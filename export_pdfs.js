@@ -40,16 +40,34 @@ if (!fs.existsSync(pdfsDir)){
       await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'networkidle2', timeout: 120000 });
       const pdfFileName = unit + '_' + file.replace('.html', '.pdf');
       const pdfPath = path.join(pdfsDir, pdfFileName);
-      await page.pdf({
-        path: pdfPath,
-        format: 'A4',
-        printBackground: true,
-        displayHeaderFooter: true,
-        headerTemplate: '<div></div>',
-        footerTemplate: '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
-        margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' }
-      });
-      console.log('Saved ' + pdfPath);
+      let success = false;
+      let retries = 3;
+      while (!success && retries > 0) {
+        try {
+          await page.pdf({
+            path: pdfPath,
+            format: 'A4',
+            printBackground: true,
+            displayHeaderFooter: true,
+            headerTemplate: '<div></div>',
+            footerTemplate: '<div style="font-size:10px; width:100%; text-align:center;">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+            margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' }
+          });
+          success = true;
+          console.log('Saved ' + pdfPath);
+        } catch (err) {
+          if (err.code === 'EBUSY' || err.code === 'EPERM') {
+            console.warn(`File locked (${pdfFileName}). Retrying in 2 seconds... (${retries - 1} retries left)`);
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            retries--;
+          } else {
+            throw err;
+          }
+        }
+      }
+      if (!success) {
+        console.error(`Failed to export ${pdfFileName} after multiple retries due to file locking.`);
+      }
     }
   }
 

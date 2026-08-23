@@ -58,7 +58,7 @@ export function bindEvents() {
     
     const units = getUnits();
     const ks3Order = ['water_and_sanitation', 'change_1450_1750', 'great_war'];
-    const ks3Units = units.filter(u => u.title.includes('KS3:')).sort((a, b) => {
+    const ks3Units = units.filter(u => (u.title || '').includes('KS3:')).sort((a, b) => {
       let idxA = ks3Order.indexOf(a.id);
       let idxB = ks3Order.indexOf(b.id);
       if (idxA === -1) idxA = 999;
@@ -67,7 +67,7 @@ export function bindEvents() {
     });
     
     const ks4Order = ['edexcel_medicine', 'cme_new', 'weimar_nazi_germany', 'eee'];
-    const ks4Units = units.filter(u => !u.title.includes('KS3:') && !['trip_ypres'].includes(u.id)).sort((a, b) => {
+    const ks4Units = units.filter(u => !(u.title || '').includes('KS3:') && !['trip_ypres'].includes(u.id)).sort((a, b) => {
       let idxA = ks4Order.indexOf(a.id);
       let idxB = ks4Order.indexOf(b.id);
       if (idxA === -1) idxA = 999;
@@ -133,7 +133,7 @@ export function bindEvents() {
           link.style.color = 'rgba(255,255,255,0.85)';
         });
 
-        link.innerHTML = `<i class="fa-solid ${unit.id === 'great_war' || unit.id === 'great_war_part2' ? 'fa-helmet-safety' : 'fa-book'}" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${unit.title}</span>`;
+        link.innerHTML = `<i class="fa-solid ${unit.id === 'great_war' || unit.id === 'great_war_part2' ? 'fa-helmet-safety' : 'fa-book'}" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${unit.title || 'Untitled Unit'}</span>`;
         link.addEventListener('click', () => {
           if (window.launchSubApp) window.launchSubApp(unit.id);
         });

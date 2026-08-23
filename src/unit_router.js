@@ -1,4 +1,5 @@
-import { initializeApp } from './core_app.js';
+console.log('ROUTER RUNNING');
+import { initializeApp } from './core_app.js?v=2';
 import { renderVerticalTimeline } from './vertical_timeline.js';
 import { initTerminologyTask } from './terminology_task.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
@@ -10,10 +11,18 @@ window.currentUnitId = unitId;
 if (!unitId) {
   document.body.innerHTML = '<h1>Unit not found</h1><p>Please return to the <a href="/">Dashboard</a>.</p>';
 } else {
-  fetch(`/data/${unitId}.json?v=${Date.now()}`).then(r => {
-    if (!r.ok) throw new Error('Unit not found');
-    return r.json();
-  }).then(unitPayload => {
+  fetch(`/data/${unitId}.json?v=${Date.now()}`)
+    .then(r => {
+      if (!r.ok) {
+        // Fallback for local development using serve . instead of Vite
+        return fetch(`/public/data/${unitId}.json?v=${Date.now()}`);
+      }
+      return r;
+    })
+    .then(r => {
+      if (!r.ok) throw new Error('Unit not found');
+      return r.json();
+    }).then(unitPayload => {
     const db = {};
     db[unitId] = unitPayload;
     window.db = db;

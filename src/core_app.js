@@ -821,6 +821,10 @@ export function initializeApp(unitData) {
               </button>
             </div>
             ` : ''}
+
+            <button onclick="window.openTeacherGuideModal()" style="margin-top: 20px; background: #4f46e5; color: white; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 1.05rem; border: none; cursor: pointer; transition: background 0.2s; box-shadow: 0 4px 15px rgba(79,70,229,0.3); display: flex; align-items: center; gap: 10px;" onmouseover="this.style.background='#4338ca'" onmouseout="this.style.background='#4f46e5'">
+               <i class="fa-solid fa-chalkboard-user"></i> How to Use This App (Teacher Guide)
+            </button>
           </div>
           
           <!-- Right Column -->
@@ -1354,6 +1358,7 @@ export function initializeApp(unitData) {
     }
     
     // Sticky Header (No visible background, but opaque to hide scrolling text)
+    const currentIndex = unitData.lessons.findIndex(l => l.title === lesson.title);
     html += `
       <div style="position: sticky; top: 0; margin-left: -4rem; margin-right: -4rem; padding: 1rem 4rem; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; background: #f8f9fa; border: none; box-shadow: none;">
         <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600; font-family: 'Playfair Display', serif;">
@@ -1361,6 +1366,7 @@ export function initializeApp(unitData) {
         </h4>
         <div style="display: flex; gap: 8px; flex-shrink: 0;">
           ${isTrip ? (window.currentUnitData && window.currentUnitData.key_info ? `<button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="openKeyInfoModal()"><i class="fa-solid fa-circle-info"></i> Key Info</button>` : '') : `<button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>`}
+          ${isTrip && lesson.tour_guide_script ? `<button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: #6366f1; border-color: #6366f1; box-shadow: 0 2px 5px rgba(99,102,241,0.3);" onclick="window.openTourGuideModal(${currentIndex})"><i class="fa-solid fa-bullhorn"></i> Tour Guide Script</button>` : ''}
           <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> ${isTrip ? 'Trip Menu' : 'Unit Menu'}</button>
         </div>
       </div>
@@ -1581,7 +1587,7 @@ if (lesson.primary_source) {
                   ${starter.caption}
                 </div>
                 <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px; border-radius: 0 4px 4px 0; margin-top: auto;">
-                  <div style="font-weight: 700; color: #1e3a8a; margin-bottom: 5px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb" style="color: #fbbf24; margin-right: 5px;"></i> Think & Wonder</div>
+                  <div style="font-weight: 700; color: #1e40af; margin-bottom: 5px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb" style="color: #fbbf24; margin-right: 5px;"></i> Think & Wonder</div>
                   <div style="font-size: 0.95rem; color: #1e40af;">${starter.think_wonder}</div>
                 </div>
               </div>
@@ -1927,7 +1933,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
           const kiMatch = block.text.match(/^\[Key Individual:\s*(.+)\]$/i);
           const personName = kiMatch[1].trim();
           let person = null;
-          if (window.db && window.db[window.currentUnitId]) {
+          if (window.db && window.currentUnitId) {
             const unitDb = window.db[window.currentUnitId];
             person = unitDb.data?.key_individuals?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
             if (!person) person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
@@ -2874,7 +2880,6 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
     }
     
     // Previous / Next Lesson Navigation Buttons
-    const currentIndex = unitData.lessons.findIndex(l => l.title === lesson.title);
     if (currentIndex !== -1) {
       html += `<div style="display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; margin-bottom: 40px;">`;
       
@@ -3481,8 +3486,41 @@ window.openKeyInfoModal = function() {
   document.body.appendChild(overlay);
 };
 
-window.openDebateModal = function() {
-  window.injectDebateModalIfNeeded();
+  window.openTourGuideModal = function(lessonIndex) {
+    const lesson = window.currentUnitData.lessons[lessonIndex];
+    if (!lesson || !lesson.tour_guide_script) return;
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay no-print';
+    overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
+    overlay.onclick = function(e) {
+      if (e.target === overlay) overlay.remove();
+    };
+    
+    let blocksHtml = lesson.tour_guide_script.map(block => `
+      <div style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
+        <h4 style="color: #1e293b; font-size: 1.25rem; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 12px;">${block.theme_heading}</h4>
+        <div style="font-size: 1.1rem; line-height: 1.6; color: #334155;">${block.text}</div>
+      </div>
+    `).join('');
+
+    overlay.innerHTML = `
+      <div class="modal-content" style="background: white; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; padding: 40px; border-radius: 12px; font-family: 'Outfit', sans-serif;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #6366f1; padding-bottom: 15px;">
+          <h3 style="margin: 0; color: #1e293b; font-size: 1.8rem;"><i class="fa-solid fa-bullhorn" style="color:#6366f1; margin-right:12px;"></i> Tour Guide Script</h3>
+          <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()"><i class="fa-solid fa-times"></i> Close</button>
+        </div>
+        ${blocksHtml}
+        <div style="text-align: right; margin-top: 20px;">
+          <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()">Close Script</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  };
+
+  window.openDebateModal = function() {
+    window.injectDebateModalIfNeeded();
   const modal = document.getElementById('debateModal');
   modal.style.display = 'flex';
   // Trigger reflow
@@ -4108,3 +4146,164 @@ window.openGallery = function(encodedData, startIndex) {
   };
 
   
+  window.openTeacherGuideModal = function() {
+    if (document.getElementById('teacherGuideModal')) return;
+    const html = `
+    <div id="teacherGuideModal" class="modal-overlay no-print" style="display: flex; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) this.remove()">
+      <div class="modal-content" style="background: white; border-radius: 12px; padding: 40px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; color: #1e293b; position: relative; font-family: 'Outfit', sans-serif;">
+        <button onclick="this.closest('.modal-overlay').remove()" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; color: #64748b; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+        
+        <h2 style="font-family: 'Playfair Display', serif; color: #4f46e5; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; font-size: 2rem;">
+          <i class="fa-solid fa-chalkboard-user"></i> Teacher & Tour Guide Instructions
+        </h2>
+        
+        <p style="font-size: 1.1rem; line-height: 1.6;">Welcome to the Meoncross Battlefield Tour App! This app is designed with a "Dual Interface" to keep pupils engaged while giving you, the teacher, all the information you need.</p>
+        
+        <h3 style="color: #334155; margin-top: 30px;"><i class="fa-solid fa-mobile-screen"></i> 1. The Pupil View vs. Teacher View</h3>
+        <p style="font-size: 1.05rem; line-height: 1.6;">By default, the app is in <strong>Pupil Mode</strong>. They will see the timeline, photos, and interactive maps. However, they do NOT see the historical script or the answers to questions.</p>
+        <p style="font-size: 1.05rem; line-height: 1.6;">As a teacher, you have access to the <strong>Tour Guide Script</strong>. On any day's page, click the blue button with the megaphone icon at the top. This opens your script, complete with timelines, key facts, and historical sources to read out loud to the pupils.</p>
+
+        <h3 style="color: #334155; margin-top: 30px;"><i class="fa-solid fa-location-dot"></i> 2. Geo-Fenced "Missions" (Padlocks)</h3>
+        <p style="font-size: 1.05rem; line-height: 1.6;">To prevent pupils from just scrolling through the entire trip while bored on the coach, many historical sites are <strong>Geo-Fenced</strong>. You will see a <i class="fa-solid fa-lock"></i> padlock icon next to these sites.</p>
+        <p style="font-size: 1.05rem; line-height: 1.6;"><strong>How it works:</strong> When the pupils physically step off the coach and enter the boundaries of the cemetery or memorial, the app uses their phone's GPS to automatically unlock the site. This reveals a specific interactive "Mission" they must complete there (e.g., finding a specific grave, using their compass to find the direction of a gas attack).</p>
+        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin-top: 10px; border-radius: 4px;">
+          <strong>Teacher's Fail-Safe:</strong> If a pupil's GPS is broken or offline, they can manually unlock their mission task. To do this, simply instruct the pupil to <strong>tap the padlock icon 4 times in quick succession</strong>. This will act as a secret override.
+        </div>
+
+        <h3 style="color: #334155; margin-top: 30px;"><i class="fa-solid fa-users"></i> 3. The Oral Storytelling Task (Tyne Cot & Langemarck)</h3>
+        <p style="font-size: 1.05rem; line-height: 1.6;">At massive cemeteries like Tyne Cot, pupils can easily be overwhelmed by the numbers. To build empathy, the app assigns each pupil one specific, well-documented soldier to find (e.g., a Victoria Cross winner or a local Stubbington hero).</p>
+        <p style="font-size: 1.05rem; line-height: 1.6;"><strong>Your Role:</strong> Let the pupils spread out to find their assigned graves and read the biography on their phones. At the end of the visit, gather them together and ask them to orally tell the rest of the group the story of "their" soldier.</p>
+        
+        <div style="margin-top: 40px; text-align: center;">
+          <button class="btn btn-primary" onclick="this.closest('.modal-overlay').remove()" style="background: #4f46e5; color: white; padding: 10px 30px; font-size: 1.1rem; border-radius: 8px; border: none; cursor: pointer;">Got it!</button>
+        </div>
+      </div>
+    </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', html);
+    const modal = document.getElementById('teacherGuideModal');
+    // Trigger reflow for animation
+    void modal.offsetWidth;
+    modal.style.opacity = '1';
+  };
+  window.unlockMission = function(btnElement, siteId) {
+    const container = btnElement.closest('.geo-fence-container');
+    let missionHTML = '';
+    
+    if (siteId === 'brooding_soldier') {
+      missionHTML = `
+        <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <h4 style="color: #059669; margin: 0 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: The Direction of the Gas</h4>
+          <p style="font-size: 1.05rem; color: #334155;"><strong>Task:</strong> Open your phone's compass app. Stand at the base of the Canadian memorial and turn until you are facing the exact direction the German gas attack came from (North-East).</p>
+          <div style="background: #ecfdf5; padding: 15px; border-left: 4px solid #10b981; margin: 15px 0; border-radius: 0 4px 4px 0;">
+            <em style="color: #065f46;">"Gas! GAS! Quick, boys!—An ecstasy of fumbling..."</em><br><small style="color: #047857;">- Wilfred Owen</small>
+          </div>
+          <p style="color: #b91c1c; font-weight: bold; margin-bottom: 5px;"><i class="fa-solid fa-brain"></i> Learn these 3 facts by heart before getting back on the coach:</p>
+          <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;">
+            <li>Chlorine gas severely damaged the respiratory system, causing victims to suffocate.</li>
+            <li>The earliest defense was holding cotton pads soaked in urine over the mouth (ammonia neutralized chlorine).</li>
+            <li>The memorial shows a soldier in a 'reverse arms' position, signifying mourning, not victory.</li>
+          </ul>
+        </div>
+      `;
+    } else if (siteId === 'tyne_cot') {
+       const db = window.currentUnitData?.missions_database?.tyne_cot_soldiers;
+       if (db && db.length > 0) {
+         const soldier = db[Math.floor(Math.random() * db.length)];
+         missionHTML = `
+           <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+             <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: Tell Their Story</h4>
+             <div style="background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;">
+               <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1.3rem;"></h3>
+               <p style="margin: 0 0 5px 0; color: #475569;"><strong>Regiment:</strong> </p>
+               <p style="margin: 0 0 15px 0; color: #ef4444; font-weight: bold; font-size: 1.1rem;"><i class="fa-solid fa-map-pin"></i> <strong>Location:</strong> </p>
+               <p style="margin: 0; font-size: 1rem; line-height: 1.6; color: #334155;"></p>
+             </div>
+             <div style="background: #fff1f2; padding: 15px; border-radius: 6px; border: 1px solid #fecdd3;">
+               <p style="margin: 0; color: #be123c; font-weight: bold; font-size: 1.05rem;"><i class="fa-solid fa-person-chalkboard"></i> Task: Find this exact grave or panel. At the end of the visit, you will be asked to orally tell the rest of your group about this soldier.</p>
+             </div>
+           </div>
+         `;
+       } else {
+         missionHTML = "<p>Error loading soldier database.</p>";
+       }
+    } else if (siteId === 'langemarck') {
+       const db = window.currentUnitData?.missions_database?.langemarck_soldiers;
+       if (db && db.length > 0) {
+         const soldier = db[Math.floor(Math.random() * db.length)];
+         missionHTML = `
+           <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+             <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: The Individuals</h4>
+             <div style="background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #1e293b;">
+               <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1.3rem;"></h3>
+               <p style="margin: 0 0 5px 0; color: #475569;"><strong>Regiment:</strong> </p>
+               <p style="margin: 0 0 15px 0; color: #ef4444; font-weight: bold; font-size: 1.1rem;"><i class="fa-solid fa-map-pin"></i> <strong>Location:</strong> </p>
+               <p style="margin: 0; font-size: 1rem; line-height: 1.6; color: #334155;"></p>
+             </div>
+             <div style="background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
+               <p style="margin: 0; color: #334155; font-weight: bold;"><i class="fa-solid fa-magnifying-glass"></i> Task: Look at the names on the bronze oak panels. Remember that every German soldier in the mass grave had a story and family similar to the one above.</p>
+             </div>
+           </div>
+         `;
+       } else {
+         missionHTML = "<p>Error loading soldier database.</p>";
+       }
+    } else if (siteId === 'menin_gate') {
+        missionHTML = `
+          <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: Local Hero & The Empire</h4>
+            
+            <div style="margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
+              <h4 style="margin: 0 0 10px 0; color: #1e293b;"><i class="fa-solid fa-magnifying-glass-location" style="color: #3b82f6;"></i> Task 1: Find the Local Hero</h4>
+              
+              <div style="background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;">
+                <h3 style="margin: 0 0 10px 0; color: #1e293b; font-size: 1.3rem;">Private T. J. Franklin</h3>
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                  <strong>Service Number:</strong> 8560<br>
+                  <strong>Regiment:</strong> 1st Battalion, The Hampshire Regiment<br>
+                  <strong>Born:</strong> Alverstoke, Hampshire, in about 1893.<br><br>
+                  <strong>Local Connection:</strong> He was the son of George Franklin (an Army Pensioner and farm labourer) and Mary Ann Jane Franklin. The family lived at Chark Cottage in Stubbington, and later moved to Meadow Cottage, Chark, Lee-on-the-Solent.<br><br>
+                  <strong>Military Service & Fate:</strong> Enlisted at Gosport. He was deployed to the Western Front in August 1914. He was killed in action on <strong>29th April 1915</strong> during the Second Battle of Ypres. His battalion was holding an exposed section of the line on the Frezenberg Ridge to cover an Allied withdrawal, enduring intense German shelling and the first ever military poison gas attacks.
+                </p>
+              </div>
+              <p style="margin: 0; color: #b91c1c; font-weight: bold;"><i class="fa-solid fa-person-chalkboard"></i> Action: The Menin Gate has 54,000 names. Locate the specific panel for Private T. J. Franklin.</p>
+            </div>
+            
+            <div>
+              <h4 style="margin: 0 0 5px 0; color: #1e293b;"><i class="fa-solid fa-monument" style="color: #f59e0b;"></i> Task 2: The Indian Forces Memorial</h4>
+              <p style="margin: 0; color: #475569;">Once you have found his name, walk out of the gate and up onto the grassy ramparts. Locate the <strong>Indian Forces Memorial</strong>. 130,000 troops from the Indian subcontinent served in Flanders. Take a moment to read the inscription before the Last Post begins at 8:00 PM.</p>
+            </div>
+          </div>
+        `;
+    }
+    
+    if (missionHTML) {
+      container.style.border = 'none';
+      container.style.background = 'transparent';
+      container.style.padding = '0';
+      container.style.boxShadow = 'none';
+      container.innerHTML = missionHTML;
+    }
+  };
+
+  window.handleSecretUnlock = function(element, siteId) {
+    const now = Date.now();
+    const lastClick = element.dataset.lastClick ? parseInt(element.dataset.lastClick) : 0;
+    let clicks = element.dataset.clicks ? parseInt(element.dataset.clicks) : 0;
+    
+    // If more than 1.5 seconds have passed since the last click, reset the counter
+    if (now - lastClick > 1500) {
+      clicks = 1;
+    } else {
+      clicks++;
+    }
+    
+    element.dataset.lastClick = now;
+    element.dataset.clicks = clicks;
+    
+    // 4 quick taps to unlock
+    if (clicks >= 4) {
+      window.unlockMission(element, siteId);
+    }
+  };
+

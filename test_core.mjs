@@ -1,16 +1,4309 @@
-import { unitData } from './weimar_nazi_germany/data.js';
-import fs from 'fs';
+import { renderExamPracticeZone } from './exam_practice_zone.js';
+import { initKeyIndividualsTask, generateKeyIndividualCardHTML, generateKeyIndividualEmbedHTML } from './key_individuals.js';
+import { renderQuizZone } from './quiz_zone.js';
+import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
+import { sectionAGuide, sectionBGuide, middleEastGuide, weimarGuide , elizabethGuide} from './exam_guide_content.js';
+import { renderCoverSourcesHTML } from './cover_sources.js';
+import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
 
-const coreAppStr = fs.readFileSync('src/core_app.js', 'utf8');
-global.window = {};
+window.examTimers = {};
 
-const initAppFuncStr = coreAppStr.replace(/export function/g, 'function') + '\n\n' + `
-const l1 = unitData.lessons.find(l => l.id === 'lesson_1_1');
-console.log(generateLessonHTML(l1, 0, unitData));
-`;
+window.toggleExamTimer = function(cardId, defaultMinutes) {
+  const container = document.getElementById('timer-container-' + cardId);
+  if (container.style.display === 'none') {
+    container.style.display = 'flex';
+    if (!window.examTimers[cardId]) {
+      window.examTimers[cardId] = {
+        totalSeconds: defaultMinutes * 60,
+        remainingSeconds: defaultMinutes * 60,
+        interval: null,
+        isRunning: false
+      };
+      updateTimerDisplay(cardId);
+    }
+  } else {
+    container.style.display = 'none';
+  }
+};
 
-try {
-  eval(initAppFuncStr);
-} catch (e) {
-  console.log("Error evaluating:", e);
+window.adjustExamTimer = function(cardId, minutesChange) {
+  const timer = window.examTimers[cardId];
+  if (!timer || timer.isRunning) return;
+  
+  const newSeconds = timer.totalSeconds + (minutesChange * 60);
+  if (newSeconds >= 60) {
+    timer.totalSeconds = newSeconds;
+    timer.remainingSeconds = newSeconds;
+    updateTimerDisplay(cardId);
+  }
+};
+
+window.startExamTimer = function(cardId) {
+  const timer = window.examTimers[cardId];
+  if (!timer) return;
+  
+  const btn = document.getElementById('timer-start-btn-' + cardId);
+  
+  if (timer.isRunning) {
+    // Pause
+    clearInterval(timer.interval);
+    timer.isRunning = false;
+    btn.innerHTML = '<i class="fa-solid fa-play"></i> Resume';
+    btn.style.background = '#f59e0b';
+    btn.onmouseout = function() { this.style.background='#f59e0b' };
+    btn.onmouseover = function() { this.style.background='#d97706' };
+  } else {
+    // Start
+    timer.isRunning = true;
+    btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+    btn.style.background = '#f59e0b';
+    btn.onmouseout = function() { this.style.background='#f59e0b' };
+    btn.onmouseover = function() { this.style.background='#d97706' };
+    
+    timer.interval = setInterval(() => {
+      if (timer.remainingSeconds > 0) {
+        timer.remainingSeconds--;
+        updateTimerDisplay(cardId);
+      } else {
+        clearInterval(timer.interval);
+        timer.isRunning = false;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Time Up!';
+        btn.style.background = '#ef4444';
+        btn.onmouseout = function() { this.style.background='#ef4444' };
+        btn.onmouseover = function() { this.style.background='#dc2626' };
+      }
+    }, 1000);
+  }
+};
+
+window.resetExamTimer = function(cardId, defaultMinutes) {
+  const timer = window.examTimers[cardId];
+  if (!timer) return;
+  
+  clearInterval(timer.interval);
+  timer.remainingSeconds = timer.totalSeconds;
+  timer.isRunning = false;
+  
+  const btn = document.getElementById('timer-start-btn-' + cardId);
+  btn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+  btn.style.background = '#10b981';
+  btn.onmouseout = function() { this.style.background='#10b981' };
+  btn.onmouseover = function() { this.style.background='#059669' };
+  
+  updateTimerDisplay(cardId);
+};
+
+function updateTimerDisplay(cardId) {
+  const timer = window.examTimers[cardId];
+  if (!timer) return;
+  
+  const m = Math.floor(timer.remainingSeconds / 60);
+  const s = timer.remainingSeconds % 60;
+  
+  const display = document.getElementById('timer-display-' + cardId);
+  if (display) {
+    display.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    if (timer.remainingSeconds <= 60 && timer.remainingSeconds > 0) {
+      display.style.color = '#dc2626';
+    } else {
+      display.style.color = '#1e3a8a';
+    }
+  }
+  
+  const progress = document.getElementById('timer-progress-' + cardId);
+  if (progress) {
+    const percentage = (timer.remainingSeconds / timer.totalSeconds) * 100;
+    progress.style.width = percentage + '%';
+    if (percentage < 20) {
+      progress.style.background = '#ef4444';
+    } else if (percentage < 50) {
+      progress.style.background = '#f59e0b';
+    } else {
+      progress.style.background = '#3b82f6';
+    }
+  }
 }
+
+export function getAssetUrl(path) {
+  if (!path) return path;
+  if (path.startsWith('http') || path.startsWith('/')) return path;
+  if (window.currentUnitId) {
+    return `/${window.currentUnitId}/${path}`;
+  }
+  return path;
+}
+
+export function initializeApp(unitData) {
+  window.currentUnitData = unitData;
+  
+  const init = () => {
+  // Listen for custom events from dynamically loaded modules (like the Thematic Matrix)
+  window.addEventListener('renderLessonEvent', (e) => {
+    const lesson = e.detail;
+    renderLesson(lesson);
+    setTimeout(() => {
+      const ca = document.getElementById('content-area');
+      if (ca) {
+        ca.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 100);
+    // Try to update sidebar active state
+    document.querySelectorAll('.lesson-link').forEach(l => {
+      l.classList.remove('active');
+      if (l.textContent.includes(lesson.title)) {
+        l.classList.add('active');
+      }
+    });
+  });
+
+  const sidebar = document.getElementById('sidebar');
+  const contentArea = document.getElementById('content-area');
+  const btnDyslexia = document.getElementById('btn-dyslexia');
+
+  // Inject Custom Styles for Layout & SEN (No Icons)
+  const style = document.createElement('style');
+  style.textContent = `
+    .phase-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .phase-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 2px solid rgba(0,0,0,0.05);
+      padding-bottom: 10px;
+    }
+    .narrative-chunk {
+      background: #f8fafc;
+      border-left: 4px solid #002855;
+      padding: 15px 20px;
+      margin-bottom: 18px;
+      border-radius: 0 6px 6px 0;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+    .vocab-word {
+      position: relative;
+      border-bottom: 2px dashed #3b82f6;
+      cursor: pointer;
+      color: #1e3a8a;
+      font-weight: 700;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 0 4px;
+      border-radius: 3px;
+      transition: all 0.2s ease;
+    }
+    .vocab-word:hover, .vocab-word.active {
+      background: rgba(59, 130, 246, 0.25);
+      border-bottom-color: #1e3a8a;
+    }
+    #global-glossary-popover {
+      position: fixed;
+      background: #1e293b;
+      color: #ffffff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      width: max-content;
+      max-width: 300px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 1.5;
+      z-index: 100000;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(10px) scale(0.95);
+      transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #global-glossary-popover.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    #global-glossary-popover::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #1e293b transparent transparent transparent;
+      transition: left 0.2s ease;
+    }
+    #global-glossary-popover.arrow-top::after {
+      top: auto;
+      bottom: 100%;
+      border-color: transparent transparent #1e293b transparent;
+    }
+    .scaffold-box {
+      background: #fafafa;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+    .starter-box { border-left: 4px solid #2563eb; }
+    .clue-box { border-left: 4px solid #d97706; }
+    .model-box { border-left: 4px solid #059669; }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .student-answer-input {
+      display: none;
+      width: 100%;
+      height: 140px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-family: inherit;
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+    .laptop-mode-active .student-answer-input {
+      display: block;
+    }
+    .do-now-card {
+      background: rgba(248, 250, 252, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .do-now-card .answer {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .do-now-card.revealed .answer {
+      display: block;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: #1a237e;
+      color: white;
+      border-color: #1a237e;
+    }
+    .btn-primary:hover {
+      background: #0d1659;
+    }
+    .btn-sm-icon {
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+    .student-answer-input {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-family: inherit;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+    .fab-copy {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .fab-copy:hover {
+      transform: scale(1.05);
+      background: #1e293b;
+    }
+    .laptop-mode-active .fab-copy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #334155;
+      border-color: #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background: #cbd5e1;
+      color: #0f172a;
+    }
+    .reading-active {
+      background: #ef4444 !important;
+      color: white !important;
+      border-color: #dc2626 !important;
+    }
+    .sidebar {
+      background: #0f172a !important;
+      border-right: none !important;
+      box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+    }
+    .sidebar .fa-graduation-cap, .sidebar h2, .sidebar span, .sidebar .lesson-link {
+      color: #f1f5f9 !important;
+    }
+    .sidebar .lesson-link {
+      background: rgba(255,255,255,0.05) !important;
+      border: 1px solid transparent;
+    }
+    .sidebar .lesson-link:hover, .sidebar .lesson-link.active {
+      background: rgba(255,255,255,0.15) !important;
+      color: #ffffff !important;
+      border-color: rgba(255,255,255,0.2);
+    }
+    .sidebar-header {
+      border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    .source-card img {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .flashcard-deck {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .flashcard-wrapper {
+      background-color: transparent;
+      height: 200px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    .flashcard-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    .flashcard-front {
+      background-color: #f1f5f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid #cbd5e1;
+      transform: rotateY(0deg);
+      -webkit-transform: rotateY(0deg);
+    }
+    .flashcard-front h4 {
+      margin: 0 0 10px 0;
+      color: #1e293b;
+      font-size: 1.1rem;
+    }
+    .flashcard-front p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    .flashcard-back {
+      background-color: #3b82f6;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .flashcard-wrapper.flipped .flashcard-front {
+      transform: rotateY(-180deg);
+      -webkit-transform: rotateY(-180deg);
+    }
+    .flashcard-wrapper.flipped .flashcard-back {
+      transform: rotateY(0deg);
+      -webkit-transform: rotateY(0deg);
+    }
+    .teacher-note {
+      display: none;
+      background: #1e293b;
+      color: #f8fafc;
+      border-left: 4px solid #facc15;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      line-height: 1.6;
+    }
+    .teacher-note h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #facc15;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+    }
+    .teacher-mode-active .teacher-note {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    .para-number {
+      background: #e2e8f0;
+      color: #475569;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      margin-right: 15px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    @keyframes highlightPulse {
+      0% { background: #fef08a; transform: scale(1.02); }
+      50% { background: #fef08a; transform: scale(1.02); }
+      100% { background: #f8fafc; transform: scale(1); }
+    }
+    .highlight-flash {
+      animation: highlightPulse 2.5s ease-out;
+    }
+  `;
+  document.head.appendChild(style);
+
+  window.scrollToPara = function(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.remove('highlight-flash');
+      // Trigger reflow to restart animation
+      void el.offsetWidth;
+      el.classList.add('highlight-flash');
+      setTimeout(() => el.classList.remove('highlight-flash'), 2600);
+    }
+  };
+
+  let unitEnquiryText = "";
+  const headerDivs = document.querySelectorAll('.header-title-container div div');
+  headerDivs.forEach(div => {
+    if (div.textContent.includes('Unit Enquiry:')) {
+      unitEnquiryText = div.textContent;
+      div.style.display = 'none';
+    }
+  });
+
+  // Set up Speech Synthesis
+  let synth = window.speechSynthesis;
+  let utterance = null;
+
+  // Copy to OneNote FAB
+  const fab = document.createElement('button');
+  fab.className = 'fab-copy';
+  fab.innerHTML = '<i class="fa-solid fa-copy"></i>';
+  fab.title = "Copy all answers to OneNote";
+  fab.onclick = () => {
+    let text = "History Lesson Answers\n\n";
+    document.querySelectorAll('.do-now-card').forEach(card => {
+      let qTextEl = card.querySelector('div[style*="font-weight: 700"]');
+      let textarea = card.querySelector('.student-answer-input');
+      if (qTextEl && textarea) {
+        let clone = qTextEl.cloneNode(true);
+        let span = clone.querySelector('span');
+        if (span) span.remove();
+        text += clone.textContent.trim() + "\n";
+        text += "Answer: " + textarea.value + "\n\n";
+      }
+    });
+    navigator.clipboard.writeText(text).then(() => {
+      alert('All answers copied to clipboard! Ready to paste into OneNote.');
+    }).catch(err => {
+      alert('Failed to copy to clipboard.');
+    });
+  };
+  document.body.appendChild(fab);
+
+  // Global Simplify logic
+  window.toggleSimplify = function(btnElement) {
+    const textContainer = btnElement.closest('.narrative-chunk').querySelector('.narrative-text');
+    if (!textContainer) return;
+    
+    if (btnElement.classList.contains('simplified-active')) {
+      textContainer.innerHTML = decodeURIComponent(btnElement.getAttribute('data-original'));
+      btnElement.classList.remove('simplified-active');
+      btnElement.style.background = '';
+      btnElement.style.color = '#047857';
+    } else {
+      textContainer.innerHTML = decodeURIComponent(btnElement.getAttribute('data-simplified'));
+      btnElement.classList.add('simplified-active');
+      btnElement.style.background = '#d1fae5';
+      btnElement.style.color = '#065f46';
+    }
+  };
+
+  // Global Read Aloud logic (Per Paragraph)
+  window.readAloudText = function(btnElement) {
+    if (synth.speaking && btnElement.classList.contains('reading-active')) {
+      synth.cancel();
+      btnElement.classList.remove('reading-active');
+      btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+      return;
+    }
+    
+    synth.cancel();
+    document.querySelectorAll('.narrative-chunk button').forEach(b => {
+      b.classList.remove('reading-active');
+      b.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    });
+
+    const textToRead = btnElement.closest('.narrative-chunk').querySelector('.narrative-text').textContent;
+    if (textToRead.trim() === "") return;
+
+    btnElement.classList.add('reading-active');
+    btnElement.innerHTML = '<i class="fa-solid fa-stop"></i>';
+
+    utterance = new SpeechSynthesisUtterance(textToRead);
+    utterance.onend = () => {
+      btnElement.classList.remove('reading-active');
+      btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    };
+    synth.speak(utterance);
+  };
+
+  
+
+  // Toggle Dyslexia Mode (Preserve icon)
+  btnDyslexia.addEventListener('click', () => {
+    document.body.classList.toggle('sen-mode');
+    const isSen = document.body.classList.contains('sen-mode');
+    if (btnDyslexia.title === 'SEN / Dyslexia Mode' || btnDyslexia.title === 'Standard Mode') {
+      // It's an icon button with title
+      btnDyslexia.title = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+      btnDyslexia.style.background = isSen ? '#1e293b' : '';
+      btnDyslexia.style.color = isSen ? '#ffffff' : '';
+    } else {
+      // Legacy text button
+      btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+    }
+  });
+
+  // Inject Laptop Mode & Teacher Mode Buttons
+  const headerActions = document.querySelector('.header-actions');
+  if (headerActions) {
+    const btnLaptop = document.createElement('button');
+    btnLaptop.className = 'btn btn-secondary';
+    btnLaptop.style.marginRight = '5px';
+    btnLaptop.style.padding = '6px 12px';
+    btnLaptop.title = 'Laptop Mode';
+    btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i>';
+    
+    if (localStorage.getItem('laptopMode') === 'true') {
+      document.body.classList.add('laptop-mode-active');
+      btnLaptop.style.background = '#1e293b';
+      btnLaptop.style.color = '#ffffff';
+    }
+
+    btnLaptop.addEventListener('click', () => {
+      document.body.classList.toggle('laptop-mode-active');
+      const isActive = document.body.classList.contains('laptop-mode-active');
+      localStorage.setItem('laptopMode', isActive);
+      btnLaptop.style.background = isActive ? '#1e293b' : '';
+      btnLaptop.style.color = isActive ? '#ffffff' : '';
+    });
+    headerActions.appendChild(btnLaptop);
+
+    const btnTeacher = document.createElement('button');
+    btnTeacher.className = 'btn btn-secondary';
+    btnTeacher.innerHTML = '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
+    btnTeacher.addEventListener('click', () => {
+      document.body.classList.toggle('teacher-mode-active');
+      const isActive = document.body.classList.contains('teacher-mode-active');
+      btnTeacher.innerHTML = isActive ? '<i class="fa-solid fa-user-tie"></i> Teacher Mode: ON' : '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
+      btnTeacher.style.background = isActive ? '#1e293b' : '';
+      btnTeacher.style.color = isActive ? '#ffffff' : '';
+    });
+    headerActions.appendChild(btnTeacher);
+
+    const btnCurriculum = document.createElement('button');
+    btnCurriculum.className = 'btn btn-secondary';
+    btnCurriculum.innerHTML = '<i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge (Teachers)';
+    btnCurriculum.addEventListener('click', () => {
+      openCurriculumModal();
+    });
+    headerActions.appendChild(btnCurriculum);
+
+    const btnWhiteboard = document.createElement('button');
+    btnWhiteboard.className = 'btn btn-secondary';
+    btnWhiteboard.innerHTML = '<i class="fa-solid fa-person-chalkboard"></i> Task Whiteboard';
+    btnWhiteboard.addEventListener('click', () => {
+      openTaskWhiteboard();
+    });
+    headerActions.appendChild(btnWhiteboard);
+
+  }
+
+  function openCurriculumModal() {
+    let modal = document.getElementById('curriculum-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'curriculum-modal';
+      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
+      
+      const content = document.createElement('div');
+      content.style.cssText = 'background:#ffffff;padding:30px;border-radius:12px;width:90%;max-width:500px;color:#333333;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
+      
+      content.innerHTML = `
+        <h2 style="margin-top:0"><i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge Setup</h2>
+        <p style="opacity:0.8;font-size:0.95rem;">Select the units your class has already been taught. The app will dynamically generate "PAST TOPIC" Do Now retrieval questions from these units.</p>
+        <div id="unit-checkboxes" style="display:flex;flex-direction:column;gap:12px;margin:25px 0;">
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+          <button id="close-curriculum" class="btn btn-primary">Save & Close</button>
+        </div>
+      `;
+      modal.appendChild(content);
+      document.body.appendChild(modal);
+
+      const availableUnits = [
+        { id: 'norman_conquest', title: 'The Norman Conquest' },
+        { id: 'water_and_sanitation', title: 'Water & Health Through Time' },
+        { id: 'change_1450_1750', title: 'Change 1450-1750 (Tudors)' }
+      ];
+
+      const container = content.querySelector('#unit-checkboxes');
+      const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+
+      availableUnits.forEach(u => {
+        const label = document.createElement('label');
+        label.style.display = 'flex';
+        label.style.alignItems = 'center';
+        label.style.gap = '10px';
+        label.style.cursor = 'pointer';
+        label.style.fontSize = '1.1rem';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = u.id;
+        checkbox.style.width = '20px';
+        checkbox.style.height = '20px';
+        checkbox.checked = taught.includes(u.id);
+        checkbox.addEventListener('change', () => {
+          let current = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+          if (checkbox.checked) current.push(u.id);
+          else current = current.filter(id => id !== u.id);
+          localStorage.setItem('taughtUnits', JSON.stringify([...new Set(current)]));
+        });
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(u.title));
+        container.appendChild(label);
+      });
+
+      content.querySelector('#close-curriculum').addEventListener('click', () => {
+        document.body.removeChild(modal);
+        // Refresh page to apply new Do Nows if we are currently looking at one
+        location.reload();
+      });
+    }
+  }
+
+  window.renderDashboard = function(skipHistory = false) {
+    if (!skipHistory) {
+      try {
+        const url = new URL(window.location);
+        url.searchParams.delete('lesson');
+        history.pushState({ dashboard: true }, "", url);
+      } catch (e) {
+        console.warn('History routing disabled (e.g. file:// protocol):', e);
+      }
+    }
+    document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+    const homeLink = document.querySelector('.lesson-link');
+    if (homeLink) homeLink.classList.add('active');
+    renderHomepage();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  function renderHomepage() {
+    let lessonsHTML = renderKeyTopicLessonsHTML(unitData, window.currentUnitId, window.currentUnitData);
+
+
+
+    let topSectionHTML = '';
+    
+    if (unitData.type === 'trip') {
+      const coverImage = unitData.cover_image ? getAssetUrl(unitData.cover_image) : '';
+      
+      let prepLessonIndex = -1;
+      let prepLesson = null;
+      if (unitData.lessons) {
+        unitData.lessons.forEach((l, i) => {
+          if (l.id === 'day_0') {
+            prepLessonIndex = i;
+            prepLesson = l;
+          }
+        });
+      }
+
+      topSectionHTML = `
+        <div style="display: flex; flex-wrap: wrap; text-align: left; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; margin-bottom: 40px;">
+          <!-- Left Column -->
+          <div style="flex: 1.2; min-width: 300px; padding: 40px;">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin: 0 0 10px 0; line-height: 1.1;">
+              ${unitData.title || 'Featured Battlefield Tour'}
+            </h1>
+            <h2 style="font-size: 1.3rem; color: #64748b; font-weight: 400; margin: 0 0 30px 0;">
+              ${unitData.enquiry_question || unitData.enquiry || 'Join the expedition'}
+            </h2>
+            
+            ${prepLesson ? `
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 25px; margin-top: 20px;">
+              <h3 style="margin: 0 0 10px 0; color: #334155; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-suitcase-rolling" style="color: #f59e0b;"></i> Final Preparations
+              </h3>
+              <p style="margin: 0 0 15px 0; color: #475569; font-size: 0.95rem;">
+                ${prepLesson.enquiry || 'What to Pack & Logistics'}
+              </p>
+              <button class="btn btn-primary" onclick="window.renderLessonByIndex(${prepLessonIndex})" style="background: #2563eb; color: white; padding: 10px 20px; border-radius: 6px; font-weight: 600; border: none; cursor: pointer; transition: background 0.2s; box-shadow: 0 4px 6px rgba(37,99,235,0.2);" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                View Prep Pack
+              </button>
+            </div>
+            ` : ''}
+
+            <button onclick="window.openTeacherGuideModal()" style="margin-top: 20px; background: #4f46e5; color: white; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 1.05rem; border: none; cursor: pointer; transition: background 0.2s; box-shadow: 0 4px 15px rgba(79,70,229,0.3); display: flex; align-items: center; gap: 10px;" onmouseover="this.style.background='#4338ca'" onmouseout="this.style.background='#4f46e5'">
+               <i class="fa-solid fa-chalkboard-user"></i> How to Use This App (Teacher Guide)
+            </button>
+          </div>
+          
+          <!-- Right Column -->
+          <div style="flex: 1; min-width: 300px; padding: 20px;">
+             <div style="width: 100%; height: 100%; min-height: 300px; background-image: url('${coverImage}'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);"></div>
+          </div>
+        </div>
+      `;
+    } else {
+      topSectionHTML = `
+        <div style="text-align: center; padding-bottom: 50px;">
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin-bottom: 10px; line-height: 1.2;">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
+          <h2 style="font-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
+            ${unitData.title}
+          </h2>
+          
+          ${renderCoverSourcesHTML(unitData, getAssetUrl)}
+          
+          ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
+        </div>
+      `;
+    }
+
+    contentArea.innerHTML = `
+      <div>
+        ${topSectionHTML}
+        
+        <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">${unitData.type === 'trip' ? 'Tour Itinerary' : 'Key Topic Lessons'}</h2>
+        ${lessonsHTML}
+      </div>
+    `;
+
+    // Add click listeners to cards
+    const cards = contentArea.querySelectorAll('.homepage-lesson-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-3px)';
+        card.style.boxShadow = '0 8px 15px rgba(0,0,0,0.1)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'none';
+        card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+      });
+      card.addEventListener('click', () => {
+        if (!card.hasAttribute('data-index')) return;
+        const idx = parseInt(card.dataset.index);
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        renderLesson(unitData.lessons[idx]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  }
+
+  function renderExamGuide() {
+    contentArea.innerHTML = '';
+    const container = document.createElement('div');
+    container.className = 'dashboard-container';
+    
+    let contentHtml = '';
+    if (unitData.title && unitData.title.toLowerCase().includes('medicine')) {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+          <div>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #e2e8f0; font-size: 1.15rem; margin: 0;">The Pearson Edexcel GCSE (9-1) History Paper 1</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          ${sectionAGuide}
+          ${sectionBGuide}
+        </div>
+      `;
+    } else if (unitData.title && unitData.title.toLowerCase().includes('middle east')) {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+          <div>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #fecaca; font-size: 1.15rem; margin: 0;">The Pearson Edexcel GCSE (9-1) History Paper 2</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          ${middleEastGuide}
+        </div>
+      `;
+    } else if (unitData.title && (unitData.title.toLowerCase().includes('weimar') || unitData.title.toLowerCase().includes('germany'))) {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #334155 0%, #0f172a 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+          <div>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #cbd5e1; font-size: 1.15rem; margin: 0;">The Pearson Edexcel GCSE (9-1) History Paper 3</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          ${weimarGuide}
+        </div>
+      `;
+    } else if (unitData.title && (unitData.title.toLowerCase().includes('elizabeth') || unitData.title.toLowerCase().includes('armada'))) {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+          <div>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #ddd6fe; font-size: 1.15rem; margin: 0;">The Pearson Edexcel GCSE (9-1) History Paper 2</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          ${elizabethGuide}
+        </div>
+      `;
+    } else {
+      contentHtml = `
+        <div class="welcome-banner" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+          <div>
+            <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Exam Masterclass Guide</h1>
+            <p class="welcome-subtitle" style="color: #e2e8f0; font-size: 1.15rem; margin: 0;">Revision strategies for this unit</p>
+          </div>
+        </div>
+        <div style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px;">
+          <p>No specific exam guidance is available for this unit yet.</p>
+        </div>
+      `;
+    }
+    
+    container.innerHTML = contentHtml;
+    contentArea.appendChild(container);
+  }
+
+  // Render Sidebar
+  function renderSidebar() {
+    const navContainer = document.getElementById('sidebar-nav-container') || sidebar;
+    navContainer.innerHTML = '';
+
+    // Unit Homepage Tab
+    const homeLink = document.createElement('a');
+    homeLink.className = 'lesson-link active';
+    homeLink.innerHTML = '<i class="fa-solid fa-home" style="margin-right: 8px;"></i> Unit Homepage';
+    homeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+      homeLink.classList.add('active');
+      renderHomepage();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(homeLink);
+
+    // Live Photo Feed Tab (Trips only)
+    if (unitData.key_info && unitData.key_info.live_album_url) {
+      const liveLink = document.createElement('a');
+      liveLink.className = 'lesson-link';
+      liveLink.innerHTML = '<i class="fa-solid fa-camera-retro" style="margin-right: 8px;"></i> Live Photo Feed';
+      liveLink.style.background = 'rgba(239, 68, 68, 0.1)';
+      liveLink.style.borderLeft = '3px solid #ef4444';
+      liveLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        liveLink.classList.add('active');
+        
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = `
+          <div class="welcome-banner" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+            <div>
+              <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Live Photo Feed</h1>
+              <p class="welcome-subtitle" style="color: #cbd5e1; font-size: 1.15rem; margin: 0;">Follow the trip in real-time as teachers upload photos from Belgium!</p>
+            </div>
+          </div>
+          <div style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; margin-top: 30px;">
+            <i class="fa-brands fa-google" style="font-size: 4rem; color: #3b82f6; margin-bottom: 20px;"></i>
+            <h2 style="color: #1e293b; margin-top: 0;">Google Photos Shared Album</h2>
+            <p style="color: #475569; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px auto;">
+              We are using a shared Google Photos album to securely share photos with parents back home. 
+              Whenever our staff find a 4G signal, new photos of the pupils will automatically appear here!
+            </p>
+            <a href="${unitData.key_info.live_album_url}" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 30px;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Album
+            </a>
+          </div>
+        `;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(liveLink);
+    }
+
+    // The Fallen / Local Heroes Sidebar Accordion (Trips only)
+    if (unitData.type === 'trip') {
+      const heroes = [];
+      unitData.lessons.forEach((lesson, index) => {
+        if (lesson.id && lesson.id.startsWith('hero_')) heroes.push({ lesson, index });
+      });
+      if (heroes.length > 0) {
+        const heroesHeader = document.createElement('a');
+        heroesHeader.className = 'lesson-link';
+        heroesHeader.innerHTML = '<div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><div style="color:#991b1b;"><i class="fa-solid fa-ribbon" style="margin-right: 8px;"></i> The Fallen</div><i class="fa-solid fa-chevron-down" style="font-size:0.8em; opacity:0.6;"></i></div>';
+        heroesHeader.href = '#';
+        heroesHeader.style.background = 'rgba(153, 27, 27, 0.05)';
+        heroesHeader.style.borderLeft = '3px solid #991b1b';
+        
+        const list = document.createElement('div');
+        list.style.display = 'none';
+        list.style.flexDirection = 'column';
+        
+        heroesHeader.onclick = (e) => {
+          e.preventDefault();
+          list.style.display = list.style.display === 'none' ? 'flex' : 'none';
+          const iconEl = heroesHeader.querySelector('.fa-chevron-down, .fa-chevron-up');
+          if (iconEl) iconEl.className = list.style.display === 'none' ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+        };
+
+        heroes.forEach(h => {
+          const subLink = document.createElement('a');
+          subLink.className = 'lesson-link sub-link';
+          subLink.innerHTML = '<i class="fa-solid fa-user" style="margin-right: 8px; opacity:0.7;"></i>' + h.lesson.title;
+          subLink.style.paddingLeft = '2.5rem';
+          subLink.style.fontSize = '0.9em';
+          subLink.style.borderLeft = '2px solid #ef4444';
+          subLink.style.background = 'rgba(0,0,0,0.02)';
+          subLink.style.marginBottom = '2px';
+          
+          subLink.onclick = (e) => {
+            e.preventDefault();
+            document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+            subLink.classList.add('active');
+            window.renderLessonByIndex(h.index);
+          };
+          list.appendChild(subLink);
+        });
+        
+        navContainer.appendChild(heroesHeader);
+        navContainer.appendChild(list);
+      }
+    }
+    
+    // Exam Specification Tab
+    if (unitData.specification_file) {
+      const specLink = document.createElement('a');
+      specLink.className = 'lesson-link';
+      const specTitle = (unitData.title && unitData.title.includes('KS3')) ? 'Curriculum Overview' : 'Exam Specification';
+      specLink.innerHTML = `<i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> ${specTitle}`;
+      specLink.href = unitData.specification_file;
+      specLink.onclick = (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        specLink.classList.add('active');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        import('/src/spec_viewer.js').then(module => {
+          module.initSpecViewer(contentArea, unitData.specification_file);
+        });
+      };
+      navContainer.appendChild(specLink);
+    }
+
+    
+    // Exam Masterclass Guide Tab - ONLY for KS4 units
+    if (unitData.type !== 'trip' && (!unitData.title || !unitData.title.includes('KS3'))) {
+      const guideLink = document.createElement('a');
+      guideLink.className = 'lesson-link';
+      guideLink.innerHTML = '<i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Exam Masterclass Guide';
+      guideLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        guideLink.classList.add('active');
+        renderExamGuide();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(guideLink);
+    }
+
+    // Thematic Matrix Tab (Change & Continuity) - Only for Medicine
+    if (window.currentUnitId === 'edexcel_medicine') {
+      const thematicLink = document.createElement('a');
+      thematicLink.className = 'lesson-link';
+      thematicLink.innerHTML = '<i class="fa-solid fa-timeline" style="margin-right: 8px;"></i> Thematic Matrix (Change & Continuity)';
+      thematicLink.style.background = 'rgba(56, 189, 248, 0.1)';
+      thematicLink.style.borderLeft = '3px solid #38bdf8';
+      thematicLink.addEventListener('click', async (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        thematicLink.classList.add('active');
+        
+        const { renderThematicMatrix } = await import('./thematic_matrix.js');
+        const contentArea = document.getElementById('content-area');
+        renderThematicMatrix(contentArea, unitData);
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(thematicLink);
+    }
+
+
+
+
+
+    // Add Guided Reading Tab if available
+    if (unitData.guided_reading && unitData.guided_reading.length > 0) {
+      const grLink = document.createElement('a');
+      grLink.className = 'lesson-link';
+      grLink.innerHTML = '<i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Guided Reading';
+      grLink.href = '#';
+      grLink.style.marginTop = '15px';
+      grLink.style.borderTop = '1px solid #e2e8f0';
+      grLink.style.paddingTop = '15px';
+      grLink.onclick = async (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        grLink.classList.add('active');
+        
+        // Dynamically load the guided reading module to avoid cluttering core_app.js
+        const { initGuidedReadingTask } = await import('./guided_reading.js');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        
+        let currentLessonIndex = 0;
+        if (window.currentActiveLesson && unitData.lessons) {
+          currentLessonIndex = unitData.lessons.findIndex(l => l.title === window.currentActiveLesson.title);
+        }
+        
+        initGuidedReadingTask(contentArea, unitData.guided_reading, { currentLessonIndex });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+      navContainer.appendChild(grLink);
+    }
+
+    if (unitData.type !== 'trip' && window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
+      const examPracticeLink = document.createElement('a');
+      examPracticeLink.className = 'lesson-link';
+      examPracticeLink.innerHTML = (unitData.title && unitData.title.includes('KS3')) ? '✍️ Assessments' : '✍️ Assessments & Exam Practice';
+      examPracticeLink.style.marginTop = '15px';
+      examPracticeLink.style.color = '#60a5fa'; // Blue-400
+      examPracticeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        examPracticeLink.classList.add('active');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = ''; // clear
+        renderExamPracticeZone(contentArea, unitData);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(examPracticeLink);
+    }
+
+    if (unitData.type !== 'trip') {
+      const quizPackLink = document.createElement('a');
+      quizPackLink.id = 'quiz-zone-link';
+      quizPackLink.className = 'lesson-link';
+      quizPackLink.innerHTML = '<i class="fa-solid fa-layer-group"></i> Interactive Revision Hub';
+      quizPackLink.style.marginTop = '15px';
+      quizPackLink.style.color = '#34d399'; // Emerald-400
+      quizPackLink.style.cursor = 'pointer';
+      quizPackLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        quizPackLink.classList.add('active');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        renderQuizZone(contentArea, unitData);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(quizPackLink);
+    }
+
+    
+    if (unitData.type !== 'trip' && window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'water_and_sanitation' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'edexcel_medicine' && window.currentUnitId !== 'great_war' && window.currentUnitId !== 'great_war_part2' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
+      const cheatSheetLink = document.createElement('a');
+      cheatSheetLink.className = 'lesson-link';
+      cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
+      cheatSheetLink.href = window.currentUnitId ? `/units/${window.currentUnitId}/cheat_sheet.html` : 'cheat_sheet.html';
+      cheatSheetLink.target = '_blank';
+      cheatSheetLink.style.marginTop = '15px';
+      
+      navContainer.appendChild(cheatSheetLink);
+    }
+
+
+
+    // Attach Pupil Workbooks dynamically as a single Zone
+    if (unitData.type !== 'trip' && unitData.workbooks && unitData.workbooks.length > 0) {
+      const wbLink = document.createElement('a');
+      wbLink.className = 'lesson-link';
+      wbLink.innerHTML = `<i class="fa-solid fa-print"></i> Print & PDF Hub`;
+      wbLink.style.marginTop = '15px';
+      wbLink.style.color = '#8b5cf6'; // Purple icon/text focus
+      wbLink.addEventListener('click', async (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        wbLink.classList.add('active');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        const { renderWorkbooksZone } = await import('./workbooks_zone.js');
+        renderWorkbooksZone(contentArea, unitData);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(wbLink);
+    }
+
+  }
+
+  
+  // Global markdown formatter for inline text and bullet points
+  window.formatBold = function(text) {
+      if (!text) return '';
+      let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      // Handle blockquotes
+      parsed = parsed.replace(/(^|\n)> (.*?)(?=\n|$)/g, '$1<blockquote style="border-left: 4px solid #cbd5e1; padding-left: 15px; margin-left: 0; color: #475569; font-style: italic; background: rgba(248, 250, 252, 0.5); padding-top: 5px; padding-bottom: 5px; border-radius: 0 4px 4px 0;">$2</blockquote>');
+      // Handle headers
+      parsed = parsed.replace(/(^|\n)### (.*?)(?=\n|$)/g, '$1<h4 style="color: #1e3a8a; margin-top: 15px; margin-bottom: 5px;">$2</h4>');
+      parsed = parsed.replace(/(^|\n)## (.*?)(?=\n|$)/g, '$1<h3 style="color: #1e3a8a; margin-top: 15px; margin-bottom: 5px;">$2</h3>');
+      
+      parsed = parsed.replace(/\\n/g, '\n');
+      
+      // Handle lists
+      if (parsed.match(/(^|\n)[\*\-]\s/)) {
+        parsed = parsed.replace(/(^|\n)[\*\-]\s+(.*)/g, '$1<li>$2</li>');
+        parsed = parsed.replace(/(<li>.*<\/li>(?:\n<li>.*<\/li>)*)/g, '<ul style="margin-top: 5px; margin-bottom: 5px; padding-left: 20px;">\n$1\n</ul>');
+      }
+
+      // Handle italics (after lists so we don't conflict with bullet points)
+      parsed = parsed.replace(/\*([^\*]+)\*/g, '<i>$1</i>');
+      
+      parsed = parsed.replace(/\n/g, '<br>');
+      // Clean up <br> around elements
+      parsed = parsed.replace(/<br><ul/g, '<ul').replace(/<\/ul><br>/g, '</ul>').replace(/<br><li>/g, '<li>').replace(/<\/li><br>/g, '</li>');
+      parsed = parsed.replace(/<br><blockquote/g, '<blockquote').replace(/<\/blockquote><br>/g, '</blockquote>');
+      parsed = parsed.replace(/<br><h/g, '<h').replace(/<\/h4><br>/g, '</h4>').replace(/<\/h3><br>/g, '</h3>');
+      
+      return parsed;
+    };
+  
+  // Render Lesson Content
+    window.renderLessonByIndex = function(index, skipHistory = false) {
+      if (unitData && unitData.lessons && unitData.lessons[index]) {
+        if (!skipHistory) {
+          try {
+            const url = new URL(window.location);
+            url.searchParams.set('lesson', index);
+            history.pushState({ lessonIndex: index }, "", url);
+          } catch (e) {
+            console.warn('History routing disabled (e.g. file:// protocol):', e);
+          }
+        }
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        // Try to activate the corresponding sidebar link
+        const links = document.querySelectorAll('.lesson-link');
+        const isKS3 = unitData.title && unitData.title.includes('KS3');
+        if (!isKS3 && links.length > index + 1) { // +1 because the first link is Unit Homepage
+            links[index + 1].classList.add('active');
+        }
+        renderLesson(unitData.lessons[index]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    function renderLesson(lesson) {
+        window.postRenderHooks = [];
+        let htmlDoNow="", htmlPrimary="", htmlSources1="", htmlNarrative="", htmlPairShare="", htmlHistorian="", htmlTasks="";
+      const formatBold = window.formatBold;
+    lesson = JSON.parse(JSON.stringify(lesson));
+    assignQuestionNumbers(lesson);
+    
+    // Normalize do_now format
+    if (Array.isArray(lesson.do_now)) {
+      lesson.do_now = {
+        type: "questions",
+        items: lesson.do_now.map(t => ({ question: t.q || t.question, answer: t.a || t.answer }))
+      };
+    } else if (lesson.do_now && lesson.do_now.type === "questions" && lesson.do_now.tasks) {
+      lesson.do_now.items = lesson.do_now.tasks.map(t => ({ question: t.q || t.question, answer: t.a || t.answer }));
+    }
+
+    // Extract exam tasks from tasks array so they are not rendered inline
+    let extractedExamTasks = [];
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks.forEach(block => {
+        if (block.tasks) {
+          const eTasks = block.tasks.filter(t => (t.text || t.question || '').includes('marks)'));
+          extractedExamTasks.push(...eTasks);
+          block.tasks = block.tasks.filter(t => !(t.text || t.question || '').includes('marks)'));
+        }
+      });
+    }
+    if (lesson.tasks) {
+      const eTasks = lesson.tasks.filter(t => (t.text || t.question || '').includes('marks)'));
+      extractedExamTasks.push(...eTasks);
+      lesson.tasks = lesson.tasks.filter(t => !(t.text || t.question || '').includes('marks)'));
+    }
+    
+    if (lesson.exam_practice && Array.isArray(lesson.exam_practice)) {
+      // Duplication removed: exam_practice is rendered directly below.
+    }
+
+    assignQuestionNumbers(lesson);
+    window.currentActiveLesson = lesson;
+    
+    // Tabs container logic
+    let heroImage = lesson.banner || window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
+    const isTrip = window.currentUnitData && window.currentUnitData.type === 'trip';
+    let lessonPrefix = 'Lesson';
+    let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
+    
+    if (window.currentUnitId === 'cme_new' && ktMatch) {
+      if (ktMatch[1].startsWith('1')) heroImage = '/assets/cme_new_kt1_cover.png';
+      else if (ktMatch[1].startsWith('2')) heroImage = '/assets/cme_new_kt2_cover.png';
+      else if (ktMatch[1].startsWith('3')) heroImage = '/assets/cme_new_kt3_cover.png';
+    }
+
+    if (isTrip && lesson.id && lesson.id.startsWith('day_')) {
+      lessonPrefix = `Day ${lesson.id.split('_')[1]}`;
+    } else if (ktMatch) {
+      lessonPrefix = `KT ${ktMatch[1]}`;
+    } else if (lesson.id && lesson.id.startsWith('lesson_')) {
+      const parts = lesson.id.split('_');
+      if (parts.length > 2) {
+        lessonPrefix = `Lesson ${parseInt(parts[1])}.${parts.slice(2).join('.')}`;
+      } else {
+        lessonPrefix = `Lesson ${parseInt(parts[1])}`;
+      }
+    }
+    
+    const contentArea = document.getElementById('content-area');
+    if (contentArea) contentArea.style.paddingTop = '0'; // Fix gap
+    
+    let html = `<div class="lesson-content">`;
+    
+    let headerEnquiry = lesson.enquiry || lesson.enquiry_question || lesson.inquiry_question;
+    let targetText = headerEnquiry || lesson.title || '';
+    let stickyHeaderText = '';
+    
+    if (/^(?:KT|Key Topic|Lesson)\s*[\d\.]+/i.test(targetText)) {
+      stickyHeaderText = targetText;
+    } else {
+      stickyHeaderText = `${lessonPrefix}: ${targetText}`;
+    }
+    
+    // Sticky Header (No visible background, but opaque to hide scrolling text)
+    const currentIndex = unitData.lessons.findIndex(l => l.title === lesson.title);
+    html += `
+      <div style="position: sticky; top: 0; margin-left: -4rem; margin-right: -4rem; padding: 1rem 4rem; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; background: #f8f9fa; border: none; box-shadow: none;">
+        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600; font-family: 'Playfair Display', serif;">
+          ${stickyHeaderText}
+        </h4>
+        <div style="display: flex; gap: 8px; flex-shrink: 0;">
+          ${isTrip ? (window.currentUnitData && window.currentUnitData.key_info ? `<button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem;" onclick="openKeyInfoModal()"><i class="fa-solid fa-circle-info"></i> Key Info</button>` : '') : `<button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>`}
+          ${isTrip && lesson.tour_guide_script ? `<button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: #6366f1; border-color: #6366f1; box-shadow: 0 2px 5px rgba(99,102,241,0.3);" onclick="window.openTourGuideModal(${currentIndex})"><i class="fa-solid fa-bullhorn"></i> Tour Guide Script</button>` : ''}
+          <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> ${isTrip ? 'Trip Menu' : 'Unit Menu'}</button>
+        </div>
+      </div>
+    `;
+    let bannerPosition = lesson.banner_position || 'center';
+    
+    // Full-Bleed Hero Image
+    html += `
+      <div class="lesson-hero" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 300px; background: url('${heroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.9));"></div>
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem 4rem;">
+          <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">${lessonPrefix}</span>
+          <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 2.5rem; margin: 0.5rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">${lesson.title}</h2>
+        </div>
+      </div>
+    `;
+
+    html += `
+      <div id="progress-container" style="background: rgba(226,232,240,0.5); height: 6px; width: 100%; margin-bottom: 20px; border-radius: 3px; overflow: hidden; backdrop-filter: blur(5px);">
+        <div id="progress-bar" style="background: #10b981; height: 100%; width: 0%; transition: width 0.3s;"></div>
+      </div>
+    `;
+
+    // -----------------------------------------------------
+    // TABS NAVIGATION UI
+    // -----------------------------------------------------
+    html += `
+      
+    `;
+
+    let globalQuestionNum = 1;
+    const formatQuestion = (qText, prependNumber = true) => {
+      if (!qText) return '';
+      let cleaned = qText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
+      if (prependNumber) return `Question ${globalQuestionNum++}: ${formatBold(cleaned)}`;
+      return formatBold(cleaned);
+    };
+
+    let vocabDict = {};
+    if (lesson.vocab) {
+      lesson.vocab.forEach(v => {
+        const termDef = v.definition || v.def || v.desc || '';
+        if (termDef) {
+          vocabDict[v.term.toLowerCase()] = termDef;
+        }
+      });
+    }
+
+       let seenTerms = new Set();
+      const highlightGlossary = (text) => {
+        if (!text || typeof text !== 'string') return text || '';
+        if (Object.keys(vocabDict).length === 0) return text;
+        let processedText = text;
+        const sortedTerms = Object.keys(vocabDict).sort((a,b) => b.length - a.length);
+        for (const term of sortedTerms) {
+          const def = vocabDict[term];
+          if (!def || typeof def !== 'string') continue;
+          if (!seenTerms.has(term)) {
+            // Regex matches HTML tags OR the specific term word boundary
+            const regex = new RegExp(`(<[^>]+>)|\\b(${term})\\b`, 'gi');
+            let matchedTerm = false;
+            
+            processedText = processedText.replace(regex, (match, htmlTag, word) => {
+              if (htmlTag) return htmlTag; // Skip and preserve anything already in an HTML tag
+              if (word) {
+                matchedTerm = true;
+                return `<span class="vocab-word" data-definition="${def.replace(/"/g, '&quot;')}">${word}</span>`;
+              }
+              return match;
+            });
+            
+            if (matchedTerm) {
+              seenTerms.add(term);
+            }
+          }
+        }
+        return processedText;
+      };
+
+
+    let studentObjectivesHtml = '';
+    if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object' && lesson.teacher_notes.objectives) {
+      studentObjectivesHtml = `
+        <div class="learning-objectives-box" style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; padding: 20px; border-radius: 6px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <h4 style="margin-top: 0; color: #1e3a8a; font-size: 1.15rem; margin-bottom: 15px;"><i class="fa-solid fa-graduation-cap" style="margin-right: 8px;"></i> Learning Objectives</h4>
+          <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 1.05rem; line-height: 1.5;">
+            ${lesson.teacher_notes.objectives.map(obj => `<li style="margin-bottom: 8px;">${obj.objective}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    if (lesson.teacher_notes) {
+      let notesHtml = '';
+      if (lesson.teacher_notes && !Array.isArray(lesson.teacher_notes) && typeof lesson.teacher_notes === 'object') {
+        const primerText = lesson.teacher_notes.primer ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>` : '';
+        const sourceContext = lesson.teacher_notes.source_context ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${lesson.teacher_notes.source_context}</div>` : '';
+        const objectivesHtml = (lesson.teacher_notes.objectives || []).map(note => `
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
+            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
+          </div>
+        `).join('');
+        notesHtml = primerText + sourceContext + objectivesHtml;
+      } else if (Array.isArray(lesson.teacher_notes)) {
+        notesHtml = lesson.teacher_notes.map(note => `
+          <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
+            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
+          </div>
+        `).join('');
+      } else {
+        notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
+      }
+
+      if (!isTrip) {
+        html += `
+          ${studentObjectivesHtml}
+          <div class="teacher-note">
+            <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
+            ${notesHtml}
+          </div>
+        `;
+      }
+    } else {
+      // If no teacher notes but we somehow had objectives elsewhere (fallback)
+      if (!isTrip) {
+        html += studentObjectivesHtml;
+      }
+    }
+
+          
+if (lesson.sources && lesson.sources.length > 0) {
+        htmlSources1 += `<div class="sources-grid" style="margin-top: 20px;">`;
+        lesson.sources.forEach(source => {
+          htmlSources1 += `
+            <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+              ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
+              
+              ${source.src ? `
+                <div style="display: inline-flex; flex-direction: column; position: relative; max-width: 100%; text-align: left; margin: 15px 0;">
+                  <div style="position: relative;">
+                    <img src="${getAssetUrl(source.src)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" onclick="window.openModal(this.src)">
+                  </div>
+                  ${source.caption ? `
+                    <div class="source-info-panel" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; font-size: 0.95rem; color: #334155; margin-top: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
+                      <strong style="color: #0f172a; margin-bottom: 5px; display: block;">
+                        <i class="fa-solid fa-circle-info" style="color: #10b981; margin-right: 5px;"></i>
+                        About this source
+                      </strong>
+                      ${source.caption}
+                    </div>
+                  ` : ''}
+                </div>
+              ` : (source.caption ? `
+                <div style="text-align: left; margin-top: 15px; font-size: 1.05rem; color: #334155; line-height: 1.5; padding: 15px; background: #f8fafc; border-left: 4px solid #10b981; border-radius: 4px;">
+                  ${source.caption}
+                </div>
+              ` : '')}
+              
+              ${source.content ? `<div style="text-align: left; margin-top: 10px; font-style: italic; color: #334155; font-size: 1.05rem; line-height: 1.5;">${source.content}</div>` : ''}
+              ${source.question ? `
+                <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question, !source.qNum)}</strong></p>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        });
+        htmlSources1 += `</div>`;
+      }
+
+// ==========================================
+    // TAB 1: PREPARATION
+    // ==========================================
+    htmlSources1 += ``;
+    
+    
+if (lesson.primary_source) {
+      let srcs = Array.isArray(lesson.primary_source.src) ? lesson.primary_source.src : [lesson.primary_source.src];
+      htmlPrimary += `
+        <div class="phase-card">
+          <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 15px;">
+              ${srcs.map(src => `<img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: ${srcs.length > 1 ? '45%' : '100%'}; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">`).join('')}
+            </div>
+            <div style="font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary);">${lesson.primary_source.title}</div>
+            ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
+            ${lesson.primary_source.question ? `
+              <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 20px;">
+                <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.primary_source.qNum ? `Q${lesson.primary_source.qNum}. ` : ''}${formatQuestion(lesson.primary_source.question, !lesson.primary_source.qNum)}</strong></p>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    
+      if (lesson.starters && lesson.starters.length > 0) {
+        htmlPrimary += `
+          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <div style="padding: 15px 20px; background: linear-gradient(to right, #1e3a8a, #3b82f6); color: white; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center;">
+              <i class="fa-solid fa-image" style="margin-right: 10px;"></i> Historical Sources: Think & Wonder
+            </div>
+            <div style="padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+        `;
+        lesson.starters.forEach((starter, index) => {
+          htmlPrimary += `
+              <div style="display: flex; flex-direction: column; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px; height: 100%;">
+                <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.1rem; border-bottom: 2px solid #3b82f6; padding-bottom: 5px;">Source ${String.fromCharCode(65 + index)}: ${starter.title}</h4>
+                <div style="width: 100%; height: 250px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
+                  <img src="${starter.source}" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" onclick="window.openModal(this.src)">
+                </div>
+                <div style="font-size: 0.95rem; color: #475569; margin-bottom: 15px; font-style: italic;">
+                  ${starter.caption}
+                </div>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px; border-radius: 0 4px 4px 0; margin-top: auto;">
+                  <div style="font-weight: 700; color: #1e40af; margin-bottom: 5px; font-size: 0.95rem;"><i class="fa-solid fa-lightbulb" style="color: #fbbf24; margin-right: 5px;"></i> Think & Wonder</div>
+                  <div style="font-size: 0.95rem; color: #1e40af;">${starter.think_wonder}</div>
+                </div>
+              </div>
+          `;
+        });
+        htmlPrimary += `
+            </div>
+          </div>
+        `;
+      }
+      
+      if (lesson.utility_starters && lesson.utility_starters.sources) {
+        htmlPrimary += `
+          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <div style="padding: 15px 20px; background: linear-gradient(to right, #475569, #334155); color: white; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center;">
+              <i class="fa-solid fa-scale-balanced" style="margin-right: 10px;"></i> Historical Sources: Utility
+            </div>
+            <div style="padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+        `;
+        lesson.utility_starters.sources.forEach((source, index) => {
+          let sourceContentHtml = '';
+          if (source.type === 'written') {
+             sourceContentHtml = `
+               <div style="width: 100%; height: 250px; background-color: #fefce8; border: 1px solid #fde047; border-radius: 4px; padding: 20px; overflow-y: auto; margin-bottom: 15px; font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.6; color: #422006; box-shadow: inset 0 0 10px rgba(0,0,0,0.02);">
+                 <i class="fa-solid fa-quote-left" style="color: #facc15; font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+                 ${source.content}
+               </div>
+             `;
+          } else {
+             sourceContentHtml = `
+                <div style="width: 100%; height: 250px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
+                  <img src="${source.source}" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" onclick="window.openModal(this.src)">
+                </div>
+                ${source.caption ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 15px; font-style: italic;">${source.caption}</div>` : ''}
+             `;
+          }
+
+          htmlPrimary += `
+              <div style="display: flex; flex-direction: column; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px; height: 100%;">
+                <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.1rem; border-bottom: 2px solid #475569; padding-bottom: 5px;">${source.title}</h4>
+                ${sourceContentHtml}
+                
+                <details style="background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 0 4px 4px 0; margin-top: auto; overflow: hidden;">
+                  <summary style="padding: 12px; cursor: pointer; font-weight: 700; color: #334155; font-size: 0.95rem; list-style: none; display: flex; align-items: center;">
+                    <i class="fa-solid fa-key" style="color: #fbbf24; margin-right: 8px;"></i> Reveal Provenance Clue
+                  </summary>
+                  <div style="padding: 0 12px 12px 12px; font-size: 0.95rem; color: #475569; border-top: 1px dashed #cbd5e1; margin-top: 4px; padding-top: 8px;">
+                    ${source.provenance_clue}
+                  </div>
+                </details>
+              </div>
+          `;
+        });
+        htmlPrimary += `
+            </div>
+            <div style="padding: 15px 20px; background: #f8fafc; border-top: 1px solid #e2e8f0; text-align: center;">
+              <h3 style="margin: 0; color: #0f172a; font-size: 1.15rem; font-family: 'Playfair Display', serif;">
+                How useful are Sources A and B for an enquiry into ${lesson.utility_starters.enquiry}? (8 marks)
+              </h3>
+            </div>
+          </div>
+        `;
+      }
+      
+      
+    if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
+      if (isTrip) {
+        htmlDoNow += `
+          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+              <div style="padding: 20px;">
+                <div style="margin-bottom: 20px; font-size: 1.2rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
+        `;
+        lesson.do_now.events.forEach((ev, idx) => {
+          htmlDoNow += `
+            <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
+              <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;"><i class="fa-regular fa-clock" style="margin-right: 6px;"></i>${ev.year}</div>
+              <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
+              <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
+              ${ev.img ? `<div style="text-align: center; margin-top: 15px;"><img src="${getAssetUrl(ev.img)}" style="max-width: 40%; border-radius: 4px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>` : ''}
+            </div>
+          `;
+        });
+        htmlDoNow += `</div></div></div>`;
+        
+        // Add Map Container
+        const eventsWithLoc = lesson.do_now.events.filter(e => e.lat && e.lng);
+        if (eventsWithLoc.length > 0) {
+          htmlDoNow += `
+            <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px;">
+              <div style="padding: 15px 20px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-weight: bold; font-size: 1.1rem; color: #1e293b;">
+                <i class="fa-solid fa-map-location-dot" style="color: #ef4444; margin-right: 8px;"></i> Interactive Trip Map
+              </div>
+              <div id="trip-map-container" style="height: 500px; width: 100%;"></div>
+            </div>
+          `;
+        }
+      } else {
+        htmlDoNow += `
+          <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+              <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+                <span><i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6; margin-right: 10px;"></i> Chronological Timeline</span>
+                <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
+              </summary>
+              <div style="padding: 20px;">
+                <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
+        `;
+        lesson.do_now.events.forEach((ev, idx) => {
+          htmlDoNow += `
+            <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
+              <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
+              <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
+              <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
+              ${ev.img ? `<div style="text-align: center; margin-top: 15px;"><img src="${getAssetUrl(ev.img)}" style="max-width: 40%; border-radius: 4px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>` : ''}
+            </div>
+          `;
+        });
+        htmlDoNow += `</div></div></details>`;
+      }
+    } else if (lesson.do_now && lesson.do_now.items) {
+      try {
+        const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+        if (taught.length > 0 && window.KNOWLEDGE_BANK) {
+          lesson.do_now.items.forEach(item => {
+            if (item.question.includes('PAST TOPIC:')) {
+              const unit = taught[Math.floor(Math.random() * taught.length)];
+              const bank = window.KNOWLEDGE_BANK[unit];
+              if (bank && bank.length > 0) {
+                const randQ = bank[Math.floor(Math.random() * bank.length)];
+                item.question = 'PAST TOPIC: ' + randQ.question;
+                item.answer = randQ.answer;
+              }
+            }
+          });
+        }
+      } catch(e) { console.error(e); }
+
+      htmlDoNow += `
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+            <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+              <span><i class="fa-solid fa-list-check" style="color: #3b82f6; margin-right: 10px;"></i> Do Now Tasks</span>
+              <div>
+                <button class="btn btn-secondary" onclick="event.preventDefault(); window.toggleAllAnswers(this.closest('details'))" style="font-size: 0.9rem; padding: 4px 10px; margin-right: 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
+                <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
+              </div>
+            </summary>
+            <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+      `;
+      const doNowItems = lesson.do_now.items || lesson.do_now.tasks || [];
+      doNowItems.forEach((item, index) => {
+        let qText = item.question || item.event || '';
+        let aText = item.answer || item.year || '';
+        if (typeof qText !== 'string') qText = String(qText);
+        if (typeof aText !== 'string') aText = String(aText);
+        if (window.currentUnitId) {
+          qText = qText.replace(/src=['"]assets\//g, `src="/units/${window.currentUnitId}/assets/`);
+          aText = aText.replace(/src=['"]assets\//g, `src="/units/${window.currentUnitId}/assets/`);
+        }
+        const cardId = `donow-card-${index}`;
+        htmlDoNow += `
+          <div class="do-now-card" id="do-now-card-${index}" onclick="window.toggleAnswerById('${cardId}')" style="cursor: pointer;">
+            <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
+            <div>${qText}</div>
+            <div class="answer" id="${cardId}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
+          </div>
+        `;
+      });
+      htmlDoNow += `</div></details>`;
+    }
+
+    const hasVocab = lesson.vocab && lesson.vocab.length > 0;
+    if (hasVocab) {
+      htmlDoNow += `
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+            <summary style="padding: 10px 15px; cursor: pointer; color: #b45309; font-weight: bold; font-size: 1.05rem; background: #fffbeb; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+              <span><i class="fa-solid fa-spell-check" style="color: #b45309; margin-right: 10px;"></i> Key Vocabulary</span>
+              <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
+            </summary>
+            <div style="padding: 20px;">
+              <p style="color: #475569; margin-bottom: 20px; font-size: 1.1rem;"><strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
+              <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="match-terms" style="display: flex; flex-direction: column; gap: 10px;">
+      `;
+      
+      lesson.vocab.forEach((v, idx) => {
+        htmlDoNow += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">${v.term}</button>`;
+      });
+      
+      htmlDoNow += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
+      
+      let defs = lesson.vocab.map((v, idx) => ({ def: v.definition, idx: idx }));
+      defs.sort(() => Math.random() - 0.5);
+      
+      defs.forEach(d => {
+        htmlDoNow += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">${d.def}</button>`;
+      });
+      
+      htmlDoNow += `
+                </div>
+              </div>
+              <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
+                <i class="fa-solid fa-star"></i> Vocabulary Mastered!
+              </div>
+            </div>
+          </details>
+      `;
+    }
+
+    
+
+    // ==========================================
+    // TAB 2: THE HISTORY
+    // ==========================================
+    htmlDoNow += ``;
+
+    if (lesson.learning_objectives) {
+      // Smart check: Only render overarching objective if it differs from the main lesson title
+      let overarchingHtml = '';
+      const cleanTitle = (lesson.title || '').replace(/^Lesson\s*\d+:\s*/i, '').trim();
+      const cleanObj = (lesson.learning_objectives.overarching || '').trim();
+      if (cleanObj && cleanObj !== cleanTitle) {
+        overarchingHtml = `
+          <p style="font-size: 1.1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 15px;">
+            ${lesson.learning_objectives.overarching}
+          </p>
+        `;
+      }
+      
+      htmlDoNow += `
+        <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; margin-bottom: ${overarchingHtml ? '0' : '15px'};">
+            <i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Learning Objectives
+          </h3>
+          ${overarchingHtml}
+          <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
+            ${lesson.learning_objectives.scaffolded.map(obj => `<li style="margin-bottom: 8px;">${obj}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    let videos = [];
+    if (lesson.video) {
+      videos = videos.concat(Array.isArray(lesson.video) ? lesson.video : [lesson.video]);
+    }
+    if (lesson.extra_videos && Array.isArray(lesson.extra_videos)) {
+      videos = videos.concat(lesson.extra_videos);
+    }
+    
+    if (videos.length > 0) {
+      htmlDoNow += `
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <summary style="cursor: pointer; padding: 20px; font-size: 1.25rem; color: #b45309; font-weight: 600; display: flex; align-items: center; gap: 10px; user-select: none;">
+            <i class="fa-brands fa-youtube" style="color: #dc2626;"></i> Lesson Video Resources (${videos.length})
+          </summary>
+          <div style="padding: 0 20px 20px 20px; display: flex; flex-direction: column; gap: 15px;">
+      `;
+
+      videos.forEach((vid) => {
+        let providerText = vid.type === 'youtube' ? 'YouTube' : 'ERA';
+        let iconColor = vid.type === 'youtube' ? '#dc2626' : '#3b82f6';
+        let iconClass = vid.type === 'youtube' ? 'fa-brands fa-youtube' : 'fa-solid fa-arrow-up-right-from-square';
+
+        htmlDoNow += `
+          <div style="background: #f8fafc; border-left: 4px solid ${iconColor}; border-radius: 4px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="${iconClass}" style="font-size: 1.2rem; color: ${iconColor};"></i>
+                <div>
+                  <div style="color: #1e293b; font-size: 0.95rem; font-weight: 600;">${vid.title || 'External Video Resource'} ${vid.duration ? `<span style="color: #64748b; font-weight: normal; margin-left: 8px;"><i class="fa-regular fa-clock"></i> ${vid.duration}</span>` : ''}</div>
+                  <div style="color: #64748b; font-size: 0.85rem;">External ${providerText} Video. Opens in a new secure tab.</div>
+                </div>
+              </div>
+              <a href="${vid.url}" target="_blank" style="white-space: nowrap; background: #eff6ff; color: #2563eb; padding: 6px 12px; border: 1px solid #bfdbfe; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;">
+                Watch <i class="fa-solid fa-play" style="margin-left: 4px; font-size: 0.8rem;"></i>
+              </a>
+            </div>
+            ${vid.viewing_task ? `<div style="background: #fffbeb; border-left: 3px solid #f59e0b; padding: 8px 12px; font-size: 0.9rem; color: #b45309;"><i class="fa-solid fa-bullseye" style="margin-right: 5px;"></i> <b>Viewing Task:</b> ${vid.viewing_task}</div>` : ''}
+            ${vid.model_answer ? `
+            <details style="background: #f0fdf4; border-left: 3px solid #22c55e; border-radius: 2px;">
+              <summary style="cursor: pointer; padding: 8px 12px; font-size: 0.9rem; color: #166534; font-weight: 600; user-select: none; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-key"></i> Reveal Model Answer
+              </summary>
+              <div style="padding: 0 12px 12px 12px; font-size: 0.9rem; color: #14532d; line-height: 1.5;">
+                ${vid.model_answer}
+              </div>
+            </details>
+            ` : ''}
+          </div>
+        `;
+      });
+      
+      htmlDoNow += `
+          </div>
+        </details>
+      `;
+    }
+
+    
+if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
+      htmlNarrative += `
+        <div class="phase-card">
+      `;
+      
+      lesson.narrative_blocks.forEach((block, index) => {
+        if (block.type === 'interactive_map') {
+          htmlNarrative += `
+            <div class="interactive-map-container" style="margin: 30px 0; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+              <h3 style="margin-top: 0; color: #1e293b; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-map-location-dot"></i> Interactive Historical Map</h3>
+              <div class="map-img-wrapper" style="position: relative; height: 500px; width: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden; margin-bottom: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+          `;
+          
+          block.maps.forEach((m, idx) => {
+            htmlNarrative += `<img src="${getAssetUrl(m.src)}" id="map-img-${m.id}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; transition: opacity 0.6s ease-in-out; border-radius: 6px;">`;
+          });
+          
+          htmlNarrative += `
+              </div>
+              <div id="map-caption-display" style="font-size: 1.1rem; font-style: italic; color: #334155; min-height: 3em; margin-bottom: 20px;">${block.maps[0].caption}</div>
+              <div class="map-controls" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+          `;
+          
+          block.maps.forEach((m, idx) => {
+            const activeClass = idx === 0 ? 'active-map-btn' : '';
+            htmlNarrative += `
+                <button class="btn btn-secondary map-toggle-btn ${activeClass}" data-map-id="${m.id}" data-caption="${m.caption.replace(/"/g, '&quot;')}" onclick="toggleMap(this)" style="border-radius: 30px; padding: 8px 16px; font-weight: bold;">
+                  ${m.year} ${m.label}
+                </button>
+            `;
+          });
+          
+          htmlNarrative += `
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        const bg = (index % 2 === 0) ? '#ffffff' : '#f0f9ff';
+        
+        if (typeof block.text === 'string' && block.text.match(/^\[Key Individual:\s*(.+)\]$/i)) {
+          const kiMatch = block.text.match(/^\[Key Individual:\s*(.+)\]$/i);
+          const personName = kiMatch[1].trim();
+          let person = null;
+          if (window.db && window.currentUnitId) {
+            const unitDb = window.db[window.currentUnitId];
+            person = unitDb.data?.key_individuals?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
+            if (!person) person = unitDb.biographies?.find(p => p.name.toLowerCase().includes(personName.toLowerCase()));
+          }
+          if (person) {
+             const cardHtml = generateKeyIndividualEmbedHTML ? generateKeyIndividualEmbedHTML(person) : `<div>${person.name}</div>`;
+             htmlNarrative += `
+               <div class="key-individual-embed" style="margin-bottom: 20px; border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; background: #f8fafc; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                 <button onclick="const content = this.nextElementSibling; const icon = this.querySelector('.chevron-icon'); if(content.style.display==='none'){content.style.display='block'; icon.classList.replace('fa-chevron-down','fa-chevron-up');}else{content.style.display='none'; icon.classList.replace('fa-chevron-up','fa-chevron-down');}" style="width: 100%; text-align: left; padding: 15px 20px; background: rgba(59, 130, 246, 0.1); border: none; font-weight: bold; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; transition: background 0.2s;">
+                   <span><i class="fa-solid fa-id-card-clip" style="margin-right: 10px; color: #3b82f6;"></i> Key Individual: ${person.name}</span>
+                   <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                 </button>
+                 <div style="display: none; padding: 25px; background: #ffffff;">
+                   <div style="width: 100%; margin: 0 auto;">
+                     ${cardHtml}
+                   </div>
+                 </div>
+               </div>
+             `;
+             return;
+          }
+        }
+
+        const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
+        let blockText = block.text || '';
+        
+        // 1. Add inline Key Individual links FIRST
+        let contentStr = blockText.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
+            const hasPerson = unitData && unitData.key_individuals && unitData.key_individuals.some(p => p.name && p.name.toLowerCase() === name.toLowerCase());
+            if (!hasPerson) {
+                return name;
+            }
+            return `<a href="javascript:void(0)" class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</a><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+        });
+
+        // 2. Add Glossary highlighting SECOND (it will skip the <a> tags we just made)
+        contentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${contentStr}</em>` : highlightGlossary(contentStr);
+
+        contentStr = formatBold(contentStr);
+        contentStr = contentStr.replace(/src=["'](\.\/)?assets\//g, 'src="/units/' + window.currentUnitId + '/assets/');
+        let styledContent = contentStr;
+        if (!isQuote && !contentStr.trim().startsWith('<') && contentStr.length > 20) {
+           const firstLetter = contentStr.charAt(0);
+           const rest = contentStr.slice(1);
+           styledContent = `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #1e3a8a;">${firstLetter}</span>` + rest;
+        }
+        
+        let l4StyledContent = '';
+        if (block.level_4) {
+          // 1. Add inline Key Individual links FIRST
+          let l4ContentStr = block.level_4.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
+              const hasPerson = unitData && unitData.key_individuals && unitData.key_individuals.some(p => p.name && p.name.toLowerCase() === name.toLowerCase());
+              if (!hasPerson) {
+                  return name;
+              }
+              return `<a href="javascript:void(0)" class="key-individual-inline-link no-print" onclick="window.jumpToKeyIndividual('${name}')" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 4px; color: #2563eb; text-decoration: none; font-weight: 600; cursor: pointer; padding: 2px 6px; font-size: 0.95em; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; vertical-align: baseline;"><i class="fa-solid fa-id-card-clip"></i> ${name}</a><span class="print-only" style="display:none; font-weight:bold;">${name}</span>`;
+          });
+          
+          // 2. Add Glossary highlighting SECOND
+          l4ContentStr = isQuote ? `<em style="font-size:1.1rem; color:#475569;">${l4ContentStr}</em>` : highlightGlossary(l4ContentStr);
+
+          l4ContentStr = formatBold(l4ContentStr);
+          l4StyledContent = l4ContentStr;
+          if (!isQuote && !l4ContentStr.trim().startsWith('<') && l4ContentStr.length > 20) {
+             const firstLetter = l4ContentStr.charAt(0);
+             const rest = l4ContentStr.slice(1);
+             l4StyledContent = `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #047857;">${firstLetter}</span>` + rest;
+          }
+        }
+
+        let themeHeadingHtml = '';
+        if (block.theme_heading) {
+          themeHeadingHtml = `<h4 style="margin-top: 0; margin-bottom: 10px; color: #1e3a8a; font-size: 1.15rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; display: inline-block;"><i class="fa-solid fa-bookmark" style="color: #64748b; margin-right: 8px;"></i>${block.theme_heading}</h4><br/>`;
+        }
+
+        let imageHtml = '';
+        if (block.images && Array.isArray(block.images) && block.images.length > 0) {
+           const galleryData = encodeURIComponent(JSON.stringify(block.images.map(img => ({ src: getAssetUrl(img.src || img.image), alt: img.alt || img.image_alt || '' })))).replace(/'/g, "%27");
+           imageHtml = `
+             <style>
+               .image-hint-caption {
+                 font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
+               }
+               .image-hint-caption:hover {
+                 background: rgba(0,0,0,0.02);
+               }
+               .image-hint-caption.blurred {
+                 color: transparent !important; text-shadow: 0 0 10px rgba(100,116,139,0.8) !important;
+               }
+             </style>
+             <div class="narrative-images-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 20px 0;">
+               ${block.images.map((img, idx) => {
+                 if (img.image_context) {
+                   return `
+                     <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; justify-content: center; margin: 20px 0; width: 100%; grid-column: 1 / -1;">
+                       <div style="flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                         <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
+                         ${(img.caption || img.image_caption || img.alt || img.image_alt) ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.caption || img.image_caption || img.alt || img.image_alt}</div>` : ''}
+                       </div>
+                       <div style="flex: 1 1 300px; background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
+                         <h4 style="margin-top: 0; margin-bottom: 12px; color: #b45309; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;">
+                           <i class="fa-solid fa-magnifying-glass-plus"></i> Historical Context
+                         </h4>
+                         <p style="margin: 0; font-size: 1rem; color: #334155; line-height: 1.6;">
+                           ${img.image_context.replace(/\*\*Hinge Question:\*\*/g, '<br><br><strong style="color: #b45309;">Hinge Question:</strong>')}
+                         </p>
+                       </div>
+                     </div>
+                   `;
+                 } else {
+                   return `
+                     <div class="narrative-image-container" style="text-align: center;">
+                       <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openGallery('${galleryData}', ${idx})">
+                       ${(img.caption || img.image_caption || img.alt || img.image_alt) ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.caption || img.image_caption || img.alt || img.image_alt}</div>` : ''}
+                     </div>
+                   `;
+                 }
+               }).join('')}
+             </div>
+           `;
+        } else if (block.image) {
+           let containerStyle = block.image_context 
+             ? 'display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; justify-content: center; margin: 20px 0;'
+             : 'text-align: center; margin: 20px 0;';
+           let imgWrapperStyle = block.image_context 
+             ? 'flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;' 
+             : '';
+           let contextHtml = block.image_context 
+             ? `
+               <div style="flex: 1 1 300px; background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
+                 <h4 style="margin-top: 0; margin-bottom: 12px; color: #b45309; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;">
+                   <i class="fa-solid fa-magnifying-glass-plus"></i> Historical Context
+                 </h4>
+                 <p style="margin: 0; color: #334155; line-height: 1.6; font-size: 1rem;">${block.image_context.replace(/\*\*Hinge Question:\*\*/g, '<br><br><strong style="color: #b45309;">Hinge Question:</strong>')}</p>
+               </div>
+               `
+             : '';
+           
+           imageHtml = `
+             <style>
+               .image-hint-caption {
+                 font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
+               }
+               .image-hint-caption:hover {
+                 background: rgba(0,0,0,0.02);
+               }
+               .image-hint-caption.blurred {
+                 color: transparent !important; text-shadow: 0 0 10px rgba(100,116,139,0.8) !important;
+               }
+             </style>
+             <div class="narrative-image-container" style="${containerStyle}">
+               <div style="${imgWrapperStyle}">
+                 <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" onclick="window.openModal(this.src)">
+                 ${(block.caption || block.image_caption || block.image_alt) ? `<div class="image-hint-caption" onclick="this.classList.toggle('blurred'); const i = this.querySelector('i'); if(this.classList.contains('blurred')) { i.classList.replace('fa-eye', 'fa-eye-slash'); i.style.color = '#94a3b8'; this.title = 'Click to reveal caption'; } else { i.classList.replace('fa-eye-slash', 'fa-eye'); i.style.color = '#10b981'; this.title = 'Click to hide caption'; }" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.caption || block.image_caption || block.image_alt}</div>` : ''}
+               </div>
+               ${contextHtml}
+             </div>
+           `;
+        }
+
+        let blockSourceHtml = '';
+        if (block.source) {
+             let sourceContentHtml = '';
+             if (block.source.type === 'written') {
+                 sourceContentHtml = `
+                   <div style="width: 100%; max-height: 350px; background-color: #fefce8; border: 1px solid #fde047; border-radius: 4px; padding: 20px; overflow-y: auto; margin-bottom: 15px; font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.6; color: #422006; box-shadow: inset 0 0 10px rgba(0,0,0,0.02);">
+                     <i class="fa-solid fa-quote-left" style="color: #facc15; font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+                     ${block.source.content}
+                   </div>
+                 `;
+             } else {
+                 sourceContentHtml = `
+                    <div style="width: 100%; max-height: 400px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
+                      <img src="${getAssetUrl(block.source.source || block.source.src)}" alt="Source" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" onclick="window.openModal(this.src)">
+                    </div>
+                 `;
+             }
+
+             blockSourceHtml = `
+              <div class="gcse-source-container" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left;">
+                ${block.source.caption ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; line-height: 1.4;">
+                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
+                  ${block.source.caption}
+                </h4>` : (block.source.title ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center;">
+                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
+                  ${block.source.title}
+                </h4>` : '')}
+                ${sourceContentHtml}
+                ${block.source.source_context ? `
+                  <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
+                    <strong>Historical Context:</strong> ${window.formatBold(block.source.source_context)}
+                  </div>
+                ` : ''}
+                ${block.source.provenance_clue ? `
+                  <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
+                    <strong style="color: #166534; display: block; margin-bottom: 5px;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i> Provenance Clue:</strong>
+                    <span style="color: #15803d; font-size: 0.95rem;">${window.formatBold(block.source.provenance_clue)}</span>
+                  </div>
+                ` : ''}
+                ${block.source.question ? `<div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${block.source.qNum ? `Q${block.source.qNum}. ` : ''}${formatQuestion(block.source.question, !block.source.qNum)}</strong></p>
+                </div>` : ''}
+              </div>
+             `;
+        }
+
+        htmlNarrative += `
+            <div class="standard-narrative-container">
+              ${imageHtml}
+              ${blockSourceHtml}
+              <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                ${(!block.text || !block.text.trim() || (typeof block.text === 'string' && block.text.includes('side-quest-box')) || (block.title && block.title.toLowerCase().includes('lesson reflection'))) ? '' : '<div class="para-number">' + (index + 1) + '</div>'}
+                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
+                <div style="display: flex; align-items: flex-start;">
+                  <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                </div>
+              </div>
+            </div>
+          `;
+
+        let extrasHtml = '';
+        if (block.level_4) {
+          extrasHtml += `
+            <div class="level4-narrative-container" style="display: none;">
+              <div id="para-l4-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #10b981; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="para-number" style="background:#ecfdf5; color:#047857;">${index + 1}</div>
+                <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;">${l4StyledContent}</div>
+                <div style="display: flex; align-items: flex-start;">
+                  <button class="btn btn-secondary no-print" onclick="window.readAloudText(this)" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+        
+        if (block.hinge_question) {
+          const hingeId = `hinge-${index}`;
+          const hingeQuestionText = block.hinge_question.text || block.hinge_question.question;
+          const correctIndex = block.hinge_question.correct_index !== undefined ? block.hinge_question.correct_index : block.hinge_question.answer;
+          extrasHtml += `
+            <div class="hinge-question-container no-print" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px;">
+              <button class="btn btn-secondary" id="btn-${hingeId}" onclick="document.getElementById('${hingeId}').style.display = 'block'; this.style.display = 'none';" style="background: #0ea5e9; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;"><i class="fa-solid fa-person-circle-question" style="margin-right: 6px;"></i> Reveal Hinge Question</button>
+              <div id="${hingeId}" style="display: none; background: #f0f9ff; border: 2px solid #38bdf8; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div style="color: #0284c7; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Interactive Hinge Question</div>
+                <div style="color: #0f172a; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">"${hingeQuestionText}"</div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  ${block.hinge_question.options.map((opt, i) => `
+                    <button onclick="
+                      const parent = this.parentElement;
+                      const explanation = parent.nextElementSibling;
+                      for (let child of parent.children) {
+                        child.style.pointerEvents = 'none';
+                        if (child.dataset.index == ${correctIndex}) {
+                          child.style.backgroundColor = '#dcfce7';
+                          child.style.borderColor = '#22c55e';
+                          child.style.color = '#166534';
+                        }
+                      }
+                      if (${i} !== ${correctIndex}) {
+                        this.style.backgroundColor = '#fee2e2';
+                        this.style.borderColor = '#ef4444';
+                        this.style.color = '#991b1b';
+                      }
+                      explanation.style.display = 'block';
+                    " data-index="${i}" style="text-align: left; background: #ffffff; border: 1px solid #cbd5e1; color: #334155; padding: 10px 15px; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-size: 1rem;">
+                      <span style="font-weight: bold; margin-right: 8px;">${String.fromCharCode(65+i)}.</span> ${opt}
+                    </button>
+                  `).join('')}
+                </div>
+                <div style="display: none; margin-top: 15px; padding: 12px; background: #dcfce7; border-left: 4px solid #22c55e; color: #166534; font-size: 1rem; border-radius: 0 6px 6px 0;">
+                  <strong>Explanation:</strong> ${block.hinge_question.explanation}
+                </div>
+              </div>
+            </div>
+          `;
+        }
+        
+        if (block.tasks && block.tasks.length > 0) {
+          extrasHtml += `<div class="embedded-tasks-container" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
+          block.tasks.forEach((task, tIdx) => {
+             if (task.type === 'convict_game') {
+              const gameId = `convict-game-emb-${index}-${tIdx}`;
+              extrasHtml += `<div id="${gameId}" style="margin-bottom: 20px;"></div>`;
+              window.postRenderHooks.push(() => {
+                import('./convict_game.js').then(mod => {
+                   mod.initConvictGame(document.getElementById(gameId), task);
+                });
+              });
+              return;
+            }
+            if (task.type === 'physician_game') {
+              const gameId = `physician-game-emb-${index}-${tIdx}`;
+              extrasHtml += `<div id="${gameId}" style="margin-bottom: 20px;"></div>`;
+              window.postRenderHooks.push(() => {
+                import('./physician_game.js').then(mod => {
+                   mod.initPhysicianGame(document.getElementById(gameId), task);
+                });
+              });
+              return;
+            }
+            if (task.type === 'drag_drop_timeline') {
+               const timelineId = `dd-timeline-emb-${index}-${tIdx}`;
+               extrasHtml += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
+               window.postRenderHooks.push(() => {
+                 import('./drag_drop_timeline.js').then(mod => {
+                    mod.initDragDropTimeline(document.getElementById(timelineId), task);
+                 });
+               });
+               return;
+             }
+             if (task.type === 'interactive_map') {
+               const mapId = `interactive-map-emb-${index}-${tIdx}`;
+               extrasHtml += `<div id="${mapId}" style="margin-bottom: 20px;"></div>`;
+               window.postRenderHooks.push(() => {
+                 import('./interactive_map.js').then(mod => {
+                    mod.initInteractiveMap(document.getElementById(mapId), task);
+                 });
+               });
+               return;
+             }
+             if (task.type === 'spectrum_mapper') {
+               const spectrumId = `spectrum-emb-${index}-${tIdx}`;
+               extrasHtml += `<div id="${spectrumId}" style="margin-bottom: 20px;"></div>`;
+               window.postRenderHooks.push(() => {
+                 import('./spectrum_mapper.js').then(mod => {
+                    mod.initSpectrumMapper(document.getElementById(spectrumId), task);
+                 });
+               });
+               return;
+             }
+             if (task.type === 'multiple_choice') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-list-check"></i> ${task.text}</h4>
+                 ${task.questions.map((q, qIdx) => `
+                   <div style="margin-top: 15px;">
+                     <strong>${q.q}</strong>
+                     <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+                       ${q.options.map((opt, oIdx) => `
+                         <label style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+                           <input type="radio" name="mc-${index}-${tIdx}-${qIdx}" value="${oIdx}">
+                           <span>${opt}</span>
+                         </label>
+                       `).join('')}
+                     </div>
+                   </div>
+                 `).join('')}
+               </div>`;
+               return;
+             }
+             if (task.type === 'sorting') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-arrow-down-1-9"></i> ${task.text}</h4>
+                 <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                   ${task.events.map((ev, eIdx) => `
+                     <div style="display:flex; align-items:center; gap:10px;">
+                       <input type="number" min="1" max="${task.events.length}" style="width:50px; padding:5px; border:1px solid #ccc; border-radius:4px;">
+                       <span>${ev}</span>
+                     </div>
+                   `).join('')}
+                 </div>
+               </div>`;
+               return;
+             }
+             if (task.type === 'cloze') {
+               let renderedCloze = task.cloze_text.replace(/\[([^\]]+)\]/g, '<input type="text" placeholder="..." style="border:none; border-bottom:2px solid #3b82f6; background:transparent; width:100px; text-align:center; margin:0 5px;" />');
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-pen-clip"></i> ${task.text}</h4>
+                 <div style="margin-bottom: 15px; padding:10px; background:#e0f2fe; border-radius:6px; font-weight:bold; color:#0369a1;">Word Bank: ${task.words.join(' | ')}</div>
+                 <p style="line-height:1.8; font-size:1.05rem;">${renderedCloze}</p>
+               </div>`;
+               return;
+             }
+             if (task.type === 'matching') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-link"></i> ${task.text}</h4>
+                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-top:15px;">
+                   <div style="display:flex; flex-direction:column; gap:10px;">
+                     ${task.pairs.map(p => `<div style="padding:10px; background:white; border:1px solid #cbd5e1; border-radius:6px; font-weight:bold;">${p.left}</div>`).join('')}
+                   </div>
+                   <div style="display:flex; flex-direction:column; gap:10px;">
+                     ${[...task.pairs].sort(() => Math.random() - 0.5).map(p => `<div style="padding:10px; background:white; border:1px solid #cbd5e1; border-radius:6px;">${p.right}</div>`).join('')}
+                   </div></div></details>`;
+               return;
+             }
+             if (task.type === 'table_planner') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; overflow-x:auto;">
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-table"></i> ${task.text}</h4>
+                 <table style="width:100%; border-collapse:collapse; margin-top:10px; background:white;">
+                   <thead><tr>${task.columns.map(c => `<th style="border:1px solid #cbd5e1; padding:10px; background:#e2e8f0; color:#1e293b; text-align:left;">${c}</th>`).join('')}</tr></thead>
+                   <tbody>
+                     ${Array.from({length: task.rows}).map(() => `<tr>${task.columns.map(() => `<td style="border:1px solid #cbd5e1; padding:10px;"><textarea style="width:100%; min-height:60px; border:none; resize:vertical; outline:none;" placeholder="Type here..."></textarea></td>`).join('')}</tr>`).join('')}
+                   </tbody>
+                 </table>
+               </div>`;
+               return;
+             }
+             if (task.type === 'think_pair_share') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #ecfdf5; padding: 15px; border-radius: 8px; border: 2px solid #10b981;">
+                 <h4 style="margin-top:0; color:#065f46;"><i class="fa-solid fa-users"></i> Think-Pair-Share</h4>
+                 <p style="font-weight:bold; color:#0f172a; font-size:1.1rem;">${task.text || task.question}</p>
+                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-top:15px;">
+                   <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+                     <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-brain"></i> My Thoughts</div>
+                     <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="Jot down your initial ideas..."></textarea>
+                   </div>
+                   <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+                     <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-comments"></i> Partner's Thoughts</div>
+                     <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="What did your partner add?..."></textarea>
+                   </div></div></details>`;
+               return;
+             }
+             if (task.type === 'drawing') {
+               extrasHtml += `<div style="margin-bottom: 20px; background: #fffbeb; padding: 15px; border-radius: 8px; border: 2px dashed #f59e0b; text-align:center;">
+                 <h4 style="margin-top:0; color:#b45309;"><i class="fa-solid fa-palette"></i> Drawing Task</h4>
+                 <p style="font-weight:bold; color:#0f172a; font-size:1.05rem;">${task.text || task.question}</p>
+                 <div style="margin:20px auto; width:80%; height:200px; background:white; border:1px solid #d1d5db; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-style:italic;">
+                   [Draw your response in your workbook]
+                 </div>
+               </div>`;
+               return;
+             }
+             const qPrefix = task.qNum ? `Q${task.qNum}. ` : "";
+             const ansId = `ans-emb-${index}-${tIdx}`;
+             const starterBtn = task.starter ? `<button class="btn" onclick="window.toggleStarterById('starter-${ansId}')" style="margin-left: 5px; padding: 4px 8px; font-size: 0.8rem; background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc;"><i class="fa-solid fa-pen"></i> Starter</button>` : "";
+             const starterDiv = task.starter ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${task.starter}</div>` : "";
+             extrasHtml += `
+               <div style="margin-bottom: 10px;">
+                 <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + (task.text || task.question || ''))}</div>
+                 <button class="btn btn-secondary" onclick="window.toggleAnswerById('${ansId}')" style="padding: 4px 8px; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Show</button>
+                 ${starterBtn}
+                 ${starterDiv}
+                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03; line-height: 1.6;">${window.formatBold(task.model || task.model_answer || '')}</div>
+               </div>
+             `;
+          });
+          extrasHtml += `</div>`;
+        }
+
+        let isSideQuest = styledContent.includes('</details>') && (block.title && block.title.includes('Side Quest'));
+        if (isSideQuest) {
+           styledContent = styledContent.replace('</details>', extrasHtml + '</details>');
+           extrasHtml = '';
+           // Rewrite the actual styledContent in the narrative chunk manually below
+        }
+
+        htmlNarrative += extrasHtml;
+        });
+
+      
+let hasModels = false;
+if (lesson.tasks) {
+        hasModels = lesson.tasks.some(t => !!t.model);
+      }
+      if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
+        hasModels = true;
+      }
+      
+      const revealBtn = hasModels ? `<button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>` : '';
+
+      htmlTasks += `
+        <div class="phase-card">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            
+            ${revealBtn}
+          </div>
+      `;
+
+      if (lesson.tasks && lesson.tasks.length > 0) {
+        lesson.tasks.forEach((task, tIdx) => {
+          if (task.type === 'drag_drop_timeline') {
+            const timelineId = `dd-timeline-lesson-${tIdx}`;
+            htmlTasks += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
+            window.postRenderHooks.push(() => {
+              import('./drag_drop_timeline.js').then(mod => {
+                 mod.initDragDropTimeline(document.getElementById(timelineId), task);
+              });
+            });
+            return;
+          }
+          if (task.type === 'interactive_map') {
+            const mapId = `interactive-map-lesson-${tIdx}`;
+            htmlTasks += `<div id="${mapId}" style="margin-bottom: 20px;"></div>`;
+            window.postRenderHooks.push(() => {
+              import('./interactive_map.js').then(mod => {
+                 mod.initInteractiveMap(document.getElementById(mapId), task);
+              });
+            });
+            return;
+          }
+          let rawQText = task.text || task.question || "";
+          let cleaned = rawQText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
+          let qText = typeof formatBold !== 'undefined' ? formatBold(cleaned) : cleaned;
+          let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
+          let clueBtn = '';
+          if (clueParaMatch) {
+            qText = qText.replace(clueParaMatch[0], '').trim();
+            clueBtn = `<button class="btn btn-secondary btn-sm-icon" title="Find Evidence" onclick="window.scrollToPara('para-${clueParaMatch[2]}')"><i class="fa-solid fa-magnifying-glass"></i></button>`;
+          }
+
+          let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+          let displayHeading = '';
+          if (match) {
+              displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${match[1]}</div>`;
+              qText = match[2];
+          }
+
+          htmlTasks += `
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              ${displayHeading}
+              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                ${task.qNum ? `Q${task.qNum}. ` : ''}${qText}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${clueBtn}
+                  ${task.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('starter-${tIdx}')"><i class="fa-solid fa-pen"></i></button>` : ''}
+                  ${task.clue ? `<button class="btn btn-secondary btn-sm-icon" title="Clue" onclick="toggleElement('clue-${tIdx}')"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
+                  ${task.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('model-${tIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                </span>
+              </div>
+              <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+
+              ${task.starter ? `<div id="starter-${tIdx}" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${task.starter}</div>` : ''}
+              ${task.clue ? `<div id="clue-${tIdx}" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${task.clue}</div>` : ''}
+              ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${formatBold(task.model)}</div>` : ''}
+            </div>
+          `;
+        });
+      }
+
+      
+if (lesson.historians_corner) {
+        const hc = lesson.historians_corner;
+        htmlHistorian += `
+          <div style="margin-top: 30px; background: #fafafa; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
+            <h3 style="margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #0f172a;">${hc.title}</h3>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">${formatBold(hc.text || (hc.author_context + "<br><br><i>" + hc.extract + "</i>"))}</p>
+            ${hc.stretch_question ? `
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 0;">
+              <div style="font-weight: 700; margin-bottom: 10px; color: #ef4444;">Stretch Challenge</div>
+              <div style="font-size: 1.05rem; margin-bottom: 12px;">
+                ${hc.qNum ? `Q${hc.qNum}. ` : ''}${hc.stretch_question}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${hc.starter ? `<button class="btn btn-secondary btn-sm-icon" title="Sentence Starter" onclick="toggleElement('hc-starter')"><i class="fa-solid fa-pen"></i></button>` : ''}
+                  ${hc.clue ? `<button class="btn btn-secondary btn-sm-icon" title="Clue" onclick="toggleElement('hc-clue')"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
+                  ${hc.stretch_model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('hc-model')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                </span>
+              </div>
+              ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
+              ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
+              ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;">${formatBold(hc.stretch_model)}</div>` : ''}
+            </div>` : ''}
+          </div>
+        `;
+      }
+      htmlHistorian += `</div>`;
+    }
+
+    
+if (lesson.pair_share) {
+      const ps = lesson.pair_share;
+      htmlPairShare += `
+        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
+            <summary style="padding: 10px 15px; cursor: pointer; color: #059669; font-weight: bold; font-size: 1.05rem; background: #ecfdf5; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #a7f3d0;">
+              <span><i class="fa-solid fa-users" style="color: #059669; margin-right: 10px;"></i> Think, Pair, Share</span>
+              <i class="fa-solid fa-chevron-down" style="color: #059669;"></i>
+            </summary>
+            <div style="padding: 20px; background: #ecfdf5;">
+              <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                  <div style="font-weight: bold; color: #059669; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <span><i class="fa-solid fa-brain"></i> 1. Think</span>
+                    <button onclick="startTPSTimer(this, 60)" style="background: #10b981; color: white; border: none; border-radius: 4px; padding: 3px 8px; cursor: pointer; font-size: 0.85rem; font-weight: bold;"><i class="fa-regular fa-clock"></i> 60s</button>
+                  </div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                  <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.pair}</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                  <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
+                 </div>
+              </div>
+            </div>
+          </details>
+      `;
+    }
+
+    if (lesson.exam_practice) {
+      let epQuestions = [];
+      let epStimulus = [];
+      if (Array.isArray(lesson.exam_practice)) {
+        epQuestions = lesson.exam_practice;
+      } else {
+        epQuestions = lesson.exam_practice.questions || [];
+        epStimulus = lesson.exam_practice.stimulus || [];
+      }
+
+      if (epQuestions.length > 0 || epStimulus.length > 0) {
+        htmlPairShare += `
+          <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
+            <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Assessment Practice</h3>
+              <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px; background: white; border: 1px solid #bfdbfe;"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
+            </div>
+        `;
+        const renderQuestion = (q, qIdx) => `
+              <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                    ${formatQuestion(q.question)}
+                  <span style="display: inline-flex; vertical-align: middle;">
+                    ${q.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('ep-model-${qIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                  </span>
+                </div>
+                <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+                ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
+              </div>
+        `;
+
+        if (epQuestions.length > 0) {
+          let q2Index = epQuestions.findIndex(q => q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.')));
+          if (q2Index !== -1) {
+             htmlPairShare += renderQuestion(epQuestions[q2Index], q2Index);
+          }
+        }
+        
+        if (epStimulus.length > 0) {
+          htmlPairShare += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
+          epStimulus.forEach((stim, sIdx) => {
+            htmlPairShare += `
+              <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px;">
+                <div style="font-weight: bold; color: #334155; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">${stim.title}</div>
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: #475569; font-style: italic;">${stim.content}</p>
+              </div>
+            `;
+          });
+          htmlPairShare += `</div>`;
+        }
+        
+        if (epQuestions.length > 0) {
+          epQuestions.forEach((q, qIdx) => {
+            let isQ2 = q.question && (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.'));
+            if (!isQ2) {
+               htmlPairShare += renderQuestion(q, qIdx);
+            }
+          });
+        }
+        htmlPairShare += `</div>`;
+      }
+    }
+
+    let deck = null;
+    if (lesson.vocab && lesson.vocab.length > 0) {
+      deck = lesson.vocab;
+    } else if (lesson.key_vocabulary && lesson.key_vocabulary.length > 0) {
+      deck = lesson.key_vocabulary;
+    } else if (lesson.flashcards && lesson.flashcards.length > 0) {
+      if (lesson.flashcards[0].term || lesson.flashcards[0].word) {
+         deck = lesson.flashcards;
+      }
+    }
+
+    if (deck) {
+      htmlPairShare += `
+        <div class="phase-card">
+          <div class="phase-title">Consolidation & Recall</div>
+          <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
+          <div class="flashcard-deck">
+      `;
+      deck.forEach(fc => {
+        let t = fc.term || fc.word || fc.title || '';
+        let d = fc.definition || fc.meaning || fc.desc || '';
+        htmlPairShare += `
+          <div class="flashcard-wrapper" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+              <div class="flashcard-face flashcard-front">
+                <h4>${t}</h4>
+                <p>Tap to reveal</p>
+              </div>
+              <div class="flashcard-face flashcard-back">
+                ${d}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      htmlPairShare += `</div></div>`;
+    }
+
+    if (lesson.extended || lesson.debate_prep) {
+      let extHtml = `
+        <div class="phase-card">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Extended Scholarship</div>
+            ${lesson.extended && (lesson.extended.model || lesson.extended.answer) ? `<button class="btn btn-secondary" onclick="toggleElement('extended-model-${lesson.id}')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button>` : ''}
+          </div>
+      `;
+
+      if (lesson.debate_prep) {
+        const dp = lesson.debate_prep;
+        const allArgs = [...dp.arguments_for.map(a=>({t:a, s:'for'})), ...dp.arguments_against.map(a=>({t:a, s:'against'}))].sort(() => Math.random() - 0.5);
+        const argsHtml = allArgs.map((arg, idx) => `<div class="debate-card" draggable="true" ondragstart="window.dragDebate(event)" id="debate-arg-${lesson.id}-${idx}" data-side="${arg.s}" style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px; margin-bottom: 8px; border-radius: 6px; cursor: grab;">${arg.t}</div>`).join('');
+
+        extHtml += `
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+            <h3 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-scale-balanced"></i> Debate Prep: ${dp.question}</h3>
+            <p style="color: #475569; font-size: 0.95rem;">Drag and drop the evidence cards below into the correct columns to prepare your arguments before writing your essay.</p>
+            
+            <div id="debate-bank-${lesson.id}" class="debate-dropzone" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #94a3b8; padding: 15px; border-radius: 8px; margin-bottom: 20px; min-height: 80px;">
+              ${argsHtml}
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div>
+                <h4 style="text-align: center; color: #16a34a; margin-top: 0;">Agree</h4>
+                <div id="debate-for-${lesson.id}" class="debate-dropzone" data-target="for" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #86efac; padding: 15px; border-radius: 8px; min-height: 150px;"></div>
+              </div>
+              <div>
+                <h4 style="text-align: center; color: #dc2626; margin-top: 0;">Disagree</h4>
+                <div id="debate-against-${lesson.id}" class="debate-dropzone" data-target="against" ondragover="window.allowDrop(event)" ondrop="window.dropDebate(event)" style="background: white; border: 2px dashed #fca5a5; padding: 15px; border-radius: 8px; min-height: 150px;"></div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+              <button class="btn btn-primary" onclick="window.checkDebate('${lesson.id}')">Check Answers</button>
+              <div id="debate-feedback-${lesson.id}" style="margin-top: 10px; font-weight: bold;"></div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (lesson.extended && (lesson.extended.paragraphs || lesson.extended.title)) {
+        if (lesson.extended.title) {
+          extHtml += `<h3 style="color: #0f172a;">${lesson.extended.title}</h3>`;
+        }
+        if (lesson.extended.paragraphs) {
+          lesson.extended.paragraphs.forEach(p => {
+             extHtml += `<p style="color: #334155; font-size: 1.05rem; line-height: 1.6;">${formatBold(p)}</p>`;
+          });
+        }
+      }
+      extHtml += `</div>`;
+      
+      if (lesson.debate_prep || (lesson.extended && (lesson.extended.paragraphs || lesson.extended.title))) {
+         htmlPairShare += extHtml;
+      }
+    }
+
+    
+      let myUnitData = window.currentUnitData || {};
+      const unitId = myUnitData.id || new URLSearchParams(window.location.search).get('id');
+      const isEarlyModern = (unitId === 'early_modern_world');
+      let isGCSE = (unitId === 'weimar_nazi_germany' || unitId === 'cme_new');
+
+      if (isTrip) {
+          html += htmlNarrative + htmlDoNow + htmlPrimary + htmlSources1 + htmlPairShare + htmlHistorian + htmlTasks;
+      } else if (isEarlyModern) {
+          html += htmlDoNow + htmlPrimary + (isGCSE ? '' : htmlSources1) + htmlNarrative + htmlPairShare + htmlHistorian + htmlTasks;
+      } else {
+          html += (isGCSE ? '' : htmlSources1) + htmlPrimary + htmlDoNow + htmlNarrative + htmlTasks + htmlHistorian + htmlPairShare;
+      }
+      
+      if (isGCSE) {
+          html += htmlSources1;
+      }
+if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extractedExamTasks.length > 0) {
+      let gcseHtml = `
+        <div class="phase-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">${(lesson.extended && lesson.extended.title) ? lesson.extended.title : 'Assessment Practice'}</div>
+            <button class="btn btn-secondary" onclick="this.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block')" style="font-size: 0.9rem; padding: 4px 10px;"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
+          </div>
+      `;
+
+      if (lesson.extended && lesson.extended.question) {
+        let hintsHtml = '';
+        if (lesson.extended.hints && lesson.extended.hints.length > 0) {
+           hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; padding-left: 20px; color: #92400e;">${lesson.extended.hints.map(h => `<li>${formatBold(h)}</li>`).join('')}</ul></div>`;
+        }
+
+        let sourceHtml = '';
+        if (lesson.extended.source_a || lesson.extended.source_b) {
+          sourceHtml = `<div style="display: flex; gap: 20px; margin: 15px 0;">`;
+          if (lesson.extended.source_a) {
+             const prov = typeof lesson.extended.source_a === 'string' ? '' : lesson.extended.source_a.provenance;
+             const content = typeof lesson.extended.source_a === 'string' ? lesson.extended.source_a : lesson.extended.source_a.content;
+             sourceHtml += `
+               <div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                 <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A</strong>
+                 ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
+                 <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
+                   ${content.replace(/\n/g, '<br>')}
+                 </div>
+               </div>`;
+          }
+          if (lesson.extended.source_b) {
+             const prov = typeof lesson.extended.source_b === 'string' ? '' : lesson.extended.source_b.provenance;
+             const content = typeof lesson.extended.source_b === 'string' ? lesson.extended.source_b : lesson.extended.source_b.content;
+             sourceHtml += `
+               <div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                 <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B</strong>
+                 ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
+                 <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
+                   ${content.replace(/\n/g, '<br>')}
+                 </div>
+               </div>`;
+          }
+          sourceHtml += `</div>`;
+          if (lesson.extended.provenance_clue) {
+            sourceHtml += `<details style="margin-top: 15px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden;">
+              <summary style="padding: 12px; cursor: pointer; color: #166534; font-weight: bold; list-style: none;">
+                <i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i> Click to Reveal Provenance Scaffolding Clues
+              </summary>
+              <div style="padding: 0 12px 12px 12px; color: #15803d; border-top: 1px solid #bbf7d0; margin-top: 5px; padding-top: 12px;">
+                ${lesson.extended.provenance_clue}
+              </div>
+            </details>`;
+          }
+        }
+
+        gcseHtml += `
+          <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+              ${lesson.extended.qNum ? `Q${lesson.extended.qNum}. ` : ''}${formatQuestion(lesson.extended.question, !lesson.extended.qNum)}
+              <span style="display: inline-flex; vertical-align: middle;">
+                ${lesson.extended.model || lesson.extended.answer ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('extended-model-${lesson.id}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+              </span>
+            </div>
+            ${sourceHtml}
+            ${hintsHtml}
+            <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your extended response here..." oninput="window.updateProgress()"></textarea>
+            ${lesson.extended.model || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.extended.model || lesson.extended.answer)}</div>` : ''}
+          </div>
+        `;
+      }
+
+      if (lesson.gcse_task) {
+        if (lesson.gcse_task.tasks) {
+          lesson.gcse_task.tasks.forEach((task, tIdx) => {
+            gcseHtml += `
+              <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+                <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                  ${lesson.gcse_task.qNum && tIdx === 0 ? `Q${lesson.gcse_task.qNum}. ` : ''}${formatQuestion(task.text || task.question, !(lesson.gcse_task.qNum && tIdx === 0))}
+                  <span style="display: inline-flex; vertical-align: middle;">
+                    ${task.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('gcse-model-${tIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                  </span>
+                </div>
+                <textarea class="student-answer-input" style="min-height: ${(task.text || task.question || "").includes("12 marks") || (task.text || task.question || "").includes("16 marks") ? "200px" : "100px"};" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+                ${task.model ? `<div id="gcse-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(task.model)}</div>` : ''}
+              </div>
+            `;
+          });
+        } else if (lesson.gcse_task.sources) {
+           let topicText = lesson.gcse_task.topic || '';
+           let isNarrative = topicText.toLowerCase().includes("write a narrative account");
+           
+           if (isNarrative) {
+               gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
+               gcseHtml += `<p style="font-size: 1rem; color: #475569; margin-bottom: 10px;"><em>Read the historical sources below before writing your narrative account:</em></p>`;
+           } else {
+               gcseHtml += `<p style="font-weight: bold; font-size: 1.15rem; color: #1e3a8a;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+           }
+           
+           gcseHtml += `<div style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">`;
+           lesson.gcse_task.sources.forEach(srcObj => {
+             gcseHtml += `<div style="flex: 1; min-width: 300px; background: white; border: 1px solid #cbd5e1; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">`;
+             if (srcObj.type === 'visual') {
+               gcseHtml += `<img src="${getAssetUrl(srcObj.src)}" style="max-width: 100%; max-height: 250px; border-radius: 4px; margin-bottom: 10px;">`;
+             } else {
+               gcseHtml += `<blockquote style="font-size: 1.05rem; font-style: italic; color: #475569; margin: 0 0 15px 0; border-left: 4px solid #94a3b8; padding-left: 10px;">${formatBold(srcObj.text)}</blockquote>`;
+             }
+             gcseHtml += `<p style="font-size: 0.95rem; font-weight: bold; color: #334155; margin: 0;">${srcObj.title}</p>`;
+             gcseHtml += `</div>`;
+           });
+           gcseHtml += `</div>`;
+           
+           let placeholder = isNarrative ? "Write your 8-mark narrative account here..." : "Type your 8-mark utility evaluation here...";
+           gcseHtml += `<textarea class="student-answer-input" style="min-height: 200px;" placeholder="${placeholder}" oninput="window.updateProgress()"></textarea>`;
+           
+           if (lesson.gcse_task.model) {
+              gcseHtml += `<div style="margin-top: 15px;"><button class="btn btn-secondary" onclick="toggleElement('gcse-model-src')"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button></div>`;
+              gcseHtml += `<div id="gcse-model-src" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.gcse_task.model)}</div>`;
+           }
+        }
+      }
+
+      if (extractedExamTasks.length > 0) {
+        extractedExamTasks.forEach((task, tIdx) => {
+          gcseHtml += `
+            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+                ${formatQuestion(task.text || task.question)}
+                <span style="display: inline-flex; vertical-align: middle;">
+                  ${task.model ? `<button class="btn btn-secondary btn-sm-icon" title="Reveal Model Answer" onclick="toggleElement('extracted-model-${tIdx}')"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                </span>
+              </div>
+              <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+              ${task.model ? `<div id="extracted-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(task.model)}</div>` : ''}
+            </div>
+          `;
+        });
+      }
+      gcseHtml += `</div>`;
+      html += gcseHtml;
+    }
+
+    if (lesson.quiz && lesson.quiz.length > 0 && unitData.type !== 'trip') {
+      window.currentQuizData = lesson.quiz.map(q => {
+      if (!q.options && q.distractors && q.distractors.length > 0) {
+        let opts = [q.answer || q.a, ...q.distractors];
+        opts = opts.sort(() => Math.random() - 0.5);
+        const correctIdx = opts.indexOf(q.answer || q.a);
+        return { ...q, options: opts, answer: correctIdx };
+      } else if (q.options && typeof (q.answer || q.a) === 'string') {
+        let opts = [...q.options];
+        opts = opts.sort(() => Math.random() - 0.5);
+        return { ...q, options: opts, answer: opts.indexOf(q.answer || q.a) };
+      }
+      return q;
+    });
+    window.currentQuizIndex = 0;
+      window.currentQuizLessonId = lesson.id;
+      
+      html += `
+        <div class="phase-card no-print" id="inline-quiz-container" style="padding: 30px;">
+          <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+            <i class="fa-solid fa-clipboard-check" style="font-size: 2rem; color: #3b82f6; margin-right: 15px;"></i>
+            <div>
+              <h2 style="margin: 0; color: #1e293b; font-size: 1.5rem;">Knowledge Check Quiz</h2>
+              <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Question <span id="quiz-progress">1 / ${lesson.quiz.length}</span></p>
+            </div>
+          </div>
+          
+          <div id="quiz-question-container">
+            <!-- Populated dynamically -->
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+            <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
+            <button id="quiz-next-btn" class="btn btn-primary" style="display: none;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      `;
+    }
+    
+    // Previous / Next Lesson Navigation Buttons
+    if (currentIndex !== -1) {
+      html += `<div style="display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; margin-bottom: 40px;">`;
+      
+      if (currentIndex > 0) {
+        html += `<button class="btn btn-secondary" onclick="window.renderLessonByIndex(${currentIndex - 1})"><i class="fa-solid fa-arrow-left"></i> Previous ${isTrip ? 'Day' : 'Lesson'}</button>`;
+      } else {
+        html += `<div></div>`;
+      }
+      
+      if (currentIndex < unitData.lessons.length - 1) {
+        html += `<button class="btn btn-primary" onclick="window.renderLessonByIndex(${currentIndex + 1})">Next ${isTrip ? 'Day' : 'Lesson'} <i class="fa-solid fa-arrow-right"></i></button>`;
+      } else {
+        html += `<div></div>`;
+      }
+      
+      html += `</div>`;
+    }
+    
+    html += `</div>`; // End lesson-content wrapper
+
+    contentArea.innerHTML = html;
+    
+    if (lesson.quiz && lesson.quiz.length > 0) {
+      window.renderQuizQuestion();
+    }
+    window.vocabMatchesFound = 0;
+    setTimeout(() => {
+      if (window.mermaid) {
+        try {
+          mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        } catch (e) {
+          console.error("Mermaid render error:", e);
+        }
+      }
+      if (window.postRenderHooks) {
+        window.postRenderHooks.forEach(hook => hook());
+        window.postRenderHooks = [];
+      }
+      
+      // Initialize Trip Map
+      const mapContainer = document.getElementById('trip-map-container');
+      if (mapContainer && window.L && lesson.do_now && lesson.do_now.type === 'timeline') {
+        const eventsWithLoc = lesson.do_now.events.filter(e => e.lat && e.lng);
+        if (eventsWithLoc.length > 0) {
+          const map = L.map('trip-map-container');
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '© OpenStreetMap contributors'
+          }).addTo(map);
+          
+          const markers = [];
+          eventsWithLoc.forEach(ev => {
+            const marker = L.marker([ev.lat, ev.lng]).addTo(map);
+            let popupContent = `<strong>${ev.year} - ${ev.title}</strong><br>${ev.detail}`;
+            
+            if (unitData.local_heroes) {
+              const heroes = unitData.local_heroes.filter(h => ev.title.includes(h.cemetery) || ev.detail.includes(h.cemetery) || (h.cemetery.includes("Menin Gate") && ev.title.includes("Menin Gate")));
+              if (heroes.length > 0) {
+                popupContent += `<div style="margin-top: 15px; border: 2px solid #ef4444; border-radius: 8px; padding: 10px; background: #fef2f2;">
+                  <h4 style="margin: 0 0 5px 0; color: #991b1b;"><i class="fa-solid fa-ribbon"></i> Local Connection</h4>`;
+                heroes.forEach(h => {
+                  popupContent += `<p style="margin: 0 0 5px 0; font-size: 0.9em; color: #7f1d1d;"><strong>${h.name}</strong> (${h.age}) - ${h.regiment}<br><em>${h.connection}</em><br>${h.story}</p>`;
+                });
+                popupContent += `</div>`;
+              }
+            }
+
+            if (ev.youtube_id) {
+              popupContent += `<div style="margin-top: 10px;"><iframe width="100%" height="150" src="https://www.youtube.com/embed/${ev.youtube_id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 4px;"></iframe></div>`;
+            }
+            marker.bindPopup(popupContent, { minWidth: 250 });
+            markers.push(marker);
+          });
+          
+          if (markers.length > 0) {
+            const group = new L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.2));
+            
+            // Draw Polyline connecting pins if not a local hero lesson
+            if (!lesson.id || !lesson.id.startsWith('hero_')) {
+              const latlngs = eventsWithLoc.map(ev => [ev.lat, ev.lng]);
+              L.polyline(latlngs, {
+                color: '#ef4444',
+                weight: 4,
+                opacity: 0.7,
+                dashArray: '10, 10',
+                lineJoin: 'round'
+              }).addTo(map);
+            }
+          }
+        }
+      }
+    }, 100); 
+  }
+  
+  window.switchTab = (tabId) => {
+    // Hide all tab content
+    document.querySelectorAll('.tab-content').forEach(el => {
+      el.style.display = 'none';
+    });
+    // Remove active class from all buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    // Show requested tab
+    const activeTab = document.getElementById(tabId);
+    if (activeTab) {
+      activeTab.style.display = 'block';
+    }
+    // Set clicked button to active (we can find it via the onclick string)
+    const btn = document.querySelector(`button[onclick*="${tabId}"]`);
+    if (btn) {
+      btn.classList.add('active');
+    }
+  };
+
+  // Toggling elements helper
+
+  window.toggleElement = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  };
+
+
+  // Matching Game Logic
+  let selectedTermIdx = null;
+  let selectedTermEl = null;
+  window.vocabMatchesFound = 0;
+
+  document.addEventListener('click', (e) => {
+    const termBtn = e.target.closest('.match-term-btn');
+    const defBtn = e.target.closest('.match-def-btn');
+
+    if (termBtn && !termBtn.disabled) {
+      document.querySelectorAll('.match-term-btn').forEach(b => {
+        if (!b.disabled) b.style.borderColor = '#cbd5e1';
+      });
+      termBtn.style.borderColor = '#3b82f6';
+      selectedTermIdx = termBtn.dataset.idx;
+      selectedTermEl = termBtn;
+    }
+
+    if (defBtn && !defBtn.disabled && selectedTermIdx !== null) {
+      if (defBtn.dataset.idx === selectedTermIdx) {
+        // Match found!
+        defBtn.style.background = '#10b981';
+        defBtn.style.color = '#fff';
+        defBtn.style.borderColor = '#059669';
+        defBtn.disabled = true;
+
+        selectedTermEl.style.background = '#10b981';
+        selectedTermEl.style.color = '#fff';
+        selectedTermEl.style.borderColor = '#059669';
+        selectedTermEl.disabled = true;
+
+        selectedTermIdx = null;
+        selectedTermEl = null;
+        window.vocabMatchesFound++;
+
+        const totalTerms = document.querySelectorAll('.match-term-btn').length;
+        if (window.vocabMatchesFound >= totalTerms) {
+           const successMsg = document.getElementById('unlock-success');
+           if (successMsg) successMsg.style.display = 'block';
+           
+           const lockedSec = document.getElementById('locked-content');
+           if (lockedSec) {
+             lockedSec.style.opacity = '1';
+             lockedSec.style.pointerEvents = 'auto';
+             lockedSec.style.filter = 'none';
+           }
+        }
+      } else {
+        // Wrong match
+        defBtn.style.borderColor = '#ef4444';
+        setTimeout(() => {
+          if (!defBtn.disabled) defBtn.style.borderColor = '#cbd5e1';
+        }, 500);
+      }
+    }
+  });
+
+  // Initialize
+  if (unitData.lessons.length > 0) {
+    renderSidebar();
+    
+    // Initial Render - load homepage or specific lesson based on URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const lessonIdx = urlParams.get('lesson');
+    if (lessonIdx !== null && !isNaN(lessonIdx)) {
+      window.renderLessonByIndex(parseInt(lessonIdx), true);
+    } else {
+      renderHomepage();
+    }
+    
+    window.addEventListener('popstate', (e) => {
+      if (e.state && e.state.customTab) {
+        // Trigger the corresponding custom tab
+        const links = document.querySelectorAll('.lesson-link');
+        links.forEach(l => {
+          if (l.innerText.toLowerCase().includes(e.state.customTab.replace('_', ' '))) {
+            l.click();
+          }
+        });
+      } else if (e.state && e.state.lessonIndex !== undefined) {
+        window.renderLessonByIndex(e.state.lessonIndex, true);
+      } else {
+        window.renderDashboard(true);
+      }
+    });
+  } else {
+    contentArea.innerHTML = "<h2>No lessons found in data.js</h2>";
+  }
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+}
+window.updateProgress = () => {
+  const inputs = document.querySelectorAll('.student-answer-input');
+  let filled = 0;
+  inputs.forEach(input => {
+    if (input.value.trim().length > 0) filled++;
+  });
+  const bar = document.getElementById('progress-bar');
+  if (bar) {
+    if (inputs.length === 0) bar.style.width = '100%';
+    else bar.style.width = `${(filled / inputs.length) * 100}%`;
+  }
+};
+
+
+  function assignQuestionNumbers(lesson) {
+    let globalQNum = 1;
+    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
+    if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
+    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks.forEach(block => {
+        if (block.source && block.source.question) block.source.qNum = globalQNum++;
+        if (block.tasks) block.tasks.forEach(task => { if (task.type !== 'vocab_match') task.qNum = globalQNum++; });
+        if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
+      });
+    }
+    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
+    if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+  }
+
+  function openTaskWhiteboard() {
+    const modal = document.getElementById('task-whiteboard-modal');
+    if (!modal) return;
+    
+    const container = document.getElementById('whiteboard-questions-container');
+    container.innerHTML = '';
+    
+    const activeLesson = window.currentActiveLesson || unitData.lessons[0];
+    
+    assignQuestionNumbers(activeLesson);
+    
+    let html = '';
+    
+    const addQuestionCard = (qNum, questionText, answerText) => {
+      const finalAnswer = window.formatBold(answerText) || "Model answer to be discussed in class.";
+      const prefix = qNum && qNum !== '-' && qNum !== 'Do Now' ? `Q${qNum}. ` : (qNum === 'Do Now' ? '<strong>[Do Now]</strong> ' : '');
+      html += `
+        <div class="wb-question-card" style="cursor:pointer;" onclick="this.querySelector('.wb-answer').classList.toggle('revealed')" title="Click to reveal answer">
+          <div style="font-weight: bold;">${prefix}${questionText}</div>
+          <div class="wb-answer">${finalAnswer}</div>
+        </div>
+      `;
+    };
+
+    if (activeLesson.do_now) {
+      if (activeLesson.do_now.type === "timeline" && activeLesson.do_now.prediction_question) {
+        addQuestionCard('Do Now', activeLesson.do_now.prediction_question, activeLesson.do_now.model || activeLesson.do_now.answer || '');
+      } else if (activeLesson.do_now.type === "questions") {
+        activeLesson.do_now.items.forEach(item => {
+           addQuestionCard('Do Now', item.question, item.answer || '');
+        });
+      }
+    }
+
+    if (activeLesson.primary_source && activeLesson.primary_source.question) {
+      addQuestionCard(activeLesson.primary_source.qNum, activeLesson.primary_source.question, activeLesson.primary_source.model_answer || '');
+    }
+    
+    if (activeLesson.sources) {
+      activeLesson.sources.forEach(source => {
+        if (source.question) addQuestionCard(source.qNum, source.question, source.model_answer || '');
+      });
+    }
+
+    if (activeLesson.tasks) {
+      activeLesson.tasks.forEach(task => {
+        addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
+      });
+    }
+
+    if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
+      addQuestionCard(activeLesson.historians_corner.qNum, activeLesson.historians_corner.stretch_question, activeLesson.historians_corner.model_answer || '');
+    }
+    
+    if (activeLesson.narrative_blocks) {
+      activeLesson.narrative_blocks.forEach(block => {
+        if (block.source && block.source.question) {
+          addQuestionCard(block.source.qNum, block.source.question, block.source.model_answer || '');
+        }
+        if (block.tasks) {
+          block.tasks.forEach(task => {
+            if (task.type !== 'vocab_match') {
+              addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
+            }
+          });
+        }
+        if (block.hinge_question) {
+          addQuestionCard(block.hinge_question.qNum, block.hinge_question.question || block.hinge_question, block.hinge_question.model_answer || '');
+        }
+      });
+    }
+    
+    if (activeLesson.extended && activeLesson.extended.question) {
+      addQuestionCard(activeLesson.extended.qNum, activeLesson.extended.question, activeLesson.extended.model_answer || '');
+    }
+
+    if (activeLesson.gcse_task && (activeLesson.gcse_task.question || activeLesson.gcse_task.prompt)) {
+      addQuestionCard(activeLesson.gcse_task.qNum, activeLesson.gcse_task.question || activeLesson.gcse_task.prompt, activeLesson.gcse_task.model_answer || '');
+    }
+
+    if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
+      addQuestionCard(activeLesson.pair_share.qNum, activeLesson.pair_share.prompt, "Discuss in pairs.");
+    }
+    
+    if (activeLesson.debate_prep) {
+       addQuestionCard('-', `Debate Prep: ${activeLesson.debate_prep.question}`, `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map(a=>`<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map(a=>`<li>${a}</li>`).join('')}</ul>`);
+    }
+
+    
+    container.innerHTML = html;
+    modal.classList.add('visible');
+  }
+  
+window.toggleStarterById = function(id) {
+  const starter = document.getElementById(id);
+  if (starter) {
+    starter.style.display = starter.style.display === 'block' ? 'none' : 'block';
+  }
+};
+
+window.dragDebate = function(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+};
+
+window.allowDrop = function(ev) {
+  ev.preventDefault();
+};
+
+window.dropDebate = function(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const el = document.getElementById(data);
+  let target = ev.target;
+  // If dropped on another card, append to the dropzone
+  while (target && !target.classList.contains('debate-dropzone')) {
+    target = target.parentElement;
+  }
+  if (target && el) {
+    target.appendChild(el);
+  }
+};
+
+window.checkDebate = function(lessonId) {
+  let correct = true;
+  let allSorted = true;
+  
+  const bank = document.getElementById(`debate-bank-${lessonId}`);
+  if (bank && bank.children.length > 0) allSorted = false;
+  
+  const forZone = document.getElementById(`debate-for-${lessonId}`);
+  if (forZone) {
+    Array.from(forZone.children).forEach(child => {
+      if (child.getAttribute('data-side') !== 'for') {
+        correct = false;
+        child.style.border = '2px solid #dc2626';
+      } else {
+        child.style.border = '2px solid #16a34a';
+      }
+    });
+  }
+
+  const againstZone = document.getElementById(`debate-against-${lessonId}`);
+  if (againstZone) {
+    Array.from(againstZone.children).forEach(child => {
+      if (child.getAttribute('data-side') !== 'against') {
+        correct = false;
+        child.style.border = '2px solid #dc2626';
+      } else {
+        child.style.border = '2px solid #16a34a';
+      }
+    });
+  }
+  
+  const feedback = document.getElementById(`debate-feedback-${lessonId}`);
+  if (!allSorted) {
+    feedback.style.color = '#d97706';
+    feedback.innerText = "Please sort all evidence cards first!";
+  } else if (!correct) {
+    feedback.style.color = '#dc2626';
+    feedback.innerText = "Some evidence is in the wrong column. Check the red cards and try again!";
+  } else {
+    feedback.style.color = '#16a34a';
+    feedback.innerText = "Excellent! All evidence sorted correctly. You are ready to write your essay!";
+  }
+};
+window.toggleAnswerById = function(id) {
+  const ans = document.getElementById(id);
+  if (ans) {
+    if (ans.classList.contains('revealed')) {
+      ans.classList.remove('revealed');
+      ans.style.display = 'none';
+    } else {
+      ans.classList.add('revealed');
+      ans.style.display = 'block';
+    }
+  }
+};
+
+window.toggleAllAnswers = function(btn) {
+  const container = btn.closest('.phase-card') || btn.closest('.do-now-box') || btn.closest('details');
+  if (!container) return;
+  const answers = container.querySelectorAll('.answer');
+  const anyHidden = Array.from(answers).some(a => a.style.display !== 'block' && !a.classList.contains('revealed'));
+  answers.forEach(a => {
+    if (anyHidden) {
+      a.style.display = 'block';
+      a.classList.add('revealed');
+    } else {
+      a.style.display = 'none';
+      a.classList.remove('revealed');
+    }
+  });
+};
+
+window.toggleAllWhiteboardAnswers = function() {
+  const container = document.getElementById('taskWhiteboardContent');
+  if (!container) return;
+  const answers = container.querySelectorAll('.answer');
+  const anyHidden = Array.from(answers).some(a => a.style.display !== 'block' && !a.classList.contains('revealed'));
+  answers.forEach(a => {
+    if (anyHidden) {
+      a.style.display = 'block';
+      a.classList.add('revealed');
+    } else {
+      a.style.display = 'none';
+      a.classList.remove('revealed');
+    }
+  });
+};
+
+window.toggleMap = function(btn) {
+  const container = btn.closest('.interactive-map-container');
+  // Update buttons
+  container.querySelectorAll('.map-toggle-btn').forEach(b => {
+    b.classList.remove('active-map-btn');
+    b.style.backgroundColor = '';
+    b.style.color = '';
+  });
+  btn.classList.add('active-map-btn');
+  btn.style.backgroundColor = '#1a237e';
+  btn.style.color = 'white';
+  
+  // Update images
+  const targetId = btn.getAttribute('data-map-id');
+  container.querySelectorAll('img[id^="map-img-"]').forEach(img => {
+    img.style.opacity = '0';
+  });
+  container.querySelector('#map-img-' + targetId).style.opacity = '1';
+  
+  // Update caption
+  container.querySelector('#map-caption-display').innerHTML = btn.getAttribute('data-caption');
+};
+
+// --- Key Individual Link Global Functions ---
+window.jumpToKeyIndividual = function(name) {
+    let targetTab = 'historical_individuals'; // default
+    let linkSearchStr = 'Historical Individuals';
+    
+    if (window.db && window.currentUnitId && window.db[window.currentUnitId]) {
+      const unitData = window.db[window.currentUnitId].data || window.db[window.currentUnitId];
+      if (unitData && unitData.key_individuals) {
+         const person = unitData.key_individuals.find(p => p.name.toLowerCase() === name.toLowerCase());
+         if (person && person.group === 'Historians') {
+            targetTab = 'historians';
+            linkSearchStr = 'Historians';
+         }
+      }
+    }
+
+    const url = new URL(window.location);
+    url.searchParams.set('tab', targetTab);
+    history.pushState({ customTab: targetTab }, "", url);
+  
+    // 1. Find the sidebar link and click it
+    const kiLinks = document.querySelectorAll('.lesson-link');
+    let targetLink = null;
+    kiLinks.forEach(l => {
+      // Avoid partial match false positives (e.g. "Historical Individuals" contains "Historians" if not careful, though technically it doesn't)
+      if (l.innerText.includes(linkSearchStr)) {
+         if (linkSearchStr === 'Historians' && l.innerText.includes('Historical')) {
+             return; // skip
+         }
+         targetLink = l;
+      }
+    });
+  if (targetLink) {
+    targetLink.click();
+  }
+  
+  // 2. Wait for the page to render then find and scroll to the card
+  setTimeout(() => {
+    const cards = document.querySelectorAll('.person-card');
+    let targetCard = null;
+    cards.forEach(card => {
+      const h3 = card.querySelector('h3');
+      if (h3 && h3.innerText.toLowerCase().includes(name.toLowerCase())) {
+        targetCard = card;
+      }
+    });
+    if (targetCard) {
+      targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const originalBoxShadow = targetCard.style.boxShadow;
+      targetCard.style.boxShadow = '0 0 0 4px rgba(59, 130, 246, 0.5)';
+      targetCard.style.transition = 'box-shadow 0.3s ease';
+      setTimeout(() => {
+        targetCard.style.boxShadow = originalBoxShadow;
+      }, 2000);
+    }
+  }, 100);
+};
+
+// --- Debate Modal Global Functions ---
+window.currentDebateIndex = 0;
+
+window.injectDebateModalIfNeeded = function() {
+  if (document.getElementById('debateModal')) return;
+  const html = `
+  <div id="debateModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeDebateModal()">
+    <div class="modal-content" style="background: white; border: 3px solid var(--accent-red); border-radius: 12px; padding: 30px; max-width: 700px; width: 90%; color: var(--navy); position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.6); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button onclick="window.closeDebateModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #555; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <i class="fa-solid fa-scale-balanced" style="font-size: 32pt; color: var(--accent-red);"></i>
+        <h2 style="font-family: var(--font-heading); font-size: 22pt; margin: 10px 0 0 0; color: var(--navy); text-transform: uppercase;">Classroom Oracy</h2>
+        <h3 style="font-family: var(--font-title); font-size: 14pt; margin: 5px 0 0 0; color: #555;" id="debateTopicSubtitle">Structured Debate Prompt</h3>
+      </div>
+      <div id="debateModalContent" style="font-size: 14pt; line-height: 1.5; text-align: center; background: #faf9f6; padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+        <!-- Content dynamically populated -->
+      </div>
+      <div id="debateSentenceStarterContainer" style="display: none; background: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px; margin-bottom: 20px; border-radius: 4px; text-align: left;">
+        <strong style="color: #d97706; font-size: 11pt; text-transform: uppercase; display: block; margin-bottom: 5px;"><i class="fa-solid fa-lightbulb"></i> Sentence Starter</strong>
+        <span id="debateSentenceStarterText" style="font-size: 12pt; color: #451a03; font-style: italic;"></span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <button class="btn btn-secondary" onclick="window.cycleDebatePrompt(-1)"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+        <button id="btn-show-starter" class="btn" style="background: transparent; border: 2px dashed #cbd5e1; color: #64748b; border-radius: 6px; padding: 8px 15px; font-size: 11pt; cursor: pointer; transition: all 0.2s;" onclick="window.toggleDebateStarter()">Show Hint</button>
+        <button class="btn btn-primary" onclick="window.cycleDebatePrompt(1)">Next Prompt <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.openKeyInfoModal = function() {
+  const info = window.currentUnitData && window.currentUnitData.key_info;
+  if (!info) return;
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.style.display = 'flex';
+  overlay.innerHTML = `
+    <div class="modal-content" style="max-width: 500px; padding: 30px; border-radius: 12px; font-family: 'Outfit', sans-serif;">
+      <h3 style="margin-top:0; color: #1e293b; font-size: 1.5rem; margin-bottom: 20px;"><i class="fa-solid fa-circle-info" style="color:#ef4444; margin-right:10px;"></i> Key Trip Information</h3>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+        <h4 style="margin: 0 0 5px 0; color: #334155; font-size: 1rem;"><i class="fa-solid fa-phone" style="width:20px; color:#64748b;"></i> Emergency Contact</h4>
+        <p style="margin: 0; color: #0f172a; font-weight: 600;">${info.emergency_contact}</p>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+        <h4 style="margin: 0 0 5px 0; color: #334155; font-size: 1rem;"><i class="fa-solid fa-hotel" style="width:20px; color:#64748b;"></i> Accommodation</h4>
+        <p style="margin: 0; color: #0f172a; font-weight: 600;">${info.hotel}</p>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 25px;">
+        <h4 style="margin: 0 0 5px 0; color: #334155; font-size: 1rem;"><i class="fa-solid fa-bus" style="width:20px; color:#64748b;"></i> Transport Provider</h4>
+        <p style="margin: 0; color: #0f172a; font-weight: 600;">${info.coach}</p>
+      </div>
+      <div style="text-align: right;">
+        <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()">Close</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+};
+
+  window.openTourGuideModal = function(lessonIndex) {
+    const lesson = window.currentUnitData.lessons[lessonIndex];
+    if (!lesson || !lesson.tour_guide_script) return;
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay no-print';
+    overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
+    overlay.onclick = function(e) {
+      if (e.target === overlay) overlay.remove();
+    };
+    
+    let blocksHtml = lesson.tour_guide_script.map(block => `
+      <div style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
+        <h4 style="color: #1e293b; font-size: 1.25rem; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 12px;">${block.theme_heading}</h4>
+        <div style="font-size: 1.1rem; line-height: 1.6; color: #334155;">${block.text}</div>
+      </div>
+    `).join('');
+
+    overlay.innerHTML = `
+      <div class="modal-content" style="background: white; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; padding: 40px; border-radius: 12px; font-family: 'Outfit', sans-serif;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #6366f1; padding-bottom: 15px;">
+          <h3 style="margin: 0; color: #1e293b; font-size: 1.8rem;"><i class="fa-solid fa-bullhorn" style="color:#6366f1; margin-right:12px;"></i> Tour Guide Script</h3>
+          <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()"><i class="fa-solid fa-times"></i> Close</button>
+        </div>
+        ${blocksHtml}
+        <div style="text-align: right; margin-top: 20px;">
+          <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()">Close Script</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  };
+
+  window.openDebateModal = function() {
+    window.injectDebateModalIfNeeded();
+  const modal = document.getElementById('debateModal');
+  modal.style.display = 'flex';
+  // Trigger reflow
+  void modal.offsetWidth;
+  modal.style.opacity = '1';
+  modal.querySelector('.modal-content').style.transform = 'scale(1)';
+  window.renderDebatePrompt();
+};
+
+window.closeDebateModal = function() {
+  const modal = document.getElementById('debateModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  }
+};
+
+window.renderDebatePrompt = function() {
+  if (!window.currentUnitData || !window.currentUnitData.debatePrompts || window.currentUnitData.debatePrompts.length === 0) {
+    document.getElementById('debateTopicSubtitle').innerText = "No prompts available";
+    document.getElementById('debateModalContent').innerHTML = "No debate prompts found for this unit.";
+    document.getElementById('btn-show-starter').style.display = 'none';
+    return;
+  }
+  const prompts = window.currentUnitData.debatePrompts;
+  const promptData = prompts[window.currentDebateIndex];
+  document.getElementById('debateTopicSubtitle').innerText = promptData.title;
+  document.getElementById('debateModalContent').innerHTML = promptData.prompt;
+  
+  const starterContainer = document.getElementById('debateSentenceStarterContainer');
+  const starterBtn = document.getElementById('btn-show-starter');
+  
+  // Hide starter by default when changing prompts
+  if (starterContainer) starterContainer.style.display = 'none';
+  
+  if (promptData.sentence_starter && starterBtn) {
+    starterBtn.style.display = 'inline-block';
+    starterBtn.innerText = 'Show Hint';
+    document.getElementById('debateSentenceStarterText').innerText = promptData.sentence_starter;
+  } else if (starterBtn) {
+    starterBtn.style.display = 'none';
+  }
+};
+
+window.toggleDebateStarter = function() {
+  const container = document.getElementById('debateSentenceStarterContainer');
+  const btn = document.getElementById('btn-show-starter');
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    btn.innerText = 'Hide Hint';
+  } else {
+    container.style.display = 'none';
+    btn.innerText = 'Show Hint';
+  }
+};
+
+window.cycleDebatePrompt = function(direction) {
+  if (!window.currentUnitData || !window.currentUnitData.debatePrompts) return;
+  const prompts = window.currentUnitData.debatePrompts;
+  window.currentDebateIndex += direction;
+  if (window.currentDebateIndex < 0) window.currentDebateIndex = prompts.length - 1;
+  if (window.currentDebateIndex >= prompts.length) window.currentDebateIndex = 0;
+  window.renderDebatePrompt();
+};
+
+// --- Milestone Modal Global Functions ---
+window.injectMilestoneModalIfNeeded = function() {
+  if (document.getElementById('milestoneModal')) return;
+  const html = `
+  <div id="milestoneModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeMilestoneModal()">
+    <div class="modal-content" style="background: var(--navy); border: 2.5px solid var(--gold); border-radius: 12px; padding: 25px; max-width: 500px; width: 90%; color: #ffffff; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button class="modal-close-btn" onclick="window.closeMilestoneModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #ffffff; font-size: 16pt; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalMilestoneContent">
+        <!-- Content dynamically populated via showMilestoneModal -->
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.showMilestoneModal = function(id) {
+  window.injectMilestoneModalIfNeeded();
+  if (!window.currentUnitData || !window.currentUnitData.milestones) return;
+  const data = window.currentUnitData.milestones[id];
+  if (!data) return;
+  
+  const contentBox = document.getElementById('modalMilestoneContent');
+  if (contentBox) {
+    contentBox.innerHTML = `
+      <div style="font-size: 11pt; font-weight: bold; color: var(--gold); text-transform: uppercase; margin-bottom: 5px;">Milestone ${id}: ${data.year}</div>
+      <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; border-bottom: 1.5px solid var(--gold); padding-bottom: 5px; color: #ffffff;">${data.title}</h3>
+      <img src="${getAssetUrl(data.img)}" alt="${data.title}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 6px; border: 1.5px solid var(--gold); margin-bottom: 15px;">
+      <p style="font-size: 10.5pt; line-height: 1.5; color: #e2e8f0; margin-bottom: 15px; text-align: justify;">${data.desc}</p>
+      <div style="background: rgba(255,255,255,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid var(--gold);">
+        <strong style="display: block; font-size: 9pt; text-transform: uppercase; color: var(--gold); margin-bottom: 4px;"><i class="fa-solid fa-circle-question"></i> Retrieval Challenge</strong>
+        <span style="font-size: 9.5pt; line-height: 1.4; color: #f8fafc;">${data.trivia}</span>
+      </div>
+    `;
+  }
+  
+  const modal = document.getElementById('milestoneModal');
+  if (modal) {
+    modal.style.display = 'flex';
+    // Trigger reflow
+    void modal.offsetWidth;
+    modal.style.opacity = '1';
+    modal.querySelector('.modal-content').style.transform = 'scale(1)';
+  }
+};
+
+window.closeMilestoneModal = function() {
+  const modal = document.getElementById('milestoneModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  }
+};
+
+// --- Quiz Modal Global Functions ---
+window.currentQuizData = [];
+window.currentQuizIndex = 0;
+window.currentQuizLessonId = null;
+
+window.injectQuizModalIfNeeded = function() {
+  if (document.getElementById('quizModal')) return;
+  const html = `
+  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeQuizModal()">
+    <div class="modal-content" style="background: #ffffff; border-radius: 12px; padding: 30px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease;">
+      <button class="modal-close-btn" onclick="window.closeQuizModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #64748b; font-size: 16pt; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+        <i class="fa-solid fa-clipboard-check" style="font-size: 2rem; color: #3b82f6; margin-right: 15px;"></i>
+        <div>
+          <h2 style="margin: 0; color: #1e293b; font-size: 1.5rem;">Knowledge Check</h2>
+          <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Question <span id="quiz-progress">1 / 4</span></p>
+        </div>
+      </div>
+      
+      <div id="quiz-question-container">
+        <!-- Populated dynamically -->
+      </div>
+      
+      <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+        <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
+        <button id="quiz-next-btn" class="btn btn-primary" style="display: none;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.startQuiz = function(lessonId) {
+  window.injectQuizModalIfNeeded();
+  if (!window.currentUnitData || !window.currentUnitData.lessons) return;
+  const lesson = window.currentUnitData.lessons.find(l => l.id === lessonId);
+  if (!lesson || !lesson.quiz || lesson.quiz.length === 0) return;
+  
+  window.currentQuizData = lesson.quiz.map(q => {
+    if (!q.options && q.distractors && q.distractors.length > 0) {
+      let opts = [q.answer || q.a, ...q.distractors];
+      opts = opts.sort(() => Math.random() - 0.5);
+      const correctIdx = opts.indexOf(q.answer || q.a);
+      return { ...q, options: opts, answer: correctIdx };
+    } else if (q.options && typeof (q.answer || q.a) === 'string') {
+      let opts = [...q.options];
+      opts = opts.sort(() => Math.random() - 0.5);
+      return { ...q, options: opts, answer: opts.indexOf(q.answer || q.a) };
+    }
+    return q;
+  });
+  window.currentQuizIndex = 0;
+  window.currentQuizLessonId = lessonId;
+  
+  window.renderQuizQuestion();
+  
+  const modal = document.getElementById('quizModal');
+  modal.style.display = 'flex';
+  void modal.offsetWidth; // Trigger reflow
+  modal.style.opacity = '1';
+  modal.querySelector('.modal-content').style.transform = 'scale(1)';
+};
+
+window.renderQuizQuestion = function() {
+  const qData = window.currentQuizData[window.currentQuizIndex];
+  document.getElementById('quiz-progress').innerText = `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
+  
+  let optionsHtml = '';
+  if (qData.options) {
+    qData.options.forEach((opt, idx) => {
+      optionsHtml += `
+        <button class="quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: block; width: 100%; text-align: left; padding: 15px; margin-bottom: 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.05rem; color: #334155; cursor: pointer; transition: all 0.2s;">
+          <span style="display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #e2e8f0; border-radius: 50%; margin-right: 15px; font-weight: bold; color: #64748b;">${String.fromCharCode(65 + idx)}</span>
+          ${opt}
+        </button>
+      `;
+    });
+  } else {
+    optionsHtml = `
+      <div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 15px;">
+         <button class="btn btn-secondary" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'; document.getElementById('quiz-next-btn').style.display='block';">Reveal Answer</button>
+         <div style="display: none; font-size: 1.15rem; color: #059669; font-weight: bold; padding: 10px;">${qData.a || qData.answer || ''}</div>
+      </div>
+    `;
+  }
+  
+  document.getElementById('quiz-question-container').innerHTML = `
+    <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 20px; line-height: 1.4;">${qData.question || qData.q}</h3>
+    ${optionsHtml}
+  `;
+  
+  document.getElementById('quiz-feedback').innerHTML = '';
+  
+  const nextBtn = document.getElementById('quiz-next-btn');
+  if (!qData.options) {
+    nextBtn.style.display = 'none'; // Will be revealed when answer is shown
+  } else {
+    nextBtn.style.display = 'none';
+  }
+  
+  if (window.currentQuizIndex >= window.currentQuizData.length - 1) {
+    nextBtn.innerHTML = 'Finish <i class="fa-solid fa-check"></i>';
+    nextBtn.onclick = window.closeQuizModal;
+  } else {
+    nextBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+    nextBtn.onclick = window.nextQuizQuestion;
+  }
+};
+
+window.checkQuizAnswer = function(btnEl, selectedIdx) {
+  const qData = window.currentQuizData[window.currentQuizIndex];
+  const isCorrect = (selectedIdx === qData.answer);
+  
+  // Disable all buttons
+  const allBtns = document.getElementById('quiz-question-container').querySelectorAll('.quiz-option-btn');
+  allBtns.forEach(btn => {
+    btn.disabled = true;
+    btn.style.cursor = 'default';
+    if (parseInt(btn.dataset.idx) === qData.answer) {
+      btn.style.borderColor = '#22c55e';
+      btn.style.background = '#f0fdf4';
+      btn.style.color = '#15803d';
+      btn.innerHTML = '<i class="fa-solid fa-check-circle"></i> ' + btn.innerHTML;
+    }
+  });
+  
+  const feedbackEl = document.getElementById('quiz-feedback');
+  if (isCorrect) {
+    feedbackEl.innerHTML = '<span style="color: #22c55e;"><i class="fa-solid fa-star"></i> Correct!</span>';
+  } else {
+    btnEl.style.borderColor = '#ef4444';
+    btnEl.style.background = '#fef2f2';
+    btnEl.style.color = '#b91c1c';
+    btnEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + btnEl.innerHTML;
+    feedbackEl.innerHTML = '<span style="color: #ef4444;">Incorrect. Review the answer above.</span>';
+  }
+  
+  if (window.currentQuizIndex < window.currentQuizData.length - 1) {
+    document.getElementById('quiz-next-btn').innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+    document.getElementById('quiz-next-btn').style.display = 'block';
+    document.getElementById('quiz-next-btn').onclick = window.nextQuizQuestion;
+  } else {
+    document.getElementById('quiz-next-btn').innerHTML = 'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
+    document.getElementById('quiz-next-btn').style.display = 'block';
+    document.getElementById('quiz-next-btn').onclick = function() {
+       document.getElementById('quiz-question-container').innerHTML = '<h3 style="text-align:center; color: #15803d;"><i class="fa-solid fa-trophy"></i> Quiz Complete!</h3>';
+       document.getElementById('quiz-feedback').innerHTML = '';
+       document.getElementById('quiz-next-btn').style.display = 'none';
+    };
+  }
+};
+
+window.nextQuizQuestion = function() {
+  window.currentQuizIndex++;
+  window.renderQuizQuestion();
+};
+
+window.closeQuizModal = function() {
+  const modal = document.getElementById('quizModal');
+  if (modal) {
+    modal.style.opacity = '0';
+    modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  }
+};
+
+// --- Glossary Popover Logic ---
+let glossaryPopover = null;
+let activeVocabElement = null;
+
+function initGlossaryPopover() {
+  if (!document.getElementById('global-glossary-popover')) {
+    glossaryPopover = document.createElement('div');
+    glossaryPopover.id = 'global-glossary-popover';
+    document.body.appendChild(glossaryPopover);
+  } else {
+    glossaryPopover = document.getElementById('global-glossary-popover');
+  }
+
+  const showPopover = (e) => {
+    const target = e.target.closest('.vocab-word');
+    if (!target) return;
+    
+    const definition = target.getAttribute('data-definition');
+    if (!definition) return;
+
+    activeVocabElement = target;
+    target.classList.add('active');
+    glossaryPopover.innerHTML = `<strong style="color: #60a5fa; display: block; margin-bottom: 4px;">${target.textContent}</strong>${definition}`;
+    glossaryPopover.classList.add('visible');
+
+    // Calculate position
+    const rect = target.getBoundingClientRect();
+    const popoverRect = glossaryPopover.getBoundingClientRect();
+    
+    let top = rect.top - popoverRect.height - 10;
+    let left = rect.left + (rect.width / 2) - (popoverRect.width / 2);
+    
+    // Boundary detection
+    let arrowLeft = '50%';
+    glossaryPopover.classList.remove('arrow-top');
+
+    // Top boundary
+    if (top < 10) {
+      top = rect.bottom + 10;
+      glossaryPopover.classList.add('arrow-top');
+    }
+
+    // Left boundary
+    if (left < 10) {
+      const overflow = 10 - left;
+      left = 10;
+      arrowLeft = `calc(50% - ${overflow}px)`;
+    } 
+    // Right boundary
+    else if (left + popoverRect.width > window.innerWidth - 10) {
+      const overflow = (left + popoverRect.width) - (window.innerWidth - 10);
+      left = window.innerWidth - 10 - popoverRect.width;
+      arrowLeft = `calc(50% + ${overflow}px)`;
+    }
+
+    glossaryPopover.style.top = `${top}px`;
+    glossaryPopover.style.left = `${left}px`;
+    
+    let arrowStyle = document.getElementById('popover-arrow-style');
+    if (!arrowStyle) {
+      arrowStyle = document.createElement('style');
+      arrowStyle.id = 'popover-arrow-style';
+      document.head.appendChild(arrowStyle);
+    }
+    arrowStyle.innerHTML = `#global-glossary-popover::after { left: ${arrowLeft}; }`;
+  };
+
+  const hidePopover = (e) => {
+    if (glossaryPopover && glossaryPopover.classList.contains('visible')) {
+      glossaryPopover.classList.remove('visible');
+      if (activeVocabElement) {
+        activeVocabElement.classList.remove('active');
+        activeVocabElement = null;
+      }
+    }
+  };
+
+  document.body.addEventListener('mouseover', showPopover);
+  document.body.addEventListener('mouseout', (e) => {
+    if (e.target.closest('.vocab-word')) hidePopover(e);
+  });
+  
+  document.body.addEventListener('click', (e) => {
+    if (e.target.closest('.vocab-word')) {
+      if (activeVocabElement === e.target.closest('.vocab-word')) {
+        hidePopover(e);
+      } else {
+        hidePopover(e);
+        showPopover(e);
+      }
+    } else {
+      hidePopover(e);
+    }
+  });
+  
+  window.addEventListener('scroll', hidePopover, { passive: true });
+  window.addEventListener('resize', hidePopover, { passive: true });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initGlossaryPopover);
+} else {
+  initGlossaryPopover();
+}
+
+window.openModal = function(src) {
+      const modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100vw';
+      modal.style.height = '100vh';
+      modal.style.backgroundColor = 'rgba(0,0,0,0.85)';
+      modal.style.zIndex = '999999';
+      modal.style.display = 'flex';
+      modal.style.justifyContent = 'center';
+      modal.style.alignItems = 'center';
+      
+      const img = document.createElement('img');
+      img.src = src;
+      img.style.maxWidth = '90%';
+      img.style.maxHeight = '90%';
+      img.style.borderRadius = '8px';
+      img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+      img.style.transition = 'transform 0.1s ease';
+      img.style.cursor = 'zoom-in';
+
+      let scale = 1;
+      modal.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        scale += e.deltaY * -0.005;
+        scale = Math.min(Math.max(1, scale), 5); 
+        const rect = img.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        if (scale === 1) {
+            img.style.transformOrigin = 'center center';
+            img.style.cursor = 'zoom-in';
+        } else if (e.deltaY < 0) {
+            img.style.transformOrigin = `${x}% ${y}%`;
+            img.style.cursor = 'zoom-out';
+        }
+        img.style.transform = `scale(${scale})`;
+      });
+
+      modal.onclick = (e) => {
+          if (scale > 1) {
+              scale = 1;
+              img.style.transform = `scale(1)`;
+              img.style.cursor = 'zoom-in';
+          } else {
+              modal.remove();
+          }
+      };
+      
+      modal.appendChild(img);
+      document.body.appendChild(modal);
+    };
+
+window.openGallery = function(encodedData, startIndex) {
+    const images = JSON.parse(decodeURIComponent(encodedData));
+    let currentIndex = startIndex;
+
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+    modal.style.zIndex = '999999';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '20px';
+    closeBtn.style.right = '20px';
+    closeBtn.style.background = 'none';
+    closeBtn.style.border = 'none';
+    closeBtn.style.color = 'white';
+    closeBtn.style.fontSize = '2rem';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.onclick = () => modal.remove();
+    modal.appendChild(closeBtn);
+
+    const imgContainer = document.createElement('div');
+    imgContainer.style.position = 'relative';
+    imgContainer.style.width = '80%';
+    imgContainer.style.height = '80%';
+    imgContainer.style.display = 'flex';
+    imgContainer.style.flexDirection = 'column';
+    imgContainer.style.justifyContent = 'center';
+    imgContainer.style.alignItems = 'center';
+
+    const img = document.createElement('img');
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = '90%';
+    img.style.objectFit = 'contain';
+    img.style.borderRadius = '8px';
+    img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+    img.style.transition = 'transform 0.1s ease';
+    img.style.cursor = 'zoom-in';
+    imgContainer.appendChild(img);
+
+    const caption = document.createElement('div');
+    caption.style.color = 'white';
+    caption.style.marginTop = '15px';
+    caption.style.fontSize = '1.1rem';
+    caption.style.textAlign = 'center';
+    imgContainer.appendChild(caption);
+
+    modal.appendChild(imgContainer);
+
+    let scale = 1;
+    imgContainer.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      scale += e.deltaY * -0.005;
+      scale = Math.min(Math.max(1, scale), 5); 
+      const rect = img.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      if (scale === 1) {
+          img.style.transformOrigin = 'center center';
+          img.style.cursor = 'zoom-in';
+      } else if (e.deltaY < 0) {
+          img.style.transformOrigin = `${x}% ${y}%`;
+          img.style.cursor = 'zoom-out';
+      }
+      img.style.transform = `scale(${scale})`;
+    });
+
+    imgContainer.onclick = (e) => {
+        if (scale > 1) {
+            scale = 1;
+            img.style.transform = `scale(1)`;
+            img.style.cursor = 'zoom-in';
+        }
+    };
+
+    const prevBtn = document.createElement('button');
+    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+    prevBtn.style.position = 'absolute';
+    prevBtn.style.left = '5%';
+    prevBtn.style.top = '50%';
+    prevBtn.style.transform = 'translateY(-50%)';
+    prevBtn.style.background = 'rgba(255,255,255,0.2)';
+    prevBtn.style.border = 'none';
+    prevBtn.style.color = 'white';
+    prevBtn.style.fontSize = '2rem';
+    prevBtn.style.width = '60px';
+    prevBtn.style.height = '60px';
+    prevBtn.style.borderRadius = '50%';
+    prevBtn.style.cursor = 'pointer';
+    prevBtn.style.display = 'flex';
+    prevBtn.style.justifyContent = 'center';
+    prevBtn.style.alignItems = 'center';
+    prevBtn.onclick = (e) => { e.stopPropagation(); scale = 1; img.style.transform = 'scale(1)'; if (currentIndex > 0) { currentIndex--; updateImage(); } };
+    modal.appendChild(prevBtn);
+
+    const nextBtn = document.createElement('button');
+    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+    nextBtn.style.position = 'absolute';
+    nextBtn.style.right = '5%';
+    nextBtn.style.top = '50%';
+    nextBtn.style.transform = 'translateY(-50%)';
+    nextBtn.style.background = 'rgba(255,255,255,0.2)';
+    nextBtn.style.border = 'none';
+    nextBtn.style.color = 'white';
+    nextBtn.style.fontSize = '2rem';
+    nextBtn.style.width = '60px';
+    nextBtn.style.height = '60px';
+    nextBtn.style.borderRadius = '50%';
+    nextBtn.style.cursor = 'pointer';
+    nextBtn.style.display = 'flex';
+    nextBtn.style.justifyContent = 'center';
+    nextBtn.style.alignItems = 'center';
+    nextBtn.onclick = (e) => { e.stopPropagation(); scale = 1; img.style.transform = 'scale(1)'; if (currentIndex < images.length - 1) { currentIndex++; updateImage(); } };
+    modal.appendChild(nextBtn);
+
+    const updateImage = () => {
+      img.src = images[currentIndex].src;
+      caption.innerHTML = images[currentIndex].alt || '';
+      prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+      nextBtn.style.display = currentIndex < images.length - 1 ? 'flex' : 'none';
+    };
+
+    modal.onclick = (e) => {
+      if (e.target === modal || e.target === imgContainer) modal.remove();
+    };
+    
+    const keyHandler = (e) => {
+      if (!document.body.contains(modal)) {
+        document.removeEventListener('keydown', keyHandler);
+        return;
+      }
+      if (e.key === 'Escape') modal.remove();
+      if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; updateImage(); }
+      if (e.key === 'ArrowRight' && currentIndex < images.length - 1) { currentIndex++; updateImage(); }
+    };
+    document.addEventListener('keydown', keyHandler);
+
+    updateImage();
+    document.body.appendChild(modal);
+  };
+
+  window.startTPSTimer = function(btn, seconds) {
+    if (btn.timerInterval) return;
+    btn.originalHTML = btn.innerHTML;
+    let timeLeft = seconds;
+    btn.innerHTML = '<i class="fa-regular fa-clock"></i> ' + timeLeft + 's';
+    btn.style.background = '#ef4444';
+    
+    btn.timerInterval = setInterval(() => {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(btn.timerInterval);
+        btn.timerInterval = null;
+        btn.innerHTML = '<i class="fa-regular fa-bell"></i> Time!';
+        setTimeout(() => {
+          btn.innerHTML = btn.originalHTML;
+          btn.style.background = '#10b981';
+        }, 4000);
+      } else {
+        btn.innerHTML = '<i class="fa-regular fa-clock"></i> ' + timeLeft + 's';
+      }
+    }, 1000);
+  };
+
+  
+  window.openTeacherGuideModal = function() {
+    if (document.getElementById('teacherGuideModal')) return;
+    const html = `
+    <div id="teacherGuideModal" class="modal-overlay no-print" style="display: flex; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) this.remove()">
+      <div class="modal-content" style="background: white; border-radius: 12px; padding: 40px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; color: #1e293b; position: relative; font-family: 'Outfit', sans-serif;">
+        <button onclick="this.closest('.modal-overlay').remove()" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; color: #64748b; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+        
+        <h2 style="font-family: 'Playfair Display', serif; color: #4f46e5; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; font-size: 2rem;">
+          <i class="fa-solid fa-chalkboard-user"></i> Teacher & Tour Guide Instructions
+        </h2>
+        
+        <p style="font-size: 1.1rem; line-height: 1.6;">Welcome to the Meoncross Battlefield Tour App! This app is designed with a "Dual Interface" to keep pupils engaged while giving you, the teacher, all the information you need.</p>
+        
+        <h3 style="color: #334155; margin-top: 30px;"><i class="fa-solid fa-mobile-screen"></i> 1. The Pupil View vs. Teacher View</h3>
+        <p style="font-size: 1.05rem; line-height: 1.6;">By default, the app is in <strong>Pupil Mode</strong>. They will see the timeline, photos, and interactive maps. However, they do NOT see the historical script or the answers to questions.</p>
+        <p style="font-size: 1.05rem; line-height: 1.6;">As a teacher, you have access to the <strong>Tour Guide Script</strong>. On any day's page, click the blue button with the megaphone icon at the top. This opens your script, complete with timelines, key facts, and historical sources to read out loud to the pupils.</p>
+
+        <h3 style="color: #334155; margin-top: 30px;"><i class="fa-solid fa-location-dot"></i> 2. Geo-Fenced "Missions" (Padlocks)</h3>
+        <p style="font-size: 1.05rem; line-height: 1.6;">To prevent pupils from just scrolling through the entire trip while bored on the coach, many historical sites are <strong>Geo-Fenced</strong>. You will see a <i class="fa-solid fa-lock"></i> padlock icon next to these sites.</p>
+        <p style="font-size: 1.05rem; line-height: 1.6;"><strong>How it works:</strong> When the pupils physically step off the coach and enter the boundaries of the cemetery or memorial, the app uses their phone's GPS to automatically unlock the site. This reveals a specific interactive "Mission" they must complete there (e.g., finding a specific grave, using their compass to find the direction of a gas attack).</p>
+        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin-top: 10px; border-radius: 4px;">
+          <strong>Teacher's Fail-Safe:</strong> If a pupil's GPS is broken or offline, they can manually unlock their mission task. To do this, simply instruct the pupil to <strong>tap the padlock icon 4 times in quick succession</strong>. This will act as a secret override.
+        </div>
+
+        <h3 style="color: #334155; margin-top: 30px;"><i class="fa-solid fa-users"></i> 3. The Oral Storytelling Task (Tyne Cot & Langemarck)</h3>
+        <p style="font-size: 1.05rem; line-height: 1.6;">At massive cemeteries like Tyne Cot, pupils can easily be overwhelmed by the numbers. To build empathy, the app assigns each pupil one specific, well-documented soldier to find (e.g., a Victoria Cross winner or a local Stubbington hero).</p>
+        <p style="font-size: 1.05rem; line-height: 1.6;"><strong>Your Role:</strong> Let the pupils spread out to find their assigned graves and read the biography on their phones. At the end of the visit, gather them together and ask them to orally tell the rest of the group the story of "their" soldier.</p>
+        
+        <div style="margin-top: 40px; text-align: center;">
+          <button class="btn btn-primary" onclick="this.closest('.modal-overlay').remove()" style="background: #4f46e5; color: white; padding: 10px 30px; font-size: 1.1rem; border-radius: 8px; border: none; cursor: pointer;">Got it!</button>
+        </div>
+      </div>
+    </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', html);
+    const modal = document.getElementById('teacherGuideModal');
+    // Trigger reflow for animation
+    void modal.offsetWidth;
+    modal.style.opacity = '1';
+  };
+  window.unlockMission = function(btnElement, siteId) {
+    const container = btnElement.closest('.geo-fence-container');
+    let missionHTML = '';
+    
+    if (siteId === 'brooding_soldier') {
+      missionHTML = `
+        <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <h4 style="color: #059669; margin: 0 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: The Direction of the Gas</h4>
+          <p style="font-size: 1.05rem; color: #334155;"><strong>Task:</strong> Open your phone's compass app. Stand at the base of the Canadian memorial and turn until you are facing the exact direction the German gas attack came from (North-East).</p>
+          <div style="background: #ecfdf5; padding: 15px; border-left: 4px solid #10b981; margin: 15px 0; border-radius: 0 4px 4px 0;">
+            <em style="color: #065f46;">"Gas! GAS! Quick, boys!—An ecstasy of fumbling..."</em><br><small style="color: #047857;">- Wilfred Owen</small>
+          </div>
+          <p style="color: #b91c1c; font-weight: bold; margin-bottom: 5px;"><i class="fa-solid fa-brain"></i> Learn these 3 facts by heart before getting back on the coach:</p>
+          <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;">
+            <li>Chlorine gas severely damaged the respiratory system, causing victims to suffocate.</li>
+            <li>The earliest defense was holding cotton pads soaked in urine over the mouth (ammonia neutralized chlorine).</li>
+            <li>The memorial shows a soldier in a 'reverse arms' position, signifying mourning, not victory.</li>
+          </ul>
+        </div>
+      `;
+    } else if (siteId === 'tyne_cot') {
+       const db = window.currentUnitData?.missions_database?.tyne_cot_soldiers;
+       if (db && db.length > 0) {
+         const soldier = db[Math.floor(Math.random() * db.length)];
+         missionHTML = `
+           <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+             <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: Tell Their Story</h4>
+             <div style="background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;">
+               <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1.3rem;"></h3>
+               <p style="margin: 0 0 5px 0; color: #475569;"><strong>Regiment:</strong> </p>
+               <p style="margin: 0 0 15px 0; color: #ef4444; font-weight: bold; font-size: 1.1rem;"><i class="fa-solid fa-map-pin"></i> <strong>Location:</strong> </p>
+               <p style="margin: 0; font-size: 1rem; line-height: 1.6; color: #334155;"></p>
+             </div>
+             <div style="background: #fff1f2; padding: 15px; border-radius: 6px; border: 1px solid #fecdd3;">
+               <p style="margin: 0; color: #be123c; font-weight: bold; font-size: 1.05rem;"><i class="fa-solid fa-person-chalkboard"></i> Task: Find this exact grave or panel. At the end of the visit, you will be asked to orally tell the rest of your group about this soldier.</p>
+             </div>
+           </div>
+         `;
+       } else {
+         missionHTML = "<p>Error loading soldier database.</p>";
+       }
+    } else if (siteId === 'langemarck') {
+       const db = window.currentUnitData?.missions_database?.langemarck_soldiers;
+       if (db && db.length > 0) {
+         const soldier = db[Math.floor(Math.random() * db.length)];
+         missionHTML = `
+           <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+             <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: The Individuals</h4>
+             <div style="background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #1e293b;">
+               <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1.3rem;"></h3>
+               <p style="margin: 0 0 5px 0; color: #475569;"><strong>Regiment:</strong> </p>
+               <p style="margin: 0 0 15px 0; color: #ef4444; font-weight: bold; font-size: 1.1rem;"><i class="fa-solid fa-map-pin"></i> <strong>Location:</strong> </p>
+               <p style="margin: 0; font-size: 1rem; line-height: 1.6; color: #334155;"></p>
+             </div>
+             <div style="background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
+               <p style="margin: 0; color: #334155; font-weight: bold;"><i class="fa-solid fa-magnifying-glass"></i> Task: Look at the names on the bronze oak panels. Remember that every German soldier in the mass grave had a story and family similar to the one above.</p>
+             </div>
+           </div>
+         `;
+       } else {
+         missionHTML = "<p>Error loading soldier database.</p>";
+       }
+    } else if (siteId === 'menin_gate') {
+        missionHTML = `
+          <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: Local Hero & The Empire</h4>
+            
+            <div style="margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
+              <h4 style="margin: 0 0 10px 0; color: #1e293b;"><i class="fa-solid fa-magnifying-glass-location" style="color: #3b82f6;"></i> Task 1: Find the Local Hero</h4>
+              
+              <div style="background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;">
+                <h3 style="margin: 0 0 10px 0; color: #1e293b; font-size: 1.3rem;">Private T. J. Franklin</h3>
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                  <strong>Service Number:</strong> 8560<br>
+                  <strong>Regiment:</strong> 1st Battalion, The Hampshire Regiment<br>
+                  <strong>Born:</strong> Alverstoke, Hampshire, in about 1893.<br><br>
+                  <strong>Local Connection:</strong> He was the son of George Franklin (an Army Pensioner and farm labourer) and Mary Ann Jane Franklin. The family lived at Chark Cottage in Stubbington, and later moved to Meadow Cottage, Chark, Lee-on-the-Solent.<br><br>
+                  <strong>Military Service & Fate:</strong> Enlisted at Gosport. He was deployed to the Western Front in August 1914. He was killed in action on <strong>29th April 1915</strong> during the Second Battle of Ypres. His battalion was holding an exposed section of the line on the Frezenberg Ridge to cover an Allied withdrawal, enduring intense German shelling and the first ever military poison gas attacks.
+                </p>
+              </div>
+              <p style="margin: 0; color: #b91c1c; font-weight: bold;"><i class="fa-solid fa-person-chalkboard"></i> Action: The Menin Gate has 54,000 names. Locate the specific panel for Private T. J. Franklin.</p>
+            </div>
+            
+            <div>
+              <h4 style="margin: 0 0 5px 0; color: #1e293b;"><i class="fa-solid fa-monument" style="color: #f59e0b;"></i> Task 2: The Indian Forces Memorial</h4>
+              <p style="margin: 0; color: #475569;">Once you have found his name, walk out of the gate and up onto the grassy ramparts. Locate the <strong>Indian Forces Memorial</strong>. 130,000 troops from the Indian subcontinent served in Flanders. Take a moment to read the inscription before the Last Post begins at 8:00 PM.</p>
+            </div>
+          </div>
+        `;
+    }
+    
+    if (missionHTML) {
+      container.style.border = 'none';
+      container.style.background = 'transparent';
+      container.style.padding = '0';
+      container.style.boxShadow = 'none';
+      container.innerHTML = missionHTML;
+    }
+  };
+
+  window.handleSecretUnlock = function(element, siteId) {
+    const now = Date.now();
+    const lastClick = element.dataset.lastClick ? parseInt(element.dataset.lastClick) : 0;
+    let clicks = element.dataset.clicks ? parseInt(element.dataset.clicks) : 0;
+    
+    // If more than 1.5 seconds have passed since the last click, reset the counter
+    if (now - lastClick > 1500) {
+      clicks = 1;
+    } else {
+      clicks++;
+    }
+    
+    element.dataset.lastClick = now;
+    element.dataset.clicks = clicks;
+    
+    // 4 quick taps to unlock
+    if (clicks >= 4) {
+      window.unlockMission(element, siteId);
+    }
+  };
+
