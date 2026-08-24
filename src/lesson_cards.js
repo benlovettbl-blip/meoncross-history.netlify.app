@@ -48,11 +48,11 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     let periods = [];
     if (currentUnitId === 'edexcel_medicine') {
       periods = [
-        { id: 'medieval', title: 'Medieval (c1250-c1500)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'assets/banners/medieval_pano_1784551792993.png', enquiry: 'How much did medicine really change in Medieval England?' },
-        { id: 'renaissance', title: 'Renaissance (c1500-c1700)', prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #064e3b, #059669)', border: '#059669', image: 'assets/banners/renaissance_pano_1784551804068.png', enquiry: 'Why did the Medical Renaissance have so little impact on everyday treatments?' },
-        { id: '18th_19th', title: '18th & 19th C (c1700-c1900)', prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #475569, #d97706)', border: '#d97706', image: 'assets/banners/industrial_pano_1784551813599.png', enquiry: 'How did the Industrial Revolution transform the understanding and prevention of disease?' },
-        { id: 'modern', title: 'Modern (c1900-present)', prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #0c4a6e, #0284c7)', border: '#0284c7', image: 'assets/banners/modern_pano_1784551822373.png', enquiry: 'How did technology and government intervention revolutionize 20th-century medicine?' },
-        { id: 'western_front', title: 'Western Front', prefix: 'lesson_5_', gradient: 'linear-gradient(135deg, #422006, #65a30d)', border: '#65a30d', image: 'assets/banners/western_front_pano_1784551831887.png', enquiry: 'How did the horrific conditions of trench warfare drive rapid medical innovation?' }
+        { id: 'medieval', title: 'Medieval (c1250-c1500)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: '/images/banner_medicine_medieval.jpg', enquiry: 'How much did medicine really change in Medieval England?' },
+        { id: 'renaissance', title: 'Renaissance (c1500-c1700)', prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #064e3b, #059669)', border: '#059669', image: '/images/banner_medicine_renaissance.jpg', enquiry: 'Why did the Medical Renaissance have so little impact on everyday treatments?' },
+        { id: '18th_19th', title: '18th & 19th C (c1700-c1900)', prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #475569, #d97706)', border: '#d97706', image: '/images/banner_medicine_18th_19th.jpg', enquiry: 'How did the Industrial Revolution transform the understanding and prevention of disease?' },
+        { id: 'modern', title: 'Modern (c1900-present)', prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #0c4a6e, #0284c7)', border: '#0284c7', image: '/images/banner_medicine_modern.png', enquiry: 'How did technology and government intervention revolutionize 20th-century medicine?' },
+        { id: 'western_front', title: 'Western Front', prefix: 'lesson_5_', gradient: 'linear-gradient(135deg, #422006, #65a30d)', border: '#65a30d', image: '/images/banner_medicine_western_front.jpg', enquiry: 'How did the horrific conditions of trench warfare drive rapid medical innovation?' }
       ];
     } else if (currentUnitId === 'cme_new') {
       periods = [
@@ -155,10 +155,32 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
   } else {
     lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
     unitData.lessons.forEach((lesson, index) => {
+        let bgStyle = "background: white; border: 1px solid #e2e8f0;";
+        let titleColor = "#1a237e";
+        let textColor = "#475569";
+        
+        if (lesson.banner || lesson.cover_image) {
+            let imgUrl = typeof getAssetUrl === 'function' ? getAssetUrl(lesson.banner || lesson.cover_image) : (lesson.banner || lesson.cover_image);
+            bgStyle = `background: linear-gradient(to bottom, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.9) 100%), url('${imgUrl}') center/cover; border: none; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end;`;
+            titleColor = "#f8fafc";
+            textColor = "#e2e8f0";
+        }
+
+        let cardContent = `
+            <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
+            <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.95rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">${lesson.title}</p>
+        `;
+
+        if (lesson.enquiry) {
+            cardContent = `
+                <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}: ${lesson.title}</h3>
+                <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.9rem; font-style: italic; text-shadow: 0 1px 3px rgba(0,0,0,0.5); line-height: 1.3;">${lesson.enquiry}</p>
+            `;
+        }
+
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-index="${index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="window.renderLessonByIndex(${index})">
-            <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Lesson ${index + 1}</h3>
-            <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${lesson.title}</p>
+          <div class="homepage-lesson-card" data-index="${index}" style="${bgStyle} border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="window.renderLessonByIndex(${index})">
+            ${cardContent}
           </div>
         `;
     });

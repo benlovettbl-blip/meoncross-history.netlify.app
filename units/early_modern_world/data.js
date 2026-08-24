@@ -1,4 +1,4 @@
-export const unitData = {
+const early_modern_world = {
   "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
   "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
   "cover_image": "/images/east_offering.jpg",
@@ -210,6 +210,20 @@ export const unitData = {
       },
       "narrative_blocks": [
         {
+          "title": "Visual Analysis: The Silk Road (1375)",
+          "image": "/images/caravane_marco_polo.jpg",
+          "image_alt": "Detail from the Catalan Atlas (1375) showing Marco Polo's caravan on the Silk Road",
+          "source_letter": "A",
+          "image_caption": "A detail from the famous Catalan Atlas of 1375, depicting Marco Polo's caravan travelling along the Silk Road. For centuries, this massive network of overland trade routes was the artery of global wealth, connecting Europe to the riches of Asia.",
+          "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "Study Source A. What does this 1375 map detail suggest about how trade was conducted between Europe and Asia before the discovery of sea routes?",
+              "model_answer": "Source A shows merchants traveling in large caravans using camels and horses. This suggests that trade before 1450 relied on slow, grueling overland journeys across massive continents, requiring pack animals to transport luxury goods like silk and spices."
+            }
+          ]
+        },
+        {
           "title": "Micro-History: A Venetian Merchant’s Shock (May 1453)",
           "text": "In May 1453, a Venetian merchant named  stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old  of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
           "tasks": [
@@ -224,15 +238,6 @@ export const unitData = {
                     "It ended the Renaissance",
                     "It forced them to pay higher taxes to the Pope"
                   ]
-                },
-                {
-                  "q": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
-                  "options": [
-                    "Europeans were forced to stay in small, confined trading posts",
-                    "Europeans owned the entire city of Canton",
-                    "The Chinese refused to trade entirely",
-                    "Europeans had stronger armies than the Ming Emperor"
-                  ]
                 }
               ],
               "question": "Knowledge Check: Review the events of 1450."
@@ -241,8 +246,13 @@ export const unitData = {
         },
         {
           "title": "Analyzing the Evidence: The Fall of Constantinople",
-          "text": "<div class='scaffold-box'><strong>Source A: An Eyewitness Account of  entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong></strong>, a Greek scholar writing in 1454.</div><br><br><strong>A Contrast in Living (1450)</strong><br>In 1450, a typical European peasant lived in a tiny, one-room hut made of wattle and daub (woven sticks covered in mud) with a thatched straw roof, sharing the dirt floor with their livestock to stay warm. In contrast, the Oba (King) of Benin lived in a sprawling palace complex covering miles, featuring immense courtyards, wooden pillars coated in bronze, and roofs topped with cast-copper birds. Meanwhile, the Ming Emperor in China commanded the vast 'Forbidden City', a staggering complex of 980 buildings with sweeping golden-yellow glazed roof tiles and red pillars.<br><br>",
+          "text": "<div class='scaffold-box'><strong>Source B: An Eyewitness Account of Sultan Mehmed II entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>George Sphrantzes</strong>, a Greek scholar writing in 1454.</div><br><br><strong>A Contrast in Living (1450)</strong><br>In 1450, a typical European peasant lived in a tiny, one-room hut made of wattle and daub (woven sticks covered in mud) with a thatched straw roof, sharing the dirt floor with their livestock to stay warm. In contrast, the Oba (King) of Benin lived in a sprawling palace complex covering miles, featuring immense courtyards, wooden pillars coated in bronze, and roofs topped with cast-copper birds. Meanwhile, the Ming Emperor in China commanded the vast 'Forbidden City', a staggering complex of 980 buildings with sweeping golden-yellow glazed roof tiles and red pillars.<br><br>",
           "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "Study Source B. What does the eyewitness account suggest about the power of the Ottoman Empire compared to Christian Europe in 1453?",
+              "model_answer": "Source B suggests the Ottoman Empire was vastly more powerful, disciplined, and wealthy than Christian Europe. The mention of the Sultan's 'great pomp', 'absolute' power, and the fact that European rulers 'quaked with fear' highlights the severe power imbalance."
+            },
             {
               "type": "drawing",
               "lines": 10,
@@ -252,7 +262,24 @@ export const unitData = {
         },
         {
           "title": "Macro-History: The Wealth of the East",
-          "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities."
+          "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities.",
+          "tasks": [
+            {
+              "type": "multiple_choice",
+              "question": "Knowledge Check: Global Power in 1450",
+              "questions": [
+                {
+                  "q": "How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+                  "options": [
+                    "Europeans were forced to stay in small, confined trading posts",
+                    "Europeans owned the entire city of Canton",
+                    "The Chinese refused to trade entirely",
+                    "Europeans had stronger armies than the Ming Emperor"
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "title": "Macro-History: The Real Centers of Wealth in 1450",
@@ -262,15 +289,15 @@ export const unitData = {
           "title": "Analyzing Source C",
           "image": "/images/ottoman_1453.jpg",
           "image_alt": "Fresco of the Siege of Constantinople (1537)",
-          "source_letter": "C",
+          "source_letter": "D",
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Study Source C. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
+              "question": "Study Source D. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
               "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
             },
             {
-              "question": "Study Source C (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
+              "question": "Study Source D (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
               "model_answer": "This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period."
             }
           ],
@@ -284,11 +311,11 @@ export const unitData = {
           "title": "Analyzing Source D",
           "image": "/images/benin_bronze.jpg",
           "image_alt": "16th-Century Benin Bronze Plaque",
-          "source_letter": "D",
+          "source_letter": "E",
           "image_caption": "16th-Century Benin Bronze Plaque",
           "tasks": [
             {
-              "question": "Study Source D (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
+              "question": "Study Source E (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
               "model_answer": "The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African \"backwardness\"."
             }
           ]
@@ -301,12 +328,12 @@ export const unitData = {
           "title": "Analyzing Source E",
           "image": "/images/mansa_musa_catalan.jpg",
           "image_alt": "Catalan Atlas (1375) - Mansa Musa",
-          "source_letter": "E",
+          "source_letter": "F",
           "tasks": [
             {
               "type": "comprehension",
-              "question": "What impression do Sources D and E give about the balance of power between Europe and the rest of the world in the 15th century?",
-              "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source D (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source E highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
+              "question": "What impression do Sources E and F give about the balance of power between Europe and the rest of the world in the 15th century?",
+              "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source F (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source F highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
             }
           ],
           "image_caption": "Catalan Atlas (1375) - Mansa Musa"
@@ -314,12 +341,6 @@ export const unitData = {
         {
           "title": "The Silk Road & Ming China: The World's Industrial Engine",
           "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, Zheng He commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than ’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
-        },
-        {
-          "title": "Examining the Evidence",
-          "image": "/images/silk_road.jpg",
-          "image_alt": "Map of the Silk Road Trade Routes",
-          "image_caption": "Map of the Silk Road Trade Routes"
         },
         {
           "title": "Historical Interpretations: The Eurocentric Myth",
@@ -497,7 +518,7 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "Micro-History: San Juan de Ulúa (September 1568)",
-          "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, , had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against  of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
+          "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, John Hawkins, had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against King Philip II of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
           "tasks": [
             {
               "type": "comprehension",
@@ -537,7 +558,7 @@ export const unitData = {
               "question": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships."
             },
             {
-              "question": "Study Source C (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
+              "question": "Study Source A (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
               "model_answer": "Mercator's projection was revolutionary because it represented sailing courses of constant bearing as straight lines. This made oceanic navigation significantly easier and more accurate, directly enabling the global expansion of European empires."
             }
           ],
@@ -615,7 +636,7 @@ export const unitData = {
               "model_answer": "The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe)."
             },
             {
-              "question": "Study the Armada Portrait of Queen Elizabeth I. How does the artist use symbolism in this painting to project Elizabeth's power following the defeat of the Spanish Armada?",
+              "question": "Study Source F (The Armada Portrait of Queen Elizabeth I). How does the artist use symbolism in this painting to project Elizabeth's power following the defeat of the Spanish Armada?",
               "model_answer": "The portrait is filled with imperial symbolism. Elizabeth's hand rests on a globe, symbolizing England's growing global ambitions, while the background scenes explicitly contrast the destruction of the Spanish fleet with the calm strength of the English navy."
             }
           ],
@@ -962,7 +983,7 @@ export const unitData = {
               "question": "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses."
             },
             {
-              "question": "Study Source C (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?",
+              "question": "Study Source A (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?",
               "model_answer": "The image suggests that the Mughal Empire was vastly wealthier and more powerful than England at this time. Sir Thomas Roe is depicted as a minor supplicant seeking trading privileges from a dominant and magnificent imperial court."
             }
           ],
@@ -992,7 +1013,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "comprehension",
-              "question": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+              "question": "How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
               "model_answer": "It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade."
             }
           ],
@@ -1309,6 +1330,11 @@ export const unitData = {
               "type": "extended_writing",
               "question": "Essay Question (16 Marks)",
               "instructions": "\"The Gunpowder Plot was caused entirely by the harsh persecution and broken promises of King James I.\"\nHow far do you agree with this statement?\n\nIn your answer, ensure you:\n- Examine the impact of recusancy penalties and the banishment of Catholic priests.\n- Consider alternative perspectives, including religious extremism or political exploitation by Robert Cecil.\n- Conclude with a clear, balanced historical judgement supported by evidence."
+            },
+            {
+              "type": "source_analysis",
+              "question": "Study Source C. What does this execution scene suggest about how the government punished treason in the 17th century?",
+              "model_answer": "Source C depicts a brutal, public execution where conspirators are hanged, drawn, and quartered. This suggests that the government used extreme, theatrical violence to deter others and demonstrate the absolute power of the monarch."
             }
           ]
         }
@@ -1428,6 +1454,11 @@ export const unitData = {
           "text": "At 2:00 PM on Tuesday, 30 January 1649, a man in a black velvet coat stepped out of a window of the Banqueting House in Whitehall, London, onto a wooden scaffold draped in black cloth.<br><br>The man was <strong>King Charles I</strong>. Below him stood thousands of silent onlookers, surrounded by ranks of iron-armored cavalry. For seven years, England had been ripped apart by a bloody Civil War that cost the lives of nearly 200,000 people—a higher proportion of the population than died in the First World War.<br><br>Charles put his head on the wooden block. He stretched out his hands—the prearranged signal—and the masked executioner’s axe severed his head with a single blow. The executioner held the dripping head aloft and shouted: <em>\"Behold the head of a traitor!\"</em><br><br>A collective groan echoed through the crowd. Never before in European history had a monarch been put on trial, condemned, and executed by his own Parliament.<br><br><strong>But who was really pulling the strings?</strong> Was this victory brought about by high-minded Parliamentary ideals of liberty? Or was it secretly fueled by a new class of ultra-rich Atlantic merchants whose sugar and tobacco profits were reshaping the British state?",
           "tasks": [
             {
+              "type": "source_analysis",
+              "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
+              "model_answer": "The combined symbols represented the 1707 Act of Union, formally joining England and Scotland into a single, unified political entity: Great Britain."
+            },
+            {
               "type": "comprehension",
               "question": "Why was the execution of King Charles I such a shocking event in European history?",
               "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
@@ -1452,7 +1483,7 @@ export const unitData = {
         },
         {
           "title": "The Three-Way Tug-of-War for Power (1642–1660)",
-          "text": "To understand this chaotic era, we must investigate three competing forces battling for the soul—and wealth—of Britain.<br><br><div style=\"display: flex; flex-direction: column; align-items: center; gap: 20px; background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0;\">    <div style=\"background: #ef4444; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 60%; font-weight: bold;\">        THE CROWN (Charles I)<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Divine Right of Kings\"</span>    </div>    <div style=\"display: flex; width: 100%; justify-content: space-between; align-items: center;\">        <div style=\"background: #3b82f6; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            PARLIAMENT<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Godly Governance & Rights\"</span>        </div>        <div style=\"font-size: 1.5rem; font-weight: bold; color: #64748b;\">VS</div>        <div style=\"background: #10b981; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            ATLANTIC MERCHANTS<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Sugar, Tobacco & Empire\"</span>        </div>    </div></div><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 20px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"btn1\" onclick=\"document.getElementById('c1').style.display='block'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#fff'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem;\">1. The Crown</button>        <button id=\"btn2\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='block'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#fff'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem;\">2. Parliament</button>        <button id=\"btn3\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='block'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#fff';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; cursor: pointer; font-weight: bold; font-size: 1rem;\">3. Atlantic Merchants</button>    </div>    <div id=\"c1\" style=\"padding: 20px; display: block;\">        <h3 style=\"margin-top: 0;\">Contender 1: The King & \"Divine Right\" (Charles I)</h3>        <p>Charles I believed in the <strong>Divine Right of Kings</strong>—the conviction that God alone chose monarchs to rule, making royal authority absolute.</p>        <ul><li><strong>The Spark:</strong> Between 1629 and 1640, Charles ruled without calling Parliament at all (<strong>The Eleven Years' Tyranny</strong>). To raise money without Parliament's consent, he forced illegal taxes on the nation, such as <strong>Ship Money</strong>.</li><li><strong>The Explosion:</strong> When Charles marched into the House of Commons with 400 armed soldiers in 1642 to arrest five MP leaders, Parliament revolted. War broke out: <strong>Royalists (Cavaliers)</strong> supporting the King vs. <strong>Parliamentarians (Roundheads)</strong> fighting for parliamentary consent.</li></ul>    </div>    <div id=\"c2\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 2: Parliament & ’s New Model Army</h3>        <p>Parliament won the Civil War not because of noble speeches, but because of a revolutionary military machine: <strong>The New Model Army</strong>.</p>        <p>Led by a strict Puritan country gentleman named <strong></strong>, this army was built on merit rather than noble birth. Soldiers sang religious psalms as they charged into battle at Naseby (1645) and Preston (1648).</p>        <p>When Charles I was executed in 1649, monarchy was abolished. Britain was declared a republic: <strong>The Commonwealth of England</strong>. By 1653, Cromwell dismissed Parliament at swordpoint, taking total power as <strong>Lord Protector</strong>—a military dictator who banned Christmas, theater, and sports.</p>    </div>    <div id=\"c3\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 3: The Atlantic Merchant Elite</h3>        <p>While Royalists and Roundheads were hacking each other to pieces on English battlefields, a silent economic revolution was happening in the Caribbean and North America.</p>        <p>In the 1640s, English planters in <strong>Barbados</strong> transformed the island from tobacco farming to mass <strong>sugar plantation production</strong> powered by enslaved African labor. Sugar was nicknamed \"white gold.\"</p>        <ul><li>A single acre of Barbados sugar produced <strong>ten times more profit</strong> than an acre of English wheat.</li><li>By 1650, Barbados generated more export wealth than all the North American colonies combined.</li></ul>        <p><strong>The Hidden Link:</strong> The merchants who grew rich off Caribbean sugar and Virginian tobacco were almost all ardent supporters of Parliament. They hated Charles I because his royal monopolies interfered with their free trade. They poured millions into funding Cromwell’s New Model Army.</p>        <p>When Cromwell took power, he used their money to build the <strong>Commonwealth Navy</strong> and passed the <strong>Navigation Acts (1651)</strong>—laws stating that all colonial goods had to be carried on English ships, effectively seizing global trade from the Dutch!</p>    </div></div>",
+          "text": "To understand this chaotic era, we must investigate three competing forces battling for the soul—and wealth—of Britain.<br><br><div style=\"display: flex; flex-direction: column; align-items: center; gap: 20px; background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0;\">    <div style=\"background: #ef4444; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 60%; font-weight: bold;\">        THE CROWN (Charles I)<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Divine Right of Kings\"</span>    </div>    <div style=\"display: flex; width: 100%; justify-content: space-between; align-items: center;\">        <div style=\"background: #3b82f6; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            PARLIAMENT<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Godly Governance & Rights\"</span>        </div>        <div style=\"font-size: 1.5rem; font-weight: bold; color: #64748b;\">VS</div>        <div style=\"background: #10b981; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            ATLANTIC MERCHANTS<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Sugar, Tobacco & Empire\"</span>        </div>    </div></div><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 20px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"btn1\" onclick=\"document.getElementById('c1').style.display='block'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#fff'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem;\">1. The Crown</button>        <button id=\"btn2\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='block'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#fff'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem;\">2. Parliament</button>        <button id=\"btn3\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='block'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#fff';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; cursor: pointer; font-weight: bold; font-size: 1rem;\">3. Atlantic Merchants</button>    </div>    <div id=\"c1\" style=\"padding: 20px; display: block;\">        <h3 style=\"margin-top: 0;\">Contender 1: The King & \"Divine Right\" (Charles I)</h3>        <p>Charles I believed in the <strong>Divine Right of Kings</strong>—the conviction that God alone chose monarchs to rule, making royal authority absolute.</p>        <ul><li><strong>The Spark:</strong> Between 1629 and 1640, Charles ruled without calling Parliament at all (<strong>The Eleven Years' Tyranny</strong>). To raise money without Parliament's consent, he forced illegal taxes on the nation, such as <strong>Ship Money</strong>.</li><li><strong>The Explosion:</strong> When Charles marched into the House of Commons with 400 armed soldiers in 1642 to arrest five MP leaders, Parliament revolted. War broke out: <strong>Royalists (Cavaliers)</strong> supporting the King vs. <strong>Parliamentarians (Roundheads)</strong> fighting for parliamentary consent.</li></ul>    </div>    <div id=\"c2\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 2: Parliament & ’s New Model Army</h3>        <p>Parliament won the Civil War not because of noble speeches, but because of a revolutionary military machine: <strong>The New Model Army</strong>.</p>        <p>Led by a strict Puritan country gentleman named <strong>Oliver Cromwell</strong>, this army was built on merit rather than noble birth. Soldiers sang religious psalms as they charged into battle at Naseby (1645) and Preston (1648).</p>        <p>When Charles I was executed in 1649, monarchy was abolished. Britain was declared a republic: <strong>The Commonwealth of England</strong>. By 1653, Cromwell dismissed Parliament at swordpoint, taking total power as <strong>Lord Protector</strong>—a military dictator who banned Christmas, theater, and sports.</p>    </div>    <div id=\"c3\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 3: The Atlantic Merchant Elite</h3>        <p>While Royalists and Roundheads were hacking each other to pieces on English battlefields, a silent economic revolution was happening in the Caribbean and North America.</p>        <p>In the 1640s, English planters in <strong>Barbados</strong> transformed the island from tobacco farming to mass <strong>sugar plantation production</strong> powered by enslaved African labor. Sugar was nicknamed \"white gold.\"</p>        <ul><li>A single acre of Barbados sugar produced <strong>ten times more profit</strong> than an acre of English wheat.</li><li>By 1650, Barbados generated more export wealth than all the North American colonies combined.</li></ul>        <p><strong>The Hidden Link:</strong> The merchants who grew rich off Caribbean sugar and Virginian tobacco were almost all ardent supporters of Parliament. They hated Charles I because his royal monopolies interfered with their free trade. They poured millions into funding Cromwell’s New Model Army.</p>        <p>When Cromwell took power, he used their money to build the <strong>Commonwealth Navy</strong> and passed the <strong>Navigation Acts (1651)</strong>—laws stating that all colonial goods had to be carried on English ships, effectively seizing global trade from the Dutch!</p>    </div></div>",
           "tasks": [
             {
               "type": "analysis",
@@ -1463,7 +1494,7 @@ export const unitData = {
         },
         {
           "title": "Investigating Power: The King vs. The Merchants",
-          "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong></strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by </strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: ’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
+          "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong>John Bradshaw</strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by Maurice Thompson</strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: Oliver Cromwell’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
           "tasks": [
             {
               "type": "think_pair_share",
@@ -1491,7 +1522,7 @@ export const unitData = {
         },
         {
           "title": "Side Quest: The Diggers and the Dream of Equality",
-          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by .</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by  in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
+          "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by Gerrard Winstanley.</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by Gerrard Winstanley in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
           "tasks": [
             {
               "type": "comprehension",
@@ -1796,12 +1827,12 @@ export const unitData = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Look at the Great Seal. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
+              "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
               "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
-              "text": "Look at the Great Seal. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
+              "text": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
             },
             {
-              "question": "Study the Great Seal of the Commonwealth of England. How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
+              "question": "Study Source E (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
               "model_answer": "The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the \"Commonwealth\", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch."
             }
           ],
@@ -2035,7 +2066,7 @@ export const unitData = {
             },
             {
               "type": "comprehension",
-              "question": "Study Source C. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
+              "question": "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
               "model_answer": "The fortifications show that the trade was highly competitive and militarized, as the forts were built to defend the 'cargo' from rival European navies, not just to imprison people."
             },
             {
@@ -2366,6 +2397,11 @@ export const unitData = {
           "text": "High in the mist-shrouded Blue Mountains of eastern Jamaica, an English army patrol crept through the dense rainforest in 1734. Suddenly, the trees themselves seemed to come alive.<br><br>Men and women dressed in camouflage woven from forest foliage descended upon the soldiers. The English troops were routed without ever seeing the main body of their enemy. Leading this guerrilla force was a woman whom British colonial officials called a \"rebel witch,\" but whom her people knew as <strong>Queen </strong>.<br><br>Born in the Gold Coast (modern-day Ghana) around 1686, Nanny was kidnapped, enslaved, and brought to Jamaica. She escaped from a sugar plantation into the rugged interior, joining communities of formerly enslaved people known as <strong>Maroons</strong> (derived from the Spanish <em>cimarrón</em>, meaning \"wild\" or \"untamed\").<br><br>Nanny was an extraordinary military strategist. She established <strong>Nanny Town</strong>, a fortified, self-sufficient mountain sanctuary where freed Africans grew crops, maintained African cultural traditions, and launched lightning raids to free enslaved workers from nearby British sugar plantations.<br><br>For over a decade, British forces tried and failed to conquer Nanny Town. By 1739, the British Crown was forced to do something unthinkable: <strong>sign a peace treaty with former slaves</strong>, recognizing their freedom and granting them 1,500 acres of autonomous land in Jamaica.<br><br>Queen Nanny’s story shatters a persistent historical myth: that enslaved Africans were passive victims who waited silently for white European abolitionists to free them. From the decks of slave ships to the sugar fields of the Caribbean, African resistance was continuous, sophisticated, and relentless.",
           "tasks": [
             {
+              "type": "source_analysis",
+              "question": "Study Source B. How did the geography of Jamaica shown in the map help the Maroons wage a successful guerrilla war against the British?",
+              "model_answer": "The 1775 map shows Jamaica's rugged, mountainous interior (the Blue Mountains). This harsh, inaccessible terrain allowed the Maroons to build hidden strongholds like Nanny Town and use the dense rainforest camouflage to launch surprise attacks on the British."
+            },
+            {
               "type": "comprehension",
               "question": "How does the story of Queen Nanny challenge the traditional historical narrative about the abolition of slavery?",
               "model_answer": "Queen Nanny's successful armed rebellion challenges the myth that enslaved people were passive victims waiting for white European abolitionists to free them, proving instead that African resistance was active, organized, and capable of forcing imperial powers into treaties."
@@ -2439,7 +2475,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Based on the geography in Source B, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
+              "question": "Based on the geography in Source D, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
               "model_answer": "They headed South toward St. Augustine in Spanish Florida because the Spanish governor had promised freedom to any enslaved person who escaped from the British colonies. This reveals that enslaved Africans strategically understood and exploited the geopolitical rivalries between European empires to seek their freedom."
             },
             {
@@ -2475,7 +2511,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "think_pair_share",
-              "question": "Compare Source C with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source C when trying to understand how and why the slave trade was eventually abolished?",
+              "question": "Compare Source F with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source C when trying to understand how and why the slave trade was eventually abolished?",
               "model_answer": "Relying only on portraits of wealthy white men like Wilberforce ignores the active, dangerous, and crucial role that enslaved people played in their own liberation (like Queen Nanny's military resistance). It creates a false 'White Savior' narrative that erases Black agency from history."
             },
             {
@@ -2489,7 +2525,7 @@ export const unitData = {
               "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
             },
             {
-              "question": "Study Source C (Portrait of a British politician and abolitionist). Why were portraits like this important for the abolitionist movement in the late 18th century?",
+              "question": "Study Source F (Portrait of a British politician and abolitionist). Why were portraits like this important for the abolitionist movement in the late 18th century?",
               "model_answer": "Portraits and visual propaganda were crucial tools for abolitionists to humanize their cause, raise public awareness, and project an image of moral authority in their long political campaign to end the transatlantic slave trade."
             }
           ],
@@ -2516,7 +2552,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Study Source D. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
+              "question": "Study Source E. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
               "model_answer": "Armed rebellions could be seen and fought with military force. Botanical knowledge allowed enslaved people to silently and undetectably poison their enslavers through their daily food. This created constant, paranoid terror because the threat was invisible and came from within their own households."
             },
             {
@@ -2929,7 +2965,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "Study Source C. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
+              "question": "Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
               "model_answer": "The painting glorifies the empire by showing a majestic Britannia peacefully receiving riches from willing, kneeling figures representing Asia and Africa. It masks the brutal realities by completely ignoring the violence, exploitation, and slavery (like the Transatlantic slave trade) that actually generated this wealth."
             }
           ],
@@ -2994,7 +3030,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "How does the density and infrastructure of London shown in Source C (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
+              "question": "How does the density and infrastructure of London shown in Source E (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
               "model_answer": "The sprawling, densely packed streets and complex networks of roads show a massive shift away from rural farming and towards centralized, urban trade and industry. It physically demonstrates Britain's growing wealth, exploding population, and transition into an industrial powerhouse."
             }
           ],
@@ -3067,7 +3103,14 @@ export const unitData = {
         {
           "title": "Urban Poverty: The Mudlarks of London",
           "text": "<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_mudlark.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n</div>\n<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>",
-          "source_letter": "F"
+          "source_letter": "F",
+          "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "Study Source F. How does the existence of 'Mudlarks' challenge the idea that 1750 London was entirely prosperous and modern?",
+              "model_answer": "Source F shows desperate children scavenging in freezing, sewage-filled mud just to survive. This challenges the idea of a 'modern' London by highlighting the extreme, lethal poverty that existed right alongside the wealthy coffee houses."
+            }
+          ]
         }
       ],
       "learning_objectives": {
@@ -4109,3 +4152,5 @@ export const unitData = {
     }
   ]
 };
+
+export default early_modern_world;

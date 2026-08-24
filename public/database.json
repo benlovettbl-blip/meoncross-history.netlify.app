@@ -3,7 +3,7 @@
     "data": {
       "specification_file": "",
       "title": "KS3: History of Australia",
-      "homepage_background": "",
+      "homepage_background": "/images/sydney_cove_1792.jpg",
       "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",
       "cover_image": "/images/prison_hulks.jpg",
       "cover_caption": "An 18th-century sketch of Prison Hulks in Portsmouth Harbour by Louis Garneray.",
@@ -22,6 +22,7 @@
         {
           "id": "lesson_1",
           "title": "Claiming Australia",
+          "banner": "/images/gweagal_encounter.jpg",
           "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
           "teacher_notes": {
             "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
@@ -315,7 +316,6 @@
               "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
             }
           ],
-          "banner": "/images/gweagal_encounter.jpg",
           "pair_share": {
             "prompt": "Discuss with your partner: Why does the story of the Gweagal resistance at Botany Bay challenge the old, traditional idea that Australia was 'peacefully settled'?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -326,6 +326,7 @@
         {
           "id": "lesson_2",
           "title": "Creating a Convict Colony",
+          "banner": "/images/prison_hulks.jpg",
           "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
           "teacher_notes": {
             "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
@@ -647,7 +648,6 @@
               "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
             }
           ],
-          "banner": "/images/prison_hulks.jpg",
           "banner_position": "bottom center",
           "pair_share": {
             "prompt": "Discuss with your partner: If you were an officer in the First Fleet, why might you be angry that Governor Phillip gave you the exact same food ration as a convict?",
@@ -659,6 +659,7 @@
         {
           "id": "lesson_3",
           "title": "Encounters with the Indigenous Peoples",
+          "banner": "/images/sydney_cove_1792.jpg",
           "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
           "teacher_notes": {
             "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
@@ -830,7 +831,6 @@
             }
           ],
           "tasks": [],
-          "banner": "/images/sydney_cove_1792.jpg",
           "pair_share": {
             "prompt": "Discuss with your partner: Did the arrival of the First Fleet represent a 'settlement' or an 'invasion'?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -841,6 +841,7 @@
         {
           "id": "lesson_4",
           "title": "From Penal Colony to Settlement",
+          "banner": "/images/ballarat_gold.jpg",
           "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
           "teacher_notes": {
             "primer": "This lesson transitions the narrative from the early struggles of the convict colony to the explosive economic growth of the 1850s gold rushes. Students will explore how free settlers, the wool industry, and the arrival of global immigrants (especially Chinese miners) fundamentally changed the demographic and economic landscape of Australia.",
@@ -1026,7 +1027,6 @@
             }
           ],
           "tasks": [],
-          "banner": "/images/ballarat_gold.jpg",
           "pair_share": {
             "prompt": "Discuss with your partner: Once poor migrants realized they could make a fortune digging for gold in Australia, why was it impossible for the British government to continue using transportation as a terrifying punishment?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -1037,8 +1037,8 @@
         {
           "id": "lesson_5",
           "title": "End of Unit Assessment",
-          "banner": "/images/sydney_cove.jpg",
-          "banner_position": "center",
+          "banner": "/images/james_cook.jpg",
+          "homepage_background": "/images/assessment_bg.jpg",
           "enquiry": "How did New South Wales develop, and how should we assess its history?",
           "teacher_notes": {
             "primer": "This is the final assessment lesson for the Australia unit. It provides three differentiated choices for students to demonstrate their historical knowledge and skills.",
@@ -9953,6 +9953,20 @@
           },
           "narrative_blocks": [
             {
+              "title": "Visual Analysis: The Silk Road (1375)",
+              "image": "/images/caravane_marco_polo.jpg",
+              "image_alt": "Detail from the Catalan Atlas (1375) showing Marco Polo's caravan on the Silk Road",
+              "source_letter": "A",
+              "image_caption": "A detail from the famous Catalan Atlas of 1375, depicting Marco Polo's caravan travelling along the Silk Road. For centuries, this massive network of overland trade routes was the artery of global wealth, connecting Europe to the riches of Asia.",
+              "tasks": [
+                {
+                  "type": "source_analysis",
+                  "question": "Study Source A. What does this 1375 map detail suggest about how trade was conducted between Europe and Asia before the discovery of sea routes?",
+                  "model_answer": "Source A shows merchants traveling in large caravans using camels and horses. This suggests that trade before 1450 relied on slow, grueling overland journeys across massive continents, requiring pack animals to transport luxury goods like silk and spices."
+                }
+              ]
+            },
+            {
               "title": "Micro-History: A Venetian Merchant’s Shock (May 1453)",
               "text": "In May 1453, a Venetian merchant named  stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old  of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
               "tasks": [
@@ -9967,15 +9981,6 @@
                         "It ended the Renaissance",
                         "It forced them to pay higher taxes to the Pope"
                       ]
-                    },
-                    {
-                      "q": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
-                      "options": [
-                        "Europeans were forced to stay in small, confined trading posts",
-                        "Europeans owned the entire city of Canton",
-                        "The Chinese refused to trade entirely",
-                        "Europeans had stronger armies than the Ming Emperor"
-                      ]
                     }
                   ],
                   "question": "Knowledge Check: Review the events of 1450."
@@ -9984,8 +9989,13 @@
             },
             {
               "title": "Analyzing the Evidence: The Fall of Constantinople",
-              "text": "<div class='scaffold-box'><strong>Source A: An Eyewitness Account of  entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong></strong>, a Greek scholar writing in 1454.</div><br><br><strong>A Contrast in Living (1450)</strong><br>In 1450, a typical European peasant lived in a tiny, one-room hut made of wattle and daub (woven sticks covered in mud) with a thatched straw roof, sharing the dirt floor with their livestock to stay warm. In contrast, the Oba (King) of Benin lived in a sprawling palace complex covering miles, featuring immense courtyards, wooden pillars coated in bronze, and roofs topped with cast-copper birds. Meanwhile, the Ming Emperor in China commanded the vast 'Forbidden City', a staggering complex of 980 buildings with sweeping golden-yellow glazed roof tiles and red pillars.<br><br>",
+              "text": "<div class='scaffold-box'><strong>Source B: An Eyewitness Account of Sultan Mehmed II entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>George Sphrantzes</strong>, a Greek scholar writing in 1454.</div><br><br><strong>A Contrast in Living (1450)</strong><br>In 1450, a typical European peasant lived in a tiny, one-room hut made of wattle and daub (woven sticks covered in mud) with a thatched straw roof, sharing the dirt floor with their livestock to stay warm. In contrast, the Oba (King) of Benin lived in a sprawling palace complex covering miles, featuring immense courtyards, wooden pillars coated in bronze, and roofs topped with cast-copper birds. Meanwhile, the Ming Emperor in China commanded the vast 'Forbidden City', a staggering complex of 980 buildings with sweeping golden-yellow glazed roof tiles and red pillars.<br><br>",
               "tasks": [
+                {
+                  "type": "source_analysis",
+                  "question": "Study Source B. What does the eyewitness account suggest about the power of the Ottoman Empire compared to Christian Europe in 1453?",
+                  "model_answer": "Source B suggests the Ottoman Empire was vastly more powerful, disciplined, and wealthy than Christian Europe. The mention of the Sultan's 'great pomp', 'absolute' power, and the fact that European rulers 'quaked with fear' highlights the severe power imbalance."
+                },
                 {
                   "type": "drawing",
                   "lines": 10,
@@ -9995,7 +10005,24 @@
             },
             {
               "title": "Macro-History: The Wealth of the East",
-              "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities."
+              "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities.",
+              "tasks": [
+                {
+                  "type": "multiple_choice",
+                  "question": "Knowledge Check: Global Power in 1450",
+                  "questions": [
+                    {
+                      "q": "How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+                      "options": [
+                        "Europeans were forced to stay in small, confined trading posts",
+                        "Europeans owned the entire city of Canton",
+                        "The Chinese refused to trade entirely",
+                        "Europeans had stronger armies than the Ming Emperor"
+                      ]
+                    }
+                  ]
+                }
+              ]
             },
             {
               "title": "Macro-History: The Real Centers of Wealth in 1450",
@@ -10005,15 +10032,15 @@
               "title": "Analyzing Source C",
               "image": "/images/ottoman_1453.jpg",
               "image_alt": "Fresco of the Siege of Constantinople (1537)",
-              "source_letter": "C",
+              "source_letter": "D",
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "question": "Study Source C. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
+                  "question": "Study Source D. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
                   "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
                 },
                 {
-                  "question": "Study Source C (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
+                  "question": "Study Source D (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
                   "model_answer": "This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period."
                 }
               ],
@@ -10027,11 +10054,11 @@
               "title": "Analyzing Source D",
               "image": "/images/benin_bronze.jpg",
               "image_alt": "16th-Century Benin Bronze Plaque",
-              "source_letter": "D",
+              "source_letter": "E",
               "image_caption": "16th-Century Benin Bronze Plaque",
               "tasks": [
                 {
-                  "question": "Study Source D (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
+                  "question": "Study Source E (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
                   "model_answer": "The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African \"backwardness\"."
                 }
               ]
@@ -10044,12 +10071,12 @@
               "title": "Analyzing Source E",
               "image": "/images/mansa_musa_catalan.jpg",
               "image_alt": "Catalan Atlas (1375) - Mansa Musa",
-              "source_letter": "E",
+              "source_letter": "F",
               "tasks": [
                 {
                   "type": "comprehension",
-                  "question": "What impression do Sources D and E give about the balance of power between Europe and the rest of the world in the 15th century?",
-                  "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source D (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source E highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
+                  "question": "What impression do Sources E and F give about the balance of power between Europe and the rest of the world in the 15th century?",
+                  "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source F (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source F highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
                 }
               ],
               "image_caption": "Catalan Atlas (1375) - Mansa Musa"
@@ -10057,12 +10084,6 @@
             {
               "title": "The Silk Road & Ming China: The World's Industrial Engine",
               "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, Zheng He commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than ’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
-            },
-            {
-              "title": "Examining the Evidence",
-              "image": "/images/silk_road.jpg",
-              "image_alt": "Map of the Silk Road Trade Routes",
-              "image_caption": "Map of the Silk Road Trade Routes"
             },
             {
               "title": "Historical Interpretations: The Eurocentric Myth",
@@ -10240,7 +10261,7 @@
           "narrative_blocks": [
             {
               "title": "Micro-History: San Juan de Ulúa (September 1568)",
-              "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, , had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against  of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
+              "text": "On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, John Hawkins, had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against King Philip II of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.",
               "tasks": [
                 {
                   "type": "comprehension",
@@ -10280,7 +10301,7 @@
                   "question": "Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships."
                 },
                 {
-                  "question": "Study Source C (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
+                  "question": "Study Source A (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
                   "model_answer": "Mercator's projection was revolutionary because it represented sailing courses of constant bearing as straight lines. This made oceanic navigation significantly easier and more accurate, directly enabling the global expansion of European empires."
                 }
               ],
@@ -10358,7 +10379,7 @@
                   "model_answer": "The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe)."
                 },
                 {
-                  "question": "Study Source D (The Armada Portrait of Queen Elizabeth I). How does the artist use symbolism in this painting to project Elizabeth's power following the defeat of the Spanish Armada?",
+                  "question": "Study Source F (The Armada Portrait of Queen Elizabeth I). How does the artist use symbolism in this painting to project Elizabeth's power following the defeat of the Spanish Armada?",
                   "model_answer": "The portrait is filled with imperial symbolism. Elizabeth's hand rests on a globe, symbolizing England's growing global ambitions, while the background scenes explicitly contrast the destruction of the Spanish fleet with the calm strength of the English navy."
                 }
               ],
@@ -10705,7 +10726,7 @@
                   "question": "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses."
                 },
                 {
-                  "question": "Study Source C (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?",
+                  "question": "Study Source A (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?",
                   "model_answer": "The image suggests that the Mughal Empire was vastly wealthier and more powerful than England at this time. Sir Thomas Roe is depicted as a minor supplicant seeking trading privileges from a dominant and magnificent imperial court."
                 }
               ],
@@ -10735,7 +10756,7 @@
               "tasks": [
                 {
                   "type": "comprehension",
-                  "question": "Based on Source B, how does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
+                  "question": "How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
                   "model_answer": "It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade."
                 }
               ],
@@ -11052,6 +11073,11 @@
                   "type": "extended_writing",
                   "question": "Essay Question (16 Marks)",
                   "instructions": "\"The Gunpowder Plot was caused entirely by the harsh persecution and broken promises of King James I.\"\nHow far do you agree with this statement?\n\nIn your answer, ensure you:\n- Examine the impact of recusancy penalties and the banishment of Catholic priests.\n- Consider alternative perspectives, including religious extremism or political exploitation by Robert Cecil.\n- Conclude with a clear, balanced historical judgement supported by evidence."
+                },
+                {
+                  "type": "source_analysis",
+                  "question": "Study Source C. What does this execution scene suggest about how the government punished treason in the 17th century?",
+                  "model_answer": "Source C depicts a brutal, public execution where conspirators are hanged, drawn, and quartered. This suggests that the government used extreme, theatrical violence to deter others and demonstrate the absolute power of the monarch."
                 }
               ]
             }
@@ -11171,6 +11197,11 @@
               "text": "At 2:00 PM on Tuesday, 30 January 1649, a man in a black velvet coat stepped out of a window of the Banqueting House in Whitehall, London, onto a wooden scaffold draped in black cloth.<br><br>The man was <strong>King Charles I</strong>. Below him stood thousands of silent onlookers, surrounded by ranks of iron-armored cavalry. For seven years, England had been ripped apart by a bloody Civil War that cost the lives of nearly 200,000 people—a higher proportion of the population than died in the First World War.<br><br>Charles put his head on the wooden block. He stretched out his hands—the prearranged signal—and the masked executioner’s axe severed his head with a single blow. The executioner held the dripping head aloft and shouted: <em>\"Behold the head of a traitor!\"</em><br><br>A collective groan echoed through the crowd. Never before in European history had a monarch been put on trial, condemned, and executed by his own Parliament.<br><br><strong>But who was really pulling the strings?</strong> Was this victory brought about by high-minded Parliamentary ideals of liberty? Or was it secretly fueled by a new class of ultra-rich Atlantic merchants whose sugar and tobacco profits were reshaping the British state?",
               "tasks": [
                 {
+                  "type": "source_analysis",
+                  "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
+                  "model_answer": "The combined symbols represented the 1707 Act of Union, formally joining England and Scotland into a single, unified political entity: Great Britain."
+                },
+                {
                   "type": "comprehension",
                   "question": "Why was the execution of King Charles I such a shocking event in European history?",
                   "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
@@ -11195,7 +11226,7 @@
             },
             {
               "title": "The Three-Way Tug-of-War for Power (1642–1660)",
-              "text": "To understand this chaotic era, we must investigate three competing forces battling for the soul—and wealth—of Britain.<br><br><div style=\"display: flex; flex-direction: column; align-items: center; gap: 20px; background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0;\">    <div style=\"background: #ef4444; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 60%; font-weight: bold;\">        THE CROWN (Charles I)<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Divine Right of Kings\"</span>    </div>    <div style=\"display: flex; width: 100%; justify-content: space-between; align-items: center;\">        <div style=\"background: #3b82f6; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            PARLIAMENT<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Godly Governance & Rights\"</span>        </div>        <div style=\"font-size: 1.5rem; font-weight: bold; color: #64748b;\">VS</div>        <div style=\"background: #10b981; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            ATLANTIC MERCHANTS<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Sugar, Tobacco & Empire\"</span>        </div>    </div></div><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 20px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"btn1\" onclick=\"document.getElementById('c1').style.display='block'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#fff'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem;\">1. The Crown</button>        <button id=\"btn2\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='block'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#fff'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem;\">2. Parliament</button>        <button id=\"btn3\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='block'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#fff';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; cursor: pointer; font-weight: bold; font-size: 1rem;\">3. Atlantic Merchants</button>    </div>    <div id=\"c1\" style=\"padding: 20px; display: block;\">        <h3 style=\"margin-top: 0;\">Contender 1: The King & \"Divine Right\" (Charles I)</h3>        <p>Charles I believed in the <strong>Divine Right of Kings</strong>—the conviction that God alone chose monarchs to rule, making royal authority absolute.</p>        <ul><li><strong>The Spark:</strong> Between 1629 and 1640, Charles ruled without calling Parliament at all (<strong>The Eleven Years' Tyranny</strong>). To raise money without Parliament's consent, he forced illegal taxes on the nation, such as <strong>Ship Money</strong>.</li><li><strong>The Explosion:</strong> When Charles marched into the House of Commons with 400 armed soldiers in 1642 to arrest five MP leaders, Parliament revolted. War broke out: <strong>Royalists (Cavaliers)</strong> supporting the King vs. <strong>Parliamentarians (Roundheads)</strong> fighting for parliamentary consent.</li></ul>    </div>    <div id=\"c2\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 2: Parliament & ’s New Model Army</h3>        <p>Parliament won the Civil War not because of noble speeches, but because of a revolutionary military machine: <strong>The New Model Army</strong>.</p>        <p>Led by a strict Puritan country gentleman named <strong></strong>, this army was built on merit rather than noble birth. Soldiers sang religious psalms as they charged into battle at Naseby (1645) and Preston (1648).</p>        <p>When Charles I was executed in 1649, monarchy was abolished. Britain was declared a republic: <strong>The Commonwealth of England</strong>. By 1653, Cromwell dismissed Parliament at swordpoint, taking total power as <strong>Lord Protector</strong>—a military dictator who banned Christmas, theater, and sports.</p>    </div>    <div id=\"c3\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 3: The Atlantic Merchant Elite</h3>        <p>While Royalists and Roundheads were hacking each other to pieces on English battlefields, a silent economic revolution was happening in the Caribbean and North America.</p>        <p>In the 1640s, English planters in <strong>Barbados</strong> transformed the island from tobacco farming to mass <strong>sugar plantation production</strong> powered by enslaved African labor. Sugar was nicknamed \"white gold.\"</p>        <ul><li>A single acre of Barbados sugar produced <strong>ten times more profit</strong> than an acre of English wheat.</li><li>By 1650, Barbados generated more export wealth than all the North American colonies combined.</li></ul>        <p><strong>The Hidden Link:</strong> The merchants who grew rich off Caribbean sugar and Virginian tobacco were almost all ardent supporters of Parliament. They hated Charles I because his royal monopolies interfered with their free trade. They poured millions into funding Cromwell’s New Model Army.</p>        <p>When Cromwell took power, he used their money to build the <strong>Commonwealth Navy</strong> and passed the <strong>Navigation Acts (1651)</strong>—laws stating that all colonial goods had to be carried on English ships, effectively seizing global trade from the Dutch!</p>    </div></div>",
+              "text": "To understand this chaotic era, we must investigate three competing forces battling for the soul—and wealth—of Britain.<br><br><div style=\"display: flex; flex-direction: column; align-items: center; gap: 20px; background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0;\">    <div style=\"background: #ef4444; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 60%; font-weight: bold;\">        THE CROWN (Charles I)<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Divine Right of Kings\"</span>    </div>    <div style=\"display: flex; width: 100%; justify-content: space-between; align-items: center;\">        <div style=\"background: #3b82f6; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            PARLIAMENT<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Godly Governance & Rights\"</span>        </div>        <div style=\"font-size: 1.5rem; font-weight: bold; color: #64748b;\">VS</div>        <div style=\"background: #10b981; color: white; padding: 15px; border-radius: 8px; text-align: center; width: 42%; font-weight: bold;\">            ATLANTIC MERCHANTS<br><span style=\"font-size: 0.9em; font-weight: normal;\">\"Sugar, Tobacco & Empire\"</span>        </div>    </div></div><br><div style=\"border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 20px;\">    <div style=\"display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;\">        <button id=\"btn1\" onclick=\"document.getElementById('c1').style.display='block'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#fff'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem;\">1. The Crown</button>        <button id=\"btn2\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='block'; document.getElementById('c3').style.display='none'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#fff'; document.getElementById('btn3').style.background='#f1f5f9';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem;\">2. Parliament</button>        <button id=\"btn3\" onclick=\"document.getElementById('c1').style.display='none'; document.getElementById('c2').style.display='none'; document.getElementById('c3').style.display='block'; document.getElementById('btn1').style.background='#f1f5f9'; document.getElementById('btn2').style.background='#f1f5f9'; document.getElementById('btn3').style.background='#fff';\" style=\"flex: 1; padding: 10px; border: none; background: #f1f5f9; cursor: pointer; font-weight: bold; font-size: 1rem;\">3. Atlantic Merchants</button>    </div>    <div id=\"c1\" style=\"padding: 20px; display: block;\">        <h3 style=\"margin-top: 0;\">Contender 1: The King & \"Divine Right\" (Charles I)</h3>        <p>Charles I believed in the <strong>Divine Right of Kings</strong>—the conviction that God alone chose monarchs to rule, making royal authority absolute.</p>        <ul><li><strong>The Spark:</strong> Between 1629 and 1640, Charles ruled without calling Parliament at all (<strong>The Eleven Years' Tyranny</strong>). To raise money without Parliament's consent, he forced illegal taxes on the nation, such as <strong>Ship Money</strong>.</li><li><strong>The Explosion:</strong> When Charles marched into the House of Commons with 400 armed soldiers in 1642 to arrest five MP leaders, Parliament revolted. War broke out: <strong>Royalists (Cavaliers)</strong> supporting the King vs. <strong>Parliamentarians (Roundheads)</strong> fighting for parliamentary consent.</li></ul>    </div>    <div id=\"c2\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 2: Parliament & ’s New Model Army</h3>        <p>Parliament won the Civil War not because of noble speeches, but because of a revolutionary military machine: <strong>The New Model Army</strong>.</p>        <p>Led by a strict Puritan country gentleman named <strong>Oliver Cromwell</strong>, this army was built on merit rather than noble birth. Soldiers sang religious psalms as they charged into battle at Naseby (1645) and Preston (1648).</p>        <p>When Charles I was executed in 1649, monarchy was abolished. Britain was declared a republic: <strong>The Commonwealth of England</strong>. By 1653, Cromwell dismissed Parliament at swordpoint, taking total power as <strong>Lord Protector</strong>—a military dictator who banned Christmas, theater, and sports.</p>    </div>    <div id=\"c3\" style=\"padding: 20px; display: none;\">        <h3 style=\"margin-top: 0;\">Contender 3: The Atlantic Merchant Elite</h3>        <p>While Royalists and Roundheads were hacking each other to pieces on English battlefields, a silent economic revolution was happening in the Caribbean and North America.</p>        <p>In the 1640s, English planters in <strong>Barbados</strong> transformed the island from tobacco farming to mass <strong>sugar plantation production</strong> powered by enslaved African labor. Sugar was nicknamed \"white gold.\"</p>        <ul><li>A single acre of Barbados sugar produced <strong>ten times more profit</strong> than an acre of English wheat.</li><li>By 1650, Barbados generated more export wealth than all the North American colonies combined.</li></ul>        <p><strong>The Hidden Link:</strong> The merchants who grew rich off Caribbean sugar and Virginian tobacco were almost all ardent supporters of Parliament. They hated Charles I because his royal monopolies interfered with their free trade. They poured millions into funding Cromwell’s New Model Army.</p>        <p>When Cromwell took power, he used their money to build the <strong>Commonwealth Navy</strong> and passed the <strong>Navigation Acts (1651)</strong>—laws stating that all colonial goods had to be carried on English ships, effectively seizing global trade from the Dutch!</p>    </div></div>",
               "tasks": [
                 {
                   "type": "analysis",
@@ -11206,7 +11237,7 @@
             },
             {
               "title": "Investigating Power: The King vs. The Merchants",
-              "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong></strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by </strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: ’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
+              "text": "Work like a professional historian. Examine these three rare primary sources from the 1640s and 1650s to identify where the true power lay.<br><br><blockquote><strong>Source B: The Charge Against King Charles I (Read at his Trial, January 1649)</strong><br><em>\"That the said Charles Stuart, being admitted King of England, and therein trusted with a limited power to govern by and according to the laws of the land... hath traitorously and maliciously levied war against the present Parliament and the people therein represented... for the erecting and upholding to himself of an unlimited and tyrannical power.\"</em><br>— <strong>John Bradshaw</strong>, President of the High Court of Justice.</blockquote><br><br><blockquote><strong>Source C: A London Merchant’s Pamphlet on Sugar Profits (1654)</strong><br><em>\"This small island of Barbados doth yield more wealth to the Commonwealth than any kingdom in Europe... Our ships return laden with sweetness, paying thousands in customs to the state, and maintaining hundreds of brave sailors. Without the trade of the West Indies, the New Model Army would starve for want of pay.\"</em><br>— <strong>Adapted from a pamphlet by Maurice Thompson</strong>, London merchant and slave trader.</blockquote><br><br><blockquote><strong>Source D: Oliver Cromwell’s Speech Dismissing the Rump Parliament (1653)</strong><br><em>\"It is high time for me to put an end to your sitting in this place, which you have dishonoured by your contempt of all virtue... You are an factious crew! Ye are noblemen for gold; ye are lovers of money, not justice! In the name of God, go!\"</em><br>— <strong>Oliver Cromwell</strong>, speaking to MPs on 20 April 1653 before locking the doors of Parliament.</blockquote>",
               "tasks": [
                 {
                   "type": "think_pair_share",
@@ -11234,7 +11265,7 @@
             },
             {
               "title": "Side Quest: The Diggers and the Dream of Equality",
-              "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by .</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by  in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
+              "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The Diggers and the Dream of Equality</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_diggers.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source G:</strong> The authentic title page of the radical 1649 pamphlet 'The True Levellers Standard Advanced' by Gerrard Winstanley.</i>\n</div>\n<p>History usually remembers the English Civil War as a battle between King Charles I and Oliver Cromwell. But among the ordinary foot soldiers of the New Model Army and the desperate, starving peasants, radical new ideas were brewing. A group known as the Diggers (or True Levellers) believed that the war shouldn't just replace a King with a Parliament; it should wipe out poverty entirely. Led by Gerrard Winstanley in 1649, the Diggers marched onto privately owned land at St George's Hill in Surrey and simply started planting vegetables, declaring that the earth was a 'common treasury for all' and that private property should be abolished. They envisioned a radically modern, equal, bottom-up democracy. Tragically, this was too extreme for Cromwell and the wealthy landowners, who quickly used the army to violently crush the Diggers' camps.</p>\n</details>",
               "tasks": [
                 {
                   "type": "comprehension",
@@ -11539,12 +11570,12 @@
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "question": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
+                  "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
                   "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
                   "text": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
                 },
                 {
-                  "question": "Study Source D (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
+                  "question": "Study Source E (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
                   "model_answer": "The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the \"Commonwealth\", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch."
                 }
               ],
@@ -11778,7 +11809,7 @@
                 },
                 {
                   "type": "comprehension",
-                  "question": "Study Source C. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
+                  "question": "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
                   "model_answer": "The fortifications show that the trade was highly competitive and militarized, as the forts were built to defend the 'cargo' from rival European navies, not just to imprison people."
                 },
                 {
@@ -12109,6 +12140,11 @@
               "text": "High in the mist-shrouded Blue Mountains of eastern Jamaica, an English army patrol crept through the dense rainforest in 1734. Suddenly, the trees themselves seemed to come alive.<br><br>Men and women dressed in camouflage woven from forest foliage descended upon the soldiers. The English troops were routed without ever seeing the main body of their enemy. Leading this guerrilla force was a woman whom British colonial officials called a \"rebel witch,\" but whom her people knew as <strong>Queen </strong>.<br><br>Born in the Gold Coast (modern-day Ghana) around 1686, Nanny was kidnapped, enslaved, and brought to Jamaica. She escaped from a sugar plantation into the rugged interior, joining communities of formerly enslaved people known as <strong>Maroons</strong> (derived from the Spanish <em>cimarrón</em>, meaning \"wild\" or \"untamed\").<br><br>Nanny was an extraordinary military strategist. She established <strong>Nanny Town</strong>, a fortified, self-sufficient mountain sanctuary where freed Africans grew crops, maintained African cultural traditions, and launched lightning raids to free enslaved workers from nearby British sugar plantations.<br><br>For over a decade, British forces tried and failed to conquer Nanny Town. By 1739, the British Crown was forced to do something unthinkable: <strong>sign a peace treaty with former slaves</strong>, recognizing their freedom and granting them 1,500 acres of autonomous land in Jamaica.<br><br>Queen Nanny’s story shatters a persistent historical myth: that enslaved Africans were passive victims who waited silently for white European abolitionists to free them. From the decks of slave ships to the sugar fields of the Caribbean, African resistance was continuous, sophisticated, and relentless.",
               "tasks": [
                 {
+                  "type": "source_analysis",
+                  "question": "Study Source B. How did the geography of Jamaica shown in the map help the Maroons wage a successful guerrilla war against the British?",
+                  "model_answer": "The 1775 map shows Jamaica's rugged, mountainous interior (the Blue Mountains). This harsh, inaccessible terrain allowed the Maroons to build hidden strongholds like Nanny Town and use the dense rainforest camouflage to launch surprise attacks on the British."
+                },
+                {
                   "type": "comprehension",
                   "question": "How does the story of Queen Nanny challenge the traditional historical narrative about the abolition of slavery?",
                   "model_answer": "Queen Nanny's successful armed rebellion challenges the myth that enslaved people were passive victims waiting for white European abolitionists to free them, proving instead that African resistance was active, organized, and capable of forcing imperial powers into treaties."
@@ -12182,7 +12218,7 @@
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "question": "Based on the geography in Source B, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
+                  "question": "Based on the geography in Source D, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?",
                   "model_answer": "They headed South toward St. Augustine in Spanish Florida because the Spanish governor had promised freedom to any enslaved person who escaped from the British colonies. This reveals that enslaved Africans strategically understood and exploited the geopolitical rivalries between European empires to seek their freedom."
                 },
                 {
@@ -12218,7 +12254,7 @@
               "tasks": [
                 {
                   "type": "think_pair_share",
-                  "question": "Compare Source C with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source C when trying to understand how and why the slave trade was eventually abolished?",
+                  "question": "Compare Source F with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source C when trying to understand how and why the slave trade was eventually abolished?",
                   "model_answer": "Relying only on portraits of wealthy white men like Wilberforce ignores the active, dangerous, and crucial role that enslaved people played in their own liberation (like Queen Nanny's military resistance). It creates a false 'White Savior' narrative that erases Black agency from history."
                 },
                 {
@@ -12232,7 +12268,7 @@
                   "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
                 },
                 {
-                  "question": "Study Source C (Portrait of a British politician and abolitionist). Why were portraits like this important for the abolitionist movement in the late 18th century?",
+                  "question": "Study Source F (Portrait of a British politician and abolitionist). Why were portraits like this important for the abolitionist movement in the late 18th century?",
                   "model_answer": "Portraits and visual propaganda were crucial tools for abolitionists to humanize their cause, raise public awareness, and project an image of moral authority in their long political campaign to end the transatlantic slave trade."
                 }
               ],
@@ -12259,7 +12295,7 @@
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "question": "Study Source D. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
+                  "question": "Study Source E. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
                   "model_answer": "Armed rebellions could be seen and fought with military force. Botanical knowledge allowed enslaved people to silently and undetectably poison their enslavers through their daily food. This created constant, paranoid terror because the threat was invisible and came from within their own households."
                 },
                 {
@@ -12672,7 +12708,7 @@
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "question": "Study Source C. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
+                  "question": "Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
                   "model_answer": "The painting glorifies the empire by showing a majestic Britannia peacefully receiving riches from willing, kneeling figures representing Asia and Africa. It masks the brutal realities by completely ignoring the violence, exploitation, and slavery (like the Transatlantic slave trade) that actually generated this wealth."
                 }
               ],
@@ -12737,7 +12773,7 @@
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "question": "How does the density and infrastructure of London shown in Source C (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
+                  "question": "How does the density and infrastructure of London shown in Source E (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
                   "model_answer": "The sprawling, densely packed streets and complex networks of roads show a massive shift away from rural farming and towards centralized, urban trade and industry. It physically demonstrates Britain's growing wealth, exploding population, and transition into an industrial powerhouse."
                 }
               ],
@@ -12810,7 +12846,14 @@
             {
               "title": "Urban Poverty: The Mudlarks of London",
               "text": "<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_mudlark.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n</div>\n<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>",
-              "source_letter": "F"
+              "source_letter": "F",
+              "tasks": [
+                {
+                  "type": "source_analysis",
+                  "question": "Study Source F. How does the existence of 'Mudlarks' challenge the idea that 1750 London was entirely prosperous and modern?",
+                  "model_answer": "Source F shows desperate children scavenging in freezing, sewage-filled mud just to survive. This challenges the idea of a 'modern' London by highlighting the extreme, lethal poverty that existed right alongside the wealthy coffee houses."
+                }
+              ]
             }
           ],
           "learning_objectives": {
@@ -25302,11 +25345,11 @@
       "specification_file": "/data/eee_overview.json",
       "title": "Paper 2: Early Elizabethan England, 1558-88",
       "subtitle": "",
-      "homepage_background": "/images/elizabeth_i.jpg",
+      "homepage_background": "assets/elizabeth_i.jpg",
       "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?",
       "enquiry_question": "From religious division to the Armada: How did Elizabeth secure her throne?",
       "desc": "Paper 2",
-      "cover_image": "/images/placeholder_cover.jpg",
+      "cover_image": "/assets/placeholder_cover.jpg",
       "cover_caption": "Source A: A placeholder image for Early Elizabethan England.",
       "workbooks": [
         {
@@ -25592,8 +25635,7 @@
             {
               "type": "narrative",
               "theme_heading": "5. The Big Picture: A Crisis of Interconnected Threats",
-              "text": "Ultimately, the crisis of 1558 was so severe because Elizabeth’s problems did not exist in isolation; they actively magnified each other. Her gender and contested legitimacy directly emboldened foreign enemies like France, who championed Mary, Queen of Scots’ rival claim to the throne. Simultaneously, the Crown’s crippling £300,000 debt meant Elizabeth lacked the financial muscle to raise an army to defend against the Auld Alliance on her northern border. She was a vulnerable target with no money to buy a shield. Consequently, Elizabeth was forced to rely on extreme political caution, the strategic advice of her Privy Council, and careful public relations just to survive her first few years in power.",
-              "tasks": []
+              "text": "Ultimately, the crisis of 1558 was so severe because Elizabeth’s problems did not exist in isolation; they actively magnified each other. Her gender and contested legitimacy directly emboldened foreign enemies like France, who championed Mary, Queen of Scots’ rival claim to the throne. Simultaneously, the Crown’s crippling £300,000 debt meant Elizabeth lacked the financial muscle to raise an army to defend against the Auld Alliance on her northern border. She was a vulnerable target with no money to buy a shield. Consequently, Elizabeth was forced to rely on extreme political caution, the strategic advice of her Privy Council, and careful public relations just to survive her first few years in power."
             }
           ],
           "quiz": [
@@ -25970,8 +26012,7 @@
             {
               "type": "narrative",
               "theme_heading": "5. The Big Picture: From Compromise to Treason",
-              "text": "Elizabeth’s Religious Settlement was a brilliant piece of initial statecraft; by creating a broad, ambiguous 'Middle Way', she successfully avoided an immediate civil war in 1559. She used the Church not just for prayer, but as a vast, nationwide network of social control, utilising Church courts and parish priests to enforce loyalty. However, theology is notoriously difficult to compromise on. The Puritans remained a persistent, irritating thorn in her side regarding the day-to-day running of the Church. Conversely, the Catholic threat morphed from quiet disobedience into outright treason. Once the Pope excommunicated Elizabeth and Mary, Queen of Scots crossed the border, religion became inextricably linked to national security and foreign invasion.",
-              "tasks": []
+              "text": "Elizabeth’s Religious Settlement was a brilliant piece of initial statecraft; by creating a broad, ambiguous 'Middle Way', she successfully avoided an immediate civil war in 1559. She used the Church not just for prayer, but as a vast, nationwide network of social control, utilising Church courts and parish priests to enforce loyalty. However, theology is notoriously difficult to compromise on. The Puritans remained a persistent, irritating thorn in her side regarding the day-to-day running of the Church. Conversely, the Catholic threat morphed from quiet disobedience into outright treason. Once the Pope excommunicated Elizabeth and Mary, Queen of Scots crossed the border, religion became inextricably linked to national security and foreign invasion."
             }
           ],
           "quiz": [
@@ -26343,8 +26384,7 @@
             {
               "type": "narrative",
               "theme_heading": "4. Summary: The Escalation of Religious Threats",
-              "text": "While Elizabeth’s Religious Settlement of 1559 successfully established a state church and prevented immediate civil war, it fundamentally failed to create a united nation. The settlement inadvertently forced Elizabeth to fight a two-front religious battle. From within her own ranks, Puritans fiercely challenged her authority over church doctrine and dress (such as the Crucifix and Vestment controversies), highlighting deep Protestant divisions. Yet, the Puritan threat remained relatively benign because they would never conspire against a Protestant queen. Conversely, the Catholic challenge rapidly mutated from passive domestic recusancy into an existential geopolitical crisis. The combination of the 1569 Northern Earls' rebellion, the 1570 Papal excommunication, and the arrival of Mary, Queen of Scots, fused local religious discontent with the vast military might of foreign Catholic superpowers like Spain and France. This transformed the Catholic challenge from a matter of private faith into a direct, treasonous threat to Elizabeth's crown and life.",
-              "tasks": []
+              "text": "While Elizabeth’s Religious Settlement of 1559 successfully established a state church and prevented immediate civil war, it fundamentally failed to create a united nation. The settlement inadvertently forced Elizabeth to fight a two-front religious battle. From within her own ranks, Puritans fiercely challenged her authority over church doctrine and dress (such as the Crucifix and Vestment controversies), highlighting deep Protestant divisions. Yet, the Puritan threat remained relatively benign because they would never conspire against a Protestant queen. Conversely, the Catholic challenge rapidly mutated from passive domestic recusancy into an existential geopolitical crisis. The combination of the 1569 Northern Earls' rebellion, the 1570 Papal excommunication, and the arrival of Mary, Queen of Scots, fused local religious discontent with the vast military might of foreign Catholic superpowers like Spain and France. This transformed the Catholic challenge from a matter of private faith into a direct, treasonous threat to Elizabeth's crown and life."
             }
           ],
           "quiz": [
@@ -26712,8 +26752,7 @@
             {
               "type": "narrative",
               "theme_heading": "4. Summary: The Captive Threat",
-              "text": "Mary, Queen of Scots, was the most significant domestic and dynastic problem Elizabeth faced in her early reign. With her impeccable Tudor bloodline and strict adherence to the Catholic faith, Mary represented everything Elizabeth was not—a legitimate, Catholic alternative for the English throne. When Mary’s scandalous personal life and the murder of Lord Darnley resulted in her forced abdication and flight to England in 1568, she inadvertently transferred Scotland’s instability directly onto English soil. Elizabeth’s decision to hold Mary in comfortable but heavily guarded captivity following the inconclusive 'Casket Letters' inquiry was a necessary short-term compromise. However, it had severe long-term consequences. By keeping her Catholic rival locked up in England, Elizabeth inadvertently provided a figurehead for the very rebellions and plots she was trying to avoid, starting immediately with the Revolt of the Northern Earls in 1569.",
-              "tasks": []
+              "text": "Mary, Queen of Scots, was the most significant domestic and dynastic problem Elizabeth faced in her early reign. With her impeccable Tudor bloodline and strict adherence to the Catholic faith, Mary represented everything Elizabeth was not—a legitimate, Catholic alternative for the English throne. When Mary’s scandalous personal life and the murder of Lord Darnley resulted in her forced abdication and flight to England in 1568, she inadvertently transferred Scotland’s instability directly onto English soil. Elizabeth’s decision to hold Mary in comfortable but heavily guarded captivity following the inconclusive 'Casket Letters' inquiry was a necessary short-term compromise. However, it had severe long-term consequences. By keeping her Catholic rival locked up in England, Elizabeth inadvertently provided a figurehead for the very rebellions and plots she was trying to avoid, starting immediately with the Revolt of the Northern Earls in 1569."
             }
           ],
           "quiz": [
@@ -27114,8 +27153,7 @@
             },
             {
               "theme_heading": "The Big Picture",
-              "text": "Between 1569 and 1586, the Catholic threat against Elizabeth fundamentally evolved. It began as a domestic dispute regarding northern noble power and traditional faith (The Northern Earls). However, the Ridolfi, Throckmorton, and Babington plots demonstrated a lethal intersection of English Catholic plotting and direct foreign (Spanish and French) military backing, forcing the government to pass harsh anti-Catholic laws in 1581. Elizabeth’s survival was almost entirely reliant on Sir Francis Walsingham’s sophisticated intelligence network. Ultimately, Mary's execution in 1587 brutally eradicated the domestic threat of a Catholic replacement, but in doing so, it became the definitive trigger for the launch of the Spanish Armada.",
-              "tasks": []
+              "text": "Between 1569 and 1586, the Catholic threat against Elizabeth fundamentally evolved. It began as a domestic dispute regarding northern noble power and traditional faith (The Northern Earls). However, the Ridolfi, Throckmorton, and Babington plots demonstrated a lethal intersection of English Catholic plotting and direct foreign (Spanish and French) military backing, forcing the government to pass harsh anti-Catholic laws in 1581. Elizabeth’s survival was almost entirely reliant on Sir Francis Walsingham’s sophisticated intelligence network. Ultimately, Mary's execution in 1587 brutally eradicated the domestic threat of a Catholic replacement, but in doing so, it became the definitive trigger for the launch of the Spanish Armada."
             }
           ],
           "quiz": [
@@ -27493,8 +27531,7 @@
             {
               "type": "narrative",
               "theme_heading": "5. Summary: The Big Picture",
-              "text": "The launch of the Spanish Armada was the inevitable climax of decades of simmering tension. What began as privateering raids in the New World and secret funding of Dutch rebels morphed into a fight for survival. Philip II’s plan required perfect timing and communication between his naval fleet and land army—a fatal flaw the English expertly exploited. The defeat of the Armada in 1588 was a monumental triumph for Elizabeth. It did not instantly end the war with Spain, but it provided a massive propaganda victory, 'proving' to the world that God favoured Protestant England, and it secured Elizabeth's legacy as a warrior queen.",
-              "tasks": []
+              "text": "The launch of the Spanish Armada was the inevitable climax of decades of simmering tension. What began as privateering raids in the New World and secret funding of Dutch rebels morphed into a fight for survival. Philip II’s plan required perfect timing and communication between his naval fleet and land army—a fatal flaw the English expertly exploited. The defeat of the Armada in 1588 was a monumental triumph for Elizabeth. It did not instantly end the war with Spain, but it provided a massive propaganda victory, 'proving' to the world that God favoured Protestant England, and it secured Elizabeth's legacy as a warrior queen."
             }
           ],
           "quiz": [
@@ -27847,8 +27884,7 @@
             },
             {
               "theme_heading": "The Big Picture",
-              "text": "The period between 1585 and 1588 marked the dramatic transition from cold war to open, state-sponsored conflict. Early provocations like the seizure of the 1568 Genoese Loan and Drake's £400,000 privateering haul severely damaged relations. Ultimately, the Treaty of Nonsuch forced Elizabeth to abandon her preferred strategy of cautious diplomacy. While Robert Dudley’s military campaign in the Netherlands was hampered by defection and a lack of royal funding, his protection of the deep-water port of Ostend laid the invisible groundwork for England's future survival. Ultimately, Francis Drake's aggressive, preemptive strike on Cadiz exposed the logistical vulnerabilities of the Spanish Empire and bought Elizabeth the vital time she needed to prepare for the greatest existential threat of her reign: the Spanish Armada.",
-              "tasks": []
+              "text": "The period between 1585 and 1588 marked the dramatic transition from cold war to open, state-sponsored conflict. Early provocations like the seizure of the 1568 Genoese Loan and Drake's £400,000 privateering haul severely damaged relations. Ultimately, the Treaty of Nonsuch forced Elizabeth to abandon her preferred strategy of cautious diplomacy. While Robert Dudley’s military campaign in the Netherlands was hampered by defection and a lack of royal funding, his protection of the deep-water port of Ostend laid the invisible groundwork for England's future survival. Ultimately, Francis Drake's aggressive, preemptive strike on Cadiz exposed the logistical vulnerabilities of the Spanish Empire and bought Elizabeth the vital time she needed to prepare for the greatest existential threat of her reign: the Spanish Armada."
             }
           ],
           "quiz": [
@@ -28196,8 +28232,7 @@
             },
             {
               "theme_heading": "The Big Picture",
-              "text": "The Spanish Armada of 1588 was the ultimate test of Elizabeth’s reign. Philip II’s motivations were a potent mix of holy crusade, political retaliation for the Netherlands, and fury over privateering. However, his grand strategy required a level of logistical perfection that simply did not exist in the 16th century. The failure of Medina Sidonia and Parma to coordinate at Calais allowed English tactical brilliance (fireships and rapidly reloading long-range broadsides) to break the Spanish lines. Ultimately, however, it was the catastrophic weather—the \"Protestant Wind\"—that annihilated the fleet. The victory did not end the Anglo-Spanish war, but it delivered an unprecedented propaganda victory that cemented Elizabeth’s authority and England's Protestant identity forever.",
-              "tasks": []
+              "text": "The Spanish Armada of 1588 was the ultimate test of Elizabeth’s reign. Philip II’s motivations were a potent mix of holy crusade, political retaliation for the Netherlands, and fury over privateering. However, his grand strategy required a level of logistical perfection that simply did not exist in the 16th century. The failure of Medina Sidonia and Parma to coordinate at Calais allowed English tactical brilliance (fireships and rapidly reloading long-range broadsides) to break the Spanish lines. Ultimately, however, it was the catastrophic weather—the \"Protestant Wind\"—that annihilated the fleet. The victory did not end the Anglo-Spanish war, but it delivered an unprecedented propaganda victory that cemented Elizabeth’s authority and England's Protestant identity forever."
             }
           ],
           "quiz": [
@@ -28564,8 +28599,7 @@
             },
             {
               "theme_heading": "The Big Picture",
-              "text": "Elizabethan education and leisure were highly effective mirrors of the era's rigid social hierarchy. Education expanded thanks to Humanism, the printing press, and Protestantism, but it remained fundamentally unequal, strictly ring-fencing opportunities based on gender and wealth. Similarly, sports like real tennis and mob football visually separated the elite from the masses. However, the late 16th century also saw the birth of a unified popular culture. Cruel sports and the booming new theatres provided shared spaces where, for a few hours, the glittering nobility and the illiterate groundlings experienced the exact same entertainment, creating a vibrant, albeit highly controversial, cultural golden age.",
-              "tasks": []
+              "text": "Elizabethan education and leisure were highly effective mirrors of the era's rigid social hierarchy. Education expanded thanks to Humanism, the printing press, and Protestantism, but it remained fundamentally unequal, strictly ring-fencing opportunities based on gender and wealth. Similarly, sports like real tennis and mob football visually separated the elite from the masses. However, the late 16th century also saw the birth of a unified popular culture. Cruel sports and the booming new theatres provided shared spaces where, for a few hours, the glittering nobility and the illiterate groundlings experienced the exact same entertainment, creating a vibrant, albeit highly controversial, cultural golden age."
             }
           ],
           "quiz": [
@@ -28934,8 +28968,7 @@
             },
             {
               "theme_heading": "The Big Picture",
-              "text": "The Elizabethan era completely transformed how England dealt with poverty. The demographic explosion and the greed of enclosure destroyed the traditional, rural way of life, forcing thousands onto the road as vagabonds. Fear of these 'masterless men' initially led to brutal, violent legislation. However, the sheer scale of the crisis forced Elizabeth’s government to undergo a profound ideological shift. By introducing a compulsory Poor Rate in 1572 and actively providing raw materials for the unemployed in 1576, Elizabeth’s government laid the very first, tentative foundations of a national welfare state—not out of modern compassion, but out of a desperate, pragmatic need to maintain social order and prevent rebellion.",
-              "tasks": []
+              "text": "The Elizabethan era completely transformed how England dealt with poverty. The demographic explosion and the greed of enclosure destroyed the traditional, rural way of life, forcing thousands onto the road as vagabonds. Fear of these 'masterless men' initially led to brutal, violent legislation. However, the sheer scale of the crisis forced Elizabeth’s government to undergo a profound ideological shift. By introducing a compulsory Poor Rate in 1572 and actively providing raw materials for the unemployed in 1576, Elizabeth’s government laid the very first, tentative foundations of a national welfare state—not out of modern compassion, but out of a desperate, pragmatic need to maintain social order and prevent rebellion."
             }
           ],
           "quiz": [
@@ -29299,8 +29332,7 @@
             },
             {
               "theme_heading": "The Big Picture",
-              "text": "The Elizabethan era was the turbulent dawn of the British Empire. Forced outward by the collapse of European trade, English sailors utilised cutting-edge technology and galleon designs to project English power across the globe. While Drake’s circumnavigation was a dazzling financial and propaganda triumph that enraged Spain, Raleigh’s Virginia campaigns offered a brutal reality check. The failures at Roanoke proved that creating an empire required more than just the piracy of privateers; it required careful logistical planning, farming expertise, and sustainable diplomacy. These harsh lessons, however, laid the essential foundations for the successful Jamestown colony established shortly after Elizabeth's death in 1607.",
-              "tasks": []
+              "text": "The Elizabethan era was the turbulent dawn of the British Empire. Forced outward by the collapse of European trade, English sailors utilised cutting-edge technology and galleon designs to project English power across the globe. While Drake’s circumnavigation was a dazzling financial and propaganda triumph that enraged Spain, Raleigh’s Virginia campaigns offered a brutal reality check. The failures at Roanoke proved that creating an empire required more than just the piracy of privateers; it required careful logistical planning, farming expertise, and sustainable diplomacy. These harsh lessons, however, laid the essential foundations for the successful Jamestown colony established shortly after Elizabeth's death in 1607."
             }
           ],
           "quiz": [
@@ -29658,8 +29690,7 @@
             },
             {
               "theme_heading": "The Big Picture",
-              "text": "Raleigh’s ambitious dream of a New World empire ended in complete failure. The colonies collapsed due to a lethal intersection of terrible luck (the grounding of *The Tiger*), poor leadership (Lane's aggression), a lack of farming expertise, and the overarching shadow of the Anglo-Spanish war. However, Raleigh’s failure was highly significant because it provided the ultimate blueprint for future success. It proved that private funding was not enough and that successful colonisation required massive, state-backed investment and a focus on sustainable farming rather than aggressive military conquest. These harsh lessons laid the foundation for the successful establishment of Jamestown shortly after Elizabeth's death.",
-              "tasks": []
+              "text": "Raleigh’s ambitious dream of a New World empire ended in complete failure. The colonies collapsed due to a lethal intersection of terrible luck (the grounding of *The Tiger*), poor leadership (Lane's aggression), a lack of farming expertise, and the overarching shadow of the Anglo-Spanish war. However, Raleigh’s failure was highly significant because it provided the ultimate blueprint for future success. It proved that private funding was not enough and that successful colonisation required massive, state-backed investment and a focus on sustainable farming rather than aggressive military conquest. These harsh lessons laid the foundation for the successful establishment of Jamestown shortly after Elizabeth's death."
             }
           ],
           "quiz": [
@@ -30155,8 +30186,6 @@
   },
   "great_war": {
     "data": {
-      "cover_image": "/images/great_war_cover.jpg",
-      "title": "KS3: Causes of the Great War",
       "debatePrompts": [
         {
           "title": "Bismarck & Unification",
@@ -30172,8 +30201,10 @@
         }
       ],
       "specification_file": "/data/great_war_overview.json",
+      "title": "KS3: Causes of the Great War",
       "homepage_background": "assets/somme_trench_1916.jpg",
       "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
+      "cover_image": "/images/great_war_cover.jpg",
       "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
       "printable_workbooks": [
         {
@@ -31617,7 +31648,7 @@
               "text": "**The Naval Race: A Self-Fulfilling Prophecy?**\n\nThe HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.\n\nGermany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914."
             },
             {
-              "text": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
+              "text": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong>Two-Power Standard</strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
               "level_4": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
               "tasks": [
                 {
@@ -31668,7 +31699,7 @@
               "theme_heading": "Naval Arms Race Begins"
             },
             {
-              "text": "This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong></strong> in Scotland, while the German High Seas Fleet was based at <strong></strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong></strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.",
+              "text": "This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong>Scapa Flow</strong> in Scotland, while the German High Seas Fleet was based at <strong>Wilhelmshaven</strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong>North Sea</strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong>Kiel Canal</strong>, completing the project in 1914 just before the outbreak of war.",
               "level_4": "This competitive race culminated in a highly strategic naval standoff. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.",
               "theme_heading": "Naval Standoff Prepar"
             },
@@ -32030,7 +32061,7 @@
               "theme_heading": "Europe's Alliance System"
             },
             {
-              "text": "By 1907, the European alliance system had solidified into two balanced groups. On one side stood the <strong></strong>, consisting of the central European bloc of Germany, Austria-Hungary, and Italy. On the opposing side sat the <strong></strong>, uniting Great Britain, France, and Russia. At the time, contemporary newspapers and diplomats argued that this delicate division of power would successfully maintain world peace. The logic was simple: going to war with any single member of an alliance meant triggering an immediate, terrible war against the entire opposing bloc. No statesman, they believed, would be reckless enough to initiate such a disaster.",
+              "text": "By 1907, the European alliance system had solidified into two balanced groups. On one side stood the <strong>Triple Alliance</strong>, consisting of the central European bloc of Germany, Austria-Hungary, and Italy. On the opposing side sat the <strong>Triple Entente</strong>, uniting Great Britain, France, and Russia. At the time, contemporary newspapers and diplomats argued that this delicate division of power would successfully maintain world peace. The logic was simple: going to war with any single member of an alliance meant triggering an immediate, terrible war against the entire opposing bloc. No statesman, they believed, would be reckless enough to initiate such a disaster.",
               "level_4": "By 1907, the European alliance system had solidified into two balanced groups. No statesman, they believed, would be reckless enough to initiate such a disaster.",
               "tasks": [
                 {
@@ -32047,7 +32078,7 @@
               "theme_heading": "Europe's Two Alliances"
             },
             {
-              "text": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. The German Kaiser and his military planners viewed the Triple Entente not as a peaceful defensive bloc, but as a hostile circle of enemies designed to trap them. Historians note that from the German perspective, this amounted to a deliberate policy of <strong></strong> meant to block Germany’s legitimate right to become a global power. Crucially, the German High Command and Austria-Hungary's Chief of the General Staff, <strong></strong> (who repeatedly advocated for a preventive war to crush Serbia), believed that a massive European war was <strong></strong>. They feared that Russia's rapid industrialization and military growth would soon overwhelm Germany, making a preventative war necessary before Russia became too powerful. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
+              "text": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. The German Kaiser and his military planners viewed the Triple Entente not as a peaceful defensive bloc, but as a hostile circle of enemies designed to trap them. Historians note that from the German perspective, this amounted to a deliberate policy of <strong>encirclement</strong> meant to block Germany’s legitimate right to become a global power. Crucially, the German High Command and Austria-Hungary's Chief of the General Staff, <strong>Conrad von Hötzendorf</strong> (who repeatedly advocated for a preventive war to crush Serbia), believed that a massive European war was <strong>inevitable</strong>. They feared that Russia's rapid industrialization and military growth would soon overwhelm Germany, making a preventative war necessary before Russia became too powerful. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
               "level_4": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
               "tasks": [
                 {
@@ -32405,7 +32436,7 @@
               "theme_heading": "Balkans Ignite Conflict"
             },
             {
-              "text": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. Austria-Hungary was a vast empire containing many different nationalities who wanted independence. Its politicians deeply feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside the Austro-Hungarian borders would rebel, causing the entire empire to collapse. Tensions exploded in 1908 when Austria officially <strong></strong> the provinces of Bosnia and Herzegovina, directly absorbing thousands of furious Serbs into its territory. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
+              "text": "For the neighboring empire of Austria-Hungary, this <strong>Pan-Slavism</strong> was an absolute nightmare. Austria-Hungary was a vast empire containing many different nationalities who wanted independence. Its politicians deeply feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside the Austro-Hungarian borders would rebel, causing the entire empire to collapse. Tensions exploded in 1908 when Austria officially <strong>annexed</strong> the provinces of Bosnia and Herzegovina, directly absorbing thousands of furious Serbs into its territory. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
               "level_4": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
               "tasks": [
                 {
@@ -32417,7 +32448,7 @@
               "theme_heading": "Empire's Serbian"
             },
             {
-              "text": "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong></strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
+              "text": "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong>Appel Quay</strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
               "level_4": "By June 1914, the Balkan powder keg was ready to blow. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
               "theme_heading": "Ferdinand'"
             },
@@ -32439,7 +32470,7 @@
               "theme_heading": "Princip's Fatal"
             },
             {
-              "text": "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong></strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
+              "text": "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong>Treaty of London (1839)</strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
               "level_4": "This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
               "tasks": [
                 {
@@ -35676,7 +35707,13 @@
               "title": "Historical Controversy: Where Did the Money Come From?",
               "text": "Building massive ironworks like Funtley and funding the broader Industrial Revolution required unimaginable amounts of capital. Modern historians emphasize that this sudden wealth was intrinsically tied to the profits of the 18th-century Transatlantic Slave Trade. Although Britain abolished the trade in 1807 and slavery itself in 1833, the industrial economy was kickstarted by the immense wealth extracted from enslaved labor on Caribbean sugar plantations, and continued to rely on slave-picked American cotton.",
               "is_controversy": true,
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "comprehension",
+                  "question": "Why do modern historians argue that the profits from the Transatlantic Slave Trade were essential to the Industrial Revolution?",
+                  "model_answer": "Historians argue that the immense capital required to build massive ironworks and kickstart the industrial economy was largely generated by the wealth extracted from enslaved labor on Caribbean sugar plantations, and British factories continued to rely on slave-picked American cotton."
+                }
+              ]
             }
           ],
           "video": [
@@ -36661,7 +36698,13 @@
             {
               "title": "The Birth of the British Raj",
               "text": "The immediate consequence of this catastrophic conflict was the complete destruction of the entity that had triggered it. In 1858, recognizing that a private, profit-driven corporation could no longer safely govern a subcontinent, the British Parliament passed the Government of India Act. The East India Company was formally abolished, and its vast territories were transferred directly to the British Crown, establishing the era of the **British Raj**. Queen Victoria was declared Empress of India, signaling to the world that while the initial rebellion had been crushed by overwhelming violence, the empire had been forced to completely restructure itself because the colonized population had dared to strike back.",
-              "tasks": []
+              "tasks": [
+                {
+                  "type": "comprehension",
+                  "question": "What was the most significant consequence of the 1857 Indian Rebellion for how India was governed?",
+                  "model_answer": "The most significant consequence was that the East India Company was formally abolished by Parliament in 1858. Its territories were transferred directly to the British Crown, establishing the British Raj, because the government realised a private corporation could no longer safely govern the subcontinent."
+                }
+              ]
             }
           ],
           "sources": [],
@@ -45356,8 +45399,7 @@
             {
               "type": "narrative",
               "theme_heading": "5. Evaluating the Constitution: A Flawed Masterpiece?",
-              "text": "On paper, the Weimar Constitution was one of the most progressive and democratic documents in the world. However, to a historian, it is clear that this document contained fatal structural flaws that would leave the Republic vulnerable to total collapse.<br><br><table style='width: 100%; border-collapse: collapse; margin-top: 15px;'><thead><tr><th style='border: 1px solid #cbd5e1; padding: 10px; background: #f1f5f9; color: #0f172a; text-align: left;'>Strengths (Highly Democratic)</th><th style='border: 1px solid #cbd5e1; padding: 10px; background: #f1f5f9; color: #0f172a; text-align: left;'>Weaknesses (Fatal Flaws)</th></tr></thead><tbody><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Universal Suffrage:</strong> It was incredibly forward-thinking. Women received the vote on the same terms as men, and the voting age was reduced from 25 to 21 (and later 20), making it more democratic than Britain at the time.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Proportional Representation (PR):</strong> Because every 60,000 votes guaranteed one seat, tiny extremist parties easily gained a voice in the Reichstag.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Checks and Balances:</strong> No single person or group could hold too much power. The President, Chancellor, and Reichstag all kept each other in check.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Coalition Governments:</strong> PR made it mathematically almost impossible for one party to win a majority. Parties had to join together to form weak 'coalitions' that constantly argued and frequently collapsed during crises.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Local Power:</strong> The 18 <em>Länder</em> (local regions) retained control over key local services like the police, courts, and education, ensuring power was not heavily centralised in Berlin.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Article 48:</strong> The 'suicide clause'. In an emergency, the President could suspend the Constitution and pass laws by decree, bypassing the Reichstag entirely. It provided a legal backdoor to dictatorship.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Rights of the Individual:</strong> Freedom of speech, religion, and the press were legally guaranteed for all German citizens.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Undemocratic Foundations:</strong> The Republic was built on compromise and imposed upon a military, judiciary, and civil service that largely despised democracy and longed for the Kaiser.</td></tr></tbody></table>",
-              "tasks": []
+              "text": "On paper, the Weimar Constitution was one of the most progressive and democratic documents in the world. However, to a historian, it is clear that this document contained fatal structural flaws that would leave the Republic vulnerable to total collapse.<br><br><table style='width: 100%; border-collapse: collapse; margin-top: 15px;'><thead><tr><th style='border: 1px solid #cbd5e1; padding: 10px; background: #f1f5f9; color: #0f172a; text-align: left;'>Strengths (Highly Democratic)</th><th style='border: 1px solid #cbd5e1; padding: 10px; background: #f1f5f9; color: #0f172a; text-align: left;'>Weaknesses (Fatal Flaws)</th></tr></thead><tbody><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Universal Suffrage:</strong> It was incredibly forward-thinking. Women received the vote on the same terms as men, and the voting age was reduced from 25 to 21 (and later 20), making it more democratic than Britain at the time.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Proportional Representation (PR):</strong> Because every 60,000 votes guaranteed one seat, tiny extremist parties easily gained a voice in the Reichstag.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Checks and Balances:</strong> No single person or group could hold too much power. The President, Chancellor, and Reichstag all kept each other in check.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Coalition Governments:</strong> PR made it mathematically almost impossible for one party to win a majority. Parties had to join together to form weak 'coalitions' that constantly argued and frequently collapsed during crises.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Local Power:</strong> The 18 <em>Länder</em> (local regions) retained control over key local services like the police, courts, and education, ensuring power was not heavily centralised in Berlin.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Article 48:</strong> The 'suicide clause'. In an emergency, the President could suspend the Constitution and pass laws by decree, bypassing the Reichstag entirely. It provided a legal backdoor to dictatorship.</td></tr><tr><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Rights of the Individual:</strong> Freedom of speech, religion, and the press were legally guaranteed for all German citizens.</td><td style='border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;'><strong>Undemocratic Foundations:</strong> The Republic was built on compromise and imposed upon a military, judiciary, and civil service that largely despised democracy and longed for the Kaiser.</td></tr></tbody></table>"
             }
           ],
           "quiz": [
@@ -45840,8 +45882,7 @@
             {
               "type": "narrative",
               "theme_heading": "5. The Crisis of 1923: Hyperinflation",
-              "text": "Passive resistance created an apocalyptic economic crisis. The government was suddenly deprived of the wealth generated by the Ruhr, yet it still had to pay the wages of the striking workers. The government's solution was disastrous: they simply printed more paper money.<br><br>Printing unbacked money completely destroyed its value, triggering <strong>Hyperinflation</strong>. Prices spiralled out of control daily, then hourly. A loaf of bread that cost 0.6 marks in 1918 cost 201 billion marks by November 1923. Workers had to be paid twice a day and carried their wages in wheelbarrows before prices went up again.<br><br><strong>The Winners and Losers of Hyperinflation:</strong><ul><li><strong>The Losers:</strong> The middle classes were devastated. Anyone with savings in the bank, fixed pensions, or fixed incomes saw their life's wealth wiped out overnight.</li><li><strong>The Winners:</strong> Anyone with loans or mortgages could pay off their debts with worthless paper money. Farmers benefited because the food they produced could be sold at highly inflated prices. Foreigners in Germany with foreign currency (like the US Dollar) could suddenly afford to buy businesses and property for a fraction of their real value.</li></ul>By late 1923, the Republic was humiliated, bankrupt, and seemingly on the brink of total collapse.<br><br><strong>The 'Inflation King' and the Munich Putsch</strong><br>While hyperinflation destroyed the middle classes, a few wealthy industrialists thrived. Figures like <strong>Hugo Stinnes</strong>—who became known as the 'Inflation King'—used worthless paper money to buy up bankrupt businesses and cheap industrial land, vastly expanding his empire. However, the sheer chaos of 1923 had one final political consequence. In November 1923, believing the Republic was on the verge of total collapse, a relatively unknown right-wing extremist named <strong>Adolf Hitler</strong> and his Nazi Party attempted to seize power in Bavaria in an event known as the <strong>Munich Putsch</strong>.",
-              "tasks": []
+              "text": "Passive resistance created an apocalyptic economic crisis. The government was suddenly deprived of the wealth generated by the Ruhr, yet it still had to pay the wages of the striking workers. The government's solution was disastrous: they simply printed more paper money.<br><br>Printing unbacked money completely destroyed its value, triggering <strong>Hyperinflation</strong>. Prices spiralled out of control daily, then hourly. A loaf of bread that cost 0.6 marks in 1918 cost 201 billion marks by November 1923. Workers had to be paid twice a day and carried their wages in wheelbarrows before prices went up again.<br><br><strong>The Winners and Losers of Hyperinflation:</strong><ul><li><strong>The Losers:</strong> The middle classes were devastated. Anyone with savings in the bank, fixed pensions, or fixed incomes saw their life's wealth wiped out overnight.</li><li><strong>The Winners:</strong> Anyone with loans or mortgages could pay off their debts with worthless paper money. Farmers benefited because the food they produced could be sold at highly inflated prices. Foreigners in Germany with foreign currency (like the US Dollar) could suddenly afford to buy businesses and property for a fraction of their real value.</li></ul>By late 1923, the Republic was humiliated, bankrupt, and seemingly on the brink of total collapse.<br><br><strong>The 'Inflation King' and the Munich Putsch</strong><br>While hyperinflation destroyed the middle classes, a few wealthy industrialists thrived. Figures like <strong>Hugo Stinnes</strong>—who became known as the 'Inflation King'—used worthless paper money to buy up bankrupt businesses and cheap industrial land, vastly expanding his empire. However, the sheer chaos of 1923 had one final political consequence. In November 1923, believing the Republic was on the verge of total collapse, a relatively unknown right-wing extremist named <strong>Adolf Hitler</strong> and his Nazi Party attempted to seize power in Bavaria in an event known as the <strong>Munich Putsch</strong>."
             }
           ],
           "quiz": [
@@ -46287,8 +46328,7 @@
             {
               "type": "narrative",
               "theme_heading": "5. Evaluation: Dancing on a Volcano?",
-              "text": "Between 1924 and 1929, Germany experienced a 'Golden Age'. Politically, the Republic stabilised. Moderate parties dominated the Reichstag, and extreme parties lost support (the Nazis won just 12 seats in the 1928 election). However, a historian must recognize the fatal flaws hiding beneath the surface:<br><br><ul><li><strong>The Quicksand Economy:</strong> Germany's entire recovery was dependent on short-term American loans. If the USA demanded their money back, the German economy would instantly collapse.</li><li><strong>The Losers of the Golden Age:</strong> Unemployment remained a persistent problem, never dropping below 1.3 million. Furthermore, farmers suffered from plummeting food prices, and the middle classes never got back the life savings they lost in 1923.</li></ul><br>Shortly before his sudden death in October 1929, Stresemann himself issued a dark warning: <em>\"The economic position is only flourishing on the surface. Germany is in fact dancing on a volcano.\"</em>",
-              "tasks": []
+              "text": "Between 1924 and 1929, Germany experienced a 'Golden Age'. Politically, the Republic stabilised. Moderate parties dominated the Reichstag, and extreme parties lost support (the Nazis won just 12 seats in the 1928 election). However, a historian must recognize the fatal flaws hiding beneath the surface:<br><br><ul><li><strong>The Quicksand Economy:</strong> Germany's entire recovery was dependent on short-term American loans. If the USA demanded their money back, the German economy would instantly collapse.</li><li><strong>The Losers of the Golden Age:</strong> Unemployment remained a persistent problem, never dropping below 1.3 million. Furthermore, farmers suffered from plummeting food prices, and the middle classes never got back the life savings they lost in 1923.</li></ul><br>Shortly before his sudden death in October 1929, Stresemann himself issued a dark warning: <em>\"The economic position is only flourishing on the surface. Germany is in fact dancing on a volcano.\"</em>"
             }
           ],
           "quiz": [
@@ -46735,8 +46775,7 @@
             {
               "type": "narrative",
               "theme_heading": "4. Evaluation: A Deeply Divided Nation",
-              "text": "To a top-level historian, the cultural 'Golden Age' was actually a source of severe weakness for the Republic because it deeply divided the nation.<br><br><ul><li><strong>Left-wing opposition:</strong> The Communists believed government funding for the arts was an extravagant waste of money when ordinary working people were still struggling to buy food.</li><li><strong>Right-wing opposition:</strong> Nationalists, traditionalists, and the Nazi Party were horrified. They believed the new art, the cabaret clubs, and the 'New Woman' were immoral, un-German, and destroying traditional family values. This cultural divide handed the Nazis powerful propaganda weapons to attack the Republic.</li></ul><br><strong>Opposition from the Churches</strong><br>The cultural explosion was not just attacked by political extremists; it faced fierce backlash from Germany's religious institutions. Both the <strong>Catholic and Protestant Churches</strong> actively campaigned against the 'New Woman', the cabaret clubs, and the open acceptance of homosexuality in Berlin. Church leaders believed that the Weimar Republic was leading Germany into a state of moral decline and aggressively urged their followers to reject this new, liberal culture in favour of traditional family values.",
-              "tasks": []
+              "text": "To a top-level historian, the cultural 'Golden Age' was actually a source of severe weakness for the Republic because it deeply divided the nation.<br><br><ul><li><strong>Left-wing opposition:</strong> The Communists believed government funding for the arts was an extravagant waste of money when ordinary working people were still struggling to buy food.</li><li><strong>Right-wing opposition:</strong> Nationalists, traditionalists, and the Nazi Party were horrified. They believed the new art, the cabaret clubs, and the 'New Woman' were immoral, un-German, and destroying traditional family values. This cultural divide handed the Nazis powerful propaganda weapons to attack the Republic.</li></ul><br><strong>Opposition from the Churches</strong><br>The cultural explosion was not just attacked by political extremists; it faced fierce backlash from Germany's religious institutions. Both the <strong>Catholic and Protestant Churches</strong> actively campaigned against the 'New Woman', the cabaret clubs, and the open acceptance of homosexuality in Berlin. Church leaders believed that the Weimar Republic was leading Germany into a state of moral decline and aggressively urged their followers to reject this new, liberal culture in favour of traditional family values."
             }
           ],
           "quiz": [
@@ -47156,8 +47195,7 @@
             },
             {
               "theme_heading": "Deeper Evaluation: A Regional Fringe Group",
-              "text": "While the creation of the 25-Point Programme, the newspaper, and the SA showed incredible organisation, it is vital to keep the early Nazi Party in perspective. By the end of 1922, they were still fundamentally a regional phenomenon contained within Bavaria. They had roughly 20,000 members, but outside of Munich, they were largely unknown. They did not hold a single seat in the national Reichstag. They had built the machinery for a national movement, but they were not yet a serious threat to the Weimar Republic's existence.",
-              "tasks": []
+              "text": "While the creation of the 25-Point Programme, the newspaper, and the SA showed incredible organisation, it is vital to keep the early Nazi Party in perspective. By the end of 1922, they were still fundamentally a regional phenomenon contained within Bavaria. They had roughly 20,000 members, but outside of Munich, they were largely unknown. They did not hold a single seat in the national Reichstag. They had built the machinery for a national movement, but they were not yet a serious threat to the Weimar Republic's existence."
             }
           ],
           "quiz": [
@@ -47764,8 +47802,7 @@
             },
             {
               "text": "Despite having over 100,000 highly disciplined members by 1928, the Nazis were an electoral failure, winning just 12 seats (2.6% of the vote) in the 1928 Reichstag elections.\n\nThe primary reason for this failure was Gustav Stresemann. The Weimar Republic was experiencing an economic 'Golden Age'. Hyperinflation was over, American Dawes Plan loans were flowing in, and in 1925, the German people had elected the conservative war hero Paul von Hindenburg as President. With the country feeling stable and proud, voters simply ignored the extreme politics of the Nazi Party.\n\nHowever, the Nazis were highly adaptable. Realising that industrial workers were voting for the Communists or Social Democrats, the Nazis shifted their propaganda. They began heavily targeting **farmers** (who were suffering from plummeting food prices) and the **lower-middle classes** (the *Mittelstand*, who had never recovered from hyperinflation). While they failed to win power in 1928, the Nazis had built a highly organised, national political machine just waiting for the next major crisis to strike.",
-              "heading": "6. Shifting Propaganda and Electoral Failure",
-              "tasks": []
+              "heading": "6. Shifting Propaganda and Electoral Failure"
             }
           ],
           "utility_starters": {
@@ -48166,8 +48203,7 @@
             },
             {
               "text": "The growth of the Nazi Party was not just about brilliant posters; it was deeply rooted in violence and **negative cohesion**.\n\nBy 1932, the SA had grown to 400,000 members. Germany’s streets were erupting into open warfare as the SA fought brutal battles against the communist private army, the *Rotfrontkämpferbund*. Dozens of people were killed in political street fights.\n\nParadoxically, the Nazis used this violence to their advantage. They deliberately started the fights with the communists, but then used their highly disciplined, uniformed SA marches to present themselves to the middle classes as the only party capable of restoring order. Millions of middle-class voters ultimately voted for the Nazis not because they fully supported Hitler’s extreme racial views, but because of *negative cohesion*—they shared Hitler's hatred of the Weimar Republic and his absolute determination to crush the communists.",
-              "heading": "5. Advanced Analysis: The SA and Negative Cohesion",
-              "tasks": []
+              "heading": "5. Advanced Analysis: The SA and Negative Cohesion"
             }
           ],
           "utility_starters": {
@@ -48570,8 +48606,7 @@
             },
             {
               "text": "On **30 January 1933**, President Hindenburg officially appointed Adolf Hitler as Chancellor of Germany.\n\nTo a modern historian, it seems unbelievable that the conservative elites would hand power to a violent extremist. However, they believed they had trapped Hitler in a political cage. Out of a Cabinet of 12 ministers, Hindenburg and Papen allowed **only two other Nazis** (Wilhelm Frick and Hermann Göring); the rest were traditional conservatives.\n\nThe elites severely underestimated Hitler, viewing him as an uneducated political amateur they could easily manipulate to crush the communists. Papen famously boasted to a friend: *\"We have framed him... in two months we will have pushed Hitler into a corner so hard that he'll be squeaking.\"* They believed they were hiring Hitler as their puppet; in reality, they had just handed him the keys to the Republic.",
-              "heading": "5. Advanced Analysis: The Fatal Miscalculation",
-              "tasks": []
+              "heading": "5. Advanced Analysis: The Fatal Miscalculation"
             }
           ],
           "utility_starters": {
@@ -49008,8 +49043,7 @@
             },
             {
               "heading": "The Death of Hindenburg and the Army Oath (August 1934)",
-              "text": "On **2 August 1934**, President Hindenburg died at the age of 86. Within hours, Hitler declared himself **Führer** (Supreme Leader), officially combining the roles of Chancellor and President.<br><br>On the exact same day, the entire German army swore a new **Oath of Allegiance**. Crucially, they did not swear to protect Germany or the constitution; they swore unconditional obedience to the person of *Adolf Hitler*. To cement this, Hitler held a public plebiscite (referendum) in mid-August; 90% of German voters agreed with his new powers. With the army firmly on his side, and the SA broken, Hitler’s totalitarian dictatorship was complete.",
-              "tasks": []
+              "text": "On **2 August 1934**, President Hindenburg died at the age of 86. Within hours, Hitler declared himself **Führer** (Supreme Leader), officially combining the roles of Chancellor and President.<br><br>On the exact same day, the entire German army swore a new **Oath of Allegiance**. Crucially, they did not swear to protect Germany or the constitution; they swore unconditional obedience to the person of *Adolf Hitler*. To cement this, Hitler held a public plebiscite (referendum) in mid-August; 90% of German voters agreed with his new powers. With the army firmly on his side, and the SA broken, Hitler’s totalitarian dictatorship was complete."
             }
           ],
           "utility_starters": {
@@ -49242,8 +49276,7 @@
               "text": "**4. Controlling the Churches: The Catholic Concordat**\nReligion was a massive threat to Hitler. Christianity preached peace, forgiveness, and loyalty to God over any earthly leader. In 1933, one-third of Germans were Catholic, and two-thirds were Protestant.\n\nInitially, Hitler tried to compromise with the Catholic Church. In **July 1933**, he signed the **Concordat** with the Pope. The Pope agreed that Catholic priests would stay out of German politics, and in return, Hitler promised not to interfere with Catholic schools or youth groups.\n\nHowever, Hitler quickly broke this treaty. By 1935, he had set up a dedicated **Ministry of Church Affairs** under Hanns Kerrl to systematically weaken religious power. In 1936, the state aggressively campaigned to remove crucifixes from Catholic classrooms, Catholic schools were forcibly closed, and the Catholic Youth League was banned. In 1937, a furious Pope Pius XI issued a scorching public letter called ***Mit brennender Sorge*** '(With Burning Concern)'. It was secretly smuggled into Germany and read out in every Catholic church, openly condemning Hitler's broken promises and his dangerous \"myth of race and blood.\""
             },
             {
-              "text": "**5. Controlling the Churches: The Protestants**\nThe Protestant churches were heavily divided. Hitler united the pro-Nazi Protestants into a single **Reich Church**, led by Ludwig Müller (the 'Reich Bishop'). Its members called themselves 'German Christians'. They wore Nazi uniforms, hung swastikas inside their churches, and demanded that the Old Testament of the Bible be banned because of its Jewish origins.\n\nIn disgust, a brave First World War U-boat commander turned pastor named Martin Niemöller set up the **Pastors' Emergency League (PEL)**, which evolved into the rival **Confessional Church** in 1934. Over 6,000 Protestant pastors joined Niemöller, alongside theologians like Dietrich Bonhoeffer (who secretly trained illegal pastors), in preaching against Nazi interference in religion. The Nazis responded with brutal force: Niemöller was arrested in 1937 and eventually sent to Sachsenhausen concentration camp, and hundreds of his pastors were imprisoned.",
-              "tasks": []
+              "text": "**5. Controlling the Churches: The Protestants**\nThe Protestant churches were heavily divided. Hitler united the pro-Nazi Protestants into a single **Reich Church**, led by Ludwig Müller (the 'Reich Bishop'). Its members called themselves 'German Christians'. They wore Nazi uniforms, hung swastikas inside their churches, and demanded that the Old Testament of the Bible be banned because of its Jewish origins.\n\nIn disgust, a brave First World War U-boat commander turned pastor named Martin Niemöller set up the **Pastors' Emergency League (PEL)**, which evolved into the rival **Confessional Church** in 1934. Over 6,000 Protestant pastors joined Niemöller, alongside theologians like Dietrich Bonhoeffer (who secretly trained illegal pastors), in preaching against Nazi interference in religion. The Nazis responded with brutal force: Niemöller was arrested in 1937 and eventually sent to Sachsenhausen concentration camp, and hundreds of his pastors were imprisoned."
             }
           ],
           "quiz": [
@@ -49671,8 +49704,7 @@
               "text": "**4. The 1936 Berlin Olympics**\nThe 1936 Olympic Games provided Hitler with the ultimate global stage to showcase the \"superiority\" of the Aryan race and the efficiency of the Nazi state.\n\n* **The Deception:** Goebbels carefully paused the regime's brutality. Violent anti-Semitic newspapers like 'Der Stürmer' were temporarily removed from newsstands, and \"Jews Not Wanted\" signs were taken down. Foreign visitors left genuinely impressed by the clean, prosperous, and highly organised \"New Germany\".\n* **The International Failure vs. Domestic Success:** Hitler's primary goal was to prove Aryan racial supremacy. Internationally, this was undermined by the African-American athlete Jesse Owens, who won four gold medals. However, for the domestic German audience, the propaganda was a massive triumph: Germany dominated the overall medal table, winning 33 gold medals (far ahead of America's 24), which Goebbels used as 'proof' of Aryan superiority."
             },
             {
-              "text": "**5. Controlling Culture and the Arts**\nHitler fancied himself an artist, and he believed that culture should reflect the heroic, traditional values of the German race. In September 1933, the **Reich Chamber of Culture** was set up. If you wanted to publish a book, sell a painting, or play in an orchestra, you 'had' to be a member. Jews and political opponents were banned.\n\n* **Art:** Modern, abstract art was despised by Hitler and banned as ***Entartete Kunst*** (Degenerate Art). In 1937, the Nazis held a massive 'Degenerate Art Exhibition' in Munich, where banned paintings were hung crookedly and surrounded by insulting graffiti to encourage the public to mock them. Instead, the Nazis promoted heroic, realistic paintings of muscular Aryan soldiers and fertile peasant women.\n* **Architecture:** Hitler favoured monumental, neoclassical architecture (huge stone buildings with classical pillars). Albert Speer designed buildings that were deliberately massive to make the individual feel small and the State feel eternal.\n* **Music:** Jewish composers (like Mendelssohn) were completely banned. American Jazz was outlawed because it was seen as \"black music\". Instead, Germans were encouraged to listen to traditional German composers like **Richard Wagner** and Beethoven.",
-              "tasks": []
+              "text": "**5. Controlling Culture and the Arts**\nHitler fancied himself an artist, and he believed that culture should reflect the heroic, traditional values of the German race. In September 1933, the **Reich Chamber of Culture** was set up. If you wanted to publish a book, sell a painting, or play in an orchestra, you 'had' to be a member. Jews and political opponents were banned.\n\n* **Art:** Modern, abstract art was despised by Hitler and banned as ***Entartete Kunst*** (Degenerate Art). In 1937, the Nazis held a massive 'Degenerate Art Exhibition' in Munich, where banned paintings were hung crookedly and surrounded by insulting graffiti to encourage the public to mock them. Instead, the Nazis promoted heroic, realistic paintings of muscular Aryan soldiers and fertile peasant women.\n* **Architecture:** Hitler favoured monumental, neoclassical architecture (huge stone buildings with classical pillars). Albert Speer designed buildings that were deliberately massive to make the individual feel small and the State feel eternal.\n* **Music:** Jewish composers (like Mendelssohn) were completely banned. American Jazz was outlawed because it was seen as \"black music\". Instead, Germans were encouraged to listen to traditional German composers like **Richard Wagner** and Beethoven."
             }
           ],
           "quiz": [
@@ -50099,8 +50131,7 @@
               "text": "**4. Youth Opposition: The Swing Youth**\nWhile the Pirates were working-class, the **Swing Youth** were largely **middle and upper-class** teenagers in big cities like Berlin and Hamburg. They had the wealth to own record players and rebelled culturally rather than violently.\n\n* They illegally listened to banned American Jazz and Swing music (such as Glenn Miller), which the Nazis despised as \"black\" and \"Jewish\" music.\n* They dressed in sharp 'English' styles—boys carried umbrellas and wore tailored suits, while girls wore makeup (which the Nazis banned, as they wanted women to have a natural, 'peasant' look).\n* They organised illegal underground dances, attended by thousands, where they jitterbugged and smoked."
             },
             {
-              "text": "**5. The Nazi Reaction to Youth Opposition**\nBefore the outbreak of war in 1939, the Nazi response to these youth groups was relatively lenient. The Gestapo would occasionally break up Swing Youth dances, confiscate record players, or arrest Edelweiss Pirates, shave their heads, and give them a severe beating before releasing them. The Nazis did not want to send thousands of young, healthy Aryans to concentration camps. '(Note: This would change drastically during WWII, when youth opposition became more political and the Nazi punishments became lethal).'",
-              "tasks": []
+              "text": "**5. The Nazi Reaction to Youth Opposition**\nBefore the outbreak of war in 1939, the Nazi response to these youth groups was relatively lenient. The Gestapo would occasionally break up Swing Youth dances, confiscate record players, or arrest Edelweiss Pirates, shave their heads, and give them a severe beating before releasing them. The Nazis did not want to send thousands of young, healthy Aryans to concentration camps. '(Note: This would change drastically during WWII, when youth opposition became more political and the Nazi punishments became lethal).'"
             }
           ],
           "quiz": [
@@ -50524,8 +50555,7 @@
               "text": "**4. Controlling Appearance, Daily Life, and Education**\nThe Nazis dictated exactly how the ideal German woman should look and behave, enforced through propaganda and social pressure:\n\n* **Appearance:** They were expected to wear traditional German peasant dresses. Trousers, high heels, and makeup were heavily discouraged. Hair had to be tied back in plaits or a bun; dyeing or perming hair was viewed as 'un-German'.\n* **Lifestyle Restrictions:** Women were banned from smoking in public (it was considered harmful to fertility) and discouraged from slimming/dieting, as the Nazis believed heavier women had easier childbirths.\n* **Organisations:** Hitler appointed Gertrud Scholtz-Klink as the Reich Women’s Leader. She oversaw the elite **NS-Frauenschaft** (National Socialist Women's League). All independent women's groups were banned and merged into the massive **Deutsches Frauenwerk (DFW)**, which by 1939 had 6 million members. It ran motherhood schools, teaching millions of women how to cook, clean, and raise children according to Nazi ideology.\n* **Education:** To keep women focused on the 'Three Ks' ('Kinder, Küche, Kirche'), female enrolment in universities was strictly limited to a maximum quota of **10%**."
             },
             {
-              "text": "**5. Employment: The Great Contradiction**\nThis is a crucial analytical point. The Nazis 'wanted' women out of the workplace, but their own economic and military goals made this impossible.\n\n* **Initial Removals (1933–1936):** Women were forced out of professional careers. In 1933, female doctors, civil servants, and teachers were sacked. In 1936, women were banned from being judges or serving on juries.\n* **The Reversal (1937–1939):** In 1936, Hermann Göring introduced the **Four Year Plan** to secretly rearm Germany for war. This created a massive labor shortage in factories as men joined the army. By 1937, the Nazis were forced to abandon their ideology. They needed women back in the factories. They abolished the marriage loan requirement that women had to quit work, and introduced a \"compulsory duty year\" requiring women to work in agriculture or industry.\n* **The Result:** Nazi employment policy towards women was an ideological failure. Despite spending years telling women to stay at home, the number of women in employment actually **rose** from 11.6 million in 1933 to 14.6 million in 1939.",
-              "tasks": []
+              "text": "**5. Employment: The Great Contradiction**\nThis is a crucial analytical point. The Nazis 'wanted' women out of the workplace, but their own economic and military goals made this impossible.\n\n* **Initial Removals (1933–1936):** Women were forced out of professional careers. In 1933, female doctors, civil servants, and teachers were sacked. In 1936, women were banned from being judges or serving on juries.\n* **The Reversal (1937–1939):** In 1936, Hermann Göring introduced the **Four Year Plan** to secretly rearm Germany for war. This created a massive labor shortage in factories as men joined the army. By 1937, the Nazis were forced to abandon their ideology. They needed women back in the factories. They abolished the marriage loan requirement that women had to quit work, and introduced a \"compulsory duty year\" requiring women to work in agriculture or industry.\n* **The Result:** Nazi employment policy towards women was an ideological failure. Despite spending years telling women to stay at home, the number of women in employment actually **rose** from 11.6 million in 1933 to 14.6 million in 1939."
             }
           ],
           "quiz": [
@@ -50939,8 +50969,7 @@
               "text": "**Extracurricular Control: The Youth Movements**\nTo control children outside of school hours, Hitler appointed Baldur von Schirach as the Reich Youth Leader. All other youth groups (like the Boy Scouts or Catholic youth groups) were banned or absorbed. Crucially, the Hitler Youth aimed to undermine family loyalty; teenagers were encouraged to inform on their own parents if they heard them criticising the regime.\n\n**The Path for Boys:**\n* **Ages 10–14:** 'Deutsches Jungvolk' (DJ - German Young People).\n* **Ages 14–18:** 'Hitlerjugend' (HJ - Hitler Youth).\n* **Activities:** The focus was purely on military preparation. Boys engaged in regular hiking, camping, map-reading, and rifle shooting. They were subjected to harsh physical punishments to toughen them up and swore a blood oath of personal loyalty to Hitler.\n\n**The Path for Girls:**\n* **Ages 10–14:** 'Jungmädelbund' (JM - Young Girls).\n* **Ages 14–18:** 'Bund Deutscher Mädel' (BDM - League of German Maidens).\n* **Ages 17-21 (Grade 9 point):** The **Faith and Beauty Society** ('Glaube und Schönheit') was set up in 1938. The Nazis were worried girls would forget their domestic training in the gap between leaving the BDM at 18 and marrying, so this group kept them under Nazi control until they joined the adult women's league.\n* **Activities:** The focus was on health and preparation for motherhood. Girls were taught domestic chores, cooking, and how to spot a racially pure husband. They also took part in gymnastics and cross-country running to ensure they were physically fit for childbirth."
             },
             {
-              "text": "**5. Success or Failure? (Grade 9 Analysis)**\n* **The Success:** Initially, the youth movements were highly successful and popular. Young people enjoyed the camping, sports, and the sense of power it gave them over their parents. In 1936, the **Hitler Youth Law** made it state policy, and in 1939, a Second Hitler Youth Law made membership strictly compulsory. By 1939, membership stood at around **8 million**.\n* **The Failure:** However, by the late 1930s, the system was beginning to crack. As the Hitler Youth became strictly compulsory, it became less about fun and more about boring military drill and endless political speeches. This resentment directly fueled the rise of opposition groups like the **Edelweiss Pirates** and the **Swing Youth**, proving that indoctrination was never 100% successful.",
-              "tasks": []
+              "text": "**5. Success or Failure? (Grade 9 Analysis)**\n* **The Success:** Initially, the youth movements were highly successful and popular. Young people enjoyed the camping, sports, and the sense of power it gave them over their parents. In 1936, the **Hitler Youth Law** made it state policy, and in 1939, a Second Hitler Youth Law made membership strictly compulsory. By 1939, membership stood at around **8 million**.\n* **The Failure:** However, by the late 1930s, the system was beginning to crack. As the Hitler Youth became strictly compulsory, it became less about fun and more about boring military drill and endless political speeches. This resentment directly fueled the rise of opposition groups like the **Edelweiss Pirates** and the **Swing Youth**, proving that indoctrination was never 100% successful."
             }
           ],
           "quiz": [
@@ -51368,8 +51397,7 @@
               "text": "**4. Controlling the Workers: The DAF**\nIn May 1933, Hitler banned all trade unions and strikes. To replace them, he set up the **German Labour Front (DAF)**, run by Robert Ley. Every worker had to join. Employers could set wages as they pleased, and workers could not negotiate or quit without permission. To bribe the workers into accepting this loss of freedom, the DAF set up two sub-organisations:\n* **Strength Through Joy (KdF):** Provided state-subsidised leisure activities like theatre tickets and luxury cruises to loyal workers. \n* **The Volkswagen Scheme:** A KdF savings scheme where workers paid 5 marks a week towards a 'People's Car'. It was a scam—in 1939, factories switched to military vehicles, and no civilian ever received a car or a refund.\n* **Beauty of Labour (SdA):** Campaigned for better factory facilities. 'Nuance:' While facilities improved, employers forced the workers to build these canteens themselves during unpaid free time."
             },
             {
-              "text": "**5. Winners and Losers: Did Living Standards Improve?**\nThe idea that everyone was better off under the Nazis is a myth. \n* **The Winners (Big Business & Farmers):** Giant monopolies like IG Farben and Krupp made fortunes from government rearmament contracts. Farmers benefited initially from the 'Reich Entailed Farm Law' (1933), which protected their land from being seized for debt (though it also meant they couldn't sell it). \n* **The Losers (Small Businesses & Workers):** Small businesses ('Mittelstand') were squeezed out by big department stores and high taxes; roughly 20% went bankrupt. For the average worker, the working week increased from 43 hours in 1933 to 49 hours in 1939. Because the government prioritized military spending ('Guns over Butter') and Ersatz goods were expensive to produce, the price of basic groceries rose faster than wages. **Conclusion:** Workers had job security, but their purchasing power (real wages) fell compared to the Weimar era.",
-              "tasks": []
+              "text": "**5. Winners and Losers: Did Living Standards Improve?**\nThe idea that everyone was better off under the Nazis is a myth. \n* **The Winners (Big Business & Farmers):** Giant monopolies like IG Farben and Krupp made fortunes from government rearmament contracts. Farmers benefited initially from the 'Reich Entailed Farm Law' (1933), which protected their land from being seized for debt (though it also meant they couldn't sell it). \n* **The Losers (Small Businesses & Workers):** Small businesses ('Mittelstand') were squeezed out by big department stores and high taxes; roughly 20% went bankrupt. For the average worker, the working week increased from 43 hours in 1933 to 49 hours in 1939. Because the government prioritized military spending ('Guns over Butter') and Ersatz goods were expensive to produce, the price of basic groceries rose faster than wages. **Conclusion:** Workers had job security, but their purchasing power (real wages) fell compared to the Weimar era."
             }
           ],
           "quiz": [
@@ -51839,8 +51867,7 @@
               "text": "**4. The Escalation of Anti-Semitism (1933–1939)**\nThe persecution of Jewish people did not start with mass murder; it was a process of 'cumulative radicalisation'—slowly segregating them to normalise discrimination before ramping up the brutality.\n\n**Phase 1: Early Discrimination (1933–1934)**\n* **April 1933 Boycott:** The SA stood outside Jewish shops, painting Stars of David on windows and intimidating customers. \n* **Employment:** The Civil Service Act (1933) sacked Jewish teachers, judges, and civil servants. \n* **Segregation:** Local councils began banning Jewish people from public parks, swimming pools, and cinemas.\n\n**Phase 2: The Nuremberg Laws (September 1935)**\nThese laws legally stripped Jewish people of their basic human rights:\n1. **The Reich Citizenship Law:** Declared that only those of German blood could be citizens. Jewish people became 'subjects' with no right to vote or hold a German passport.\n2. **The Law for the Protection of German Blood and Honour:** Forbade marriage or sexual relations between Jews and Aryans. \n\n**Phase 3: Bureaucratic Dehumanisation (1938)**\nBefore Kristallnacht, the state systematically erased Jewish identity. \n* **Passports:** In October 1938, all Jewish passports had to be stamped with a large red letter **'J'**.\n* **Names:** A decree forced all Jewish men to add **'Israel'** to their first name, and all women to add **'Sarah'**, so they could be immediately identified on official documents."
             },
             {
-              "text": "**Phase 4: State-Sponsored Violence & Forced Emigration (1938–1939)**\n* **Kristallnacht (9/10 November 1938):** A Jewish teenager assassinated a minor German diplomat in Paris. Joseph Goebbels (trying to win Hitler's favour) used this to orchestrate a nationwide pogrom. \n    * 'The Damage:' Over 800 shops were destroyed, 191 synagogues burned, and 91 Jewish people murdered. 30,000 Jewish men were sent to concentration camps. \n    * Secret 'Sopade' and Gestapo reports revealed that many ordinary Germans were disgusted by Kristallnacht. This was not always out of sympathy for the Jews, but because the German public hated public disorder and the wasteful destruction of property. \n* **The Aftermath:** The Nazis fined the Jewish community **1 billion marks** for the damage. \n* **The Shift in Policy (1939):** Realising public violence was unpopular, persecution became highly bureaucratic. In January 1939, Reinhard Heydrich was put in charge of the **Reich Office for Jewish Emigration** to systematically force Jewish people out of Germany by confiscating all their wealth in exchange for exit visas.",
-              "tasks": []
+              "text": "**Phase 4: State-Sponsored Violence & Forced Emigration (1938–1939)**\n* **Kristallnacht (9/10 November 1938):** A Jewish teenager assassinated a minor German diplomat in Paris. Joseph Goebbels (trying to win Hitler's favour) used this to orchestrate a nationwide pogrom. \n    * 'The Damage:' Over 800 shops were destroyed, 191 synagogues burned, and 91 Jewish people murdered. 30,000 Jewish men were sent to concentration camps. \n    * Secret 'Sopade' and Gestapo reports revealed that many ordinary Germans were disgusted by Kristallnacht. This was not always out of sympathy for the Jews, but because the German public hated public disorder and the wasteful destruction of property. \n* **The Aftermath:** The Nazis fined the Jewish community **1 billion marks** for the damage. \n* **The Shift in Policy (1939):** Realising public violence was unpopular, persecution became highly bureaucratic. In January 1939, Reinhard Heydrich was put in charge of the **Reich Office for Jewish Emigration** to systematically force Jewish people out of Germany by confiscating all their wealth in exchange for exit visas."
             }
           ],
           "quiz": [
@@ -52623,6 +52650,67 @@
           ]
         }
       ]
-    }
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
   }
 }

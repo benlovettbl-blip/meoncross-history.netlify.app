@@ -1,7 +1,7 @@
 export const unitData = {
   "specification_file": "",
   "title": "KS3: History of Australia",
-  "homepage_background": "",
+  "homepage_background": "/images/sydney_cove_1792.jpg",
   "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",
   "cover_image": "/images/prison_hulks.jpg",
   "cover_caption": "An 18th-century sketch of Prison Hulks in Portsmouth Harbour by Louis Garneray.",
@@ -20,6 +20,7 @@ export const unitData = {
     {
       "id": "lesson_1",
       "title": "Claiming Australia",
+      "banner": "/images/gweagal_encounter.jpg",
       "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
       "teacher_notes": {
         "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
@@ -324,6 +325,7 @@ export const unitData = {
     {
       "id": "lesson_2",
       "title": "Creating a Convict Colony",
+      "banner": "/images/prison_hulks.jpg",
       "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
       "teacher_notes": {
         "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
@@ -657,6 +659,7 @@ export const unitData = {
     {
       "id": "lesson_3",
       "title": "Encounters with the Indigenous Peoples",
+      "banner": "/images/sydney_cove_1792.jpg",
       "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
       "teacher_notes": {
         "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
@@ -839,6 +842,7 @@ export const unitData = {
     {
       "id": "lesson_4",
       "title": "From Penal Colony to Settlement",
+      "banner": "/images/ballarat_gold.jpg",
       "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
       "teacher_notes": {
         "primer": "This lesson transitions the narrative from the early struggles of the convict colony to the explosive economic growth of the 1850s gold rushes. Students will explore how free settlers, the wool industry, and the arrival of global immigrants (especially Chinese miners) fundamentally changed the demographic and economic landscape of Australia.",
@@ -1035,8 +1039,8 @@ export const unitData = {
     {
       "id": "lesson_5",
       "title": "End of Unit Assessment",
-      "banner": "/images/sydney_cove.jpg",
-      "banner_position": "center",
+      "banner": "/images/james_cook.jpg",
+      "homepage_background": "/images/assessment_bg.jpg",
       "enquiry": "How did New South Wales develop, and how should we assess its history?",
       "teacher_notes": {
         "primer": "This is the final assessment lesson for the Australia unit. It provides three differentiated choices for students to demonstrate their historical knowledge and skills.",

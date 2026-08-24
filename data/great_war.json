@@ -1,7 +1,5 @@
 {
   "data": {
-    "cover_image": "/images/great_war_cover.jpg",
-    "title": "KS3: Causes of the Great War",
     "debatePrompts": [
       {
         "title": "Bismarck & Unification",
@@ -17,8 +15,10 @@
       }
     ],
     "specification_file": "/data/great_war_overview.json",
+    "title": "KS3: Causes of the Great War",
     "homepage_background": "assets/somme_trench_1916.jpg",
     "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
+    "cover_image": "/images/great_war_cover.jpg",
     "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
     "printable_workbooks": [
       {
@@ -1462,7 +1462,7 @@
             "text": "**The Naval Race: A Self-Fulfilling Prophecy?**\n\nThe HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.\n\nGermany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914."
           },
           {
-            "text": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
+            "text": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong>Two-Power Standard</strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
             "level_4": "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
             "tasks": [
               {
@@ -1513,7 +1513,7 @@
             "theme_heading": "Naval Arms Race Begins"
           },
           {
-            "text": "This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong></strong> in Scotland, while the German High Seas Fleet was based at <strong></strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong></strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.",
+            "text": "This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong>Scapa Flow</strong> in Scotland, while the German High Seas Fleet was based at <strong>Wilhelmshaven</strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong>North Sea</strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong>Kiel Canal</strong>, completing the project in 1914 just before the outbreak of war.",
             "level_4": "This competitive race culminated in a highly strategic naval standoff. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.",
             "theme_heading": "Naval Standoff Prepar"
           },
@@ -1875,7 +1875,7 @@
             "theme_heading": "Europe's Alliance System"
           },
           {
-            "text": "By 1907, the European alliance system had solidified into two balanced groups. On one side stood the <strong></strong>, consisting of the central European bloc of Germany, Austria-Hungary, and Italy. On the opposing side sat the <strong></strong>, uniting Great Britain, France, and Russia. At the time, contemporary newspapers and diplomats argued that this delicate division of power would successfully maintain world peace. The logic was simple: going to war with any single member of an alliance meant triggering an immediate, terrible war against the entire opposing bloc. No statesman, they believed, would be reckless enough to initiate such a disaster.",
+            "text": "By 1907, the European alliance system had solidified into two balanced groups. On one side stood the <strong>Triple Alliance</strong>, consisting of the central European bloc of Germany, Austria-Hungary, and Italy. On the opposing side sat the <strong>Triple Entente</strong>, uniting Great Britain, France, and Russia. At the time, contemporary newspapers and diplomats argued that this delicate division of power would successfully maintain world peace. The logic was simple: going to war with any single member of an alliance meant triggering an immediate, terrible war against the entire opposing bloc. No statesman, they believed, would be reckless enough to initiate such a disaster.",
             "level_4": "By 1907, the European alliance system had solidified into two balanced groups. No statesman, they believed, would be reckless enough to initiate such a disaster.",
             "tasks": [
               {
@@ -1892,7 +1892,7 @@
             "theme_heading": "Europe's Two Alliances"
           },
           {
-            "text": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. The German Kaiser and his military planners viewed the Triple Entente not as a peaceful defensive bloc, but as a hostile circle of enemies designed to trap them. Historians note that from the German perspective, this amounted to a deliberate policy of <strong></strong> meant to block Germany’s legitimate right to become a global power. Crucially, the German High Command and Austria-Hungary's Chief of the General Staff, <strong></strong> (who repeatedly advocated for a preventive war to crush Serbia), believed that a massive European war was <strong></strong>. They feared that Russia's rapid industrialization and military growth would soon overwhelm Germany, making a preventative war necessary before Russia became too powerful. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
+            "text": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. The German Kaiser and his military planners viewed the Triple Entente not as a peaceful defensive bloc, but as a hostile circle of enemies designed to trap them. Historians note that from the German perspective, this amounted to a deliberate policy of <strong>encirclement</strong> meant to block Germany’s legitimate right to become a global power. Crucially, the German High Command and Austria-Hungary's Chief of the General Staff, <strong>Conrad von Hötzendorf</strong> (who repeatedly advocated for a preventive war to crush Serbia), believed that a massive European war was <strong>inevitable</strong>. They feared that Russia's rapid industrialization and military growth would soon overwhelm Germany, making a preventative war necessary before Russia became too powerful. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
             "level_4": "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
             "tasks": [
               {
@@ -2250,7 +2250,7 @@
             "theme_heading": "Balkans Ignite Conflict"
           },
           {
-            "text": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. Austria-Hungary was a vast empire containing many different nationalities who wanted independence. Its politicians deeply feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside the Austro-Hungarian borders would rebel, causing the entire empire to collapse. Tensions exploded in 1908 when Austria officially <strong></strong> the provinces of Bosnia and Herzegovina, directly absorbing thousands of furious Serbs into its territory. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
+            "text": "For the neighboring empire of Austria-Hungary, this <strong>Pan-Slavism</strong> was an absolute nightmare. Austria-Hungary was a vast empire containing many different nationalities who wanted independence. Its politicians deeply feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside the Austro-Hungarian borders would rebel, causing the entire empire to collapse. Tensions exploded in 1908 when Austria officially <strong>annexed</strong> the provinces of Bosnia and Herzegovina, directly absorbing thousands of furious Serbs into its territory. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
             "level_4": "For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.",
             "tasks": [
               {
@@ -2262,7 +2262,7 @@
             "theme_heading": "Empire's Serbian"
           },
           {
-            "text": "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong></strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
+            "text": "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong>Appel Quay</strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
             "level_4": "By June 1914, the Balkan powder keg was ready to blow. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
             "theme_heading": "Ferdinand'"
           },
@@ -2284,7 +2284,7 @@
             "theme_heading": "Princip's Fatal"
           },
           {
-            "text": "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong></strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
+            "text": "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong>Treaty of London (1839)</strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
             "level_4": "This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
             "tasks": [
               {

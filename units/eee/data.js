@@ -1,4 +1,4 @@
-const unitData = {
+const eee = {
   "debatePrompts": [
     {
       "title": "Elizabeth's Religious Settlement",
@@ -16,11 +16,11 @@ const unitData = {
   "specification_file": "/data/eee_overview.json",
   "title": "Paper 2: Early Elizabethan England, 1558-88",
   "subtitle": "",
-  "homepage_background": "/images/elizabeth_i.jpg",
+  "homepage_background": "assets/elizabeth_i.jpg",
   "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?",
   "enquiry_question": "From religious division to the Armada: How did Elizabeth secure her throne?",
   "desc": "Paper 2",
-  "cover_image": "/images/placeholder_cover.jpg",
+  "cover_image": "/assets/placeholder_cover.jpg",
   "cover_caption": "Source A: A placeholder image for Early Elizabethan England.",
   "workbooks": [
     {
@@ -306,8 +306,7 @@ const unitData = {
         {
           "type": "narrative",
           "theme_heading": "5. The Big Picture: A Crisis of Interconnected Threats",
-          "text": "Ultimately, the crisis of 1558 was so severe because Elizabeth’s problems did not exist in isolation; they actively magnified each other. Her gender and contested legitimacy directly emboldened foreign enemies like France, who championed Mary, Queen of Scots’ rival claim to the throne. Simultaneously, the Crown’s crippling £300,000 debt meant Elizabeth lacked the financial muscle to raise an army to defend against the Auld Alliance on her northern border. She was a vulnerable target with no money to buy a shield. Consequently, Elizabeth was forced to rely on extreme political caution, the strategic advice of her Privy Council, and careful public relations just to survive her first few years in power.",
-          "tasks": []
+          "text": "Ultimately, the crisis of 1558 was so severe because Elizabeth’s problems did not exist in isolation; they actively magnified each other. Her gender and contested legitimacy directly emboldened foreign enemies like France, who championed Mary, Queen of Scots’ rival claim to the throne. Simultaneously, the Crown’s crippling £300,000 debt meant Elizabeth lacked the financial muscle to raise an army to defend against the Auld Alliance on her northern border. She was a vulnerable target with no money to buy a shield. Consequently, Elizabeth was forced to rely on extreme political caution, the strategic advice of her Privy Council, and careful public relations just to survive her first few years in power."
         }
       ],
       "quiz": [
@@ -684,8 +683,7 @@ const unitData = {
         {
           "type": "narrative",
           "theme_heading": "5. The Big Picture: From Compromise to Treason",
-          "text": "Elizabeth’s Religious Settlement was a brilliant piece of initial statecraft; by creating a broad, ambiguous 'Middle Way', she successfully avoided an immediate civil war in 1559. She used the Church not just for prayer, but as a vast, nationwide network of social control, utilising Church courts and parish priests to enforce loyalty. However, theology is notoriously difficult to compromise on. The Puritans remained a persistent, irritating thorn in her side regarding the day-to-day running of the Church. Conversely, the Catholic threat morphed from quiet disobedience into outright treason. Once the Pope excommunicated Elizabeth and Mary, Queen of Scots crossed the border, religion became inextricably linked to national security and foreign invasion.",
-          "tasks": []
+          "text": "Elizabeth’s Religious Settlement was a brilliant piece of initial statecraft; by creating a broad, ambiguous 'Middle Way', she successfully avoided an immediate civil war in 1559. She used the Church not just for prayer, but as a vast, nationwide network of social control, utilising Church courts and parish priests to enforce loyalty. However, theology is notoriously difficult to compromise on. The Puritans remained a persistent, irritating thorn in her side regarding the day-to-day running of the Church. Conversely, the Catholic threat morphed from quiet disobedience into outright treason. Once the Pope excommunicated Elizabeth and Mary, Queen of Scots crossed the border, religion became inextricably linked to national security and foreign invasion."
         }
       ],
       "quiz": [
@@ -1057,8 +1055,7 @@ const unitData = {
         {
           "type": "narrative",
           "theme_heading": "4. Summary: The Escalation of Religious Threats",
-          "text": "While Elizabeth’s Religious Settlement of 1559 successfully established a state church and prevented immediate civil war, it fundamentally failed to create a united nation. The settlement inadvertently forced Elizabeth to fight a two-front religious battle. From within her own ranks, Puritans fiercely challenged her authority over church doctrine and dress (such as the Crucifix and Vestment controversies), highlighting deep Protestant divisions. Yet, the Puritan threat remained relatively benign because they would never conspire against a Protestant queen. Conversely, the Catholic challenge rapidly mutated from passive domestic recusancy into an existential geopolitical crisis. The combination of the 1569 Northern Earls' rebellion, the 1570 Papal excommunication, and the arrival of Mary, Queen of Scots, fused local religious discontent with the vast military might of foreign Catholic superpowers like Spain and France. This transformed the Catholic challenge from a matter of private faith into a direct, treasonous threat to Elizabeth's crown and life.",
-          "tasks": []
+          "text": "While Elizabeth’s Religious Settlement of 1559 successfully established a state church and prevented immediate civil war, it fundamentally failed to create a united nation. The settlement inadvertently forced Elizabeth to fight a two-front religious battle. From within her own ranks, Puritans fiercely challenged her authority over church doctrine and dress (such as the Crucifix and Vestment controversies), highlighting deep Protestant divisions. Yet, the Puritan threat remained relatively benign because they would never conspire against a Protestant queen. Conversely, the Catholic challenge rapidly mutated from passive domestic recusancy into an existential geopolitical crisis. The combination of the 1569 Northern Earls' rebellion, the 1570 Papal excommunication, and the arrival of Mary, Queen of Scots, fused local religious discontent with the vast military might of foreign Catholic superpowers like Spain and France. This transformed the Catholic challenge from a matter of private faith into a direct, treasonous threat to Elizabeth's crown and life."
         }
       ],
       "quiz": [
@@ -1426,8 +1423,7 @@ const unitData = {
         {
           "type": "narrative",
           "theme_heading": "4. Summary: The Captive Threat",
-          "text": "Mary, Queen of Scots, was the most significant domestic and dynastic problem Elizabeth faced in her early reign. With her impeccable Tudor bloodline and strict adherence to the Catholic faith, Mary represented everything Elizabeth was not—a legitimate, Catholic alternative for the English throne. When Mary’s scandalous personal life and the murder of Lord Darnley resulted in her forced abdication and flight to England in 1568, she inadvertently transferred Scotland’s instability directly onto English soil. Elizabeth’s decision to hold Mary in comfortable but heavily guarded captivity following the inconclusive 'Casket Letters' inquiry was a necessary short-term compromise. However, it had severe long-term consequences. By keeping her Catholic rival locked up in England, Elizabeth inadvertently provided a figurehead for the very rebellions and plots she was trying to avoid, starting immediately with the Revolt of the Northern Earls in 1569.",
-          "tasks": []
+          "text": "Mary, Queen of Scots, was the most significant domestic and dynastic problem Elizabeth faced in her early reign. With her impeccable Tudor bloodline and strict adherence to the Catholic faith, Mary represented everything Elizabeth was not—a legitimate, Catholic alternative for the English throne. When Mary’s scandalous personal life and the murder of Lord Darnley resulted in her forced abdication and flight to England in 1568, she inadvertently transferred Scotland’s instability directly onto English soil. Elizabeth’s decision to hold Mary in comfortable but heavily guarded captivity following the inconclusive 'Casket Letters' inquiry was a necessary short-term compromise. However, it had severe long-term consequences. By keeping her Catholic rival locked up in England, Elizabeth inadvertently provided a figurehead for the very rebellions and plots she was trying to avoid, starting immediately with the Revolt of the Northern Earls in 1569."
         }
       ],
       "quiz": [
@@ -1828,8 +1824,7 @@ const unitData = {
         },
         {
           "theme_heading": "The Big Picture",
-          "text": "Between 1569 and 1586, the Catholic threat against Elizabeth fundamentally evolved. It began as a domestic dispute regarding northern noble power and traditional faith (The Northern Earls). However, the Ridolfi, Throckmorton, and Babington plots demonstrated a lethal intersection of English Catholic plotting and direct foreign (Spanish and French) military backing, forcing the government to pass harsh anti-Catholic laws in 1581. Elizabeth’s survival was almost entirely reliant on Sir Francis Walsingham’s sophisticated intelligence network. Ultimately, Mary's execution in 1587 brutally eradicated the domestic threat of a Catholic replacement, but in doing so, it became the definitive trigger for the launch of the Spanish Armada.",
-          "tasks": []
+          "text": "Between 1569 and 1586, the Catholic threat against Elizabeth fundamentally evolved. It began as a domestic dispute regarding northern noble power and traditional faith (The Northern Earls). However, the Ridolfi, Throckmorton, and Babington plots demonstrated a lethal intersection of English Catholic plotting and direct foreign (Spanish and French) military backing, forcing the government to pass harsh anti-Catholic laws in 1581. Elizabeth’s survival was almost entirely reliant on Sir Francis Walsingham’s sophisticated intelligence network. Ultimately, Mary's execution in 1587 brutally eradicated the domestic threat of a Catholic replacement, but in doing so, it became the definitive trigger for the launch of the Spanish Armada."
         }
       ],
       "quiz": [
@@ -2207,8 +2202,7 @@ const unitData = {
         {
           "type": "narrative",
           "theme_heading": "5. Summary: The Big Picture",
-          "text": "The launch of the Spanish Armada was the inevitable climax of decades of simmering tension. What began as privateering raids in the New World and secret funding of Dutch rebels morphed into a fight for survival. Philip II’s plan required perfect timing and communication between his naval fleet and land army—a fatal flaw the English expertly exploited. The defeat of the Armada in 1588 was a monumental triumph for Elizabeth. It did not instantly end the war with Spain, but it provided a massive propaganda victory, 'proving' to the world that God favoured Protestant England, and it secured Elizabeth's legacy as a warrior queen.",
-          "tasks": []
+          "text": "The launch of the Spanish Armada was the inevitable climax of decades of simmering tension. What began as privateering raids in the New World and secret funding of Dutch rebels morphed into a fight for survival. Philip II’s plan required perfect timing and communication between his naval fleet and land army—a fatal flaw the English expertly exploited. The defeat of the Armada in 1588 was a monumental triumph for Elizabeth. It did not instantly end the war with Spain, but it provided a massive propaganda victory, 'proving' to the world that God favoured Protestant England, and it secured Elizabeth's legacy as a warrior queen."
         }
       ],
       "quiz": [
@@ -2561,8 +2555,7 @@ const unitData = {
         },
         {
           "theme_heading": "The Big Picture",
-          "text": "The period between 1585 and 1588 marked the dramatic transition from cold war to open, state-sponsored conflict. Early provocations like the seizure of the 1568 Genoese Loan and Drake's £400,000 privateering haul severely damaged relations. Ultimately, the Treaty of Nonsuch forced Elizabeth to abandon her preferred strategy of cautious diplomacy. While Robert Dudley’s military campaign in the Netherlands was hampered by defection and a lack of royal funding, his protection of the deep-water port of Ostend laid the invisible groundwork for England's future survival. Ultimately, Francis Drake's aggressive, preemptive strike on Cadiz exposed the logistical vulnerabilities of the Spanish Empire and bought Elizabeth the vital time she needed to prepare for the greatest existential threat of her reign: the Spanish Armada.",
-          "tasks": []
+          "text": "The period between 1585 and 1588 marked the dramatic transition from cold war to open, state-sponsored conflict. Early provocations like the seizure of the 1568 Genoese Loan and Drake's £400,000 privateering haul severely damaged relations. Ultimately, the Treaty of Nonsuch forced Elizabeth to abandon her preferred strategy of cautious diplomacy. While Robert Dudley’s military campaign in the Netherlands was hampered by defection and a lack of royal funding, his protection of the deep-water port of Ostend laid the invisible groundwork for England's future survival. Ultimately, Francis Drake's aggressive, preemptive strike on Cadiz exposed the logistical vulnerabilities of the Spanish Empire and bought Elizabeth the vital time she needed to prepare for the greatest existential threat of her reign: the Spanish Armada."
         }
       ],
       "quiz": [
@@ -2910,8 +2903,7 @@ const unitData = {
         },
         {
           "theme_heading": "The Big Picture",
-          "text": "The Spanish Armada of 1588 was the ultimate test of Elizabeth’s reign. Philip II’s motivations were a potent mix of holy crusade, political retaliation for the Netherlands, and fury over privateering. However, his grand strategy required a level of logistical perfection that simply did not exist in the 16th century. The failure of Medina Sidonia and Parma to coordinate at Calais allowed English tactical brilliance (fireships and rapidly reloading long-range broadsides) to break the Spanish lines. Ultimately, however, it was the catastrophic weather—the \"Protestant Wind\"—that annihilated the fleet. The victory did not end the Anglo-Spanish war, but it delivered an unprecedented propaganda victory that cemented Elizabeth’s authority and England's Protestant identity forever.",
-          "tasks": []
+          "text": "The Spanish Armada of 1588 was the ultimate test of Elizabeth’s reign. Philip II’s motivations were a potent mix of holy crusade, political retaliation for the Netherlands, and fury over privateering. However, his grand strategy required a level of logistical perfection that simply did not exist in the 16th century. The failure of Medina Sidonia and Parma to coordinate at Calais allowed English tactical brilliance (fireships and rapidly reloading long-range broadsides) to break the Spanish lines. Ultimately, however, it was the catastrophic weather—the \"Protestant Wind\"—that annihilated the fleet. The victory did not end the Anglo-Spanish war, but it delivered an unprecedented propaganda victory that cemented Elizabeth’s authority and England's Protestant identity forever."
         }
       ],
       "quiz": [
@@ -3278,8 +3270,7 @@ const unitData = {
         },
         {
           "theme_heading": "The Big Picture",
-          "text": "Elizabethan education and leisure were highly effective mirrors of the era's rigid social hierarchy. Education expanded thanks to Humanism, the printing press, and Protestantism, but it remained fundamentally unequal, strictly ring-fencing opportunities based on gender and wealth. Similarly, sports like real tennis and mob football visually separated the elite from the masses. However, the late 16th century also saw the birth of a unified popular culture. Cruel sports and the booming new theatres provided shared spaces where, for a few hours, the glittering nobility and the illiterate groundlings experienced the exact same entertainment, creating a vibrant, albeit highly controversial, cultural golden age.",
-          "tasks": []
+          "text": "Elizabethan education and leisure were highly effective mirrors of the era's rigid social hierarchy. Education expanded thanks to Humanism, the printing press, and Protestantism, but it remained fundamentally unequal, strictly ring-fencing opportunities based on gender and wealth. Similarly, sports like real tennis and mob football visually separated the elite from the masses. However, the late 16th century also saw the birth of a unified popular culture. Cruel sports and the booming new theatres provided shared spaces where, for a few hours, the glittering nobility and the illiterate groundlings experienced the exact same entertainment, creating a vibrant, albeit highly controversial, cultural golden age."
         }
       ],
       "quiz": [
@@ -3648,8 +3639,7 @@ const unitData = {
         },
         {
           "theme_heading": "The Big Picture",
-          "text": "The Elizabethan era completely transformed how England dealt with poverty. The demographic explosion and the greed of enclosure destroyed the traditional, rural way of life, forcing thousands onto the road as vagabonds. Fear of these 'masterless men' initially led to brutal, violent legislation. However, the sheer scale of the crisis forced Elizabeth’s government to undergo a profound ideological shift. By introducing a compulsory Poor Rate in 1572 and actively providing raw materials for the unemployed in 1576, Elizabeth’s government laid the very first, tentative foundations of a national welfare state—not out of modern compassion, but out of a desperate, pragmatic need to maintain social order and prevent rebellion.",
-          "tasks": []
+          "text": "The Elizabethan era completely transformed how England dealt with poverty. The demographic explosion and the greed of enclosure destroyed the traditional, rural way of life, forcing thousands onto the road as vagabonds. Fear of these 'masterless men' initially led to brutal, violent legislation. However, the sheer scale of the crisis forced Elizabeth’s government to undergo a profound ideological shift. By introducing a compulsory Poor Rate in 1572 and actively providing raw materials for the unemployed in 1576, Elizabeth’s government laid the very first, tentative foundations of a national welfare state—not out of modern compassion, but out of a desperate, pragmatic need to maintain social order and prevent rebellion."
         }
       ],
       "quiz": [
@@ -4013,8 +4003,7 @@ const unitData = {
         },
         {
           "theme_heading": "The Big Picture",
-          "text": "The Elizabethan era was the turbulent dawn of the British Empire. Forced outward by the collapse of European trade, English sailors utilised cutting-edge technology and galleon designs to project English power across the globe. While Drake’s circumnavigation was a dazzling financial and propaganda triumph that enraged Spain, Raleigh’s Virginia campaigns offered a brutal reality check. The failures at Roanoke proved that creating an empire required more than just the piracy of privateers; it required careful logistical planning, farming expertise, and sustainable diplomacy. These harsh lessons, however, laid the essential foundations for the successful Jamestown colony established shortly after Elizabeth's death in 1607.",
-          "tasks": []
+          "text": "The Elizabethan era was the turbulent dawn of the British Empire. Forced outward by the collapse of European trade, English sailors utilised cutting-edge technology and galleon designs to project English power across the globe. While Drake’s circumnavigation was a dazzling financial and propaganda triumph that enraged Spain, Raleigh’s Virginia campaigns offered a brutal reality check. The failures at Roanoke proved that creating an empire required more than just the piracy of privateers; it required careful logistical planning, farming expertise, and sustainable diplomacy. These harsh lessons, however, laid the essential foundations for the successful Jamestown colony established shortly after Elizabeth's death in 1607."
         }
       ],
       "quiz": [
@@ -4372,8 +4361,7 @@ const unitData = {
         },
         {
           "theme_heading": "The Big Picture",
-          "text": "Raleigh’s ambitious dream of a New World empire ended in complete failure. The colonies collapsed due to a lethal intersection of terrible luck (the grounding of *The Tiger*), poor leadership (Lane's aggression), a lack of farming expertise, and the overarching shadow of the Anglo-Spanish war. However, Raleigh’s failure was highly significant because it provided the ultimate blueprint for future success. It proved that private funding was not enough and that successful colonisation required massive, state-backed investment and a focus on sustainable farming rather than aggressive military conquest. These harsh lessons laid the foundation for the successful establishment of Jamestown shortly after Elizabeth's death.",
-          "tasks": []
+          "text": "Raleigh’s ambitious dream of a New World empire ended in complete failure. The colonies collapsed due to a lethal intersection of terrible luck (the grounding of *The Tiger*), poor leadership (Lane's aggression), a lack of farming expertise, and the overarching shadow of the Anglo-Spanish war. However, Raleigh’s failure was highly significant because it provided the ultimate blueprint for future success. It proved that private funding was not enough and that successful colonisation required massive, state-backed investment and a focus on sustainable farming rather than aggressive military conquest. These harsh lessons laid the foundation for the successful establishment of Jamestown shortly after Elizabeth's death."
         }
       ],
       "quiz": [
@@ -4789,6 +4777,5 @@ const unitData = {
     }
   ]
 };
-if (typeof module !== 'undefined') {
-  module.exports = { unitData };
-}
+
+export default eee;

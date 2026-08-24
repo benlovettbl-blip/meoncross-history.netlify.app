@@ -10,10 +10,16 @@ const KS3_UNITS = [
     'australia'
 ];
 
+const KS4_UNITS = [
+    'edexcel_medicine',
+    'eee',
+    'weimar_nazi_germany'
+];
+
 async function runAudit() {
     console.log("Starting Pre-Commit Curriculum Audit...");
     let allPassed = true;
-    for (const unit of KS3_UNITS) {
+    for (const unit of [...KS3_UNITS, ...KS4_UNITS]) {
         const passed = await auditUnit(unit);
         if (!passed) {
             allPassed = false;

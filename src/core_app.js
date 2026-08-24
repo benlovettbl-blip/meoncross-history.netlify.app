@@ -834,18 +834,33 @@ export function initializeApp(unitData) {
         </div>
       `;
     } else {
-      topSectionHTML = `
-        <div style="text-align: center; padding-bottom: 50px;">
-          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin-bottom: 10px; line-height: 1.2;">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
-          <h2 style="font-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
-            ${unitData.title}
-          </h2>
-          
-          ${renderCoverSourcesHTML(unitData, getAssetUrl)}
-          
-          ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
-        </div>
-      `;
+      let heroImage = unitData.homepage_background || (typeof unitData.cover_image === 'string' ? unitData.cover_image : null);
+      
+      if (heroImage && !unitData.cover_sources && !Array.isArray(unitData.cover_image)) {
+        let imgUrl = getAssetUrl(heroImage);
+        topSectionHTML = `
+          <div style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -2rem; padding: 4rem 4rem 3rem 4rem; min-height: 550px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center; background: linear-gradient(to bottom, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.1) 100%), url('${imgUrl}') center/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 0 0 12px 12px;">
+            <h1 style="position: relative; z-index: 2; font-family: 'Playfair Display', serif; font-size: 3rem; color: #f8fafc; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 4px 10px rgba(0,0,0,0.8);">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
+            <h2 style="position: relative; z-index: 2; font-size: 1.4rem; color: #cbd5e1; font-weight: 500; margin-top: 0; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);">
+              ${unitData.title}
+            </h2>
+            ${unitData.cover_caption ? `<p style="position: absolute; bottom: 10px; right: 20px; margin: 0; font-style: italic; color: rgba(255,255,255,0.7); font-size: 0.85rem; text-shadow: 0 1px 3px rgba(0,0,0,0.8); z-index: 2;">${unitData.cover_caption}</p>` : ''}
+          </div>
+        `;
+      } else {
+        topSectionHTML = `
+          <div style="text-align: center; padding-bottom: 50px;">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin-bottom: 10px; line-height: 1.2;">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
+            <h2 style="font-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
+              ${unitData.title}
+            </h2>
+            
+            ${renderCoverSourcesHTML(unitData, getAssetUrl)}
+            
+            ${unitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${unitData.cover_caption}</p>` : ''}
+          </div>
+        `;
+      }
     }
 
     contentArea.innerHTML = `
