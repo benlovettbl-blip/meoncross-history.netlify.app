@@ -567,7 +567,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Was the Weimar Republic doomed from the start?",
+        "prompt": "Discuss with your partner: Was the Weimar Republic doomed from the start?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -1039,7 +1039,7 @@ const weimar_nazi_germany = {
         ]
       },
       "pair_share": {
-        "prompt": "Which was the greater threat to the Republic: the extreme Left (Spartacists) or the extreme Right (Kapp)?",
+        "prompt": "Discuss with your partner: Which was the greater threat to the Republic: the extreme Left (Spartacists) or the extreme Right (Kapp)?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -1491,7 +1491,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Was Stresemann's recovery a true Golden Age or just a mirage?",
+        "prompt": "Discuss with your partner: Was Stresemann's recovery a true Golden Age or just a mirage?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -1932,7 +1932,7 @@ const weimar_nazi_germany = {
         ]
       },
       "pair_share": {
-        "prompt": "Did the changes in society (1924-1929) benefit all Germans equally?",
+        "prompt": "Discuss with your partner: Did the changes in society (1924-1929) benefit all Germans equally?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -2357,7 +2357,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Why did the Nazi Party appeal to people in the early 1920s?",
+        "prompt": "Discuss with your partner: Why did the Nazi Party appeal to people in the early 1920s?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -2766,7 +2766,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Was the Munich Putsch a total failure for Hitler?",
+        "prompt": "Discuss with your partner: Was the Munich Putsch a total failure for Hitler?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -3163,7 +3163,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Why did Nazi support surge after 1929?",
+        "prompt": "Discuss with your partner: Why did Nazi support surge after 1929?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -3594,7 +3594,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Did Hitler seize power or was it handed to him?",
+        "prompt": "Discuss with your partner: Did Hitler seize power or was it handed to him?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -4015,7 +4015,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Which event was more crucial in creating the dictatorship: the Reichstag Fire or the Enabling Act?",
+        "prompt": "Discuss with your partner: Which event was more crucial in creating the dictatorship: the Reichstag Fire or the Enabling Act?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -4450,7 +4450,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Why was the Gestapo so terrifying despite being relatively small?",
+        "prompt": "Discuss with your partner: Why was the Gestapo so terrifying despite being relatively small?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -4870,7 +4870,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Was Goebbels' propaganda or Himmler's terror more effective in controlling Germany?",
+        "prompt": "Discuss with your partner: Was Goebbels' propaganda or Himmler's terror more effective in controlling Germany?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -5297,7 +5297,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Why was there so little resistance to the Nazi regime?",
+        "prompt": "Discuss with your partner: Why was there so little resistance to the Nazi regime?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -5711,7 +5711,7 @@ const weimar_nazi_germany = {
         ]
       },
       "pair_share": {
-        "prompt": "Did Nazi policies towards women succeed in their goals?",
+        "prompt": "Discuss with your partner: Did Nazi policies towards women succeed in their goals?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -6135,7 +6135,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Were the Hitler Youth effective in controlling the young?",
+        "prompt": "Discuss with your partner: Were the Hitler Youth effective in controlling the young?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -6609,7 +6609,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "Did living standards really improve for workers under the Nazis?",
+        "prompt": "Discuss with your partner: Did living standards really improve for workers under the Nazis?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -7091,7 +7091,7 @@ const weimar_nazi_germany = {
         }
       ],
       "pair_share": {
-        "prompt": "How did the Nazis justify the persecution of minorities?",
+        "prompt": "Discuss with your partner: How did the Nazis justify the persecution of minorities?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -7376,7 +7376,7 @@ const weimar_nazi_germany = {
       "role": "Head of the Catholic Church",
       "bio": "He was the Pope during the early years of the Nazi regime. He signed the Concordat with Hitler in 1933 but later authored the encyclical \"Mit brennender Sorge\" (With Burning Anxiety) in 1937, condemning Nazi ideology and racism.",
       "significance": "His public condemnation of Nazi policies was a significant act of religious resistance, though it led to severe reprisals against Catholic priests in Germany.",
-      "image": "/images/placeholder.jpg"
+      "image": "/images/pope_pius_xi.jpg"
     },
     {
       "name": "Gustav von Kahr",
@@ -7392,7 +7392,7 @@ const weimar_nazi_germany = {
       "role": "Head of the Bavarian Army",
       "bio": "A German army general who commanded the armed forces in Bavaria. He was captured alongside Kahr during the Munich Putsch but quickly turned against Hitler once released.",
       "significance": "His refusal to back Hitler doomed the Munich Putsch and demonstrated that the regular army would not automatically support a right-wing coup.",
-      "image": "/images/placeholder.jpg"
+      "image": "/images/otto_von_lossow.jpg"
     },
     {
       "name": "Hans von Seisser",
