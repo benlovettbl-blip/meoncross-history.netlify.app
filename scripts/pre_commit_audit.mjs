@@ -7,9 +7,7 @@ const KS3_UNITS = [
     'great_war_part2',
     'industrialisation_and_empire',
     'water_and_sanitation',
-    'the_shoah',
-    'australia',
-    'cold_war'
+    'australia'
 ];
 
 async function runAudit() {
