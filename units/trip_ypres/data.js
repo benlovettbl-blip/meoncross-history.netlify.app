@@ -119,7 +119,24 @@ export const unitData = {
             }
           ]
         }
-      ]
+      ],
+      "banner": "/images/menin_road_nash.jpg",
+      "extended": {
+        "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+        "scaffolding": [
+          "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+        ],
+        "source_a": {
+          "provenance": "The Menin Road, a painting by official British War Artist Paul Nash, commissioned in 1919.",
+          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/menin_road_nash.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+        },
+        "source_b": {
+          "provenance": "An official Royal Flying Corps aerial photograph showing the intricate trench network on the Western Front, 1916.",
+          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/aerial_trench_ypres.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+        },
+        "model": "<strong>Source A is highly useful...</strong>",
+        "provenance_clue": "Source A is a painting by an official War Artist; does its stylistic and emotional nature make it more or less useful than a photograph? Source B is a military aerial photograph; what makes its objective recording of the geography useful?"
+      }
     },
     {
       "id": "day_1",
@@ -250,7 +267,24 @@ export const unitData = {
           "theme_heading": "4:00 PM – Hooge Crater Museum & Trenches",
           "text": "\"To finish our first day, we are heading to a site that shows just how explosive this war really was. Imagine living in a crater made by a mine blast so massive the shockwave shattered windows miles away. Here at Hooge, you will walk through recreated German and British trenches. This wasn't just fighting; it was survival. Notice how close the frontlines were—you could hear the enemy coughing. As we go through the museum and its medicine section, think about the claustrophobia these men endured.\"<br><br><strong>Teacher Points:</strong><ul><li>The crater at Hooge was created in July 1915 when the British detonated a massive underground mine, blowing a hole 120 feet wide and 20 feet deep.</li><li>Trench foot was a massive problem here; soldiers stood in freezing mud for days, causing their feet to swell, blister, and turn gangrenous, often requiring amputation.</li><li>The museum houses an excellent collection of medical artifacts, which ties directly into the medicine questions you'll tackle in your workbooks tonight.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>\"The trench was a ribbon of earth, filled with freezing water, the stench of unburied bodies, and the constant, nerve-shredding crack of sniper fire. We were not just fighting the Germans; we were fighting the mud, the rats, and our own exhausted minds.\"</em><br>— <strong>Private Frank Richards</strong>, Royal Welch Fusiliers, from his memoir Old Soldiers Never Die.</blockquote>"
         }
-      ]
+      ],
+      "banner": "/images/stretcher_bearers_passchendaele.jpg",
+      "extended": {
+        "question": "1 (a). How useful are Sources A and B for an enquiry into the difficult conditions faced by the medical services at Passchendaele and Ypres? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+        "scaffolding": [
+          "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+        ],
+        "source_a": {
+          "provenance": "A photograph taken by official war photographer Frank Hurley showing Australian soldiers walking along a duckboard track through the shattered landscape of Chateau Wood during the Battle of Passchendaele, 1917.",
+          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/stretcher_bearers_passchendaele.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+        },
+        "source_b": {
+          "provenance": "An aerial photograph showing clouds of poison gas rolling across the battlefield during a chemical attack on the Western Front.",
+          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/brooding_soldier_gas.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+        },
+        "model": "<strong>Source A is highly useful...</strong>",
+        "provenance_clue": "Source A was taken by an official photographer known for dramatic compositions; does this limit its usefulness or perfectly capture the reality of the mud? Source B is an aerial photograph of a gas attack; what makes this detached, wide-angle view of the battlefield useful for understanding the scale of chemical warfare?"
+      }
     },
     {
       "id": "day_2",
@@ -267,16 +301,16 @@ export const unitData = {
           {
             "year": "08:00",
             "title": "Breakfast",
-              "lat": 50.763,
-              "lng": 2.893,
-              "detail": "Provided at accommodation."
+            "lat": 50.763,
+            "lng": 2.893,
+            "detail": "Provided at accommodation."
           },
           {
             "year": "09:00",
             "title": "Depart for Battlefield Sites",
-              "lat": 50.763,
-              "lng": 2.893,
-              "detail": "Board coach for full day of guided study."
+            "lat": 50.763,
+            "lng": 2.893,
+            "detail": "Board coach for full day of guided study."
           },
           {
             "year": "09:15",
@@ -406,7 +440,24 @@ export const unitData = {
           "theme_heading": "7:00 PM – The Menin Gate (Traveling to Last Post)",
           "text": "\"Tonight is about remembrance. We are heading into Ypres to the Menin Gate. Every single one of the 54,000 names carved into this gate belongs to a soldier who died defending the Salient and has no known grave. Every night since 1928, the Last Post has been played here to honor them. Tonight, our school will lay a wreath on their behalf. Listen to the bugles echoing under the arch, and remember the teenagers who walked out through this gate to the frontlines and never came back.\"<br><br><strong>Teacher Points:</strong><ul><li>The Menin Gate was the main road out of the town of Ypres leading directly toward the frontline; millions of soldiers marched through this very spot.</li><li>The Last Post is played by volunteers from the local Ypres fire brigade. They even hid their bugles and played it secretly during the German occupation in WWII.</li><li>There are so many missing soldiers in the Salient that the Menin Gate ran out of space; the remaining 35,000 names are on the wall at Tyne Cot, which we saw earlier.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>\"He is not missing; he is here.\"</em><br>— <strong>Field Marshal Lord Plumer</strong>, speaking to the families of the missing at the inauguration of the Menin Gate in 1927.</blockquote>"
         }
-      ]
+      ],
+      "banner": "/images/ypres_cloth_hall.jpg",
+      "extended": {
+        "question": "1 (a). How useful are Sources A and B for an enquiry into the impact of the war on the town of Ypres and the importance of rest for the soldiers? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+        "scaffolding": [
+          "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+        ],
+        "source_a": {
+          "provenance": "A photograph showing the complete destruction of the Cloth Hall in the Ypres town square, 1918.",
+          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/ypres_cloth_hall.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+        },
+        "source_b": {
+          "provenance": "A photograph of British soldiers relaxing and drinking tea inside Talbot House (Toc H) in Poperinge.",
+          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/talbot_house_relaxing.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+        },
+        "model": "<strong>Source A is highly useful...</strong>",
+        "provenance_clue": "Source A is a factual photograph documenting structural damage; what can it tell us about the destructive power of artillery? Source B shows men resting at Talbot House; why was this 'Every Man’s Club' so vital for morale just a few miles behind the front line?"
+      }
     },
     {
       "id": "day_3",
@@ -423,9 +474,9 @@ export const unitData = {
           {
             "year": "08:00",
             "title": "Breakfast & Packing",
-              "lat": 50.763,
-              "lng": 2.893,
-              "detail": "Breakfast, room handover, and loading coach."
+            "lat": 50.763,
+            "lng": 2.893,
+            "detail": "Breakfast, room handover, and loading coach."
           },
           {
             "year": "09:15",
@@ -1007,5 +1058,3 @@ export const unitData = {
     }
   ]
 };
-
-

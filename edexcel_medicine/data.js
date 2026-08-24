@@ -27,7 +27,7 @@ export const unitData = {
       "prompt": "<strong>Debate:</strong> 'War is the ultimate catalyst for medical progress.' Using evidence from the trench systems and casualty clearing stations of WW1, argue for or against this statement."
     }
   ],
-  "homepage_background": "/images/vesalius_muscle_men.jpg",
+  "homepage_background": "/images/pasteur_laboratory.jpg",
   "category": "Edexcel GCSE",
   "desc": "Paper 1",
   "specification_file": "/data/edexcel_medicine_spec.json",
@@ -686,7 +686,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "Hippocrates",
+          "text": "[Key Individual: Hippocrates]",
           "hinge_question": {
             "text": "Why did the Church promote the work of the ancient Roman doctor Galen?",
             "options": [
@@ -716,17 +716,11 @@ export const unitData = {
           ]
         },
         {
-          "text": "Claudius Galen",
+          "text": "[Key Individual: Claudius Galen]",
           "theme_heading": "Galen: Medical Pioneer"
         },
         {
-          "text": "**Medieval Diagnostic Methods**\n\nPhysicians used two highly significant practical diagnostic methods to determine a patient's illness and internal humoural balance.\n\nThe first was Urine Charts. Examining a patient's urine was the primary diagnostic tool. A physician would carefully examine a sample against a chart, checking its color, thickness, smell, and even tasting it to diagnose the illness (for example, white or thin urine was diagnosed as an excess of phlegm). This method was so highly valued that large institutions, such as Norwich Cathedral Priory, employed a full-time physician solely to examine urine.\n\nPhysicians also carried a Vademecum, a pocket-sized book of charts that included urine colors and astrological diagrams, to patients' bedsides. A common and crucial drawing inside the Vademecum was the 'Zodiac Man' diagram. This illustrated how different star signs governed different parts of the human body, warning physicians when it was astrologically unsafe to treat or perform surgery on a specific body part.",
-          "tasks": [
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
-            }
-          ]
+          "text": "**Medieval Diagnostic Methods**\n\nPhysicians used two highly significant practical diagnostic methods to determine a patient's illness and internal humoural balance.\n\nThe first was Urine Charts. Examining a patient's urine was the primary diagnostic tool. A physician would carefully examine a sample against a chart, checking its color, thickness, smell, and even tasting it to diagnose the illness (for example, white or thin urine was diagnosed as an excess of phlegm). This method was so highly valued that large institutions, such as Norwich Cathedral Priory, employed a full-time physician solely to examine urine.\n\nPhysicians also carried a Vademecum, a pocket-sized book of charts that included urine colors and astrological diagrams, to patients' bedsides. A common and crucial drawing inside the Vademecum was the 'Zodiac Man' diagram. This illustrated how different star signs governed different parts of the human body, warning physicians when it was astrologically unsafe to treat or perform surgery on a specific body part."
         }
       ],
       "exam_practice": [
@@ -1250,13 +1244,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "**Caring for the Sick: Hospitals and the Home**\n\nThe vast majority of sick people were cared for at home by female family members who mixed herbal remedies and grew healing plants in their gardens.\n\nHospitals were run by the Church (staffed by monks and nuns). They offered 'hospitality' to travellers and the elderly, focusing on a clean environment, rest, and a good diet.\n\nInfectious and terminal patients were usually rejected from these hospitals because prayer and penance could do nothing for them. Because hospitals focused purely on \"care, not cure\" and relied on prayer rather than doctors, they offered no real medical advancement or effective treatment for severe diseases.",
-          "tasks": [
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
-            }
-          ]
+          "text": "**Caring for the Sick: Hospitals and the Home**\n\nThe vast majority of sick people were cared for at home by female family members who mixed herbal remedies and grew healing plants in their gardens.\n\nHospitals were run by the Church (staffed by monks and nuns). They offered 'hospitality' to travellers and the elderly, focusing on a clean environment, rest, and a good diet.\n\nInfectious and terminal patients were usually rejected from these hospitals because prayer and penance could do nothing for them. Because hospitals focused purely on \"care, not cure\" and relied on prayer rather than doctors, they offered no real medical advancement or effective treatment for severe diseases."
         }
       ],
       "exam_practice": [
@@ -1947,10 +1935,6 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the impact of the Black Death on medieval society.",
               "model": "It had a massive impact, killing roughly one-third of the population. However, it did not lead to medical progress, as people continued to blame God and the planets instead of investigating the true cause."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ],
           "hinge_question": {
@@ -2432,7 +2416,7 @@ export const unitData = {
           "text": "**The Medical Renaissance Begins**\n\nDuring the Renaissance, there was a revival of learning and a new desire to question old ideas. The invention of the printing press in 1440 meant that books could be copied quickly and cheaply, reducing the Church's control over information. At the same time, the Royal Society was founded in 1660 to promote scientific experiments and share new discoveries across Europe.\n\nOne of the biggest changes was in anatomy. Andreas Vesalius began dissecting human bodies himself and proved that Galen had made over 300 mistakes (because Galen had only dissected animals). Vesalius published his highly accurate anatomy book, 'The Fabric of the Human Body', in 1543. However, despite these breakthroughs in anatomy, people still didn't know what caused disease, and the theory of the Four Humours remained widely believed."
         },
         {
-          "text": "Andreas Vesalius",
+          "text": "[Key Individual: Andreas Vesalius]",
           "theme_heading": "Vesali"
         },
         {
@@ -2467,7 +2451,7 @@ export const unitData = {
           }
         },
         {
-          "text": "Thomas Sydenham",
+          "text": "[Key Individual: Thomas Sydenham]",
           "theme_heading": "Thomas Sydenham: Pioneer"
         },
         {
@@ -2487,10 +2471,6 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the extent to which the Renaissance changed beliefs about the causes of illness.",
               "model": "While the Renaissance revolutionized anatomy through Vesalius, it completely failed to change beliefs about the causes of illness. Without microscopes, bacteria couldn't be seen, so people still believed in miasma and the Four Humours."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -3004,10 +2984,6 @@ export const unitData = {
               "type": "written",
               "text": "To what extent did the 'New World' improve medical treatments?",
               "model": "It had a minor but positive impact. While the vast majority of treatments remained medieval, the discovery of new herbs like Cinchona bark provided the first effective treatment for specific diseases like malaria."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -3471,7 +3447,7 @@ export const unitData = {
           "text": "**William Harvey and the Great Plague**\n\nIn 1628, William Harvey made one of the most important discoveries in medical history: he proved that blood circulates around the body, pumped by the heart. He completely destroyed Galen's theory that blood was constantly being made in the liver and burned up by the muscles. Harvey proved this by dissecting cold-blooded animals and experimenting on human veins.\n\nHowever, in 1665, the Great Plague struck London, proving that while anatomical knowledge had improved, prevention of disease had not. People still blamed miasma and the planets, though local governments did take stronger action this time. The Mayor of London ordered victims to be locked in their houses with a red cross painted on the door, and banned public gatherings. Yet, just like in 1348, the true cause (fleas on rats) remained unknown."
         },
         {
-          "text": "William Harvey",
+          "text": "[Key Individual: William Harvey]",
           "theme_heading": "Harvey's"
         },
         {
@@ -3522,10 +3498,6 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the short-term significance of Harvey's discovery.",
               "model": "In the short term, Harvey's discovery was highly insignificant. Doctors could not use the knowledge to cure any diseases, blood transfusions were still impossible, and many doctors refused to believe him because it contradicted Galen."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -3993,11 +3965,11 @@ export const unitData = {
           "text": "**The Germ Theory**\n\nFor centuries, people believed in 'Spontaneous Generation'-the idea that rotting matter naturally created maggots and microbes. In 1861, a French chemist named Louis Pasteur published his brilliant 'Germ Theory'. By conducting experiments with swan-necked flasks, he proved that microbes in the air were causing decay, completely destroying the theory of spontaneous generation.\n\nA German doctor, Robert Koch, then took Pasteur's work a massive step further. Koch discovered how to stain and grow bacteria in a petri dish, and successfully identified the specific microbes that caused tuberculosis (1882) and cholera (1883). Koch's work was revolutionary because it proved that specific diseases were caused by specific microbes, earning him the title of the 'Father of Bacteriology'."
         },
         {
-          "text": "Louis Pasteur",
+          "text": "[Key Individual: Louis Pasteur]",
           "theme_heading": "Louis Pasteur:"
         },
         {
-          "text": "Robert Koch",
+          "text": "[Key Individual: Robert Koch]",
           "theme_heading": "Koch's Medical Breakthroughs"
         },
         {
@@ -4047,14 +4019,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "John Snow",
-          "theme_heading": "John Snow's",
-          "tasks": [
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
-            }
-          ]
+          "text": "[Key Individual: John Snow]",
+          "theme_heading": "John Snow's"
         }
       ],
       "exam_practice": [
@@ -4523,11 +4489,11 @@ export const unitData = {
           "text": "**Surgery in the Industrial Era**\n\nIn the early 1800s, surgery was horrific. Surgeons had to work incredibly fast because there was no pain relief, and patients often died from shock. Furthermore, operating theatres were filthy, meaning patients who survived the pain almost always died from post-operative infections like gangrene.\n\nThis changed drastically with two major discoveries. In 1847, James Simpson discovered Chloroform, providing the first effective anaesthetic that completely knocked patients out. Then, in 1865, Joseph Lister read Pasteur's Germ Theory and realized that microbes were causing surgical infections. He began using Carbolic Acid spray to kill germs in the operating theatre (antiseptic surgery), which caused death rates to plummet from 46% to just 15%."
         },
         {
-          "text": "James Simpson",
+          "text": "[Key Individual: James Simpson]",
           "theme_heading": "Meet James Simpson"
         },
         {
-          "text": "Joseph Lister",
+          "text": "[Key Individual: Joseph Lister]",
           "theme_heading": "Joseph Lister's Legacy"
         },
         {
@@ -4552,7 +4518,7 @@ export const unitData = {
           }
         },
         {
-          "text": "Florence Nightingale",
+          "text": "[Key Individual: Florence Nightingale]",
           "theme_heading": "Nightingale"
         },
         {
@@ -4576,7 +4542,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "Edward Jenner",
+          "text": "[Key Individual: Edward Jenner]",
           "theme_heading": "Jenner's Vaccine Breakthrough"
         },
         {
@@ -4586,10 +4552,6 @@ export const unitData = {
               "type": "written",
               "text": "To what extent did Simpson's discovery of Chloroform immediately improve surgery?",
               "model": "While Chloroform solved the problem of pain, it actually made surgery more dangerous in the short term. Surgeons performed longer, more complex internal operations, which massively increased the rate of fatal infections until Lister introduced antiseptics."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -5106,12 +5068,6 @@ export const unitData = {
         },
         {
           "text": "**John Snow and the Broad Street Pump**\n\nJohn Snow, a highly respected London surgeon, noticed that cholera affected the gut rather than the lungs, making him doubt the miasma theory.\n\nWhen a massive outbreak hit Soho in August 1854, Snow mapped all the local deaths and proved they were clustered around a single water pump on Broad Street.\n\nHe famously removed the handle from the pump, and the local cholera outbreak stopped immediately. It was later discovered that a leaking cesspit had cracked and was pouring raw sewage directly into the well. Snow's brilliantly logical investigation provided the first undeniable, practical evidence that cholera was water-borne, placing massive pressure on the government to finally build a clean, modern sewer system for London.",
-          "tasks": [
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
-            }
-          ],
           "hinge_question": {
             "text": "How did John Snow prove that cholera was a waterborne disease in 1854, long before the discovery of germs?",
             "options": [
@@ -5607,7 +5563,7 @@ export const unitData = {
           "theme_heading": "Watson and Crick: DNA Pioneers"
         },
         {
-          "text": "Rosalind Franklin",
+          "text": "[Key Individual: Rosalind Franklin]",
           "theme_heading": "Meet Rosalind Franklin"
         },
         {
@@ -5653,10 +5609,6 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the impact of the discovery of DNA on modern medicine.",
               "model": "The discovery of DNA was incredibly impactful because it explained genetic illnesses for the first time. By mapping the genome, scientists can now identify genes responsible for diseases like breast cancer, opening the door to genetic screening and personalized medicine."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -6126,15 +6078,15 @@ export const unitData = {
           "text": "**High-Tech Diagnostics and Magic Bullets**\n\nIn the 20th century, diagnosing illness shifted from observing external symptoms to looking inside the body. Marie Curie's work with radiation led to the widespread use of X-rays, while modern technology introduced Ultrasound, MRI, and CT scans. Doctors no longer had to cut a patient open to see what was wrong.\n\nTreatment also evolved rapidly. In 1909, Paul Ehrlich discovered Salvarsan 606, the first 'Magic Bullet'-a chemical compound that targeted and killed the specific bacteria causing syphilis without harming the rest of the body. Later, in 1932, Gerhard Domagk discovered the second magic bullet, Prontosil, which cured blood poisoning. These synthetic chemicals marked the beginning of modern pharmaceutical treatments."
         },
         {
-          "text": "Marie Curie",
+          "text": "[Key Individual: Marie Curie]",
           "theme_heading": "Marie Curie's Legacy"
         },
         {
-          "text": "Paul Ehrlich",
+          "text": "[Key Individual: Paul Ehrlich]",
           "theme_heading": "Ehrlich's"
         },
         {
-          "text": "Gerhard Domagk",
+          "text": "[Key Individual: Gerhard Domagk]",
           "theme_heading": "Gerhard Domagk'"
         },
         {
@@ -6159,7 +6111,7 @@ export const unitData = {
           }
         },
         {
-          "text": "Alexander Fleming",
+          "text": "[Key Individual: Alexander Fleming]",
           "theme_heading": "Fleming's Penicillin"
         },
         {
@@ -6193,10 +6145,6 @@ export const unitData = {
               "type": "written",
               "text": "To what extent did the discovery of Magic Bullets revolutionize treatment?",
               "model": "They revolutionized treatment completely. Before 1909, doctors could prevent diseases with vaccines but had no chemical cures for bacterial infections. Magic Bullets proved that synthetic antibodies could be manufactured to destroy specific germs, launching the modern pharmaceutical industry."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ]
         }
@@ -6714,10 +6662,6 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the role of World War II in the mass production of Penicillin.",
               "model": "World War II was the crucial catalyst for mass production. Because of the desperate need to treat wounded soldiers on D-Day, the US Government provided the massive funding and factory infrastructure required to produce the drug on an industrial scale, saving millions of lives."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ],
           "hinge_question": {
@@ -7231,10 +7175,6 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the effectiveness of government legislation in reducing smoking.",
               "model": "Government legislation has been highly effective. By passing strict laws like the 2007 ban on smoking in public places and the 2015 plain packaging laws, combined with heavy taxation, they have successfully forced a massive behavioral change and reduced smoking rates."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ],
           "hinge_question": {
@@ -7740,7 +7680,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "Wilhelm Roentgen",
+          "text": "[Key Individual: Wilhelm Roentgen]",
           "theme_heading": "Wilhelm Roentgen Introduced"
         },
         {
@@ -7770,14 +7710,8 @@ export const unitData = {
           }
         },
         {
-          "text": "Karl Landsteiner",
-          "theme_heading": "Discovering Blood Types",
-          "tasks": [
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
-            }
-          ]
+          "text": "[Key Individual: Karl Landsteiner]",
+          "theme_heading": "Discovering Blood Types"
         }
       ],
       "exam_practice": [
@@ -8309,10 +8243,6 @@ export const unitData = {
               "type": "written",
               "text": "Evaluate the effectiveness of military discipline in preventing environmental illnesses.",
               "model": "Military discipline was highly effective in preventing these illnesses. By ordering soldiers to change socks twice a day, rub whale oil on their feet, and enforcing strict hygiene regimes in bathhouses, the army managed to significantly reduce cases of Trench Foot and Trench Fever."
-            },
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
             }
           ],
           "hinge_question": {
@@ -8877,13 +8807,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "**The Terror of Poison Gas**\n\nChlorine gas was first used by the Germans at the Second Battle of Ypres (April 1915), causing victims to slowly suffocate as their lungs filled with fluid. Before gas masks were officially issued in July 1915, soldiers urinated on cotton pads and pressed them to their faces to neutralise the chemical.\n\nPhosgene was introduced later in 1915; it was faster-acting and more deadly, capable of killing an exposed person within two days.\n\nMustard gas (1917) was an odourless gas that caused severe internal and external blistering and could burn the skin straight through clothing. Although poison gas was a terrifying psychological weapon, the rapid development of effective gas masks meant it was actually the cause of under 5% of British deaths (around 6,000 soldiers), making it far less lethal than artillery fire.",
-          "tasks": [
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
-            }
-          ]
+          "text": "**The Terror of Poison Gas**\n\nChlorine gas was first used by the Germans at the Second Battle of Ypres (April 1915), causing victims to slowly suffocate as their lungs filled with fluid. Before gas masks were officially issued in July 1915, soldiers urinated on cotton pads and pressed them to their faces to neutralise the chemical.\n\nPhosgene was introduced later in 1915; it was faster-acting and more deadly, capable of killing an exposed person within two days.\n\nMustard gas (1917) was an odourless gas that caused severe internal and external blistering and could burn the skin straight through clothing. Although poison gas was a terrifying psychological weapon, the rapid development of effective gas masks meant it was actually the cause of under 5% of British deaths (around 6,000 soldiers), making it far less lethal than artillery fire."
         }
       ],
       "exam_practice": [
@@ -9426,13 +9350,7 @@ export const unitData = {
           }
         },
         {
-          "text": "**The Underground Hospital at Arras**\n\nIn 1916, British and Commonwealth troops linked existing chalk tunnels and quarries beneath the town of Arras.\n\nThey created a massive underground town that included a fully functioning hospital (nicknamed Thompson's Cave) within 800m of tunnels.\n\nIt contained 700 spaces for stretchers to be used as beds, operating theatres, rest stations, a mortuary, and was supplied with electricity and piped water. The underground hospital at Arras was highly significant because it functioned as a fully equipped medical facility incredibly close to the frontline, while remaining completely safe from enemy artillery bombardment.",
-          "tasks": [
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
-            }
-          ]
+          "text": "**The Underground Hospital at Arras**\n\nIn 1916, British and Commonwealth troops linked existing chalk tunnels and quarries beneath the town of Arras.\n\nThey created a massive underground town that included a fully functioning hospital (nicknamed Thompson's Cave) within 800m of tunnels.\n\nIt contained 700 spaces for stretchers to be used as beds, operating theatres, rest stations, a mortuary, and was supplied with electricity and piped water. The underground hospital at Arras was highly significant because it functioned as a fully equipped medical facility incredibly close to the frontline, while remaining completely safe from enemy artillery bombardment."
         }
       ],
       "exam_practice": [
@@ -9940,7 +9858,7 @@ export const unitData = {
           "text": "**Medical Advances on the Western Front**\n\nThe sheer volume of casualties on the Western Front forced doctors to innovate rapidly. One of the greatest breakthroughs was the Thomas Splint, a metal frame designed by Hugh Owen Thomas. Before 1915, 80% of soldiers with broken femurs died from shock or bleeding. The Thomas Splint kept the leg perfectly still during transport, increasing the survival rate to an incredible 82%.\n\nAnother major advance was in blood transfusions. At the start of the war, transfusions had to be done arm-to-arm. However, in 1915, Richard Lewisohn discovered that adding sodium citrate to blood stopped it from clotting, allowing it to be stored on ice. This led to the creation of the first blood banks at the Battle of Cambrai in 1917, allowing surgeons to treat shock and perform complex surgeries."
         },
         {
-          "text": "Hugh Owen Thomas",
+          "text": "[Key Individual: Hugh Owen Thomas]",
           "theme_heading": "Hugh Owen Thomas"
         },
         {
@@ -9996,13 +9914,7 @@ export const unitData = {
         },
         {
           "text": "Oswald Hope Robertson",
-          "theme_heading": "Oswald Hope",
-          "tasks": [
-            {
-              "type": "think_pair_share",
-              "question": "Think-Pair-Share: Based on the events we have studied in this lesson, what do you think was the most significant turning point or consequence? Discuss your reasoning with your partner."
-            }
-          ]
+          "theme_heading": "Oswald Hope"
         }
       ],
       "exam_practice": [
