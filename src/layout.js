@@ -45,8 +45,29 @@ export function bindEvents() {
   const menuToggle = document.getElementById('sidebar-toggle-btn');
   const sidebar = document.getElementById('app-sidebar');
   if (menuToggle && sidebar) {
-    menuToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
+    let overlay = document.querySelector('.sidebar-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'sidebar-overlay';
+      document.body.appendChild(overlay);
+    }
+    
+    const toggleSidebar = () => {
+      sidebar.classList.toggle('mobile-open');
+      overlay.classList.toggle('active');
+    };
+
+    menuToggle.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
+    // Auto-close on mobile when a navigation item is clicked
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          sidebar.classList.remove('mobile-open');
+          overlay.classList.remove('active');
+        }
+      });
     });
   }
 

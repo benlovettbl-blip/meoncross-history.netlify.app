@@ -1416,3 +1416,66 @@ img::after {
   border-radius: inherit;
   z-index: 2;
 }
+
+
+/* --- Mobile Responsive Layout --- */
+@media (max-width: 768px) {
+  .app-sidebar, .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000 !important;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  }
+
+  .app-sidebar.mobile-open, .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .content-area, .content-container {
+    padding: 1rem 1rem !important;
+  }
+  
+  .header-left, .header-title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: inline-block !important;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+}
+
+/* Hide hamburger on desktop by default */
+.menu-toggle {
+  display: none;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}

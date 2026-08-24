@@ -289,3 +289,33 @@ window.navigateBack = function() {
 };
 
 // force vite reload
+
+// --- Mobile Hamburger Menu Logic ---
+setTimeout(() => {
+  const menuToggle = document.getElementById('unit-sidebar-toggle-btn');
+  const sidebar = document.getElementById('sidebar');
+  if (menuToggle && sidebar) {
+    let overlay = document.querySelector('.sidebar-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'sidebar-overlay';
+      document.body.appendChild(overlay);
+    }
+    
+    const toggleSidebar = () => {
+      sidebar.classList.toggle('mobile-open');
+      overlay.classList.toggle('active');
+    };
+
+    menuToggle.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
+    // Auto close when links are clicked
+    sidebar.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && e.target.closest('a')) {
+        sidebar.classList.remove('mobile-open');
+        overlay.classList.remove('active');
+      }
+    });
+  }
+}, 100);
