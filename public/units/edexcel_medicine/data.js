@@ -27,7 +27,7 @@ export const unitData = {
       "prompt": "<strong>Debate:</strong> 'War is the ultimate catalyst for medical progress.' Using evidence from the trench systems and casualty clearing stations of WW1, argue for or against this statement."
     }
   ],
-  "homepage_background": "/images/vesalius_muscle_men.jpg",
+  "homepage_background": "/images/pasteur_laboratory.jpg",
   "category": "Edexcel GCSE",
   "desc": "Paper 1",
   "specification_file": "/data/edexcel_medicine_spec.json",
