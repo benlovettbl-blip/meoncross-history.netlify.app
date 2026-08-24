@@ -1338,10 +1338,16 @@ export function initializeApp(unitData) {
     let lessonPrefix = 'Lesson';
     let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
     
-    if (window.currentUnitId === 'cme_new' && ktMatch) {
+        if (window.currentUnitId === 'cme_new' && ktMatch) {
       if (ktMatch[1].startsWith('1')) heroImage = '/assets/cme_new_kt1_cover.png';
       else if (ktMatch[1].startsWith('2')) heroImage = '/assets/cme_new_kt2_cover.png';
       else if (ktMatch[1].startsWith('3')) heroImage = '/assets/cme_new_kt3_cover.png';
+    } else if (window.currentUnitId === 'edexcel_medicine' && ktMatch) {
+      if (ktMatch[1].startsWith('1')) heroImage = '/images/banner_medicine_medieval.jpg';
+      else if (ktMatch[1].startsWith('2')) heroImage = '/images/banner_medicine_renaissance.jpg';
+      else if (ktMatch[1].startsWith('3')) heroImage = '/images/banner_medicine_18th_19th.jpg';
+      else if (ktMatch[1].startsWith('4')) heroImage = '/images/banner_medicine_modern.png';
+      else if (ktMatch[1].startsWith('5')) heroImage = '/images/banner_medicine_western_front.jpg';
     }
 
     if (isTrip && lesson.id && lesson.id.startsWith('day_')) {
