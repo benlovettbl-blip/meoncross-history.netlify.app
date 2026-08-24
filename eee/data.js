@@ -4754,7 +4754,7 @@ const eee = {
       "name": "Edmund Campion",
       "group": "🎓 Tier 4: Professionals & High-Ranking Clergy",
       "bio": "Highly educated Jesuit missionary priest executed for treason.",
-      "image": "/"
+      "image": "/images/edmund_campion.jpg"
     },
     {
       "name": "Roberto Ridolfi",

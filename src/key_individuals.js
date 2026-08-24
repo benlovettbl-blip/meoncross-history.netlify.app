@@ -79,8 +79,7 @@ export function generateKeyIndividualCardHTML(person) {
     </div>`;
   } else {
     frontImgHtml = `<div style="width: 100%; height: 280px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-glass); overflow: hidden; flex-direction: column; color: var(--text-muted);">
-      <i class="fa-solid fa-image" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
-      <div style="font-size: 0.9rem; font-style: italic; opacity: 0.7;">Image hidden (Copyright)</div>
+      <i class="fa-solid fa-user" style="font-size: 4rem; opacity: 0.2;"></i>
     </div>`;
   }
 
