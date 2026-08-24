@@ -1381,7 +1381,7 @@ export function initializeApp(unitData) {
     // Sticky Header (No visible background, but opaque to hide scrolling text)
     const currentIndex = unitData.lessons.findIndex(l => l.title === lesson.title);
     html += `
-      <div style="position: sticky; top: 0; margin-left: -4rem; margin-right: -4rem; padding: 1rem 4rem; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; background: #f8f9fa; border: none; box-shadow: none;">
+      <div class="sticky-lesson-header" style="position: sticky; top: 0; margin-left: -4rem; margin-right: -4rem; padding: 1rem 4rem; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; background: #f8f9fa; border: none; box-shadow: none;">
         <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600; font-family: 'Playfair Display', serif;">
           ${stickyHeaderText}
         </h4>
