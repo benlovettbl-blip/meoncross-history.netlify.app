@@ -2911,7 +2911,9 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
     contentArea.innerHTML = html;
     
     if (lesson.quiz && lesson.quiz.length > 0) {
-      window.renderQuizQuestion();
+      if (document.getElementById('quiz-progress')) {
+        window.renderQuizQuestion();
+      }
     }
     window.vocabMatchesFound = 0;
     setTimeout(() => {

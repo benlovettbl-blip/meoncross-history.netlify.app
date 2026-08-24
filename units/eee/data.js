@@ -519,7 +519,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: What was Elizabeth's most urgent problem in 1558?",
+        "prompt": "What was Elizabeth's most urgent problem in 1558?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -896,7 +896,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Did the 1559 Religious Settlement actually solve the religious crisis?",
+        "prompt": "Did the 1559 Religious Settlement actually solve the religious crisis?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -1268,7 +1268,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Were the Puritans a serious threat to Elizabeth's rule?",
+        "prompt": "Were the Puritans a serious threat to Elizabeth's rule?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -1636,7 +1636,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Why was Mary, Queen of Scots, such a unique problem for Elizabeth?",
+        "prompt": "Why was Mary, Queen of Scots, such a unique problem for Elizabeth?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -2037,7 +2037,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Which plot posed the greatest danger to Elizabeth's life?",
+        "prompt": "Which plot posed the greatest danger to Elizabeth's life?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -2415,7 +2415,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Why did relations with Spain deteriorate so badly by the 1580s?",
+        "prompt": "Why did relations with Spain deteriorate so badly by the 1580s?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -2748,7 +2748,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Was the outbreak of war with Spain in 1585 inevitable?",
+        "prompt": "Was the outbreak of war with Spain in 1585 inevitable?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -3116,7 +3116,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Why did the Spanish Armada fail?",
+        "prompt": "Why did the Spanish Armada fail?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -3483,7 +3483,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Did Elizabethan education improve society or simply reinforce class divisions?",
+        "prompt": "Did Elizabethan education improve society or simply reinforce class divisions?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -3852,7 +3852,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Why did poverty increase so rapidly during Elizabeth's reign?",
+        "prompt": "Why did poverty increase so rapidly during Elizabeth's reign?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -4216,7 +4216,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: What was the main motivation for Elizabethan exploration?",
+        "prompt": "What was the main motivation for Elizabethan exploration?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
@@ -4574,7 +4574,7 @@ const eee = {
         }
       ],
       "pair_share": {
-        "prompt": "Discuss with your partner: Why did the Roanoke colony fail?",
+        "prompt": "Why did the Roanoke colony fail?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."

@@ -276,7 +276,7 @@ if (!unitId) {
 
   }).catch(err => {
     console.error('Error loading unit:', err);
-    document.body.innerHTML = '<div style="padding: 40px; text-align: center;"><h1 style="color: #ef4444;">Unit Not Found</h1><p>Sorry, the data for this unit could not be loaded.</p><br><a href="/" style="padding: 10px 20px; background: #002855; color: white; text-decoration: none; border-radius: 6px;">Return to Dashboard</a></div>';
+    document.body.innerHTML = `<div style="padding: 40px; text-align: center;"><h1 style="color: #ef4444;">Unit Error</h1><p>Sorry, an error occurred while loading this unit.</p><pre style="text-align: left; background: #fee2e2; padding: 15px; border-radius: 6px; color: #991b1b; max-width: 800px; margin: 20px auto; overflow: auto;">${err.stack || err.message || err}</pre><br><a href="/" style="padding: 10px 20px; background: #002855; color: white; text-decoration: none; border-radius: 6px;">Return to Dashboard</a></div>`;
   });
 }
 
