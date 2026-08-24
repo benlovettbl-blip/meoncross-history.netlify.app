@@ -4,8 +4,8 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 120000 });
   const page = await browser.newPage();
   
-  // Set viewport to simulate a wide desktop
-  await page.setViewport({ width: 1600, height: 1200 });
+  // Set viewport to simulate a mobile screen
+  await page.setViewport({ width: 375, height: 812, isMobile: true });
   
   const unitId = process.argv[2] || 'water_and_sanitation';
   const LOCAL_URL = `http://localhost:3003/unit.html?id=${unitId}`;
