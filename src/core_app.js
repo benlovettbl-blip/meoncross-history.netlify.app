@@ -839,12 +839,12 @@ export function initializeApp(unitData) {
       if (heroImage && !unitData.cover_sources && !Array.isArray(unitData.cover_image)) {
         let imgUrl = getAssetUrl(heroImage);
         topSectionHTML = `
-          <div style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -2rem; padding: 4rem 4rem 3rem 4rem; min-height: 550px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center; background: linear-gradient(to bottom, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.1) 100%), url('${imgUrl}') center/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 0 0 12px 12px;">
-            <h1 style="position: relative; z-index: 2; font-family: 'Playfair Display', serif; font-size: 3rem; color: #f8fafc; margin-bottom: 15px; line-height: 1.2; text-shadow: 0 4px 10px rgba(0,0,0,0.8);">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
-            <h2 style="position: relative; z-index: 2; font-size: 1.4rem; color: #cbd5e1; font-weight: 500; margin-top: 0; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);">
+          <div class="hero-container" style="background: linear-gradient(to bottom, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.1) 100%), url('${imgUrl}') center/cover no-repeat;">
+            <h1 class="hero-title">${unitData.enquiry_question || unitData.enquiry || 'Unit Enquiry'}</h1>
+            <h2 class="hero-subtitle">
               ${unitData.title}
             </h2>
-            ${unitData.cover_caption ? `<p style="position: absolute; bottom: 10px; right: 20px; margin: 0; font-style: italic; color: rgba(255,255,255,0.7); font-size: 0.85rem; text-shadow: 0 1px 3px rgba(0,0,0,0.8); z-index: 2;">${unitData.cover_caption}</p>` : ''}
+            ${unitData.cover_caption ? `<p class="hero-caption">${unitData.cover_caption}</p>` : ''}
           </div>
         `;
       } else {
@@ -1381,11 +1381,11 @@ export function initializeApp(unitData) {
     // Sticky Header (No visible background, but opaque to hide scrolling text)
     const currentIndex = unitData.lessons.findIndex(l => l.title === lesson.title);
     html += `
-      <div class="sticky-lesson-header" style="position: sticky; top: 0; margin-left: -4rem; margin-right: -4rem; padding: 1rem 4rem; z-index: 90; display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; background: #f8f9fa; border: none; box-shadow: none;">
-        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary); font-weight: 600; font-family: 'Playfair Display', serif;">
-          ${stickyHeaderText}
-        </h4>
-        <div style="display: flex; gap: 8px; flex-shrink: 0;">
+      <div class="sticky-lesson-header">
+          <h4 class="sticky-lesson-title">
+            ${stickyHeaderText}
+          </h4>
+          <div class="sticky-lesson-actions">
           ${isTrip ? '' : `<button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" onclick="openDebateModal()"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>`}
           ${isTrip && lesson.tour_guide_script ? `<button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: #6366f1; border-color: #6366f1; box-shadow: 0 2px 5px rgba(99,102,241,0.3);" onclick="window.openTourGuideModal(${currentIndex})"><i class="fa-solid fa-bullhorn"></i> Tour Guide Script</button>` : ''}
           <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" onclick="window.renderDashboard()"><i class="fa-solid fa-arrow-left"></i> ${isTrip ? 'Trip Menu' : 'Unit Menu'}</button>
