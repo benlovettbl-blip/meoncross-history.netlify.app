@@ -2468,7 +2468,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
           extrasHtml += `</div>`;
           
           if (block.flashcards && block.flashcards.length > 0) {
-            extrasHtml += `<div style="margin-top: 20px;"><div class="flashcard-deck">`;
+            extrasHtml += `<div style="margin-top: 20px; padding: 20px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 8px;"><div class="flashcard-deck">`;
             block.flashcards.forEach(fc => {
               let t = fc.term || fc.word || fc.title || '';
               let d = fc.definition || fc.meaning || fc.desc || '';
