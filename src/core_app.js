@@ -1295,6 +1295,13 @@ export function initializeApp(unitData) {
         window.postRenderHooks = [];
         let htmlDoNow="", htmlPrimary="", htmlSources1="", htmlNarrative="", htmlPairShare="", htmlHistorian="", htmlTasks="";
       const formatBold = window.formatBold;
+      let globalQuestionNum = 1;
+      const formatQuestion = (qText, prependNumber = true) => {
+        if (!qText) return '';
+        let cleaned = cleanQuestionText(qText);
+        if (prependNumber) return `Question ${globalQuestionNum++}: ${formatBold(cleaned)}`;
+        return formatBold(cleaned);
+      };
     lesson = JSON.parse(JSON.stringify(lesson));
     assignQuestionNumbers(lesson);
     
@@ -1418,13 +1425,6 @@ export function initializeApp(unitData) {
       
     `;
 
-    let globalQuestionNum = 1;
-    const formatQuestion = (qText, prependNumber = true) => {
-      if (!qText) return '';
-      let cleaned = qText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
-      if (prependNumber) return `Question ${globalQuestionNum++}: ${formatBold(cleaned)}`;
-      return formatBold(cleaned);
-    };
 
     let vocabDict = {};
     if (lesson.vocab) {
