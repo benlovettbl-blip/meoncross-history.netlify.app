@@ -301,8 +301,10 @@ body.focus-mode .content-area {
   padding: 2rem 4rem 1rem 4rem; /* add back top padding */
   z-index: 90;
   display: flex;
+  flex-wrap: wrap; /* allow wrapping if title and buttons are too wide */
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   margin-bottom: 2rem;
   background: #f8f9fa;
   border-bottom: 1px solid var(--border-glass);
@@ -314,12 +316,18 @@ body.focus-mode .content-area {
   color: var(--primary);
   font-weight: 600;
   font-family: 'Playfair Display', serif;
+  hyphens: none; /* explicitly prevent aggressive hyphenation on long words */
+  word-wrap: normal;
+  overflow-wrap: normal;
+  flex: 1 1 200px; /* allow title to grow and shrink, with a minimum basis before wrapping */
+  min-width: 0; /* prevent flex blowout */
 }
 
 .sticky-lesson-actions {
   display: flex;
   gap: 8px;
   flex-shrink: 0;
+  flex-wrap: wrap; /* allow buttons to wrap if needed */
 }
 
 @media (max-width: 768px) {

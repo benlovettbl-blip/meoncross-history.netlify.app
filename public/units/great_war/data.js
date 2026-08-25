@@ -18,7 +18,7 @@ const great_war = {
   "homepage_background": "assets/somme_trench_1916.jpg",
   "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
   "cover_image": "/images/great_war_cover.jpg",
-  "cover_caption": "Source A: A photograph of British soldiers in a front-line trench during the Battle of the Somme (1916). The deep, muddy conditions and duckboards were characteristic of the Western Front.",
+  "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
   "printable_workbooks": [
     {
       "title": "Unit Workbook",

@@ -1517,7 +1517,7 @@ img::after {
 
 
 /* Global Sticky Header Classes */
-.sticky-lesson-header, .timeline-group-title {
+.timeline-group-title {
   position: sticky !important;
   top: -1px;
   z-index: 90;
@@ -1525,11 +1525,129 @@ img::after {
 
 
 @media (max-width: 768px) {
-  .sticky-lesson-header, .timeline-group-title {
+  .timeline-group-title {
     position: static !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding: 1rem !important;
     height: auto !important;
+  }
+}
+
+/* =========================================
+   Sticky Lesson Header (Desktop & Mobile)
+   ========================================= */
+.sticky-lesson-header {
+  position: sticky;
+  top: 0;
+  margin-top: -2rem; /* negate content-area top padding */
+  margin-left: -4rem; /* negate content-area side padding */
+  margin-right: -4rem;
+  padding: 2rem 4rem 1rem 4rem; /* add back top padding */
+  z-index: 90;
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping if title and buttons are too wide */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.sticky-lesson-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  hyphens: none !important; /* explicitly prevent aggressive hyphenation on long words */
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+  flex: 1 1 200px; /* allow title to grow and shrink, with a minimum basis before wrapping */
+  min-width: 0; /* prevent flex blowout */
+}
+
+.sticky-lesson-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: wrap; /* allow buttons to wrap if needed */
+}
+
+@media (max-width: 768px) {
+  .sticky-lesson-header {
+    margin-top: -1.5rem; /* negate mobile padding-top */
+    margin-left: -1rem; /* negate mobile padding-left */
+    margin-right: -1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}
+
+/* =========================================
+   Hero Section Typography (Desktop & Mobile)
+   ========================================= */
+.hero-container {
+  position: relative;
+  width: calc(100% + 8rem);
+  margin-left: -4rem;
+  margin-top: -2rem;
+  padding: 4rem 4rem 3rem 4rem;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-glass);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 0 0 12px 12px;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Playfair Display', serif;
+  color: #f8fafc;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  /* Fluid typography using clamp */
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  hyphens: none !important; /* Prevent ugly hyphenation on mobile */
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.hero-subtitle {
+  position: relative;
+  z-index: 2;
+  font-size: 1.4rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.hero-caption {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  margin: 0;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-top: -1.5rem;
+    padding: 3rem 1rem 2rem 1rem;
+    min-height: 400px;
   }
 }
