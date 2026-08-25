@@ -14,7 +14,7 @@ function processFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let changed = false;
     
-    const newContent = content.replace(/("(question|text)"\s*:\s*")([^"]+)("/g, (match, prefix, fieldName, textValue, suffix) => {
+    const newContent = content.replace(/("(question|text)"\s*:\s*")([^"]+)(")/g, (match, prefix, fieldName, textValue, suffix) => {
         let originalText = textValue;
         let cleanedText = textValue;
         
