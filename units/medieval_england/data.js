@@ -18,7 +18,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "The Claimants' Pitch (Group Battle)\nImagine you are an adviser to the Witan (the council of English lords) in January 1066. Write a short persuasive speech (3-4 sentences) for ONE of the three claimants (Harold, William, or Hardrada) convincing the lords why they should choose your man to be King. \nHint: Make sure you use their specific historical evidence (like Harold's deathbed promise, William's holy oath, or Hardrada's old Viking treaty) to make your case!",
+              "question": "Task 1: The Claimants' Pitch (Group Battle)\nImagine you are an adviser to the Witan (the council of English lords) in January 1066. Write a short persuasive speech (3-4 sentences) for ONE of the three claimants (Harold, William, or Hardrada) convincing the lords why they should choose your man to be King. \nHint: Make sure you use their specific historical evidence (like Harold's deathbed promise, William's holy oath, or Hardrada's old Viking treaty) to make your case!",
               "model_answer": "Lords of the Witan, we must choose Harold Godwinson. He is the Earl of Wessex, our most powerful and wealthy nobleman, and a brave warrior who knows how to defend England. Most importantly, as King Edward lay on his deathbed, he explicitly nominated Harold to succeed him. We must honor the King's dying wish and crown Harold immediately to secure our realm!"
             }
           ]
@@ -29,13 +29,13 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "The Exhaustion Timeline (Why Timing was Everything)\nHistorians argue that William was incredibly lucky with the weather in September 1066. \n1. Calculate the days: How many days did Harold have between fighting the Vikings at Stamford Bridge (25 Sept) and fighting the Normans at Hastings (14 Oct)? \n2. Explain the impact: Write a short explanation of how the timing of the two invasions left Harold’s army at a massive disadvantage before the Battle of Hastings even started.",
+              "question": "Task 2: The Exhaustion Timeline (Why Timing was Everything)\nHistorians argue that William was incredibly lucky with the weather in September 1066. \n1. Calculate the days: How many days did Harold have between fighting the Vikings at Stamford Bridge (25 Sept) and fighting the Normans at Hastings (14 Oct)? \n2. Explain the impact: Write a short explanation of how the timing of the two invasions left Harold’s army at a massive disadvantage before the Battle of Hastings even started.",
               "model_answer": "1. Harold had 19 days between the two battles. \n2. The timing meant his army was utterly exhausted; they had just fought a brutal battle against the Vikings and then had to march nearly 300 miles back south. When they arrived at Hastings, they were depleted, tired, and likely lacked their full strength, giving William a massive advantage."
             },
             {
               "type": "drawing",
               "lines": 8,
-              "question": "Tension Timeline\nDraw a line graph mapping King Harold's stress levels day-by-day throughout September and October 1066. Label key events such as waiting for the wind, hearing about the Viking invasion, winning at Stamford Bridge, and the Norman landing.",
+              "question": "Task 5: Tension Timeline\nDraw a line graph mapping King Harold's stress levels day-by-day throughout September and October 1066. Label key events such as waiting for the wind, hearing about the Viking invasion, winning at Stamford Bridge, and the Norman landing.",
               "model_answer": "Students should draw a graph where stress is low/medium during summer, spikes at the news of Hardrada's landing, drops slightly after Stamford Bridge, and spikes to maximum when news of William's landing arrives."
             }
           ]
@@ -53,7 +53,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "According to Source A, what was the main reason King Harold lost the battle? \n*Hint: Look at the sentence describing how William arrived at the battlefield.*",
+              "question": "Task 3: Source Analysis (Source A)\nAccording to Source A, what was the main reason King Harold lost the battle? \n*Hint: Look at the sentence describing how William arrived at the battlefield.*",
               "model_answer": "According to Source A, Harold lost because William attacked him 'unawares, before his people were set in order'. This suggests the English army was surprised and not fully prepared for the battle to begin."
             }
           ]
@@ -70,17 +70,17 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "Look at Source B (The Bayeux Tapestry). How does this source support the idea that Harold's death was chaotic and brutal?",
+              "question": "Task 4: Source Analysis (Source B)\nLook at Source B (The Bayeux Tapestry). How does this source support the idea that Harold's death was chaotic and brutal?",
               "model_answer": "Source B shows Harold's death as chaotic because it depicts a soldier being struck in the eye with an arrow amidst a crowded battlefield, while another figure is being cut down by a Norman knight on a horse. The tapestry shows the English shield wall completely broken and men fighting desperately."
             },
             {
               "type": "short_answer",
-              "question": "Hastings Tactical Analysis (How the Battle was Won)\nCopy and complete the flow diagram below to show how the battle shifted in William's favour.\n\n<div style='display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 15px;'>\n  <div style='padding: 12px; border: 2px solid #2b5c8f; border-radius: 8px; background-color: #eaf3fa; width: 85%; text-align: center; font-weight: bold;'>1. Saxon Shield Wall holds firm on the high ground</div>\n  <div style='font-size: 20px; color: #2b5c8f;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #8f2b2b; border-radius: 8px; background-color: #faeaea; width: 85%; text-align: center;'>2. Rumour spreads that William is __________. William removes his __________ to prove he is alive.</div>\n  <div style='font-size: 20px; color: #8f2b2b;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #e08b1b; border-radius: 8px; background-color: #fdf4e8; width: 85%; text-align: center;'>3. The Cunning Plan: William orders a \"___________ retreat\" to trick the Saxons down the hill.</div>\n  <div style='font-size: 20px; color: #e08b1b;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #2b8f3d; border-radius: 8px; background-color: #eafaf0; width: 85%; text-align: center;'>4. Saxon Shield Wall is broken. Archers fire __________, and King __________ is killed.</div>\n</div>",
+              "question": "Task 5: Hastings Tactical Analysis (How the Battle was Won)\nCopy and complete the flow diagram below to show how the battle shifted in William's favour.\n\n<div style='display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 15px;'>\n  <div style='padding: 12px; border: 2px solid #2b5c8f; border-radius: 8px; background-color: #eaf3fa; width: 85%; text-align: center; font-weight: bold;'>1. Saxon Shield Wall holds firm on the high ground</div>\n  <div style='font-size: 20px; color: #2b5c8f;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #8f2b2b; border-radius: 8px; background-color: #faeaea; width: 85%; text-align: center;'>2. Rumour spreads that William is __________. William removes his __________ to prove he is alive.</div>\n  <div style='font-size: 20px; color: #8f2b2b;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #e08b1b; border-radius: 8px; background-color: #fdf4e8; width: 85%; text-align: center;'>3. The Cunning Plan: William orders a \"___________ retreat\" to trick the Saxons down the hill.</div>\n  <div style='font-size: 20px; color: #e08b1b;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #2b8f3d; border-radius: 8px; background-color: #eafaf0; width: 85%; text-align: center;'>4. Saxon Shield Wall is broken. Archers fire __________, and King __________ is killed.</div>\n</div>",
               "model_answer": "2. killed / helmet\n3. feigned\n4. high into the air / Harold"
             },
             {
               "type": "extended_writing",
-              "question": "The Turning Point Debate (Evaluation)\nLook at the list of reasons why William won:\n- William's clever tactics (the feigned retreat)\n- Harold's mistakes (letting his men chase the retreating Normans)\n- Bad luck for Harold (having to fight two invasions at opposite ends of the country)\n- William's leadership (keeping his men motivated and organized)\n\nWrite a brief paragraph arguing which of these was the single most important reason William won the throne. Use evidence from your notes to justify your choice!",
+              "question": "Task 6: The Turning Point Debate (Evaluation)\nLook at the list of reasons why William won:\n- William's clever tactics (the feigned retreat)\n- Harold's mistakes (letting his men chase the retreating Normans)\n- Bad luck for Harold (having to fight two invasions at opposite ends of the country)\n- William's leadership (keeping his men motivated and organized)\n\nWrite a brief paragraph arguing which of these was the single most important reason William won the throne. Use evidence from your notes to justify your choice!",
               "model_answer": "I believe the single most important reason William won was his clever tactics, specifically the feigned retreat. Even though Harold's men were exhausted from the double invasion (bad luck), the Saxon shield wall was holding firm on the high ground and the Normans could not break it. It was only when William ordered his men to pretend to run away that the Saxons broke their formation. If William had not used this cunning trick, the shield wall might have survived the day."
             }
           ]

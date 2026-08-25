@@ -305,12 +305,12 @@ allDirs.forEach(unitId => {
 
     // Primary Source
     if (lesson.primary_source) {
-      let srcs = Array.isArray(lesson.primary_source.src) ? lesson.primary_source.src : [lesson.primary_source.src];
+      let srcs = Array.isArray((lesson.primary_source.src || lesson.primary_source.source)) ? (lesson.primary_source.src || lesson.primary_source.source) : [(lesson.primary_source.src || lesson.primary_source.source)];
       let renderImages = true;
-      if (lesson.a4_map && lesson.primary_source.src) {
+      if (lesson.a4_map && (lesson.primary_source.src || lesson.primary_source.source)) {
         let a4Str = JSON.stringify(lesson.a4_map);
-        let srcStr = JSON.stringify(lesson.primary_source.src);
-        if (a4Str === srcStr || lesson.a4_map === lesson.primary_source.src) renderImages = false;
+        let srcStr = JSON.stringify((lesson.primary_source.src || lesson.primary_source.source));
+        if (a4Str === srcStr || lesson.a4_map === (lesson.primary_source.src || lesson.primary_source.source)) renderImages = false;
       }
 
       let imgTags = '';
@@ -444,12 +444,12 @@ allDirs.forEach(unitId => {
       html += `<div style="page-break-inside: auto; margin-bottom: 15px;">`;
       lesson.sources.forEach((source, sIdx) => {
         let sourceContent = source.content || source.text;
-        if(source.src || source.caption || sourceContent) {
+        if((source.src || source.source) || source.caption || sourceContent) {
           html += `
             <div class="source-container" style="">
               <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
               ${source.title ? `<strong>${badgeSource(source.title)}</strong><br>` : ''}
-              ${source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src, 2) : source.src}" alt="Source">` : ''}
+              ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source">` : ''}
               ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
               ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
               ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${source.qNum ? source.qNum + '.' : ''} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div>` : ''}
@@ -490,7 +490,7 @@ allDirs.forEach(unitId => {
             <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
               <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
               ${block.source.title ? `<strong>${badgeSource ? badgeSource(block.source.title) : block.source.title}</strong><br>` : ''}
-              ${block.source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src, 2) : block.source.src}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
+              ${(block.source.src || block.source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((block.source.src || block.source.source), 2) : (block.source.src || block.source.source)}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
               ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
               ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
               ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${block.source.qNum ? block.source.qNum + '.' : ''} ${block.source.question}${block.source.page ? ` (See Textbook Page ${block.source.page})` : ''}</strong></div>` : ''}
@@ -750,13 +750,13 @@ allDirs.forEach(unitId => {
         }
         lesson.sources.forEach((source, sIdx) => {
           let sourceContent = source.content || source.text;
-          if(source.src || source.caption || sourceContent) {
+          if((source.src || source.source) || source.caption || sourceContent) {
             let containerStyle = (unitId === 'cme_new') ? `style="flex: 1 1 45%; max-width: 48%; box-sizing: border-box; page-break-inside: avoid; border: 1px solid #ccc; padding: 10px; border-radius: 6px; box-shadow: 1px 1px 4px rgba(0,0,0,0.05); margin-bottom: 0;"` : `style=""`;
             html += `
               <div class="source-container" ${containerStyle}>
                 <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
                 ${source.title ? `<strong>${badgeSource(source.title)}</strong><br>` : ''}
-                ${source.src ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src, 2) : source.src}" alt="Source">` : ''}
+                ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source">` : ''}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
                 ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
                 ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${source.qNum ? source.qNum + '.' : ''} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div>` : ''}

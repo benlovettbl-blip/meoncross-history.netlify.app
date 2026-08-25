@@ -463,14 +463,14 @@ allDirs.forEach((unitId) => {
 
       // Primary Source
       if (lesson.primary_source) {
-        let srcs = Array.isArray(lesson.primary_source.src)
-          ? lesson.primary_source.src
-          : [lesson.primary_source.src];
+        let srcs = Array.isArray((lesson.primary_source.src || lesson.primary_source.source))
+          ? (lesson.primary_source.src || lesson.primary_source.source)
+          : [(lesson.primary_source.src || lesson.primary_source.source)];
         let renderImages = false; // globally disabled for pupil workbooks to save space
-        if (lesson.a4_map && lesson.primary_source.src) {
+        if (lesson.a4_map && (lesson.primary_source.src || lesson.primary_source.source)) {
           let a4Str = JSON.stringify(lesson.a4_map);
-          let srcStr = JSON.stringify(lesson.primary_source.src);
-          if (a4Str === srcStr || lesson.a4_map === lesson.primary_source.src)
+          let srcStr = JSON.stringify((lesson.primary_source.src || lesson.primary_source.source));
+          if (a4Str === srcStr || lesson.a4_map === (lesson.primary_source.src || lesson.primary_source.source))
             renderImages = false;
         }
 
@@ -1434,11 +1434,11 @@ allDirs.forEach((unitId) => {
           html += `<div style="page-break-inside: auto; margin-bottom: 15px; margin-top: 20px;">`;
           lesson.sources.forEach((source, sIdx) => {
             let sourceContent = source.content || source.text;
-            if (source.src || source.caption || sourceContent) {
+            if ((source.src || source.source) || source.caption || sourceContent) {
               html += `
               <div class="source-container" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 6px;">
                 ${source.title ? `<strong style="font-size: 11pt;">${source.title}</strong><br>` : ""}
-                ${source.src ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath(source.src, 2) : source.src}" alt="Source" style="max-width: 100%; max-height: 250px; margin-top: 10px;">` : ""}
+                ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source" style="max-width: 100%; max-height: 250px; margin-top: 10px;">` : ""}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${formatText(sourceContent)}</blockquote>` : ""}
                 ${source.caption ? `<div class="source-caption" style="margin-top: 5px; font-size: 10pt;">${source.caption}</div>` : ""}
               </div>
