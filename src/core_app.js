@@ -998,22 +998,110 @@ export function initializeApp(unitData) {
         
         const contentArea = document.getElementById('content-area');
         contentArea.innerHTML = `
-          <div class="welcome-banner" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
-            <div>
-              <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Live Photo Feed</h1>
-              <p class="welcome-subtitle" style="color: #cbd5e1; font-size: 1.15rem; margin: 0;">Follow the trip in real-time as teachers upload photos from Belgium!</p>
+          <style>
+            @keyframes floatUp {
+              0% { transform: translateY(20px) rotate(-8deg); opacity: 0; }
+              100% { transform: translateY(0) rotate(-8deg); opacity: 1; }
+            }
+            @keyframes floatUpRight {
+              0% { transform: translateY(30px) rotate(4deg); opacity: 0; }
+              100% { transform: translateY(0) rotate(4deg); opacity: 1; }
+            }
+            .photo-stack {
+              position: relative;
+              width: 250px;
+              height: 250px;
+              margin: 0 auto 40px auto;
+            }
+            .polaroid {
+              position: absolute;
+              background: white;
+              padding: 10px 10px 35px 10px;
+              box-shadow: 0 15px 35px -5px rgba(0,0,0,0.4);
+              border-radius: 6px;
+              width: 200px;
+              height: 220px;
+              top: 10px;
+              left: 25px;
+              border: 1px solid #e2e8f0;
+            }
+            .polaroid-1 {
+              transform: rotate(-8deg);
+              z-index: 1;
+              background-color: #f8fafc;
+              animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+            .polaroid-2 {
+              transform: rotate(4deg);
+              z-index: 2;
+              left: 45px;
+              top: 20px;
+              animation: floatUpRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+              opacity: 0;
+            }
+            .polaroid-img {
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #94a3b8;
+              font-size: 3.5rem;
+              border-radius: 4px;
+            }
+            @keyframes photoPulse {
+              0%, 100% { transform: scale(1); opacity: 1; }
+              50% { transform: scale(1.5); opacity: 0; }
+            }
+          </style>
+          
+          <div class="welcome-banner" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 60px 40px; border-radius: 20px; margin-bottom: 30px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 10px 15px -3px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+            <!-- Decorative background elements -->
+            <div style="position: absolute; top: -100px; right: -50px; width: 300px; height: 300px; background: rgba(59, 130, 246, 0.15); border-radius: 50%; filter: blur(50px);"></div>
+            <div style="position: absolute; bottom: -100px; left: -50px; width: 350px; height: 350px; background: rgba(239, 68, 68, 0.15); border-radius: 50%; filter: blur(60px);"></div>
+            
+            <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 10;">
+              
+              <div class="photo-stack">
+                <div class="polaroid polaroid-1">
+                  <div class="polaroid-img"><i class="fa-solid fa-image"></i></div>
+                </div>
+                <div class="polaroid polaroid-2">
+                  <div class="polaroid-img"><i class="fa-solid fa-camera"></i></div>
+                </div>
+              </div>
+
+              <div style="display: inline-flex; align-items: center; background: rgba(255,255,255,0.1); padding: 8px 20px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); margin-bottom: 24px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+                <div style="position: relative; width: 10px; height: 10px; margin-right: 12px;">
+                  <div style="position: absolute; inset: 0; background-color: #ef4444; border-radius: 50%;"></div>
+                  <div style="position: absolute; inset: 0; background-color: #ef4444; border-radius: 50%; animation: photoPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"></div>
+                </div>
+                <span style="color: #f8fafc; font-weight: 700; font-size: 0.95rem; letter-spacing: 1.5px; text-transform: uppercase;">Live Updates Active</span>
+              </div>
+              
+              <h1 style="color: #ffffff; margin-top: 0; margin-bottom: 15px; font-size: clamp(2.5rem, 5vw, 4rem); font-family: 'Playfair Display', serif; text-shadow: 0 4px 15px rgba(0,0,0,0.5); line-height: 1.1;">Live Photo Feed</h1>
+              
+              <p style="color: #94a3b8; font-size: 1.25rem; margin: 0 auto 40px auto; max-width: 700px; line-height: 1.7;">
+                We are using a shared Google Photos album to securely share photos with parents back home. Whenever our staff find a 4G signal, new photos of the pupils will automatically appear in the album!
+              </p>
+
+              <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; align-items: center;">
+                <a href="${unitData.key_info.live_album_url}" target="_blank" class="main-btn" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 18px 40px; font-size: 1.3rem; border: none; border-radius: 12px; font-weight: 700; box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); text-decoration: none; display: inline-flex; align-items: center; gap: 12px;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 20px 25px -5px rgba(37, 99, 235, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px -5px rgba(37, 99, 235, 0.5)'">
+                  <i class="fa-brands fa-google" style="font-size: 1.5rem;"></i> Open Google Photos
+                </a>
+                
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 15px 20px; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2);">
+                  <div style="background: white; padding: 6px; border-radius: 8px;">
+                      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(unitData.key_info.live_album_url)}&bgcolor=ffffff&color=1e293b&margin=0" alt="QR Code" style="width: 70px; height: 70px; display: block;">
+                  </div>
+                  <div style="text-align: left;">
+                    <div style="color: #ffffff; font-weight: 700; font-size: 1.15rem; margin-bottom: 4px;">Scan with phone</div>
+                    <div style="color: #cbd5e1; font-size: 0.95rem;">To view on the go</div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; margin-top: 30px;">
-            <i class="fa-brands fa-google" style="font-size: 4rem; color: #3b82f6; margin-bottom: 20px;"></i>
-            <h2 style="color: #1e293b; margin-top: 0;">Google Photos Shared Album</h2>
-            <p style="color: #475569; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px auto;">
-              We are using a shared Google Photos album to securely share photos with parents back home. 
-              Whenever our staff find a 4G signal, new photos of the pupils will automatically appear here!
-            </p>
-            <a href="${unitData.key_info.live_album_url}" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 30px;">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Album
-            </a>
           </div>
         `;
         window.scrollTo({ top: 0, behavior: 'smooth' });
