@@ -4,7 +4,7 @@ const path = require('path');
 const regexes = [
     /^(Recall from (last|previous) lesson(s)?:\s*|PAST TOPIC:\s*|Enquiry:\s*|Predict:\s*)/i,
     /^(Q\d+[:.]?\s*|Task \d+[:.]?\s*|Question \d+[a-z]?[:.]?\s*|Enquiry Task[:.]?\s*|\d+\.\s*)/i,
-    /^(\d+[\.\)]|Q\.?\d+|Task[s]?\s+\d+|Activity\s+\d+|Question\s+\d+|Source\s+[A-Z]\s+Task|Task:)/i,
+    /^(\d+[\.\)]|Q\.?\d+|Task[s]?\s+\d+|Activity\s+\d+|Question\s+\d+|Source\s+[A-Z]\s+Task|Task:|Source Analysis \(Source [A-Z]\)|Source Analysis)/i,
     /^(Task:|Question:|Q:|Activity:)\s*/i
 ];
 
@@ -14,7 +14,8 @@ function processFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let changed = false;
     
-    const newContent = content.replace(/("(question|text)"\s*:\s*")([^"]+)(")/g, (match, prefix, fieldName, textValue, suffix) => {
+    // Use (?:[^"\\]|\\.)* to correctly match everything inside a string, even escaped quotes like \"
+    const newContent = content.replace(/("(question|text)"\s*:\s*")((?:[^"\\]|\\.)*)(")/g, (match, prefix, fieldName, textValue, suffix) => {
         let originalText = textValue;
         let cleanedText = textValue;
         
@@ -22,9 +23,13 @@ function processFile(filePath) {
         do {
             lastText = cleanedText;
             for (const r of regexes) {
-                cleanedText = cleanedText.replace(r, "").trim();
+                // Because literal \n in the string might separate the prefix from the content,
+                // we should handle prefixes that end in \n or \s*
+                cleanedText = cleanedText.replace(r, "");
+                cleanedText = cleanedText.replace(/^(\\n|\s)+/, "");
             }
             cleanedText = cleanedText.replace(/^:\s*/, ""); // remove leftover colons
+            cleanedText = cleanedText.replace(/^(\\n|\s)+/, "");
         } while (cleanedText !== lastText);
         
         if (cleanedText !== originalText) {
@@ -41,15 +46,12 @@ function processFile(filePath) {
     }
 }
 
-const roots = [path.join(__dirname, 'units', 'medieval_england'), path.join(__dirname, 'public', 'units', 'medieval_england')];
+const unitsDir = path.join(__dirname, 'units');
+const unitDirs = fs.readdirSync(unitsDir).filter(f => fs.statSync(path.join(unitsDir, f)).isDirectory());
 
-roots.forEach(dataPath => {
-    const dataJsPath = path.join(dataPath, 'data.js');
+unitDirs.forEach(unitFolder => {
+    const dataJsPath = path.join(unitsDir, unitFolder, 'data.js');
     if (fs.existsSync(dataJsPath)) {
         processFile(dataJsPath);
-    } else if (fs.existsSync(dataPath) && !fs.statSync(dataPath).isDirectory()) {
-        processFile(dataPath); // If the path itself is the data.js file
-    } else {
-        processFile(dataPath + '\\data.js');
     }
 });

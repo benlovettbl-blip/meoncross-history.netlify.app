@@ -1242,17 +1242,17 @@ const early_modern_world = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Task 1: The Foreign Diplomat’s Confidential Dispatch",
+              "question": "The Foreign Diplomat’s Confidential Dispatch",
               "instructions": "Take on the role of a foreign ambassador visiting London in 1605. Write a confidential report back to your home court explaining why religious division in England is so intense. Include your impressions of King James, his falling out with Church leaders and Parliament, and the growing Catholic resentment over the expulsion of priests."
             },
             {
               "type": "extended_writing",
-              "question": "Task 2: Prosecution Speech at Westminster",
+              "question": "Prosecution Speech at Westminster",
               "instructions": "It is 27 January 1606, and the trial of the surviving conspirators has begun before Lord Chief Justice Sir John Popham. Write the opening speech for the prosecution outlining the charges—treason, attempted murder of the King, and conspiracy to reintroduce Catholicism—explaining why treason against the Protestant Crown requires the harshest public punishment."
             },
             {
               "type": "extended_writing",
-              "question": "Task 3: Eyewitness Letter Home",
+              "question": "Eyewitness Letter Home",
               "instructions": "Imagine you were a Londoner who witnessed the capture of Guy Fawkes and the subsequent execution of the conspirators in January 1606. Write a letter to a friend describing the mood of the city, explaining why most citizens were relieved the plot failed, and reflecting on how the King wants the fifth of November remembered."
             }
           ]
@@ -1286,22 +1286,22 @@ const early_modern_world = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "1. Inference from Source A (2 Marks)",
+              "question": "Inference from Source A (2 Marks)",
               "instructions": "What can you infer from the 1605 engraving about how the plotters were viewed by contemporaries? Support your inference with a specific visual detail."
             },
             {
               "type": "source_analysis",
-              "question": "2. Utility & Provenance of Source A (8 Marks)",
+              "question": "Utility & Provenance of Source A (8 Marks)",
               "instructions": "How useful is Source A for an enquiry into the threat posed by the Gunpowder Plot? Evaluate the content of the engraving and its provenance."
             },
             {
               "type": "source_analysis",
-              "question": "3. Analysis of Evidence in Source B (4 Marks)",
+              "question": "Analysis of Evidence in Source B (4 Marks)",
               "instructions": "Explain how the physical difference between Guy Fawkes's early signature and his later signature can be used as evidence of Jacobean interrogation methods."
             },
             {
               "type": "table_planner",
-              "question": "4. Follow-Up Investigation (4 Marks)",
+              "question": "Follow-Up Investigation (4 Marks)",
               "instructions": "Investigate the official government account of the plot based on the Monteagle letter (Source C).",
               "columns": [
                 "Enquiry Field",
