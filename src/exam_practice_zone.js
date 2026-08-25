@@ -19,9 +19,25 @@ export function renderExamPracticeZone(container, unitData) {
   if (unitData.lessons) {
     unitData.lessons.forEach(l => {
       if (l.exam_practice) {
-        let practices = Array.isArray(l.exam_practice) ? l.exam_practice : [l.exam_practice];
+        let practices = [];
+        if (Array.isArray(l.exam_practice)) {
+            practices = l.exam_practice;
+        } else if (l.exam_practice.questions) {
+            // New structure: object with questions and stimulus
+            practices = l.exam_practice.questions.map(q => {
+               return {
+                  ...q,
+                  stimulus: q.stimulus || l.exam_practice.stimulus // inherit global stimulus if question doesn't have its own
+               };
+            });
+        } else {
+            // Single question object
+            practices = [l.exam_practice];
+        }
+
         practices.forEach(ep => {
           let qText = ep.question || ep.text;
+          if (!qText) return; // Skip if no question text
           let type = ep.type;
           if (!type) {
               if (qText.includes("12 marks")) type = "12-mark";
@@ -456,7 +472,13 @@ export function renderExamPracticeZone(container, unitData) {
     
     if (currentQuestion.stimulus) {
       if (Array.isArray(currentQuestion.stimulus)) {
-          qStimulus.innerHTML = currentQuestion.stimulus.join('<br><br>');
+          qStimulus.innerHTML = currentQuestion.stimulus.map(stim => {
+              if (typeof stim === 'string') return stim;
+              if (typeof stim === 'object') {
+                  return `<strong>${stim.title}</strong><br>${stim.content}`;
+              }
+              return '';
+          }).join('<br><br>');
       } else {
           qStimulus.innerHTML = currentQuestion.stimulus;
       }
