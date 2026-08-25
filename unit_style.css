@@ -332,19 +332,32 @@ body.focus-mode .content-area {
 
 @media (max-width: 768px) {
   .sticky-lesson-header {
-    margin-top: -1.5rem; /* negate mobile padding-top */
-    margin-left: -1rem; /* negate mobile padding-left */
+    position: relative; /* Remove stickiness on mobile so it scrolls away, freeing up screen space */
+    margin-top: -1.5rem; 
+    margin-left: -1rem; 
     margin-right: -1rem;
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.5rem;
+    box-shadow: none;
+    border-bottom: 2px solid var(--border-glass);
+  }
+  
+  .sticky-lesson-title {
+    font-size: 1rem;
+    line-height: 1.3;
   }
   
   .sticky-lesson-actions {
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 0.5rem; /* prevent scrollbar from hiding buttons */
+    padding-bottom: 0.5rem;
+  }
+  
+  .sticky-lesson-actions .btn {
+    padding: 5px 10px !important;
+    font-size: 0.85rem !important;
   }
 }
 
