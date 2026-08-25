@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset="utf-8">
+  <title>GCSE History Lesson Resource - Workbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: 21cm 29.7cm; /* A4 */
+      margin: 1.0cm;
+      mso-page-orientation: portrait;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 11pt;
+      color: #000000;
+      line-height: 1.4;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .print-page, .print-page-last {
+      clear: both;
+      box-sizing: border-box;
+      position: relative;
+      background: #ffffff;
+    }
+    .print-page {
+      page-break-after: always;
+    }
+    .print-page-last {
+      page-break-after: avoid;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+      }
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+      }
+      .print-page, .print-page-last {
+        width: 100% !important;
+        min-height: 27.2cm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+      }
+    }
+    .main-title {
+      font-size: 15pt;
+      font-weight: 800;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 3px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #000000;
+    }
+    .sub-title {
+      font-size: 10pt;
+      font-weight: bold;
+      color: #000000;
+      margin-top: 6px;
+      margin-bottom: 2px;
+    }
+    .dotted-writing-line {
+      border-bottom: 1px dashed #9ca3af;
+      height: 28px;
+      margin-bottom: 4px;
+    }
+
+    /* Cornell grid styles */
+    .print-cornell-grid {
+      display: table;
+      width: 100%;
+      border: 1.5px solid #000000;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    .print-cornell-row {
+      display: table-row;
+    }
+    .print-cornell-cues {
+      display: table-cell;
+      width: 30%;
+      border-right: 1.5px solid #000000;
+      border-bottom: 1.5px solid #000000;
+      padding: 10px;
+      vertical-align: top;
+      font-size: 9.5pt;
+      font-weight: bold;
+      background: #f9fafb;
+    }
+    .print-cornell-notes {
+      display: table-cell;
+      width: 70%;
+      border-bottom: 1.5px solid #000000;
+      padding: 10px;
+      vertical-align: top;
+      background: #ffffff;
+    }
+    .print-cornell-summary-row {
+      display: table-row;
+    }
+    .print-cornell-summary-cell {
+      display: table-cell;
+      colspan: 2;
+      padding: 10px;
+      vertical-align: top;
+      background: #f9fafb;
+      font-size: 10pt;
+    }
+    /* Flowchart styles */
+    .flowchart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .flowchart-box {
+      border: 1.5px solid #000000;
+      padding: 8px;
+      width: 22%;
+      vertical-align: top;
+      background: #ffffff;
+      font-size: 9.5pt;
+    }
+    .flowchart-arrow {
+      text-align: center;
+      font-size: 15.5pt;
+      font-weight: bold;
+      width: 4%;
+      vertical-align: middle;
+      color: #000000;
+    }
+    /* Vocabulary Match-up styles */
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+    .vocab-th {
+      font-weight: bold;
+      font-size: 9pt;
+      text-transform: uppercase;
+      background-color: #f3f4f6;
+      border: 1px solid #9ca3af;
+      padding: 4px 6px;
+      text-align: left;
+    }
+    .vocab-td {
+      border: 1px solid #9ca3af;
+      padding: 5px 6px;
+      font-size: 9pt;
+      vertical-align: middle;
+    }
+    /* Exam Rubric styles */
+    .rubric-box {
+      border: 1px solid #000000;
+      background: #f9fafb;
+      padding: 8px;
+      margin-top: 15px;
+      font-size: 9.5pt;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        background: #ffffff;
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+            <div class="print-page" style="text-align: center; font-family: 'Outfit', sans-serif;">
+              <h1 style="font-family: 'Playfair Display', serif; font-size: 32pt; margin-top: 50px;">Conflict in the Middle East</h1>
+              <p style="font-size:16pt; margin-top: 0; color: #555;">Key Topic 1: The Birth of the State of Israel (1945-63)</p>
+              <p style="font-size:14pt; font-style: italic;">Student Workbook</p>
+              
+              <div style="margin: 20px 0;">
+                <img src="/assets/sources/kt1_cover.png" alt="Middle East Cover" style="max-width: 65%; height: auto; border: 2px solid #1a237e; border-radius: 4px; box-shadow: 3px 3px 10px rgba(0,0,0,0.15);">
+              </div>
+
+              <div style="margin-top: 30px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt; text-align: left;">Name: </div>
+              <div style="margin-top: 25px; border-bottom: 1px solid #000; padding-bottom: 5px; width: 80%; margin-left: 10%; font-weight: 500; font-size: 14pt; margin-bottom: 40px; text-align: left;">Class: </div>
+            </div>
+          
+<!-- LESSON subtopic_1_1 -->
+<div class="print-page" style="page-break-after: always; position: relative;">
+        <h2 class="main-title">Topic 1.1: British Withdrawal & Creation of Israel &bull; Reading & Vocabulary</h2>
+        
+    <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 9pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
+      <strong style="text-transform: uppercase; font-size: 9.5pt; color: #000000; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (Pearson Edexcel)</strong>
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        <li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Conflicting interests and demands of Jews and Arabs within the British Mandate.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Key events leading to the end of the British Mandate, partition and the creation of Israel, including the significance of the bombing of the King David Hotel and UN Resolution 181.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Key events of the Arab-Israeli war (1948–49).</li>
+      </ul>
+    </div>
+  
+        
+        <div style="margin-top: 15px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Pre-Reading Vocabulary</h3>
+          
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Zionism</strong>: Movement advocating for an independent Jewish homeland in Palestine.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Certificates</strong>: Official entry permits issued by mandate authorities.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Insurgency</strong>: Coordinated armed rebellion against a ruling state power.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Mandate</strong>: League of Nations authorization for Britain to govern the territory.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">King David Hotel</strong>: British military administrative headquarters bombed in July 1946 (91 deaths).
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Sergeants Affair</strong>: Retaliatory hanging of two British sergeants by Irgun, breaking UK domestic resolve.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">SS Exodus</strong>: Refugee ship turned away by Britain in 1947, provoking global outcry.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Resolution 181</strong>: The 1947 United Nations partition framework.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Deir Yassin</strong>: Palestinian village attacked by Zionist paramilitaries in April 1948, triggering widespread panic.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Sovereignty</strong>: Independent authority and supreme self-governing power.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Bevin Quota</strong>: The strict monthly limit of 1,500 Jewish immigrants to protect relations with Arab oil nations.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Nakba</strong>: 'Catastrophe'; the displacement of 700,000 Palestinians.
+      </div>
+    
+        </div>
+
+        <div style="margin-top: 20px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Historical Narrative</h3>
+          
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">1. Post-War Pressures & Zionist Demand (1945)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">Following the Allied victory in 1945, Britain faced a mounting crisis in Palestine. The Holocaust galvanized global support for <strong>Zionism</strong>—the movement advocating for a sovereign Jewish homeland. In the US, President Harry Truman pressured British PM Clement Attlee to immediately grant entry <strong>certificates</strong> for 100,000 Jewish refugees. Meanwhile, Palestinian Arabs, led by the Grand Mufti <strong>Haj Amin al-Husseini</strong>, vehemently opposed this, demanding immediate independence and warning of rebellion. Caught in the middle, British Foreign Secretary Ernest Bevin restricted immigration to a quota of <strong>1,500</strong> per month to protect relations with Arab oil-producing nations, fueling deep anger among Jewish communities.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">2. Zionist Insurgency & The Sergeants Affair (1946–1947)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">Furious at British restrictions, Jewish paramilitary organizations (Haganah, Irgun, and Lehi) launched a coordinated armed <strong>insurgency</strong>. On 22 July 1946, the Irgun bombed the British military administrative headquarters at the King David Hotel in Jerusalem, killing 91 people. The crisis escalated in July 1947 with the <strong>Sergeants Affair</strong>: the Irgun kidnapped and hanged two British sergeants (Clifford Martin and Mervyn Paice) in retaliation for British executions. This caused immense public outrage in Britain, sparked anti-Semitic riots, and destroyed domestic willingness to maintain the Mandate.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">3. The SS Exodus, UN Partition & Outbreak of War (1947–1948)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">In July 1947, British authorities intercepted the <strong>SS Exodus</strong> carrying 4,500 Holocaust survivors and returned them to Europe, causing global media outrage. Near bankruptcy and unable to maintain order, Britain referred Palestine's future to the United Nations. On 29 November 1947, the UN passed <strong>Resolution 181 (the Partition Plan)</strong>, proposing to divide Palestine into separate Jewish and Arab states, with Jerusalem under international control. Jewish leaders accepted the plan for <strong>sovereignty</strong>, but Arab leaders rejected it as unjust, since the Jewish state got 55% of the land despite Jews representing only 33% of the population. Palestinian Arabs felt their right to self-determination was completely ignored by western powers, triggering civil war. During this escalating civil war, Zionist paramilitaries (Irgun and Lehi) attacked the Arab village of <strong>Deir Yassin</strong> on 9 April 1948, killing over 100 residents, which spread widespread panic and accelerated the flight of Palestinian civilians.</p><p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">When the Mandate expired on 14 May 1948, David Ben-Gurion declared the State of Israel. British forces withdrew, and five neighboring Arab armies (Egypt, Transjordan, Syria, Lebanon, Iraq) invaded. Israel won due to <strong>Arab disunity</strong> (lack of coordinated command); <strong>military consolidation</strong> (paramilitaries merged into the IDF); and a crucial ceasefire that allowed Israel to negotiate a secret arms deal with <strong>Czechoslovakia</strong>, doubling active troops from 35,000 to 108,000. By 1949, Israel captured 50% more land than originally allocated, creating a refugee crisis for 700,000 Palestinians, known as the <strong>Nakba</strong>.</p>
+      </div>
+    
+        </div>
+      </div>
+
+      <div class="print-page">
+        <h2 class="main-title">Cornell Notes &bull; Topic 1.1: British Withdrawal & Creation of Israel</h2>
+        
+      <div class="retrieval-questions-section" style="border: 1.5px solid #000000; padding: 8px 10px; margin-top: 15px; background: #ffffff; border-radius: 4px; box-sizing: border-box; text-align: left;">
+        <strong style="text-transform: uppercase; font-size: 12.5pt; color: #000000; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">✏️ Do Now: Recall from Previous Lesson</strong>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q1:</strong> What was the Balfour Declaration of 1917?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q2:</strong> Which empire controlled Palestine before the British Mandate?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q3:</strong> How did the Holocaust impact international sympathy for a Jewish state?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+        </div>
+      </div>
+    
+        <div style="border: 1px solid #111827; padding: 10px; margin-top: 15px; margin-bottom: 10px; font-size: 9.5pt; background: #f9fafb;">
+          <strong>Methodology:</strong> Use the left-hand column cues to guide your note-taking on the historical narrative. Re-read the section to extract precise dates, groups, and motivations.
+        </div>
+
+        <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+          <tbody>
+            
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            1. Conflicting Demands & Quotas (1945)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            2. Zionist Insurgency (1946-47)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    
+        <div class="print-page">
+          <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+            <tbody>
+              
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            3. UN Referral & Resolution 181 (1947)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            4. 1948 Arab-Israeli War
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+<!-- LESSON subtopic_1_2 -->
+<div class="print-page" style="page-break-after: always; position: relative;">
+        <h2 class="main-title">Topic 1.2: The Aftermath of the 1948–49 War &bull; Reading & Vocabulary</h2>
+        
+    <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 9pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
+      <strong style="text-transform: uppercase; font-size: 9.5pt; color: #000000; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (Pearson Edexcel)</strong>
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        <li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Territorial changes and their impact.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ The refugee status of Palestinian Arabs.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ The creation of the Israeli Defence Forces and the Law of Return.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ US aid to Israel.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Israel's relations with Egypt.</li>
+      </ul>
+    </div>
+  
+        
+        <div style="margin-top: 15px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Pre-Reading Vocabulary</h3>
+          
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Green Line</strong>: The 1949 armistice borders separating Israel from its Arab neighbors.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Nakba</strong>: Arabic for 'Catastrophe'; the flight and expulsion of 700,000 Palestinians.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">UNRWA</strong>: UN agency established in 1949 to provide food, health care, and schooling to Palestinian refugees.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Law of Return</strong>: 1950 Israeli law granting automatic citizenship to any Jewish immigrant.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Tzena</strong>: Strict economic austerity and food rationing system implemented in early 1950s Israel.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Conscription</strong>: Compulsory military service introduced in Israel to maintain a massive reserve force.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Fedayeen</strong>: Palestinian guerrilla fighters launching cross-border raids into Israel.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Reprisals</strong>: Disproportionately harsh military counter-attacks launched by the IDF.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Suez Canal</strong>: Waterway blockaded by Egypt to choke Israeli maritime commerce.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Straits of Tiran</strong>: Narrow sea passage blockaded by Egypt to close off Israel's port of Eilat.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Count Bernadotte</strong>: UN mediator assassinated in September 1948 by the Zionist Stern Gang.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Right of Return</strong>: The right claimed by Palestinian refugees to return to their original homes, denied by Israel.
+      </div>
+    
+        </div>
+
+        <div style="margin-top: 20px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Historical Narrative</h3>
+          
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">1. Territorial Changes & The Green Line (1949)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">The armistice agreements of 1949 redrew the map of the Middle East. The proposed independent Palestinian Arab state was aborted. Israel captured <strong>79%</strong> of mandate Palestine (50% more than the UN partition plan had allocated), gaining control of vast new territories including the fertile <strong>Galilee</strong> region, the <strong>Negev Desert</strong>, and <strong>West Jerusalem</strong>. Transjordan occupied the <strong>West Bank</strong> and East Jerusalem, annexing it in 1951, while Egypt took military control of the <strong>Gaza Strip</strong>. These armistice lines became known as the <strong>Green Line</strong>, consolidating Israel's victories and entrenching border divisions.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">2. The Palestinian Refugee Crisis (The Nakba)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">The war was a disaster for Palestinian Arabs, who refer to the events of 1948 as the <strong>Nakba</strong> ('The Catastrophe'). Over <strong>700,000</strong> Palestinians fled or were forcibly expelled from their homes in the territory that became Israel. Fleeing in panic, they ended up in squalid, overcrowded refugee camps in Gaza, the West Bank, Lebanon, Syria, and Jordan. Israel denied them the <strong>Right of Return</strong> to prevent the dilution of its Jewish majority, creating permanent exile. In December 1949, the UN established the <strong>UNRWA</strong> (Relief and Works Agency) to manage these camps and provide basic food, healthcare, and schooling.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">3. State Consolidation (IDF & Law of Return)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">To defend the new state, Prime Minister David Ben-Gurion merged rival pre-war Jewish militias (Haganah, Irgun, and Lehi) into a single national army: the <strong>Israeli Defence Forces (IDF)</strong>. Israel introduced universal conscription to secure its borders. In July 1950, Israel passed the <strong>Law of Return</strong>, granting every Jew in the world the right to settle in Israel and receive immediate citizenship. This doubled Israel's population in three years, welcoming Holocaust survivors and Jews fleeing Arab lands. This massive influx caused extreme economic strain, forcing a strict food rationing system called <strong>Tzena</strong> and heavy reliance on US aid (grants and loans totaling <strong>$300 million</strong>) and German reparations.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">4. Hostile Relations with Egypt</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">Following the war, relations between Israel and Egypt were characterized by deep hostility. Egypt resented Israel for its military defeat and for the burden of 200,000 Palestinian refugees trapped in the Egyptian-controlled Gaza Strip. Displaced Palestinians, known as the <strong>Fedayeen</strong>, launched frequent guerrilla raids from Gaza into Israel. The IDF responded with disproportionate military <strong>reprisals</strong>, escalating border tensions. Egypt also waged economic war by blockading the <strong>Suez Canal</strong> to Israeli shipping and closing the <strong>Straits of Tiran</strong>, choking Israel's southern port of Eilat.</p>
+      </div>
+    
+        </div>
+      </div>
+
+      <div class="print-page">
+        <h2 class="main-title">Cornell Notes &bull; Topic 1.2: The Aftermath of the 1948–49 War</h2>
+        
+      <div class="retrieval-questions-section" style="border: 1.5px solid #000000; padding: 8px 10px; margin-top: 15px; background: #ffffff; border-radius: 4px; box-sizing: border-box; text-align: left;">
+        <strong style="text-transform: uppercase; font-size: 12.5pt; color: #000000; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">✏️ Do Now: Recall from Previous Lesson</strong>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q1:</strong> Which five Arab nations invaded Israel in May 1948?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q2:</strong> From which country did Israel secure weapons during the 1948 UN truce?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q3:</strong> What was UN Resolution 181?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+        </div>
+      </div>
+    
+        <div style="border: 1px solid #111827; padding: 10px; margin-top: 15px; margin-bottom: 10px; font-size: 9.5pt; background: #f9fafb;">
+          <strong>Methodology:</strong> Use the left-hand column cues to guide your note-taking on the historical narrative. Re-read the section to extract precise dates, groups, and motivations.
+        </div>
+
+        <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+          <tbody>
+            
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            1. Borders & Territory (1949)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            2. The Nakba & UNRWA (1949)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    
+        <div class="print-page">
+          <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+            <tbody>
+              
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            3. State Consolidation & Aid
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            4. Egypt-Israel Tensions
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+<!-- LESSON subtopic_1_3 -->
+<div class="print-page" style="page-break-after: always; position: relative;">
+        <h2 class="main-title">Topic 1.3: The Suez Crisis &bull; Reading & Vocabulary</h2>
+        
+    <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 9pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
+      <strong style="text-transform: uppercase; font-size: 9.5pt; color: #000000; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (Pearson Edexcel)</strong>
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        <li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Nasser and Egypt's leadership of the Arab world.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ The events and significance of Israeli attacks on Gaza in 1955 and Sinai in 1956.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ The events and significance of the Suez Crisis (1956), including the formation of the UAR in 1958.</li>
+      </ul>
+    </div>
+  
+        
+        <div style="margin-top: 15px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Pre-Reading Vocabulary</h3>
+          
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Pan-Arabism</strong>: Ideology promoting the unification of Arab nations under common political leadership.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Czech Arms Deal</strong>: 1955 agreement providing Egypt with advanced Soviet jet fighters and tanks.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Aswan Dam</strong>: Massive Egyptian infrastructure project which lost Western funding, prompting canal seizure.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Nationalisation</strong>: The act of bringing private assets (the Suez Canal) under government ownership.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Protocol of Sèvres</strong>: Secret agreement outlining the military collusion between Britain, France, and Israel.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Sinai Peninsula</strong>: Vast desert territory captured by Israel during the swift October campaign.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Port Said</strong>: Egyptian canal city where British and French paratroopers landed.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">UNEF</strong>: First UN peacekeeping force, deployed in Sinai to separate Egyptian and Israeli forces.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">UAR</strong>: The 1958 political union between Egypt and Syria, representing the height of Pan-Arabism.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Eisenhower</strong>: US President who forced the withdrawal of invading forces using financial leverage.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Austerity</strong>: Severe economic cuts, experienced in Egypt due to dam expenses and invasion damages.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Pan-Arab hero</strong>: Nasser's status after surviving the invasion and retaining nationalised control of the canal.
+      </div>
+    
+        </div>
+
+        <div style="margin-top: 20px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Historical Narrative</h3>
+          
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">1. Nasser's Pan-Arabism & Soviet Realignment (1954–1955)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">Gamal Abdel Nasser came to power in Egypt in 1954, championing <strong>Pan-Arabism</strong>—the unification of Arab states to resist Western influence and oppose Israel. To modernize his army and bypass Western restrictions, Nasser signed the <strong>Czech Arms Deal</strong> in September 1955, importing modern Soviet jet fighters and tanks. This deal fundamentally shifted the regional balance of power. He also planned to construct the massive <strong>Aswan High Dam</strong> to boost Egypt's economy.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">2. Canal Nationalisation & Secret Sèvres Alliance (1956)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">When the US and UK withdrew their funding for the Aswan Dam in July 1956, Nasser retaliated by nationalising the British-and-French-owned <strong>Suez Canal</strong> to fund the project. Outraged, Britain and France signed the secret <strong>Protocol of Sèvres</strong> with Israel. The conspiracy was simple: Israel would invade Egypt, and Britain and France would intervene as 'peacekeepers' to seize control of the canal zone.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">3. The Sinai Campaign & Tripartite Invasion (Oct–Nov 1956)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">On 29 October 1956, Israel launched a swift invasion of the <strong>Sinai Peninsula</strong>, routing Egyptian forces. As planned, Britain and France ordered both sides to withdraw from the canal, and then bombed Egyptian airfields and landed troops at <strong>Port Said</strong>. While the invasion was a military success, capturing Sinai and the canal, it was a massive political disaster.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">4. Superpower Intervention & UAR (1958)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">Angry at the unilateral action, US President Dwight Eisenhower threatened to destroy the British <strong>pound</strong> by selling US sterling reserves and blocking IMF loans. The USSR threatened rocket strikes. Under this intense pressure, Britain, France, and Israel withdrew. A UN peacekeeping force (<strong>UNEF</strong>) was deployed to Sinai. Nasser emerged as a Pan-Arab hero, leading to the peak of Pan-Arabism in 1958 with the <strong>UAR</strong> (United Arab Republic), a political union between Egypt and Syria.</p>
+      </div>
+    
+        </div>
+      </div>
+
+      <div class="print-page">
+        <h2 class="main-title">Cornell Notes &bull; Topic 1.3: The Suez Crisis</h2>
+        
+      <div class="retrieval-questions-section" style="border: 1.5px solid #000000; padding: 8px 10px; margin-top: 15px; background: #ffffff; border-radius: 4px; box-sizing: border-box; text-align: left;">
+        <strong style="text-transform: uppercase; font-size: 12.5pt; color: #000000; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">✏️ Do Now: Recall from Previous Lesson</strong>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q1:</strong> What was the 'Green Line' established in 1949?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q2:</strong> How many Palestinian refugees fled their homes in 1948?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q3:</strong> Which Arab state took control of the West Bank after the 1948 war?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+        </div>
+      </div>
+    
+        <div style="border: 1px solid #111827; padding: 10px; margin-top: 15px; margin-bottom: 10px; font-size: 9.5pt; background: #f9fafb;">
+          <strong>Methodology:</strong> Use the left-hand column cues to guide your note-taking on the historical narrative. Re-read the section to extract precise dates, groups, and motivations.
+        </div>
+
+        <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+          <tbody>
+            
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            1. Nasser's Realignment
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            2. The Secret Coalition
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    
+        <div class="print-page">
+          <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+            <tbody>
+              
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            3. Superpower Pressures
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            4. Aftermath & UAR
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+</body>
+</html>

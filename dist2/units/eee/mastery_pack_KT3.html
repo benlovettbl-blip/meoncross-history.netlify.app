@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mastery Pack: Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #121212;
+            --brand-red: #d32f2f;
+            --brand-grey: #f5f5f5;
+        }
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        @media print {
+            .page-break { page-break-after: always; }
+            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            color: #2c3e50;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 100%;
+                padding: 0;
+            }
+        }
+        
+        /* Cover Page Styling */
+        .cover {
+            background-color: var(--brand-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-image: url('/assets/placeholder_cover.jpg'); background-size: cover; background-position: center;
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 1;
+        }
+        .cover-content {
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
+        }
+        .cover h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+        }
+        .cover h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: #ef4444; /* bright red */
+            margin-top: 0;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .cover-bottom {
+            margin-top: auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.95);
+            color: #121212;
+            border-radius: 8px;
+            padding: 20px 25px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--brand-red);
+        }
+        .cover-bottom p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        /* Strategy Page */
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--brand-dark);
+            border-bottom: 4px solid var(--brand-red);
+            padding-bottom: 10px;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--brand-red);
+            margin-top: 30px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .rag-box {
+            display: inline-block;
+            width: 15px; height: 15px;
+            border: 1px solid #000;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* Grids */
+        .grid-page h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        tr:nth-child(even) {
+            background-color: var(--brand-grey);
+        }
+        .col-qnum { width: 5%; text-align: center; font-weight: bold; }
+        .col-question { width: 45%; }
+        .col-rag { width: 4%; text-align: center; }
+        .col-notes { width: 38%; }
+        
+        .rag-checkbox {
+            width: 12px; height: 12px;
+            border: 1px solid #888;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Footer Debrief */
+        .debrief {
+            margin-top: auto;
+            border: 2px dashed var(--brand-red);
+            padding: 15px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .debrief h3 {
+            margin: 0 0 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--brand-red);
+        }
+        .debrief p {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        /* The Vault (Answers) */
+        .vault-page {
+            background-color: #fffbc8; /* Pastel yellow */
+            position: relative;
+        }
+        .vault-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15rem;
+            color: rgba(0,0,0,0.03);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .vault-content {
+            position: relative;
+            z-index: 1;
+        }
+        .vault-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .answer-list {
+            margin-bottom: 30px;
+        }
+        .answer-list h3 {
+            font-family: 'Outfit', sans-serif;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+        }
+        .answer-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+        }
+        .answer-num {
+            font-weight: bold;
+            width: 30px;
+            flex-shrink: 0;
+        }
+        .answer-text {
+            font-weight: 600;
+        }
+
+        /* Tracker Page */
+        .tracker-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        .tracker-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        .tracker-table th, .tracker-table td {
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .tracker-table th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        .col-attempt { width: 10%; }
+        .col-date { width: 15%; }
+        .col-score { width: 15%; }
+        .col-sig { width: 30%; }
+        .col-target { width: 30%; }
+        .reflection-box {
+            border: 2px solid var(--brand-dark);
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="page cover page-break">
+        <div class="cover-content">
+            <h1>Paper 2: Early Elizabethan England, 1558-88</h1>
+            <h2>"What was life like during the Elizabethan Golden Age?"</h2>
+            <h3>Mastery Pack: KEY TOPIC 3: ELIZABETHAN SOCIETY IN THE AGE OF EXPLORATION, 1558-88</h3>
+            
+            <div class="cover-bottom">
+                <p><strong>Operative / Student Name:</strong> ___________________________</p>
+                <p><strong>Target:</strong> Total Recall of 120 Crucial Questions</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Page -->
+    <div class="page strategy page-break">
+        <h1>How to Hack Your Memory<br><span style="font-size: 1.2rem; color: #555;">(Rules of Engagement)</span></h1>
+        
+        <h2>1. Never Just Read</h2>
+        <p>Reading the answers feels like learning, but it’s an illusion. You must force your brain to struggle to find the answer. The struggle is what builds memory pathways.</p>
+
+        <h2>2. Cover, Recall, Check</h2>
+        <p>Cover the answer sheet. Write your answer down in the notes section (or say it out loud). Only then are you allowed to check 'The Vault'.</p>
+
+        <h2>3. Track Your Threat Level</h2>
+        <p>Use the R-A-G (Red, Amber, Green) checkboxes next to every question after you attempt it.</p>
+        <ul>
+            <li><span class="rag-box" style="background: #4ade80;"></span> <strong>Green:</strong> I nailed it instantly.</li>
+            <li><span class="rag-box" style="background: #fbbf24;"></span> <strong>Amber:</strong> I got it, but I had to think hard.</li>
+            <li><span class="rag-box" style="background: #f87171;"></span> <strong>Red:</strong> My mind went blank. (Revisit these tomorrow).</li>
+        </ul>
+
+        <h2>4. The Interrogation (Homework Protocol)</h2>
+        <p>True mastery requires testing under pressure. Hand 'The Vault' (answers) to your parent or guardian. They will test you on 20 random questions. They hold the score; they hold the signature.</p>
+    </div>
+
+    <!-- Question Grids -->
+    
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT3.1: Education and leisure</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">1</td>
+                    <td class="col-question">What intellectual movement acted as a catalyst for educational reform in Elizabethan England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">2</td>
+                    <td class="col-question">Which prominent Humanist scholar was Queen Elizabeth's personal tutor?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">3</td>
+                    <td class="col-question">What invention significantly helped increase literacy by making books cheaper?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">4</td>
+                    <td class="col-question">What type of local school provided basic education for young boys and some girls?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">5</td>
+                    <td class="col-question">What wooden object covered in a transparent layer was used to teach children the alphabet?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">6</td>
+                    <td class="col-question">What type of school did the sons of the gentry and merchants attend from age seven?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">7</td>
+                    <td class="col-question">Which language dominated the curriculum of the Elizabethan Grammar school?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">8</td>
+                    <td class="col-question">Roughly what percentage of men, and what percentage of women, were literate by 1603?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">9</td>
+                    <td class="col-question">Name one exclusive sport played only by the nobility.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">10</td>
+                    <td class="col-question">What violently aggressive sport was played by the lower classes between neighbouring villages?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">11</td>
+                    <td class="col-question">Give two examples of 'cruel sports' popular in Elizabethan England.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">12</td>
+                    <td class="col-question">What was the Queen's personal attitude towards bear-baiting?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">13</td>
+                    <td class="col-question">What type of plays did Elizabeth ban in the 1570s to avoid religious conflict?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">14</td>
+                    <td class="col-question">Name one famous pioneering Elizabethan playwright other than Shakespeare.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">15</td>
+                    <td class="col-question">In what year was the first purpose-built theatre (The Theatre) constructed?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">16</td>
+                    <td class="col-question">What was the nickname given to the poorest theatre-goers who stood in the open-air pit?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">17</td>
+                    <td class="col-question">Which religious group furiously opposed the theatre, believing it was the work of the devil?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">18</td>
+                    <td class="col-question">What 1572 law meant actors could be whipped if they didn't have a noble license?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">19</td>
+                    <td class="col-question">Name one famous acting company sponsored by powerful nobility to protect them from the law.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">20</td>
+                    <td class="col-question">Why did the location of the theatres (outside the City walls) exacerbate opposition from authorities?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT3.1: Education and leisure</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">21</td>
+                    <td class="col-question">Who led the Spanish Armada?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">22</td>
+                    <td class="col-question">What was the Armada's plan?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">23</td>
+                    <td class="col-question">What tactic did the English use to break the Spanish defensive formation at Calais?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">24</td>
+                    <td class="col-question">What was the decisive sea battle of the Armada called?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">25</td>
+                    <td class="col-question">What role did the weather play in defeating the Armada?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">26</td>
+                    <td class="col-question">What did Drake do in Cadiz in 1587?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">27</td>
+                    <td class="col-question">When was Mary, Queen of Scots executed?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">28</td>
+                    <td class="col-question">What was the Treaty of Nonsuch?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">29</td>
+                    <td class="col-question">Who was Francis Walsingham?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">30</td>
+                    <td class="col-question">What was the Book of Common Prayer?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">31</td>
+                    <td class="col-question">What happened to the population of England between 1551 and 1601?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">32</td>
+                    <td class="col-question">What economic problem was caused by demand for food outstripping supply?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">33</td>
+                    <td class="col-question">What agricultural practice involved landlords fencing off common fields?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">34</td>
+                    <td class="col-question">Why did landlords prefer breeding sheep over traditional crop farming?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">35</td>
+                    <td class="col-question">What happened to unemployed rural workers after they were evicted due to enclosure?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">36</td>
+                    <td class="col-question">Which major European port city placed a trade embargo on English cloth, causing mass unemployment?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">37</td>
+                    <td class="col-question">What term was used to describe the 'deserving' poor (the sick, elderly, and orphans)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">38</td>
+                    <td class="col-question">What term was used to describe the 'undeserving' poor who were physically capable of working?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">39</td>
+                    <td class="col-question">What was the name given to a homeless, unemployed person who wandered from town to town?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">40</td>
+                    <td class="col-question">Give two reasons why the authorities were terrified of vagabonds.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT3.2: The Problem of Poverty</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">41</td>
+                    <td class="col-question">Who wrote a famous pamphlet warning the public about the tricks used by vagabonds?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">42</td>
+                    <td class="col-question">What was a 'Counterfeit Crank'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">43</td>
+                    <td class="col-question">What physical punishment was dictated by the 1572 Vagabonds Act for a first-time offence?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">44</td>
+                    <td class="col-question">Under the 1572 Act, what was the punishment for being caught as a vagabond a third time?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">45</td>
+                    <td class="col-question">What highly significant financial system did the 1572 Act introduce to help the impotent poor?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">46</td>
+                    <td class="col-question">Who was responsible for collecting the Poor Rate in local areas?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">47</td>
+                    <td class="col-question">What major economic reality did the 1576 Poor Relief Act finally recognise?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">48</td>
+                    <td class="col-question">What did the 1576 Act order JPs to provide for the genuinely unemployed?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">49</td>
+                    <td class="col-question">What institutions were created under the 1576 Act to punish those who refused to work?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">50</td>
+                    <td class="col-question">Why did the government ultimately transition from brutal punishment to national poor relief?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">51</td>
+                    <td class="col-question">Name two types of schools in Elizabethan England.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">52</td>
+                    <td class="col-question">What was a typical subject studied at Grammar school?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">53</td>
+                    <td class="col-question">What was a popular cruel animal sport during this period?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">54</td>
+                    <td class="col-question">Name one famous Elizabethan theatre.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">55</td>
+                    <td class="col-question">Were women allowed to act on the Elizabethan stage?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">56</td>
+                    <td class="col-question">Who led the Spanish Armada?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">57</td>
+                    <td class="col-question">What was the Battle of Gravelines?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">58</td>
+                    <td class="col-question">What phrase did Drake use to describe his attack on Cadiz?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">59</td>
+                    <td class="col-question">What was the Babington Plot (1586)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">60</td>
+                    <td class="col-question">What was the 'Great Chain of Being'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT3.3: Exploration and voyages of discovery</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">61</td>
+                    <td class="col-question">What traditional English trade market collapsed, prompting the search for new global markets?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">62</td>
+                    <td class="col-question">Name an essential navigational instrument that used the stars to determine latitude.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">63</td>
+                    <td class="col-question">What type of new, highly manoeuvrable warship was developed by the English?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">64</td>
+                    <td class="col-question">What term describes a sailor officially licensed by the Queen to attack Spanish ships?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">65</td>
+                    <td class="col-question">Between which years did Francis Drake circumnavigate the globe?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">66</td>
+                    <td class="col-question">What area of North America (modern-day California) did Drake claim for Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">67</td>
+                    <td class="col-question">Roughly how much Spanish treasure did Drake bring back to England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">68</td>
+                    <td class="col-question">On which ship was Francis Drake knighted by Queen Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">69</td>
+                    <td class="col-question">Which English nobleman was given a royal charter in 1584 to colonise North America?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">70</td>
+                    <td class="col-question">What name was given to the new territory in honour of Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">71</td>
+                    <td class="col-question">On which specific island off the coast of North America did the colonists land?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">72</td>
+                    <td class="col-question">What was the name of the flagship that hit a sandbank, ruining the colony's food and seeds?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">73</td>
+                    <td class="col-question">Name one of the aggressive military leaders of the 1585 expedition who caused conflict.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">74</td>
+                    <td class="col-question">Which Native American Chief turned against the English and attacked the colony?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">75</td>
+                    <td class="col-question">Why did Native Americans turn against the English settlers?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">76</td>
+                    <td class="col-question">In what year was the second attempt to establish a colony (which included women and children) launched?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">77</td>
+                    <td class="col-question">Who was the leader of the 1587 expedition who returned to England for supplies?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">78</td>
+                    <td class="col-question">Why couldn't supply ships return to Virginia in 1588?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">79</td>
+                    <td class="col-question">How long were the 1587 colonists left without any supplies or communication?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">80</td>
+                    <td class="col-question">What is the famous nickname given to the 1587 settlement that vanished without a trace?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT3.3: Exploration and voyages of discovery</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">81</td>
+                    <td class="col-question">What was a 'vagrant' or 'vagabond'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">82</td>
+                    <td class="col-question">What were the 'deserving poor'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">83</td>
+                    <td class="col-question">What were the 'idle poor'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">84</td>
+                    <td class="col-question">What was the 1572 Vagabonds Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">85</td>
+                    <td class="col-question">What caused poverty to rise in this period?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">86</td>
+                    <td class="col-question">What was a typical subject studied at a Grammar school?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">87</td>
+                    <td class="col-question">Were women allowed to act on stage?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">88</td>
+                    <td class="col-question">What tactic did the English use to break the Spanish formation at Calais?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">89</td>
+                    <td class="col-question">What was a 'privateer'?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">90</td>
+                    <td class="col-question">What was the Act of Supremacy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">91</td>
+                    <td class="col-question">In what year did Queen Elizabeth grant Walter Raleigh a Royal Charter?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">92</td>
+                    <td class="col-question">What traditional European English trade market had collapsed, encouraging New World expansion?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">93</td>
+                    <td class="col-question">What name was given to the new territory in North America in honour of Elizabeth?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">94</td>
+                    <td class="col-question">Did Walter Raleigh personally lead the expeditions to North America?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">95</td>
+                    <td class="col-question">Name the two Native Americans brought to England in 1584 to help with translation.</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">96</td>
+                    <td class="col-question">Strategically, what did the English hope to use a colony in Virginia for?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">97</td>
+                    <td class="col-question">On which specific island was the colony established?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">98</td>
+                    <td class="col-question">Who was the aggressive military governor of the 1585 expedition?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">99</td>
+                    <td class="col-question">Who was the brilliant mathematician and mapmaker on the 1585 expedition?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">100</td>
+                    <td class="col-question">What was the name of the flagship that hit a sandbank, ruining the food and seeds?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+        <h2>KT3.4: Raleigh and Virginia</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">101</td>
+                    <td class="col-question">Why were the 1585 colonists poorly suited to building a settlement?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">102</td>
+                    <td class="col-question">Which Native American Chief turned against the English and was killed by Ralph Lane?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">103</td>
+                    <td class="col-question">Apart from violence, what unwittingly killed many Native Americans?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">104</td>
+                    <td class="col-question">Who rescued the surviving 1585 colonists and took them back to England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">105</td>
+                    <td class="col-question">How did the demographics of the 1587 expedition differ from the 1585 expedition?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">106</td>
+                    <td class="col-question">Who was the leader of the 1587 expedition?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">107</td>
+                    <td class="col-question">Why were the Native Americans immediately hostile to the 1587 colonists?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">108</td>
+                    <td class="col-question">Why was John White unable to return to Virginia with supplies in 1588?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">109</td>
+                    <td class="col-question">How long was John White stranded in England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">110</td>
+                    <td class="col-question">What single word was found carved into a post when White finally returned?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">111</td>
+                    <td class="col-question">Why did English sailors explore the world?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">112</td>
+                    <td class="col-question">What new technology helped Elizabethan exploration?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">113</td>
+                    <td class="col-question">Who was the first Englishman to circumnavigate the globe (1577-1580)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">114</td>
+                    <td class="col-question">Who did Elizabeth give a patent to colonize North America in 1584?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">115</td>
+                    <td class="col-question">Why did the first Roanoke settlement (1585) fail?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">116</td>
+                    <td class="col-question">What happened to the second Roanoke settlement (1587)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">117</td>
+                    <td class="col-question">What caused poverty to rise in the Elizabethan period?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">118</td>
+                    <td class="col-question">What was the 1572 Vagabonds Act?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">119</td>
+                    <td class="col-question">Who led the Spanish Armada?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">120</td>
+                    <td class="col-question">What was the Ridolfi Plot (1571)?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <!-- The Vault -->
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+            <h1>THE VAULT</h1>
+            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+        <div class="answer-list"><h3>KT3.1: Education and leisure</h3>
+                <div class="answer-item">
+                    <div class="answer-num">1.</div>
+                    <div class="answer-text">Humanism</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">2.</div>
+                    <div class="answer-text">Roger Ascham</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">3.</div>
+                    <div class="answer-text">The printing press</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">4.</div>
+                    <div class="answer-text">A Petty School / Dame School</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">5.</div>
+                    <div class="answer-text">A hornbook</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">6.</div>
+                    <div class="answer-text">A Grammar School</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">7.</div>
+                    <div class="answer-text">Latin</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">8.</div>
+                    <div class="answer-text">30% of men, 10% of women</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">9.</div>
+                    <div class="answer-text">Real tennis / Hawking / Fencing / Hunting on horseback</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">10.</div>
+                    <div class="answer-text">Mob football</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">11.</div>
+                    <div class="answer-text">Bear-baiting and Bull-baiting</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">12.</div>
+                    <div class="answer-text">She loved it and frequently ordered private exhibitions</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">13.</div>
+                    <div class="answer-text">Religious mystery plays</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">14.</div>
+                    <div class="answer-text">Christopher Marlowe</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">15.</div>
+                    <div class="answer-text">1576</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">16.</div>
+                    <div class="answer-text">Groundlings</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">17.</div>
+                    <div class="answer-text">The Puritans</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">18.</div>
+                    <div class="answer-text">The Vagabonds Act</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">19.</div>
+                    <div class="answer-text">The Lord Chamberlain's Men / The Earl of Leicester's Men</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">20.</div>
+                    <div class="answer-text">They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">21.</div>
+                    <div class="answer-text">The Duke of Medina Sidonia.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">22.</div>
+                    <div class="answer-text">To sail to the Netherlands, pick up the Duke of Parma's army, and transport them to invade England.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">23.</div>
+                    <div class="answer-text">They sent burning fireships into the Spanish fleet.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">24.</div>
+                    <div class="answer-text">The Battle of Gravelines.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">25.</div>
+                    <div class="answer-text">Strong winds (the 'Protestant Wind') blew the Spanish ships north around Scotland, destroying dozens on the rocks.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">26.</div>
+                    <div class="answer-text">He attacked the Spanish fleet, destroying ships and supplies.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">27.</div>
+                    <div class="answer-text">1587.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">28.</div>
+                    <div class="answer-text">An alliance between England and Dutch Protestant rebels.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">29.</div>
+                    <div class="answer-text">Elizabeth's spymaster.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">30.</div>
+                    <div class="answer-text">The mandatory Protestant prayer book introduced in 1559.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">31.</div>
+                    <div class="answer-text">It grew rapidly from roughly 3 million to over 4 million</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">32.</div>
+                    <div class="answer-text">Rapid inflation (prices rising much faster than wages)</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">33.</div>
+                    <div class="answer-text">Enclosure</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">34.</div>
+                    <div class="answer-text">The European wool trade was more lucrative and it required fewer workers to pay</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">35.</div>
+                    <div class="answer-text">They migrated to towns and cities looking for work, becoming vagrants/vagabonds</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">36.</div>
+                    <div class="answer-text">Antwerp</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">37.</div>
+                    <div class="answer-text">The Impotent Poor</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">38.</div>
+                    <div class="answer-text">The Able-bodied Poor</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">39.</div>
+                    <div class="answer-text">A vagabond or vagrant</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">40.</div>
+                    <div class="answer-text">They believed they spread disease, committed crimes, and could start a rebellion</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>KT3.2: The Problem of Poverty</h3>
+                <div class="answer-item">
+                    <div class="answer-num">41.</div>
+                    <div class="answer-text">Thomas Harman</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">42.</div>
+                    <div class="answer-text">A beggar who faked epileptic fits using soap to get sympathy money</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">43.</div>
+                    <div class="answer-text">Being whipped and having a hole burned through the right ear</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">44.</div>
+                    <div class="answer-text">Execution</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">45.</div>
+                    <div class="answer-text">The national Poor Rate</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">46.</div>
+                    <div class="answer-text">Justices of the Peace / JPs</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">47.</div>
+                    <div class="answer-text">That some able-bodied people wanted to work but simply couldn't find employment</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">48.</div>
+                    <div class="answer-text">Raw materials, like wool and hemp, to work with and sell</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">49.</div>
+                    <div class="answer-text">Houses of Correction</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">50.</div>
+                    <div class="answer-text">They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">51.</div>
+                    <div class="answer-text">Petty schools (for young children) and Grammar schools (for older boys of the middling sorts).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">52.</div>
+                    <div class="answer-text">Latin or Greek.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">53.</div>
+                    <div class="answer-text">Bear-baiting or bull-baiting.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">54.</div>
+                    <div class="answer-text">The Globe, The Theatre, or The Rose.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">55.</div>
+                    <div class="answer-text">No, all female roles were played by young boys.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">56.</div>
+                    <div class="answer-text">The Duke of Medina Sidonia.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">57.</div>
+                    <div class="answer-text">The major battle where English ships heavily damaged the Armada.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">58.</div>
+                    <div class="answer-text">'Singeing the King of Spain's beard.'</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">59.</div>
+                    <div class="answer-text">The final plot that proved Mary's guilt via coded letters.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">60.</div>
+                    <div class="answer-text">The Tudor belief in a strict, God-given social hierarchy.</div>
+                </div>
+                </div><div class="answer-list"><h3>KT3.3: Exploration and voyages of discovery</h3>
+                <div class="answer-item">
+                    <div class="answer-num">61.</div>
+                    <div class="answer-text">The Antwerp cloth market</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">62.</div>
+                    <div class="answer-text">The Astrolabe / Quadrant</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">63.</div>
+                    <div class="answer-text">The Galleon</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">64.</div>
+                    <div class="answer-text">Privateer</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">65.</div>
+                    <div class="answer-text">1577–1580</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">66.</div>
+                    <div class="answer-text">Nova Albion</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">67.</div>
+                    <div class="answer-text">£400,000</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">68.</div>
+                    <div class="answer-text">The Golden Hind</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">69.</div>
+                    <div class="answer-text">Sir Walter Raleigh</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">70.</div>
+                    <div class="answer-text">Virginia</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">71.</div>
+                    <div class="answer-text">Roanoke Island</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">72.</div>
+                    <div class="answer-text">The Tiger</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">73.</div>
+                    <div class="answer-text">Ralph Lane (or Richard Grenville)</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">74.</div>
+                    <div class="answer-text">Chief Wingina</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">75.</div>
+                    <div class="answer-text">English demands for food, aggressive behaviour, and the spread of deadly European diseases</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">76.</div>
+                    <div class="answer-text">1587</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">77.</div>
+                    <div class="answer-text">John White</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">78.</div>
+                    <div class="answer-text">All English ships were requisitioned to fight the Spanish Armada</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">79.</div>
+                    <div class="answer-text">Three years</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">80.</div>
+                    <div class="answer-text">The 'Lost Colony'</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content">
+                <div class="answer-list"><h3>KT3.3: Exploration and voyages of discovery</h3>
+                <div class="answer-item">
+                    <div class="answer-num">81.</div>
+                    <div class="answer-text">A homeless person who wandered from place to place looking for work, heavily feared by the authorities.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">82.</div>
+                    <div class="answer-text">Those who were too old, young, or ill to work and deserved help.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">83.</div>
+                    <div class="answer-text">Those who were fit to work but couldn't find a job, often seen as lazy criminals.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">84.</div>
+                    <div class="answer-text">A harsh law where vagabonds could be whipped and have a hole burned through their ear.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">85.</div>
+                    <div class="answer-text">Population growth, bad harvests, and the enclosure of farming land for sheep.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">86.</div>
+                    <div class="answer-text">Latin.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">87.</div>
+                    <div class="answer-text">No, boys played female roles.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">88.</div>
+                    <div class="answer-text">Fireships.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">89.</div>
+                    <div class="answer-text">A state-licensed pirate.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">90.</div>
+                    <div class="answer-text">The law that made Elizabeth Supreme Governor of the Church.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">91.</div>
+                    <div class="answer-text">1584</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">92.</div>
+                    <div class="answer-text">The Antwerp cloth market</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">93.</div>
+                    <div class="answer-text">Virginia</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">94.</div>
+                    <div class="answer-text">No, Elizabeth refused to let him leave court</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">95.</div>
+                    <div class="answer-text">Manteo and Wanchese</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">96.</div>
+                    <div class="answer-text">As a hidden base for privateers to attack Spanish treasure ships</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">97.</div>
+                    <div class="answer-text">Roanoke Island</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">98.</div>
+                    <div class="answer-text">Ralph Lane</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">99.</div>
+                    <div class="answer-text">Thomas Harriot</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">100.</div>
+                    <div class="answer-text">The Tiger</div>
+                </div>
+                </div><div class="answer-list"><h3>KT3.4: Raleigh and Virginia</h3>
+                <div class="answer-item">
+                    <div class="answer-num">101.</div>
+                    <div class="answer-text">They were mostly soldiers and gentlemen with no farming skills</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">102.</div>
+                    <div class="answer-text">Chief Wingina</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">103.</div>
+                    <div class="answer-text">European diseases to which they had no immunity</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">104.</div>
+                    <div class="answer-text">Francis Drake</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">105.</div>
+                    <div class="answer-text">It included families, women, and children with farming skills</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">106.</div>
+                    <div class="answer-text">John White</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">107.</div>
+                    <div class="answer-text">Because of the violence and murders committed by Ralph Lane's men in 1585</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">108.</div>
+                    <div class="answer-text">Elizabeth banned all ships from leaving England to fight the Spanish Armada</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">109.</div>
+                    <div class="answer-text">Three years / until 1590</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">110.</div>
+                    <div class="answer-text">CROATOAN</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">111.</div>
+                    <div class="answer-text">To expand trade, bypass Spanish monopolies, and find new trade routes.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">112.</div>
+                    <div class="answer-text">Astrolabes for navigation, better maps, and more agile ships like galleons.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">113.</div>
+                    <div class="answer-text">Sir Francis Drake.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">114.</div>
+                    <div class="answer-text">Sir Walter Raleigh.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">115.</div>
+                    <div class="answer-text">Due to food shortages and conflict with Native Americans.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">116.</div>
+                    <div class="answer-text">It became the 'Lost Colony'; when a supply ship returned in 1590, everyone had vanished.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">117.</div>
+                    <div class="answer-text">Population growth and bad harvests.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">118.</div>
+                    <div class="answer-text">A law punishing vagrants with whipping and ear-burning.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">119.</div>
+                    <div class="answer-text">The Duke of Medina Sidonia.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">120.</div>
+                    <div class="answer-text">An assassination plot against Elizabeth backed by Spanish troops.</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    <!-- Tracker Page -->
+    <div class="page tracker-page">
+        <h1>Mastery Tracker</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 120 questions.</p>
+        
+        <table class="tracker-table">
+            <thead>
+                <tr>
+                    <th class="col-attempt">Attempt</th>
+                    <th class="col-date">Date</th>
+                    <th class="col-score">Score (/120)</th>
+                    <th class="col-sig">Parent/Guardian Signature</th>
+                    <th class="col-target">Target for Next Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>1</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>2</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>3</strong></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="reflection-box">
+            <h3 style="margin-top: 0;">Operative Reflection</h3>
+            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
+            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
+    function replaceLines(className) {
+      const lines = document.querySelectorAll('.' + className);
+      if (lines.length === 0) return;
+      let group = [];
+      lines.forEach((line, i) => {
+        group.push(line);
+        const next = lines[i + 1];
+        if (!next || line.nextElementSibling !== next) {
+          const wrapper = document.createElement('textarea');
+          wrapper.className = 'interactive-textarea';
+          wrapper.style.width = '100%';
+          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
+          wrapper.style.border = '2px dashed #94a3b8';
+          wrapper.style.borderRadius = '6px';
+          wrapper.style.padding = '12px';
+          wrapper.style.boxSizing = 'border-box';
+          wrapper.style.fontFamily = 'Outfit, sans-serif';
+          wrapper.style.fontSize = '1.1rem';
+          wrapper.style.resize = 'vertical';
+          wrapper.style.marginTop = group[0].style.marginTop || '10px';
+          wrapper.style.marginBottom = '10px';
+          wrapper.style.background = '#f8fafc';
+          wrapper.placeholder = 'Type your answer here...';
+          group[0].parentNode.insertBefore(wrapper, group[0]);
+          group.forEach(l => l.remove());
+          group = [];
+        }
+      });
+    }
+    replaceLines('task-lines');
+    replaceLines('task-lines-large');
+    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
+  });
+</script>
+
+        

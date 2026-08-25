@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset="utf-8">
+  <title>GCSE History Lesson Resource - Workbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: 21cm 29.7cm; /* A4 */
+      margin: 1.0cm;
+      mso-page-orientation: portrait;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 11pt;
+      color: #000000;
+      line-height: 1.4;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .print-page, .print-page-last {
+      clear: both;
+      box-sizing: border-box;
+      position: relative;
+      background: #ffffff;
+    }
+    .print-page {
+      page-break-after: always;
+    }
+    .print-page-last {
+      page-break-after: avoid;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+      }
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+      }
+      .print-page, .print-page-last {
+        width: 100% !important;
+        min-height: 27.2cm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+      }
+    }
+    .main-title {
+      font-size: 15pt;
+      font-weight: 800;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 3px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #000000;
+    }
+    .sub-title {
+      font-size: 10pt;
+      font-weight: bold;
+      color: #000000;
+      margin-top: 6px;
+      margin-bottom: 2px;
+    }
+    .dotted-writing-line {
+      border-bottom: 1px dashed #9ca3af;
+      height: 28px;
+      margin-bottom: 4px;
+    }
+
+    /* Cornell grid styles */
+    .print-cornell-grid {
+      display: table;
+      width: 100%;
+      border: 1.5px solid #000000;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    .print-cornell-row {
+      display: table-row;
+    }
+    .print-cornell-cues {
+      display: table-cell;
+      width: 30%;
+      border-right: 1.5px solid #000000;
+      border-bottom: 1.5px solid #000000;
+      padding: 10px;
+      vertical-align: top;
+      font-size: 9.5pt;
+      font-weight: bold;
+      background: #f9fafb;
+    }
+    .print-cornell-notes {
+      display: table-cell;
+      width: 70%;
+      border-bottom: 1.5px solid #000000;
+      padding: 10px;
+      vertical-align: top;
+      background: #ffffff;
+    }
+    .print-cornell-summary-row {
+      display: table-row;
+    }
+    .print-cornell-summary-cell {
+      display: table-cell;
+      colspan: 2;
+      padding: 10px;
+      vertical-align: top;
+      background: #f9fafb;
+      font-size: 10pt;
+    }
+    /* Flowchart styles */
+    .flowchart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .flowchart-box {
+      border: 1.5px solid #000000;
+      padding: 8px;
+      width: 22%;
+      vertical-align: top;
+      background: #ffffff;
+      font-size: 9.5pt;
+    }
+    .flowchart-arrow {
+      text-align: center;
+      font-size: 15.5pt;
+      font-weight: bold;
+      width: 4%;
+      vertical-align: middle;
+      color: #000000;
+    }
+    /* Vocabulary Match-up styles */
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+    .vocab-th {
+      font-weight: bold;
+      font-size: 9pt;
+      text-transform: uppercase;
+      background-color: #f3f4f6;
+      border: 1px solid #9ca3af;
+      padding: 4px 6px;
+      text-align: left;
+    }
+    .vocab-td {
+      border: 1px solid #9ca3af;
+      padding: 5px 6px;
+      font-size: 9pt;
+      vertical-align: middle;
+    }
+    /* Exam Rubric styles */
+    .rubric-box {
+      border: 1px solid #000000;
+      background: #f9fafb;
+      padding: 8px;
+      margin-top: 15px;
+      font-size: 9.5pt;
+    }
+    @media screen {
+      body {
+        background-color: #f3f4f6;
+        padding: 20px 0;
+      }
+      .print-page, .print-page-last {
+        background: #ffffff;
+        width: 21cm;
+        min-height: 29.7cm;
+        margin: 0 auto 20px auto;
+        padding: 1.0cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- LESSON subtopic_3_1 -->
+<div class="print-page" style="page-break-after: always; position: relative;">
+        <h2 class="main-title">Topic 3.1: Camp David & Egypt-Israel Peace &bull; Reading & Vocabulary</h2>
+        
+    <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 9pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
+      <strong style="text-transform: uppercase; font-size: 9.5pt; color: #000000; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (Pearson Edexcel)</strong>
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        <li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ The significance of the oil crisis and the involvement of the USA and the USSR.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Kissinger, 'shuttle diplomacy' and the reopening of the Suez Canal.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Sadat's visit to Israel (1977), Begin's visit to Egypt (1977), US President Carter and Camp David (1978) and the Treaty of Washington (1979).</li>
+      </ul>
+    </div>
+  
+        
+        <div style="margin-top: 15px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Pre-Reading Vocabulary</h3>
+          
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Shuttle Diplomacy</strong>: Kissinger's flights between Middle East capitals to negotiate disengagement agreements.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Knesset Visit</strong>: Sadat's historic 1977 address to the Israeli parliament in Jerusalem.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Menachem Begin</strong>: Israeli Prime Minister who signed the Camp David Accords and the peace treaty.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Jimmy Carter</strong>: US President who mediated the secret 13-day talks at Camp David in 1978.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Camp David Accords</strong>: The 1978 frameworks for Egypt-Israel peace and West Bank autonomy.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Treaty of Washington</strong>: Formal 1979 peace treaty signed by Egypt and Israel at the White House.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Sinai Withdrawal</strong>: Israeli military and civilian evacuation of the Sinai Peninsula, completed in 1982.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Arab League</strong>: Organization of Arab states which expelled Egypt in 1979 for signing the peace treaty.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Sadat Assassination</strong>: 1981 assassination of Anwar Sadat by military officers opposed to peace with Israel.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Disengagement</strong>: The physical separation of military forces after a conflict, brokered by Kissinger.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Autonomy</strong>: Proposed self-government for Palestinians in the West Bank/Gaza, left unresolved.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Suez Canal reopen</strong>: Waterway reopened in June 1975 following troop pullbacks from canal banks.
+      </div>
+    
+        </div>
+
+        <div style="margin-top: 20px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Historical Narrative</h3>
+          
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">1. Kissinger & Shuttle Diplomacy (1974–1975)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">In the aftermath of the 1973 war, US Secretary of State Henry Kissinger engaged in <strong>shuttle diplomacy</strong>, flying repeatedly between Middle East capitals. His efforts brokered disengagement agreements in 1974 and 1975, which separated Israeli and Egyptian forces in Sinai and Syrian forces in the Golan Heights. Crucially, these treaties returned the banks of the <strong>Suez Canal</strong> to Egyptian control, allowing it to reopen to global shipping in June 1975, reducing superpower tensions.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">2. Historic Visits & Knesset Speech (1977)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">In 1977, Anwar Sadat took a massive gamble to break the diplomatic deadlock. On 19 November 1977, he became the first Arab leader to visit Israel, addressing the <strong>Knesset</strong> (Israeli parliament) in Jerusalem. He offered formal peace in exchange for the return of all occupied territories. In response, Israeli Prime Minister <strong>Menachem Begin</strong> visited Egypt in December 1977. These visits broke decades of psychological barriers and prepared the ground for formal negotiations.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">3. The Camp David Accords (1978)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">To secure a treaty, US President <strong>Jimmy Carter</strong> invited Sadat and Begin to the presidential retreat at Camp David in September 1978. After 13 days of intense, secret negotiations, they signed the <strong>Camp David Accords</strong>. The accords established two frameworks: (1) a peace treaty returning Sinai to Egypt, and (2) a framework for Palestinian self-government (autonomy) in the West Bank and Gaza, which remained vague and unresolved.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">4. Treaty of Washington (1979) & Aftermath</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">On 26 March 1979, Sadat and Begin signed the formal <strong>Treaty of Washington</strong>, ending 30 years of war. Israel withdrew all troops and settlements from the Sinai Peninsula in exchange for Egyptian diplomatic recognition and security guarantees. However, the Arab world viewed Sadat as a traitor, expelling Egypt from the <strong>Arab League</strong> and cutting off financial aid. In October 1981, Sadat was assassinated by Islamist extremists in Cairo, though the peace treaty survived.</p>
+      </div>
+    
+        </div>
+      </div>
+
+      <div class="print-page">
+        <h2 class="main-title">Cornell Notes &bull; Topic 3.1: Camp David & Egypt-Israel Peace</h2>
+        
+      <div class="retrieval-questions-section" style="border: 1.5px solid #000000; padding: 8px 10px; margin-top: 15px; background: #ffffff; border-radius: 4px; box-sizing: border-box; text-align: left;">
+        <strong style="text-transform: uppercase; font-size: 12.5pt; color: #000000; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">✏️ Do Now: Recall from Previous Lesson</strong>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q1:</strong> When did the Yom Kippur War take place?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q2:</strong> What was the Bar Lev Line?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q3:</strong> How did the USA assist Israel during the Yom Kippur War?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+        </div>
+      </div>
+    
+        <div style="border: 1px solid #111827; padding: 10px; margin-top: 15px; margin-bottom: 10px; font-size: 9.5pt; background: #f9fafb;">
+          <strong>Methodology:</strong> Use the left-hand column cues to guide your note-taking on the historical narrative. Re-read the section to extract precise dates, groups, and motivations.
+        </div>
+
+        <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+          <tbody>
+            
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            1. Henry Kissinger's Shuttle (1974-75)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            2. Knesset Break (1977)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    
+        <div class="print-page">
+          <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+            <tbody>
+              
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            3. Camp David Frameworks (1978)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            4. Treaty and Arab Backlash
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+<!-- LESSON subtopic_3_2 -->
+<div class="print-page" style="page-break-after: always; position: relative;">
+        <h2 class="main-title">Topic 3.2: Lebanon & the Rise of Intifada &bull; Reading & Vocabulary</h2>
+        
+    <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 9pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
+      <strong style="text-transform: uppercase; font-size: 9.5pt; color: #000000; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (Pearson Edexcel)</strong>
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        <li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Arafat's speech to the UN (1974).</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ The significance of PLO activities in Lebanon.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Israeli reprisals, the invasion of Lebanon (1982) and the results.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ The Israeli occupied territories and the First Palestinian Intifada (1987–93).</li>
+      </ul>
+    </div>
+  
+        
+        <div style="margin-top: 15px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Pre-Reading Vocabulary</h3>
+          
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Litani Operation</strong>: 1978 Israeli military invasion of southern Lebanon to push back PLO bases.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Peace for Galilee</strong>: Ariel Sharon's 1982 full-scale invasion of Lebanon to destroy the PLO.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Beirut Siege</strong>: Israeli military blockade of West Beirut in 1982, forcing PLO exile to Tunis.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Sabra and Shatila</strong>: Refugee camps where Christian Phalangists massacred hundreds of Palestinians under Israeli watch.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Ariel Sharon</strong>: Israeli Defense Minister forced to resign after the Kahan Commission inquiry.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Hezbollah</strong>: Shiite Islamist militant group formed in Lebanon to resist the Israeli occupation.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Intifada</strong>: Arabic for 'uprising'; the grassroots Palestinian rebellion that began in December 1987.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Hamas</strong>: Islamist militant organization founded in Gaza in 1987, opposing Israel and competing with PLO.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Iron Fist</strong>: Rabin's military policy of using physical force and arrests to suppress the Intifada.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Kahan Commission</strong>: Israeli inquiry that found government officials indirectly responsible for Sabra and Shatila.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Tunis</strong>: Capital of Tunisia where the PLO relocated its headquarters in exile after being expelled from Beirut.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Stones Campaign</strong>: The popular image of the Intifada, showing youth throwing stones at IDF armored vehicles.
+      </div>
+    
+        </div>
+
+        <div style="margin-top: 20px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Historical Narrative</h3>
+          
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">1. PLO in Lebanon & Sectarian Instability (1975–1978)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">After expulsion from Jordan, the PLO established a state-within-a-state in South Lebanon ('Fatahland'), launching rocket attacks into northern Israel. This armed presence destabilized Lebanon's fragile Christian-Muslim sectarian balance, helping drag Lebanon into civil war in 1975. In March 1978, after a PLO bus hijacking, Israel launched the <strong>Litani Operation</strong>, invading South Lebanon to push PLO bases back from the border.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">2. Invasion of Lebanon & Sabra/Shatila Massacre (1982)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">In June 1982, following the attempted assassination of the Israeli ambassador in London, Defense Minister Ariel Sharon launched <strong>Operation Peace for Galilee</strong>, a full-scale invasion of Lebanon. Israeli forces besieged West Beirut, eventually forcing Yasser Arafat and the PLO to withdraw to Tunis. However, in September 1982, Israel's allied Christian Phalangist militia entered the refugee camps of <strong>Sabra and Shatila</strong> and massacred hundreds of civilians. An Israeli inquiry (the Kahan Commission) found Ariel Sharon indirectly responsible, forcing his resignation. The invasion also led to the rise of a new Shiite militant enemy: <strong>Hezbollah</strong>.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">3. The First Palestinian Intifada (1987)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">In December 1987, decades of military occupation erupted into the First Palestinian <strong>Intifada</strong> ('Uprising') in Gaza and the West Bank. This was a grassroots movement featuring civil disobedience, strikes, boycotts, and youth throwing stones at IDF tanks. The uprising was not controlled by the exiled PLO leadership but by local committees. A new Islamist militant organization, <strong>Hamas</strong>, was founded in Gaza during the uprising, challenging the secular PLO.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">4. The 'Iron Fist' Policy & Public Opinion</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">Israeli Defense Minister Yitzhak Rabin ordered the IDF to suppress the uprising with physical force, implemented as the <strong>'Iron Fist'</strong> policy (using force to break protesters' bones). The television coverage of heavily armed soldiers beating stone-throwing children drew international condemnation, turning global public opinion in favor of the Palestinian cause and forcing Israel to consider a political solution.</p>
+      </div>
+    
+        </div>
+      </div>
+
+      <div class="print-page">
+        <h2 class="main-title">Cornell Notes &bull; Topic 3.2: Lebanon & the Rise of Intifada</h2>
+        
+      <div class="retrieval-questions-section" style="border: 1.5px solid #000000; padding: 8px 10px; margin-top: 15px; background: #ffffff; border-radius: 4px; box-sizing: border-box; text-align: left;">
+        <strong style="text-transform: uppercase; font-size: 12.5pt; color: #000000; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">✏️ Do Now: Recall from Previous Lesson</strong>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q1:</strong> Which US President mediated the Camp David Accords?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q2:</strong> Which territory did Israel agree to return to Egypt?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q3:</strong> Why was Anwar Sadat assassinated in 1981?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+        </div>
+      </div>
+    
+        <div style="border: 1px solid #111827; padding: 10px; margin-top: 15px; margin-bottom: 10px; font-size: 9.5pt; background: #f9fafb;">
+          <strong>Methodology:</strong> Use the left-hand column cues to guide your note-taking on the historical narrative. Re-read the section to extract precise dates, groups, and motivations.
+        </div>
+
+        <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+          <tbody>
+            
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            1. PLO in Lebanon (1975-78)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            2. 1982 Invasion & Outflow
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    
+        <div class="print-page">
+          <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+            <tbody>
+              
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            3. Sabra and Shatila Massacre
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            4. First Intifada (1987)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+<!-- LESSON subtopic_3_3 -->
+<div class="print-page" style="page-break-after: always; position: relative;">
+        <h2 class="main-title">Topic 3.3: Peace Process & Oslo Accords &bull; Reading & Vocabulary</h2>
+        
+    <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 9pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
+      <strong style="text-transform: uppercase; font-size: 9.5pt; color: #000000; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (Pearson Edexcel)</strong>
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        <li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ The significance of Arafat's renunciation of terrorism in a speech at the UN (1988).</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Changing superpower policies in the Middle East: US involvement in the Gulf War (1991), and the end of the Cold War.</li><li style="margin: 0 0 2px 0; padding: 0; list-style: none;">☐ Arafat, Rabin and the Oslo Accords (1993); the setting up of the Palestinian National Authority; Israel-Jordan peace treaty (1994); Oslo II (1995).</li>
+      </ul>
+    </div>
+  
+        
+        <div style="margin-top: 15px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Pre-Reading Vocabulary</h3>
+          
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Madrid Conference</strong>: 1991 peace summit organized by US/USSR, bringing Israel and Arab states together for the first time.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Gulf War</strong>: 1991 conflict where Arafat's support for Iraq isolated the PLO and cut off Gulf aid.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Oslo I</strong>: The 1993 Declaration of Principles establishing Palestinian self-rule frameworks.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Declaration of Principles</strong>: Oslo framework where PLO recognized Israel and Israel recognized PLO.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Yasser Arafat</strong>: PLO Chairman who renounced terrorism and became head of the Palestinian Authority.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Yitzhak Rabin</strong>: Israeli Prime Minister assassinated in 1995 by a Jewish extremist opposed to Oslo.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Palestinian Authority</strong>: The self-governing body established in 1994 to rule Gaza and West Bank cities.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Israel-Jordan Treaty</strong>: Historic 1994 peace treaty ending the state of war between Israel and Jordan.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Oslo II</strong>: 1995 agreement dividing the West Bank into Areas A, B, and C.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Areas A, B, and C</strong>: Security zones dividing West Bank authority between Israel and the PNA.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Yigal Amir</strong>: Right-wing Jewish extremist who assassinated Yitzhak Rabin in November 1995.
+      </div>
+    
+      <div style="margin-bottom: 4px; font-size: 8.5pt; line-height: 1.2; color: #000000;">
+        <strong style="color: #000000;">Bill Clinton</strong>: US President who hosted the historic Rabin-Arafat handshake in September 1993.
+      </div>
+    
+        </div>
+
+        <div style="margin-top: 20px;">
+          <h3 style="font-size: 11pt; color: #1a237e; border-bottom: 2px solid #1a237e; margin-bottom: 10px;">Historical Narrative</h3>
+          
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">1. End of Cold War & Gulf War Isolation (1990–1991)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">The end of the Cold War and the collapse of the Soviet Union cut off financial and military aid to Arab states. During the <strong>Gulf War</strong> (1991), Yasser Arafat isolated the PLO by backing Saddam Hussein's invasion of Kuwait, which led oil-rich Gulf states to cut off funding. As the sole superpower, the US used its leverage to bring both Israel and Arab states to the <strong>Madrid Conference</strong> in October 1991, establishing the principle of direct peace talks.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">2. Secret Oslo Negotiations & White House Handshake (1993)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">In 1992, the election of Yitzhak Rabin as Israeli PM opened new opportunities. In early 1993, secret negotiations took place in Norway. This led to <strong>Oslo I</strong> (the Declaration of Principles). Yasser Arafat renounced terrorism and recognized Israel's right to exist, while Rabin recognized the PLO as the representative of the Palestinians. On 13 September 1993, Rabin and Arafat shook hands on the White House lawn, hosted by Bill Clinton.</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">3. PNA Setup, Jordan Peace & Oslo II (1994–1995)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">Oslo I established the <strong>Palestinian National Authority (PNA)</strong>, granting self-rule in Gaza and Jericho. In October 1994, Rabin and King Hussein signed the <strong>Israel-Jordan Peace Treaty</strong>, ending a 46-year state of war. In September 1995, <strong>Oslo II</strong> was signed, dividing the West Bank into three zones: Area A (full Palestinian control), Area B (Palestinian civil, Israeli security control), and Area C (full Israeli control, containing Jewish settlements).</p>
+      </div>
+    
+      <div style="margin-bottom: 8px;">
+        <h4 style="margin: 0 0 3px 0; font-size: 9.3pt; color: #000000; font-weight: bold; border-bottom: 1px solid #e5e7eb; padding-bottom: 1px;">4. Opposition & Rabin's Assassination (1995)</h4>
+        <p style="margin: 0 0 4px 0; font-size: 8.7pt; line-height: 1.3; text-align: justify; color: #000000;">The accords faced fierce opposition. Hamas launched suicide bombings to derail the peace process, while right-wing Israelis accused Rabin of treason. On 4 November 1995, at a peace rally in Tel Aviv, Prime Minister <strong>Yitzhak Rabin</strong> was assassinated by <strong>Yigal Amir</strong>, a right-wing Jewish extremist. This tragedy froze the peace process, leaving permanent borders and statehood unresolved.</p>
+      </div>
+    
+        </div>
+      </div>
+
+      <div class="print-page">
+        <h2 class="main-title">Cornell Notes &bull; Topic 3.3: Peace Process & Oslo Accords</h2>
+        
+      <div class="retrieval-questions-section" style="border: 1.5px solid #000000; padding: 8px 10px; margin-top: 15px; background: #ffffff; border-radius: 4px; box-sizing: border-box; text-align: left;">
+        <strong style="text-transform: uppercase; font-size: 12.5pt; color: #000000; display: block; margin-bottom: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 2px;">✏️ Do Now: Recall from Previous Lesson</strong>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q1:</strong> What was the PLO's base of operations before they were exiled to Tunisia in 1982?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q2:</strong> What were the Sabra and Shatila massacres?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+              <div style="font-size: 11.5pt; line-height: 1.35; color: #000000;">
+                <strong>Q3:</strong> What grassroots uprising began in the occupied territories in 1987?
+                <div class="dotted-writing-line" style="border-bottom: 1px dashed #9ca3af; height: 18px; margin-top: 2px;"></div>
+              </div>
+            
+        </div>
+      </div>
+    
+        <div style="border: 1px solid #111827; padding: 10px; margin-top: 15px; margin-bottom: 10px; font-size: 9.5pt; background: #f9fafb;">
+          <strong>Methodology:</strong> Use the left-hand column cues to guide your note-taking on the historical narrative. Re-read the section to extract precise dates, groups, and motivations.
+        </div>
+
+        <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+          <tbody>
+            
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            1. Geopolitical Realignment (1990-91)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            2. Oslo I Accords (1993)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+          </tbody>
+        </table>
+      </div>
+    
+        <div class="print-page">
+          <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
+            <tbody>
+              
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            3. Palestinian Authority & Zones
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 9.5pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            4. Extremist Backlash (1995)
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            <div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div><div class="dotted-writing-line"></div>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+</body>
+</html>

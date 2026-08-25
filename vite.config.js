@@ -17,7 +17,7 @@ export default defineConfig({
     host: true,
     open: true,
     watch: {
-      ignored: ['**/public/assets/infographics/**']
+      ignored: ['**/public/assets/infographics/**', '**/dist/**', '**/dist2/**']
     }
   }
 });
