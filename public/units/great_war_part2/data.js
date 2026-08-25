@@ -788,7 +788,7 @@ module.exports = {
               "model_answer": "One feature of the Empire's contribution was the immense manpower provided. For example, over 1.5 million men from the British Indian Army fought across multiple theaters, including the Western Front and Mesopotamia."
             },
             {
-              "question": "Study Source B and read the text on Racial Hierarchy. How does the impression given by the photograph contrast with the reality described in the text?",
+              "question": "Q5. Study Source B and read the text on Racial Hierarchy. How does the impression given by the photograph contrast with the reality described in the text?",
               "model_answer": "The Photograph's Impression: Shows soldiers posed in full uniform holding rifles, giving the visual impression of an active, respected, front-line combat unit.\n\nThe Reality in the Text: Most BWIR soldiers were stripped of combat roles and relegated to dangerous manual labor (e.g., digging trenches, carrying ammunition, burying the dead), alongside facing unequal pay, denied promotions, and segregated facilities."
             }
           ],

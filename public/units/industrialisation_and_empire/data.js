@@ -1135,7 +1135,7 @@ const industrialisation_and_empire = {
             {
               "type": "source_analysis",
               "qNum": 1,
-              "question": "According to Source A, how did the rebel leaders attempt to unite the diverse religious populations of India against the British?",
+              "question": "Source Analysis: According to Source A, how did the rebel leaders attempt to unite the diverse religious populations of India against the British?",
               "model_answer": "The rebel leaders attempted to unite the diverse populations by emphasizing a shared suffering. The proclamation explicitly addresses \"both Hindoos and Mohammedans,\" arguing that regardless of their religious differences, both groups were \"being ruined under the tyranny and oppression\" of the British. By framing the British as \"infidel and treacherous\" outsiders, the leaders created a common enemy to foster national unity."
             }
           ]

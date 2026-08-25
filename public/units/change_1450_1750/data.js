@@ -53,7 +53,7 @@ module.exports = {
           "tasks": [
             {
               "type": "short_answer",
-              "text": "Placeholder task.",
+              "text": "Task 1: Placeholder task.",
               "model_answer": "Model answer placeholder."
             }
           ]
@@ -103,7 +103,7 @@ module.exports = {
           "tasks": [
             {
               "type": "short_answer",
-              "text": "Placeholder task.",
+              "text": "Task 1: Placeholder task.",
               "model_answer": "Model answer placeholder."
             }
           ]
@@ -153,7 +153,7 @@ module.exports = {
           "tasks": [
             {
               "type": "short_answer",
-              "text": "Placeholder task.",
+              "text": "Task 1: Placeholder task.",
               "model_answer": "Model answer placeholder."
             }
           ]
@@ -203,7 +203,7 @@ module.exports = {
           "tasks": [
             {
               "type": "short_answer",
-              "text": "Placeholder task.",
+              "text": "Task 1: Placeholder task.",
               "model_answer": "Model answer placeholder."
             }
           ]
@@ -253,7 +253,7 @@ module.exports = {
           "tasks": [
             {
               "type": "short_answer",
-              "text": "Placeholder task.",
+              "text": "Task 1: Placeholder task.",
               "model_answer": "Model answer placeholder."
             }
           ]
@@ -303,7 +303,7 @@ module.exports = {
           "tasks": [
             {
               "type": "short_answer",
-              "text": "Placeholder task.",
+              "text": "Task 1: Placeholder task.",
               "model_answer": "Model answer placeholder."
             }
           ]

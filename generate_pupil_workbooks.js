@@ -707,6 +707,7 @@ allDirs.forEach((unitId) => {
             finalRenderedText.trim() !== "" ||
             block.hinge_question ||
             (block.tasks && block.tasks.length > 0) ||
+            (block.source && block.source.question) ||
             block.extended;
           if (hasContent) {
             html += `<div class="narrative-block" id="para-${bIdx + 1}">`;
@@ -910,6 +911,14 @@ allDirs.forEach((unitId) => {
                 html += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65 + idx)}. ${opt}</li>`;
               });
               html += `</ul></div>`;
+            }
+            if (block.source && block.source.question) {
+              html += `<div class="task-box">`;
+              html += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${block.source.qNum ? block.source.qNum + ". " : ""}${block.source.question}${block.source.page ? ` [p. ${block.source.page}]` : ""}</h4>`;
+              for (let i = 0; i < 4; i++) {
+                html += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
+              }
+              html += `</div>`;
             }
             html += `</div>`; // Close narrative-block div
           }

@@ -310,7 +310,7 @@ const great_war = {
           "tasks": [
             {
               "type": "comprehension",
-              "text": "Interpreting 'Blood and Iron'. In your own words, explain what Otto von Bismarck meant when he said Germany would be united by 'blood and iron'. How did Prussia use its industrial and military power to prove Bismarck’s speech right between 1864 and 1871?",
+              "text": "Task 1: Interpreting 'Blood and Iron'. In your own words, explain what Otto von Bismarck meant when he said Germany would be united by 'blood and iron'. How did Prussia use its industrial and military power to prove Bismarck’s speech right between 1864 and 1871?",
               "model_answer": "By 'blood and iron', Bismarck meant that unification would be achieved through warfare (blood) and industrial/military strength (iron), rather than through peaceful democratic speeches or votes. Prussia proved this right by building a modernized army with advanced railways and artillery, and then using this military machine to crush Denmark, Austria, and France in rapid succession between 1864 and 1871."
             }
           ]
@@ -321,7 +321,7 @@ const great_war = {
           "tasks": [
             {
               "type": "comprehension",
-              "text": "The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.",
+              "text": "Task 2: The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.",
               "model_answer": "Step 1: Denmark (1864) - Showed off military coordination. Step 2: Austria (1866) - Excluded Austria from German affairs, making Prussia the undisputed leader. Step 3: France (1870-1871) - Provided a common enemy to convince the southern German states to join the union, completing the creation of the German Empire."
             },
             {
@@ -374,16 +374,16 @@ const great_war = {
           "/images/modern_germany_map.png"
         ],
         "caption": "This map illustrates the dramatic shift in European borders following the Franco-Prussian War in 1871. By uniting various independent German states into a single, massive German Empire under Prussian leadership, Otto von Bismarck completely altered the balance of power in Europe. This sudden creation of a massive, heavily armed, and highly industrialized powerhouse in the center of Europe deeply terrified its neighbors, setting the stage for future conflict.",
-        "question": "Look at the A4 map provided. Why might the geographical location of the new German Empire cause fear for both Germany and its neighbors?",
+        "question": "Enquiry: Look at the A4 map provided. Why might the geographical location of the new German Empire cause fear for both Germany and its neighbors?",
         "tasks": [
           {
             "type": "short_answer",
-            "text": "Analyzing the Seeds of Future Conflict. Write a short analysis explaining why Bismarck’s decision to take Alsace-Lorraine from France in 1871 was highly successful for Germany's economy in the short term, but incredibly dangerous for Germany's security in the long term.",
+            "text": "Task 3: Analyzing the Seeds of Future Conflict. Write a short analysis explaining why Bismarck’s decision to take Alsace-Lorraine from France in 1871 was highly successful for Germany's economy in the short term, but incredibly dangerous for Germany's security in the long term.",
             "model_answer": "In the short term, taking Alsace-Lorraine was an economic success for Germany because the region was rich in coal and iron, fueling Germany's industrial growth. However, in the long term, it was incredibly dangerous for Germany's security because it created a permanent, bitter rivalry with France. France would seek revenge and the return of its territory, leading to tensions that ultimately helped spark the First World War."
           },
           {
             "type": "short_answer",
-            "text": "Spot the Difference (Geography). Compare the 1871 German Empire map with the modern-day Germany map. Identify two major territories that belonged to the German Empire but are no longer part of modern Germany.",
+            "text": "Task 4: Spot the Difference (Geography). Compare the 1871 German Empire map with the modern-day Germany map. Identify two major territories that belonged to the German Empire but are no longer part of modern Germany.",
             "model_answer": "Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia)."
           }
         ]
@@ -469,16 +469,16 @@ const great_war = {
         "title": "Source A: A painting by Anton von Werner from 1885 showing the Proclamation of the German Empire at Versailles.",
         "src": "/units/great_war/assets/was_germany_unification.png",
         "caption": "This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
-        "question": "What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
+        "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
         "tasks": [
           {
             "type": "draw",
-            "text": "Draw an arrow to Kaiser Wilhelm I and Chancellor Otto von Bismarck at the center of the cheering military crowd.",
+            "text": "Task 1: Draw an arrow to Kaiser Wilhelm I and Chancellor Otto von Bismarck at the center of the cheering military crowd.",
             "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
           },
           {
             "type": "draw",
-            "text": "Circle the surrounding architecture of the French Royal Palace, noting where this ceremony took place.",
+            "text": "Task 2: Circle the surrounding architecture of the French Royal Palace, noting where this ceremony took place.",
             "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
           }
         ],
@@ -895,43 +895,43 @@ const great_war = {
         "type": "questions",
         "items": [
           {
-            "question": "Who was the first Emperor of the newly unified Germany in 1871?",
+            "question": "1. Who was the first Emperor of the newly unified Germany in 1871?",
             "answer": "Kaiser Wilhelm I"
           },
           {
-            "question": "Which brilliant Chancellor united the German states?",
+            "question": "2. Which brilliant Chancellor united the German states?",
             "answer": "Otto von Bismarck"
           },
           {
-            "question": "Which country was humiliatingly defeated in the Franco-Prussian War?",
+            "question": "3. Which country was humiliatingly defeated in the Franco-Prussian War?",
             "answer": "France"
           },
           {
-            "question": "What strategic border territory did Germany take in 1871?",
+            "question": "4. What strategic border territory did Germany take in 1871?",
             "answer": "Alsace-Lorraine"
           },
           {
-            "question": "What is the French word for their desire for revenge?",
+            "question": "5. What is the French word for their desire for revenge?",
             "answer": "Revanche"
           },
           {
-            "question": "Explain how Bismarck used the Ems Telegram to trap France into a war.",
+            "question": "6. Explain how Bismarck used the Ems Telegram to trap France into a war.",
             "answer": "He edited the King's telegram to make it look like an insult to the French ambassador, forcing France to declare war out of pride."
           },
           {
-            "question": "Detail the two military advantages the Prussian army possessed.",
+            "question": "7. Detail the two military advantages the Prussian army possessed.",
             "answer": "Advanced railway networks for rapid mobilization and superior Krupp steel artillery."
           },
           {
-            "question": "Why was the location of the German Empire's proclamation so humiliating for France?",
+            "question": "8. Why was the location of the German Empire's proclamation so humiliating for France?",
             "answer": "It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty."
           },
           {
-            "question": "Why did Bismarck weave a complex web of secret alliances after 1871?",
+            "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
             "answer": "To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war."
           },
           {
-            "question": "What was Bismarck's ultimate nightmare scenario?",
+            "question": "10. What was Bismarck's ultimate nightmare scenario?",
             "answer": "A two-front war against both France and Russia simultaneously."
           }
         ]
@@ -940,16 +940,16 @@ const great_war = {
         "title": "Source A: A political cartoon by John Tenniel from 1885 showing German Chancellor Otto von Bismarck as a greedy boy.",
         "src": "/units/great_war/assets/was_greedy_boy.png",
         "caption": "This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
-        "question": "Look closely at the man standing over Africa. What is his posture suggesting about imperial ambitions?",
+        "question": "Enquiry: Look closely at the man standing over Africa. What is his posture suggesting about imperial ambitions?",
         "tasks": [
           {
             "type": "draw",
-            "text": "Draw an arrow to the globe and label what the different slices represent to European leaders.",
+            "text": "Task 1: Draw an arrow to the globe and label what the different slices represent to European leaders.",
             "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
           },
           {
             "type": "draw",
-            "text": "Circle the facial expression of the Kaiser, annotating what this reveals about British fears of German intentions.",
+            "text": "Task 2: Circle the facial expression of the Kaiser, annotating what this reveals about British fears of German intentions.",
             "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
           },
           {
@@ -1298,43 +1298,43 @@ const great_war = {
         "type": "questions",
         "items": [
           {
-            "question": "What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
+            "question": "1. What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
             "answer": "Weltpolitik (World Policy)"
           },
           {
-            "question": "Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+            "question": "2. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
             "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
           },
           {
-            "question": "Why was the Franco-Russian Alliance a strategic disaster for Germany?",
+            "question": "3. Why was the Franco-Russian Alliance a strategic disaster for Germany?",
             "answer": "It destroyed Bismarck's diplomatic safety net and threatened Germany with a two-front war."
           },
           {
-            "question": "Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+            "question": "4. Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
             "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
           },
           {
-            "question": "Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.",
+            "question": "5. Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.",
             "answer": "Britain realized it could no longer defend its empire alone and sought European allies."
           },
           {
-            "question": "Evaluate the role of Wilhelm II's personality in destabilizing Europe.",
+            "question": "6. Evaluate the role of Wilhelm II's personality in destabilizing Europe.",
             "answer": "His impulsive, aggressive nature alienated allies and destroyed Bismarck's careful diplomatic balance."
           },
           {
-            "question": "Who dismissed Otto von Bismarck in 1890?",
+            "question": "7. Who dismissed Otto von Bismarck in 1890?",
             "answer": "Kaiser Wilhelm II"
           },
           {
-            "question": "What strategic territory did Germany take from France in 1871?",
+            "question": "8. What strategic territory did Germany take from France in 1871?",
             "answer": "Alsace-Lorraine"
           },
           {
-            "question": "Why did Bismarck weave a complex web of secret alliances after 1871?",
+            "question": "9. Why did Bismarck weave a complex web of secret alliances after 1871?",
             "answer": "To keep France diplomatically isolated so they could never start a revenge war."
           },
           {
-            "question": "What was Bismarck's ultimate nightmare scenario?",
+            "question": "10. What was Bismarck's ultimate nightmare scenario?",
             "answer": "A two-front war against both France and Russia simultaneously."
           }
         ]
@@ -1343,11 +1343,11 @@ const great_war = {
         "title": "Source A: An official technical blueprint from 1906 showing the revolutionary design of HMS Dreadnought.",
         "src": "/units/great_war/assets/was_dreadnought_blueprint.png",
         "caption": "This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.",
-        "question": "This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?",
+        "question": "Enquiry: This blueprint represents the HMS Dreadnought. Why would this ship make all other navies obsolete?",
         "tasks": [
           {
             "type": "draw",
-            "text": "Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.",
+            "text": "Task 1: Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.",
             "model_answer": "Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships."
           }
         ],
@@ -1680,7 +1680,7 @@ const great_war = {
           "title": "Map A: European Military Alliance Blocs (1914)",
           "src": "/units/great_war/assets/map_lesson4.png",
           "caption": "",
-          "question": "Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?"
+          "question": "Enquiry: Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?"
         }
       ],
       "vocab": [
@@ -1709,43 +1709,43 @@ const great_war = {
         "type": "questions",
         "items": [
           {
-            "question": "What revolutionary British battleship was launched in 1906?",
+            "question": "1. What revolutionary British battleship was launched in 1906?",
             "answer": "HMS Dreadnought"
           },
           {
-            "question": "What was the 'Two-Power Standard'?",
+            "question": "2. What was the 'Two-Power Standard'?",
             "answer": "A British policy stating their navy must be as large as the next two rival navies combined."
           },
           {
-            "question": "Why did Germany feel it needed a massive high seas fleet?",
+            "question": "3. Why did Germany feel it needed a massive high seas fleet?",
             "answer": "To protect their growing global trade and forcefully assert their status as a top-tier world power."
           },
           {
-            "question": "Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+            "question": "4. Explain how the invention of the Dreadnought ironically hurt British supremacy.",
             "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
           },
           {
-            "question": "What was the popular British slogan chanted by the public in 1909?",
+            "question": "5. What was the popular British slogan chanted by the public in 1909?",
             "answer": "We want eight, and we won't wait!"
           },
           {
-            "question": "Why did Britain feel their survival depended on massive naval supremacy?",
+            "question": "6. Why did Britain feel their survival depended on massive naval supremacy?",
             "answer": "As an island nation, Britain relied on the sea to import food and defend its global empire."
           },
           {
-            "question": "How did the Anglo-German naval race make war more likely?",
+            "question": "7. How did the Anglo-German naval race make war more likely?",
             "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
           },
           {
-            "question": "What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
+            "question": "8. What was the name of Kaiser Wilhelm II's aggressive foreign policy?",
             "answer": "Weltpolitik (World Policy)"
           },
           {
-            "question": "Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
+            "question": "9. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.",
             "answer": "By aggressively interfering, he terrified Britain into forming a closer military alliance with France."
           },
           {
-            "question": "Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
+            "question": "10. Evaluate how the 'Scramble for Africa' increased tensions in Europe.",
             "answer": "It turned European empires into global rivals, causing constant friction and border disputes."
           }
         ]
@@ -1754,16 +1754,16 @@ const great_war = {
         "title": "Source A: An American political cartoon from July 1914 showing the chain reaction of the European alliance system.",
         "src": "/units/great_war/assets/was_military_matrix.png",
         "caption": "This cartoon vividly illustrates the terrifying domino effect of the European alliance system. Following the assassination in Sarajevo, the rigid network of treaties dragged all the major powers into war. Serbia is threatened by Austria-Hungary, who is threatened by Russia, who is threatened by Germany, and so on. The alliances, which were theoretically designed to prevent war by acting as a deterrent, instead acted as tripwires that guaranteed a localized dispute would instantly explode into a continent-wide conflict.",
-        "question": "Study the intertwined hands and figures in this cartoon. What does it suggest about how a local conflict might spread?",
+        "question": "Enquiry: Study the intertwined hands and figures in this cartoon. What does it suggest about how a local conflict might spread?",
         "tasks": [
           {
             "type": "draw",
-            "text": "Identify which figure represents Germany and explain how you know.",
+            "text": "Task 1: Identify which figure represents Germany and explain how you know.",
             "model_answer": "The large, aggressive figure second from the right, wearing the spiked Pickelhaube helmet, represents Germany threatening Russia."
           },
           {
             "type": "written",
-            "text": "Draw an arrow to the figure representing Russia and annotate why they are getting involved.",
+            "text": "Task 2: Draw an arrow to the figure representing Russia and annotate why they are getting involved.",
             "model_answer": "Russia (the third figure from the left) is getting involved to protect its smaller Slavic ally, Serbia, from being crushed by Austria-Hungary."
           }
         ],
@@ -2105,43 +2105,43 @@ const great_war = {
         "type": "questions",
         "items": [
           {
-            "question": "Which three countries made up the Triple Entente?",
+            "question": "1. Which three countries made up the Triple Entente?",
             "answer": "Great Britain, France, and Russia"
           },
           {
-            "question": "Which three countries made up the Triple Alliance?",
+            "question": "2. Which three countries made up the Triple Alliance?",
             "answer": "Germany, Austria-Hungary, and Italy"
           },
           {
-            "question": "Explain the theoretical logic of how the alliance system was supposed to keep peace.",
+            "question": "3. Explain the theoretical logic of how the alliance system was supposed to keep peace.",
             "answer": "It was believed that the blocs were so heavily armed that attacking one would trigger an unwinnable global war, deterring aggression."
           },
           {
-            "question": "Why did the alliance system actually increase paranoia instead of security?",
+            "question": "4. Why did the alliance system actually increase paranoia instead of security?",
             "answer": "Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a sudden attack."
           },
           {
-            "question": "What military plan did Germany create to avoid a long two-front war?",
+            "question": "5. What military plan did Germany create to avoid a long two-front war?",
             "answer": "The Schlieffen Plan"
           },
           {
-            "question": "Which neutral country did the Schlieffen Plan require invading?",
+            "question": "6. Which neutral country did the Schlieffen Plan require invading?",
             "answer": "Belgium"
           },
           {
-            "question": "What feeling of being surrounded by enemies haunted German planners?",
+            "question": "7. What feeling of being surrounded by enemies haunted German planners?",
             "answer": "Encirclement"
           },
           {
-            "question": "What revolutionary British battleship was launched in 1906?",
+            "question": "8. What revolutionary British battleship was launched in 1906?",
             "answer": "HMS Dreadnought"
           },
           {
-            "question": "Explain how the invention of the Dreadnought ironically hurt British supremacy.",
+            "question": "9. Explain how the invention of the Dreadnought ironically hurt British supremacy.",
             "answer": "It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch."
           },
           {
-            "question": "How did the Anglo-German naval race make war more likely?",
+            "question": "10. How did the Anglo-German naval race make war more likely?",
             "answer": "It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente."
           }
         ]
@@ -2150,16 +2150,16 @@ const great_war = {
         "title": "Source A: A British political cartoon by Leonard Raven-Hill from 1912 showing European leaders sitting on the boiling Balkans.",
         "src": "/units/great_war/assets/was_boiling_point.png",
         "caption": "This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.",
-        "question": "Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?",
+        "question": "Enquiry: Look at the men sitting on the 'Balkan Troubles' pot. What are they desperately trying to prevent?",
         "tasks": [
           {
             "type": "draw",
-            "text": "Draw an arrow to the figure representing Austria-Hungary and label what its main fear was regarding the Balkans.",
+            "text": "Task 1: Draw an arrow to the figure representing Austria-Hungary and label what its main fear was regarding the Balkans.",
             "model_answer": "(Draw an arrow to the Austro-Hungarian figure on the lid. Label: 'Fearful that rising Balkan nationalism and Slavic independence movements would cause their multi-ethnic empire to collapse.')"
           },
           {
             "type": "draw",
-            "text": "Circle the steam escaping from the pot and annotate what specific short-term force this steam represents.",
+            "text": "Task 2: Circle the steam escaping from the pot and annotate what specific short-term force this steam represents.",
             "model_answer": "(Circle the steam. Annotation: 'The steam represents the explosive, short-term tension of the July Crisis and the assassination of Archduke Franz Ferdinand.')"
           }
         ],

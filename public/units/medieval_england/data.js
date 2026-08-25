@@ -18,7 +18,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "The Claimants' Pitch (Group Battle)\nImagine you are an adviser to the Witan (the council of English lords) in January 1066. Write a short persuasive speech (3-4 sentences) for ONE of the three claimants (Harold, William, or Hardrada) convincing the lords why they should choose your man to be King. \nHint: Make sure you use their specific historical evidence (like Harold's deathbed promise, William's holy oath, or Hardrada's old Viking treaty) to make your case!",
+              "question": "Task 1: The Claimants' Pitch (Group Battle)\nImagine you are an adviser to the Witan (the council of English lords) in January 1066. Write a short persuasive speech (3-4 sentences) for ONE of the three claimants (Harold, William, or Hardrada) convincing the lords why they should choose your man to be King. \nHint: Make sure you use their specific historical evidence (like Harold's deathbed promise, William's holy oath, or Hardrada's old Viking treaty) to make your case!",
               "model_answer": "Lords of the Witan, we must choose Harold Godwinson. He is the Earl of Wessex, our most powerful and wealthy nobleman, and a brave warrior who knows how to defend England. Most importantly, as King Edward lay on his deathbed, he explicitly nominated Harold to succeed him. We must honor the King's dying wish and crown Harold immediately to secure our realm!"
             }
           ]
@@ -29,13 +29,13 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "The Exhaustion Timeline (Why Timing was Everything)\nHistorians argue that William was incredibly lucky with the weather in September 1066. \n1. Calculate the days: How many days did Harold have between fighting the Vikings at Stamford Bridge (25 Sept) and fighting the Normans at Hastings (14 Oct)? \n2. Explain the impact: Write a short explanation of how the timing of the two invasions left Harold’s army at a massive disadvantage before the Battle of Hastings even started.",
+              "question": "Task 2: The Exhaustion Timeline (Why Timing was Everything)\nHistorians argue that William was incredibly lucky with the weather in September 1066. \n1. Calculate the days: How many days did Harold have between fighting the Vikings at Stamford Bridge (25 Sept) and fighting the Normans at Hastings (14 Oct)? \n2. Explain the impact: Write a short explanation of how the timing of the two invasions left Harold’s army at a massive disadvantage before the Battle of Hastings even started.",
               "model_answer": "1. Harold had 19 days between the two battles. \n2. The timing meant his army was utterly exhausted; they had just fought a brutal battle against the Vikings and then had to march nearly 300 miles back south. When they arrived at Hastings, they were depleted, tired, and likely lacked their full strength, giving William a massive advantage."
             },
             {
               "type": "drawing",
               "lines": 8,
-              "question": "Tension Timeline\nDraw a line graph mapping King Harold's stress levels day-by-day throughout September and October 1066. Label key events such as waiting for the wind, hearing about the Viking invasion, winning at Stamford Bridge, and the Norman landing.",
+              "question": "Task 5: Tension Timeline\nDraw a line graph mapping King Harold's stress levels day-by-day throughout September and October 1066. Label key events such as waiting for the wind, hearing about the Viking invasion, winning at Stamford Bridge, and the Norman landing.",
               "model_answer": "Students should draw a graph where stress is low/medium during summer, spikes at the news of Hardrada's landing, drops slightly after Stamford Bridge, and spikes to maximum when news of William's landing arrives."
             }
           ]
@@ -53,7 +53,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "According to Source A, what was the main reason King Harold lost the battle? \n*Hint: Look at the sentence describing how William arrived at the battlefield.*",
+              "question": "Task 3: Source Analysis (Source A)\nAccording to Source A, what was the main reason King Harold lost the battle? \n*Hint: Look at the sentence describing how William arrived at the battlefield.*",
               "model_answer": "According to Source A, Harold lost because William attacked him 'unawares, before his people were set in order'. This suggests the English army was surprised and not fully prepared for the battle to begin."
             }
           ]
@@ -70,17 +70,17 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "Look at Source B (The Bayeux Tapestry). How does this source support the idea that Harold's death was chaotic and brutal?",
+              "question": "Task 4: Source Analysis (Source B)\nLook at Source B (The Bayeux Tapestry). How does this source support the idea that Harold's death was chaotic and brutal?",
               "model_answer": "Source B shows Harold's death as chaotic because it depicts a soldier being struck in the eye with an arrow amidst a crowded battlefield, while another figure is being cut down by a Norman knight on a horse. The tapestry shows the English shield wall completely broken and men fighting desperately."
             },
             {
               "type": "short_answer",
-              "question": "Hastings Tactical Analysis (How the Battle was Won)\nCopy and complete the flow diagram below to show how the battle shifted in William's favour.\n\n<div style='display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 15px;'>\n  <div style='padding: 12px; border: 2px solid #2b5c8f; border-radius: 8px; background-color: #eaf3fa; width: 85%; text-align: center; font-weight: bold;'>1. Saxon Shield Wall holds firm on the high ground</div>\n  <div style='font-size: 20px; color: #2b5c8f;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #8f2b2b; border-radius: 8px; background-color: #faeaea; width: 85%; text-align: center;'>2. Rumour spreads that William is __________. William removes his __________ to prove he is alive.</div>\n  <div style='font-size: 20px; color: #8f2b2b;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #e08b1b; border-radius: 8px; background-color: #fdf4e8; width: 85%; text-align: center;'>3. The Cunning Plan: William orders a \"___________ retreat\" to trick the Saxons down the hill.</div>\n  <div style='font-size: 20px; color: #e08b1b;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #2b8f3d; border-radius: 8px; background-color: #eafaf0; width: 85%; text-align: center;'>4. Saxon Shield Wall is broken. Archers fire __________, and King __________ is killed.</div>\n</div>",
+              "question": "Task 5: Hastings Tactical Analysis (How the Battle was Won)\nCopy and complete the flow diagram below to show how the battle shifted in William's favour.\n\n<div style='display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 15px;'>\n  <div style='padding: 12px; border: 2px solid #2b5c8f; border-radius: 8px; background-color: #eaf3fa; width: 85%; text-align: center; font-weight: bold;'>1. Saxon Shield Wall holds firm on the high ground</div>\n  <div style='font-size: 20px; color: #2b5c8f;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #8f2b2b; border-radius: 8px; background-color: #faeaea; width: 85%; text-align: center;'>2. Rumour spreads that William is __________. William removes his __________ to prove he is alive.</div>\n  <div style='font-size: 20px; color: #8f2b2b;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #e08b1b; border-radius: 8px; background-color: #fdf4e8; width: 85%; text-align: center;'>3. The Cunning Plan: William orders a \"___________ retreat\" to trick the Saxons down the hill.</div>\n  <div style='font-size: 20px; color: #e08b1b;'>⬇️</div>\n  <div style='padding: 12px; border: 2px solid #2b8f3d; border-radius: 8px; background-color: #eafaf0; width: 85%; text-align: center;'>4. Saxon Shield Wall is broken. Archers fire __________, and King __________ is killed.</div>\n</div>",
               "model_answer": "2. killed / helmet\n3. feigned\n4. high into the air / Harold"
             },
             {
               "type": "extended_writing",
-              "question": "The Turning Point Debate (Evaluation)\nLook at the list of reasons why William won:\n- William's clever tactics (the feigned retreat)\n- Harold's mistakes (letting his men chase the retreating Normans)\n- Bad luck for Harold (having to fight two invasions at opposite ends of the country)\n- William's leadership (keeping his men motivated and organized)\n\nWrite a brief paragraph arguing which of these was the single most important reason William won the throne. Use evidence from your notes to justify your choice!",
+              "question": "Task 6: The Turning Point Debate (Evaluation)\nLook at the list of reasons why William won:\n- William's clever tactics (the feigned retreat)\n- Harold's mistakes (letting his men chase the retreating Normans)\n- Bad luck for Harold (having to fight two invasions at opposite ends of the country)\n- William's leadership (keeping his men motivated and organized)\n\nWrite a brief paragraph arguing which of these was the single most important reason William won the throne. Use evidence from your notes to justify your choice!",
               "model_answer": "I believe the single most important reason William won was his clever tactics, specifically the feigned retreat. Even though Harold's men were exhausted from the double invasion (bad luck), the Saxon shield wall was holding firm on the high ground and the Normans could not break it. It was only when William ordered his men to pretend to run away that the Saxons broke their formation. If William had not used this cunning trick, the shield wall might have survived the day."
             }
           ]
@@ -98,7 +98,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "sorting",
-              "text": "Put these key events of 1066 in the correct chronological order to map out the dramatic sequence of events.",
+              "text": "Task 3: Put these key events of 1066 in the correct chronological order to map out the dramatic sequence of events.",
               "events": [
                 "Edward the Confessor dies without a direct heir.",
                 "Harold Godwinson is crowned King of England.",
@@ -462,12 +462,12 @@ export const unitData = {
             {
               "type": "drawing",
               "lines": 10,
-              "question": "Sketch a Motte and Bailey castle and label the key defensive features (Motte, Keep, Bailey, Palisade, Ditch).",
+              "question": "Task 1: Sketch a Motte and Bailey castle and label the key defensive features (Motte, Keep, Bailey, Palisade, Ditch).",
               "model_answer": "Students should draw a large mound (Motte) with a wooden tower (Keep) on top, connected by a bridge to a lower enclosure (Bailey) surrounded by a wooden fence (Palisade) and a moat (Ditch)."
             },
             {
               "type": "short_answer",
-              "question": "Look at Source B (Portchester Castle). Why would this towering stone keep be absolutely terrifying for the local English peasants who lived in small wooden huts?",
+              "question": "Task: Look at Source B (Portchester Castle). Why would this towering stone keep be absolutely terrifying for the local English peasants who lived in small wooden huts?",
               "model_answer": "It was huge, permanent, and indestructible to ordinary weapons. It was a physical reminder that the Normans were there to stay and could not be defeated."
             }
           ]
@@ -485,7 +485,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Explain why William carried out the Harrying of the North and what the consequences were for the people living in the region.",
+              "question": "Task 2: Explain why William carried out the Harrying of the North and what the consequences were for the people living in the region.",
               "model_answer": "William carried out the Harrying of the North in the winter of 1069-1070 to crush a major rebellion in Yorkshire and Durham, which had been supported by a Danish invasion fleet. He wanted to punish the rebels for slaughtering his garrison in York and send a terrifying warning to prevent any future uprisings. The consequences for the people of the region were devastating. William's policy of burning crops, slaughtering livestock, and destroying farming tools led to a catastrophic famine. Over 100,000 men, women, and children starved to death, and large areas of the north were recorded as 'waste' in historical records for years, completely ending the region's ability to resist Norman rule."
             }
           ]
@@ -503,13 +503,13 @@ export const unitData = {
           "tasks": [
             {
               "type": "flow_diagram",
-              "question": "Create a flow diagram tracking how the Domesday survey was carried out from 1085 to 1086.",
+              "question": "Task 3: Create a flow diagram tracking how the Domesday survey was carried out from 1085 to 1086.",
               "model_answer": "[Step 1: In 1085, William faces the threat of a Danish invasion and needs money to pay for a large army.]\n↓\n[Step 2: At Christmas 1085, William orders a complete survey of England to find out the wealth of his kingdom.]\n↓\n[Step 3: Royal commissioners travel to every shire, questioning local people about land ownership, livestock, resources, and values.]\n↓\n[Step 4: The detailed information is compiled and edited down into a single manuscript called the Domesday Book in 1086.]\n↓\n[Step 5: William uses the book to tax his subjects efficiently and confirm that Norman lords hold the land.]",
               "lines": 5
             },
             {
               "type": "short_answer",
-              "question": "Look at the visual image of the Domesday Book in the Key Individuals section. Why was having all of this information written down in a permanent book so terrifying for the English population?",
+              "question": "Task 3: Look at the visual image of the Domesday Book in the Key Individuals section. Why was having all of this information written down in a permanent book so terrifying for the English population?",
               "model_answer": "Writing it down permanently meant there was no escape. The King knew exactly who owned what, meaning the English could never avoid his taxes or hide their wealth from the new Norman lords."
             }
           ]
@@ -524,7 +524,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "Local History Investigation. Look at the Domesday records for our local area. Explain what resources were recorded in Fareham and what this reveals about how Norman control impacted our local community.",
+              "question": "Task 4: Local History Investigation. Look at the Domesday records for our local area. Explain what resources were recorded in Fareham and what this reveals about how Norman control impacted our local community.",
               "model_answer": "In the Domesday Book of 1086, the manor of Fareham was held by the Bishop of Winchester, just as it had been before the conquest. The survey recorded valuable local assets, including multiple mills, fisheries along the inlet, woodland for pigs, and dozens of tenant households. This local evidence shows that the Domesday Survey reached every corner of Hampshire, ensuring that even small coastal settlements like Fareham and Stubbington were accurately recorded, heavily taxed, and placed firmly under the control of Norman leaders and bishops."
             }
           ]
@@ -535,7 +535,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Review the timeline of William's consolidation of power. Which method (Castles, Terror, or the Domesday Book) do you think was the most effective in securing his control? Explain your reasoning.",
+              "question": "Task 5: Review the timeline of William's consolidation of power. Which method (Castles, Terror, or the Domesday Book) do you think was the most effective in securing his control? Explain your reasoning.",
               "model_answer": "I believe terror (the Harrying of the North) was the most effective method because it completely broke the will of the English people to resist. While castles provided defensive bases and the Domesday Book provided administrative control, it was the catastrophic famine and mass death caused by the Harrying that permanently ended the threat of large-scale rebellion."
             }
           ],
@@ -888,7 +888,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "Explain why Henry II chose to appoint Thomas Becket as Archbishop of Canterbury in 1162, and explain why this appointment backfired.",
+              "question": "Task 1: Explain why Henry II chose to appoint Thomas Becket as Archbishop of Canterbury in 1162, and explain why this appointment backfired.",
               "model_answer": "Henry II appointed Thomas Becket because Becket had proven to be a fiercely loyal Chancellor since 1155, dedicated to enforcing royal taxation and expanding crown power. Henry believed that by placing his closest ally at the head of the English Church, he could control ecclesiastical courts, eliminate the benefit of clergy, and bring churchmen under royal law. The plan backfired completely because upon his consecration, Becket underwent a radical spiritual transformation. Becket immediately resigned the Chancellorship against the King's wishes, adopted an austere monastic lifestyle, and declared his absolute devotion to God and the Pope. Instead of subordinating the Church to the Crown, Becket became its most uncompromising defender."
             }
           ]
@@ -906,7 +906,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Explain the main reasons why the relationship between King Henry II and Archbishop Thomas Becket broke down completely between 1162 and 1164.",
+              "question": "Task 2: Explain the main reasons why the relationship between King Henry II and Archbishop Thomas Becket broke down completely between 1162 and 1164.",
               "model_answer": "The complete breakdown of relations between Henry II and Becket between 1162 and 1164 stemmed from irreconcilable views on legal jurisdiction, personal betrayal, and royal authority. Firstly, the primary structural conflict was the issue of criminous clerks and benefit of clergy. Henry sought a uniform system of royal common law where clerical felons were punished by the state, whereas Becket aggressively defended Canon Law, arguing that state punishment infringed upon sacred orders and constituted uncanonical double jeopardy. Secondly, the dispute escalated through the Constitutions of Clarendon in 1164. Henry attempted to enshrine royal supremacy by banning papal appeals and forcing church courts to surrender degraded clerks. Becket viewed this as an intolerable assault on church independence; his subsequent refusal to seal the document turned a legal disagreement into open rebellion against the Crown. Finally, the conflict was intensified by personal enmity and Henry's sense of betrayal. Having elevated Becket from modest origins, Henry viewed Becket's sudden monastic zeal, resignation of the Chancellorship, and defense of clerical immunities as personal ingratitude. Henry's retaliatory prosecution of Becket at Northampton on fabricated embezzlement charges destroyed any remaining trust, forcing Becket into exile and cementing an absolute political schism."
             }
           ]
@@ -920,7 +920,7 @@ export const unitData = {
             "type": "written",
             "content": "\"The wicked knight sprang upon him and sheared off the top of his crown which the holy chrism had dedicated to God... Then with another blow on the head he fell upon the pavement, saying, 'For the name of Jesus and the protection of the Church, I am ready to embrace death.' Then the third knight scattered his brains with the point of his sword across the stone floor.\"",
             "caption": "Extract from the chronicle of Edward Grim, c. 1174–1177",
-            "question": "Source Inference (Source C)\nLook at Source C. Make two inferences about how the monk who witnessed the murder viewed the knights who killed Thomas Becket. Support each inference with a detail from the source.",
+            "question": "Task 3: Source Inference (Source C)\nLook at Source C. Make two inferences about how the monk who witnessed the murder viewed the knights who killed Thomas Becket. Support each inference with a detail from the source.",
             "task_type": "source_analysis"
           },
           "source_context": "Edward Grim was a visiting clerk from Cambridge who was present inside Canterbury Cathedral during the attack, sustaining a severe arm injury while attempting to shield Becket from the knights.",
@@ -1255,7 +1255,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "matching",
-              "text": "King John was a disastrous ruler. Match his failures to the correct category.",
+              "text": "Task 1: King John was a disastrous ruler. Match his failures to the correct category.",
               "pairs": [
                 {
                   "left": "Losing all his land in Normandy to the French King Philip II",
@@ -1287,7 +1287,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "The Baron's Lawyer. Magna Carta contained 63 clauses. Below are three of the most famous. Categorize them into 'Financial', 'Legal', or 'Royal Power' limitations:\n1. 'No freeman shall be arrested or imprisoned without a fair trial.'\n2. 'No scutage (tax) shall be imposed without the general consent of the realm.'\n3. 'The English Church shall be free from royal interference.'",
+              "question": "Task 2: The Baron's Lawyer. Magna Carta contained 63 clauses. Below are three of the most famous. Categorize them into 'Financial', 'Legal', or 'Royal Power' limitations:\n1. 'No freeman shall be arrested or imprisoned without a fair trial.'\n2. 'No scutage (tax) shall be imposed without the general consent of the realm.'\n3. 'The English Church shall be free from royal interference.'",
               "model_answer": "1. Legal (Guarantees a fair trial). 2. Financial (Stops the King inventing taxes). 3. Royal Power (Limits the King's control over the Church)."
             }
           ]
@@ -1305,7 +1305,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "The Trial of King John (Interpretation)\nDivide your answer into two parts:\n1. You are King John's defense lawyer. Write a short paragraph defending his actions, explaining why the heavy taxes were necessary.\n2. Now, act as the Barons' prosecutor. Write a response arguing why his actions were tyrannical and justified the Magna Carta.",
+              "question": "Task 3: The Trial of King John (Interpretation)\nDivide your answer into two parts:\n1. You are King John's defense lawyer. Write a short paragraph defending his actions, explaining why the heavy taxes were necessary.\n2. Now, act as the Barons' prosecutor. Write a response arguing why his actions were tyrannical and justified the Magna Carta.",
               "model_answer": "As King John's defense lawyer, I argue that the heavy scutage taxes were an absolute necessity to protect the realm and win back our crucial lands in Normandy. As the Barons' prosecutor, I argue that John's behavior was completely tyrannical; he acted above the law, extorted his own lords, and broke the feudal contract.",
               "lines": 12
             }
@@ -1657,18 +1657,18 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "Explain why the parish church was the most important building in a medieval village, referencing both its religious and community uses.",
+              "question": "Task 1: Explain why the parish church was the most important building in a medieval village, referencing both its religious and community uses.",
               "model_answer": "The parish church was the most important building because it served both religious and social purposes. Religiously, it towered over the village as a constant reminder of God, and its bells paced the working day. It was where peasants went for essential life events like baptisms, marriages, and burials. Socially, because there were no pews, the church acted as a weatherproof community centre where villagers held markets, shared news, celebrated feasts, and watched plays, making it the hub of daily life.",
               "lines": 5
             },
             {
               "type": "short_answer",
-              "question": "Look at Source A (The Medieval Church Interior). List three different activities taking place in the church other than praying.",
+              "question": "Task: Look at Source A (The Medieval Church Interior). List three different activities taking place in the church other than praying.",
               "model_answer": "In Source A, you can see people trading goods, socialising/talking with their neighbours, and walking their dogs."
             },
             {
               "type": "short_answer",
-              "question": "Look at Source A (the medieval parish church). Identify three different activities taking place inside the church, showing that it was used for more than just praying.",
+              "question": "Task: Look at Source A (the medieval parish church). Identify three different activities taking place inside the church, showing that it was used for more than just praying.",
               "model_answer": "Students should identify people trading/selling goods, a dog running around, people talking/gossiping, and the priest delivering a sermon."
             }
           ],
@@ -1686,7 +1686,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Describe what a tithe was, how it was collected, and why it caused tension between ordinary medieval peasants and the Church.",
+              "question": "Task 2: Describe what a tithe was, how it was collected, and why it caused tension between ordinary medieval peasants and the Church.",
               "model_answer": "A tithe was a compulsory tax where peasants had to give 10% of their annual harvest or goods produced (such as crops, wool, or livestock) to the Church. It was collected by the parish priest and stored in large tithe barns. This tax caused massive tension because it was a severe economic burden on poor peasants who were already struggling to survive. Seeing the Church amass huge wealth and land—owning one-third of England—while they starved made many peasants resentful of the clergy's luxury and the threat of eternal damnation if they failed to pay.",
               "lines": 8
             }
@@ -1711,7 +1711,7 @@ export const unitData = {
             {
               "type": "drawing",
               "lines": 8,
-              "question": "Sketch your own terrifying Doom Painting monster (Hellmouth or demon) that would have scared medieval peasants into obeying the Church.",
+              "question": "Task: Sketch your own terrifying Doom Painting monster (Hellmouth or demon) that would have scared medieval peasants into obeying the Church.",
               "model_answer": "Students should draw a grotesque monster or demon, demonstrating an understanding of how fear of Hell was used to control the peasant population."
             }
           ],
@@ -1969,7 +1969,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "physician_game",
-              "text": "The Plague Doctor. Play the role of a medieval physician and try to cure the infected patients.",
+              "text": "Task 1: The Plague Doctor. Play the role of a medieval physician and try to cure the infected patients.",
               "model_answer": "Students play the interactive game to learn about the ineffective medieval cures based on the Four Humours."
             }
           ]
@@ -1987,7 +1987,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Explain how the Black Death transformed the balance of economic power between lords and peasants after 1348.",
+              "question": "Task 2: Explain how the Black Death transformed the balance of economic power between lords and peasants after 1348.",
               "model_answer": "The Black Death completely revolutionized the economic relationship between lords and peasants by shifting the balance of power decisively toward ordinary working people.\n\nBefore 1348, a high population meant that labor was cheap and land was scarce, allowing feudal lords to demand unpaid labor services and keep peasants tightly controlled. However, when the plague wiped out nearly half the population, labor suddenly became the scarcest and most valuable commodity in the English economy. Landlords were desperate to find workers to plant crops, harvest fields, and maintain livestock, giving surviving peasants immense bargaining power for the first time.\n\nAs a result, peasants refused to work under old feudal obligations and demanded substantial cash wages and reduced land rents. If a local lord refused, peasants could easily break the law and relocate to neighboring manors where rival lords were willing to pay higher wages.\n\nAlthough the Crown attempted to restore elite control through the Statute of Labourers in 1351 by freezing wages at pre-plague rates, the law ultimately failed to reverse market realities. Lords continually broke the statute to secure workers, enabling many peasants to accumulate surplus wealth, purchase land, and permanently challenge the traditional feudal hierarchy."
             }
           ]
@@ -2002,7 +2002,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "The Plague Doctor's Diary (Empathetic Writing)\nWrite a diary entry as a physician in 1348. Explain the horrifying symptoms you are witnessing in your patients, the 'cures' you are attempting to use (such as bloodletting or carrying sweet-smelling herbs), and why you believe they are failing due to your lack of germ theory.",
+              "question": "Task 3: The Plague Doctor's Diary (Empathetic Writing)\nWrite a diary entry as a physician in 1348. Explain the horrifying symptoms you are witnessing in your patients, the 'cures' you are attempting to use (such as bloodletting or carrying sweet-smelling herbs), and why you believe they are failing due to your lack of germ theory.",
               "model_answer": "Diary Entry, August 1348: The pestilence has arrived and it is terrifying. My patients are developing agonizing, dark buboes in their armpits and coughing up blood. I have tried bleeding them to balance their humours, and I carry sweet herbs to ward off the miasma, but nothing works because we do not understand the invisible poison causing this tragedy.",
               "lines": 10
             }
@@ -2348,7 +2348,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "How much of a threat did the rebels actually pose to King Richard II and royal government when they seized London in June 1381?",
+              "question": "Task 2: How much of a threat did the rebels actually pose to King Richard II and royal government when they seized London in June 1381?",
               "model_answer": "The rebels posed an existential threat to royal government and the social order in June 1381, although they deliberately avoided threatening the personal authority of King Richard II himself.\n\nOn the one hand, the physical threat to state authority was absolute. The rebels, numbering tens of thousands, completely paralyzed the capital, defeated royal security, and burned the Savoy Palace and legal archives with total impunity. By breaching the Tower of London—the kingdom's premier fortress—and executing Archbishop Simon Sudbury (the Chancellor) and Robert Hales (the Treasurer), the rebels demonstrated that the Crown had completely lost military control of the capital and could not protect its highest officials.\n\nOn the other hand, the rebels did not intend to depose or assassinate the fourteen-year-old king. Wat Tyler and the rebel leadership maintained that their quarrel was not with Richard, but with his 'traitorous' advisors, tax collectors, and corrupt churchmen. They repeatedly declared their loyalty to the King and sought royal charters to legally abolish serfdom. Therefore, while the rebels posed a catastrophic military and administrative threat to the ruling elite and royal government, they sought to use royal authority to validate their demands rather than overthrow the monarchy itself."
             }
           ]
@@ -2363,7 +2363,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "flow_diagram",
-              "question": "Create a 5-step chronological flow diagram showing the key events of the Peasants' Revolt from the initial march on London to the execution of the rebel leaders.",
+              "question": "Task 3: Create a 5-step chronological flow diagram showing the key events of the Peasants' Revolt from the initial march on London to the execution of the rebel leaders.",
               "model_answer": "[Step 1: Wat Tyler and rebel bands from Kent and Essex march on London, burning manorial rolls and tax records along the route.]\n↓\n[Step 2: The rebels enter London, destroy John of Gaunt's Savoy Palace, and storm the Tower of London to execute Archbishop Simon Sudbury.]\n↓\n[Step 3: King Richard II meets Wat Tyler at Smithfield, where Tyler is attacked and mortally wounded by the Mayor of London, William Walworth.]\n↓\n[Step 4: Richard II boldly defuses the furious crowd by promising to be their leader and granting charters ending serfdom, convincing the peasants to go home.]\n↓\n[Step 5: Richard II revokes all charters, sends troops into the countryside to crush resistance, and executes Wat Tyler, John Ball, and other rebel leaders.]",
               "lines": 5
             }
@@ -2708,13 +2708,13 @@ export const unitData = {
           "tasks": [
             {
               "type": "short_answer",
-              "question": "Explain what caused the Wars of the Roses to break out in 1455, and describe how this instability affected the English monarchy over the next thirty years.",
+              "question": "Task 1: Explain what caused the Wars of the Roses to break out in 1455, and describe how this instability affected the English monarchy over the next thirty years.",
               "model_answer": "The Wars of the Roses broke out in 1455 primarily because of the weakness of the Lancastrian King, Henry VI, who was unfit to rule effectively. This created a power vacuum that allowed the wealthy and powerful House of York to challenge his right to the throne, claiming a stronger hereditary bloodline. Over the next thirty years, this instability caused extreme chaos, resulting in the crown changing hands six times as rival noble factions fought, betrayed one another, and executed their opponents to seize power.",
               "lines": 6
             },
             {
               "type": "short_answer",
-              "question": "Look at Sources A and B. Why was it important for rival noble houses to have simple, recognizable badges like the Red and White Roses during a chaotic civil war?",
+              "question": "Task: Look at Sources A and B. Why was it important for rival noble houses to have simple, recognizable badges like the Red and White Roses during a chaotic civil war?",
               "model_answer": "In the chaos of a medieval battlefield, where many soldiers couldn't read and armour made it hard to recognize people, simple visual badges were essential for soldiers to know who was friend and who was foe."
             }
           ],
@@ -2755,7 +2755,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "flow_diagram",
-              "question": "Create a 5-step chronological flow diagram showing the key events of the Battle of Bosworth Field, from the arrival of the two armies to the crowning of the first Tudor king.",
+              "question": "Task 3: Create a 5-step chronological flow diagram showing the key events of the Battle of Bosworth Field, from the arrival of the two armies to the crowning of the first Tudor king.",
               "model_answer": "Step 1: Henry Tudor lands in Wales and marches to meet Richard III's much larger royal army at Bosworth Field on 22 August 1485.\\n↓\\nStep 2: Powerful nobles like Lord Stanley and the Duke of Northumberland hesitate, refusing to commit their armies to either side.\\n↓\\nStep 3: Richard III spots Henry Tudor isolated on the battlefield and leads a desperate, high-risk cavalry charge to kill him.\\n↓\\nStep 4: Lord Stanley betrays Richard III, ordering his private army to join the battle on Henry's side and surrounding the king.\\n↓\\nStep 5: Richard III is killed in the swampy ground, his army retreats, and Henry Tudor is crowned on the battlefield as King Henry VII.",
               "boxes": 5
             }
@@ -3073,7 +3073,7 @@ export const unitData = {
           "tasks": [
             {
               "type": "extended_writing",
-              "question": "Which of the two interpretations do you find more convincing? Explain your answer using your own knowledge.",
+              "question": "Task 1: Which of the two interpretations do you find more convincing? Explain your answer using your own knowledge.",
               "model_answer": "Interpretation B is more convincing because it acknowledges that while early Norman kings had absolute power, by the end of the medieval period, things had changed. For example, King John lost so much authority that he was forced by the barons to seal the Magna Carta in 1215, meaning the king was no longer above the law."
             }
           ]

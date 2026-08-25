@@ -518,7 +518,7 @@ allDirs.forEach(unitId => {
               ${(block.source.src || block.source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((block.source.src || block.source.source), 2) : (block.source.src || block.source.source)}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
               ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
               ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
-              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${block.source.qNum ? block.source.qNum + '.' : ''} ${block.source.question}${block.source.page ? ` (See Textbook Page ${block.source.page})` : ''}</strong></div>` : ''}
+              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${block.source.qNum ? block.source.qNum + '.' : ''} ${block.source.question}${block.source.page ? ` (See Textbook Page ${block.source.page})` : ''}</strong></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div>` : ''}
             </div>
           `;
         }
