@@ -59,6 +59,7 @@ export function sanitizeLessonData(lesson) {
       if (block.tasks) {
         block.tasks.forEach(task => {
           if (task.text) task.text = cleanQuestionText(task.text);
+          if (task.question) task.question = cleanQuestionText(task.question);
         });
       }
     });
@@ -67,6 +68,7 @@ export function sanitizeLessonData(lesson) {
   if (lesson.tasks) {
     lesson.tasks.forEach(task => {
       if (task.text) task.text = cleanQuestionText(task.text);
+      if (task.question) task.question = cleanQuestionText(task.question);
     });
   }
   

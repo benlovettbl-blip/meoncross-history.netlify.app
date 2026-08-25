@@ -2466,6 +2466,28 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
              `;
           });
           extrasHtml += `</div>`;
+          
+          if (block.flashcards && block.flashcards.length > 0) {
+            extrasHtml += `<div style="margin-top: 20px;"><div class="flashcard-deck">`;
+            block.flashcards.forEach(fc => {
+              let t = fc.term || fc.word || fc.title || '';
+              let d = fc.definition || fc.meaning || fc.desc || '';
+              extrasHtml += `
+                <div class="flashcard-wrapper" onclick="this.classList.toggle('flipped')">
+                  <div class="flashcard-inner">
+                    <div class="flashcard-face flashcard-front">
+                      <h4>${t}</h4>
+                      <p style="font-size: 0.9rem; margin-top: 10px;">Tap to reveal</p>
+                    </div>
+                    <div class="flashcard-face flashcard-back">
+                      ${d}
+                    </div>
+                  </div>
+                </div>
+              `;
+            });
+            extrasHtml += `</div></div>`;
+          }
         }
 
         let isSideQuest = styledContent.includes('</details>') && (block.title && block.title.includes('Side Quest'));

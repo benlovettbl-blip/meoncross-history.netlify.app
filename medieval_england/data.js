@@ -538,6 +538,28 @@ export const unitData = {
               "question": "Task 5: Review the timeline of William's consolidation of power. Which method (Castles, Terror, or the Domesday Book) do you think was the most effective in securing his control? Explain your reasoning.",
               "model_answer": "I believe terror (the Harrying of the North) was the most effective method because it completely broke the will of the English people to resist. While castles provided defensive bases and the Domesday Book provided administrative control, it was the catastrophic famine and mass death caused by the Harrying that permanently ended the threat of large-scale rebellion."
             }
+          ],
+          "flashcards": [
+            {
+              "term": "1066",
+              "definition": "William crowned King. The great castle-building programme begins."
+            },
+            {
+              "term": "1069-1070",
+              "definition": "The Harrying of the North crushes northern resistance through starvation and destruction."
+            },
+            {
+              "term": "1071",
+              "definition": "The last major Anglo-Saxon resistance is defeated at Ely."
+            },
+            {
+              "term": "1085-1086",
+              "definition": "The Domesday Survey is ordered and completed, recording every taxable asset in England."
+            },
+            {
+              "term": "1087",
+              "definition": "William the Conqueror dies."
+            }
           ]
         }
       ],
@@ -3167,3 +3189,4 @@ export const unitData = {
   "specification_file": "",
   "hero_image": "/images/portchester_keep.jpg"
 };
+
