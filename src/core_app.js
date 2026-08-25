@@ -146,7 +146,7 @@ export function initializeApp(unitData) {
       if (ca) {
         ca.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       }
     }, 100);
     // Try to update sidebar active state
@@ -773,7 +773,7 @@ export function initializeApp(unitData) {
     const homeLink = document.querySelector('.lesson-link');
     if (homeLink) homeLink.classList.add('active');
     renderHomepage();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   function renderHomepage() {
@@ -888,7 +888,7 @@ export function initializeApp(unitData) {
         const idx = parseInt(card.dataset.index);
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
         renderLesson(unitData.lessons[idx]);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   }
@@ -980,7 +980,7 @@ export function initializeApp(unitData) {
       document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
       homeLink.classList.add('active');
       renderHomepage();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
     });
     navContainer.appendChild(homeLink);
 
@@ -1104,7 +1104,7 @@ export function initializeApp(unitData) {
             </div>
           </div>
         `;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       });
       navContainer.appendChild(liveLink);
     }
@@ -1189,7 +1189,7 @@ export function initializeApp(unitData) {
         document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
         guideLink.classList.add('active');
         renderExamGuide();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       });
       navContainer.appendChild(guideLink);
     }
@@ -1210,7 +1210,7 @@ export function initializeApp(unitData) {
         const contentArea = document.getElementById('content-area');
         renderThematicMatrix(contentArea, unitData);
         
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       });
       navContainer.appendChild(thematicLink);
     }
@@ -1244,7 +1244,7 @@ export function initializeApp(unitData) {
         }
         
         initGuidedReadingTask(contentArea, unitData.guided_reading, { currentLessonIndex });
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       };
       navContainer.appendChild(grLink);
     }
@@ -1262,7 +1262,7 @@ export function initializeApp(unitData) {
         const contentArea = document.getElementById('content-area');
         contentArea.innerHTML = ''; // clear
         renderExamPracticeZone(contentArea, unitData);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       });
       navContainer.appendChild(examPracticeLink);
     }
@@ -1282,7 +1282,7 @@ export function initializeApp(unitData) {
         const contentArea = document.getElementById('content-area');
         contentArea.innerHTML = '';
         renderQuizZone(contentArea, unitData);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       });
       navContainer.appendChild(quizPackLink);
     }
@@ -1316,7 +1316,7 @@ export function initializeApp(unitData) {
         contentArea.innerHTML = '';
         const { renderWorkbooksZone } = await import('./workbooks_zone.js');
         renderWorkbooksZone(contentArea, unitData);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       });
       navContainer.appendChild(wbLink);
     }
@@ -1375,7 +1375,7 @@ export function initializeApp(unitData) {
             links[index + 1].classList.add('active');
         }
         renderLesson(unitData.lessons[index]);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
 
