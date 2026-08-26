@@ -52,7 +52,7 @@ const processTaskTextWithTariff = (text) => {
         let match = text.match(/\(?\[?\b(\d+)\s*marks?\b\]?\)?/i);
         if (match) {
             marks = parseInt(match[1]);
-            text = text.replace(match[0], '').trim();
+            // text = text.replace(match[0], '').trim();
         } else {
             if (text.toLowerCase().includes("narrative account")) marks = 8;
             else if (text.toLowerCase().includes("explain why")) marks = 12;
@@ -467,7 +467,7 @@ allDirs.forEach(unitId => {
     if (vocabTerms && vocabTerms.length > 0) {
       let vocabStyle = lessonIndex % 3;
       html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;">`;
-      html += `<h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3>`;
+      html += `<div style="break-inside: avoid; page-break-inside: avoid;"><h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3>`;
       
       if (vocabStyle === 0) {
         if (lesson.vocab_cloze_text) {
@@ -475,7 +475,7 @@ allDirs.forEach(unitId => {
            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p>`;
            let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
-           let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;');
+           let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '<span style="display:inline-block; width: 80px; border-bottom: 1px solid black;">&nbsp;</span>');
            html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
         } else {
 

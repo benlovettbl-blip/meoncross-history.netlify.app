@@ -57,7 +57,7 @@ const processTaskTextWithTariff = (text) => {
         let match = text.match(/\(?\[?\b(\d+)\s*marks?\b\]?\)?/i);
         if (match) {
             marks = parseInt(match[1]);
-            text = text.replace(match[0], '').trim();
+            // text = text.replace(match[0], '').trim();
         } else {
             if (text.toLowerCase().includes("narrative account")) marks = 8;
             else if (text.toLowerCase().includes("explain why")) marks = 12;
@@ -78,7 +78,7 @@ const formatText = (text) => {
   if (!text) return "";
   return text
     .replace(/\(Weighing the Evidence toggle tabs\)/gi, "")
-    .replace(/_{3,}/g, '&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;')
+    .replace(/_{3,}/g, '<span style="display:inline-block; width: 80px; border-bottom: 1px solid black;">&nbsp;</span>')
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
     .replace(/\*(.*?)\*/g, "<em>$1</em>");
 };
@@ -652,7 +652,7 @@ allDirs.forEach((unitId) => {
       if (vocabTerms && vocabTerms.length > 0) {
         let vocabStyle = lessonIndex % 3;
         html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;">`;
-        html += `<h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3>`;
+        html += `<div style="break-inside: avoid; page-break-inside: avoid;"><h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3>`;
 
         if (vocabStyle === 0) {
           if (lesson.vocab_cloze_text) {
