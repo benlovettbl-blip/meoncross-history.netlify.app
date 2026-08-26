@@ -15,6 +15,7 @@ window.toggleExamTimer = function(cardId, defaultMinutes) {
     if (!window.examTimers[cardId]) {
       window.examTimers[cardId] = {
         totalSeconds: defaultMinutes * 60,
+        
         remainingSeconds: defaultMinutes * 60,
         interval: null,
         isRunning: false

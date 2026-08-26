@@ -83,44 +83,7 @@
             }
           ]
         },
-        "narrative_blocks": [
-          {
-            "theme_heading": "Quick Navigation",
-            "text": "<div class='toc-menu' style='position: sticky; top: 10px; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; gap: 10px; flex-wrap: wrap;'><a href='#the-lowry-brothers-a-village-s-sacrifice' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-users'></i> The Lowry Brothers</a> <a href='#the-trip-rules-what-you-need-to-know' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-clipboard-list'></i> Trip Rules</a> <a href='#kit-list-what-to-pack' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-suitcase'></i> Kit List</a></div>"
-          },
-          {
-            "type": "narrative",
-            "theme_heading": "What to Pack: The Essential Checklist",
-            "text": "Please ensure all pupils have the following items packed in a suitable overnight bag (no hard suitcases if possible, to maximize coach storage space):<br><br><ul><li><strong>Valid Passport</strong> (will be given in hopefully at the parent briefing meeting on the 10th of September)</li><li><strong>GHIC / EHIC Card</strong> (valid and in-date)</li><li><strong>Sturdy Walking Boots</strong> or waterproof shoes (we will be walking through muddy trenches)</li><li><strong>Waterproof Coat</strong> (Belgian weather is unpredictable)</li><li><strong>Small Rucksack</strong> for daytime use on the coach</li><li><strong>Euro Currency</strong> (approx €30-€50 maximum for snacks and chocolates)</li><li><strong>Refillable Water Bottle</strong></li></ul>"
-          },
-          {
-            "type": "narrative",
-            "theme_heading": "The Lowry Brothers: A Village's Sacrifice",
-            "text": "The names of three brothers—William, Cyril, and Auriol (Eric) Lowry—are all carved into the Stubbington War Memorial in our village center. The story of these young men perfectly captures the devastating toll the war took on individual families.<br><br>Tragically, the three brothers fell in three completely different theatres of war:<br><ul><li><strong>William 'Harper' Lowry:</strong> Fell in 1915 and is commemorated on the Helles Memorial in Turkey (Gallipoli).</li><li><strong>Cyril 'Patrick' Lowry:</strong> Fell in 1916 and is commemorated on the Pozieres Memorial in France (The Somme).</li><li><strong>Auriol 'Eric' Lowry:</strong> Fell in 1917 and is buried at La Targette Cemetery near Arras, France.</li></ul><br>Before we depart for Belgium, take a moment to reflect on what it must have been like for the local community to receive the telegrams for all three boys over the course of three years.",
-            "images": [
-              {
-                "image": "/images/stubbington_memorial.jpg",
-                "image_alt": "The Stubbington War Memorial",
-                "image_caption": "The Stubbington War Memorial, where the Lowry brothers are commemorated."
-              },
-              {
-                "image": "/images/lowry_william.png",
-                "image_alt": "William 'Harper' Lowry",
-                "image_caption": "William 'Harper' Lowry"
-              },
-              {
-                "image": "/images/lowry_cyril.png",
-                "image_alt": "Cyril 'Patrick' Lowry",
-                "image_caption": "Cyril 'Patrick' Lowry"
-              },
-              {
-                "image": "/images/lowry_auriol.png",
-                "image_alt": "Auriol 'Eric' Lowry",
-                "image_caption": "Auriol 'Eric' Lowry"
-              }
-            ]
-          }
-        ],
+        "narrative_blocks": [],
         "banner": "/images/menin_road_nash.jpg",
         "extended": {
           "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
@@ -1057,6 +1020,7 @@
           }
         ]
       }
-    ]
+    ],
+    "overview_custom_html": "\n      <div style=\"background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 30px;\">\n        <h3 style=\"margin-top: 0; color: #1e3a8a; font-family: 'Playfair Display', serif; font-size: 1.8rem;\">The Lowry Brothers: A Village's Sacrifice</h3>\n        <p style=\"color: #334155; line-height: 1.6; font-size: 1.05rem;\">The names of three brothers—William, Cyril, and Auriol (Eric) Lowry—are all carved into the Stubbington War Memorial in our village center. The story of these young men perfectly captures the devastating toll the war took on individual families.<br><br>Tragically, the three brothers fell in three completely different theatres of war:<br><ul><li><strong>William 'Harper' Lowry:</strong> Fell in 1915 and is commemorated on the Helles Memorial in Turkey (Gallipoli).</li><li><strong>Cyril 'Patrick' Lowry:</strong> Fell in 1916 and is commemorated on the Pozieres Memorial in France (The Somme).</li><li><strong>Auriol 'Eric' Lowry:</strong> Fell in 1917 and is buried at La Targette Cemetery near Arras, France.</li></ul><br>Before we depart for Belgium, take a moment to reflect on what it must have been like for the local community to receive the telegrams for all three boys over the course of three years.</p>\n        <div style=\"display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;\"><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/stubbington_memorial.jpg\" alt=\"The Stubbington War Memorial\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">The Stubbington War Memorial, where the Lowry brothers are commemorated.</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_william.png\" alt=\"William 'Harper' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">William 'Harper' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_cyril.png\" alt=\"Cyril 'Patrick' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Cyril 'Patrick' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_auriol.png\" alt=\"Auriol 'Eric' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Auriol 'Eric' Lowry</small>\n         </div></div>\n      </div>\n    "
   }
 }
