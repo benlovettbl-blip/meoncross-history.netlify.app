@@ -47,9 +47,9 @@ const getTariffBadge = (topic) => {
 
 const processTaskTextWithTariff = (text) => {
     if (!text) return "";
-    if (text.toLowerCase().includes('assessment') || /\(\d+\s*marks?\)/i.test(text)) {
+    if (text.toLowerCase().includes('assessment') || /\(?\b\d+\s*marks?\b\)?/i.test(text)) {
         let marks = 8;
-        let match = text.match(/\(\s*(\d+)\s*marks?\s*\)/i) || text.match(/\[\s*(\d+)\s*marks?\s*\]/i);
+        let match = text.match(/\(?\[?\b(\d+)\s*marks?\b\]?\)?/i);
         if (match) {
             marks = parseInt(match[1]);
             text = text.replace(match[0], '').trim();
@@ -251,7 +251,7 @@ allDirs.forEach(unitId => {
     let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="width: 100%; height: 60vh; object-fit: cover; border-bottom: 5px solid #1e3a8a; border-top-left-radius: 12px; border-top-right-radius: 12px;">` : '';
 
     html += `
-    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; max-height: 100vh; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
+    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; height: 80vh; box-sizing: border-box; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
       ${heroHtml}
       
       <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box;">
@@ -507,7 +507,7 @@ allDirs.forEach(unitId => {
     }
     if (vocabTerms && vocabTerms.length > 0) {
       let vocabStyle = lessonIndex % 3;
-      html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px;">`;
+      html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;">`;
       html += `<h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3>`;
       
       if (vocabStyle === 0) {
@@ -516,7 +516,7 @@ allDirs.forEach(unitId => {
            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p>`;
            let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
-           let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, ' ___________ ');
+           let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, ' &#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95; ');
            html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
         } else {
 

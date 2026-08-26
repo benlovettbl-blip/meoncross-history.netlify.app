@@ -84,4 +84,8 @@ const puppeteer = require('puppeteer');
   console.log('-----------------------\n');
   
   await browser.close();
+  
+  if (overflows.length > 0) {
+    process.exit(1);
+  }
 })();

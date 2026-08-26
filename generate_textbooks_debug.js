@@ -428,7 +428,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
     }
     if (vocabTerms && vocabTerms.length > 0) {
       let vocabStyle = lessonIndex % 3;
-      html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px;">`;
+      html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;">`;
       html += `<h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3>`;
       
       if (vocabStyle === 0) {
@@ -437,7 +437,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p>`;
            let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
-           let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '__________________');
+           let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;');
            html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
         } else {
 

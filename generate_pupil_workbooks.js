@@ -52,9 +52,9 @@ const getTariffBadge = (topic) => {
 
 const processTaskTextWithTariff = (text) => {
     if (!text) return "";
-    if (text.toLowerCase().includes('assessment') || /\(\d+\s*marks?\)/i.test(text)) {
+    if (text.toLowerCase().includes('assessment') || /\(?\b\d+\s*marks?\b\)?/i.test(text)) {
         let marks = 8;
-        let match = text.match(/\(\s*(\d+)\s*marks?\s*\)/i) || text.match(/\[\s*(\d+)\s*marks?\s*\]/i);
+        let match = text.match(/\(?\[?\b(\d+)\s*marks?\b\]?\)?/i);
         if (match) {
             marks = parseInt(match[1]);
             text = text.replace(match[0], '').trim();
@@ -78,7 +78,7 @@ const formatText = (text) => {
   if (!text) return "";
   return text
     .replace(/\(Weighing the Evidence toggle tabs\)/gi, "")
-    .replace(/_{3,}/g, '___________')
+    .replace(/_{3,}/g, '&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;')
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
     .replace(/\*(.*?)\*/g, "<em>$1</em>");
 };
@@ -349,7 +349,7 @@ allDirs.forEach((unitId) => {
     let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="width: 100%; height: 60vh; object-fit: cover; border-bottom: 5px solid #1e3a8a; border-top-left-radius: 12px; border-top-right-radius: 12px;">` : '';
 
     html += `
-    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; max-height: 100vh; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
+    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; height: 80vh; box-sizing: border-box; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
       ${heroHtml}
       
       <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box;">
