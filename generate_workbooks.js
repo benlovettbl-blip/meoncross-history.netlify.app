@@ -17,6 +17,58 @@ if (fs.existsSync(path.join(__dirname, 'src', 'exam_guide_content.js'))) {
 }
 
 
+
+const getTariffBadge = (topic) => {
+    if (!topic) return "";
+    let marks = 8;
+    let match = topic.match(/\((\d+)\s*marks?\)/i);
+    if (match) {
+        marks = parseInt(match[1]);
+        topic = topic.replace(match[0], '').trim();
+    } else {
+        if (topic.toLowerCase().includes("narrative account")) marks = 8;
+        else if (topic.toLowerCase().includes("how useful")) marks = 8;
+        else if (topic.toLowerCase().includes("explain why")) marks = 12;
+        else if (topic.toLowerCase().includes("explain one consequence")) marks = 4;
+        else if (topic.toLowerCase().includes("describe two features") || topic.toLowerCase().includes("describe one feature")) marks = 4;
+    }
+    let time = Math.round(marks * 1.25);
+    if (marks === 4) time = 5;
+    if (marks === 8) time = 10;
+    if (marks === 12) time = 15;
+    if (marks === 16) time = 20;
+    
+    return {
+        cleanTopic: topic,
+        badgeHtml: ` <span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle; margin-left: 10px;">[${marks} marks &bull; ${time} mins]</span>`
+    };
+};
+
+
+const processTaskTextWithTariff = (text) => {
+    if (!text) return "";
+    if (text.toLowerCase().includes('assessment') || /\(\d+\s*marks?\)/i.test(text)) {
+        let marks = 8;
+        let match = text.match(/\(\s*(\d+)\s*marks?\s*\)/i) || text.match(/\[\s*(\d+)\s*marks?\s*\]/i);
+        if (match) {
+            marks = parseInt(match[1]);
+            text = text.replace(match[0], '').trim();
+        } else {
+            if (text.toLowerCase().includes("narrative account")) marks = 8;
+            else if (text.toLowerCase().includes("explain why")) marks = 12;
+            else if (text.toLowerCase().includes("16 marks")) marks = 16;
+        }
+        let time = Math.round(marks * 1.25);
+        if (marks === 4) time = 5;
+        if (marks === 8) time = 10;
+        if (marks === 12) time = 15;
+        if (marks === 16) time = 20;
+        
+        return text + ` <span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle; margin-left: 10px;">[${marks} marks &bull; ${time} mins]</span>`;
+    }
+    return text;
+};
+
 const formatText = (text) => {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
@@ -608,12 +660,12 @@ allDirs.forEach(unitId => {
             html += `<div class="task-box">`;
             block.tasks.forEach(task => {
               if (task.type === 'draw') {
-                 html += `<div class="draw-task">Q${task.qNum}: ${task.text || task.question}</div>`;
+                 html += `<div class="draw-task">Q${task.qNum}: ${processTaskTextWithTariff(task.text || task.question)}</div>`;
               } else {
                  
                                  if (task.type === "multiple_choice") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '')}</h4>`;
                   task.questions.forEach((q, qIdx) => {
                     html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
                     q.options.forEach((opt) => {
@@ -626,7 +678,7 @@ allDirs.forEach(unitId => {
                 }
                 if (task.type === "sorting") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '')}</h4>`;
                   html += `<ul style="list-style-type:none; padding-left:0;">`;
                   task.events.forEach((ev) => {
                     html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
@@ -637,10 +689,10 @@ allDirs.forEach(unitId => {
                 if (task.type === "cloze") {
                   let cloze = task.cloze_text.replace(
                     /\[([^\]]+)\]/g,
-                    "______________",
+                    "<span style=\"display:inline-block; width:100px; border-bottom:1px solid #333;\"></span>",
                   );
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '')}</h4>`;
                   html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
                   html += `<p style="line-height: 2;">${cloze}</p>`;
                   html += `</div>`;
@@ -649,7 +701,7 @@ allDirs.forEach(unitId => {
 
                 if (task.type === "physician_game") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '')}</h4>`;
                   html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
                   html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
                   html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
@@ -688,11 +740,9 @@ allDirs.forEach(unitId => {
                 }
                 if (task.type === "matching") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '')}</h4>`;
                   html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
-                  const rightMixed = [...task.pairs].sort(
-                    () => Math.random() - 0.5,
-                  );
+                  const rightMixed = [...task.pairs];
                   task.pairs.forEach((p, i) => {
                     html += `<tr>
                      <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
@@ -705,7 +755,7 @@ allDirs.forEach(unitId => {
                 }
                 if (task.type === "table_planner") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '')}</h4>`;
                   html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
                   task.columns.forEach((c) => {
                     html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
@@ -723,7 +773,7 @@ allDirs.forEach(unitId => {
                 }
                 if (task.type === "think_pair_share") {
                   html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
-                  html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || ""} ${task.text || task.question}</h4>`;
+                  html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question)}</h4>`;
                   html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
                    <thead><tr>
                      <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
@@ -1045,7 +1095,7 @@ allDirs.forEach(unitId => {
             for(let i=0; i<20; i++) { html += `<div class="task-lines-large"></div>`; }
           }
         } else if (lesson.gcse_task.topic) {
-          html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.topic}</p>`;
+          let tariff = getTariffBadge(lesson.gcse_task.topic); lesson.gcse_task.topic = tariff.cleanTopic; html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.topic}${tariff.badgeHtml}</p>`;
           
           if (lesson.gcse_task.topic.toLowerCase().includes("narrative account")) {
              html += `<div style="margin: 15px 0; padding-top: 12px; padding-bottom: 12px;   border-radius: 6px; ">
