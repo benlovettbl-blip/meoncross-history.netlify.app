@@ -1,85 +1,87 @@
 const fs = require('fs');
-const path = './public/units/early_modern_world/data.js';
+const path = require('path');
 
-let code = fs.readFileSync(path, 'utf8');
+const unitsToPatch = ['change_1450_1750', 'early_modern_world'];
+const baseDir = 'C:/Projects/meoncross-history.netlify.app/public/units';
 
-// Replace export statement so we can require it
-code = code.replace(/export const unitData\s*=\s*/, 'module.exports = ');
-fs.writeFileSync('temp_data.js', code);
+unitsToPatch.forEach(unit => {
+  const dataPath = path.join(baseDir, unit, 'data.js');
+  if (!fs.existsSync(dataPath)) {
+    console.log(`Skipping ${unit}, data.js not found at ${dataPath}`);
+    return;
+  }
+  
+  let content = fs.readFileSync(dataPath, 'utf8');
+  let originalContent = content;
 
-const data = require('./temp_data');
+  // 1. NER Stripping fixes
+  content = content.replace(/named  stood/g, 'named Nicolò Barbaro stood');
+  content = content.replace(/21-year-old  of the Ottoman/g, '21-year-old Sultan Mehmed II of the Ottoman');
+  content = content.replace(/When Protestant  took/g, 'When Protestant Queen Elizabeth I took');
+  content = content.replace(/In 1494,  issued/g, 'In 1494, Pope Alexander VI issued');
 
-// Patch Lesson 1: Add context to image-only blocks
-const l1 = data.lessons[0];
-if (l1.narrative_blocks[3] && !l1.narrative_blocks[3].text) {
-  l1.narrative_blocks[3].text = "Source B shows the reality of global trade in Canton, where European merchants were restricted and tightly controlled by the Chinese Emperor, challenging the myth of European dominance.";
-}
-if (l1.narrative_blocks[5] && !l1.narrative_blocks[5].text) {
-  l1.narrative_blocks[5].text = "Source C illustrates the fall of Constantinople in 1453 to the powerful Ottoman Empire, an event that deeply shocked Christian Europe and blocked their traditional trade routes to the East.";
-}
-if (l1.narrative_blocks[7] && !l1.narrative_blocks[7].text) {
-  l1.narrative_blocks[7].text = "Source D reveals the highly advanced metallurgical skills of the Benin Empire in West Africa, producing magnificent bronzes that rivalled or surpassed European art of the same period.";
-}
-if (l1.narrative_blocks[9] && !l1.narrative_blocks[9].text) {
-  l1.narrative_blocks[9].text = "Source E, a detail from the Catalan Atlas, highlights the staggering wealth of Mansa Musa and the Mali Empire, drawing desperate European merchants towards West African gold.";
-}
-
-// Patch Lesson 2: Add Summary Task
-const l2 = data.lessons[1];
-if (!l2.tasks) l2.tasks = [];
-l2.tasks.push({
-  title: "Summary Task",
-  type: "comprehension",
-  question: "Summarize in two sentences how the religious conflict of the Reformation directly triggered global exploration and early colonialism by European powers.",
-  model_answer: "The Reformation split Europe into hostile Catholic and Protestant camps, leading to intense geopolitical rivalry. To gain the upper hand, rival monarchs desperately sought new sources of wealth and new territories to spread their faith, driving them to explore and colonize the Americas."
+  if (content !== originalContent) {
+    fs.writeFileSync(dataPath, content, 'utf8');
+    console.log(`Patched ${unit} NER via regex.`);
+  }
 });
 
-// Patch Lesson 3: Add East India Company block
-const l3 = data.lessons[2];
-if (l3.narrative_blocks) {
-  // Insert before the last block or at the end
-  l3.narrative_blocks.push({
-    title: "The Rise of the East India Company",
-    text: "By 1600, the nature of empire was shifting from religious crusade to corporate monopoly. The English Crown granted a charter to the East India Company (EIC), a ruthless joint-stock corporation that built its own private army. The EIC eventually transitioned from trading spices in India to outright territorial conquest, laying the foundations for the British Empire in Asia.",
-    tasks: [
-      {
-        type: "comprehension",
-        question: "How did the East India Company change the nature of British empire-building?",
-        model_answer: "It shifted the focus from religious conflict to corporate profit, using a private company with its own army to conquer territory and monopolize trade in India."
-      }
-    ]
-  });
-}
+unitsToPatch.forEach(unit => {
+    const dataPath = path.join(baseDir, unit, 'data.js');
+    if (!fs.existsSync(dataPath)) return;
+    let content = fs.readFileSync(dataPath, 'utf8');
+    const varMatch = content.match(/const\s+(\w+)\s*=\s*(\{[\s\S]*\});\s*(?:window\.\w+\s*=\s*\w+;)?\s*$/);
+    if (!varMatch) {
+      console.log(`Could not match JSON in ${unit}`);
+      return;
+    }
+    
+    const varName = varMatch[1];
+    let dataObj;
+    try {
+        dataObj = JSON.parse(varMatch[2]);
+    } catch(e) {
+        console.error("Failed to parse JSON for " + unit, e.message);
+        return;
+    }
 
-// Patch Lesson 4: Add English Civil War block
-const l4 = data.lessons[3];
-if (l4.narrative_blocks) {
-  // Insert at a logical point
-  l4.narrative_blocks.push({
-    title: "The Ultimate Ideological Battle: The English Civil War",
-    text: "The struggle for control between the monarch and the people exploded into the English Civil War (1642–1651). King Charles I believed in his divine right to rule absolutely, while Parliament demanded a say in taxation and governance. The conflict ended with the shocking execution of the King in 1649, temporarily turning England into a republic and permanently establishing that a British monarch could not rule without the consent of Parliament.",
-    tasks: [
-      {
-        type: "comprehension",
-        question: "Why was the execution of King Charles I in 1649 such a significant turning point in the ideological battle for control of Britain?",
-        model_answer: "It destroyed the idea of the 'Divine Right of Kings' and permanently established that a monarch's power was limited and subject to the consent of Parliament."
-      }
-    ]
-  });
-}
+    let modified = false;
 
-// Patch Lesson 5: Add Summary Task
-const l5 = data.lessons[4];
-if (!l5.tasks) l5.tasks = [];
-l5.tasks.push({
-  title: "Summary Task",
-  type: "comprehension",
-  question: "Explain the connection between Britain's growing global trade and the shift in domestic economic power by 1750.",
-  model_answer: "The massive profits generated from global trade, the East India Company, and the Transatlantic Slave Trade created a new, wealthy middle class. This shifted economic power away from the traditional land-owning aristocracy and paved the way for the Industrial Revolution."
+    dataObj.lessons.forEach(lesson => {
+        // Task 3: Remove UI text
+        if (lesson.id === 'lesson_9' && lesson.narrative_blocks) {
+            lesson.narrative_blocks.forEach(block => {
+                if (block.text && block.text.includes('(Weighing the Evidence toggle tabs)')) {
+                    block.text = block.text.replace(/\(Weighing the Evidence toggle tabs\)/gi, '').trim();
+                    modified = true;
+                }
+            });
+        }
+
+        // Remove Canton from L3
+        if (lesson.id === 'lesson_3' && lesson.narrative_blocks) {
+            lesson.narrative_blocks.forEach(block => {
+                if (block.image === '/images/global_canton.jpg') {
+                    delete block.image;
+                    modified = true;
+                }
+            });
+        }
+
+        // Remove Britannia from L6 and L9
+        if ((lesson.id === 'lesson_6' || lesson.id === 'lesson_9') && lesson.narrative_blocks) {
+            lesson.narrative_blocks.forEach(block => {
+                if (block.image === '/images/global_britannia.jpg') {
+                    delete block.image;
+                    modified = true;
+                }
+            });
+        }
+    });
+
+    if (modified) {
+        let newContent = `const ${varName} = ` + JSON.stringify(dataObj, null, 2) + `;\n\nif (typeof window !== 'undefined') {\n  window.${varName} = ${varName};\n}\n`;
+        fs.writeFileSync(dataPath, newContent, 'utf8');
+        console.log(`Patched ${unit} via JSON object manipulation.`);
+    }
 });
-
-// Write it back as an ES module
-const newCode = 'export const unitData = ' + JSON.stringify(data, null, 2) + ';\n';
-fs.writeFileSync(path, newCode);
-
-console.log('Patching complete!');

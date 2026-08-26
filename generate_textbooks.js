@@ -43,27 +43,14 @@ allDirs.forEach(unitId => {
   if (!fs.existsSync(dataPath)) return;
 
   const dataContent = fs.readFileSync(dataPath, 'utf8');
-  let startIndex = dataContent.indexOf('export default {') !== -1 ? dataContent.indexOf('export default {') + 15 : -1;
+  let startIndex = dataContent.indexOf('{');
   if (startIndex === -1) {
-    startIndex = dataContent.indexOf('export const unitData = {') !== -1 ? dataContent.indexOf('export const unitData = {') + 24 : -1;
-  }
-  if (startIndex === -1) {
-    startIndex = dataContent.indexOf('const unitData = {') !== -1 ? dataContent.indexOf('const unitData = {') + 17 : -1;
-  }
-  if (startIndex === -1) {
-    startIndex = dataContent.indexOf('export const gwData = {') !== -1 ? dataContent.indexOf('export const gwData = {') + 22 : -1;
-  }
-  
-  if (startIndex === -1) {
-    startIndex = dataContent.indexOf('module.exports = {') !== -1 ? dataContent.indexOf('module.exports = {') + 17 : -1;
-  }
-  if (startIndex === -1) {
-    console.log(`Skipping workbook generation for ${unitId} (unsupported data format).`);
+    console.log(`Skipping workbook generation for ${unitId} (no opening brace found).`);
     return;
   }
   const endIndex = dataContent.lastIndexOf('}');
   if (endIndex === -1) return;
-  
+
   const jsonStr = dataContent.substring(startIndex, endIndex + 1);
   let unitData;
   try {
@@ -86,6 +73,7 @@ allDirs.forEach(unitId => {
   }
 
   unitData.lessons.forEach((lesson, lIdx) => {
+      let sourceCharCode = 65;
     lesson.globalIndex = lIdx;
     if (typeof sanitizeLessonData === 'function') sanitizeLessonData(lesson);
     
@@ -225,7 +213,7 @@ allDirs.forEach(unitId => {
     
     <div style="margin-top: 25px; padding: 25px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
       <h2 style="margin-top: 0; font-family: 'Playfair Display', serif; color: #1e3a8a; font-size: 22pt; border-bottom: 2px solid #93c5fd; padding-bottom: 10px; text-align: center;">Contents</h2>
-      <table style="width: 100%; border: none; margin-top: 15px;">
+      <table   style="page-break-inside: avoid; width: 100%; border: none; margin-top: 15px;">
         <tbody>
           ${periodLessons.map((l, i) => `
             <tr>
@@ -244,16 +232,13 @@ allDirs.forEach(unitId => {
     `;
 
   periodLessons.forEach((lesson, lessonIndex) => {
+      let sourceCharCode = 65;
     let globalQNum = 1;
     if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
     if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
-    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => {
-              if (unitId === 'great_war' || unitId === 'great_war_part2') {
-                if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, '');
-                if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, '');
-              } if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
-    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
+    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => { if (typeof unitId !== 'undefined' && (unitId === 'great_war' || unitId === 'great_war_part2')) { if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); } if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
     if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
     if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
@@ -467,6 +452,14 @@ allDirs.forEach(unitId => {
       lesson.narrative_blocks.forEach((block, bIdx) => {
         // Support for new 'images' array schema
         if (block.images && Array.isArray(block.images)) {
+          var blockSourceLetter = '';
+          if ((block.images && block.images.some(i => i.source_letter)) || block.source) {
+             blockSourceLetter = String.fromCharCode(sourceCharCode++);
+          }
+          var blockSourceLetter = '';
+          if ((block.images && block.images.some(i => i.source_letter)) || block.source) {
+             blockSourceLetter = String.fromCharCode(sourceCharCode++);
+          }
           block.images.forEach(imgObj => {
             let rawSrc = imgObj.src || imgObj.image;
             if (rawSrc) {
@@ -565,20 +558,150 @@ allDirs.forEach(unitId => {
               if (task.type === 'draw') {
                  html += `<div class="draw-task" style="display:none;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${task.qNum}: ${task.text || task.question}</div>`;
               } else {
+                 
+                                 if (task.type === "multiple_choice") {
+                  html += `<div class="task-box">`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  task.questions.forEach((q, qIdx) => {
+                    html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
+                    q.options.forEach((opt) => {
+                      html += `<li style="margin-bottom: 5px;"><input type="checkbox" style="margin-right:8px; position:relative; top:2px;">${opt}</li>`;
+                    });
+                    html += `</ul>`;
+                  });
+                  html += `</div>`;
+                  return;
+                }
+                if (task.type === "sorting") {
+                  html += `<div class="task-box">`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<ul style="list-style-type:none; padding-left:0;">`;
+                  task.events.forEach((ev) => {
+                    html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
+                  });
+                  html += `</ul></div>`;
+                  return;
+                }
+                if (task.type === "cloze") {
+                  let cloze = task.cloze_text.replace(
+                    /\[([^\]]+)\]/g,
+                    "______________",
+                  );
+                  html += `<div class="task-box">`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
+                  html += `<p style="line-height: 2;">${cloze}</p>`;
+                  html += `</div>`;
+                  return;
+                }
+
+                if (task.type === "physician_game") {
+                  html += `<div class="task-box">`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
+                  html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
+                  html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
+                  html += `<tbody>`;
+                  const patients = [
+                    {
+                      name: "William",
+                      symptoms:
+                        "High fever, shivering, and large, painful black swellings (buboes) in his armpits.",
+                    },
+                    {
+                      name: "Agnes",
+                      symptoms:
+                        "Coughing up blood, severe chest pain, and struggling to breathe.",
+                    },
+                    {
+                      name: "John",
+                      symptoms:
+                        "Fingers and toes have turned completely black. High fever and vomiting.",
+                    },
+                    {
+                      name: "Thomas",
+                      symptoms:
+                        "A runny nose, a mild cough, and feeling a bit tired.",
+                    },
+                  ];
+                  patients.forEach((p) => {
+                    html += `<tr>
+                      <td style="border:1px solid #333; padding:8px; font-weight:bold;">${p.name}</td>
+                      <td style="border:1px solid #333; padding:8px;">${p.symptoms}</td>
+                      <td style="border:1px solid #333; padding:8px; height: 60px;"></td>
+                    </tr>`;
+                  });
+                  html += `</tbody></table></div>`;
+                  return;
+                }
+                if (task.type === "matching") {
+                  html += `<div class="task-box">`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
+                  const rightMixed = [...task.pairs].sort(
+                    () => Math.random() - 0.5,
+                  );
+                  task.pairs.forEach((p, i) => {
+                    html += `<tr>
+                     <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
+                     <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
+                     <td style="border:1px solid #333; padding:10px; width:40%;">${(rightMixed[i].right || '').replace(/\n/g, '<br>')}</td>
+                   </tr>`;
+                  });
+                  html += `</tbody></table></div>`;
+                  return;
+                }
+                if (task.type === "table_planner") {
+                  html += `<div class="task-box">`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
+                  task.columns.forEach((c) => {
+                    html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
+                  });
+                  html += `</tr></thead><tbody>`;
+                  for (let i = 0; i < task.rows; i++) {
+                    html += `<tr>`;
+                    task.columns.forEach(() => {
+                      html += `<td style="border: 1px solid #333; padding: 8px; height: 60px;"></td>`;
+                    });
+                    html += `</tr>`;
+                  }
+                  html += `</tbody></table></div>`;
+                  return;
+                }
+                if (task.type === "think_pair_share") {
+                  html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
+                  html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || ""} ${task.text || task.question}</h4>`;
+                  html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
+                   <thead><tr>
+                     <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
+                     <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">2. Partner's Thoughts (Pair)</th>
+                   </tr></thead>
+                   <tbody><tr>
+                     <td style="border:1px solid #333; padding:8px; height:120px;"></td>
+                     <td style="border:1px solid #333; padding:8px; height:120px;"></td>
+                   </tr></tbody>
+                 </table></div>`;
+                  return;
+                }
                  if (task.type === 'vocab_match' || ((unitId === 'great_war' || unitId === 'great_war_part2') && task.type === 'drag_drop_timeline')) {
                     // Do nothing
-                  } else {
-                    html += `<p style="margin-top:10px;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${task.qNum}. ${task.text || task.question}</strong></p>`;
-                  }
+                 } else {
+                    html += `<p style="margin-top:10px;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${task.qNum}. ${task.text || task.question || task.instruction || task.instructions || task.title || ''}</strong></p>`;
+                    if (task.type === 'extended_writing' && task.instructions) {
+                        html += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
+                    }
+                 }
                  let linesToDraw = 3;
-                 let tText = (task.text || task.question || '').toLowerCase();
-                 if (task.type === 'analysis' || task.type === 'debate' || tText.includes('explain') || tText.includes('describe') || tText.includes('two ') || tText.length > 60) {
+                 let tText = (task.text || task.question || task.instruction || task.instructions || '').toLowerCase();
+                 if (task.type === 'extended_writing') {
+                    linesToDraw = 18;
+                 } else if (task.type === 'analysis' || task.type === 'debate' || tText.includes('explain') || tText.includes('describe') || tText.includes('two ') || tText.length > 60) {
                     linesToDraw = 6;
                  }
-                 for(let i=0; i<linesToDraw; i++) {
-                    html += ``;
-                 }
+                 for(let i=0; i<linesToDraw; i++) { html += ``; }
               }
+           
             });
             html += `</div>`;
           }
@@ -809,7 +932,7 @@ allDirs.forEach(unitId => {
 
           if (unitId === 'edexcel_medicine' || unitId === 'weimar_nazi_germany') {
             html += `<h3 style="margin-top: 0;">Source Evaluation Notes</h3>
-              <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px; ">
+              <table   style="page-break-inside: avoid; width: 100%; border-collapse: collapse; margin-bottom: 10px; ">
                 <tr><th style=" padding-top: 8px; padding-bottom: 8px; width: 10%;">Source</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">N.O.P.</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">Content</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">Context</th></tr>
                 <tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">A</td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td></tr>
                 <tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">B</td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td></tr>
@@ -895,6 +1018,14 @@ allDirs.forEach(unitId => {
   html = html.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, ''); // Remove interactive buttons
   html = html.replace(/display:\s*none;?/gi, 'display: block; margin-top: 15px;'); // Stack toggle tabs
   html = html.replace(/(?:using the toggle tabs,?\s*)/ig, ''); // Remove app-only phrasing
+
+  
+  // Dynamically inject correct page numbers for ANY manual placeholder references 
+  // Syntax: [[PAGE_REF:Marker_Name]] e.g. [[PAGE_REF:L3_Start]]
+  html = html.replace(/\[\[PAGE_REF:([a-zA-Z0-9_]+)\]\]/g, (match, marker) => {
+    const markerObj = pdfMarkers.find(m => m.marker === marker);
+    return markerObj ? markerObj.page : 'XX';
+  });
 
   const filename = period.name === 'full' ? 'textbook.html' : `textbook_${period.name}.html`;
   const outPath = path.join(publicUnitsDir, unitId, filename);

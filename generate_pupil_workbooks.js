@@ -29,12 +29,18 @@ const formatText = (text) => {
     .replace(/\*(.*?)\*/g, "<em>$1</em>");
 };
 
-const badgeSource = (title) => {
-  if (!title) return "";
-  return title.replace(
-    /(Source [A-Z])/i,
-    '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>',
-  );
+const badgeSource = (title, overrideLetter = null) => {
+    if (!title) return '';
+    if (overrideLetter) {
+        if (/(Source )\s*[A-Z]/i.test(title)) {
+            title = title.replace(/(Source )\s*[A-Z]/i, '$1' + overrideLetter);
+        } else if (/(Source)(?!s)/i.test(title)) {
+            title = title.replace(/(Source)/i, '$1 ' + overrideLetter + ':');
+        } else {
+            title = 'Source ' + overrideLetter + ': ' + title;
+        }
+    }
+    return title.replace(/(Source [A-Z])/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
 };
 
 const ignoredDirs = ["node_modules", "public", ".git", ".agents", "dist"];
@@ -56,42 +62,12 @@ allDirs.forEach((unitId) => {
   if (!fs.existsSync(dataPath)) return;
 
   const dataContent = fs.readFileSync(dataPath, "utf8");
-  let startIndex =
-    dataContent.indexOf("export default {") !== -1
-      ? dataContent.indexOf("export default {") + 15
-      : -1;
+  let startIndex = dataContent.indexOf('{');
   if (startIndex === -1) {
-    startIndex =
-      dataContent.indexOf("export const unitData = {") !== -1
-        ? dataContent.indexOf("export const unitData = {") + 24
-        : -1;
-  }
-  if (startIndex === -1) {
-    startIndex =
-      dataContent.indexOf("const unitData = {") !== -1
-        ? dataContent.indexOf("const unitData = {") + 17
-        : -1;
-  }
-  if (startIndex === -1) {
-    startIndex =
-      dataContent.indexOf("export const gwData = {") !== -1
-        ? dataContent.indexOf("export const gwData = {") + 22
-        : -1;
-  }
-
-  if (startIndex === -1) {
-    startIndex =
-      dataContent.indexOf("module.exports = {") !== -1
-        ? dataContent.indexOf("module.exports = {") + 17
-        : -1;
-  }
-  if (startIndex === -1) {
-    console.log(
-      `Skipping workbook generation for ${unitId} (unsupported data format).`,
-    );
+    console.log(`Skipping workbook generation for ${unitId} (no opening brace found).`);
     return;
   }
-  const endIndex = dataContent.lastIndexOf("}");
+  const endIndex = dataContent.lastIndexOf('}');
   if (endIndex === -1) return;
 
   const jsonStr = dataContent.substring(startIndex, endIndex + 1);
@@ -159,6 +135,11 @@ allDirs.forEach((unitId) => {
   });
 
   unitData.lessons.forEach((lesson, lIdx) => {
+      let allVideos = [];
+      let imgTags = "";
+      let sources = [];
+      let interpretations = [];
+      let sourceCharCode = 65;
     if (typeof sanitizeLessonData === "function") sanitizeLessonData(lesson);
 
     const startMarker = pdfMarkers.find((m) => m.marker === `L${lIdx}_Start`);
@@ -246,7 +227,7 @@ allDirs.forEach((unitId) => {
     .source-container img { max-height: 250px !important; object-fit: contain !important; display: block; margin: 0 auto; }
     .source-caption { font-size: 9.5pt; color: #64748b; font-style: italic; margin-top: 10px; text-align: center; font-family: 'Inter', sans-serif; }
     .cover-image { width: 100%; max-width: 600px; height: auto; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
-    table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
+    table { page-break-inside: avoid; width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
     th {  color: white; padding-top: 12px; padding-bottom: 12px; font-weight: 600; text-align: left; border-right: 1px solid #3b82f6; }
     td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 5px; padding-bottom: 5px; }
     tr:last-child td { border-bottom: none; }
@@ -301,11 +282,11 @@ allDirs.forEach((unitId) => {
 
     let progressTrackerRows = "";
     periodLessons.forEach((l, i) => {
-      progressTrackerRows += `<tr style="background-color: #f1f5f9; height: 35px;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>`;
+      progressTrackerRows += `<tr style="background-color: #f1f5f9; height: 35px;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>\n`;
     });
     if (unitData.assessments) {
       unitData.assessments.forEach((a) => {
-        progressTrackerRows += `<tr style="height: 35px;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">Assessment: ${a.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>`;
+        progressTrackerRows += `<tr style="height: 35px;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">Assessment: ${a.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>\n`;
       });
     }
 
@@ -361,7 +342,7 @@ allDirs.forEach((unitId) => {
     <div class="tracker-page" style="page-break-after: always; padding: 20px;">
       <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 25px; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">Progress & Assessment Tracker</h3>
       <div style="width: 100%; display: flex; justify-content: center;">
-        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 11pt; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+        <table style="page-break-inside: avoid; width: 100%; border-collapse: collapse; text-align: left; font-size: 11pt; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
           <thead>
             <tr style="background-color: #1a237e; color: white;">
               <th style="border: 1px solid #333; padding: 10px; width: 35%;">Lesson / Assessment Title</th>
@@ -385,37 +366,22 @@ allDirs.forEach((unitId) => {
     `;
 
     periodLessons.forEach((lesson, lessonIndex) => {
+      let allVideos = [];
+      let imgTags = "";
+      let sources = [];
+      let interpretations = [];
+      let sourceCharCode = 65;
       let globalQNum = 1;
-      if (lesson.primary_source && lesson.primary_source.question)
-        lesson.primary_source.qNum = globalQNum++;
-      if (lesson.sources)
-        lesson.sources.forEach((source) => {
-          if (source.question) source.qNum = globalQNum++;
-        });
-      if (lesson.tasks)
-        lesson.tasks.forEach((task) => (task.qNum = globalQNum++));
-      if (lesson.historians_corner && lesson.historians_corner.stretch_question)
-        lesson.historians_corner.qNum = globalQNum++;
-      if (lesson.narrative_blocks)
-        lesson.narrative_blocks.forEach((block) => {
-          if (block.tasks)
-            block.tasks.forEach((task) => {
-              if (unitId === "great_war" || unitId === "great_war_part2") {
-                if (typeof task.text === "string")
-                  task.text = task.text.replace(/^Task\s*\d*:\s*/i, "");
-                if (typeof task.question === "string")
-                  task.question = task.question.replace(/^Task\s*\d*:\s*/i, "");
-              }
-              if (task.type !== "vocab_match") task.qNum = globalQNum++;
-            });
-          if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
-        });
-      if (lesson.extended && lesson.extended.question)
-        lesson.extended.qNum = globalQNum++;
-      if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
-      if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
-
-      html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
+    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
+    if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
+    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => { if (typeof unitId !== 'undefined' && (unitId === 'great_war' || unitId === 'great_war_part2')) { if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); } if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
+    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
+    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
+    if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+    
+    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
       if (lesson.startPage) {
         html += `<div style="font-size: 11pt; color: #555; margin-bottom: 15px; font-style: italic;">(See Textbook Page ${lesson.startPage})</div>`;
       } else {
@@ -474,7 +440,7 @@ allDirs.forEach((unitId) => {
             renderImages = false;
         }
 
-        let imgTags = "";
+        imgTags = "";
         if (renderImages) {
           imgTags = srcs
             .map((src) => {
@@ -494,9 +460,9 @@ allDirs.forEach((unitId) => {
 
         html += `
         <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
-          ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title)}</strong><br>` : ""}
+          ${(renderImages && lesson.primary_source.title) ? `<strong>${badgeSource(lesson.primary_source.title, String.fromCharCode(sourceCharCode++))}</strong><br>` : ""}
           <div style="${srcs.length > 1 ? "display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;" : "display: flex; justify-content: center; gap: 10px;"} margin: 15px 0;">${imgTags}</div>
-          ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ""}
+          ${(renderImages && lesson.primary_source.caption) ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ""}
           ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace("Enquiry: ", "")}${lesson.primary_source.page ? ` [p. ${lesson.primary_source.page}]` : ""}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ""}
         </div>
       `;
@@ -628,7 +594,7 @@ allDirs.forEach((unitId) => {
             html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
             let cloze = lesson.vocab_cloze_text.replace(
               /\[.*?\]/g,
-              "__________________",
+              '<span style="display:inline-block; width: 100px; border-bottom: 1px solid #333; margin: 0 5px;">&nbsp;</span>',
             );
             html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
           } else {
@@ -741,14 +707,14 @@ allDirs.forEach((unitId) => {
               block.tasks.forEach((task) => {
                 if (task.type === "drawing" || task.type === "draw") {
                   html += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
-                  html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${task.qNum || ""} ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
+                  html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${task.qNum || ""} ${task.text || task.question}</h4>`;
                   html += `<div style="height: 250px;"></div>`;
                   html += `</div>`;
                   return;
                 }
                 if (task.type === "multiple_choice") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   task.questions.forEach((q, qIdx) => {
                     html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
                     q.options.forEach((opt) => {
@@ -761,7 +727,7 @@ allDirs.forEach((unitId) => {
                 }
                 if (task.type === "sorting") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   html += `<ul style="list-style-type:none; padding-left:0;">`;
                   task.events.forEach((ev) => {
                     html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
@@ -775,7 +741,7 @@ allDirs.forEach((unitId) => {
                     "______________",
                   );
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
                   html += `<p style="line-height: 2;">${cloze}</p>`;
                   html += `</div>`;
@@ -784,9 +750,9 @@ allDirs.forEach((unitId) => {
 
                 if (task.type === "physician_game") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
-                  html += `<table style="width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
+                  html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
                   html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
                   html += `<tbody>`;
                   const patients = [
@@ -823,16 +789,16 @@ allDirs.forEach((unitId) => {
                 }
                 if (task.type === "matching") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
-                  html += `<table style="width:100%; border:none;"><tbody>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
                   const rightMixed = [...task.pairs].sort(
                     () => Math.random() - 0.5,
                   );
                   task.pairs.forEach((p, i) => {
                     html += `<tr>
-                     <td style="border:1px solid #333; padding:10px; width:40%;">${p.left}</td>
+                     <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
                      <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
-                     <td style="border:1px solid #333; padding:10px; width:40%;">${rightMixed[i].right}</td>
+                     <td style="border:1px solid #333; padding:10px; width:40%;">${(rightMixed[i].right || '').replace(/\n/g, '<br>')}</td>
                    </tr>`;
                   });
                   html += `</tbody></table></div>`;
@@ -840,8 +806,8 @@ allDirs.forEach((unitId) => {
                 }
                 if (task.type === "table_planner") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
-                  html += `<table style="width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
+                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+                  html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
                   task.columns.forEach((c) => {
                     html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
                   });
@@ -858,8 +824,8 @@ allDirs.forEach((unitId) => {
                 }
                 if (task.type === "think_pair_share") {
                   html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
-                  html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || ""} ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
-                  html += `<table style="width:100%; border-collapse:collapse; margin-top:10px;">
+                  html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || ""} ${task.text || task.question}</h4>`;
+                  html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
                    <thead><tr>
                      <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
                      <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">2. Partner's Thoughts (Pair)</th>
@@ -878,7 +844,10 @@ allDirs.forEach((unitId) => {
                   ) {
                     // Do nothing
                   } else {
-                    html += `<p style="margin-top:10px;"><strong>Q${task.qNum}. ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ""}</strong></p>`;
+                    html += `<p style="margin-top:10px;"><strong>Q${task.qNum}. ${task.text || task.question}</strong></p>`;
+                    if (task.type === 'extended_writing' && task.instructions) {
+                        html += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
+                    }
                   }
                   let linesToDraw = 3;
                   let tText = (task.text || task.question || "").toLowerCase();
@@ -951,24 +920,25 @@ allDirs.forEach((unitId) => {
           lesson.pair_share.sources.forEach((srcObj) => {
             sourceHTML +=
               '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
-            if (srcObj.type === "visual") {
+            if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
               let imgSrc =
                 typeof resolveAssetPath === "function"
-                  ? resolveAssetPath(srcObj.src, 2)
-                  : srcObj.src;
+                  ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
+                  : (srcObj.src || srcObj.source || srcObj.image);
               sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-            } else {
+            } 
+        if (srcObj.text || srcObj.content) { 
               sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
             }
             if (srcObj.title)
-              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">${srcObj.title}</p>`;
+              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
             sourceHTML += "</div>";
           });
           sourceHTML += "</div>";
           html += sourceHTML;
         }
 
-        html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Prompt: ${lesson.pair_share.prompt}</p>`;
+        html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${lesson.pair_share.qNum}. Prompt: ${lesson.pair_share.prompt}</p>`;
         if (lesson.pair_share.think)
           html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
         html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
@@ -979,7 +949,16 @@ allDirs.forEach((unitId) => {
         html += `</div>`;
       }
 
-      // Historians Corner (Removed for Pupil Workbook)
+      // Historians Corner
+    if (lesson.historians_corner) {
+      html += `<div class="task-box" style=" ">`;
+      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
+      html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
+      if (lesson.historians_corner.stretch_question) {
+        html += `<div style="margin-top: 15px; font-weight: bold;">Q${lesson.historians_corner.qNum}. ${lesson.historians_corner.stretch_question}</div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
+      }
+      html += `</div>`;
+    }
 
       if (lesson.tasks && lesson.tasks.length > 0) {
         html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
@@ -1036,14 +1015,14 @@ allDirs.forEach((unitId) => {
 
           if (task.type === "drawing" || task.type === "draw") {
             html += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
-            html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${task.qNum || tIdx + 1} ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
+            html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${task.qNum || tIdx + 1} ${task.text || task.question}</h4>`;
             html += `<div style="height: 250px;"></div>`;
             html += `</div>`;
             return;
           }
           if (task.type === "multiple_choice") {
             html += `<div class="task-box">`;
-            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text}</h4>`;
+            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
             task.questions.forEach((q, qIdx) => {
               html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
               q.options.forEach((opt) => {
@@ -1056,7 +1035,7 @@ allDirs.forEach((unitId) => {
           }
           if (task.type === "sorting") {
             html += `<div class="task-box">`;
-            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text}</h4>`;
+            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
             html += `<ul style="list-style-type:none; padding-left:0;">`;
             task.events.forEach((ev) => {
               html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
@@ -1070,7 +1049,7 @@ allDirs.forEach((unitId) => {
               "______________",
             );
             html += `<div class="task-box">`;
-            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text}</h4>`;
+            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
             html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
             html += `<p style="line-height: 2;">${cloze}</p>`;
             html += `</div>`;
@@ -1079,9 +1058,9 @@ allDirs.forEach((unitId) => {
 
           if (task.type === "physician_game") {
             html += `<div class="task-box">`;
-            html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
+            html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
             html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
-            html += `<table style="width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
+            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
             html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
             html += `<tbody>`;
             const patients = [
@@ -1118,14 +1097,14 @@ allDirs.forEach((unitId) => {
           }
           if (task.type === "matching") {
             html += `<div class="task-box">`;
-            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text}</h4>`;
-            html += `<table style="width:100%; border:none;"><tbody>`;
+            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
             const rightMixed = [...task.pairs].sort(() => Math.random() - 0.5);
             task.pairs.forEach((p, i) => {
               html += `<tr>
-                 <td style="border:1px solid #333; padding:10px; width:40%;">${p.left}</td>
+                 <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
                  <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
-                 <td style="border:1px solid #333; padding:10px; width:40%;">${rightMixed[i].right}</td>
+                 <td style="border:1px solid #333; padding:10px; width:40%;">${(rightMixed[i].right || '').replace(/\n/g, '<br>')}</td>
                </tr>`;
             });
             html += `</tbody></table></div>`;
@@ -1133,8 +1112,8 @@ allDirs.forEach((unitId) => {
           }
           if (task.type === "table_planner") {
             html += `<div class="task-box">`;
-            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text}</h4>`;
-            html += `<table style="width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
+            html += `<h4 style="margin-top: 0;">Q${task.qNum || tIdx + 1} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
+            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
             task.columns.forEach((c) => {
               html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
             });
@@ -1151,8 +1130,8 @@ allDirs.forEach((unitId) => {
           }
           if (task.type === "think_pair_share") {
             html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
-            html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || tIdx + 1} ${task.text || task.question}${task.page ? ` [p. ${task.page}]` : ""}</h4>`;
-            html += `<table style="width:100%; border-collapse:collapse; margin-top:10px;">
+            html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || tIdx + 1} ${task.text || task.question}</h4>`;
+            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
                <thead><tr>
                  <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
                  <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">2. Partner's Thoughts (Pair)</th>
@@ -1166,6 +1145,7 @@ allDirs.forEach((unitId) => {
           }
 
           let qText = task.question || task.text || "";
+          qText = qText.replace(/\(Weighing the Evidence toggle tabs\)/ig, '');
           html += `<div class="task-box" style="page-break-inside: auto;">`;
 
           let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
@@ -1252,7 +1232,19 @@ allDirs.forEach((unitId) => {
         };
 
         if (lesson.extended && lesson.extended.question) {
+          
+          let letterA = 'A';
+          let letterB = 'B';
           if (lesson.extended.source_a || lesson.extended.source_b) {
+              letterA = String.fromCharCode(sourceCharCode++);
+              if (lesson.extended.source_b) letterB = String.fromCharCode(sourceCharCode++);
+              
+              if (lesson.extended.question) {
+                  lesson.extended.question = lesson.extended.question.replace(/Sources\s+A\s+and\s+B/g, 'Sources ' + letterA + ' and ' + letterB);
+                  lesson.extended.question = lesson.extended.question.replace(/Source\s+A/g, 'Source ' + letterA);
+                  lesson.extended.question = lesson.extended.question.replace(/Source\s+B/g, 'Source ' + letterB);
+              }
+
             html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 10px; ">`;
             if (lesson.extended.source_a) {
               const prov =
@@ -1270,7 +1262,7 @@ allDirs.forEach((unitId) => {
                 ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath(content, 2) : `../..${content.startsWith("/") ? content : "/" + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
                 : content.replace(/\n/g, "<br>");
               html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
-                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A</strong>
+                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterA}</strong>
                   ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ""}
                   <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
                     ${renderedA}
@@ -1293,7 +1285,7 @@ allDirs.forEach((unitId) => {
                 ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath(content, 2) : `../..${content.startsWith("/") ? content : "/" + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
                 : content.replace(/\n/g, "<br>");
               html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
-                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B</strong>
+                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterB}</strong>
                   ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ""}
                   <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
                     ${renderedB}
@@ -1344,11 +1336,20 @@ allDirs.forEach((unitId) => {
               let pbBefore = isLong
                 ? "page-break-before: always; margin-top: 30px;"
                 : "margin-top: 15px;";
-              html += `<div style="${pbBefore}"><strong>${task.examQNum ? "Exam Q" + task.examQNum + ". " : task.qNum ? "Q" + task.qNum + ". " : ""}${task.text}</strong></div>`;
+              html += `<div style="${pbBefore}"><strong>${task.examQNum ? "Exam Q" + task.examQNum + ". " : task.qNum ? "Q" + task.qNum + ". " : ""}${task.text || task.question || task.instruction || task.title || ''}</strong></div>`;
               renderLines(task.text);
               html += `<br>`;
             });
           } else if (lesson.gcse_task.sources) {
+          let letterA = String.fromCharCode(sourceCharCode++);
+          let letterB = lesson.gcse_task.sources.length > 1 ? String.fromCharCode(sourceCharCode++) : '';
+          
+          if (lesson.gcse_task.topic) {
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Sources\s+A\s+and\s+B/g, 'Sources ' + letterA + ' and ' + letterB);
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\s+A/g, 'Source ' + letterA);
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\s+B/g, 'Source ' + letterB);
+          }
+
             html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
             let topicText = lesson.gcse_task.topic || "";
             let tLower = topicText.toLowerCase();
@@ -1373,16 +1374,17 @@ allDirs.forEach((unitId) => {
             lesson.gcse_task.sources.forEach((srcObj) => {
               sourceHTML +=
                 '<div style="flex: 1; border: 1px solid #ccc; padding-top: 5px; padding-bottom: 5px; text-align: center; ">';
-              if (srcObj.type === "visual") {
+              if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
                 let imgSrc =
                   typeof resolveAssetPath === "function"
-                    ? resolveAssetPath(srcObj.src, 2)
-                    : srcObj.src;
+                    ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
+                    : (srcObj.src || srcObj.source || srcObj.image);
                 sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-              } else {
+              } 
+        if (srcObj.text || srcObj.content) { 
                 sourceHTML += `<blockquote style="font-size: 12pt; font-style: italic; margin: 0 0 10px 0; text-align: left;">${srcObj.text}</blockquote>`;
               }
-              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">${srcObj.title}</p>`;
+              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
               sourceHTML += "</div>";
             });
             sourceHTML += "</div>";
@@ -1394,10 +1396,10 @@ allDirs.forEach((unitId) => {
               unitId === "weimar_nazi_germany"
             ) {
               html += `<h3 style="margin-top: 0;">Source Evaluation Notes</h3>
-              <table style="width: 100%; border-collapse: collapse; margin-bottom: 10px; ">
+              <table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width: 100%; border-collapse: collapse; margin-bottom: 10px; ">
                 <tr><th style=" padding-top: 8px; padding-bottom: 8px; width: 10%;">Source</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">N.O.P.</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">Content</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">Context</th></tr>
-                <tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">A</td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td></tr>
-                <tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">B</td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td></tr>
+                <tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">${letterA}</td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td></tr>
+                <tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">${letterB}</td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td><td style=" padding-top: 8px; padding-bottom: 8px;"></td></tr>
               </table>`;
               html += `<h3 style="margin-top: 0;">Final Written Evaluation</h3>`;
               for (let i = 0; i < 10; i++) {
@@ -1443,11 +1445,11 @@ allDirs.forEach((unitId) => {
           html += `<div style="page-break-inside: auto; margin-bottom: 15px; margin-top: 20px;">`;
           lesson.sources.forEach((source, sIdx) => {
             let sourceContent = source.content || source.text;
-            if ((source.src || source.source) || source.caption || sourceContent) {
+            if ((source.src || source.source || source.image) || source.caption || sourceContent) {
               html += `
               <div class="source-container" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 6px;">
                 ${source.title ? `<strong style="font-size: 11pt;">${source.title}</strong><br>` : ""}
-                ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source" style="max-width: 100%; max-height: 250px; margin-top: 10px;">` : ""}
+                ${(source.src || source.source || source.image) ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath((source.src || source.source || source.image), 2) : (source.src || source.source || source.image)}" alt="Source" style="max-width: 100%; max-height: 250px; margin-top: 10px;">` : ""}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${formatText(sourceContent)}</blockquote>` : ""}
                 ${source.caption ? `<div class="source-caption" style="margin-top: 5px; font-size: 10pt;">${source.caption}</div>` : ""}
               </div>
@@ -1579,8 +1581,8 @@ allDirs.forEach((unitId) => {
             html += `</div>`; // Close the initial task-box
             html += `<div style="page-break-before: always; page-break-inside: auto; margin-top: 20px;">`; // Force new page for sources
             html += `<h2 style="margin-top: 15px; margin-bottom: 15px; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Sources & Interpretations</h2>`;
-            let sources = [];
-            let interpretations = [];
+            sources = [];
+            interpretations = [];
             epStimulus.forEach((stim, i) => {
               let sTitle =
                 stim.title || `Source ${String.fromCharCode(65 + i)}`;
@@ -1702,7 +1704,7 @@ allDirs.forEach((unitId) => {
         html += `</div>`;
       }
 
-      let allVideos = [];
+      allVideos = [];
       if (lesson.video) {
         if (Array.isArray(lesson.video))
           allVideos = allVideos.concat(lesson.video);
@@ -1734,7 +1736,7 @@ allDirs.forEach((unitId) => {
           if (lesson.gcse_task) {
             if (lesson.gcse_task.tasks) {
               lesson.gcse_task.tasks.forEach((task) => {
-                allExamTasksHtml += `<div style="margin-top: 10px;"><strong>Q${task.qNum ? task.qNum + "." : ""} ${task.text}</strong></div>`;
+                allExamTasksHtml += `<div style="margin-top: 10px;"><strong>Q${task.qNum ? task.qNum + "." : ""} ${task.text || task.question || task.instruction || task.title || ''}</strong></div>`;
               });
             } else if (lesson.gcse_task.topic) {
               let topicText = lesson.gcse_task.topic || "";
@@ -1808,7 +1810,7 @@ allDirs.forEach((unitId) => {
     <div style="page-break-before: always; padding: 20px;">
       <h2 style="text-align: center; font-size: 18pt; margin-bottom: 15px; font-family: 'Playfair Display', serif; color: #1a237e;">Factors Overview: ${periodTitle}</h2>
       <p style="text-align: center; font-size: 12pt; margin-bottom: 15px;">Edexcel focuses heavily on the factors that drove medical progress (or held it back). For each factor below, write one specific historical example from this period that either helped or hindered medical progress.</p>
-      <table style="width: 100%; border-collapse: collapse; ">
+      <table   style="page-break-inside: avoid; width: 100%; border-collapse: collapse; border: 2px solid #1a237e;">
         <thead>
           <tr style="background-color: #1a237e; color: white;">
             <th style="padding-top: 5px; padding-bottom: 5px; border: 1px solid #ccc; width: 25%; font-size: 12pt;">Factor</th>
@@ -1865,8 +1867,8 @@ allDirs.forEach((unitId) => {
         }
       });
     }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
+    // replaceLines('task-lines');
+    // replaceLines('task-lines-large');
     document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
   });
 </script></body></html>`;
@@ -1889,7 +1891,15 @@ allDirs.forEach((unitId) => {
     ); // Stack toggle tabs
     html = html.replace(/(?:using the toggle tabs,?\s*)/gi, ""); // Remove app-only phrasing
 
-    const filename =
+    
+  // Dynamically inject correct page numbers for ANY manual placeholder references 
+  // Syntax: [[PAGE_REF:Marker_Name]] e.g. [[PAGE_REF:L3_Start]]
+  html = html.replace(/\[\[PAGE_REF:([a-zA-Z0-9_]+)\]\]/g, (match, marker) => {
+    const markerObj = pdfMarkers.find(m => m.marker === marker);
+    return markerObj ? markerObj.page : 'XX';
+  });
+
+  const filename =
       period.name === "full"
         ? "pupil_workbook.html"
         : `pupil_workbook_${period.name}.html`;

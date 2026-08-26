@@ -28,12 +28,18 @@ try {
 
   // Step 4: Extract SRC_MARKER page numbers from Textbook PDF
   console.log(`\n[4/7] Extracting page markers from Textbook PDF...`);
-  const textbookPdfPath = `public/pdfs/${unitId}_textbook.pdf`;
   const markerJsonPath = `scratch/pdf_markers_${unitId}.json`;
-  if (fs.existsSync(textbookPdfPath)) {
-    execSync(`node scratch/puppeteer_pdf_extractor.js ${textbookPdfPath} ${markerJsonPath}`, { stdio: 'inherit' });
+  if (fs.existsSync(markerJsonPath)) {
+    fs.unlinkSync(markerJsonPath);
+  }
+  const pdfFiles = fs.readdirSync('public/pdfs').filter(f => f.startsWith(`${unitId}_textbook`) && f.endsWith('.pdf'));
+  if (pdfFiles.length > 0) {
+    pdfFiles.forEach(f => {
+      const p = `public/pdfs/${f}`;
+      execSync(`node scratch/puppeteer_pdf_extractor.js ${p} ${markerJsonPath}`, { stdio: 'inherit' });
+    });
   } else {
-    console.error(`Warning: Textbook PDF not found at ${textbookPdfPath}. Skipping marker extraction.`);
+    console.error(`Warning: No Textbook PDFs found for ${unitId}. Skipping marker extraction.`);
   }
 
   // Step 4.5: Re-generate and re-export the Textbook with accurate Table of Contents

@@ -2783,19 +2783,17 @@ if (lesson.pair_share) {
         `;
       }
 
-      if (lesson.extended && (lesson.extended.paragraphs || lesson.extended.title)) {
+      if (lesson.extended && lesson.extended.paragraphs) {
         if (lesson.extended.title) {
           extHtml += `<h3 style="color: #0f172a;">${lesson.extended.title}</h3>`;
         }
-        if (lesson.extended.paragraphs) {
-          lesson.extended.paragraphs.forEach(p => {
+        lesson.extended.paragraphs.forEach(p => {
              extHtml += `<p style="color: #334155; font-size: 1.05rem; line-height: 1.6;">${formatBold(p)}</p>`;
-          });
-        }
+        });
       }
       extHtml += `</div>`;
       
-      if (lesson.debate_prep || (lesson.extended && (lesson.extended.paragraphs || lesson.extended.title))) {
+      if (lesson.debate_prep || (lesson.extended && lesson.extended.paragraphs)) {
          htmlPairShare += extHtml;
       }
     }

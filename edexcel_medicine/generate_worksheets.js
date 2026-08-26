@@ -20,8 +20,21 @@ const formatText = (text) => {
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
 };
 
-unitData.lessons.forEach(lesson => {
+  const markersPath = path.join(__dirname, '../scratch', `pdf_markers_edexcel_medicine.json`);
+  let pdfMarkers = [];
+  if (fs.existsSync(markersPath)) {
+    try {
+      pdfMarkers = JSON.parse(fs.readFileSync(markersPath, 'utf8'));
+    } catch(e) {}
+  }
+
+unitData.lessons.forEach((lesson, lIdx) => {
   sanitizeLessonData(lesson);
+  
+  const startMarker = pdfMarkers.find(m => m.marker === `L${lIdx}_Start`);
+  if (startMarker) {
+    lesson.startPage = startMarker.page;
+  }
 });
 
 
@@ -152,15 +165,20 @@ periods.forEach(period => {
 periodLessons.forEach((lesson, lessonIndex) => {
   let globalQNum = 1;
   if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
-  if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
-  if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
-  if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
-  if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => task.qNum = globalQNum++); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
-  if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
-  if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
-  if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+    if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
+    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => { if (typeof unitId !== 'undefined' && (unitId === 'great_war' || unitId === 'great_war_part2')) { if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); } if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
+    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
+    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
+    if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
   
-  html += `<h2 style="margin-bottom: 20px;">${formatText(lesson.title)}</h2>`;
+  html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
+    if (lesson.startPage) {
+      html += `<div style="font-size: 11pt; color: #555; margin-bottom: 15px; font-style: italic;">(See Textbook Page ${lesson.startPage})</div>`;
+    } else {
+      html += `<div style="margin-bottom: 10px;"></div>`;
+    }
 
   if (lesson.hook_text) {
     html += `<p style="font-size: 12pt; font-style: italic; background: #eef2ff; padding: 15px; border-left: 4px solid #3b82f6; margin-bottom: 20px;">${lesson.hook_text}</p>`;
@@ -240,8 +258,9 @@ periodLessons.forEach((lesson, lessonIndex) => {
   // Render Sources
   if (lesson.sources && lesson.sources.length > 0) {
     lesson.sources.forEach(source => {
-      if(source.src) {
-        let src = source.src.startsWith('../') || source.src.startsWith('http') ? source.src : `..${source.src}`;
+      if(source.src || source.source || source.image) {
+        let imgSrcRaw = source.src || source.source || source.image;
+        let src = imgSrcRaw.startsWith('../') || source.src.startsWith('http') ? source.src : `..${imgSrcRaw}`;
         html += `
           <div class="source-container" style="page-break-inside: avoid;">
             ${source.title ? `<strong>${source.title}</strong><br>` : ''}
@@ -266,7 +285,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
       let words = lesson.vocab.map(v => v.term).join(' &nbsp;|&nbsp; ');
       html += `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; text-align: center; font-weight: bold;">${words}</div>`;
       if (lesson.vocab_cloze_text) {
-         let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '__________________');
+         let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '<span style="display:inline-block; width: 100px; border-bottom: 1px solid #333; margin: 0 5px;">&nbsp;</span>');
          html += `<p style="line-height: 2; font-size: 12pt;">${cloze}</p>`;
       } else {
          html += `<p>_________________________________________________________</p>`;
@@ -376,6 +395,9 @@ periodLessons.forEach((lesson, lessonIndex) => {
     html += `<div class="task-box" style="page-break-inside: avoid; background: #fff; border: 2px dashed #666;">`;
     html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
     html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
+    if (lesson.historians_corner.stretch_question) {
+      html += `<div style="margin-top: 15px; font-weight: bold;">Q${lesson.historians_corner.qNum}. ${lesson.historians_corner.stretch_question}</div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
+    }
     html += `</div>`;
   }
 
@@ -465,10 +487,11 @@ periodLessons.forEach((lesson, lessonIndex) => {
       
       lesson.gcse_task.sources.forEach(srcObj => {
         sourceHTML += '<div style="flex: 1; border: 1px solid #ccc; padding: 10px; text-align: center;">';
-        if (srcObj.type === 'visual') {
-          let imgSrc = srcObj.src.startsWith('../') ? srcObj.src : `..${srcObj.src}`;
+        if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
+          let imgSrc = (srcObj.src || srcObj.source || srcObj.image).startsWith('../') ? srcObj.src : `..${srcObj.src || srcObj.source || srcObj.image}`;
           sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-        } else {
+        } 
+        if (srcObj.text || srcObj.content) { 
           sourceHTML += `<blockquote style="font-size: 12pt; font-style: italic; margin: 0 0 10px 0; text-align: left;">${srcObj.text}</blockquote>`;
         }
         sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">${srcObj.title}</p>`;

@@ -1,57 +1,80 @@
 const fs = require('fs');
 
-let c = fs.readFileSync('src/core_app.js', 'utf8');
-const idx = c.indexOf('// ==========================================');
-
-if (idx !== -1) {
-    const before = c.substring(0, idx);
-    const after = c.substring(idx);
+function patchFile(filename) {
+    if (!fs.existsSync(filename)) return;
+    let content = fs.readFileSync(filename, 'utf8');
     
-    const injection = `      if (lesson.sources && lesson.sources.length > 0) {
-        html += \`<div class="sources-grid" style="margin-top: 20px;">\`;
-        lesson.sources.forEach(source => {
-          html += \`
-            <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
-              \${source.title ? \`<h4 style="color: var(--primary); margin-top: 0; text-align: left;">\${source.title}</h4>\` : ''}
+    // Fix extended writing Source A and B hardcoding
+    let target1 = `if (lesson.extended.source_a || lesson.extended.source_b) {`;
+    let replacement1 = `
+          let letterA = 'A';
+          let letterB = 'B';
+          if (lesson.extended.source_a || lesson.extended.source_b) {
+              letterA = String.fromCharCode(sourceCharCode++);
+              if (lesson.extended.source_b) letterB = String.fromCharCode(sourceCharCode++);
               
-              \${source.src ? \`
-                <div style="display: inline-flex; flex-direction: column; position: relative; max-width: 100%; text-align: left; margin: 15px 0;">
-                  <div style="position: relative;">
-                    <img src="\${getAssetUrl(source.src)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" onclick="window.openModal(this.src)">
-                    \${source.caption ? \`
-                      <button class="source-accordion-btn no-print" onclick="const panel = this.parentElement.nextElementSibling; panel.style.display = panel.style.display === 'none' ? 'block' : 'none';" title="Source Information" style="position: absolute; top: 10px; right: 10px; background: #10b981; color: white; border: none; border-radius: 50%; width: 32px; height: 32px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); z-index: 10; display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-info"></i>
-                      </button>
-                    \` : ''}
-                  </div>
-                  \${source.caption ? \`
-                    <div class="source-info-panel" style="display: none; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; font-size: 0.95rem; color: #334155; margin-top: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
-                      <strong style="color: #0f172a; margin-bottom: 5px; display: block;">
-                        <i class="fa-solid fa-circle-info" style="color: #10b981; margin-right: 5px;"></i>
-                        About this source
-                      </strong>
-                      \${source.caption}
-                    </div>
-                  \` : ''}
-                </div>
-              \` : ''}
-              
-              \${source.content ? \`<div style="text-align: left; margin-top: 10px; font-style: italic; color: #334155; font-size: 1.05rem; line-height: 1.5;">\${source.content}</div>\` : ''}
-              \${source.question ? \`
-                <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
-                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>\${formatQuestion(source.question)}</strong></p>
-                </div>
-              \` : ''}
-            </div>
-          \`;
-        });
-        html += \`</div>\`;
-      }
-
+              if (lesson.extended.question) {
+                  lesson.extended.question = lesson.extended.question.replace(/Sources\\s+A\\s+and\\s+B/g, 'Sources ' + letterA + ' and ' + letterB);
+                  lesson.extended.question = lesson.extended.question.replace(/Source\\s+A/g, 'Source ' + letterA);
+                  lesson.extended.question = lesson.extended.question.replace(/Source\\s+B/g, 'Source ' + letterB);
+              }
 `;
+    content = content.replace(target1, replacement1);
     
-    fs.writeFileSync('src/core_app.js', before + injection + after);
-    console.log('Successfully injected sources!');
-} else {
-    console.log('Could not find injection point');
+    content = content.replace(/<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A<\/strong>/g, 
+                             '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterA}</strong>');
+                             
+    content = content.replace(/<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B<\/strong>/g, 
+                             '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterB}</strong>');
+
+
+    // Fix GCSE tasks Source A and B hardcoding
+    let target2 = `} else if (lesson.gcse_task.sources) {`;
+    let replacement2 = `} else if (lesson.gcse_task.sources) {
+          let letterA = String.fromCharCode(sourceCharCode++);
+          let letterB = lesson.gcse_task.sources.length > 1 ? String.fromCharCode(sourceCharCode++) : '';
+          
+          if (lesson.gcse_task.topic) {
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Sources\\s+A\\s+and\\s+B/g, 'Sources ' + letterA + ' and ' + letterB);
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\\s+A/g, 'Source ' + letterA);
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\\s+B/g, 'Source ' + letterB);
+          }
+`;
+    content = content.replace(target2, replacement2);
+    
+    // Replace "How useful are Sources A and B"
+    let target3 = `} else {
+            html += \`<p style="font-weight: bold; font-size: 13pt;">\${lesson.gcse_task.qNum ? \`Q\${lesson.gcse_task.qNum}. \` : ''}How useful are Sources A and B for an enquiry into \${topicText}?</p>\`;
+          }`;
+    let replacement3 = `} else {
+            html += \`<p style="font-weight: bold; font-size: 13pt;">\${lesson.gcse_task.qNum ? \`Q\${lesson.gcse_task.qNum}. \` : ''}How useful are \${letterB ? 'Sources ' + letterA + ' and ' + letterB : 'Source ' + letterA} for an enquiry into \${topicText}?</p>\`;
+          }`;
+    content = content.replace(target3, replacement3);
+    
+    // Replace srcObj.title
+    let target4 = `lesson.gcse_task.sources.forEach(srcObj => {`;
+    let replacement4 = `lesson.gcse_task.sources.forEach((srcObj, srcIdx) => {
+            let currentLetter = srcIdx === 0 ? letterA : letterB;
+            let displayTitle = srcObj.title.replace(/Source\\s+[A-Z]/, 'Source ' + currentLetter);`;
+    content = content.replace(target4, replacement4);
+    
+    let target5 = `sourceHTML += \`<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\${srcObj.title}</p>\`;`;
+    let replacement5 = `sourceHTML += \`<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\${displayTitle}</p>\`;`;
+    content = content.replace(target5, replacement5);
+    
+    // Replace the NOP Table
+    let target6 = `<tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">A</td>`;
+    let replacement6 = `<tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">\${letterA}</td>`;
+    content = content.replace(target6, replacement6);
+    
+    let target7 = `<tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">B</td>`;
+    let replacement7 = `<tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">\${letterB}</td>`;
+    content = content.replace(target7, replacement7);
+    
+    fs.writeFileSync(filename, content);
+    console.log("Patched " + filename);
 }
+
+patchFile('generate_textbooks.js');
+patchFile('generate_workbooks.js');
+patchFile('generate_pupil_workbooks.js');

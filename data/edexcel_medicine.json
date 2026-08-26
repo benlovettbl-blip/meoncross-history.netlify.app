@@ -1082,66 +1082,6 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
-              "question": "Which Roman physician developed the Theory of Opposites?",
-              "answer": "Galen.",
-              "options": [
-                "Galen.",
-                "Hippocrates.",
-                "Vesalius.",
-                "Harvey"
-              ]
-            },
-            {
-              "question": "How did the medieval Church explain the cause of disease?",
-              "answer": "God sent disease as a punishment for sin or to test faith.",
-              "options": [
-                "God sent disease as a punishment for sin or to test faith.",
-                "Disease was spread by dirty water and bacteria.",
-                "Imbalances in the solar system caused organs to fail.",
-                "Poor sanitation in large industrial cities."
-              ]
-            },
-            {
-              "question": "What was 'miasma'?",
-              "answer": "Bad air or noxious smells believed to cause disease.",
-              "options": [
-                "Bad air or noxious smells believed to cause disease.",
-                "An imbalance of the four humours.",
-                "A treatment involving bleeding and purging.",
-                "A holy water used by priests to cure illness."
-              ]
-            },
-            {
-              "question": "What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?",
-              "answer": "To restore balance to the four humours by releasing excess blood.",
-              "options": [
-                "To restore balance to the four humours by releasing excess blood.",
-                "To allow fresh air into the circulatory system.",
-                "To release evil spirits from the patient's body.",
-                "To test the blood for bacterial infections."
-              ]
-            },
-            {
-              "question": "What was the role of a medieval apothecary?",
-              "answer": "Preparing and selling herbal remedies and potions.",
-              "options": [
-                "Preparing and selling herbal remedies and potions.",
-                "Performing complex surgical operations.",
-                "Running the local hospital under Church supervision.",
-                "Bleeding patients using leeches or cups."
-              ]
-            },
-            {
-              "question": "How did medieval hospitals differ from modern ones?",
-              "answer": "They provided shelter and care, not medical treatment.",
-              "options": [
-                "They provided shelter and care, not medical treatment.",
-                "They were run by local town councils rather than the Church.",
-                "They specialized in complex surgery and amputations.",
-                "They treated only plague victims during epidemics."
-              ]
-            },
-            {
               "question": "What does the term 'public health' refer to?",
               "answer": "The health of the population as a whole, especially as monitored and regulated by the state.",
               "options": [
@@ -1162,23 +1102,83 @@
               ]
             },
             {
-              "question": "Under the Theory of Opposites, how would a fever (hot/dry) be treated?",
-              "answer": "With cold treatments like cucumber or cool baths.",
+              "question": "Which Greek physician originally created the Theory of the Four Humours?",
+              "answer": "Hippocrates.",
               "options": [
-                "With cold treatments like cucumber or cool baths.",
-                "With hot spices like pepper and mustard.",
-                "By placing hot cups on the back to draw out blood.",
-                "By praying to the Saint of Fevers."
+                "Hippocrates.",
+                "Galen.",
+                "Vesalius.",
+                "Harvey"
               ]
             },
             {
-              "question": "What was 'purging'?",
-              "answer": "Using laxatives or emetics to clear the digestive system.",
+              "question": "Which Roman physician developed the Theory of Opposites?",
+              "answer": "Galen.",
               "options": [
-                "Using laxatives or emetics to clear the digestive system.",
-                "Cutting open a vein to release bad blood.",
-                "Praying to God to purge sins from the soul.",
-                "Boiling clothes to kill fleas and lice."
+                "Galen.",
+                "Hippocrates.",
+                "Thomas Sydenham.",
+                "Roger Bacon"
+              ]
+            },
+            {
+              "question": "What are the four humours?",
+              "answer": "Blood, phlegm, yellow bile, black bile.",
+              "options": [
+                "Blood, phlegm, yellow bile, black bile.",
+                "Blood, water, air, bile.",
+                "Blood, phlegm, yellow bile, urine.",
+                "Blood, water, pus, black bile."
+              ]
+            },
+            {
+              "question": "What was 'miasma'?",
+              "answer": "Bad air or noxious smells believed to cause disease.",
+              "options": [
+                "Bad air or noxious smells believed to cause disease.",
+                "An imbalance of the four humours.",
+                "A treatment involving bleeding and purging.",
+                "A holy water used by priests to cure illness."
+              ]
+            },
+            {
+              "question": "How did the medieval Church explain the cause of disease?",
+              "answer": "God sent disease as a punishment for sin or to test faith.",
+              "options": [
+                "God sent disease as a punishment for sin or to test faith.",
+                "Disease was spread by dirty water and bacteria.",
+                "Imbalances in the solar system caused organs to fail.",
+                "Poor sanitation in large industrial cities."
+              ]
+            },
+            {
+              "question": "Why did the medieval Church promote the ideas of Galen?",
+              "answer": "Galen's ideas fit Christian beliefs because he argued the body was created by a single Creator.",
+              "options": [
+                "Galen's ideas fit Christian beliefs because he argued the body was created by a single Creator.",
+                "Galen was a Christian bishop who lived in Rome.",
+                "Galen proved that God performed miracles in hospitals.",
+                "Galen's books were written in Latin by medieval monks."
+              ]
+            },
+            {
+              "question": "Explain how astrology was used in medieval medicine.",
+              "answer": "Physicians used star charts and planetary alignments to diagnose illness and plan treatments.",
+              "options": [
+                "Physicians used star charts and planetary alignments to diagnose illness and plan treatments.",
+                "Astrology was strictly banned by the Church as witchcraft.",
+                "Physicians believed that the stars physically fell to Earth to infect water.",
+                "It was used to calculate the exact price of apothecary medicines."
+              ]
+            },
+            {
+              "question": "What was the 'urine chart' used for in medieval diagnosis?",
+              "answer": "To check the colour, taste, and smell of urine to identify humour imbalances.",
+              "options": [
+                "To check the colour, taste, and smell of urine to identify humour imbalances.",
+                "To determine if a patient was possessed by a demon.",
+                "To check for bacterial infections using microscopes.",
+                "To guide bloodletting by indicating the best vein to open."
               ]
             }
           ]
@@ -1788,6 +1788,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "Which Roman physician developed the Theory of Opposites?",
+              "answer": "Galen.",
+              "options": [
+                "Galen.",
+                "Hippocrates.",
+                "Vesalius.",
+                "Harvey"
+              ]
+            },
+            {
+              "question": "How did the medieval Church explain the cause of disease?",
+              "answer": "God sent disease as a punishment for sin or to test faith.",
+              "options": [
+                "God sent disease as a punishment for sin or to test faith.",
+                "Disease was spread by dirty water and bacteria.",
+                "Imbalances in the solar system caused organs to fail.",
+                "Poor sanitation in large industrial cities."
+              ]
+            },
+            {
+              "question": "What was 'miasma'?",
+              "answer": "Bad air or noxious smells believed to cause disease.",
+              "options": [
+                "Bad air or noxious smells believed to cause disease.",
+                "An imbalance of the four humours.",
+                "A treatment involving bleeding and purging.",
+                "A holy water used by priests to cure illness."
+              ]
+            },
+            {
               "question": "What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?",
               "answer": "To restore balance to the four humours by releasing excess blood.",
               "options": [
@@ -1818,73 +1848,43 @@
               ]
             },
             {
-              "question": "In what year did the Black Death arrive in England?",
-              "answer": "1348.",
+              "question": "What does the term 'public health' refer to?",
+              "answer": "The health of the population as a whole, especially as monitored and regulated by the state.",
               "options": [
-                "1348.",
-                "1066.",
-                "1415.",
-                "1665."
+                "The health of the population as a whole, especially as monitored and regulated by the state.",
+                "Treating patients inside private clinics or monasteries.",
+                "A medical theory developed by the Romans to bleed patients.",
+                "The training of physicians in medieval universities."
               ]
             },
             {
-              "question": "Who were the 'flagellants'?",
-              "answer": "People who whipped themselves to show penance to God.",
+              "question": "Name one ancient civilization that heavily influenced medieval medicine.",
+              "answer": "The Ancient Greeks.",
               "options": [
-                "People who whipped themselves to show penance to God.",
-                "Doctors who specialized in treating buboes.",
-                "Apothecaries who created herbal plague remedies.",
-                "Foreign traders banned from entering English ports."
+                "The Ancient Greeks.",
+                "The Vikings.",
+                "The Anglo-Saxons.",
+                "The Normans."
               ]
             },
             {
-              "question": "State one common medieval preventative measure for the Black Death.",
-              "answer": "Carrying sweet-smelling herbs or lighting fires.",
+              "question": "Under the Theory of Opposites, how would a fever (hot/dry) be treated?",
+              "answer": "With cold treatments like cucumber or cool baths.",
               "options": [
-                "Carrying sweet-smelling herbs or lighting fires.",
-                "Boiling drinking water and washing hands.",
-                "Using penicillin or other antibiotics.",
-                "Quarantining the entire country for six months."
+                "With cold treatments like cucumber or cool baths.",
+                "With hot spices like pepper and mustard.",
+                "By placing hot cups on the back to draw out blood.",
+                "By praying to the Saint of Fevers."
               ]
             },
             {
-              "question": "Which Roman physician developed the Theory of Opposites?",
-              "answer": "Galen.",
+              "question": "What was 'purging'?",
+              "answer": "Using laxatives or emetics to clear the digestive system.",
               "options": [
-                "Galen.",
-                "Hippocrates.",
-                "Vesalius.",
-                "Harvey"
-              ]
-            },
-            {
-              "question": "What was 'miasma'?",
-              "answer": "Bad air or noxious smells believed to cause disease.",
-              "options": [
-                "Bad air or noxious smells believed to cause disease.",
-                "An imbalance of the four humours.",
-                "A treatment involving bleeding and purging.",
-                "A holy water used by priests to cure illness."
-              ]
-            },
-            {
-              "question": "What was a 'bubo'?",
-              "answer": "A painful swelling in the armpit or groin, a symptom of the plague.",
-              "options": [
-                "A painful swelling in the armpit or groin, a symptom of the plague.",
-                "A type of surgical knife used for bloodletting.",
-                "An apothecary's jar used to mix laxatives.",
-                "A religious charm worn to ward off evil spirits."
-              ]
-            },
-            {
-              "question": "How did local mayors try to prevent the spread of the Black Death?",
-              "answer": "Cleaning streets and stopping visitor trade.",
-              "options": [
-                "Cleaning streets and stopping visitor trade.",
-                "Quarantining sick families inside their homes for 40 days.",
-                "Distributing masks and building sewage systems.",
-                "Closing all churches and monasteries."
+                "Using laxatives or emetics to clear the digestive system.",
+                "Cutting open a vein to release bad blood.",
+                "Praying to God to purge sins from the soul.",
+                "Boiling clothes to kill fleas and lice."
               ]
             }
           ]
@@ -2305,6 +2305,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?",
+              "answer": "To restore balance to the four humours by releasing excess blood.",
+              "options": [
+                "To restore balance to the four humours by releasing excess blood.",
+                "To allow fresh air into the circulatory system.",
+                "To release evil spirits from the patient's body.",
+                "To test the blood for bacterial infections."
+              ]
+            },
+            {
+              "question": "What was the role of a medieval apothecary?",
+              "answer": "Preparing and selling herbal remedies and potions.",
+              "options": [
+                "Preparing and selling herbal remedies and potions.",
+                "Performing complex surgical operations.",
+                "Running the local hospital under Church supervision.",
+                "Bleeding patients using leeches or cups."
+              ]
+            },
+            {
+              "question": "How did medieval hospitals differ from modern ones?",
+              "answer": "They provided shelter and care, not medical treatment.",
+              "options": [
+                "They provided shelter and care, not medical treatment.",
+                "They were run by local town councils rather than the Church.",
+                "They specialized in complex surgery and amputations.",
+                "They treated only plague victims during epidemics."
+              ]
+            },
+            {
               "question": "In what year did the Black Death arrive in England?",
               "answer": "1348.",
               "options": [
@@ -2335,73 +2365,43 @@
               ]
             },
             {
-              "question": "What was the Renaissance?",
-              "answer": "A period of 'rebirth' in learning, art, and science from the 14th to 17th century.",
+              "question": "Which Roman physician developed the Theory of Opposites?",
+              "answer": "Galen.",
               "options": [
-                "A period of 'rebirth' in learning, art, and science from the 14th to 17th century.",
-                "The era of the industrial revolution and factory work.",
-                "The medieval period marked by the dominance of the Church.",
-                "The WWI era which saw medical innovations on the battlefield."
+                "Galen.",
+                "Hippocrates.",
+                "Vesalius.",
+                "Harvey"
               ]
             },
             {
-              "question": "What invention helped spread new medical ideas during the Renaissance?",
-              "answer": "The printing press.",
+              "question": "What was 'miasma'?",
+              "answer": "Bad air or noxious smells believed to cause disease.",
               "options": [
-                "The printing press.",
-                "The microscope.",
-                "The steam engine.",
-                "The telegraph."
+                "Bad air or noxious smells believed to cause disease.",
+                "An imbalance of the four humours.",
+                "A treatment involving bleeding and purging.",
+                "A holy water used by priests to cure illness."
               ]
             },
             {
-              "question": "Who was Thomas Sydenham?",
-              "answer": "An English physician who advocated observing patients' symptoms rather than relying on books.",
+              "question": "What was a 'bubo'?",
+              "answer": "A painful swelling in the armpit or groin, a symptom of the plague.",
               "options": [
-                "An English physician who advocated observing patients' symptoms rather than relying on books.",
-                "A surgeon who discovered that blood circulates around the body.",
-                "A monk who translated Galen's works into English.",
-                "The scientist who discovered penicillin."
+                "A painful swelling in the armpit or groin, a symptom of the plague.",
+                "A type of surgical knife used for bloodletting.",
+                "An apothecary's jar used to mix laxatives.",
+                "A religious charm worn to ward off evil spirits."
               ]
             },
             {
-              "question": "How did medieval hospitals differ from modern ones?",
-              "answer": "They provided shelter and care, not medical treatment.",
+              "question": "How did local mayors try to prevent the spread of the Black Death?",
+              "answer": "Cleaning streets and stopping visitor trade.",
               "options": [
-                "They provided shelter and care, not medical treatment.",
-                "They were run by local town councils rather than the Church.",
-                "They specialized in complex surgery and amputations.",
-                "They treated only plague victims during epidemics."
-              ]
-            },
-            {
-              "question": "What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?",
-              "answer": "To restore balance to the four humours by releasing excess blood.",
-              "options": [
-                "To restore balance to the four humours by releasing excess blood.",
-                "To allow fresh air into the circulatory system.",
-                "To release evil spirits from the patient's body.",
-                "To test the blood for bacterial infections."
-              ]
-            },
-            {
-              "question": "Why did the influence of the Church begin to decline in the Renaissance?",
-              "answer": "The scientific method promoted questioning old authorities, and the Reformation weakened Church power.",
-              "options": [
-                "The scientific method promoted questioning old authorities, and the Reformation weakened Church power.",
-                "The Church was officially banned by Renaissance monarchs.",
-                "The invention of the printing press was declared illegal by bishops.",
-                "Everyone became atheists during the Renaissance."
-              ]
-            },
-            {
-              "question": "What was the Royal Society?",
-              "answer": "A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.",
-              "options": [
-                "A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.",
-                "The governing body of apothecaries and surgeons in London.",
-                "A charity set up by the King to build free municipal hospitals.",
-                "A religious order that maintained medical libraries."
+                "Cleaning streets and stopping visitor trade.",
+                "Quarantining sick families inside their homes for 40 days.",
+                "Distributing masks and building sewage systems.",
+                "Closing all churches and monasteries."
               ]
             }
           ]
@@ -2826,6 +2826,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "In what year did the Black Death arrive in England?",
+              "answer": "1348.",
+              "options": [
+                "1348.",
+                "1066.",
+                "1415.",
+                "1665."
+              ]
+            },
+            {
+              "question": "Who were the 'flagellants'?",
+              "answer": "People who whipped themselves to show penance to God.",
+              "options": [
+                "People who whipped themselves to show penance to God.",
+                "Doctors who specialized in treating buboes.",
+                "Apothecaries who created herbal plague remedies.",
+                "Foreign traders banned from entering English ports."
+              ]
+            },
+            {
+              "question": "State one common medieval preventative measure for the Black Death.",
+              "answer": "Carrying sweet-smelling herbs or lighting fires.",
+              "options": [
+                "Carrying sweet-smelling herbs or lighting fires.",
+                "Boiling drinking water and washing hands.",
+                "Using penicillin or other antibiotics.",
+                "Quarantining the entire country for six months."
+              ]
+            },
+            {
               "question": "What was the Renaissance?",
               "answer": "A period of 'rebirth' in learning, art, and science from the 14th to 17th century.",
               "options": [
@@ -2856,73 +2886,43 @@
               ]
             },
             {
-              "question": "Who wrote 'On the Fabric of the Human Body' (1543)?",
-              "answer": "Andreas Vesalius.",
+              "question": "How did medieval hospitals differ from modern ones?",
+              "answer": "They provided shelter and care, not medical treatment.",
               "options": [
-                "Andreas Vesalius.",
-                "William Harvey.",
-                "Thomas Sydenham.",
-                "Ambroise Pare"
+                "They provided shelter and care, not medical treatment.",
+                "They were run by local town councils rather than the Church.",
+                "They specialized in complex surgery and amputations.",
+                "They treated only plague victims during epidemics."
               ]
             },
             {
-              "question": "What did Vesalius prove about Galen's anatomical ideas?",
-              "answer": "Galen had made over 300 mistakes because he dissected animals, not humans.",
+              "question": "What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?",
+              "answer": "To restore balance to the four humours by releasing excess blood.",
               "options": [
-                "Galen had made over 300 mistakes because he dissected animals, not humans.",
-                "Galen was 100% correct in every anatomical diagram.",
-                "Galen's Theory of Opposites was scientifically true.",
-                "Galen's books were written by fake physicians."
+                "To restore balance to the four humours by releasing excess blood.",
+                "To allow fresh air into the circulatory system.",
+                "To release evil spirits from the patient's body.",
+                "To test the blood for bacterial infections."
               ]
             },
             {
-              "question": "What was 'transference'?",
-              "answer": "A Renaissance belief that a disease could be passed on or transferred to an object or animal.",
+              "question": "Why did the influence of the Church begin to decline in the Renaissance?",
+              "answer": "The scientific method promoted questioning old authorities, and the Reformation weakened Church power.",
               "options": [
-                "A Renaissance belief that a disease could be passed on or transferred to an object or animal.",
-                "The process of printing books using movable type.",
-                "Transferring blood from a healthy donor to a sick patient.",
-                "Moving sick patients from monasteries to city hospitals."
+                "The scientific method promoted questioning old authorities, and the Reformation weakened Church power.",
+                "The Church was officially banned by Renaissance monarchs.",
+                "The invention of the printing press was declared illegal by bishops.",
+                "Everyone became atheists during the Renaissance."
               ]
             },
             {
-              "question": "In what year did the Black Death arrive in England?",
-              "answer": "1348.",
+              "question": "What was the Royal Society?",
+              "answer": "A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.",
               "options": [
-                "1348.",
-                "1066.",
-                "1415.",
-                "1665."
-              ]
-            },
-            {
-              "question": "Explain the role of the apothecary in medieval medicine.",
-              "answer": "Preparing and selling herbal remedies and potions.",
-              "options": [
-                "Preparing and selling herbal remedies and potions.",
-                "Performing complex surgical operations.",
-                "Running the local hospital under Church supervision.",
-                "Bleeding patients using leeches or cups."
-              ]
-            },
-            {
-              "question": "Why did Vesalius' anatomical discoveries have limited immediate impact on medical treatments?",
-              "answer": "Knowing correct anatomy did not provide cures for diseases, and many doctors still relied on Galen.",
-              "options": [
-                "Knowing correct anatomy did not provide cures for diseases, and many doctors still relied on Galen.",
-                "His books were banned by all European kings.",
-                "His diagrams were too complicated for Renaissance students.",
-                "He died before he could publish his discoveries."
-              ]
-            },
-            {
-              "question": "Name one new herbal remedy brought to Europe from the New World.",
-              "answer": "Cinchona bark (quinine) or Tobacco.",
-              "options": [
-                "Cinchona bark (quinine) or Tobacco.",
-                "Aloe Vera or Lavender.",
-                "Chamomile or Peppermint.",
-                "Mustard seed or Sage."
+                "A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.",
+                "The governing body of apothecaries and surgeons in London.",
+                "A charity set up by the King to build free municipal hospitals.",
+                "A religious order that maintained medical libraries."
               ]
             }
           ]
@@ -3336,6 +3336,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What was the Renaissance?",
+              "answer": "A period of 'rebirth' in learning, art, and science from the 14th to 17th century.",
+              "options": [
+                "A period of 'rebirth' in learning, art, and science from the 14th to 17th century.",
+                "The era of the industrial revolution and factory work.",
+                "The medieval period marked by the dominance of the Church.",
+                "The WWI era which saw medical innovations on the battlefield."
+              ]
+            },
+            {
+              "question": "What invention helped spread new medical ideas during the Renaissance?",
+              "answer": "The printing press.",
+              "options": [
+                "The printing press.",
+                "The microscope.",
+                "The steam engine.",
+                "The telegraph."
+              ]
+            },
+            {
+              "question": "Who was Thomas Sydenham?",
+              "answer": "An English physician who advocated observing patients' symptoms rather than relying on books.",
+              "options": [
+                "An English physician who advocated observing patients' symptoms rather than relying on books.",
+                "A surgeon who discovered that blood circulates around the body.",
+                "A monk who translated Galen's works into English.",
+                "The scientist who discovered penicillin."
+              ]
+            },
+            {
               "question": "Who wrote 'On the Fabric of the Human Body' (1543)?",
               "answer": "Andreas Vesalius.",
               "options": [
@@ -3366,73 +3396,43 @@
               ]
             },
             {
-              "question": "What did William Harvey discover about the human body?",
-              "answer": "Blood circulates around the body, pumped by the heart.",
+              "question": "In what year did the Black Death arrive in England?",
+              "answer": "1348.",
               "options": [
-                "Blood circulates around the body, pumped by the heart.",
-                "The brain is the center of the nervous system.",
-                "Bacteria are the cause of cholera and the plague.",
-                "The human jawbone consists of two separate bones."
-              ]
-            },
-            {
-              "question": "What did Harvey prove wrong about Galen's theories of blood?",
-              "answer": "Galen believed the liver constantly manufactured new blood which was consumed by the body.",
-              "options": [
-                "Galen believed the liver constantly manufactured new blood which was consumed by the body.",
-                "Galen argued that veins had valves that stopped backflow.",
-                "Galen claimed that blood was pumped by the lungs.",
-                "Galen believed that bloodletting was useless."
-              ]
-            },
-            {
-              "question": "In what year did the Great Plague hit London?",
-              "answer": "1665.",
-              "options": [
-                "1665.",
                 "1348.",
-                "1543.",
-                "1854."
+                "1066.",
+                "1415.",
+                "1665."
               ]
             },
             {
-              "question": "How did local mayors try to prevent the spread of the Black Death in 1348?",
-              "answer": "Cleaning streets and stopping visitor trade.",
+              "question": "Explain the role of the apothecary in medieval medicine.",
+              "answer": "Preparing and selling herbal remedies and potions.",
               "options": [
-                "Cleaning streets and stopping visitor trade.",
-                "Quarantining sick families inside their homes for 40 days.",
-                "Distributing masks and building sewage systems.",
-                "Closing all churches and monasteries."
+                "Preparing and selling herbal remedies and potions.",
+                "Performing complex surgical operations.",
+                "Running the local hospital under Church supervision.",
+                "Bleeding patients using leeches or cups."
               ]
             },
             {
-              "question": "What was the Theory of the Four Humours?",
-              "answer": "The belief that health was governed by the balance of blood, phlegm, black bile, and yellow bile.",
+              "question": "Why did Vesalius' anatomical discoveries have limited immediate impact on medical treatments?",
+              "answer": "Knowing correct anatomy did not provide cures for diseases, and many doctors still relied on Galen.",
               "options": [
-                "The belief that health was governed by the balance of blood, phlegm, black bile, and yellow bile.",
-                "The belief that bad smells in the air caused diseases.",
-                "The idea that bloodletting was the only way to cure fever.",
-                "A medical theory arguing that germs caused illness."
+                "Knowing correct anatomy did not provide cures for diseases, and many doctors still relied on Galen.",
+                "His books were banned by all European kings.",
+                "His diagrams were too complicated for Renaissance students.",
+                "He died before he could publish his discoveries."
               ]
             },
             {
-              "question": "What was the 'Stagnation Paradox' regarding Harvey's discovery?",
-              "answer": "His discovery was scientifically brilliant, but had zero immediate impact on treating patients.",
+              "question": "Name one new herbal remedy brought to Europe from the New World.",
+              "answer": "Cinchona bark (quinine) or Tobacco.",
               "options": [
-                "His discovery was scientifically brilliant, but had zero immediate impact on treating patients.",
-                "He was jailed for heresy, preventing him from teaching.",
-                "His books were written in English, which other doctors couldn't read.",
-                "He could not prove his ideas because microscopes did not exist."
-              ]
-            },
-            {
-              "question": "Explain one way the government response to the Great Plague (1665) was better than the Black Death (1348).",
-              "answer": "Mayors employed searchers to identify victims and quarantined sick families inside their houses for 40 days.",
-              "options": [
-                "Mayors employed searchers to identify victims and quarantined sick families inside their houses for 40 days.",
-                "They built large hospitals and mass-vaccinated the population.",
-                "The government imported penicillin to cure the plague.",
-                "They closed the borders and shut down all trade with France."
+                "Cinchona bark (quinine) or Tobacco.",
+                "Aloe Vera or Lavender.",
+                "Chamomile or Peppermint.",
+                "Mustard seed or Sage."
               ]
             }
           ]
@@ -3854,6 +3854,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "Who wrote 'On the Fabric of the Human Body' (1543)?",
+              "answer": "Andreas Vesalius.",
+              "options": [
+                "Andreas Vesalius.",
+                "William Harvey.",
+                "Thomas Sydenham.",
+                "Ambroise Pare"
+              ]
+            },
+            {
+              "question": "What did Vesalius prove about Galen's anatomical ideas?",
+              "answer": "Galen had made over 300 mistakes because he dissected animals, not humans.",
+              "options": [
+                "Galen had made over 300 mistakes because he dissected animals, not humans.",
+                "Galen was 100% correct in every anatomical diagram.",
+                "Galen's Theory of Opposites was scientifically true.",
+                "Galen's books were written by fake physicians."
+              ]
+            },
+            {
+              "question": "What was 'transference'?",
+              "answer": "A Renaissance belief that a disease could be passed on or transferred to an object or animal.",
+              "options": [
+                "A Renaissance belief that a disease could be passed on or transferred to an object or animal.",
+                "The process of printing books using movable type.",
+                "Transferring blood from a healthy donor to a sick patient.",
+                "Moving sick patients from monasteries to city hospitals."
+              ]
+            },
+            {
               "question": "What did William Harvey discover about the human body?",
               "answer": "Blood circulates around the body, pumped by the heart.",
               "options": [
@@ -3884,73 +3914,43 @@
               ]
             },
             {
-              "question": "What was 'Spontaneous Generation'?",
-              "answer": "The belief that microbes and decay appeared spontaneously out of dead matter.",
+              "question": "How did local mayors try to prevent the spread of the Black Death in 1348?",
+              "answer": "Cleaning streets and stopping visitor trade.",
               "options": [
-                "The belief that microbes and decay appeared spontaneously out of dead matter.",
-                "The theory that diseases were generated by bad air (miasma).",
-                "The discovery that bacteria reproduce using cell division.",
-                "The process of creating vaccines in laboratories."
+                "Cleaning streets and stopping visitor trade.",
+                "Quarantining sick families inside their homes for 40 days.",
+                "Distributing masks and building sewage systems.",
+                "Closing all churches and monasteries."
               ]
             },
             {
-              "question": "Who published the Germ Theory in 1861?",
-              "answer": "Louis Pasteur.",
+              "question": "What was the Theory of the Four Humours?",
+              "answer": "The belief that health was governed by the balance of blood, phlegm, black bile, and yellow bile.",
               "options": [
-                "Louis Pasteur.",
-                "Robert Koch.",
-                "Alexander Fleming.",
-                "Edward Jenner"
+                "The belief that health was governed by the balance of blood, phlegm, black bile, and yellow bile.",
+                "The belief that bad smells in the air caused diseases.",
+                "The idea that bloodletting was the only way to cure fever.",
+                "A medical theory arguing that germs caused illness."
               ]
             },
             {
-              "question": "What did Robert Koch contribute to Germ Theory?",
-              "answer": "He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).",
+              "question": "What was the 'Stagnation Paradox' regarding Harvey's discovery?",
+              "answer": "His discovery was scientifically brilliant, but had zero immediate impact on treating patients.",
               "options": [
-                "He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).",
-                "He proved that blood circulation was driven by the heart.",
-                "He discovered penicillin in a petri dish.",
-                "He invented the smallpox vaccine using cowpox."
+                "His discovery was scientifically brilliant, but had zero immediate impact on treating patients.",
+                "He was jailed for heresy, preventing him from teaching.",
+                "His books were written in English, which other doctors couldn't read.",
+                "He could not prove his ideas because microscopes did not exist."
               ]
             },
             {
-              "question": "Who wrote 'On the Fabric of the Human Body' (1543)?",
-              "answer": "Andreas Vesalius.",
+              "question": "Explain one way the government response to the Great Plague (1665) was better than the Black Death (1348).",
+              "answer": "Mayors employed searchers to identify victims and quarantined sick families inside their houses for 40 days.",
               "options": [
-                "Andreas Vesalius.",
-                "William Harvey.",
-                "Thomas Sydenham.",
-                "Ambroise Pare"
-              ]
-            },
-            {
-              "question": "What invention helped spread new medical ideas during the Renaissance?",
-              "answer": "The printing press.",
-              "options": [
-                "The printing press.",
-                "The microscope.",
-                "The steam engine.",
-                "The telegraph."
-              ]
-            },
-            {
-              "question": "Why did many doctors reject Germ Theory at first?",
-              "answer": "They could not see how tiny invisible microbes could kill large humans, and they still believed in miasma.",
-              "options": [
-                "They could not see how tiny invisible microbes could kill large humans, and they still believed in miasma.",
-                "Pasteur was a chemist, not a doctor, so they did not trust him.",
-                "The government made it illegal to study bacteria.",
-                "Microscopes had not yet been invented in 1861."
-              ]
-            },
-            {
-              "question": "What method did Robert Koch use to isolate and photograph bacteria?",
-              "answer": "Using agar jelly to grow cultures and methyl violet dye to stain them.",
-              "options": [
-                "Using agar jelly to grow cultures and methyl violet dye to stain them.",
-                "Using X-ray machines to photograph organs.",
-                "Dissecting human bodies under high-power lenses.",
-                "Injecting microbes directly into healthy human volunteers."
+                "Mayors employed searchers to identify victims and quarantined sick families inside their houses for 40 days.",
+                "They built large hospitals and mass-vaccinated the population.",
+                "The government imported penicillin to cure the plague.",
+                "They closed the borders and shut down all trade with France."
               ]
             }
           ]
@@ -4378,6 +4378,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What did William Harvey discover about the human body?",
+              "answer": "Blood circulates around the body, pumped by the heart.",
+              "options": [
+                "Blood circulates around the body, pumped by the heart.",
+                "The brain is the center of the nervous system.",
+                "Bacteria are the cause of cholera and the plague.",
+                "The human jawbone consists of two separate bones."
+              ]
+            },
+            {
+              "question": "What did Harvey prove wrong about Galen's theories of blood?",
+              "answer": "Galen believed the liver constantly manufactured new blood which was consumed by the body.",
+              "options": [
+                "Galen believed the liver constantly manufactured new blood which was consumed by the body.",
+                "Galen argued that veins had valves that stopped backflow.",
+                "Galen claimed that blood was pumped by the lungs.",
+                "Galen believed that bloodletting was useless."
+              ]
+            },
+            {
+              "question": "In what year did the Great Plague hit London?",
+              "answer": "1665.",
+              "options": [
+                "1665.",
+                "1348.",
+                "1543.",
+                "1854."
+              ]
+            },
+            {
               "question": "What was 'Spontaneous Generation'?",
               "answer": "The belief that microbes and decay appeared spontaneously out of dead matter.",
               "options": [
@@ -4408,73 +4438,43 @@
               ]
             },
             {
-              "question": "Who was Florence Nightingale?",
-              "answer": "A nurse who revolutionized hospital care and hygiene during the Crimean War.",
+              "question": "Who wrote 'On the Fabric of the Human Body' (1543)?",
+              "answer": "Andreas Vesalius.",
               "options": [
-                "A nurse who revolutionized hospital care and hygiene during the Crimean War.",
-                "The scientist who discovered the cholera microbe.",
-                "The first female doctor in Britain.",
-                "A researcher who helped develop penicillin."
+                "Andreas Vesalius.",
+                "William Harvey.",
+                "Thomas Sydenham.",
+                "Ambroise Pare"
               ]
             },
             {
-              "question": "What did Florence Nightingale believe caused disease?",
-              "answer": "Miasma (bad air) and poor hygiene.",
+              "question": "What invention helped spread new medical ideas during the Renaissance?",
+              "answer": "The printing press.",
               "options": [
-                "Miasma (bad air) and poor hygiene.",
-                "Bacteria and germs in the water.",
-                "Imbalances in the four humours.",
-                "Inherited genetic defects."
+                "The printing press.",
+                "The microscope.",
+                "The steam engine.",
+                "The telegraph."
               ]
             },
             {
-              "question": "Which anesthetic was discovered by James Simpson in 1847?",
-              "answer": "Chloroform.",
+              "question": "Why did many doctors reject Germ Theory at first?",
+              "answer": "They could not see how tiny invisible microbes could kill large humans, and they still believed in miasma.",
               "options": [
-                "Chloroform.",
-                "Ether.",
-                "Nitrous oxide.",
-                "Cocaine"
+                "They could not see how tiny invisible microbes could kill large humans, and they still believed in miasma.",
+                "Pasteur was a chemist, not a doctor, so they did not trust him.",
+                "The government made it illegal to study bacteria.",
+                "Microscopes had not yet been invented in 1861."
               ]
             },
             {
-              "question": "What did William Harvey discover about the human body?",
-              "answer": "Blood circulates around the body, pumped by the heart.",
+              "question": "What method did Robert Koch use to isolate and photograph bacteria?",
+              "answer": "Using agar jelly to grow cultures and methyl violet dye to stain them.",
               "options": [
-                "Blood circulates around the body, pumped by the heart.",
-                "The brain is the center of the nervous system.",
-                "Bacteria are the cause of cholera and the plague.",
-                "The human jawbone consists of two separate bones."
-              ]
-            },
-            {
-              "question": "Who was Thomas Sydenham?",
-              "answer": "An English physician who advocated observing patients' symptoms rather than relying on books.",
-              "options": [
-                "An English physician who advocated observing patients' symptoms rather than relying on books.",
-                "A surgeon who discovered that blood circulates around the body.",
-                "A monk who translated Galen's works into English.",
-                "The scientist who discovered penicillin."
-              ]
-            },
-            {
-              "question": "Why did the 'Black Period of Surgery' occur after the discovery of anesthetics?",
-              "answer": "Surgeons operated deeper and for longer, but because antiseptics were not used, infection rates soared.",
-              "options": [
-                "Surgeons operated deeper and for longer, but because antiseptics were not used, infection rates soared.",
-                "Anesthetics were banned by the government, forcing operations into secret backrooms.",
-                "Doctors refused to use chloroform due to religious objections.",
-                "Everyone who took chloroform died immediately of cardiac arrest."
-              ]
-            },
-            {
-              "question": "Who introduced antiseptic surgery using carbolic acid in 1865?",
-              "answer": "Joseph Lister.",
-              "options": [
-                "Joseph Lister.",
-                "James Simpson.",
-                "Robert Koch.",
-                "Louis Pasteur"
+                "Using agar jelly to grow cultures and methyl violet dye to stain them.",
+                "Using X-ray machines to photograph organs.",
+                "Dissecting human bodies under high-power lenses.",
+                "Injecting microbes directly into healthy human volunteers."
               ]
             }
           ]
@@ -4916,6 +4916,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What was 'Spontaneous Generation'?",
+              "answer": "The belief that microbes and decay appeared spontaneously out of dead matter.",
+              "options": [
+                "The belief that microbes and decay appeared spontaneously out of dead matter.",
+                "The theory that diseases were generated by bad air (miasma).",
+                "The discovery that bacteria reproduce using cell division.",
+                "The process of creating vaccines in laboratories."
+              ]
+            },
+            {
+              "question": "Who published the Germ Theory in 1861?",
+              "answer": "Louis Pasteur.",
+              "options": [
+                "Louis Pasteur.",
+                "Robert Koch.",
+                "Alexander Fleming.",
+                "Edward Jenner"
+              ]
+            },
+            {
+              "question": "What did Robert Koch contribute to Germ Theory?",
+              "answer": "He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).",
+              "options": [
+                "He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).",
+                "He proved that blood circulation was driven by the heart.",
+                "He discovered penicillin in a petri dish.",
+                "He invented the smallpox vaccine using cowpox."
+              ]
+            },
+            {
               "question": "Who was Florence Nightingale?",
               "answer": "A nurse who revolutionized hospital care and hygiene during the Crimean War.",
               "options": [
@@ -4946,73 +4976,43 @@
               ]
             },
             {
-              "question": "What disease did Edward Jenner vaccine against in 1796?",
-              "answer": "Smallpox.",
+              "question": "What did William Harvey discover about the human body?",
+              "answer": "Blood circulates around the body, pumped by the heart.",
               "options": [
-                "Smallpox.",
-                "Cholera.",
-                "Tuberculosis.",
-                "Anthrax"
+                "Blood circulates around the body, pumped by the heart.",
+                "The brain is the center of the nervous system.",
+                "Bacteria are the cause of cholera and the plague.",
+                "The human jawbone consists of two separate bones."
               ]
             },
             {
-              "question": "What did Edward Jenner observe that led to his vaccine?",
-              "answer": "Milkmaids who caught cowpox never caught the deadly smallpox.",
+              "question": "Who was Thomas Sydenham?",
+              "answer": "An English physician who advocated observing patients' symptoms rather than relying on books.",
               "options": [
-                "Milkmaids who caught cowpox never caught the deadly smallpox.",
-                "Clean water stopped people from getting cholera.",
-                "Boiling broth inside swan-necked flasks stopped decay.",
-                "Penicillium mould killed staphylococci bacteria."
+                "An English physician who advocated observing patients' symptoms rather than relying on books.",
+                "A surgeon who discovered that blood circulates around the body.",
+                "A monk who translated Galen's works into English.",
+                "The scientist who discovered penicillin."
               ]
             },
             {
-              "question": "Who discovered the cause of cholera in 1854?",
-              "answer": "John Snow.",
+              "question": "Why did the 'Black Period of Surgery' occur after the discovery of anesthetics?",
+              "answer": "Surgeons operated deeper and for longer, but because antiseptics were not used, infection rates soared.",
               "options": [
-                "John Snow.",
+                "Surgeons operated deeper and for longer, but because antiseptics were not used, infection rates soared.",
+                "Anesthetics were banned by the government, forcing operations into secret backrooms.",
+                "Doctors refused to use chloroform due to religious objections.",
+                "Everyone who took chloroform died immediately of cardiac arrest."
+              ]
+            },
+            {
+              "question": "Who introduced antiseptic surgery using carbolic acid in 1865?",
+              "answer": "Joseph Lister.",
+              "options": [
+                "Joseph Lister.",
+                "James Simpson.",
                 "Robert Koch.",
-                "Louis Pasteur.",
-                "Edward Jenner"
-              ]
-            },
-            {
-              "question": "In what year did the Black Death arrive in England?",
-              "answer": "1348.",
-              "options": [
-                "1348.",
-                "1066.",
-                "1415.",
-                "1665."
-              ]
-            },
-            {
-              "question": "What did Vesalius prove about Galen's anatomical ideas?",
-              "answer": "Galen had made over 300 mistakes because he dissected animals, not humans.",
-              "options": [
-                "Galen had made over 300 mistakes because he dissected animals, not humans.",
-                "Galen was 100% correct in every anatomical diagram.",
-                "Galen's Theory of Opposites was scientifically true.",
-                "Galen's books were written by fake physicians."
-              ]
-            },
-            {
-              "question": "How did John Snow prove that cholera was spread by contaminated water?",
-              "answer": "He mapped cholera deaths and linked them to the Broad Street pump, then removed the pump handle.",
-              "options": [
-                "He mapped cholera deaths and linked them to the Broad Street pump, then removed the pump handle.",
-                "He looked at cholera bacteria under a microscope and showed them to the Mayor.",
-                "He proved that cholera was spread by bad smells coming from London sewers.",
-                "He mass-vaccinated the local population using a weakened cholera strain."
-              ]
-            },
-            {
-              "question": "What was the significance of the Public Health Act of 1875?",
-              "answer": "It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.",
-              "options": [
-                "It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.",
-                "It banned the use of leeches and bloodletting.",
-                "It established the National Health Service (NHS) in Britain.",
-                "It funded Robert Koch's research into tuberculosis."
+                "Louis Pasteur"
               ]
             }
           ]
@@ -5448,6 +5448,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "Who was Florence Nightingale?",
+              "answer": "A nurse who revolutionized hospital care and hygiene during the Crimean War.",
+              "options": [
+                "A nurse who revolutionized hospital care and hygiene during the Crimean War.",
+                "The scientist who discovered the cholera microbe.",
+                "The first female doctor in Britain.",
+                "A researcher who helped develop penicillin."
+              ]
+            },
+            {
+              "question": "What did Florence Nightingale believe caused disease?",
+              "answer": "Miasma (bad air) and poor hygiene.",
+              "options": [
+                "Miasma (bad air) and poor hygiene.",
+                "Bacteria and germs in the water.",
+                "Imbalances in the four humours.",
+                "Inherited genetic defects."
+              ]
+            },
+            {
+              "question": "Which anesthetic was discovered by James Simpson in 1847?",
+              "answer": "Chloroform.",
+              "options": [
+                "Chloroform.",
+                "Ether.",
+                "Nitrous oxide.",
+                "Cocaine"
+              ]
+            },
+            {
               "question": "What disease did Edward Jenner vaccine against in 1796?",
               "answer": "Smallpox.",
               "options": [
@@ -5478,73 +5508,43 @@
               ]
             },
             {
-              "question": "What structure did Watson and Crick discover in 1953?",
-              "answer": "The double helix structure of DNA.",
+              "question": "In what year did the Black Death arrive in England?",
+              "answer": "1348.",
               "options": [
-                "The double helix structure of DNA.",
-                "The penicillin mould culture.",
-                "The valves inside human veins.",
-                "The bacteria responsible for tuberculosis."
+                "1348.",
+                "1066.",
+                "1415.",
+                "1665."
               ]
             },
             {
-              "question": "What is the function of DNA in relation to disease?",
-              "answer": "It contains genetic instructions that can cause hereditary diseases or influence susceptibility.",
+              "question": "What did Vesalius prove about Galen's anatomical ideas?",
+              "answer": "Galen had made over 300 mistakes because he dissected animals, not humans.",
               "options": [
-                "It contains genetic instructions that can cause hereditary diseases or influence susceptibility.",
-                "It is a chemical that actively kills bacteria in the blood.",
-                "It is a type of scanner used to detect lung cancer.",
-                "It is a vaccine injected to prevent viral infections."
+                "Galen had made over 300 mistakes because he dissected animals, not humans.",
+                "Galen was 100% correct in every anatomical diagram.",
+                "Galen's Theory of Opposites was scientifically true.",
+                "Galen's books were written by fake physicians."
               ]
             },
             {
-              "question": "Name one modern lifestyle factor that causes disease.",
-              "answer": "Smoking, poor diet, or lack of exercise.",
+              "question": "How did John Snow prove that cholera was spread by contaminated water?",
+              "answer": "He mapped cholera deaths and linked them to the Broad Street pump, then removed the pump handle.",
               "options": [
-                "Smoking, poor diet, or lack of exercise.",
-                "Drinking clean tap water.",
-                "Undergoing surgical operations under anesthetic.",
-                "Dissecting animal bodies in university labs."
+                "He mapped cholera deaths and linked them to the Broad Street pump, then removed the pump handle.",
+                "He looked at cholera bacteria under a microscope and showed them to the Mayor.",
+                "He proved that cholera was spread by bad smells coming from London sewers.",
+                "He mass-vaccinated the local population using a weakened cholera strain."
               ]
             },
             {
-              "question": "What did Harvey prove wrong about Galen's theories of blood?",
-              "answer": "Galen believed the liver constantly manufactured new blood which was consumed by the body.",
+              "question": "What was the significance of the Public Health Act of 1875?",
+              "answer": "It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.",
               "options": [
-                "Galen believed the liver constantly manufactured new blood which was consumed by the body.",
-                "Galen argued that veins had valves that stopped backflow.",
-                "Galen claimed that blood was pumped by the lungs.",
-                "Galen believed that bloodletting was useless."
-              ]
-            },
-            {
-              "question": "Who published the Germ Theory in 1861?",
-              "answer": "Louis Pasteur.",
-              "options": [
-                "Louis Pasteur.",
-                "Robert Koch.",
-                "Alexander Fleming.",
-                "Edward Jenner"
-              ]
-            },
-            {
-              "question": "Why did the mapping of the human genome (completed in 2003) not lead to immediate cures?",
-              "answer": "Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.",
-              "options": [
-                "Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.",
-                "The government classified the human genome map as a state secret.",
-                "Genetic science was banned by international ethical treaties.",
-                "Scientists realized that genes do not actually cause any diseases."
-              ]
-            },
-            {
-              "question": "Which female scientist's X-ray crystallography photo was vital to Watson and Crick's DNA discovery?",
-              "answer": "Rosalind Franklin.",
-              "options": [
-                "Rosalind Franklin.",
-                "Florence Nightingale.",
-                "Marie Curie.",
-                "Dorothy Hodgkin"
+                "It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.",
+                "It banned the use of leeches and bloodletting.",
+                "It established the National Health Service (NHS) in Britain.",
+                "It funded Robert Koch's research into tuberculosis."
               ]
             }
           ]
@@ -5967,6 +5967,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What disease did Edward Jenner vaccine against in 1796?",
+              "answer": "Smallpox.",
+              "options": [
+                "Smallpox.",
+                "Cholera.",
+                "Tuberculosis.",
+                "Anthrax"
+              ]
+            },
+            {
+              "question": "What did Edward Jenner observe that led to his vaccine?",
+              "answer": "Milkmaids who caught cowpox never caught the deadly smallpox.",
+              "options": [
+                "Milkmaids who caught cowpox never caught the deadly smallpox.",
+                "Clean water stopped people from getting cholera.",
+                "Boiling broth inside swan-necked flasks stopped decay.",
+                "Penicillium mould killed staphylococci bacteria."
+              ]
+            },
+            {
+              "question": "Who discovered the cause of cholera in 1854?",
+              "answer": "John Snow.",
+              "options": [
+                "John Snow.",
+                "Robert Koch.",
+                "Louis Pasteur.",
+                "Edward Jenner"
+              ]
+            },
+            {
               "question": "What structure did Watson and Crick discover in 1953?",
               "answer": "The double helix structure of DNA.",
               "options": [
@@ -5997,73 +6027,43 @@
               ]
             },
             {
-              "question": "What is a 'magic bullet'?",
-              "answer": "A chemical compound that targets and kills specific microbes without harming the rest of the body.",
+              "question": "What did Harvey prove wrong about Galen's theories of blood?",
+              "answer": "Galen believed the liver constantly manufactured new blood which was consumed by the body.",
               "options": [
-                "A chemical compound that targets and kills specific microbes without harming the rest of the body.",
-                "A type of shrapnel shell used on the Western Front.",
-                "An injection of cowpox to prevent smallpox.",
-                "A pill containing vitamins to boost public health."
+                "Galen believed the liver constantly manufactured new blood which was consumed by the body.",
+                "Galen argued that veins had valves that stopped backflow.",
+                "Galen claimed that blood was pumped by the lungs.",
+                "Galen believed that bloodletting was useless."
               ]
             },
             {
-              "question": "Name the first magic bullet, discovered by Paul Ehrlich in 1909.",
-              "answer": "Salvarsan 606.",
+              "question": "Who published the Germ Theory in 1861?",
+              "answer": "Louis Pasteur.",
               "options": [
-                "Salvarsan 606.",
-                "Prontosil.",
-                "Penicillin.",
-                "Carbolic acid"
+                "Louis Pasteur.",
+                "Robert Koch.",
+                "Alexander Fleming.",
+                "Edward Jenner"
               ]
             },
             {
-              "question": "What was established in Britain in 1948 to provide free medical care?",
-              "answer": "The National Health Service (NHS).",
+              "question": "Why did the mapping of the human genome (completed in 2003) not lead to immediate cures?",
+              "answer": "Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.",
               "options": [
-                "The National Health Service (NHS).",
-                "The Royal Society.",
-                "The Red Cross.",
-                "The RAMC."
+                "Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.",
+                "The government classified the human genome map as a state secret.",
+                "Genetic science was banned by international ethical treaties.",
+                "Scientists realized that genes do not actually cause any diseases."
               ]
             },
             {
-              "question": "What did Edward Jenner vaccine against in 1796?",
-              "answer": "Smallpox.",
+              "question": "Which female scientist's X-ray crystallography photo was vital to Watson and Crick's DNA discovery?",
+              "answer": "Rosalind Franklin.",
               "options": [
-                "Smallpox.",
-                "Cholera.",
-                "Tuberculosis.",
-                "Anthrax"
-              ]
-            },
-            {
-              "question": "How did John Snow prove that cholera was spread by contaminated water in 1854?",
-              "answer": "He mapped cholera deaths and linked them to the Broad Street pump, then removed the pump handle.",
-              "options": [
-                "He mapped cholera deaths and linked them to the Broad Street pump, then removed the pump handle.",
-                "He looked at cholera bacteria under a microscope and showed them to the Mayor.",
-                "He proved that cholera was spread by bad smells coming from London sewers.",
-                "He mass-vaccinated the local population using a weakened cholera strain."
-              ]
-            },
-            {
-              "question": "Who was the Minister of Health responsible for establishing the NHS in 1948?",
-              "answer": "Aneurin Bevan.",
-              "options": [
-                "Aneurin Bevan.",
-                "Winston Churchill.",
+                "Rosalind Franklin.",
                 "Florence Nightingale.",
-                "Alexander Fleming"
-              ]
-            },
-            {
-              "question": "Name the second magic bullet, discovered by Gerhard Domagk in 1932 to treat strep infections.",
-              "answer": "Prontosil.",
-              "options": [
-                "Prontosil.",
-                "Salvarsan 606.",
-                "Penicillin.",
-                "Chloroform"
+                "Marie Curie.",
+                "Dorothy Hodgkin"
               ]
             }
           ]
@@ -6520,6 +6520,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What structure did Watson and Crick discover in 1953?",
+              "answer": "The double helix structure of DNA.",
+              "options": [
+                "The double helix structure of DNA.",
+                "The penicillin mould culture.",
+                "The valves inside human veins.",
+                "The bacteria responsible for tuberculosis."
+              ]
+            },
+            {
+              "question": "What is the function of DNA in relation to disease?",
+              "answer": "It contains genetic instructions that can cause hereditary diseases or influence susceptibility.",
+              "options": [
+                "It contains genetic instructions that can cause hereditary diseases or influence susceptibility.",
+                "It is a chemical that actively kills bacteria in the blood.",
+                "It is a type of scanner used to detect lung cancer.",
+                "It is a vaccine injected to prevent viral infections."
+              ]
+            },
+            {
+              "question": "Name one modern lifestyle factor that causes disease.",
+              "answer": "Smoking, poor diet, or lack of exercise.",
+              "options": [
+                "Smoking, poor diet, or lack of exercise.",
+                "Drinking clean tap water.",
+                "Undergoing surgical operations under anesthetic.",
+                "Dissecting animal bodies in university labs."
+              ]
+            },
+            {
               "question": "What is a 'magic bullet'?",
               "answer": "A chemical compound that targets and kills specific microbes without harming the rest of the body.",
               "options": [
@@ -6550,73 +6580,43 @@
               ]
             },
             {
-              "question": "Who discovered Penicillin by accident in 1928?",
-              "answer": "Alexander Fleming.",
+              "question": "What did Edward Jenner vaccine against in 1796?",
+              "answer": "Smallpox.",
               "options": [
-                "Alexander Fleming.",
-                "Howard Florey.",
-                "Ernst Chain.",
-                "Robert Koch"
+                "Smallpox.",
+                "Cholera.",
+                "Tuberculosis.",
+                "Anthrax"
               ]
             },
             {
-              "question": "Which two scientists at Oxford developed Penicillin into a usable drug?",
-              "answer": "Howard Florey and Ernst Chain.",
+              "question": "How did John Snow prove that cholera was spread by contaminated water in 1854?",
+              "answer": "He mapped cholera deaths and linked them to the Broad Street pump, then removed the pump handle.",
               "options": [
-                "Howard Florey and Ernst Chain.",
-                "Watson and Crick.",
-                "Louis Pasteur and Robert Koch.",
-                "Paul Ehrlich and Gerhard Domagk."
+                "He mapped cholera deaths and linked them to the Broad Street pump, then removed the pump handle.",
+                "He looked at cholera bacteria under a microscope and showed them to the Mayor.",
+                "He proved that cholera was spread by bad smells coming from London sewers.",
+                "He mass-vaccinated the local population using a weakened cholera strain."
               ]
             },
             {
-              "question": "What major global event drove the mass production of Penicillin?",
-              "answer": "The Second World War.",
+              "question": "Who was the Minister of Health responsible for establishing the NHS in 1948?",
+              "answer": "Aneurin Bevan.",
               "options": [
-                "The Second World War.",
-                "The Crimean War.",
-                "The Industrial Revolution.",
-                "The Great Plague."
+                "Aneurin Bevan.",
+                "Winston Churchill.",
+                "Florence Nightingale.",
+                "Alexander Fleming"
               ]
             },
             {
-              "question": "Who published the Germ Theory in 1861?",
-              "answer": "Louis Pasteur.",
+              "question": "Name the second magic bullet, discovered by Gerhard Domagk in 1932 to treat strep infections.",
+              "answer": "Prontosil.",
               "options": [
-                "Louis Pasteur.",
-                "Robert Koch.",
-                "Alexander Fleming.",
-                "Edward Jenner"
-              ]
-            },
-            {
-              "question": "Who introduced antiseptic surgery using carbolic acid in 1865?",
-              "answer": "Joseph Lister.",
-              "options": [
-                "Joseph Lister.",
-                "James Simpson.",
-                "Robert Koch.",
-                "Louis Pasteur"
-              ]
-            },
-            {
-              "question": "What did Fleming observe in his petri dish that led to the discovery of Penicillin?",
-              "answer": "A mould (Penicillium) had grown on the dish and killed the surrounding staphylococci bacteria.",
-              "options": [
-                "A mould (Penicillium) had grown on the dish and killed the surrounding staphylococci bacteria.",
-                "Bacteriophages were attacking and consuming viruses.",
-                "Astrological signs matched the bacterial colony growth.",
-                "The agar jelly had decayed spontaneously due to bad air."
-              ]
-            },
-            {
-              "question": "How did the US government assist in the development of Penicillin?",
-              "answer": "They provided massive funding to pharmaceutical companies to mass-produce the drug for the D-Day landings.",
-              "options": [
-                "They provided massive funding to pharmaceutical companies to mass-produce the drug for the D-Day landings.",
-                "They officially declared penicillin to be the only legal antibiotic.",
-                "They supplied Howard Florey with raw penicillin samples from the Amazon.",
-                "They developed the initial chemical structure of the drug in US military labs."
+                "Prontosil.",
+                "Salvarsan 606.",
+                "Penicillin.",
+                "Chloroform"
               ]
             }
           ]
@@ -7028,6 +7028,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What is a 'magic bullet'?",
+              "answer": "A chemical compound that targets and kills specific microbes without harming the rest of the body.",
+              "options": [
+                "A chemical compound that targets and kills specific microbes without harming the rest of the body.",
+                "A type of shrapnel shell used on the Western Front.",
+                "An injection of cowpox to prevent smallpox.",
+                "A pill containing vitamins to boost public health."
+              ]
+            },
+            {
+              "question": "Name the first magic bullet, discovered by Paul Ehrlich in 1909.",
+              "answer": "Salvarsan 606.",
+              "options": [
+                "Salvarsan 606.",
+                "Prontosil.",
+                "Penicillin.",
+                "Carbolic acid"
+              ]
+            },
+            {
+              "question": "What was established in Britain in 1948 to provide free medical care?",
+              "answer": "The National Health Service (NHS).",
+              "options": [
+                "The National Health Service (NHS).",
+                "The Royal Society.",
+                "The Red Cross.",
+                "The RAMC."
+              ]
+            },
+            {
               "question": "Who discovered Penicillin by accident in 1928?",
               "answer": "Alexander Fleming.",
               "options": [
@@ -7058,73 +7088,43 @@
               ]
             },
             {
-              "question": "What lifestyle choice was definitively linked to lung cancer in the 1950s?",
-              "answer": "Smoking tobacco.",
+              "question": "Who published the Germ Theory in 1861?",
+              "answer": "Louis Pasteur.",
               "options": [
-                "Smoking tobacco.",
-                "Drinking alcohol.",
-                "Eating red meat.",
-                "Lack of sleep"
+                "Louis Pasteur.",
+                "Robert Koch.",
+                "Alexander Fleming.",
+                "Edward Jenner"
               ]
             },
             {
-              "question": "Name one modern technology used to diagnose lung cancer.",
-              "answer": "CT scans or Bronchoscopy.",
+              "question": "Who introduced antiseptic surgery using carbolic acid in 1865?",
+              "answer": "Joseph Lister.",
               "options": [
-                "CT scans or Bronchoscopy.",
-                "Stethoscope or Blood pressure cuffs.",
-                "X-ray crystallography.",
-                "Urine charts and pulse checking."
+                "Joseph Lister.",
+                "James Simpson.",
+                "Robert Koch.",
+                "Louis Pasteur"
               ]
             },
             {
-              "question": "State one way the modern government tries to prevent people from smoking.",
-              "answer": "Banning cigarette advertising, raising taxes, and packaging warning labels.",
+              "question": "What did Fleming observe in his petri dish that led to the discovery of Penicillin?",
+              "answer": "A mould (Penicillium) had grown on the dish and killed the surrounding staphylococci bacteria.",
               "options": [
-                "Banning cigarette advertising, raising taxes, and packaging warning labels.",
-                "Making smoking entirely illegal for all citizens.",
-                "Quarantining smokers inside their homes.",
-                "Mass-vaccinating teenagers against nicotine addiction."
+                "A mould (Penicillium) had grown on the dish and killed the surrounding staphylococci bacteria.",
+                "Bacteriophages were attacking and consuming viruses.",
+                "Astrological signs matched the bacterial colony growth.",
+                "The agar jelly had decayed spontaneously due to bad air."
               ]
             },
             {
-              "question": "What are the four humours?",
-              "answer": "Blood, phlegm, yellow bile, black bile.",
+              "question": "How did the US government assist in the development of Penicillin?",
+              "answer": "They provided massive funding to pharmaceutical companies to mass-produce the drug for the D-Day landings.",
               "options": [
-                "Blood, phlegm, yellow bile, black bile.",
-                "Blood, water, air, bile.",
-                "Blood, phlegm, yellow bile, urine.",
-                "Blood, water, pus, black bile."
-              ]
-            },
-            {
-              "question": "Who wrote 'On the Fabric of the Human Body' (1543)?",
-              "answer": "Andreas Vesalius.",
-              "options": [
-                "Andreas Vesalius.",
-                "William Harvey.",
-                "Thomas Sydenham.",
-                "Ambroise Pare"
-              ]
-            },
-            {
-              "question": "Why is lung cancer so difficult to treat effectively compared to other diseases?",
-              "answer": "Symptoms often do not appear until the cancer is advanced and has spread to other organs.",
-              "options": [
-                "Symptoms often do not appear until the cancer is advanced and has spread to other organs.",
-                "Modern science has not yet mapped the lung genome.",
-                "CT scans cannot detect tumors in the lungs.",
-                "Chemotherapy was officially banned by the NHS."
-              ]
-            },
-            {
-              "question": "Which landmark 1950 epidemiological study proved the link between smoking and lung cancer?",
-              "answer": "The British Doctors Study by Richard Doll and Bradford Hill.",
-              "options": [
-                "The British Doctors Study by Richard Doll and Bradford Hill.",
-                "The John Snow Cholera Report.",
-                "The Florence Nightingale Hygiene Audit.",
-                "The Alexander Fleming Penicillin Memo."
+                "They provided massive funding to pharmaceutical companies to mass-produce the drug for the D-Day landings.",
+                "They officially declared penicillin to be the only legal antibiotic.",
+                "They supplied Howard Florey with raw penicillin samples from the Amazon.",
+                "They developed the initial chemical structure of the drug in US military labs."
               ]
             }
           ]
@@ -7549,6 +7549,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "Who discovered Penicillin by accident in 1928?",
+              "answer": "Alexander Fleming.",
+              "options": [
+                "Alexander Fleming.",
+                "Howard Florey.",
+                "Ernst Chain.",
+                "Robert Koch"
+              ]
+            },
+            {
+              "question": "Which two scientists at Oxford developed Penicillin into a usable drug?",
+              "answer": "Howard Florey and Ernst Chain.",
+              "options": [
+                "Howard Florey and Ernst Chain.",
+                "Watson and Crick.",
+                "Louis Pasteur and Robert Koch.",
+                "Paul Ehrlich and Gerhard Domagk."
+              ]
+            },
+            {
+              "question": "What major global event drove the mass production of Penicillin?",
+              "answer": "The Second World War.",
+              "options": [
+                "The Second World War.",
+                "The Crimean War.",
+                "The Industrial Revolution.",
+                "The Great Plague."
+              ]
+            },
+            {
               "question": "What lifestyle choice was definitively linked to lung cancer in the 1950s?",
               "answer": "Smoking tobacco.",
               "options": [
@@ -7579,73 +7609,43 @@
               ]
             },
             {
-              "question": "When did the First World War begin and end?",
-              "answer": "1914 to 1918.",
+              "question": "What are the four humours?",
+              "answer": "Blood, phlegm, yellow bile, black bile.",
               "options": [
-                "1914 to 1918.",
-                "1939 to 1945.",
-                "1899 to 1902.",
-                "1950 to 1953."
+                "Blood, phlegm, yellow bile, black bile.",
+                "Blood, water, air, bile.",
+                "Blood, phlegm, yellow bile, urine.",
+                "Blood, water, pus, black bile."
               ]
             },
             {
-              "question": "What was the 'Western Front'?",
-              "answer": "A 400-mile line of trenches stretching through Belgium and France.",
+              "question": "Who wrote 'On the Fabric of the Human Body' (1543)?",
+              "answer": "Andreas Vesalius.",
               "options": [
-                "A 400-mile line of trenches stretching through Belgium and France.",
-                "The naval blockade in the North Sea.",
-                "The battles fought in the deserts of Mesopotamia.",
-                "The medical supply route between London and Paris."
+                "Andreas Vesalius.",
+                "William Harvey.",
+                "Thomas Sydenham.",
+                "Ambroise Pare"
               ]
             },
             {
-              "question": "Name the three major battles fought by the British on the Western Front.",
-              "answer": "Ypres, Somme, Cambrai.",
+              "question": "Why is lung cancer so difficult to treat effectively compared to other diseases?",
+              "answer": "Symptoms often do not appear until the cancer is advanced and has spread to other organs.",
               "options": [
-                "Ypres, Somme, Cambrai.",
-                "Waterloo, Trafalgar, Hastings.",
-                "Crimea, Sevastopol, Balaclava.",
-                "Gallipoli, Verdun, Marne."
+                "Symptoms often do not appear until the cancer is advanced and has spread to other organs.",
+                "Modern science has not yet mapped the lung genome.",
+                "CT scans cannot detect tumors in the lungs.",
+                "Chemotherapy was officially banned by the NHS."
               ]
             },
             {
-              "question": "What disease did Edward Jenner vaccine against in 1796?",
-              "answer": "Smallpox.",
+              "question": "Which landmark 1950 epidemiological study proved the link between smoking and lung cancer?",
+              "answer": "The British Doctors Study by Richard Doll and Bradford Hill.",
               "options": [
-                "Smallpox.",
-                "Cholera.",
-                "Tuberculosis.",
-                "Anthrax"
-              ]
-            },
-            {
-              "question": "What was established in Britain in 1948 to provide free medical care?",
-              "answer": "The National Health Service (NHS).",
-              "options": [
-                "The National Health Service (NHS).",
-                "The Royal Society.",
-                "The Red Cross.",
-                "The RAMC."
-              ]
-            },
-            {
-              "question": "Why did the terrain of Ypres make evacuation and medical treatment very difficult?",
-              "answer": "The muddy, low-lying ground became waterlogged and destroyed by artillery shells.",
-              "options": [
-                "The muddy, low-lying ground became waterlogged and destroyed by artillery shells.",
-                "The region was mountainous, preventing ambulances from climbing.",
-                "Constant sandstorms blinded stretcher-bearers.",
-                "The French army refused to let British doctors pass."
-              ]
-            },
-            {
-              "question": "What did the battle of Cambrai (1917) demonstrate about tanks?",
-              "answer": "Tanks could break through barbed wire and trenches, though they easily broke down.",
-              "options": [
-                "Tanks could break through barbed wire and trenches, though they easily broke down.",
-                "Tanks were completely useless on muddy terrain.",
-                "Tanks were primarily used to transport wounded casualties.",
-                "Tanks were immediately fitted with gas-spraying nozzles."
+                "The British Doctors Study by Richard Doll and Bradford Hill.",
+                "The John Snow Cholera Report.",
+                "The Florence Nightingale Hygiene Audit.",
+                "The Alexander Fleming Penicillin Memo."
               ]
             }
           ]
@@ -8101,6 +8101,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What lifestyle choice was definitively linked to lung cancer in the 1950s?",
+              "answer": "Smoking tobacco.",
+              "options": [
+                "Smoking tobacco.",
+                "Drinking alcohol.",
+                "Eating red meat.",
+                "Lack of sleep"
+              ]
+            },
+            {
+              "question": "Name one modern technology used to diagnose lung cancer.",
+              "answer": "CT scans or Bronchoscopy.",
+              "options": [
+                "CT scans or Bronchoscopy.",
+                "Stethoscope or Blood pressure cuffs.",
+                "X-ray crystallography.",
+                "Urine charts and pulse checking."
+              ]
+            },
+            {
+              "question": "State one way the modern government tries to prevent people from smoking.",
+              "answer": "Banning cigarette advertising, raising taxes, and packaging warning labels.",
+              "options": [
+                "Banning cigarette advertising, raising taxes, and packaging warning labels.",
+                "Making smoking entirely illegal for all citizens.",
+                "Quarantining smokers inside their homes.",
+                "Mass-vaccinating teenagers against nicotine addiction."
+              ]
+            },
+            {
               "question": "When did the First World War begin and end?",
               "answer": "1914 to 1918.",
               "options": [
@@ -8131,73 +8161,43 @@
               ]
             },
             {
-              "question": "What was 'No Man's Land'?",
-              "answer": "The dangerous, open ground between the Allied and German front-line trenches.",
+              "question": "What disease did Edward Jenner vaccine against in 1796?",
+              "answer": "Smallpox.",
               "options": [
-                "The dangerous, open ground between the Allied and German front-line trenches.",
-                "A demilitarized zone where hospitals were built.",
-                "The transport area behind the third line of trenches.",
-                "The medical tents set up at base camps."
+                "Smallpox.",
+                "Cholera.",
+                "Tuberculosis.",
+                "Anthrax"
               ]
             },
             {
-              "question": "Name the pattern in which trenches were dug.",
-              "answer": "A zig-zag pattern.",
+              "question": "What was established in Britain in 1948 to provide free medical care?",
+              "answer": "The National Health Service (NHS).",
               "options": [
-                "A zig-zag pattern.",
-                "A straight line.",
-                "A circular maze.",
-                "Grid squares"
+                "The National Health Service (NHS).",
+                "The Royal Society.",
+                "The Red Cross.",
+                "The RAMC."
               ]
             },
             {
-              "question": "What was the purpose of the 'duckboards' in the trenches?",
-              "answer": "To keep soldiers' feet out of the mud and standing water at the bottom of the trench.",
+              "question": "Why did the terrain of Ypres make evacuation and medical treatment very difficult?",
+              "answer": "The muddy, low-lying ground became waterlogged and destroyed by artillery shells.",
               "options": [
-                "To keep soldiers' feet out of the mud and standing water at the bottom of the trench.",
-                "To protect soldiers from overhead shrapnel shells.",
-                "To serve as stretchers to carry wounded men.",
-                "To block gas from entering the sleeping dugouts."
+                "The muddy, low-lying ground became waterlogged and destroyed by artillery shells.",
+                "The region was mountainous, preventing ambulances from climbing.",
+                "Constant sandstorms blinded stretcher-bearers.",
+                "The French army refused to let British doctors pass."
               ]
             },
             {
-              "question": "Who discovered the cause of cholera in 1854?",
-              "answer": "John Snow.",
+              "question": "What did the battle of Cambrai (1917) demonstrate about tanks?",
+              "answer": "Tanks could break through barbed wire and trenches, though they easily broke down.",
               "options": [
-                "John Snow.",
-                "Robert Koch.",
-                "Louis Pasteur.",
-                "Edward Jenner"
-              ]
-            },
-            {
-              "question": "Which anesthetic was discovered by James Simpson in 1847?",
-              "answer": "Chloroform.",
-              "options": [
-                "Chloroform.",
-                "Ether.",
-                "Nitrous oxide.",
-                "Cocaine"
-              ]
-            },
-            {
-              "question": "Explain why the zig-zag pattern of trenches was crucial for survival.",
-              "answer": "It contained the blast of any shell and prevented enemies from shooting straight down the trench.",
-              "options": [
-                "It contained the blast of any shell and prevented enemies from shooting straight down the trench.",
-                "It allowed rainwater to drain easily into the sump pits.",
-                "It was easier to dig in rocky soils.",
-                "It let supply horses turn corners more safely."
-              ]
-            },
-            {
-              "question": "What were the three main parallel lines of trenches?",
-              "answer": "Front-line, Support, and Communication trenches.",
-              "options": [
-                "Front-line, Support, and Communication trenches.",
-                "Allied, German, and Neutral trenches.",
-                "Attack, Retreat, and Reserve trenches.",
-                "Soldier, Officer, and Medical trenches."
+                "Tanks could break through barbed wire and trenches, though they easily broke down.",
+                "Tanks were completely useless on muddy terrain.",
+                "Tanks were primarily used to transport wounded casualties.",
+                "Tanks were immediately fitted with gas-spraying nozzles."
               ]
             }
           ]
@@ -8645,6 +8645,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "When did the First World War begin and end?",
+              "answer": "1914 to 1918.",
+              "options": [
+                "1914 to 1918.",
+                "1939 to 1945.",
+                "1899 to 1902.",
+                "1950 to 1953."
+              ]
+            },
+            {
+              "question": "What was the 'Western Front'?",
+              "answer": "A 400-mile line of trenches stretching through Belgium and France.",
+              "options": [
+                "A 400-mile line of trenches stretching through Belgium and France.",
+                "The naval blockade in the North Sea.",
+                "The battles fought in the deserts of Mesopotamia.",
+                "The medical supply route between London and Paris."
+              ]
+            },
+            {
+              "question": "Name the three major battles fought by the British on the Western Front.",
+              "answer": "Ypres, Somme, Cambrai.",
+              "options": [
+                "Ypres, Somme, Cambrai.",
+                "Waterloo, Trafalgar, Hastings.",
+                "Crimea, Sevastopol, Balaclava.",
+                "Gallipoli, Verdun, Marne."
+              ]
+            },
+            {
               "question": "What was 'No Man's Land'?",
               "answer": "The dangerous, open ground between the Allied and German front-line trenches.",
               "options": [
@@ -8675,73 +8705,43 @@
               ]
             },
             {
-              "question": "What is 'Trench Foot'?",
-              "answer": "A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.",
+              "question": "Who discovered the cause of cholera in 1854?",
+              "answer": "John Snow.",
               "options": [
-                "A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.",
-                "An infection caused by stepping on rusty barbed wire.",
-                "A disease spread by lice living in the seams of uniforms.",
-                "A mental breakdown caused by constant artillery shell fire."
+                "John Snow.",
+                "Robert Koch.",
+                "Louis Pasteur.",
+                "Edward Jenner"
               ]
             },
             {
-              "question": "Which weapon caused the most casualties on the Western Front?",
-              "answer": "Artillery shells and shrapnel.",
+              "question": "Which anesthetic was discovered by James Simpson in 1847?",
+              "answer": "Chloroform.",
               "options": [
-                "Artillery shells and shrapnel.",
-                "Rifles.",
-                "Poison gas.",
-                "Bayonets"
+                "Chloroform.",
+                "Ether.",
+                "Nitrous oxide.",
+                "Cocaine"
               ]
             },
             {
-              "question": "Why were wounds on the Western Front highly prone to severe infection?",
-              "answer": "The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.",
+              "question": "Explain why the zig-zag pattern of trenches was crucial for survival.",
+              "answer": "It contained the blast of any shell and prevented enemies from shooting straight down the trench.",
               "options": [
-                "The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.",
-                "Soldiers went weeks without bathing or washing their hands.",
-                "The British army did not carry any antiseptic dressings.",
-                "Poison gas infected the open flesh wounds."
+                "It contained the blast of any shell and prevented enemies from shooting straight down the trench.",
+                "It allowed rainwater to drain easily into the sump pits.",
+                "It was easier to dig in rocky soils.",
+                "It let supply horses turn corners more safely."
               ]
             },
             {
-              "question": "Who discovered Penicillin by accident in 1928?",
-              "answer": "Alexander Fleming.",
+              "question": "What were the three main parallel lines of trenches?",
+              "answer": "Front-line, Support, and Communication trenches.",
               "options": [
-                "Alexander Fleming.",
-                "Howard Florey.",
-                "Ernst Chain.",
-                "Robert Koch"
-              ]
-            },
-            {
-              "question": "What structure did Watson and Crick discover in 1953?",
-              "answer": "The double helix structure of DNA.",
-              "options": [
-                "The double helix structure of DNA.",
-                "The penicillin mould culture.",
-                "The valves inside human veins.",
-                "The bacteria responsible for tuberculosis."
-              ]
-            },
-            {
-              "question": "What preventative measure was introduced to stop Trench Foot?",
-              "answer": "Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.",
-              "options": [
-                "Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.",
-                "They were vaccinated against trench foot twice a year.",
-                "They wore heavy rubber boots imported from America.",
-                "They washed their feet in carbolic acid every morning."
-              ]
-            },
-            {
-              "question": "What was 'Shell Shock'?",
-              "answer": "A psychological condition caused by the trauma of constant shelling, now known as PTSD.",
-              "options": [
-                "A psychological condition caused by the trauma of constant shelling, now known as PTSD.",
-                "A physical injury caused by shrapnel hitting the helmet.",
-                "An ear infection caused by loud gunfire.",
-                "A chemical burn caused by chlorine gas."
+                "Front-line, Support, and Communication trenches.",
+                "Allied, German, and Neutral trenches.",
+                "Attack, Retreat, and Reserve trenches.",
+                "Soldier, Officer, and Medical trenches."
               ]
             }
           ]
@@ -9188,6 +9188,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What was 'No Man's Land'?",
+              "answer": "The dangerous, open ground between the Allied and German front-line trenches.",
+              "options": [
+                "The dangerous, open ground between the Allied and German front-line trenches.",
+                "A demilitarized zone where hospitals were built.",
+                "The transport area behind the third line of trenches.",
+                "The medical tents set up at base camps."
+              ]
+            },
+            {
+              "question": "Name the pattern in which trenches were dug.",
+              "answer": "A zig-zag pattern.",
+              "options": [
+                "A zig-zag pattern.",
+                "A straight line.",
+                "A circular maze.",
+                "Grid squares"
+              ]
+            },
+            {
+              "question": "What was the purpose of the 'duckboards' in the trenches?",
+              "answer": "To keep soldiers' feet out of the mud and standing water at the bottom of the trench.",
+              "options": [
+                "To keep soldiers' feet out of the mud and standing water at the bottom of the trench.",
+                "To protect soldiers from overhead shrapnel shells.",
+                "To serve as stretchers to carry wounded men.",
+                "To block gas from entering the sleeping dugouts."
+              ]
+            },
+            {
               "question": "What is 'Trench Foot'?",
               "answer": "A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.",
               "options": [
@@ -9218,73 +9248,43 @@
               ]
             },
             {
-              "question": "What does RAMC stand for?",
-              "answer": "Royal Army Medical Corps.",
+              "question": "Who discovered Penicillin by accident in 1928?",
+              "answer": "Alexander Fleming.",
               "options": [
-                "Royal Army Medical Corps.",
-                "Royal Auxiliary Military Clinicians.",
-                "Rescue and Medical Command.",
-                "Regimental Ambulance Mobilization Corps."
+                "Alexander Fleming.",
+                "Howard Florey.",
+                "Ernst Chain.",
+                "Robert Koch"
               ]
             },
             {
-              "question": "What was the role of the FANY?",
-              "answer": "Driving ambulances, moving supplies, and running soup kitchens.",
+              "question": "What structure did Watson and Crick discover in 1953?",
+              "answer": "The double helix structure of DNA.",
               "options": [
-                "Driving ambulances, moving supplies, and running soup kitchens.",
-                "Performing front-line surgery on wounded soldiers.",
-                "Digging medical trenches and building bunkers.",
-                "Translating messages between Allied commanders."
+                "The double helix structure of DNA.",
+                "The penicillin mould culture.",
+                "The valves inside human veins.",
+                "The bacteria responsible for tuberculosis."
               ]
             },
             {
-              "question": "Describe the 'Chain of Evacuation' on the Western Front.",
-              "answer": "A series of medical posts starting at the front line and ending at base hospitals.",
+              "question": "What preventative measure was introduced to stop Trench Foot?",
+              "answer": "Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.",
               "options": [
-                "A series of medical posts starting at the front line and ending at base hospitals.",
-                "The evacuation of civilians from cities near the battlefields.",
-                "The method of importing medical supplies from Britain via ships.",
-                "The training program for stretcher-bearers."
+                "Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.",
+                "They were vaccinated against trench foot twice a year.",
+                "They wore heavy rubber boots imported from America.",
+                "They washed their feet in carbolic acid every morning."
               ]
             },
             {
-              "question": "What lifestyle choice was definitively linked to lung cancer in the 1950s?",
-              "answer": "Smoking tobacco.",
+              "question": "What was 'Shell Shock'?",
+              "answer": "A psychological condition caused by the trauma of constant shelling, now known as PTSD.",
               "options": [
-                "Smoking tobacco.",
-                "Drinking alcohol.",
-                "Eating red meat.",
-                "Lack of sleep"
-              ]
-            },
-            {
-              "question": "What was established in Britain in 1948 to provide free medical care?",
-              "answer": "The National Health Service (NHS).",
-              "options": [
-                "The National Health Service (NHS).",
-                "The Royal Society.",
-                "The Red Cross.",
-                "The RAMC."
-              ]
-            },
-            {
-              "question": "What was the primary role of the Casualty Clearing Station (CCS)?",
-              "answer": "To perform urgent surgery to save life or limbs close to the front line.",
-              "options": [
-                "To perform urgent surgery to save life or limbs close to the front line.",
-                "To bury soldiers who died in No Man's Land.",
-                "To supply healthy blood to the Regimental Aid Posts.",
-                "To quarantine soldiers suffering from gas attacks."
-              ]
-            },
-            {
-              "question": "Where were the Base Hospitals located and what did they do?",
-              "answer": "On the French coast, treating long-term casualties or sending them to Britain.",
-              "options": [
-                "On the French coast, treating long-term casualties or sending them to Britain.",
-                "Right behind the front-line trenches in deep dugouts.",
-                "In London, training medical students in battlefield triage.",
-                "In neutral Switzerland to protect wounded prisoners."
+                "A psychological condition caused by the trauma of constant shelling, now known as PTSD.",
+                "A physical injury caused by shrapnel hitting the helmet.",
+                "An ear infection caused by loud gunfire.",
+                "A chemical burn caused by chlorine gas."
               ]
             }
           ]
@@ -9747,6 +9747,36 @@
           "instructions": "Answer these questions in full sentences.",
           "items": [
             {
+              "question": "What is 'Trench Foot'?",
+              "answer": "A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.",
+              "options": [
+                "A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.",
+                "An infection caused by stepping on rusty barbed wire.",
+                "A disease spread by lice living in the seams of uniforms.",
+                "A mental breakdown caused by constant artillery shell fire."
+              ]
+            },
+            {
+              "question": "Which weapon caused the most casualties on the Western Front?",
+              "answer": "Artillery shells and shrapnel.",
+              "options": [
+                "Artillery shells and shrapnel.",
+                "Rifles.",
+                "Poison gas.",
+                "Bayonets"
+              ]
+            },
+            {
+              "question": "Why were wounds on the Western Front highly prone to severe infection?",
+              "answer": "The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.",
+              "options": [
+                "The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.",
+                "Soldiers went weeks without bathing or washing their hands.",
+                "The British army did not carry any antiseptic dressings.",
+                "Poison gas infected the open flesh wounds."
+              ]
+            },
+            {
               "question": "What does RAMC stand for?",
               "answer": "Royal Army Medical Corps.",
               "options": [
@@ -9777,73 +9807,43 @@
               ]
             },
             {
-              "question": "What was the Thomas Splint?",
-              "answer": "A leg splint that kept the broken femur rigid, reducing blood loss and saving lives.",
+              "question": "What lifestyle choice was definitively linked to lung cancer in the 1950s?",
+              "answer": "Smoking tobacco.",
               "options": [
-                "A leg splint that kept the broken femur rigid, reducing blood loss and saving lives.",
-                "A device used to filter chlorine gas from the lungs.",
-                "A surgical knife used to amputate infected limbs.",
-                "A method of storing blood using sodium citrate."
+                "Smoking tobacco.",
+                "Drinking alcohol.",
+                "Eating red meat.",
+                "Lack of sleep"
               ]
             },
             {
-              "question": "What chemical was discovered in 1915 to prevent blood from clotting?",
-              "answer": "Sodium citrate.",
+              "question": "What was established in Britain in 1948 to provide free medical care?",
+              "answer": "The National Health Service (NHS).",
               "options": [
-                "Sodium citrate.",
-                "Carbolic acid.",
-                "Ether.",
-                "Penicillin"
+                "The National Health Service (NHS).",
+                "The Royal Society.",
+                "The Red Cross.",
+                "The RAMC."
               ]
             },
             {
-              "question": "What did the discovery of blood storage allow surgeons to do?",
-              "answer": "Perform blood transfusions at Casualty Clearing Stations (CCS) using blood banks.",
+              "question": "What was the primary role of the Casualty Clearing Station (CCS)?",
+              "answer": "To perform urgent surgery to save life or limbs close to the front line.",
               "options": [
-                "Perform blood transfusions at Casualty Clearing Stations (CCS) using blood banks.",
-                "Store vaccines for plague and cholera outbreaks.",
-                "Perform amputations without using anesthetics.",
-                "Diagnose gas gangrene using chemical tests."
+                "To perform urgent surgery to save life or limbs close to the front line.",
+                "To bury soldiers who died in No Man's Land.",
+                "To supply healthy blood to the Regimental Aid Posts.",
+                "To quarantine soldiers suffering from gas attacks."
               ]
             },
             {
-              "question": "Who discovered the structure of DNA in 1953?",
-              "answer": "James Watson and Francis Crick.",
+              "question": "Where were the Base Hospitals located and what did they do?",
+              "answer": "On the French coast, treating long-term casualties or sending them to Britain.",
               "options": [
-                "James Watson and Francis Crick.",
-                "Alexander Fleming and Howard Florey.",
-                "Louis Pasteur and Robert Koch.",
-                "William Harvey and Andreas Vesalius."
-              ]
-            },
-            {
-              "question": "Who introduced antiseptic surgery using carbolic acid in 1865?",
-              "answer": "Joseph Lister.",
-              "options": [
-                "Joseph Lister.",
-                "James Simpson.",
-                "Robert Koch.",
-                "Louis Pasteur"
-              ]
-            },
-            {
-              "question": "How did WWI affect the use of X-rays in medicine?",
-              "answer": "Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.",
-              "options": [
-                "Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.",
-                "X-rays were banned because they caused severe radiation burns.",
-                "X-rays were used to diagnose trench foot in soldiers.",
-                "They were only used in London base hospitals."
-              ]
-            },
-            {
-              "question": "What was the 'Carrel-Dakin' method?",
-              "answer": "Sterilizing deep wounds by constantly flushing them with an antiseptic solution.",
-              "options": [
-                "Sterilizing deep wounds by constantly flushing them with an antiseptic solution.",
-                "A method of amputating limbs in less than 30 seconds.",
-                "The use of whale oil to prevent trench foot.",
-                "A technique to store blood in vacuum flasks."
+                "On the French coast, treating long-term casualties or sending them to Britain.",
+                "Right behind the front-line trenches in deep dugouts.",
+                "In London, training medical students in battlefield triage.",
+                "In neutral Switzerland to protect wounded prisoners."
               ]
             }
           ]
