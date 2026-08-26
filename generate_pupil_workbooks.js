@@ -500,7 +500,7 @@ allDirs.forEach((unitId) => {
                         <span style="font-size: 7.5pt; color: #475569;">${ev.detail || ""}</span>
                      </div>`;
             } else {
-              html += `<div style="flex: 1 1 30%; max-width: 31%; border: 1px solid #94a3b8; padding: 6px; box-sizing: border-box; box-shadow: 2px 2px 0px #cbd5e1; border-radius: 4px; background: #fff;">
+              html += `<div style="flex: 1 1 30%; max-width: 31%; border: 2px solid #334155; padding: 15px; box-sizing: border-box; box-shadow: 2px 2px 0px #cbd5e1; border-radius: 8px; background: #f8fafc;">
                         <strong style="font-size: 9.5pt; color: #1e3a8a;">${ev.year || ""}</strong><br>
                         <strong style="font-size: 9.5pt;">${ev.title || ""}</strong><br>
                         <span style="font-size: 9pt; color: #475569;">${ev.detail || ""}</span>
@@ -510,7 +510,7 @@ allDirs.forEach((unitId) => {
           html += `</div><div style="clear: both; margin-bottom: 5px;"></div>`;
 
           if (lesson.do_now.prediction_question) {
-            html += `<div class="do-now-q" style="margin-top: 5px; font-size: 9.5pt;"><strong>1. ${lesson.do_now.prediction_question}</strong></div>`;
+            html += `<div class="do-now-q" style="margin-top: 5px; font-size: 9.5pt;"><strong>${lesson.do_now.qNum ? "Q" + lesson.do_now.qNum + ". " : "1. "}${lesson.do_now.prediction_question}</strong></div>`;
             html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
           }
           html += `</div>`;
@@ -592,13 +592,10 @@ allDirs.forEach((unitId) => {
             html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p>`;
             let words = vocabTerms.map((v) => v.term).join(" &nbsp;|&nbsp; ");
             html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
-            let cloze = lesson.vocab_cloze_text.replace(
-              /\[.*?\]/g,
-              '<span style="display:inline-block; width: 100px; border-bottom: 1px solid #333; margin: 0 5px;">&nbsp;</span>',
-            );
+            let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, ' _______________________ ');
             html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
           } else {
-            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least FOUR of the vocabulary words below correctly.</p>`;
+            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least ${vocabTerms.length >= 4 ? "FOUR" : vocabTerms.length === 3 ? "THREE" : vocabTerms.length === 2 ? "TWO" : "ONE"} of the vocabulary words below correctly.</p>`;
             let words = vocabTerms.map((v) => v.term).join(" &nbsp;|&nbsp; ");
             html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
             for (let i = 0; i < 4; i++) {
@@ -949,16 +946,7 @@ allDirs.forEach((unitId) => {
         html += `</div>`;
       }
 
-      // Historians Corner
-    if (lesson.historians_corner) {
-      html += `<div class="task-box" style=" ">`;
-      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-      html += `<p style="font-size: 12pt; font-style: italic;">${lesson.historians_corner.text}</p>`;
-      if (lesson.historians_corner.stretch_question) {
-        html += `<div style="margin-top: 15px; font-weight: bold;">Q${lesson.historians_corner.qNum}. ${lesson.historians_corner.stretch_question}</div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
-      }
-      html += `</div>`;
-    }
+
 
       if (lesson.tasks && lesson.tasks.length > 0) {
         html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
@@ -1174,7 +1162,7 @@ allDirs.forEach((unitId) => {
         lesson.gcse_task ||
         lesson.exam_practice ||
         (lesson.extended && lesson.extended.question);
-      if (hasExamTask && unitId !== "cme_new") {
+      if (hasExamTask) {
         html += `<div style="page-break-before: always; margin-top: 20px;">`;
         let fallbackExamTitle = [
           "water_and_sanitation",
@@ -1225,7 +1213,7 @@ allDirs.forEach((unitId) => {
               html += `<div class="task-lines-large"></div>`;
             }
           } else {
-            for (let i = 0; i < 8; i++) {
+            for (let i = 0; i < 6; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
           }
@@ -1371,9 +1359,11 @@ allDirs.forEach((unitId) => {
 
             let sourceHTML =
               '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
-            lesson.gcse_task.sources.forEach((srcObj) => {
+            lesson.gcse_task.sources.forEach((srcObj, i) => {
               sourceHTML +=
-                '<div style="flex: 1; border: 1px solid #ccc; padding-top: 5px; padding-bottom: 5px; text-align: center; ">';
+                '<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">' +
+                '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">Source ' + String.fromCharCode(65 + i) + '</strong>' +
+                (srcObj.title ? '<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic; text-align: left;">' + srcObj.title.replace(/Source [A-Z]:\s*/g, '') + '</span>' : '');
               if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
                 let imgSrc =
                   typeof resolveAssetPath === "function"
@@ -1755,7 +1745,7 @@ allDirs.forEach((unitId) => {
               }
 
               if (lesson.gcse_task.sources) {
-                lesson.gcse_task.sources.forEach((srcObj) => {
+                lesson.gcse_task.sources.forEach((srcObj, i) => {
                   if (srcObj.type !== "visual") {
                     allExamTasksHtml += `<div style="margin-top: 10px; padding: 10px; border-left: 3px solid #ccc; font-style: italic; font-size: 11pt;"><strong>${srcObj.title}:</strong> ${srcObj.text}</div>`;
                   }
