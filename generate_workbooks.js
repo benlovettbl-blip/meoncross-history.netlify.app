@@ -247,19 +247,37 @@ allDirs.forEach(unitId => {
       });
     }
 
+    let heroImgSrc = unitData.cover_image ? (typeof resolveAssetPath === "function" ? resolveAssetPath(unitData.cover_image, 2) : `../..${unitData.cover_image.startsWith("/") ? unitData.cover_image : "/" + unitData.cover_image}`) : '';
+    let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="width: 100%; height: 60vh; object-fit: cover; border-bottom: 5px solid #1e3a8a; border-top-left-radius: 12px; border-top-right-radius: 12px;">` : '';
+
     html += `
-    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; height: 95vh; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
-      <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
-      ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
+    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; max-height: 100vh; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
+      ${heroHtml}
       
-      <div style="display: flex; flex-direction: row; justify-content: center; margin: 20px auto; width: 80%; gap: 40px;">
-        <div style="flex: 2; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; font-weight: 600; font-size: 16pt; text-align: left; color: #1e3a8a;">Name: </div>
-        <div style="flex: 1; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; font-weight: 600; font-size: 16pt; text-align: left; color: #1e3a8a;">Class: </div>
+      <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box;">
+        Meoncross School | History Department
+      </div>
+      
+      <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+        <h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 38pt; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">${periodTitle}</h1>
+        ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
+        
+        <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
+                <span style="font-weight: 600; color: #334155; font-size: 13pt;">Teacher Workbook - Scholar:</span>
+                <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
+                <span style="font-weight: 600; color: #334155; font-size: 13pt;">Class:</span>
+                <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <span style="font-weight: 600; color: #334155; font-size: 13pt;">Teacher:</span>
+                <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
+            </div>
+        </div>
       </div>
     </div>
-    
-    <div class="tracker-page" style="page-break-after: always; padding: 20px;">
-      <div style="width: 100%; text-align: left; padding: 20px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
         <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 25px; font-size: 18pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-list-check"></i> Unit Checklist Tracker</h3>
         <table   style="page-break-inside: avoid; width: 100%; border-collapse: collapse; font-size: 11pt;">
           <thead>
@@ -498,7 +516,7 @@ allDirs.forEach(unitId => {
            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p>`;
            let words = vocabTerms.map(v => v.term).join(' &nbsp;|&nbsp; ');
            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
-           let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, '<span style="display:inline-block; width: 100px; border-bottom: 1px solid #333; margin: 0 5px;">&nbsp;</span>');
+           let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, ' ___________ ');
            html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
         } else {
 

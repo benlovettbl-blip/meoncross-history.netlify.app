@@ -78,7 +78,7 @@ const formatText = (text) => {
   if (!text) return "";
   return text
     .replace(/\(Weighing the Evidence toggle tabs\)/gi, "")
-    .replace(/_{3,}/g, '<span style="display:inline-block; width:100px; border-bottom:1px solid #333;"></span>')
+    .replace(/_{3,}/g, '___________')
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
     .replace(/\*(.*?)\*/g, "<em>$1</em>");
 };
@@ -346,21 +346,21 @@ allDirs.forEach((unitId) => {
 
     
     let heroImgSrc = unitData.cover_image ? (typeof resolveAssetPath === "function" ? resolveAssetPath(unitData.cover_image, 2) : `../..${unitData.cover_image.startsWith("/") ? unitData.cover_image : "/" + unitData.cover_image}`) : '';
-    let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="width: 100%; height: 50vh; object-fit: cover; border-bottom: 5px solid #1e3a8a; border-top-left-radius: 12px; border-top-right-radius: 12px;">` : '';
+    let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="width: 100%; height: 60vh; object-fit: cover; border-bottom: 5px solid #1e3a8a; border-top-left-radius: 12px; border-top-right-radius: 12px;">` : '';
 
     html += `
-    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; min-height: 98vh; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
+    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; max-height: 100vh; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
       ${heroHtml}
       
       <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box;">
         Meoncross School | History Department
       </div>
       
-      <div style="padding: 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
-        <h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 38pt; margin: 0 0 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">${periodTitle}</h1>
-        ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 25px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 25px;"></div>'}
+      <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+        <h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 38pt; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">${periodTitle}</h1>
+        ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
         
-        <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px; margin: 0 auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+        <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
                 <span style="font-weight: 600; color: #334155; font-size: 13pt;">Scholar:</span>
                 <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
@@ -375,44 +375,7 @@ allDirs.forEach((unitId) => {
             </div>
         </div>
       </div>
-    </div>
-    `;
-
-    if (unitData.cover_sources) {
-      html += `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 85%; margin: 10px auto;">
-        ${unitData.cover_sources
-          .map((src) => {
-            let imgSrc =
-              typeof resolveAssetPath === "function"
-                ? resolveAssetPath(src.image, 2)
-                : `../..${src.image.startsWith("/") ? src.image : "/" + src.image}`;
-            return `
-          <div style="display: flex; gap: 10px; align-items: center;  padding-top: 5px; padding-bottom: 5px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <img src="${imgSrc}" style="width: 80px; height: 80px; object-fit: cover; border: 2px solid white; border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.2);" alt="${src.title}">
-            <div style="text-align: left; flex: 1;">
-              <strong style="display: block; font-size: 9pt; color: #1a237e; margin-bottom: 3px;">${src.title}</strong>
-              <span style="font-size: 8pt; color: #475569; line-height: 1.2; display: block;">${src.description}</span>
-            </div>
-          </div>
-          `;
-          })
-          .join("")}
-      </div>
-      `;
-    } else if (unitData.hero_image) {
-      let heroImageSrc =
-        typeof resolveAssetPath === "function"
-          ? resolveAssetPath(unitData.hero_image, 2)
-          : `../..${unitData.hero_image.startsWith("/") ? unitData.hero_image : "/" + unitData.hero_image}`;
-      html += `
-      <div style="margin: 15px auto 10px auto; text-align: center; max-width: 85%;">
-        <img src="${heroImageSrc}" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); ">
-        ${unitData.hero_caption ? `<p style="font-size: 10pt; color: #475569; margin-top: 10px; font-style: italic;">${unitData.hero_caption}</p>` : ""}
-      </div>
-      `;
-    }
-
+    </div>`;
     html += `
     </div>
     
