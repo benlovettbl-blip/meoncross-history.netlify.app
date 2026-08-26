@@ -372,14 +372,41 @@ allDirs.forEach((unitId) => {
       let interpretations = [];
       let sourceCharCode = 65;
       let globalQNum = 1;
+    let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
+    if (lesson.do_now && (lesson.do_now.prediction_question || lesson.do_now.question)) lesson.do_now.qNum = globalQNum++;
     if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
-    if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
-    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => { if (typeof unitId !== 'undefined' && (unitId === 'great_war' || unitId === 'great_war_part2')) { if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); } if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
+    
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks.forEach(block => { 
+        if (block.tasks) {
+          block.tasks.forEach(task => { 
+            if (currentUnitId === 'great_war' || currentUnitId === 'great_war_part2') { 
+              if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); 
+              if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); 
+            } 
+            if (task.type !== 'vocab_match' && task.type !== 'drag_drop_timeline') task.qNum = globalQNum++; 
+          }); 
+        }
+        if (block.hinge_question) block.hinge_question.qNum = globalQNum++; 
+      });
+    }
+
     if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
-    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
-    if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+    if (lesson.sources) {
+      lesson.sources.forEach(source => { 
+        if (source.question) source.qNum = globalQNum++; 
+      });
+    }
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
+    if (lesson.gcse_task) {
+      if (lesson.gcse_task.tasks) {
+          lesson.gcse_task.tasks.forEach(t => t.qNum = globalQNum++);
+      } else {
+          lesson.gcse_task.qNum = globalQNum++;
+      }
+    }
     
     html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
       if (lesson.startPage) {
@@ -906,48 +933,6 @@ allDirs.forEach((unitId) => {
         });
       }
 
-      // Pair Share
-      if (lesson.pair_share) {
-        html += `<div class="task-box" style="  ">`;
-        html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
-
-        if (lesson.pair_share.sources) {
-          let sourceHTML =
-            '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
-          lesson.pair_share.sources.forEach((srcObj) => {
-            sourceHTML +=
-              '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
-            if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
-              let imgSrc =
-                typeof resolveAssetPath === "function"
-                  ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
-                  : (srcObj.src || srcObj.source || srcObj.image);
-              sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-            } 
-        if (srcObj.text || srcObj.content) { 
-              sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
-            }
-            if (srcObj.title)
-              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
-            sourceHTML += "</div>";
-          });
-          sourceHTML += "</div>";
-          html += sourceHTML;
-        }
-
-        html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${lesson.pair_share.qNum}. Prompt: ${lesson.pair_share.prompt}</p>`;
-        if (lesson.pair_share.think)
-          html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
-        html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
-        for (let i = 0; i < 6; i++) {
-          html += `<div class="task-lines-large"></div>`;
-        }
-        html += `</div>`;
-        html += `</div>`;
-      }
-
-
-
       if (lesson.tasks && lesson.tasks.length > 0) {
         html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
         lesson.tasks.forEach((task, tIdx) => {
@@ -1158,7 +1143,112 @@ allDirs.forEach((unitId) => {
         });
       }
 
-      let hasExamTask =
+       else {
+        html += `<div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;">`;
+        html += `<h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2>`;
+
+        if (lesson.lesson_assessment) {
+          html += `<div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 8px; margin-bottom: 15px;">`;
+          html += `<p style="font-weight: bold; color: #166534; margin-top: 0;">${lesson.lesson_assessment.question}</p>`;
+          if (lesson.lesson_assessment.hints) {
+            html += `<p style="font-size: 0.95rem; margin-bottom: 5px;"><strong>Hints:</strong> ${lesson.lesson_assessment.hints}</p>`;
+          }
+          if (lesson.lesson_assessment.sentence_starters) {
+            html += `<p style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0;"><strong>Sentence Starters:</strong></p>`;
+            html += `<ul style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0; padding-left: 20px;">`;
+            lesson.lesson_assessment.sentence_starters.forEach((starter) => {
+              html += `<li><em>${starter}</em></li>`;
+            });
+            html += `</ul>`;
+          }
+          html += `</div>`;
+        } else {
+          const consolText = lesson.consolidation || "Reflect on today's learning and answer your teacher's final challenge.";
+          html += `<p style="font-weight: bold; margin-bottom: 15px;">${consolText}</p>`;
+        }
+
+        for (let i = 0; i < 15; i++) {
+          html += `<div class="task-lines-large"></div>`;
+        }
+        html += `</div>`;
+      }
+      // Inject General Notes Box
+      html += `<div style="">`;
+      html += `
+      <div style="page-break-before: always; margin-top: 20px;">
+        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+    `;
+      for (let i = 0; i < 12; i++) {
+        html += `<div class="task-lines-large"></div>`;
+      }
+      html += `</div>`;
+
+      // Inject Discreet Grading Footer for the Lesson (KS3 ONLY)
+      const isGCSEUnit = [
+        "weimar_nazi_germany",
+        "cme_new",
+        "edexcel_medicine",
+        "eee",
+      ].includes(unitId);
+      if (!isGCSEUnit) {
+        html += `
+        <div style="margin-top: 10px;"></div>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
+        </div>
+      `;
+      }
+
+      
+    // Pair Share
+    if (lesson.pair_share) {
+        html += `<div class="task-box" style="  ">`;
+        html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
+
+        if (lesson.pair_share.sources) {
+          let sourceHTML =
+            '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
+          lesson.pair_share.sources.forEach((srcObj) => {
+            sourceHTML +=
+              '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
+            if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
+              let imgSrc =
+                typeof resolveAssetPath === "function"
+                  ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
+                  : (srcObj.src || srcObj.source || srcObj.image);
+              sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
+            } 
+        if (srcObj.text || srcObj.content) { 
+              sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
+            }
+            if (srcObj.title)
+              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
+            sourceHTML += "</div>";
+          });
+          sourceHTML += "</div>";
+          html += sourceHTML;
+        }
+
+        html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${lesson.pair_share.qNum}. Prompt: ${lesson.pair_share.prompt}</p>`;
+        if (lesson.pair_share.think)
+          html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
+        html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
+        for (let i = 0; i < 6; i++) {
+          html += `<div class="task-lines-large"></div>`;
+        }
+        html += `</div>`;
+        html += `</div>`;
+      }
+
+    // GCSE Task
+    let hasExamTask =
         lesson.gcse_task ||
         lesson.exam_practice ||
         (lesson.extended && lesson.extended.question);
@@ -1621,70 +1711,10 @@ allDirs.forEach((unitId) => {
           html += `</div>`;
         }
         html += `</div>`;
-      } else {
-        html += `<div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;">`;
-        html += `<h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2>`;
-
-        if (lesson.lesson_assessment) {
-          html += `<div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 8px; margin-bottom: 15px;">`;
-          html += `<p style="font-weight: bold; color: #166534; margin-top: 0;">${lesson.lesson_assessment.question}</p>`;
-          if (lesson.lesson_assessment.hints) {
-            html += `<p style="font-size: 0.95rem; margin-bottom: 5px;"><strong>Hints:</strong> ${lesson.lesson_assessment.hints}</p>`;
-          }
-          if (lesson.lesson_assessment.sentence_starters) {
-            html += `<p style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0;"><strong>Sentence Starters:</strong></p>`;
-            html += `<ul style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0; padding-left: 20px;">`;
-            lesson.lesson_assessment.sentence_starters.forEach((starter) => {
-              html += `<li><em>${starter}</em></li>`;
-            });
-            html += `</ul>`;
-          }
-          html += `</div>`;
-        } else {
-          const consolText = lesson.consolidation || "Reflect on today's learning and answer your teacher's final challenge.";
-          html += `<p style="font-weight: bold; margin-bottom: 15px;">${consolText}</p>`;
-        }
-
-        for (let i = 0; i < 15; i++) {
-          html += `<div class="task-lines-large"></div>`;
-        }
-        html += `</div>`;
-      }
-      // Inject General Notes Box
-      html += `<div style="">`;
-      html += `
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    `;
-      for (let i = 0; i < 12; i++) {
-        html += `<div class="task-lines-large"></div>`;
-      }
-      html += `</div>`;
-
-      // Inject Discreet Grading Footer for the Lesson (KS3 ONLY)
-      const isGCSEUnit = [
-        "weimar_nazi_germany",
-        "cme_new",
-        "edexcel_medicine",
-        "eee",
-      ].includes(unitId);
-      if (!isGCSEUnit) {
-        html += `
-        <div style="margin-top: 10px;"></div>
-        <div class="grading-footer">
-          <div class="grading-boxes">
-            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
-          </div>
-          <div>Teacher Comment: <span class="teacher-comment"></span></div>
-        </div>
-      `;
       }
 
-      if (lesson.full_page_map) {
+    // Full Page Map
+    if (lesson.full_page_map) {
         let mapSrc =
           typeof resolveAssetPath === "function"
             ? resolveAssetPath(lesson.full_page_map, 2)
@@ -1693,8 +1723,7 @@ allDirs.forEach((unitId) => {
         html += `<img src="${mapSrc}" style="max-width: 100%; max-height: 95vh; object-fit: contain; margin: auto; display: block;">`;
         html += `</div>`;
       }
-
-      allVideos = [];
+allVideos = [];
       if (lesson.video) {
         if (Array.isArray(lesson.video))
           allVideos = allVideos.concat(lesson.video);

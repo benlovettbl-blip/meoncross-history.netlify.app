@@ -1,80 +1,25 @@
 const fs = require('fs');
+let c = fs.readFileSync('public/units/great_war/data.js', 'utf8');
 
-function patchFile(filename) {
-    if (!fs.existsSync(filename)) return;
-    let content = fs.readFileSync(filename, 'utf8');
-    
-    // Fix extended writing Source A and B hardcoding
-    let target1 = `if (lesson.extended.source_a || lesson.extended.source_b) {`;
-    let replacement1 = `
-          let letterA = 'A';
-          let letterB = 'B';
-          if (lesson.extended.source_a || lesson.extended.source_b) {
-              letterA = String.fromCharCode(sourceCharCode++);
-              if (lesson.extended.source_b) letterB = String.fromCharCode(sourceCharCode++);
-              
-              if (lesson.extended.question) {
-                  lesson.extended.question = lesson.extended.question.replace(/Sources\\s+A\\s+and\\s+B/g, 'Sources ' + letterA + ' and ' + letterB);
-                  lesson.extended.question = lesson.extended.question.replace(/Source\\s+A/g, 'Source ' + letterA);
-                  lesson.extended.question = lesson.extended.question.replace(/Source\\s+B/g, 'Source ' + letterB);
-              }
-`;
-    content = content.replace(target1, replacement1);
-    
-    content = content.replace(/<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A<\/strong>/g, 
-                             '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterA}</strong>');
-                             
-    content = content.replace(/<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B<\/strong>/g, 
-                             '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterB}</strong>');
+c = c.replace(
+    '“We do not want to put anyone in the shade, but we too demand our place in the sun.”',
+    '“The days when the German left the earth to one of his neighbors, the sea to the other, and reserved for himself the heavens where pure philosophy reigns—those days are over. We recognize that without power, without a strong army and a strong navy, there can be no welfare for us. We do not want to step on the toes of any foreign power, but at the same time we do not want our own feet tramped by any foreign power. We do not want to put anyone in the shade, but we too demand our place in the sun.”'
+);
 
+c = c.replace(
+    '“We want eight, and we won\'t wait!”',
+    '“The German Kaiser is building a mighty battle fleet that threatens our island nation and our vast Empire. Britain has always ruled the waves, and we must never surrender our naval supremacy. If the Germans are building new Dreadnoughts, then we must outbuild them, no matter the cost to the taxpayer. The safety of our homes depends upon it. We demand that the government immediately construct eight new super-battleships this year. We want eight, and we won\'t wait!”'
+);
 
-    // Fix GCSE tasks Source A and B hardcoding
-    let target2 = `} else if (lesson.gcse_task.sources) {`;
-    let replacement2 = `} else if (lesson.gcse_task.sources) {
-          let letterA = String.fromCharCode(sourceCharCode++);
-          let letterB = lesson.gcse_task.sources.length > 1 ? String.fromCharCode(sourceCharCode++) : '';
-          
-          if (lesson.gcse_task.topic) {
-              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Sources\\s+A\\s+and\\s+B/g, 'Sources ' + letterA + ' and ' + letterB);
-              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\\s+A/g, 'Source ' + letterA);
-              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\\s+B/g, 'Source ' + letterB);
-          }
-`;
-    content = content.replace(target2, replacement2);
-    
-    // Replace "How useful are Sources A and B"
-    let target3 = `} else {
-            html += \`<p style="font-weight: bold; font-size: 13pt;">\${lesson.gcse_task.qNum ? \`Q\${lesson.gcse_task.qNum}. \` : ''}How useful are Sources A and B for an enquiry into \${topicText}?</p>\`;
-          }`;
-    let replacement3 = `} else {
-            html += \`<p style="font-weight: bold; font-size: 13pt;">\${lesson.gcse_task.qNum ? \`Q\${lesson.gcse_task.qNum}. \` : ''}How useful are \${letterB ? 'Sources ' + letterA + ' and ' + letterB : 'Source ' + letterA} for an enquiry into \${topicText}?</p>\`;
-          }`;
-    content = content.replace(target3, replacement3);
-    
-    // Replace srcObj.title
-    let target4 = `lesson.gcse_task.sources.forEach(srcObj => {`;
-    let replacement4 = `lesson.gcse_task.sources.forEach((srcObj, srcIdx) => {
-            let currentLetter = srcIdx === 0 ? letterA : letterB;
-            let displayTitle = srcObj.title.replace(/Source\\s+[A-Z]/, 'Source ' + currentLetter);`;
-    content = content.replace(target4, replacement4);
-    
-    let target5 = `sourceHTML += \`<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\${srcObj.title}</p>\`;`;
-    let replacement5 = `sourceHTML += \`<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\${displayTitle}</p>\`;`;
-    content = content.replace(target5, replacement5);
-    
-    // Replace the NOP Table
-    let target6 = `<tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">A</td>`;
-    let replacement6 = `<tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">\${letterA}</td>`;
-    content = content.replace(target6, replacement6);
-    
-    let target7 = `<tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">B</td>`;
-    let replacement7 = `<tr><td style=" padding-top: 8px; padding-bottom: 8px; text-align: center; font-weight: bold; height: 120px;">\${letterB}</td>`;
-    content = content.replace(target7, replacement7);
-    
-    fs.writeFileSync(filename, content);
-    console.log("Patched " + filename);
-}
+c = c.replace(
+    '“Serbia is a viper that must be crushed. If we do not destroy them now, our empire will be torn apart by Slavic nationalism.”',
+    '“The assassination of our beloved Archduke Franz Ferdinand is an unforgivable outrage. It is clear that the government in Belgrade provided the weapons and training for these terrorist assassins. Serbia is a viper that must be crushed. For years they have stirred up rebellion among the Slavic peoples living within our borders. If we do not destroy them now, our entire multi-national empire will be torn apart by Slavic nationalism. We must strike quickly and without mercy, to show the world that Austria-Hungary is still a great power.”'
+);
 
-patchFile('generate_textbooks.js');
-patchFile('generate_workbooks.js');
-patchFile('generate_pupil_workbooks.js');
+c = c.replace(
+    '“You may rest assured that His Majesty will faithfully stand by Austria-Hungary, as is required by the obligations of his alliance and of his ancient friendship.”',
+    '“The Kaiser views the assassination at Sarajevo as a direct attack on the principle of monarchy itself. We fully understand that Austria-Hungary must take swift and severe military action against Serbia to restore its honor. If Russia foolishly decides to intervene to protect Serbia, Germany will not hesitate to mobilize its own forces. You may rest assured that His Majesty will faithfully stand by Austria-Hungary, as is required by the obligations of his alliance and of his ancient friendship, even if it leads to a European war.”'
+);
+
+fs.writeFileSync('public/units/great_war/data.js', c);
+console.log('Patched sources in data.js');

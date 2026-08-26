@@ -236,7 +236,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
       html += `</div><div style="clear: both; margin-bottom: 20px;"></div>`;
 
       if (lesson.do_now.prediction_question) {
-        html += `<div class="do-now-q" style="margin-top: 20px;"><strong>1. ${lesson.do_now.prediction_question}</strong></div>`;
+        html += `<div class="do-now-q" style="margin-top: 20px;"><strong>${lesson.do_now.qNum ? "Q" + lesson.do_now.qNum + ". " : "1. "}${lesson.do_now.prediction_question}</strong></div>`;
         html += `<div class="task-lines"></div>`;
       }
       html += `</div>`;

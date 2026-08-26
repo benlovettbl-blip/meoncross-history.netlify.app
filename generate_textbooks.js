@@ -234,14 +234,41 @@ allDirs.forEach(unitId => {
   periodLessons.forEach((lesson, lessonIndex) => {
       let sourceCharCode = 65;
     let globalQNum = 1;
+    let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
+    if (lesson.do_now && (lesson.do_now.prediction_question || lesson.do_now.question)) lesson.do_now.qNum = globalQNum++;
     if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
-    if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
-    if (lesson.narrative_blocks) lesson.narrative_blocks.forEach(block => { if (block.tasks) block.tasks.forEach(task => { if (typeof unitId !== 'undefined' && (unitId === 'great_war' || unitId === 'great_war_part2')) { if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); } if (task.type !== 'vocab_match') task.qNum = globalQNum++; }); if (block.hinge_question) block.hinge_question.qNum = globalQNum++; });
+    
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks.forEach(block => { 
+        if (block.tasks) {
+          block.tasks.forEach(task => { 
+            if (currentUnitId === 'great_war' || currentUnitId === 'great_war_part2') { 
+              if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); 
+              if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); 
+            } 
+            if (task.type !== 'vocab_match' && task.type !== 'drag_drop_timeline') task.qNum = globalQNum++; 
+          }); 
+        }
+        if (block.hinge_question) block.hinge_question.qNum = globalQNum++; 
+      });
+    }
+
     if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
-    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
     if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
-    if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+    if (lesson.sources) {
+      lesson.sources.forEach(source => { 
+        if (source.question) source.qNum = globalQNum++; 
+      });
+    }
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
+    if (lesson.gcse_task) {
+      if (lesson.gcse_task.tasks) {
+          lesson.gcse_task.tasks.forEach(t => t.qNum = globalQNum++);
+      } else {
+          lesson.gcse_task.qNum = globalQNum++;
+      }
+    }
     
     html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: auto; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
     html += `<div style="margin-bottom: 10px;"></div>`;
@@ -340,7 +367,7 @@ allDirs.forEach(unitId => {
         shuffledEvents.forEach((ev, idx) => {
           const margins = ["margin-top: 5px;", "margin-top: 20px;", "margin-bottom: 5px;", "margin-top: 0px;"];
           const m = margins[idx % margins.length];
-          html += `<div style="width: 45%;  padding: 5px; box-sizing: border-box;  ${m} box-shadow: 2px 2px 0px #aaa;">
+          html += `<div style="width: 45%; border: 1px solid #334155; border-radius: 4px; padding: 5px; box-sizing: border-box; ${m} box-shadow: 2px 2px 0px #aaa;">
                       <strong style="font-size: 9.5pt;">${ev.year || ''}</strong><br>
                       <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
                       <span style="font-size: 9pt;">${ev.detail || ''}</span>
@@ -725,17 +752,10 @@ allDirs.forEach(unitId => {
       });
     }
 
-    // Pair Share
-    if (lesson.historians_corner) {
-      html += `<div class="task-box" style=" ">`;
-      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
-      if (lesson.historians_corner.stretch_question) {
-        html += `<div style="margin-top: 15px; font-weight: bold;">Q${lesson.historians_corner.qNum}. ${lesson.historians_corner.stretch_question}</div>`;
-      }
-      html += `</div>`;
-    }
+    // Removed Lesson Assessment
+    // Removed General Notes Box
 
+    // Pair Share
     if (lesson.pair_share) {
       html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
       html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
@@ -743,6 +763,7 @@ allDirs.forEach(unitId => {
       html += `</div>`;
     }
 
+    // Active Tasks
     if (lesson.tasks) {
       html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
       lesson.tasks.forEach((task, tIdx) => {
@@ -801,6 +822,18 @@ allDirs.forEach(unitId => {
       });
     }
 
+    // Historian's Corner
+    if (lesson.historians_corner) {
+      html += `<div class="task-box" style=" ">`;
+      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
+      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
+      if (lesson.historians_corner.stretch_question) {
+        html += `<div style="margin-top: 15px; font-weight: bold;">Q${lesson.historians_corner.qNum}. ${lesson.historians_corner.stretch_question}</div>`;
+      }
+      html += `</div>`;
+    }
+
+    // GCSE Task
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
@@ -973,20 +1006,14 @@ allDirs.forEach(unitId => {
       html += `</div>`;
     }
 
-    // Removed Lesson Assessment
-    // Removed General Notes Box
-
-
-    
-
+    // Full Page Map
     if (lesson.full_page_map) {
       let mapSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.full_page_map, 2) : `../..${lesson.full_page_map}`;
       html += `<div style="page-break-before: always; height: 95vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;">`;
       html += `<img src="${mapSrc}" style="max-width: 100%; max-height: 95vh; object-fit: contain; margin: auto; display: block;">`;
       html += `</div>`;
     }
-
-    let allVideos = [];
+allVideos = [];
     if (lesson.video) {
       if (Array.isArray(lesson.video)) allVideos = allVideos.concat(lesson.video);
       else allVideos.push(lesson.video);
