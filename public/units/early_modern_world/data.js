@@ -1286,22 +1286,22 @@ const early_modern_world = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "1. Inference from Source A",
+              "question": "1. Inference from Source A (2 Marks)",
               "instructions": "What can you infer from the 1605 engraving about how the plotters were viewed by contemporaries? Support your inference with a specific visual detail."
             },
             {
               "type": "source_analysis",
-              "question": "2. Utility & Provenance of Source A",
+              "question": "2. Utility & Provenance of Source A (8 Marks)",
               "instructions": "How useful is Source A for an enquiry into the threat posed by the Gunpowder Plot? Evaluate the content of the engraving and its provenance."
             },
             {
               "type": "source_analysis",
-              "question": "3. Analysis of Evidence in Source B",
+              "question": "3. Analysis of Evidence in Source B (4 Marks)",
               "instructions": "Explain how the physical difference between Guy Fawkes's early signature and his later signature can be used as evidence of Jacobean interrogation methods."
             },
             {
               "type": "table_planner",
-              "question": "4. Follow-Up Investigation",
+              "question": "4. Follow-Up Investigation (4 Marks)",
               "instructions": "Investigate the official government account of the plot based on the Monteagle letter (Source C).",
               "columns": [
                 "Enquiry Field",
@@ -1328,7 +1328,7 @@ const early_modern_world = {
             },
             {
               "type": "extended_writing",
-              "question": "Essay Question",
+              "question": "Essay Question (16 Marks)",
               "instructions": "\"The Gunpowder Plot was caused entirely by the harsh persecution and broken promises of King James I.\"\nHow far do you agree with this statement?\n\nIn your answer, ensure you:\n- Examine the impact of recusancy penalties and the banishment of Catholic priests.\n- Consider alternative perspectives, including religious extremism or political exploitation by Robert Cecil.\n- Conclude with a clear, balanced historical judgement supported by evidence."
             },
             {
@@ -1404,24 +1404,24 @@ const early_modern_world = {
         "type": "questions",
         "items": [
           {
-            "question": "Who was the English monarch executed in 1649 after the English Civil War?",
-            "answer": "King Charles I"
+            "question": "What was the name of the first permanent English settlement in North America (1607)?",
+            "answer": "Jamestown"
           },
           {
-            "question": "What was the name of the professional, radical army created by Parliament?",
-            "answer": "The New Model Army"
+            "question": "Which cash crop saved the Jamestown colony from economic ruin?",
+            "answer": "Tobacco"
           },
           {
-            "question": "Who led Parliament's forces and later ruled Britain as 'Lord Protector'?",
-            "answer": "Oliver Cromwell"
+            "question": "What type of business model was the East India Company (EIC), where multiple investors pooled money?",
+            "answer": "A Joint-Stock Company"
           },
           {
-            "question": "What name was given to the period when Britain was ruled as a republic without a king?",
-            "answer": "The Commonwealth"
+            "question": "Which powerful Asian empire did Sir Thomas Roe visit in 1615?",
+            "answer": "The Mughal Empire"
           },
           {
-            "question": "How did wealthy London merchants use their colonial money during the Civil War?",
-            "answer": "They funded Parliament's New Model Army to defeat the King."
+            "question": "Why were the English submissive traders in India, but aggressive conquerors in North America?",
+            "answer": "Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics."
           }
         ]
       },
