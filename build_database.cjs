@@ -21,6 +21,23 @@ async function buildDatabase() {
       const fileUrl = 'file:///' + path.join(process.cwd(), unit, 'data.js').replace(/\\/g, '/') + '?t=' + Date.now();
       const mod = await import(fileUrl);
       db[unitKey].data = mod.unitData || mod.gwData || mod.default;
+      
+      // Orphaned Questions Guard
+      if (db[unitKey].data && db[unitKey].data.lessons) {
+        db[unitKey].data.lessons.forEach((lesson, lIdx) => {
+          if (lesson.narrative_blocks) {
+            lesson.narrative_blocks.forEach((block, bIdx) => {
+              if (block.tasks) {
+                block.tasks.forEach((task) => {
+                  if (task.type === 'source_analysis') {
+                    console.warn(`\x1b[33m[WARNING] Orphaned source_analysis task found in narrative_blocks for ${unitKey} Lesson ${lIdx + 1}. Please move it to the sources array.\x1b[0m`);
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
     } catch (err) {
       console.error(`Error loading data.js for ${unit}:`, err.message);
     }

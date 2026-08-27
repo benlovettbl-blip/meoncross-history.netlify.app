@@ -1455,11 +1455,6 @@
             "text": "At 2:00 PM on Tuesday, 30 January 1649, a man in a black velvet coat stepped out of a window of the Banqueting House in Whitehall, London, onto a wooden scaffold draped in black cloth.<br><br>The man was <strong>King Charles I</strong>. Below him stood thousands of silent onlookers, surrounded by ranks of iron-armored cavalry. For seven years, England had been ripped apart by a bloody Civil War that cost the lives of nearly 200,000 people—a higher proportion of the population than died in the First World War.<br><br>Charles put his head on the wooden block. He stretched out his hands—the prearranged signal—and the masked executioner’s axe severed his head with a single blow. The executioner held the dripping head aloft and shouted: <em>\"Behold the head of a traitor!\"</em><br><br>A collective groan echoed through the crowd. Never before in European history had a monarch been put on trial, condemned, and executed by his own Parliament.<br><br><strong>But who was really pulling the strings?</strong> Was this victory brought about by high-minded Parliamentary ideals of liberty? Or was it secretly fueled by a new class of ultra-rich Atlantic merchants whose sugar and tobacco profits were reshaping the British state?",
             "tasks": [
               {
-                "type": "source_analysis",
-                "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
-                "model_answer": "The combined symbols represented the 1707 Act of Union, formally joining England and Scotland into a single, unified political entity: Great Britain."
-              },
-              {
                 "type": "comprehension",
                 "question": "Why was the execution of King Charles I such a shocking event in European history?",
                 "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
@@ -1679,6 +1674,11 @@
             "caption": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
             "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
             "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
+          },
+          {
+            "type": "source_analysis",
+            "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
+            "model_answer": "The combined symbols represented the 1707 Act of Union, formally joining England and Scotland into a single, unified political entity: Great Britain."
           }
         ],
         "lesson_assessment": {
@@ -1752,24 +1752,24 @@
           "type": "questions",
           "items": [
             {
-              "question": "What was the name of the first permanent English settlement in North America (1607)?",
-              "answer": "Jamestown"
+              "question": "What political belief held that kings were chosen directly by God and possessed absolute power?",
+              "answer": "The Divine Right of Kings"
             },
             {
-              "question": "Which cash crop saved the Jamestown colony from economic ruin?",
-              "answer": "Tobacco"
+              "question": "What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?",
+              "answer": "Ship Money"
             },
             {
-              "question": "What type of business model was the East India Company (EIC), where multiple investors pooled money?",
-              "answer": "A Joint-Stock Company"
+              "question": "What was the name of Parliament's disciplined, professional military force created during the Civil War?",
+              "answer": "The New Model Army"
             },
             {
-              "question": "Which powerful Asian empire did Sir Thomas Roe visit in 1615?",
-              "answer": "The Mughal Empire"
+              "question": "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
+              "answer": "Oliver Cromwell"
             },
             {
-              "question": "Why were the English submissive traders in India, but aggressive conquerors in North America?",
-              "answer": "Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics."
+              "question": "On what date was King Charles I executed outside the Banqueting House in London?",
+              "answer": "27 January 1649"
             }
           ]
         },
@@ -1825,18 +1825,7 @@
             "image": "/images/great_seal_1651.png",
             "image_alt": "The Great Seal of the Commonwealth of England (1651)",
             "source_letter": "E",
-            "tasks": [
-              {
-                "type": "source_analysis",
-                "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
-                "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
-                "text": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
-              },
-              {
-                "question": "Study Source E (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
-                "model_answer": "The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the \"Commonwealth\", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch."
-              }
-            ],
+            "tasks": [],
             "image_caption": "The Great Seal of the Commonwealth of England (1651)"
           },
           {
@@ -1982,6 +1971,16 @@
             "caption": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
             "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
             "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
+          },
+          {
+            "question": "Study Source E (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
+            "model_answer": "The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the \"Commonwealth\", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch."
+          },
+          {
+            "type": "source_analysis",
+            "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
+            "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
+            "text": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
           }
         ],
         "lesson_assessment": {
@@ -4151,7 +4150,8 @@
           "lng": -2.5991
         }
       }
-    ]
+    ],
+    "is_ks3": true
   },
   "biographies": [
     {

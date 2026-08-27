@@ -1,33 +1,80 @@
 const fs = require('fs');
-let code = fs.readFileSync('c:/Projects/meoncross-history.netlify.app/medieval_england/data.js', 'utf8');
-code = code.replace(/"doom_painting"/g, '"/images/doom_painting.jpg"');
-code = code.replace(/"bosworth_field"/g, '"/images/bosworth_battle.jpg"');
-code = code.replace(/\/images\/lancaster_rose\.png/g, '/images/lancaster_rose.svg');
-code = code.replace(/\/images\/york_rose\.png/g, '/images/york_rose.svg');
+let c = fs.readFileSync('early_modern_world/data.js', 'utf8');
+c = c.replace('export default early_modern_world;', '');
+let obj = eval(c + '\n early_modern_world;');
 
-// Let's also add tasks to Lesson 5 for the missing sources
-const data = JSON.parse(code.replace('export const unitData = ', '').replace(/;\s*$/, ''));
-const l5 = data.lessons[4];
-const churchBlock = l5.narrative_blocks.find(b => b.title.includes('Parish Church'));
-if (churchBlock && churchBlock.tasks) {
-  if (!churchBlock.tasks.find(t => t.instruction && t.instruction.includes('Source A'))) {
-    churchBlock.tasks.push({
-      "type": "short_answer",
-      "question": "Task: Look at Source A (The Medieval Church Interior). List three different activities taking place in the church other than praying.",
-      "model_answer": "In Source A, you can see people trading goods, socialising/talking with their neighbours, and walking their dogs."
-    });
-  }
-}
-const doomBlock = l5.narrative_blocks.find(b => b.title.includes('Doom Paintings'));
-if (doomBlock && doomBlock.tasks) {
-  if (!doomBlock.tasks.find(t => t.instruction && t.instruction.includes('Source C'))) {
-    doomBlock.tasks.push({
-      "type": "short_answer",
-      "question": "Task: Look at Source C (The Chaldon Doom Painting). Describe two terrifying things happening to the sinners in the bottom half of the painting.",
-      "model_answer": "In the bottom half of Source C, sinners are being dragged into the jaws of a giant monster (Hellmouth) and demons are stabbing and torturing them with pitchforks."
-    });
-  }
-}
+// 1. HARDCODE L6 DO NOW
+obj.lessons[5].do_now = {
+  title: "Do Now: Previous Knowledge",
+  type: "questions",
+  items: [
+    {
+      "question": "What political belief held that kings were chosen directly by God and possessed absolute power?",
+      "answer": "The Divine Right of Kings"
+    },
+    {
+      "question": "What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?",
+      "answer": "Ship Money"
+    },
+    {
+      "question": "What was the name of Parliament's disciplined, professional military force created during the Civil War?",
+      "answer": "The New Model Army"
+    },
+    {
+      "question": "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
+      "answer": "Oliver Cromwell"
+    },
+    {
+      "question": "On what date was King Charles I executed outside the Banqueting House in London?",
+      "answer": "27 January 1649"
+    }
+  ]
+};
 
-fs.writeFileSync('c:/Projects/meoncross-history.netlify.app/medieval_england/data.js', 'export const unitData = ' + JSON.stringify(data, null, 2) + ';\n');
-console.log('Fixed links and added missing tasks');
+// 3. FIX ORPHANED QUESTIONS
+// For Lesson 5 (Index 4), move the task containing "Study Source A" from narrative_blocks to sources
+let l5 = obj.lessons[4];
+if (!l5.sources) l5.sources = [];
+l5.narrative_blocks.forEach(b => {
+  if (b.tasks) {
+    let taskIdx = b.tasks.findIndex(t => t.question && t.question.includes('Study Source A. Why did the monarch combine'));
+    if (taskIdx > -1) {
+      let task = b.tasks.splice(taskIdx, 1)[0];
+      l5.sources.push(task);
+    }
+  }
+});
+
+// For Lesson 6 (Index 5), move the task containing "Study Source E" from narrative_blocks to sources
+let l6 = obj.lessons[5];
+if (!l6.sources) l6.sources = [];
+l6.narrative_blocks.forEach(b => {
+  if (b.tasks) {
+    let taskIdx = b.tasks.findIndex(t => t.question && t.question.includes('Study Source E (The Great Seal'));
+    if (taskIdx > -1) {
+      let task = b.tasks.splice(taskIdx, 1)[0];
+      l6.sources.push(task);
+    }
+    
+    // Check for Source B or others that might be similar
+    let taskIdx2 = b.tasks.findIndex(t => t.text && t.text.includes('Look at Source B. What did the design'));
+    if (taskIdx2 > -1) {
+      let task2 = b.tasks.splice(taskIdx2, 1)[0];
+      // Map text to question for sources processing
+      if(task2.text && !task2.question) {
+         task2.question = task2.text;
+         delete task2.text;
+      }
+      l6.sources.push(task2);
+    }
+  }
+});
+
+let finalJson = JSON.stringify(obj, null, 2);
+
+// 2. MANUALLY DELETE TARIFFS
+finalJson = finalJson.replace(/\s*\[\d+\s*marks?\s*\d*\s*mins?\]/g, '');
+
+let newC = 'const early_modern_world = ' + finalJson + ';\nexport default early_modern_world;\n';
+fs.writeFileSync('early_modern_world/data.js', newC);
+console.log('Fixed early_modern_world/data.js successfully');

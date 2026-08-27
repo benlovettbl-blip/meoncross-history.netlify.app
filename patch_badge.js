@@ -1,38 +1,25 @@
 const fs = require('fs');
-
-function patchBadge(filename) {
-    if (!fs.existsSync(filename)) return;
-    let content = fs.readFileSync(filename, 'utf8');
+['generate_pupil_workbooks.js', 'generate_workbooks.js', 'generate_textbooks.js'].forEach(f => {
+  if (fs.existsSync(f)) {
+    let c = fs.readFileSync(f, 'utf8');
+    c = c.replace(
+      /const processTaskTextWithTariff = \(text\) => {/,
+      'const processTaskTextWithTariff = (text, isExamContext = false) => {'
+    );
+    c = c.replace(
+      /let isExam = text\.toLowerCase\(\)\.includes\('assessment'\) \|\| \/\\b\\d\+\\s\*marks\?\\b\/i\.test\(text\) \|\| text\.toLowerCase\(\)\.includes\('explain why'\);/g,
+      "let isExam = text.toLowerCase().includes('assessment') || /\\b\\d+\\s*marks?\\b/i.test(text) || (isExamContext && text.toLowerCase().includes('explain why'));"
+    );
+    // Replace all calls inside exam_practice or extended with true
+    c = c.replace(/let _extInfo = processTaskTextWithTariff\(lesson\.extended\.question\);/g, 'let _extInfo = processTaskTextWithTariff(lesson.extended.question, true);');
+    c = c.replace(/let _tInfo3 = processTaskTextWithTariff\(rawQText\);/g, 'let _tInfo3 = processTaskTextWithTariff(rawQText, true);');
+    c = c.replace(/let _tInfo2 = processTaskTextWithTariff\(ep\.question\);/g, 'let _tInfo2 = processTaskTextWithTariff(ep.question, true);');
     
-    let target = `  const badgeSource = (title, overrideLetter = null) => {
-    if (overrideLetter) title = title.replace(/(Source )\\s*[A-Z]/i, \`$1\${overrideLetter}\`);
-    if (!title) return '';
-    return title.replace(/(Source [A-Z])/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
-  };`;
-  
-    let replacement = `  const badgeSource = (title, overrideLetter = null) => {
-    if (!title) return '';
-    if (overrideLetter) {
-      if (/(Source )\\s*[A-Z]/i.test(title)) {
-          title = title.replace(/(Source )\\s*[A-Z]/i, \`$1\${overrideLetter}\`);
-      } else if (/(Source)(?!s)/i.test(title)) {
-          title = title.replace(/(Source)/i, \`$1 \${overrideLetter}\`);
-      } else {
-          title = \`Source \${overrideLetter}: \` + title;
-      }
-    }
-    return title.replace(/(Source [A-Z])/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
-  };`;
+    // There is also `processTaskTextWithTariff(task.text || task.question ...)` in gcse_tasks. 
+    // Wait, the gcse_task ALWAYS contains the word "marks" if it's an exam, or we can just pass true if `task.examQNum` exists!
+    // But it's easier to just pass true where we know it's exam practice.
+    // If it's `l.gcse_task.tasks`, the user didn't mention it. The only issue was regular tasks getting badged.
     
-    if (content.includes(target)) {
-        content = content.replace(target, replacement);
-        fs.writeFileSync(filename, content);
-        console.log("Patched badgeSource in " + filename);
-    } else {
-        console.log("Could not find badgeSource target in " + filename);
-    }
-}
-
-patchBadge('generate_textbooks.js');
-patchBadge('generate_workbooks.js');
-patchBadge('generate_pupil_workbooks.js');
+    fs.writeFileSync(f, c);
+  }
+});

@@ -13,7 +13,7 @@ export function cleanQuestionText(text) {
     .replace(/^Enquiry:\s*/i, "")
     .replace(/^Predict:\s*/i, "")
     // 2. Remove variations of question/task numbering (e.g., "1. ", "Q1: ", "Task 2: ", "Question 3a: ", "Enquiry Task: ")
-    .replace(/^(Q\d+[:.]? |Task \d+[:.]? |Question \d+[a-z]?[:.]? |Enquiry Task[:.]? |\d+\.\s*)/i, "")
+    .replace(/^(Q\d+[:.]? |Task \d+[:.]? |Question \d+[a-z]?[:.]? |Enquiry Task[:.]? |\d+[__________]\s*)/i, "")
     // 3. Remove paragraph references like (P1), (Para 2), (Ext P1-2)
     .replace(/\s*\((P|Para\s*)\d+\)/gi, "")
     .replace(/\s*\(Ext P\d+(-\d+)?\)/gi, "")

@@ -38,7 +38,7 @@ if (!fs.existsSync(pdfsDir)){
       const htmlPath = path.join(unitDir, file);
       console.log('Generating PDF for ' + unit + '/' + file + '...');
       await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'networkidle2', timeout: 120000 });
-      const pdfFileName = unit + '_' + file.replace('.html', '_FINAL_V7.pdf');
+      const pdfFileName = unit + '_' + file.replace('.html', '_FINAL_V9.pdf');
       const pdfPath = path.join(pdfsDir, pdfFileName);
       let success = false;
       let retries = 3;
