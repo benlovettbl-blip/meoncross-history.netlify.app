@@ -573,6 +573,13 @@ const early_modern_world = {
           "image": "/images/martin_luther_portrait.jpg",
           "image_alt": "Portrait of Martin Luther (1529)",
           "source_letter": "B",
+          "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "Study Source B. How does this portrait of Martin Luther portray his authority or defiance against the Catholic Church?",
+              "model_answer": "The portrait likely shows Luther as a steadfast and determined figure, representing his unyielding stance on reforming the Church and challenging papal authority despite being condemned as a heretic."
+            }
+          ],
           "image_caption": "Portrait of Martin Luther (1529)"
         },
         {
@@ -1457,6 +1464,16 @@ const early_modern_world = {
               "type": "comprehension",
               "question": "Why was the execution of King Charles I such a shocking event in European history?",
               "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
+            },
+            {
+              "type": "source_analysis",
+              "question": "Study Source A. What does the blending of the English and Scottish lions on the Coat of Arms suggest about the changing identity of Britain?",
+              "model_answer": "The blended heraldry in Source A suggests a deliberate visual attempt to unite England and Scotland into a single political identity (Great Britain) and symbolize stability following a century of severe political turmoil and civil war."
+            },
+            {
+              "type": "source_analysis",
+              "question": "Study Source B. How does the engraving capture the sheer shock and public trauma of a monarch's execution?",
+              "model_answer": "The engraving shows a massive, chaotic crowd reacting in real-time, capturing the collective horror and trauma of witnessing the physical destruction of the 'Divine Right of Kings', a foundational belief in European society."
             }
           ],
           "images": [
@@ -1824,7 +1841,13 @@ const early_modern_world = {
           "image": "/images/great_seal_1651.png",
           "image_alt": "The Great Seal of the Commonwealth of England (1651)",
           "source_letter": "E",
-          "tasks": [],
+          "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "Study Source E. What specific changes to the Great Seal of the Commonwealth demonstrate the shift in power away from the monarchy?",
+              "model_answer": "The removal of the King's face and crown, replaced by the House of Commons and a map of England and its naval fleet, physically demonstrates the rejection of royal authority in favor of parliamentary power and maritime expansion."
+            }
+          ],
           "image_caption": "The Great Seal of the Commonwealth of England (1651)"
         },
         {
@@ -2949,6 +2972,13 @@ const early_modern_world = {
               "image_context": "Notice the horrific details: a mother dropping her baby, starvation, suicide, and collapsing buildings. Hogarth created this satirical engraving as propaganda to expose the devastating social decay, poverty, and misery caused by the unchecked 'Gin Craze' among London's poorest classes. **Hinge Question:** Is this image a reliable reflection of daily life in 1751, or an exaggerated moral panic designed to shock the viewer?",
               "image_caption": "William Hogarth's 1751 engraving 'Gin Lane' depicts the horrifying social decay, poverty, and alcohol addiction rampant in 18th-century London slums. Hogarth created this print as a direct piece of propaganda to support the Gin Act, seeking to reduce the mass consumption of cheap spirits.",
               "source_letter": "B"
+            }
+          ],
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "How do Sources A and B present a contradictory picture of 18th-century London's wealth and poverty?",
+              "model_answer": "Source A depicts London as a bustling, wealthy hub of global trade with packed merchant shipping on the Thames, while Source B exposes the devastating poverty, social decay, and alcohol addiction rampant in the city's unregulated slums, creating a sharp contrast between the empire's wealth and domestic suffering."
             }
           ]
         },
