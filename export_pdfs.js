@@ -15,9 +15,9 @@ if (!fs.existsSync(pdfsDir)){
 }
 
 (async () => {
-  console.log('Starting PDF export for early_modern_world...');
-  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 300000, timeout: 120000 });
+  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 600000, timeout: 300000 });
   const page = await browser.newPage();
+  page.setDefaultNavigationTimeout(300000);
   
   const unitArg = process.argv[2] || 'early_modern_world';
   const targetFile = process.argv[3];
@@ -37,8 +37,8 @@ if (!fs.existsSync(pdfsDir)){
     for (const file of files) {
       const htmlPath = path.join(unitDir, file);
       console.log('Generating PDF for ' + unit + '/' + file + '...');
-      await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'networkidle2', timeout: 120000 });
-      const pdfFileName = unit + '_' + file.replace('.html', '_FINAL_V16.pdf');
+      await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'networkidle2', timeout: 300000 });
+      const pdfFileName = unit + '_' + file.replace('.html', '_FINAL_V17.pdf');
       const pdfPath = path.join(pdfsDir, pdfFileName);
       let success = false;
       let retries = 3;

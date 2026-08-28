@@ -17,110 +17,23 @@ if (fs.existsSync(path.join(__dirname, 'src', 'exam_guide_content.js'))) {
 }
 
 
-
-
-function assignChronologicalNumbers(lesson, syncQNum) {
-    if (lesson.primary_source && lesson.primary_source.question) { lesson.primary_source.qNum = syncQNum++; }
-    if (lesson.do_now && (lesson.do_now.prediction_question || lesson.do_now.question)) { lesson.do_now.qNum = syncQNum++; }
-    
-    if (lesson.vocab_cloze_text) {
-        // Wait, vocab cloze doesn't have a QNum?
-    }
-
-    if (lesson.narrative_blocks) {
-        lesson.narrative_blocks.forEach(block => {
-            if (block.tasks) {
-                block.tasks.forEach(task => { if (task.type !== 'vocab_match' && task.type !== 'drag_drop_timeline') { task.qNum = syncQNum++; } });
-            }
-            if (block.hinge_question) { block.hinge_question.qNum = syncQNum++; }
-            if (block.source && block.source.question) { block.source.qNum = syncQNum++; }
-        });
-    }
-
-    if (lesson.pair_share) { lesson.pair_share.qNum = syncQNum++; }
-    if (lesson.tasks) { lesson.tasks.forEach(task => { task.qNum = syncQNum++; }); }
-    
-    if (lesson.extended && lesson.extended.question) { lesson.extended.qNum = syncQNum++; }
-    
-    if (lesson.sources) {
-        lesson.sources.forEach(source => { if (source.question) source.qNum = syncQNum++; });
-    }
-
-    if (lesson.historians_corner && lesson.historians_corner.stretch_question) { lesson.historians_corner.qNum = syncQNum++; }
-    
-    if (lesson.gcse_task) {
-        if (lesson.gcse_task.tasks) {
-            lesson.gcse_task.tasks.forEach(t => { t.qNum = syncQNum++; });
-        }
-        lesson.gcse_task.qNum = syncQNum++;
-    }
-    
-    return syncQNum;
-}
-
-const getTariffBadge = (topic, is_ks3 = false) => {
-    if (!topic) return "";
-    let marks = 8;
-    let match = topic.match(/\((\d+)\s*marks?\)/i);
-    if (match) {
-        marks = parseInt(match[1]);
-        topic = topic.replace(match[0], '').trim();
-    } else {
-        if (topic.toLowerCase().includes("narrative account")) marks = 8;
-        else if (topic.toLowerCase().includes("how useful")) marks = 8;
-        else if (topic.toLowerCase().includes("explain why")) marks = 12;
-        else if (topic.toLowerCase().includes("explain one consequence")) marks = 4;
-        else if (topic.toLowerCase().includes("describe two features") || topic.toLowerCase().includes("describe one feature")) marks = 4;
-    }
-    let time = Math.round(marks * 1.25);
-    if (marks === 4) time = 5;
-    if (marks === 8) time = 10;
-    if (marks === 12) time = 15;
-    if (marks === 16) time = 20;
-    
-    return {
-        cleanTopic: topic,
-        badgeHtml: is_ks3 ? "" : ` <span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle; margin-left: 10px;">[${marks} marks &bull; ${time} mins]</span>`
-    };
-};
-
-
-const processTaskTextWithTariff = (text, is_ks3 = false) => {
-    if (!text) return "";
-    if (text.toLowerCase().includes('assessment') || /\(?\b\d+\s*marks?\b\)?/i.test(text)) {
-        let marks = 8;
-        let match = text.match(/\(?\[?\b(\d+)\s*marks?\b\]?\)?/i);
-        if (match) {
-            marks = parseInt(match[1]);
-            // text = text.replace(match[0], '').trim();
-        } else {
-            if (text.toLowerCase().includes("narrative account")) marks = 8;
-            else if (text.toLowerCase().includes("explain why")) marks = 12;
-            else if (text.toLowerCase().includes("16 marks")) marks = 16;
-        }
-        let time = Math.round(marks * 1.25);
-        if (marks === 4) time = 5;
-        if (marks === 8) time = 10;
-        if (is_ks3) {
-            if (match) {
-                text = text.replace(match[0], '').trim();
-            }
-            return text;
-        }
-        
-        return text + ` <span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle; margin-left: 10px;">[${marks} marks &bull; ${time} mins]</span>`;
-    }
-    return text;
-};
-
 const formatText = (text) => {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
 };
 
-const badgeSource = (title) => {
+const badgeSource = (title, overrideLetter = null) => {
   if (!title) return '';
-  return title.replace(/(Source [A-Z])/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
+  if (overrideLetter) {
+      if (/(Source )\s*[A-Z0-9]/i.test(title)) {
+          title = title.replace(/(Source )\s*[A-Z0-9]/i, '$1' + overrideLetter);
+      } else if (/(Source)(?!s)/i.test(title)) {
+          title = title.replace(/(Source)/i, '$1 ' + overrideLetter + ':');
+      } else {
+          title = 'Source ' + overrideLetter + ': ' + title;
+      }
+  }
+  return title.replace(/(Source (?:[A-Z]|S\d+))/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
 };
 
 const ignoredDirs = ['node_modules', 'public', '.git', '.agents', 'dist'];
@@ -291,26 +204,22 @@ allDirs.forEach(unitId => {
       });
     }
 
-    let heroImgSrc = unitData.cover_image ? (typeof resolveAssetPath === "function" ? resolveAssetPath(unitData.cover_image, 2) : `../..${unitData.cover_image.startsWith("/") ? unitData.cover_image : "/" + unitData.cover_image}`) : '';
-    let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="width: 100%; height: 60vh; object-fit: cover; border-bottom: 5px solid #1e3a8a; border-top-left-radius: 12px; border-top-right-radius: 12px;">` : '';
+    let bannerImageSrc = period.image || unitData.cover_image || '/assets/water_and_sanitation_was_roman_bathhouse.png';
+    if (bannerImageSrc) {
+      bannerImageSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(bannerImageSrc, 2) : `../..${bannerImageSrc.startsWith('/') ? bannerImageSrc : '/' + bannerImageSrc}`;
+    }
 
     html += `
-    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; height: 80vh; box-sizing: border-box; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
-      ${heroHtml}
+    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; height: 95vh; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
+      <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
+      ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
       
-      <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box;">
-        Meoncross School | History Department
-      </div>
-      
-      <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
-        <h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 38pt; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">${periodTitle}</h1>
-        ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
-        
-        <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
-            <span style="font-weight: 600; color: #334155; font-size: 16pt;">Course Textbook</span>
-        </div>
+      <div style="margin-top: 15px; width: 100%; max-width: 700px; text-align: center; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0; color: #1e3a8a; margin-bottom: 15px; font-size: 22pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-book-open"></i> Course Textbook</h3>
+        ${unitData.enquiry ? `<p style="font-size: 14pt; color: #475569; font-style: italic; line-height: 1.5; margin-bottom: 0;"><strong>Enquiry:</strong> ${unitData.enquiry}</p>` : ''}
       </div>
     </div>
+    
     <div style="margin-top: 25px; padding: 25px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
       <h2 style="margin-top: 0; font-family: 'Playfair Display', serif; color: #1e3a8a; font-size: 22pt; border-bottom: 2px solid #93c5fd; padding-bottom: 10px; text-align: center;">Contents</h2>
       <table   style="page-break-inside: avoid; width: 100%; border: none; margin-top: 15px;">
@@ -331,11 +240,120 @@ allDirs.forEach(unitId => {
     <div style="page-break-after: always;"></div>
     `;
 
-  let syncQNum = 1;
-  periodLessons.forEach((lesson, lessonIndex) => {
+  let globalQNum = 1;
+    periodLessons.forEach((lesson, lessonIndex) => {
+      let sourceNum = 1;
       let sourceCharCode = 65;
+    
     let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
-    syncQNum = assignChronologicalNumbers(lesson, syncQNum);
+
+
+
+    
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks.forEach(block => { 
+        if (block.tasks) {
+          block.tasks.forEach(task => { 
+            if (currentUnitId === 'great_war' || currentUnitId === 'great_war_part2') { 
+              if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); 
+              if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); 
+            } 
+
+          }); 
+        }
+
+      });
+    }
+
+
+    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+
+    if (lesson.sources) {
+      lesson.sources.forEach(source => { 
+
+      });
+    }
+
+    if (lesson.gcse_task) {
+      if (lesson.gcse_task.tasks) {
+          lesson.gcse_task.tasks.forEach(t => t.qNum = globalQNum++);
+      } else {
+
+      }
+    }
+    
+    
+if (lessonIndex === 1) {
+    let q7 = html.indexOf('Q7.');
+    let q8 = html.indexOf('Q8.');
+    let q9 = html.indexOf('Q9.');
+    let q10 = html.indexOf('Q10.');
+    let q11 = html.indexOf('Q11.');
+    let q12 = html.indexOf('Q12.');
+    console.log('--- L2 HTML AT START ---');
+    console.log('Q7:', q7);
+    console.log('Q8:', q8);
+    console.log('Q9:', q9);
+    console.log('Q10:', q10);
+    console.log('Q11:', q11);
+    console.log('Q12:', q12);
+}
+
+    if (lesson.a4_map) {
+      if (Array.isArray(lesson.a4_map)) {
+        lesson.a4_map.forEach(img => {
+          let mapPath = typeof resolveAssetPath === 'function' ? resolveAssetPath(img, 2) : `../..${img.startsWith('/') ? img : '/' + img}`;
+          html += `<div style="page-break-after: always; width: 100%; height: 95vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
+          html += `<img src="${mapPath}" style="max-width: 100%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
+          html += `</div>`;
+        });
+      } else {
+        let mapPath = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.a4_map, 2) : `../..${lesson.a4_map.startsWith('/') ? lesson.a4_map : '/' + lesson.a4_map}`;
+        html += `<div style="page-break-after: always; width: 100%; height: 95vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
+        html += `<img src="${mapPath}" style="max-width: 100%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
+        html += `</div>`;
+      }
+    }
+    
+    if (lesson.full_page_map) {
+      let mapSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.full_page_map, 2) : `../..${lesson.full_page_map}`;
+      html += `<div style="page-break-after: always; height: 95vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;">`;
+      html += `<img src="${mapSrc}" style="max-width: 100%; max-height: 95vh; object-fit: contain; margin: auto; display: block;">`;
+      html += `</div>`;
+    }
+   
+html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: auto; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
+
+    html += `<div style="margin-bottom: 10px;"></div>`;
+    
+    if (false && lesson.a4_map) {
+      if (Array.isArray(lesson.a4_map)) {
+        lesson.a4_map.forEach(img => {
+          let mapPath = typeof resolveAssetPath === 'function' ? resolveAssetPath(img, 2) : `../..${img.startsWith('/') ? img : '/' + img}`;
+          html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
+          html += `<img src="${mapPath}" style="max-width: 100%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
+          html += `</div>`;
+        });
+      } else {
+        let mapPath = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.a4_map, 2) : `../..${lesson.a4_map.startsWith('/') ? lesson.a4_map : '/' + lesson.a4_map}`;
+        html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
+        html += `<img src="${mapPath}" style="max-width: 100%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
+        html += `</div>`;
+      }
+    }
+
+    if (lesson.teacher_notes && lesson.teacher_notes.objectives && lesson.teacher_notes.objectives.length > 0) {
+      html += `<div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  ">`;
+      html += `<h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4>`;
+      lesson.teacher_notes.objectives.forEach(obj => {
+        html += `<div style="display: flex; align-items: flex-start; margin-bottom: 4px;">`;
+        html += `<div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div>`;
+        html += `<div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">${formatText(obj.objective)}</div>`;
+        html += `</div>`;
+      });
+      html += `</div>`;
+    }
+
     if (lesson.hook_text) {
       html += `<p style="font-size: 12pt; font-style: italic;  padding-top: 10px; padding-bottom: 10px; border-left: 4px solid #3b82f6; margin-bottom: 10px;">${lesson.hook_text}</p>`;
     }
@@ -371,10 +389,10 @@ allDirs.forEach(unitId => {
 
       html += `
         <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
-          ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title)}</strong><br>` : ''}
+          ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, 'S' + sourceNum++)}</strong><br>` : ''}
           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
-          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${lesson.primary_source.qNum}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` (See Textbook Page ${lesson.primary_source.page})` : ''}</strong></div>` : ''}
+          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` (See Textbook Page ${lesson.primary_source.page})` : ''}</strong></div>` : ''}
           
         </div>
       `;
@@ -429,7 +447,7 @@ allDirs.forEach(unitId => {
                    </div>`;
         if (items) {
           items.forEach((item, index) => {
-            html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${index + 1}.</strong> ${item.question}</div>`;
+            html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">${item.question}</div>`;
           });
         }
         html += `</div>`;
@@ -495,11 +513,11 @@ allDirs.forEach(unitId => {
           html += `
             <div class="source-container" style="">
               <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-              ${source.title ? `<strong>${badgeSource(source.title)}</strong><br>` : ''}
+              ${source.title ? `<strong>${badgeSource(source.title, 'S' + sourceNum++)}</strong><br>` : ''}
               ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source">` : ''}
               ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
               ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
-              ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${source.qNum ? source.qNum + '.' : ''} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div>` : ''}
+              ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div>` : ''}
             </div>
           `;
         }
@@ -544,11 +562,11 @@ allDirs.forEach(unitId => {
           html += `
             <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
               <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-              ${block.source.title ? `<strong>${badgeSource ? badgeSource(block.source.title) : block.source.title}</strong><br>` : ''}
+              ${block.source.title ? `<strong>${badgeSource(block.source.title, 'S' + sourceNum++)}</strong><br>` : ''}
               ${(block.source.src || block.source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((block.source.src || block.source.source), 2) : (block.source.src || block.source.source)}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
               ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
               ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
-              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${block.source.qNum ? block.source.qNum + '.' : ''} ${block.source.question}${block.source.page ? ` (See Textbook Page ${block.source.page})` : ''}</strong></div>` : ''}
+              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${block.source.question}${block.source.page ? ` (See Textbook Page ${block.source.page})` : ''}</strong></div>` : ''}
             </div>
           `;
         }
@@ -587,7 +605,7 @@ allDirs.forEach(unitId => {
           
           if (block.hinge_question) {
             html += `<div class="task-box" style=" ">`;
-            html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${block.hinge_question.qNum})</strong></p>`;
+            html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${globalQNum++})</strong></p>`;
             html += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
             html += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
             block.hinge_question.options.forEach((opt, idx) => {
@@ -618,12 +636,12 @@ allDirs.forEach(unitId => {
             html += `<div class="task-box">`;
             block.tasks.forEach((task, tIdx) => {
               if (task.type === 'draw') {
-                 html += `<div class="draw-task" style="display:none;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${task.qNum}: ${processTaskTextWithTariff(task.text || task.question, unitData.is_ks3)}</div>`;
+                 html += `<div class="draw-task" style="display:none;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${globalQNum++}: ${task.text || task.question}</div>`;
               } else {
                  
                                  if (task.type === "multiple_choice") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '', unitData.is_ks3)}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   task.questions.forEach((q, qIdx) => {
                     html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
                     q.options.forEach((opt) => {
@@ -636,7 +654,7 @@ allDirs.forEach(unitId => {
                 }
                 if (task.type === "sorting") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '', unitData.is_ks3)}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   html += `<ul style="list-style-type:none; padding-left:0;">`;
                   task.events.forEach((ev) => {
                     html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
@@ -647,10 +665,10 @@ allDirs.forEach(unitId => {
                 if (task.type === "cloze") {
                   let cloze = task.cloze_text.replace(
                     /\[([^\]]+)\]/g,
-                    "<span style=\"display:inline-block; width:100px; border-bottom:1px solid #333;\"></span>",
+                    "______________",
                   );
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '', unitData.is_ks3)}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
                   html += `<p style="line-height: 2;">${cloze}</p>`;
                   html += `</div>`;
@@ -659,7 +677,7 @@ allDirs.forEach(unitId => {
 
                 if (task.type === "physician_game") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '', unitData.is_ks3)}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
                   html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
                   html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
@@ -698,9 +716,11 @@ allDirs.forEach(unitId => {
                 }
                 if (task.type === "matching") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '', unitData.is_ks3)}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
-                  const rightMixed = [...task.pairs];
+                  const rightMixed = [...task.pairs].sort(
+                    () => Math.random() - 0.5,
+                  );
                   task.pairs.forEach((p, i) => {
                     html += `<tr>
                      <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
@@ -713,7 +733,7 @@ allDirs.forEach(unitId => {
                 }
                 if (task.type === "table_planner") {
                   html += `<div class="task-box">`;
-                  html += `<h4 style="margin-top: 0;">Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '', unitData.is_ks3)}</h4>`;
+                  html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                   html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
                   task.columns.forEach((c) => {
                     html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
@@ -731,7 +751,7 @@ allDirs.forEach(unitId => {
                 }
                 if (task.type === "think_pair_share") {
                   html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
-                  html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${task.qNum || ""} ${processTaskTextWithTariff(task.text || task.question, unitData.is_ks3)}</h4>`;
+                  html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${globalQNum++} ${task.text || task.question}</h4>`;
                   html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
                    <thead><tr>
                      <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
@@ -747,7 +767,7 @@ allDirs.forEach(unitId => {
                  if (task.type === 'vocab_match' || ((unitId === 'great_war' || unitId === 'great_war_part2') && task.type === 'drag_drop_timeline')) {
                     // Do nothing
                  } else {
-                    html += `<p style="margin-top:10px;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${task.qNum}. ${task.text || task.question || task.instruction || task.instructions || task.title || ''}</strong></p>`;
+                    html += `<p style="margin-top:10px;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${globalQNum++}. ${task.text || task.question || task.instruction || task.instructions || task.title || ''}</strong></p>`;
                     if (task.type === 'extended_writing' && task.instructions) {
                         html += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
                     }
@@ -785,19 +805,15 @@ allDirs.forEach(unitId => {
       });
     }
 
-    // Removed Lesson Assessment
-    // Removed General Notes Box
-
     // Pair Share
     if (lesson.pair_share) {
       html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
       html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
-      html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${lesson.pair_share.qNum}. ${lesson.pair_share.prompt}</p>`;
+      html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
       html += `</div>`;
     }
 
-    // Active Tasks
-    if (lesson.tasks && lesson.tasks.length > 0) {
+    if (lesson.tasks) {
       html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
       lesson.tasks.forEach((task, tIdx) => {
         if (task.type === 'spectrum_mapper') {
@@ -842,9 +858,9 @@ allDirs.forEach(unitId => {
             let subhead = match[1];
             let rest = match[2];
             html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
-            html += `<p style="font-weight: bold; margin-top: 0;">Q${task.qNum || (tIdx + 1)}. ${rest}</p>`;
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${rest}</p>`;
         } else {
-            html += `<p style="font-weight: bold; margin-top: 0;">Q${task.qNum || (tIdx + 1)}. ${qText}</p>`;
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${qText}</p>`;
         }
         let hasExamTaskLater = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
         let numLines = (!hasExamTaskLater && tIdx === lesson.tasks.length - 1) ? 20 : 6;
@@ -855,18 +871,6 @@ allDirs.forEach(unitId => {
       });
     }
 
-    // Historian's Corner
-    if (lesson.historians_corner) {
-      html += `<div class="task-box" style=" ">`;
-      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
-      if (lesson.historians_corner.stretch_question) {
-        html += `<div style="margin-top: 15px; font-weight: bold;">Q${lesson.historians_corner.qNum}. ${lesson.historians_corner.stretch_question}</div>`;
-      }
-      html += `</div>`;
-    }
-
-    // GCSE Task
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
       html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
@@ -924,7 +928,7 @@ allDirs.forEach(unitId => {
           if (lesson.extended.provenance_clue) {
                html += `<div style="margin-top: 15px; margin-bottom: 15px; padding-top: 12px; padding-bottom: 12px;  border: 1px solid #bfdbfe; border-radius: 6px; "><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
           }
-          html += `<div style="margin-top: 15px;"><strong>Q${lesson.extended.qNum}. ${formatText(lesson.extended.question)}</strong></div>`;
+          html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${formatText(lesson.extended.question)}</strong></div>`;
           if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
             renderLines(lesson.extended.question);
           }
@@ -944,11 +948,11 @@ allDirs.forEach(unitId => {
             html += `
               <div class="source-container" ${containerStyle}>
                 <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-                ${source.title ? `<strong>${badgeSource(source.title)}</strong><br>` : ''}
+                ${source.title ? `<strong>${badgeSource(source.title, 'S' + sourceNum++)}</strong><br>` : ''}
                 ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source">` : ''}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
                 ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
-                ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${source.qNum ? source.qNum + '.' : ''} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div>` : ''}
+                ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div>` : ''}
               </div>
             `;
           }
@@ -959,13 +963,23 @@ allDirs.forEach(unitId => {
         html += `</div>`;
       }
 
-      if (lesson.gcse_task) {
+      if (lesson.historians_corner) {
+      html += `<div class="task-box" style=" ">`;
+      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
+      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
+      if (lesson.historians_corner.stretch_question) {
+        html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
+      }
+      html += `</div>`;
+    }
+
+    if (lesson.gcse_task) {
         html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto;">`;
         html += `<h2 style="margin-top: 0; color: #b71c1c; font-size: 14pt; border-bottom: none;">GCSE Exam Practice</h2>`;
         
         if (lesson.gcse_task.tasks) {
           lesson.gcse_task.tasks.forEach(task => {
-             html += `<div style="margin-top: 15px;"><strong>Q${task.qNum ? task.qNum + '.' : ''} ${task.text}</strong></div>`;
+             html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++} ${task.text}</strong></div>`;
              renderLines(task.text);
              html += `<br>`;
           });
@@ -974,10 +988,10 @@ allDirs.forEach(unitId => {
           let topicText = lesson.gcse_task.topic || '';
           let isNarrative = topicText.toLowerCase().includes("write a narrative account");
           if (isNarrative) {
-            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}${topicText}</p>`;
+            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${globalQNum++}. ` : ''}${topicText}</p>`;
             html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
           } else {
-            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${lesson.gcse_task.qNum}. ` : ''}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${globalQNum++}. ` : ''}Q${globalQNum++}. How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
           }
           
           let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
@@ -1010,7 +1024,7 @@ allDirs.forEach(unitId => {
             for(let i=0; i<20; i++) { html += ``; }
           }
         } else if (lesson.gcse_task.topic) {
-          let tariff = getTariffBadge(lesson.gcse_task.topic, unitData.is_ks3); lesson.gcse_task.topic = tariff.cleanTopic; html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.topic}${tariff.badgeHtml}</p>`;
+          html += `<p style="font-weight: bold; font-size: 13pt;">Q${globalQNum++}. ${lesson.gcse_task.topic}</p>`;
           
           if (lesson.gcse_task.topic.toLowerCase().includes("narrative account")) {
              html += `<div style="margin: 15px 0; padding-top: 12px; padding-bottom: 12px;   border-radius: 6px; ">
@@ -1039,14 +1053,44 @@ allDirs.forEach(unitId => {
       html += `</div>`;
     }
 
-    // Full Page Map
-    if (lesson.full_page_map) {
+    // Removed Lesson Assessment
+    // Removed General Notes Box
+
+
+    
+
+    
+if (lessonIndex === 1) {
+    let q7 = html.indexOf('Q7.');
+    let q8 = html.indexOf('Q8.');
+    let q9 = html.indexOf('Q9.');
+    let q10 = html.indexOf('Q10.');
+    let q11 = html.indexOf('Q11.');
+    let q12 = html.indexOf('Q12.');
+    console.log('--- L2 HTML AT END ---');
+    console.log('Q7:', q7);
+    console.log('Q8:', q8);
+    console.log('Q9:', q9);
+    console.log('Q10:', q10);
+    console.log('Q11:', q11);
+    console.log('Q12:', q12);
+    
+    let hc = html.indexOf('Historian\'s Corner');
+    let ps = html.indexOf('Pair & Share');
+    console.log('HC at', hc);
+    console.log('PS at', ps);
+    
+    console.log('Substr from HC:', html.substring(hc, hc + 200));
+}
+if (lesson.full_page_map) {
+
       let mapSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.full_page_map, 2) : `../..${lesson.full_page_map}`;
       html += `<div style="page-break-before: always; height: 95vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;">`;
       html += `<img src="${mapSrc}" style="max-width: 100%; max-height: 95vh; object-fit: contain; margin: auto; display: block;">`;
       html += `</div>`;
     }
-allVideos = [];
+
+    let allVideos = [];
     if (lesson.video) {
       if (Array.isArray(lesson.video)) allVideos = allVideos.concat(lesson.video);
       else allVideos.push(lesson.video);
