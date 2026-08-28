@@ -1300,6 +1300,24 @@ export function initializeApp(unitData) {
       navContainer.appendChild(cheatSheetLink);
     }
 
+    if (window.currentUnitId === 'australia') {
+      const tbLink = document.createElement('a');
+      tbLink.className = 'lesson-link';
+      tbLink.innerHTML = '<i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Textbook PDF';
+      tbLink.href = '/pdfs/australia_textbook_FINAL_V9.pdf';
+      tbLink.target = '_blank';
+      tbLink.style.marginTop = '15px';
+      tbLink.style.borderTop = '1px solid #e2e8f0';
+      tbLink.style.paddingTop = '15px';
+      navContainer.appendChild(tbLink);
+
+      const pwLink = document.createElement('a');
+      pwLink.className = 'lesson-link';
+      pwLink.innerHTML = '<i class="fa-solid fa-pencil" style="margin-right: 8px;"></i> Pupil Workbook PDF';
+      pwLink.href = '/pdfs/australia_pupil_workbook_FINAL_V9.pdf';
+      pwLink.target = '_blank';
+      navContainer.appendChild(pwLink);
+    }
 
 
     // Attach Pupil Workbooks dynamically as a single Zone

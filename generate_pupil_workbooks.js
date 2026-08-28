@@ -438,10 +438,7 @@ allDirs.forEach((unitId) => {
       
       <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
         <h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 38pt; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">${periodTitle}</h1>
-        <div style="margin-top: 40px; text-align: center; font-family: 'Inter', sans-serif; font-size: 14pt; color: #334155;">
-          <strong>Scholar:</strong> <span style="display: inline-block; width: 200px; border-bottom: 1px solid #94a3b8; margin-right: 20px;"></span>
-          <strong>Class:</strong> <span style="display: inline-block; width: 80px; border-bottom: 1px solid #94a3b8;"></span>
-        </div>
+
         ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
         
         <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
@@ -489,49 +486,52 @@ allDirs.forEach((unitId) => {
     </div>
     `;
 
+    let globalQNum = 1;
     periodLessons.forEach((lesson, lessonIndex) => {
       let allVideos = [];
       let imgTags = "";
       let sources = [];
       let interpretations = [];
       let sourceCharCode = 65;
-      let globalQNum = 1;
     let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
-    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
-    if (lesson.do_now && (lesson.do_now.prediction_question || lesson.do_now.question)) lesson.do_now.qNum = globalQNum++;
+    // Synced Chronological Numbering matching generate_textbooks.js
+    if (lesson.primary_source && lesson.primary_source.question) { lesson.primary_source.qNum = globalQNum++; }
+    if (lesson.do_now && (lesson.do_now.prediction_question || lesson.do_now.question)) { lesson.do_now.qNum = globalQNum++; }
+    
+    if (lesson.narrative_blocks) {
+        lesson.narrative_blocks.forEach(block => {
+            if (block.tasks) {
+                block.tasks.forEach(task => { 
+                    if (currentUnitId === 'great_war' || currentUnitId === 'great_war_part2') { 
+                        if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); 
+                        if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); 
+                    } 
+                    if (task.type !== 'vocab_match' && task.type !== 'drag_drop_timeline') { task.qNum = globalQNum++; } 
+                });
+            }
+            if (block.hinge_question) { block.hinge_question.qNum = globalQNum++; }
+            if (block.source && block.source.question) { block.source.qNum = globalQNum++; }
+        });
+    }
+
+    if (lesson.pair_share) { lesson.pair_share.qNum = globalQNum++; }
+    if (lesson.tasks) { lesson.tasks.forEach(task => { task.qNum = globalQNum++; }); }
+    if (lesson.extended && lesson.extended.question) { lesson.extended.qNum = globalQNum++; }
     
     if (lesson.sources) {
-      lesson.sources.forEach(source => { 
-        if (source.question) source.qNum = globalQNum++; 
-      });
+        lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
     }
 
-    if (lesson.narrative_blocks) {
-      lesson.narrative_blocks.forEach(block => { 
-        if (block.tasks) {
-          block.tasks.forEach(task => { 
-            if (currentUnitId === 'great_war' || currentUnitId === 'great_war_part2') { 
-              if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); 
-              if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); 
-            } 
-            if (task.type !== 'vocab_match' && task.type !== 'drag_drop_timeline') task.qNum = globalQNum++; 
-          }); 
-        }
-        if (block.hinge_question) block.hinge_question.qNum = globalQNum++; 
-      });
-    }
-
-    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
-    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
-    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) { lesson.historians_corner.qNum = globalQNum++; }
+    
     if (lesson.gcse_task) {
-      if (lesson.gcse_task.tasks) {
-          lesson.gcse_task.tasks.forEach(t => t.qNum = globalQNum++);
-      } else {
-          lesson.gcse_task.qNum = globalQNum++;
-      }
+        if (lesson.gcse_task.tasks) {
+            lesson.gcse_task.tasks.forEach(t => { t.qNum = globalQNum++; });
+        } else {
+            lesson.gcse_task.qNum = globalQNum++;
+        }
     }
+
     
     html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
       let flatQuestions = [];
@@ -1061,22 +1061,23 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
               _nbHtml += `</div>`;
             }
             _nbHtml += `</div>`; // Close narrative-block div
+            html += _nbHtml;
           }
         });
       }
 
       // Extended Scholarship
       if (lesson.extended && lesson.extended.paragraphs) {
-        _nbHtml += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
+        html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
         lesson.extended.paragraphs.forEach((para) => {
-          _nbHtml += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${formatText(para)}</p>`;
+          html += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${formatText(para)}</p>`;
         });
       }
 
       // Narrative
       if (lesson.narrative) {
         lesson.narrative.forEach((block, idx) => {
-          _nbHtml += `<p class="narrative-block"><strong style="color:#000;">${idx + 1}.</strong> ${formatText(block.text)}</p>`;
+          html += `<p class="narrative-block"><strong style="color:#000;">${idx + 1}.</strong> ${formatText(block.text)}</p>`;
         });
       }
 

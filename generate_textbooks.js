@@ -18,6 +18,46 @@ if (fs.existsSync(path.join(__dirname, 'src', 'exam_guide_content.js'))) {
 
 
 
+
+function assignChronologicalNumbers(lesson, syncQNum) {
+    if (lesson.primary_source && lesson.primary_source.question) { lesson.primary_source.qNum = syncQNum++; }
+    if (lesson.do_now && (lesson.do_now.prediction_question || lesson.do_now.question)) { lesson.do_now.qNum = syncQNum++; }
+    
+    if (lesson.vocab_cloze_text) {
+        // Wait, vocab cloze doesn't have a QNum?
+    }
+
+    if (lesson.narrative_blocks) {
+        lesson.narrative_blocks.forEach(block => {
+            if (block.tasks) {
+                block.tasks.forEach(task => { if (task.type !== 'vocab_match' && task.type !== 'drag_drop_timeline') { task.qNum = syncQNum++; } });
+            }
+            if (block.hinge_question) { block.hinge_question.qNum = syncQNum++; }
+            if (block.source && block.source.question) { block.source.qNum = syncQNum++; }
+        });
+    }
+
+    if (lesson.pair_share) { lesson.pair_share.qNum = syncQNum++; }
+    if (lesson.tasks) { lesson.tasks.forEach(task => { task.qNum = syncQNum++; }); }
+    
+    if (lesson.extended && lesson.extended.question) { lesson.extended.qNum = syncQNum++; }
+    
+    if (lesson.sources) {
+        lesson.sources.forEach(source => { if (source.question) source.qNum = syncQNum++; });
+    }
+
+    if (lesson.historians_corner && lesson.historians_corner.stretch_question) { lesson.historians_corner.qNum = syncQNum++; }
+    
+    if (lesson.gcse_task) {
+        if (lesson.gcse_task.tasks) {
+            lesson.gcse_task.tasks.forEach(t => { t.qNum = syncQNum++; });
+        }
+        lesson.gcse_task.qNum = syncQNum++;
+    }
+    
+    return syncQNum;
+}
+
 const getTariffBadge = (topic, is_ks3 = false) => {
     if (!topic) return "";
     let marks = 8;
@@ -291,76 +331,11 @@ allDirs.forEach(unitId => {
     <div style="page-break-after: always;"></div>
     `;
 
+  let syncQNum = 1;
   periodLessons.forEach((lesson, lessonIndex) => {
       let sourceCharCode = 65;
-    let globalQNum = 1;
     let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
-    if (lesson.do_now && (lesson.do_now.prediction_question || lesson.do_now.question)) lesson.do_now.qNum = globalQNum++;
-    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
-    
-    if (lesson.narrative_blocks) {
-      lesson.narrative_blocks.forEach(block => { 
-        if (block.tasks) {
-          block.tasks.forEach(task => { 
-            if (currentUnitId === 'great_war' || currentUnitId === 'great_war_part2') { 
-              if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); 
-              if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); 
-            } 
-            if (task.type !== 'vocab_match' && task.type !== 'drag_drop_timeline') task.qNum = globalQNum++; 
-          }); 
-        }
-        if (block.hinge_question) block.hinge_question.qNum = globalQNum++; 
-      });
-    }
-
-    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
-    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
-    if (lesson.sources) {
-      lesson.sources.forEach(source => { 
-        if (source.question) source.qNum = globalQNum++; 
-      });
-    }
-    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
-    if (lesson.gcse_task) {
-      if (lesson.gcse_task.tasks) {
-          lesson.gcse_task.tasks.forEach(t => t.qNum = globalQNum++);
-      } else {
-          lesson.gcse_task.qNum = globalQNum++;
-      }
-    }
-    
-    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: auto; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
-    html += `<div style="margin-bottom: 10px;"></div>`;
-    
-    if (lesson.a4_map) {
-      if (Array.isArray(lesson.a4_map)) {
-        lesson.a4_map.forEach(img => {
-          let mapPath = typeof resolveAssetPath === 'function' ? resolveAssetPath(img, 2) : `../..${img.startsWith('/') ? img : '/' + img}`;
-          html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
-          html += `<img src="${mapPath}" style="max-width: 100%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
-          html += `</div>`;
-        });
-      } else {
-        let mapPath = typeof resolveAssetPath === 'function' ? resolveAssetPath(lesson.a4_map, 2) : `../..${lesson.a4_map.startsWith('/') ? lesson.a4_map : '/' + lesson.a4_map}`;
-        html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
-        html += `<img src="${mapPath}" style="max-width: 100%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
-        html += `</div>`;
-      }
-    }
-
-    if (lesson.teacher_notes && lesson.teacher_notes.objectives && lesson.teacher_notes.objectives.length > 0) {
-      html += `<div style="margin-bottom: 15px; padding-top: 10px; padding-bottom: 10px; border: 1px solid #cbd5e1; border-radius: 8px;  ">`;
-      html += `<h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4>`;
-      lesson.teacher_notes.objectives.forEach(obj => {
-        html += `<div style="display: flex; align-items: flex-start; margin-bottom: 4px;">`;
-        html += `<div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div>`;
-        html += `<div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">${formatText(obj.objective)}</div>`;
-        html += `</div>`;
-      });
-      html += `</div>`;
-    }
-
+    syncQNum = assignChronologicalNumbers(lesson, syncQNum);
     if (lesson.hook_text) {
       html += `<p style="font-size: 12pt; font-style: italic;  padding-top: 10px; padding-bottom: 10px; border-left: 4px solid #3b82f6; margin-bottom: 10px;">${lesson.hook_text}</p>`;
     }
@@ -822,7 +797,7 @@ allDirs.forEach(unitId => {
     }
 
     // Active Tasks
-    if (lesson.tasks) {
+    if (lesson.tasks && lesson.tasks.length > 0) {
       html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
       lesson.tasks.forEach((task, tIdx) => {
         if (task.type === 'spectrum_mapper') {

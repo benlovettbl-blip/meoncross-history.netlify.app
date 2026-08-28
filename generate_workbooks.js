@@ -401,6 +401,7 @@ allDirs.forEach(unitId => {
           }); 
         }
         if (block.hinge_question) block.hinge_question.qNum = globalQNum++; 
+        if (block.source && block.source.question) block.source.qNum = globalQNum++;
       });
     }
 

@@ -1,8 +1,8 @@
 const fs = require('fs');
-const dataStr = fs.readFileSync('early_modern_world/data.js', 'utf8');
-const codeToEval = dataStr.replace('export const unitData =', 'global.unitData =');
-eval(codeToEval);
-
-const lesson = global.unitData.lessons[2]; // Lesson 3
-const block = lesson.narrative_blocks.find(b => b.title === 'Visual Analysis: The Jamestown Triangular Fort Plan (1607)');
-console.log(block.tasks);
+let data = fs.readFileSync('australia/data.js', 'utf8');
+data = data.replace(/^[^{]*\{/, '{'); // strip module.exports
+if (data.endsWith(';')) data = data.substring(0, data.length - 1);
+const j = JSON.parse(data);
+const l5 = j.lessons[j.lessons.length - 1]; // or the assessment one
+console.log('Lesson Title:', l5.title);
+console.log('Tasks:', JSON.stringify(l5.tasks, null, 2));

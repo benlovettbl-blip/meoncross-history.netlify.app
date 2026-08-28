@@ -1457,6 +1457,16 @@ const early_modern_world = {
               "type": "comprehension",
               "question": "Why was the execution of King Charles I such a shocking event in European history?",
               "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
+            },
+            {
+              "type": "analysis",
+              "question": "Looking at Source A, why was it important for the monarch to create a single, unified visual identity for the newly formed nation of Great Britain?",
+              "model_answer": "It was important to visually merge the identities of England and Scotland into a single political entity to solidify the 1707 Act of Union and project stability and shared authority."
+            },
+            {
+              "type": "analysis",
+              "question": "Looking at Source B, how did the execution of Charles I permanently change the balance of power between the Monarchy and Parliament?",
+              "model_answer": "The public execution shattered the 'Divine Right of Kings' and proved that an English monarch could be held legally accountable by his own subjects and Parliament, shifting ultimate authority away from the Crown."
             }
           ],
           "images": [
@@ -1824,7 +1834,13 @@ const early_modern_world = {
           "image": "/images/great_seal_1651.png",
           "image_alt": "The Great Seal of the Commonwealth of England (1651)",
           "source_letter": "E",
-          "tasks": [],
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "Based on Source E, how did the Great Seal of 1651 differ from previous seals, and what did it emphasize?",
+              "model_answer": "Unlike previous seals that featured the monarch's face, the 1651 Great Seal showed the House of Commons and a map emphasizing maritime power, reflecting the new authority of Parliament and the Commonwealth."
+            }
+          ],
           "image_caption": "The Great Seal of the Commonwealth of England (1651)"
         },
         {
