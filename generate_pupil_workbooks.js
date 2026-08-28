@@ -441,17 +441,13 @@ allDirs.forEach((unitId) => {
 
         ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
         
-        <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
+        <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px 45px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
                 <span style="font-weight: 600; color: #334155; font-size: 13pt;">Scholar:</span>
                 <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
             </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
-                <span style="font-weight: 600; color: #334155; font-size: 13pt;">Class:</span>
-                <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
-            </div>
             <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                <span style="font-weight: 600; color: #334155; font-size: 13pt;">Teacher:</span>
+                <span style="font-weight: 600; color: #334155; font-size: 13pt;">Class:</span>
                 <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
             </div>
         </div>
@@ -1556,7 +1552,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             html += `</ul></div>`;
           }
           let _extInfo = processTaskTextWithTariff(lesson.extended.question, true);
-          html += `<div style="margin-top: 15px;"><strong>${lesson.extended.examQNum ? "Exam Q" + lesson.extended.examQNum + ". " : lesson.extended.qNum ? "Q" + lesson.extended.qNum + ". " : ""}${_extInfo.cleanText}</strong></div>`;
+          html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${_extInfo.cleanText}</strong></div>`;
           if (_extInfo.badgeHtml) {
               html += _extInfo.badgeHtml;
           }
@@ -1618,7 +1614,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
               lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\s+B/g, 'Source ' + letterB);
           }
 
-            html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
+            html += `<div style="page-break-inside: avoid; break-inside: avoid; margin-top: 20px;">`;
             let topicText = lesson.gcse_task.topic || "";
             let tLower = topicText.toLowerCase();
             let isFullQuestion =
@@ -1638,10 +1634,10 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             }
 
             let sourceHTML =
-              '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
+              '<div style="display: flex; gap: 20px; margin-bottom: 10px; page-break-inside: avoid; break-inside: avoid;">';
             lesson.gcse_task.sources.forEach((srcObj, i) => {
               sourceHTML +=
-                '<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">' +
+                '<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1; page-break-inside: avoid; break-inside: avoid;">' +
                 '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">Source ' + String.fromCharCode(65 + i) + '</strong>' +
                 (srcObj.title ? '<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic; text-align: left;">' + srcObj.title.replace(/Source [A-Z]:\s*/g, '') + '</span>' : '');
               if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {

@@ -984,7 +984,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
              html += `<br>`;
           });
         } else if (lesson.gcse_task.sources) {
-          html += `<div style="page-break-inside: auto; margin-top: 20px;">`;
+          html += `<div style="page-break-inside: avoid; break-inside: avoid; margin-top: 20px;">`;
           let topicText = lesson.gcse_task.topic || '';
           let isNarrative = topicText.toLowerCase().includes("write a narrative account");
           if (isNarrative) {
@@ -994,9 +994,9 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
             html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${globalQNum++}. ` : ''}Q${globalQNum++}. How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
           }
           
-          let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
+          let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px; page-break-inside: avoid; break-inside: avoid;">';
           lesson.gcse_task.sources.forEach(srcObj => {
-            sourceHTML += '<div style="flex: 1; border: 1px solid #ccc; padding-top: 10px; padding-bottom: 10px; text-align: center; ">';
+            sourceHTML += '<div style="flex: 1; border: 1px solid #ccc; padding-top: 10px; padding-bottom: 10px; text-align: center; page-break-inside: avoid; break-inside: avoid;">';
             if (srcObj.type === 'visual') {
               let imgSrc = typeof resolveAssetPath === 'function' ? resolveAssetPath(srcObj.src, 2) : srcObj.src;
               sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
