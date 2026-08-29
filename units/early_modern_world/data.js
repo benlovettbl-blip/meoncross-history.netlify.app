@@ -1459,14 +1459,9 @@ const early_modern_world = {
               "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
             },
             {
-              "type": "analysis",
-              "question": "Looking at Source A, why was it important for the monarch to create a single, unified visual identity for the newly formed nation of Great Britain?",
-              "model_answer": "It was important to visually merge the identities of England and Scotland into a single political entity to solidify the 1707 Act of Union and project stability and shared authority."
-            },
-            {
-              "type": "analysis",
-              "question": "Looking at Source B, how did the execution of Charles I permanently change the balance of power between the Monarchy and Parliament?",
-              "model_answer": "The public execution shattered the 'Divine Right of Kings' and proved that an English monarch could be held legally accountable by his own subjects and Parliament, shifting ultimate authority away from the Crown."
+              "type": "source_analysis",
+              "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
+              "model_answer": "The monarch combined them to create a single, unified visual identity for the newly formed nation of Great Britain, attempting to project stability after the 1707 Act of Union."
             }
           ],
           "images": [
@@ -1836,9 +1831,9 @@ const early_modern_world = {
           "source_letter": "E",
           "tasks": [
             {
-              "type": "comprehension",
-              "question": "Based on Source E, how did the Great Seal of 1651 differ from previous seals, and what did it emphasize?",
-              "model_answer": "Unlike previous seals that featured the monarch's face, the 1651 Great Seal showed the House of Commons and a map emphasizing maritime power, reflecting the new authority of Parliament and the Commonwealth."
+              "type": "source_analysis",
+              "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
+              "model_answer": "It signalled a shift from a monarchy to a republic, emphasizing Parliament, maritime power, and imperial expansion over royal bloodlines by erasing the King's face entirely."
             }
           ],
           "image_caption": "The Great Seal of the Commonwealth of England (1651)"

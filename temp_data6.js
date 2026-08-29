@@ -1457,11 +1457,6 @@ const early_modern_world = {
               "type": "comprehension",
               "question": "Why was the execution of King Charles I such a shocking event in European history?",
               "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
-            },
-            {
-              "type": "source_analysis",
-              "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
-              "model_answer": "The monarch combined them to create a single, unified visual identity for the newly formed nation of Great Britain, attempting to project stability after the 1707 Act of Union."
             }
           ],
           "images": [
@@ -1829,13 +1824,7 @@ const early_modern_world = {
           "image": "/images/great_seal_1651.png",
           "image_alt": "The Great Seal of the Commonwealth of England (1651)",
           "source_letter": "E",
-          "tasks": [
-            {
-              "type": "source_analysis",
-              "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
-              "model_answer": "It signalled a shift from a monarchy to a republic, emphasizing Parliament, maritime power, and imperial expansion over royal bloodlines by erasing the King's face entirely."
-            }
-          ],
+          "tasks": [],
           "image_caption": "The Great Seal of the Commonwealth of England (1651)"
         },
         {
@@ -4164,3 +4153,5 @@ const early_modern_world = {
   "is_ks3": true
 };
 export default early_modern_world;
+
+console.log(early_modern_world.lessons[0].blocks.find(b => b.images).images[0].source_letter);

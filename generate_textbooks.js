@@ -33,7 +33,7 @@ const badgeSource = (title, overrideLetter = null) => {
           title = 'Source ' + overrideLetter + ': ' + title;
       }
   }
-  return title.replace(/(Source (?:[A-Z]|S\d+))/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
+  return title.replace(/(Source\s+[A-Z0-9]+)/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
 };
 
 const ignoredDirs = ['node_modules', 'public', '.git', '.agents', 'dist'];
@@ -389,7 +389,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
 
       html += `
         <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
-          ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, 'S' + sourceNum++)}</strong><br>` : ''}
+          ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
           ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` (See Textbook Page ${lesson.primary_source.page})` : ''}</strong></div>` : ''}
@@ -513,7 +513,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
           html += `
             <div class="source-container" style="">
               <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-              ${source.title ? `<strong>${badgeSource(source.title, 'S' + sourceNum++)}</strong><br>` : ''}
+              ${source.title ? `<strong>${badgeSource(source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
               ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source">` : ''}
               ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
               ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
@@ -540,18 +540,30 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
           if ((block.images && block.images.some(i => i.source_letter)) || block.source) {
              blockSourceLetter = String.fromCharCode(sourceCharCode++);
           }
-          block.images.forEach(imgObj => {
+                              block.images.forEach(imgObj => {
             let rawSrc = imgObj.src || imgObj.image;
             if (rawSrc) {
               let src = typeof resolveAssetPath === 'function' ? resolveAssetPath(rawSrc, 2) : rawSrc;
+              
+              let caption = imgObj.image_caption || imgObj.image_alt || '';
+              
+              let badgeHtml = '';
+              let inlineSourceHtml = imgObj.source_letter ? `<strong>Source ${imgObj.source_letter}:</strong> ` : '';
+              
+              if (unitId === 'early_modern_world' && imgObj.source_letter) {
+                  badgeHtml = `<div style="text-align: center; margin-bottom: 5px;"><strong>${badgeSource('Source ' + imgObj.source_letter)}</strong></div>`;
+                  inlineSourceHtml = ''; // Eliminate redundancy
+              }
+
+              html += badgeHtml;
+
               if (src.toLowerCase().endsWith('.svg')) {
                   html += `<img src="${src}" style="width: 85%; max-width: 650px; height: auto; display:block; margin: 25px auto 5px auto; border-radius: 8px; border: 1.5px solid #475569; padding-top: 10px; padding-bottom: 10px; ">`;
               } else {
                   html += `<img src="${src}" style="max-width:100%; max-height: 250px; display:block; margin: 15px auto 5px auto; border-radius: 6px; border: 1px solid #ccc;">`;
               }
-              if (imgObj.image_caption || imgObj.image_alt) {
-                  let caption = imgObj.image_caption || imgObj.image_alt;
-                  html += `<div style="text-align: center; font-size: 10pt; font-style: italic; color: #555; margin-bottom: 15px;">${imgObj.source_letter ? `<strong>Source ${imgObj.source_letter}:</strong> ` : ''}${caption}</div>`;
+              if (caption || inlineSourceHtml) {
+                  html += `<div style="text-align: center; font-size: 10pt; font-style: italic; color: #555; margin-bottom: 15px;">${inlineSourceHtml}${caption}</div>`;
               }
             }
           });
@@ -562,7 +574,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
           html += `
             <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
               <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-              ${block.source.title ? `<strong>${badgeSource(block.source.title, 'S' + sourceNum++)}</strong><br>` : ''}
+              ${block.source.title ? `<strong>${badgeSource(block.source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
               ${(block.source.src || block.source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((block.source.src || block.source.source), 2) : (block.source.src || block.source.source)}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
               ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
               ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
@@ -574,13 +586,26 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
         // Legacy support for single 'image' string
         if (block.image && (!block.images || block.images.length === 0)) {
           let src = typeof resolveAssetPath === 'function' ? resolveAssetPath(block.image, 2) : block.image;
+          
+          let caption = block.image_caption || block.image_alt || '';
+          
+          let badgeHtml = '';
+          let inlineSourceHtml = block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : '';
+          
+          if (unitId === 'early_modern_world' && block.source_letter) {
+              badgeHtml = `<div style="text-align: center; margin-bottom: 5px;"><strong>${badgeSource('Source ' + block.source_letter)}</strong></div>`;
+              inlineSourceHtml = ''; // Eliminate redundancy
+          }
+
+          html += badgeHtml;
+
           if (src.toLowerCase().endsWith('.svg')) {
               html += `<img src="${src}" style="width: 85%; max-width: 650px; height: auto; display:block; margin: 25px auto 5px auto; border-radius: 8px; border: 1.5px solid #475569; padding-top: 10px; padding-bottom: 10px; ">`;
           } else {
               html += `<img src="${src}" style="max-width:100%; max-height: 250px; display:block; margin: 15px auto 5px auto; border-radius: 6px; border: 1px solid #ccc;">`;
           }
-          if (block.image_alt) {
-              html += `<div style="text-align: center; font-size: 10pt; font-style: italic; color: #555; margin-bottom: 15px;">${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.image_alt}</div>`;
+          if (caption || inlineSourceHtml) {
+              html += `<div style="text-align: center; font-size: 10pt; font-style: italic; color: #555; margin-bottom: 15px;">${inlineSourceHtml}${caption}</div>`;
           }
         }
         
@@ -948,7 +973,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
             html += `
               <div class="source-container" ${containerStyle}>
                 <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-                ${source.title ? `<strong>${badgeSource(source.title, 'S' + sourceNum++)}</strong><br>` : ''}
+                ${source.title ? `<strong>${badgeSource(source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
                 ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source">` : ''}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
                 ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}

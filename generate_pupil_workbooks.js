@@ -415,7 +415,7 @@ allDirs.forEach((unitId) => {
     let heroImgSrc = unitData.cover_image ? (typeof resolveAssetPath === "function" ? resolveAssetPath(unitData.cover_image, 2) : `../..${unitData.cover_image.startsWith("/") ? unitData.cover_image : "/" + unitData.cover_image}`) : '';
     let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="max-height: 45vh; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">` : '';
     if (unitId === 'early_modern_world') {
-        heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [__________] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
+        heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
     }
     if (unitId === 'edexcel_medicine') {
         heroHtml = `<div style="border: 2px solid #1e3a8a; padding: 15px; margin-top: 20px; background-color: #f8fafc;">
@@ -710,7 +710,7 @@ allDirs.forEach((unitId) => {
                    </div>`;
           if (items) {
             items.forEach((item, index) => {
-              html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">${item.question}</div>`;
+              html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">${unitId === "early_modern_world" ? (index + 1) + ". " : ""}${item.question}</div>`;
               let linesToDraw = 2;
               for (let i = 0; i < linesToDraw; i++) {
                 html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
