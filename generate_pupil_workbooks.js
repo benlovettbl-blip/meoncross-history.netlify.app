@@ -441,6 +441,8 @@ allDirs.forEach((unitId) => {
 
         ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
         
+        ${unitId === 'water_and_sanitation' ? '<img src="/images/pasteur.png" style="max-height: 350px; width: auto; display: block; margin: 30px auto; object-fit: contain;">' : ''}
+        
         <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px 45px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
                 <span style="font-weight: 600; color: #334155; font-size: 13pt;">Scholar:</span>

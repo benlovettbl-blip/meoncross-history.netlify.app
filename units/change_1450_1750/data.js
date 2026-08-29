@@ -84,7 +84,7 @@ module.exports = {
         "type": "quiz",
         "questions": [
           {
-            "question": "Recall question from previous unit.",
+            "question": "Recall question from previous lesson.",
             "options": [
               "A",
               "B",

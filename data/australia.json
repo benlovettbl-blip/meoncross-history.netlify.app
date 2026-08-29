@@ -1061,25 +1061,28 @@
             "text": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855. \n\nYou may use the following in your answer:\n* The near-starvation of the First Fleet (1788)\n* The introduction of Merino sheep and the wool industry\n\nYou must also use information of your own.",
             "tasks": [
               {
-                "type": "extended_writing",
-                "question": "Write your narrative account here:",
-                "instructions": "Use these sentence starters to build your narrative in chronological order:\n\n1. The development of Australia began in 1788 when...\n2. This was a very difficult period because...\n3. However, the situation changed dramatically when John Macarthur...\n4. This led to New South Wales becoming a profitable colony because...\n5. Finally, the development of Australia accelerated in the 1850s due to..."
+                "question": "Sentence Starters",
+                "model": "Use these sentence starters to build your narrative in chronological order:\n\n1. The development of Australia began in 1788 when...\n2. This was a very difficult period because...\n3. However, the situation changed dramatically when John Macarthur...\n4. This led to New South Wales becoming a profitable colony because...\n5. Finally, the development of Australia accelerated in the 1850s due to..."
               }
             ]
           },
           {
             "type": "narrative",
             "theme_heading": "Assessment 2: 'How Useful' Source Analysis",
-            "text": "<p>Study Sources A and B below. Then answer the question: <strong>How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?</strong></p>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source A: Extract from a letter written by a British squatter in New South Wales, published in a London newspaper in 1840.</strong><br/><br/>\"The land here is vast and entirely unimproved by the native people, who simply wander across it. We have brought civilization, built permanent farms, and our flocks of sheep are multiplying rapidly. We are turning a wasteland into a highly profitable jewel of the Empire. The natives are melting away, which is the natural outcome when a superior race arrives.\"<br/><br/><em>Provenance Clue: Written by a wealthy squatter trying to encourage more British investment, in an era where racism was common.</em>\n</div>\n\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source B: Extract from a report by Lancelot Threlkeld, a Christian missionary living among the Awabakal people, written in 1838.</strong><br/><br/>\"It is a tragedy to witness the complete destruction of these people. The white settlers have stolen their hunting grounds. When the starving natives steal a single sheep to survive, they are hunted down and shot like dogs by the squatters. The British government has done nothing to protect them from this slaughter.\"<br/><br/><em>Provenance Clue: Written by a missionary whose job was to protect Aboriginal people, meaning he sympathised with them and saw the brutality of the squatters firsthand.</em>\n</div>\n</div>",
-            "tasks": [
-              {
-                "type": "extended_writing",
-                "question": "How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians? (8 marks)"
-              }
-            ]
+            "text": "<p>Study Sources A and B below. Then answer the question: <strong>How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?</strong></p>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source A: Extract from a letter written by a British squatter in New South Wales, published in a London newspaper in 1840.</strong><br/><br/>\"The land here is vast and entirely unimproved by the native people, who simply wander across it. We have brought civilization, built permanent farms, and our flocks of sheep are multiplying rapidly. We are turning a wasteland into a highly profitable jewel of the Empire. The natives are melting away, which is the natural outcome when a superior race arrives.\"<br/><br/><em>Provenance Clue: Written by a wealthy squatter trying to encourage more British investment, in an era where racism was common.</em>\n</div>\n\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source B: Extract from a report by Lancelot Threlkeld, a Christian missionary living among the Awabakal people, written in 1838.</strong><br/><br/>\"It is a tragedy to witness the complete destruction of these people. The white settlers have stolen their hunting grounds. When the starving natives steal a single sheep to survive, they are hunted down and shot like dogs by the squatters. The British government has done nothing to protect them from this slaughter.\"<br/><br/><em>Provenance Clue: Written by a missionary whose job was to protect Aboriginal people, meaning he sympathised with them and saw the brutality of the squatters firsthand.</em>\n</div>\n</div>\n\n<div style='margin-top:20px; padding: 15px; background-color: #fffbeb; border-left: 4px solid #fbbf24;'>\n<h4>Scaffolding: How to analyze these sources</h4>\n<p>For <strong>both</strong> sources, make sure you address:</p>\n<ul>\n<li><strong>Content:</strong> What does the source actually say? What details are useful?</li>\n<li><strong>Context:</strong> What do you know about this from your lessons that supports or challenges the source?</li>\n<li><strong>Provenance (NOP):</strong> Who wrote it, when, and why? How does that affect its reliability and usefulness?</li>\n</ul>\n</div>",
+            "tasks": []
           }
         ],
-        "tasks": []
+        "tasks": [
+          {
+            "question": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855.",
+            "marks": "8"
+          },
+          {
+            "question": "How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?",
+            "marks": "8"
+          }
+        ]
       }
     ],
     "quizPack": [

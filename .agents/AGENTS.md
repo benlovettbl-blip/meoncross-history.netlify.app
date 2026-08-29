@@ -55,7 +55,7 @@ Whenever you (the AI agent) make structural changes to any unit's curriculum fil
 1. `node extract_units.js <unit_id>`
 2. `node build_database.cjs`
 3. `node generate_tracker_v2.mjs`
-4. `node export_pdfs.js <unit_id>`
+4. `node export_pdfs.js <unit_id>` (CRITICAL EXCEPTION: Do NOT run this step for the battlefield tour unit `trip_ypres`, as it is fully digital and requires no printed PDFs).
 Do NOT run `npm run sync` globally unless explicitly requested, as this risks breaking other units. You must run these safe unit-targeted commands proactively so the user never has to remember or type the phrases themselves.
 
 ## Video Injection Metadata
