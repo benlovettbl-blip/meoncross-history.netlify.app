@@ -42476,6 +42476,36 @@
                   "name": "The 7,977 'Unknowns'",
                   "background": "Unidentified German Soldiers.",
                   "story": "Of the nearly 25,000 men buried in the Kameradengrab (mass grave) at the cemetery entrance, 7,977 remain completely unidentified. Their presence stands as a haunting testament to the mechanized scale of slaughter on the Western Front."
+                },
+                {
+                  "name": "The 3,000 'Student Volunteers'",
+                  "background": "The Kriegsfreiwilliger of 1914.",
+                  "story": "Poorly trained German schoolboys and university students killed during the First Battle of Ypres. Their slaughter was romanticized by German propaganda, earning Langemark the nickname 'Studentenfriedhof' (Student Cemetery)."
+                },
+                {
+                  "name": "Private Albert Carlill",
+                  "background": "1st/4th Bn. Loyal North Lancashire Reg.",
+                  "story": "One of only two British soldiers buried in this German military cemetery. He died on November 4, 1918, aged 19, serving as a rare reminder of shared tragedy across enemy lines."
+                },
+                {
+                  "name": "Private Leonard H. Lockley",
+                  "background": "4th Bn. Seaforth Highlanders.",
+                  "story": "The second British Tommy buried at Langemark, killed on October 30, 1918. His name, alongside Carlill's, is recorded on a plaque near the entrance, resting permanently among former foes."
+                },
+                {
+                  "name": "The 17,342 'Knowns'",
+                  "background": "The Kameradengrab (Mass Grave).",
+                  "story": "While your existing card covers the unknowns, this single mass grave holds 24,917 bodies in total. The names of the 17,342 identified soldiers are cast on bronze steles surrounding the perimeter."
+                },
+                {
+                  "name": "The April 1915 Casualties",
+                  "background": "The Second Battle of Ypres.",
+                  "story": "Langemark was the site of the first major poison gas attack on the Western Front. Many German soldiers buried here died in the chaotic offensives that immediately followed the release of the gas."
+                },
+                {
+                  "name": "Harry Patch's 'Unknown'",
+                  "background": "A symbol of reconciliation.",
+                  "story": "In 2008, Harry Patch, the last surviving British trench veteran, visited the cemetery. He laid a wreath on the grave of a German soldier killed on August 16, 1917—the exact day Patch's unit fought at Langemark."
                 }
               ]
             },
