@@ -1,5 +1,6 @@
 const industrialisation_and_empire = {
   "title": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+  "specification_file": "/data/industrialisation_and_empire_overview.json",
   "homepage_background": "/images/imperial_federation_map.jpg",
   "enquiry": "Industrialisation, Empire, and Power: How did 19th-century Britain transform at home and abroad?",
   "cover_image": "/images/imperial_federation_map.jpg",

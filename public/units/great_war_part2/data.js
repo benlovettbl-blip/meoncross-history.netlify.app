@@ -1,5 +1,6 @@
 module.exports = {
   "title": "KS3: The Great War (1914-1919)",
+  "specification_file": "/data/great_war_part2_overview.json",
   "homepage_background": "/images/stubbington_memorial_1.jpg",
   "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
   "cover_image": "/images/bg_great_war_part2.jpg",
