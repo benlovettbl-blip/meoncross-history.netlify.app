@@ -13,6 +13,33 @@ export const unitData = {
   },
   "local_heroes": [
     {
+      "name": "William Augustine 'Harper' Lowry",
+      "age": 25,
+      "regiment": "Indian Army",
+      "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Eldest brother.",
+      "cemetery": "Gully Ravine (Gallipoli)",
+      "story": "Killed on 4th June 1915 leading a desperate charge up Gully Ravine. He has no known grave.",
+      "image": "/images/lowry_william.png"
+    },
+    {
+      "name": "Auriol 'Eric' Lowry",
+      "age": null,
+      "regiment": "West Yorkshire Regiment",
+      "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Middle brother.",
+      "cemetery": "Unknown",
+      "story": "Fought at Westhoek Ridge in 1917. Commanded the battalion where his younger brother Patrick served.",
+      "image": "/images/lowry_auriol.png"
+    },
+    {
+      "name": "Cyril John 'Patrick' Lowry",
+      "age": 20,
+      "regiment": "West Yorkshire Regiment",
+      "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Youngest brother.",
+      "cemetery": "Somme",
+      "story": "Killed on 25th March 1918 during a German offensive near the Somme, in full view of his brother Eric.",
+      "image": "/images/lowry_cyril.png"
+    },
+    {
       "name": "Private T. J. Franklin",
       "age": 22,
       "regiment": "1st Hampshire Regt",

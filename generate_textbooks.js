@@ -258,14 +258,30 @@ allDirs.forEach(unitId => {
               if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); 
               if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); 
             } 
-
+            if (currentUnitId === 'early_modern_world') {
+              if (typeof task.text === 'string') task.text = task.text.replace(/^Q\d+[\.:\s]*/i, '');
+              if (typeof task.question === 'string') task.question = task.question.replace(/^Q\d+[\.:\s]*/i, '');
+              if (typeof task.instruction === 'string') task.instruction = task.instruction.replace(/^Q\d+[\.:\s]*/i, '');
+              if (typeof task.instructions === 'string') task.instructions = task.instructions.replace(/^Q\d+[\.:\s]*/i, '');
+              if (typeof task.title === 'string') task.title = task.title.replace(/^Q\d+[\.:\s]*/i, '');
+            }
           }); 
         }
-
       });
     }
 
 
+    if (currentUnitId === 'early_modern_world') {
+      if (lesson.extended && typeof lesson.extended.question === 'string') {
+        lesson.extended.question = lesson.extended.question.replace(/^Q\d+[\.:\s]*/i, '');
+      }
+      if (lesson.primary_source && typeof lesson.primary_source.question === 'string') {
+        lesson.primary_source.question = lesson.primary_source.question.replace(/^Q\d+[\.:\s]*/i, '');
+      }
+      if (lesson.source && typeof lesson.source.question === 'string') {
+        lesson.source.question = lesson.source.question.replace(/^Q\d+[\.:\s]*/i, '');
+      }
+    }
     if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
 
     if (lesson.sources) {
@@ -509,7 +525,8 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
       html += `<div style="page-break-inside: auto; margin-bottom: 15px;">`;
       lesson.sources.forEach((source, sIdx) => {
         let sourceContent = source.content || source.text;
-        if((source.src || source.source) || source.caption || sourceContent) {
+        let isEarlyModernQuarantine = (unitId === 'early_modern_world' && source.question);
+        if((source.src || source.source) || source.caption || sourceContent || isEarlyModernQuarantine) {
           html += `
             <div class="source-container" style="">
               <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
@@ -843,7 +860,11 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
       lesson.tasks.forEach((task, tIdx) => {
         if (task.type === 'spectrum_mapper') {
              // html += `<div style="page-break-before: always;"></div>`;
-             html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || 'Spectrum Planner'}</h2>`;
+             if (unitId === 'early_modern_world') {
+                 html += `<h2 style="text-align: center; margin-bottom: 30px;">Q${globalQNum++}. ${task.text || 'Spectrum Planner'}</h2>`;
+             } else {
+                 html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || 'Spectrum Planner'}</h2>`;
+             }
              
              // Draw the spectrum line
              html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
