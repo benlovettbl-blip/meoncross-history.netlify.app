@@ -190,7 +190,19 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           ` : ''}
         </div>
       `;
+      `;
     }
+
+    // Langemarck Myth Interactive Module Button
+    lessonsHTML += `
+      <div style="margin-top: 40px; background: linear-gradient(135deg, #1e2420, #2f3e36); border: 1px solid #4a5d23; border-radius: 8px; padding: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); text-align: center; color: white;">
+        <h2 style="font-family: 'Cinzel', 'Playfair Display', serif; font-size: 1.8rem; margin: 0 0 10px 0; color: #f8fafc;"><i class="fa-solid fa-masks-theater" style="margin-right: 10px;"></i>Langemarck Student Myth</h2>
+        <p style="color: #cbd5e1; font-size: 1.05rem; margin: 0 0 20px 0;">Investigate the propaganda behind the Student Volunteers.</p>
+        <button onclick="window.openLangemarckMythModal && window.openLangemarckMythModal()" style="background: #4a5d23; color: white; border: none; padding: 12px 24px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: transform 0.2s, background 0.2s;" onmouseover="this.style.background='#5a702a'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#4a5d23'; this.style.transform='translateY(0)'">
+          <i class="fa-solid fa-magnifying-glass" style="margin-right: 8px;"></i> Uncover the Truth
+        </button>
+      </div>
+    `;
 
   } else {
     lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';

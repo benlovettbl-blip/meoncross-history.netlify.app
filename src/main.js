@@ -8,6 +8,7 @@ import { initData } from './storage.js';
 import { bindEvents } from './layout.js';
 import { switchView } from './navigation.js';
 import { state } from './state.js';
+import './langemarck_myth.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   // Bind global helper routing
