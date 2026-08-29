@@ -982,6 +982,27 @@ export function initializeApp(unitData) {
     });
     navContainer.appendChild(homeLink);
 
+    // Trip Days Sidebar Tabs
+    if (unitData.type === 'trip') {
+      const days = [];
+      unitData.lessons.forEach((lesson, index) => {
+        if (lesson.id && lesson.id.startsWith('day_')) days.push({ lesson, index });
+      });
+      days.forEach(d => {
+        const dayLink = document.createElement('a');
+        dayLink.className = 'lesson-link';
+        dayLink.innerHTML = '<i class="fa-solid fa-map-location-dot" style="margin-right: 8px;"></i> ' + (d.lesson.title.split(':')[0] || d.lesson.title);
+        dayLink.href = '#';
+        dayLink.onclick = (e) => {
+          e.preventDefault();
+          document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+          dayLink.classList.add('active');
+          window.renderLessonByIndex(d.index);
+        };
+        navContainer.appendChild(dayLink);
+      });
+    }
+
     // The Fallen / Local Heroes Sidebar Accordion (Trips only)
     if (unitData.type === 'trip') {
       const heroes = [];
