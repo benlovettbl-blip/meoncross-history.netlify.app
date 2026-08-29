@@ -848,13 +848,11 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
     }
 
     // Pair Share
-    if (unitId !== 'water_and_sanitation') {
-      if (lesson.pair_share) {
-        html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
-        html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
-        html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
-        html += `</div>`;
-      }
+    if (lesson.pair_share) {
+      html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
+      html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
+      html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
+      html += `</div>`;
     }
 
     if (lesson.tasks) {
@@ -1011,14 +1009,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
         html += `</div>`;
       }
 
-      if (unitId === 'water_and_sanitation') {
-        if (lesson.pair_share) {
-          html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
-          html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
-          html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
-          html += `</div>`;
-        }
-      }
+
 
       if (lesson.historians_corner) {
       html += `<div class="task-box" style=" ">`;
