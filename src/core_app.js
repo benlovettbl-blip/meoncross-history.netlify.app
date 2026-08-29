@@ -2839,12 +2839,12 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
 
         let sourceHtml = '';
         if (lesson.extended.source_a || lesson.extended.source_b) {
-          sourceHtml = `<div style="display: flex; gap: 20px; margin: 15px 0;">`;
+          sourceHtml = `<div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 15px 0;">`;
           if (lesson.extended.source_a) {
              const prov = typeof lesson.extended.source_a === 'string' ? '' : lesson.extended.source_a.provenance;
              const content = typeof lesson.extended.source_a === 'string' ? lesson.extended.source_a : lesson.extended.source_a.content;
              sourceHtml += `
-               <div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+               <div style="flex: 1 1 250px; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A</strong>
                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
                  <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
@@ -2856,7 +2856,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
              const prov = typeof lesson.extended.source_b === 'string' ? '' : lesson.extended.source_b.provenance;
              const content = typeof lesson.extended.source_b === 'string' ? lesson.extended.source_b : lesson.extended.source_b.content;
              sourceHtml += `
-               <div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+               <div style="flex: 1 1 250px; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B</strong>
                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
                  <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
