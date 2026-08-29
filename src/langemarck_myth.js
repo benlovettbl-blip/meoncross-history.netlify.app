@@ -136,6 +136,103 @@ export function openLangemarckMythModal() {
     displayArea.innerHTML = realityHTML;
   };
 
+  
+  const profilesData = [
+    {
+      "name": "Leutnant Werner Voss",
+      "background": "WWI Fighter Ace & Pour le Mérite winner.",
+      "story": "Killed in an epic dogfight against seven British SE5s. Because his grave was lost, he is commemorated on the bronze panels and lies somewhere among the 24,000+ men in the mass grave."
+    },
+    {
+      "name": "The Student Volunteers",
+      "background": "Over 3,000 poorly trained young volunteers.",
+      "story": "Died in the First Battle of Ypres (1914). They form the core of the 'Langemarck Myth', which heavily ties the site to the 'Studentenfriedhof' (Student Cemetery) propaganda narrative."
+    },
+    {
+      "name": "Ptes. Albert Carlill & Leonard Lockley",
+      "background": "British Teenage POWs.",
+      "story": "They died in late 1918 and were originally buried near German graves. During the 1956 cemetery consolidation, their remains couldn't be separated, so they rest permanently in the German mass grave."
+    },
+    {
+      "name": "Oberst (Colonel) Julius von List",
+      "background": "Adolf Hitler's First Regimental Commander.",
+      "story": "List commanded the Bavarian 16th Reserve Infantry Regiment, in which a young Adolf Hitler served as a dispatch runner. Killed at Gheluvelt in October 1914, his remains were later moved to the Langemarck Kameradengrab (mass grave)."
+    },
+    {
+      "name": "The 7,977 'Unknowns'",
+      "background": "Unidentified German Soldiers.",
+      "story": "Of the nearly 25,000 men buried in the Kameradengrab (mass grave) at the cemetery entrance, 7,977 remain completely unidentified. Their presence stands as a haunting testament to the mechanized scale of slaughter on the Western Front."
+    }
+  ];
+
+  const galleryGrid = document.createElement('div');
+  galleryGrid.style.display = 'grid';
+  galleryGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
+  galleryGrid.style.gap = '20px';
+  galleryGrid.style.marginTop = '40px';
+  galleryGrid.style.marginBottom = '30px';
+
+  profilesData.forEach((profile, index) => {
+    const card = document.createElement('div');
+    card.style.perspective = '1000px';
+    card.style.height = '320px';
+    card.style.cursor = 'pointer';
+
+    const inner = document.createElement('div');
+    inner.style.position = 'relative';
+    inner.style.width = '100%';
+    inner.style.height = '100%';
+    inner.style.textAlign = 'center';
+    inner.style.transition = 'transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1)';
+    inner.style.transformStyle = 'preserve-3d';
+
+    card.onclick = () => {
+      inner.style.transform = inner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
+    };
+
+    const front = document.createElement('div');
+    front.style.position = 'absolute';
+    front.style.width = '100%';
+    front.style.height = '100%';
+    front.style.backfaceVisibility = 'hidden';
+    front.style.background = '#2d333b';
+    front.style.border = '1px solid #343a40';
+    front.style.borderRadius = '8px';
+    front.style.padding = '20px';
+    front.style.display = 'flex';
+    front.style.flexDirection = 'column';
+    front.style.justifyContent = 'center';
+    front.style.boxShadow = '0 10px 15px rgba(0,0,0,0.5)';
+    front.innerHTML = `<div style="position:absolute;top:0;left:0;right:0;height:6px;background:#4a5c40;border-top-left-radius:8px;border-top-right-radius:8px;"></div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#f8f9fa;margin-bottom:10px;">${profile.name}</h3>
+      <p style="color:#adb5bd;font-size:0.95rem;line-height:1.5;">${profile.background}</p>
+      <div style="position:absolute;bottom:15px;width:100%;text-align:center;font-size:0.75rem;color:#adb5bd;opacity:0.6;text-transform:uppercase;">Tap to reveal</div>`;
+
+    const back = document.createElement('div');
+    back.style.position = 'absolute';
+    back.style.width = '100%';
+    back.style.height = '100%';
+    back.style.backfaceVisibility = 'hidden';
+    back.style.background = '#2b3a32';
+    back.style.border = '1px solid #343a40';
+    back.style.borderRadius = '8px';
+    back.style.padding = '20px';
+    back.style.display = 'flex';
+    back.style.flexDirection = 'column';
+    back.style.justifyContent = 'center';
+    back.style.transform = 'rotateY(180deg)';
+    back.style.boxShadow = '0 10px 15px rgba(0,0,0,0.5)';
+    back.innerHTML = `<p style="color:#f8f9fa;font-size:0.95rem;line-height:1.6;text-align:left;">${profile.story}</p>
+      <div style="position:absolute;bottom:15px;width:100%;text-align:center;font-size:0.75rem;color:#adb5bd;opacity:0.6;text-transform:uppercase;">Tap to close</div>`;
+
+    inner.appendChild(front);
+    inner.appendChild(back);
+    card.appendChild(inner);
+    galleryGrid.appendChild(card);
+  });
+  
+  content.appendChild(galleryGrid);
+
   // Reflection Form
   const formContainer = document.createElement('div');
   formContainer.style.background = '#151917';

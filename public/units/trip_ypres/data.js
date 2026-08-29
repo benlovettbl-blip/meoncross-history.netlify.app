@@ -1044,6 +1044,118 @@ export const unitData = {
         }
       ]
     }
-  ],
+  
+    {
+      "id": "hero_lowry_william",
+      "title": "William Augustine 'Harper' Lowry",
+      "enquiry": "Local Hero",
+      "banner": "/images/stubbington_memorial.jpg",
+      "teacher_notes": {
+        "primer": "The story of William Augustine 'Harper' Lowry, who lived at Manor Way Grange.",
+        "objectives": []
+      },
+      "do_now": {
+        "type": "timeline",
+        "prediction_question": "The Life and Fall of William Augustine 'Harper' Lowry",
+        "events": [
+          {
+            "year": "Home",
+            "title": "Stubbington Connection",
+            "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Eldest brother.",
+            "lat": 50.8107,
+            "lng": -1.1967
+          },
+          {
+            "year": "Resting Place",
+            "title": "Gully Ravine (Gallipoli)",
+            "detail": "Killed on 4th June 1915 leading a desperate charge up Gully Ravine. He has no known grave.",
+            "lat": 40.3200,
+            "lng": 26.2600
+          }
+        ]
+      },
+      "narrative_blocks": [
+        {
+          "type": "narrative",
+          "theme_heading": "William Augustine 'Harper' Lowry",
+          "text": "<strong>Regiment:</strong> Indian Army<br><strong>Age:</strong> 25<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the eldest of the three Lowry brothers.<br><br><strong>Military Service & Fate:</strong> He fought in the Gallipoli campaign. On 4th June 1915, he was killed leading a desperate charge up Gully Ravine. He has no known grave.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i>"
+        }
+      ]
+    },
+    {
+      "id": "hero_lowry_auriol",
+      "title": "Auriol 'Eric' Lowry",
+      "enquiry": "Local Hero",
+      "banner": "/images/stubbington_memorial.jpg",
+      "teacher_notes": {
+        "primer": "The story of Auriol 'Eric' Lowry, who lived at Manor Way Grange.",
+        "objectives": []
+      },
+      "do_now": {
+        "type": "timeline",
+        "prediction_question": "The Service of Auriol 'Eric' Lowry",
+        "events": [
+          {
+            "year": "Home",
+            "title": "Stubbington Connection",
+            "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Middle brother.",
+            "lat": 50.8107,
+            "lng": -1.1967
+          },
+          {
+            "year": "Action",
+            "title": "Westhoek Ridge",
+            "detail": "Fought at Westhoek Ridge in 1917. Commanded the battalion where his younger brother Patrick served.",
+            "lat": 50.852,
+            "lng": 2.8913
+          }
+        ]
+      },
+      "narrative_blocks": [
+        {
+          "type": "narrative",
+          "theme_heading": "Auriol 'Eric' Lowry",
+          "text": "<strong>Regiment:</strong> West Yorkshire Regiment<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the middle brother.<br><br><strong>Military Service:</strong> He fought at Westhoek Ridge in 1917. Uniquely, he commanded the battalion in which his younger brother Patrick also served, bearing the heavy burden of leadership and family duty.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i>"
+        }
+      ]
+    },
+    {
+      "id": "hero_lowry_cyril",
+      "title": "Cyril John 'Patrick' Lowry",
+      "enquiry": "Local Hero",
+      "banner": "/images/stubbington_memorial.jpg",
+      "teacher_notes": {
+        "primer": "The story of Cyril John 'Patrick' Lowry, who lived at Manor Way Grange.",
+        "objectives": []
+      },
+      "do_now": {
+        "type": "timeline",
+        "prediction_question": "The Life and Fall of Cyril John 'Patrick' Lowry",
+        "events": [
+          {
+            "year": "Home",
+            "title": "Stubbington Connection",
+            "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Youngest brother.",
+            "lat": 50.8107,
+            "lng": -1.1967
+          },
+          {
+            "year": "Resting Place",
+            "title": "Somme",
+            "detail": "Killed on 25th March 1918 during a German offensive near the Somme, in full view of his brother Eric.",
+            "lat": 50.0100,
+            "lng": 2.6800
+          }
+        ]
+      },
+      "narrative_blocks": [
+        {
+          "type": "narrative",
+          "theme_heading": "Cyril John 'Patrick' Lowry",
+          "text": "<strong>Regiment:</strong> West Yorkshire Regiment<br><strong>Age:</strong> 20<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the youngest brother.<br><br><strong>Military Service & Fate:</strong> Served under the command of his older brother, Eric. He was tragically killed on 25th March 1918 during a massive German spring offensive near the Somme. Heartbreakingly, he fell in full view of his brother Eric.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i>"
+        }
+      ]
+    },
+],
   "overview_custom_html": "\n      <div style=\"background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 30px;\">\n        <h3 style=\"margin-top: 0; color: #1e3a8a; font-family: 'Playfair Display', serif; font-size: 1.8rem;\">The Lowry Brothers: A Village's Sacrifice</h3>\n        <p style=\"color: #334155; line-height: 1.6; font-size: 1.05rem;\">The names of three brothers—William, Cyril, and Auriol (Eric) Lowry—are all carved into the Stubbington War Memorial in our village center. The story of these young men perfectly captures the devastating toll the war took on individual families.<br><br>Tragically, the three brothers fell in three completely different theatres of war:<br><ul><li><strong>William 'Harper' Lowry:</strong> Fell in 1915 and is commemorated on the Helles Memorial in Turkey (Gallipoli).</li><li><strong>Cyril 'Patrick' Lowry:</strong> Fell in 1916 and is commemorated on the Pozieres Memorial in France (The Somme).</li><li><strong>Auriol 'Eric' Lowry:</strong> Fell in 1917 and is buried at La Targette Cemetery near Arras, France.</li></ul><br>Before we depart for Belgium, take a moment to reflect on what it must have been like for the local community to receive the telegrams for all three boys over the course of three years.</p>\n        <div style=\"display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;\"><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/stubbington_memorial.jpg\" alt=\"The Stubbington War Memorial\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">The Stubbington War Memorial, where the Lowry brothers are commemorated.</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_william.png\" alt=\"William 'Harper' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">William 'Harper' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_cyril.png\" alt=\"Cyril 'Patrick' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Cyril 'Patrick' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_auriol.png\" alt=\"Auriol 'Eric' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Auriol 'Eric' Lowry</small>\n         </div></div>\n      </div>\n    "
 };
