@@ -1,4 +1,4 @@
-export const unitData = {
+{
   "type": "trip",
   "title": "History Battlefield Tour",
   "enquiry_question": "Ypres & The Salient",
@@ -124,7 +124,7 @@ export const unitData = {
             "detail": "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions. I will be requesting passports in and EHIC cards. If you can't make it, you can hand it into the office before that date or just after."
           }
         ]
-      },
+      }
     },
     {
       "id": "day_1",
@@ -454,24 +454,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "The Menin Gate",
-          "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_menin_gate.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Menin Gate\"/><br><small>The Menin Gate, Ypres</small></div>The Menin Gate is a colossal memorial to the missing in Ypres. Millions of Allied soldiers marched through this spot on their way to the frontlines, and many never returned.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Local Hero & The Empire</h4><div style=\"margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;\"><h4 style=\"margin: 0 0 10px 0; color: #1e293b;\"><i class=\"fa-solid fa-magnifying-glass-location\" style=\"color: #3b82f6;\"></i> Find the Local Hero</h4><div style=\"background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;\"><h3 style=\"margin: 0 0 10px 0; color: #1e293b; font-size: 1.3rem;\">Private T. J. Franklin</h3><p style=\"margin: 0; font-size: 0.95rem; line-height: 1.6; color: #334155;\"><strong>Regiment:</strong> 1st Battalion, The Hampshire Regiment<br><strong>Local Connection:</strong> Stubbington<br><strong>Fate:</strong> Killed 29th April 1915 holding an exposed line on the Frezenberg Ridge.</p></div><p style=\"margin: 0; color: #b91c1c; font-weight: bold;\"><i class=\"fa-solid fa-person-chalkboard\"></i> Action: The Menin Gate has 54,000 names. Locate the specific panel for Private T. J. Franklin.</p></div><div><h4 style=\"margin: 0 0 5px 0; color: #1e293b;\"><i class=\"fa-solid fa-monument\" style=\"color: #f59e0b;\"></i> The Indian Forces Memorial</h4><p style=\"margin: 0; color: #475569;\">Once you have found his name, walk out of the gate and up onto the grassy ramparts. Locate the <strong>Indian Forces Memorial</strong>. 130,000 troops from the Indian subcontinent served in Flanders. Take a moment to read the inscription before the Last Post begins at 8:00 PM.</p></div></div>",
-          "historical_facts": [
-            "Indian Expeditionary Force A (45,000 men) arrived in late 1914, plugging critical gaps to prevent a German breakthrough during the First Battle of Ypres.",
-            "By the end of 1914, Indian troops made up one-third of all British forces on the Western Front.",
-            "Of the 130,000 Indian soldiers who served in Flanders, roughly 9,000 died from combat and severe exposure to the brutal European winter.",
-            "The Menin Gate lists 413 Indian soldiers with no known grave.",
-            "Unveiled in 2011, the memorial features the State Emblem of India: four Asian lions facing outward over a bull, elephant, horse, and lion."
-          ],
-          "interactive_task": {
-            "title": "The Empire’s War: Global Voices in Flanders",
-            "action": "Watch the David Olusoga video, then stand before the Indian Forces Memorial and complete three steps: 1) Observe: Why did it take nearly a century to build this 2011 monument, and what does this delay tell us about historical memory? 2) Challenge: Look down at the Menin Gate where 413 Indian soldiers are carved alongside British troops. How does this change the traditional textbook image of the 'British Tommy'? 3) Discuss: How might the First Battle of Ypres have ended if those 45,000 Empire troops had not been deployed?"
-          },
-          "media": {
-            "type": "youtube",
-            "youtube_id": "Fwv4qL8yE-s",
-            "url": "https://www.youtube.com/watch?v=Fwv4qL8yE-s",
-            "caption": "Watch: Historian David Olusoga reveals the true diversity of the World War One trenches. Pay attention to the sheer number of nations that fought and died in the exact mud you are standing on today."
-          }
+          "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_menin_gate.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Menin Gate\"/><br><small>The Menin Gate, Ypres</small></div>The Menin Gate is a colossal memorial to the missing in Ypres. Millions of Allied soldiers marched through this spot on their way to the frontlines, and many never returned.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Local Hero & The Empire</h4><div style=\"margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;\"><h4 style=\"margin: 0 0 10px 0; color: #1e293b;\"><i class=\"fa-solid fa-magnifying-glass-location\" style=\"color: #3b82f6;\"></i> Find the Local Hero</h4><div style=\"background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;\"><h3 style=\"margin: 0 0 10px 0; color: #1e293b; font-size: 1.3rem;\">Private T. J. Franklin</h3><p style=\"margin: 0; font-size: 0.95rem; line-height: 1.6; color: #334155;\"><strong>Regiment:</strong> 1st Battalion, The Hampshire Regiment<br><strong>Local Connection:</strong> Stubbington<br><strong>Fate:</strong> Killed 29th April 1915 holding an exposed line on the Frezenberg Ridge.</p></div><p style=\"margin: 0; color: #b91c1c; font-weight: bold;\"><i class=\"fa-solid fa-person-chalkboard\"></i> Action: The Menin Gate has 54,000 names. Locate the specific panel for Private T. J. Franklin.</p></div><div><h4 style=\"margin: 0 0 5px 0; color: #1e293b;\"><i class=\"fa-solid fa-monument\" style=\"color: #f59e0b;\"></i> The Indian Forces Memorial</h4><p style=\"margin: 0; color: #475569;\">Once you have found his name, walk out of the gate and up onto the grassy ramparts. Locate the <strong>Indian Forces Memorial</strong>. 130,000 troops from the Indian subcontinent served in Flanders. Take a moment to read the inscription before the Last Post begins at 8:00 PM.</p></div></div>"
         }
       ],
       "tour_guide_script": [
@@ -1140,8 +1123,8 @@ export const unitData = {
             "year": "Resting Place",
             "title": "Gully Ravine (Gallipoli)",
             "detail": "Killed on 4th June 1915 leading a desperate charge up Gully Ravine. He has no known grave.",
-            "lat": 40.3200,
-            "lng": 26.2600
+            "lat": 40.32,
+            "lng": 26.26
           }
         ]
       },
@@ -1214,8 +1197,8 @@ export const unitData = {
             "year": "Resting Place",
             "title": "Somme",
             "detail": "Killed on 25th March 1918 during a German offensive near the Somme, in full view of his brother Eric.",
-            "lat": 50.0100,
-            "lng": 2.6800
+            "lat": 50.01,
+            "lng": 2.68
           }
         ]
       },
@@ -1229,4 +1212,4 @@ export const unitData = {
     }
   ],
   "overview_custom_html": "\n      <div style=\"background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 30px;\">\n        <h3 style=\"margin-top: 0; color: #1e3a8a; font-family: 'Playfair Display', serif; font-size: 1.8rem;\">The Lowry Brothers: A Village's Sacrifice</h3>\n        <p style=\"color: #334155; line-height: 1.6; font-size: 1.05rem;\">The names of three brothers—William, Cyril, and Auriol (Eric) Lowry—are all carved into the Stubbington War Memorial in our village center. The story of these young men perfectly captures the devastating toll the war took on individual families.<br><br>Tragically, the three brothers fell in three completely different theatres of war:<br><ul><li><strong>William 'Harper' Lowry:</strong> Fell in 1915 and is commemorated on the Helles Memorial in Turkey (Gallipoli).</li><li><strong>Cyril 'Patrick' Lowry:</strong> Fell in 1916 and is commemorated on the Pozieres Memorial in France (The Somme).</li><li><strong>Auriol 'Eric' Lowry:</strong> Fell in 1917 and is buried at La Targette Cemetery near Arras, France.</li></ul><br>Before we depart for Belgium, take a moment to reflect on what it must have been like for the local community to receive the telegrams for all three boys over the course of three years.</p>\n        <div style=\"display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;\"><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/stubbington_memorial.jpg\" alt=\"The Stubbington War Memorial\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">The Stubbington War Memorial, where the Lowry brothers are commemorated.</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_william.png\" alt=\"William 'Harper' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">William 'Harper' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_cyril.png\" alt=\"Cyril 'Patrick' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Cyril 'Patrick' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_auriol.png\" alt=\"Auriol 'Eric' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Auriol 'Eric' Lowry</small>\n         </div></div>\n      </div>\n    "
-};
+}
