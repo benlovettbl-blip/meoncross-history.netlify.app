@@ -152,6 +152,46 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       });
       lessonsHTML += '</div>';
     }
+
+    if (unitData.extended) {
+      lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px;"><i class="fa-solid fa-pen-nib"></i> Assessment Practice</h2>';
+      lessonsHTML += `
+        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; text-align: left;">
+          <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.1rem; margin-bottom: 15px;">${unitData.extended.question}</h3>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+            ${unitData.extended.source_a ? `
+              <div>
+                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source A:</strong> ${unitData.extended.source_a.provenance}</p>
+                ${unitData.extended.source_a.content}
+              </div>
+            ` : ''}
+            ${unitData.extended.source_b ? `
+              <div>
+                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source B:</strong> ${unitData.extended.source_b.provenance}</p>
+                ${unitData.extended.source_b.content}
+              </div>
+            ` : ''}
+          </div>
+
+          ${unitData.extended.provenance_clue ? `
+            <div style="background: #fdf2f8; border: 1px solid #fbcfe8; border-left: 4px solid #ec4899; padding: 15px; border-radius: 4px; margin-top: 20px;">
+              <p style="margin: 0; font-size: 0.95rem; color: #831843;"><i class="fa-solid fa-lightbulb" style="margin-right: 8px;"></i><strong>Provenance Clue:</strong> ${unitData.extended.provenance_clue}</p>
+            </div>
+          ` : ''}
+          
+          ${unitData.extended.scaffolding && unitData.extended.scaffolding.length > 0 ? `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 4px; margin-top: 20px;">
+              <p style="margin: 0 0 10px 0; font-weight: bold; color: #1e3a8a;"><i class="fa-solid fa-hammer" style="margin-right: 8px;"></i>Scaffolding</p>
+              <ul style="margin: 0; padding-left: 20px; color: #334155;">
+                ${unitData.extended.scaffolding.map(s => `<li style="margin-bottom: 5px;">${s}</li>`).join('')}
+              </ul>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
   } else {
     lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
     unitData.lessons.forEach((lesson, index) => {

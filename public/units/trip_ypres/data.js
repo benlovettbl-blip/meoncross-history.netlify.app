@@ -11,6 +11,22 @@ export const unitData = {
     "coach": "Jet Connect Executive Travel",
     "live_album_url": "https://photos.app.goo.gl/placeholder"
   },
+  "extended": {
+    "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+    "scaffolding": [
+      "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+    ],
+    "source_a": {
+      "provenance": "The Menin Road, a painting by official British War Artist Paul Nash, commissioned in 1919.",
+      "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/menin_road_nash.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+    },
+    "source_b": {
+      "provenance": "An official Royal Flying Corps aerial photograph showing the intricate trench network on the Western Front, 1916.",
+      "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/aerial_trench_ypres.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+    },
+    "model": "<strong>Source A is highly useful...</strong>",
+    "provenance_clue": "Source A is a painting by an official War Artist; does its stylistic and emotional nature make it more or less useful than a photograph? Source B is a military aerial photograph; what makes its objective recording of the geography useful?"
+  },
   "local_heroes": [
     {
       "name": "William Augustine 'Harper' Lowry",
@@ -105,28 +121,10 @@ export const unitData = {
           {
             "year": "10th Sep",
             "title": "Parent Briefing Meeting",
-            "detail": "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions."
+            "detail": "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions. I will be requesting passports in and EHIC cards. If you can't make it, you can hand it into the office before that date or just after."
           }
         ]
       },
-      "narrative_blocks": [],
-      "banner": "/images/menin_road_nash.jpg",
-      "extended": {
-        "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
-        "scaffolding": [
-          "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
-        ],
-        "source_a": {
-          "provenance": "The Menin Road, a painting by official British War Artist Paul Nash, commissioned in 1919.",
-          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/menin_road_nash.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
-        },
-        "source_b": {
-          "provenance": "An official Royal Flying Corps aerial photograph showing the intricate trench network on the Western Front, 1916.",
-          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/aerial_trench_ypres.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
-        },
-        "model": "<strong>Source A is highly useful...</strong>",
-        "provenance_clue": "Source A is a painting by an official War Artist; does its stylistic and emotional nature make it more or less useful than a photograph? Source B is a military aerial photograph; what makes its objective recording of the geography useful?"
-      }
     },
     {
       "id": "day_1",
@@ -228,7 +226,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "Langemarck German War Cemetery",
-          "text": "Unlike the bright, white Portland stone of British cemeteries, German cemeteries like Langemarck are intentionally somber, shaded by large oak trees and featuring dark stone blocks, reflecting Germanic mourning traditions.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Enter the Langemarck gates to unlock your assigned individual.</p><button onclick='window.unlockMission(this, \"langemarck\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+          "text": "Unlike the bright, white Portland stone of British cemeteries, German cemeteries like Langemarck are intentionally somber, shaded by large oak trees and featuring dark stone blocks, reflecting Germanic mourning traditions.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Individuals</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-magnifying-glass\"></i> Look at the names on the bronze oak panels. Remember that every German soldier in the mass grave had a story and family back home.</p></div></div>"
         },
         {
           "type": "narrative",
@@ -381,7 +379,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "The Brooding Soldier & Poison Gas",
-          "text": "In April 1915, the Germans launched the first major poison gas attack of the war on the Western Front at St Julien. A heavy cloud of chlorine gas was released, devastating the French colonial troops and forcing the Canadian 1st Division to step in and hold the line.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk into the memorial grounds to unlock your reflection task./p><button onclick='window.unlockMission(this, \"brooding_soldier\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+          "text": "In April 1915, the Germans launched the first major poison gas attack of the war on the Western Front at St Julien. A heavy cloud of chlorine gas was released, devastating the French colonial troops and forcing the Canadian 1st Division to step in and hold the line.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Direction of the Gas</h4><p style=\"font-size: 1.05rem; color: #334155;\"><strong>Action:</strong> Open your phone's compass app. Stand at the base of the Canadian memorial and turn until you are facing the exact direction the German gas attack came from (North-East).</p><div style=\"background: #ecfdf5; padding: 15px; border-left: 4px solid #10b981; margin: 15px 0; border-radius: 0 4px 4px 0;\"><em style=\"color: #065f46;\">\\\"Gas! GAS! Quick, boys!—An ecstasy of fumbling...\\\"</em><br><small style=\"color: #047857;\">- Wilfred Owen</small></div><p style=\"color: #b91c1c; font-weight: bold; margin-bottom: 5px;\"><i class=\"fa-solid fa-brain\"></i> Learn these 3 facts by heart before getting back on the coach:</p><ul style=\"margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;\"><li>Chlorine gas severely damaged the respiratory system, causing victims to suffocate.</li><li>The earliest defense was holding cotton pads soaked in urine over the mouth (ammonia neutralized chlorine).</li><li>The memorial shows a soldier in a 'reverse arms' position, signifying mourning, not victory.</li></ul></div>"
         },
         {
           "type": "narrative",
@@ -391,7 +389,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "Tyne Cot Cemetery",
-          "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_tyne_cot.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Tyne Cot Cemetery\"/><br><small>Tyne Cot Cemetery</small></div>Tyne Cot is the largest Commonwealth war cemetery in the world, reflecting the incomprehensible scale of the casualties during the Battle of Passchendaele (1917).<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk through the cemetery gates to unlock your assigned soldier.</p><button onclick='window.unlockMission(this, \"tyne_cot\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+          "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_tyne_cot.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Tyne Cot Cemetery\"/><br><small>Tyne Cot Cemetery</small></div>Tyne Cot is the largest Commonwealth war cemetery in the world, reflecting the incomprehensible scale of the casualties during the Battle of Passchendaele (1917).<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Tell Their Story</h4><div style=\"background: #fff1f2; padding: 15px; border-radius: 6px; border: 1px solid #fecdd3;\"><p style=\"margin: 0; color: #be123c; font-weight: bold; font-size: 1.05rem;\"><i class=\"fa-solid fa-person-chalkboard\"></i> Find the grave or panel of one of our Local Heroes (e.g., Lance Corporal A. Ward). At the end of the visit, you will be asked to orally tell the rest of your group about this soldier.</p></div></div>"
         },
         {
           "type": "narrative",
@@ -401,7 +399,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "The Menin Gate",
-          "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_menin_gate.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Menin Gate\"/><br><small>The Menin Gate, Ypres</small></div>The Menin Gate is a colossal memorial to the missing in Ypres. Millions of Allied soldiers marched through this spot on their way to the frontlines, and many never returned.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk under the arches of the Menin Gate to unlock your reflection task./p><button onclick='window.unlockMission(this, \"menin_gate\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+          "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_menin_gate.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Menin Gate\"/><br><small>The Menin Gate, Ypres</small></div>The Menin Gate is a colossal memorial to the missing in Ypres. Millions of Allied soldiers marched through this spot on their way to the frontlines, and many never returned.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Local Hero & The Empire</h4><div style=\"margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;\"><h4 style=\"margin: 0 0 10px 0; color: #1e293b;\"><i class=\"fa-solid fa-magnifying-glass-location\" style=\"color: #3b82f6;\"></i> Find the Local Hero</h4><div style=\"background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;\"><h3 style=\"margin: 0 0 10px 0; color: #1e293b; font-size: 1.3rem;\">Private T. J. Franklin</h3><p style=\"margin: 0; font-size: 0.95rem; line-height: 1.6; color: #334155;\"><strong>Regiment:</strong> 1st Battalion, The Hampshire Regiment<br><strong>Local Connection:</strong> Stubbington<br><strong>Fate:</strong> Killed 29th April 1915 holding an exposed line on the Frezenberg Ridge.</p></div><p style=\"margin: 0; color: #b91c1c; font-weight: bold;\"><i class=\"fa-solid fa-person-chalkboard\"></i> Action: The Menin Gate has 54,000 names. Locate the specific panel for Private T. J. Franklin.</p></div><div><h4 style=\"margin: 0 0 5px 0; color: #1e293b;\"><i class=\"fa-solid fa-monument\" style=\"color: #f59e0b;\"></i> The Indian Forces Memorial</h4><p style=\"margin: 0; color: #475569;\">Once you have found his name, walk out of the gate and up onto the grassy ramparts. Locate the <strong>Indian Forces Memorial</strong>. 130,000 troops from the Indian subcontinent served in Flanders. Take a moment to read the inscription before the Last Post begins at 8:00 PM.</p></div></div>"
         }
       ],
       "tour_guide_script": [
