@@ -171,31 +171,6 @@ if (!unitId) {
         sidebarNav.appendChild(geoLink);
       }
 
-      // 6. Guided Reading Tab
-      if (unitData.guided_reading) {
-        const grLink = document.createElement('a');
-        grLink.className = 'lesson-link';
-        grLink.innerHTML = '<i class="fa-solid fa-book-open-reader" style="margin-right: 8px;"></i> Guided Reading';
-        grLink.href = '#';
-        grLink.onclick = (e) => {
-          e.preventDefault();
-          if (e.isTrusted !== false) {
-            const url = new URL(window.location);
-            url.searchParams.set('tab', 'guided_reading');
-            history.pushState({ customTab: 'guided_reading' }, "", url);
-          }
-
-          document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-          grLink.classList.add('active');
-          const contentArea = document.getElementById('content-area');
-          contentArea.innerHTML = '';
-          initGuidedReadingTask(contentArea, unitData.guided_reading);
-          if (contentArea) contentArea.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-        sidebarNav.appendChild(grLink);
-      }
-
-      
       // 5. PDF Textbook and Workbook Tabs
       // Removed direct PDF sidebar links in favor of centralized Print & PDF Hub
 

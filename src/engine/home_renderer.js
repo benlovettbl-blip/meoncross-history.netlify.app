@@ -313,6 +313,34 @@ export function renderSidebar() {
       navContainer.appendChild(cheatSheetLink);
     }
 
+    if (appStore.state.activeUnitData.guided_reading) {
+      const grLink = document.createElement('a');
+      grLink.className = 'lesson-link';
+      grLink.innerHTML = '<i class="fa-solid fa-book-open-reader" style="margin-right: 8px;"></i> Guided Reading';
+      grLink.style.marginTop = '15px';
+      grLink.style.color = '#10b981'; // Emerald-500
+      grLink.href = '#';
+      grLink.addEventListener('click', async (e) => {
+        e.preventDefault();
+        
+        if (e.isTrusted !== false) {
+          const url = new URL(window.location);
+          url.searchParams.set('tab', 'guided_reading');
+          history.pushState({ customTab: 'guided_reading' }, "", url);
+        }
+        
+        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        grLink.classList.add('active');
+        
+        const { initGuidedReadingTask } = await import('../guided_reading.js');
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        initGuidedReadingTask(contentArea, appStore.state.activeUnitData.guided_reading);
+        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      navContainer.appendChild(grLink);
+    }
+
     // Attach Pupil Workbooks dynamically as a single Zone
     if (appStore.state.activeUnitData.type !== 'trip' && appStore.state.activeUnitData.workbooks && appStore.state.activeUnitData.workbooks.length > 0) {
       const wbLink = document.createElement('a');
