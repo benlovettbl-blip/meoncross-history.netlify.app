@@ -411,6 +411,9 @@ const early_modern_world = {
           "term": "Ottoman Empire",
           "definition": "A powerful Islamic empire that controlled the Middle East, North Africa, and Eastern Europe, acting as the gateway for trade."
         }
+      ],
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
       ]
     },
     {
@@ -814,7 +817,10 @@ const early_modern_world = {
           "Sentence Starter: This rivalry culminated in..."
         ],
         "lines": 15
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "id": "lesson_3",
@@ -1213,7 +1219,10 @@ const early_modern_world = {
           "Sentence Starter: However, they often used violence to secure a 'monopoly', allowing them to..."
         ],
         "lines": 15
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "id": "lesson_4",
@@ -1347,7 +1356,10 @@ const early_modern_world = {
             "question": "What is the most significant consequence of the Gunpowder Plot?"
           }
         ]
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "id": "lesson_4",
@@ -1699,7 +1711,10 @@ const early_modern_world = {
           "Sentence Starter: By executing the King in 1649, it proved that..."
         ],
         "lines": 15
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "id": "lesson_5",
@@ -2007,7 +2022,10 @@ const early_modern_world = {
           "Sentence Starter: Consequently, Britain could out-spend its rivals by building..."
         ],
         "lines": 15
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "id": "lesson_6",
@@ -2353,7 +2371,10 @@ const early_modern_world = {
           "Sentence Starter: Finally, the immense profits from raw materials (like sugar) flowed back into British ports like..."
         ],
         "lines": 15
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "id": "lesson_7",
@@ -2737,7 +2758,10 @@ const early_modern_world = {
           "Sentence Starter: Ultimately, the British were forced to..."
         ],
         "lines": 15
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "id": "lesson_8",
@@ -3137,7 +3161,10 @@ const early_modern_world = {
         ],
         "lines": 35
       },
-      "banner": "/images/early_mod_l6_banner.jpg"
+      "banner": "/images/early_mod_l6_banner.jpg",
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     }
   ],
   "portraits": [

@@ -34,7 +34,10 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "title": "1933–1939: How were German Jews progressively stripped of citizenship and rights?",
@@ -67,7 +70,10 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "title": "The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?",
@@ -100,7 +106,10 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "title": "The 'Final Solution': How did the death camps operate as industrialised extermination?",
@@ -133,7 +142,10 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "title": "Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?",
@@ -166,7 +178,10 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "title": "Liberation and Legacy: What does survivor testimony teach us about humanity and memory?",
@@ -199,7 +214,10 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     },
     {
       "title": "Assessment: The Shoah Enquiry",
@@ -232,7 +250,10 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "tasks": [
+        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+      ]
     }
   ],
   "key_individuals": [],
