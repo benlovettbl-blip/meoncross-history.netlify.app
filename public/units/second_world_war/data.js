@@ -34,10 +34,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Blitzkrieg, Dunkirk, and the Battle of Britain: How close was Britain to defeat in 1940?",
@@ -70,10 +67,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Operation Barbarossa & Pearl Harbor: How did 1941 make the conflict truly global?",
@@ -106,10 +100,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "The Home Front: How did the Blitz, rationing, and women workers sustain the war effort?",
@@ -142,10 +133,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Turning Points: Stalingrad, El Alamein, and D-Day.",
@@ -178,10 +166,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Hiroshima and Nagasaki: Was the atomic bomb militarily necessary or the first move of the Cold War?",
@@ -214,10 +199,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Assessment: What was the decisive turning point of the Second World War?",
@@ -250,10 +232,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     }
   ],
   "key_individuals": [],

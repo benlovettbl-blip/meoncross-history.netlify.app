@@ -338,10 +338,7 @@ module.exports = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_2",
@@ -647,10 +644,7 @@ module.exports = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_3",
@@ -936,10 +930,7 @@ module.exports = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_4",
@@ -1197,10 +1188,7 @@ module.exports = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_5",
@@ -1441,10 +1429,7 @@ module.exports = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_6",
@@ -1676,10 +1661,7 @@ module.exports = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_7",
@@ -1798,10 +1780,7 @@ module.exports = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     }
   ],
   "quizzes": {

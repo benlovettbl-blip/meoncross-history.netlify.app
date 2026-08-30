@@ -268,10 +268,7 @@ module.exports = {
         "text": "<strong>Simon Schama</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
         "stretch_question": "According to Schama, was Roman public health purely about stopping disease, or was there another motivation?",
         "stretch_model": "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_2",
@@ -507,10 +504,7 @@ module.exports = {
         "text": "**Carole Rawcliffe** argues:\n\n\"Medieval towns were not entirely filthy; many had local laws requiring citizens to clean the street outside their house.\"",
         "stretch_question": "How does Rawcliffe challenge the idea that all medieval towns were completely disgusting?",
         "stretch_model": "The historian argues that..."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_3",
@@ -732,10 +726,7 @@ module.exports = {
         "text": "**Roy Porter** argues:\n\n\"The rapid growth of London meant that traditional methods of waste disposal simply could not cope.\"",
         "stretch_question": "What does Porter say was the main reason towns became so filthy?",
         "stretch_model": "The historian argues that..."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_4",
@@ -957,10 +948,7 @@ module.exports = {
         "text": "**Steven Johnson** argues:\n\n\"John Snow's map of the Broad Street cholera outbreak was a triumph of medical detective work.\"",
         "stretch_question": "Why does Johnson call Snow's work 'detective work'?",
         "stretch_model": "The historian argues that..."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_5",
@@ -1196,10 +1184,7 @@ module.exports = {
         "text": "**The Observer Newspaper, 1861** argues:\n\n\"Bazalgette's sewer system was the most extensive and wonderful work of modern times.\"",
         "stretch_question": "How did the media at the time view Bazalgette's sewers?",
         "stretch_model": "The historian argues that..."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     }
   ],
   "quizPack": [

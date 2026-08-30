@@ -1032,9 +1032,6 @@ export const unitData = {
           "src": "/images/four_humours.jpg",
           "caption": "A medieval diagram showing the Theory of the Four Humours."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -1741,9 +1738,6 @@ export const unitData = {
           "src": "/images/bloodletting.jpg",
           "caption": "A manuscript illustration of a physician performing bloodletting."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -2261,9 +2255,6 @@ export const unitData = {
           "src": "/images/black_death.jpg",
           "caption": "An illustration showing victims of the Black Death covered in buboes."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -2785,9 +2776,6 @@ export const unitData = {
           "src": "/images/printing_press.jpg",
           "caption": "An early printing press, which helped spread new medical ideas during the Renaissance."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -3298,9 +3286,6 @@ export const unitData = {
           "src": "/images/pare_treatment.jpg",
           "caption": "A contemporary portrait of Ambroise Paré, the famous Renaissance surgeon who revolutionized the treatment of gunshot wounds."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -3819,9 +3804,6 @@ export const unitData = {
           "src": "/images/harvey_veins.jpg",
           "caption": "William Harvey demonstrating the circulation of blood and valves in the veins."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -4341,9 +4323,6 @@ export const unitData = {
           "src": "/images/pasteur_lab.jpg",
           "caption": "Louis Pasteur working in his laboratory to prove Germ Theory."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -4887,9 +4866,6 @@ export const unitData = {
           "src": "/images/nightingale.jpg",
           "caption": "Florence Nightingale tending to patients in the clean wards she established at Scutari."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -5422,9 +5398,6 @@ export const unitData = {
           "src": "/images/broad_street_pump.jpg",
           "caption": "John Snow's map showing deaths centered around the Broad Street pump."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -5944,9 +5917,6 @@ export const unitData = {
           "src": "/images/dna_structure.jpg",
           "caption": "Watson and Crick with their model of the DNA double helix in 1953."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -6500,9 +6470,6 @@ export const unitData = {
           "src": "/images/nhs_established.jpg",
           "caption": "A poster from 1948 advertising the establishment of the National Health Service."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -7011,9 +6978,6 @@ export const unitData = {
           "src": "/images/penicillin_mould.jpg",
           "caption": "Alexander Fleming's original petri dish showing Penicillium mould killing staphylococci bacteria."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -7517,9 +7481,6 @@ export const unitData = {
           "src": "/images/lung_cancer_campaign.jpg",
           "caption": "A modern government health campaign warning about the dangers of smoking and lung cancer."
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -8067,9 +8028,6 @@ export const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/4-medicine-and-war-history-file/",
           "title": "4 Medicine And War History File"
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -8610,9 +8568,6 @@ export const unitData = {
           ],
           "answer": 2
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -9156,9 +9111,6 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=x8OazQml0gw",
           "title": "Infections - WW1 Uncut - BBC"
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -9722,9 +9674,6 @@ export const unitData = {
           "url": "https://www.youtube.com/watch?v=xsz0-8-qAi8",
           "title": "The Battle of the Somme: Dressing station"
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     },
     {
@@ -10265,9 +10214,6 @@ export const unitData = {
           "url": "https://era.org.uk/streaming-service-resource/fixing-faces-blood-and-guts-a-history-of-surgery/",
           "title": "Fixing Faces Blood And Guts A History Of Surgery"
         }
-      ],
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
       ]
     }
   ],

@@ -220,7 +220,10 @@
           "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
           "share": "Share your pair's combined conclusion with the class."
         },
-        "consolidation": "Why is the geography of the Middle East so geopolitically important?"
+        "consolidation": "Why is the geography of the Middle East so geopolitically important?",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_2",
@@ -812,7 +815,10 @@
           "100,000: The number of Jewish Holocaust survivors US President Truman demanded Britain immediately allow into Palestine.",
           "1947: The year Britain gave up and handed the Palestine problem to the newly created United Nations."
         ],
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_3",
@@ -1252,7 +1258,10 @@
             "model_answer": "<ol><li><strong>Recall:</strong> The Arabic word <em>Nakba</em> translates to \"catastrophe\" in English.</li><li><strong>Explain:</strong> During the 1936–1939 revolt, British forces dismantled the Palestinian military and political leadership, leaving the Palestinian population without organized leadership or defenses. Concurrently, when Britain attempted to limit Jewish immigration after the revolt, Zionist groups formed their own heavily armed militias. Consequently, by 1948, Palestinians were largely leaderless, whereas Israeli forces were highly prepared, well-armed, and organized.</li><li><strong>Challenge:</strong> The video uses explicit, emotive terminology such as \"catastrophe\", \"ethnic cleansing\", and \"illegal settlements\" to frame the events primarily from a Palestinian perspective. This language presents the displacement of Palestinians not merely as an unintended byproduct of war, but as a deliberate and ongoing policy of forced removal supported initially by British sponsorship and carried out by Zionist militias.</li></ol>"
           }
         ],
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_4",
@@ -1747,7 +1756,10 @@
         "pair_share": {
           "prompt": "Why was the Suez Canal so important to Britain and France that they were willing to go to war over it?"
         },
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_5",
@@ -2274,7 +2286,10 @@
         "pair_share": {
           "prompt": "Was Israel justified in launching a pre-emptive strike against Egypt? Discuss both perspectives."
         },
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_6",
@@ -2750,7 +2765,10 @@
         "pair_share": {
           "prompt": "Why did the spectacular Israeli victory in 1967 actually make a long-term peace agreement more difficult?"
         },
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_7",
@@ -3274,7 +3292,10 @@
         "pair_share": {
           "prompt": "How did the Yom Kippur War change the psychological balance of power between Israel and the Arab states?"
         },
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_8",
@@ -3734,7 +3755,10 @@
         "pair_share": {
           "prompt": "Was Anwar Sadat a courageous visionary or a traitor to the Arab cause? Justify your view."
         },
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_9",
@@ -4326,7 +4350,10 @@
         "pair_share": {
           "prompt": "Why was the First Intifada more damaging to Israel's international reputation than their previous wars with Arab armies?"
         },
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "lesson_10",
@@ -4862,7 +4889,10 @@
         "pair_share": {
           "prompt": "Looking at the assassination of Rabin, why are peace agreements sometimes more dangerous for leaders than declaring war?"
         },
-        "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
+        "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       }
     ],
     "exam_blocks": [

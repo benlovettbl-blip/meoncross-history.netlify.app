@@ -542,10 +542,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_1_2",
@@ -1017,10 +1014,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_1_3",
@@ -1472,10 +1466,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_1_4",
@@ -1916,10 +1907,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_2_1",
@@ -2344,10 +2332,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_2_2",
@@ -2756,10 +2741,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_2_3",
@@ -3156,10 +3138,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_2_4",
@@ -3590,10 +3569,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_3_1",
@@ -4014,10 +3990,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_3_2",
@@ -4452,10 +4425,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_3_3",
@@ -4875,10 +4845,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_3_4",
@@ -5305,10 +5272,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_4_1",
@@ -5722,10 +5686,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_4_2",
@@ -6149,10 +6110,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_4_3",
@@ -6626,10 +6584,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "id": "lesson_4_4",
@@ -7111,10 +7066,7 @@ const weimar_nazi_germany = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     }
   ],
   "key_individuals": [

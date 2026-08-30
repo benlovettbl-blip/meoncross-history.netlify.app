@@ -413,10 +413,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?",
@@ -855,10 +852,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?",
@@ -1225,10 +1219,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?",
@@ -1606,10 +1597,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?",
@@ -1945,10 +1933,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Lesson 6: 1348: How did the Black Death shatter medieval social order?",
@@ -2309,10 +2294,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?",
@@ -2673,10 +2655,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?",
@@ -2999,10 +2978,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "title": "Lesson 9: Assessment: How powerful was a medieval monarch?",
@@ -3149,10 +3125,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     }
   ],
   "key_individuals": [

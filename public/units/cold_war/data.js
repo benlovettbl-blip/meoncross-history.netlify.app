@@ -34,10 +34,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "title": "Yalta to Potsdam (1945): How did wartime allies become bitter rivals?",
@@ -70,10 +67,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "title": "The Iron Curtain & The Berlin Blockade (1948–1949): The first flashpoint.",
@@ -106,10 +100,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "title": "Nuclear Brinkmanship: The Cuban Missile Crisis (1962).",
@@ -142,10 +133,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "title": "Proxy Wars: Why did the superpowers fight in Asia (Korea & Vietnam)?",
@@ -178,10 +166,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "title": "Fall of the Berlin Wall (1989) and the collapse of the Soviet Union (1991).",
@@ -214,10 +199,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     },
     {
       "title": "Assessment: Was the Cold War ever truly 'cold'?",
@@ -250,10 +232,7 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Draw an analytical diagram or flowchart summarizing the complex historical systems, policies, and events from this lesson."
-      ]
+      }
     }
   ],
   "key_individuals": [],

@@ -399,10 +399,7 @@ const great_war = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      },
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-      ]
+      }
     },
     {
       "id": "lesson_1",
@@ -851,9 +848,6 @@ const great_war = {
             "Notre Dame Cathedral"
           ]
         }
-      ],
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
       ]
     },
     {
@@ -1262,9 +1256,6 @@ const great_war = {
             "It led to Britain abandoning its empire"
           ]
         }
-      ],
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
       ]
     },
     {
@@ -1670,9 +1661,6 @@ const great_war = {
             "It made them give up their empire"
           ]
         }
-      ],
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
       ]
     },
     {
@@ -2069,9 +2057,6 @@ const great_war = {
             "Britain"
           ]
         }
-      ],
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
       ]
     },
     {
@@ -2471,9 +2456,6 @@ const great_war = {
             "Because Germany sank a British ship"
           ]
         }
-      ],
-      "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
       ]
     }
   ],
