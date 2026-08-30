@@ -129,7 +129,7 @@ allDirs.forEach(unitId => {
   <title>${unitData.title} - Textbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <style>
-      @page { @bottom-center { content: "Page " counter(page); font-family: sans-serif; font-size: 10pt; color: #666; } }
+      
     @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
     body { font-family: 'Inter', sans-serif; font-size: 10pt; line-height: 1.3; color: #1e293b;  }
     h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 60px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
@@ -213,6 +213,7 @@ allDirs.forEach(unitId => {
     <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; height: 95vh; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
       <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
       ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
+      ${unitData.cover_image ? `<div style="margin-bottom: 20px;"><img src="../../${unitData.cover_image.replace(/^\//, '')}" style="max-height: 350px; max-width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 2px solid #e2e8f0;"></div>` : ''}
       
       <div style="margin-top: 15px; width: 100%; max-width: 700px; text-align: center; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
         <h3 style="margin-top: 0; color: #1e3a8a; margin-bottom: 15px; font-size: 22pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-book-open"></i> Course Textbook</h3>
@@ -1255,6 +1256,10 @@ if (lesson.full_page_map) {
   html = html.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, ''); // Remove interactive buttons
   html = html.replace(/display:\s*none;?/gi, 'display: block; margin-top: 15px;'); // Stack toggle tabs
   html = html.replace(/(?:using the toggle tabs,?\s*)/ig, ''); // Remove app-only phrasing
+
+  // Safely strip HTML/Markdown link wrappers but preserve inner display text
+  html = html.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  html = html.replace(/<a[^>]*>(.*?)<\/a>/g, '$1');
 
   
   // Dynamically inject correct page numbers for ANY manual placeholder references 

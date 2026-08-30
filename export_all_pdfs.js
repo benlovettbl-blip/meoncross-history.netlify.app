@@ -17,8 +17,6 @@ if (!fs.existsSync(pdfsDir)){
 }
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 600000, timeout: 300000 });
-  
   // Read database.json to find all KS3 and GCSE units (i.e., non-trip units)
   const dbPath = path.join(publicDir, 'database.json');
   if (!fs.existsSync(dbPath)) {
@@ -42,7 +40,15 @@ if (!fs.existsSync(pdfsDir)){
     console.log('\n========================================');
     console.log(`Starting PDF export for unit: ${unitId}`);
     console.log('========================================');
-    const unitDir = path.join(publicDir, 'units', unitId);
+    let browser = null;
+    try {
+      browser = await puppeteer.launch({ 
+        headless: 'new', 
+        protocolTimeout: 600000, 
+        timeout: 300000,
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
+      });
+      const unitDir = path.join(publicDir, 'units', unitId);
     
     if (!fs.existsSync(unitDir)) {
         console.warn(`Directory not found for unit: ${unitId}, skipping...`);
@@ -99,8 +105,10 @@ if (!fs.existsSync(pdfsDir)){
       
       await page.close();
     }
+    } finally {
+      if (browser) await browser.close();
+    }
   }
   
-  await browser.close();
   console.log('\nGlobal PDF export complete!');
 })();

@@ -402,7 +402,7 @@ allDirs.forEach((unitId) => {
 
         ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
         
-        ${unitId === 'water_and_sanitation' ? '<img src="/images/pasteur.png" style="max-height: 350px; width: auto; display: block; margin: 30px auto; object-fit: contain;">' : ''}
+        ${unitData.cover_image ? `<img src="../../${unitData.cover_image.replace(/^\//, '')}" style="max-height: 400px; width: auto; display: block; margin: 30px auto; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 2px solid #e2e8f0;">` : ''}
         
         <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px 45px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
@@ -2321,6 +2321,10 @@ if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
       "display: block; margin-top: 15px;",
     ); // Stack toggle tabs
     html = html.replace(/(?:using the toggle tabs,?\s*)/gi, ""); // Remove app-only phrasing
+
+    // Safely strip HTML/Markdown link wrappers but preserve inner display text
+    html = html.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    html = html.replace(/<a[^>]*>(.*?)<\/a>/g, '$1');
 
     
   // Dynamically inject correct page numbers for ANY manual placeholder references 
