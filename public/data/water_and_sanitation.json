@@ -20,15 +20,11 @@
     "color": "#0288d1",
     "enquiry": "Why did it take so long to clean up Britain?",
     "specification_file": "/data/water_and_sanitation_overview.json",
-    "printable_workbooks": [
+    "workbooks": [
       {
-        "title": "Unit Workbook",
-        "url": "workbook.html"
-      },
-      {
-        "title": "Mastery Pack",
-        "url": "../../pdfs/water_and_sanitation_mastery_pack_full.pdf",
-        "icon": "fa-brain"
+        "id": "full",
+        "name": "full",
+        "title": "Complete Unit"
       }
     ],
     "lessons": [

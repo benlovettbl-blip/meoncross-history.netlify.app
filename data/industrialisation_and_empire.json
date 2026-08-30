@@ -5,15 +5,11 @@
     "enquiry": "Industrialisation, Empire, and Power: How did 19th-century Britain transform at home and abroad?",
     "cover_image": "/images/imperial_federation_map.jpg",
     "cover_caption": "Industrialisation, Empire, and Power.",
-    "printable_workbooks": [
+    "workbooks": [
       {
-        "title": "Unit Workbook",
-        "url": "workbook.html"
-      },
-      {
-        "title": "Mastery Pack",
-        "url": "../../pdfs/industrialisation_and_empire_mastery_pack_full.pdf",
-        "icon": "fa-brain"
+        "id": "full",
+        "name": "full",
+        "title": "Complete Unit"
       }
     ],
     "lessons": [

@@ -5,15 +5,11 @@ export const unitData = {
   "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",
   "cover_image": "/images/prison_hulks.jpg",
   "cover_caption": "An 18th-century sketch of Prison Hulks in Portsmouth Harbour by Louis Garneray.",
-  "printable_workbooks": [
+  "workbooks": [
     {
-      "title": "Unit Workbook",
-      "url": "workbook.html"
-    },
-    {
-      "title": "Mastery Pack",
-      "url": "../../pdfs/australia_mastery_pack_full.pdf",
-      "icon": "fa-brain"
+      "id": "full",
+      "name": "full",
+      "title": "Complete Unit"
     }
   ],
   "lessons": [
@@ -1826,5 +1822,57 @@ export const unitData = {
       ]
     }
   ],
-  "assessments": []
+  "assessments": [],
+  "guided_reading": [
+    {
+      "lesson_index": 0,
+      "book_title": "Captain James Cook’s Journal",
+      "author": "Captain James Cook (22 August 1770)",
+      "author_context": "In 1770, Captain James Cook sailed the HMS Endeavour along the eastern coast of Australia. The land had been inhabited by Indigenous Australians for over 60,000 years, but under European law, because they did not build towns or farm the land in a European way, the British considered it terra nullius—nobody's land.",
+      "is_adapted": false,
+      "hinge_question": "<strong>Think:</strong> Write down the exact phrase Cook uses to explain *why* he believes he has the right to claim the land.<br><strong>Pair:</strong> Look at what Cook is actually claiming: 'the whole Eastern Coast... together with all the Bays, Harbours, Rivers, and Islands.' Discuss with your partner how ridiculous it is to claim half a continent just by planting a flag and firing a few guns on a beach.<br><strong>Share:</strong> Indigenous Australians were watching the Endeavour from the shore. Based on Cook's actions, how do you think the British are going to treat the people who already live there?",
+      "extract": "\"As I am now about to quit the Eastern Coast of New Holland, which I have coasted from latitude 38 to this place, and which I am confident no European has ever seen before, I once more hoisted English Coulers, and in the Name of His Majesty King George the Third took possession of the whole Eastern Coast from the above latitude down to this place by the name of New South Wales, together with all the Bays, Harbours, Rivers, and Islands situate upon the said coast; after which we fired three volleys of small arms, which were answered by the like number from the ship.\n\nThis done, we set out for the ship, but were some time in getting on board on account of a very rapid ebb tide, which set NE out of the Strait.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Hoisted English Coulers:</strong> Raised the British flag (the Union Jack).</li><li><strong>Situate:</strong> Located or placed.</li><li><strong>Volleys of small arms:</strong> Firing muskets or guns all at the same time as a salute.</li></ul>"
+    },
+    {
+      "lesson_index": 1,
+      "book_title": "A Narrative of the Expedition to Botany Bay",
+      "author": "Captain Watkin Tench (1789)",
+      "author_context": "In 1788, the 'First Fleet' arrived at Sydney Cove. It was packed with British criminals—many of whom had only stolen food or clothes—sent across the world to build a new prison colony. Captain Watkin Tench was an officer in charge of the marines guarding the convicts. Here, he describes the brutal reality of their first few months ashore.",
+      "is_adapted": false,
+      "hinge_question": "<strong>Think:</strong> Identify two specific reasons from the text why building the first settlement in Sydney was so difficult.<br><strong>Pair:</strong> Discuss the punishment given for stealing a single piece of soap. What does this extreme violence tell us about how the officers felt about keeping control of the colony?<br><strong>Share:</strong> These convicts were not skilled builders; they were pickpockets, thieves, and starving city-dwellers. Did the British Government set the First Fleet up to succeed, or set them up to die?",
+      "extract": "\"The general business of the settlement was now directed to the building of huts, and the clearing of ground... The convicts were divided into gangs, and officers appointed to command them. But the progress of their labour was very slow.\n\nMany of them were so weakened by the scurvy, and other distempers, as to be poorly able to perform any labour; and the timber of this country is so remarkably hard, that our tools were broken, and blunted, by the wood, as fast as they were repaired.\n\n...Thefts were frequent, and punishments severe. A convict was caught in the act of stealing a piece of soap from a soldier... He was tried by the criminal court, and sentenced to receive three hundred lashes, which were severely inflicted.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Scurvy:</strong> A horrific disease caused by a lack of vitamin C on long sea voyages, causing teeth to fall out and wounds to open up.</li><li><strong>Distempers:</strong> Illnesses or diseases.</li><li><strong>Lashes:</strong> Being whipped across the bare back. (300 lashes was a potentially fatal punishment).</li></ul>"
+    },
+    {
+      "lesson_index": 2,
+      "book_title": "Sydney's First Four Years",
+      "author": "Captain Watkin Tench (April 1789)",
+      "author_context": "Within a year of the British arriving, a terrifying disaster struck the local Indigenous tribes (the Eora people) around Sydney. Because Australia had been isolated from the rest of the world for millennia, the Indigenous people had absolutely no immunity to European diseases.",
+      "is_adapted": false,
+      "hinge_question": "<strong>Think:</strong> Write down what the British surgeons found in the coves and inlets around the harbor.<br><strong>Pair:</strong> Tench says it was 'inexplicable' how the smallpox arrived, noting that none of the British people were currently sick with it. Discuss with your partner where the disease *must* have come from, even if the British didn't realize it.<br><strong>Share:</strong> It is estimated that up to 70% of the Indigenous population around Sydney died in this single outbreak. How would this catastrophic loss of life make it easier for the British to take over the rest of the land?",
+      "extract": "\"An extraordinary calamity was now observed among the natives. Repeated accounts brought by our boats of finding bodies of the Indians in all the coves and inlets of the harbour, caused the governor to dispatch the surgeons...\n\nThey reported on their return, that they had found them in all the miserable, consuming stages of the smallpox. From this time a great number of dead bodies were found on the beaches, or floating in the water...\n\nHow a disease, to which our former observations had led us to suppose them entire strangers, could at once have introduced itself, and have spread so widely, seemed inexplicable... It is certain that none of our people were affected by it.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Calamity:</strong> A terrible, sudden disaster causing huge damage or loss of life.</li><li><strong>Inlets:</strong> Small, narrow bays or strips of water running into the land.</li><li><strong>Inexplicable:</strong> Unable to be explained or understood.</li></ul>"
+    },
+    {
+      "lesson_index": 3,
+      "book_title": "The Sydney Morning Herald",
+      "author": "Newspaper Report (19 May 1851)",
+      "author_context": "For 60 years, Australia was seen as a miserable prison. But in 1851, everything changed. Gold was discovered in New South Wales and Victoria. Suddenly, instead of being dragged there in chains, thousands of free people from Britain, America, and China were desperately paying to sail to Australia.",
+      "is_adapted": false,
+      "hinge_question": "<strong>Think:</strong> According to the newspaper, what have the farmers and the tradesmen done?<br><strong>Pair:</strong> Look at the phrase 'the masters have been left by their servants, and the servants have left their masters.' Discuss with your partner how the Gold Rush was destroying the normal class system and social rules of the British Empire.<br><strong>Share:</strong> How did the discovery of gold permanently change the purpose and identity of Australia?",
+      "extract": "\"A complete mental madness appears to have seized almost every member of the community. There has been a universal rush to the diggings... The towns of Bathurst and Wellington are almost deserted.\n\nThe mechanics and tradesmen have thrown down their tools, the farmers have left their crops, the masters have been left by their servants, and the servants have left their masters. All are hastening to the El Dorado...\n\nA gentleman who arrived in town last night reports that he met upwards of two hundred persons on the road, heavily laden with picks, spades, and washing dishes. Some were driving carts, others were on horseback, and the majority on foot.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Mechanics:</strong> Skilled manual workers, like carpenters, blacksmiths, or bricklayers.</li><li><strong>Hastening:</strong> Hurrying or rushing.</li><li><strong>El Dorado:</strong> A legendary, mythical city made entirely of gold in South America (used here as a metaphor for the goldfields).</li></ul>"
+    },
+    {
+      "lesson_index": 4,
+      "book_title": "Aborigines Claim Citizen Rights! (The Day of Mourning Manifesto)",
+      "author": "Jack Patten and William Ferguson (26 January 1938)",
+      "author_context": "On January 26, 1938, white Australians celebrated the 150th anniversary of the arrival of the First Fleet with a massive party. On the exact same day, early Indigenous civil rights leaders Jack Patten and William Ferguson organized a 'Day of Mourning' and published this powerful manifesto to challenge the official 'story' of Australia.",
+      "is_adapted": false,
+      "hinge_question": "<strong>Think:</strong> How do the authors of this text refer to the British people who arrived on the First Fleet? (Write down the exact two-word phrase they use at the end of the first paragraph).<br><strong>Pair:</strong> Discuss why the authors put the word 'progress' in quotation marks. What might look like progress to a white settler, but look like disaster to an Indigenous Australian?<br><strong>Share:</strong> This document challenges us to look at the whole story of Australia. Based on everything we have studied in this unit (exploration, convicts, disease, gold, and dispossession), is the story of early Australia a story of heroic survival, or a story of brutal invasion?",
+      "extract": "\"The 26th of January, 1938, is not a day of rejoicing for Australia's Aborigines; it is a day of mourning. This festival of 150 years' so-called 'progress' in Australia commemorates also 150 years of misery and degradation imposed upon the original native inhabitants by the white invaders of this country.\n\nWe, representing the Aborigines, now ask you, the reader of this appeal, to pause in the midst of your rejoicing, and ask yourself honestly whether your 'conscience' is clear in regard to the treatment of the Australian blacks by the Australian whites during the period of 150 years' history which you celebrate?\n\n...You are the New Australians, but we are the Old Australians. We have in our arteries the blood of the Original Australians, who have lived in this land for many thousands of years. You came here only recently, and you took our land away from us by force.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Rejoicing:</strong> Celebrating or showing great joy.</li><li><strong>Degradation:</strong> Being treated with extreme disrespect, humiliation, and cruelty.</li><li><strong>Commemorates:</strong> Remembers or marks an important event in history.</li></ul>"
+    }
+  ]
 };
+
+// Support both ES module and CommonJS environments (legacy fallback)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = unitData;
+}

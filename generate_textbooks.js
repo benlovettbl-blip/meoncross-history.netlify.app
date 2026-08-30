@@ -848,9 +848,14 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
       html += `</div>`;
     }
 
-    if (lesson.tasks) {
-      html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
-      lesson.tasks.forEach((task, tIdx) => {
+
+    // Phase 1: Standard Tasks
+    if (lesson.tasks && lesson.tasks.length > 0) {
+      let originalTasks = lesson.tasks;
+      lesson.tasks = originalTasks.filter(t => t.type !== 'gcse_exam_practice' && t.type !== 'exam_practice');
+      if (lesson.tasks.length > 0) {
+        html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
+        lesson.tasks.forEach((task, tIdx) => {
         if (task.type === 'spectrum_mapper') {
              // html += `<div style="page-break-before: always;"></div>`;
              if (unitId === 'early_modern_world') {
@@ -907,8 +912,90 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
             html += ``;
         }
         html += `</div>`;
-      });
+        });
+      }
+      lesson.tasks = originalTasks; // Restore
     }
+
+    // Phase 2: Historian's Corner
+      if (lesson.historians_corner) {
+      html += `<div class="task-box" style=" ">`;
+      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
+      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
+      if (lesson.historians_corner.stretch_question) {
+        html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
+      }
+      html += `</div>`;
+    }
+
+    // Phase 3 & 4: GCSE Exam Practice
+    if (lesson.tasks && lesson.tasks.length > 0) {
+      let originalTasks = lesson.tasks;
+      lesson.tasks = originalTasks.filter(t => t.type === 'gcse_exam_practice' || t.type === 'exam_practice');
+      if (lesson.tasks.length > 0) {
+        html += `<h2 style="margin-top: 30px; margin-bottom: 15px; color: #1e3a8a;">GCSE Exam Practice</h2>`;
+        lesson.tasks.forEach((task, tIdx) => {
+        if (task.type === 'spectrum_mapper') {
+             // html += `<div style="page-break-before: always;"></div>`;
+             if (unitId === 'early_modern_world') {
+                 html += `<h2 style="text-align: center; margin-bottom: 30px;">Q${globalQNum++}. ${task.text || 'Spectrum Planner'}</h2>`;
+             } else {
+                 html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || 'Spectrum Planner'}</h2>`;
+             }
+             
+             // Draw the spectrum line
+             html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
+             html += `<div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14pt; margin-bottom: 10px;">`;
+             html += `<div>${task.labels[0]}</div><div>${task.labels[1]}</div>`;
+             html += `</div>`;
+             html += `<div style="height: 4px;  width: 100%; position: relative;">`;
+             html += `<div style="position: absolute; left: 0%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `<div style="position: absolute; left: 25%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `<div style="position: absolute; left: 50%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `<div style="position: absolute; left: 75%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `<div style="position: absolute; left: 100%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `</div></div>`;
+
+             html += `<h3 style="margin-top: 40px;">Factors to map:</h3>`;
+             html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">`;
+             task.items.forEach(item => {
+                 html += `<div style=" padding: 15px; width: 45%; border-radius: 8px;">`;
+                 html += `<strong>${item.title}</strong><br>`;
+                 if (item.desc) html += `<span style="font-size: 0.9em; color: #555;">${item.desc}</span>`;
+                 html += `</div>`;
+             });
+             html += `</div>`;
+
+             html += `<h3>Notes & Paragraph Plan</h3>`;
+             for(let i=0; i<15; i++) {
+                html += ``;
+             }
+             return;
+        }
+
+        let qText = task.question || task.text || '';
+        html += `<div class="task-box" style="page-break-inside: auto;">`;
+        
+        let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+        if (match) {
+            let subhead = match[1];
+            let rest = match[2];
+            html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${rest}</p>`;
+        } else {
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${qText}</p>`;
+        }
+        let hasExamTaskLater = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
+        let numLines = (!hasExamTaskLater && tIdx === lesson.tasks.length - 1) ? 20 : 6;
+        for(let i=0; i<numLines; i++) {
+            html += ``;
+        }
+        html += `</div>`;
+        });
+      }
+      lesson.tasks = originalTasks; // Restore
+    }
+
 
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
@@ -1004,15 +1091,6 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
 
 
 
-      if (lesson.historians_corner) {
-      html += `<div class="task-box" style=" ">`;
-      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
-      if (lesson.historians_corner.stretch_question) {
-        html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
-      }
-      html += `</div>`;
-    }
 
     if (lesson.gcse_task) {
         html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto;">`;

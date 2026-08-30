@@ -66,46 +66,19 @@ export function renderWorkbooksZone(container, unitData) {
     }));
     html += renderSection('Textbook PDFs', 'fa-book-open', 'Reading material only (no blank writing lines or tasks). Perfect for reading on a screen or printing as a class set of reading books.', '#3b82f6', textbookItems);
 
-    // 2. Guided Workbook PDFs
-    if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
-      const guidedItems = unitData.workbooks.map(wb => ({
-        title: wb.title || wb.name,
-        url: getPdfUrl('workbook', wb.name || wb.id)
-      }));
-      html += renderSection('Guided Workbook PDFs', 'fa-pencil', 'Reading + Writing tasks. Contains all narrative text alongside the writing spaces and tasks.', '#8b5cf6', guidedItems);
-    }
-
-    // 3. Pupil Workbook PDFs
+    // 2. Pupil Workbook PDFs
     const pupilItems = unitData.workbooks.map(wb => ({
       title: wb.title || wb.name,
       url: getPdfUrl('pupil_workbook', wb.name || wb.id)
     }));
     html += renderSection('Pupil Workbook PDFs', 'fa-user-pen', 'Writing tasks only. Contains just the questions and blank spaces (assumes the student already has access to the Textbook).', '#f59e0b', pupilItems);
 
-    // 4. Interactive Web Workbooks
-    if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
-      const webItems = unitData.workbooks.map(wb => ({
-        title: wb.title || wb.name,
-        url: getHtmlUrl(wb.name || wb.id)
-      }));
-      html += renderSection('Interactive Web Workbooks', 'fa-laptop-code', 'Designed for laptops and Chromebooks. Click to open and type your answers directly onto the screen.', '#10b981', webItems);
-    }
-
-    // 5. Mastery Pack PDFs
+    // 3. Mastery Pack PDFs
     const masteryPdfItems = unitData.workbooks.map(wb => ({
       title: wb.title || wb.name,
       url: window.currentUnitId ? `/pdfs/${window.currentUnitId}_mastery_pack_${wb.name || wb.id}.pdf` : `/pdfs/unknown_mastery_pack_${wb.name || wb.id}.pdf`
     }));
     html += renderSection('Mastery Pack PDFs', 'fa-shield-halved', 'Comprehensive revision and mastery tasks designed to test deep knowledge retrieval.', '#d32f2f', masteryPdfItems);
-
-    // 6. Interactive Web Mastery Packs
-    if (window.currentUnitId !== 'weimar_nazi_germany' && window.currentUnitId !== 'cme_new') {
-      const masteryWebItems = unitData.workbooks.map(wb => ({
-        title: wb.title || wb.name,
-        url: window.currentUnitId ? `/units/${window.currentUnitId}/mastery_pack_${wb.name || wb.id}.html` : `mastery_pack_${wb.name || wb.id}.html`
-      }));
-      html += renderSection('Interactive Web Mastery Packs', 'fa-laptop-file', 'Designed for laptops and Chromebooks. Click to open and type your answers directly onto the screen.', '#e11d48', masteryWebItems);
-    }
 
   }
 

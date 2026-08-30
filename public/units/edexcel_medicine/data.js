@@ -505,28 +505,7 @@ export const unitData = {
       "icon": "fa-helmet-battle"
     }
   ],
-  "printable_workbooks": [
-    {
-      "title": "Workbook KT1 (Medieval)",
-      "url": "workbook_medieval.html"
-    },
-    {
-      "title": "Workbook KT2 (Renaissance)",
-      "url": "workbook_renaissance.html"
-    },
-    {
-      "title": "Workbook KT3 (18th & 19th)",
-      "url": "workbook_18th_19th.html"
-    },
-    {
-      "title": "Workbook KT4 (Modern)",
-      "url": "workbook_modern.html"
-    },
-    {
-      "title": "Workbook KT5 (Western Front)",
-      "url": "workbook_western_front.html"
-    }
-  ],
+  
   "lessons": [
     {
       "id": "lesson_1_1",

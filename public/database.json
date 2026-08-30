@@ -7,15 +7,11 @@
       "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",
       "cover_image": "/images/prison_hulks.jpg",
       "cover_caption": "An 18th-century sketch of Prison Hulks in Portsmouth Harbour by Louis Garneray.",
-      "printable_workbooks": [
+      "workbooks": [
         {
-          "title": "Unit Workbook",
-          "url": "workbook.html"
-        },
-        {
-          "title": "Mastery Pack",
-          "url": "../../pdfs/australia_mastery_pack_full.pdf",
-          "icon": "fa-brain"
+          "id": "full",
+          "name": "full",
+          "title": "Complete Unit"
         }
       ],
       "lessons": [
@@ -1828,7 +1824,54 @@
           ]
         }
       ],
-      "assessments": []
+      "assessments": [],
+      "guided_reading": [
+        {
+          "lesson_index": 0,
+          "book_title": "Captain James Cook’s Journal",
+          "author": "Captain James Cook (22 August 1770)",
+          "author_context": "In 1770, Captain James Cook sailed the HMS Endeavour along the eastern coast of Australia. The land had been inhabited by Indigenous Australians for over 60,000 years, but under European law, because they did not build towns or farm the land in a European way, the British considered it terra nullius—nobody's land.",
+          "is_adapted": false,
+          "hinge_question": "<strong>Think:</strong> Write down the exact phrase Cook uses to explain *why* he believes he has the right to claim the land.<br><strong>Pair:</strong> Look at what Cook is actually claiming: 'the whole Eastern Coast... together with all the Bays, Harbours, Rivers, and Islands.' Discuss with your partner how ridiculous it is to claim half a continent just by planting a flag and firing a few guns on a beach.<br><strong>Share:</strong> Indigenous Australians were watching the Endeavour from the shore. Based on Cook's actions, how do you think the British are going to treat the people who already live there?",
+          "extract": "\"As I am now about to quit the Eastern Coast of New Holland, which I have coasted from latitude 38 to this place, and which I am confident no European has ever seen before, I once more hoisted English Coulers, and in the Name of His Majesty King George the Third took possession of the whole Eastern Coast from the above latitude down to this place by the name of New South Wales, together with all the Bays, Harbours, Rivers, and Islands situate upon the said coast; after which we fired three volleys of small arms, which were answered by the like number from the ship.\n\nThis done, we set out for the ship, but were some time in getting on board on account of a very rapid ebb tide, which set NE out of the Strait.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Hoisted English Coulers:</strong> Raised the British flag (the Union Jack).</li><li><strong>Situate:</strong> Located or placed.</li><li><strong>Volleys of small arms:</strong> Firing muskets or guns all at the same time as a salute.</li></ul>"
+        },
+        {
+          "lesson_index": 1,
+          "book_title": "A Narrative of the Expedition to Botany Bay",
+          "author": "Captain Watkin Tench (1789)",
+          "author_context": "In 1788, the 'First Fleet' arrived at Sydney Cove. It was packed with British criminals—many of whom had only stolen food or clothes—sent across the world to build a new prison colony. Captain Watkin Tench was an officer in charge of the marines guarding the convicts. Here, he describes the brutal reality of their first few months ashore.",
+          "is_adapted": false,
+          "hinge_question": "<strong>Think:</strong> Identify two specific reasons from the text why building the first settlement in Sydney was so difficult.<br><strong>Pair:</strong> Discuss the punishment given for stealing a single piece of soap. What does this extreme violence tell us about how the officers felt about keeping control of the colony?<br><strong>Share:</strong> These convicts were not skilled builders; they were pickpockets, thieves, and starving city-dwellers. Did the British Government set the First Fleet up to succeed, or set them up to die?",
+          "extract": "\"The general business of the settlement was now directed to the building of huts, and the clearing of ground... The convicts were divided into gangs, and officers appointed to command them. But the progress of their labour was very slow.\n\nMany of them were so weakened by the scurvy, and other distempers, as to be poorly able to perform any labour; and the timber of this country is so remarkably hard, that our tools were broken, and blunted, by the wood, as fast as they were repaired.\n\n...Thefts were frequent, and punishments severe. A convict was caught in the act of stealing a piece of soap from a soldier... He was tried by the criminal court, and sentenced to receive three hundred lashes, which were severely inflicted.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Scurvy:</strong> A horrific disease caused by a lack of vitamin C on long sea voyages, causing teeth to fall out and wounds to open up.</li><li><strong>Distempers:</strong> Illnesses or diseases.</li><li><strong>Lashes:</strong> Being whipped across the bare back. (300 lashes was a potentially fatal punishment).</li></ul>"
+        },
+        {
+          "lesson_index": 2,
+          "book_title": "Sydney's First Four Years",
+          "author": "Captain Watkin Tench (April 1789)",
+          "author_context": "Within a year of the British arriving, a terrifying disaster struck the local Indigenous tribes (the Eora people) around Sydney. Because Australia had been isolated from the rest of the world for millennia, the Indigenous people had absolutely no immunity to European diseases.",
+          "is_adapted": false,
+          "hinge_question": "<strong>Think:</strong> Write down what the British surgeons found in the coves and inlets around the harbor.<br><strong>Pair:</strong> Tench says it was 'inexplicable' how the smallpox arrived, noting that none of the British people were currently sick with it. Discuss with your partner where the disease *must* have come from, even if the British didn't realize it.<br><strong>Share:</strong> It is estimated that up to 70% of the Indigenous population around Sydney died in this single outbreak. How would this catastrophic loss of life make it easier for the British to take over the rest of the land?",
+          "extract": "\"An extraordinary calamity was now observed among the natives. Repeated accounts brought by our boats of finding bodies of the Indians in all the coves and inlets of the harbour, caused the governor to dispatch the surgeons...\n\nThey reported on their return, that they had found them in all the miserable, consuming stages of the smallpox. From this time a great number of dead bodies were found on the beaches, or floating in the water...\n\nHow a disease, to which our former observations had led us to suppose them entire strangers, could at once have introduced itself, and have spread so widely, seemed inexplicable... It is certain that none of our people were affected by it.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Calamity:</strong> A terrible, sudden disaster causing huge damage or loss of life.</li><li><strong>Inlets:</strong> Small, narrow bays or strips of water running into the land.</li><li><strong>Inexplicable:</strong> Unable to be explained or understood.</li></ul>"
+        },
+        {
+          "lesson_index": 3,
+          "book_title": "The Sydney Morning Herald",
+          "author": "Newspaper Report (19 May 1851)",
+          "author_context": "For 60 years, Australia was seen as a miserable prison. But in 1851, everything changed. Gold was discovered in New South Wales and Victoria. Suddenly, instead of being dragged there in chains, thousands of free people from Britain, America, and China were desperately paying to sail to Australia.",
+          "is_adapted": false,
+          "hinge_question": "<strong>Think:</strong> According to the newspaper, what have the farmers and the tradesmen done?<br><strong>Pair:</strong> Look at the phrase 'the masters have been left by their servants, and the servants have left their masters.' Discuss with your partner how the Gold Rush was destroying the normal class system and social rules of the British Empire.<br><strong>Share:</strong> How did the discovery of gold permanently change the purpose and identity of Australia?",
+          "extract": "\"A complete mental madness appears to have seized almost every member of the community. There has been a universal rush to the diggings... The towns of Bathurst and Wellington are almost deserted.\n\nThe mechanics and tradesmen have thrown down their tools, the farmers have left their crops, the masters have been left by their servants, and the servants have left their masters. All are hastening to the El Dorado...\n\nA gentleman who arrived in town last night reports that he met upwards of two hundred persons on the road, heavily laden with picks, spades, and washing dishes. Some were driving carts, others were on horseback, and the majority on foot.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Mechanics:</strong> Skilled manual workers, like carpenters, blacksmiths, or bricklayers.</li><li><strong>Hastening:</strong> Hurrying or rushing.</li><li><strong>El Dorado:</strong> A legendary, mythical city made entirely of gold in South America (used here as a metaphor for the goldfields).</li></ul>"
+        },
+        {
+          "lesson_index": 4,
+          "book_title": "Aborigines Claim Citizen Rights! (The Day of Mourning Manifesto)",
+          "author": "Jack Patten and William Ferguson (26 January 1938)",
+          "author_context": "On January 26, 1938, white Australians celebrated the 150th anniversary of the arrival of the First Fleet with a massive party. On the exact same day, early Indigenous civil rights leaders Jack Patten and William Ferguson organized a 'Day of Mourning' and published this powerful manifesto to challenge the official 'story' of Australia.",
+          "is_adapted": false,
+          "hinge_question": "<strong>Think:</strong> How do the authors of this text refer to the British people who arrived on the First Fleet? (Write down the exact two-word phrase they use at the end of the first paragraph).<br><strong>Pair:</strong> Discuss why the authors put the word 'progress' in quotation marks. What might look like progress to a white settler, but look like disaster to an Indigenous Australian?<br><strong>Share:</strong> This document challenges us to look at the whole story of Australia. Based on everything we have studied in this unit (exploration, convicts, disease, gold, and dispossession), is the story of early Australia a story of heroic survival, or a story of brutal invasion?",
+          "extract": "\"The 26th of January, 1938, is not a day of rejoicing for Australia's Aborigines; it is a day of mourning. This festival of 150 years' so-called 'progress' in Australia commemorates also 150 years of misery and degradation imposed upon the original native inhabitants by the white invaders of this country.\n\nWe, representing the Aborigines, now ask you, the reader of this appeal, to pause in the midst of your rejoicing, and ask yourself honestly whether your 'conscience' is clear in regard to the treatment of the Australian blacks by the Australian whites during the period of 150 years' history which you celebrate?\n\n...You are the New Australians, but we are the Old Australians. We have in our arteries the blood of the Original Australians, who have lived in this land for many thousands of years. You came here only recently, and you took our land away from us by force.\"\n\n<strong>Glossary:</strong>\n<ul><li><strong>Rejoicing:</strong> Celebrating or showing great joy.</li><li><strong>Degradation:</strong> Being treated with extreme disrespect, humiliation, and cruelty.</li><li><strong>Commemorates:</strong> Remembers or marks an important event in history.</li></ul>"
+        }
+      ]
     },
     "biographies": [
       {
@@ -1980,20 +2023,6 @@
           "bg": "#ecfdf5",
           "border": "#10b981",
           "icon": "fa-dove"
-        }
-      ],
-      "printable_workbooks": [
-        {
-          "title": "Workbook KT1",
-          "url": "workbook_KT1.html"
-        },
-        {
-          "title": "Workbook KT2",
-          "url": "workbook_KT2.html"
-        },
-        {
-          "title": "Workbook KT3",
-          "url": "workbook_KT3.html"
         }
       ],
       "lessons": [
@@ -9451,326 +9480,16 @@
       }
     ]
   },
-  "crown_parliament_revolution": {
-    "data": {
-      "id": "crown_parliament_revolution",
-      "title": "KS3: Crown, Parliament, and Revolution (1603–1689)",
-      "enquiry": "Who held ultimate power in 17th-century Britain?",
-      "lessons": [
-        {
-          "title": "James I and the Gunpowder Plot: Why was religious division so volatile?",
-          "narrative_blocks": [
-            {
-              "text": "Placeholder content for James I and the Gunpowder Plot: Why was religious division so volatile?",
-              "level_2": "",
-              "level_3": "",
-              "level_4": ""
-            }
-          ],
-          "do_now": {
-            "type": "standard",
-            "questions": []
-          },
-          "comprehension": [],
-          "source_tasks": [],
-          "teacher_notes": {
-            "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-            "objectives": [
-              {
-                "objective": "Understand the core concepts of James I and the Gunpowder Plot: Why was religious division so volatile?",
-                "primer": "Guide students through the narrative and focus on the key turning points.",
-                "question": "What is the most significant consequence of the events studied today?"
-              }
-            ]
-          },
-          "pair_share": {
-            "prompt": "Discuss with your partner: Why was religious division so volatile during James I's reign?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
-        },
-        {
-          "title": "Why did Charles I and Parliament go to war in 1642?",
-          "narrative_blocks": [
-            {
-              "text": "Placeholder content for Why did Charles I and Parliament go to war in 1642?",
-              "level_2": "",
-              "level_3": "",
-              "level_4": ""
-            }
-          ],
-          "do_now": {
-            "type": "standard",
-            "questions": []
-          },
-          "comprehension": [],
-          "source_tasks": [],
-          "teacher_notes": {
-            "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-            "objectives": [
-              {
-                "objective": "Understand the core concepts of Why did Charles I and Parliament go to war in 1642?",
-                "primer": "Guide students through the narrative and focus on the key turning points.",
-                "question": "What is the most significant consequence of the events studied today?"
-              }
-            ]
-          },
-          "pair_share": {
-            "prompt": "Discuss with your partner: Who was more responsible for the outbreak of the Civil War in 1642: Charles I or Parliament?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
-        },
-        {
-          "title": "Cavalier vs Roundhead: How did the English Civil War divide families and communities?",
-          "narrative_blocks": [
-            {
-              "text": "Placeholder content for Cavalier vs Roundhead: How did the English Civil War divide families and communities?",
-              "level_2": "",
-              "level_3": "",
-              "level_4": ""
-            }
-          ],
-          "do_now": {
-            "type": "standard",
-            "questions": []
-          },
-          "comprehension": [],
-          "source_tasks": [],
-          "teacher_notes": {
-            "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-            "objectives": [
-              {
-                "objective": "Understand the core concepts of Cavalier vs Roundhead: How did the English Civil War divide families and communities?",
-                "primer": "Guide students through the narrative and focus on the key turning points.",
-                "question": "What is the most significant consequence of the events studied today?"
-              }
-            ]
-          },
-          "pair_share": {
-            "prompt": "Discuss with your partner: How did the English Civil War divide families and communities?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
-        },
-        {
-          "title": "Regicide (1649): Was executing Charles I an act of justice or treason?",
-          "narrative_blocks": [
-            {
-              "text": "Placeholder content for Regicide (1649): Was executing Charles I an act of justice or treason?",
-              "level_2": "",
-              "level_3": "",
-              "level_4": ""
-            }
-          ],
-          "do_now": {
-            "type": "standard",
-            "questions": []
-          },
-          "comprehension": [],
-          "source_tasks": [],
-          "teacher_notes": {
-            "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-            "objectives": [
-              {
-                "objective": "Understand the core concepts of Regicide (1649): Was executing Charles I an act of justice or treason?",
-                "primer": "Guide students through the narrative and focus on the key turning points.",
-                "question": "What is the most significant consequence of the events studied today?"
-              }
-            ]
-          },
-          "pair_share": {
-            "prompt": "Discuss with your partner: Was executing Charles I an act of justice or an act of treason?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
-        },
-        {
-          "title": "Cromwell's Republic: Was Oliver Cromwell a champion of liberty or a military dictator?",
-          "narrative_blocks": [
-            {
-              "text": "Placeholder content for Cromwell's Republic: Was Oliver Cromwell a champion of liberty or a military dictator?",
-              "level_2": "",
-              "level_3": "",
-              "level_4": ""
-            }
-          ],
-          "do_now": {
-            "type": "standard",
-            "questions": []
-          },
-          "comprehension": [],
-          "source_tasks": [],
-          "teacher_notes": {
-            "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-            "objectives": [
-              {
-                "objective": "Understand the core concepts of Cromwell's Republic: Was Oliver Cromwell a champion of liberty or a military dictator?",
-                "primer": "Guide students through the narrative and focus on the key turning points.",
-                "question": "What is the most significant consequence of the events studied today?"
-              }
-            ]
-          },
-          "pair_share": {
-            "prompt": "Discuss with your partner: Was Oliver Cromwell a champion of liberty or a military dictator?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
-        },
-        {
-          "title": "The Restoration & Glorious Revolution (1688): How did Britain become a constitutional monarchy?",
-          "narrative_blocks": [
-            {
-              "text": "Placeholder content for The Restoration & Glorious Revolution (1688): How did Britain become a constitutional monarchy?",
-              "level_2": "",
-              "level_3": "",
-              "level_4": ""
-            }
-          ],
-          "do_now": {
-            "type": "standard",
-            "questions": []
-          },
-          "comprehension": [],
-          "source_tasks": [],
-          "teacher_notes": {
-            "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-            "objectives": [
-              {
-                "objective": "Understand the core concepts of The Restoration & Glorious Revolution (1688): How did Britain become a constitutional monarchy?",
-                "primer": "Guide students through the narrative and focus on the key turning points.",
-                "question": "What is the most significant consequence of the events studied today?"
-              }
-            ]
-          },
-          "pair_share": {
-            "prompt": "Discuss with your partner: How did the Glorious Revolution permanently change the British monarchy?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
-        },
-        {
-          "title": "Assessment: Who held ultimate power in 17th-century Britain?",
-          "narrative_blocks": [
-            {
-              "text": "Placeholder content for Assessment: Who held ultimate power in 17th-century Britain?",
-              "level_2": "",
-              "level_3": "",
-              "level_4": ""
-            }
-          ],
-          "do_now": {
-            "type": "standard",
-            "questions": []
-          },
-          "comprehension": [],
-          "source_tasks": [],
-          "teacher_notes": {
-            "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-            "objectives": [
-              {
-                "objective": "Understand the core concepts of Assessment: Who held ultimate power in 17th-century Britain?",
-                "primer": "Guide students through the narrative and focus on the key turning points.",
-                "question": "What is the most significant consequence of the events studied today?"
-              }
-            ]
-          },
-          "pair_share": {
-            "prompt": "Discuss with your partner: Who held ultimate power in 17th-century Britain by 1689?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
-        }
-      ],
-      "key_individuals": [],
-      "terminology": [],
-      "workbooks": [],
-      "specification_file": ""
-    },
-    "biographies": [
-      {
-        "name": "Kaiser Wilhelm II",
-        "role": "Emperor of Germany",
-        "lifespan": "1859 – 1941",
-        "achievements": [
-          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
-          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
-          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
-        ],
-        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
-        "image": "assets/card_wilhelm.png"
-      },
-      {
-        "name": "Tsar Nicholas II",
-        "role": "Emperor of Russia",
-        "lifespan": "1868 – 1918",
-        "achievements": [
-          "Led the rapid industrialisation of the Russian Empire.",
-          "Formed an alliance with France to counter the Triple Alliance.",
-          "Ordered the mobilization of the Russian army in July 1914."
-        ],
-        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
-        "image": "assets/card_nicholas.png"
-      },
-      {
-        "name": "Gavrilo Princip",
-        "role": "Bosnian Serb Nationalist",
-        "lifespan": "1894 – 1918",
-        "achievements": [
-          "Joined the secret nationalist society 'Young Bosnia'.",
-          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
-          "Fired the fatal shots in Sarajevo on June 28, 1914."
-        ],
-        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
-        "image": "assets/card_princip.png"
-      },
-      {
-        "name": "Count Leopold Berchtold",
-        "role": "Austro-Hungarian Foreign Minister",
-        "lifespan": "1863 – 1942",
-        "achievements": [
-          "Drafted the severe July Ultimatum presented to Serbia.",
-          "Convinced Emperor Franz Joseph to declare war on Serbia.",
-          "Secured Germany's unconditional support (the 'Blank Cheque')."
-        ],
-        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
-      },
-      {
-        "name": "Alfred von Schlieffen",
-        "role": "German Field Marshal",
-        "lifespan": "1833 – 1913",
-        "achievements": [
-          "Chief of the Imperial German General Staff (1891–1906).",
-          "Authored the famous 'Schlieffen Plan' for a two-front war.",
-          "Prioritized military strategy over diplomatic consequences."
-        ],
-        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
-        "image": "assets/alfred_von_schlieffen.jpg"
-      }
-    ]
-  },
   "early_modern_world": {
     "data": {
       "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
       "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
       "cover_image": "/images/east_offering.jpg",
-      "printable_workbooks": [
+      "workbooks": [
         {
-          "title": "Unit Workbook",
-          "url": "workbook.html",
-          "id": "full"
-        },
-        {
-          "title": "Mastery Pack",
-          "url": "../../pdfs/early_modern_world_mastery_pack_full.pdf",
-          "icon": "fa-brain"
+          "id": "full",
+          "name": "full",
+          "title": "Complete Unit"
         }
       ],
       "timeline": [
@@ -14704,28 +14423,6 @@
           "bg": "#f8fafc",
           "border": "#64748b",
           "icon": "fa-helmet-battle"
-        }
-      ],
-      "printable_workbooks": [
-        {
-          "title": "Workbook KT1 (Medieval)",
-          "url": "workbook_medieval.html"
-        },
-        {
-          "title": "Workbook KT2 (Renaissance)",
-          "url": "workbook_renaissance.html"
-        },
-        {
-          "title": "Workbook KT3 (18th & 19th)",
-          "url": "workbook_18th_19th.html"
-        },
-        {
-          "title": "Workbook KT4 (Modern)",
-          "url": "workbook_modern.html"
-        },
-        {
-          "title": "Workbook KT5 (Western Front)",
-          "url": "workbook_western_front.html"
         }
       ],
       "lessons": [
@@ -25313,23 +25010,6 @@
           "enquiry": "What was life like during the Elizabethan Golden Age?"
         }
       ],
-      "printable_workbooks": [
-        {
-          "id": "KT1",
-          "title": "Key Topic 1: Queen, government and religion, 1558-69",
-          "prefix": "lesson_1_"
-        },
-        {
-          "id": "KT2",
-          "title": "Key Topic 2: Challenges to Elizabeth at home and abroad, 1569-88",
-          "prefix": "lesson_2_"
-        },
-        {
-          "id": "KT3",
-          "title": "Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88",
-          "prefix": "lesson_3_"
-        }
-      ],
       "key_topics": [],
       "mock_exams": [
         {
@@ -30145,15 +29825,11 @@
       "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
       "cover_image": "/images/great_war_cover.jpg",
       "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
-      "printable_workbooks": [
+      "workbooks": [
         {
-          "title": "Unit Workbook",
-          "url": "workbook.html"
-        },
-        {
-          "title": "Mastery Pack",
-          "url": "../../pdfs/great_war_mastery_pack_full.pdf",
-          "icon": "fa-brain"
+          "id": "full",
+          "name": "full",
+          "title": "Complete Unit"
         }
       ],
       "lessons": [
@@ -33493,15 +33169,11 @@
       "cover_caption": "The cover image displays two powerful historical sources that bookend the First World War: on the left, an illustration of the assassination of Archduke Franz Ferdinand in Sarajevo (the spark that ignited the conflict in 1914), and on the right, the official Treaty of Versailles document (the controversial peace settlement signed in 1919).",
       "hero_image": "/images/stubbington_memorial_1.jpg",
       "hero_caption": "The Stubbington War Memorial, built in 1922 over the village pump on the green. Designed by the mother of the only woman commemorated, its unique wooden shelter stands as a powerful and poignant local reminder of the devastating human cost of the conflict on tight-knit communities.",
-      "printable_workbooks": [
+      "workbooks": [
         {
-          "title": "Unit Workbook",
-          "url": "workbook.html"
-        },
-        {
-          "title": "Mastery Pack",
-          "url": "../../pdfs/great_war_part2_mastery_pack_full.pdf",
-          "icon": "fa-brain"
+          "id": "full",
+          "name": "full",
+          "title": "Complete Unit"
         }
       ],
       "debatePrompts": [
@@ -35480,15 +35152,11 @@
       "enquiry": "Industrialisation, Empire, and Power: How did 19th-century Britain transform at home and abroad?",
       "cover_image": "/images/imperial_federation_map.jpg",
       "cover_caption": "Industrialisation, Empire, and Power.",
-      "printable_workbooks": [
+      "workbooks": [
         {
-          "title": "Unit Workbook",
-          "url": "workbook.html"
-        },
-        {
-          "title": "Mastery Pack",
-          "url": "../../pdfs/industrialisation_and_empire_mastery_pack_full.pdf",
-          "icon": "fa-brain"
+          "id": "full",
+          "name": "full",
+          "title": "Complete Unit"
         }
       ],
       "lessons": [
@@ -41280,7 +40948,108 @@
         }
       ],
       "specification_file": "",
-      "hero_image": "/images/portchester_keep.jpg"
+      "hero_image": "/images/portchester_keep.jpg",
+      "guided_reading": [
+        {
+          "lesson_index": 0,
+          "book_title": "Chronicle of the Kings of England",
+          "author": "William of Malmesbury",
+          "author_context": "William of Malmesbury was an English historian writing about 60 years after the Battle of Hastings. In this extract, he describes how the two armies behaved on the night before the battle. As a monk, he had a clear opinion on why God allowed the English to lose.",
+          "is_adapted": false,
+          "extract": "\"The courageous leaders mutually prepared for battle, each according to his national custom. The English, as we have heard, passed the night without sleep, in drinking and singing, and, in the morning, proceeded without delay towards the enemy; all were on foot, armed with battle-axes... The king himself on foot, stood, with his brother, near the standard; in order that, while all shared equal danger, none might think of retreating.<br><br>On the other hand, the Normans passed the whole night in confessing their sins, and received the sacrament in the morning... The infantry, with bows and arrows, formed the vanguard, while their cavalry, divided into wings, were thrown back.<br><br>...The English, breathing nothing but blood and treason, resolved to die or conquer. For, as long as they stood firm in a close body, they penetrated every point of the enemy's line.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Sacrament:</strong> A religious ceremony, in this case, taking Holy Communion before facing death.</li><li><strong>Vanguard:</strong> The front part of an advancing army.</li><li><strong>Treason:</strong> The crime of betraying one's country or king (William viewed Harold as a traitor who broke a sacred oath).</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> According to this monk, what were the English doing the night before the battle, and what were the Normans doing?<br><br><strong>Pair:</strong> Why might a religious writer like William of Malmesbury describe the night before the battle in this specific way? What point is he trying to make about <em>why</em> the Normans won?<br><br><strong>Share:</strong> Based on this text, what was the greatest strength of the English army, and what was the main difference in how the Normans organized their troops?",
+          "audio_file": "/assets/medieval_england_reading_l1.mp3",
+          "questions": []
+        },
+        {
+          "lesson_index": 1,
+          "book_title": "The Anglo-Saxon Chronicle",
+          "author": "Anonymous Monk",
+          "author_context": "The Anglo-Saxon Chronicle was a year-by-year history of England kept by English monks. When William the Conqueror died in 1087, an anonymous monk who had lived at his court wrote this famous, bitter summary of the king's rule.",
+          "is_adapted": false,
+          "extract": "\"He caused castles to be built, and oppressed the poor. The king was also of great sternness, and he took from his subjects many marks of gold, and many hundred pounds of silver... He was given to avarice, and greedily loved gain.<br><br>He had a great survey made of his kingdom... so very narrowly did he cause the survey to be made, that there was not a single hide nor a rood of land, nor—it is shameful to relate that which he thought no shame to do—was there an ox, or a cow, or a pig passed by, and that was not set down in the accounts...<br><br>He made large forests for the deer, and enacted laws therewith, so that whoever killed a hart or a hind should be blinded. As he forbade killing the deer, so also the boars; and he loved the tall stags as if he were their father.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Avarice:</strong> Extreme greed for wealth or material gain.</li><li><strong>Hide / Rood:</strong> Medieval measurements of land.</li><li><strong>Hart / Hind:</strong> An adult male deer (hart) and female deer (hind).</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> Pick out the punishment for hunting the King's deer. Write it down.<br><br><strong>Pair:</strong> The monk writes that it is \"shameful to relate\" that William counted every single ox, cow, and pig in England. Discuss with your partner: why would an English person in 1086 find the Domesday Book so offensive and shocking?<br><br><strong>Share:</strong> Look at the phrase: \"He loved the tall stags as if he were their father.\" What does this brilliant piece of sarcasm tell us about William's attitude towards his human subjects compared to his hunting forests?",
+          "audio_file": "/assets/medieval_england_reading_l2.mp3",
+          "questions": []
+        },
+        {
+          "lesson_index": 2,
+          "book_title": "Life of St. Thomas",
+          "author": "Edward Grim",
+          "author_context": "Edward Grim was a monk who was standing right next to the Archbishop of Canterbury, Thomas Becket, when four of King Henry II's knights broke into the cathedral in December 1170. Grim was severely wounded in the attack trying to protect Becket.",
+          "is_adapted": false,
+          "extract": "\"The wicked knight leapt suddenly upon him, cutting off the top of the crown which the unction of sacred chrism had dedicated to God. Next he received a second blow on the head, but still he stood firm and immovable. At the third blow he fell on his knees and elbows, offering himself a living sacrifice, and saying in a low voice, 'For the name of Jesus and the protection of the Church, I am ready to embrace death.'<br><br>But the third knight inflicted a terrible wound as he lay prostrate. By this stroke, the crown of his head was separated from the head in such a way that the blood white with the brain, and the brain no less red from the blood, dyed the floor of the cathedral. The same clerk who had entered with the knights placed his foot on the neck of the holy priest and precious martyr, and, horrible to relate, scattered the brains and blood about the pavements, crying to the others, 'Let us away, knights; this fellow will arise no more.'\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Unction of sacred chrism:</strong> The holy oil used to anoint the heads of priests, making them sacred to God.</li><li><strong>Prostrate:</strong> Lying stretched out on the ground with one's face downwards.</li><li><strong>Martyr:</strong> A person who is killed because of their religious or other beliefs.</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> How does Thomas Becket react to the first two blows of the sword?<br><br><strong>Pair:</strong> Discuss why Grim includes the gruesome detail of the clerk scattering Becket's brains on the floor and shouting \"this fellow will arise no more.\" What does this tell us about the knights' attitude toward the Church?<br><br><strong>Share:</strong> King Henry II claimed he never directly ordered the knights to kill Becket. Based on how violently they acted inside a sacred cathedral, do you think they believed they were carrying out the King's true wishes?",
+          "audio_file": "/assets/medieval_england_reading_l3.mp3",
+          "questions": []
+        },
+        {
+          "lesson_index": 3,
+          "book_title": "Magna Carta",
+          "author": "King John and the Barons",
+          "author_context": "In 1215, King John was forced by his rebellious barons to seal the Magna Carta (The Great Charter) at Runnymede. While much of it was about protecting the wealthy barons' lands, Clauses 39 and 40 became the foundation of modern justice.",
+          "is_adapted": false,
+          "extract": "<em>(Clause 39)</em> \"No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled, or deprived of his standing in any way, nor will we proceed with force against him, or send others to do so, except by the lawful judgment of his equals or by the law of the land.\"<br><br><em>(Clause 40)</em> \"To no one will we sell, to no one deny or delay right or justice.\"<br><br><em>(Clause 61 - The Security Clause)</em> \"The barons shall elect twenty-five of their number to keep, and cause to be observed with all their might, the peace and liberties granted and confirmed to them by this charter... If we, our chief justice, our officials, or any of our servants offend in any respect against any man... those twenty-five barons may distrain upon and assail us in every way possible, with the support of the whole community of the land, by seizing our castles, lands, possessions...\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Lawful judgment of his equals:</strong> The right to a fair trial by a jury of peers, rather than a king just deciding you are guilty.</li><li><strong>Distrain / Assail:</strong> To seize someone's property to force them to do something, and to attack them.</li><li><strong>Liberties:</strong> Freedoms and legal rights.</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> Read Clause 40 carefully. What does King John promise he will never \"sell,\" \"deny,\" or \"delay\" again?<br><br><strong>Pair:</strong> Look at Clause 61. Discuss what the 25 barons are legally allowed to do if the King breaks the rules of Magna Carta. Why would a medieval King find this clause absolutely humiliating?<br><br><strong>Share:</strong> Notice the phrase \"No <em>free man</em> shall be seized\" in Clause 39. Since the vast majority of people in 1215 were unfree peasants (villeins), was Magna Carta really a triumph of liberty for everyone, or just a deal for the rich?",
+          "audio_file": "/assets/medieval_england_reading_l4.mp3",
+          "questions": []
+        },
+        {
+          "lesson_index": 4,
+          "book_title": "Aelfric's Colloquy",
+          "author": "Abbot Aelfric",
+          "author_context": "Aelfric was an Anglo-Saxon abbot who wrote a textbook (a 'Colloquy') to help boys learn Latin. It features interviews with ordinary workers. Though written just before the Norman Conquest, this famous extract perfectly captures the brutal, unchanging reality of peasant farming that defined the entire medieval period.",
+          "is_adapted": false,
+          "extract": "<em>Teacher:</em> What do you say, ploughman? How do you do your work?<br><br><em>Ploughman:</em> O, my lord, I work very hard: I go out at dawn, driving the cattle to the field, and I yoke them to the plough. Be the winter never so stark, I dare not stay at home for fear of my lord; but having yoked my oxen, and fastened the share and coulter to the plough, every day I must plough a full acre or more.<br><br><em>Teacher:</em> Have you any companion?<br><br><em>Ploughman:</em> I have a boy who urges on the oxen with a goad, and he is now hoarse from cold and shouting.<br><br><em>Teacher:</em> What more do you do in the day?<br><br><em>Ploughman:</em> Truly, still I do more. I must fill the oxen's mangers with hay, and water them, and carry out their dung.<br><br><em>Teacher:</em> O, O, it is hard work.<br><br><em>Ploughman:</em> Yes, lord, it is hard work, because I am not free.<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Yoke:</strong> A wooden beam used between a pair of oxen to allow them to pull a heavy load.</li><li><strong>Share and Coulter:</strong> The heavy iron blades of a plough that cut into the earth.</li><li><strong>Goad:</strong> A spiked stick used for driving cattle.</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> Identify three specific jobs the ploughman must do every single day, regardless of the weather.<br><br><strong>Pair:</strong> Look at the final sentence: \"Yes, lord, it is hard work, because I am not free.\" Discuss what it actually meant to \"not be free\" in a medieval village. Why couldn't he just quit and find a new job?<br><br><strong>Share:</strong> The boy driving the oxen is \"hoarse from cold and shouting.\" Based on this text, what role did children play in the medieval rural economy?",
+          "audio_file": "/assets/medieval_england_reading_l5.mp3",
+          "questions": []
+        },
+        {
+          "lesson_index": 5,
+          "book_title": "Knighton's Chronicle",
+          "author": "Henry Knighton",
+          "author_context": "Henry Knighton was a monk in Leicester who survived the Black Death. He wrote down what happened when the plague struck England, focusing not just on the horrific human death toll, but on how the sudden lack of workers threw the entire medieval economy into chaos.",
+          "is_adapted": false,
+          "extract": "\"The dreadful pestilence penetrated the sea coast by Southampton and came to Bristol, and there almost the whole strength of the town died, struck, as it were, by sudden death...<br><br>And there died a multitude of sheep and other cattle throughout the country, wandering about without anyone to keep them. They perished in ditches and hedges in unnumbered masses... for there was such a lack of servants and workers that no one knew what to do.<br><br>Meanwhile, the King sent word into every shire that mowers and other workmen should take no more than they had before, under the penalties set down in the order... But the workers were so arrogant and obstinate that they did not heed the King’s mandate, but if anyone wanted to have them he had to give them what they asked, and either lose his fruit and crops or satisfy the arrogant and greedy desire of the workmen.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Pestilence:</strong> A fatal epidemic disease.</li><li><strong>Mandate:</strong> An official order or command from the King.</li><li><strong>Obstinate:</strong> Stubbornly refusing to change one's opinion or chosen course of action.</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> According to Knighton, why were the sheep and cattle dying in the ditches?<br><br><strong>Pair:</strong> Before 1348, peasants had to do what the lords told them for very little reward. Discuss with your partner why the surviving workmen suddenly became \"arrogant and obstinate\" and demanded higher wages.<br><br><strong>Share:</strong> King Edward III tried to pass a law forcing peasants to accept the same low wages they got <em>before</em> the plague. Why was this law completely impossible to enforce?",
+          "audio_file": "/assets/medieval_england_reading_l6.mp3",
+          "questions": []
+        },
+        {
+          "lesson_index": 6,
+          "book_title": "Chronicles",
+          "author": "Jean Froissart",
+          "author_context": "Jean Froissart was a French chronicler who wrote a famous history of the 14th century. Here, he records the revolutionary sermons of John Ball, a radical priest whose ideas fueled the Peasants' Revolt of 1381. John Ball was preaching absolute equality—a terrifying concept to the medieval nobility.",
+          "is_adapted": false,
+          "extract": "\"A crazy priest in the county of Kent, called John Ball, who for his absurd preaching had been thrice confined in the prison... was accustomed on a Sunday after mass, as the people were coming out of the church, to preach to them in the marketplace and assemble a crowd around him...<br><br>'My good friends, things cannot go on well in England, nor ever will until everything shall be in common; when there shall be neither vassal nor lord, and all distinctions levelled; when the lords shall be no more masters than ourselves. How ill they have used us! ...Are we not all descended from the same parents, Adam and Eve? and what can they show, or what reasons give, why they should be more the masters than ourselves?'\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Vassal:</strong> A person in the feudal system who is subordinate to a lord and owes them labor and loyalty.</li><li><strong>Distinctions levelled:</strong> Removing the social classes (rich and poor) so everyone is treated equally.</li><li><strong>Common:</strong> Owned or shared by everyone, rather than privately owned by the rich.</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> Froissart calls John Ball a \"crazy priest.\" Find one thing John Ball suggests that would have made a medieval nobleman think he was insane.<br><br><strong>Pair:</strong> Look at John Ball's use of religion: \"Are we not all descended from the same parents, Adam and Eve?\" Discuss how he is using the Bible as a weapon against the King and the Lords.<br><br><strong>Share:</strong> The medieval system (the Feudal System) was based on a strict hierarchy where God placed the King at the top and the peasants at the bottom. How does John Ball's sermon threaten to destroy that entire worldview?",
+          "audio_file": "/assets/medieval_england_reading_l7.mp3",
+          "questions": []
+        },
+        {
+          "lesson_index": 7,
+          "book_title": "The Croyland Chronicle",
+          "author": "Monks of Croyland Abbey",
+          "author_context": "The Croyland Chronicle was written by monks with deep connections to the royal court. This extract describes the brutal climax of the Wars of the Roses at the Battle of Bosworth in 1485, where King Richard III led a desperate, suicidal cavalry charge directly at Henry Tudor.",
+          "is_adapted": false,
+          "extract": "\"A fierce and most cruel battle was joined by the vanguards... But when the king [Richard III] saw that in the place where the earl of Richmond [Henry Tudor], his enemy, was standing, there were not many soldiers, he spurred his horse and rode outside his own lines, and made an attack on the earl's position.<br><br>The fighting was extremely fierce... and King Richard fell in the field, pierced with numerous deadly wounds, fighting manfully and most valiantly in the thickest press of his enemies.<br><br>...The body of the said King Richard was found stripped of all its clothing, and was thrown over a horse, the head and arms hanging down on one side, and the legs on the other; and in this most wretched condition he was carried into Leicester. And the earl of Richmond, receiving the crown from the Lord Stanley, was hailed by the whole army as King Henry the Seventh.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Vanguard:</strong> The leading units advancing into battle.</li><li><strong>Valiantly:</strong> With courage or determination.</li><li><strong>Wretched:</strong> In a very unhappy, unfortunate, or undignified state.</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> According to this chronicle, did King Richard III die running away, or fighting? Note down the exact phrase that proves your answer.<br><br><strong>Pair:</strong> Discuss the treatment of Richard III's dead body. Why would the victorious Henry Tudor want the dead king to be stripped naked and draped over a horse for everyone in Leicester to see?<br><br><strong>Share:</strong> At the Battle of Hastings in 1066, King Harold died on the battlefield and the crown was taken by force. In 1485 at Bosworth, Richard III died on the battlefield and the crown was taken by force. After 400 years, had royal power in England really changed at all?",
+          "audio_file": "/assets/medieval_england_reading_l8.mp3",
+          "questions": []
+        },
+        {
+          "lesson_index": 8,
+          "book_title": "On the Laws and Customs of England",
+          "author": "Henry de Bracton",
+          "author_context": "Henry de Bracton was a judge in the 1250s who wrote a massive book attempting to explain the laws of England. In this famous passage, he wrestles with the ultimate question of the Middle Ages: is the King above the law, or is the King subject to the law?",
+          "is_adapted": false,
+          "extract": "\"The king has no equal within his realm. Subjects cannot be the equals of the ruler, because he would thereby lose his rule, since equal can have no authority over equal...<br><br>But the king himself ought not to be subject to man, but subject to God and to the law, for the law makes the king. Let the king, therefore, bestow upon the law what the law bestows upon him, namely, rule and power. For there is no king where will rules rather than the law.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Realm:</strong> A kingdom.</li><li><strong>Bestow:</strong> To grant or present an honor, right, or gift.</li><li><strong>Will rules rather than the law:</strong> When a king acts purely on his own selfish desires and moods (\"will\") instead of following established rules.</li></ul></div>",
+          "hinge_question": "<strong>Think:</strong> Write down Bracton's explanation for why no subject can ever be equal to the King.<br><br><strong>Pair:</strong> \"There is no king where will rules rather than the law.\" Discuss what this means. According to Bracton, what happens to a King if he ignores the law and just does whatever he wants?<br><br><strong>Share:</strong> Think back across the whole unit (William the Conqueror, Henry II and Becket, King John and Magna Carta, Richard III). Give an example of a medieval monarch who thought they were above the law, and discuss what happened to them.",
+          "audio_file": "/assets/medieval_england_reading_l9.mp3",
+          "questions": []
+        }
+      ]
     },
     "biographies": [
       {
@@ -42333,7 +42102,7 @@
           "story": "Killed 4th October 1917 taking Juniper Trench."
         }
       ],
-      "printable_workbooks": [],
+      "workbooks": [],
       "lessons": [
         {
           "id": "day_0",
@@ -43482,15 +43251,11 @@
       "color": "#0288d1",
       "enquiry": "Why did it take so long to clean up Britain?",
       "specification_file": "/data/water_and_sanitation_overview.json",
-      "printable_workbooks": [
+      "workbooks": [
         {
-          "title": "Unit Workbook",
-          "url": "workbook.html"
-        },
-        {
-          "title": "Mastery Pack",
-          "url": "../../pdfs/water_and_sanitation_mastery_pack_full.pdf",
-          "icon": "fa-brain"
+          "id": "full",
+          "name": "full",
+          "title": "Complete Unit"
         }
       ],
       "lessons": [
@@ -45529,36 +45294,6 @@
           "image": "/images/weimar_kt4_cover.jpg",
           "prefix": "lesson_4_",
           "enquiry": "Did life improve under the Nazis?"
-        }
-      ],
-      "printable_workbooks": [
-        {
-          "id": "KT1",
-          "title": "Key Topic 1: The Weimar Republic",
-          "url": "workbook_KT1.html",
-          "image": "/images/weimar_kt1_cover.jpg",
-          "prefix": "lesson_1_"
-        },
-        {
-          "id": "KT2",
-          "title": "Key Topic 2: Hitler's Rise to Power, 1919-33",
-          "url": "workbook_KT2.html",
-          "image": "/images/weimar_kt2_cover.jpg",
-          "prefix": "lesson_2_"
-        },
-        {
-          "id": "KT3",
-          "title": "Key Topic 3: Nazi Control and Dictatorship",
-          "url": "workbook_KT3.html",
-          "image": "/images/weimar_kt3_cover.jpg",
-          "prefix": "lesson_3_"
-        },
-        {
-          "id": "KT4",
-          "title": "Key Topic 4: Life in Nazi Germany, 1933–39",
-          "url": "workbook_KT4.html",
-          "image": "/images/weimar_kt4_cover.jpg",
-          "prefix": "lesson_4_"
         }
       ],
       "lessons": [

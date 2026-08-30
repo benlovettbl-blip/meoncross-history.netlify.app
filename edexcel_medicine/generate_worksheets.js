@@ -339,7 +339,7 @@ periodLessons.forEach((lesson, lessonIndex) => {
       
       if (block.hinge_question) {
         html += `<div class="task-box" style="background: #f8fafc; border: 2px dashed #94a3b8;">`;
-        html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong><i class="fa-solid fa-circle-check"></i> Knowledge Check (Q${block.hinge_question.qNum})</strong></p>`;
+        html += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong><i class="fa-solid fa-circle-check"></i> Q${block.hinge_question.qNum}. KNOWLEDGE CHECK</strong></p>`;
         html += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text}</strong></p>`;
         html += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
         block.hinge_question.options.forEach((opt, idx) => {

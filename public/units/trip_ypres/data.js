@@ -104,7 +104,7 @@ export const unitData = {
       "story": "Killed 4th October 1917 taking Juniper Trench."
     }
   ],
-  "printable_workbooks": [],
+  "workbooks": [],
   "lessons": [
     {
       "id": "day_0",

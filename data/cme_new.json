@@ -88,20 +88,6 @@
         "icon": "fa-dove"
       }
     ],
-    "printable_workbooks": [
-      {
-        "title": "Workbook KT1",
-        "url": "workbook_KT1.html"
-      },
-      {
-        "title": "Workbook KT2",
-        "url": "workbook_KT2.html"
-      },
-      {
-        "title": "Workbook KT3",
-        "url": "workbook_KT3.html"
-      }
-    ],
     "lessons": [
       {
         "id": "lesson_0",

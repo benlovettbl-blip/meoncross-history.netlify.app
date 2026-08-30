@@ -1113,36 +1113,6 @@ export function initializeApp(unitData) {
 
 
 
-    // Add Guided Reading Tab if available
-    if (unitData.guided_reading && unitData.guided_reading.length > 0) {
-      const grLink = document.createElement('a');
-      grLink.className = 'lesson-link';
-      grLink.innerHTML = '<i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Guided Reading';
-      grLink.href = '#';
-      grLink.style.marginTop = '15px';
-      grLink.style.borderTop = '1px solid #e2e8f0';
-      grLink.style.paddingTop = '15px';
-      grLink.onclick = async (e) => {
-        e.preventDefault();
-        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-        grLink.classList.add('active');
-        
-        // Dynamically load the guided reading module to avoid cluttering core_app.js
-        const { initGuidedReadingTask } = await import('./guided_reading.js');
-        const contentArea = document.getElementById('content-area');
-        contentArea.innerHTML = '';
-        
-        let currentLessonIndex = 0;
-        if (window.currentActiveLesson && unitData.lessons) {
-          currentLessonIndex = unitData.lessons.findIndex(l => l.title === window.currentActiveLesson.title);
-        }
-        
-        initGuidedReadingTask(contentArea, unitData.guided_reading, { currentLessonIndex });
-        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
-      };
-      navContainer.appendChild(grLink);
-    }
-
     if (unitData.type !== 'trip' && window.currentUnitId !== 'medieval_england' && window.currentUnitId !== 'early_modern_world' && window.currentUnitId !== 'industrialisation_and_empire' && window.currentUnitId !== 'australia') {
       const examPracticeLink = document.createElement('a');
       examPracticeLink.className = 'lesson-link';
@@ -1193,24 +1163,7 @@ export function initializeApp(unitData) {
       navContainer.appendChild(cheatSheetLink);
     }
 
-    if (window.currentUnitId === 'australia') {
-      const tbLink = document.createElement('a');
-      tbLink.className = 'lesson-link';
-      tbLink.innerHTML = '<i class="fa-solid fa-book-open" style="margin-right: 8px;"></i> Textbook PDF';
-      tbLink.href = '/pdfs/australia_textbook_FINAL_V9.pdf';
-      tbLink.target = '_blank';
-      tbLink.style.marginTop = '15px';
-      tbLink.style.borderTop = '1px solid #e2e8f0';
-      tbLink.style.paddingTop = '15px';
-      navContainer.appendChild(tbLink);
-
-      const pwLink = document.createElement('a');
-      pwLink.className = 'lesson-link';
-      pwLink.innerHTML = '<i class="fa-solid fa-pencil" style="margin-right: 8px;"></i> Pupil Workbook PDF';
-      pwLink.href = '/pdfs/australia_pupil_workbook_FINAL_V9.pdf';
-      pwLink.target = '_blank';
-      navContainer.appendChild(pwLink);
-    }
+    
 
 
     // Attach Pupil Workbooks dynamically as a single Zone

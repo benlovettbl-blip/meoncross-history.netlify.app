@@ -78,7 +78,7 @@ export function bindEvents() {
     sidebarUnitsContainer.innerHTML = '';
     
     const units = getUnits();
-    const ks3Order = ['water_and_sanitation', 'change_1450_1750', 'great_war'];
+    const ks3Order = ['water_and_sanitation','medieval_england','early_modern_world','industrialisation_and_empire','australia','great_war','great_war_part2','second_world_war','the_shoah','cold_war','post_war_britain'];
     const ks3Units = units.filter(u => u && u.title && typeof u.title === 'string' && u.title.includes('KS3:')).sort((a, b) => {
       let idxA = ks3Order.indexOf(a.id);
       let idxB = ks3Order.indexOf(b.id);

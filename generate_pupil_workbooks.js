@@ -795,6 +795,27 @@ allDirs.forEach((unitId) => {
               // Narrative text removed for Pupil Workbook
             }
 
+            if (block.source && block.source.question) {
+              _nbHtml += `<div class="task-box">`;
+              _nbHtml += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${globalQNum++}${block.source.question}${block.source.page ? ` [p. ${block.source.page}]` : ""}</h4>`;
+              for (let i = 0; i < 4; i++) {
+                _nbHtml += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
+              }
+              _nbHtml += `</div>`;
+            }
+
+            if (block.hinge_question) {
+              if (block.hinge_question.qNum && block.hinge_question.qNum < _firstQNum) _firstQNum = block.hinge_question.qNum;
+              _nbHtml += `<div class="task-box" style=" ">`;
+              _nbHtml += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${globalQNum++})</strong></p>`;
+              _nbHtml += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
+              _nbHtml += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
+              block.hinge_question.options.forEach((opt, idx) => {
+                _nbHtml += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65 + idx)}. ${opt}</li>`;
+              });
+              _nbHtml += `</ul></div>`;
+            }
+
             if (block.extended && block.extended.question) {
               if (block.extended.qNum && block.extended.qNum < _firstQNum) _firstQNum = block.extended.qNum;
               _nbHtml += `<div class="task-box" style="margin-bottom: 20px;">`;
@@ -1002,25 +1023,6 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
               _nbHtml += `</div>`;
             }
 
-            if (block.hinge_question) {
-              if (block.hinge_question.qNum && block.hinge_question.qNum < _firstQNum) _firstQNum = block.hinge_question.qNum;
-              _nbHtml += `<div class="task-box" style=" ">`;
-              _nbHtml += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${globalQNum++})</strong></p>`;
-              _nbHtml += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
-              _nbHtml += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
-              block.hinge_question.options.forEach((opt, idx) => {
-                _nbHtml += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65 + idx)}. ${opt}</li>`;
-              });
-              _nbHtml += `</ul></div>`;
-            }
-            if (block.source && block.source.question) {
-              _nbHtml += `<div class="task-box">`;
-              _nbHtml += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${globalQNum++}${block.source.question}${block.source.page ? ` [p. ${block.source.page}]` : ""}</h4>`;
-              for (let i = 0; i < 4; i++) {
-                _nbHtml += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
-              }
-              _nbHtml += `</div>`;
-            }
             _nbHtml += `</div>`; // Close narrative-block div
             html += _nbHtml;
           }
@@ -1042,7 +1044,12 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
         });
       }
 
-      if (lesson.tasks && lesson.tasks.length > 0) {
+
+    // Phase 1: Standard Tasks
+    if (lesson.tasks && lesson.tasks.length > 0) {
+      let originalTasks = lesson.tasks;
+      lesson.tasks = originalTasks.filter(t => t.type !== 'gcse_exam_practice' && t.type !== 'exam_practice');
+      if (lesson.tasks.length > 0) {
         html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
         lesson.tasks.forEach((task, tIdx) => {
           if (task.type === "spectrum_mapper") {
@@ -1267,6 +1274,255 @@ if (_t.badgeHtml) html += _t.badgeHtml;
           html += `</div>`;
         });
       }
+      lesson.tasks = originalTasks; // Restore
+    }
+
+    // Phase 2: Historian's Corner
+      if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
+        html += `<div class="task-box" style=" ">`;
+        html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
+        html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
+        if (lesson.historians_corner.stretch_question) {
+          html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
+          for (let i = 0; i < 4; i++) {
+            html += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
+          }
+        }
+        html += `</div>`;
+      }
+
+    // Phase 3 & 4: GCSE Exam Practice
+    if (lesson.tasks && lesson.tasks.length > 0) {
+      let originalTasks = lesson.tasks;
+      lesson.tasks = originalTasks.filter(t => t.type === 'gcse_exam_practice' || t.type === 'exam_practice');
+      if (lesson.tasks.length > 0) {
+        
+        lesson.tasks.forEach((task, tIdx) => {
+          if (task.type === "spectrum_mapper") {
+            // html += `<div style="page-break-before: always;"></div>`;
+            html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || "Spectrum Planner"}</h2>`;
+
+            // Draw the spectrum line
+            html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
+            html += `<div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14pt; margin-bottom: 10px;">`;
+            html += `<div>${task.labels[0]}</div><div>${task.labels[1]}</div>`;
+            html += `</div>`;
+            html += `<div style="height: 4px;  width: 100%; position: relative;">`;
+            html += `<div style="position: absolute; left: 0%; top: -10px; width: 2px; height: 24px; "></div>`;
+            html += `<div style="position: absolute; left: 25%; top: -10px; width: 2px; height: 24px; "></div>`;
+            html += `<div style="position: absolute; left: 50%; top: -10px; width: 2px; height: 24px; "></div>`;
+            html += `<div style="position: absolute; left: 75%; top: -10px; width: 2px; height: 24px; "></div>`;
+            html += `<div style="position: absolute; left: 100%; top: -10px; width: 2px; height: 24px; "></div>`;
+            html += `</div></div>`;
+
+            html += `<h3 style="margin-top: 40px;">Factors to map:</h3>`;
+            html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">`;
+            task.items.forEach((item) => {
+              html += `<div style=" padding: 15px; width: 45%; border-radius: 8px;">`;
+              html += `<strong>${item.title}</strong><br>`;
+              if (item.desc)
+                html += `<span style="font-size: 0.9em; color: #555;">${item.desc}</span>`;
+              html += `</div>`;
+            });
+            html += `</div>`;
+
+            html += `<h3>Notes & Paragraph Plan</h3>`;
+            for (let i = 0; i < 10; i++) {
+              html += `<div class="task-lines-large"></div>`;
+            }
+
+            // Add two pages for the final essay
+            html += `<div style="page-break-before: always; margin-top: 20px;">`;
+            html += `<h2 style="color: #0284c7; font-size: 18pt;">Final Assessment Essay</h2>`;
+            html += `<p style="font-weight: bold; font-size: 12pt;">How 'modern' was Britain by 1750?</p>`;
+            for (let i = 0; i < 30; i++) {
+              html += `<div class="task-lines-large"></div>`;
+            }
+            html += `</div>`;
+            html += `<div style="page-break-before: always; margin-top: 20px;">`;
+            for (let i = 0; i < 35; i++) {
+              html += `<div class="task-lines-large"></div>`;
+            }
+            html += `</div>`;
+
+            return;
+          }
+
+          if (task.type === "drawing" || task.type === "draw") {
+            html += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
+            let _t = processTaskTextWithTariff(task.text || task.question);
+html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${globalQNum++} ${_t.cleanText}</h4>`;
+if (_t.badgeHtml) html += _t.badgeHtml;
+            html += `<div style="height: 250px;"></div>`;
+            html += `</div>`;
+            return;
+          }
+          if (task.type === "multiple_choice") {
+            html += `<div class="task-box">`;
+            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
+html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+if (_t.badgeHtml) html += _t.badgeHtml;
+            task.questions.forEach((q, qIdx) => {
+              html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
+              q.options.forEach((opt) => {
+                html += `<li style="margin-bottom: 5px;"><input type="checkbox" style="margin-right:8px; position:relative; top:2px;">${opt}</li>`;
+              });
+              html += `</ul>`;
+            });
+            html += `</div>`;
+            return;
+          }
+          if (task.type === "sorting") {
+            html += `<div class="task-box">`;
+            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
+html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+if (_t.badgeHtml) html += _t.badgeHtml;
+            html += `<ul style="list-style-type:none; padding-left:0;">`;
+            task.events.forEach((ev) => {
+              html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
+            });
+            html += `</ul></div>`;
+            return;
+          }
+          if (task.type === "cloze") {
+            let cloze = task.cloze_text.replace(
+              /\[([^\]]+)\]/g,
+              "[ . . . . . . . . ]",
+            );
+            html += `<div class="task-box">`;
+            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
+html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+if (_t.badgeHtml) html += _t.badgeHtml;
+            html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
+            html += `<p style="line-height: 2;">${cloze}</p>`;
+            html += `</div>`;
+            return;
+          }
+
+          if (task.type === "physician_game") {
+            html += `<div class="task-box">`;
+            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
+html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+if (_t.badgeHtml) html += _t.badgeHtml;
+            html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
+            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
+            html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
+            html += `<tbody>`;
+            const patients = [
+              {
+                name: "William",
+                symptoms:
+                  "High fever, shivering, and large, painful black swellings (buboes) in his armpits.",
+              },
+              {
+                name: "Agnes",
+                symptoms:
+                  "Coughing up blood, severe chest pain, and struggling to breathe.",
+              },
+              {
+                name: "John",
+                symptoms:
+                  "Fingers and toes have turned completely black. High fever and vomiting.",
+              },
+              {
+                name: "Thomas",
+                symptoms:
+                  "A runny nose, a mild cough, and feeling a bit tired.",
+              },
+            ];
+            patients.forEach((p) => {
+              html += `<tr>
+                      <td style="border:1px solid #333; padding:8px; font-weight:bold;">${p.name}</td>
+                      <td style="border:1px solid #333; padding:8px;">${p.symptoms}</td>
+                      <td style="border:1px solid #333; padding:8px; height: 60px;"></td>
+                    </tr>`;
+            });
+            html += `</tbody></table></div>`;
+            return;
+          }
+          if (task.type === "matching") {
+            html += `<div class="task-box">`;
+            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
+html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+if (_t.badgeHtml) html += _t.badgeHtml;
+            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
+            const rightMixed = [...task.pairs];
+            task.pairs.forEach((p, i) => {
+              html += `<tr>
+                 <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
+                 <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
+                 <td style="border:1px solid #333; padding:10px; width:40%;">${(rightMixed[i].right || '').replace(/\n/g, '<br>')}</td>
+               </tr>`;
+            });
+            html += `</tbody></table></div>`;
+            return;
+          }
+          if (task.type === "table_planner") {
+            html += `<div class="task-box">`;
+            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
+html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+if (_t.badgeHtml) html += _t.badgeHtml;
+            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
+            task.columns.forEach((c) => {
+              html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
+            });
+            html += `</tr></thead><tbody>`;
+            for (let i = 0; i < task.rows; i++) {
+              html += `<tr>`;
+              task.columns.forEach(() => {
+                html += `<td style="border: 1px solid #333; padding: 8px; height: 60px;"></td>`;
+              });
+              html += `</tr>`;
+            }
+            html += `</tbody></table></div>`;
+            return;
+          }
+          if (task.type === "think_pair_share") {
+            html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
+            let _t = processTaskTextWithTariff(task.text || task.question);
+html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${globalQNum++} ${_t.cleanText}</h4>`;
+if (_t.badgeHtml) html += _t.badgeHtml;
+            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
+               <thead><tr>
+                 <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
+                 <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">2. Partner's Thoughts (Pair)</th>
+               </tr></thead>
+               <tbody><tr>
+                 <td style="border:1px solid #333; padding:8px; height:120px;"></td>
+                 <td style="border:1px solid #333; padding:8px; height:120px;"></td>
+               </tr></tbody>
+             </table></div>`;
+            return;
+          }
+
+          let qText = task.question || task.text || "";
+          qText = qText.replace(/\(Weighing the Evidence toggle tabs\)/ig, '');
+          html += `<div class="task-box" style="page-break-inside: auto;">`;
+
+          let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+          if (match) {
+            let subhead = match[1];
+            let rest = match[2];
+            html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${rest}</p>`;
+          } else {
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${qText}</p>`;
+          }
+          let hasExamTaskLater =
+            lesson.gcse_task ||
+            lesson.exam_practice ||
+            (lesson.extended && lesson.extended.question);
+          let numLines =
+            !hasExamTaskLater && tIdx === lesson.tasks.length - 1 ? 20 : 6;
+          for (let i = 0; i < numLines; i++) {
+            html += `<div class="task-lines-large"></div>`;
+          }
+          html += `</div>`;
+        });
+      }
+      lesson.tasks = originalTasks; // Restore
+    }
+
 
        else {
         let skipConsolidation = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
@@ -1440,18 +1696,6 @@ if (_t.badgeHtml) html += _t.badgeHtml;
 
 
 
-      if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
-        html += `<div class="task-box" style=" ">`;
-        html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-        html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
-        if (lesson.historians_corner.stretch_question) {
-          html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
-          for (let i = 0; i < 4; i++) {
-            html += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
-          }
-        }
-        html += `</div>`;
-      }
 
         if (lesson.extended && lesson.extended.question) {
           

@@ -1,7 +1,6 @@
 import { auditUnit } from './audit_curriculum_data.mjs';
 
 const KS3_UNITS = [
-    'change_1450_1750',
     'early_modern_world',
     'great_war',
     'great_war_part2',
