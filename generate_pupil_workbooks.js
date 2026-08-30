@@ -182,46 +182,7 @@ allDirs.forEach((unitId) => {
       console.error(`Error reading pdf markers for ${unitId}:`, e.message);
     }
   }
-  let globalExamQNum = 1;
-  unitData.lessons.forEach((l) => {
-    function checkAndAdd(obj, force = false) {
-      if (!obj) return;
-      let qText = obj.question || obj.text || obj.topic || obj.stretch_question;
-      if (force || obj.marks || (qText && /\b\d+\s*marks/i.test(qText))) {
-        if (!obj.examQNum) {
-            obj.examQNum = globalExamQNum++;
-        }
-      }
-    }
-    if (l.primary_source) checkAndAdd(l.primary_source);
-    if (l.sources) l.sources.forEach((s) => checkAndAdd(s));
-    if (l.tasks) l.tasks.forEach((t) => checkAndAdd(t));
-    if (l.historians_corner) checkAndAdd(l.historians_corner);
-    if (l.narrative_blocks)
-      l.narrative_blocks.forEach((b) => {
-        if (b.tasks) b.tasks.forEach((t) => checkAndAdd(t));
-        if (b.hinge_question) checkAndAdd(b.hinge_question);
-        if (b.extended) checkAndAdd(b.extended);
-      });
-    if (l.extended) checkAndAdd(l.extended);
-    if (l.gcse_task) {
-      checkAndAdd(l.gcse_task);
-      if (l.gcse_task.tasks) l.gcse_task.tasks.forEach((t) => checkAndAdd(t));
-    }
-    if (l.pair_share) checkAndAdd(l.pair_share);
-    let epArray = l.exam_practice;
-    if (
-      l.exam_practice &&
-      !Array.isArray(l.exam_practice) &&
-      l.exam_practice.questions
-    ) {
-      epArray = l.exam_practice.questions;
-    }
-    if (epArray && Array.isArray(epArray)) {
-      epArray.forEach((ep) => checkAndAdd(ep, true));
-    }
-  });
-
+  
   unitData.lessons.forEach((lesson, lIdx) => {
     if (lesson.exam_practice || lesson.extended) {
         if (lesson.tasks) {
@@ -1477,6 +1438,21 @@ if (_t.badgeHtml) html += _t.badgeHtml;
           }
         };
 
+
+
+      if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
+        html += `<div class="task-box" style=" ">`;
+        html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
+        html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
+        if (lesson.historians_corner.stretch_question) {
+          html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
+          for (let i = 0; i < 4; i++) {
+            html += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
+          }
+        }
+        html += `</div>`;
+      }
+
         if (lesson.extended && lesson.extended.question) {
           
           let letterA = 'A';
@@ -1568,18 +1544,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
         }
 
         
-      if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
-        html += `<div class="task-box" style=" ">`;
-        html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-        html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
-        if (lesson.historians_corner.stretch_question) {
-          html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
-          for (let i = 0; i < 4; i++) {
-            html += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
-          }
-        }
-        html += `</div>`;
-      }
+
         
         if (lesson.gcse_task) {
           html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto; border-top: none; padding-top: 0; margin-top: 0;">`;
@@ -1601,7 +1566,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
                 ? "page-break-before: always; margin-top: 30px;"
                 : "margin-top: 15px;";
               let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<div style="${pbBefore}"><strong>${task.examQNum ? "Exam Q" + task.examQNum + ". " : task.qNum ? "Q" + task.qNum + ". " : ""}${_t.cleanText}</strong></div>`;
+html += `<div style="${pbBefore}"><strong>${"Q" + (globalQNum++) + ". "}${_t.cleanText}</strong></div>`;
 if (_t.badgeHtml) html += _t.badgeHtml;
               renderLines(task.text);
               html += `<br>`;
@@ -1802,7 +1767,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
               ? "page-break-before: always; margin-top: 30px;"
               : "margin-top: 15px;";
             let _tInfo3 = processTaskTextWithTariff(rawQText, true);
-            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${ep.examQNum ? "Exam Q" + ep.examQNum : "Q" + (index + 1)}. ${_tInfo3.cleanText}</strong></div>`;
+            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${"Exam Q" + (index + 1)}. ${_tInfo3.cleanText}</strong></div>`;
             if (_tInfo3.badgeHtml) {
                 questionHtml += _tInfo3.badgeHtml.replace('<div style="margin-top: 5px; margin-bottom: 15px;">', '<div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;">');
             } else if (ep.marks) {
@@ -1953,7 +1918,7 @@ allVideos = [];
             if (lesson.gcse_task.tasks) {
               lesson.gcse_task.tasks.forEach((task) => {
                 let _t2 = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-allExamTasksHtml += `<div style="margin-top: 10px;"><strong>Q${globalQNum++} ${_t2.cleanText}</strong></div>`;
+allExamTasksHtml += `<div style="margin-top: 10px;"><strong>Q. ${_t2.cleanText}</strong></div>`;
 if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
               });
             } else if (lesson.gcse_task.topic) {
@@ -1967,9 +1932,9 @@ if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
                 tLower.includes("explain why") ||
                 tLower.includes("describe");
               if (isFullQuestion) {
-                allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">Q${globalQNum++}. ${topicText}</p>`;
+                allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">Q.. ${topicText}</p>`;
               } else {
-                allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">Q${globalQNum++}. How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+                allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">Q.. How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
               }
 
               if (lesson.gcse_task.sources) {

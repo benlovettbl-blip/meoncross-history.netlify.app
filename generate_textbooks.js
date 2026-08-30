@@ -175,46 +175,6 @@ allDirs.forEach(unitId => {
 <body>
 `;
 
-  let globalExamQNum = 1;
-  unitData.lessons.forEach((l) => {
-    function checkAndAdd(obj, force = false) {
-      if (!obj) return;
-      let qText = obj.question || obj.text || obj.topic || obj.stretch_question;
-      if (force || obj.marks || (qText && /\b\d+\s*marks/i.test(qText))) {
-        if (!obj.examQNum) {
-            obj.examQNum = globalExamQNum++;
-        }
-      }
-    }
-    if (l.primary_source) checkAndAdd(l.primary_source);
-    if (l.sources) l.sources.forEach((s) => checkAndAdd(s));
-    if (l.tasks) l.tasks.forEach((t) => checkAndAdd(t));
-    if (l.historians_corner) checkAndAdd(l.historians_corner);
-    if (l.narrative_blocks)
-      l.narrative_blocks.forEach((b) => {
-        if (b.tasks) b.tasks.forEach((t) => checkAndAdd(t));
-        if (b.hinge_question) checkAndAdd(b.hinge_question);
-        if (b.extended) checkAndAdd(b.extended);
-      });
-    if (l.extended) checkAndAdd(l.extended);
-    if (l.gcse_task) {
-      checkAndAdd(l.gcse_task);
-      if (l.gcse_task.tasks) l.gcse_task.tasks.forEach((t) => checkAndAdd(t));
-    }
-    if (l.pair_share) checkAndAdd(l.pair_share);
-    let epArray = l.exam_practice;
-    if (
-      l.exam_practice &&
-      !Array.isArray(l.exam_practice) &&
-      l.exam_practice.questions
-    ) {
-      epArray = l.exam_practice.questions;
-    }
-    if (epArray && Array.isArray(epArray)) {
-      epArray.forEach((ep) => checkAndAdd(ep, true));
-    }
-  });
-
   workbooksToGenerate.forEach(period => {
     let html = htmlHead;
     const periodLessons = unitData.lessons.filter(period.filter);
@@ -1062,7 +1022,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
           lesson.gcse_task.tasks.forEach(task => {
              let _tText = task.text || task.question || '';
              if (task.marks && !_tText.toLowerCase().includes('marks)')) _tText += ` (${task.marks} marks)`;
-             let _qPrefix = task.examQNum ? `Exam Q${task.examQNum}. ` : `Q${globalQNum++} `;
+             let _qPrefix = `Q${globalQNum++}. `;
              html += `<div style="margin-top: 15px;"><strong>${_qPrefix}${_tText}</strong></div>`;
              renderLines(_tText);
              html += `<br>`;
@@ -1078,7 +1038,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
               tLower.includes("how useful") ||
               tLower.includes("explain why") ||
               tLower.includes("describe");
-            let _qPrefix = lesson.gcse_task.examQNum ? `Exam Q${lesson.gcse_task.examQNum}. ` : `Q${globalQNum++}. `;
+            let _qPrefix = `Q${globalQNum++}. `;
             if (isFullQuestion) {
               html += `<p style="font-weight: bold; font-size: 13pt;">${_qPrefix}${topicText}</p>`;
               if (tLower.includes("write a narrative account")) {
@@ -1118,7 +1078,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
             for(let i=0; i<20; i++) { html += ``; }
           }
         } else if (lesson.gcse_task.topic) {
-          let _qPrefix = lesson.gcse_task.examQNum ? `Exam Q${lesson.gcse_task.examQNum}. ` : `Q${globalQNum++}. `;
+          let _qPrefix = `Q${globalQNum++}. `;
           html += `<p style="font-weight: bold; font-size: 13pt;">${_qPrefix}${lesson.gcse_task.topic}</p>`;
           
           if (lesson.gcse_task.topic.toLowerCase().includes("narrative account")) {

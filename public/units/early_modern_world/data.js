@@ -1,6 +1,5 @@
 const early_modern_world = {
   "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
-  "specification_file": "/data/early_modern_world_overview.json",
   "enquiry": "How 'global' was Britain's transformation between 1450 and 1750?",
   "cover_image": "/images/east_offering.jpg",
   "printable_workbooks": [

@@ -1,0 +1,47 @@
+{
+  "title": "KS3 History: KS3: History of Australia",
+  "subtitle": "A condensed roadmap and revision sheet for this unit.",
+  "sections": [
+    {
+      "id": "section-a",
+      "title": "Core Curriculum Content",
+      "topics": [
+        {
+          "title": "1. Claiming Australia",
+          "points": [
+            "**Objective:** To understand Claiming Australia",
+            "**Key Topics:** Ancestors, Botany Bay, Colony, Gweagal, Navigator, Royal Society"
+          ]
+        },
+        {
+          "title": "2. Creating a Convict Colony",
+          "points": [
+            "**Objective:** To understand Creating a Convict Colony",
+            "**Key Topics:** Convict, Governor, Hard labour, Hulk, Transportation, Sydney Harbour"
+          ]
+        },
+        {
+          "title": "3. Encounters with the Indigenous Peoples",
+          "points": [
+            "**Objective:** To understand Encounters with the Indigenous Peoples",
+            "**Key Topics:** Frontier, Guerrilla Warfare, Dispossession, Massacre"
+          ]
+        },
+        {
+          "title": "4. From Penal Colony to Settlement",
+          "points": [
+            "**Objective:** To understand From Penal Colony to Settlement",
+            "**Key Topics:** Squatter, Merino, Immigrant, Xenophobia"
+          ]
+        },
+        {
+          "title": "5. Assessment - What's the story of Australia?",
+          "points": [
+            "**Objective:** To understand Assessment - What's the story of Australia?",
+            "**Key Topics:** Various historical sources and events"
+          ]
+        }
+      ]
+    }
+  ]
+}

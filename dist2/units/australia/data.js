@@ -1,7 +1,7 @@
 export const unitData = {
   "specification_file": "",
   "title": "KS3: History of Australia",
-  "homepage_background": "/images/sydney_cove_1792.jpg",
+  "homepage_background": "",
   "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",
   "cover_image": "/images/prison_hulks.jpg",
   "cover_caption": "An 18th-century sketch of Prison Hulks in Portsmouth Harbour by Louis Garneray.",
@@ -20,7 +20,6 @@ export const unitData = {
     {
       "id": "lesson_1",
       "title": "Claiming Australia",
-      "banner": "/images/gweagal_encounter.jpg",
       "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
       "teacher_notes": {
         "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
@@ -325,7 +324,6 @@ export const unitData = {
     {
       "id": "lesson_2",
       "title": "Creating a Convict Colony",
-      "banner": "/images/prison_hulks.jpg",
       "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
       "teacher_notes": {
         "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
@@ -659,7 +657,6 @@ export const unitData = {
     {
       "id": "lesson_3",
       "title": "Encounters with the Indigenous Peoples",
-      "banner": "/images/sydney_cove_1792.jpg",
       "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
       "teacher_notes": {
         "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
@@ -842,7 +839,6 @@ export const unitData = {
     {
       "id": "lesson_4",
       "title": "From Penal Colony to Settlement",
-      "banner": "/images/ballarat_gold.jpg",
       "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
       "teacher_notes": {
         "primer": "This lesson transitions the narrative from the early struggles of the convict colony to the explosive economic growth of the 1850s gold rushes. Students will explore how free settlers, the wool industry, and the arrival of global immigrants (especially Chinese miners) fundamentally changed the demographic and economic landscape of Australia.",
@@ -1038,21 +1034,21 @@ export const unitData = {
     },
     {
       "id": "lesson_5",
-      "title": "End of Unit Assessment",
-      "banner": "/images/james_cook.jpg",
-      "homepage_background": "/images/assessment_bg.jpg",
+      "title": "Lesson 5: Assessment - What's the story of Australia?",
+      "banner": "/images/sydney_cove.jpg",
+      "banner_position": "center",
       "enquiry": "How did New South Wales develop, and how should we assess its history?",
       "teacher_notes": {
-        "primer": "This is the final assessment lesson for the Australia unit. It provides three differentiated choices for students to demonstrate their historical knowledge and skills.",
+        "primer": "This is the final assessment lesson for the Australia unit. It provides two differentiated choices for students to demonstrate their historical knowledge and skills.",
         "objectives": [
           {
             "objective": "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
-            "primer": "Direct students to Option 1 for a narrative account.",
+            "primer": "Direct students to Assessment 1 for a narrative account.",
             "question": "Can you sequence the key turning points in the colony's development?"
           },
           {
             "objective": "Evaluate the usefulness of primary sources for historical enquiries.",
-            "primer": "Direct students to Option 2 for GCSE-style source utility practice.",
+            "primer": "Direct students to Assessment 2 for GCSE-style source utility practice.",
             "question": "Why does the provenance of a source affect its usefulness to a historian?"
           }
         ]
@@ -1060,136 +1056,32 @@ export const unitData = {
       "narrative_blocks": [
         {
           "type": "narrative",
-          "theme_heading": "Option 1: Write a Narrative Account",
+          "theme_heading": "Assessment 1: Write a Narrative Account",
           "text": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855. \n\nYou may use the following in your answer:\n* The near-starvation of the First Fleet (1788)\n* The introduction of Merino sheep and the wool industry\n\nYou must also use information of your own.",
           "tasks": [
             {
-              "question": "Lower-Ability Scaffolding: Sentence Starters",
+              "question": "Sentence Starters",
               "model": "Use these sentence starters to build your narrative in chronological order:\n\n1. The development of Australia began in 1788 when...\n2. This was a very difficult period because...\n3. However, the situation changed dramatically when John Macarthur...\n4. This led to New South Wales becoming a profitable colony because...\n5. Finally, the development of Australia accelerated in the 1850s due to..."
             }
           ]
         },
         {
           "type": "narrative",
-          "theme_heading": "Option 2: 'How Useful' Source Analysis",
-          "text": "<p>Study Sources A and B, and Interpretations 1 and 2 below. Then answer the four Edexcel-style questions.</p>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source A: Extract from a letter written by a British squatter in New South Wales, published in a London newspaper in 1840.</strong><br/><br/>\"The land here is vast and entirely unimproved by the native people, who simply wander across it. We have brought civilization, built permanent farms, and our flocks of sheep are multiplying rapidly. We are turning a wasteland into a highly profitable jewel of the Empire. The natives are melting away, which is the natural outcome when a superior race arrives.\"<br/><br/><em>Provenance Clue: Written by a wealthy squatter trying to encourage more British investment, in an era where racism was common.</em>\n</div>\n\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source B: Extract from a report by Lancelot Threlkeld, a Christian missionary living among the Awabakal people, written in 1838.</strong><br/><br/>\"It is a tragedy to witness the complete destruction of these people. The white settlers have stolen their hunting grounds. When the starving natives steal a single sheep to survive, they are hunted down and shot like dogs by the squatters. The British government has done nothing to protect them from this slaughter.\"<br/><br/><em>Provenance Clue: Written by a missionary whose job was to protect Aboriginal people, meaning he sympathised with them and saw the brutality of the squatters firsthand.</em>\n</div>\n</div>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#eff6ff; padding:15px; border-left:4px solid #2563eb; margin-bottom:15px;'>\n<strong>Interpretation 1 (Adapted from historian Keith Windschuttle, <em>The Fabrication of Aboriginal History</em>, 2002):</strong><br/><br/>\"The creation of the Australian nation was a remarkable achievement of British civilization. The idea that there was a systematic 'frontier war' or genocide against the Aboriginal people is an exaggeration. While there were isolated clashes over resources, the British authorities actively sought to protect the native population. The tragic decline of Aboriginal numbers was largely due to European diseases, not organized massacres.\" \n</div>\n\n<div style='flex:1; min-width:300px; background:#eff6ff; padding:15px; border-left:4px solid #2563eb; margin-bottom:15px;'>\n<strong>Interpretation 2 (Adapted from historian Henry Reynolds, <em>The Other Side of the Frontier</em>, 1981):</strong><br/><br/>\"The British colonization of Australia was essentially a violent conquest. The Aboriginal people did not passively surrender their lands; they fought a desperate and highly organized frontier war to defend their sovereignty. The British response was brutal, involving widespread massacres and the systematic dispossession of Indigenous Australians to make way for sheep farms.\"\n</div>\n</div>",
-          "source": {
-            "id": "source_utility_a",
-            "type": "written",
-            "title": "Source A: From the journal of Arthur Bowes Smyth, a surgeon on the First Fleet (1788)",
-            "content": "The natives here are completely naked. They seem to have no concept of property or farming. When we approached them, they threw spears at us, forcing Governor Phillip to order a musket to be fired over their heads. They are a wretched people, wandering the land without any permanent homes.",
-            "provenance_clue": "Arthur Bowes Smyth was a British naval surgeon arriving on the First Fleet. Because he was British and had never encountered Aboriginal culture before, he did not understand that they successfully managed the land without needing European-style farms. How does this affect his reliability?",
-            "caption": "Source A: From the journal of Arthur Bowes Smyth, a surgeon on the First Fleet (1788).",
-            "source_context": "Arthur Bowes Smyth was a well-educated naval surgeon who kept a detailed private diary of the First Fleet voyage. As a middle-class officer, his diary offers an unfiltered, primary perspective on the brutal conditions aboard the ships, as he was responsible for the health of both the convicts and the crew. Because this was a private diary not intended for publication, it is a highly reliable insight into his genuine thoughts."
-          },
-          "tasks": [
-            {
-              "question": "Scaffolding for Source A:",
-              "model": "1. **Content:** What does the source actually say? (e.g., it shows the British thought the Aboriginals were 'wretched').\n2. **Context:** What do you know about this from your lessons? (e.g., they weren't wretched, they just lived differently).\n3. **Provenance (NOP):** Who wrote it, when, and why? How does that affect its usefulness?"
-            }
-          ]
-        },
-        {
-          "type": "narrative",
-          "theme_heading": "Option 2 (Continued): Source B",
-          "text": "Now analyze the second source for your 'How Useful' assessment.",
-          "source": {
-            "id": "source_utility_b",
-            "type": "written",
-            "title": "Source B: Extract from Wurundjeri leader William Barak's testimony to the 1881 Parliamentary Inquiry",
-            "content": "Before the white men came, we had our own laws and our own land. Now, they have taken everything. The squatters push their sheep onto our hunting grounds, and the Board tries to control every aspect of our lives at Coranderrk. We don't want any Board over us... we will show to the country that we can work the land and make it pay.",
-            "provenance_clue": "William Barak was a highly respected First Nations leader testifying at an official government inquiry. His motive was to protect his people's farm at Coranderrk and fight for Aboriginal rights. Does this make his testimony more or less useful for historians?",
-            "caption": "Source B: Extract from Wurundjeri leader William Barak's testimony to the 1881 Parliamentary Inquiry.",
-            "source_context": "William Barak was a respected Aboriginal elder fighting for the independence of the Coranderrk farming community. By 1881, the government 'Board for the Protection of Aborigines' was attempting to seize their successful farm and force them off the land. Barak gave this testimony in an official parliamentary inquiry to publicly shame the government and prove that Aboriginal people were perfectly capable of running their own affairs without white interference."
-          },
-          "tasks": [
-            {
-              "question": "Scaffolding for Source B:",
-              "model": "1. **Content:** What does the source actually say? (e.g., it reveals the anger over lost land).\n2. **Context:** What do you know about this from your lessons? (e.g., squatters were stealing land for sheep).\n3. **Provenance (NOP):** Who wrote it, when, and why? How does that affect its usefulness?"
-            }
-          ]
-        },
-        {
-          "type": "narrative",
-          "theme_heading": "Option 3: The Historical Debate",
-          "text": "**Statement:** *\"The British colonization of Australia was a triumph of survival and progress.\"*\n\n**Question:** How far do you agree with this statement?",
-          "tasks": [
-            {
-              "question": "Scaffolding: Paragraph Structure",
-              "model": "Use this structure to ensure a balanced argument:\n\n*   **Introduction:** Briefly outline the two sides of the debate and state your overall opinion.\n*   **Paragraph 1 (Agree):** Explain the \"triumph\" (e.g., surviving starvation, building a rich wool industry, the gold rush).\n*   **Paragraph 2 (Disagree):** Explain the tragedy (e.g., Terra Nullius, disease, frontier violence, theft of land from First Nations peoples).\n*   **Conclusion:** Weigh up the evidence. Which side is stronger? Did the 'progress' justify the human cost?"
-            }
-          ]
-        },
-        {
-          "type": "narrative",
-          "theme_heading": "Option 4: Museum Exhibition Curator",
-          "text": "**Task:** Design a museum exhibition with exactly 5 'artefacts' that tell the complex story of Australia's colonization. You must write a curator's plaque for each item, explaining its historical significance and ensuring both British and Aboriginal perspectives are fairly represented.",
-          "tasks": [
-            {
-              "question": "Scaffolding: Curator's Checklist",
-              "model": "Before you submit your exhibition, check that you have:\n\n1. Chosen exactly 5 distinct artefacts (e.g., a convict leg-iron, a Merino sheep fleece, a letter from Bennelong).\n2. Ensured at least 2 artefacts represent the First Nations perspective.\n3. Ensured at least 2 artefacts represent the British/convict perspective.\n4. Written a short paragraph for *each* artefact explaining why it is historically significant."
-            }
-          ]
+          "theme_heading": "Assessment 2: 'How Useful' Source Analysis",
+          "text": "<p>Study Sources A and B below. Then answer the question: <strong>How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?</strong></p>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source A: Extract from a letter written by a British squatter in New South Wales, published in a London newspaper in 1840.</strong><br/><br/>\"The land here is vast and entirely unimproved by the native people, who simply wander across it. We have brought civilization, built permanent farms, and our flocks of sheep are multiplying rapidly. We are turning a wasteland into a highly profitable jewel of the Empire. The natives are melting away, which is the natural outcome when a superior race arrives.\"<br/><br/><em>Provenance Clue: Written by a wealthy squatter trying to encourage more British investment, in an era where racism was common.</em>\n</div>\n\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source B: Extract from a report by Lancelot Threlkeld, a Christian missionary living among the Awabakal people, written in 1838.</strong><br/><br/>\"It is a tragedy to witness the complete destruction of these people. The white settlers have stolen their hunting grounds. When the starving natives steal a single sheep to survive, they are hunted down and shot like dogs by the squatters. The British government has done nothing to protect them from this slaughter.\"<br/><br/><em>Provenance Clue: Written by a missionary whose job was to protect Aboriginal people, meaning he sympathised with them and saw the brutality of the squatters firsthand.</em>\n</div>\n</div>\n\n<div style='margin-top:20px; padding: 15px; background-color: #fffbeb; border-left: 4px solid #fbbf24;'>\n<h4>Scaffolding: How to analyze these sources</h4>\n<p>For <strong>both</strong> sources, make sure you address:</p>\n<ul>\n<li><strong>Content:</strong> What does the source actually say? What details are useful?</li>\n<li><strong>Context:</strong> What do you know about this from your lessons that supports or challenges the source?</li>\n<li><strong>Provenance (NOP):</strong> Who wrote it, when, and why? How does that affect its reliability and usefulness?</li>\n</ul>\n</div>",
+          "tasks": []
         }
       ],
       "tasks": [
         {
-          "question": "Who introduced the Merino sheep to Australia?",
-          "model": "John Macarthur.",
-          "type": "recall"
+          "question": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855.",
+          "marks": "8"
         },
         {
-          "question": "Why was the Merino sheep so important?",
-          "model": "It produced high-quality wool that made the colony extremely wealthy.",
-          "type": "recall"
-        },
-        {
-          "question": "What is a 'squatter'?",
-          "model": "A wealthy settler who illegally claimed massive areas of Aboriginal land for sheep farming.",
-          "type": "recall"
-        },
-        {
-          "question": "What happened in Australia in 1851?",
-          "model": "The Gold Rush began.",
-          "type": "recall"
-        },
-        {
-          "question": "How did the Gold Rush change the population?",
-          "model": "It tripled the population in ten years as free settlers arrived from around the world.",
-          "type": "recall"
-        },
-        {
-          "question": "What was the impact of the sheep industry on Aboriginal people?",
-          "model": "It destroyed their hunting grounds and water sources, leading to starvation and conflict.",
-          "type": "recall"
-        },
-        {
-          "question": "Did the British government stop the squatters?",
-          "model": "No, they eventually gave them legal leases because the wool trade was so profitable.",
-          "type": "recall"
-        },
-        {
-          "question": "What was the original purpose of the colony?",
-          "model": "A prison (penal colony).",
-          "type": "recall"
-        },
-        {
-          "question": "How did the colony change by 1850?",
-          "model": "It transitioned from a struggling prison into a wealthy, permanent settlement.",
-          "type": "recall"
-        },
-        {
-          "question": "Who suffered the most as the colony expanded?",
-          "model": "The First Nations peoples, whose land was stolen.",
-          "type": "recall"
+          "question": "How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?",
+          "marks": "8"
         }
-      ],
-      "pair_share": {
-        "prompt": "Discuss with your partner: Based on all the evidence you have studied in this unit, do you personally believe the colonization of Australia was a triumph or a tragedy? Why?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
-      }
+      ]
     }
   ],
   "quizPack": [

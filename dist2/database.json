@@ -3,7 +3,7 @@
     "data": {
       "specification_file": "",
       "title": "KS3: History of Australia",
-      "homepage_background": "/images/sydney_cove_1792.jpg",
+      "homepage_background": "",
       "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",
       "cover_image": "/images/prison_hulks.jpg",
       "cover_caption": "An 18th-century sketch of Prison Hulks in Portsmouth Harbour by Louis Garneray.",
@@ -22,7 +22,6 @@
         {
           "id": "lesson_1",
           "title": "Claiming Australia",
-          "banner": "/images/gweagal_encounter.jpg",
           "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
           "teacher_notes": {
             "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
@@ -316,6 +315,7 @@
               "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
             }
           ],
+          "banner": "/images/gweagal_encounter.jpg",
           "pair_share": {
             "prompt": "Discuss with your partner: Why does the story of the Gweagal resistance at Botany Bay challenge the old, traditional idea that Australia was 'peacefully settled'?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -326,7 +326,6 @@
         {
           "id": "lesson_2",
           "title": "Creating a Convict Colony",
-          "banner": "/images/prison_hulks.jpg",
           "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
           "teacher_notes": {
             "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
@@ -648,6 +647,7 @@
               "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
             }
           ],
+          "banner": "/images/prison_hulks.jpg",
           "banner_position": "bottom center",
           "pair_share": {
             "prompt": "Discuss with your partner: If you were an officer in the First Fleet, why might you be angry that Governor Phillip gave you the exact same food ration as a convict?",
@@ -659,7 +659,6 @@
         {
           "id": "lesson_3",
           "title": "Encounters with the Indigenous Peoples",
-          "banner": "/images/sydney_cove_1792.jpg",
           "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
           "teacher_notes": {
             "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
@@ -831,6 +830,7 @@
             }
           ],
           "tasks": [],
+          "banner": "/images/sydney_cove_1792.jpg",
           "pair_share": {
             "prompt": "Discuss with your partner: Did the arrival of the First Fleet represent a 'settlement' or an 'invasion'?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -841,7 +841,6 @@
         {
           "id": "lesson_4",
           "title": "From Penal Colony to Settlement",
-          "banner": "/images/ballarat_gold.jpg",
           "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
           "teacher_notes": {
             "primer": "This lesson transitions the narrative from the early struggles of the convict colony to the explosive economic growth of the 1850s gold rushes. Students will explore how free settlers, the wool industry, and the arrival of global immigrants (especially Chinese miners) fundamentally changed the demographic and economic landscape of Australia.",
@@ -1027,6 +1026,7 @@
             }
           ],
           "tasks": [],
+          "banner": "/images/ballarat_gold.jpg",
           "pair_share": {
             "prompt": "Discuss with your partner: Once poor migrants realized they could make a fortune digging for gold in Australia, why was it impossible for the British government to continue using transportation as a terrifying punishment?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -1036,21 +1036,21 @@
         },
         {
           "id": "lesson_5",
-          "title": "End of Unit Assessment",
-          "banner": "/images/james_cook.jpg",
-          "homepage_background": "/images/assessment_bg.jpg",
+          "title": "Lesson 5: Assessment - What's the story of Australia?",
+          "banner": "/images/sydney_cove.jpg",
+          "banner_position": "center",
           "enquiry": "How did New South Wales develop, and how should we assess its history?",
           "teacher_notes": {
-            "primer": "This is the final assessment lesson for the Australia unit. It provides three differentiated choices for students to demonstrate their historical knowledge and skills.",
+            "primer": "This is the final assessment lesson for the Australia unit. It provides two differentiated choices for students to demonstrate their historical knowledge and skills.",
             "objectives": [
               {
                 "objective": "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
-                "primer": "Direct students to Option 1 for a narrative account.",
+                "primer": "Direct students to Assessment 1 for a narrative account.",
                 "question": "Can you sequence the key turning points in the colony's development?"
               },
               {
                 "objective": "Evaluate the usefulness of primary sources for historical enquiries.",
-                "primer": "Direct students to Option 2 for GCSE-style source utility practice.",
+                "primer": "Direct students to Assessment 2 for GCSE-style source utility practice.",
                 "question": "Why does the provenance of a source affect its usefulness to a historian?"
               }
             ]
@@ -1058,136 +1058,32 @@
           "narrative_blocks": [
             {
               "type": "narrative",
-              "theme_heading": "Option 1: Write a Narrative Account",
+              "theme_heading": "Assessment 1: Write a Narrative Account",
               "text": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855. \n\nYou may use the following in your answer:\n* The near-starvation of the First Fleet (1788)\n* The introduction of Merino sheep and the wool industry\n\nYou must also use information of your own.",
               "tasks": [
                 {
-                  "question": "Lower-Ability Scaffolding: Sentence Starters",
+                  "question": "Sentence Starters",
                   "model": "Use these sentence starters to build your narrative in chronological order:\n\n1. The development of Australia began in 1788 when...\n2. This was a very difficult period because...\n3. However, the situation changed dramatically when John Macarthur...\n4. This led to New South Wales becoming a profitable colony because...\n5. Finally, the development of Australia accelerated in the 1850s due to..."
                 }
               ]
             },
             {
               "type": "narrative",
-              "theme_heading": "Option 2: 'How Useful' Source Analysis",
-              "text": "<p>Study Sources A and B, and Interpretations 1 and 2 below. Then answer the four Edexcel-style questions.</p>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source A: Extract from a letter written by a British squatter in New South Wales, published in a London newspaper in 1840.</strong><br/><br/>\"The land here is vast and entirely unimproved by the native people, who simply wander across it. We have brought civilization, built permanent farms, and our flocks of sheep are multiplying rapidly. We are turning a wasteland into a highly profitable jewel of the Empire. The natives are melting away, which is the natural outcome when a superior race arrives.\"<br/><br/><em>Provenance Clue: Written by a wealthy squatter trying to encourage more British investment, in an era where racism was common.</em>\n</div>\n\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source B: Extract from a report by Lancelot Threlkeld, a Christian missionary living among the Awabakal people, written in 1838.</strong><br/><br/>\"It is a tragedy to witness the complete destruction of these people. The white settlers have stolen their hunting grounds. When the starving natives steal a single sheep to survive, they are hunted down and shot like dogs by the squatters. The British government has done nothing to protect them from this slaughter.\"<br/><br/><em>Provenance Clue: Written by a missionary whose job was to protect Aboriginal people, meaning he sympathised with them and saw the brutality of the squatters firsthand.</em>\n</div>\n</div>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#eff6ff; padding:15px; border-left:4px solid #2563eb; margin-bottom:15px;'>\n<strong>Interpretation 1 (Adapted from historian Keith Windschuttle, <em>The Fabrication of Aboriginal History</em>, 2002):</strong><br/><br/>\"The creation of the Australian nation was a remarkable achievement of British civilization. The idea that there was a systematic 'frontier war' or genocide against the Aboriginal people is an exaggeration. While there were isolated clashes over resources, the British authorities actively sought to protect the native population. The tragic decline of Aboriginal numbers was largely due to European diseases, not organized massacres.\" \n</div>\n\n<div style='flex:1; min-width:300px; background:#eff6ff; padding:15px; border-left:4px solid #2563eb; margin-bottom:15px;'>\n<strong>Interpretation 2 (Adapted from historian Henry Reynolds, <em>The Other Side of the Frontier</em>, 1981):</strong><br/><br/>\"The British colonization of Australia was essentially a violent conquest. The Aboriginal people did not passively surrender their lands; they fought a desperate and highly organized frontier war to defend their sovereignty. The British response was brutal, involving widespread massacres and the systematic dispossession of Indigenous Australians to make way for sheep farms.\"\n</div>\n</div>",
-              "source": {
-                "id": "source_utility_a",
-                "type": "written",
-                "title": "Source A: From the journal of Arthur Bowes Smyth, a surgeon on the First Fleet (1788)",
-                "content": "The natives here are completely naked. They seem to have no concept of property or farming. When we approached them, they threw spears at us, forcing Governor Phillip to order a musket to be fired over their heads. They are a wretched people, wandering the land without any permanent homes.",
-                "provenance_clue": "Arthur Bowes Smyth was a British naval surgeon arriving on the First Fleet. Because he was British and had never encountered Aboriginal culture before, he did not understand that they successfully managed the land without needing European-style farms. How does this affect his reliability?",
-                "caption": "Source A: From the journal of Arthur Bowes Smyth, a surgeon on the First Fleet (1788).",
-                "source_context": "Arthur Bowes Smyth was a well-educated naval surgeon who kept a detailed private diary of the First Fleet voyage. As a middle-class officer, his diary offers an unfiltered, primary perspective on the brutal conditions aboard the ships, as he was responsible for the health of both the convicts and the crew. Because this was a private diary not intended for publication, it is a highly reliable insight into his genuine thoughts."
-              },
-              "tasks": [
-                {
-                  "question": "Scaffolding for Source A:",
-                  "model": "1. **Content:** What does the source actually say? (e.g., it shows the British thought the Aboriginals were 'wretched').\n2. **Context:** What do you know about this from your lessons? (e.g., they weren't wretched, they just lived differently).\n3. **Provenance (NOP):** Who wrote it, when, and why? How does that affect its usefulness?"
-                }
-              ]
-            },
-            {
-              "type": "narrative",
-              "theme_heading": "Option 2 (Continued): Source B",
-              "text": "Now analyze the second source for your 'How Useful' assessment.",
-              "source": {
-                "id": "source_utility_b",
-                "type": "written",
-                "title": "Source B: Extract from Wurundjeri leader William Barak's testimony to the 1881 Parliamentary Inquiry",
-                "content": "Before the white men came, we had our own laws and our own land. Now, they have taken everything. The squatters push their sheep onto our hunting grounds, and the Board tries to control every aspect of our lives at Coranderrk. We don't want any Board over us... we will show to the country that we can work the land and make it pay.",
-                "provenance_clue": "William Barak was a highly respected First Nations leader testifying at an official government inquiry. His motive was to protect his people's farm at Coranderrk and fight for Aboriginal rights. Does this make his testimony more or less useful for historians?",
-                "caption": "Source B: Extract from Wurundjeri leader William Barak's testimony to the 1881 Parliamentary Inquiry.",
-                "source_context": "William Barak was a respected Aboriginal elder fighting for the independence of the Coranderrk farming community. By 1881, the government 'Board for the Protection of Aborigines' was attempting to seize their successful farm and force them off the land. Barak gave this testimony in an official parliamentary inquiry to publicly shame the government and prove that Aboriginal people were perfectly capable of running their own affairs without white interference."
-              },
-              "tasks": [
-                {
-                  "question": "Scaffolding for Source B:",
-                  "model": "1. **Content:** What does the source actually say? (e.g., it reveals the anger over lost land).\n2. **Context:** What do you know about this from your lessons? (e.g., squatters were stealing land for sheep).\n3. **Provenance (NOP):** Who wrote it, when, and why? How does that affect its usefulness?"
-                }
-              ]
-            },
-            {
-              "type": "narrative",
-              "theme_heading": "Option 3: The Historical Debate",
-              "text": "**Statement:** *\"The British colonization of Australia was a triumph of survival and progress.\"*\n\n**Question:** How far do you agree with this statement?",
-              "tasks": [
-                {
-                  "question": "Scaffolding: Paragraph Structure",
-                  "model": "Use this structure to ensure a balanced argument:\n\n*   **Introduction:** Briefly outline the two sides of the debate and state your overall opinion.\n*   **Paragraph 1 (Agree):** Explain the \"triumph\" (e.g., surviving starvation, building a rich wool industry, the gold rush).\n*   **Paragraph 2 (Disagree):** Explain the tragedy (e.g., Terra Nullius, disease, frontier violence, theft of land from First Nations peoples).\n*   **Conclusion:** Weigh up the evidence. Which side is stronger? Did the 'progress' justify the human cost?"
-                }
-              ]
-            },
-            {
-              "type": "narrative",
-              "theme_heading": "Option 4: Museum Exhibition Curator",
-              "text": "**Task:** Design a museum exhibition with exactly 5 'artefacts' that tell the complex story of Australia's colonization. You must write a curator's plaque for each item, explaining its historical significance and ensuring both British and Aboriginal perspectives are fairly represented.",
-              "tasks": [
-                {
-                  "question": "Scaffolding: Curator's Checklist",
-                  "model": "Before you submit your exhibition, check that you have:\n\n1. Chosen exactly 5 distinct artefacts (e.g., a convict leg-iron, a Merino sheep fleece, a letter from Bennelong).\n2. Ensured at least 2 artefacts represent the First Nations perspective.\n3. Ensured at least 2 artefacts represent the British/convict perspective.\n4. Written a short paragraph for *each* artefact explaining why it is historically significant."
-                }
-              ]
+              "theme_heading": "Assessment 2: 'How Useful' Source Analysis",
+              "text": "<p>Study Sources A and B below. Then answer the question: <strong>How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?</strong></p>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source A: Extract from a letter written by a British squatter in New South Wales, published in a London newspaper in 1840.</strong><br/><br/>\"The land here is vast and entirely unimproved by the native people, who simply wander across it. We have brought civilization, built permanent farms, and our flocks of sheep are multiplying rapidly. We are turning a wasteland into a highly profitable jewel of the Empire. The natives are melting away, which is the natural outcome when a superior race arrives.\"<br/><br/><em>Provenance Clue: Written by a wealthy squatter trying to encourage more British investment, in an era where racism was common.</em>\n</div>\n\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source B: Extract from a report by Lancelot Threlkeld, a Christian missionary living among the Awabakal people, written in 1838.</strong><br/><br/>\"It is a tragedy to witness the complete destruction of these people. The white settlers have stolen their hunting grounds. When the starving natives steal a single sheep to survive, they are hunted down and shot like dogs by the squatters. The British government has done nothing to protect them from this slaughter.\"<br/><br/><em>Provenance Clue: Written by a missionary whose job was to protect Aboriginal people, meaning he sympathised with them and saw the brutality of the squatters firsthand.</em>\n</div>\n</div>\n\n<div style='margin-top:20px; padding: 15px; background-color: #fffbeb; border-left: 4px solid #fbbf24;'>\n<h4>Scaffolding: How to analyze these sources</h4>\n<p>For <strong>both</strong> sources, make sure you address:</p>\n<ul>\n<li><strong>Content:</strong> What does the source actually say? What details are useful?</li>\n<li><strong>Context:</strong> What do you know about this from your lessons that supports or challenges the source?</li>\n<li><strong>Provenance (NOP):</strong> Who wrote it, when, and why? How does that affect its reliability and usefulness?</li>\n</ul>\n</div>",
+              "tasks": []
             }
           ],
           "tasks": [
             {
-              "question": "Who introduced the Merino sheep to Australia?",
-              "model": "John Macarthur.",
-              "type": "recall"
+              "question": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855.",
+              "marks": "8"
             },
             {
-              "question": "Why was the Merino sheep so important?",
-              "model": "It produced high-quality wool that made the colony extremely wealthy.",
-              "type": "recall"
-            },
-            {
-              "question": "What is a 'squatter'?",
-              "model": "A wealthy settler who illegally claimed massive areas of Aboriginal land for sheep farming.",
-              "type": "recall"
-            },
-            {
-              "question": "What happened in Australia in 1851?",
-              "model": "The Gold Rush began.",
-              "type": "recall"
-            },
-            {
-              "question": "How did the Gold Rush change the population?",
-              "model": "It tripled the population in ten years as free settlers arrived from around the world.",
-              "type": "recall"
-            },
-            {
-              "question": "What was the impact of the sheep industry on Aboriginal people?",
-              "model": "It destroyed their hunting grounds and water sources, leading to starvation and conflict.",
-              "type": "recall"
-            },
-            {
-              "question": "Did the British government stop the squatters?",
-              "model": "No, they eventually gave them legal leases because the wool trade was so profitable.",
-              "type": "recall"
-            },
-            {
-              "question": "What was the original purpose of the colony?",
-              "model": "A prison (penal colony).",
-              "type": "recall"
-            },
-            {
-              "question": "How did the colony change by 1850?",
-              "model": "It transitioned from a struggling prison into a wealthy, permanent settlement.",
-              "type": "recall"
-            },
-            {
-              "question": "Who suffered the most as the colony expanded?",
-              "model": "The First Nations peoples, whose land was stolen.",
-              "type": "recall"
+              "question": "How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?",
+              "marks": "8"
             }
-          ],
-          "pair_share": {
-            "prompt": "Discuss with your partner: Based on all the evidence you have studied in this unit, do you personally believe the colonization of Australia was a triumph or a tragedy? Why?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
+          ]
         }
       ],
       "quizPack": [
@@ -1935,7 +1831,68 @@
         }
       ],
       "assessments": []
-    }
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
   },
   "cme_new": {
     "data": {
@@ -2376,44 +2333,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "Why did Britain refer the Palestine issue to the UN in 1947?",
-                "answer": "Due to the rising cost and the violence of the Jewish insurgency."
-              },
-              {
-                "question": "What did the UN Special Committee on Palestine (UNSCOP) recommend?",
-                "answer": "The partition of Palestine into separate Jewish and Arab states."
-              },
-              {
-                "question": "How did the Arab Higher Committee respond to the UN Partition Plan?",
-                "answer": "They rejected it completely."
-              },
-              {
-                "question": "What was the significance of the attack on Deir Yassin in April 1948?",
-                "answer": "It led to a mass exodus of Palestinian Arabs out of fear."
-              },
-              {
-                "question": "When did David Ben-Gurion officially declare the creation of the State of Israel?",
-                "answer": "14 May 1948."
-              },
-              {
                 "question": "What does 'empire' mean?",
-                "answer": "Countries controlled by a single ruler."
+                "answer": "A group of countries or territories controlled by a single ruler or state."
               },
               {
-                "question": "What does 'mandate' mean?",
-                "answer": "A commission given by the League of Nations to govern a territory."
+                "question": "What does 'colony' mean?",
+                "answer": "A country or area under the political control of another country."
               },
               {
-                "question": "What was the League of Nations?",
-                "answer": "An international peace organization formed after WW1."
-              },
-              {
-                "question": "In what year did WW1 end?",
+                "question": "In what year did the First World War end?",
                 "answer": "1918."
               },
               {
+                "question": "What does 'mandate' mean in an international context?",
+                "answer": "An official order or commission given by the League of Nations to govern a territory."
+              },
+              {
+                "question": "What was the League of Nations?",
+                "answer": "An international organization formed after WW1 to promote peace and prevent war."
+              },
+              {
+                "question": "What does 'assassination' mean?",
+                "answer": "The murder of a prominent person, often for political reasons."
+              },
+              {
+                "question": "What is a 'dictatorship'?",
+                "answer": "A country ruled by a single leader with total power."
+              },
+              {
+                "question": "What is a 'republic'?",
+                "answer": "A country without a monarch."
+              },
+              {
                 "question": "What does 'nationalism' mean?",
-                "answer": "Strong identification with one's own nation."
+                "answer": "A strong identification with one's own nation and support for its interests."
+              },
+              {
+                "question": "What is 'propaganda'?",
+                "answer": "Biased or misleading information used to promote a political cause."
               }
             ]
           },
@@ -2421,7 +2378,7 @@
             "title": "Source A: The Ruins of the King David Hotel, 1946",
             "src": "/assets/cme_new_king_david_ruins.png",
             "caption": "The southern wing of the King David Hotel in Jerusalem following the Irgun bomb attack on 22 July 1946.",
-            "question": "Enquiry: What impact did the King David Hotel bombing have on the British Mandate?",
+            "question": "What impact did the King David Hotel bombing have on the British Mandate?",
             "tasks": [
               {
                 "type": "draw",
@@ -2796,44 +2753,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "What was the 1948-49 Arab-Israeli War?",
-                "answer": "The invasion of Israel by surrounding Arab nations immediately after it declared independence."
+                "question": "Why did Britain refer the Palestine issue to the UN in 1947?",
+                "answer": "Due to the rising cost and the violence of the Jewish insurgency."
               },
               {
-                "question": "Which Arab nations invaded Israel in 1948?",
-                "answer": "Egypt, Syria, Transjordan, Lebanon, and Iraq."
+                "question": "What did the UN Special Committee on Palestine (UNSCOP) recommend?",
+                "answer": "The partition of Palestine into separate Jewish and Arab states."
               },
               {
-                "question": "Why did the Israelis ultimately win the 1948-49 war?",
-                "answer": "They were highly motivated, secured weapons from Czechoslovakia, and the Arab armies were uncoordinated."
+                "question": "How did the Arab Higher Committee respond to the UN Partition Plan?",
+                "answer": "They rejected it completely."
               },
               {
-                "question": "What was the impact of the war on Israel's borders?",
-                "answer": "Israel gained 21% more territory than the UN Partition Plan had given them."
+                "question": "What was the significance of the attack on Deir Yassin in April 1948?",
+                "answer": "It led to a mass exodus of Palestinian Arabs out of fear."
               },
               {
-                "question": "What was the Nakba?",
-                "answer": "The 'Catastrophe'—the expulsion and flight of approx. 700,000 Palestinian Arabs."
-              },
-              {
-                "question": "When did David Ben-Gurion declare the State of Israel?",
+                "question": "When did David Ben-Gurion officially declare the creation of the State of Israel?",
                 "answer": "14 May 1948."
               },
               {
-                "question": "What did UNSCOP recommend in 1947?",
-                "answer": "The partition of Palestine into two states."
+                "question": "What does 'empire' mean?",
+                "answer": "Countries controlled by a single ruler."
               },
               {
-                "question": "Why did Britain refer the issue to the UN?",
-                "answer": "Violence and cost of the mandate."
+                "question": "What does 'mandate' mean?",
+                "answer": "A commission given by the League of Nations to govern a territory."
               },
               {
-                "question": "What was the attack on Deir Yassin?",
-                "answer": "A massacre that caused mass Arab panic and flight."
+                "question": "What was the League of Nations?",
+                "answer": "An international peace organization formed after WW1."
               },
               {
-                "question": "What does 'colony' mean?",
-                "answer": "A country controlled by another."
+                "question": "In what year did WW1 end?",
+                "answer": "1918."
+              },
+              {
+                "question": "What does 'nationalism' mean?",
+                "answer": "Strong identification with one's own nation."
               }
             ]
           },
@@ -3342,44 +3299,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "What was the Law of Return (1950)?",
-                "answer": "An Israeli law granting every Jew in the world the right to immigrate to Israel."
-              },
-              {
-                "question": "Which Arab nation took control of the West Bank after 1949?",
-                "answer": "Transjordan (Jordan)."
-              },
-              {
-                "question": "Which Arab nation took control of the Gaza Strip after 1949?",
-                "answer": "Egypt."
-              },
-              {
-                "question": "How did Arab states treat the Palestinian refugees?",
-                "answer": "They largely kept them in squalid refugee camps and refused to integrate them."
-              },
-              {
-                "question": "What were the 'fedayeen'?",
-                "answer": "Palestinian guerrilla fighters who launched raids into Israel from neighboring Arab states."
-              },
-              {
                 "question": "What was the 1948-49 Arab-Israeli War?",
-                "answer": "The first major conflict following Israel's creation."
+                "answer": "The invasion of Israel by surrounding Arab nations immediately after it declared independence."
               },
               {
-                "question": "Why did Israel win in 1949?",
-                "answer": "Better organization, motivation, and weapons."
+                "question": "Which Arab nations invaded Israel in 1948?",
+                "answer": "Egypt, Syria, Transjordan, Lebanon, and Iraq."
+              },
+              {
+                "question": "Why did the Israelis ultimately win the 1948-49 war?",
+                "answer": "They were highly motivated, secured weapons from Czechoslovakia, and the Arab armies were uncoordinated."
+              },
+              {
+                "question": "What was the impact of the war on Israel's borders?",
+                "answer": "Israel gained 21% more territory than the UN Partition Plan had given them."
               },
               {
                 "question": "What was the Nakba?",
-                "answer": "The Palestinian refugee crisis (approx. 700,000 people)."
+                "answer": "The 'Catastrophe'—the expulsion and flight of approx. 700,000 Palestinian Arabs."
+              },
+              {
+                "question": "When did David Ben-Gurion declare the State of Israel?",
+                "answer": "14 May 1948."
               },
               {
                 "question": "What did UNSCOP recommend in 1947?",
-                "answer": "Partition into a Jewish and Arab state."
+                "answer": "The partition of Palestine into two states."
               },
               {
-                "question": "When was the State of Israel created?",
-                "answer": "14 May 1948."
+                "question": "Why did Britain refer the issue to the UN?",
+                "answer": "Violence and cost of the mandate."
+              },
+              {
+                "question": "What was the attack on Deir Yassin?",
+                "answer": "A massacre that caused mass Arab panic and flight."
+              },
+              {
+                "question": "What does 'colony' mean?",
+                "answer": "A country controlled by another."
               }
             ]
           },
@@ -3711,44 +3668,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "Who became President of Egypt in 1954?",
-                "answer": "Gamal Abdel Nasser."
-              },
-              {
-                "question": "Why did Nasser nationalize the Suez Canal in 1956?",
-                "answer": "To pay for the Aswan High Dam after the US and UK withdrew their funding."
-              },
-              {
-                "question": "Which three countries secretly conspired to attack Egypt during the Suez Crisis?",
-                "answer": "Israel, Britain, and France (The Sèvres Protocol)."
-              },
-              {
-                "question": "What was Israel's role in the Suez plan?",
-                "answer": "To invade the Sinai Peninsula, giving Britain and France an excuse to 'intervene'."
-              },
-              {
-                "question": "Why did Britain and France humiliate themselves in the Suez Crisis?",
-                "answer": "The USA forced them to withdraw by threatening economic ruin."
-              },
-              {
                 "question": "What was the Law of Return (1950)?",
-                "answer": "A law allowing any Jew to immigrate to Israel."
+                "answer": "An Israeli law granting every Jew in the world the right to immigrate to Israel."
               },
               {
-                "question": "Who controlled the West Bank between 1949 and 1967?",
-                "answer": "Jordan."
+                "question": "Which Arab nation took control of the West Bank after 1949?",
+                "answer": "Transjordan (Jordan)."
+              },
+              {
+                "question": "Which Arab nation took control of the Gaza Strip after 1949?",
+                "answer": "Egypt."
+              },
+              {
+                "question": "How did Arab states treat the Palestinian refugees?",
+                "answer": "They largely kept them in squalid refugee camps and refused to integrate them."
               },
               {
                 "question": "What were the 'fedayeen'?",
-                "answer": "Palestinian guerrilla fighters."
+                "answer": "Palestinian guerrilla fighters who launched raids into Israel from neighboring Arab states."
+              },
+              {
+                "question": "What was the 1948-49 Arab-Israeli War?",
+                "answer": "The first major conflict following Israel's creation."
+              },
+              {
+                "question": "Why did Israel win in 1949?",
+                "answer": "Better organization, motivation, and weapons."
               },
               {
                 "question": "What was the Nakba?",
-                "answer": "The mass displacement of Palestinians in 1948."
+                "answer": "The Palestinian refugee crisis (approx. 700,000 people)."
               },
               {
-                "question": "Why did Israel win the 1948-49 war?",
-                "answer": "Arab disunity and superior Israeli organization/arms."
+                "question": "What did UNSCOP recommend in 1947?",
+                "answer": "Partition into a Jewish and Arab state."
+              },
+              {
+                "question": "When was the State of Israel created?",
+                "answer": "14 May 1948."
               }
             ]
           },
@@ -4258,44 +4215,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "What was the PLO (Palestine Liberation Organization) created in 1964?",
-                "answer": "An umbrella organization aiming to destroy Israel and create a Palestinian state."
+                "question": "Who became President of Egypt in 1954?",
+                "answer": "Gamal Abdel Nasser."
               },
               {
-                "question": "Who became the chairman of the PLO in 1969?",
-                "answer": "Yasser Arafat."
+                "question": "Why did Nasser nationalize the Suez Canal in 1956?",
+                "answer": "To pay for the Aswan High Dam after the US and UK withdrew their funding."
               },
               {
-                "question": "What triggered the Six Day War in 1967?",
-                "answer": "Nasser expelled UN peacekeepers from Sinai and blockaded the Straits of Tiran."
+                "question": "Which three countries secretly conspired to attack Egypt during the Suez Crisis?",
+                "answer": "Israel, Britain, and France (The Sèvres Protocol)."
               },
               {
-                "question": "How did Israel win the Six Day War so quickly?",
-                "answer": "They launched a devastating pre-emptive air strike, destroying the Egyptian air force on the ground."
+                "question": "What was Israel's role in the Suez plan?",
+                "answer": "To invade the Sinai Peninsula, giving Britain and France an excuse to 'intervene'."
               },
               {
-                "question": "What territories did Israel capture in the Six Day War?",
-                "answer": "The Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights."
+                "question": "Why did Britain and France humiliate themselves in the Suez Crisis?",
+                "answer": "The USA forced them to withdraw by threatening economic ruin."
               },
               {
-                "question": "Why did Nasser nationalize the Suez Canal?",
-                "answer": "To fund the Aswan High Dam."
+                "question": "What was the Law of Return (1950)?",
+                "answer": "A law allowing any Jew to immigrate to Israel."
               },
               {
-                "question": "Which three nations attacked Egypt in 1956?",
-                "answer": "Israel, Britain, and France."
+                "question": "Who controlled the West Bank between 1949 and 1967?",
+                "answer": "Jordan."
               },
               {
-                "question": "Why did Britain and France withdraw from Suez?",
-                "answer": "Massive financial pressure from the USA."
+                "question": "What were the 'fedayeen'?",
+                "answer": "Palestinian guerrilla fighters."
               },
               {
-                "question": "What was the Law of Return?",
-                "answer": "Israel's law allowing Jewish immigration."
+                "question": "What was the Nakba?",
+                "answer": "The mass displacement of Palestinians in 1948."
               },
               {
-                "question": "Who controlled the Gaza Strip between 1949 and 1967?",
-                "answer": "Egypt."
+                "question": "Why did Israel win the 1948-49 war?",
+                "answer": "Arab disunity and superior Israeli organization/arms."
               }
             ]
           },
@@ -4734,44 +4691,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "What was UN Resolution 242 (1967)?",
-                "answer": "A resolution calling for 'Land for Peace'—Israel returns land in exchange for recognition."
+                "question": "What was the PLO (Palestine Liberation Organization) created in 1964?",
+                "answer": "An umbrella organization aiming to destroy Israel and create a Palestinian state."
               },
               {
-                "question": "Why was the Yom Kippur War (1973) launched?",
-                "answer": "Egypt and Syria launched a surprise attack to regain the Sinai and Golan Heights lost in 1967."
-              },
-              {
-                "question": "Why was Israel caught off guard in 1973?",
-                "answer": "It was the holiest day in Judaism (Yom Kippur), and they underestimated Arab military improvements."
-              },
-              {
-                "question": "What was the oil weapon used during the Yom Kippur War?",
-                "answer": "Arab states (OPEC) reduced oil production to punish countries supporting Israel, causing a global energy crisis."
-              },
-              {
-                "question": "Who won the Yom Kippur War militarily?",
-                "answer": "Israel eventually repelled the attacks, but suffered heavy casualties."
-              },
-              {
-                "question": "Who became chairman of the PLO in 1969?",
+                "question": "Who became the chairman of the PLO in 1969?",
                 "answer": "Yasser Arafat."
               },
               {
-                "question": "What territories did Israel capture in 1967?",
-                "answer": "Sinai, Gaza, West Bank, Golan Heights."
+                "question": "What triggered the Six Day War in 1967?",
+                "answer": "Nasser expelled UN peacekeepers from Sinai and blockaded the Straits of Tiran."
               },
               {
-                "question": "How did Israel win the Six Day War?",
-                "answer": "A massive pre-emptive air strike."
+                "question": "How did Israel win the Six Day War so quickly?",
+                "answer": "They launched a devastating pre-emptive air strike, destroying the Egyptian air force on the ground."
               },
               {
-                "question": "Why did Nasser blockade the Straits of Tiran in 1967?",
-                "answer": "To choke off Israel's southern trade route."
+                "question": "What territories did Israel capture in the Six Day War?",
+                "answer": "The Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights."
               },
               {
-                "question": "Who forced Britain and France out of Suez in 1956?",
-                "answer": "The USA."
+                "question": "Why did Nasser nationalize the Suez Canal?",
+                "answer": "To fund the Aswan High Dam."
+              },
+              {
+                "question": "Which three nations attacked Egypt in 1956?",
+                "answer": "Israel, Britain, and France."
+              },
+              {
+                "question": "Why did Britain and France withdraw from Suez?",
+                "answer": "Massive financial pressure from the USA."
+              },
+              {
+                "question": "What was the Law of Return?",
+                "answer": "Israel's law allowing Jewish immigration."
+              },
+              {
+                "question": "Who controlled the Gaza Strip between 1949 and 1967?",
+                "answer": "Egypt."
               }
             ]
           },
@@ -5361,44 +5318,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "What was the significance of Anwar Sadat visiting Jerusalem in 1977?",
-                "answer": "He was the first Arab leader to officially visit Israel, opening the door for peace."
+                "question": "What was UN Resolution 242 (1967)?",
+                "answer": "A resolution calling for 'Land for Peace'—Israel returns land in exchange for recognition."
               },
               {
-                "question": "What were the Camp David Accords (1978)?",
-                "answer": "A peace framework brokered by US President Jimmy Carter between Egypt and Israel."
+                "question": "Why was the Yom Kippur War (1973) launched?",
+                "answer": "Egypt and Syria launched a surprise attack to regain the Sinai and Golan Heights lost in 1967."
               },
               {
-                "question": "What was the 1979 Egypt-Israel Peace Treaty?",
-                "answer": "Egypt officially recognized Israel, and Israel agreed to return the Sinai Peninsula."
+                "question": "Why was Israel caught off guard in 1973?",
+                "answer": "It was the holiest day in Judaism (Yom Kippur), and they underestimated Arab military improvements."
               },
               {
-                "question": "How did the Arab world react to Sadat's peace treaty?",
-                "answer": "They were furious; Egypt was expelled from the Arab League, and Sadat was later assassinated."
+                "question": "What was the oil weapon used during the Yom Kippur War?",
+                "answer": "Arab states (OPEC) reduced oil production to punish countries supporting Israel, causing a global energy crisis."
               },
               {
-                "question": "What was the PLO's strategy in the 1970s?",
-                "answer": "They used international terrorism, such as the 1972 Munich Olympics massacre, to gain attention."
+                "question": "Who won the Yom Kippur War militarily?",
+                "answer": "Israel eventually repelled the attacks, but suffered heavy casualties."
               },
               {
-                "question": "Why did Egypt and Syria attack in 1973?",
-                "answer": "To reclaim land lost in 1967."
-              },
-              {
-                "question": "What was the 'oil weapon' (OPEC embargo)?",
-                "answer": "Arab nations cutting oil supplies to punish Israel's allies."
-              },
-              {
-                "question": "What was UN Resolution 242?",
-                "answer": "The 'Land for Peace' formula."
-              },
-              {
-                "question": "What territory did Israel capture from Syria in 1967?",
-                "answer": "The Golan Heights."
-              },
-              {
-                "question": "Who was the leader of the PLO?",
+                "question": "Who became chairman of the PLO in 1969?",
                 "answer": "Yasser Arafat."
+              },
+              {
+                "question": "What territories did Israel capture in 1967?",
+                "answer": "Sinai, Gaza, West Bank, Golan Heights."
+              },
+              {
+                "question": "How did Israel win the Six Day War?",
+                "answer": "A massive pre-emptive air strike."
+              },
+              {
+                "question": "Why did Nasser blockade the Straits of Tiran in 1967?",
+                "answer": "To choke off Israel's southern trade route."
+              },
+              {
+                "question": "Who forced Britain and France out of Suez in 1956?",
+                "answer": "The USA."
               }
             ]
           },
@@ -5821,44 +5778,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "Why did Israel invade Lebanon in 1982?",
-                "answer": "To destroy PLO bases in southern Lebanon that were attacking northern Israel."
+                "question": "What was the significance of Anwar Sadat visiting Jerusalem in 1977?",
+                "answer": "He was the first Arab leader to officially visit Israel, opening the door for peace."
               },
               {
-                "question": "What were the Sabra and Shatila massacres?",
-                "answer": "Christian militias massacred Palestinian refugees while the Israeli army stood by."
-              },
-              {
-                "question": "What was the First Intifada (1987)?",
-                "answer": "A spontaneous, grassroots Palestinian uprising against the Israeli occupation in the West Bank and Gaza."
-              },
-              {
-                "question": "What methods were used during the First Intifada?",
-                "answer": "Strikes, boycotts, and most famously, youths throwing stones at heavily armed Israeli soldiers."
-              },
-              {
-                "question": "What was the political impact of the First Intifada?",
-                "answer": "It severely damaged Israel's international reputation and pressured them into negotiations."
+                "question": "What were the Camp David Accords (1978)?",
+                "answer": "A peace framework brokered by US President Jimmy Carter between Egypt and Israel."
               },
               {
                 "question": "What was the 1979 Egypt-Israel Peace Treaty?",
-                "answer": "Israel returned the Sinai in exchange for peace."
+                "answer": "Egypt officially recognized Israel, and Israel agreed to return the Sinai Peninsula."
               },
               {
-                "question": "Who brokered the Camp David Accords?",
-                "answer": "US President Jimmy Carter."
+                "question": "How did the Arab world react to Sadat's peace treaty?",
+                "answer": "They were furious; Egypt was expelled from the Arab League, and Sadat was later assassinated."
               },
               {
-                "question": "Why was Anwar Sadat assassinated?",
-                "answer": "For making peace with Israel."
+                "question": "What was the PLO's strategy in the 1970s?",
+                "answer": "They used international terrorism, such as the 1972 Munich Olympics massacre, to gain attention."
               },
               {
-                "question": "What happened at the 1972 Munich Olympics?",
-                "answer": "Palestinian terrorists took Israeli athletes hostage and murdered them."
+                "question": "Why did Egypt and Syria attack in 1973?",
+                "answer": "To reclaim land lost in 1967."
               },
               {
-                "question": "Why was the Yom Kippur War launched?",
-                "answer": "To regain territories lost in 1967."
+                "question": "What was the 'oil weapon' (OPEC embargo)?",
+                "answer": "Arab nations cutting oil supplies to punish Israel's allies."
+              },
+              {
+                "question": "What was UN Resolution 242?",
+                "answer": "The 'Land for Peace' formula."
+              },
+              {
+                "question": "What territory did Israel capture from Syria in 1967?",
+                "answer": "The Golan Heights."
+              },
+              {
+                "question": "Who was the leader of the PLO?",
+                "answer": "Yasser Arafat."
               }
             ]
           },
@@ -6030,7 +5987,7 @@
               ]
             },
             {
-              "text": "\n<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\">\n  <caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">CONSEQUENCES OF THE FIRST INTIFADA</caption>\n  <thead>\n    <tr style=\"background-color: #e9ecef;\">\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For the PLO</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">The Rise of Hamas</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Forced Yasser Arafat to renounce terrorism and officially accept the two-state solution (1988) to retain leadership.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Convinced Yitzhak Rabin and military planners that there was no purely military solution to the Palestinian issue.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Formed in 1987 as a rival to the PLO, Hamas rejected compromises and conducted violent armed attacks against Israelis.</td>\n    </tr>\n  </tbody>\n</table>",
+              "text": "<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\">\n  <caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">CONSEQUENCES OF THE FIRST INTIFADA</caption>\n  <thead>\n    <tr style=\"background-color: #e9ecef;\">\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For the PLO</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">The Rise of Hamas</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Forced Yasser Arafat to renounce terrorism and officially accept the two-state solution (1988) to retain leadership.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Convinced Yitzhak Rabin and military planners that there was no purely military solution to the Palestinian issue.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Formed in 1987 as a rival to the PLO, Hamas rejected compromises and conducted violent armed attacks against Israelis.</td>\n    </tr>\n  </tbody>\n</table>",
               "level_4": "\n<table class=\"table-auto w-full mt-4 text-left border-collapse\" style=\"background-color: white; border: 1px solid #ddd;\">\n  <caption style=\"font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;\">CONSEQUENCES OF THE FIRST INTIFADA</caption>\n  <thead>\n    <tr style=\"background-color: #e9ecef;\">\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For the PLO</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">For Israel</th>\n      <th style=\"padding: 10px; border: 1px solid #ddd;\">The Rise of Hamas</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Forced Yasser Arafat to renounce terrorism and officially accept the two-state solution (1988) to retain leadership.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Convinced Yitzhak Rabin and military planners that there was no purely military solution to the Palestinian issue.</td>\n      <td style=\"padding: 10px; border: 1px solid #ddd; vertical-align: top;\">Formed in 1987 as a rival to the PLO, Hamas rejected compromises and conducted violent armed attacks against Israelis.</td>\n    </tr>\n  </tbody>\n</table>"
             },
             {
@@ -6310,44 +6267,44 @@
             "instructions": "Answer these questions in full sentences.",
             "items": [
               {
-                "question": "What were the Oslo Accords (1993)?",
-                "answer": "A historic peace agreement where the PLO recognized Israel, and Israel agreed to limited Palestinian self-rule."
+                "question": "Why did Israel invade Lebanon in 1982?",
+                "answer": "To destroy PLO bases in southern Lebanon that were attacking northern Israel."
               },
               {
-                "question": "What was the Palestinian Authority (PA)?",
-                "answer": "The new governing body created by Oslo to administer parts of the West Bank and Gaza."
-              },
-              {
-                "question": "Why was Israeli Prime Minister Yitzhak Rabin assassinated in 1995?",
-                "answer": "He was murdered by a right-wing Israeli extremist who opposed giving land to the Palestinians."
-              },
-              {
-                "question": "Why did the peace process stall after 1995?",
-                "answer": "Continued violence by Hamas, the expansion of Israeli settlements, and Rabin's assassination."
-              },
-              {
-                "question": "What was the fundamental flaw of the Oslo Accords?",
-                "answer": "It delayed solving the hardest issues (Jerusalem, refugees, borders) for a later date."
+                "question": "What were the Sabra and Shatila massacres?",
+                "answer": "Christian militias massacred Palestinian refugees while the Israeli army stood by."
               },
               {
                 "question": "What was the First Intifada (1987)?",
-                "answer": "A massive Palestinian uprising against Israeli occupation."
+                "answer": "A spontaneous, grassroots Palestinian uprising against the Israeli occupation in the West Bank and Gaza."
               },
               {
-                "question": "Why did Israel invade Lebanon in 1982?",
-                "answer": "To destroy the PLO."
+                "question": "What methods were used during the First Intifada?",
+                "answer": "Strikes, boycotts, and most famously, youths throwing stones at heavily armed Israeli soldiers."
               },
               {
-                "question": "What were the Camp David Accords (1978)?",
-                "answer": "The peace framework between Israel and Egypt."
+                "question": "What was the political impact of the First Intifada?",
+                "answer": "It severely damaged Israel's international reputation and pressured them into negotiations."
               },
               {
-                "question": "What land did Israel agree to return in 1979?",
-                "answer": "The Sinai Peninsula."
+                "question": "What was the 1979 Egypt-Israel Peace Treaty?",
+                "answer": "Israel returned the Sinai in exchange for peace."
               },
               {
-                "question": "Who was Yasser Arafat?",
-                "answer": "The Chairman of the PLO."
+                "question": "Who brokered the Camp David Accords?",
+                "answer": "US President Jimmy Carter."
+              },
+              {
+                "question": "Why was Anwar Sadat assassinated?",
+                "answer": "For making peace with Israel."
+              },
+              {
+                "question": "What happened at the 1972 Munich Olympics?",
+                "answer": "Palestinian terrorists took Israeli athletes hostage and murdered them."
+              },
+              {
+                "question": "Why was the Yom Kippur War launched?",
+                "answer": "To regain territories lost in 1967."
               }
             ]
           },
@@ -9738,7 +9695,68 @@
       "terminology": [],
       "workbooks": [],
       "specification_file": ""
-    }
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
   },
   "early_modern_world": {
     "data": {
@@ -11197,14 +11215,14 @@
               "text": "At 2:00 PM on Tuesday, 30 January 1649, a man in a black velvet coat stepped out of a window of the Banqueting House in Whitehall, London, onto a wooden scaffold draped in black cloth.<br><br>The man was <strong>King Charles I</strong>. Below him stood thousands of silent onlookers, surrounded by ranks of iron-armored cavalry. For seven years, England had been ripped apart by a bloody Civil War that cost the lives of nearly 200,000 people—a higher proportion of the population than died in the First World War.<br><br>Charles put his head on the wooden block. He stretched out his hands—the prearranged signal—and the masked executioner’s axe severed his head with a single blow. The executioner held the dripping head aloft and shouted: <em>\"Behold the head of a traitor!\"</em><br><br>A collective groan echoed through the crowd. Never before in European history had a monarch been put on trial, condemned, and executed by his own Parliament.<br><br><strong>But who was really pulling the strings?</strong> Was this victory brought about by high-minded Parliamentary ideals of liberty? Or was it secretly fueled by a new class of ultra-rich Atlantic merchants whose sugar and tobacco profits were reshaping the British state?",
               "tasks": [
                 {
-                  "type": "source_analysis",
-                  "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
-                  "model_answer": "The combined symbols represented the 1707 Act of Union, formally joining England and Scotland into a single, unified political entity: Great Britain."
-                },
-                {
                   "type": "comprehension",
                   "question": "Why was the execution of King Charles I such a shocking event in European history?",
                   "model_answer": "It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people."
+                },
+                {
+                  "type": "source_analysis",
+                  "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
+                  "model_answer": "The monarch combined them to create a single, unified visual identity for the newly formed nation of Great Britain, attempting to project stability after the 1707 Act of Union."
                 }
               ],
               "images": [
@@ -11421,6 +11439,11 @@
               "caption": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
               "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
               "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
+            },
+            {
+              "type": "source_analysis",
+              "question": "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
+              "model_answer": "The combined symbols represented the 1707 Act of Union, formally joining England and Scotland into a single, unified political entity: Great Britain."
             }
           ],
           "lesson_assessment": {
@@ -11494,24 +11517,24 @@
             "type": "questions",
             "items": [
               {
-                "question": "What was the name of the first permanent English settlement in North America (1607)?",
-                "answer": "Jamestown"
+                "question": "What political belief held that kings were chosen directly by God and possessed absolute power?",
+                "answer": "The Divine Right of Kings"
               },
               {
-                "question": "Which cash crop saved the Jamestown colony from economic ruin?",
-                "answer": "Tobacco"
+                "question": "What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?",
+                "answer": "Ship Money"
               },
               {
-                "question": "What type of business model was the East India Company (EIC), where multiple investors pooled money?",
-                "answer": "A Joint-Stock Company"
+                "question": "What was the name of Parliament's disciplined, professional military force created during the Civil War?",
+                "answer": "The New Model Army"
               },
               {
-                "question": "Which powerful Asian empire did Sir Thomas Roe visit in 1615?",
-                "answer": "The Mughal Empire"
+                "question": "Who served as the commander of the New Model Army and later became 'Lord Protector' of England?",
+                "answer": "Oliver Cromwell"
               },
               {
-                "question": "Why were the English submissive traders in India, but aggressive conquerors in North America?",
-                "answer": "Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics."
+                "question": "On what date was King Charles I executed outside the Banqueting House in London?",
+                "answer": "27 January 1649"
               }
             ]
           },
@@ -11571,12 +11594,7 @@
                 {
                   "type": "source_analysis",
                   "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
-                  "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
-                  "text": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
-                },
-                {
-                  "question": "Study Source E (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
-                  "model_answer": "The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the \"Commonwealth\", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch."
+                  "model_answer": "It signalled a shift from a monarchy to a republic, emphasizing Parliament, maritime power, and imperial expansion over royal bloodlines by erasing the King's face entirely."
                 }
               ],
               "image_caption": "The Great Seal of the Commonwealth of England (1651)"
@@ -11724,6 +11742,16 @@
               "caption": "A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House. It is an allegorical painting showing Britannia's wealth, receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of Britain's empire.",
               "content": "Notice how Britannia sits elevated, while figures representing Asia, Africa, and India offer her their goods. This painting was placed on the ceiling of the East India Company's headquarters, literally looking down on the directors as they made decisions about global trade.",
               "question": "How useful is this painting as evidence of Britain's global power and ideology in 1778?"
+            },
+            {
+              "question": "Study Source E (The Great Seal of the Commonwealth of England). How does the imagery on this 1651 seal reflect the political upheaval following the execution of Charles I?",
+              "model_answer": "The Great Seal reflects the radical shift from a monarchy to a republic. By replacing the image of a king with symbols representing the authority of Parliament and the \"Commonwealth\", it visually declares that political power now rests with the representatives of the people rather than a divinely appointed monarch."
+            },
+            {
+              "type": "source_analysis",
+              "question": "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
+              "model_answer": "By replacing the traditional image of the monarch with Parliament and a map showing naval ships, the Great Seal signaled that Britain was no longer defined by royal bloodlines, but by parliamentary governance, maritime strength, and imperial expansion.",
+              "text": "Look at Source B. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?"
             }
           ],
           "lesson_assessment": {
@@ -13893,7 +13921,8 @@
             "lng": -2.5991
           }
         }
-      ]
+      ],
+      "is_ks3": true
     },
     "biographies": [
       {
@@ -38604,6 +38633,28 @@
                   "question": "Task 5: Review the timeline of William's consolidation of power. Which method (Castles, Terror, or the Domesday Book) do you think was the most effective in securing his control? Explain your reasoning.",
                   "model_answer": "I believe terror (the Harrying of the North) was the most effective method because it completely broke the will of the English people to resist. While castles provided defensive bases and the Domesday Book provided administrative control, it was the catastrophic famine and mass death caused by the Harrying that permanently ended the threat of large-scale rebellion."
                 }
+              ],
+              "flashcards": [
+                {
+                  "term": "1066",
+                  "definition": "William crowned King. The great castle-building programme begins."
+                },
+                {
+                  "term": "1069-1070",
+                  "definition": "The Harrying of the North crushes northern resistance through starvation and destruction."
+                },
+                {
+                  "term": "1071",
+                  "definition": "The last major Anglo-Saxon resistance is defeated at Ely."
+                },
+                {
+                  "term": "1085-1086",
+                  "definition": "The Domesday Survey is ordered and completed, recording every taxable asset in England."
+                },
+                {
+                  "term": "1087",
+                  "definition": "William the Conqueror dies."
+                }
               ]
             }
           ],
@@ -41232,7 +41283,68 @@
       ],
       "specification_file": "",
       "hero_image": "/images/portchester_keep.jpg"
-    }
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
   },
   "post_war_britain": {
     "data": {
@@ -41443,7 +41555,68 @@
       "terminology": [],
       "workbooks": [],
       "specification_file": ""
-    }
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
   },
   "second_world_war": {
     "data": {
@@ -41687,7 +41860,68 @@
       "terminology": [],
       "workbooks": [],
       "specification_file": ""
-    }
+    },
+    "biographies": [
+      {
+        "name": "Kaiser Wilhelm II",
+        "role": "Emperor of Germany",
+        "lifespan": "1859 – 1941",
+        "achievements": [
+          "Pursued aggressive 'Weltpolitik' to expand German global influence.",
+          "Expanded the German Imperial Navy, sparking an arms race with Britain.",
+          "Offered the 'Blank Cheque' to Austria-Hungary in 1914."
+        ],
+        "significance": "His erratic diplomacy, aggressive militarism, and refusal to compromise repeatedly destabilized European politics, creating the conditions that led to the outbreak of the First World War.",
+        "image": "assets/card_wilhelm.png"
+      },
+      {
+        "name": "Tsar Nicholas II",
+        "role": "Emperor of Russia",
+        "lifespan": "1868 – 1918",
+        "achievements": [
+          "Led the rapid industrialisation of the Russian Empire.",
+          "Formed an alliance with France to counter the Triple Alliance.",
+          "Ordered the mobilization of the Russian army in July 1914."
+        ],
+        "significance": "As an absolute monarch determined to protect fellow Slavs in Serbia, his decision to prematurely mobilize the massive Russian army forced Germany into declaring war.",
+        "image": "assets/card_nicholas.png"
+      },
+      {
+        "name": "Gavrilo Princip",
+        "role": "Bosnian Serb Nationalist",
+        "lifespan": "1894 – 1918",
+        "achievements": [
+          "Joined the secret nationalist society 'Young Bosnia'.",
+          "Conspired with the Black Hand to assassinate Archduke Franz Ferdinand.",
+          "Fired the fatal shots in Sarajevo on June 28, 1914."
+        ],
+        "significance": "Driven by intense nationalism and the desire to free Bosnia from Austro-Hungarian rule, his assassination of the heir to the throne was the direct spark that ignited the July Crisis and World War I.",
+        "image": "assets/card_princip.png"
+      },
+      {
+        "name": "Count Leopold Berchtold",
+        "role": "Austro-Hungarian Foreign Minister",
+        "lifespan": "1863 – 1942",
+        "achievements": [
+          "Drafted the severe July Ultimatum presented to Serbia.",
+          "Convinced Emperor Franz Joseph to declare war on Serbia.",
+          "Secured Germany's unconditional support (the 'Blank Cheque')."
+        ],
+        "significance": "He deliberately engineered a localized war with Serbia to crush Pan-Slavism, stubbornly ignoring diplomatic solutions and plunging the major powers into a global conflict."
+      },
+      {
+        "name": "Alfred von Schlieffen",
+        "role": "German Field Marshal",
+        "lifespan": "1833 – 1913",
+        "achievements": [
+          "Chief of the Imperial German General Staff (1891–1906).",
+          "Authored the famous 'Schlieffen Plan' for a two-front war.",
+          "Prioritized military strategy over diplomatic consequences."
+        ],
+        "significance": "His inflexible war plan, which required the immediate invasion of neutral Belgium to swiftly defeat France, forced Germany to widen the conflict and guaranteed British entry into the war.",
+        "image": "assets/alfred_von_schlieffen.jpg"
+      }
+    ]
   },
   "the_shoah": {
     "data": {
@@ -42008,7 +42242,50 @@
         "coach": "Jet Connect Executive Travel",
         "live_album_url": "https://photos.app.goo.gl/placeholder"
       },
+      "extended": {
+        "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+        "scaffolding": [
+          "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+        ],
+        "source_a": {
+          "provenance": "The Menin Road, a painting by official British War Artist Paul Nash, commissioned in 1919.",
+          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/menin_road_nash.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+        },
+        "source_b": {
+          "provenance": "An official Royal Flying Corps aerial photograph showing the intricate trench network on the Western Front, 1916.",
+          "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/aerial_trench_ypres.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+        },
+        "model": "<strong>Source A is highly useful...</strong>",
+        "provenance_clue": "Source A is a painting by an official War Artist; does its stylistic and emotional nature make it more or less useful than a photograph? Source B is a military aerial photograph; what makes its objective recording of the geography useful?"
+      },
       "local_heroes": [
+        {
+          "name": "William Augustine 'Harper' Lowry",
+          "age": 25,
+          "regiment": "Indian Army",
+          "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Eldest brother.",
+          "cemetery": "Gully Ravine (Gallipoli)",
+          "story": "Killed on 4th June 1915 leading a desperate charge up Gully Ravine. He has no known grave.",
+          "image": "/images/lowry_william.png"
+        },
+        {
+          "name": "Auriol 'Eric' Lowry",
+          "age": null,
+          "regiment": "West Yorkshire Regiment",
+          "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Middle brother.",
+          "cemetery": "Unknown",
+          "story": "Fought at Westhoek Ridge in 1917. Commanded the battalion where his younger brother Patrick served.",
+          "image": "/images/lowry_auriol.png"
+        },
+        {
+          "name": "Cyril John 'Patrick' Lowry",
+          "age": 20,
+          "regiment": "West Yorkshire Regiment",
+          "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Youngest brother.",
+          "cemetery": "Somme",
+          "story": "Killed on 25th March 1918 during a German offensive near the Somme, in full view of his brother Eric.",
+          "image": "/images/lowry_cyril.png"
+        },
         {
           "name": "Private T. J. Franklin",
           "age": 22,
@@ -42075,64 +42352,9 @@
               {
                 "year": "10th Sep",
                 "title": "Parent Briefing Meeting",
-                "detail": "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions."
+                "detail": "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions. I will be requesting passports in and EHIC cards. If you can't make it, you can hand it into the office before that date or just after."
               }
             ]
-          },
-          "narrative_blocks": [
-            {
-              "theme_heading": "Quick Navigation",
-              "text": "<div class='toc-menu' style='position: sticky; top: 10px; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; gap: 10px; flex-wrap: wrap;'><a href='#the-lowry-brothers-a-village-s-sacrifice' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-users'></i> The Lowry Brothers</a> <a href='#the-trip-rules-what-you-need-to-know' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-clipboard-list'></i> Trip Rules</a> <a href='#kit-list-what-to-pack' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-suitcase'></i> Kit List</a></div>"
-            },
-            {
-              "type": "narrative",
-              "theme_heading": "What to Pack: The Essential Checklist",
-              "text": "Please ensure all pupils have the following items packed in a suitable overnight bag (no hard suitcases if possible, to maximize coach storage space):<br><br><ul><li><strong>Valid Passport</strong> (will be given in hopefully at the parent briefing meeting on the 10th of September)</li><li><strong>GHIC / EHIC Card</strong> (valid and in-date)</li><li><strong>Sturdy Walking Boots</strong> or waterproof shoes (we will be walking through muddy trenches)</li><li><strong>Waterproof Coat</strong> (Belgian weather is unpredictable)</li><li><strong>Small Rucksack</strong> for daytime use on the coach</li><li><strong>Euro Currency</strong> (approx €30-€50 maximum for snacks and chocolates)</li><li><strong>Refillable Water Bottle</strong></li></ul>"
-            },
-            {
-              "type": "narrative",
-              "theme_heading": "The Lowry Brothers: A Village's Sacrifice",
-              "text": "The names of three brothers—William, Cyril, and Auriol (Eric) Lowry—are all carved into the Stubbington War Memorial in our village center. The story of these young men perfectly captures the devastating toll the war took on individual families.<br><br>Tragically, the three brothers fell in three completely different theatres of war:<br><ul><li><strong>William 'Harper' Lowry:</strong> Fell in 1915 and is commemorated on the Helles Memorial in Turkey (Gallipoli).</li><li><strong>Cyril 'Patrick' Lowry:</strong> Fell in 1916 and is commemorated on the Pozieres Memorial in France (The Somme).</li><li><strong>Auriol 'Eric' Lowry:</strong> Fell in 1917 and is buried at La Targette Cemetery near Arras, France.</li></ul><br>Before we depart for Belgium, take a moment to reflect on what it must have been like for the local community to receive the telegrams for all three boys over the course of three years.",
-              "images": [
-                {
-                  "image": "/images/stubbington_memorial.jpg",
-                  "image_alt": "The Stubbington War Memorial",
-                  "image_caption": "The Stubbington War Memorial, where the Lowry brothers are commemorated."
-                },
-                {
-                  "image": "/images/lowry_william.png",
-                  "image_alt": "William 'Harper' Lowry",
-                  "image_caption": "William 'Harper' Lowry"
-                },
-                {
-                  "image": "/images/lowry_cyril.png",
-                  "image_alt": "Cyril 'Patrick' Lowry",
-                  "image_caption": "Cyril 'Patrick' Lowry"
-                },
-                {
-                  "image": "/images/lowry_auriol.png",
-                  "image_alt": "Auriol 'Eric' Lowry",
-                  "image_caption": "Auriol 'Eric' Lowry"
-                }
-              ]
-            }
-          ],
-          "banner": "/images/menin_road_nash.jpg",
-          "extended": {
-            "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
-            "scaffolding": [
-              "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
-            ],
-            "source_a": {
-              "provenance": "The Menin Road, a painting by official British War Artist Paul Nash, commissioned in 1919.",
-              "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/menin_road_nash.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
-            },
-            "source_b": {
-              "provenance": "An official Royal Flying Corps aerial photograph showing the intricate trench network on the Western Front, 1916.",
-              "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/aerial_trench_ypres.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
-            },
-            "model": "<strong>Source A is highly useful...</strong>",
-            "provenance_clue": "Source A is a painting by an official War Artist; does its stylistic and emotional nature make it more or less useful than a photograph? Source B is a military aerial photograph; what makes its objective recording of the geography useful?"
           }
         },
         {
@@ -42225,7 +42447,7 @@
             {
               "type": "narrative",
               "theme_heading": "Historical Context: The Ypres Salient",
-              "text": "The Ypres Salient was a bulge in the Allied frontline that surrounded the Belgian town of Ypres. Because it was a salient, British and Commonwealth troops were surrounded by German artillery on three sides, making it one of the most dangerous places on earth. Ypres was the last major Belgian town not to fall to the Germans, making it a powerful symbol of resistance.<br><br><strong>Key Facts:</strong><ul><li>Over half a million soldiers died defending a strip of land barely ten miles wide.</li><li>The Salient consisted of thick, heavy clay that, when bombarded by artillery, turned into a deadly, bottomless mud.</li><li>Five major battles were fought here between 1914 and 1918.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"I am no longer an artist interested and curious, I am a messenger who will bring back word from the men who are fighting to those who want the war to go on for ever. It is unspeakable, godless, hopeless.\"</em><br>— <strong>Paul Nash</strong>, British War Artist (1917)</blockquote>"
+              "text": "The Ypres Salient was a bulge in the Allied frontline that surrounded the Belgian town of Ypres. Because it was a salient, British and Commonwealth troops were surrounded by German artillery on three sides, making it one of the most dangerous places on earth. Ypres was the last major Belgian town not to fall to the Germans, making it a powerful symbol of resistance.<br><br><strong>Key Facts:</strong><ul><li>Over half a million soldiers died defending a strip of land barely ten miles wide.</li><li>The Salient consisted of thick, heavy clay that, when bombarded by artillery, turned into a deadly, bottomless mud.</li><li>Five major battles were fought here between 1914 and 1918.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"I am no longer an artist interested and curious, I am a messenger who will bring back word from the men who are fighting to those who want the war to go on for ever. It is unspeakable, godless, hopeless.\"</em><br>— <strong>Paul Nash</strong>, British War Artist (1917)</blockquote><div style='text-align: center; margin-top: 15px;'><img src='/images/menin_road_nash.jpg' style='max-width: 100%; border-radius: 6px; border: 1px solid #ccc;' alt='The Menin Road by Paul Nash'></div>"
             },
             {
               "type": "narrative",
@@ -42235,12 +42457,67 @@
             {
               "type": "narrative",
               "theme_heading": "Langemarck German War Cemetery",
-              "text": "Unlike the bright, white Portland stone of British cemeteries, German cemeteries like Langemarck are intentionally somber, shaded by large oak trees and featuring dark stone blocks, reflecting Germanic mourning traditions.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Enter the Langemarck gates to unlock your assigned individual.</p><button onclick='window.unlockMission(this, \"langemarck\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+              "text": "Unlike the bright, white Portland stone of British cemeteries, German cemeteries like Langemarck are intentionally somber, shaded by large oak trees and featuring dark stone blocks, reflecting Germanic mourning traditions.<br><br><strong>The Langemarck Student Myth:</strong><br><em>The Heroic Propaganda:</em> The German High Command claimed that thousands of young, patriotic student volunteers advanced fearlessly on enemy lines singing 'Deutschland über alles'. They were portrayed as the ultimate heroes who joyfully gave their lives for the Fatherland.<br><br><em>The Tragic Reality:</em> These volunteers were woefully untrained and poorly equipped. Instead of a glorious charge, they were marched blindly into devastating British machine-gun fire. Thousands were slaughtered needlessly in what became known as the 'Massacre of the Innocents of Ypres'.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Individuals</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-magnifying-glass\"></i> Look at the names on the bronze oak panels. Remember that every German soldier in the mass grave had a story and family back home.</p></div></div>"
+            },
+            {
+              "type": "flip_card_gallery",
+              "cards": [
+                {
+                  "name": "Leutnant Werner Voss",
+                  "background": "WWI Fighter Ace & Pour le Mérite winner.",
+                  "story": "Killed in an epic dogfight against seven British SE5s. Because his grave was lost, he is commemorated on the bronze panels and lies somewhere among the unknowns."
+                },
+                {
+                  "name": "Oberst (Colonel) Julius von List",
+                  "background": "Adolf Hitler's First Regimental Commander.",
+                  "story": "List commanded the Bavarian 16th Reserve Infantry Regiment, in which a young Adolf Hitler served as a dispatch runner. Killed at Gheluvelt in October 1914, his remains were later moved to the Langemarck Kameradengrab (mass grave)."
+                },
+                {
+                  "name": "The 7,977 'Unknowns'",
+                  "background": "Unidentified German Soldiers.",
+                  "story": "Of the nearly 25,000 men buried in the Kameradengrab (mass grave) at the cemetery entrance, 7,977 remain completely unidentified. Their presence stands as a haunting testament to the mechanized scale of slaughter on the Western Front."
+                },
+                {
+                  "name": "The 3,000 'Student Volunteers'",
+                  "background": "The Kriegsfreiwilliger of 1914.",
+                  "story": "Poorly trained German schoolboys and university students killed during the First Battle of Ypres. Their slaughter was romanticized by German propaganda, earning Langemark the nickname 'Studentenfriedhof' (Student Cemetery)."
+                },
+                {
+                  "name": "Private Albert Carlill",
+                  "background": "1st/4th Bn. Loyal North Lancashire Reg.",
+                  "story": "One of only two British soldiers buried in this German military cemetery. He died on November 4, 1918, aged 19, serving as a rare reminder of shared tragedy across enemy lines."
+                },
+                {
+                  "name": "Private Leonard H. Lockley",
+                  "background": "4th Bn. Seaforth Highlanders.",
+                  "story": "The second British Tommy buried at Langemark, killed on October 30, 1918. His name, alongside Carlill's, is recorded on a plaque near the entrance, resting permanently among former foes."
+                },
+                {
+                  "name": "The 17,342 'Knowns'",
+                  "background": "The Kameradengrab (Mass Grave).",
+                  "story": "While your existing card covers the unknowns, this single mass grave holds 24,917 bodies in total. The names of the 17,342 identified soldiers are cast on bronze steles surrounding the perimeter."
+                },
+                {
+                  "name": "The April 1915 Casualties",
+                  "background": "The Second Battle of Ypres.",
+                  "story": "Langemark was the site of the first major poison gas attack on the Western Front. Many German soldiers buried here died in the chaotic offensives that immediately followed the release of the gas."
+                },
+                {
+                  "name": "Harry Patch's 'Unknown'",
+                  "background": "A symbol of reconciliation.",
+                  "story": "In 2008, Harry Patch, the last surviving British trench veteran, visited the cemetery. He laid a wreath on the grave of a German soldier killed on August 16, 1917—the exact day Patch's unit fought at Langemark."
+                }
+              ]
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "The Weaponization of Memory: The Langemarck Myth",
+              "text": "<div style=\"background: #f8fafc; padding: 25px; border-radius: 8px; border-left: 5px solid #059669; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top: 10px;\"><p style=\"font-size: 1.1rem; color: #1e293b;\">The Nazi regime weaponized the 'Langemarck Myth' to bridge the humiliation of 1918 with the militarism of the Third Reich, transforming a World War I military failure into a cult of youth sacrifice. Hitler exploited the site to legitimize his own regime, presenting himself as the fulfillment of the students' uncompleted mission.</p><ul style=\"list-style-type: none; padding-left: 0; margin-top: 20px;\"><li style=\"margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e2e8f0;\"><strong style=\"color: #0f172a; font-size: 1.1rem;\"><i class=\"fa-solid fa-scroll\" style=\"color: #059669; margin-right: 10px;\"></i> Primary Source: The Official 1914 Fabrication</strong><br><span style=\"color: #334155;\">The entire Langemarck myth originates from a single, highly manipulated press release. On November 11, 1914, the German Supreme Army Command (<i>Oberste Heeresleitung</i> or OHL) needed to distract the German public from a devastating tactical failure and a massive loss of life. They issued an official communiqué that intentionally fabricated a romanticized narrative of youthful, willing sacrifice:</span><br><br><blockquote style=\"margin-top: 10px; margin-bottom: 10px;\">\"We made good progress yesterday in the Yser section. West of Langemarck young regiments broke forward with the song <i>'Deutschland, Deutschland über alles'</i> against the front line of enemy positions and took them.\"<br>— <strong>Official Communiqué of the German Supreme Army Command (OHL), 11 November 1914</strong></blockquote></li><li style=\"margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e2e8f0;\"><strong style=\"color: #0f172a; font-size: 1.1rem;\"><i class=\"fa-solid fa-book-skull\" style=\"color: #059669; margin-right: 10px;\"></i> Primary Source: Adolf Hitler’s Weaponization</strong><br><span style=\"color: #334155;\">A decade later, Adolf Hitler hijacked this fabricated story to lay the psychological groundwork for the next war. In his 1925 manifesto, Hitler inserted himself directly into the Langemarck narrative, twisting a military disaster into a mystical, almost religious awakening of the German soul. He used this specific battle to groom the Hitler Youth, demanding they view the slaughtered students as the ultimate role models for blind obedience to the Fatherland:</span><br><br><blockquote style=\"margin-top: 10px; margin-bottom: 10px;\">\"And then the night came down, and we advanced in silence, and as daylight broke, the first greeting of the morning whistled over our heads... Then from afar the strains of a song reached our ears, coming closer and closer... And as Death plunged his hand into our ranks, the song reached us too, and we passed it on: <i>Deutschland, Deutschland über alles!</i>\"<br>— <strong>Adolf Hitler, <i>Mein Kampf</i>, Volume 1, Chapter 5: The World War, 1925</strong></blockquote></li><li style=\"margin-bottom: 15px;\"><strong style=\"color: #0f172a; font-size: 1.1rem;\"><i class=\"fa-solid fa-building-columns\" style=\"color: #059669; margin-right: 10px;\"></i> Historical Interpretation: Dismantling the Myth</strong><br><span style=\"color: #334155;\">Modern historians have thoroughly dismantled the <i>Kindermord</i> (Massacre of the Innocents) narrative. In his landmark study on how nations process the trauma of war, historian George Mosse details how the disaster at Langemarck was deliberately repackaged by right-wing extremists. Mosse argues that the Nazi Party actively weaponized the grief surrounding the Langemarck cemetery to create a \"cult of fallen soldiers,\" replacing the horrific reality of industrialized slaughter with a sanitized, glorious myth of youth and manliness to justify future aggression.<br>— <strong>Professor George L. Mosse, <i>Fallen Soldiers: Reshaping the Memory of the World Wars</i>, Oxford University Press, 1990</strong></span></li></ul><div style=\"background: #e2e8f0; padding: 15px; border-radius: 6px; margin-top: 20px;\"><p style=\"font-style: italic; color: #1e293b; font-weight: bold; margin: 0; text-align: center;\"><i class=\"fa-solid fa-lightbulb\" style=\"color: #d97706; margin-right: 8px;\"></i> By understanding the myth, students can look at the bronze oak panels and recognize how the memories of those individuals were stolen and repurposed for a second, even more devastating war.</p></div></div>"
             },
             {
               "type": "narrative",
               "theme_heading": "Hooge Crater & Trench Warfare",
-              "text": "Hooge was the site of intense, close-quarters fighting. The opposing trenches were so close that soldiers could hear each other speaking. In July 1915, the British detonated a massive underground mine beneath the German lines, creating a massive crater.<br><br><strong>Key Facts:</strong><ul><li>The mine blast created a crater 120 feet wide and 20 feet deep.</li><li>Soldiers in these trenches suffered terribly from 'trench foot' due to standing in freezing mud and water for days on end.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"The trench was a ribbon of earth, filled with freezing water, the stench of unburied bodies, and the constant, nerve-shredding crack of sniper fire.\"</em><br>— <strong>Private Frank Richards</strong>, Royal Welch Fusiliers</blockquote>"
+              "text": "Hooge was the site of intense, close-quarters fighting. The opposing trenches were so close that soldiers could hear each other speaking. In July 1915, the British detonated a massive underground mine beneath the German lines, creating a massive crater.<br><br><strong>Key Facts:</strong><ul><li>The mine blast created a crater 120 feet wide and 20 feet deep.</li><li>Soldiers in these trenches suffered terribly from 'trench foot' due to standing in freezing mud and water for days on end.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"The trench was a ribbon of earth, filled with freezing water, the stench of unburied bodies, and the constant, nerve-shredding crack of sniper fire.\"</em><br>— <strong>Private Frank Richards</strong>, Royal Welch Fusiliers</blockquote><div style='text-align: center; margin-top: 15px;'><img src='/images/cheshire_regiment_trench.png' style='max-width: 100%; border-radius: 6px; border: 1px solid #ccc;' alt='Hooge Crater'></div>"
             }
           ],
           "tour_guide_script": [
@@ -42388,27 +42665,44 @@
             {
               "type": "narrative",
               "theme_heading": "The Brooding Soldier & Poison Gas",
-              "text": "In April 1915, the Germans launched the first major poison gas attack of the war on the Western Front at St Julien. A heavy cloud of chlorine gas was released, devastating the French colonial troops and forcing the Canadian 1st Division to step in and hold the line.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk into the memorial grounds to unlock your reflection task./p><button onclick='window.unlockMission(this, \"brooding_soldier\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+              "text": "In April 1915, the Germans launched the first major poison gas attack of the war on the Western Front at St Julien. A heavy cloud of chlorine gas was released, devastating the French colonial troops and forcing the Canadian 1st Division to step in and hold the line.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Direction of the Gas</h4><p style=\"font-size: 1.05rem; color: #334155;\"><strong>Action:</strong> Open your phone's compass app. Stand at the base of the Canadian memorial and turn until you are facing the exact direction the German gas attack came from (North-East).</p><div style=\"background: #ecfdf5; padding: 15px; border-left: 4px solid #10b981; margin: 15px 0; border-radius: 0 4px 4px 0;\"><em style=\"color: #065f46;\">\\\"Gas! GAS! Quick, boys!—An ecstasy of fumbling...\\\"</em><br><small style=\"color: #047857;\">- Wilfred Owen</small></div><p style=\"color: #b91c1c; font-weight: bold; margin-bottom: 5px;\"><i class=\"fa-solid fa-brain\"></i> Learn these 3 facts by heart before getting back on the coach:</p><ul style=\"margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;\"><li>Chlorine gas severely damaged the respiratory system, causing victims to suffocate.</li><li>The earliest defense was holding cotton pads soaked in urine over the mouth (ammonia neutralized chlorine).</li><li>The memorial shows a soldier in a 'reverse arms' position, signifying mourning, not victory.</li></ul></div>"
             },
             {
               "type": "narrative",
               "theme_heading": "Sanctuary Wood",
-              "text": "Sanctuary Wood was initially a quiet area behind the lines where soldiers could rest (a sanctuary), but it eventually became part of the frontline. Today, it offers a rare look at an original, preserved trench system.<br><br><strong>Key Facts:</strong><ul><li>Trenches here were reinforced with corrugated metal ('elephant iron') to prevent collapse in the waterlogged soil.</li><li>The shattered, dead trees preserved in the wood are a direct result of relentless artillery fire tearing the landscape apart.</li><li><strong>Local Connection:</strong> Just a short distance from here is Westhoek Ridge, where Stubbington local Auriol 'Eric' Lowry fought in 1917.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"I died in hell—(They called it Passchendaele). My wound was slight, / And I was hobbling back; and then a shell / Burst slick upon the duck-boards: so I fell / Into the bottomless mud, and lost the light.\"</em><br>— <strong>Siegfried Sassoon</strong>, Memorial Tablet</blockquote>"
+              "text": "Sanctuary Wood was initially a quiet area behind the lines where soldiers could rest (a sanctuary), but it eventually became part of the frontline. Today, it offers a rare look at an original, preserved trench system.<br><br><strong>Key Facts:</strong><ul><li>Trenches here were reinforced with corrugated metal ('elephant iron') to prevent collapse in the waterlogged soil.</li><li>The shattered, dead trees preserved in the wood are a direct result of relentless artillery fire tearing the landscape apart.</li><li><strong>Local Connection:</strong> Just a short distance from here is Westhoek Ridge, where Stubbington local Auriol 'Eric' Lowry fought in 1917.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"I died in hell—(They called it Passchendaele). My wound was slight, / And I was hobbling back; and then a shell / Burst slick upon the duck-boards: so I fell / Into the bottomless mud, and lost the light.\"</em><br>— <strong>Siegfried Sassoon</strong>, Memorial Tablet</blockquote><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Senses of the Salient</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-eye\"></i> As you walk through the preserved trench system, close your eyes for 30 seconds. Imagine the sound of artillery, the smell of mud and cordite, and the fear of a night raid. Think of three adjectives that describe how it feels to stand here.</p><ul style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <li>The Ypres Salient was a massive bulge in the Allied front line, leaving British and Commonwealth troops dangerously exposed to German artillery fire from three sides.</li> <li>It was the site of three major, apocalyptic battles (1914, 1915, 1917), resulting in over 300,000 British and Commonwealth casualties.</li> <li>During the Second Battle of Ypres in 1915, the Salient witnessed the first mass use of poison gas on the Western Front.</li> <li>The high water table and relentless artillery bombardment destroyed natural drainage, turning the Salient into a notoriously lethal landscape of liquid mud.</li> <li>Sanctuary Wood earned its name in 1914 as a quiet rear area where troops rested, but by 1916, the front line had violently collapsed back into the woods.</li> </ul><div style='text-align: center; margin-top: 15px;'><img src='/images/ypres_salient_map_new.png' style='max-width: 100%; border-radius: 6px; border: 1px solid #ccc;' alt='Ypres Salient Map'></div></div></div>"
             },
             {
               "type": "narrative",
               "theme_heading": "Tyne Cot Cemetery",
-              "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_tyne_cot.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Tyne Cot Cemetery\"/><br><small>Tyne Cot Cemetery</small></div>Tyne Cot is the largest Commonwealth war cemetery in the world, reflecting the incomprehensible scale of the casualties during the Battle of Passchendaele (1917).<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk through the cemetery gates to unlock your assigned soldier.</p><button onclick='window.unlockMission(this, \"tyne_cot\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+              "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_tyne_cot.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Tyne Cot Cemetery\"/><br><small>Tyne Cot Cemetery</small></div>Tyne Cot is the largest Commonwealth war cemetery in the world, reflecting the incomprehensible scale of the casualties during the Battle of Passchendaele (1917).<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Tell Their Story</h4><div style=\"background: #fff1f2; padding: 15px; border-radius: 6px; border: 1px solid #fecdd3;\"><p style=\"margin: 0; color: #be123c; font-weight: bold; font-size: 1.05rem;\"><i class=\"fa-solid fa-person-chalkboard\"></i> Find the grave or panel of one of our Local Heroes (e.g., Lance Corporal A. Ward). At the end of the visit, you will be asked to orally tell the rest of your group about this soldier.</p></div></div>"
             },
             {
               "type": "narrative",
               "theme_heading": "Lijssenthoek Casualty Clearing Station",
-              "text": "Lijssenthoek was the largest evacuation hospital in the Ypres Salient. Located just out of artillery range, it received casualties directly from the frontline dressing stations.<br><br><strong>Key Facts:</strong><ul><li>It handled over 200,000 casualties during the war.</li><li>The cemetery graves provide a timeline of hospital mortality, showing spikes during major offensives.</li><li>Advances in treating infection happened here, including the Carrel-Dakin method of flushing wounds with antiseptics.</li><li>Nurses also lost their lives here, such as Staff Nurse Nellie Spindler who was killed by a shell.</li></ul>"
+              "text": "Lijssenthoek was the largest evacuation hospital in the Ypres Salient. Located just out of artillery range, it received casualties directly from the frontline dressing stations.<br><br><strong>Key Facts:</strong><ul><li>It handled over 200,000 casualties during the war.</li><li>The cemetery graves provide a timeline of hospital mortality, showing spikes during major offensives.</li><li>Advances in treating infection happened here, including the Carrel-Dakin method of flushing wounds with antiseptics.</li><li>Nurses also lost their lives here, such as Staff Nurse Nellie Spindler who was killed by a shell.</li></ul><br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Medical Frontline</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-magnifying-glass\"></i> Walk along the rows of headstones and find the grave of Staff Nurse Nellie Spindler (the only female casualty buried here). Consider: Why were medical staff, located miles behind the front line, still at risk of death?</p><div style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <p>Staff Nurse Nellie Spindler was a 26-year-old nurse serving with the Queen Alexandra’s Imperial Military Nursing Service. In August 1917, at the height of the Battle of Passchendaele, the casualty clearing station where she worked was struck by German artillery. Shrapnel tore through her tent, killing her instantly. Today, she is the only woman buried alongside more than 10,000 men at Lijssenthoek Military Cemetery, serving as a powerful physical reminder that women operating in medical roles lived and died in the direct line of fire.</p> <ul> <li>The First Aid Nursing Yeomanry (FANY) was created in 1907 as an all-female voluntary organization.</li> <li>FANYs drove motor ambulances through heavily shelled, muddy roads to evacuate bleeding soldiers from the front.</li> <li>They operated soup kitchens, mobile canteens, and advanced dressing stations, consistently working under direct enemy bombardment.</li> </ul></div></div></div>"
             },
             {
               "type": "narrative",
               "theme_heading": "The Menin Gate",
-              "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_menin_gate.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Menin Gate\"/><br><small>The Menin Gate, Ypres</small></div>The Menin Gate is a colossal memorial to the missing in Ypres. Millions of Allied soldiers marched through this spot on their way to the frontlines, and many never returned.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk under the arches of the Menin Gate to unlock your reflection task./p><button onclick='window.unlockMission(this, \"menin_gate\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+              "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_menin_gate.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Menin Gate\"/><br><small>The Menin Gate, Ypres</small></div>The Menin Gate is a colossal memorial to the missing in Ypres. Millions of Allied soldiers marched through this spot on their way to the frontlines, and many never returned.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Local Hero & The Empire</h4><div style=\"margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;\"><h4 style=\"margin: 0 0 10px 0; color: #1e293b;\"><i class=\"fa-solid fa-magnifying-glass-location\" style=\"color: #3b82f6;\"></i> Find the Local Hero</h4><div style=\"background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;\"><h3 style=\"margin: 0 0 10px 0; color: #1e293b; font-size: 1.3rem;\">Private T. J. Franklin</h3><p style=\"margin: 0; font-size: 0.95rem; line-height: 1.6; color: #334155;\"><strong>Regiment:</strong> 1st Battalion, The Hampshire Regiment<br><strong>Local Connection:</strong> Stubbington<br><strong>Fate:</strong> Killed 29th April 1915 holding an exposed line on the Frezenberg Ridge.</p></div><p style=\"margin: 0; color: #b91c1c; font-weight: bold;\"><i class=\"fa-solid fa-person-chalkboard\"></i> Action: The Menin Gate has 54,000 names. Locate the specific panel for Private T. J. Franklin.</p></div><div><h4 style=\"margin: 0 0 5px 0; color: #1e293b;\"><i class=\"fa-solid fa-monument\" style=\"color: #f59e0b;\"></i> The Indian Forces Memorial</h4><p style=\"margin: 0; color: #475569;\">Once you have found his name, walk out of the gate and up onto the grassy ramparts. Locate the <strong>Indian Forces Memorial</strong>. 130,000 troops from the Indian subcontinent served in Flanders. Take a moment to read the inscription before the Last Post begins at 8:00 PM.</p><div style='background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 15px;'><p style='margin: 0 0 10px 0; color: #334155; font-weight: bold;'><i class='fa-solid fa-video' style='color: #e11d48;'></i> The Empire's War: Global Voices in Flanders</p><p style='margin: 0 0 10px 0; color: #475569;'>David Olusoga’s WW1 Uncut series brilliantly dismantles the traditional, whitewashed image of the trenches, making it the perfect digital companion for this stop.</p><p style='margin: 0 0 10px 0; color: #475569;'><strong>Action:</strong> Watch the embedded David Olusoga video on your device, then stand before the Indian Forces Memorial and complete these three steps:</p><ol style='margin: 0; padding-left: 20px; color: #475569;'><li style='margin-bottom: 8px;'><strong>Observe the Symbolism:</strong> Look closely at the monument's base and the four Asian lions facing outward (the State Emblem of India). This memorial was unveiled in 2011. Why do you think it took nearly a century for a dedicated national monument to be placed here, and what does this delay tell us about how history is remembered?</li><li style='margin-bottom: 8px;'><strong>Challenge the Image:</strong> Olusoga explains that the Western Front was one of the most diverse spaces on earth. Look down at the Menin Gate, where 413 Indian soldiers with no known grave are carved into the stone alongside British troops. How does standing here change the traditional textbook image of the \"British Tommy\" in the mud?</li><li style='margin-bottom: 8px;'><strong>Discuss the Impact:</strong> Indian Expeditionary Force A arrived in freezing conditions in late 1914, plugging critical gaps in the British line just in time to prevent a German breakthrough. Discuss with your partner: How might the First Battle of Ypres have ended if those 45,000 Empire troops had not been deployed?</li></ol></div><div style='text-align: center; margin-bottom: 15px;'><iframe width='100%' height='315' src='https://www.youtube.com/embed/WRTm7mw25WU?start=182' frameborder='0' allowfullscreen></iframe><p style='font-size: 0.9rem; color: #64748b; margin-top: 5px; text-align: left;'><strong>Watch (6 mins 31 secs):</strong> Historian David Olusoga reveals the true diversity of the World War One trenches. Pay attention to the sheer number of nations that fought and died in the exact mud you are standing on today. <em>Contrast this with the Chattri Memorial on the South Downs in Sussex, where wounded Indian soldiers were cremated after being treated at the Royal Pavilion in Brighton.</em></p></div></div></div>",
+              "historical_facts": [
+                "Indian Expeditionary Force A (45,000 men) arrived in late 1914, plugging critical gaps to prevent a German breakthrough during the First Battle of Ypres.",
+                "By the end of 1914, Indian troops made up one-third of all British forces on the Western Front.",
+                "Of the 130,000 Indian soldiers who served in Flanders, roughly 9,000 died from combat and severe exposure to the brutal European winter.",
+                "The Menin Gate lists 413 Indian soldiers with no known grave.",
+                "Unveiled in 2011, the memorial features the State Emblem of India: four Asian lions facing outward over a bull, elephant, horse, and lion."
+              ],
+              "interactive_task": {
+                "title": "The Empire’s War: Global Voices in Flanders",
+                "action": "Watch the David Olusoga video, then stand before the Indian Forces Memorial and complete three steps: 1) Observe: Why did it take nearly a century to build this 2011 monument, and what does this delay tell us about historical memory? 2) Challenge: Look down at the Menin Gate where 413 Indian soldiers are carved alongside British troops. How does this change the traditional textbook image of the 'British Tommy'? 3) Discuss: How might the First Battle of Ypres have ended if those 45,000 Empire troops had not been deployed?"
+              },
+              "media": {
+                "type": "youtube",
+                "youtube_id": "Fwv4qL8yE-s",
+                "url": "https://www.youtube.com/watch?v=Fwv4qL8yE-s",
+                "caption": "Watch: Historian David Olusoga reveals the true diversity of the World War One trenches. Pay attention to the sheer number of nations that fought and died in the exact mud you are standing on today."
+              }
             }
           ],
           "tour_guide_script": [
@@ -42440,20 +42734,20 @@
           ],
           "banner": "/images/ypres_cloth_hall.jpg",
           "extended": {
-            "question": "1 (a). How useful are Sources A and B for an enquiry into the impact of the war on the town of Ypres and the importance of rest for the soldiers? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+            "question": "1 (a). How useful are Sources A and B for an enquiry into the physical conditions of the landscape and trench warfare on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
             "scaffolding": [
               "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
             ],
             "source_a": {
-              "provenance": "A photograph showing the complete destruction of the Cloth Hall in the Ypres town square, 1918.",
-              "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/ypres_cloth_hall.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+              "provenance": "A photograph showing the devastating impact of artillery fire and mud on the landscape during the Battle of Passchendaele, 1917.",
+              "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/gw_flooded_trench.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
             },
             "source_b": {
-              "provenance": "A photograph of British soldiers relaxing and drinking tea inside Talbot House (Toc H) in Poperinge.",
-              "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/talbot_house_relaxing.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+              "provenance": "A photograph of soldiers from the Cheshire Regiment occupying a captured German trench, 1916.",
+              "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/hooge_crater_trench.png\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
             },
             "model": "<strong>Source A is highly useful...</strong>",
-            "provenance_clue": "Source A is a factual photograph documenting structural damage; what can it tell us about the destructive power of artillery? Source B shows men resting at Talbot House; why was this 'Every Man’s Club' so vital for morale just a few miles behind the front line?"
+            "provenance_clue": "Source A is an official photograph documenting the severe mud and destroyed landscape; what can it tell us about the conditions soldiers had to fight in? Source B shows men resting in a captured trench; what does this reveal about the realities of trench occupation?"
           }
         },
         {
@@ -42533,17 +42827,17 @@
             {
               "type": "narrative",
               "theme_heading": "Ypres Ramparts",
-              "text": "The medieval ramparts of Ypres provided some of the only cover in the destroyed city. Soldiers dug deep into the ancient moated defenses to hide from the shelling. The Ramparts Cemetery is one of the most picturesque on the Western Front, built directly into the town's defenses.<br><br><blockquote><strong>Written Source:</strong><br><em>\"Who will remember, passing through this Gate, / The unheroic dead who fed the guns? / Who shall absolve the foulness of their fate...\"</em><br>— <strong>Siegfried Sassoon</strong>, On Passing the New Menin Gate</blockquote>"
+              "text": "<div style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ramparts_ww1.jpg\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\" alt=\"Ypres Ramparts WWI\" /><br><small style=\"color: #64748b;\">Soldiers sheltering near the Lille Gate dugouts in the Ypres Ramparts during WWI</small></div>The medieval ramparts of Ypres provided some of the only cover in the destroyed city. Soldiers dug deep into the ancient moated defenses to hide from the shelling. The Ramparts Cemetery is one of the most picturesque on the Western Front, built directly into the town's defenses.<br><br><blockquote><strong>Written Source:</strong><br><em>\"Who will remember, passing through this Gate, / The unheroic dead who fed the guns? / Who shall absolve the foulness of their fate...\"</em><br>— <strong>Siegfried Sassoon</strong>, On Passing the New Menin Gate</blockquote><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Ancient Defenses</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-shield-halved\"></i> Look at the thick brick walls of the Ramparts. Why do you think soldiers chose to dig their dugouts into medieval defenses rather than staying in the open town? How does the Ramparts Cemetery differ in atmosphere from Tyne Cot?</p><ul style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <li>The Ramparts were originally medieval fortifications, massively expanded and reinforced in the 17th century by the famous French military engineer Vauban.</li> <li>Because the brick and earth walls were incredibly thick, they survived the relentless German artillery barrages that completely leveled the rest of the town.</li> <li>British troops honeycombed these ancient walls, digging extensive subterranean dugouts to house battalion headquarters, dormitories, and advanced dressing stations safely out of the blast zones.</li> </ul></div></div>"
             },
             {
               "type": "narrative",
               "theme_heading": "Talbot House (Every Man's Club)",
-              "text": "Located in the town of Poperinge, safely behind the lines, Talbot House was set up by Army Chaplain Tubby Clayton as an 'Every Man's Club'. It was an oasis of sanity where soldiers could escape the psychological horror of the trenches.<br><br><strong>Key Facts:</strong><ul><li>Rank was completely ignored here; signs read 'Abandon Rank All Ye Who Enter Here'.</li><li>Soldiers could drink tea, write letters, use the library, and attend services in the attic chapel.</li><li>Over half a million men passed through its doors.</li></ul>"
+              "text": "Located in the town of Poperinge, safely behind the lines, Talbot House was set up by Army Chaplain Tubby Clayton as an 'Every Man's Club'. It was an oasis of sanity where soldiers could escape the psychological horror of the trenches.<br><br><strong>Key Facts:</strong><ul><li>Rank was completely ignored here; signs read 'Abandon Rank All Ye Who Enter Here'.</li><li>Soldiers could drink tea, write letters, use the library, and attend services in the attic chapel.</li><li>Over half a million men passed through its doors.</li></ul><br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Abandon Rank</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-mug-hot\"></i> Find the famous sign that reads 'Abandon Rank All Ye Who Enter Here'. Why was it so important for soldiers suffering from the psychological toll of the trenches to have a place where officers and privates were treated as equals?</p><div style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <p>For soldiers rotating out of the slaughter of the Salient, Talbot House was an essential psychological sanctuary. The mental toll of industrialized warfare—then poorly understood and heavily stigmatized as \"shell shock\"—destroyed thousands of men. By enforcing the rule \"Abandon Rank All Ye Who Enter Here,\" Tubby Clayton removed the strict, oppressive military hierarchy that dominated soldiers' lives. This allowed them to decompress, play piano, and speak freely as human beings rather than cogs in a military machine. Today, this deeply resonates with modern understandings of PTSD, recognizing that mental survival in the armed forces requires psychological decompression, peer support, and the destigmatization of trauma.</p> </div></div></div>"
             },
             {
               "type": "narrative",
               "theme_heading": "Poperinge Death Cells & Discipline",
-              "text": "A stark contrast to Talbot House, the nearby Poperinge Town Hall contains the death cells and an execution post used by the British Army. Discipline was incredibly harsh, and shell shock was poorly understood by the high command.<br><br><strong>Key Facts:</strong><ul><li>Over 300 British and Commonwealth soldiers were executed by firing squad during the war, often for 'cowardice' or 'desertion'.</li><li>Many of these men were actually suffering from severe psychological trauma (shell shock) caused by the relentless artillery bombardment.</li><li>In 2006, the British Government issued a mass statutory pardon for all soldiers executed for military offenses during the First World War.</li></ul>"
+              "text": "A stark contrast to Talbot House, the nearby Poperinge Town Hall contains the death cells and an execution post used by the British Army. Discipline was incredibly harsh, and shell shock was poorly understood by the high command.<br><br><strong>Key Facts:</strong><ul><li>Over 300 British and Commonwealth soldiers were executed by firing squad during the war, often for 'cowardice' or 'desertion'.</li><li>Many of these men were actually suffering from severe psychological trauma (shell shock) caused by the relentless artillery bombardment.</li><li>In 2006, the British Government issued a mass statutory pardon for all soldiers executed for military offenses during the First World War.</li></ul><br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Justice or Tragedy?</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-scale-unbalanced\"></i> Stand near the cramped death cells. Many of the men executed here were suffering from severe shell shock. Discuss with the person next to you: Why did the British High Command believe executions were necessary, and why was this practice eventually condemned?</p><ul style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <li>During the First World War, 306 British and Commonwealth soldiers were executed by firing squad.</li> <li>The most common charges were desertion, cowardice, and casting away arms.</li> <li>Medical science at the time failed to recognize that many of these condemned men were suffering from severe, undiagnosed shell shock.</li> <li>Men were held in tiny, damp cells at the Poperinge Town Hall overnight before being shot at dawn against a post in the courtyard.</li> <li>In 2006, the UK government officially granted a posthumous statutory pardon to all 306 soldiers, recognizing the tragic miscarriage of military justice.</li> </ul></div></div>"
             }
           ],
           "tour_guide_script": [
@@ -43052,8 +43346,120 @@
               "text": "As we conclude our journey through the Ypres Salient, it is time to bring the stories of the fallen back home. Your final challenge is to choose one of the local heroes we investigated and write a short memorial speech that could be read aloud at the Stubbington War Memorial on Remembrance Sunday.<br><br>**Your speech must:**<br>- State who they were and where they lived.<br>- Describe the conditions they faced on the battlefield.<br>- Explain why their sacrifice, and the sacrifice of their generation, must never be forgotten."
             }
           ]
+        },
+        {
+          "id": "hero_lowry_william",
+          "title": "William Augustine 'Harper' Lowry",
+          "enquiry": "Local Hero",
+          "banner": "/images/stubbington_memorial.jpg",
+          "teacher_notes": {
+            "primer": "The story of William Augustine 'Harper' Lowry, who lived at Manor Way Grange.",
+            "objectives": []
+          },
+          "do_now": {
+            "type": "timeline",
+            "prediction_question": "The Life and Fall of William Augustine 'Harper' Lowry",
+            "events": [
+              {
+                "year": "Home",
+                "title": "Stubbington Connection",
+                "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Eldest brother.",
+                "lat": 50.8107,
+                "lng": -1.1967
+              },
+              {
+                "year": "Resting Place",
+                "title": "Gully Ravine (Gallipoli)",
+                "detail": "Killed on 4th June 1915 leading a desperate charge up Gully Ravine. He has no known grave.",
+                "lat": 40.32,
+                "lng": 26.26
+              }
+            ]
+          },
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "William Augustine 'Harper' Lowry",
+              "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> Indian Army<br><strong>Age:</strong> 25<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the eldest of the three Lowry brothers.<br><br><strong>Military Service & Fate:</strong> He fought in the Gallipoli campaign. On 4th June 1915, he was killed leading a desperate charge up Gully Ravine. Because of relentless Turkish machine-gun fire, those who fell too badly wounded to move could not be rescued or safely recovered, and they tragically died of exposure. His body was never recovered. He has no known grave and is commemorated on the Helles Memorial in Gallipoli, Turkey.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_william.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
+            }
+          ]
+        },
+        {
+          "id": "hero_lowry_auriol",
+          "title": "Auriol 'Eric' Lowry",
+          "enquiry": "Local Hero",
+          "banner": "/images/stubbington_memorial.jpg",
+          "teacher_notes": {
+            "primer": "The story of Auriol 'Eric' Lowry, who lived at Manor Way Grange.",
+            "objectives": []
+          },
+          "do_now": {
+            "type": "timeline",
+            "prediction_question": "The Service of Auriol 'Eric' Lowry",
+            "events": [
+              {
+                "year": "Home",
+                "title": "Stubbington Connection",
+                "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Middle brother.",
+                "lat": 50.8107,
+                "lng": -1.1967
+              },
+              {
+                "year": "Action",
+                "title": "Westhoek Ridge",
+                "detail": "Fought at Westhoek Ridge in 1917. Commanded the battalion where his younger brother Patrick served.",
+                "lat": 50.852,
+                "lng": 2.8913
+              }
+            ]
+          },
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "Auriol 'Eric' Lowry",
+              "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> West Yorkshire Regiment<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the middle brother.<br><br><strong>Military Service:</strong> He fought at Westhoek Ridge in 1917. Uniquely, he commanded the battalion in which his younger brother Patrick also served, bearing the heavy burden of leadership and family duty. He was killed instantaneously by a random machine-gun bullet on 23rd September 1918 (aged 25) while inspecting frontline outposts in the Acheville Sector near Arleux, France, dying in his runner's arms. He is buried at La Targette Cemetery, Neuville-St. Vaast, in Northern France. His burial was highly distinguished, attended by an Army commander, two corps commanders, and three divisional commanders as a sign of the immense respect he had earned.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_auriol.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
+            }
+          ]
+        },
+        {
+          "id": "hero_lowry_cyril",
+          "title": "Cyril John 'Patrick' Lowry",
+          "enquiry": "Local Hero",
+          "banner": "/images/stubbington_memorial.jpg",
+          "teacher_notes": {
+            "primer": "The story of Cyril John 'Patrick' Lowry, who lived at Manor Way Grange.",
+            "objectives": []
+          },
+          "do_now": {
+            "type": "timeline",
+            "prediction_question": "The Life and Fall of Cyril John 'Patrick' Lowry",
+            "events": [
+              {
+                "year": "Home",
+                "title": "Stubbington Connection",
+                "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Youngest brother.",
+                "lat": 50.8107,
+                "lng": -1.1967
+              },
+              {
+                "year": "Resting Place",
+                "title": "Somme",
+                "detail": "Killed on 25th March 1918 during a German offensive near the Somme, in full view of his brother Eric.",
+                "lat": 50.01,
+                "lng": 2.68
+              }
+            ]
+          },
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "Cyril John 'Patrick' Lowry",
+              "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> West Yorkshire Regiment<br><strong>Age:</strong> 20<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the youngest brother.<br><br><strong>Military Service & Fate:</strong> Served under the command of his older brother, Eric. He was tragically killed on 25th March 1918 (aged 20) while leading a counter-attack with C Company to defend the River Somme bridgehead west of Eterpigny, France. In the chaos of the massive German Spring Offensive and the subsequent British withdrawal, his body was never recovered for burial. Heartbreakingly, he fell in full view of his brother Eric. He has no known grave and is commemorated on the Pozieres Memorial in France (located on the old Roman road between Albert and Bapaume).<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_cyril.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
+            }
+          ]
         }
-      ]
+      ],
+      "overview_custom_html": "\n      <div style=\"background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 30px;\">\n        <h3 style=\"margin-top: 0; color: #1e3a8a; font-family: 'Playfair Display', serif; font-size: 1.8rem;\">The Lowry Brothers: A Village's Sacrifice</h3>\n        <p style=\"color: #334155; line-height: 1.6; font-size: 1.05rem;\">The names of three brothers—William, Cyril, and Auriol (Eric) Lowry—are all carved into the Stubbington War Memorial in our village center. The story of these young men perfectly captures the devastating toll the war took on individual families.<br><br>Tragically, the three brothers fell in three completely different theatres of war:<br><ul><li><strong>William 'Harper' Lowry:</strong> Fell in 1915 and is commemorated on the Helles Memorial in Turkey (Gallipoli).</li><li><strong>Cyril 'Patrick' Lowry:</strong> Fell in 1916 and is commemorated on the Pozieres Memorial in France (The Somme).</li><li><strong>Auriol 'Eric' Lowry:</strong> Fell in 1917 and is buried at La Targette Cemetery near Arras, France.</li></ul><br>Before we depart for Belgium, take a moment to reflect on what it must have been like for the local community to receive the telegrams for all three boys over the course of three years.</p>\n        <div style=\"display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;\"><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/stubbington_memorial.jpg\" alt=\"The Stubbington War Memorial\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">The Stubbington War Memorial, where the Lowry brothers are commemorated.</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_william.png\" alt=\"William 'Harper' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">William 'Harper' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_cyril.png\" alt=\"Cyril 'Patrick' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Cyril 'Patrick' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_auriol.png\" alt=\"Auriol 'Eric' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Auriol 'Eric' Lowry</small>\n         </div></div>\n      </div>\n    "
     }
   },
   "water_and_sanitation": {
