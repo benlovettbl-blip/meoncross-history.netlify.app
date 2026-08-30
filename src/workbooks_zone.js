@@ -1,3 +1,4 @@
+import { state } from './state.js';
 export function renderWorkbooksZone(container, unitData) {
   let html = `
     <div class="welcome-banner" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
@@ -23,7 +24,7 @@ export function renderWorkbooksZone(container, unitData) {
 
     items.forEach(item => {
       sectionHtml += `
-        <div class="homepage-lesson-card" style="background: #f8fafc; border: 2px dashed ${color}; border-radius: 8px; padding: 25px 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('${item.url}', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#f8fafc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+        <div class="homepage-lesson-card" style="background: #f8fafc; border: 2px dashed ${color}; border-radius: 8px; padding: 25px 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" data-action="open-link" data-url="${item.url}" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#f8fafc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
            <i class="fa-solid ${icon}" style="font-size: 2.5rem; color: ${color}; margin-bottom: 15px;"></i>
            <h3 style="margin: 0; color: #334155; font-size: 1.1rem;">${item.title}</h3>
         </div>
@@ -40,18 +41,18 @@ export function renderWorkbooksZone(container, unitData) {
   const getPdfUrl = (type, wbId) => {
     const isFull = (wbId === 'full');
     const suffix = isFull ? type : `${type}_${wbId}`;
-    return window.currentUnitId ? `/pdfs/${window.currentUnitId}_${suffix}.pdf` : `/pdfs/unknown_${suffix}.pdf`;
+    return (state.selectedUnitId || window.currentUnitId) ? `/pdfs/${(state.selectedUnitId || window.currentUnitId)}_${suffix}.pdf` : `/pdfs/unknown_${suffix}.pdf`;
   };
 
   const getHtmlUrl = (wbId) => {
     const filename = wbId === 'full' ? 'pupil_workbook.html' : `pupil_workbook_${wbId}.html`;
-    return window.currentUnitId ? `/units/${window.currentUnitId}/${filename}` : filename;
+    return (state.selectedUnitId || window.currentUnitId) ? `/units/${(state.selectedUnitId || window.currentUnitId)}/${filename}` : filename;
   };
 
   if (unitData.timeline && unitData.timeline.length > 0) {
     const timelineItems = [{
       title: 'Full Unit Timeline',
-      url: window.currentUnitId ? `/pdfs/${window.currentUnitId}_timeline.pdf` : `/pdfs/unknown_timeline.pdf`
+      url: (state.selectedUnitId || window.currentUnitId) ? `/pdfs/${(state.selectedUnitId || window.currentUnitId)}_timeline.pdf` : `/pdfs/unknown_timeline.pdf`
     }];
     html += renderSection('Printable Timelines', 'fa-clock-rotate-left', 'A chronological overview of all key events in this unit, formatted for easy printing and revision.', '#14b8a6', timelineItems);
   }
@@ -76,7 +77,7 @@ export function renderWorkbooksZone(container, unitData) {
     // 3. Mastery Pack PDFs
     const masteryPdfItems = unitData.workbooks.map(wb => ({
       title: wb.title || wb.name,
-      url: window.currentUnitId ? `/pdfs/${window.currentUnitId}_mastery_pack_${wb.name || wb.id}.pdf` : `/pdfs/unknown_mastery_pack_${wb.name || wb.id}.pdf`
+      url: (state.selectedUnitId || window.currentUnitId) ? `/pdfs/${(state.selectedUnitId || window.currentUnitId)}_mastery_pack_${wb.name || wb.id}.pdf` : `/pdfs/unknown_mastery_pack_${wb.name || wb.id}.pdf`
     }));
     html += renderSection('Mastery Pack PDFs', 'fa-shield-halved', 'Comprehensive revision and mastery tasks designed to test deep knowledge retrieval.', '#d32f2f', masteryPdfItems);
 

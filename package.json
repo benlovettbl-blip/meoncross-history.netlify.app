@@ -25,6 +25,7 @@
     "@google/genai": "^2.15.0",
     "@google/generative-ai": "^0.24.1",
     "acorn": "^8.18.0",
+    "acorn-walk": "^8.3.5",
     "astring": "^1.9.0",
     "jsdom": "^29.1.1",
     "mobile-drag-drop": "^2.3.0-rc.2",

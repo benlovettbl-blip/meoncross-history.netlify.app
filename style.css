@@ -1651,3 +1651,354 @@ img::after {
     min-height: 400px;
   }
 }
+
+/* =========================================
+   Core Layout & SEN Styles (Extracted from core_app.js)
+   ========================================= */
+.phase-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.phase-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  padding-bottom: 10px;
+}
+.narrative-chunk {
+  background: #f8fafc;
+  border-left: 4px solid #002855;
+  padding: 15px 20px;
+  margin-bottom: 18px;
+  border-radius: 0 6px 6px 0;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+.vocab-word {
+  position: relative;
+  border-bottom: 2px dashed #3b82f6;
+  cursor: pointer;
+  color: #1e3a8a;
+  font-weight: 700;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0 4px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+.vocab-word:hover, .vocab-word.active {
+  background: rgba(59, 130, 246, 0.25);
+  border-bottom-color: #1e3a8a;
+}
+#global-glossary-popover {
+  position: fixed;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  width: max-content;
+  max-width: 300px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  z-index: 100000;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#global-glossary-popover.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+#global-glossary-popover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1e293b transparent transparent transparent;
+  transition: left 0.2s ease;
+}
+#global-glossary-popover.arrow-top::after {
+  top: auto;
+  bottom: 100%;
+  border-color: transparent transparent #1e293b transparent;
+}
+.scaffold-box {
+  background: #fafafa;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 14px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+.starter-box { border-left: 4px solid #2563eb; }
+.clue-box { border-left: 4px solid #d97706; }
+.model-box { border-left: 4px solid #059669; }
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.student-answer-input {
+  display: none;
+  width: 100%;
+  height: 140px;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+.laptop-mode-active .student-answer-input {
+  display: block;
+}
+.do-now-card {
+  background: rgba(248, 250, 252, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.do-now-card .answer {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.do-now-card.revealed .answer {
+  display: block;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+.btn-primary {
+  background: #1a237e;
+  color: white;
+  border-color: #1a237e;
+}
+.btn-primary:hover {
+  background: #0d1659;
+}
+.btn-sm-icon {
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+.fab-copy {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s, background 0.2s;
+}
+.fab-copy:hover {
+  transform: scale(1.05);
+  background: #1e293b;
+}
+.laptop-mode-active .fab-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-secondary {
+  background: #e2e8f0;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+.btn-secondary:hover {
+  background: #cbd5e1;
+  color: #0f172a;
+}
+.reading-active {
+  background: #ef4444 !important;
+  color: white !important;
+  border-color: #dc2626 !important;
+}
+.sidebar {
+  background: #0f172a !important;
+  border-right: none !important;
+  box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+}
+.sidebar .fa-graduation-cap, .sidebar h2, .sidebar span, .sidebar .lesson-link {
+  color: #f1f5f9 !important;
+}
+.sidebar .lesson-link {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid transparent;
+}
+.sidebar .lesson-link:hover, .sidebar .lesson-link.active {
+  background: rgba(255,255,255,0.15) !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.2);
+}
+.sidebar-header {
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+.source-card img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.flashcard-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.flashcard-wrapper {
+  background-color: transparent;
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.flashcard-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.flashcard-front {
+  background-color: #f1f5f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+}
+.flashcard-front h4 {
+  margin: 0 0 10px 0;
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+.flashcard-front p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+.flashcard-back {
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.flashcard-wrapper.flipped .flashcard-front {
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+}
+.flashcard-wrapper.flipped .flashcard-back {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+}
+.teacher-note {
+  display: none;
+  background: #1e293b;
+  color: #f8fafc;
+  border-left: 4px solid #facc15;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  line-height: 1.6;
+}
+.teacher-note h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #facc15;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.15rem;
+}
+.teacher-mode-active .teacher-note {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+.para-number {
+  background: #e2e8f0;
+  color: #475569;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  margin-right: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+@keyframes highlightPulse {
+  0% { background: #fef08a; transform: scale(1.02); }
+  50% { background: #fef08a; transform: scale(1.02); }
+  100% { background: #f8fafc; transform: scale(1); }
+}
+.highlight-flash {
+  animation: highlightPulse 2.5s ease-out;
+}

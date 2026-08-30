@@ -6,11 +6,16 @@
 import { initAuth } from './auth.js';
 import { initData } from './storage.js';
 import { bindEvents } from './layout.js';
-import { switchView } from './navigation.js';
+import { switchView, initNavigationUI } from './navigation.js';
 import { state } from './state.js';
+import { initEventDelegation } from './engine/events.js';
 import './langemarck_myth.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
+  // Initialize UI subscribers
+  initNavigationUI();
+  initEventDelegation();
+
   // Bind global helper routing
   window.switchView = switchView;
   window.state = state;
@@ -20,9 +25,12 @@ window.addEventListener('DOMContentLoaded', async () => {
   
   try {
     const res = await fetch(`/database.json?v=${Date.now()}`);
-    window.db = await res.json();
+    state.db = await res.json();
+    // Keep window.db temporarily for files not yet refactored
+    window.db = state.db;
   } catch (err) {
     console.error('Failed to load database.json:', err);
+    state.db = {};
     window.db = {};
   }
 

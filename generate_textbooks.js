@@ -240,8 +240,8 @@ allDirs.forEach(unitId => {
     <div style="page-break-after: always;"></div>
     `;
 
-  let globalQNum = 1;
     periodLessons.forEach((lesson, lessonIndex) => {
+      let globalQNum = 1;
       let sourceNum = 1;
       let sourceCharCode = 65;
     

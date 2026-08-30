@@ -90,7 +90,7 @@
     ],
     "lessons": [
       {
-        "id": "lesson_0",
+        "id": "lesson_1",
         "title": "KT1: Geography of the Middle East",
         "full_page_map": "/images/middle_east_map.png",
         "sources": [
@@ -223,7 +223,7 @@
         "consolidation": "Why is the geography of the Middle East so geopolitically important?"
       },
       {
-        "id": "lesson_1",
+        "id": "lesson_2",
         "title": "KT1.1: The End of the British Mandate and the Creation of Israel, 1945–1949",
         "video": {
           "type": "era",
@@ -815,7 +815,7 @@
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
       },
       {
-        "id": "lesson_2",
+        "id": "lesson_3",
         "title": "KT1.2: The Aftermath of the 1948–49 War",
         "learning_objective": "To understand the consequences of the 1948-49 war for Palestinians, Israelis, and regional borders.",
         "vocab": [
@@ -1255,7 +1255,7 @@
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
       },
       {
-        "id": "lesson_3",
+        "id": "lesson_4",
         "title": "KT1.3: Increased Tension, 1955–1963",
         "quiz": [
           {
@@ -1750,7 +1750,7 @@
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
       },
       {
-        "id": "lesson_4",
+        "id": "lesson_5",
         "title": "KT2.1: The Six Day War, 1967",
         "do_now": {
           "type": "questions",
@@ -2277,7 +2277,7 @@
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
       },
       {
-        "id": "lesson_5",
+        "id": "lesson_6",
         "title": "KT2.2: The Aftermath of the 1967 War",
         "teacher_notes": {
           "primer": "This lesson shifts focus from conventional warfare to the diplomatic stalemate and the rise of asymmetrical guerrilla conflict. Students will explore how the Six Day War created the occupied territories and triggered the radicalization of the PLO, culminating in the Black September civil war and the Munich Olympics massacre.",
@@ -2753,7 +2753,7 @@
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
       },
       {
-        "id": "lesson_6",
+        "id": "lesson_7",
         "title": "KT2.3: Israel and Egypt, 1967–1973",
         "teacher_notes": {
           "primer": "This lesson focuses on the transition from the War of Attrition to the dramatic outbreak of the Yom Kippur War. Students will explore Sadat's diplomatic maneuvers, the failure of the Bar Lev Line, and the devastating global impact of the OPEC oil weapon.",
@@ -3277,7 +3277,7 @@
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
       },
       {
-        "id": "lesson_7",
+        "id": "lesson_8",
         "title": "KT3.1: Diplomatic negotiations, 1974–1979",
         "quiz": [
           {
@@ -3737,7 +3737,7 @@
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
       },
       {
-        "id": "lesson_8",
+        "id": "lesson_9",
         "title": "KT3.2: The Palestinian Issue, 1974–1993",
         "quiz": [
           {
@@ -4329,7 +4329,7 @@
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
       },
       {
-        "id": "lesson_9",
+        "id": "lesson_10",
         "title": "KT3.3: Attempts at a solution, 1988–1995",
         "teacher_notes": {
           "primer": "This final lesson explores the culmination of the peace process, analyzing the geopolitical shifts that forced the PLO and Israel to the negotiating table, the breakthrough of the Oslo Accords, and the tragic collapse of the process following Rabin's assassination.",

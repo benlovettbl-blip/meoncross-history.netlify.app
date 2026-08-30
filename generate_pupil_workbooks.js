@@ -446,8 +446,8 @@ allDirs.forEach((unitId) => {
     `;
 
     
-    let globalQNum = 1;
     periodLessons.forEach((lesson, lessonIndex) => {
+      let globalQNum = 1;
       let allVideos = [];
       let imgTags = "";
       let sources = [];
@@ -1045,6 +1045,46 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
       }
 
 
+    // Pair Share
+    if (lesson.pair_share) {
+        html += `<div class="task-box" style="  ">`;
+        html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
+
+        if (lesson.pair_share.sources) {
+          let sourceHTML =
+            '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
+          lesson.pair_share.sources.forEach((srcObj) => {
+            sourceHTML +=
+              '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
+            if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
+              let imgSrc =
+                typeof resolveAssetPath === "function"
+                  ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
+                  : (srcObj.src || srcObj.source || srcObj.image);
+              sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
+            } 
+        if (srcObj.text || srcObj.content) { 
+              sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
+            }
+            if (srcObj.title)
+              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
+            sourceHTML += "</div>";
+          });
+          sourceHTML += "</div>";
+          html += sourceHTML;
+        }
+
+        html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${globalQNum++}. Prompt: ${lesson.pair_share.prompt}</p>`;
+        if (lesson.pair_share.think)
+          html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
+        html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
+        for (let i = 0; i < 6; i++) {
+          html += `<div class="task-lines-large"></div>`;
+        }
+        html += `</div>`;
+        html += `</div>`;
+      }
+
     // Phase 1: Standard Tasks
     if (lesson.tasks && lesson.tasks.length > 0) {
       let originalTasks = lesson.tasks;
@@ -1592,45 +1632,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
 
 
       
-    // Pair Share
-    if (lesson.pair_share) {
-        html += `<div class="task-box" style="  ">`;
-        html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
 
-        if (lesson.pair_share.sources) {
-          let sourceHTML =
-            '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
-          lesson.pair_share.sources.forEach((srcObj) => {
-            sourceHTML +=
-              '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
-            if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
-              let imgSrc =
-                typeof resolveAssetPath === "function"
-                  ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
-                  : (srcObj.src || srcObj.source || srcObj.image);
-              sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-            } 
-        if (srcObj.text || srcObj.content) { 
-              sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
-            }
-            if (srcObj.title)
-              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
-            sourceHTML += "</div>";
-          });
-          sourceHTML += "</div>";
-          html += sourceHTML;
-        }
-
-        html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${globalQNum++}. Prompt: ${lesson.pair_share.prompt}</p>`;
-        if (lesson.pair_share.think)
-          html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
-        html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
-        for (let i = 0; i < 6; i++) {
-          html += `<div class="task-lines-large"></div>`;
-        }
-        html += `</div>`;
-        html += `</div>`;
-      }
 
     // GCSE Task
     let hasExamTask =

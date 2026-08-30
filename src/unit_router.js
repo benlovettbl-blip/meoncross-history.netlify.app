@@ -1,5 +1,6 @@
 console.log('ROUTER RUNNING');
 import { initializeApp } from './core_app.js';
+import { initEventDelegation } from './engine/events.js';
 import { renderVerticalTimeline } from './vertical_timeline.js';
 import { initTerminologyTask } from './terminology_task.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
@@ -7,6 +8,8 @@ import { initGeographicalLocationsTask } from './geographical_locations.js';
 const urlParams = new URLSearchParams(window.location.search);
 let unitId = urlParams.get('id');
 window.currentUnitId = unitId;
+
+initEventDelegation();
 
 if (!unitId) {
   document.body.innerHTML = '<h1>Unit not found</h1><p>Please return to the <a href="/">Dashboard</a>.</p>';

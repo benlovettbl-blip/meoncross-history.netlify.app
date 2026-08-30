@@ -1,7 +1,7 @@
 import { activeFigures, KEY_FIGURES_BIO } from './views.js?v=18';
 import { AudioEngine } from './audio.js?v=18';
 import { Confetti } from './confetti.js?v=18';
-import { getAssetUrl } from './core_app.js';
+import { getAssetUrl } from './engine/assets.js';
 
 let gameState = {
   mode: null,       // 'riddles', 'recall', 'cluedo'
