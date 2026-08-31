@@ -1124,7 +1124,7 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
     // Phase 1: Standard Tasks
     if (lesson.tasks && lesson.tasks.length > 0) {
       let originalTasks = lesson.tasks;
-      lesson.tasks = originalTasks.filter(t => t.type !== 'gcse_exam_practice' && t.type !== 'exam_practice');
+      lesson.tasks = originalTasks.filter(t => t.type !== 'gcse_exam_practice' && t.type !== 'exam_practice' && t.type !== 'drawing' && t.type !== 'draw');
       if (lesson.tasks.length > 0) {
         html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
         lesson.tasks.forEach((task, tIdx) => {
@@ -2003,7 +2003,11 @@ if (_t.badgeHtml) html += _t.badgeHtml;
           html += `<div style="page-break-inside: auto; margin-bottom: 15px; margin-top: 20px;">`;
           lesson.sources.forEach((source, sIdx) => {
             let sourceContent = source.content || source.text;
-            if ((source.src || source.source || source.image) || source.caption || sourceContent) {
+            let hasImage = source.src || source.source || source.image;
+            // Strip purely visual sources from pupil workbook
+            if (hasImage && !sourceContent && unitId === 'cme_new') return;
+            
+            if (hasImage || source.caption || sourceContent) {
               html += `
               <div class="source-container" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 6px;">
                 ${source.title ? `<strong style="font-size: 11pt;">${source.title}</strong><br>` : ""}
@@ -2092,7 +2096,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
               ? "page-break-before: always; margin-top: 30px;"
               : "margin-top: 15px;";
             let _tInfo3 = processTaskTextWithTariff(rawQText, true);
-            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${"Exam Q" + (index + 1)}. ${_tInfo3.cleanText}</strong></div>`;
+            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${"Q" + (globalQNum++)}. ${_tInfo3.cleanText}</strong></div>`;
             if (_tInfo3.badgeHtml) {
                 questionHtml += _tInfo3.badgeHtml.replace('<div style="margin-top: 5px; margin-bottom: 15px;">', '<div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;">');
             } else if (ep.marks) {

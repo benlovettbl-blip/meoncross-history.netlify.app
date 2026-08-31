@@ -44,21 +44,21 @@
       {
         "id": "KT1",
         "title": "KT1",
-        "image": "/assets/cme_new_kt1_cover.png",
+        "image": "/units/cme_new/assets/kt1_cover.jpg",
         "prefix": "KT1",
         "enquiry": "How and why was the state of Israel established?"
       },
       {
         "id": "KT2",
         "title": "KT2",
-        "image": "/assets/cme_new_yom_kippur_crossing.png",
+        "image": "/units/cme_new/assets/kt2_cover.jpg",
         "prefix": "KT2",
         "enquiry": "What drove the major conflicts in the Middle East from 1967-1973?"
       },
       {
         "id": "KT3",
         "title": "KT3",
-        "image": "/assets/cme_new_camp_david_accords.png",
+        "image": "/units/cme_new/assets/camp_david_accords.png",
         "prefix": "KT3",
         "enquiry": "Why has lasting peace in the Middle East been so difficult to achieve?"
       }
@@ -223,7 +223,10 @@
         },
         "consolidation": "Why is the geography of the Middle East so geopolitically important?",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -419,7 +422,8 @@
         "vocab_cloze_text": "Following World War II, Britain struggled to control its League of Nations [Mandate] in Palestine. The horrors of the Holocaust increased international sympathy for [Zionism], leading to demands for a Jewish state. As tensions rose, militant groups like the [Irgun] launched violent attacks against the British, such as the bombing of the King David Hotel. Ultimately, the 1948 war resulted in the creation of Israel but also led to the [Nakba], where hundreds of thousands of Palestinians were displaced.",
         "historians_corner": {
           "title": "The Debate over Plan Dalet",
-          "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
+          "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state.",
+          "stretch_question": "How does Pappé's interpretation of Plan Dalet fundamentally change our understanding of the Palestinian refugee crisis?"
         },
         "do_now": {
           "type": "questions",
@@ -818,7 +822,10 @@
         ],
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -1261,7 +1268,10 @@
         ],
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -1759,7 +1769,10 @@
         },
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -2289,7 +2302,10 @@
         },
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -2768,7 +2784,10 @@
         },
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -3295,7 +3314,10 @@
         },
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -3758,7 +3780,10 @@
         },
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -4353,7 +4378,10 @@
         },
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       },
       {
@@ -4892,7 +4920,10 @@
         },
         "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
         "tasks": [
-          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          {
+            "type": "drawing",
+            "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          }
         ]
       }
     ],
