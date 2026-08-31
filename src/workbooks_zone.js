@@ -41,7 +41,7 @@ export function renderWorkbooksZone(container, unitData) {
   const getPdfUrl = (type, wbId) => {
     const isFull = (wbId === 'full');
     const suffix = isFull ? type : `${type}_${wbId}`;
-    return (state.selectedUnitId || window.currentUnitId) ? `/pdfs/${(state.selectedUnitId || window.currentUnitId)}_${suffix}.pdf` : `/pdfs/unknown_${suffix}.pdf`;
+    return (state.selectedUnitId || window.currentUnitId) ? `/pdfs/${(state.selectedUnitId || window.currentUnitId)}_${suffix}_FINAL_V17.pdf` : `/pdfs/unknown_${suffix}_FINAL_V17.pdf`;
   };
 
   const getHtmlUrl = (wbId) => {
@@ -77,7 +77,7 @@ export function renderWorkbooksZone(container, unitData) {
     // 3. Mastery Pack PDFs
     const masteryPdfItems = unitData.workbooks.map(wb => ({
       title: wb.title || wb.name,
-      url: (state.selectedUnitId || window.currentUnitId) ? `/pdfs/${(state.selectedUnitId || window.currentUnitId)}_mastery_pack_${wb.name || wb.id}.pdf` : `/pdfs/unknown_mastery_pack_${wb.name || wb.id}.pdf`
+      url: (state.selectedUnitId || window.currentUnitId) ? `/pdfs/${(state.selectedUnitId || window.currentUnitId)}_mastery_pack_${wb.name || wb.id}_FINAL_V17.pdf` : `/pdfs/unknown_mastery_pack_${wb.name || wb.id}_FINAL_V17.pdf`
     }));
     html += renderSection('Mastery Pack PDFs', 'fa-shield-halved', 'Comprehensive revision and mastery tasks designed to test deep knowledge retrieval.', '#d32f2f', masteryPdfItems);
 
