@@ -1022,7 +1022,7 @@ export const unitData = {
           ]
         },
         {
-          "text": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. The young country had to fund a massive military defense budget, build housing for hundreds of thousands of destitute immigrants arriving under the Law of Return, and survive a total economic boycott implemented by the Arab League, which banned all trade with Israel and penalised foreign companies that did business with the Jewish state. In this precarious position, direct financial and political aid from the United States was absolutely critical to Israel's survival. President , driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants.",
+          "text": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. The young country had to fund a massive military defense budget, build housing for hundreds of thousands of destitute immigrants arriving under the Law of Return, and survive a total economic boycott implemented by the Arab League, which banned all trade with Israel and penalised foreign companies that did business with the Jewish state. In this precarious position, direct financial and political aid from the United States was absolutely critical to Israel's survival. President Harry S. Truman, driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants. This massive US aid to Israel became a vital economic lifeline that allowed the young nation to absorb immigrants and build its defense forces.",
           "level_4": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. President , driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants.",
           "tasks": [
             {
@@ -1957,7 +1957,7 @@ export const unitData = {
           ],
           "source": {
             "title": "Israeli Paratroopers at the Western Wall",
-            "src": "/units/cme_new/assets/western_wall_1967.jpg",
+            "src": "/images/cme_wailing_wall_1967.jpg",
             "caption": "Israeli paratroopers standing in awe at the Western Wall after capturing the Old City of Jerusalem.",
             "teacher_notes": {
               "primer": "Discuss the immense religious and emotional significance of this victory for Israelis.",
@@ -2021,7 +2021,7 @@ export const unitData = {
           "level_4": "<img src=\"/units/cme_new/assets/operation_focus.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"operation_focus\">",
           "source": {
             "title": "Operation Focus",
-            "src": "/images/fouga_magister_iaf.jpg",
+            "src": "/images/operation_focus_historic.jpg",
             "caption": "Israeli aircraft dominating the skies after destroying the Egyptian Air Force on the ground.",
             "teacher_notes": {
               "primer": "Explain the preemptive strike that essentially won the war in its first few hours.",
@@ -2534,8 +2534,8 @@ export const unitData = {
           ]
         },
         {
-          "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
-          "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
+          "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 10px 0; page-break-inside: avoid;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
+          "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 10px 0; page-break-inside: avoid;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
           "source": {
             "title": "Yasser Arafat and the PLO",
             "src": "/units/cme_new/assets/arafat_1974.svg",
@@ -2969,7 +2969,7 @@ export const unitData = {
           ],
           "source": {
             "title": "Israeli Counter-Offensive",
-            "src": "/units/cme_new/assets/ariel_sharon.webp",
+            "src": "/images/sharon_yom_kippur.jpg",
             "caption": "General Ariel Sharon leading the Israeli counter-offensive across the Sinai desert towards Egypt in the later stages of the Yom Kippur War.",
             "teacher_notes": {
               "primer": "Explain how Israel recovered and eventually surrounded the Egyptian Third Army.",
@@ -3602,8 +3602,8 @@ export const unitData = {
           "level_4": "<img src=\"/units/cme_new/assets/sadat_faces.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"sadat_faces\">"
         },
         {
-          "text": "However, Anwar Sadat was facing severe internal pressures, a failing economy, and food riots in Cairo. Sadat realized only a dramatic, direct gesture could break the diplomatic deadlock. On 19 November 1977, Sadat’s presidential plane landed at Ben Gurion Airport in Israel. The following day, he addressed the Israeli Knesset, offering Israel complete recognition and permanent peace in exchange for complete Israeli withdrawal from all occupied Arab lands. By mid-1978, direct talks between Egypt and Israel had once again broken down over Begin’s refusal to dismantle Jewish settlements in the Sinai. To rescue the process, US President Jimmy Carter took a massive political risk, inviting both Sadat and Begin to the presidential retreat at Camp David, Maryland, for face-to-face negotiations.",
-          "level_4": "However, Anwar Sadat was facing severe internal pressures, a failing economy, and food riots in Cairo. To rescue the process, US President Jimmy Carter took a massive political risk, inviting both Sadat and Begin to the presidential retreat at Camp David, Maryland, for face-to-face negotiations.",
+          "text": "However, Anwar Sadat was facing severe internal pressures, a failing economy, and food riots in Cairo. Sadat realized only a dramatic, direct gesture could break the diplomatic deadlock. On 19 November 1977, Sadat’s presidential plane landed at Ben Gurion Airport in Israel. The following day, he addressed the Israeli Knesset, offering Israel complete recognition and permanent peace in exchange for complete Israeli withdrawal from all occupied Arab lands. On 25 December 1977, Menachem Begin made a reciprocal visit to Ismailia, Egypt, for a summit with Sadat. However, this historic meeting failed to produce a breakthrough, and by mid-1978, direct talks between Egypt and Israel had once again broken down over Begin’s refusal to dismantle Jewish settlements in the Sinai. To rescue the process, US President Jimmy Carter took a massive political risk, inviting both Sadat and Begin to the presidential retreat at Camp David, Maryland, for face-to-face negotiations.",
+          "level_4": "However, Anwar Sadat was facing severe internal pressures, a failing economy, and food riots in Cairo. Following Sadat's trip to Israel and Begin's reciprocal visit to Egypt in 1977, direct talks stalled. To rescue the process, US President Jimmy Carter took a massive political risk, inviting both Sadat and Begin to the presidential retreat at Camp David, Maryland, for face-to-face negotiations.",
           "tasks": [
             {
               "type": "written",
@@ -6323,7 +6323,7 @@ export const unitData = {
           "id": 5,
           "text": "Following Jordanian shelling, the IDF captures East Jerusalem and the West Bank.",
           "date": "June 1967",
-          "image": "/units/cme_new/assets/western_wall_1967.jpg",
+          "image": "/images/cme_wailing_wall_1967.jpg",
           "image_caption": "Historical Source",
           "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
         },
@@ -6431,7 +6431,7 @@ export const unitData = {
           "id": 5,
           "text": "Israeli forces under General Ariel Sharon cross the Suez Canal, encircling the Egyptian Third Army.",
           "date": "Oct 1973",
-          "image": "/units/cme_new/assets/ariel_sharon.webp",
+          "image": "/images/sharon_yom_kippur.jpg",
           "image_caption": "Ariel Sharon",
           "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
         },
@@ -6906,7 +6906,7 @@ export const unitData = {
         "Engineered the unilateral disengagement from Gaza in 2005."
       ],
       "significance": "A fiercely controversial military tactician whose aggressive policies deeply shaped Israel's security architecture and settlement strategy.",
-      "image": "/units/cme_new/assets/ariel_sharon.webp"
+      "image": "/images/sharon_yom_kippur.jpg"
     },
     {
       "name": "Gamal Abdel Nasser",
