@@ -6480,7 +6480,7 @@ module.exports = {
           "id": 3,
           "text": "Israel launches Operation Focus, a devastating preemptive airstrike that destroys the Egyptian air force on the ground.",
           "date": "June 1967",
-          "image": "/units/cme_new/assets/idf_fighter_planes.jpg",
+          "image": "/images/operation_focus_mirage_formation.jpg",
           "image_caption": "Historical Source",
           "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
         },
