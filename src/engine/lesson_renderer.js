@@ -24,7 +24,9 @@ window.formatBold = function(text) {
       // Handle italics (after lists so we don't conflict with bullet points)
       parsed = parsed.replace(/\*([^\*]+)\*/g, '<i>$1</i>');
       
-      parsed = parsed.replace(/\n/g, '<br>');
+      if (!parsed.trim().startsWith('<table') && !parsed.trim().startsWith('<div')) {
+        parsed = parsed.replace(/\n/g, '<br>');
+      }
       // Clean up <br> around elements
       parsed = parsed.replace(/<br><ul/g, '<ul').replace(/<\/ul><br>/g, '</ul>').replace(/<br><li>/g, '<li>').replace(/<\/li><br>/g, '</li>');
       parsed = parsed.replace(/<br><blockquote/g, '<blockquote').replace(/<\/blockquote><br>/g, '</blockquote>');
