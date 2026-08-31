@@ -3895,7 +3895,7 @@
               ],
               "source": {
                 "title": "Israeli Paratroopers at the Western Wall",
-                "src": "/images/paratroopers_western_wall.jpg",
+                "src": "/units/cme_new/assets/western_wall_1967.jpg",
                 "caption": "Israeli paratroopers standing in awe at the Western Wall after capturing the Old City of Jerusalem.",
                 "teacher_notes": {
                   "primer": "Discuss the immense religious and emotional significance of this victory for Israelis.",
@@ -4355,7 +4355,7 @@
               "level_4": "The lightning ending of the Six Day War left the Middle East in a deep diplomatic deadlock. A just settlement of the refugee problem.",
               "source": {
                 "title": "The Khartoum Resolution",
-                "src": "/units/cme_new/assets/card_nasser.png",
+                "src": "/units/cme_new/assets/nasser_1958.jpg",
                 "caption": "Egyptian President Gamal Abdel Nasser, who led the Arab rejectionist stance at the 1967 Khartoum Conference with the famous 'Three No's'.",
                 "teacher_notes": {
                   "primer": "Discuss Arab defiance despite total military defeat.",
@@ -4476,8 +4476,8 @@
               "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
               "source": {
                 "title": "Yasser Arafat and the PLO",
-                "src": "/units/cme_new/assets/yasser_arafat.jpg",
-                "custom_style": "max-height: 150px; width: auto; object-fit: contain;",
+                "src": "/units/cme_new/assets/arafat_1974.svg",
+                "custom_style": "max-height: 250px; width: auto; object-fit: contain;",
                 "caption": "Yasser Arafat, leader of the PLO, addressing the UN General Assembly with an olive branch and a gun.",
                 "teacher_notes": {
                   "primer": "Discuss the PLO's shift towards seeking international legitimacy alongside armed struggle.",
