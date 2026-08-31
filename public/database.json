@@ -3895,7 +3895,7 @@
               ],
               "source": {
                 "title": "Israeli Paratroopers at the Western Wall",
-                "src": "/units/cme_new/assets/western_wall_1967.jpg",
+                "src": "/images/cme_wailing_wall_1967.jpg",
                 "caption": "Israeli paratroopers standing in awe at the Western Wall after capturing the Old City of Jerusalem.",
                 "teacher_notes": {
                   "primer": "Discuss the immense religious and emotional significance of this victory for Israelis.",
@@ -3959,7 +3959,7 @@
               "level_4": "<img src=\"/units/cme_new/assets/operation_focus.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"operation_focus\">",
               "source": {
                 "title": "Operation Focus",
-                "src": "/images/fouga_magister_iaf.jpg",
+                "src": "/images/operation_focus_historic.jpg",
                 "caption": "Israeli aircraft dominating the skies after destroying the Egyptian Air Force on the ground.",
                 "teacher_notes": {
                   "primer": "Explain the preemptive strike that essentially won the war in its first few hours.",
@@ -4472,8 +4472,8 @@
               ]
             },
             {
-              "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
-              "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
+              "text": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 10px 0; page-break-inside: avoid;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
+              "level_4": "<div style=\"background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 10px 0; page-break-inside: avoid;\">\n  <h4 style=\"text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;\">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src=\"/units/cme_new/assets/black_september.svg\" style=\"width: 100%; max-width: 400px; display: block; margin: 0 auto;\" alt=\"Flowchart showing the sequence of events of the Black September Civil War\">\n</div>",
               "source": {
                 "title": "Yasser Arafat and the PLO",
                 "src": "/units/cme_new/assets/arafat_1974.svg",
@@ -4907,7 +4907,7 @@
               ],
               "source": {
                 "title": "Israeli Counter-Offensive",
-                "src": "/units/cme_new/assets/ariel_sharon.webp",
+                "src": "/images/sharon_yom_kippur.jpg",
                 "caption": "General Ariel Sharon leading the Israeli counter-offensive across the Sinai desert towards Egypt in the later stages of the Yom Kippur War.",
                 "teacher_notes": {
                   "primer": "Explain how Israel recovered and eventually surrounded the Egyptian Third Army.",
@@ -8261,7 +8261,7 @@
               "id": 5,
               "text": "Following Jordanian shelling, the IDF captures East Jerusalem and the West Bank.",
               "date": "June 1967",
-              "image": "/units/cme_new/assets/western_wall_1967.jpg",
+              "image": "/images/cme_wailing_wall_1967.jpg",
               "image_caption": "Historical Source",
               "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
             },
@@ -8369,7 +8369,7 @@
               "id": 5,
               "text": "Israeli forces under General Ariel Sharon cross the Suez Canal, encircling the Egyptian Third Army.",
               "date": "Oct 1973",
-              "image": "/units/cme_new/assets/ariel_sharon.webp",
+              "image": "/images/sharon_yom_kippur.jpg",
               "image_caption": "Ariel Sharon",
               "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
             },
@@ -8844,7 +8844,7 @@
             "Engineered the unilateral disengagement from Gaza in 2005."
           ],
           "significance": "A fiercely controversial military tactician whose aggressive policies deeply shaped Israel's security architecture and settlement strategy.",
-          "image": "/units/cme_new/assets/ariel_sharon.webp"
+          "image": "/images/sharon_yom_kippur.jpg"
         },
         {
           "name": "Gamal Abdel Nasser",
@@ -25299,12 +25299,12 @@
       "specification_file": "/data/eee_overview.json",
       "title": "Paper 2: Early Elizabethan England, 1558-88",
       "subtitle": "",
-      "homepage_background": "assets/elizabeth_i.jpg",
+      "homepage_background": "/images/armada_portrait.jpg",
       "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?",
       "enquiry_question": "From religious division to the Armada: How did Elizabeth secure her throne?",
       "desc": "Paper 2",
       "cover_image": "/assets/placeholder_cover.jpg",
-      "cover_caption": "Source A: A placeholder image for Early Elizabethan England.",
+      "cover_caption": "Source A: The Armada Portrait of Queen Elizabeth I, painted to commemorate the defeat of the Spanish Armada (1588).",
       "workbooks": [
         {
           "id": "KT1",

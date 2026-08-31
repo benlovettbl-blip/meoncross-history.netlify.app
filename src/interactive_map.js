@@ -31,8 +31,8 @@ export function initInteractiveMap(container, task) {
   task.maps.forEach((map, index) => {
     contentHtml += `
       <div class="map-pane" id="map-pane-${index}" style="display: ${index === 0 ? 'block' : 'none'}; animation: fadeIn 0.4s ease;">
-        <div style="width: 100%; height: 400px; background: #e2e8f0; display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative;">
-          ${map.src ? `<img src="${map.src}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" alt="${map.label}">` : '<i class="fa-solid fa-map-location-dot fa-3x" style="color: #94a3b8;"></i>'}
+        <div style="width: 100%; height: 600px; background: #e2e8f0; display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative;">
+          ${map.src ? `<img src="${map.src}" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease; cursor: zoom-in;" data-action="open-modal" alt="${map.label}">` : '<i class="fa-solid fa-map-location-dot fa-3x" style="color: #94a3b8;"></i>'}
         </div>
         <div style="padding: 20px; background: white;">
           <p style="margin: 0; font-size: 1.1rem; line-height: 1.6; color: #1e293b;">${map.caption || ''}</p>

@@ -122,6 +122,7 @@ export function renderHomepage() {
 
 export function renderSidebar() {
     const navContainer = document.getElementById('sidebar-nav-container') || sidebar;
+    const unitData = appStore.state.activeUnitData;
     navContainer.innerHTML = '';
 
     // Unit Homepage Tab
