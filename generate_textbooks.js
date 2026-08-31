@@ -129,7 +129,7 @@ allDirs.forEach(unitId => {
   <title>${unitData.title} - Textbook</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <style>
-      @page { @bottom-center { content: "Page " counter(page); font-family: sans-serif; font-size: 10pt; color: #666; } }
+      
     @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
     body { font-family: 'Inter', sans-serif; font-size: 10pt; line-height: 1.3; color: #1e293b;  }
     h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 60px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
@@ -137,7 +137,7 @@ allDirs.forEach(unitId => {
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 10px; border-radius: 8px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto; box-sizing: border-box; }
+    .task-box { background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 10px; border-radius: 8px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: avoid; box-sizing: border-box; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto; }
@@ -213,6 +213,7 @@ allDirs.forEach(unitId => {
     <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; height: 95vh; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
       <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
       ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
+      ${(period.image || unitData.cover_image) ? `<div style="margin-bottom: 20px;"><img src="../../${(period.image || unitData.cover_image).replace(/^\//, '')}" style="max-height: 350px; max-width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 2px solid #e2e8f0;"></div>` : ''}
       
       <div style="margin-top: 15px; width: 100%; max-width: 700px; text-align: center; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
         <h3 style="margin-top: 0; color: #1e3a8a; margin-bottom: 15px; font-size: 22pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-book-open"></i> Course Textbook</h3>
@@ -240,8 +241,8 @@ allDirs.forEach(unitId => {
     <div style="page-break-after: always;"></div>
     `;
 
-  let globalQNum = 1;
     periodLessons.forEach((lesson, lessonIndex) => {
+      let globalQNum = 1;
       let sourceNum = 1;
       let sourceCharCode = 65;
     
@@ -282,7 +283,6 @@ allDirs.forEach(unitId => {
         lesson.source.question = lesson.source.question.replace(/^Q\d+[\.:\s]*/i, '');
       }
     }
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
 
     if (lesson.sources) {
       lesson.sources.forEach(source => { 
@@ -290,13 +290,7 @@ allDirs.forEach(unitId => {
       });
     }
 
-    if (lesson.gcse_task) {
-      if (lesson.gcse_task.tasks) {
-          lesson.gcse_task.tasks.forEach(t => t.qNum = globalQNum++);
-      } else {
-
-      }
-    }
+    // Removed premature gcse_task globalQNum increment that caused textbook/workbook Q-number desync
     
     
 if (lessonIndex === 1) {
@@ -848,18 +842,21 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
     }
 
     // Pair Share
-    if (unitId !== 'water_and_sanitation') {
-      if (lesson.pair_share) {
-        html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
-        html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
-        html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
-        html += `</div>`;
-      }
+    if (lesson.pair_share) {
+      html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
+      html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
+      html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
+      html += `</div>`;
     }
 
-    if (lesson.tasks) {
-      html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
-      lesson.tasks.forEach((task, tIdx) => {
+
+    // Phase 1: Standard Tasks
+    if (lesson.tasks && lesson.tasks.length > 0) {
+      let originalTasks = lesson.tasks;
+      lesson.tasks = originalTasks.filter(t => t.type !== 'gcse_exam_practice' && t.type !== 'exam_practice' && t.type !== 'drawing' && t.type !== 'draw');
+      if (lesson.tasks.length > 0) {
+        html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
+        lesson.tasks.forEach((task, tIdx) => {
         if (task.type === 'spectrum_mapper') {
              // html += `<div style="page-break-before: always;"></div>`;
              if (unitId === 'early_modern_world') {
@@ -916,8 +913,90 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
             html += ``;
         }
         html += `</div>`;
-      });
+        });
+      }
+      lesson.tasks = originalTasks; // Restore
     }
+
+    // Phase 2: Historian's Corner
+      if (lesson.historians_corner) {
+      html += `<div class="task-box" style=" ">`;
+      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
+      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
+      if (lesson.historians_corner.stretch_question) {
+        html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
+      }
+      html += `</div>`;
+    }
+
+    // Phase 3 & 4: GCSE Exam Practice
+    if (lesson.tasks && lesson.tasks.length > 0) {
+      let originalTasks = lesson.tasks;
+      lesson.tasks = originalTasks.filter(t => t.type === 'gcse_exam_practice' || t.type === 'exam_practice');
+      if (lesson.tasks.length > 0) {
+        html += `<h2 style="margin-top: 30px; margin-bottom: 15px; color: #1e3a8a;">GCSE Exam Practice</h2>`;
+        lesson.tasks.forEach((task, tIdx) => {
+        if (task.type === 'spectrum_mapper') {
+             // html += `<div style="page-break-before: always;"></div>`;
+             if (unitId === 'early_modern_world') {
+                 html += `<h2 style="text-align: center; margin-bottom: 30px;">Q${globalQNum++}. ${task.text || 'Spectrum Planner'}</h2>`;
+             } else {
+                 html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || 'Spectrum Planner'}</h2>`;
+             }
+             
+             // Draw the spectrum line
+             html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
+             html += `<div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14pt; margin-bottom: 10px;">`;
+             html += `<div>${task.labels[0]}</div><div>${task.labels[1]}</div>`;
+             html += `</div>`;
+             html += `<div style="height: 4px;  width: 100%; position: relative;">`;
+             html += `<div style="position: absolute; left: 0%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `<div style="position: absolute; left: 25%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `<div style="position: absolute; left: 50%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `<div style="position: absolute; left: 75%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `<div style="position: absolute; left: 100%; top: -10px; width: 2px; height: 24px; "></div>`;
+             html += `</div></div>`;
+
+             html += `<h3 style="margin-top: 40px;">Factors to map:</h3>`;
+             html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">`;
+             task.items.forEach(item => {
+                 html += `<div style=" padding: 15px; width: 45%; border-radius: 8px;">`;
+                 html += `<strong>${item.title}</strong><br>`;
+                 if (item.desc) html += `<span style="font-size: 0.9em; color: #555;">${item.desc}</span>`;
+                 html += `</div>`;
+             });
+             html += `</div>`;
+
+             html += `<h3>Notes & Paragraph Plan</h3>`;
+             for(let i=0; i<15; i++) {
+                html += ``;
+             }
+             return;
+        }
+
+        let qText = task.question || task.text || '';
+        html += `<div class="task-box" style="page-break-inside: auto;">`;
+        
+        let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+        if (match) {
+            let subhead = match[1];
+            let rest = match[2];
+            html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${rest}</p>`;
+        } else {
+            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${qText}</p>`;
+        }
+        let hasExamTaskLater = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
+        let numLines = (!hasExamTaskLater && tIdx === lesson.tasks.length - 1) ? 20 : 6;
+        for(let i=0; i<numLines; i++) {
+            html += ``;
+        }
+        html += `</div>`;
+        });
+      }
+      lesson.tasks = originalTasks; // Restore
+    }
+
 
     let hasExamTask = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
     if (hasExamTask) {
@@ -1011,24 +1090,8 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
         html += `</div>`;
       }
 
-      if (unitId === 'water_and_sanitation') {
-        if (lesson.pair_share) {
-          html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
-          html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
-          html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
-          html += `</div>`;
-        }
-      }
 
-      if (lesson.historians_corner) {
-      html += `<div class="task-box" style=" ">`;
-      html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
-      html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
-      if (lesson.historians_corner.stretch_question) {
-        html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
-      }
-      html += `</div>`;
-    }
+
 
     if (lesson.gcse_task) {
         html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto;">`;
@@ -1036,22 +1099,35 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
         
         if (lesson.gcse_task.tasks) {
           lesson.gcse_task.tasks.forEach(task => {
-             html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++} ${task.text}</strong></div>`;
-             renderLines(task.text);
+             let _tText = task.text || task.question || '';
+             if (task.marks && !_tText.toLowerCase().includes('marks)')) _tText += ` (${task.marks} marks)`;
+             let _qPrefix = `Q${globalQNum++}. `;
+             html += `<div style="margin-top: 15px;"><strong>${_qPrefix}${_tText}</strong></div>`;
+             renderLines(_tText);
              html += `<br>`;
           });
         } else if (lesson.gcse_task.sources) {
-          html += `<div style="page-break-inside: avoid; break-inside: avoid; margin-top: 20px;">`;
-          let topicText = lesson.gcse_task.topic || '';
-          let isNarrative = topicText.toLowerCase().includes("write a narrative account");
-          if (isNarrative) {
-            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${globalQNum++}. ` : ''}${topicText}</p>`;
-            html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
-          } else {
-            html += `<p style="font-weight: bold; font-size: 13pt;">${lesson.gcse_task.qNum ? `Q${globalQNum++}. ` : ''}Q${globalQNum++}. How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
-          }
-          
-          let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px; page-break-inside: avoid; break-inside: avoid;">';
+            html += `<div style="page-break-inside: avoid; break-inside: avoid; margin-top: 20px;">`;
+            let topicText = lesson.gcse_task.topic || '';
+            let tLower = topicText.toLowerCase();
+            let isFullQuestion =
+              tLower.includes("write a narrative account") ||
+              tLower.includes("explain one consequence") ||
+              tLower.includes("explain the importance") ||
+              tLower.includes("how useful") ||
+              tLower.includes("explain why") ||
+              tLower.includes("describe");
+            let _qPrefix = `Q${globalQNum++}. `;
+            if (isFullQuestion) {
+              html += `<p style="font-weight: bold; font-size: 13pt;">${_qPrefix}${topicText}</p>`;
+              if (tLower.includes("write a narrative account")) {
+                html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
+              }
+            } else {
+              html += `<p style="font-weight: bold; font-size: 13pt;">${_qPrefix}How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+            }
+            
+            let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px; page-break-inside: avoid; break-inside: avoid;">';
           lesson.gcse_task.sources.forEach(srcObj => {
             sourceHTML += '<div style="flex: 1; border: 1px solid #ccc; padding-top: 10px; padding-bottom: 10px; text-align: center; page-break-inside: avoid; break-inside: avoid;">';
             if (srcObj.type === 'visual') {
@@ -1081,7 +1157,8 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
             for(let i=0; i<20; i++) { html += ``; }
           }
         } else if (lesson.gcse_task.topic) {
-          html += `<p style="font-weight: bold; font-size: 13pt;">Q${globalQNum++}. ${lesson.gcse_task.topic}</p>`;
+          let _qPrefix = `Q${globalQNum++}. `;
+          html += `<p style="font-weight: bold; font-size: 13pt;">${_qPrefix}${lesson.gcse_task.topic}</p>`;
           
           if (lesson.gcse_task.topic.toLowerCase().includes("narrative account")) {
              html += `<div style="margin: 15px 0; padding-top: 12px; padding-bottom: 12px;   border-radius: 6px; ">
@@ -1179,6 +1256,10 @@ if (lesson.full_page_map) {
   html = html.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, ''); // Remove interactive buttons
   html = html.replace(/display:\s*none;?/gi, 'display: block; margin-top: 15px;'); // Stack toggle tabs
   html = html.replace(/(?:using the toggle tabs,?\s*)/ig, ''); // Remove app-only phrasing
+
+  // Safely strip HTML/Markdown link wrappers but preserve inner display text
+  html = html.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  html = html.replace(/<a[^>]*>(.*?)<\/a>/g, '$1');
 
   
   // Dynamically inject correct page numbers for ANY manual placeholder references 

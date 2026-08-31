@@ -1,12 +1,16 @@
 console.log('ROUTER RUNNING');
 import { initializeApp } from './core_app.js';
+import { initEventDelegation } from './engine/events.js';
 import { renderVerticalTimeline } from './vertical_timeline.js';
 import { initTerminologyTask } from './terminology_task.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGeographicalLocationsTask } from './geographical_locations.js';
+import { initGuidedReadingTask } from './guided_reading.js';
 const urlParams = new URLSearchParams(window.location.search);
 let unitId = urlParams.get('id');
 window.currentUnitId = unitId;
+
+initEventDelegation();
 
 if (!unitId) {
   document.body.innerHTML = '<h1>Unit not found</h1><p>Please return to the <a href="/">Dashboard</a>.</p>';
@@ -167,76 +171,8 @@ if (!unitId) {
         sidebarNav.appendChild(geoLink);
       }
 
-      
       // 5. PDF Textbook and Workbook Tabs
-      if (unitData.type !== 'trip') {
-        const renderLink = (title, icon, subtitle, url, isSubLink = false) => {
-          const link = document.createElement('a');
-          link.className = 'lesson-link' + (isSubLink ? ' sub-link' : '');
-          if (isSubLink) {
-             link.style.paddingLeft = '2rem';
-             link.style.fontSize = '0.9em';
-             link.style.borderLeft = '2px solid var(--gold)';
-             link.style.background = 'rgba(0,0,0,0.02)';
-             link.style.marginBottom = '2px';
-          }
-          link.innerHTML = `<div style="display:flex; flex-direction:column;"><div><i class="fa-solid ${icon}" style="margin-right: 8px;"></i> ${title}</div><div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">${subtitle}</div></div>`;
-          link.href = url;
-          link.target = '_blank';
-          return link;
-        };
-
-        const renderDropdown = (title, icon, subtitle, typePrefix) => {
-          const container = document.createElement('div');
-          
-          const header = document.createElement('a');
-          header.className = 'lesson-link';
-          header.innerHTML = `<div style="display:flex; flex-direction:column; width:100%;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <div><i class="fa-solid ${icon}" style="margin-right: 8px;"></i> ${title}</div>
-              <i class="fa-solid fa-chevron-down" style="font-size:0.8em; opacity:0.6;"></i>
-            </div>
-            <div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8; line-height: 1.2;">${subtitle}</div>
-          </div>`;
-          header.href = '#';
-          
-          const list = document.createElement('div');
-          list.style.display = 'none';
-          list.style.flexDirection = 'column';
-          
-          header.onclick = (e) => {
-            e.preventDefault();
-            list.style.display = list.style.display === 'none' ? 'flex' : 'none';
-            const iconEl = header.querySelector('.fa-chevron-down, .fa-chevron-up');
-            if (iconEl) {
-              iconEl.className = list.style.display === 'none' ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
-            }
-          };
-
-          unitData.workbooks.forEach(wb => {
-             const wbId = wb.id || wb.name;
-             const subUrl = '/pdfs/' + unitId + '_' + typePrefix + '_' + wbId + '.pdf';
-             const subLink = renderLink(wb.title, 'fa-file-pdf', '', subUrl, true);
-             // Remove subtitle margin for sublinks
-             subLink.querySelector('div > div:nth-child(2)').style.display = 'none';
-             list.appendChild(subLink);
-          });
-
-          container.appendChild(header);
-          container.appendChild(list);
-          sidebarNav.appendChild(container);
-        };
-
-        if (unitData.workbooks && unitData.workbooks.length > 0) {
-            renderDropdown('Textbook PDFs', 'fa-book-open', 'Reading material only', 'textbook');
-            renderDropdown('Guided Workbook PDFs', 'fa-pencil', 'Reading + Writing tasks', 'workbook');
-            renderDropdown('Pupil Workbook PDFs', 'fa-user-pen', 'Writing tasks only', 'pupil_workbook');
-        } else {
-            sidebarNav.appendChild(renderLink('Textbook PDF', 'fa-book-open', 'Reading material only', '/pdfs/' + unitId + '_textbook.pdf'));
-            sidebarNav.appendChild(renderLink('Guided Workbook PDF', 'fa-pencil', 'Reading + Writing tasks', '/pdfs/' + unitId + '_workbook.pdf'));
-            sidebarNav.appendChild(renderLink('Pupil Workbook PDF', 'fa-user-pen', 'Writing tasks only', '/pdfs/' + unitId + '_pupil_workbook.pdf'));
-        }
-      }
+      // Removed direct PDF sidebar links in favor of centralized Print & PDF Hub
 
 
 

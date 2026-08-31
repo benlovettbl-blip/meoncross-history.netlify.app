@@ -20,15 +20,11 @@
     "enquiry": "How did decades of imperial rivalry and fear culminate in thirty days of madness?",
     "cover_image": "/images/great_war_cover.jpg",
     "cover_caption": "Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.",
-    "printable_workbooks": [
+    "workbooks": [
       {
-        "title": "Unit Workbook",
-        "url": "workbook.html"
-      },
-      {
-        "title": "Mastery Pack",
-        "url": "../../pdfs/great_war_mastery_pack_full.pdf",
-        "icon": "fa-brain"
+        "id": "full",
+        "name": "full",
+        "title": "Complete Unit"
       }
     ],
     "lessons": [

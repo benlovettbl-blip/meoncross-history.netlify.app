@@ -12,7 +12,50 @@
       "coach": "Jet Connect Executive Travel",
       "live_album_url": "https://photos.app.goo.gl/placeholder"
     },
+    "extended": {
+      "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+      "scaffolding": [
+        "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+      ],
+      "source_a": {
+        "provenance": "The Menin Road, a painting by official British War Artist Paul Nash, commissioned in 1919.",
+        "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/menin_road_nash.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+      },
+      "source_b": {
+        "provenance": "An official Royal Flying Corps aerial photograph showing the intricate trench network on the Western Front, 1916.",
+        "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/aerial_trench_ypres.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+      },
+      "model": "<strong>Source A is highly useful...</strong>",
+      "provenance_clue": "Source A is a painting by an official War Artist; does its stylistic and emotional nature make it more or less useful than a photograph? Source B is a military aerial photograph; what makes its objective recording of the geography useful?"
+    },
     "local_heroes": [
+      {
+        "name": "William Augustine 'Harper' Lowry",
+        "age": 25,
+        "regiment": "Indian Army",
+        "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Eldest brother.",
+        "cemetery": "Gully Ravine (Gallipoli)",
+        "story": "Killed on 4th June 1915 leading a desperate charge up Gully Ravine. He has no known grave.",
+        "image": "/images/lowry_william.png"
+      },
+      {
+        "name": "Auriol 'Eric' Lowry",
+        "age": null,
+        "regiment": "West Yorkshire Regiment",
+        "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Middle brother.",
+        "cemetery": "Unknown",
+        "story": "Fought at Westhoek Ridge in 1917. Commanded the battalion where his younger brother Patrick served.",
+        "image": "/images/lowry_auriol.png"
+      },
+      {
+        "name": "Cyril John 'Patrick' Lowry",
+        "age": 20,
+        "regiment": "West Yorkshire Regiment",
+        "connection": "Lived at Manor Way Grange in Lee-on-the-Solent. Youngest brother.",
+        "cemetery": "Somme",
+        "story": "Killed on 25th March 1918 during a German offensive near the Somme, in full view of his brother Eric.",
+        "image": "/images/lowry_cyril.png"
+      },
       {
         "name": "Private T. J. Franklin",
         "age": 22,
@@ -79,64 +122,9 @@
             {
               "year": "10th Sep",
               "title": "Parent Briefing Meeting",
-              "detail": "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions."
+              "detail": "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions. I will be requesting passports in and EHIC cards. If you can't make it, you can hand it into the office before that date or just after."
             }
           ]
-        },
-        "narrative_blocks": [
-          {
-            "theme_heading": "Quick Navigation",
-            "text": "<div class='toc-menu' style='position: sticky; top: 10px; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; gap: 10px; flex-wrap: wrap;'><a href='#the-lowry-brothers-a-village-s-sacrifice' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-users'></i> The Lowry Brothers</a> <a href='#the-trip-rules-what-you-need-to-know' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-clipboard-list'></i> Trip Rules</a> <a href='#kit-list-what-to-pack' class='btn' style='background: #f1f5f9; color: #475569; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; border: 1px solid #cbd5e1;'><i class='fa-solid fa-suitcase'></i> Kit List</a></div>"
-          },
-          {
-            "type": "narrative",
-            "theme_heading": "What to Pack: The Essential Checklist",
-            "text": "Please ensure all pupils have the following items packed in a suitable overnight bag (no hard suitcases if possible, to maximize coach storage space):<br><br><ul><li><strong>Valid Passport</strong> (will be given in hopefully at the parent briefing meeting on the 10th of September)</li><li><strong>GHIC / EHIC Card</strong> (valid and in-date)</li><li><strong>Sturdy Walking Boots</strong> or waterproof shoes (we will be walking through muddy trenches)</li><li><strong>Waterproof Coat</strong> (Belgian weather is unpredictable)</li><li><strong>Small Rucksack</strong> for daytime use on the coach</li><li><strong>Euro Currency</strong> (approx €30-€50 maximum for snacks and chocolates)</li><li><strong>Refillable Water Bottle</strong></li></ul>"
-          },
-          {
-            "type": "narrative",
-            "theme_heading": "The Lowry Brothers: A Village's Sacrifice",
-            "text": "The names of three brothers—William, Cyril, and Auriol (Eric) Lowry—are all carved into the Stubbington War Memorial in our village center. The story of these young men perfectly captures the devastating toll the war took on individual families.<br><br>Tragically, the three brothers fell in three completely different theatres of war:<br><ul><li><strong>William 'Harper' Lowry:</strong> Fell in 1915 and is commemorated on the Helles Memorial in Turkey (Gallipoli).</li><li><strong>Cyril 'Patrick' Lowry:</strong> Fell in 1916 and is commemorated on the Pozieres Memorial in France (The Somme).</li><li><strong>Auriol 'Eric' Lowry:</strong> Fell in 1917 and is buried at La Targette Cemetery near Arras, France.</li></ul><br>Before we depart for Belgium, take a moment to reflect on what it must have been like for the local community to receive the telegrams for all three boys over the course of three years.",
-            "images": [
-              {
-                "image": "/images/stubbington_memorial.jpg",
-                "image_alt": "The Stubbington War Memorial",
-                "image_caption": "The Stubbington War Memorial, where the Lowry brothers are commemorated."
-              },
-              {
-                "image": "/images/lowry_william.png",
-                "image_alt": "William 'Harper' Lowry",
-                "image_caption": "William 'Harper' Lowry"
-              },
-              {
-                "image": "/images/lowry_cyril.png",
-                "image_alt": "Cyril 'Patrick' Lowry",
-                "image_caption": "Cyril 'Patrick' Lowry"
-              },
-              {
-                "image": "/images/lowry_auriol.png",
-                "image_alt": "Auriol 'Eric' Lowry",
-                "image_caption": "Auriol 'Eric' Lowry"
-              }
-            ]
-          }
-        ],
-        "banner": "/images/menin_road_nash.jpg",
-        "extended": {
-          "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
-          "scaffolding": [
-            "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
-          ],
-          "source_a": {
-            "provenance": "The Menin Road, a painting by official British War Artist Paul Nash, commissioned in 1919.",
-            "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/menin_road_nash.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
-          },
-          "source_b": {
-            "provenance": "An official Royal Flying Corps aerial photograph showing the intricate trench network on the Western Front, 1916.",
-            "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/aerial_trench_ypres.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
-          },
-          "model": "<strong>Source A is highly useful...</strong>",
-          "provenance_clue": "Source A is a painting by an official War Artist; does its stylistic and emotional nature make it more or less useful than a photograph? Source B is a military aerial photograph; what makes its objective recording of the geography useful?"
         }
       },
       {
@@ -229,7 +217,7 @@
           {
             "type": "narrative",
             "theme_heading": "Historical Context: The Ypres Salient",
-            "text": "The Ypres Salient was a bulge in the Allied frontline that surrounded the Belgian town of Ypres. Because it was a salient, British and Commonwealth troops were surrounded by German artillery on three sides, making it one of the most dangerous places on earth. Ypres was the last major Belgian town not to fall to the Germans, making it a powerful symbol of resistance.<br><br><strong>Key Facts:</strong><ul><li>Over half a million soldiers died defending a strip of land barely ten miles wide.</li><li>The Salient consisted of thick, heavy clay that, when bombarded by artillery, turned into a deadly, bottomless mud.</li><li>Five major battles were fought here between 1914 and 1918.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"I am no longer an artist interested and curious, I am a messenger who will bring back word from the men who are fighting to those who want the war to go on for ever. It is unspeakable, godless, hopeless.\"</em><br>— <strong>Paul Nash</strong>, British War Artist (1917)</blockquote>"
+            "text": "The Ypres Salient was a bulge in the Allied frontline that surrounded the Belgian town of Ypres. Because it was a salient, British and Commonwealth troops were surrounded by German artillery on three sides, making it one of the most dangerous places on earth. Ypres was the last major Belgian town not to fall to the Germans, making it a powerful symbol of resistance.<br><br><strong>Key Facts:</strong><ul><li>Over half a million soldiers died defending a strip of land barely ten miles wide.</li><li>The Salient consisted of thick, heavy clay that, when bombarded by artillery, turned into a deadly, bottomless mud.</li><li>Five major battles were fought here between 1914 and 1918.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"I am no longer an artist interested and curious, I am a messenger who will bring back word from the men who are fighting to those who want the war to go on for ever. It is unspeakable, godless, hopeless.\"</em><br>— <strong>Paul Nash</strong>, British War Artist (1917)</blockquote><div style='text-align: center; margin-top: 15px;'><img src='/images/menin_road_nash.jpg' style='max-width: 100%; border-radius: 6px; border: 1px solid #ccc;' alt='The Menin Road by Paul Nash'></div>"
           },
           {
             "type": "narrative",
@@ -239,12 +227,67 @@
           {
             "type": "narrative",
             "theme_heading": "Langemarck German War Cemetery",
-            "text": "Unlike the bright, white Portland stone of British cemeteries, German cemeteries like Langemarck are intentionally somber, shaded by large oak trees and featuring dark stone blocks, reflecting Germanic mourning traditions.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Enter the Langemarck gates to unlock your assigned individual.</p><button onclick='window.unlockMission(this, \"langemarck\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+            "text": "Unlike the bright, white Portland stone of British cemeteries, German cemeteries like Langemarck are intentionally somber, shaded by large oak trees and featuring dark stone blocks, reflecting Germanic mourning traditions.<br><br><strong>The Langemarck Student Myth:</strong><br><em>The Heroic Propaganda:</em> The German High Command claimed that thousands of young, patriotic student volunteers advanced fearlessly on enemy lines singing 'Deutschland über alles'. They were portrayed as the ultimate heroes who joyfully gave their lives for the Fatherland.<br><br><em>The Tragic Reality:</em> These volunteers were woefully untrained and poorly equipped. Instead of a glorious charge, they were marched blindly into devastating British machine-gun fire. Thousands were slaughtered needlessly in what became known as the 'Massacre of the Innocents of Ypres'.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Individuals</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-magnifying-glass\"></i> Look at the names on the bronze oak panels. Remember that every German soldier in the mass grave had a story and family back home.</p></div></div>"
+          },
+          {
+            "type": "flip_card_gallery",
+            "cards": [
+              {
+                "name": "Leutnant Werner Voss",
+                "background": "WWI Fighter Ace & Pour le Mérite winner.",
+                "story": "Killed in an epic dogfight against seven British SE5s. Because his grave was lost, he is commemorated on the bronze panels and lies somewhere among the unknowns."
+              },
+              {
+                "name": "Oberst (Colonel) Julius von List",
+                "background": "Adolf Hitler's First Regimental Commander.",
+                "story": "List commanded the Bavarian 16th Reserve Infantry Regiment, in which a young Adolf Hitler served as a dispatch runner. Killed at Gheluvelt in October 1914, his remains were later moved to the Langemarck Kameradengrab (mass grave)."
+              },
+              {
+                "name": "The 7,977 'Unknowns'",
+                "background": "Unidentified German Soldiers.",
+                "story": "Of the nearly 25,000 men buried in the Kameradengrab (mass grave) at the cemetery entrance, 7,977 remain completely unidentified. Their presence stands as a haunting testament to the mechanized scale of slaughter on the Western Front."
+              },
+              {
+                "name": "The 3,000 'Student Volunteers'",
+                "background": "The Kriegsfreiwilliger of 1914.",
+                "story": "Poorly trained German schoolboys and university students killed during the First Battle of Ypres. Their slaughter was romanticized by German propaganda, earning Langemark the nickname 'Studentenfriedhof' (Student Cemetery)."
+              },
+              {
+                "name": "Private Albert Carlill",
+                "background": "1st/4th Bn. Loyal North Lancashire Reg.",
+                "story": "One of only two British soldiers buried in this German military cemetery. He died on November 4, 1918, aged 19, serving as a rare reminder of shared tragedy across enemy lines."
+              },
+              {
+                "name": "Private Leonard H. Lockley",
+                "background": "4th Bn. Seaforth Highlanders.",
+                "story": "The second British Tommy buried at Langemark, killed on October 30, 1918. His name, alongside Carlill's, is recorded on a plaque near the entrance, resting permanently among former foes."
+              },
+              {
+                "name": "The 17,342 'Knowns'",
+                "background": "The Kameradengrab (Mass Grave).",
+                "story": "While your existing card covers the unknowns, this single mass grave holds 24,917 bodies in total. The names of the 17,342 identified soldiers are cast on bronze steles surrounding the perimeter."
+              },
+              {
+                "name": "The April 1915 Casualties",
+                "background": "The Second Battle of Ypres.",
+                "story": "Langemark was the site of the first major poison gas attack on the Western Front. Many German soldiers buried here died in the chaotic offensives that immediately followed the release of the gas."
+              },
+              {
+                "name": "Harry Patch's 'Unknown'",
+                "background": "A symbol of reconciliation.",
+                "story": "In 2008, Harry Patch, the last surviving British trench veteran, visited the cemetery. He laid a wreath on the grave of a German soldier killed on August 16, 1917—the exact day Patch's unit fought at Langemark."
+              }
+            ]
+          },
+          {
+            "type": "narrative",
+            "theme_heading": "The Weaponization of Memory: The Langemarck Myth",
+            "text": "<div style=\"background: #f8fafc; padding: 25px; border-radius: 8px; border-left: 5px solid #059669; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top: 10px;\"><p style=\"font-size: 1.1rem; color: #1e293b;\">The Nazi regime weaponized the 'Langemarck Myth' to bridge the humiliation of 1918 with the militarism of the Third Reich, transforming a World War I military failure into a cult of youth sacrifice. Hitler exploited the site to legitimize his own regime, presenting himself as the fulfillment of the students' uncompleted mission.</p><ul style=\"list-style-type: none; padding-left: 0; margin-top: 20px;\"><li style=\"margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e2e8f0;\"><strong style=\"color: #0f172a; font-size: 1.1rem;\"><i class=\"fa-solid fa-scroll\" style=\"color: #059669; margin-right: 10px;\"></i> Primary Source: The Official 1914 Fabrication</strong><br><span style=\"color: #334155;\">The entire Langemarck myth originates from a single, highly manipulated press release. On November 11, 1914, the German Supreme Army Command (<i>Oberste Heeresleitung</i> or OHL) needed to distract the German public from a devastating tactical failure and a massive loss of life. They issued an official communiqué that intentionally fabricated a romanticized narrative of youthful, willing sacrifice:</span><br><br><blockquote style=\"margin-top: 10px; margin-bottom: 10px;\">\"We made good progress yesterday in the Yser section. West of Langemarck young regiments broke forward with the song <i>'Deutschland, Deutschland über alles'</i> against the front line of enemy positions and took them.\"<br>— <strong>Official Communiqué of the German Supreme Army Command (OHL), 11 November 1914</strong></blockquote></li><li style=\"margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e2e8f0;\"><strong style=\"color: #0f172a; font-size: 1.1rem;\"><i class=\"fa-solid fa-book-skull\" style=\"color: #059669; margin-right: 10px;\"></i> Primary Source: Adolf Hitler’s Weaponization</strong><br><span style=\"color: #334155;\">A decade later, Adolf Hitler hijacked this fabricated story to lay the psychological groundwork for the next war. In his 1925 manifesto, Hitler inserted himself directly into the Langemarck narrative, twisting a military disaster into a mystical, almost religious awakening of the German soul. He used this specific battle to groom the Hitler Youth, demanding they view the slaughtered students as the ultimate role models for blind obedience to the Fatherland:</span><br><br><blockquote style=\"margin-top: 10px; margin-bottom: 10px;\">\"And then the night came down, and we advanced in silence, and as daylight broke, the first greeting of the morning whistled over our heads... Then from afar the strains of a song reached our ears, coming closer and closer... And as Death plunged his hand into our ranks, the song reached us too, and we passed it on: <i>Deutschland, Deutschland über alles!</i>\"<br>— <strong>Adolf Hitler, <i>Mein Kampf</i>, Volume 1, Chapter 5: The World War, 1925</strong></blockquote></li><li style=\"margin-bottom: 15px;\"><strong style=\"color: #0f172a; font-size: 1.1rem;\"><i class=\"fa-solid fa-building-columns\" style=\"color: #059669; margin-right: 10px;\"></i> Historical Interpretation: Dismantling the Myth</strong><br><span style=\"color: #334155;\">Modern historians have thoroughly dismantled the <i>Kindermord</i> (Massacre of the Innocents) narrative. In his landmark study on how nations process the trauma of war, historian George Mosse details how the disaster at Langemarck was deliberately repackaged by right-wing extremists. Mosse argues that the Nazi Party actively weaponized the grief surrounding the Langemarck cemetery to create a \"cult of fallen soldiers,\" replacing the horrific reality of industrialized slaughter with a sanitized, glorious myth of youth and manliness to justify future aggression.<br>— <strong>Professor George L. Mosse, <i>Fallen Soldiers: Reshaping the Memory of the World Wars</i>, Oxford University Press, 1990</strong></span></li></ul><div style=\"background: #e2e8f0; padding: 15px; border-radius: 6px; margin-top: 20px;\"><p style=\"font-style: italic; color: #1e293b; font-weight: bold; margin: 0; text-align: center;\"><i class=\"fa-solid fa-lightbulb\" style=\"color: #d97706; margin-right: 8px;\"></i> By understanding the myth, students can look at the bronze oak panels and recognize how the memories of those individuals were stolen and repurposed for a second, even more devastating war.</p></div></div>"
           },
           {
             "type": "narrative",
             "theme_heading": "Hooge Crater & Trench Warfare",
-            "text": "Hooge was the site of intense, close-quarters fighting. The opposing trenches were so close that soldiers could hear each other speaking. In July 1915, the British detonated a massive underground mine beneath the German lines, creating a massive crater.<br><br><strong>Key Facts:</strong><ul><li>The mine blast created a crater 120 feet wide and 20 feet deep.</li><li>Soldiers in these trenches suffered terribly from 'trench foot' due to standing in freezing mud and water for days on end.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"The trench was a ribbon of earth, filled with freezing water, the stench of unburied bodies, and the constant, nerve-shredding crack of sniper fire.\"</em><br>— <strong>Private Frank Richards</strong>, Royal Welch Fusiliers</blockquote>"
+            "text": "Hooge was the site of intense, close-quarters fighting. The opposing trenches were so close that soldiers could hear each other speaking. In July 1915, the British detonated a massive underground mine beneath the German lines, creating a massive crater.<br><br><strong>Key Facts:</strong><ul><li>The mine blast created a crater 120 feet wide and 20 feet deep.</li><li>Soldiers in these trenches suffered terribly from 'trench foot' due to standing in freezing mud and water for days on end.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"The trench was a ribbon of earth, filled with freezing water, the stench of unburied bodies, and the constant, nerve-shredding crack of sniper fire.\"</em><br>— <strong>Private Frank Richards</strong>, Royal Welch Fusiliers</blockquote><div style='text-align: center; margin-top: 15px;'><img src='/images/cheshire_regiment_trench.png' style='max-width: 100%; border-radius: 6px; border: 1px solid #ccc;' alt='Hooge Crater'></div>"
           }
         ],
         "tour_guide_script": [
@@ -392,27 +435,44 @@
           {
             "type": "narrative",
             "theme_heading": "The Brooding Soldier & Poison Gas",
-            "text": "In April 1915, the Germans launched the first major poison gas attack of the war on the Western Front at St Julien. A heavy cloud of chlorine gas was released, devastating the French colonial troops and forcing the Canadian 1st Division to step in and hold the line.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk into the memorial grounds to unlock your reflection task./p><button onclick='window.unlockMission(this, \"brooding_soldier\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+            "text": "In April 1915, the Germans launched the first major poison gas attack of the war on the Western Front at St Julien. A heavy cloud of chlorine gas was released, devastating the French colonial troops and forcing the Canadian 1st Division to step in and hold the line.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Direction of the Gas</h4><p style=\"font-size: 1.05rem; color: #334155;\"><strong>Action:</strong> Open your phone's compass app. Stand at the base of the Canadian memorial and turn until you are facing the exact direction the German gas attack came from (North-East).</p><div style=\"background: #ecfdf5; padding: 15px; border-left: 4px solid #10b981; margin: 15px 0; border-radius: 0 4px 4px 0;\"><em style=\"color: #065f46;\">\\\"Gas! GAS! Quick, boys!—An ecstasy of fumbling...\\\"</em><br><small style=\"color: #047857;\">- Wilfred Owen</small></div><p style=\"color: #b91c1c; font-weight: bold; margin-bottom: 5px;\"><i class=\"fa-solid fa-brain\"></i> Learn these 3 facts by heart before getting back on the coach:</p><ul style=\"margin: 0; padding-left: 20px; color: #475569; line-height: 1.5;\"><li>Chlorine gas severely damaged the respiratory system, causing victims to suffocate.</li><li>The earliest defense was holding cotton pads soaked in urine over the mouth (ammonia neutralized chlorine).</li><li>The memorial shows a soldier in a 'reverse arms' position, signifying mourning, not victory.</li></ul></div>"
           },
           {
             "type": "narrative",
             "theme_heading": "Sanctuary Wood",
-            "text": "Sanctuary Wood was initially a quiet area behind the lines where soldiers could rest (a sanctuary), but it eventually became part of the frontline. Today, it offers a rare look at an original, preserved trench system.<br><br><strong>Key Facts:</strong><ul><li>Trenches here were reinforced with corrugated metal ('elephant iron') to prevent collapse in the waterlogged soil.</li><li>The shattered, dead trees preserved in the wood are a direct result of relentless artillery fire tearing the landscape apart.</li><li><strong>Local Connection:</strong> Just a short distance from here is Westhoek Ridge, where Stubbington local Auriol 'Eric' Lowry fought in 1917.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"I died in hell—(They called it Passchendaele). My wound was slight, / And I was hobbling back; and then a shell / Burst slick upon the duck-boards: so I fell / Into the bottomless mud, and lost the light.\"</em><br>— <strong>Siegfried Sassoon</strong>, Memorial Tablet</blockquote>"
+            "text": "Sanctuary Wood was initially a quiet area behind the lines where soldiers could rest (a sanctuary), but it eventually became part of the frontline. Today, it offers a rare look at an original, preserved trench system.<br><br><strong>Key Facts:</strong><ul><li>Trenches here were reinforced with corrugated metal ('elephant iron') to prevent collapse in the waterlogged soil.</li><li>The shattered, dead trees preserved in the wood are a direct result of relentless artillery fire tearing the landscape apart.</li><li><strong>Local Connection:</strong> Just a short distance from here is Westhoek Ridge, where Stubbington local Auriol 'Eric' Lowry fought in 1917.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"I died in hell—(They called it Passchendaele). My wound was slight, / And I was hobbling back; and then a shell / Burst slick upon the duck-boards: so I fell / Into the bottomless mud, and lost the light.\"</em><br>— <strong>Siegfried Sassoon</strong>, Memorial Tablet</blockquote><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Senses of the Salient</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-eye\"></i> As you walk through the preserved trench system, close your eyes for 30 seconds. Imagine the sound of artillery, the smell of mud and cordite, and the fear of a night raid. Think of three adjectives that describe how it feels to stand here.</p><ul style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <li>The Ypres Salient was a massive bulge in the Allied front line, leaving British and Commonwealth troops dangerously exposed to German artillery fire from three sides.</li> <li>It was the site of three major, apocalyptic battles (1914, 1915, 1917), resulting in over 300,000 British and Commonwealth casualties.</li> <li>During the Second Battle of Ypres in 1915, the Salient witnessed the first mass use of poison gas on the Western Front.</li> <li>The high water table and relentless artillery bombardment destroyed natural drainage, turning the Salient into a notoriously lethal landscape of liquid mud.</li> <li>Sanctuary Wood earned its name in 1914 as a quiet rear area where troops rested, but by 1916, the front line had violently collapsed back into the woods.</li> </ul><div style='text-align: center; margin-top: 15px;'><img src='/images/ypres_salient_map_new.png' style='max-width: 100%; border-radius: 6px; border: 1px solid #ccc;' alt='Ypres Salient Map'></div></div></div>"
           },
           {
             "type": "narrative",
             "theme_heading": "Tyne Cot Cemetery",
-            "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_tyne_cot.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Tyne Cot Cemetery\"/><br><small>Tyne Cot Cemetery</small></div>Tyne Cot is the largest Commonwealth war cemetery in the world, reflecting the incomprehensible scale of the casualties during the Battle of Passchendaele (1917).<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk through the cemetery gates to unlock your assigned soldier.</p><button onclick='window.unlockMission(this, \"tyne_cot\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+            "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_tyne_cot.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Tyne Cot Cemetery\"/><br><small>Tyne Cot Cemetery</small></div>Tyne Cot is the largest Commonwealth war cemetery in the world, reflecting the incomprehensible scale of the casualties during the Battle of Passchendaele (1917).<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Tell Their Story</h4><div style=\"background: #fff1f2; padding: 15px; border-radius: 6px; border: 1px solid #fecdd3;\"><p style=\"margin: 0; color: #be123c; font-weight: bold; font-size: 1.05rem;\"><i class=\"fa-solid fa-person-chalkboard\"></i> Find the grave or panel of one of our Local Heroes (e.g., Lance Corporal A. Ward). At the end of the visit, you will be asked to orally tell the rest of your group about this soldier.</p></div></div>"
           },
           {
             "type": "narrative",
             "theme_heading": "Lijssenthoek Casualty Clearing Station",
-            "text": "Lijssenthoek was the largest evacuation hospital in the Ypres Salient. Located just out of artillery range, it received casualties directly from the frontline dressing stations.<br><br><strong>Key Facts:</strong><ul><li>It handled over 200,000 casualties during the war.</li><li>The cemetery graves provide a timeline of hospital mortality, showing spikes during major offensives.</li><li>Advances in treating infection happened here, including the Carrel-Dakin method of flushing wounds with antiseptics.</li><li>Nurses also lost their lives here, such as Staff Nurse Nellie Spindler who was killed by a shell.</li></ul>"
+            "text": "Lijssenthoek was the largest evacuation hospital in the Ypres Salient. Located just out of artillery range, it received casualties directly from the frontline dressing stations.<br><br><strong>Key Facts:</strong><ul><li>It handled over 200,000 casualties during the war.</li><li>The cemetery graves provide a timeline of hospital mortality, showing spikes during major offensives.</li><li>Advances in treating infection happened here, including the Carrel-Dakin method of flushing wounds with antiseptics.</li><li>Nurses also lost their lives here, such as Staff Nurse Nellie Spindler who was killed by a shell.</li></ul><br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: The Medical Frontline</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-magnifying-glass\"></i> Walk along the rows of headstones and find the grave of Staff Nurse Nellie Spindler (the only female casualty buried here). Consider: Why were medical staff, located miles behind the front line, still at risk of death?</p><div style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <p>Staff Nurse Nellie Spindler was a 26-year-old nurse serving with the Queen Alexandra’s Imperial Military Nursing Service. In August 1917, at the height of the Battle of Passchendaele, the casualty clearing station where she worked was struck by German artillery. Shrapnel tore through her tent, killing her instantly. Today, she is the only woman buried alongside more than 10,000 men at Lijssenthoek Military Cemetery, serving as a powerful physical reminder that women operating in medical roles lived and died in the direct line of fire.</p> <ul> <li>The First Aid Nursing Yeomanry (FANY) was created in 1907 as an all-female voluntary organization.</li> <li>FANYs drove motor ambulances through heavily shelled, muddy roads to evacuate bleeding soldiers from the front.</li> <li>They operated soup kitchens, mobile canteens, and advanced dressing stations, consistently working under direct enemy bombardment.</li> </ul></div></div></div>"
           },
           {
             "type": "narrative",
             "theme_heading": "The Menin Gate",
-            "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_menin_gate.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Menin Gate\"/><br><small>The Menin Gate, Ypres</small></div>The Menin Gate is a colossal memorial to the missing in Ypres. Millions of Allied soldiers marched through this spot on their way to the frontlines, and many never returned.<br><br><div class='geo-fence-container' style='border: 2px dashed #94a3b8; border-radius: 12px; padding: 30px; text-align: center; background: #f8fafc; margin-top: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);'><i class='fa-solid fa-lock' style='font-size: 3.5rem; color: #94a3b8; margin-bottom: 15px;'></i><h3 style='color: #475569; margin: 0 0 10px 0; font-family: \"Playfair Display\", serif;'>Task Locked</h3><p style='color: #64748b; margin-bottom: 25px; font-size: 1.05rem;'>Walk under the arches of the Menin Gate to unlock your reflection task./p><button onclick='window.unlockMission(this, \"menin_gate\")' class='btn' style='background: #e2e8f0; color: #475569; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.95rem; font-weight: 600;'><i class='fa-solid fa-location-crosshairs'></i> Simulate GPS Arrival</button></div>"
+            "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_menin_gate.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Menin Gate\"/><br><small>The Menin Gate, Ypres</small></div>The Menin Gate is a colossal memorial to the missing in Ypres. Millions of Allied soldiers marched through this spot on their way to the frontlines, and many never returned.<br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Local Hero & The Empire</h4><div style=\"margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;\"><h4 style=\"margin: 0 0 10px 0; color: #1e293b;\"><i class=\"fa-solid fa-magnifying-glass-location\" style=\"color: #3b82f6;\"></i> Find the Local Hero</h4><div style=\"background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;\"><h3 style=\"margin: 0 0 10px 0; color: #1e293b; font-size: 1.3rem;\">Private T. J. Franklin</h3><p style=\"margin: 0; font-size: 0.95rem; line-height: 1.6; color: #334155;\"><strong>Regiment:</strong> 1st Battalion, The Hampshire Regiment<br><strong>Local Connection:</strong> Stubbington<br><strong>Fate:</strong> Killed 29th April 1915 holding an exposed line on the Frezenberg Ridge.</p></div><p style=\"margin: 0; color: #b91c1c; font-weight: bold;\"><i class=\"fa-solid fa-person-chalkboard\"></i> Action: The Menin Gate has 54,000 names. Locate the specific panel for Private T. J. Franklin.</p></div><div><h4 style=\"margin: 0 0 5px 0; color: #1e293b;\"><i class=\"fa-solid fa-monument\" style=\"color: #f59e0b;\"></i> The Indian Forces Memorial</h4><p style=\"margin: 0; color: #475569;\">Once you have found his name, walk out of the gate and up onto the grassy ramparts. Locate the <strong>Indian Forces Memorial</strong>. 130,000 troops from the Indian subcontinent served in Flanders. Take a moment to read the inscription before the Last Post begins at 8:00 PM.</p><div style='background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 15px;'><p style='margin: 0 0 10px 0; color: #334155; font-weight: bold;'><i class='fa-solid fa-video' style='color: #e11d48;'></i> The Empire's War: Global Voices in Flanders</p><p style='margin: 0 0 10px 0; color: #475569;'>David Olusoga’s WW1 Uncut series brilliantly dismantles the traditional, whitewashed image of the trenches, making it the perfect digital companion for this stop.</p><p style='margin: 0 0 10px 0; color: #475569;'><strong>Action:</strong> Watch the embedded David Olusoga video on your device, then stand before the Indian Forces Memorial and complete these three steps:</p><ol style='margin: 0; padding-left: 20px; color: #475569;'><li style='margin-bottom: 8px;'><strong>Observe the Symbolism:</strong> Look closely at the monument's base and the four Asian lions facing outward (the State Emblem of India). This memorial was unveiled in 2011. Why do you think it took nearly a century for a dedicated national monument to be placed here, and what does this delay tell us about how history is remembered?</li><li style='margin-bottom: 8px;'><strong>Challenge the Image:</strong> Olusoga explains that the Western Front was one of the most diverse spaces on earth. Look down at the Menin Gate, where 413 Indian soldiers with no known grave are carved into the stone alongside British troops. How does standing here change the traditional textbook image of the \"British Tommy\" in the mud?</li><li style='margin-bottom: 8px;'><strong>Discuss the Impact:</strong> Indian Expeditionary Force A arrived in freezing conditions in late 1914, plugging critical gaps in the British line just in time to prevent a German breakthrough. Discuss with your partner: How might the First Battle of Ypres have ended if those 45,000 Empire troops had not been deployed?</li></ol></div><div style='text-align: center; margin-bottom: 15px;'><iframe width='100%' height='315' src='https://www.youtube.com/embed/WRTm7mw25WU?start=182' frameborder='0' allowfullscreen></iframe><p style='font-size: 0.9rem; color: #64748b; margin-top: 5px; text-align: left;'><strong>Watch (6 mins 31 secs):</strong> Historian David Olusoga reveals the true diversity of the World War One trenches. Pay attention to the sheer number of nations that fought and died in the exact mud you are standing on today. <em>Contrast this with the Chattri Memorial on the South Downs in Sussex, where wounded Indian soldiers were cremated after being treated at the Royal Pavilion in Brighton.</em></p></div></div></div>",
+            "historical_facts": [
+              "Indian Expeditionary Force A (45,000 men) arrived in late 1914, plugging critical gaps to prevent a German breakthrough during the First Battle of Ypres.",
+              "By the end of 1914, Indian troops made up one-third of all British forces on the Western Front.",
+              "Of the 130,000 Indian soldiers who served in Flanders, roughly 9,000 died from combat and severe exposure to the brutal European winter.",
+              "The Menin Gate lists 413 Indian soldiers with no known grave.",
+              "Unveiled in 2011, the memorial features the State Emblem of India: four Asian lions facing outward over a bull, elephant, horse, and lion."
+            ],
+            "interactive_task": {
+              "title": "The Empire’s War: Global Voices in Flanders",
+              "action": "Watch the David Olusoga video, then stand before the Indian Forces Memorial and complete three steps: 1) Observe: Why did it take nearly a century to build this 2011 monument, and what does this delay tell us about historical memory? 2) Challenge: Look down at the Menin Gate where 413 Indian soldiers are carved alongside British troops. How does this change the traditional textbook image of the 'British Tommy'? 3) Discuss: How might the First Battle of Ypres have ended if those 45,000 Empire troops had not been deployed?"
+            },
+            "media": {
+              "type": "youtube",
+              "youtube_id": "Fwv4qL8yE-s",
+              "url": "https://www.youtube.com/watch?v=Fwv4qL8yE-s",
+              "caption": "Watch: Historian David Olusoga reveals the true diversity of the World War One trenches. Pay attention to the sheer number of nations that fought and died in the exact mud you are standing on today."
+            }
           }
         ],
         "tour_guide_script": [
@@ -444,20 +504,20 @@
         ],
         "banner": "/images/ypres_cloth_hall.jpg",
         "extended": {
-          "question": "1 (a). How useful are Sources A and B for an enquiry into the impact of the war on the town of Ypres and the importance of rest for the soldiers? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
+          "question": "1 (a). How useful are Sources A and B for an enquiry into the physical conditions of the landscape and trench warfare on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
           "scaffolding": [
             "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
           ],
           "source_a": {
-            "provenance": "A photograph showing the complete destruction of the Cloth Hall in the Ypres town square, 1918.",
-            "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/ypres_cloth_hall.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+            "provenance": "A photograph showing the devastating impact of artillery fire and mud on the landscape during the Battle of Passchendaele, 1917.",
+            "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/gw_flooded_trench.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
           },
           "source_b": {
-            "provenance": "A photograph of British soldiers relaxing and drinking tea inside Talbot House (Toc H) in Poperinge.",
-            "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/talbot_house_relaxing.jpg\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
+            "provenance": "A photograph of soldiers from the Cheshire Regiment occupying a captured German trench, 1916.",
+            "content": "<div style=\"padding: 15px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;\"><img src=\"/images/hooge_crater_trench.png\" style=\"max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;\"></div>"
           },
           "model": "<strong>Source A is highly useful...</strong>",
-          "provenance_clue": "Source A is a factual photograph documenting structural damage; what can it tell us about the destructive power of artillery? Source B shows men resting at Talbot House; why was this 'Every Man’s Club' so vital for morale just a few miles behind the front line?"
+          "provenance_clue": "Source A is an official photograph documenting the severe mud and destroyed landscape; what can it tell us about the conditions soldiers had to fight in? Source B shows men resting in a captured trench; what does this reveal about the realities of trench occupation?"
         }
       },
       {
@@ -537,17 +597,17 @@
           {
             "type": "narrative",
             "theme_heading": "Ypres Ramparts",
-            "text": "The medieval ramparts of Ypres provided some of the only cover in the destroyed city. Soldiers dug deep into the ancient moated defenses to hide from the shelling. The Ramparts Cemetery is one of the most picturesque on the Western Front, built directly into the town's defenses.<br><br><blockquote><strong>Written Source:</strong><br><em>\"Who will remember, passing through this Gate, / The unheroic dead who fed the guns? / Who shall absolve the foulness of their fate...\"</em><br>— <strong>Siegfried Sassoon</strong>, On Passing the New Menin Gate</blockquote>"
+            "text": "<div style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ramparts_ww1.jpg\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\" alt=\"Ypres Ramparts WWI\" /><br><small style=\"color: #64748b;\">Soldiers sheltering near the Lille Gate dugouts in the Ypres Ramparts during WWI</small></div>The medieval ramparts of Ypres provided some of the only cover in the destroyed city. Soldiers dug deep into the ancient moated defenses to hide from the shelling. The Ramparts Cemetery is one of the most picturesque on the Western Front, built directly into the town's defenses.<br><br><blockquote><strong>Written Source:</strong><br><em>\"Who will remember, passing through this Gate, / The unheroic dead who fed the guns? / Who shall absolve the foulness of their fate...\"</em><br>— <strong>Siegfried Sassoon</strong>, On Passing the New Menin Gate</blockquote><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Ancient Defenses</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-shield-halved\"></i> Look at the thick brick walls of the Ramparts. Why do you think soldiers chose to dig their dugouts into medieval defenses rather than staying in the open town? How does the Ramparts Cemetery differ in atmosphere from Tyne Cot?</p><ul style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <li>The Ramparts were originally medieval fortifications, massively expanded and reinforced in the 17th century by the famous French military engineer Vauban.</li> <li>Because the brick and earth walls were incredibly thick, they survived the relentless German artillery barrages that completely leveled the rest of the town.</li> <li>British troops honeycombed these ancient walls, digging extensive subterranean dugouts to house battalion headquarters, dormitories, and advanced dressing stations safely out of the blast zones.</li> </ul></div></div>"
           },
           {
             "type": "narrative",
             "theme_heading": "Talbot House (Every Man's Club)",
-            "text": "Located in the town of Poperinge, safely behind the lines, Talbot House was set up by Army Chaplain Tubby Clayton as an 'Every Man's Club'. It was an oasis of sanity where soldiers could escape the psychological horror of the trenches.<br><br><strong>Key Facts:</strong><ul><li>Rank was completely ignored here; signs read 'Abandon Rank All Ye Who Enter Here'.</li><li>Soldiers could drink tea, write letters, use the library, and attend services in the attic chapel.</li><li>Over half a million men passed through its doors.</li></ul>"
+            "text": "Located in the town of Poperinge, safely behind the lines, Talbot House was set up by Army Chaplain Tubby Clayton as an 'Every Man's Club'. It was an oasis of sanity where soldiers could escape the psychological horror of the trenches.<br><br><strong>Key Facts:</strong><ul><li>Rank was completely ignored here; signs read 'Abandon Rank All Ye Who Enter Here'.</li><li>Soldiers could drink tea, write letters, use the library, and attend services in the attic chapel.</li><li>Over half a million men passed through its doors.</li></ul><br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Abandon Rank</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-mug-hot\"></i> Find the famous sign that reads 'Abandon Rank All Ye Who Enter Here'. Why was it so important for soldiers suffering from the psychological toll of the trenches to have a place where officers and privates were treated as equals?</p><div style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <p>For soldiers rotating out of the slaughter of the Salient, Talbot House was an essential psychological sanctuary. The mental toll of industrialized warfare—then poorly understood and heavily stigmatized as \"shell shock\"—destroyed thousands of men. By enforcing the rule \"Abandon Rank All Ye Who Enter Here,\" Tubby Clayton removed the strict, oppressive military hierarchy that dominated soldiers' lives. This allowed them to decompress, play piano, and speak freely as human beings rather than cogs in a military machine. Today, this deeply resonates with modern understandings of PTSD, recognizing that mental survival in the armed forces requires psychological decompression, peer support, and the destigmatization of trauma.</p> </div></div></div>"
           },
           {
             "type": "narrative",
             "theme_heading": "Poperinge Death Cells & Discipline",
-            "text": "A stark contrast to Talbot House, the nearby Poperinge Town Hall contains the death cells and an execution post used by the British Army. Discipline was incredibly harsh, and shell shock was poorly understood by the high command.<br><br><strong>Key Facts:</strong><ul><li>Over 300 British and Commonwealth soldiers were executed by firing squad during the war, often for 'cowardice' or 'desertion'.</li><li>Many of these men were actually suffering from severe psychological trauma (shell shock) caused by the relentless artillery bombardment.</li><li>In 2006, the British Government issued a mass statutory pardon for all soldiers executed for military offenses during the First World War.</li></ul>"
+            "text": "A stark contrast to Talbot House, the nearby Poperinge Town Hall contains the death cells and an execution post used by the British Army. Discipline was incredibly harsh, and shell shock was poorly understood by the high command.<br><br><strong>Key Facts:</strong><ul><li>Over 300 British and Commonwealth soldiers were executed by firing squad during the war, often for 'cowardice' or 'desertion'.</li><li>Many of these men were actually suffering from severe psychological trauma (shell shock) caused by the relentless artillery bombardment.</li><li>In 2006, the British Government issued a mass statutory pardon for all soldiers executed for military offenses during the First World War.</li></ul><br><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Justice or Tragedy?</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-scale-unbalanced\"></i> Stand near the cramped death cells. Many of the men executed here were suffering from severe shell shock. Discuss with the person next to you: Why did the British High Command believe executions were necessary, and why was this practice eventually condemned?</p><ul style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <li>During the First World War, 306 British and Commonwealth soldiers were executed by firing squad.</li> <li>The most common charges were desertion, cowardice, and casting away arms.</li> <li>Medical science at the time failed to recognize that many of these condemned men were suffering from severe, undiagnosed shell shock.</li> <li>Men were held in tiny, damp cells at the Poperinge Town Hall overnight before being shot at dawn against a post in the courtyard.</li> <li>In 2006, the UK government officially granted a posthumous statutory pardon to all 306 soldiers, recognizing the tragic miscarriage of military justice.</li> </ul></div></div>"
           }
         ],
         "tour_guide_script": [
@@ -1056,7 +1116,119 @@
             "text": "As we conclude our journey through the Ypres Salient, it is time to bring the stories of the fallen back home. Your final challenge is to choose one of the local heroes we investigated and write a short memorial speech that could be read aloud at the Stubbington War Memorial on Remembrance Sunday.<br><br>**Your speech must:**<br>- State who they were and where they lived.<br>- Describe the conditions they faced on the battlefield.<br>- Explain why their sacrifice, and the sacrifice of their generation, must never be forgotten."
           }
         ]
+      },
+      {
+        "id": "hero_lowry_william",
+        "title": "William Augustine 'Harper' Lowry",
+        "enquiry": "Local Hero",
+        "banner": "/images/stubbington_memorial.jpg",
+        "teacher_notes": {
+          "primer": "The story of William Augustine 'Harper' Lowry, who lived at Manor Way Grange.",
+          "objectives": []
+        },
+        "do_now": {
+          "type": "timeline",
+          "prediction_question": "The Life and Fall of William Augustine 'Harper' Lowry",
+          "events": [
+            {
+              "year": "Home",
+              "title": "Stubbington Connection",
+              "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Eldest brother.",
+              "lat": 50.8107,
+              "lng": -1.1967
+            },
+            {
+              "year": "Resting Place",
+              "title": "Gully Ravine (Gallipoli)",
+              "detail": "Killed on 4th June 1915 leading a desperate charge up Gully Ravine. He has no known grave.",
+              "lat": 40.32,
+              "lng": 26.26
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "type": "narrative",
+            "theme_heading": "William Augustine 'Harper' Lowry",
+            "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> Indian Army<br><strong>Age:</strong> 25<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the eldest of the three Lowry brothers.<br><br><strong>Military Service & Fate:</strong> He fought in the Gallipoli campaign. On 4th June 1915, he was killed leading a desperate charge up Gully Ravine. Because of relentless Turkish machine-gun fire, those who fell too badly wounded to move could not be rescued or safely recovered, and they tragically died of exposure. His body was never recovered. He has no known grave and is commemorated on the Helles Memorial in Gallipoli, Turkey.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_william.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
+          }
+        ]
+      },
+      {
+        "id": "hero_lowry_auriol",
+        "title": "Auriol 'Eric' Lowry",
+        "enquiry": "Local Hero",
+        "banner": "/images/stubbington_memorial.jpg",
+        "teacher_notes": {
+          "primer": "The story of Auriol 'Eric' Lowry, who lived at Manor Way Grange.",
+          "objectives": []
+        },
+        "do_now": {
+          "type": "timeline",
+          "prediction_question": "The Service of Auriol 'Eric' Lowry",
+          "events": [
+            {
+              "year": "Home",
+              "title": "Stubbington Connection",
+              "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Middle brother.",
+              "lat": 50.8107,
+              "lng": -1.1967
+            },
+            {
+              "year": "Action",
+              "title": "Westhoek Ridge",
+              "detail": "Fought at Westhoek Ridge in 1917. Commanded the battalion where his younger brother Patrick served.",
+              "lat": 50.852,
+              "lng": 2.8913
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "type": "narrative",
+            "theme_heading": "Auriol 'Eric' Lowry",
+            "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> West Yorkshire Regiment<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the middle brother.<br><br><strong>Military Service:</strong> He fought at Westhoek Ridge in 1917. Uniquely, he commanded the battalion in which his younger brother Patrick also served, bearing the heavy burden of leadership and family duty. He was killed instantaneously by a random machine-gun bullet on 23rd September 1918 (aged 25) while inspecting frontline outposts in the Acheville Sector near Arleux, France, dying in his runner's arms. He is buried at La Targette Cemetery, Neuville-St. Vaast, in Northern France. His burial was highly distinguished, attended by an Army commander, two corps commanders, and three divisional commanders as a sign of the immense respect he had earned.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_auriol.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
+          }
+        ]
+      },
+      {
+        "id": "hero_lowry_cyril",
+        "title": "Cyril John 'Patrick' Lowry",
+        "enquiry": "Local Hero",
+        "banner": "/images/stubbington_memorial.jpg",
+        "teacher_notes": {
+          "primer": "The story of Cyril John 'Patrick' Lowry, who lived at Manor Way Grange.",
+          "objectives": []
+        },
+        "do_now": {
+          "type": "timeline",
+          "prediction_question": "The Life and Fall of Cyril John 'Patrick' Lowry",
+          "events": [
+            {
+              "year": "Home",
+              "title": "Stubbington Connection",
+              "detail": "Lived at Manor Way Grange in Lee-on-the-Solent. Youngest brother.",
+              "lat": 50.8107,
+              "lng": -1.1967
+            },
+            {
+              "year": "Resting Place",
+              "title": "Somme",
+              "detail": "Killed on 25th March 1918 during a German offensive near the Somme, in full view of his brother Eric.",
+              "lat": 50.01,
+              "lng": 2.68
+            }
+          ]
+        },
+        "narrative_blocks": [
+          {
+            "type": "narrative",
+            "theme_heading": "Cyril John 'Patrick' Lowry",
+            "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> West Yorkshire Regiment<br><strong>Age:</strong> 20<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the youngest brother.<br><br><strong>Military Service & Fate:</strong> Served under the command of his older brother, Eric. He was tragically killed on 25th March 1918 (aged 20) while leading a counter-attack with C Company to defend the River Somme bridgehead west of Eterpigny, France. In the chaos of the massive German Spring Offensive and the subsequent British withdrawal, his body was never recovered for burial. Heartbreakingly, he fell in full view of his brother Eric. He has no known grave and is commemorated on the Pozieres Memorial in France (located on the old Roman road between Albert and Bapaume).<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_cyril.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
+          }
+        ]
       }
-    ]
+    ],
+    "overview_custom_html": "\n      <div style=\"background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 30px;\">\n        <h3 style=\"margin-top: 0; color: #1e3a8a; font-family: 'Playfair Display', serif; font-size: 1.8rem;\">The Lowry Brothers: A Village's Sacrifice</h3>\n        <p style=\"color: #334155; line-height: 1.6; font-size: 1.05rem;\">The names of three brothers—William, Cyril, and Auriol (Eric) Lowry—are all carved into the Stubbington War Memorial in our village center. The story of these young men perfectly captures the devastating toll the war took on individual families.<br><br>Tragically, the three brothers fell in three completely different theatres of war:<br><ul><li><strong>William 'Harper' Lowry:</strong> Fell in 1915 and is commemorated on the Helles Memorial in Turkey (Gallipoli).</li><li><strong>Cyril 'Patrick' Lowry:</strong> Fell in 1916 and is commemorated on the Pozieres Memorial in France (The Somme).</li><li><strong>Auriol 'Eric' Lowry:</strong> Fell in 1917 and is buried at La Targette Cemetery near Arras, France.</li></ul><br>Before we depart for Belgium, take a moment to reflect on what it must have been like for the local community to receive the telegrams for all three boys over the course of three years.</p>\n        <div style=\"display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;\"><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/stubbington_memorial.jpg\" alt=\"The Stubbington War Memorial\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">The Stubbington War Memorial, where the Lowry brothers are commemorated.</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_william.png\" alt=\"William 'Harper' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">William 'Harper' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_cyril.png\" alt=\"Cyril 'Patrick' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Cyril 'Patrick' Lowry</small>\n         </div><div style=\"flex: 1; min-width: 150px; text-align: center;\">\n            <img src=\"/images/lowry_auriol.png\" alt=\"Auriol 'Eric' Lowry\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;\" />\n            <small style=\"display:block; margin-top:5px; color:#64748b;\">Auriol 'Eric' Lowry</small>\n         </div></div>\n      </div>\n    "
   }
 }

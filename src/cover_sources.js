@@ -1,4 +1,4 @@
-import { getAssetUrl } from './core_app.js';
+import { getAssetUrl } from './engine/assets.js';
 
 export function renderCoverSourcesHTML(unitData) {
   if (unitData.cover_sources) {

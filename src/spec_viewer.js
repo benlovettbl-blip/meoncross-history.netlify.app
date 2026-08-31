@@ -50,9 +50,9 @@ export function initSpecViewer(container, specUrl) {
                       <!-- RAG Selector -->
                       <div style="position: absolute; left: 0; top: 2px; display: flex; flex-direction: column; gap: 4px; background: #f1f5f9; padding: 4px; border-radius: 6px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);">
                          <div style="display: flex; gap: 4px;">
-                           <button onclick="window.setSpecRag('${uniqueId}', 'red')" id="btn-red-${uniqueId}" style="width: 14px; height: 14px; border-radius: 50%; border: none; background: #ef4444; cursor: pointer; opacity: 0.3; transition: opacity 0.2s;"></button>
-                           <button onclick="window.setSpecRag('${uniqueId}', 'amber')" id="btn-amber-${uniqueId}" style="width: 14px; height: 14px; border-radius: 50%; border: none; background: #f59e0b; cursor: pointer; opacity: 0.3; transition: opacity 0.2s;"></button>
-                           <button onclick="window.setSpecRag('${uniqueId}', 'green')" id="btn-green-${uniqueId}" style="width: 14px; height: 14px; border-radius: 50%; border: none; background: #10b981; cursor: pointer; opacity: 0.3; transition: opacity 0.2s;"></button>
+                           <button data-action="set-spec-rag" data-id="${uniqueId}" data-color="red" id="btn-red-${uniqueId}" style="width: 14px; height: 14px; border-radius: 50%; border: none; background: #ef4444; cursor: pointer; opacity: 0.3; transition: opacity 0.2s;"></button>
+                           <button data-action="set-spec-rag" data-id="${uniqueId}" data-color="amber" id="btn-amber-${uniqueId}" style="width: 14px; height: 14px; border-radius: 50%; border: none; background: #f59e0b; cursor: pointer; opacity: 0.3; transition: opacity 0.2s;"></button>
+                           <button data-action="set-spec-rag" data-id="${uniqueId}" data-color="green" id="btn-green-${uniqueId}" style="width: 14px; height: 14px; border-radius: 50%; border: none; background: #10b981; cursor: pointer; opacity: 0.3; transition: opacity 0.2s;"></button>
                          </div>
                       </div>
 

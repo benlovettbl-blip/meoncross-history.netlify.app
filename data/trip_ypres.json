@@ -105,7 +105,7 @@
         "story": "Killed 4th October 1917 taking Juniper Trench."
       }
     ],
-    "printable_workbooks": [],
+    "workbooks": [],
     "lessons": [
       {
         "id": "day_0",
@@ -125,7 +125,10 @@
               "detail": "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions. I will be requesting passports in and EHIC cards. If you can't make it, you can hand it into the office before that date or just after."
             }
           ]
-        }
+        },
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "day_1",
@@ -328,7 +331,10 @@
           },
           "model": "<strong>Source A is highly useful...</strong>",
           "provenance_clue": "Source A was taken by an official photographer known for dramatic compositions; does this limit its usefulness or perfectly capture the reality of the mud? Source B is an aerial photograph of a gas attack; what makes this detached, wide-angle view of the battlefield useful for understanding the scale of chemical warfare?"
-        }
+        },
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "day_2",
@@ -518,7 +524,10 @@
           },
           "model": "<strong>Source A is highly useful...</strong>",
           "provenance_clue": "Source A is an official photograph documenting the severe mud and destroyed landscape; what can it tell us about the conditions soldiers had to fight in? Source B shows men resting in a captured trench; what does this reveal about the realities of trench occupation?"
-        }
+        },
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        ]
       },
       {
         "id": "day_3",
@@ -626,6 +635,9 @@
             "theme_heading": "1:30 PM – Poperinge Town Hall & Death Cells",
             "text": "\"We end our tour on a very sobering note. Just a short walk from the comfort of Talbot House is Poperinge Town Hall. Here, you will see the death cells and the execution post. Men suffering from what we now know as severe PTSD—shell shock—were often tried for cowardice or desertion. Some were held in these very cells before being tied to a post and shot at dawn by a firing squad of their own comrades.\"<br><br><strong>Teacher Points:</strong><ul><li>Over 300 British and Commonwealth soldiers were executed during the war.</li><li>Shell shock was poorly understood; many commanders believed it was a failure of moral character rather than a genuine psychological and neurological injury caused by constant bombardment.</li><li>In 2006, the British government finally issued a mass statutory pardon for all soldiers executed for military offenses during the First World War, recognizing the severe trauma they had endured.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>\"He was just a boy, trembling so violently he could hardly stand. The doctor said he was completely broken, but the General said an example had to be made to keep the others in line. I have never felt such shame as when we were ordered to raise our rifles.\"</em><br>— <strong>An anonymous soldier's account</strong>, detailing the agonizing reality of serving on a firing squad at dawn.</blockquote>"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -702,6 +714,9 @@
             ],
             "answer": "Poison Gas"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -778,6 +793,9 @@
             ],
             "answer": "Lance Corporal"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -854,6 +872,9 @@
             ],
             "answer": "Battle of Menin Road Ridge"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -930,6 +951,9 @@
             ],
             "answer": "Sydney Muckett"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -1006,6 +1030,9 @@
             ],
             "answer": "Less than a month before the Armistice"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -1082,6 +1109,9 @@
             ],
             "answer": "The Polygonebeek marsh"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -1115,6 +1145,9 @@
             "theme_heading": "Your Final Challenge",
             "text": "As we conclude our journey through the Ypres Salient, it is time to bring the stories of the fallen back home. Your final challenge is to choose one of the local heroes we investigated and write a short memorial speech that could be read aloud at the Stubbington War Memorial on Remembrance Sunday.<br><br>**Your speech must:**<br>- State who they were and where they lived.<br>- Describe the conditions they faced on the battlefield.<br>- Explain why their sacrifice, and the sacrifice of their generation, must never be forgotten."
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -1152,6 +1185,9 @@
             "theme_heading": "William Augustine 'Harper' Lowry",
             "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> Indian Army<br><strong>Age:</strong> 25<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the eldest of the three Lowry brothers.<br><br><strong>Military Service & Fate:</strong> He fought in the Gallipoli campaign. On 4th June 1915, he was killed leading a desperate charge up Gully Ravine. Because of relentless Turkish machine-gun fire, those who fell too badly wounded to move could not be rescued or safely recovered, and they tragically died of exposure. His body was never recovered. He has no known grave and is commemorated on the Helles Memorial in Gallipoli, Turkey.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_william.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -1189,6 +1225,9 @@
             "theme_heading": "Auriol 'Eric' Lowry",
             "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> West Yorkshire Regiment<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the middle brother.<br><br><strong>Military Service:</strong> He fought at Westhoek Ridge in 1917. Uniquely, he commanded the battalion in which his younger brother Patrick also served, bearing the heavy burden of leadership and family duty. He was killed instantaneously by a random machine-gun bullet on 23rd September 1918 (aged 25) while inspecting frontline outposts in the Acheville Sector near Arleux, France, dying in his runner's arms. He is buried at La Targette Cemetery, Neuville-St. Vaast, in Northern France. His burial was highly distinguished, attended by an Army commander, two corps commanders, and three divisional commanders as a sign of the immense respect he had earned.<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_auriol.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       },
       {
@@ -1226,6 +1265,9 @@
             "theme_heading": "Cyril John 'Patrick' Lowry",
             "text": "<div style=\"display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start;\"><div style=\"flex:1; min-width:300px;\"><strong>Regiment:</strong> West Yorkshire Regiment<br><strong>Age:</strong> 20<br><strong>Local Connection:</strong> Lived at Manor Way Grange in Lee-on-the-Solent. He was the youngest brother.<br><br><strong>Military Service & Fate:</strong> Served under the command of his older brother, Eric. He was tragically killed on 25th March 1918 (aged 20) while leading a counter-attack with C Company to defend the River Somme bridgehead west of Eterpigny, France. In the chaos of the massive German Spring Offensive and the subsequent British withdrawal, his body was never recovered for burial. Heartbreakingly, he fell in full view of his brother Eric. He has no known grave and is commemorated on the Pozieres Memorial in France (located on the old Roman road between Albert and Bapaume).<br><br><i>*Biographical information courtesy of the Stubbington and Hill Head History Society.*</i></div><div style=\"flex: 0 0 200px; text-align:center;\"><img src=\"/images/lowry_cyril.png\" style=\"width:100%; border-radius:8px; border:1px solid #ccc; box-shadow:0 4px 6px rgba(0,0,0,0.1);\" /></div></div>"
           }
+        ],
+        "tasks": [
+          "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
         ]
       }
     ],

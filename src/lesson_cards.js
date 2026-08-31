@@ -95,7 +95,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         if ((lesson.id && lesson.id.startsWith(p.prefix)) || (lesson.title && lesson.title.startsWith(p.prefix))) {
           foundAny = true;
           lessonsHTML += `
-            <div class="homepage-lesson-card" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onclick="window.renderLessonByIndex(${index})" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
+            <div class="homepage-lesson-card" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" data-action="render-lesson" data-index="${index}" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
               <h3 style="margin-top: 0; color: #1a237e; font-size: 1rem; margin-bottom: 5px; font-family: 'Outfit', sans-serif;">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
               <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.9rem; line-height: 1.3;">${lesson.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
             </div>
@@ -130,7 +130,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
     days.forEach((d, i) => {
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="window.renderLessonByIndex(${d.index})">
+          <div class="homepage-lesson-card" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" data-action="render-lesson" data-index="${d.index}">
             <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Day ${i + 1}</h3>
             <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${d.lesson.title.replace(/^Day \d+:\s*/, '')}</p>
           </div>
@@ -145,7 +145,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
       heroes.forEach(h => {
           lessonsHTML += `
-            <div class="homepage-lesson-card" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #ef4444; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="window.renderLessonByIndex(${h.index})">
+            <div class="homepage-lesson-card" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #ef4444; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" data-action="render-lesson" data-index="${h.index}">
               <h3 style="margin-top: 0; color: #7f1d1d; font-size: 1.1rem; margin-bottom: 0px; font-family: 'Playfair Display', serif;">${h.lesson.title}</h3>
             </div>
           `;
@@ -194,7 +194,8 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
 
   } else {
     lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
-    unitData.lessons.forEach((lesson, index) => {
+    if (unitData.lessons) {
+      unitData.lessons.forEach((lesson, index) => {
         let bgStyle = "background: white; border: 1px solid #e2e8f0;";
         let titleColor = "#1a237e";
         let textColor = "#475569";
@@ -219,11 +220,12 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         }
 
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-index="${index}" style="${bgStyle} border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="window.renderLessonByIndex(${index})">
+          <div class="homepage-lesson-card" data-index="${index}" style="${bgStyle} border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" data-action="render-lesson" data-index="${index}">
             ${cardContent}
           </div>
         `;
-    });
+      });
+    }
     lessonsHTML += '</div>';
     
 
@@ -233,7 +235,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       unitData.mock_exams.forEach(mock => {
         const mockUrl = currentUnitId ? `/units/${currentUnitId}/${mock.url}` : mock.url;
         lessonsHTML += `
-          <div class="homepage-lesson-card" style="background: #fdf2f8; border: 2px dashed #db2777; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('${mockUrl}', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#fdf2f8'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+          <div class="homepage-lesson-card" style="background: #fdf2f8; border: 2px dashed #db2777; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" data-action="open-link" data-url="${mockUrl}" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#fdf2f8'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
             <i class="fa-solid fa-file-signature fa-2x" style="color: #db2777; margin-bottom: 10px;"></i>
             <h3 style="margin: 0; color: #334155; font-size: 0.9rem;">${mock.title}</h3>
           </div>
@@ -242,26 +244,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       lessonsHTML += '</div>';
     }
 
-    // Only show PDF Materials on the homepage if the dynamic workbooks zone isn't available
-    if (unitData.printable_workbooks && unitData.printable_workbooks.length > 0 && (!unitData.workbooks || unitData.workbooks.length === 0)) {
-      lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">PDF Materials</h2>';
-      lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
-      unitData.printable_workbooks.forEach(wb => {
-        const wbUrl = currentUnitId ? `/units/${currentUnitId}/${wb.url}` : wb.url;
-        const icon = wb.icon || 'fa-book-open';
-        const isMastery = wb.title.includes('Mastery') || wb.url.includes('mastery_pack');
-        const color = isMastery ? '#d32f2f' : '#3b82f6';
-        const bg = isMastery ? '#fff0f2' : '#f8fafc';
-        
-        lessonsHTML += `
-          <div class="homepage-lesson-card" style="background: ${bg}; border: 2px dashed ${color}; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" onclick="window.open('${wbUrl}', '_blank')" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='${bg}'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-             <i class="fa-solid ${icon}" style="font-size: 1.5rem; color: ${color}; margin-bottom: 10px;"></i>
-             <h3 style="margin: 0; color: ${color}; font-size: 1.1rem;">${wb.title}</h3>
-          </div>
-        `;
-      });
-      lessonsHTML += '</div>';
-    }
+    // Removed legacy PDF Materials rendering
   }
 
   return lessonsHTML;

@@ -1,4 +1,4 @@
-import { getAssetUrl } from './core_app.js';
+import { getAssetUrl } from './engine/assets.js';
 
 export function generateKeyIndividualEmbedHTML(person) {
   const hasBackData = person.actions || (person.achievements && !Array.isArray(person.achievements)) || person.limitations;

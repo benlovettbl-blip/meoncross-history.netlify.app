@@ -37,36 +37,6 @@
         "enquiry": "Did life improve under the Nazis?"
       }
     ],
-    "printable_workbooks": [
-      {
-        "id": "KT1",
-        "title": "Key Topic 1: The Weimar Republic",
-        "url": "workbook_KT1.html",
-        "image": "/images/weimar_kt1_cover.jpg",
-        "prefix": "lesson_1_"
-      },
-      {
-        "id": "KT2",
-        "title": "Key Topic 2: Hitler's Rise to Power, 1919-33",
-        "url": "workbook_KT2.html",
-        "image": "/images/weimar_kt2_cover.jpg",
-        "prefix": "lesson_2_"
-      },
-      {
-        "id": "KT3",
-        "title": "Key Topic 3: Nazi Control and Dictatorship",
-        "url": "workbook_KT3.html",
-        "image": "/images/weimar_kt3_cover.jpg",
-        "prefix": "lesson_3_"
-      },
-      {
-        "id": "KT4",
-        "title": "Key Topic 4: Life in Nazi Germany, 1933–39",
-        "url": "workbook_KT4.html",
-        "image": "/images/weimar_kt4_cover.jpg",
-        "prefix": "lesson_4_"
-      }
-    ],
     "lessons": [
       {
         "id": "lesson_1_1",

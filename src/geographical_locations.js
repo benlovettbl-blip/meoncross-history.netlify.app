@@ -1,4 +1,4 @@
-import { getAssetUrl } from './core_app.js';
+import { getAssetUrl } from './engine/assets.js';
 
 export function generateGeographicalLocationEmbedHTML(location) {
   // Keeping this for backward compatibility if it's used elsewhere

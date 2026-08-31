@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 120000 });
+  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 300000 });
   const page = await browser.newPage();
   
   // Set viewport to simulate a mobile screen
@@ -11,7 +11,7 @@ const puppeteer = require('puppeteer');
   const LOCAL_URL = `http://localhost:3003/unit.html?id=${unitId}`;
   
   console.log(`Navigating to ${LOCAL_URL}...`);
-  await page.goto(LOCAL_URL, { waitUntil: 'networkidle0', timeout: 60000 });
+  await page.goto(LOCAL_URL, { waitUntil: 'networkidle2', timeout: 300000 });
   
   // Wait for React/scripts to render
   await new Promise(r => setTimeout(r, 2000));

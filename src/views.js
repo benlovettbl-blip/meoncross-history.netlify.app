@@ -104,7 +104,7 @@ export function renderDashboard() {
     const badgeHtml = underConstruction ? `<div style="position: absolute; top: 10px; right: 10px; background: #fef08a; color: #854d0e; border: 1px solid #eab308; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-person-digging"></i> Under Construction</div>` : '';
     
     html += `
-      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative;" onclick="if(${isUnlocked}) { window.launchSubApp('${unit.id}'); } else { window.launchSubApp('${unit.id}'); }">
+      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative;" data-action="launch-subapp" data-unit="${unit.id}">
         ${badgeHtml}
         ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
         <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
@@ -119,7 +119,7 @@ export function renderDashboard() {
         </div>
         
         <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
-          <button class="btn btn-sm btn-primary w-full" onclick="window.launchSubApp('${unit.id}')">
+          <button class="btn btn-sm btn-primary w-full" data-action="launch-subapp" data-unit="${unit.id}">
             <i class="fa-solid fa-circle-play"></i> Launch Study App
           </button>
         </div>
@@ -146,7 +146,7 @@ export function renderDashboard() {
               <span style="background: rgba(139, 92, 246, 0.1); color: #7c3aed; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-book-open-reader"></i> Site Guide</span>
             </div>
             <div>
-              <button class="btn btn-primary" style="padding: 14px 28px; font-size: 1.15rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border-radius: 8px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; transition: background 0.2s;" onclick="window.launchSubApp('${unit.id}')" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+              <button class="btn btn-primary" style="padding: 14px 28px; font-size: 1.15rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border-radius: 8px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; transition: background 0.2s;" data-action="launch-subapp" data-unit="${unit.id}" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
                 <i class="fa-solid fa-compass" style="margin-right: 8px;"></i> Launch Tour App
               </button>
             </div>
@@ -175,7 +175,7 @@ export function renderDashboard() {
     
     // Legacy USA App Card
     html += `
-      <div class="module-card" style="animation-delay: 0.5s; cursor: pointer;" onclick="window.open('https://edexcelgcsehistoryusa.netlify.app/', '_blank')">
+      <div class="module-card" style="animation-delay: 0.5s; cursor: pointer;" data-action="open-link" data-url="https://edexcelgcsehistoryusa.netlify.app/">
         <div class="module-card-img" style="background-image: url('/images/mlk_washington.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 4rem;">
             <i class="fa-solid fa-flag-usa"></i>
         </div>
@@ -245,7 +245,7 @@ export function renderProfileView() {
       </div>
       
       <div style="margin-top: 24px;">
-        <button class="btn btn-secondary w-full" onclick="window.switchView('dashboard')">Save and Return</button>
+        <button class="btn btn-secondary w-full" data-action="switch-view" data-view="dashboard">Save and Return</button>
       </div>
     </div>
 
@@ -323,7 +323,7 @@ export function renderInteractiveQuiz() {
     container.innerHTML = `
       <div class="card text-center">
         <p>No quiz questions available for this unit.</p>
-        <button class="btn btn-primary" onclick="window.switchView('dashboard')">Back to Dashboard</button>
+        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
@@ -341,22 +341,22 @@ export function renderInteractiveQuiz() {
     <div class="card max-w-lg mx-auto quiz-container">
       <div class="quiz-header">
         <span class="quiz-badge">Interactive Recall Quiz</span>
-        <button class="btn btn-outline btn-sm" onclick="window.toggleBookmarkQuestion('${q.id}')">
+        <button class="btn btn-outline btn-sm" data-action="toggle-bookmark" data-id="${q.id}">
           <i class="${state.bookmarks.includes(q.id) ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
         </button>
       </div>
       <h3 class="quiz-question">${q.question}</h3>
       <div class="quiz-options">
         ${options.map(opt => `
-          <button class="btn btn-block btn-quiz-opt" onclick="window.submitQuizAnswer('${q.id}', '${opt.replace(/'/g, "\\'")}', this)">
+          <button class="btn btn-block btn-quiz-opt" data-action="submit-quiz-answer" data-id="${q.id}" data-opt="${opt.replace(/"/g, '&quot;')}">
             ${opt}
           </button>
         `).join('')}
       </div>
       <div id="quiz-feedback" class="quiz-feedback hidden"></div>
       <div style="margin-top: 24px; display: flex; justify-content: space-between;">
-        <button class="btn btn-secondary" onclick="window.switchView('dashboard')">Exit Quiz</button>
-        <button class="btn btn-primary" onclick="window.switchView('interactive', '${state.selectedUnitId}')">Next Question &rarr;</button>
+        <button class="btn btn-secondary" data-action="switch-view" data-view="dashboard">Exit Quiz</button>
+        <button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${state.selectedUnitId}">Next Question &rarr;</button>
       </div>
     </div>
   `;
@@ -402,7 +402,7 @@ export function renderTimeline() {
       <div class="card text-center">
         <h3><i class="fa-solid fa-timeline"></i> Timeline</h3>
         <p>No historical events listed in this module's timeline.</p>
-        <button class="btn btn-primary" onclick="window.switchView('dashboard')">Back to Dashboard</button>
+        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
@@ -439,7 +439,7 @@ export function renderBookletView() {
         <h3>Workbook & Booklet Preview</h3>
         <p class="text-muted">Printable A4 classroom layout generated dynamically from master Markdown files.</p>
       </div>
-      <button class="btn btn-primary" onclick="window.printBooklet()">
+      <button class="btn btn-primary" data-action="print-booklet">
         <i class="fa-solid fa-print"></i> Print / Save as PDF
       </button>
     </div>
@@ -523,7 +523,7 @@ export async function renderDecisionsView() {
       <div class="card text-center">
         <h3><i class="fa-solid fa-phone-volume"></i> Decision Simulator</h3>
         <p>No decision scenarios available for this unit.</p>
-        <button class="btn btn-primary" onclick="window.switchView('dashboard')">Back to Dashboard</button>
+        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
@@ -537,7 +537,7 @@ export async function renderDecisionsView() {
       <div class="card max-w-lg mx-auto quiz-container">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
           <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">Phase 1: Initial Response</span>
-          <button class="btn btn-secondary btn-sm" onclick="window.switchView('decisions', '${unitId}')">
+          <button class="btn btn-secondary btn-sm" data-action="switch-view" data-view="decisions" data-unit="${unitId}">
             <i class="fa-solid fa-arrow-left"></i> Scenario Menu
           </button>
         </div>
@@ -551,10 +551,10 @@ export async function renderDecisionsView() {
         </div>
 
         <div class="quiz-options">
-          <button class="btn btn-block btn-quiz-opt" onclick="window.playDecisionsPhase2('${g.id}', 'A')">
+          <button class="btn btn-block btn-quiz-opt" data-action="play-decisions-phase2" data-id="${g.id}" data-choice="A">
             <strong>Choice A:</strong> ${g.phase1.choiceA.text}
           </button>
-          <button class="btn btn-block btn-quiz-opt" onclick="window.playDecisionsPhase2('${g.id}', 'B')">
+          <button class="btn btn-block btn-quiz-opt" data-action="play-decisions-phase2" data-id="${g.id}" data-choice="B">
             <strong>Choice B:</strong> ${g.phase1.choiceB.text}
           </button>
         </div>
@@ -572,7 +572,7 @@ export async function renderDecisionsView() {
       <div class="card max-w-lg mx-auto quiz-container">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
           <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">Phase 2: The Fallout</span>
-          <button class="btn btn-secondary btn-sm" onclick="window.switchView('decisions', '${unitId}')">
+          <button class="btn btn-secondary btn-sm" data-action="switch-view" data-view="decisions" data-unit="${unitId}">
             <i class="fa-solid fa-arrow-left"></i> Scenario Menu
           </button>
         </div>
@@ -589,10 +589,10 @@ export async function renderDecisionsView() {
         </div>
 
         <div class="quiz-options">
-          <button class="btn btn-block btn-quiz-opt" onclick="window.playDecisionsPhase3('${g.id}', '${choiceLetter}', '1')">
+          <button class="btn btn-block btn-quiz-opt" data-action="play-decisions-phase3" data-id="${g.id}" data-choice="${choiceLetter}" data-phase="1">
             <strong>Choice ${choiceLetter}1:</strong> ${selectedChoice.choice1.text}
           </button>
-          <button class="btn btn-block btn-quiz-opt" onclick="window.playDecisionsPhase3('${g.id}', '${choiceLetter}', '2')">
+          <button class="btn btn-block btn-quiz-opt" data-action="play-decisions-phase3" data-id="${g.id}" data-choice="${choiceLetter}" data-phase="2">
             <strong>Choice ${choiceLetter}2:</strong> ${selectedChoice.choice2.text}
           </button>
         </div>
@@ -611,7 +611,7 @@ export async function renderDecisionsView() {
       <div class="card max-w-lg mx-auto quiz-container">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
           <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">Phase 3: The Verdict</span>
-          <button class="btn btn-secondary btn-sm" onclick="window.switchView('decisions', '${unitId}')">
+          <button class="btn btn-secondary btn-sm" data-action="switch-view" data-view="decisions" data-unit="${unitId}">
             <i class="fa-solid fa-arrow-left"></i> Scenario Menu
           </button>
         </div>
@@ -624,8 +624,8 @@ export async function renderDecisionsView() {
         </div>
 
         <div style="display: flex; justify-content: space-between;">
-          <button class="btn btn-secondary" onclick="window.switchView('decisions', '${unitId}')">Another Scenario</button>
-          <button class="btn btn-primary" onclick="window.switchView('dashboard')">Exit Simulator</button>
+          <button class="btn btn-secondary" data-action="switch-view" data-view="decisions" data-unit="${unitId}">Another Scenario</button>
+          <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Exit Simulator</button>
         </div>
       </div>
     `;
@@ -646,7 +646,7 @@ export async function renderDecisionsView() {
             </div>
             <h4>${g.title}</h4>
             <p style="font-size: 0.85rem;"><strong>Role:</strong> ${g.role}</p>
-            <button class="btn btn-sm btn-primary w-full" onclick="window.playDecisionsScenario('${g.id}')">
+            <button class="btn btn-sm btn-primary w-full" data-action="play-decisions-scenario" data-id="${g.id}">
               Start Simulation
             </button>
           </div>
@@ -707,7 +707,7 @@ export async function renderTabooView() {
       <div class="card text-center">
         <h3><i class="fa-solid fa-tags"></i> Taboo Recall</h3>
         <p>No Taboo recall cards available for this unit.</p>
-        <button class="btn btn-primary" onclick="window.switchView('dashboard')">Back to Dashboard</button>
+        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
@@ -735,10 +735,10 @@ export async function renderTabooView() {
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <button class="btn btn-outline" id="btn-show-hint" onclick="document.getElementById('taboo-hint-box').style.display='block'; this.style.display='none';">Show Context Hint</button>
+          <button class="btn btn-outline" id="btn-show-hint" data-action="reveal-taboo-hint">Show Context Hint</button>
           <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
-            <button class="btn btn-secondary" onclick="window.switchView('dashboard')">Exit Game</button>
-            <button class="btn btn-primary" onclick="window.showRandomTabooCard()">Next Card &rarr;</button>
+            <button class="btn btn-secondary" data-action="switch-view" data-view="dashboard">Exit Game</button>
+            <button class="btn btn-primary" data-action="next-taboo-card">Next Card &rarr;</button>
           </div>
         </div>
       </div>
@@ -763,7 +763,7 @@ export async function renderLessonsView() {
       <div class="card text-center">
         <h3><i class="fa-solid fa-book-open"></i> Lessons Study Guide</h3>
         <p>No lessons available for this unit.</p>
-        <button class="btn btn-primary" onclick="window.switchView('dashboard')">Back to Dashboard</button>
+        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
@@ -809,7 +809,7 @@ export async function renderLessonsView() {
     container.innerHTML = `
       <div class="card max-w-2xl mx-auto" style="animation: fadeInUp 0.3s ease-out;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 16px; margin-bottom: 20px;">
-          <button class="btn btn-secondary btn-sm" onclick="window.switchView('lessons', '${unitId}')">
+          <button class="btn btn-secondary btn-sm" data-action="switch-view" data-view="lessons" data-unit="${unitId}">
             <i class="fa-solid fa-arrow-left"></i> Lessons Menu
           </button>
           <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--primary);">${data.title}</span>
@@ -822,8 +822,8 @@ export async function renderLessonsView() {
         </div>
 
         <div style="border-top: 1px solid var(--border-glass); padding-top: 20px; margin-top: 30px; display: flex; justify-content: space-between; gap: 12px;">
-          ${index > 0 ? `<button class="btn btn-secondary" onclick="window.viewLessonDetail(${index - 1})">&larr; Previous Lesson</button>` : '<span></span>'}
-          ${index < data.subtopics.length - 1 ? `<button class="btn btn-primary" onclick="window.viewLessonDetail(${index + 1})">Next Lesson &rarr;</button>` : `<button class="btn btn-primary" onclick="window.switchView('interactive', '${unitId}')">Take Lesson Quiz &rarr;</button>`}
+          ${index > 0 ? `<button class="btn btn-secondary" data-action="view-lesson-detail" data-index="${index - 1}">&larr; Previous Lesson</button>` : '<span></span>'}
+          ${index < data.subtopics.length - 1 ? `<button class="btn btn-primary" data-action="view-lesson-detail" data-index="${index + 1}">Next Lesson &rarr;</button>` : `<button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${unitId}">Take Lesson Quiz &rarr;</button>`}
         </div>
       </div>
     `;
@@ -838,7 +838,7 @@ export async function renderLessonsView() {
         ${data.subtopics.map((sub, idx) => {
           const descLine = sub.content.split('\n').find(line => line.trim().length > 30 && !line.includes('#') && !line.includes('*') && !line.includes('<')) || 'Study this historical topic.';
           return `
-            <div class="module-card" style="cursor: pointer;" onclick="window.viewLessonDetail(${idx})">
+            <div class="module-card" style="cursor: pointer;" data-action="view-lesson-detail" data-index="${idx}">
               <div class="module-header">
                 <span class="category-badge">Lesson ${idx + 1}</span>
                 <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>

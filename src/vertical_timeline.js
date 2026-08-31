@@ -223,7 +223,7 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
                 html += `
                 <div class="timeline-lesson-banner sticky-lesson-header" style="z-index: 100; background: linear-gradient(135deg, #1e3a8a, #312e81); padding: 15px 20px; border-radius: 8px; margin: 40px 0 25px 0; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #a5b4fc;">
                     <div style="font-size: 1.15rem; font-weight: 600;"><i class="fa-solid fa-book-open" style="color: #fde047; margin-right: 12px;"></i> ${lessonObj.title || group.title}</div>
-                    <button class="btn btn-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" onclick="window.openTimelineLesson('${lessonObj.id}')"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
+                    <button class="btn btn-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" data-action="open-timeline-lesson" data-id="${lessonObj.id}"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
                 </div>
                 `;
             } else {
@@ -258,7 +258,7 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
                     html += `
                     <div class="timeline-lesson-banner sticky-lesson-header" style="background: linear-gradient(135deg, #1e3a8a, #312e81); padding: 15px 20px; border-radius: 8px; margin: 40px 0 25px 0; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #a5b4fc; z-index: 100;">
                         <div style="font-size: 1.15rem; font-weight: 600;"><i class="fa-solid fa-book-open" style="color: #fde047; margin-right: 12px;"></i> ${lessonObj.title}</div>
-                        <button class="btn btn-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" onclick="window.openTimelineLesson('${lessonObj.id}')"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
+                        <button class="btn btn-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" data-action="open-timeline-lesson" data-id="${lessonObj.id}"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
                     </div>
                     `;
                 }

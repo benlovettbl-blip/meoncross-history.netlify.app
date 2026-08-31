@@ -400,7 +400,7 @@ export function renderQuizZone(container, unitData) {
     // ==========================================
     function startFlashcardFrenzy() {
         if (masterBank.length === 0) {
-            uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">No flashcard data available.</div><button onclick="document.getElementById('mode-select-container').style.display='block'; document.getElementById('quiz-ui-container').style.display='none';" style="padding: 10px; cursor: pointer;">Back</button>`;
+            uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">No flashcard data available.</div><button data-action="quiz-zone-back" style="padding: 10px; cursor: pointer;">Back</button>`;
             return;
         }
         
@@ -578,7 +578,7 @@ export function renderQuizZone(container, unitData) {
     // ==========================================
     function startVocabMatchUp() {
         if (vocabBank.length < 5) {
-            uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">Not enough vocabulary data available for match-up (needs 5).</div><button onclick="document.getElementById('mode-select-container').style.display='block'; document.getElementById('quiz-ui-container').style.display='none';" style="padding: 10px; cursor: pointer;">Back</button>`;
+            uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">Not enough vocabulary data available for match-up (needs 5).</div><button data-action="quiz-zone-back" style="padding: 10px; cursor: pointer;">Back</button>`;
             return;
         }
 
