@@ -95,7 +95,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         if ((lesson.id && lesson.id.startsWith(p.prefix)) || (lesson.title && lesson.title.startsWith(p.prefix))) {
           foundAny = true;
           lessonsHTML += `
-            <div class="homepage-lesson-card" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" data-action="render-lesson" data-index="${index}" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
+            <div class="homepage-lesson-card" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
               <h3 style="margin-top: 0; color: #1a237e; font-size: 1rem; margin-bottom: 5px; font-family: 'Outfit', sans-serif;">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
               <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.9rem; line-height: 1.3;">${lesson.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
             </div>
@@ -130,7 +130,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
     days.forEach((d, i) => {
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" data-action="render-lesson" data-index="${d.index}">
+          <div class="homepage-lesson-card" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
             <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Day ${i + 1}</h3>
             <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${d.lesson.title.replace(/^Day \d+:\s*/, '')}</p>
           </div>
@@ -145,7 +145,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
       heroes.forEach(h => {
           lessonsHTML += `
-            <div class="homepage-lesson-card" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #ef4444; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" data-action="render-lesson" data-index="${h.index}">
+            <div class="homepage-lesson-card" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #ef4444; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
               <h3 style="margin-top: 0; color: #7f1d1d; font-size: 1.1rem; margin-bottom: 0px; font-family: 'Playfair Display', serif;">${h.lesson.title}</h3>
             </div>
           `;
@@ -220,7 +220,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         }
 
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-index="${index}" style="${bgStyle} border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" data-action="render-lesson" data-index="${index}">
+          <div class="homepage-lesson-card" data-index="${index}" style="${bgStyle} border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
             ${cardContent}
           </div>
         `;

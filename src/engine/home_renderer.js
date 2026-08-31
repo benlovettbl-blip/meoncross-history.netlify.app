@@ -159,54 +159,7 @@ export function renderSidebar() {
       });
     }
 
-    // The Fallen / Local Heroes Sidebar Accordion (Trips only)
-    if (appStore.state.activeUnitData.type === 'trip') {
-      const heroes = [];
-      appStore.state.activeUnitData.lessons.forEach((lesson, index) => {
-        if (lesson.id && lesson.id.startsWith('hero_')) heroes.push({ lesson, index });
-      });
-      if (heroes.length > 0) {
-        const heroesHeader = document.createElement('a');
-        heroesHeader.className = 'lesson-link';
-        heroesHeader.innerHTML = '<div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><div style="color:#991b1b;"><i class="fa-solid fa-ribbon" style="margin-right: 8px;"></i> The Fallen</div><i class="fa-solid fa-chevron-down" style="font-size:0.8em; opacity:0.6;"></i></div>';
-        heroesHeader.href = '#';
-        heroesHeader.style.background = 'rgba(153, 27, 27, 0.05)';
-        heroesHeader.style.borderLeft = '3px solid #991b1b';
-        
-        const list = document.createElement('div');
-        list.style.display = 'none';
-        list.style.flexDirection = 'column';
-        
-        heroesHeader.onclick = (e) => {
-          e.preventDefault();
-          list.style.display = list.style.display === 'none' ? 'flex' : 'none';
-          const iconEl = heroesHeader.querySelector('.fa-chevron-down, .fa-chevron-up');
-          if (iconEl) iconEl.className = list.style.display === 'none' ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
-        };
-
-        heroes.forEach(h => {
-          const subLink = document.createElement('a');
-          subLink.className = 'lesson-link sub-link';
-          subLink.innerHTML = '<i class="fa-solid fa-user" style="margin-right: 8px; opacity:0.7;"></i>' + h.lesson.title;
-          subLink.style.paddingLeft = '2.5rem';
-          subLink.style.fontSize = '0.9em';
-          subLink.style.borderLeft = '2px solid #ef4444';
-          subLink.style.background = 'rgba(0,0,0,0.02)';
-          subLink.style.marginBottom = '2px';
-          
-          subLink.onclick = (e) => {
-            e.preventDefault();
-            document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-            subLink.classList.add('active');
-            window.renderLessonByIndex(h.index);
-          };
-          list.appendChild(subLink);
-        });
-        
-        navContainer.appendChild(heroesHeader);
-        navContainer.appendChild(list);
-      }
-    }
+    // The Fallen / Local Heroes Sidebar Accordion (Trips only) - Removed per user request
     
     // Exam Specification Tab
     if (appStore.state.activeUnitData.specification_file) {

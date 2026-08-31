@@ -49,6 +49,24 @@ export function initEventDelegation() {
       case 'open-tour-guide-modal':
         if (window.openTourGuideModal) window.openTourGuideModal(parseInt(target.dataset.index, 10));
         break;
+      case 'open-video-modal':
+        const youtubeId = target.dataset.youtube;
+        if (youtubeId) {
+          const overlay = document.createElement('div');
+          overlay.className = 'modal-overlay no-print';
+          overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
+          overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+          overlay.innerHTML = `
+            <div class="modal-content" style="background: transparent; width: 90%; max-width: 900px; position: relative;">
+              <button onclick="this.closest('.modal-overlay').remove()" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">&times;</button>
+              <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+                <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          `;
+          document.body.appendChild(overlay);
+        }
+        break;
       case 'jump-to-key-individual':
         if (window.jumpToKeyIndividual) window.jumpToKeyIndividual(target.dataset.name);
         break;
