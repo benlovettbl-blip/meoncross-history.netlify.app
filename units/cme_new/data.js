@@ -639,7 +639,7 @@ export const unitData = {
           "source": {
             "title": "David Ben-Gurion declaring Independence (1948)",
             "src": "/units/cme_new/assets/cme_david_ben_gurion__d597_087_.jpg",
-            "caption": " declaring the establishment of the State of Israel on May 14, 1948.",
+            "caption": "David Ben-Gurion declaring the establishment of the State of Israel on May 14, 1948.",
             "teacher_notes": {
               "primer": "Discuss the immediate political and military consequences of this declaration.",
               "objectives": [
@@ -1556,7 +1556,7 @@ export const unitData = {
           ],
           "source": {
             "title": "The Suez Crisis (1956)",
-            "src": "/assets/cme_suez_crisis.jpg",
+            "src": "/units/cme_new/assets/cme_port_said_from_air.jpg",
             "caption": "Port Said during the Suez Crisis, when Britain, France, and Israel launched a coordinated attack on Egypt.",
             "teacher_notes": {
               "primer": "Highlight the military intervention and subsequent political humiliation of Britain and France.",
@@ -1617,7 +1617,7 @@ export const unitData = {
           "source": {
             "title": "Anthony Eden",
             "src": "/units/cme_new/assets/cme_georges_bidault__anthony_eden_and_john_foster_dulles__cropped_.jpg",
-            "caption": "British Prime Minister  (center), whose career was ruined by the failure of the Suez intervention.",
+            "caption": "British Prime Minister Anthony Eden (center), whose career was ruined by the failure of the Suez intervention.",
             "teacher_notes": {
               "primer": "Discuss the decline of British imperial power in the Middle East.",
               "objectives": [
@@ -3026,7 +3026,7 @@ export const unitData = {
           "level_4": "Simultaneously, Syrian tank divisions launched a massive assault across the Golan Heights, overrunning Israel's thin border defenses and threatening to break through into the Galilee. On the Northern Front, the IDF successfully halted the Syrian advance and pushed Syrian forces back beyond the 1967 border.",
           "source": {
             "title": "Golda Meir",
-            "src": "/units/cme_new/assets/card_golda.png",
+            "src": "/images/golda_meir.jpg",
             "caption": "Israeli Prime Minister Golda Meir, whose government faced severe criticism for lack of preparedness in 1973.",
             "teacher_notes": {
               "primer": "Focus on the Agranat Commission and the subsequent political fallout in Israel.",
@@ -4067,7 +4067,7 @@ export const unitData = {
           "level_4": "<img src=\"/units/cme_new/assets/lebanese_invasion.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"lebanese_invasion\">",
           "source": {
             "title": "Israeli Response to the Intifada",
-            "src": "/units/cme_new/assets/card_shamir.png",
+            "src": "/images/yitzhak_shamir.jpg",
             "caption": "Israeli Prime Minister , who implemented a harsh 'Iron Fist' policy in response to the Intifada.",
             "teacher_notes": {
               "primer": "Explain the damage to Israel's international reputation caused by televised military crackdowns.",
@@ -4496,8 +4496,8 @@ export const unitData = {
           "level_4": "By late 1988, PLO Chairman Yasser Arafat realized that the political landscape was shifting beneath his feet. Arafat faced a major dilemma: his leadership was being rapidly overshadowed by new, highly popular underground leaders in the Unified National Leadership of the Uprising (UNLU) and radical Islamist groups like Hamas and Islamic Jihad.",
           "source": {
             "title": "The Oslo Handshake (1993)",
-            "src": "/units/cme_new/assets/yitzhak_rabin.jpg",
-            "caption": "Yitzhak Rabin, Yasser Arafat, and  sealing the Oslo I Accord on the White House lawn.",
+            "src": "/images/oslo_handshake.jpg",
+            "caption": "Yitzhak Rabin, Yasser Arafat, and Bill Clinton sealing the Oslo I Accord on the White House lawn.",
             "teacher_notes": {
               "primer": "Highlight the mutual recognition: PLO recognized Israel's right to exist, Israel recognized the PLO.",
               "objectives": [
@@ -4549,7 +4549,7 @@ export const unitData = {
           "level_4": "<img src=\"/units/cme_new/assets/arafat_saddam.svg\" class=\"svg-diagram\" style=\"width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;\" alt=\"arafat_saddam\">",
           "source": {
             "title": "Israel-Jordan Peace Treaty (1994)",
-            "src": "/units/cme_new/assets/card_hussein.png",
+            "src": "/images/king_hussein.jpg",
             "caption": "King Hussein of Jordan, who signed the historic peace treaty with Israel in 1994, normalizing relations between the two countries.",
             "teacher_notes": {
               "primer": "Discuss the momentum of the peace process following Oslo.",
