@@ -1937,8 +1937,9 @@
   },
   "cme_new": {
     "data": {
-      "cover_image": "assets/kt1_cover.png",
+      "cover_image": "/images/cme_cover.jpg",
       "title": "Paper 2: Conflict in the Middle East, 1945-1995",
+      "cover_caption": "Camp David Accords",
       "enquiry_question": "Why has peace proved so difficult to achieve in the Middle East?",
       "homepage_background": "/images/israeli_troops_wall.jpg",
       "enquiry": "Why has peace proved so elusive in the Middle East?",
@@ -4185,7 +4186,7 @@
             },
             {
               "title": "Israeli Paratroopers at the Western Wall",
-              "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Paratroopers_at_Western_Wall.jpg/500px-Paratroopers_at_Western_Wall.jpg",
+              "src": "/images/paratroopers_western_wall.jpg",
               "caption": "Israeli paratroopers standing in awe at the Western Wall after capturing the Old City of Jerusalem.",
               "teacher_notes": {
                 "primer": "Discuss the immense religious and emotional significance of this victory for Israelis.",
@@ -4200,7 +4201,7 @@
             },
             {
               "title": "Operation Focus",
-              "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Fouga_Magister_IAF_in_flight.jpg/500px-Fouga_Magister_IAF_in_flight.jpg",
+              "src": "/images/fouga_magister_iaf.jpg",
               "caption": "Israeli aircraft dominating the skies after destroying the Egyptian Air Force on the ground.",
               "teacher_notes": {
                 "primer": "Explain the preemptive strike that essentially won the war in its first few hours.",

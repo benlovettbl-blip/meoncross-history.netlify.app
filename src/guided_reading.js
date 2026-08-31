@@ -29,7 +29,7 @@ export function initGuidedReadingTask(container, guidedReadingData, globalState)
     guidedReadingData.forEach((data, i) => {
       const btn = document.createElement('button');
       btn.className = data === initialReading ? 'btn btn-primary' : 'btn btn-outline';
-      btn.innerHTML = `<i class="fa-solid fa-book-open"></i> ${data.book_title || 'Reading ' + (i+1)}`;
+      btn.innerHTML = `<i class="fa-solid fa-book-open"></i> Lesson ${data.lesson_index + 1}: ${data.book_title || 'Reading ' + (i+1)}`;
       btn.onclick = () => {
         Array.from(tabBar.children).forEach(c => {
             c.className = 'btn btn-outline';

@@ -1,6 +1,7 @@
 export const unitData = {
-  "cover_image": "assets/kt1_cover.png",
+  "cover_image": "/images/cme_cover.jpg",
   "title": "Conflict in the Middle East, 1945–1995",
+  "cover_caption": "Camp David Accords",
   "title": "Paper 2: Conflict in the Middle East, 1945-1995",
   "enquiry_question": "Why has peace proved so difficult to achieve in the Middle East?",
   "homepage_background": "/images/israeli_troops_wall.jpg",
@@ -43,14 +44,14 @@ export const unitData = {
     {
       "id": "KT1",
       "title": "KT1",
-      "image": "/assets/cme_new_kt1_cover.png",
+      "image": "/assets/kt1_cover.jpg",
       "prefix": "KT1",
       "enquiry": "How and why was the state of Israel established?"
     },
     {
       "id": "KT2",
       "title": "KT2",
-      "image": "/assets/cme_new_yom_kippur_crossing.png",
+      "image": "/assets/kt2_cover.jpg",
       "prefix": "KT2",
       "enquiry": "What drove the major conflicts in the Middle East from 1967-1973?"
     },
@@ -223,7 +224,10 @@ export const unitData = {
       },
       "consolidation": "Why is the geography of the Middle East so geopolitically important?",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -419,7 +423,8 @@ export const unitData = {
       "vocab_cloze_text": "Following World War II, Britain struggled to control its League of Nations [Mandate] in Palestine. The horrors of the Holocaust increased international sympathy for [Zionism], leading to demands for a Jewish state. As tensions rose, militant groups like the [Irgun] launched violent attacks against the British, such as the bombing of the King David Hotel. Ultimately, the 1948 war resulted in the creation of Israel but also led to the [Nakba], where hundreds of thousands of Palestinians were displaced.",
       "historians_corner": {
         "title": "The Debate over Plan Dalet",
-        "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state."
+        "text": "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state.",
+        "stretch_question": "How does Pappé's interpretation of Plan Dalet fundamentally change our understanding of the Palestinian refugee crisis?"
       },
       "do_now": {
         "type": "questions",
@@ -818,7 +823,10 @@ export const unitData = {
       ],
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -1261,7 +1269,10 @@ export const unitData = {
       ],
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -1759,7 +1770,10 @@ export const unitData = {
       },
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -2249,7 +2263,7 @@ export const unitData = {
         },
         {
           "title": "Israeli Paratroopers at the Western Wall",
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Paratroopers_at_Western_Wall.jpg/500px-Paratroopers_at_Western_Wall.jpg",
+          "src": "/images/paratroopers_western_wall.jpg",
           "caption": "Israeli paratroopers standing in awe at the Western Wall after capturing the Old City of Jerusalem.",
           "teacher_notes": {
             "primer": "Discuss the immense religious and emotional significance of this victory for Israelis.",
@@ -2264,7 +2278,7 @@ export const unitData = {
         },
         {
           "title": "Operation Focus",
-          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Fouga_Magister_IAF_in_flight.jpg/500px-Fouga_Magister_IAF_in_flight.jpg",
+          "src": "/images/fouga_magister_iaf.jpg",
           "caption": "Israeli aircraft dominating the skies after destroying the Egyptian Air Force on the ground.",
           "teacher_notes": {
             "primer": "Explain the preemptive strike that essentially won the war in its first few hours.",
@@ -2289,7 +2303,10 @@ export const unitData = {
       },
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -2768,7 +2785,10 @@ export const unitData = {
       },
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -3295,7 +3315,10 @@ export const unitData = {
       },
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -3758,7 +3781,10 @@ export const unitData = {
       },
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -4353,7 +4379,10 @@ export const unitData = {
       },
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     },
     {
@@ -4892,7 +4921,10 @@ export const unitData = {
       },
       "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
       "tasks": [
-        "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        {
+          "type": "drawing",
+          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+        }
       ]
     }
   ],

@@ -32,8 +32,8 @@ if (!fs.existsSync(pdfsDir)){
     let files = fs.readdirSync(unitDir).filter(f => f.endsWith('.html'));
     
     // Only generate PDFs for core required documents
-    const allowedFiles = ['textbook.html', 'pupil_workbook.html', 'mastery_pack_full.html'];
-    files = files.filter(f => allowedFiles.includes(f));
+    const allowedPrefixes = ['textbook', 'pupil_workbook', 'mastery_pack_full', 'mastery_pack_KT'];
+    files = files.filter(f => allowedPrefixes.some(prefix => f.startsWith(prefix) && f.endsWith('.html')));
     
     if (targetFile) {
       files = files.filter(f => f === targetFile);

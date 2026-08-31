@@ -364,16 +364,17 @@ allDirs.forEach((unitId) => {
 
     let progressTrackerRows = "";
     periodLessons.forEach((l, i) => {
-      progressTrackerRows += `<tr style="background-color: #f1f5f9; height: 35px;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>\n`;
+      progressTrackerRows += `<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
     });
     if (unitData.assessments) {
       unitData.assessments.forEach((a) => {
-        progressTrackerRows += `<tr style="height: 35px;"><td style="border: 1px solid #333; padding: 5px 6px; font-weight:bold;">Assessment: ${a.title}</td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td><td style="border: 1px solid #333; padding: 5px 6px;"></td></tr>\n`;
+        progressTrackerRows += `<tr style=""><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">Assessment: ${a.title}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
       });
     }
 
     
-    let heroImgSrc = unitData.cover_image ? (typeof resolveAssetPath === "function" ? resolveAssetPath(unitData.cover_image, 2) : `../..${unitData.cover_image.startsWith("/") ? unitData.cover_image : "/" + unitData.cover_image}`) : '';
+    let imageToUse = period.image || unitData.cover_image;
+    let heroImgSrc = imageToUse ? (typeof resolveAssetPath === "function" ? resolveAssetPath(imageToUse, 2) : `../..${imageToUse.startsWith("/") ? imageToUse : "/" + imageToUse}`) : '';
     let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="max-height: 45vh; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">` : '';
     if (unitId === 'early_modern_world') {
         heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
@@ -419,25 +420,46 @@ allDirs.forEach((unitId) => {
     html += `
     </div>
     
-    <div class="tracker-page" style="page-break-after: always; padding: 20px;">
-      <h3 style="margin-top: 0; color: #1e3a8a; text-align: center; margin-bottom: 25px; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">Progress & Assessment Tracker</h3>
+    <div style="page-break-after: always; page-break-inside: avoid; display: flex; flex-direction: column; max-height: 95vh; overflow: hidden;">
+      <h2 style="margin: 0; color: #1e3a8a; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">PROGRESS & ASSESSMENT TRACKER <span style="float: right; font-size: 0.8em; font-weight: normal; color: #333;">Target Grade: _________</span></h2>
+      
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; margin-bottom: 8px;">
+        <tbody>
+
+          ${(!["weimar_nazi_germany", "cme_new", "edexcel_medicine", "eee"].includes(unitId)) ? `
+          <tr>
+            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold; background-color: #f1f5f9;">Level</td>
+            <td style="border: 1px solid #333; padding: 4px 6px;">Emerging (1-2)</td>
+            <td style="border: 1px solid #333; padding: 4px 6px;">Emerging+ (3)</td>
+            <td style="border: 1px solid #333; padding: 4px 6px;">Expected (4-5)</td>
+            <td style="border: 1px solid #333; padding: 4px 6px;">Expected+ (6-7) / Greater Depth (8-9)</td>
+          </tr>
+          ` : `
+          <tr>
+            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold; background-color: #f1f5f9;">Grade</td>
+            <td style="border: 1px solid #333; padding: 4px 6px;" colspan="4">9-1 GCSE Grading Scale</td>
+          </tr>
+          `}
+        </tbody>
+      </table>
+
       <div style="width: 100%; display: flex; justify-content: center;">
-        <table style="page-break-inside: avoid; width: 100%; border-collapse: collapse; text-align: left; font-size: 11pt; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+        <table style="page-break-inside: avoid; width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 8px;">
           <thead>
             <tr style="background-color: #1a237e; color: white;">
-              <th style="border: 1px solid #333; padding: 10px; width: 35%;">Lesson / Assessment Title</th>
-              <th style="border: 1px solid #333; padding: 10px; width: 10%; text-align: center;">Effort</th>
-              <th style="border: 1px solid #333; padding: 10px; width: 10%; text-align: center;">Level</th>
-              <th style="border: 1px solid #333; padding: 10px; width: 45%;">Teacher Comments</th>
+              <th style="border: 1px solid #333; padding: 4px 6px; width: 35%;">Lesson / Assessment Title</th>
+              <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center;">Effort</th>
+              <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center;">Level</th>
+              <th style="border: 1px solid #333; padding: 4px 6px; width: 45%;">Teacher Comments</th>
             </tr>
           </thead>
           <tbody>
             ${progressTrackerRows}
-            <tr style=" font-weight: bold; height: 45px;">
-              <td style="border: 1px solid #333; padding: 10px; text-align: right;">Final Unit Grade:</td>
-              <td style="border: 1px solid #333; padding: 10px; background:#eee;"></td>
-              <td style="border: 1px solid #333; padding: 10px; background:#eee;"></td>
-              <td style="border: 1px solid #333; padding: 10px;"></td>
+            <tr style=" font-weight: bold;">
+              <td style="border: 1px solid #333; padding: 4px 6px; text-align: right;">Final Unit Grade:</td>
+              <td style="border: 1px solid #333; padding: 4px 6px; background:#eee;"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px; background:#eee;"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px;"></td>
             </tr>
           </tbody>
         </table>
@@ -1070,7 +1092,7 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
           lesson.pair_share.sources.forEach((srcObj) => {
             sourceHTML +=
               '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
-            if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
+            if ((srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) && unitId !== 'cme_new') {
               let imgSrc =
                 typeof resolveAssetPath === "function"
                   ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
@@ -1727,7 +1749,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
               lesson.pair_share.sources.forEach((srcObj) => {
                 sourceHTML +=
                   '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
-                if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
+                if ((srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) && unitId !== 'cme_new') {
                   let imgSrc =
                     typeof resolveAssetPath === "function"
                       ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
@@ -1910,7 +1932,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
                 '<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1; page-break-inside: avoid; break-inside: avoid;">' +
                 '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">Source ' + String.fromCharCode(65 + i) + '</strong>' +
                 (srcObj.title ? '<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic; text-align: left;">' + srcObj.title.replace(/Source [A-Z]:\s*/g, '') + '</span>' : '');
-              if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
+              if ((srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) && unitId !== 'cme_new') {
                 let imgSrc =
                   typeof resolveAssetPath === "function"
                     ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)

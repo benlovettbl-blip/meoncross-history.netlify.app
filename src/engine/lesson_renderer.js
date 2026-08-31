@@ -1852,12 +1852,12 @@ export function assignQuestionNumbers(lesson) {
     let globalQNum = 1;
     if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
     if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
+    if (lesson.tasks) lesson.tasks.forEach(task => { if (typeof task === 'object' && task !== null) task.qNum = globalQNum++; });
     if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
     if (lesson.narrative_blocks) {
       lesson.narrative_blocks.forEach(block => {
         if (block.source && block.source.question) block.source.qNum = globalQNum++;
-        if (block.tasks) block.tasks.forEach(task => { if (task.type !== 'vocab_match') task.qNum = globalQNum++; });
+        if (block.tasks) block.tasks.forEach(task => { if (typeof task === 'object' && task !== null && task.type !== 'vocab_match') task.qNum = globalQNum++; });
         if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
       });
     }
