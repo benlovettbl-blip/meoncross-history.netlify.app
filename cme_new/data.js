@@ -213,13 +213,7 @@ module.exports = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "consolidation": "Why is the geography of the Middle East so geopolitically important?",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Why is the geography of the Middle East so geopolitically important?"
     },
     {
       "id": "lesson_2",
@@ -811,13 +805,7 @@ module.exports = {
         "100,000: The number of Jewish Holocaust survivors US President Truman demanded Britain immediately allow into Palestine.",
         "1947: The year Britain gave up and handed the Palestine problem to the newly created United Nations."
       ],
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     },
     {
       "id": "lesson_3",
@@ -1261,13 +1249,7 @@ module.exports = {
           "model_answer": "<ol><li><strong>Recall:</strong> The Arabic word <em>Nakba</em> translates to \"catastrophe\" in English.</li><li><strong>Explain:</strong> During the 1936–1939 revolt, British forces dismantled the Palestinian military and political leadership, leaving the Palestinian population without organized leadership or defenses. Concurrently, when Britain attempted to limit Jewish immigration after the revolt, Zionist groups formed their own heavily armed militias. Consequently, by 1948, Palestinians were largely leaderless, whereas Israeli forces were highly prepared, well-armed, and organized.</li><li><strong>Challenge:</strong> The video uses explicit, emotive terminology such as \"catastrophe\", \"ethnic cleansing\", and \"illegal settlements\" to frame the events primarily from a Palestinian perspective. This language presents the displacement of Palestinians not merely as an unintended byproduct of war, but as a deliberate and ongoing policy of forced removal supported initially by British sponsorship and carried out by Zionist militias.</li></ol>"
         }
       ],
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     },
     {
       "id": "lesson_4",
@@ -1766,13 +1748,7 @@ module.exports = {
       "pair_share": {
         "prompt": "Why was the Suez Canal so important to Britain and France that they were willing to go to war over it?"
       },
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     },
     {
       "id": "lesson_5",
@@ -2178,7 +2154,12 @@ module.exports = {
           "answer": 0
         }
       ],
-      "draw_tasks": [],
+      "draw_tasks": [
+        {
+          "type": "drawing",
+          "text": "Draw a map of the Middle East in 1967. Shade and label the new territories captured by Israel during the Six-Day War (Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem, and the Golan Heights). Add annotations explaining the strategic military value of each newly acquired territory."
+        }
+      ],
       "enquiry": "Why did the Six Day War break out and how did Israel achieve such a rapid victory?",
       "gcse_task": {
         "topic": "Write a narrative account analysing the key events of the Six Day War (1967). (8 marks)",
@@ -2298,13 +2279,7 @@ module.exports = {
       "pair_share": {
         "prompt": "Was Israel justified in launching a pre-emptive strike against Egypt? Discuss both perspectives."
       },
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     },
     {
       "id": "lesson_6",
@@ -2799,13 +2774,7 @@ module.exports = {
       "pair_share": {
         "prompt": "Why did the spectacular Israeli victory in 1967 actually make a long-term peace agreement more difficult?"
       },
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     },
     {
       "id": "lesson_7",
@@ -3328,13 +3297,7 @@ module.exports = {
       "pair_share": {
         "prompt": "How did the Yom Kippur War change the psychological balance of power between Israel and the Arab states?"
       },
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     },
     {
       "id": "lesson_8",
@@ -3798,13 +3761,7 @@ module.exports = {
       "pair_share": {
         "prompt": "Was Anwar Sadat a courageous visionary or a traitor to the Arab cause? Justify your view."
       },
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     },
     {
       "id": "lesson_9",
@@ -4400,13 +4357,7 @@ module.exports = {
       "pair_share": {
         "prompt": "Why was the First Intifada more damaging to Israel's international reputation than their previous wars with Arab armies?"
       },
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     },
     {
       "id": "lesson_10",
@@ -4946,13 +4897,7 @@ module.exports = {
       "pair_share": {
         "prompt": "Looking at the assassination of Rabin, why are peace agreements sometimes more dangerous for leaders than declaring war?"
       },
-      "consolidation": "Reflect on today's learning and answer your teacher's final challenge.",
-      "tasks": [
-        {
-          "type": "drawing",
-          "text": "Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
-        }
-      ]
+      "consolidation": "Reflect on today's learning and answer your teacher's final challenge."
     }
   ],
   "exam_blocks": [
@@ -6535,7 +6480,7 @@ module.exports = {
           "id": 3,
           "text": "Israel launches Operation Focus, a devastating preemptive airstrike that destroys the Egyptian air force on the ground.",
           "date": "June 1967",
-          "image": "/units/cme_new/assets/idf_fighter_planes.jpg",
+          "image": "/images/operation_focus_mirage_formation.jpg",
           "image_caption": "Historical Source",
           "key_topic": "KT2: The Arab-Israeli Wars (1956–1979)"
         },

@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 300000 });
+  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 600000 });
   const page = await browser.newPage();
   
   // Set viewport to simulate a mobile screen
@@ -11,10 +11,15 @@ const puppeteer = require('puppeteer');
   const LOCAL_URL = `http://localhost:3003/unit.html?id=${unitId}`;
   
   console.log(`Navigating to ${LOCAL_URL}...`);
-  await page.goto(LOCAL_URL, { waitUntil: 'networkidle2', timeout: 300000 });
+  await page.goto(LOCAL_URL, { waitUntil: 'domcontentloaded', timeout: 300000 });
   
-  // Wait for React/scripts to render
-  await new Promise(r => setTimeout(r, 2000));
+  // Wait for React/scripts to render the main content
+  try {
+    await page.waitForSelector('.page, .page-landscape', { timeout: 60000 });
+  } catch (e) {
+    console.log('Timeout waiting for .page elements, continuing anyway...');
+  }
+  await new Promise(r => setTimeout(r, 3000)); // Buffer for images/layout to settle
   
   console.log('Page loaded. Running overflow detection...');
   

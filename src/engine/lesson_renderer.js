@@ -24,7 +24,9 @@ window.formatBold = function(text) {
       // Handle italics (after lists so we don't conflict with bullet points)
       parsed = parsed.replace(/\*([^\*]+)\*/g, '<i>$1</i>');
       
-      parsed = parsed.replace(/\n/g, '<br>');
+      if (!parsed.trim().startsWith('<table') && !parsed.trim().startsWith('<div')) {
+        parsed = parsed.replace(/\n/g, '<br>');
+      }
       // Clean up <br> around elements
       parsed = parsed.replace(/<br><ul/g, '<ul').replace(/<\/ul><br>/g, '</ul>').replace(/<br><li>/g, '<li>').replace(/<\/li><br>/g, '</li>');
       parsed = parsed.replace(/<br><blockquote/g, '<blockquote').replace(/<\/blockquote><br>/g, '</blockquote>');
@@ -1797,7 +1799,11 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
       if (mapContainer && window.L && lesson.do_now && lesson.do_now.type === 'timeline') {
         const eventsWithLoc = lesson.do_now.events.filter(e => e.lat && e.lng);
         if (eventsWithLoc.length > 0) {
+          if (window.tripMapInstance) {
+            window.tripMapInstance.remove();
+          }
           const map = L.map('trip-map-container');
+          window.tripMapInstance = map;
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               maxZoom: 19,
               attribution: '© OpenStreetMap contributors'
@@ -1821,7 +1827,7 @@ if (lesson.gcse_task || (lesson.extended && lesson.extended.question) || extract
             }
 
             if (ev.youtube_id) {
-              popupContent += `<div style="margin-top: 10px;"><iframe width="100%" height="150" src="https://www.youtube.com/embed/${ev.youtube_id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 4px;"></iframe></div>`;
+              popupContent += `<div style="margin-top: 10px;"><button class="btn btn-secondary" data-action="open-video-modal" data-youtube="${ev.youtube_id}" style="width:100%; padding: 8px;"><i class="fa-brands fa-youtube" style="color:#ef4444; margin-right:5px;"></i> Play Video</button></div>`;
             }
             marker.bindPopup(popupContent, { minWidth: 250 });
             markers.push(marker);
