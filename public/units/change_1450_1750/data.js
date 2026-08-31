@@ -1,6 +1,5 @@
 module.exports = {
   "title": "KS3: Change 1450-1750",
-  "specification_file": "/data/change_1450_1750_overview.json",
   "homepage_background": "/images/bg_great_war.jpg",
   "enquiry": "What were the biggest changes between 1450 and 1750?",
   "cover_image": "/assets/placeholder.jpg",

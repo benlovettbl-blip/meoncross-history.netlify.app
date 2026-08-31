@@ -1,5 +1,5 @@
 export const unitData = {
-  "specification_file": "/data/australia_overview.json",
+  "specification_file": "",
   "title": "KS3: History of Australia",
   "homepage_background": "",
   "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",

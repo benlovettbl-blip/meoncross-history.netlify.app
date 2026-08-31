@@ -3186,7 +3186,7 @@ export const unitData = {
       "title": "Complete Unit"
     }
   ],
-  "specification_file": "/data/medieval_england_overview.json",
+  "specification_file": "",
   "hero_image": "/images/portchester_keep.jpg"
 };
 
