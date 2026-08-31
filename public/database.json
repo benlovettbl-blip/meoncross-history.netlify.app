@@ -9522,6 +9522,278 @@
           "title": "Complete Unit"
         }
       ],
+      "guided_reading": [
+        {
+          "lesson_index": 0,
+          "book_title": "Lesson 1: Who held global power in 1450?",
+          "author": "Text Type: Stone Inscription (Admiral Zheng He, 1431)",
+          "cover_image": "/images/zheng_he.gif",
+          "author_context": "Before European empires dominated the globe, Ming Dynasty China was the unquestioned superpower. Between 1405 and 1433, Admiral Zheng He led massive fleets of 'Treasure Ships' across the Indian Ocean to Africa and the Middle East. Before his final voyage, he carved this inscription into a stone pillar in Fujian, China.",
+          "extract": "The Imperial Ming dynasty in unifying seas and continents, surpassing the three dynasties even goes beyond the Han and Tang dynasties. The countries beyond the horizon and from the ends of the earth have all become subjects and to the most western of the western or the most northern of the northern countries, however far they may be, the distance and the routes may be calculated.\n\nThus the barbarians from beyond the seas, though their countries are truly distant, have come to audience bearing precious objects and presents.\n\nThe Emperor, approving of their loyalty and sincerity, has ordered us, Zheng He and others at the head of several tens of thousands of officers and flag-troops to ascend more than a hundred large ships to go and confer presents on them in order to make manifest the transforming power of the imperial virtue and to treat distant people with kindness.",
+          "questions": [
+            "Think: According to this inscription, why has the Emperor sent Zheng He and tens of thousands of troops on these massive ships?",
+            "Pair: Look at how Zheng He describes the other countries of the world ('barbarians... have come to audience bearing precious objects'). Discuss with your partner how China viewed itself compared to the rest of the globe in 1431.",
+            "Share: Based on this text, did China explore the oceans to conquer new lands by force, or for a different reason?"
+          ],
+          "hinge_question": "Based on this text, did China explore the oceans to conquer new lands by force, or for a different reason?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Manifest",
+              "definition": "To show or demonstrate something very clearly."
+            },
+            {
+              "term": "Imperial virtue",
+              "definition": "The supreme moral goodness and authority of the Chinese Emperor."
+            },
+            {
+              "term": "Confer",
+              "definition": "To grant or give (a gift, honor, or title)."
+            }
+          ],
+          "cover_caption": "An authentic Ming Dynasty sailing chart mapping the treacherous ocean routes taken by Admiral Zheng He’s massive 'Treasure Fleets' across the Indian Ocean. It is a woodblock print from the Wubei Zhi (Treatise on Armament Technology, c. 1621), currently held in the Library of Congress."
+        },
+        {
+          "lesson_index": 1,
+          "book_title": "Lesson 2: How did religious conflict trigger global exploration (1517–1588)?",
+          "author": "Text Type: Political Treatise (Richard Hakluyt, 1584)",
+          "cover_image": "/images/armada_portrait.jpg",
+          "author_context": "Following the Reformation, Catholic Spain and Protestant England became bitter enemies. In 1584, Richard Hakluyt wrote a secret report for Queen Elizabeth I, urging her to establish colonies in America. He argued that exploration was not just about money—it was a religious war against Catholic Spain.",
+          "extract": "That this westerne discoverie will be greately for the inlargemente of the gospell of Christe whereunto the Princes of the refourmed relligion are chefely bounde amongest whome her Majestie is principall.\n\n...It is necessarye for the salvation of the soundry people of those idoles, that the truth of the gospell of Christe be preached unto them, and the errours of the false relligion of the greate Antichriste of Rome be rooted out...\n\nIf you touche him [the King of Spain] in the Indies, you touche the apple of his eye; for take away his treasure, which is the synewe of his warres, and which is the roote of all his mischiefe, and you shall ruine him altogether.",
+          "questions": [
+            "Think: What does Hakluyt call the Pope ('the greate...') and what does this reveal about his religious hatred?",
+            "Pair: Look at the last paragraph. Discuss how Hakluyt plans to defeat the King of Spain. What is the 'apple of his eye' and the 'synewe of his warres'?",
+            "Share: How does this text prove that the early British Empire was driven just as much by religious hatred of Spain as it was by a desire to explore?"
+          ],
+          "hinge_question": "How does this text prove that the early British Empire was driven just as much by religious hatred of Spain as it was by a desire to explore?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Reformed relligion",
+              "definition": "Protestantism (which had \"reformed\" or broken away from the Catholic Church)."
+            },
+            {
+              "term": "Antichriste of Rome",
+              "definition": "An extreme, insulting term used by extreme Protestants to describe the Catholic Pope."
+            },
+            {
+              "term": "Synewe (Sinew)",
+              "definition": "A piece of tough tissue connecting muscle to bone. Here, it means the fundamental strength or funding of Spain's military power."
+            }
+          ],
+          "cover_caption": "The Armada Portrait of Queen Elizabeth I, painted to celebrate the Protestant victory over Catholic Spain, with her hand resting on a globe to symbolize England's growing global ambition. This version is held at Woburn Abbey."
+        },
+        {
+          "lesson_index": 2,
+          "book_title": "Lesson 3: Trade or takeover: How did early encounters turn into empire?",
+          "author": "Text Type: Scientific Report (Thomas Hariot, 1588)",
+          "cover_image": "/images/secoton.jpg",
+          "author_context": "Thomas Hariot was an English scientist who travelled to the Roanoke colony in North America in 1585. He traded peacefully with the Algonquin Native Americans, but soon noticed a terrifying, unintended consequence of the English arrival.",
+          "extract": "There was no towne where we had any subtile devise practised against us, we leaving it unpunished or not revenged (because wee sought by all meanes possible to win them by gentlenesse) but that within a few dayes after our departure from everie such towne, the people began to die very fast, and many in short space; in some townes about twentie, in some fourtie, in some sixtie, & in one sixe score, which in trueth was very manie in respect of their numbers.\n\nThis happened in no place that wee coulde learne but where wee had bene... The disease also so strange, that they neither knew what it was, nor how to cure it; the like by report of the oldest men in the countrey never happened before, time out of minde.",
+          "questions": [
+            "Think: What happens to the Native American towns a 'few dayes' after the English leave them?",
+            "Pair: The English had immunity to European diseases like smallpox and influenza, but the Native Americans did not. Discuss how the Native Americans, who 'neither knew what it was, nor how to cure it,' might have explained this sudden wave of death.",
+            "Share: How did the accidental spread of European diseases make the transition from 'peaceful trade' to 'colonial takeover' much easier for the Europeans?"
+          ],
+          "hinge_question": "How did the accidental spread of European diseases make the transition from 'peaceful trade' to 'colonial takeover' much easier for the Europeans?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Subtile devise",
+              "definition": "A sneaky trick, trap, or plot."
+            },
+            {
+              "term": "Gentlenesse",
+              "definition": "Kindness and peaceful behavior."
+            },
+            {
+              "term": "Sixe score",
+              "definition": "120 people (a \"score\" is 20)."
+            }
+          ],
+          "cover_caption": "A watercolor painted by English explorer John White in 1585, showing the peaceful Algonquin village of Secoton shortly before European diseases decimated the population. The original is held in the British Museum."
+        },
+        {
+          "lesson_index": 3,
+          "book_title": "Lesson 4: James I and the Gunpowder Plot: Why was religious division so volatile?",
+          "author": "Text Type: Anonymous Warning Letter (26 October 1605)",
+          "cover_image": "/images/gunpowder.jpg",
+          "author_context": "On October 26, 1605, a Catholic nobleman named Lord Monteagle received this anonymous, cryptically written letter. He immediately took it to King James I's chief minister. It led directly to the discovery of Guy Fawkes beneath the Houses of Parliament.",
+          "extract": "My lord, out of the love i bear to some of your friends, i have a care of your preservation, therefore i would advise you as you tender your life to devise some excuse to shift of your attendance at this parliament, for god and man hath concurred to punish the wickedness of this time,\n\nand think not slightly of this advertisement, but retire yourself into your country, where you may expect the event in safety, for though there be no appearance of any stir, yet i say they shall receive a terrible blow this parliament and yet they shall not see who hurts them...\n\nthe danger is passed as soon as you have burnt the letter.",
+          "questions": [
+            "Think: Pick out the exact phrase in the letter that hints at an explosion.",
+            "Pair: The author says, 'they shall not see who hurts them.' Discuss with your partner why the plotters felt they had to use a hidden bomb rather than fighting King James I in an open rebellion.",
+            "Share: Lord Monteagle was a Catholic, just like the terrorists who wrote this letter. What does the fact that he handed it straight to the Protestant King tell us about how divided English Catholics were at this time?"
+          ],
+          "hinge_question": "Lord Monteagle was a Catholic, just like the terrorists who wrote this letter. What does the fact that he handed it straight to the Protestant King tell us about how divided English Catholics were at this time?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Preservation",
+              "definition": "Your survival or safety."
+            },
+            {
+              "term": "Concurred",
+              "definition": "Agreed or worked together."
+            },
+            {
+              "term": "Advertisement",
+              "definition": "A warning or notification."
+            }
+          ],
+          "cover_caption": "A 1605 engraving by Crispijn van de Passe of the Catholic conspirators (including Guy Fawkes) who plotted to blow up Parliament and assassinate the Protestant King James I. It is held by the National Portrait Gallery, London."
+        },
+        {
+          "lesson_index": 4,
+          "book_title": "Lesson 5: Who controlled Britain? The Ideological Battle",
+          "author": "Text Type: Royal Speech (King James I, 1610)",
+          "cover_image": "/images/james_i.jpg",
+          "author_context": "In 1610, King James I gave a speech to Parliament explaining the \"Divine Right of Kings.\" This was the ideology that Kings were chosen by God and answered to no one else. This exact mindset would eventually cause his son, Charles I, to lose his head in the English Civil War.",
+          "extract": "The state of monarchy is the supremest thing upon earth; for kings are not only God's lieutenants upon earth, and sit upon God's throne, but even by God himself they are called gods.\n\nThere be three principal similitudes that illustrate the state of monarchy: one taken out of the word of God; and the two other out of the grounds of policy and philosophy. In the Scriptures kings are called gods, and so their power after a certain relation compared to the divine power. Kings are also compared to fathers of families: for a king is truly Parens patriae, the politic father of his people. And lastly, kings are compared to the head of this microcosm of the body of man.\n\n...As to dispute what God may do is blasphemy... so is it sedition in subjects to dispute what a king may do in the height of his power.",
+          "questions": [
+            "Think: Write down the three things King James compares a King to.",
+            "Pair: Look at the final sentence. If it is \"blasphemy\" to question God, what does James say it is to question a King? Discuss how a Member of Parliament might react to hearing this.",
+            "Share: If a King genuinely believes he is God's lieutenant on earth, how will he respond when Parliament tells him he is running the country badly?"
+          ],
+          "hinge_question": "If a King genuinely believes he is God's lieutenant on earth, how will he respond when Parliament tells him he is running the country badly?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Similitudes",
+              "definition": "Comparisons or metaphors."
+            },
+            {
+              "term": "Blasphemy",
+              "definition": "Speaking sacrilegiously or disrespectfully about God."
+            },
+            {
+              "term": "Sedition",
+              "definition": "Conduct or speech encouraging people to rebel against the authority of a state or monarch."
+            }
+          ],
+          "cover_caption": "King James I painted in all his royal finery by Paul van Somer (c. 1616), holding the orb and sceptre—physical symbols of his belief in the 'Divine Right of Kings' and his answerability only to God. It is in the Royal Collection Trust."
+        },
+        {
+          "lesson_index": 5,
+          "book_title": "Lesson 6: Who controlled Britain? The Economic Shift",
+          "author": "Text Type: Economic Treatise (Thomas Mun, c. 1630)",
+          "cover_image": "/images/royal_exchange.jpg",
+          "author_context": "By the 1600s, power in Britain was shifting away from the old land-owning lords and towards wealthy merchants. Thomas Mun was a director of the powerful East India Company. He wrote this text explaining that true national power no longer came from castles and armies, but from global trade and cash.",
+          "extract": "The ordinary means therefore to encrease our wealth and treasure is by Forraign Trade, wherein wee must ever observe this rule; to sell more to strangers yearly than wee consume of theirs in value.\n\nFor suppose that when this Kingdom is plentifully served with the Cloth, Lead, Tinn, Iron, Fish and other native commodities, we doe yearly export the overplus to forraign Countreys to the value of twenty two hundred thousand pounds; by which means we are enabled beyond the Seas to buy and bring in forraign wares for our use and Consumptions, to the value of twenty hundred thousand pounds;\n\nBy this order duly kept in our trading, we may rest assured that the Kingdom shall be enriched yearly two hundred thousand pounds, which must be brought to us in so much Treasure; because that part of our stock which is not returned to us in wares must necessarily be brought home in treasure.",
+          "questions": [
+            "Think: What is the one simple \"rule\" Mun says England must observe to increase its wealth?",
+            "Pair: Look at the maths in the second paragraph. Discuss with your partner how England ends up \"enriched\" by two hundred thousand pounds in this example.",
+            "Share: How does this text prove that the people who really controlled Britain's growing power in the world were no longer Kings and Queens, but businessmen and merchants?"
+          ],
+          "hinge_question": "How does this text prove that the people who really controlled Britain's growing power in the world were no longer Kings and Queens, but businessmen and merchants?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Forraign (Foreign) Trade",
+              "definition": "Buying and selling goods with other countries."
+            },
+            {
+              "term": "Overplus",
+              "definition": "The surplus; whatever is left over after you have used what you need."
+            },
+            {
+              "term": "Treasure",
+              "definition": "In this context, hard currency (gold and silver coin)."
+            }
+          ],
+          "cover_caption": "An engraving by Wenceslaus Hollar showing the courtyard of the Royal Exchange in 17th-century London (1644), where wealthy merchants and businessmen gathered to strike global trade deals. Held by the Metropolitan Museum of Art."
+        },
+        {
+          "lesson_index": 6,
+          "book_title": "Lesson 7: What were the mechanics of the Transatlantic Slave Trade?",
+          "author": "Text Type: Autobiography (Olaudah Equiano, 1789)",
+          "cover_image": "/images/brookes.jpg",
+          "author_context": "Olaudah Equiano was kidnapped from West Africa as a child, enslaved, and eventually bought his freedom in London. In 1789, he published his autobiography, providing the British public with a rare, firsthand account of the absolute horror of the 'Middle Passage' aboard a slave ship.",
+          "extract": "The stench of the hold while we were on the coast was so intolerably loathsome, that it was dangerous to remain there for any time... but now that the whole ship’s cargo were confined together, it became absolutely pestilential. The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us.\n\nThis produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died, thus falling victims to the improvident avarice, as I may call it, of their purchasers.\n\nThis wretched situation was again aggravated by the galling of the chains, now become insupportable; and the filth of the necessary tubs, into which the children often fell, and were almost suffocated. The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.",
+          "questions": [
+            "Think: Identify the phrase Equiano uses to describe the extreme overcrowding on the slave ship.",
+            "Pair: Discuss why Equiano blames the deaths of the enslaved Africans specifically on the \"avarice\" (greed) of the purchasers. What mechanical choice did the ship captains make that caused this?",
+            "Share: Why was publishing a firsthand account like this in London in 1789 so much more dangerous to the slave trade than a politician giving a speech against it?"
+          ],
+          "hinge_question": "Why was publishing a firsthand account like this in London in 1789 so much more dangerous to the slave trade than a politician giving a speech against it?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Pestilential",
+              "definition": "Deadly, diseased, and foul-smelling."
+            },
+            {
+              "term": "Copious",
+              "definition": "Plentiful; in large amounts."
+            },
+            {
+              "term": "Improvident avarice",
+              "definition": "Short-sighted, thoughtless greed. (Equiano is saying the slave traders were so greedy they packed the ship too tightly, causing the very 'cargo' they wanted to sell to die)."
+            }
+          ],
+          "cover_caption": "The infamous 1788 diagram of the slave ship Brookes, published by abolitionists to expose the horrific, suffocating conditions enslaved Africans endured during the Middle Passage. This copy is held by the British Library."
+        },
+        {
+          "lesson_index": 7,
+          "book_title": "Lesson 8: How did enslaved Africans resist the Transatlantic Slave Trade?",
+          "author": "Text Type: Ship Captain's Account (William Snelgrave, 1734)",
+          "cover_image": "/images/cape_coast.jpg",
+          "author_context": "Enslaved Africans constantly resisted. Mutinies on slave ships were common but rarely succeeded due to European firepower. William Snelgrave was a British slave ship captain. In this text, he interrogates a group of enslaved men who had just attempted a bloody mutiny aboard his ship.",
+          "extract": "I asked them, 'What had induced them to mutiny?' They answered, 'I was a great Rogue to buy them, in order to carry them away from their own Country; and that they were resolved to regain their Liberty if possible.' I replied, 'That they had forfeited their Freedom before I bought them, either by Crimes or by being taken in War.'\n\n...Then I observed to them, 'That the Custom of their Country was to Murder them; whereas I bought them with a Design to preserve them.' They answered, 'They were sorry they had not killed me... and that they did not believe I bought them to preserve them, but to kill and eat them; for it was a saying amongst them, That the white Men were Eaters of human Flesh.'\n\n...I told them, 'They were only the worse used for their Mutinying; for if they would be peaceable, they should be freed from their Irons.' ...This had the desired Effect, and they submitted.",
+          "questions": [
+            "Think: What is the primary reason the enslaved men give for rebelling? Write down their exact quote.",
+            "Pair: Look at Captain Snelgrave's justification for buying them. Discuss with your partner how Snelgrave is trying to make himself sound like the \"good guy\" in this terrifying situation.",
+            "Share: The enslaved men believed the white men were going to \"kill and eat them.\" Based on the horrors of the Middle Passage you learned about in the last lesson, why was this a completely logical thing for them to believe?"
+          ],
+          "hinge_question": "The enslaved men believed the white men were going to \"kill and eat them.\" Based on the horrors of the Middle Passage you learned about in the last lesson, why was this a completely logical thing for them to believe?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Mutiny",
+              "definition": "An open rebellion against the proper authorities, especially by sailors or prisoners against their officers."
+            },
+            {
+              "term": "Forfeited",
+              "definition": "Lost or surrendered as a penalty for wrongdoing."
+            },
+            {
+              "term": "Induced",
+              "definition": "Convinced or caused someone to do something."
+            }
+          ],
+          "cover_caption": "An engraving of Cape Coast Castle, a European slave fort on the Gold Coast (modern-day Ghana), heavily fortified with cannons to protect slave ships from rival empires and constant uprisings by enslaved people."
+        },
+        {
+          "lesson_index": 8,
+          "book_title": "Lesson 9: How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+          "author": "Text Type: Travel Book / Journal (Daniel Defoe, 1724–1727)",
+          "cover_image": "/images/industry_idleness.png",
+          "author_context": "Between 1724 and 1727, the author Daniel Defoe travelled across Great Britain. When he arrived in Yorkshire (Halifax), he was stunned. The medieval farming villages were gone. In their place, he saw the explosive beginnings of the Industrial Revolution, fueled by global trade.",
+          "extract": "The nearer we came to Halifax, we found the houses thicker, and the villages greater in every bottom; and not only so, but the sides of the hills, which were very steep every way, were spread with houses, and that very thick...\n\nWe found the country, in short, one continued village, tho' mountainous every way, as before; hardly a house standing out of a speaking distance from another, and (which soon told us their business) the day clearing up, and the sun shining, we could see that almost at every house there was a tenter, and almost on every tenter a piece of cloth, or kersie, or shalloon, for they are the three articles of that country's labour...\n\n...This is the reason why we saw so few people without doors; but if we knock'd at the door of any of the master manufacturers, we presently saw a house full of lusty fellows, some at the dye-vat, some dressing the cloths, some in the loom... all hard at work, and full employed upon the manufacture, and all seeming to have sufficient business.",
+          "questions": [
+            "Think: Look at the landscape Defoe describes. Why are the houses built so close together, and what is sitting outside almost every single house?",
+            "Pair: Defoe says he saw very few people outdoors, but inside the houses, he saw \"a house full of lusty fellows... all hard at work.\" Discuss how this compares to the life of the medieval ploughman we studied in the last unit.",
+            "Share: Defoe is describing an explosion of cloth manufacturing. Thinking back over this unit (exploration, the empire, the slave trade), where is all this newly manufactured British cloth being shipped and sold? How did global encounters make this industrial boom possible?"
+          ],
+          "hinge_question": "Defoe is describing an explosion of cloth manufacturing. Thinking back over this unit (exploration, the empire, the slave trade), where is all this newly manufactured British cloth being shipped and sold? How did global encounters make this industrial boom possible?",
+          "is_adapted": false,
+          "glossary": [
+            {
+              "term": "Tenter",
+              "definition": "A wooden frame used to stretch and dry newly manufactured cloth."
+            },
+            {
+              "term": "Kersie / Shalloon",
+              "definition": "Types of woven woollen cloth."
+            },
+            {
+              "term": "Lusty",
+              "definition": "Healthy, strong, and full of energy."
+            }
+          ],
+          "cover_caption": "An 18th-century engraving by William Hogarth ('Industry and Idleness', Plate 1, 1747) showing young apprentices working hard at their weaving looms as Britain's cloth industry began to explode."
+        }
+      ],
       "timeline": [
         {
           "date": "1453",
@@ -33368,7 +33640,7 @@
             },
             {
               "title": "Source Spotlight: Propaganda & Peer Pressure",
-              "text": "The British government needed millions of men, and they used every psychological trick available to get them. <br><br><strong>Source A: 'Women of Britain Say GO!' Poster (1915)</strong><br>This famous propaganda poster featured women and children looking out of a window as soldiers marched away. It was designed to weaponize guilt and masculinity, implying that real men protected women and children, and that women wanted their men to fight.<br><br><strong>Source B: The White Feather Campaign</strong><br>If official propaganda didn't work, social peer pressure often did. Admiral Charles Fitzgerald founded the 'Order of the White Feather' in 1914. He encouraged women to hand out white feathers—a traditional symbol of cowardice—to any young man seen out of uniform in public. This weaponized social shame. Many teenage boys, terrified of being humiliated in front of their friends or girlfriends, lied about their age to escape the shame, joining the army at just 15 or 16 years old.",
+              "text": "The British government needed millions of men, and they used every psychological trick available to get them. <br><br><strong>'Women of Britain Say GO!' Poster (1915)</strong><br>This famous propaganda poster featured women and children looking out of a window as soldiers marched away. It was designed to weaponize guilt and masculinity, implying that real men protected women and children, and that women wanted their men to fight.<br><br><strong>The White Feather Campaign</strong><br>If official propaganda didn't work, social peer pressure often did. Admiral Charles Fitzgerald founded the 'Order of the White Feather' in 1914. He encouraged women to hand out white feathers—a traditional symbol of cowardice—to any young man seen out of uniform in public. This weaponized social shame. Many teenage boys, terrified of being humiliated in front of their friends or girlfriends, lied about their age to escape the shame, joining the army at just 15 or 16 years old.",
               "tasks": [
                 {
                   "text": "Describe one feature of the European Alliance System in 1914. (2 marks)",
@@ -33406,7 +33678,7 @@
               "tasks": [
                 {
                   "type": "short_answer",
-                  "text": "Study Source A and Source B. Which method of recruitment do you think was more effective in convincing a 16-year-old boy to lie about his age and enlist: the official government poster, or the threat of a white feather? Explain your reasoning.",
+                  "text": "Study Source C and Source D. Which method of recruitment do you think was more effective in convincing a 16-year-old boy to lie about his age and enlist: the official government poster, or the threat of a white feather? Explain your reasoning.",
                   "model_answer": "The white feather was likely more effective because it weaponized direct, personal social shame. While the poster appealed to a sense of national duty, a 16-year-old boy would be terrified of being humiliated in public by women in his own community, making the peer pressure impossible to ignore."
                 },
                 {
@@ -33423,11 +33695,16 @@
                   "type": "short_answer",
                   "text": "Explain what historian Gary Sheffield means when he suggests volunteers were motivated by \"economic pragmatism.\"",
                   "model_answer": "Sheffield means that working-class men weren't just looking for adventure; they practically needed the guaranteed food, clothing, and daily pay the army provided."
-                },
+                }
+              ]
+            },
+            {
+              "title": "Pair & Share Activity",
+              "text": "",
+              "tasks": [
                 {
-                  "type": "short_answer",
-                  "text": "Write a structured paragraph answering the following: <em>\"To what extent was government propaganda the most important reason for the mass enlistment of 1914?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While state propaganda created the initial momentum, economic reality and local community ties were more decisive...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Pompey Pals, a shilling a day, white feathers...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the alternative historian's view (<em>However, as historian Catriona Pennell argues, it would be reductive to ignore the genuine moral outrage over...</em>)</li><li><strong>Evaluation:</strong> Conclude by weighing the factors against each other to form a final historical judgment.</li></ul>",
-                  "model_answer": "While state propaganda and peer pressure (such as the white feather campaign) created initial momentum for recruitment, modern historians suggest that economic pragmatism and genuine moral duty were more decisive. As Gary Sheffield argues, working-class men needed the guaranteed shilling a day and regular meals, making enlistment a practical choice to escape poverty. Furthermore, Catriona Pennell emphasizes the genuine moral outrage over the invasion of 'Brave Little Belgium'. Therefore, while propaganda like the 'Pals Battalions' posters played a role, it was often the underlying economic realities and moral convictions that drove mass enlistment."
+                  "type": "think_pair_share",
+                  "question": "Why were young men so eager to enlist in 1914?"
                 }
               ]
             },
@@ -33525,13 +33802,7 @@
               "viewing_task": "Explain what a 'Pals Battalion' was and why it was an effective recruitment tactic.",
               "model_answer": "A Pals Battalion allowed groups of friends, neighbors, and workmates to join up and serve together. It was effective because men didn't want to be left behind while all their friends went off to fight."
             }
-          ],
-          "pair_share": {
-            "prompt": "Discuss with your partner: Why were young men so eager to enlist in 1914?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
+          ]
         },
         {
           "id": "lesson_2",
@@ -33602,23 +33873,8 @@
               "tasks": [
                 {
                   "type": "short_answer",
-                  "question": "Why did the Western Front become a stagnant deadlock by the winter of 1914?",
-                  "model_answer": "Both the Allied and German armies dug massive, defensive trench networks that neither side could easily penetrate."
-                },
-                {
-                  "type": "short_answer",
-                  "question": "Describe two physical challenges soldiers faced inside the Western Front trenches.",
-                  "model_answer": "Soldiers faced freezing mud that caused trench foot and massive infestations of disease-carrying black rats and lice."
-                },
-                {
-                  "type": "short_answer",
-                  "question": "Why did General Douglas Haig believe the infantry could easily walk across No Man's Land on July 1, 1916?",
-                  "model_answer": "Haig believed his troops could walk across safely because a week-long artillery bombardment was assumed to have destroyed the German defenses."
-                },
-                {
-                  "type": "short_answer",
-                  "question": "What were the British casualty figures for the first day of the Battle of the Somme?",
-                  "model_answer": "57,470 casualties on the first day, including 19,240 deaths."
+                  "text": "Knowledge Retrieval: Complete the summary table using the information from the text.",
+                  "model_answer": "Student completes table based on reading."
                 }
               ],
               "image": "/images/gw_flooded_trench.jpg",
@@ -33640,11 +33896,6 @@
                   "model_answer": "Ordinary soldiers were incredibly brave (\"lions\"), but commanded by outdated, uncaring generals (\"donkeys\") who repeated failed tactics."
                 },
                 {
-                  "type": "extended_writing",
-                  "question": "**The <abbr title=\"I - Identify (make your point)\nD - Describe (give historical evidence/detail)\nE - Explain (how the evidence supports the point)\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA</abbr> Paragraph Scaffold:** Write a structured paragraph explaining whether General Haig deserves to be remembered as the \"Butcher of the Somme.\" Use Identify, Describe, Explain, Analyse.",
-                  "model_answer": "I: Labeling him simply as a 'butcher' oversimplifies the unprecedented nature of the conflict. D: On the first day of the Somme, his outdated plan resulted in 19,240 British deaths. E: This disaster occurred because he was forced to learn industrialized warfare with no historical template. A: Therefore, while his early decisions were disastrously flawed, he eventually adapted his tactics to integrate tanks and creeping barrages to win the war in 1918."
-                },
-                {
                   "question": "Study Source B. Look closely at the zig-zag pattern of the trench system. What was the practical military purpose of digging trenches in this complex shape?",
                   "model_answer": "Trenches were deliberately dug in a zig-zag pattern rather than a straight line to prevent an enemy soldier who jumped into the trench from firing their weapon straight down the entire line. It also helped contain the blast radius of artillery shells landing inside the trench."
                 }
@@ -33655,7 +33906,7 @@
             },
             {
               "title": "Source Spotlight: Eyewitness in the Mud",
-              "text": "To truly understand the conditions, we must read the words of the men who survived them.<br><br><strong>Source C: Extract from the diary of Private Arthur Savage (1915)</strong><br><em>\"The mud was so deep and thick that if you slipped off the duckboards, you would sink up to your waist. I saw men drown in that mud. The rats were as big as cats, and they were completely fearless. They would run across your face while you tried to sleep. But the worst was the smell—a mixture of cordite, chloride of lime, and the sweet, sickly stench of death that never left your nostrils.\"</em>",
+              "text": "To truly understand the conditions, we must read the words of the men who survived them.<br><br><strong>Extract from the diary of Private Arthur Savage (1915)</strong><br><em>\"The mud was so deep and thick that if you slipped off the duckboards, you would sink up to your waist. I saw men drown in that mud. The rats were as big as cats, and they were completely fearless. They would run across your face while you tried to sleep. But the worst was the smell—a mixture of cordite, chloride of lime, and the sweet, sickly stench of death that never left your nostrils.\"</em>",
               "tasks": [
                 {
                   "type": "short_answer",
@@ -33702,10 +33953,16 @@
                 {
                   "text": "Study Source A (the photograph of the flooded trench).<br><br>How useful is Source A for an inquiry into the conditions on the Western Front? (8 marks)",
                   "model_answer": "Source A is highly useful because it is a contemporary photograph providing visual evidence of the horrific, water-logged conditions soldiers endured, which directly caused trench foot. However, its utility is limited as a photograph only captures one specific moment and location, and may not represent the entire front line."
-                },
+                }
+              ]
+            },
+            {
+              "title": "Pair & Share Activity",
+              "text": "",
+              "tasks": [
                 {
-                  "text": "Study Interpretation 1 (a historian writing in 2014 stating: 'The British high command callously ignored the horrific conditions of the mud').<br><br>How far do you agree with Interpretation 1 about the attitude of the high command? Explain your answer. (16 marks + 4 SPaG)",
-                  "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Interpretation 1 by pointing to the massive casualties and the persistence of frontal assaults in the mud at Passchendaele, suggesting generals like Haig were disconnected from the reality of the trenches.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that the high command did not simply ignore the conditions, but tried to manage them by building duckboards, deeper dugouts, and rotating troops out of the front line.<br><br><strong>Conclusion:</strong> Summarize your judgement on whether the commanders were callous or simply overwhelmed by an unprecedented scale of war."
+                  "type": "think_pair_share",
+                  "question": "Did British generals deserve the title 'Lions led by Donkeys'?"
                 }
               ]
             },
@@ -33831,13 +34088,7 @@
               "viewing_task": "Watch the students examine the genuine gas mask. Why were gas attacks so terrifying for the soldiers?",
               "model_answer": "Gas attacks were terrifying because the gas (like chlorine or mustard gas) would blind them and destroy their lungs from the inside, causing a slow and agonizing death if they didn't get their clumsy masks on in time."
             }
-          ],
-          "pair_share": {
-            "prompt": "Discuss with your partner: Did British generals deserve the title 'Lions led by Donkeys'?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
+          ]
         },
         {
           "id": "lesson_3",
@@ -33945,23 +34196,8 @@
               "tasks": [
                 {
                   "type": "short_answer",
-                  "text": "How many men did the British Indian Army contribute to the First World War?",
-                  "model_answer": "Over 1.5 million men."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "What crucial role did Indian troops play on the Western Front in late 1914?",
-                  "model_answer": "Two Indian divisions arrived just in time to stop the British line from collapsing during the early battles in places like Ypres."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "What was the British West Indies Regiment (BWIR), and how many men served in it?",
-                  "model_answer": "It was a unit made up of volunteers from the Caribbean, with over 15,000 men serving."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "Why did soldiers of the BWIR mutiny in Taranto, Italy, in 1918?",
-                  "model_answer": "They mutinied because of systemic racism, including being paid less, being barred from officer ranks, and being forced into degrading manual labor instead of combat roles."
+                  "text": "Knowledge Retrieval: Complete the summary table using the information from the text.",
+                  "model_answer": "Student completes table based on reading."
                 }
               ],
               "image": "/images/gw_indian_army.jpg",
@@ -34011,15 +34247,6 @@
                   "model_answer": "Source A is useful as it provides contemporary visual proof of non-European troops fighting on the Western Front, proving it was a global war. However, it is limited because it only shows one specific regiment at one moment in time."
                 },
                 {
-                  "text": "Study Interpretation 2 (David Olusoga's text arguing that the contribution of imperial troops was deliberately marginalized in post-war memory to preserve racial hierarchies).<br><br>How far do you agree with Interpretation 2 about the memory of the Empire's contribution? Explain your answer. (16 marks + 4 SPaG)",
-                  "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree by noting how post-war memorials and dominant narratives heavily focused on white British soldiers (e.g., the 'Tommies'), often leaving colonial troops out of the popular national memory.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing that there are large monuments, such as the India Gate, dedicated to colonial troops, so they were not entirely erased.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on Olusoga's view."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "Write a structured paragraph answering the following: <em>\"To what extent was the First World War a 'global' rather than a 'European' conflict?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>Although the most famous battles took place in Europe, the war was fundamentally a global conflict because...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>1.5 million Indian troops, the BWIR, fighting in Mesopotamia and East Africa, the Taranto mutiny...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge why the European view exists (<em>However, looking at Interpretation 1, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties...</em>)</li><li><strong>Evaluation:</strong> Conclude by using Olusoga's concept of \"historical amnesia\" to explain why remembering the global contribution is essential to understanding the true reality of the war.</li></ul>",
-                  "model_answer": "Although the most famous battles took place in Europe, the war was fundamentally a global conflict because of the massive reliance on imperial troops. The British Indian Army contributed over 1.5 million men, fighting in diverse theaters like Mesopotamia and Ypres, while the British West Indies Regiment (BWIR) provided crucial manpower, despite facing systemic racism that led to the Taranto mutiny in 1918. However, looking at Interpretation 1, it is understandable why the traditional view is Eurocentric, given that the Western Front saw the highest concentration of casualties and dominated contemporary press. Ultimately, as David Olusoga argues, ignoring the global nature of the war is a form of 'historical amnesia' designed to preserve racial hierarchies; acknowledging these diverse contributions is essential to understanding the true reality of the war."
-                },
-                {
                   "type": "short_answer",
                   "text": "Why might mid-20th-century textbooks (Interpretation 1) have ignored the story of Khudadad Khan and the Taranto Mutiny?",
                   "model_answer": "Textbooks likely ignored these stories because they focused on a Eurocentric narrative of white British suffering and victory, reflecting the societal racism and imperial attitudes of the mid-20th century."
@@ -34028,6 +34255,16 @@
                   "type": "short_answer",
                   "text": "According to Interpretation 2, why did the British Empire deliberately construct the narrative of a 'white man's war'?",
                   "model_answer": "Interpretation 2 argues this was deliberate 'historical amnesia' designed to preserve the racial hierarchy of the Empire. Acknowledging that non-white troops were essential to saving the British Empire would have undermined the myth of white supremacy that justified colonial rule."
+                }
+              ]
+            },
+            {
+              "title": "Pair & Share Activity",
+              "text": "",
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "Why has the contribution of Empire troops often been forgotten?"
                 }
               ]
             },
@@ -34117,13 +34354,7 @@
               "viewing_task": "How did the wider British Empire contribute to the war effort?",
               "model_answer": "Millions of men from across the British Empire, including India, Australia, Canada, and Africa, provided vital combat troops, laborers, and essential resources that allowed Britain to continue fighting."
             }
-          ],
-          "pair_share": {
-            "prompt": "Discuss with your partner: Why has the contribution of Empire troops often been forgotten?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
+          ]
         },
         {
           "id": "lesson_4",
@@ -34216,23 +34447,8 @@
               "tasks": [
                 {
                   "type": "short_answer",
-                  "text": "What does the term \"Total War\" mean?",
-                  "model_answer": "A conflict where a country mobilizes all of its citizens, industries, and resources, making the home front just as vital as the battlefield."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "What was the Defense of the Realm Act (DORA)?",
-                  "model_answer": "An emergency law passed in August 1914 giving the government sweeping powers over the public, such as censoring personal letters and cutting pub hours to keep workers sober."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "Why did the British government introduce conscription in January 1916?",
-                  "model_answer": "Because voluntary enlistment had collapsed due to massive casualties on the Western Front, leaving the army short of fresh soldiers."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "Why were women working at depots like Priddy's Hard nicknamed \"Canary Girls\"?",
-                  "model_answer": "Because handling toxic TNT explosive powder turned their skin bright yellow and their hair ginger-green."
+                  "text": "Knowledge Retrieval: Complete the summary table using the information from the text.",
+                  "model_answer": "Student completes table based on reading."
                 }
               ],
               "image": "/images/gw_women_say_go.jpg",
@@ -34246,15 +34462,6 @@
                 {
                   "text": "Study Source B (the painting of the Munitionettes).<br><br>How useful is Source B for an inquiry into the impact of the war on women? (8 marks)",
                   "model_answer": "Source A is highly useful as it is a contemporary painting showing women taking on heavy industrial roles in munitions factories, proving a significant shift in female employment. However, as a painting, it is an artist's subjective interpretation and may romanticize or sanitize the dangerous conditions."
-                },
-                {
-                  "text": "Study Interpretation 1 (Arthur Marwick's text arguing that the war permanently liberated women).<br><br>How far do you agree with Interpretation 1 about the impact of the war on women? Explain your answer. (16 marks + 4 SPaG)",
-                  "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Marwick by arguing that women gained financial independence, left domestic service, and proved they could do 'men's work', leading to the 1918 Representation of the People Act.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by pointing out that this 'liberation' was temporary; many women were forced out of these factories when the men returned in 1919, and the 1918 Act only gave the vote to women over 30 who met property qualifications.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on whether the war was a genuine turning point for women."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "Write a structured paragraph answering the following: <em>\"To what extent did the First World War lead to a permanent change in the social status of British women?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While the First World War temporarily gave women unprecedented financial independence, the permanent social changes were highly limited...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Canary Girls, TNT, 800,000 workers, 1918 Representation of the People Act...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the optimistic view (<em>Looking at Interpretation 1, historians like Marwick argue the war was an engine of change that shattered Victorian myths...</em>)</li><li><strong>Evaluation:</strong> Conclude using Braybon's revisionist perspective to explain why the changes were mostly an illusion (women were fired in 1919 and the young factory workers did not get the vote).</li></ul>",
-                  "model_answer": "While the First World War temporarily gave women unprecedented financial independence, the permanent social changes were highly limited. The conscription crisis meant that over 800,000 women were mobilized for the war effort, working as 'Canary Girls' handling dangerous TNT in places like Priddy's Hard. In 1918, the Representation of the People Act finally granted some women the vote. Looking at Interpretation 1, historians like Marwick argue the war was an engine of change that shattered Victorian myths of female weakness by proving women could do heavy industrial labor. However, this optimistic view is flawed. Using Braybon's revisionist perspective, the changes were mostly an illusion driven by national necessity; women were paid less than men and were fired immediately in 1919 to make way for returning soldiers. Furthermore, the 1918 vote was restricted to older, middle-class women, completely ignoring the young, working-class Munitionettes who actually risked their lives, proving the war did not permanently liberate the women who fought on the home front."
                 }
               ],
               "image": "/images/gw_munitionettes.jpg",
@@ -34286,6 +34493,16 @@
                   "type": "short_answer",
                   "text": "Looking at Source D, why did the British government use DORA to mandate the strict censorship of soldiers' letters home? (Give two specific reasons).",
                   "model_answer": "Firstly, the government censored locations and troop movements so that if the mail was intercepted by German spies, they would not gain any tactical military advantage. Secondly, they censored casualty numbers and descriptions of the horrific conditions to protect civilian morale on the Home Front, preventing families from realizing the true scale of the slaughter and turning against the war effort."
+                }
+              ]
+            },
+            {
+              "title": "Pair & Share Activity",
+              "text": "",
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "How did the Defence of the Realm Act (DORA) change the relationship between the citizen and the state?"
                 }
               ]
             },
@@ -34375,13 +34592,7 @@
               "viewing_task": "Explain why the government was forced to introduce conscription in 1916.",
               "model_answer": "The initial rush of volunteers had dried up by 1915, and due to massive casualties on the Western Front, the government had to force men to join the army (conscription) to keep the military functioning."
             }
-          ],
-          "pair_share": {
-            "prompt": "Discuss with your partner: How did the Defence of the Realm Act (DORA) change the relationship between the citizen and the state?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
+          ]
         },
         {
           "id": "lesson_5",
@@ -34470,18 +34681,8 @@
               "tasks": [
                 {
                   "type": "short_answer",
-                  "text": "What was the \"Armistice\" of November 11, 1918?",
-                  "model_answer": "It was an agreement between Germany and the Allies to stop fighting, bringing an end to active combat."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "Identify three military restrictions placed on Germany by the Treaty of Versailles.",
-                  "model_answer": "The army was cut to 100,000 men, the navy was banned from having submarines, and the air force was completely abolished."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "Why did the German people refer to the Treaty of Versailles as a \"Diktat\"?",
-                  "model_answer": "Because Germany was excluded from the peace negotiations and was forced to sign the final document under threat of invasion."
+                  "text": "Knowledge Retrieval: Complete the summary table using the information from the text.",
+                  "model_answer": "Student completes table based on reading."
                 }
               ],
               "image": "/images/gw_big_three_versailles.jpg",
@@ -34497,36 +34698,21 @@
                   "model_answer": "One feature of the military restrictions was that they left Germany virtually defenseless. For example, the German army was limited to just 100,000 men and they were banned from having submarines or an air force."
                 },
                 {
-                  "text": "Study Interpretation 1 (John Maynard Keynes arguing the economic reparations were too harsh and would ruin Europe).<br><br>How far do you agree with Interpretation 1 about the Treaty of Versailles? Explain your answer. (16 marks + 4 SPaG)",
-                  "model_answer": "<strong>Paragraph 1 (Agree):</strong> You could agree with Keynes by discussing the massive £6.6 billion reparations figure, which crippled the German economy and arguably paved the way for future instability.<br><br><strong>Paragraph 2 (Disagree):</strong> You could disagree by arguing the Treaty was actually quite lenient compared to what Germany did to Russia at the Treaty of Brest-Litovsk, and that France needed the reparations to rebuild its destroyed country.<br><br><strong>Conclusion:</strong> Summarize your overall judgement on the fairness of the treaty."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "Write a structured paragraph answering the following: <em>\"To what extent was the Treaty of Versailles an unfair settlement that guaranteed a future war?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Article 231, £6.6 billion in reparations, 100,000 men...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the traditional view (<em>Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy would lead to disaster...</em>)</li><li><strong>Evaluation:</strong> Conclude by using MacMillan's revisionist perspective to explain why the treaty's failure might have been more about enforcement than the actual terms.</li></ul>",
-                  "starter": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...",
-                  "model_answer": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed. The treaty did impose severe penalties, such as Article 231 (the War Guilt Clause), £6.6 billion in reparations, and an army limited to 100,000 men. Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy with these measures would inevitably lead to a war of vengeance. However, using MacMillan's revisionist perspective in Interpretation 2, the treaty's failure might have been more about enforcement than the actual terms. Germany remained largely intact and wealthy compared to Russia under the Treaty of Brest-Litovsk, showing that a lack of Allied unity to enforce the treaty, rather than unfair harshness, ultimately allowed future conflict."
-                },
-                {
                   "question": "Study Source B (the 1919 political cartoon). What is the cartoonist suggesting about the long-term consequences of the Treaty of Versailles?",
                   "model_answer": "By depicting a weeping child labeled \"1940 Class\", the cartoonist is suggesting that the extremely harsh terms of the treaty would fail to secure lasting peace, and would instead inevitably spark another devastating world war when that child reached fighting age."
                 }
               ],
-              "image": "/images/gw_versailles_cartoon.jpg",
+              "image": "/images/gw_weeping_child.jpg",
               "image_alt": "Source B: A famous 1919 political cartoon showing the 'Big Four' leaders leaving the Versailles conference. A child labeled '1940 Class' is weeping, symbolizing the tragic foresight that the harsh terms of the treaty would inevitably spark another world war when that child grew up.",
               "image_caption": "Source B: A famous 1919 political cartoon showing the 'Big Four' leaders leaving the Versailles conference. A child labeled '1940 Class' is weeping, symbolizing the tragic foresight that the harsh terms of the treaty would inevitably spark another world war when that child grew up."
             },
             {
-              "title": "Source Spotlight: German Reaction",
-              "text": "The German public was shocked and outraged by the severity of the Treaty. They had believed Wilson's fair 'Fourteen Points' would be the basis for peace.<br><br><strong>Source A: A photograph of the Allied leaders at the Versailles conference (1919)</strong><br><em>The photograph shows the leaders who held the fate of Germany in their hands. Clemenceau demanded harsh punishment, Wilson wanted an idealistic peace, and Lloyd George sought a middle ground.</em>",
+              "title": "Pair & Share Activity",
+              "text": "",
               "tasks": [
                 {
-                  "text": "Study Source A (the photograph of the Big Four).<br><br>How useful is Source A for an inquiry into the fairness of the Treaty of Versailles? (8 marks)",
-                  "model_answer": "Source A is useful as it shows contemporary British attitudes, often depicting the Treaty as a necessary punishment for Germany. However, as a British cartoon, it is biased, one-sided, and ignores German suffering and perspectives."
-                },
-                {
-                  "type": "short_answer",
-                  "text": "How does the photograph of the Allied leaders (Source A) reflect the power dynamic at the Treaty of Versailles? Refer specifically to the concept of the 'Diktat'.",
-                  "model_answer": "The photograph shows the Big Four leaders who held complete power over Germany's fate. Because Germany was not invited to negotiate, they viewed the resulting treaty as a 'Diktat' (a dictated peace). The leaders pictured—especially Clemenceau—forced severe terms upon a defenseless Germany, reinforcing the feeling of victimization and intense national anger."
+                  "type": "think_pair_share",
+                  "question": "Was the Treaty of Versailles a fair settlement or a vindictive peace that guaranteed a future war?"
                 }
               ]
             },
@@ -34616,13 +34802,7 @@
               "viewing_task": "How did the German public react to the peace terms?",
               "model_answer": "They were deeply bitter and felt betrayed, viewing the treaty as a 'Diktat' (a dictated peace) that humiliated their nation and stripped them of their dignity."
             }
-          ],
-          "pair_share": {
-            "prompt": "Discuss with your partner: Did the Treaty of Versailles solve the problems of 1914 or create the nightmares of 1939?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
+          ]
         },
         {
           "id": "lesson_6",
@@ -34742,7 +34922,7 @@
                   "model_answer": "The government sent these bronze plaques and a simple scroll to the families of fallen soldiers to formally acknowledge their sacrifice. However, for many grieving parents, this small piece of metal felt tragically inadequate compared to the loss of their child's life."
                 }
               ],
-              "image": "/images/gw_death_plaque.jpg",
+              "image": "/images/gw_dead_mans_penny.jpg",
               "image_alt": "Source B: A bronze memorial plaque, tragically nicknamed the 'Dead Man's Penny', which was sent to the families of every British soldier killed in the Great War. For many grieving parents, like the father of Nita Madeline King, this and a simple scroll were the only physical return they received for their child's sacrifice.",
               "image_caption": "Source B: A bronze memorial plaque, tragically nicknamed the 'Dead Man's Penny', which was sent to the families of every British soldier killed in the Great War. For many grieving parents, like the father of Nita Madeline King, this and a simple scroll were the only physical return they received for their child's sacrifice."
             },
@@ -34752,13 +34932,18 @@
               "tasks": [
                 {
                   "type": "short_answer",
-                  "text": "Write a structured paragraph answering the following: <em>\"To what extent do local war memorials provide a more accurate picture of the First World War than military statistics?\"</em>",
-                  "model_answer": "While military statistics show the global scale of the war, local war memorials are essential for revealing the true human cost. Factual evidence, such as the tragic loss of the three Lowry brothers or a carpenter having to carve his own son's name into the memorial, highlights the devastating emotional blow to a tight-knit community. However, looking only at one village's memorial does not explain why the war was won or lost on a tactical level. Ultimately, while statistics are necessary to understand the vast scope of the conflict, combining them with micro-histories gives historians the most complete picture by fostering historical empathy."
-                },
-                {
-                  "type": "short_answer",
                   "text": "<em>Instructions: Choose one of the five historical investigation tasks below. Use the provided web links and your source packs to uncover the hidden realities of the Stubbington fallen.</em><br><br><strong>Path 1: The 1911 Census (Bringing the Names to Life)</strong><br>War memorials only give us names and initials. To understand what the village actually lost, we need to see who these men were before the war.<br><ul><li><strong>Your Task:</strong> Using the provided 1911 Census records for the Lowry family, find out the following: How old were the brothers? What were their jobs? Who else lived in the house? Write a short paragraph explaining how reading the census changes the way you look at the names on the memorial.</li><li><strong>Scaffolding Tip:</strong> Look closely at the \"Occupation\" column. Were they farm laborers, shop workers, or tradesmen? Think about how their sudden absence would impact the village's daily life and economy.</li><li><strong>Helpful Link:</strong> <a href='https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/census-records/' target='_blank'>The National Archives: 1911 Census Guide</a></li></ul><br><strong>Path 2: Mapping the Tragedy</strong><br>During the war, entire streets could be plunged into mourning in a single day.<br><ul><li><strong>Your Task:</strong> Select ten names from the Stubbington memorial. Using the Commonwealth War Graves Commission website to find their home addresses, plot them on a historical map of Fareham/Stubbington from the 1910s.</li><li><strong>Scaffolding Tip:</strong> Do you notice any clusters? Are there multiple casualties on the same street? Write a sentence explaining what it would have felt like to be a postman delivering telegrams on that street in 1916.</li><li><strong>Helpful Link:</strong> <a href='https://maps.nls.uk/geo/explore/side-by-side/' target='_blank'>National Library of Scotland: Side-by-Side Historic Maps</a></li></ul><br><strong>Path 3: Decoding the Commonwealth War Graves (CWGC)</strong><br>Historians use death records like detective clues to figure out where and how men fought.<br><ul><li><strong>Your Task:</strong> Search for the Lowry brothers on the CWGC database. Look at their date of death and the name of the cemetery or memorial where they are listed (e.g., the Thiepval Memorial or the Menin Gate).</li><li><strong>Scaffolding Tip:</strong> If a soldier died in July 1916 and is listed on the Thiepval Memorial, they almost certainly died at the Battle of the Somme. If they died in late 1917 near Ypres, it was likely Passchendaele. Write down which major battles the Stubbington men were caught in based on your findings.</li><li><strong>Helpful Link:</strong> <a href='https://www.cwgc.org/' target='_blank'>Commonwealth War Graves Commission Database</a></li></ul><br><strong>Path 4: Evaluating the Memorial Design</strong><br>Most towns built statues of soldiers with rifles or giant stone crosses. Stubbington built a wooden shelter over a water pump.<br><ul><li><strong>Your Task:</strong> Write a visual analysis of the Stubbington War Memorial. Why do you think the designer (a grieving mother) chose a water pump shelter rather than a glorifying statue of a soldier?</li><li><strong>Scaffolding Tip:</strong> Think about what a water pump represents (community, life, civilian utility) versus a soldier statue (combat, glory, military). What does this tell us about how the local community wanted to remember their dead?</li></ul><br><strong>Path 5: The Missing Voices (Historiography)</strong><br>War memorials only record the dead, meaning the \"visible\" history often masks the invisible trauma of the survivors.<br><ul><li><strong>Your Task:</strong> Challenge yourself to consider who is <em>not</em> on the memorial. Are there men from Stubbington who survived but returned with severe shell shock or missing limbs?</li><li><strong>Scaffolding Tip:</strong> Write a short paragraph explaining why relying solely on a war memorial might give a historian an incomplete picture of how the war actually impacted a village like Stubbington.</li></ul>",
                   "model_answer": "Teacher Note: These are open-ended masterclass extension tasks."
+                }
+              ]
+            },
+            {
+              "title": "Pair & Share Activity",
+              "text": "",
+              "tasks": [
+                {
+                  "type": "think_pair_share",
+                  "question": "How did the loss of a generation impact small communities like Stubbington?"
                 }
               ]
             },
@@ -34848,13 +35033,7 @@
               "viewing_task": "Why was the national act of remembrance established on November 11th?",
               "model_answer": "It was established to mark the exact date and time the Armistice was signed in 1918 (the 11th hour of the 11th day of the 11th month), ensuring the country never forgets the sacrifice of the dead."
             }
-          ],
-          "pair_share": {
-            "prompt": "Discuss with your partner: How did the loss of a generation impact small communities like Stubbington?",
-            "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-            "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-            "share": "Share your pair's combined conclusion with the class."
-          }
+          ]
         },
         {
           "id": "lesson_7",

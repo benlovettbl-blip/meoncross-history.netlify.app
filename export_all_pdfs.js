@@ -37,8 +37,6 @@ if (!fs.existsSync(pdfsDir)){
   }
 
   for (const unitId of targetUnits) {
-    let browser;
-    let browser;
     console.log('\n========================================');
     console.log(`Starting PDF export for unit: ${unitId}`);
     console.log('========================================');
@@ -56,9 +54,6 @@ if (!fs.existsSync(pdfsDir)){
         console.warn(`Directory not found for unit: ${unitId}, skipping...`);
         continue;
     }
-
-    try {
-    try {
     let files = fs.readdirSync(unitDir).filter(f => f.endsWith('.html'));
     
     // Only generate PDFs for core required documents expected by the PDF Hub

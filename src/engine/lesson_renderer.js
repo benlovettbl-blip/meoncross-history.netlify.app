@@ -1171,7 +1171,7 @@ if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
              }
              if (task.type === 'table_planner') {
                extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; overflow-x:auto;">
-                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-table"></i> ${task.text}</h4>
+                  <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-table"></i> ${task.text || task.question || 'Planner'}</h4>
                  <table style="width:100%; border-collapse:collapse; margin-top:10px; background:white;">
                    <thead><tr>${task.columns.map(c => `<th style="border:1px solid #cbd5e1; padding:10px; background:#e2e8f0; color:#1e293b; text-align:left;">${c}</th>`).join('')}</tr></thead>
                    <tbody>

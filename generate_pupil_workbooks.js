@@ -402,7 +402,7 @@ allDirs.forEach((unitId) => {
 
         ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
         
-        ${unitData.cover_image ? `<img src="../../${unitData.cover_image.replace(/^\//, '')}" style="max-height: 400px; width: auto; display: block; margin: 30px auto; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 2px solid #e2e8f0;">` : ''}
+        
         
         <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px 45px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
@@ -988,6 +988,9 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   return;
                 }
                 if (true) {
+                  let isSixteen = (task.text || task.question || "").toLowerCase().includes("16 marks");
+                  let pbBefore = isSixteen ? 'page-break-before: always; margin-top: 30px;' : 'margin-top: 10px;';
+                  
                   if (
                     task.type === "vocab_match" ||
                     task.type === "drag_drop_timeline"
@@ -995,28 +998,39 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                     // Do nothing
                   } else {
                     let _t = processTaskTextWithTariff(task.text || task.question);
-_nbHtml += `<p style="margin-top:10px;"><strong>Q${globalQNum++}. ${_t.cleanText}</strong></p>`;
+_nbHtml += `<p style="${pbBefore}"><strong>Q${globalQNum++}. ${_t.cleanText}</strong></p>`;
 if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                     if (task.type === 'extended_writing' && task.instructions) {
                         _nbHtml += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
                     }
                   }
-                  let linesToDraw = 3;
+                  
                   let tText = (task.text || task.question || "").toLowerCase();
-                  if (task.type === "extended_writing") {
-                    linesToDraw = 18;
-                  } else if (
-                    task.type === "analysis" ||
-                    task.type === "debate" ||
-                    tText.includes("explain") ||
-                    tText.includes("describe") ||
-                    tText.includes("two ") ||
-                    tText.length > 60
-                  ) {
-                    linesToDraw = 6;
-                  }
-                  for (let i = 0; i < linesToDraw; i++) {
-                    _nbHtml += `<div class="task-lines"></div>`;
+                  if (tText.includes("16 marks")) {
+                    for (let i = 0; i < 40; i++) {
+                      _nbHtml += `<div class="task-lines-large"></div>`;
+                    }
+                    _nbHtml += `<div style="page-break-before: always;"></div>`;
+                    for (let i = 0; i < 40; i++) {
+                      _nbHtml += `<div class="task-lines-large"></div>`;
+                    }
+                  } else {
+                    let linesToDraw = 3;
+                    if (task.type === "extended_writing") {
+                      linesToDraw = 18;
+                    } else if (
+                      task.type === "analysis" ||
+                      task.type === "debate" ||
+                      tText.includes("explain") ||
+                      tText.includes("describe") ||
+                      tText.includes("two ") ||
+                      tText.length > 60
+                    ) {
+                      linesToDraw = 6;
+                    }
+                    for (let i = 0; i < linesToDraw; i++) {
+                      _nbHtml += `<div class="task-lines"></div>`;
+                    }
                   }
                 }
               });
@@ -1045,8 +1059,8 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
       }
 
 
-    // Pair Share
-    if (lesson.pair_share) {
+    // Pair Share (Hidden for Great War units here, moved to later)
+    if (lesson.pair_share && !(unitId === "great_war" || unitId === "great_war_part2")) {
         html += `<div class="task-box" style="  ">`;
         html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
 
@@ -1662,12 +1676,15 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             for (let i = 0; i < customLines; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
-          } else if (text.includes("16 marks")) {
-            for (let i = 0; i < 96; i++) {
+          } else if (text.includes("16 marks") || text.includes("12 marks")) {
+            for (let i = 0; i < 40; i++) {
+              html += `<div class="task-lines-large"></div>`;
+            }
+            html += `<div style="page-break-before: always;"></div>`;
+            for (let i = 0; i < 40; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
           } else if (
-            text.includes("12 marks") ||
             text.includes("Explain why")
           ) {
             for (let i = 0; i < 64; i++) {
@@ -1698,6 +1715,46 @@ if (_t.badgeHtml) html += _t.badgeHtml;
 
 
 
+
+        // Injected Pair Share for Great War units, immediately before extended writing
+        if (lesson.pair_share && (unitId === "great_war" || unitId === "great_war_part2")) {
+            html += `<div class="task-box" style="  ">`;
+            html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
+
+            if (lesson.pair_share.sources) {
+              let sourceHTML =
+                '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
+              lesson.pair_share.sources.forEach((srcObj) => {
+                sourceHTML +=
+                  '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
+                if (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) {
+                  let imgSrc =
+                    typeof resolveAssetPath === "function"
+                      ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
+                      : (srcObj.src || srcObj.source || srcObj.image);
+                  sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
+                } 
+            if (srcObj.text || srcObj.content) { 
+                  sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
+                }
+                if (srcObj.title)
+                  sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
+                sourceHTML += "</div>";
+              });
+              sourceHTML += "</div>";
+              html += sourceHTML;
+            }
+
+            html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${globalQNum++}. Prompt: ${lesson.pair_share.prompt}</p>`;
+            if (lesson.pair_share.think)
+              html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
+            html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
+            for (let i = 0; i < 6; i++) {
+              html += `<div class="task-lines-large"></div>`;
+            }
+            html += `</div>`;
+            html += `</div>`;
+        }
 
         if (lesson.extended && lesson.extended.question) {
           

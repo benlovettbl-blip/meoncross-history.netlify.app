@@ -1,0 +1,70 @@
+[
+  {
+    "title": "The Core Narrative",
+    "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>Georges Clemenceau (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>Woodrow Wilson (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
+    "tasks": [
+      {
+        "type": "short_answer",
+        "text": "Knowledge Retrieval: Complete the summary table using the information from the text.",
+        "model_answer": "Student completes table based on reading."
+      }
+    ],
+    "image": "/images/gw_big_three_versailles.jpg",
+    "image_alt": "Source A: The 'Big Four' leaders (David Lloyd George of Britain, Vittorio Orlando of Italy, Georges Clemenceau of France, and Woodrow Wilson of the USA) at the Versailles Peace Conference in 1919. They held the fate of a defeated Germany in their hands.",
+    "image_caption": "Source A: The 'Big Four' leaders (David Lloyd George of Britain, Vittorio Orlando of Italy, Georges Clemenceau of France, and Woodrow Wilson of the USA) at the Versailles Peace Conference in 1919. They held the fate of a defeated Germany in their hands."
+  },
+  {
+    "title": "The Historians' Debate: A Doomed Peace?",
+    "text": "<strong>The Terms of the Treaty: A Diktat</strong><br>Germany was not invited to negotiate; they were simply handed the treaty and forced to sign it under the threat of invasion. For this reason, Germans bitterly referred to the treaty as a <strong>Diktat</strong> (a dictated peace). The terms were deliberately devastating:<br><br><ul><li><strong>Territory (Land):</strong> Germany lost 13% of its European land and 12% of its population. The wealthy coal fields of the Saar were given to France for 15 years, and the industrial region of Alsace-Lorraine was returned to France. Crucially, the 'Polish Corridor' was carved out of Germany, splitting the country in two.</li><li><strong>Military:</strong> The proud German army was slashed to just 100,000 men. They were banned from having an air force (Luftwaffe), tanks, or submarines. The Rhineland (the border area with France) was demilitarized.</li><li><strong>Reparations (Money):</strong> Germany was ordered to pay a staggering £6.6 billion in reparations to the Allies for the damage caused by the war—an impossible sum that would shatter the German economy.</li><li><strong>Blame:</strong> The most hated term was Article 231 (The War Guilt Clause), which forced Germany to accept 100% of the blame for starting the war.</li></ul><br><br>Read the two contrasting interpretations below to understand how historians debate the legacy of the Treaty of Versailles.<br><br><blockquote><strong>Interpretation 1: The Traditional View</strong><br><em>\"The Treaty of Versailles was a disastrous, vindictive peace. The economic reparations imposed on Germany are completely impossible to pay and will inevitably lead to the total financial collapse of central Europe. By stripping Germany of its wealth and humiliating its people, the Allies have virtually guaranteed a war of vengeance in the near future.\"</em><br>— <em>Adapted from John Maynard Keynes, The Economic Consequences of the Peace (1919)</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Revisionist View</strong><br><em>\"The Treaty of Versailles was actually quite lenient compared to the brutal treaty Germany had forced upon Russia in 1918. Germany remained largely intact and structurally wealthy. The true failure was not that the treaty was too harsh, but that the Allies lacked the political will and unity to actually enforce it in the 1930s, allowing Hitler to easily tear it up.\"</em><br>— <em>Adapted from Margaret MacMillan, Peacemakers (2001)</em></blockquote>",
+    "tasks": [
+      {
+        "text": "Describe one feature of the military restrictions placed on Germany by the Treaty of Versailles. (2 marks)",
+        "model_answer": "One feature of the military restrictions was that they left Germany virtually defenseless. For example, the German army was limited to just 100,000 men and they were banned from having submarines or an air force."
+      },
+      {
+        "type": "short_answer",
+        "text": "Write a structured paragraph answering the following: <em>\"To what extent was the Treaty of Versailles an unfair settlement that guaranteed a future war?\"</em><br><ul><li><strong>Thesis Statement:</strong> Establish your main argument (e.g., <em>While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...</em>)</li><li><strong>Factual Evidence:</strong> Provide specific knowledge (e.g., <em>Article 231, £6.6 billion in reparations, 100,000 men...</em>)</li><li><strong>Counter-Perspective:</strong> Acknowledge the traditional view (<em>Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy would lead to disaster...</em>)</li><li><strong>Evaluation:</strong> Conclude by using MacMillan's revisionist perspective to explain why the treaty's failure might have been more about enforcement than the actual terms.</li></ul>",
+        "starter": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed...",
+        "model_answer": "While the Treaty of Versailles deeply humiliated the German public, modern historians argue it was not as unfairly harsh as traditionally believed. The treaty did impose severe penalties, such as Article 231 (the War Guilt Clause), £6.6 billion in reparations, and an army limited to 100,000 men. Looking at Interpretation 1, contemporaries like Keynes argued that destroying the German economy with these measures would inevitably lead to a war of vengeance. However, using MacMillan's revisionist perspective in Interpretation 2, the treaty's failure might have been more about enforcement than the actual terms. Germany remained largely intact and wealthy compared to Russia under the Treaty of Brest-Litovsk, showing that a lack of Allied unity to enforce the treaty, rather than unfair harshness, ultimately allowed future conflict."
+      },
+      {
+        "question": "Study Source B (the 1919 political cartoon). What is the cartoonist suggesting about the long-term consequences of the Treaty of Versailles?",
+        "model_answer": "By depicting a weeping child labeled \"1940 Class\", the cartoonist is suggesting that the extremely harsh terms of the treaty would fail to secure lasting peace, and would instead inevitably spark another devastating world war when that child reached fighting age."
+      }
+    ],
+    "image": "/images/gw_weeping_child.jpg",
+    "image_alt": "Source B: A famous 1919 political cartoon showing the 'Big Four' leaders leaving the Versailles conference. A child labeled '1940 Class' is weeping, symbolizing the tragic foresight that the harsh terms of the treaty would inevitably spark another world war when that child grew up.",
+    "image_caption": "Source B: A famous 1919 political cartoon showing the 'Big Four' leaders leaving the Versailles conference. A child labeled '1940 Class' is weeping, symbolizing the tragic foresight that the harsh terms of the treaty would inevitably spark another world war when that child grew up."
+  },
+  {
+    "title": "Source Spotlight: German Reaction",
+    "text": "The German public was shocked and outraged by the severity of the Treaty. They had believed Wilson's fair 'Fourteen Points' would be the basis for peace.<br><br><strong>Source C: A photograph of the Allied leaders at the Versailles conference (1919)</strong><br><em>The photograph shows the leaders who held the fate of Germany in their hands. Clemenceau demanded harsh punishment, Wilson wanted an idealistic peace, and Lloyd George sought a middle ground.</em>",
+    "tasks": [
+      {
+        "text": "Study Source C (the photograph of the Big Four).<br><br>How useful is Source C for an inquiry into the fairness of the Treaty of Versailles? (8 marks)",
+        "model_answer": "Source C is useful as it shows contemporary British attitudes, often depicting the Treaty as a necessary punishment for Germany. However, as a British cartoon, it is biased, one-sided, and ignores German suffering and perspectives."
+      },
+      {
+        "type": "short_answer",
+        "text": "How does the photograph of the Allied leaders (Source C) reflect the power dynamic at the Treaty of Versailles? Refer specifically to the concept of the 'Diktat'.",
+        "model_answer": "The photograph shows the Big Four leaders who held complete power over Germany's fate. Because Germany was not invited to negotiate, they viewed the resulting treaty as a 'Diktat' (a dictated peace). The leaders pictured—especially Clemenceau—forced severe terms upon a defenseless Germany, reinforcing the feeling of victimization and intense national anger."
+      }
+    ]
+  },
+  {
+    "title": "Consolidation Task",
+    "tasks": [
+      {
+        "type": "extended_writing",
+        "question": "Explain why the Treaty of Versailles caused so much resentment in Germany.",
+        "hints": [
+          "Sentence Starter: The Treaty caused resentment because Germany felt it was a \"Diktat\" (dictated peace)...",
+          "Sentence Starter: For example, the War Guilt Clause (Article 231) forced Germany to...",
+          "Sentence Starter: This resulted in a deep sense of humiliation and economic ruin due to..."
+        ],
+        "scaffolding": "Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance."
+      }
+    ],
+    "text": "<h3>Consolidation Task</h3>"
+  }
+]

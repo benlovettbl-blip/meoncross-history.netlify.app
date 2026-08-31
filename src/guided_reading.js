@@ -55,7 +55,17 @@ export function initGuidedReadingTask(container, guidedReadingData, globalState)
         
         <!-- Header: Image, Title, Author, and Questions -->
         <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap;">
-          <img src="${getAssetUrl(readingData.cover_image)}" alt="Book Cover" style="width: 150px; height: auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <div style="width: 250px; display: flex; flex-direction: column; gap: 10px;">
+            <img src="${getAssetUrl(readingData.cover_image)}" alt="Visual Source" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            ${readingData.cover_caption ? `
+            <button class="btn btn-secondary" onclick="document.getElementById('source-context-${readingData.lesson_index}').classList.toggle('visible')" style="width: 100%; padding: 6px 10px; font-size: 0.85rem; background: #f8fafc; color: #3b82f6; border: 1px solid #bfdbfe; display: flex; justify-content: center; gap: 8px; align-items: center;">
+              <i class="fa-solid fa-magnifying-glass"></i> Source Provenance
+            </button>
+            <div id="source-context-${readingData.lesson_index}" style="display: none; padding: 15px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 0 6px 6px 0; font-size: 0.9rem; color: #1e3a8a; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-top: -5px;">
+              ${readingData.cover_caption}
+            </div>
+            ` : ''}
+          </div>
           
           <div style="flex: 1; min-width: 300px;">
             <h2 style="margin: 0 0 10px 0; color: #1e293b; font-size: 2rem; font-family: 'Playfair Display', serif;">${readingData.book_title}</h2>
@@ -105,8 +115,6 @@ export function initGuidedReadingTask(container, guidedReadingData, globalState)
         <div class="reading-extract-container" style="position: relative;">
           <div class="reading-extract" style="font-family: 'Playfair Display', serif; font-size: 1.25rem; line-height: 1.8; color: #1e293b; padding: 30px; background: #fafafa; border-radius: 8px; border: 1px solid #e2e8f0; max-height: 600px; overflow-y: auto;">
             ${(readingData.extract || '').split(/\n+/).map(p => `<p style="margin-bottom: 1.5rem;">${p}</p>`).join('')}
-          </div>
-          <div style="position: absolute; bottom: 1px; left: 1px; right: 1px; height: 50px; background: linear-gradient(transparent, #fafafa); pointer-events: none; border-radius: 0 0 8px 8px;"></div>
         </div>
         
       </div>
@@ -116,7 +124,8 @@ export function initGuidedReadingTask(container, guidedReadingData, globalState)
       const style = document.createElement('style');
       style.id = 'guided-reading-style';
       style.innerHTML = `
-        #author-context-${readingData.lesson_index}.visible {
+        #author-context-${readingData.lesson_index}.visible,
+        #source-context-${readingData.lesson_index}.visible {
           display: block !important;
         }
         @media (max-width: 900px) {
@@ -131,7 +140,8 @@ export function initGuidedReadingTask(container, guidedReadingData, globalState)
       // So we just add the new rule to the existing style element.
       const style = document.getElementById('guided-reading-style');
       style.innerHTML += `
-        #author-context-${readingData.lesson_index}.visible {
+        #author-context-${readingData.lesson_index}.visible,
+        #source-context-${readingData.lesson_index}.visible {
           display: block !important;
         }
       `;
