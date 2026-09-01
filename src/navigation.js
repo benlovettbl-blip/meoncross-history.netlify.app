@@ -125,6 +125,51 @@ async function loadUnit(unitId) {
     state.activeUnitData = {};
   }
 
+  // Fallback: Dynamically generate quizData from lesson do_now quizzes if missing
+  if (!state.activeUnitData.quizData) {
+    const extractedQuizData = [];
+    const lessonsList = state.activeUnitData.lessons || state.activeUnitData.subtopics || [];
+    lessonsList.forEach((lesson, lIdx) => {
+      const baseId = lesson.id || `lesson_${lIdx}`;
+      if (lesson.do_now && lesson.do_now.type === 'quiz' && lesson.do_now.questions) {
+        lesson.do_now.questions.forEach((q, idx) => {
+          extractedQuizData.push({
+            id: `q_${baseId}_${idx}`,
+            question: q.question,
+            options: q.options,
+            answer: q.options[q.answer],
+            distractors: q.options.filter((opt, i) => i !== q.answer),
+            explanation: q.explanation || 'No further explanation provided.',
+          });
+        });
+      }
+      if (lesson.part3 && Array.isArray(lesson.part3)) {
+        lesson.part3.forEach((stmt, idx) => {
+          extractedQuizData.push({
+            id: `q_${baseId}_p3_${idx}`,
+            question: `True or False: ${stmt.text}`,
+            options: ['True', 'False'],
+            answer: 'True', // Historically they are all correct core statements
+            distractors: ['False'],
+            explanation: 'This is a core historical statement from the lesson.',
+          });
+        });
+      }
+    });
+    if (extractedQuizData.length > 0) {
+      state.activeUnitData.quizData = extractedQuizData;
+    }
+  }
+
+  // Fallback: Map 'timeline' array to 'timelineEvents' if missing but 'timeline' exists
+  if (!state.activeUnitData.timelineEvents && state.activeUnitData.timeline && Array.isArray(state.activeUnitData.timeline)) {
+    state.activeUnitData.timelineEvents = state.activeUnitData.timeline.map(t => ({
+      year: t.date || t.year,
+      text: t.description || t.text,
+      title: t.title || ''
+    }));
+  }
+
   // Add loaded questions to general index to support Leitner status mapping
   if (!state.allQuestions) state.allQuestions = [];
   if (state.activeUnitData.quizData) {
@@ -138,31 +183,61 @@ async function loadUnit(unitId) {
   const navDecisions = document.getElementById('nav-decisions');
   const navTaboo = document.getElementById('nav-taboo');
   const navLessons = document.getElementById('nav-lessons');
-  if (navDecisions && navTaboo && navLessons) {
-    if (unitId.startsWith('gcse_') || unitId === 'edexcel_medicine' || unitId === 'eee') {
+  const navInteractive = document.getElementById('nav-interactive');
+  const navTimeline = document.getElementById('nav-timeline');
+  const navBooklet = document.getElementById('nav-booklet');
+
+  if (navLessons) {
+    navLessons.style.display = 'flex';
+    navLessons.dataset.action = 'switch-view';
+    navLessons.dataset.view = 'lessons';
+    navLessons.dataset.unit = unitId;
+    navLessons.onclick = () => switchView('lessons', unitId);
+  }
+
+  if (navInteractive) {
+    navInteractive.style.display = 'flex';
+    navInteractive.dataset.action = 'switch-view';
+    navInteractive.dataset.view = 'interactive';
+    navInteractive.dataset.unit = unitId;
+    navInteractive.onclick = () => switchView('interactive', unitId);
+  }
+
+  if (navTimeline) {
+    navTimeline.style.display = 'flex';
+    navTimeline.dataset.action = 'switch-view';
+    navTimeline.dataset.view = 'timeline';
+    navTimeline.dataset.unit = unitId;
+    navTimeline.onclick = () => switchView('timeline', unitId);
+  }
+
+  if (navBooklet) {
+    navBooklet.style.display = 'flex';
+    navBooklet.dataset.action = 'switch-view';
+    navBooklet.dataset.view = 'booklet';
+    navBooklet.dataset.unit = unitId;
+    navBooklet.onclick = () => switchView('booklet', unitId);
+  }
+
+  if (navDecisions && navTaboo) {
+    if (unitId.startsWith('gcse_') || unitId === 'edexcel_medicine' || unitId === 'eee' || unitId === 'cme_new') {
       if (unitId === 'gcse_elizabethan_england' || unitId === 'eee') {
         navDecisions.style.display = 'none';
       } else {
         navDecisions.style.display = 'flex';
+        navDecisions.dataset.action = 'switch-view';
+        navDecisions.dataset.view = 'decisions';
+        navDecisions.dataset.unit = unitId;
+        navDecisions.onclick = () => switchView('decisions', unitId);
       }
       navTaboo.style.display = 'flex';
-      navLessons.style.display = 'flex';
-      navDecisions.dataset.action = 'switch-view';
-      navDecisions.dataset.view = 'decisions';
-      navDecisions.dataset.unit = unitId;
       navTaboo.dataset.action = 'switch-view';
       navTaboo.dataset.view = 'taboo';
       navTaboo.dataset.unit = unitId;
-      navLessons.dataset.action = 'switch-view';
-      navLessons.dataset.view = 'lessons';
-      navLessons.dataset.unit = unitId;
-      navDecisions.onclick = () => switchView('decisions', unitId);
       navTaboo.onclick = () => switchView('taboo', unitId);
-      navLessons.onclick = () => switchView('lessons', unitId);
     } else {
       navDecisions.style.display = 'none';
       navTaboo.style.display = 'none';
-      navLessons.style.display = 'none';
     }
   }
 }

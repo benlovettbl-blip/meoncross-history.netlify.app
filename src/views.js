@@ -564,7 +564,7 @@ export async function renderDecisionsView() {
   const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
 
   let decisionsData = [];
-  if (unitId === 'gcse_middle_east_1945_1995') {
+  if (unitId === 'gcse_middle_east_1945_1995' || unitId === 'cme_new') {
     const mod = await import('./data/cme/decisions_data.js');
     decisionsData = mod.DECISIONS_DATA;
   } else if (unitId === 'gcse_usa_1954_1975') {

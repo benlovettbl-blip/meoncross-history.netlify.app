@@ -11,6 +11,50 @@ const industrialisation_and_empire = {
       "title": "Complete Unit"
     }
   ],
+  "key_individuals": [
+    {
+      "name": "James Watt",
+      "dates": "1736 – 1819",
+      "title": "Engineer & Inventor",
+      "significance": "His crucial improvements to the steam engine powered the Industrial Revolution, allowing massive factories to be built anywhere rather than relying on fast-flowing rivers."
+    },
+    {
+      "name": "Henry Cort",
+      "dates": "1741 – 1800",
+      "title": "Fareham Ironmaster",
+      "significance": "Invented the puddling process at Funtley Ironworks in Hampshire. His method allowed Britain to mass-produce high-quality wrought iron for the Royal Navy and the growing railway network."
+    },
+    {
+      "name": "Isambard Kingdom Brunel",
+      "dates": "1806 – 1859",
+      "title": "Civil Engineer",
+      "significance": "One of the most ingenious figures of the Victorian era. He built the Great Western Railway, magnificent bridges, and massive steamships that connected Britain to its empire."
+    },
+    {
+      "name": "Edwin Chadwick",
+      "dates": "1800 – 1890",
+      "title": "Social Reformer",
+      "significance": "Published a shocking 1842 report proving that industrial slums were deadlier than modern wars. His relentless campaigning laid the foundation for modern public health and sanitation systems."
+    },
+    {
+      "name": "Lord Shaftesbury",
+      "dates": "1801 – 1885",
+      "title": "Politician & Philanthropist",
+      "significance": "Fought tirelessly in Parliament to improve the brutal working conditions of the industrial poor, notably championing laws that restricted the use of children in factories and coal mines."
+    },
+    {
+      "name": "Charles Dickens",
+      "dates": "1812 – 1870",
+      "title": "Author & Social Critic",
+      "significance": "Used his immensely popular novels, such as 'Oliver Twist' and 'Hard Times', to expose the harsh realities of industrial poverty, the cruel workhouse system, and the widening gap between rich and poor."
+    },
+    {
+      "name": "Queen Victoria",
+      "dates": "1819 – 1901",
+      "title": "Queen of the United Kingdom",
+      "significance": "The monarch who oversaw the massive expansion of the British Empire and the peak of Britain's industrial dominance, becoming the defining figure of the 'Victorian' era."
+    }
+  ],
   "lessons": [
     {
       "id": "lesson_1",
@@ -1083,8 +1127,11 @@ const industrialisation_and_empire = {
             "primer": "Examine the disproportionate violence used by the British to suppress the rebellion, comparing it to the domestic response to Chartism.",
             "question": "Why did the British state react with such extreme violence in India compared to domestic unrest?"
           }
-        ]
+        ],
+        "source_context": "The cover image shows a dramatic 19th-century painting of the 1857 Indian Rebellion. Based on the chaos depicted in the scene, what does this suggest about the scale of resistance the East India Company faced? (Hinge Question)"
       },
+      "cover_image": "/images/indian_rebellion_1857.jpg",
+      "cover_caption": "A painting depicting the 1857 Indian Rebellion, showing the violent uprising against East India Company rule.",
       "visual_hook": {
         "title": "The Indian Rebellion (1857)",
         "caption": "A depiction of the violent uprising against East India Company rule.",

@@ -1493,34 +1493,45 @@ const early_modern_world = {
       "narrative_blocks": [
         {
           "title": "The Roots of Volatility",
-          "text": "In seventeenth-century England, religion was not a private matter of personal conscience; it was central to daily life, guiding morals, behaviour, and major milestones such as birth, marriage, and death. Decades of religious upheaval following the Reformation had created deep division. As England switched between Protestant and Catholic monarchs, each side accused the other of being in league with the Devil, reinforcing public fears and suspicion. Roman Catholics who refused to accept the Church of England were branded as recusants. Heavily concentrated in northern regions like Yorkshire, Durham, and Lancashire, Catholics were viewed by Protestant authorities as a permanent security threat who might obey foreign powers or stage rebellions."
+          "text": "In seventeenth-century England, religion was not a private matter of personal conscience; it was central to daily life, guiding morals, behaviour, and major milestones such as birth, marriage, and death. Decades of religious upheaval following the Reformation had created deep division. As England switched between Protestant and Catholic monarchs, each side accused the other of being in league with the Devil, reinforcing public fears and suspicion. Roman Catholics who refused to accept the Church of England were branded as recusants. Heavily concentrated in northern regions like Yorkshire, Durham, and Lancashire, Catholics were viewed by Protestant authorities as a permanent security threat who might obey foreign powers or stage rebellions.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "Why were Roman Catholics viewed as a permanent security threat by Protestant authorities?",
+              "model_answer": "They were seen as a threat because they refused to accept the Church of England, and authorities feared they might obey foreign powers or stage rebellions."
+            }
+          ]
         },
         {
           "title": "The Rise of King James and Crushed Hopes",
-          "text": "When James I came to the throne, English Catholics hoped for greater toleration. However, James struggled to manage religious factions. When he met with Church leaders in 1604, he failed to satisfy strict Protestants, prompting some to leave the country entirely. At the same time, James angered Catholics by ordering all Catholic priests to leave England or face execution. This severe crackdown convinced a small group of Catholic conspirators that peaceful reform was impossible and that James had to be removed."
+          "text": "When James I came to the throne, English Catholics hoped for greater toleration. However, James struggled to manage religious factions. When he met with Church leaders in 1604, he failed to satisfy strict Protestants, prompting some to leave the country entirely. At the same time, James angered Catholics by ordering all Catholic priests to leave England or face execution. This severe crackdown convinced a small group of Catholic conspirators that peaceful reform was impossible and that James had to be removed.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "What actions did King James take that angered both strict Protestants and Catholics?",
+              "model_answer": "He failed to satisfy strict Protestants (prompting some to leave), and he ordered all Catholic priests to leave England or face execution, crushing Catholic hopes for toleration."
+            }
+          ]
         },
         {
           "title": "Treason Beneath Parliament",
-          "text": "Led by Robert Catesby, the conspirators—including Guy Fawkes, Thomas Percy, and the Wright brothers—devised a plan to assassinate the King. They intended to detonate 36 barrels of gunpowder hidden beneath piles of firewood in the cellars of the House of Lords during the State Opening of Parliament on 5 November 1605. The explosion was meant to kill James and his government in a single stroke, allowing the plotters to seize his young daughter, Princess Elizabeth, and install her as a Catholic monarch."
+          "text": "Led by Robert Catesby, the conspirators—including Guy Fawkes, Thomas Percy, and the Wright brothers—devised a plan to assassinate the King. They intended to detonate 36 barrels of gunpowder hidden beneath piles of firewood in the cellars of the House of Lords during the State Opening of Parliament on 5 November 1605. The explosion was meant to kill James and his government in a single stroke, allowing the plotters to seize his young daughter, Princess Elizabeth, and install her as a Catholic monarch.",
+          "tasks": [
+            {
+              "type": "comprehension",
+              "question": "What was the ultimate goal of Robert Catesby and the conspirators?",
+              "model_answer": "Their goal was to blow up Parliament, kill King James and his government, and install his young daughter Princess Elizabeth on the throne as a Catholic monarch."
+            }
+          ]
         },
         {
           "title": "Discovery and the 'History Mystery'",
           "text": "The plot unraveled on 26 October 1605, when Lord Monteagle received an anonymous letter warning him to avoid Parliament because it would \"receive a mighty blow\". Monteagle delivered the letter to Robert Cecil, the King’s Chief Minister. Cecil ordered searches of the vaults, where guards discovered Guy Fawkes calling himself \"John Johnson\" beside the hidden explosives in the early hours of 5 November. Fawkes was arrested and tortured until he confessed and revealed the names of his co-conspirators. The remaining plotters fled to Holbeche House in the Midlands, where a gun battle resulted in the deaths of Catesby and Percy, while the survivors were captured and later executed. Cecil subsequently used the event to push stricter Penal Laws through Parliament, cementing public anti-Catholic sentiment and establishing the tradition of lighting bonfires on 5 November.",
           "tasks": [
             {
-              "type": "extended_writing",
-              "question": "Task 1: The Foreign Diplomat’s Confidential Dispatch",
-              "instructions": "Take on the role of a foreign ambassador visiting London in 1605. Write a confidential report back to your home court explaining why religious division in England is so intense. Include your impressions of King James, his falling out with Church leaders and Parliament, and the growing Catholic resentment over the expulsion of priests."
-            },
-            {
-              "type": "extended_writing",
-              "question": "Task 2: Prosecution Speech at Westminster",
-              "instructions": "It is 27 January 1606, and the trial of the surviving conspirators has begun before Lord Chief Justice Sir John Popham. Write the opening speech for the prosecution outlining the charges—treason, attempted murder of the King, and conspiracy to reintroduce Catholicism—explaining why treason against the Protestant Crown requires the harshest public punishment."
-            },
-            {
-              "type": "extended_writing",
-              "question": "Task 3: Eyewitness Letter Home",
-              "instructions": "Imagine you were a Londoner who witnessed the capture of Guy Fawkes and the subsequent execution of the conspirators in January 1606. Write a letter to a friend describing the mood of the city, explaining why most citizens were relieved the plot failed, and reflecting on how the King wants the fifth of November remembered."
+              "type": "comprehension",
+              "question": "How did Robert Cecil uncover the Gunpowder Plot?",
+              "model_answer": "He uncovered it after receiving an anonymous warning letter sent to Lord Monteagle, which prompted him to order searches of the vaults where they found Guy Fawkes."
             }
           ]
         },
@@ -1553,55 +1564,29 @@ const early_modern_world = {
           "tasks": [
             {
               "type": "source_analysis",
-              "question": "1. Inference from Source A (2 Marks)",
-              "instructions": "What can you infer from the 1605 engraving about how the plotters were viewed by contemporaries? Support your inference with a specific visual detail."
+              "question": "Study Source A. What does this engraving tell us about how the Gunpowder Plot conspirators were viewed by the public at the time?",
+              "model_answer": "It shows them plotting secretly in dark cloaks, which suggests they were viewed as dangerous, secretive villains scheming against the state."
             },
             {
               "type": "source_analysis",
-              "question": "2. Utility & Provenance of Source A (8 Marks)",
-              "instructions": "How useful is Source A for an enquiry into the threat posed by the Gunpowder Plot? Evaluate the content of the engraving and its provenance."
+              "question": "Study Source B. What does the stark difference between Guy Fawkes's two signatures reveal about his treatment in the Tower of London?",
+              "model_answer": "The broken, faint signature reveals that he was subjected to brutal physical torture during his interrogation, severely damaging his body before he confessed."
             },
             {
               "type": "source_analysis",
-              "question": "3. Analysis of Evidence in Source B (4 Marks)",
-              "instructions": "Explain how the physical difference between Guy Fawkes's early signature and his later signature can be used as evidence of Jacobean interrogation methods."
-            },
-            {
-              "type": "table_planner",
-              "question": "4. Follow-Up Investigation (4 Marks)",
-              "instructions": "Investigate the official government account of the plot based on the Monteagle letter (Source C).",
-              "columns": [
-                "Enquiry Field",
-                "Student Response"
-              ],
-              "rows": [
-                [
-                  "Detail in the Monteagle letter / Cecil's actions to follow up:",
-                  "(Identify a specific detail from the discovery of the plot)"
-                ],
-                [
-                  "Question I would ask:",
-                  "(Formulate an inquiry question about whether Cecil had prior knowledge)"
-                ],
-                [
-                  "Type of historical source to use:",
-                  "(e.g., State Papers, Privy Council records, trial transcripts)"
-                ],
-                [
-                  "How this helps answer the question:",
-                  "(Explain how this source resolves the mystery)"
-                ]
-              ]
-            },
+              "question": "Study Source C. Why was this anonymous letter so important to the failure of the Gunpowder Plot?",
+              "model_answer": "The letter was crucial because it warned Lord Monteagle to stay away from Parliament, leading Robert Cecil to search the vaults and discover Guy Fawkes before the explosives could be detonated."
+            }
+          ]
+        },
+        {
+          "title": "Creative Task: Extra! Extra!",
+          "text": "The year is 1605, and the biggest news story of the century has just broken in London!",
+          "tasks": [
             {
               "type": "extended_writing",
-              "question": "Essay Question (16 Marks)",
-              "instructions": "\"The Gunpowder Plot was caused entirely by the harsh persecution and broken promises of King James I.\"\nHow far do you agree with this statement?\n\nIn your answer, ensure you:\n- Examine the impact of recusancy penalties and the banishment of Catholic priests.\n- Consider alternative perspectives, including religious extremism or political exploitation by Robert Cecil.\n- Conclude with a clear, balanced historical judgement supported by evidence."
-            },
-            {
-              "type": "source_analysis",
-              "question": "Study Source C. What does this execution scene suggest about how the government punished treason in the 17th century?",
-              "model_answer": "Source C depicts a brutal, public execution where conspirators are hanged, drawn, and quartered. This suggests that the government used extreme, theatrical violence to deter others and demonstrate the absolute power of the monarch."
+              "question": "Newspaper Front Page",
+              "instructions": "Write a dramatic front-page news report for November 6th, 1605. Your report must include a catchy headline and an imaginary interview with a guard who discovered Guy Fawkes in the cellars."
             }
           ]
         }

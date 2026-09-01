@@ -699,7 +699,7 @@ export default {
           theme_heading: "London's New Water Architecture",
         },
         {
-          image: '/images/placeholder.jpg',
+          image: '/assets/water_local_southsea.jpg',
           tasks: [
             {
               type: 'short_answer',
@@ -932,7 +932,7 @@ export default {
           theme_heading: 'Squalid Urban Living',
         },
         {
-          image: '/assets/fareham_chimney.png',
+          image: '/assets/water_local_cholera.jpg',
           tasks: [
             {
               type: 'short_answer',

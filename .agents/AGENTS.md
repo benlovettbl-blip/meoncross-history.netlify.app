@@ -89,7 +89,7 @@ Furthermore, when fixing a bug or adding a feature that requires modifying a **g
 This completely isolates your workflow and guarantees you cannot accidentally alter other units.
 
 ## Automated Image Verification (Anti-Corruption)
-Before pushing any code to GitHub or triggering a Netlify deployment, you MUST automatically run `node verify_images.js`. This script physically checks the `public/images/` directory to ensure no Wikipedia downloads have silently failed (e.g. 403 HTML error pages masquerading as `.jpg` files). If the script flags any broken files, you must halt the deployment, fix the broken files using the updated `fetch_wikimedia_images.js` script or manual fallback, and re-run the verification until it passes cleanly.
+Before pushing any code to GitHub or triggering a Netlify deployment, you MUST automatically run `node verify_images.cjs`. This script physically checks the `public/images/` directory to ensure no Wikipedia downloads have silently failed (e.g. 403 HTML error pages masquerading as `.jpg` files). If the script flags any broken files, you must halt the deployment, fix the broken files using the updated `fetch_wikimedia_images.js` script or manual fallback, and re-run the verification until it passes cleanly.
 
 
 ## Automatic Visual Source Inspection
