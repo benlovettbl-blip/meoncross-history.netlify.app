@@ -1,137 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="primary">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mr Lovett's History Hub Mega App</title>
-  <link rel="manifest" href="/manifest.json">
-  <!-- Google Fonts & FontAwesome Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Leaflet CSS & JS for Interactive Maps -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-</head>
-<body>
-  <div id="page-curtain" class="page-transition-curtain">
-    <i class="fa-solid fa-graduation-cap curtain-logo"></i>
-    <div class="curtain-text">Loading History Hub...</div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mr Lovett's History Hub Mega App</title>
+    <link rel="manifest" href="/manifest.json" />
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-  <div class="app-layout">
-    <!-- Sidebar Navigation -->
-    <aside class="app-sidebar" id="app-sidebar">
-      <div class="sidebar-logo">
-        <i class="fa-solid fa-graduation-cap logo-icon"></i>
-        <div>
-          <h2>Mr Lovett's History Hub</h2>
-          <span>History Portal</span>
-        </div>
-      </div>
-      
-      <nav class="sidebar-nav">
-        <div class="nav-item active" id="nav-dashboard">
-          <i class="fa-solid fa-house-chimney"></i>
-          <span>Dashboard</span>
-        </div>
-        <div class="nav-item" id="nav-profile">
-          <i class="fa-solid fa-user-shield"></i>
-          <span>My Profile</span>
-        </div>
-        <div class="nav-item" id="nav-lessons" style="display: none;">
-          <i class="fa-solid fa-book-open"></i>
-          <span>Study Lessons</span>
-        </div>
-        <div class="nav-item" id="nav-decisions" style="display: none;">
-          <i class="fa-solid fa-phone-volume"></i>
-          <span>Decisions Game</span>
-        </div>
-        <div class="nav-item" id="nav-taboo" style="display: none;">
-          <i class="fa-solid fa-tags"></i>
-          <span>Taboo Recall</span>
-        </div>
-        <div class="nav-item" id="nav-interactive" style="display: none;">
-          <i class="fa-solid fa-gamepad"></i>
-          <span>Interactive Quiz</span>
-        </div>
-        <div class="nav-item" id="nav-timeline" style="display: none;">
-          <i class="fa-solid fa-timeline"></i>
-          <span>Timeline</span>
-        </div>
-        <div class="nav-item" id="nav-booklet" style="display: none;">
-          <i class="fa-solid fa-file-pdf"></i>
-          <span>Printable Booklets</span>
-        </div>
-        
-        <div style="margin-top: 25px; padding: 0 16px; margin-bottom: 8px;">
-          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600;">Units of Study</span>
-        </div>
-        <div id="sidebar-unit-links" style="display: flex; flex-direction: column; gap: 4px;">
-          <!-- Units injected here -->
-        </div>
-      </nav>
+    <!-- Leaflet CSS & JS for Interactive Maps -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div id="page-curtain" class="page-transition-curtain">
+      <i class="fa-solid fa-graduation-cap curtain-logo"></i>
+      <div class="curtain-text">Loading History Hub...</div>
+    </div>
 
-      <!-- Theme Controls -->
-      <div class="sidebar-footer">
-        <span class="theme-label">Active Theme</span>
-        <div class="theme-switcher">
-          <button class="theme-btn" data-theme="primary" title="Mr Lovett's History Hub Theme">
-            <span class="color-dot primary"></span>
-          </button>
-          <button class="theme-btn" data-theme="desert" title="Sand Theme">
-            <span class="color-dot desert"></span>
-          </button>
-          <button class="theme-btn" data-theme="space" title="Deep Space Dark Theme">
-            <span class="color-dot space"></span>
-          </button>
-          <button class="theme-btn" data-theme="coral" title="Ocean Coral Theme">
-            <span class="color-dot coral"></span>
-          </button>
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="app-sidebar" id="app-sidebar">
+        <div class="sidebar-logo" id="sidebar-logo" style="cursor: pointer">
+          <i class="fa-solid fa-graduation-cap logo-icon"></i>
+          <div>
+            <h2>Mr Lovett's History Hub</h2>
+            <span>History Portal</span>
+          </div>
         </div>
-      </div>
-    </aside>
 
-    <!-- Main Content Wrapper -->
-    <main class="app-body">
-      <header class="app-header no-print">
-        <div class="header-left">
-          <button class="menu-toggle" id="sidebar-toggle-btn">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <button class="back-btn" id="header-back-btn" style="display: none;">
-            <i class="fa-solid fa-arrow-left"></i> <span>Dashboard</span>
-          </button>
-          <div class="breadcrumbs" id="header-breadcrumbs" style="display: none;"></div>
+        <nav class="sidebar-nav">
+          <div class="nav-item active" id="nav-dashboard">
+            <i class="fa-solid fa-house-chimney"></i>
+            <span>Dashboard</span>
+          </div>
+          <div class="nav-item" id="nav-profile">
+            <i class="fa-solid fa-user-shield"></i>
+            <span>My Profile</span>
+          </div>
+          <div class="nav-item" id="nav-lessons" style="display: none">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Study Lessons</span>
+          </div>
+          <div class="nav-item" id="nav-decisions" style="display: none">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>Decisions Game</span>
+          </div>
+          <div class="nav-item" id="nav-taboo" style="display: none">
+            <i class="fa-solid fa-tags"></i>
+            <span>Taboo Recall</span>
+          </div>
+          <div class="nav-item" id="nav-interactive" style="display: none">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Interactive Quiz</span>
+          </div>
+          <div class="nav-item" id="nav-timeline" style="display: none">
+            <i class="fa-solid fa-timeline"></i>
+            <span>Timeline</span>
+          </div>
+          <div class="nav-item" id="nav-booklet" style="display: none">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>Printable Booklets</span>
+          </div>
+          <div class="nav-item" id="nav-individuals" style="display: none">
+            <i class="fa-solid fa-users"></i>
+            <span>Historical Individuals</span>
+          </div>
+          <div class="nav-item" id="nav-reading" style="display: none">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>Guided Reading</span>
+          </div>
+
+          <div style="margin-top: 25px; padding: 0 16px; margin-bottom: 8px">
+            <span
+              style="
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: rgba(255, 255, 255, 0.5);
+                font-weight: 600;
+              "
+              >Units of Study</span
+            >
+          </div>
+          <div id="sidebar-unit-links" style="display: flex; flex-direction: column; gap: 4px">
+            <!-- Units injected here -->
+          </div>
+        </nav>
+
+        <!-- Theme Controls -->
+        <div class="sidebar-footer">
+          <span class="theme-label">Active Theme</span>
+          <div class="theme-switcher">
+            <button class="theme-btn" data-theme="primary" title="Mr Lovett's History Hub Theme">
+              <span class="color-dot primary"></span>
+            </button>
+            <button class="theme-btn" data-theme="desert" title="Sand Theme">
+              <span class="color-dot desert"></span>
+            </button>
+            <button class="theme-btn" data-theme="space" title="Deep Space Dark Theme">
+              <span class="color-dot space"></span>
+            </button>
+            <button class="theme-btn" data-theme="coral" title="Ocean Coral Theme">
+              <span class="color-dot coral"></span>
+            </button>
+          </div>
         </div>
-        <div class="header-right">
-          <span class="school-tag"><i class="fa-solid fa-award"></i> Mr Lovett's History Hub</span>
+      </aside>
+
+      <!-- Main Content Wrapper -->
+      <main class="app-body">
+        <header class="app-header no-print">
+          <div class="header-left">
+            <button class="menu-toggle" id="sidebar-toggle-btn">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <button class="back-btn" id="header-back-btn" style="display: none">
+              <i class="fa-solid fa-arrow-left"></i> <span>Dashboard</span>
+            </button>
+            <div class="breadcrumbs" id="header-breadcrumbs" style="display: none"></div>
+          </div>
+          <div class="header-right">
+            <span class="school-tag"
+              ><i class="fa-solid fa-award"></i> Mr Lovett's History Hub</span
+            >
+          </div>
+        </header>
+
+        <!-- Target container for views -->
+        <div class="content-container" id="main-content">
+          <!-- Dashboard / Quiz / Booklets render here -->
         </div>
-      </header>
+      </main>
+    </div>
 
-      <!-- Target container for views -->
-      <div class="content-container" id="main-content">
-        <!-- Dashboard / Quiz / Booklets render here -->
-      </div>
-    </main>
-  </div>
-
-  <script src="/knowledge_bank.js"></script>
-  <script type="module" src="src/main.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').then((registration) => {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, (err) => {
-          console.log('ServiceWorker registration failed: ', err);
+    <script src="/knowledge_bank.js"></script>
+    <script type="module" src="src/main.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(
+            (registration) => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            },
+            (err) => {
+              console.log('ServiceWorker registration failed: ', err);
+            },
+          );
         });
-      });
-    }
-  </script>
-</body>
+      }
+    </script>
+  </body>
 </html>
-

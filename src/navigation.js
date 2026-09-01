@@ -13,7 +13,9 @@ import {
   renderDecisionsView,
   renderTabooView,
   renderLessonsView,
-} from './views.js';
+  renderIndividualsView,
+  renderReadingView,
+} from './views.js'; // Trigger HMR
 
 // Subscribe to state changes to handle DOM updates independently of the router
 export function initNavigationUI() {
@@ -105,6 +107,12 @@ export async function switchView(viewName, param = null, skipHistory = false) {
   } else if (viewName === 'lessons') {
     if (param) await loadUnit(param);
     renderLessonsView();
+  } else if (viewName === 'individuals') {
+    if (param) await loadUnit(param);
+    renderIndividualsView();
+  } else if (viewName === 'reading') {
+    if (param) await loadUnit(param);
+    renderReadingView();
   }
 }
 
@@ -162,11 +170,15 @@ async function loadUnit(unitId) {
   }
 
   // Fallback: Map 'timeline' array to 'timelineEvents' if missing but 'timeline' exists
-  if (!state.activeUnitData.timelineEvents && state.activeUnitData.timeline && Array.isArray(state.activeUnitData.timeline)) {
-    state.activeUnitData.timelineEvents = state.activeUnitData.timeline.map(t => ({
+  if (
+    !state.activeUnitData.timelineEvents &&
+    state.activeUnitData.timeline &&
+    Array.isArray(state.activeUnitData.timeline)
+  ) {
+    state.activeUnitData.timelineEvents = state.activeUnitData.timeline.map((t) => ({
       year: t.date || t.year,
       text: t.description || t.text,
-      title: t.title || ''
+      title: t.title || '',
     }));
   }
 
@@ -186,6 +198,8 @@ async function loadUnit(unitId) {
   const navInteractive = document.getElementById('nav-interactive');
   const navTimeline = document.getElementById('nav-timeline');
   const navBooklet = document.getElementById('nav-booklet');
+  const navIndividuals = document.getElementById('nav-individuals');
+  const navReading = document.getElementById('nav-reading');
 
   if (navLessons) {
     navLessons.style.display = 'flex';
@@ -219,8 +233,41 @@ async function loadUnit(unitId) {
     navBooklet.onclick = () => switchView('booklet', unitId);
   }
 
+  const keyIndividualsData =
+    (state.activeUnitData && state.activeUnitData.key_individuals) ||
+    (state.activeUnitData && state.activeUnitData.biographies);
+  if (navIndividuals && keyIndividualsData && keyIndividualsData.length > 0) {
+    navIndividuals.style.display = 'flex';
+    navIndividuals.dataset.action = 'switch-view';
+    navIndividuals.dataset.view = 'individuals';
+    navIndividuals.dataset.unit = unitId;
+    navIndividuals.onclick = () => switchView('individuals', unitId);
+  } else if (navIndividuals) {
+    navIndividuals.style.display = 'none';
+  }
+
+  if (
+    navReading &&
+    state.activeUnitData &&
+    state.activeUnitData.guided_reading &&
+    state.activeUnitData.guided_reading.length > 0
+  ) {
+    navReading.style.display = 'flex';
+    navReading.dataset.action = 'switch-view';
+    navReading.dataset.view = 'reading';
+    navReading.dataset.unit = unitId;
+    navReading.onclick = () => switchView('reading', unitId);
+  } else if (navReading) {
+    navReading.style.display = 'none';
+  }
+
   if (navDecisions && navTaboo) {
-    if (unitId.startsWith('gcse_') || unitId === 'edexcel_medicine' || unitId === 'eee' || unitId === 'cme_new') {
+    if (
+      unitId.startsWith('gcse_') ||
+      unitId === 'edexcel_medicine' ||
+      unitId === 'eee' ||
+      unitId === 'cme_new'
+    ) {
       if (unitId === 'gcse_elizabethan_england' || unitId === 'eee') {
         navDecisions.style.display = 'none';
       } else {

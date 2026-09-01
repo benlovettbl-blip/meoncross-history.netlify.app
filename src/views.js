@@ -9,6 +9,8 @@ import { getMasteryStatus, updateLeitnerBox, toggleBookmark, saveProgress } from
 import { renderCoverSourcesHTML } from './cover_sources.js';
 import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
 import { renderLesson } from './engine/lesson_renderer.js';
+import { initKeyIndividualsTask } from './key_individuals.js';
+import { initGuidedReadingTask } from './guided_reading.js'; // Added for guided reading tab
 
 export function getUnits() {
   if (!window.db) return [];
@@ -463,102 +465,6 @@ export function renderTimeline() {
   `;
 }
 
-export function renderBookletView() {
-  const container = document.getElementById('main-content');
-  const data = state.activeUnitData;
-
-  container.innerHTML = `
-    <div class="no-print" style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
-      <div>
-        <h3>Workbook & Booklet Preview</h3>
-        <p class="text-muted">Printable A4 classroom layout generated dynamically from master Markdown files.</p>
-      </div>
-      <button class="btn-pedagogy-primary" data-action="print-booklet">
-        <i class="fa-solid fa-print"></i> Print / Save as PDF
-      </button>
-    </div>
-
-    <!-- Printable A4 Wrapper -->
-    <div class="print-booklet-a4" id="booklet-a4-content">
-      <div class="booklet-header">
-        <span class="school-title">MR LOVETT'S HISTORY HUB</span>
-        <span class="unit-title">${data.metadata.title}</span>
-      </div>
-      
-      <h1 class="booklet-main-title">${data.metadata.title}</h1>
-      <p class="booklet-subtitle">Classroom Recall Study Pack — target: ${data.metadata.year_group}</p>
-      
-      <hr />
-
-      ${(data.lessons || data.subtopics || [])
-        .map(
-          (sub) => `
-        <div class="booklet-section">
-          <h2>${sub.title}</h2>
-          <div class="booklet-body-text">
-            ${(sub.content || (sub.narrative ? sub.narrative.map((n) => (typeof n === 'string' ? n : n.text)).join('\\n') : '')).replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>').replace(/\\n/g, '<br />')}
-          </div>
-          
-          ${
-            sub.part2 && sub.part2.length > 0
-              ? `
-            <div class="booklet-vocab-block">
-              <h3>Vocabulary & Key Terms</h3>
-              <table class="booklet-table">
-                <thead>
-                  <tr>
-                    <th>Term</th>
-                    <th>Definition</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${sub.part2
-                    .map(
-                      (v) => `
-                    <tr>
-                      <td><strong>${v.term}</strong></td>
-                      <td>${v.def}</td>
-                    </tr>
-                  `,
-                    )
-                    .join('')}
-                </tbody>
-              </table>
-            </div>
-          `
-              : ''
-          }
-          
-          ${
-            sub.part3 && sub.part3.length > 0
-              ? `
-            <div class="booklet-tf-block">
-              <h3>Core recall Statements (True / False)</h3>
-              <ul>
-                ${sub.part3
-                  .map(
-                    (item) => `
-                  <li>[ &nbsp; &nbsp; ] &nbsp; ${item.text} </li>
-                `,
-                  )
-                  .join('')}
-              </ul>
-            </div>
-          `
-              : ''
-          }
-        </div>
-      `,
-        )
-        .join('')}
-    </div>
-  `;
-}
-
-window.printBooklet = function () {
-  window.print();
-};
-
 export async function renderDecisionsView() {
   const container = document.getElementById('main-content');
   const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
@@ -867,4 +773,79 @@ export async function renderLessonsView() {
       </div>
     </div>
   `;
+}
+
+export function renderIndividualsView() {
+  const contentArea = document.getElementById('main-content');
+  if (!contentArea) return;
+  contentArea.innerHTML = '';
+  contentArea.style.paddingTop = '1rem';
+
+  const keyIndividualsData =
+    (state.activeUnitData && state.activeUnitData.key_individuals) ||
+    (state.activeUnitData && state.activeUnitData.biographies);
+  if (!keyIndividualsData || keyIndividualsData.length === 0) {
+    contentArea.innerHTML =
+      '<p style="padding: 2rem; color: var(--text-main);">No historical individuals found for this unit.</p>';
+    return;
+  }
+
+  const historicalData = keyIndividualsData.filter(
+    (p) => !p.group || p.group === 'Historical Figures' || p.group !== 'Historians',
+  );
+
+  if (historicalData.length > 0) {
+    initKeyIndividualsTask(
+      contentArea,
+      historicalData,
+      'Historical Individuals',
+      'Profiles of the major historical figures who shaped these events.',
+    );
+  }
+
+  const historiansData = keyIndividualsData.filter((p) => p.group === 'Historians');
+  if (historiansData && historiansData.length > 0) {
+    initKeyIndividualsTask(
+      contentArea,
+      historiansData,
+      'Historians',
+      'Academic perspectives and historical interpretations.',
+    );
+  }
+
+  contentArea.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+export function renderReadingView() {
+  const contentArea = document.getElementById('main-content');
+  if (!contentArea) return;
+  contentArea.innerHTML = '';
+  contentArea.style.paddingTop = '1rem';
+
+  const readingData = state.activeUnitData.guided_reading;
+  if (!readingData || readingData.length === 0) {
+    contentArea.innerHTML =
+      '<p style="padding: 2rem; color: var(--text-main);">No guided reading available for this unit.</p>';
+    return;
+  }
+
+  console.log('[DEBUG] Calling initGuidedReadingTask with data length:', readingData.length);
+  initGuidedReadingTask(contentArea, readingData, state);
+  console.log(
+    '[DEBUG] contentArea innerHTML length after initGuidedReadingTask:',
+    contentArea.innerHTML.length,
+  );
+
+  contentArea.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+export async function renderBookletView() {
+  const contentArea = document.getElementById('main-content');
+  if (!contentArea) return;
+  contentArea.innerHTML = '';
+
+  const { renderWorkbooksZone } = await import('./workbooks_zone.js');
+  renderWorkbooksZone(contentArea, state.activeUnitData);
+
+  contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }

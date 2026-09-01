@@ -16,6 +16,15 @@ export function bindEvents() {
     });
   }
 
+  // Logo click handler
+  const logoBtn = document.getElementById('sidebar-logo');
+  if (logoBtn) {
+    logoBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchView('dashboard');
+    });
+  }
+
   // Bind Sidebar navigation items
   const navDashboard = document.getElementById('nav-dashboard');
   if (navDashboard) {
@@ -28,15 +37,15 @@ export function bindEvents() {
   }
 
   // Bind theme selector clicks
-  document.querySelectorAll('.theme-btn').forEach(btn => {
+  document.querySelectorAll('.theme-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const themeName = e.currentTarget.getAttribute('data-theme');
       state.theme = themeName;
       document.documentElement.setAttribute('data-theme', themeName);
       localStorage.setItem('history_theme', themeName);
-      
+
       // Update active class
-      document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.theme-btn').forEach((b) => b.classList.remove('active'));
       e.currentTarget.classList.add('active');
     });
   });
@@ -51,7 +60,7 @@ export function bindEvents() {
       overlay.className = 'sidebar-overlay';
       document.body.appendChild(overlay);
     }
-    
+
     const toggleSidebar = () => {
       sidebar.classList.toggle('mobile-open');
       overlay.classList.toggle('active');
@@ -61,7 +70,7 @@ export function bindEvents() {
     overlay.addEventListener('click', toggleSidebar);
 
     // Auto-close on mobile when a navigation item is clicked
-    document.querySelectorAll('.nav-item').forEach(item => {
+    document.querySelectorAll('.nav-item').forEach((item) => {
       item.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
           sidebar.classList.remove('mobile-open');
@@ -71,52 +80,76 @@ export function bindEvents() {
     });
   }
 
-
   // Render Sidebar Units
   const sidebarUnitsContainer = document.getElementById('sidebar-unit-links');
   if (sidebarUnitsContainer) {
     sidebarUnitsContainer.innerHTML = '';
-    
+
     const units = getUnits();
-    const ks3Order = ['water_and_sanitation','medieval_england','early_modern_world','industrialisation_and_empire','australia','great_war','great_war_part2','second_world_war','the_shoah','cold_war','post_war_britain'];
-    const ks3Units = units.filter(u => u && u.title && typeof u.title === 'string' && u.title.includes('KS3:')).sort((a, b) => {
-      let idxA = ks3Order.indexOf(a.id);
-      let idxB = ks3Order.indexOf(b.id);
-      if (idxA === -1) idxA = 999;
-      if (idxB === -1) idxB = 999;
-      return idxA - idxB;
-    });
-    
+    const ks3Order = [
+      'water_and_sanitation',
+      'medieval_england',
+      'early_modern_world',
+      'industrialisation_and_empire',
+      'australia',
+      'great_war',
+      'great_war_part2',
+      'second_world_war',
+      'the_shoah',
+      'cold_war',
+      'post_war_britain',
+    ];
+    const ks3Units = units
+      .filter((u) => u && u.title && typeof u.title === 'string' && u.title.includes('KS3:'))
+      .sort((a, b) => {
+        let idxA = ks3Order.indexOf(a.id);
+        let idxB = ks3Order.indexOf(b.id);
+        if (idxA === -1) idxA = 999;
+        if (idxB === -1) idxB = 999;
+        return idxA - idxB;
+      });
+
     const ks4Order = ['edexcel_medicine', 'cme_new', 'weimar_nazi_germany', 'eee'];
-    const ks4Units = units.filter(u => u && u.title && typeof u.title === 'string' && !u.title.includes('KS3:') && !['trip_ypres'].includes(u.id)).sort((a, b) => {
-      let idxA = ks4Order.indexOf(a.id);
-      let idxB = ks4Order.indexOf(b.id);
-      if (idxA === -1) idxA = 999;
-      if (idxB === -1) idxB = 999;
-      return idxA - idxB;
-    });
+    const ks4Units = units
+      .filter(
+        (u) =>
+          u &&
+          u.title &&
+          typeof u.title === 'string' &&
+          !u.title.includes('KS3:') &&
+          !['trip_ypres'].includes(u.id),
+      )
+      .sort((a, b) => {
+        let idxA = ks4Order.indexOf(a.id);
+        let idxB = ks4Order.indexOf(b.id);
+        if (idxA === -1) idxA = 999;
+        if (idxB === -1) idxB = 999;
+        return idxA - idxB;
+      });
 
     const tripOrder = ['trip_ypres'];
-    const tripUnits = units.filter(u => tripOrder.includes(u.id)).sort((a, b) => {
-      let idxA = tripOrder.indexOf(a.id);
-      let idxB = tripOrder.indexOf(b.id);
-      if (idxA === -1) idxA = 999;
-      if (idxB === -1) idxB = 999;
-      return idxA - idxB;
-    });
+    const tripUnits = units
+      .filter((u) => tripOrder.includes(u.id))
+      .sort((a, b) => {
+        let idxA = tripOrder.indexOf(a.id);
+        let idxB = tripOrder.indexOf(b.id);
+        if (idxA === -1) idxA = 999;
+        if (idxB === -1) idxB = 999;
+        return idxA - idxB;
+      });
 
     const renderAccordionGroup = (title, unitList, defaultOpen = false) => {
       if (unitList.length === 0) return;
-      
+
       const header = document.createElement('div');
       header.innerHTML = `<span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600; display: flex; align-items: center; justify-content: space-between;"><span style="flex-grow: 1;">${title}</span><i class="fa-solid fa-chevron-${defaultOpen ? 'up' : 'down'}" style="transition: transform 0.2s; font-size: 0.7rem;"></i></span>`;
       header.style.margin = '10px 16px 8px';
       header.style.cursor = 'pointer';
-      
+
       const content = document.createElement('div');
       content.style.display = defaultOpen ? 'block' : 'none';
       content.style.transition = 'all 0.3s ease';
-      
+
       header.addEventListener('click', () => {
         const isOpen = content.style.display === 'block';
         content.style.display = isOpen ? 'none' : 'block';
@@ -129,11 +162,11 @@ export function bindEvents() {
           icon.classList.add('fa-chevron-up');
         }
       });
-      
+
       sidebarUnitsContainer.appendChild(header);
       sidebarUnitsContainer.appendChild(content);
-      
-      unitList.forEach(unit => {
+
+      unitList.forEach((unit) => {
         const link = document.createElement('div');
         link.className = 'nav-item';
         link.style.cursor = 'pointer';
@@ -144,7 +177,7 @@ export function bindEvents() {
         link.style.borderRadius = '6px';
         link.style.margin = '0 8px 4px 8px';
         link.style.color = 'rgba(255,255,255,0.85)';
-        
+
         link.addEventListener('mouseenter', () => {
           link.style.background = 'rgba(255,255,255,0.1)';
           link.style.color = '#fff';
