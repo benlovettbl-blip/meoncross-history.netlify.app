@@ -11,7 +11,7 @@
     "build-unit": "node scripts/build_unit.js",
     "create-unit": "node scripts/create_unit.js",
     "test:content": "node scripts/test_content.mjs",
-    "export:pdf": "node scripts/export_pdfs.cjs",
+    "export:pdf": "node scripts/export_pdfs.cjs && node scripts/generate_scheme_of_work.cjs",
     "prepare": "husky"
   },
   "keywords": [

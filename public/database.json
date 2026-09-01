@@ -43029,7 +43029,7 @@
               "theme_heading": "London's New Water Architecture"
             },
             {
-              "image": "/assets/water_local_southsea.jpg",
+              "image": "/images/southsea_castle.jpg",
               "tasks": [
                 {
                   "type": "short_answer",
@@ -43248,7 +43248,7 @@
               "theme_heading": "Squalid Urban Living"
             },
             {
-              "image": "/assets/water_local_cholera.jpg",
+              "image": "/images/cholera_miasma.jpg",
               "tasks": [
                 {
                   "type": "short_answer",
