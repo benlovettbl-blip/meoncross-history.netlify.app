@@ -12,31 +12,39 @@ export function initDragDropTimeline(container, taskData) {
         
         <!-- Dropzones -->
         <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 10px;" id="timeline-dropzones">
-          ${originalItems.map((_, i) => `
+          ${originalItems
+            .map(
+              (_, i) => `
             <div style="display: flex; align-items: center; gap: 15px;">
               <div style="font-weight: bold; color: #64748b; font-size: 1.2rem; width: 30px; text-align: center;">${i + 1}</div>
               <div class="dd-dropzone" data-index="${i}" style="flex: 1; background: #f1f5f9; border: 2px dashed #cbd5e1; border-radius: 8px; min-height: 60px; padding: 10px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
                 <span style="color: #94a3b8; font-style: italic;">Drop event here</span>
               </div>
             </div>
-          `).join('')}
+          `,
+            )
+            .join('')}
         </div>
 
         <!-- Draggables Bank -->
         <div style="flex: 1; min-width: 300px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;" id="timeline-bank">
           <h4 style="margin-top: 0; text-align: center; color: #334155;">Events Bank</h4>
           <div style="display: flex; flex-direction: column; gap: 10px;" id="timeline-draggable-container">
-            ${shuffledItems.map(item => `
+            ${shuffledItems
+              .map(
+                (item) => `
               <div class="dd-draggable" draggable="true" data-id="${item.id}" style="background: white; border: 2px solid #3b82f6; border-radius: 6px; padding: 12px; cursor: grab; font-weight: 500; color: #1e293b; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <i class="fa-solid fa-grip-vertical" style="color: #94a3b8; margin-right: 8px;"></i> ${item.text}
               </div>
-            `).join('')}
+            `,
+              )
+              .join('')}
           </div>
         </div>
       </div>
 
       <div style="text-align: center; margin-top: 25px;">
-        <button id="btn-check-timeline" class="btn btn-primary" style="padding: 12px 24px; font-size: 1.1rem; border-radius: 8px; background: #10b981; border: none;"><i class="fa-solid fa-check"></i> Check Timeline</button>
+        <button id="btn-check-timeline" class="btn-pedagogy-primary" style="padding: 12px 24px; font-size: 1.1rem; border-radius: 8px; background: #10b981; border: none;"><i class="fa-solid fa-check"></i> Check Timeline</button>
         <button id="btn-reset-timeline" class="btn btn-secondary" style="padding: 12px 24px; font-size: 1.1rem; border-radius: 8px; margin-left: 10px;"><i class="fa-solid fa-rotate-left"></i> Reset</button>
       </div>
       
@@ -51,7 +59,7 @@ export function initDragDropTimeline(container, taskData) {
   const dropzones = container.querySelectorAll('.dd-dropzone');
   const bank = container.querySelector('#timeline-draggable-container');
 
-  draggables.forEach(draggable => {
+  draggables.forEach((draggable) => {
     draggable.addEventListener('dragstart', (e) => {
       draggedEl = draggable;
       draggable.style.opacity = '0.5';
@@ -65,7 +73,7 @@ export function initDragDropTimeline(container, taskData) {
     });
   });
 
-  dropzones.forEach(zone => {
+  dropzones.forEach((zone) => {
     zone.addEventListener('dragover', (e) => {
       e.preventDefault();
       e.dataTransfer.dropEffect = 'move';
@@ -82,14 +90,14 @@ export function initDragDropTimeline(container, taskData) {
       e.preventDefault();
       zone.style.borderColor = '#cbd5e1';
       zone.style.background = '#f1f5f9';
-      
+
       if (draggedEl) {
         // If there's already an item in the dropzone, move it back to bank
         const existing = zone.querySelector('.dd-draggable');
         if (existing) {
           bank.appendChild(existing);
         }
-        
+
         zone.innerHTML = '';
         zone.appendChild(draggedEl);
       }
@@ -148,22 +156,26 @@ export function initDragDropTimeline(container, taskData) {
   });
 
   resetBtn.addEventListener('click', () => {
-    dropzones.forEach(zone => {
+    dropzones.forEach((zone) => {
       zone.innerHTML = '<span style="color: #94a3b8; font-style: italic;">Drop event here</span>';
       zone.style.borderColor = '#cbd5e1';
       zone.style.background = '#f1f5f9';
     });
-    
+
     // Reshuffle bank
     shuffledItems = [...originalItems].sort(() => Math.random() - 0.5);
-    bank.innerHTML = shuffledItems.map(item => `
+    bank.innerHTML = shuffledItems
+      .map(
+        (item) => `
       <div class="dd-draggable" draggable="true" data-id="${item.id}" style="background: white; border: 2px solid #3b82f6; border-radius: 6px; padding: 12px; cursor: grab; font-weight: 500; color: #1e293b; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
         <i class="fa-solid fa-grip-vertical" style="color: #94a3b8; margin-right: 8px;"></i> ${item.text}
       </div>
-    `).join('');
+    `,
+      )
+      .join('');
 
     // Reattach drag events to new bank items
-    container.querySelectorAll('.dd-draggable').forEach(draggable => {
+    container.querySelectorAll('.dd-draggable').forEach((draggable) => {
       draggable.addEventListener('dragstart', (e) => {
         draggedEl = draggable;
         draggable.style.opacity = '0.5';

@@ -200,7 +200,7 @@ export function renderLesson(lesson) {
           </h4>
           <div class="sticky-lesson-actions">
           ${isTrip ? '' : `<button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-debate-modal"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>`}
-          ${isTrip && lesson.tour_guide_script ? `<button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.9rem; background: #6366f1; border-color: #6366f1; box-shadow: 0 2px 5px rgba(99,102,241,0.3);" data-action="open-tour-guide-modal" data-index="${currentIndex}"><i class="fa-solid fa-bullhorn"></i> Tour Guide Script</button>` : ''}
+          ${isTrip && lesson.tour_guide_script ? `<button class="btn-pedagogy-primary" style="padding: 6px 12px; font-size: 0.9rem; background: #6366f1; border-color: #6366f1; box-shadow: 0 2px 5px rgba(99,102,241,0.3);" data-action="open-tour-guide-modal" data-index="${currentIndex}"><i class="fa-solid fa-bullhorn"></i> Tour Guide Script</button>` : ''}
           <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" data-action="switch-view" data-view="dashboard"><i class="fa-solid fa-arrow-left"></i> ${isTrip ? 'Trip Menu' : 'Unit Menu'}</button>
         </div>
       </div>
@@ -1726,7 +1726,7 @@ export function renderLesson(lesson) {
               </div>
             </div>
             <div style="text-align: center; margin-top: 15px;">
-              <button class="btn btn-primary" data-action="check-debate" data-id="${lesson.id}">Check Answers</button>
+              <button class="btn-pedagogy-primary" data-action="check-debate" data-id="${lesson.id}">Check Answers</button>
               <div id="debate-feedback-${lesson.id}" style="margin-top: 10px; font-weight: bold;"></div>
             </div>
           </div>
@@ -1973,7 +1973,7 @@ export function renderLesson(lesson) {
           
           <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
             <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
-            <button id="quiz-next-btn" class="btn btn-primary" style="display: none;" data-action="next-quiz-question">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+            <button id="quiz-next-btn" class="btn-pedagogy-primary" style="display: none;" data-action="next-quiz-question">Next Question <i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
       `;
@@ -1990,7 +1990,7 @@ export function renderLesson(lesson) {
     }
 
     if (currentIndex < appStore.state.activeUnitData.lessons.length - 1) {
-      html += `<button class="btn btn-primary" data-action="render-lesson" data-index="${currentIndex + 1}">Next ${isTrip ? 'Day' : 'Lesson'} <i class="fa-solid fa-arrow-right"></i></button>`;
+      html += `<button class="btn-pedagogy-primary" data-action="render-lesson" data-index="${currentIndex + 1}">Next ${isTrip ? 'Day' : 'Lesson'} <i class="fa-solid fa-arrow-right"></i></button>`;
     } else {
       html += `<div></div>`;
     }

@@ -4,7 +4,16 @@
 
 import { appStore } from './engine/store.js';
 import { state } from './state.js';
-import { renderDashboard, renderInteractiveQuiz, renderTimeline, renderBookletView, renderProfileView, renderDecisionsView, renderTabooView, renderLessonsView } from './views.js';
+import {
+  renderDashboard,
+  renderInteractiveQuiz,
+  renderTimeline,
+  renderBookletView,
+  renderProfileView,
+  renderDecisionsView,
+  renderTabooView,
+  renderLessonsView,
+} from './views.js';
 
 // Subscribe to state changes to handle DOM updates independently of the router
 export function initNavigationUI() {
@@ -53,7 +62,7 @@ export function initNavigationUI() {
     }
 
     // Update active sidebar nav
-    document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
+    document.querySelectorAll('.sidebar-nav .nav-item').forEach((item) => {
       item.classList.remove('active');
     });
     const navItem = document.getElementById(`nav-${viewName}`);
@@ -64,13 +73,13 @@ export function initNavigationUI() {
 export async function switchView(viewName, param = null, skipHistory = false) {
   // Update state; the subscriber will handle UI changes
   appStore.state.currentView = viewName;
-  
+
   if (!skipHistory) {
     const url = new URL(window.location);
     url.searchParams.set('view', viewName);
     if (param) url.searchParams.set('unit', param);
     else url.searchParams.delete('unit');
-    window.history.pushState({ view: viewName, unit: param }, "", url);
+    window.history.pushState({ view: viewName, unit: param }, '', url);
   }
 
   // Handle view rendering
@@ -101,12 +110,13 @@ export async function switchView(viewName, param = null, skipHistory = false) {
 
 // Dynamically fetch and parse the compiled JSON for a unit
 async function loadUnit(unitId) {
-  if (state.selectedUnitId === unitId && state.activeUnitData.subtopics && state.activeUnitData.subtopics.length > 0) {
+  const currentLessons = state.activeUnitData.lessons || state.activeUnitData.subtopics;
+  if (state.selectedUnitId === unitId && currentLessons && currentLessons.length > 0) {
     return; // Already loaded
   }
 
   state.selectedUnitId = unitId;
-  
+
   if (state.db && state.db[unitId]) {
     const unitPayload = state.db[unitId];
     state.activeUnitData = unitPayload.data || {};
@@ -114,12 +124,12 @@ async function loadUnit(unitId) {
     console.error('Unit not found in database.json:', unitId);
     state.activeUnitData = {};
   }
-  
+
   // Add loaded questions to general index to support Leitner status mapping
   if (!state.allQuestions) state.allQuestions = [];
   if (state.activeUnitData.quizData) {
-    state.activeUnitData.quizData.forEach(q => {
-      if (!state.allQuestions.some(existing => existing.id === q.id)) {
+    state.activeUnitData.quizData.forEach((q) => {
+      if (!state.allQuestions.some((existing) => existing.id === q.id)) {
         state.allQuestions.push(q);
       }
     });

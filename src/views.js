@@ -6,12 +6,15 @@
 import { state } from './state.js';
 import { getProfile, setMockUser } from './auth.js';
 import { getMasteryStatus, updateLeitnerBox, toggleBookmark, saveProgress } from './storage.js';
+import { renderCoverSourcesHTML } from './cover_sources.js';
+import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
+import { renderLesson } from './engine/lesson_renderer.js';
 
 export function getUnits() {
   if (!window.db) return [];
-  return Object.keys(window.db).map(k => ({
+  return Object.keys(window.db).map((k) => ({
     id: k,
-    ...window.db[k].data
+    ...window.db[k].data,
   }));
 }
 
@@ -20,15 +23,15 @@ export function renderDashboard() {
   const contentArea = document.getElementById('content-area');
   if (contentArea) contentArea.style.paddingTop = '2rem'; // Restore gap for dashboard
   const profile = getProfile();
-  
+
   // Calculate general stats
   const totalQuestions = state.allQuestions ? state.allQuestions.length : 0;
   let masteredCount = 0;
   let securedCount = 0;
   const boxes = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-  
+
   if (state.mastery) {
-    Object.values(state.mastery).forEach(entry => {
+    Object.values(state.mastery).forEach((entry) => {
       if (entry.status === 'mastered') masteredCount++;
       else if (entry.status === 'secured') securedCount++;
       const b = entry.leitnerBox || 1;
@@ -43,7 +46,7 @@ export function renderDashboard() {
     headerRight.style.display = 'flex';
     headerRight.style.justifyContent = 'space-between';
     headerRight.style.alignItems = 'center';
-    
+
     headerRight.innerHTML = `
       <div style="font-size: 1.35rem; font-family: 'Playfair Display', serif; font-weight: 800; color: #1e3a8a; display: flex; align-items: center; gap: 12px; margin-left: 20px;">
         <i class="fa-solid fa-graduation-cap" style="color: #3b82f6;"></i>
@@ -62,22 +65,36 @@ export function renderDashboard() {
   `;
 
   const units = getUnits();
-  
+
   // Combined KS3 Grouping (maintaining sorted order)
   const ks3Order = [
-    'water_and_sanitation', 'medieval_england', 'early_modern_world',
-    'industrialisation_and_empire', 'australia',
-    'great_war', 'great_war_part2', 'second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'
+    'water_and_sanitation',
+    'medieval_england',
+    'early_modern_world',
+    'industrialisation_and_empire',
+    'australia',
+    'great_war',
+    'great_war_part2',
+    'second_world_war',
+    'the_shoah',
+    'cold_war',
+    'post_war_britain',
   ];
-  const ks3Units = units.filter(u => ks3Order.includes(u.id)).sort((a, b) => ks3Order.indexOf(a.id) - ks3Order.indexOf(b.id));
+  const ks3Units = units
+    .filter((u) => ks3Order.includes(u.id))
+    .sort((a, b) => ks3Order.indexOf(a.id) - ks3Order.indexOf(b.id));
 
   // KS4 (GCSE) Grouping
   const ks4Order = ['edexcel_medicine', 'eee', 'cme_new', 'weimar_nazi_germany'];
-  const ks4Units = units.filter(u => ks4Order.includes(u.id)).sort((a, b) => ks4Order.indexOf(a.id) - ks4Order.indexOf(b.id));
+  const ks4Units = units
+    .filter((u) => ks4Order.includes(u.id))
+    .sort((a, b) => ks4Order.indexOf(a.id) - ks4Order.indexOf(b.id));
 
   // Trips & Tours Grouping
   const tripOrder = ['trip_ypres'];
-  const tripUnits = units.filter(u => tripOrder.includes(u.id)).sort((a, b) => tripOrder.indexOf(a.id) - tripOrder.indexOf(b.id));
+  const tripUnits = units
+    .filter((u) => tripOrder.includes(u.id))
+    .sort((a, b) => tripOrder.indexOf(a.id) - tripOrder.indexOf(b.id));
 
   const renderUnitCard = (unit, index) => {
     const isUnlocked = true; // Unlocked all topics for developer/admin preview
@@ -89,20 +106,28 @@ export function renderDashboard() {
     const category = unit.category || 'History';
     const yearGroup = unit.yearGroup || 'All';
     const imageUrl = unit.homepage_background || unit.cover_image || '';
-    
+
     let displayTitle = title;
     let displayDesc = unit.enquiry_question || desc;
-    
+
     if (title.includes('KS3:') || unit.enquiry_question) {
       displayTitle = unit.enquiry_question || desc;
       displayDesc = title;
     }
-    
-    const bgPos = unit.id === 'edexcel_medicine' ? 'center 10%' : (unit.id === 'eee' ? 'center 10%' : 'center');
-    
-    const underConstruction = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'].includes(unit.id);
-    const badgeHtml = underConstruction ? `<div style="position: absolute; top: 10px; right: 10px; background: #fef08a; color: #854d0e; border: 1px solid #eab308; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-person-digging"></i> Under Construction</div>` : '';
-    
+
+    const bgPos =
+      unit.id === 'edexcel_medicine' ? 'center 10%' : unit.id === 'eee' ? 'center 10%' : 'center';
+
+    const underConstruction = [
+      'second_world_war',
+      'the_shoah',
+      'cold_war',
+      'post_war_britain',
+    ].includes(unit.id);
+    const badgeHtml = underConstruction
+      ? `<div style="position: absolute; top: 10px; right: 10px; background: #fef08a; color: #854d0e; border: 1px solid #eab308; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-person-digging"></i> Under Construction</div>`
+      : '';
+
     html += `
       <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative;" data-action="launch-subapp" data-unit="${unit.id}">
         ${badgeHtml}
@@ -119,7 +144,7 @@ export function renderDashboard() {
         </div>
         
         <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
-          <button class="btn btn-sm btn-primary w-full" data-action="launch-subapp" data-unit="${unit.id}">
+          <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" data-action="launch-subapp" data-unit="${unit.id}">
             <i class="fa-solid fa-circle-play"></i> Launch Study App
           </button>
         </div>
@@ -129,9 +154,10 @@ export function renderDashboard() {
 
   if (tripUnits.length > 0) {
     tripUnits.forEach((unit, index) => {
-      const imageUrl = unit.homepage_background || unit.cover_image || 'images/stubbington_memorial.jpg';
-      const title = "Featured Battlefield Tour: Ypres & The Salient";
-      
+      const imageUrl =
+        unit.homepage_background || unit.cover_image || 'images/stubbington_memorial.jpg';
+      const title = 'Featured Battlefield Tour: Ypres & The Salient';
+
       html += `
         <div class="featured-trip-banner" style="display: flex; flex-wrap: wrap; width: 100%; margin-top: 2.5rem; margin-bottom: 2.5rem; background: var(--bg-card, #ffffff); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid var(--border-glass, #e2e8f0); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
           <div style="flex: 2; min-width: 300px; padding: 40px 50px; display: flex; flex-direction: column; justify-content: center;">
@@ -146,7 +172,7 @@ export function renderDashboard() {
               <span style="background: rgba(139, 92, 246, 0.1); color: #7c3aed; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-book-open-reader"></i> Site Guide</span>
             </div>
             <div>
-              <button class="btn btn-primary" style="padding: 14px 28px; font-size: 1.15rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border-radius: 8px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; transition: background 0.2s;" data-action="launch-subapp" data-unit="${unit.id}" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+              <button class="btn-pedagogy-primary" style="padding: 14px 28px; font-size: 1.15rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border-radius: 8px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; transition: background 0.2s;" data-action="launch-subapp" data-unit="${unit.id}" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
                 <i class="fa-solid fa-compass" style="margin-right: 8px;"></i> Launch Tour App
               </button>
             </div>
@@ -172,7 +198,7 @@ export function renderDashboard() {
       <div class="modules-grid">
     `;
     ks4Units.forEach(renderUnitCard);
-    
+
     // Legacy USA App Card
     html += `
       <div class="module-card" style="animation-delay: 0.5s; cursor: pointer;" data-action="open-link" data-url="https://edexcelgcsehistoryusa.netlify.app/">
@@ -191,13 +217,13 @@ export function renderDashboard() {
         </div>
         
         <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
-          <button class="btn btn-sm btn-primary w-full">
+          <button class="btn-pedagogy-primary btn-pedagogy-sm w-full">
             <i class="fa-solid fa-external-link-alt"></i> Open Legacy App
           </button>
         </div>
       </div>
     `;
-    
+
     html += `</div>`;
   }
 
@@ -210,9 +236,9 @@ export function renderProfileView() {
 
   const totalQuestions = state.allQuestions ? state.allQuestions.length : 0;
   const boxes = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-  
+
   if (state.mastery) {
-    Object.values(state.mastery).forEach(entry => {
+    Object.values(state.mastery).forEach((entry) => {
       const b = entry.leitnerBox || 1;
       if (boxes[b] !== undefined) boxes[b]++;
     });
@@ -255,27 +281,27 @@ export function renderProfileView() {
       <div class="leitner-distribution">
         <div class="leitner-bar-wrapper">
           <span class="bar-label">Box 1 (New)</span>
-          <div class="bar-container"><div class="bar-fill bg-danger" style="width: ${totalQuestions ? (boxes[1]/totalQuestions)*100 : 0}%"></div></div>
+          <div class="bar-container"><div class="bar-fill bg-danger" style="width: ${totalQuestions ? (boxes[1] / totalQuestions) * 100 : 0}%"></div></div>
           <span class="bar-count">${boxes[1]}</span>
         </div>
         <div class="leitner-bar-wrapper">
           <span class="bar-label">Box 2 (Learning)</span>
-          <div class="bar-container"><div class="bar-fill bg-warning" style="width: ${totalQuestions ? (boxes[2]/totalQuestions)*100 : 0}%"></div></div>
+          <div class="bar-container"><div class="bar-fill bg-warning" style="width: ${totalQuestions ? (boxes[2] / totalQuestions) * 100 : 0}%"></div></div>
           <span class="bar-count">${boxes[2]}</span>
         </div>
         <div class="leitner-bar-wrapper">
           <span class="bar-label">Box 3 (Securing)</span>
-          <div class="bar-container"><div class="bar-fill bg-info" style="width: ${totalQuestions ? (boxes[3]/totalQuestions)*100 : 0}%"></div></div>
+          <div class="bar-container"><div class="bar-fill bg-info" style="width: ${totalQuestions ? (boxes[3] / totalQuestions) * 100 : 0}%"></div></div>
           <span class="bar-count">${boxes[3]}</span>
         </div>
         <div class="leitner-bar-wrapper">
           <span class="bar-label">Box 4 (Retained)</span>
-          <div class="bar-container"><div class="bar-fill bg-primary" style="width: ${totalQuestions ? (boxes[4]/totalQuestions)*100 : 0}%"></div></div>
+          <div class="bar-container"><div class="bar-fill bg-primary" style="width: ${totalQuestions ? (boxes[4] / totalQuestions) * 100 : 0}%"></div></div>
           <span class="bar-count">${boxes[4]}</span>
         </div>
         <div class="leitner-bar-wrapper">
           <span class="bar-label">Box 5 (Mastered)</span>
-          <div class="bar-container"><div class="bar-fill bg-success" style="width: ${totalQuestions ? (boxes[5]/totalQuestions)*100 : 0}%"></div></div>
+          <div class="bar-container"><div class="bar-fill bg-success" style="width: ${totalQuestions ? (boxes[5] / totalQuestions) * 100 : 0}%"></div></div>
           <span class="bar-count">${boxes[5]}</span>
         </div>
       </div>
@@ -284,12 +310,12 @@ export function renderProfileView() {
 }
 
 // Global update function bound to window
-window.updateProfileYearGroup = function(val) {
+window.updateProfileYearGroup = function (val) {
   setMockUser(val);
   renderDashboard();
 };
 
-window.launchSubApp = function(subAppName) {
+window.launchSubApp = function (subAppName) {
   // Show the curtain
   const curtain = document.getElementById('page-curtain');
   if (curtain) {
@@ -310,8 +336,8 @@ window.launchSubApp = function(subAppName) {
     if (subAppName === 'gcse_middle_east_1945_1995_new') mappedName = 'cme_new';
     if (subAppName === 'gcse_elizabethan_england') mappedName = 'eee';
     if (subAppName === 'great_war_v2') mappedName = 'great_war';
-    
-    window.location.href = `/unit?id=${mappedName}`;
+
+    window.location.href = `/?view=lessons&unit=${mappedName}`;
   }, 350);
 };
 
@@ -323,7 +349,7 @@ export function renderInteractiveQuiz() {
     container.innerHTML = `
       <div class="card text-center">
         <p>No quiz questions available for this unit.</p>
-        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
+        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
@@ -333,7 +359,7 @@ export function renderInteractiveQuiz() {
   const questions = data.quizData;
   const randomIndex = Math.floor(Math.random() * questions.length);
   const q = questions[randomIndex];
-  
+
   // Scramble options
   const options = [q.answer, ...q.distractors].sort(() => Math.random() - 0.5);
 
@@ -347,36 +373,40 @@ export function renderInteractiveQuiz() {
       </div>
       <h3 class="quiz-question">${q.question}</h3>
       <div class="quiz-options">
-        ${options.map(opt => `
+        ${options
+          .map(
+            (opt) => `
           <button class="btn btn-block btn-quiz-opt" data-action="submit-quiz-answer" data-id="${q.id}" data-opt="${opt.replace(/"/g, '&quot;')}">
             ${opt}
           </button>
-        `).join('')}
+        `,
+          )
+          .join('')}
       </div>
       <div id="quiz-feedback" class="quiz-feedback hidden"></div>
       <div style="margin-top: 24px; display: flex; justify-content: space-between;">
         <button class="btn btn-secondary" data-action="switch-view" data-view="dashboard">Exit Quiz</button>
-        <button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${state.selectedUnitId}">Next Question &rarr;</button>
+        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="interactive" data-unit="${state.selectedUnitId}">Next Question &rarr;</button>
       </div>
     </div>
   `;
 }
 
-window.toggleBookmarkQuestion = function(qid) {
+window.toggleBookmarkQuestion = function (qid) {
   toggleBookmark(qid);
   renderInteractiveQuiz();
 };
 
-window.submitQuizAnswer = function(qid, chosen, btnElement) {
+window.submitQuizAnswer = function (qid, chosen, btnElement) {
   const data = state.activeUnitData;
-  const q = data.quizData.find(item => item.id === qid);
+  const q = data.quizData.find((item) => item.id === qid);
   if (!q) return;
 
   const isCorrect = chosen === q.answer;
   updateLeitnerBox(qid, isCorrect);
 
   // Disable all options
-  document.querySelectorAll('.btn-quiz-opt').forEach(btn => {
+  document.querySelectorAll('.btn-quiz-opt').forEach((btn) => {
     btn.disabled = true;
     if (btn.innerText.trim() === q.answer) {
       btn.classList.add('btn-success');
@@ -402,7 +432,7 @@ export function renderTimeline() {
       <div class="card text-center">
         <h3><i class="fa-solid fa-timeline"></i> Timeline</h3>
         <p>No historical events listed in this module's timeline.</p>
-        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
+        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
@@ -415,7 +445,9 @@ export function renderTimeline() {
     <div class="card">
       <h3 style="margin-bottom: 24px;"><i class="fa-solid fa-timeline text-primary"></i> Interactive Chronology Timeline</h3>
       <div class="timeline-wrapper">
-        ${sortedEvents.map((evt, idx) => `
+        ${sortedEvents
+          .map(
+            (evt, idx) => `
           <div class="timeline-item ${idx % 2 === 0 ? 'left' : 'right'}">
             <div class="timeline-badge">${evt.year}</div>
             <div class="timeline-panel">
@@ -423,7 +455,9 @@ export function renderTimeline() {
               <p>${evt.text}</p>
             </div>
           </div>
-        `).join('')}
+        `,
+          )
+          .join('')}
       </div>
     </div>
   `;
@@ -439,7 +473,7 @@ export function renderBookletView() {
         <h3>Workbook & Booklet Preview</h3>
         <p class="text-muted">Printable A4 classroom layout generated dynamically from master Markdown files.</p>
       </div>
-      <button class="btn btn-primary" data-action="print-booklet">
+      <button class="btn-pedagogy-primary" data-action="print-booklet">
         <i class="fa-solid fa-print"></i> Print / Save as PDF
       </button>
     </div>
@@ -456,14 +490,18 @@ export function renderBookletView() {
       
       <hr />
 
-      ${data.subtopics.map(sub => `
+      ${(data.lessons || data.subtopics || [])
+        .map(
+          (sub) => `
         <div class="booklet-section">
           <h2>${sub.title}</h2>
           <div class="booklet-body-text">
-            ${sub.content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br />')}
+            ${(sub.content || (sub.narrative ? sub.narrative.map((n) => (typeof n === 'string' ? n : n.text)).join('\\n') : '')).replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>').replace(/\\n/g, '<br />')}
           </div>
           
-          ${sub.part2.length > 0 ? `
+          ${
+            sub.part2 && sub.part2.length > 0
+              ? `
             <div class="booklet-vocab-block">
               <h3>Vocabulary & Key Terms</h3>
               <table class="booklet-table">
@@ -474,41 +512,57 @@ export function renderBookletView() {
                   </tr>
                 </thead>
                 <tbody>
-                  ${sub.part2.map(v => `
+                  ${sub.part2
+                    .map(
+                      (v) => `
                     <tr>
                       <td><strong>${v.term}</strong></td>
                       <td>${v.def}</td>
                     </tr>
-                  `).join('')}
+                  `,
+                    )
+                    .join('')}
                 </tbody>
               </table>
             </div>
-          ` : ''}
+          `
+              : ''
+          }
           
-          ${sub.part3.length > 0 ? `
+          ${
+            sub.part3 && sub.part3.length > 0
+              ? `
             <div class="booklet-tf-block">
               <h3>Core recall Statements (True / False)</h3>
               <ul>
-                ${sub.part3.map(item => `
+                ${sub.part3
+                  .map(
+                    (item) => `
                   <li>[ &nbsp; &nbsp; ] &nbsp; ${item.text} </li>
-                `).join('')}
+                `,
+                  )
+                  .join('')}
               </ul>
             </div>
-          ` : ''}
+          `
+              : ''
+          }
         </div>
-      `).join('')}
+      `,
+        )
+        .join('')}
     </div>
   `;
 }
 
-window.printBooklet = function() {
+window.printBooklet = function () {
   window.print();
 };
 
 export async function renderDecisionsView() {
   const container = document.getElementById('main-content');
   const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
-  
+
   let decisionsData = [];
   if (unitId === 'gcse_middle_east_1945_1995') {
     const mod = await import('./data/cme/decisions_data.js');
@@ -523,14 +577,14 @@ export async function renderDecisionsView() {
       <div class="card text-center">
         <h3><i class="fa-solid fa-phone-volume"></i> Decision Simulator</h3>
         <p>No decision scenarios available for this unit.</p>
-        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
+        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
   }
 
-  window.playDecisionsScenario = function(gameId) {
-    const g = decisionsData.find(x => x.id === gameId);
+  window.playDecisionsScenario = function (gameId) {
+    const g = decisionsData.find((x) => x.id === gameId);
     if (!g) return;
 
     container.innerHTML = `
@@ -562,8 +616,8 @@ export async function renderDecisionsView() {
     `;
   };
 
-  window.playDecisionsPhase2 = function(gameId, choiceLetter) {
-    const g = decisionsData.find(x => x.id === gameId);
+  window.playDecisionsPhase2 = function (gameId, choiceLetter) {
+    const g = decisionsData.find((x) => x.id === gameId);
     if (!g) return;
 
     const selectedChoice = choiceLetter === 'A' ? g.phase1.choiceA : g.phase1.choiceB;
@@ -600,8 +654,8 @@ export async function renderDecisionsView() {
     `;
   };
 
-  window.playDecisionsPhase3 = function(gameId, choiceLetter, subChoice) {
-    const g = decisionsData.find(x => x.id === gameId);
+  window.playDecisionsPhase3 = function (gameId, choiceLetter, subChoice) {
+    const g = decisionsData.find((x) => x.id === gameId);
     if (!g) return;
 
     const selectedChoice = choiceLetter === 'A' ? g.phase1.choiceA : g.phase1.choiceB;
@@ -625,7 +679,7 @@ export async function renderDecisionsView() {
 
         <div style="display: flex; justify-content: space-between;">
           <button class="btn btn-secondary" data-action="switch-view" data-view="decisions" data-unit="${unitId}">Another Scenario</button>
-          <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Exit Simulator</button>
+          <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Exit Simulator</button>
         </div>
       </div>
     `;
@@ -638,7 +692,9 @@ export async function renderDecisionsView() {
       <p class="text-muted" style="margin-bottom: 24px;">Put yourself in the shoes of historical figures facing critical turning points.</p>
       
       <div class="modules-grid">
-        ${decisionsData.map(g => `
+        ${decisionsData
+          .map(
+            (g) => `
           <div class="module-card">
             <div class="module-header">
               <span class="category-badge">${g.series}</span>
@@ -646,11 +702,13 @@ export async function renderDecisionsView() {
             </div>
             <h4>${g.title}</h4>
             <p style="font-size: 0.85rem;"><strong>Role:</strong> ${g.role}</p>
-            <button class="btn btn-sm btn-primary w-full" data-action="play-decisions-scenario" data-id="${g.id}">
+            <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" data-action="play-decisions-scenario" data-id="${g.id}">
               Start Simulation
             </button>
           </div>
-        `).join('')}
+        `,
+          )
+          .join('')}
       </div>
     </div>
   `;
@@ -659,19 +717,19 @@ export async function renderDecisionsView() {
 export async function renderTabooView() {
   const container = document.getElementById('main-content');
   const unitId = window.currentUnitId || state.selectedUnitId || 'cme_new';
-  
+
   let tabooCards = [];
   if (unitId === 'cme_new' || unitId === 'gcse_middle_east_1945_1995') {
     // Both USA and CME are currently pulling from the same taboo_data file for now based on the old code
     const mod = await import('./taboo_data.js');
-    Object.keys(mod.TABOO_CARDS).forEach(cat => {
-      mod.TABOO_CARDS[cat].forEach(card => {
+    Object.keys(mod.TABOO_CARDS).forEach((cat) => {
+      mod.TABOO_CARDS[cat].forEach((card) => {
         tabooCards.push({
           id: `taboo_${unitId}_${card.target.replace(/\s+/g, '_')}`,
           topic: cat,
           target: card.target.toUpperCase(),
           taboo: card.taboo,
-          hint: `Recall this key ${cat} from the course.`
+          hint: `Recall this key ${cat} from the course.`,
         });
       });
     });
@@ -679,13 +737,13 @@ export async function renderTabooView() {
     const mod = await import('./data/elizabethan/data.js');
     const timelineData = mod.timelineData;
     let cardCount = 1;
-    timelineData.forEach(topic => {
-      topic.events.forEach(evt => {
+    timelineData.forEach((topic) => {
+      topic.events.forEach((evt) => {
         if (evt.subtitle && evt.text) {
           const target = evt.subtitle.toUpperCase();
           const taboo = [...(evt.names || []), ...(evt.stats || [])]
             .slice(0, 5)
-            .map(s => s.replace(/\(.*?\)/g, '').trim())
+            .map((s) => s.replace(/\(.*?\)/g, '').trim())
             .filter(Boolean);
           const hint = evt.text.split('.')[0] + '.';
           if (taboo.length >= 2) {
@@ -694,7 +752,7 @@ export async function renderTabooView() {
               topic: topic.title,
               target: target,
               taboo: taboo,
-              hint: hint
+              hint: hint,
             });
           }
         }
@@ -707,13 +765,13 @@ export async function renderTabooView() {
       <div class="card text-center">
         <h3><i class="fa-solid fa-tags"></i> Taboo Recall</h3>
         <p>No Taboo recall cards available for this unit.</p>
-        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
+        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
   }
 
-  window.showTabooCard = function(index) {
+  window.showTabooCard = function (index) {
     const card = tabooCards[index];
     container.innerHTML = `
       <div class="card max-w-md mx-auto text-center" style="display: flex; flex-direction: column; gap: 20px; border: 2px solid var(--primary); padding: 32px;">
@@ -726,7 +784,7 @@ export async function renderTabooView() {
         <div style="border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); padding: 18px 0;">
           <h4 style="text-transform: uppercase; font-size: 0.85rem; color: var(--accent); margin-bottom: 12px; letter-spacing: 1px;">Forbidden Taboo Words:</h4>
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            ${card.taboo.map(w => `<span style="font-size: 1.1rem; font-weight: 700; text-decoration: line-through; opacity: 0.85;">${w}</span>`).join('')}
+            ${card.taboo.map((w) => `<span style="font-size: 1.1rem; font-weight: 700; text-decoration: line-through; opacity: 0.85;">${w}</span>`).join('')}
           </div>
         </div>
 
@@ -738,14 +796,14 @@ export async function renderTabooView() {
           <button class="btn btn-outline" id="btn-show-hint" data-action="reveal-taboo-hint">Show Context Hint</button>
           <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
             <button class="btn btn-secondary" data-action="switch-view" data-view="dashboard">Exit Game</button>
-            <button class="btn btn-primary" data-action="next-taboo-card">Next Card &rarr;</button>
+            <button class="btn-pedagogy-primary" data-action="next-taboo-card">Next Card &rarr;</button>
           </div>
         </div>
       </div>
     `;
   };
 
-  window.showRandomTabooCard = function() {
+  window.showRandomTabooCard = function () {
     const randomIndex = Math.floor(Math.random() * tabooCards.length);
     window.showTabooCard(randomIndex);
   };
@@ -758,103 +816,55 @@ export async function renderLessonsView() {
   const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
   const data = state.activeUnitData;
 
-  if (!data || !data.subtopics || data.subtopics.length === 0) {
+  const lessonsList = data.lessons || data.subtopics;
+  if (!data || !lessonsList || lessonsList.length === 0) {
     container.innerHTML = `
       <div class="card text-center">
         <h3><i class="fa-solid fa-book-open"></i> Lessons Study Guide</h3>
         <p>No lessons available for this unit.</p>
-        <button class="btn btn-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
+        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
   }
 
-  window.viewLessonDetail = function(index) {
-    const sub = data.subtopics[index];
-    
-    // Parse content lines and render beautifully
-    let bodyHtml = sub.content.split('\n').map(line => {
-      let l = line.trim();
-      if (!l) return '';
-      
-      // Simple markdown conversions for textbook slides
-      if (l.startsWith('- **') && l.includes('**:')) {
-        return l.replace(/^-\s*\*\*(.*?)\*\*:\s*(.*)/, '<p style="margin: 8px 0; padding-left: 20px;"><strong>&bull; $1</strong>: $2</p>');
-      }
-      if (l.startsWith('- ')) {
-        return `<p style="margin: 6px 0; padding-left: 20px;">&bull; ${l.substring(2)}</p>`;
-      }
-      if (l.startsWith('### ')) {
-        return `<h4 style="font-size: 1.15rem; font-weight: 700; color: var(--secondary); margin: 24px 0 12px 0; border-bottom: 1px solid var(--border-glass); padding-bottom: 6px;">${l.substring(4)}</h4>`;
-      }
-      if (l.includes('<span class="tip-icon">')) {
-        return ''; 
-      }
-      if (l.includes('**Examiner Tip:**')) {
-        return `<div style="background-color: var(--bg-app); border-left: 4px solid var(--accent); padding: 14px; border-radius: var(--border-radius-sm); margin: 18px 0;">
-          <strong>💡 Examiner Tip:</strong> ${l.replace('**Examiner Tip:**', '').replace(/\*\*/g, '').trim()}
-        </div>`;
-      }
-      if (l.includes('📝 Source ')) {
-        return `<div style="background-color: var(--bg-app); border: 1px solid var(--border-glass); border-top: 3px solid var(--primary); padding: 16px; border-radius: var(--border-radius-sm); margin: 20px 0; font-family: Georgia, serif;">
-          <strong style="display: block; margin-bottom: 8px; color: var(--primary); font-family: var(--font-heading);">${l.replace(/[\*#_]/g, '')}</strong>`;
-      }
-      if (l.startsWith('"') && l.endsWith('"')) {
-        return `<p style="font-style: italic; margin: 0; line-height: 1.5; color: var(--text-muted);">${l.replace(/"/g, '')}</p></div>`;
-      }
-      
-      return `<p style="line-height: 1.6; margin: 12px 0;">${l.replace(/\*\*/g, '<strong>').replace(/\*\*/g, '</strong>')}</p>`;
-    }).join('\n');
+  window.viewLessonDetail = function (index) {
+    const lessonsList = data.lessons || data.subtopics;
+    const sub = lessonsList[index];
 
+    // Inject the content-area wrapper if it doesn't exist, since the legacy renderer expects it!
     container.innerHTML = `
-      <div class="card max-w-2xl mx-auto" style="animation: fadeInUp 0.3s ease-out;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 16px; margin-bottom: 20px;">
-          <button class="btn btn-secondary btn-sm" data-action="switch-view" data-view="lessons" data-unit="${unitId}">
-            <i class="fa-solid fa-arrow-left"></i> Lessons Menu
-          </button>
-          <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--primary);">${data.title}</span>
-        </div>
-
-        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 20px; line-height: 1.3;">${sub.title}</h2>
-        
-        <div class="lesson-content-body" style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6;">
-          ${bodyHtml}
-        </div>
-
-        <div style="border-top: 1px solid var(--border-glass); padding-top: 20px; margin-top: 30px; display: flex; justify-content: space-between; gap: 12px;">
-          ${index > 0 ? `<button class="btn btn-secondary" data-action="view-lesson-detail" data-index="${index - 1}">&larr; Previous Lesson</button>` : '<span></span>'}
-          ${index < data.subtopics.length - 1 ? `<button class="btn btn-primary" data-action="view-lesson-detail" data-index="${index + 1}">Next Lesson &rarr;</button>` : `<button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${unitId}">Take Lesson Quiz &rarr;</button>`}
-        </div>
+      <div id="content-area" style="animation: fadeInUp 0.3s ease-out; background-color: var(--bg-app); min-height: 100vh;">
       </div>
     `;
+
+    // Call the legacy Netlify app's beautifully formatted lesson renderer!
+    renderLesson(sub);
+    window.scrollTo(0, 0);
   };
 
+  let headerHtml = `
+      <div style="text-align: center; padding: 40px 30px 20px 30px; background: white;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin-bottom: 10px; line-height: 1.2;">${data.enquiry_question || data.enquiry || 'Unit Enquiry'}</h1>
+        <h2 style="font-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
+          ${data.title}
+        </h2>
+        
+        ${renderCoverSourcesHTML(data)}
+        
+        ${data.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 0; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${data.cover_caption}</p>` : ''}
+      </div>
+    `;
+
   container.innerHTML = `
-    <div class="card" style="animation: fadeInUp 0.3s ease-out;">
-      <h3 style="margin-bottom: 8px;"><i class="fa-solid fa-book-open text-primary"></i> ${data.title} - Study Guide</h3>
-      <p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and historian's tips for each lesson before testing yourself.</p>
+    <div class="card" style="animation: fadeInUp 0.3s ease-out; padding: 0; overflow: hidden; background: white;">
+      ${headerHtml}
       
-      <div class="modules-grid">
-        ${data.subtopics.map((sub, idx) => {
-          const descLine = sub.content.split('\n').find(line => line.trim().length > 30 && !line.includes('#') && !line.includes('*') && !line.includes('<')) || 'Study this historical topic.';
-          return `
-            <div class="module-card" style="cursor: pointer;" data-action="view-lesson-detail" data-index="${idx}">
-              <div class="module-header">
-                <span class="category-badge">Lesson ${idx + 1}</span>
-                <i class="fa-solid fa-book-open" style="color: var(--primary);"></i>
-              </div>
-              <h4 style="margin: 10px 0;">${sub.title}</h4>
-              <p style="font-size: 0.85rem; line-height: 1.4; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                ${descLine}
-              </p>
-              <button class="btn btn-sm btn-primary w-full" style="margin-top: 12px;">
-                Read Lesson
-              </button>
-            </div>
-          `;
-        }).join('')}
+      <div style="padding: 30px; border-top: 1px solid #e2e8f0;">
+        <p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and historian's tips for each lesson before testing yourself.</p>
+        
+        ${renderKeyTopicLessonsHTML(data, unitId, data)}
       </div>
     </div>
   `;
 }
-

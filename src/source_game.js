@@ -6,280 +6,406 @@ import { Confetti } from './confetti.js';
 import { addXp, updateGlobalStats } from './views.js';
 
 export const SOURCE_GAME_DATA = {
-  "subtopic_1_4": {
-    "title": "Opposition to Civil Rights in the 1950s",
-    "enquiry": "the opposition to the civil rights movement in the 1950s",
-    "sourceB": {
-      "name": "Source B",
-      "provenance": "From a speech by Southern Senator Strom Thurmond to Congress, 1956.",
-      "content": "The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment. The Supreme Court's ruling is an abuse of power that tears up our laws and customs. We will resist integration using every legal means at our disposal. It is our duty to protect the sovereignty of our states from this unwarranted judicial overreach.",
-      "sentences": [
-        "The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment.",
+  subtopic_1_4: {
+    title: 'Opposition to Civil Rights in the 1950s',
+    enquiry: 'the opposition to the civil rights movement in the 1950s',
+    sourceB: {
+      name: 'Source B',
+      provenance: 'From a speech by Southern Senator Strom Thurmond to Congress, 1956.',
+      content:
+        "The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment. The Supreme Court's ruling is an abuse of power that tears up our laws and customs. We will resist integration using every legal means at our disposal. It is our duty to protect the sovereignty of our states from this unwarranted judicial overreach.",
+      sentences: [
+        'The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment.',
         "The Supreme Court's ruling is an abuse of power that tears up our laws and customs.",
-        "We will resist integration using every legal means at our disposal.",
-        "It is our duty to protect the sovereignty of our states from this unwarranted judicial overreach."
+        'We will resist integration using every legal means at our disposal.',
+        'It is our duty to protect the sovereignty of our states from this unwarranted judicial overreach.',
       ],
-      "correctSentenceIndex": 0,
-      "nature": 1,
-      "natureOptions": ["Official government statistics report", "Political speech to Congress", "Private diary entry", "Newspaper advertisement"],
-      "natureExpl": "Source B is a public political speech delivered by a US Senator on the floor of Congress.",
-      "origin": 2,
-      "originOptions": ["An NAACP activist in Birmingham", "A federal court judge in Washington", "A segregationist Southern US Senator in 1956", "A journalist reporting on Little Rock"],
-      "originExpl": "Source B was written by Senator Strom Thurmond of South Carolina in 1956, a prominent leader of Southern political resistance.",
-      "purpose": 2,
-      "purposeOptions": [
-        "To campaign for civil rights legislation in the North",
-        "To record official Senate debate transcripts for historical archives",
+      correctSentenceIndex: 0,
+      nature: 1,
+      natureOptions: [
+        'Official government statistics report',
+        'Political speech to Congress',
+        'Private diary entry',
+        'Newspaper advertisement',
+      ],
+      natureExpl:
+        'Source B is a public political speech delivered by a US Senator on the floor of Congress.',
+      origin: 2,
+      originOptions: [
+        'An NAACP activist in Birmingham',
+        'A federal court judge in Washington',
+        'A segregationist Southern US Senator in 1956',
+        'A journalist reporting on Little Rock',
+      ],
+      originExpl:
+        'Source B was written by Senator Strom Thurmond of South Carolina in 1956, a prominent leader of Southern political resistance.',
+      purpose: 2,
+      purposeOptions: [
+        'To campaign for civil rights legislation in the North',
+        'To record official Senate debate transcripts for historical archives',
         "To rally Southern political resistance against school integration by framing it as a constitutional states' rights issue",
-        "To condemn violent acts committed by the Ku Klux Klan"
+        'To condemn violent acts committed by the Ku Klux Klan',
       ],
-      "purposeExpl": "Thurmond's purpose was to encourage Southern politicians to sign the Southern Manifesto and defy federal desegregation rulings."
+      purposeExpl:
+        "Thurmond's purpose was to encourage Southern politicians to sign the Southern Manifesto and defy federal desegregation rulings.",
     },
-    "sourceC": {
-      "name": "Source C",
-      "provenance": "From an NAACP report on violent incidents in Alabama, 1957.",
-      "content": "The KKK is acting with complete impunity. Black churches have been bombed, and civil rights workers are dragged from their homes and beaten. The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members.",
-      "sentences": [
-        "The KKK is acting with complete impunity.",
-        "Black churches have been bombed, and civil rights workers are dragged from their homes and beaten.",
-        "The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members."
+    sourceC: {
+      name: 'Source C',
+      provenance: 'From an NAACP report on violent incidents in Alabama, 1957.',
+      content:
+        "The KKK is acting with complete impunity. Black churches have been bombed, and civil rights workers are dragged from their homes and beaten. The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members.",
+      sentences: [
+        'The KKK is acting with complete impunity.',
+        'Black churches have been bombed, and civil rights workers are dragged from their homes and beaten.',
+        "The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members.",
       ],
-      "correctSentenceIndex": 1,
-      "nature": 0,
-      "natureOptions": ["Official activist organization report", "Public protest rally speech", "Personal letter to a relative", "Judicial transcript of a trial"],
-      "natureExpl": "Source C is an official report prepared by the NAACP to document local civil rights violations.",
-      "origin": 1,
-      "originOptions": ["Local Alabama police officers", "NAACP civil rights investigators in Alabama, 1957", "Vigilante members of the White Citizens' Councils", "Federal marshals deployed by Eisenhower"],
-      "originExpl": "Source C was created by NAACP field workers in Alabama in 1957, who witnessed local white backlash firsthand.",
-      "purpose": 1,
-      "purposeOptions": [
-        "To promote local tourism and business growth in Alabama",
-        "To document KKK terror and police collusion in order to lobby the federal government for protection and legal action",
-        "To warn activists to stop organizing voter campaigns",
-        "To publish a regular newsletter for school students"
+      correctSentenceIndex: 1,
+      nature: 0,
+      natureOptions: [
+        'Official activist organization report',
+        'Public protest rally speech',
+        'Personal letter to a relative',
+        'Judicial transcript of a trial',
       ],
-      "purposeExpl": "The report aimed to expose local police complicity with vigilante terror and pressure the federal government to intervene in the South."
+      natureExpl:
+        'Source C is an official report prepared by the NAACP to document local civil rights violations.',
+      origin: 1,
+      originOptions: [
+        'Local Alabama police officers',
+        'NAACP civil rights investigators in Alabama, 1957',
+        "Vigilante members of the White Citizens' Councils",
+        'Federal marshals deployed by Eisenhower',
+      ],
+      originExpl:
+        'Source C was created by NAACP field workers in Alabama in 1957, who witnessed local white backlash firsthand.',
+      purpose: 1,
+      purposeOptions: [
+        'To promote local tourism and business growth in Alabama',
+        'To document KKK terror and police collusion in order to lobby the federal government for protection and legal action',
+        'To warn activists to stop organizing voter campaigns',
+        'To publish a regular newsletter for school students',
+      ],
+      purposeExpl:
+        'The report aimed to expose local police complicity with vigilante terror and pressure the federal government to intervene in the South.',
     },
-    "interpretation1": {
-      "author": "Historian Keith M. Finley (2008)",
-      "summary": "Argues that the primary and most effective obstacle to civil rights was sophisticated political obstruction (states' rights arguments, filibusters) by Southern congressmen."
+    interpretation1: {
+      author: 'Historian Keith M. Finley (2008)',
+      summary:
+        "Argues that the primary and most effective obstacle to civil rights was sophisticated political obstruction (states' rights arguments, filibusters) by Southern congressmen.",
     },
-    "interpretation2": {
-      "author": "Historian Adam Fairclough (1995)",
-      "summary": "Argues that segregation was primarily enforced through raw grassroots terror (KKK bombings, beatings) and economic intimidation by Citizens' Councils."
+    interpretation2: {
+      author: 'Historian Adam Fairclough (1995)',
+      summary:
+        "Argues that segregation was primarily enforced through raw grassroots terror (KKK bombings, beatings) and economic intimidation by Citizens' Councils.",
     },
-    "corroboration": {
-      "matchB": 1, // Source B supports Interpretation 1
-      "matchC": 2, // Source C supports Interpretation 2
-      "explanation": "<strong>Corroboration Analysis:</strong> You highlighted: <em>\"The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment.\"</em> in Source B, which supports Keith M. Finley's view that opposition was framed around constitutional 'states' rights'. You highlighted: <em>\"Black churches have been bombed, and civil rights workers are dragged from their homes and beaten.\"</em> in Source C, which corroborates Adam Fairclough's view that raw, unchecked violence was the real mechanism of segregation."
-    }
+    corroboration: {
+      matchB: 1, // Source B supports Interpretation 1
+      matchC: 2, // Source C supports Interpretation 2
+      explanation:
+        "<strong>Corroboration Analysis:</strong> You highlighted: <em>\"The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment.\"</em> in Source B, which supports Keith M. Finley's view that opposition was framed around constitutional 'states' rights'. You highlighted: <em>\"Black churches have been bombed, and civil rights workers are dragged from their homes and beaten.\"</em> in Source C, which corroborates Adam Fairclough's view that raw, unchecked violence was the real mechanism of segregation.",
+    },
   },
-  "subtopic_2_4": {
-    "title": "Causes of the 1960s Urban Riots",
-    "enquiry": "the causes of the 1960s urban riots",
-    "sourceB": {
-      "name": "Source B",
-      "provenance": "From a statement by a Detroit resident participating in the 1967 riot.",
-      "content": "This isn't a race riot. We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt. We have no jobs, no future. We are just telling the white man we've had enough.",
-      "sentences": [
+  subtopic_2_4: {
+    title: 'Causes of the 1960s Urban Riots',
+    enquiry: 'the causes of the 1960s urban riots',
+    sourceB: {
+      name: 'Source B',
+      provenance: 'From a statement by a Detroit resident participating in the 1967 riot.',
+      content:
+        "This isn't a race riot. We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt. We have no jobs, no future. We are just telling the white man we've had enough.",
+      sentences: [
         "This isn't a race riot.",
-        "We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt.",
-        "We have no jobs, no future.",
-        "We are just telling the white man we've had enough."
+        'We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt.',
+        'We have no jobs, no future.',
+        "We are just telling the white man we've had enough.",
       ],
-      "correctSentenceIndex": 1,
-      "nature": 3,
-      "natureOptions": ["Government census document", "A newspaper article from a white journalist", "Official police report", "Firsthand statement by a riot participant"],
-      "natureExpl": "Source B is a personal firsthand statement / interview from an active participant in the 1967 Detroit riots.",
-      "origin": 1,
-      "originOptions": ["A white store owner in Detroit", "A Black Detroit resident participating in the 1967 unrest", "The Mayor of Detroit", "A federal government investigator"],
-      "originExpl": "Source B represents the voice of a marginalized inner-city resident directly involved in the events of 1967.",
-      "purpose": 2,
-      "purposeOptions": [
-        "To advocate for strict policing in Northern neighborhoods",
-        "To encourage out-of-town agitators to join the looting",
-        "To explain that the rioting was a direct reaction to systemic housing exploitation, economic pricing issues, and police brutality",
-        "To plead with the National Guard for protection"
+      correctSentenceIndex: 1,
+      nature: 3,
+      natureOptions: [
+        'Government census document',
+        'A newspaper article from a white journalist',
+        'Official police report',
+        'Firsthand statement by a riot participant',
       ],
-      "purposeExpl": "The resident's purpose was to express their deep socio-economic frustrations and clarify that the unrest was a political cry against injustice, not simple racial hatred."
-    },
-    "sourceC": {
-      "name": "Source C",
-      "provenance": "From a speech by California Governor Ronald Reagan, 1967.",
-      "content": "A rioter is not a civil rights protestor. He is a criminal who steals and burns. We will not tolerate lawlessness. We must restore law and order, support our police, and show that crime does not pay.",
-      "sentences": [
-        "A rioter is not a civil rights protestor.",
-        "He is a criminal who steals and burns.",
-        "We will not tolerate lawlessness.",
-        "We must restore law and order, support our police, and show that crime does not pay."
+      natureExpl:
+        'Source B is a personal firsthand statement / interview from an active participant in the 1967 Detroit riots.',
+      origin: 1,
+      originOptions: [
+        'A white store owner in Detroit',
+        'A Black Detroit resident participating in the 1967 unrest',
+        'The Mayor of Detroit',
+        'A federal government investigator',
       ],
-      "correctSentenceIndex": 1,
-      "nature": 1,
-      "natureOptions": ["Secret military briefing", "Public political speech", "Autobiographical chapter", "Court testimony"],
-      "natureExpl": "Source C is a public political speech delivered by a state governor during a time of widespread national concern over urban unrest.",
-      "origin": 2,
-      "originOptions": ["An active member of the Black Panthers", "A federal civil rights commissioner", "California Governor Ronald Reagan in 1967", "A local Detroit merchant"],
-      "originExpl": "Source C was created by conservative governor Ronald Reagan in 1967, expressing the views of the state executive authority.",
-      "purpose": 0,
-      "purposeOptions": [
-        "To condemn rioters as simple criminals, advocate for restoring law and order, and reject socio-economic justifications for the violence",
-        "To propose new housing and welfare funding for inner cities",
-        "To praise the peaceful methods of the Black Power movement",
-        "To announce his candidacy for the presidency"
+      originExpl:
+        'Source B represents the voice of a marginalized inner-city resident directly involved in the events of 1967.',
+      purpose: 2,
+      purposeOptions: [
+        'To advocate for strict policing in Northern neighborhoods',
+        'To encourage out-of-town agitators to join the looting',
+        'To explain that the rioting was a direct reaction to systemic housing exploitation, economic pricing issues, and police brutality',
+        'To plead with the National Guard for protection',
       ],
-      "purposeExpl": "Reagan's purpose was to reassure voters, outline a hardline law-and-order response, and frame the rioting as criminal anarchy rather than a valid political protest."
+      purposeExpl:
+        "The resident's purpose was to express their deep socio-economic frustrations and clarify that the unrest was a political cry against injustice, not simple racial hatred.",
     },
-    "interpretation1": {
-      "author": "Historian Gerald Horne (1995)",
-      "summary": "Argues that the riots were a political rebellion against economic despair, ghettoization, housing discrimination, and systemic police brutality."
+    sourceC: {
+      name: 'Source C',
+      provenance: 'From a speech by California Governor Ronald Reagan, 1967.',
+      content:
+        'A rioter is not a civil rights protestor. He is a criminal who steals and burns. We will not tolerate lawlessness. We must restore law and order, support our police, and show that crime does not pay.',
+      sentences: [
+        'A rioter is not a civil rights protestor.',
+        'He is a criminal who steals and burns.',
+        'We will not tolerate lawlessness.',
+        'We must restore law and order, support our police, and show that crime does not pay.',
+      ],
+      correctSentenceIndex: 1,
+      nature: 1,
+      natureOptions: [
+        'Secret military briefing',
+        'Public political speech',
+        'Autobiographical chapter',
+        'Court testimony',
+      ],
+      natureExpl:
+        'Source C is a public political speech delivered by a state governor during a time of widespread national concern over urban unrest.',
+      origin: 2,
+      originOptions: [
+        'An active member of the Black Panthers',
+        'A federal civil rights commissioner',
+        'California Governor Ronald Reagan in 1967',
+        'A local Detroit merchant',
+      ],
+      originExpl:
+        'Source C was created by conservative governor Ronald Reagan in 1967, expressing the views of the state executive authority.',
+      purpose: 0,
+      purposeOptions: [
+        'To condemn rioters as simple criminals, advocate for restoring law and order, and reject socio-economic justifications for the violence',
+        'To propose new housing and welfare funding for inner cities',
+        'To praise the peaceful methods of the Black Power movement',
+        'To announce his candidacy for the presidency',
+      ],
+      purposeExpl:
+        "Reagan's purpose was to reassure voters, outline a hardline law-and-order response, and frame the rioting as criminal anarchy rather than a valid political protest.",
     },
-    "interpretation2": {
-      "author": "Political Scientist Edward Banfield (1970)",
-      "summary": "Argues that the riots were not political protests but class-based looting sprees, driven by opportunism, greed, and a breakdown of authority."
+    interpretation1: {
+      author: 'Historian Gerald Horne (1995)',
+      summary:
+        'Argues that the riots were a political rebellion against economic despair, ghettoization, housing discrimination, and systemic police brutality.',
     },
-    "corroboration": {
-      "matchB": 1,
-      "matchC": 2,
-      "explanation": "<strong>Corroboration Analysis:</strong> You selected: <em>\"We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt.\"</em>, proving the economic despair of Interpretation 1. You highlighted: <em>\"He is a criminal who steals and burns.\"</em> from Governor Reagan, matching Edward Banfield's claim of opportunistic greed."
-    }
+    interpretation2: {
+      author: 'Political Scientist Edward Banfield (1970)',
+      summary:
+        'Argues that the riots were not political protests but class-based looting sprees, driven by opportunism, greed, and a breakdown of authority.',
+    },
+    corroboration: {
+      matchB: 1,
+      matchC: 2,
+      explanation:
+        '<strong>Corroboration Analysis:</strong> You selected: <em>"We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt."</em>, proving the economic despair of Interpretation 1. You highlighted: <em>"He is a criminal who steals and burns."</em> from Governor Reagan, matching Edward Banfield\'s claim of opportunistic greed.',
+    },
   },
-  "subtopic_3_4": {
-    "title": "Growth of the Anti-War Movement",
-    "enquiry": "the reasons for the growth of the anti-war movement in the USA",
-    "sourceB": {
-      "name": "Source B",
-      "provenance": "From a statement by the Students for a Democratic Society (SDS) at an anti-war rally in Washington D.C., 1965.",
-      "content": "The war in Vietnam is an immoral and unjustifiable intervention in a civil conflict. We are drafting young men from poor communities to fight and die for a corrupt regime in Saigon, while defense contractors in America rake in billions. We demand an immediate withdrawal of all US troops and an end to this senseless slaughter. It is our democratic duty to resist the draft and protest until the war machine is stopped.",
-      "sentences": [
-        "The war in Vietnam is an immoral and unjustifiable intervention in a civil conflict.",
-        "We are drafting young men from poor communities to fight and die for a corrupt regime in Saigon, while defense contractors in America rake in billions.",
-        "We demand an immediate withdrawal of all US troops and an end to this senseless slaughter.",
-        "It is our democratic duty to resist the draft and protest until the war machine is stopped."
+  subtopic_3_4: {
+    title: 'Growth of the Anti-War Movement',
+    enquiry: 'the reasons for the growth of the anti-war movement in the USA',
+    sourceB: {
+      name: 'Source B',
+      provenance:
+        'From a statement by the Students for a Democratic Society (SDS) at an anti-war rally in Washington D.C., 1965.',
+      content:
+        'The war in Vietnam is an immoral and unjustifiable intervention in a civil conflict. We are drafting young men from poor communities to fight and die for a corrupt regime in Saigon, while defense contractors in America rake in billions. We demand an immediate withdrawal of all US troops and an end to this senseless slaughter. It is our democratic duty to resist the draft and protest until the war machine is stopped.',
+      sentences: [
+        'The war in Vietnam is an immoral and unjustifiable intervention in a civil conflict.',
+        'We are drafting young men from poor communities to fight and die for a corrupt regime in Saigon, while defense contractors in America rake in billions.',
+        'We demand an immediate withdrawal of all US troops and an end to this senseless slaughter.',
+        'It is our democratic duty to resist the draft and protest until the war machine is stopped.',
       ],
-      "correctSentenceIndex": 3,
-      "nature": 0,
-      "natureOptions": ["Activist organization protest statement", "Official White House press release", "A military draft notice", "A television news report"],
-      "natureExpl": "Source B is an activist protest statement delivered publicly at an organized anti-war demonstration.",
-      "origin": 1,
-      "originOptions": ["A military general in Vietnam", "Students for a Democratic Society (SDS) in 1965", "A television news reporter", "A South Vietnamese diplomat"],
-      "originExpl": "Source B was created by the leading student activist group SDS in 1965, during the initial phase of US combat escalation.",
-      "purpose": 3,
-      "purposeOptions": [
+      correctSentenceIndex: 3,
+      nature: 0,
+      natureOptions: [
+        'Activist organization protest statement',
+        'Official White House press release',
+        'A military draft notice',
+        'A television news report',
+      ],
+      natureExpl:
+        'Source B is an activist protest statement delivered publicly at an organized anti-war demonstration.',
+      origin: 1,
+      originOptions: [
+        'A military general in Vietnam',
+        'Students for a Democratic Society (SDS) in 1965',
+        'A television news reporter',
+        'A South Vietnamese diplomat',
+      ],
+      originExpl:
+        'Source B was created by the leading student activist group SDS in 1965, during the initial phase of US combat escalation.',
+      purpose: 3,
+      purposeOptions: [
         "To support President Johnson's Great Society funding programs",
-        "To recruit volunteers for the South Vietnamese army",
-        "To explain the military strategy of the draft lottery",
-        "To condemn the war as immoral, oppose the draft system, and mobilize youth to resist the war machine"
+        'To recruit volunteers for the South Vietnamese army',
+        'To explain the military strategy of the draft lottery',
+        'To condemn the war as immoral, oppose the draft system, and mobilize youth to resist the war machine',
       ],
-      "purposeExpl": "The statement's purpose was to raise public awareness of the war's injustice, encourage draft resistance, and organize student opposition."
+      purposeExpl:
+        "The statement's purpose was to raise public awareness of the war's injustice, encourage draft resistance, and organize student opposition.",
     },
-    "sourceC": {
-      "name": "Source C",
-      "provenance": "From a broadcast by CBS Evening News anchor Walter Cronkite, following his visit to Vietnam during the Tet Offensive, February 1968.",
-      "content": "To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past. To suggest we are on the edge of defeat is to yield to unreasonable pessimism. To say that we are mired in stalemate seems the only realistic, yet unsatisfactory, conclusion.",
-      "sentences": [
-        "To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past.",
-        "To suggest we are on the edge of defeat is to yield to unreasonable pessimism.",
-        "To say that we are mired in stalemate seems the only realistic, yet unsatisfactory, conclusion."
+    sourceC: {
+      name: 'Source C',
+      provenance:
+        'From a broadcast by CBS Evening News anchor Walter Cronkite, following his visit to Vietnam during the Tet Offensive, February 1968.',
+      content:
+        'To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past. To suggest we are on the edge of defeat is to yield to unreasonable pessimism. To say that we are mired in stalemate seems the only realistic, yet unsatisfactory, conclusion.',
+      sentences: [
+        'To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past.',
+        'To suggest we are on the edge of defeat is to yield to unreasonable pessimism.',
+        'To say that we are mired in stalemate seems the only realistic, yet unsatisfactory, conclusion.',
       ],
-      "correctSentenceIndex": 2,
-      "nature": 2,
-      "natureOptions": ["A private letter to the President", "An official Pentagon report", "Television news broadcast / editorial comment", "A movie review script"],
-      "natureExpl": "Source C is a television news broadcast containing editorial comment, broadcast to millions of American households.",
-      "origin": 0,
-      "originOptions": ["CBS News Anchor Walter Cronkite, 1968", "General William Westmoreland", "President Lyndon B. Johnson", "An anti-war student protester"],
-      "originExpl": "Source C was created by Walter Cronkite, one of America's most trusted news anchors, in February 1968 after the Tet Offensive.",
-      "purpose": 2,
-      "purposeOptions": [
-        "To report that the US had won a decisive victory at Tet",
-        "To call for immediate nuclear strikes on Hanoi",
-        "To share a realistic assessment of the war as a stalemate and advocate for a negotiated exit",
-        "To announce his resignation from CBS News"
+      correctSentenceIndex: 2,
+      nature: 2,
+      natureOptions: [
+        'A private letter to the President',
+        'An official Pentagon report',
+        'Television news broadcast / editorial comment',
+        'A movie review script',
       ],
-      "purposeExpl": "Cronkite's purpose was to inform the public that government optimistic assessments were wrong, and that the only rational path forward was negotiations."
+      natureExpl:
+        'Source C is a television news broadcast containing editorial comment, broadcast to millions of American households.',
+      origin: 0,
+      originOptions: [
+        'CBS News Anchor Walter Cronkite, 1968',
+        'General William Westmoreland',
+        'President Lyndon B. Johnson',
+        'An anti-war student protester',
+      ],
+      originExpl:
+        "Source C was created by Walter Cronkite, one of America's most trusted news anchors, in February 1968 after the Tet Offensive.",
+      purpose: 2,
+      purposeOptions: [
+        'To report that the US had won a decisive victory at Tet',
+        'To call for immediate nuclear strikes on Hanoi',
+        'To share a realistic assessment of the war as a stalemate and advocate for a negotiated exit',
+        'To announce his resignation from CBS News',
+      ],
+      purposeExpl:
+        "Cronkite's purpose was to inform the public that government optimistic assessments were wrong, and that the only rational path forward was negotiations.",
     },
-    "interpretation1": {
-      "author": "Historian Charles DeBenedetti (1990)",
-      "summary": "Argues that the anti-war movement grew due to a moral and political awakening among youth, driven by the draft and the injustice of the conflict."
+    interpretation1: {
+      author: 'Historian Charles DeBenedetti (1990)',
+      summary:
+        'Argues that the anti-war movement grew due to a moral and political awakening among youth, driven by the draft and the injustice of the conflict.',
     },
-    "interpretation2": {
-      "author": "Media Historian Daniel Hallin (1986)",
-      "summary": "Argues that the anti-war movement grew because uncensored television and media coverage brought the brutal stalemate and credibility gap into living rooms."
+    interpretation2: {
+      author: 'Media Historian Daniel Hallin (1986)',
+      summary:
+        'Argues that the anti-war movement grew because uncensored television and media coverage brought the brutal stalemate and credibility gap into living rooms.',
     },
-    "corroboration": {
-      "matchB": 1,
-      "matchC": 2,
-      "explanation": "<strong>Corroboration Analysis:</strong> You matched: <em>\"It is our democratic duty to resist the draft and protest...\"</em>, confirming Charles DeBenedetti's focus on youth draft resistance. You selected Cronkite's television verdict: <em>\"To say that we are mired in stalemate seems the only realistic... conclusion.\"</em>, supporting Daniel Hallin's view on media-driven war opposition."
-    }
+    corroboration: {
+      matchB: 1,
+      matchC: 2,
+      explanation:
+        '<strong>Corroboration Analysis:</strong> You matched: <em>"It is our democratic duty to resist the draft and protest..."</em>, confirming Charles DeBenedetti\'s focus on youth draft resistance. You selected Cronkite\'s television verdict: <em>"To say that we are mired in stalemate seems the only realistic... conclusion."</em>, supporting Daniel Hallin\'s view on media-driven war opposition.',
+    },
   },
-  "subtopic_4_4": {
-    "title": "Reasons for US Failure in Vietnam",
-    "enquiry": "the reasons for US failure in the Vietnam War",
-    "sourceB": {
-      "name": "Source B",
-      "provenance": "From a speech by US General William Westmoreland, 1976.",
-      "content": "On the battlefield, our soldiers were outstanding. We won every major battle. The defeat was not military. The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause.",
-      "sentences": [
-        "On the battlefield, our soldiers were outstanding.",
-        "We won every major battle.",
-        "The defeat was not military.",
-        "The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause."
+  subtopic_4_4: {
+    title: 'Reasons for US Failure in Vietnam',
+    enquiry: 'the reasons for US failure in the Vietnam War',
+    sourceB: {
+      name: 'Source B',
+      provenance: 'From a speech by US General William Westmoreland, 1976.',
+      content:
+        'On the battlefield, our soldiers were outstanding. We won every major battle. The defeat was not military. The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause.',
+      sentences: [
+        'On the battlefield, our soldiers were outstanding.',
+        'We won every major battle.',
+        'The defeat was not military.',
+        'The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause.',
       ],
-      "correctSentenceIndex": 3,
-      "nature": 1,
-      "natureOptions": ["A battlefield order diary", "Retrospective public speech / military defense statement", "A confidential treaty draft", "A secret congressional testimony"],
-      "natureExpl": "Source B is a retrospective public speech / military defense statement delivered after the conclusion of the war.",
-      "origin": 3,
-      "originOptions": ["North Vietnamese General Vo Nguyen Giap", "A young American soldier in a jungle patrol", "US President Richard Nixon", "US General William Westmoreland in 1976"],
-      "originExpl": "Source B was created by General Westmoreland, the overall commander of US forces in Vietnam from 1964 to 1968, speaking in 1976.",
-      "purpose": 1,
-      "purposeOptions": [
-        "To announce plans for a new invasion of North Vietnam",
+      correctSentenceIndex: 3,
+      nature: 1,
+      natureOptions: [
+        'A battlefield order diary',
+        'Retrospective public speech / military defense statement',
+        'A confidential treaty draft',
+        'A secret congressional testimony',
+      ],
+      natureExpl:
+        'Source B is a retrospective public speech / military defense statement delivered after the conclusion of the war.',
+      origin: 3,
+      originOptions: [
+        'North Vietnamese General Vo Nguyen Giap',
+        'A young American soldier in a jungle patrol',
+        'US President Richard Nixon',
+        'US General William Westmoreland in 1976',
+      ],
+      originExpl:
+        'Source B was created by General Westmoreland, the overall commander of US forces in Vietnam from 1964 to 1968, speaking in 1976.',
+      purpose: 1,
+      purposeOptions: [
+        'To announce plans for a new invasion of North Vietnam',
         "To defend the military's record by blaming politicians and the media for restricting operations and undermining public support",
-        "To apologize to the American public for tactical military mistakes",
-        "To support congressional cuts to the defense budget"
+        'To apologize to the American public for tactical military mistakes',
+        'To support congressional cuts to the defense budget',
       ],
-      "purposeExpl": "Westmoreland's purpose was to shift the blame for the defeat away from his military strategies (like attrition) and onto Washington politicians and anti-war media coverage."
+      purposeExpl:
+        "Westmoreland's purpose was to shift the blame for the defeat away from his military strategies (like attrition) and onto Washington politicians and anti-war media coverage.",
     },
-    "sourceC": {
-      "name": "Source C",
-      "provenance": "From a North Vietnamese volunteer worker on the Ho Chi Minh Trail, 1974.",
-      "content": "They bombed us day and night, but we rebuilt the road immediately. We were fighting for our country's independence. We were willing to die for our land. Firepower cannot defeat national spirit.",
-      "sentences": [
-        "They bombed us day and night, but we rebuilt the road immediately.",
+    sourceC: {
+      name: 'Source C',
+      provenance: 'From a North Vietnamese volunteer worker on the Ho Chi Minh Trail, 1974.',
+      content:
+        "They bombed us day and night, but we rebuilt the road immediately. We were fighting for our country's independence. We were willing to die for our land. Firepower cannot defeat national spirit.",
+      sentences: [
+        'They bombed us day and night, but we rebuilt the road immediately.',
         "We were fighting for our country's independence.",
-        "We were willing to die for our land.",
-        "Firepower cannot defeat national spirit."
+        'We were willing to die for our land.',
+        'Firepower cannot defeat national spirit.',
       ],
-      "correctSentenceIndex": 3,
-      "nature": 2,
-      "natureOptions": ["An official military dispatch", "A public propaganda poster", "Firsthand oral history / veteran recollection", "A legal contract for road workers"],
-      "natureExpl": "Source C is a firsthand oral history / veteran recollection of a former trail volunteer.",
-      "origin": 0,
-      "originOptions": ["A North Vietnamese volunteer worker on the Ho Chi Minh Trail", "A US Air Force pilot bombing the trail", "A Chinese logistics officer in Hanoi", "A South Vietnamese ARVN soldier"],
-      "originExpl": "Source C was created by a North Vietnamese trail worker in 1974, recounting their experiences during the heavy US bombings.",
-      "purpose": 3,
-      "purposeOptions": [
-        "To describe the construction methods of modern bridges",
-        "To plead for medical aid from international organizations",
-        "To express regret for supporting the North Vietnamese government",
-        "To describe the absolute determination and nationalist spirit of the volunteers to rebuild the trail and drive out foreign forces"
+      correctSentenceIndex: 3,
+      nature: 2,
+      natureOptions: [
+        'An official military dispatch',
+        'A public propaganda poster',
+        'Firsthand oral history / veteran recollection',
+        'A legal contract for road workers',
       ],
-      "purposeExpl": "The volunteer's purpose was to explain that their deep patriotic commitment to independence made them willing to endure and rebuild, rendering US air supremacy ineffective."
+      natureExpl:
+        'Source C is a firsthand oral history / veteran recollection of a former trail volunteer.',
+      origin: 0,
+      originOptions: [
+        'A North Vietnamese volunteer worker on the Ho Chi Minh Trail',
+        'A US Air Force pilot bombing the trail',
+        'A Chinese logistics officer in Hanoi',
+        'A South Vietnamese ARVN soldier',
+      ],
+      originExpl:
+        'Source C was created by a North Vietnamese trail worker in 1974, recounting their experiences during the heavy US bombings.',
+      purpose: 3,
+      purposeOptions: [
+        'To describe the construction methods of modern bridges',
+        'To plead for medical aid from international organizations',
+        'To express regret for supporting the North Vietnamese government',
+        'To describe the absolute determination and nationalist spirit of the volunteers to rebuild the trail and drive out foreign forces',
+      ],
+      purposeExpl:
+        "The volunteer's purpose was to explain that their deep patriotic commitment to independence made them willing to endure and rebuild, rendering US air supremacy ineffective.",
     },
-    "interpretation1": {
-      "author": "Historian Lewis Sorley (1999)",
-      "summary": "Argues that the failure was political, as the US military had secured the country, but Congress cut funding and banned air support, leaving ARVN defenseless."
+    interpretation1: {
+      author: 'Historian Lewis Sorley (1999)',
+      summary:
+        'Argues that the failure was political, as the US military had secured the country, but Congress cut funding and banned air support, leaving ARVN defenseless.',
     },
-    "interpretation2": {
-      "author": "Historian Stanley Karnow (1983)",
-      "summary": "Argues that the US failure was inevitable because they fought a deeply rooted nationalist movement willing to accept any human cost to win."
+    interpretation2: {
+      author: 'Historian Stanley Karnow (1983)',
+      summary:
+        'Argues that the US failure was inevitable because they fought a deeply rooted nationalist movement willing to accept any human cost to win.',
     },
-    "corroboration": {
-      "matchB": 1,
-      "matchC": 2,
-      "explanation": "<strong>Corroboration Analysis:</strong> You highlighted: <em>\"The war was lost by politicians who restricted our targets...\"</em> in Source B, corroborating Lewis Sorley's political failure argument. You selected: <em>\"Firepower cannot defeat national spirit.\"</em> in Source C, supporting Stanley Karnow's view that defeat was inevitable against a nationalist struggle."
-    }
-  }
+    corroboration: {
+      matchB: 1,
+      matchC: 2,
+      explanation:
+        '<strong>Corroboration Analysis:</strong> You highlighted: <em>"The war was lost by politicians who restricted our targets..."</em> in Source B, corroborating Lewis Sorley\'s political failure argument. You selected: <em>"Firepower cannot defeat national spirit."</em> in Source C, supporting Stanley Karnow\'s view that defeat was inevitable against a nationalist struggle.',
+    },
+  },
 };
 
 export function initSourceDetectiveGame() {
@@ -336,13 +462,13 @@ function startInquiry(subtopicId) {
     activeSource: 'sourceB', // 'sourceB' | 'sourceC'
     resolved: {
       sourceB: { nature: null, origin: null, purpose: null },
-      sourceC: { nature: null, origin: null, purpose: null }
+      sourceC: { nature: null, origin: null, purpose: null },
     },
     phase: 1, // 1: NOP Deconstruction, 2: Interpretation Matching via Text Highlighting
     matchB: null, // selected sentence index for Source B
     matchC: null, // selected sentence index for Source C
     matchedB: false, // is B correctly aligned
-    matchedC: false  // is C correctly aligned
+    matchedC: false, // is C correctly aligned
   };
 
   function renderInquiryStage() {
@@ -356,9 +482,10 @@ function startInquiry(subtopicId) {
   function renderPhase1() {
     const srcData = data[gameState.activeSource];
     const isB = gameState.activeSource === 'sourceB';
-    
+
     const answers = gameState.resolved[gameState.activeSource];
-    const isSourceDone = answers.nature !== null && answers.origin !== null && answers.purpose !== null;
+    const isSourceDone =
+      answers.nature !== null && answers.origin !== null && answers.purpose !== null;
 
     playArea.innerHTML = `
       <div style="display: flex; flex-direction: column; gap: 20px;">
@@ -449,16 +576,26 @@ function startInquiry(subtopicId) {
       `;
     }
 
-    return options.map((opt, idx) => `
+    return options
+      .map(
+        (opt, idx) => `
       <button class="nop-choice-btn" data-type="${type}" data-index="${idx}" style="width: 100%; text-align: left; padding: 8px 12px; font-size: 0.76rem; border-radius: 4px; border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-main); cursor: pointer; transition: all var(--transition-fast); line-height: 1.3;">
         ${opt}
       </button>
-    `).join('');
+    `,
+      )
+      .join('');
   }
 
   function renderPhase1Footer() {
-    const isDoneB = gameState.resolved.sourceB.nature !== null && gameState.resolved.sourceB.origin !== null && gameState.resolved.sourceB.purpose !== null;
-    const isDoneC = gameState.resolved.sourceC.nature !== null && gameState.resolved.sourceC.origin !== null && gameState.resolved.sourceC.purpose !== null;
+    const isDoneB =
+      gameState.resolved.sourceB.nature !== null &&
+      gameState.resolved.sourceB.origin !== null &&
+      gameState.resolved.sourceB.purpose !== null;
+    const isDoneC =
+      gameState.resolved.sourceC.nature !== null &&
+      gameState.resolved.sourceC.origin !== null &&
+      gameState.resolved.sourceC.purpose !== null;
 
     if (isDoneB && isDoneC) {
       return `
@@ -467,7 +604,7 @@ function startInquiry(subtopicId) {
             <h4 style="margin: 0; color: var(--success); font-family: var(--font-heading); display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check"></i> Provenance Analysis Complete!</h4>
             <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: var(--text-muted);">You successfully deconstructed both sources. Next, perform active text highlighting to connect evidence to the interpretations.</p>
           </div>
-          <button class="btn-primary" id="btn-source-game-phase2" style="padding: 10px 20px; font-weight: 700; border-radius: var(--border-radius-sm); display: flex; align-items: center; gap: 6px; cursor: pointer;">
+          <button class="btn-pedagogy-primary" id="btn-source-game-phase2" style="padding: 10px 20px; font-weight: 700; border-radius: var(--border-radius-sm); display: flex; align-items: center; gap: 6px; cursor: pointer;">
             Evidence Highlighter <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
@@ -476,7 +613,7 @@ function startInquiry(subtopicId) {
 
     const currentSourceText = gameState.activeSource === 'sourceB' ? 'Source B' : 'Source C';
     const isCurrentDone = gameState.activeSource === 'sourceB' ? isDoneB : isDoneC;
-    
+
     if (isCurrentDone) {
       const nextSource = gameState.activeSource === 'sourceB' ? 'sourceC' : 'sourceB';
       return `
@@ -485,7 +622,7 @@ function startInquiry(subtopicId) {
             <h4 style="margin: 0; color: var(--primary); font-family: var(--font-heading);"><i class="fa-solid fa-arrow-right-long"></i> Deconstructed ${currentSourceText}!</h4>
             <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: var(--text-muted);">Analyze the other source to unlock the corroboration matcher.</p>
           </div>
-          <button class="btn-primary" id="btn-source-game-switch" data-target="${nextSource}" style="padding: 10px 20px; font-weight: 700; border-radius: var(--border-radius-sm); cursor: pointer;">
+          <button class="btn-pedagogy-primary" id="btn-source-game-switch" data-target="${nextSource}" style="padding: 10px 20px; font-weight: 700; border-radius: var(--border-radius-sm); cursor: pointer;">
             Deconstruct ${nextSource === 'sourceB' ? 'Source B' : 'Source C'}
           </button>
         </div>
@@ -514,12 +651,12 @@ function startInquiry(subtopicId) {
       });
     }
 
-    document.querySelectorAll('.nop-choice-btn').forEach(btn => {
+    document.querySelectorAll('.nop-choice-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         const type = btn.getAttribute('data-type');
         const idx = parseInt(btn.getAttribute('data-index'));
         const srcData = data[gameState.activeSource];
-        
+
         const isCorrect = idx === srcData[type];
         if (isCorrect) {
           AudioEngine.play('success');
@@ -554,7 +691,7 @@ function startInquiry(subtopicId) {
 
   function renderPhase2() {
     const isDone = gameState.matchedB && gameState.matchedC;
-    
+
     playArea.innerHTML = `
       <div style="display: flex; flex-direction: column; gap: 20px;">
         
@@ -577,11 +714,15 @@ function startInquiry(subtopicId) {
               <span class="badge" style="background: rgba(59, 130, 246, 0.15); color: var(--primary); padding: 3px 8px; border-radius: 3px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase;">Interpretation 1</span>
               <h5 style="margin: 10px 0 6px 0; font-size: 0.85rem; color: var(--text-main);">${data.interpretation1.author}</h5>
               <p style="margin: 0; font-size: 0.82rem; line-height: 1.45; color: var(--text-muted);">${data.interpretation1.summary}</p>
-              ${gameState.matchedB ? `
+              ${
+                gameState.matchedB
+                  ? `
                 <div style="position: absolute; top: 12px; right: 12px; color: var(--success); font-weight: bold; font-size: 0.72rem; display: flex; align-items: center; gap: 4px;">
                   <i class="fa-solid fa-circle-check"></i> Evidence Matched (Source B)
                 </div>
-              ` : ''}
+              `
+                  : ''
+              }
             </div>
 
             <!-- Interpretation 2 Panel -->
@@ -589,18 +730,24 @@ function startInquiry(subtopicId) {
               <span class="badge" style="background: rgba(236, 72, 153, 0.15); color: #ec4899; padding: 3px 8px; border-radius: 3px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase;">Interpretation 2</span>
               <h5 style="margin: 10px 0 6px 0; font-size: 0.85rem; color: var(--text-main);">${data.interpretation2.author}</h5>
               <p style="margin: 0; font-size: 0.82rem; line-height: 1.45; color: var(--text-muted);">${data.interpretation2.summary}</p>
-              ${gameState.matchedC ? `
+              ${
+                gameState.matchedC
+                  ? `
                 <div style="position: absolute; top: 12px; right: 12px; color: var(--success); font-weight: bold; font-size: 0.72rem; display: flex; align-items: center; gap: 4px;">
                   <i class="fa-solid fa-circle-check"></i> Evidence Matched (Source C)
                 </div>
-              ` : ''}
+              `
+                  : ''
+              }
             </div>
           </div>
 
           <!-- Right: Interactive Highlighter Board -->
           <div class="dashboard-panel" style="flex: 1.2; min-width: 320px; padding: 20px; display: flex; flex-direction: column; gap: 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass);">
             
-            ${!gameState.matchedB ? `
+            ${
+              !gameState.matchedB
+                ? `
               <div style="display: flex; flex-direction: column; gap: 12px;">
                 <div style="font-size: 0.75rem; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Task 1: Corroborate Interpretation 1</div>
                 <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.4;">
@@ -613,7 +760,9 @@ function startInquiry(subtopicId) {
                   ${renderClickableSentences('sourceB', data.sourceB.sentences)}
                 </div>
               </div>
-            ` : (!gameState.matchedC ? `
+            `
+                : !gameState.matchedC
+                  ? `
               <div style="display: flex; flex-direction: column; gap: 12px;">
                 <div style="font-size: 0.75rem; font-weight: bold; color: #ec4899; text-transform: uppercase; letter-spacing: 0.5px;">Task 2: Corroborate Interpretation 2</div>
                 <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.4;">
@@ -626,7 +775,8 @@ function startInquiry(subtopicId) {
                   ${renderClickableSentences('sourceC', data.sourceC.sentences)}
                 </div>
               </div>
-            ` : `
+            `
+                  : `
               <div style="text-align: center; padding: 30px 10px;">
                 <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 16px;">
                   <i class="fa-solid fa-circle-check"></i>
@@ -636,7 +786,8 @@ function startInquiry(subtopicId) {
                   You successfully extracted the direct textual quotes required for Section B questions.
                 </p>
               </div>
-            `)}
+            `
+            }
 
           </div>
 
@@ -655,21 +806,27 @@ function startInquiry(subtopicId) {
     const correctIdx = data[sourceKey].correctSentenceIndex;
     const currentSelection = gameState[sourceKey === 'sourceB' ? 'matchB' : 'matchC'];
 
-    return sentences.map((sent, idx) => {
-      let extraStyle = '';
-      let badge = '';
-      if (currentSelection !== null && idx === currentSelected(sourceKey)) {
-        const isCorrect = idx === correctIdx;
-        extraStyle = isCorrect ? 'border: 1px solid var(--success); background: rgba(16, 185, 129, 0.08); color: var(--text-main);' : 'border: 1px solid var(--danger); background: rgba(239, 68, 68, 0.08); color: var(--text-main);';
-        badge = isCorrect ? ' <i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 0.72rem; margin-left: 4px;"></i>' : ' <i class="fa-solid fa-circle-xmark" style="color: var(--danger); font-size: 0.72rem; margin-left: 4px;"></i>';
-      }
+    return sentences
+      .map((sent, idx) => {
+        let extraStyle = '';
+        let badge = '';
+        if (currentSelection !== null && idx === currentSelected(sourceKey)) {
+          const isCorrect = idx === correctIdx;
+          extraStyle = isCorrect
+            ? 'border: 1px solid var(--success); background: rgba(16, 185, 129, 0.08); color: var(--text-main);'
+            : 'border: 1px solid var(--danger); background: rgba(239, 68, 68, 0.08); color: var(--text-main);';
+          badge = isCorrect
+            ? ' <i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 0.72rem; margin-left: 4px;"></i>'
+            : ' <i class="fa-solid fa-circle-xmark" style="color: var(--danger); font-size: 0.72rem; margin-left: 4px;"></i>';
+        }
 
-      return `
+        return `
         <span class="source-evidence-sentence" data-idx="${idx}" style="cursor: pointer; padding: 6px 10px; border-radius: 4px; border: 1px dashed transparent; transition: all var(--transition-fast); display: block; hover-background: rgba(255,255,255,0.03); ${extraStyle}">
           "${sent}"${badge}
         </span>
       `;
-    }).join('');
+      })
+      .join('');
   }
 
   function currentSelected(sourceKey) {
@@ -692,14 +849,14 @@ function startInquiry(subtopicId) {
         </div>
         <div style="display: flex; gap: 12px; margin-top: 4px;">
           <button class="btn-secondary" id="btn-source-game-reset" style="padding: 10px 18px; font-weight: 700; border-radius: var(--border-radius-sm); cursor: pointer; font-size: 0.82rem;">Reset Enquiry</button>
-          <button class="btn-primary" id="btn-source-game-finished" style="padding: 10px 18px; font-weight: 700; border-radius: var(--border-radius-sm); cursor: pointer; font-size: 0.82rem;">Finished</button>
+          <button class="btn-pedagogy-primary" id="btn-source-game-finished" style="padding: 10px 18px; font-weight: 700; border-radius: var(--border-radius-sm); cursor: pointer; font-size: 0.82rem;">Finished</button>
         </div>
       </div>
     `;
   }
 
   function bindMatchListeners() {
-    document.querySelectorAll('.source-evidence-sentence').forEach(el => {
+    document.querySelectorAll('.source-evidence-sentence').forEach((el) => {
       el.addEventListener('click', () => {
         const idx = parseInt(el.getAttribute('data-idx'));
         const sourceKey = !gameState.matchedB ? 'sourceB' : 'sourceC';
