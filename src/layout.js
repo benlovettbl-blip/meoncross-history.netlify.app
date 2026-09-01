@@ -86,57 +86,18 @@ export function bindEvents() {
     sidebarUnitsContainer.innerHTML = '';
 
     const units = getUnits();
-    const ks3Order = [
-      'water_and_sanitation',
-      'medieval_england',
-      'early_modern_world',
-      'industrialisation_and_empire',
-      'australia',
-      'great_war',
-      'great_war_part2',
-      'second_world_war',
-      'the_shoah',
-      'cold_war',
-      'post_war_britain',
-    ];
-    const ks3Units = units
-      .filter((u) => u && u.title && typeof u.title === 'string' && u.title.includes('KS3:'))
-      .sort((a, b) => {
-        let idxA = ks3Order.indexOf(a.id);
-        let idxB = ks3Order.indexOf(b.id);
-        if (idxA === -1) idxA = 999;
-        if (idxB === -1) idxB = 999;
-        return idxA - idxB;
-      });
+    const getOrderedUnits = (orderArray) => {
+      return units
+        .filter((u) => u && u.id && orderArray.includes(u.id))
+        .sort((a, b) => orderArray.indexOf(a.id) - orderArray.indexOf(b.id));
+    };
 
-    const ks4Order = ['edexcel_medicine', 'cme_new', 'weimar_nazi_germany', 'eee'];
-    const ks4Units = units
-      .filter(
-        (u) =>
-          u &&
-          u.title &&
-          typeof u.title === 'string' &&
-          !u.title.includes('KS3:') &&
-          !['trip_ypres'].includes(u.id),
-      )
-      .sort((a, b) => {
-        let idxA = ks4Order.indexOf(a.id);
-        let idxB = ks4Order.indexOf(b.id);
-        if (idxA === -1) idxA = 999;
-        if (idxB === -1) idxB = 999;
-        return idxA - idxB;
-      });
-
-    const tripOrder = ['trip_ypres'];
-    const tripUnits = units
-      .filter((u) => tripOrder.includes(u.id))
-      .sort((a, b) => {
-        let idxA = tripOrder.indexOf(a.id);
-        let idxB = tripOrder.indexOf(b.id);
-        if (idxA === -1) idxA = 999;
-        if (idxB === -1) idxB = 999;
-        return idxA - idxB;
-      });
+    const year7Units = getOrderedUnits(['water_and_sanitation', 'medieval_england', 'early_modern_world']);
+    const year8Units = getOrderedUnits(['industrialisation_and_empire', 'australia', 'great_war']);
+    const year9Units = getOrderedUnits(['great_war_part2', 'the_shoah', 'cold_war', 'second_world_war', 'post_war_britain']);
+    const year10Units = getOrderedUnits(['cme_new', 'weimar_nazi_germany']);
+    const year11Units = getOrderedUnits(['edexcel_medicine', 'eee']);
+    const tripUnits = getOrderedUnits(['trip_ypres']);
 
     const renderAccordionGroup = (title, unitList, defaultOpen = false) => {
       if (unitList.length === 0) return;
@@ -196,7 +157,10 @@ export function bindEvents() {
     };
 
     renderAccordionGroup('School Trips & Tours', tripUnits, true);
-    renderAccordionGroup('Key Stage 3', ks3Units, true);
-    renderAccordionGroup('Key Stage 4', ks4Units, false);
+    renderAccordionGroup('Year 7', year7Units, true);
+    renderAccordionGroup('Year 8', year8Units, true);
+    renderAccordionGroup('Year 9', year9Units, true);
+    renderAccordionGroup('Year 10', year10Units, false);
+    renderAccordionGroup('Year 11', year11Units, false);
   }
 }

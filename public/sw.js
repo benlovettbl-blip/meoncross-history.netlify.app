@@ -1,5 +1,5 @@
-const CACHE_NAME = 'history-hub-cache-v5';
-const DYNAMIC_CACHE = 'history-hub-dynamic-v5';
+const CACHE_NAME = 'history-hub-cache-v6';
+const DYNAMIC_CACHE = 'history-hub-dynamic-v6';
 
 const CORE_ASSETS = [
   '/',

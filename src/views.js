@@ -65,33 +65,40 @@ export function renderDashboard() {
   }
 
   let html = `
+    <div style="max-width: 1150px; margin: 0 auto; padding: 0 20px;">
   `;
 
   const units = getUnits();
 
-  // Combined KS3 Grouping (maintaining sorted order)
-  const ks3Order = [
-    'water_and_sanitation',
-    'medieval_england',
-    'early_modern_world',
-    'industrialisation_and_empire',
-    'australia',
-    'great_war',
-    'great_war_part2',
-    'second_world_war',
-    'the_shoah',
-    'cold_war',
-    'post_war_britain',
-  ];
-  const ks3Units = units
-    .filter((u) => ks3Order.includes(u.id))
-    .sort((a, b) => ks3Order.indexOf(a.id) - ks3Order.indexOf(b.id));
+  // Year 7 Grouping
+  const year7Order = ['water_and_sanitation', 'medieval_england', 'early_modern_world'];
+  const year7Units = units
+    .filter((u) => year7Order.includes(u.id))
+    .sort((a, b) => year7Order.indexOf(a.id) - year7Order.indexOf(b.id));
 
-  // KS4 (GCSE) Grouping
-  const ks4Order = ['edexcel_medicine', 'eee', 'cme_new', 'weimar_nazi_germany'];
-  const ks4Units = units
-    .filter((u) => ks4Order.includes(u.id))
-    .sort((a, b) => ks4Order.indexOf(a.id) - ks4Order.indexOf(b.id));
+  // Year 8 Grouping
+  const year8Order = ['industrialisation_and_empire', 'australia', 'great_war'];
+  const year8Units = units
+    .filter((u) => year8Order.includes(u.id))
+    .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));
+
+  // Year 9 Grouping
+  const year9Order = ['great_war_part2', 'the_shoah', 'cold_war', 'second_world_war', 'post_war_britain'];
+  const year9Units = units
+    .filter((u) => year9Order.includes(u.id))
+    .sort((a, b) => year9Order.indexOf(a.id) - year9Order.indexOf(b.id));
+
+  // Year 10 Grouping
+  const year10Order = ['cme_new', 'weimar_nazi_germany'];
+  const year10Units = units
+    .filter((u) => year10Order.includes(u.id))
+    .sort((a, b) => year10Order.indexOf(a.id) - year10Order.indexOf(b.id));
+
+  // Year 11 Grouping
+  const year11Order = ['edexcel_medicine', 'eee'];
+  const year11Units = units
+    .filter((u) => year11Order.includes(u.id))
+    .sort((a, b) => year11Order.indexOf(a.id) - year11Order.indexOf(b.id));
 
   // Trips & Tours Grouping
   const tripOrder = ['trip_ypres'];
@@ -186,21 +193,48 @@ export function renderDashboard() {
     });
   }
 
-  if (ks3Units.length > 0) {
+  if (year7Units.length > 0) {
     html += `
-      <h3 class="section-title">Key Stage 3</h3>
+      <h3 class="section-title">Year 7</h3>
       <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
-    ks3Units.forEach(renderUnitCard);
+    year7Units.forEach(renderUnitCard);
     html += `</div>`;
   }
 
-  if (ks4Units.length > 0) {
+  if (year8Units.length > 0) {
     html += `
-      <h3 class="section-title">GCSE (Years 10 & 11)</h3>
+      <h3 class="section-title">Year 8</h3>
+      <div class="modules-grid" style="margin-bottom: 2rem;">
+    `;
+    year8Units.forEach(renderUnitCard);
+    html += `</div>`;
+  }
+
+  if (year9Units.length > 0) {
+    html += `
+      <h3 class="section-title">Year 9</h3>
+      <div class="modules-grid" style="margin-bottom: 2rem;">
+    `;
+    year9Units.forEach(renderUnitCard);
+    html += `</div>`;
+  }
+
+  if (year10Units.length > 0) {
+    html += `
+      <h3 class="section-title">Year 10 (GCSE)</h3>
+      <div class="modules-grid" style="margin-bottom: 2rem;">
+    `;
+    year10Units.forEach(renderUnitCard);
+    html += `</div>`;
+  }
+
+  if (year11Units.length > 0) {
+    html += `
+      <h3 class="section-title">Year 11 (GCSE)</h3>
       <div class="modules-grid">
     `;
-    ks4Units.forEach(renderUnitCard);
+    year11Units.forEach(renderUnitCard);
 
     // Legacy USA App Card
     html += `
@@ -229,7 +263,7 @@ export function renderDashboard() {
 
     html += `</div>`;
   }
-
+  html += `</div>`;
   container.innerHTML = html;
 }
 
@@ -751,10 +785,12 @@ export async function renderLessonsView() {
   };
 
   let heroImageUrl = '';
-  if (data.cover_image && typeof data.cover_image === 'string') {
+  if (data.cover_image && typeof data.cover_image === 'string' && !data.cover_image.includes('placeholder_cover')) {
     heroImageUrl = getAssetUrl(data.cover_image);
-  } else if (Array.isArray(data.cover_image) && data.cover_image.length > 0) {
+  } else if (Array.isArray(data.cover_image) && data.cover_image.length > 0 && !data.cover_image[0].includes('placeholder_cover')) {
     heroImageUrl = getAssetUrl(data.cover_image[0]);
+  } else if (data.homepage_background) {
+    heroImageUrl = getAssetUrl(data.homepage_background);
   } else if (data.cover_sources && data.cover_sources.length > 0) {
     heroImageUrl = getAssetUrl(data.cover_sources[0].image);
   }
