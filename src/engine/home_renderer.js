@@ -82,19 +82,32 @@ export function renderHomepage() {
         ? appStore.state.activeUnitData.cover_image
         : null);
 
-    if (
-      heroImage &&
-      !appStore.state.activeUnitData.cover_sources &&
-      !Array.isArray(appStore.state.activeUnitData.cover_image)
+    let heroImageUrl = '';
+    if (heroImage) {
+      heroImageUrl = getAssetUrl(heroImage);
+    } else if (
+      Array.isArray(appStore.state.activeUnitData.cover_image) &&
+      appStore.state.activeUnitData.cover_image.length > 0
     ) {
-      let imgUrl = getAssetUrl(heroImage);
+      heroImageUrl = getAssetUrl(appStore.state.activeUnitData.cover_image[0]);
+    } else if (
+      appStore.state.activeUnitData.cover_sources &&
+      appStore.state.activeUnitData.cover_sources.length > 0
+    ) {
+      heroImageUrl = getAssetUrl(appStore.state.activeUnitData.cover_sources[0].image);
+    }
+
+    if (heroImageUrl) {
       topSectionHTML = `
-          <div class="hero-container" style="background: linear-gradient(to bottom, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.1) 100%), url('${imgUrl}') center/cover no-repeat;">
+          <div class="hero-container" style="background: linear-gradient(to bottom, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.1) 100%), url('${heroImageUrl}') center/cover no-repeat;">
             <h1 class="hero-title">${appStore.state.activeUnitData.enquiry_question || appStore.state.activeUnitData.enquiry || 'Unit Enquiry'}</h1>
             <h2 class="hero-subtitle">
               ${appStore.state.activeUnitData.title}
             </h2>
             ${appStore.state.activeUnitData.cover_caption ? `<p class="hero-caption">${appStore.state.activeUnitData.cover_caption}</p>` : ''}
+          </div>
+          <div style="padding: 20px 30px 0 30px; background: white;">
+            ${renderCoverSourcesHTML(appStore.state.activeUnitData, true)}
           </div>
         `;
     } else {
@@ -105,7 +118,7 @@ export function renderHomepage() {
               ${appStore.state.activeUnitData.title}
             </h2>
             
-            ${renderCoverSourcesHTML(unitData, getAssetUrl)}
+            ${renderCoverSourcesHTML(appStore.state.activeUnitData)}
             
             ${appStore.state.activeUnitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${appStore.state.activeUnitData.cover_caption}</p>` : ''}
           </div>

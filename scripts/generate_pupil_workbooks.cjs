@@ -1,152 +1,155 @@
-const fs = require("fs");
+const fs = require('fs');
 const path = require('path');
 const { PATHS } = require('./config.cjs');
 
 const publicUnitsDir = PATHS.UNITS;
-let dataParserCode = "";
+let dataParserCode = '';
 try {
-  const dataParserSrc = fs.readFileSync(
-    path.join(PATHS.SRC, "data_parser.js"),
-    "utf8",
-  );
-  dataParserCode = dataParserSrc.replace(/export /g, "");
+  const dataParserSrc = fs.readFileSync(path.join(PATHS.SRC, 'data_parser.js'), 'utf8');
+  dataParserCode = dataParserSrc.replace(/export /g, '');
   eval(dataParserCode);
 } catch (err) {
-  console.warn("⚠️ Warning: data_parser.js is missing or cannot be read. Skipping parser initialization.", err.message);
+  console.warn(
+    '⚠️ Warning: data_parser.js is missing or cannot be read. Skipping parser initialization.',
+    err.message,
+  );
 }
 
-let examGuideSrc = "";
+let examGuideSrc = '';
 try {
-  if (fs.existsSync(path.join(PATHS.SRC, "exam_guide_content.js"))) {
-    examGuideSrc = fs.readFileSync(
-      path.join(PATHS.SRC, "exam_guide_content.js"),
-      "utf8",
-    );
-    const examGuideCode = examGuideSrc.replace(/export const /g, "global.");
+  if (fs.existsSync(path.join(PATHS.SRC, 'exam_guide_content.js'))) {
+    examGuideSrc = fs.readFileSync(path.join(PATHS.SRC, 'exam_guide_content.js'), 'utf8');
+    const examGuideCode = examGuideSrc.replace(/export const /g, 'global.');
     eval(examGuideCode);
   } else {
-    global.sectionAGuide = "";
-    global.sectionBGuide = "";
+    global.sectionAGuide = '';
+    global.sectionBGuide = '';
   }
 } catch (err) {
-  console.warn("⚠️ Warning: Could not read exam_guide_content.js.", err.message);
-  global.sectionAGuide = "";
-  global.sectionBGuide = "";
+  console.warn('⚠️ Warning: Could not read exam_guide_content.js.', err.message);
+  global.sectionAGuide = '';
+  global.sectionBGuide = '';
 }
 
-
 const getTariffBadge = (topic) => {
-    if (!topic) return "";
-    let marks = 8;
-    let match = topic.match(/\((\d+)\s*marks?\)/i);
-    if (match) {
-        marks = parseInt(match[1]);
-        topic = topic.replace(match[0], '').trim();
-    } else {
-        if (topic.toLowerCase().includes("narrative account")) marks = 8;
-        else if (topic.toLowerCase().includes("how useful")) marks = 8;
-        else if (topic.toLowerCase().includes("explain why")) marks = 12;
-        else if (topic.toLowerCase().includes("explain one consequence")) marks = 4;
-        else if (topic.toLowerCase().includes("describe two features") || topic.toLowerCase().includes("describe one feature")) marks = 4;
-    }
-    let time = Math.round(marks * 1.25);
-    if (marks === 4) time = 5;
-    if (marks === 8) time = 10;
-    if (marks === 12) time = 15;
-    if (marks === 16) time = 20;
-    
-    return {
-        cleanTopic: topic,
-        badgeHtml: ` <span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle; margin-left: 10px;">[${marks} marks &bull; ${time} mins]</span>`
-    };
+  if (!topic) return '';
+  let marks = 8;
+  let match = topic.match(/\((\d+)\s*marks?\)/i);
+  if (match) {
+    marks = parseInt(match[1]);
+    topic = topic.replace(match[0], '').trim();
+  } else {
+    if (topic.toLowerCase().includes('narrative account')) marks = 8;
+    else if (topic.toLowerCase().includes('how useful')) marks = 8;
+    else if (topic.toLowerCase().includes('explain why')) marks = 12;
+    else if (topic.toLowerCase().includes('explain one consequence')) marks = 4;
+    else if (
+      topic.toLowerCase().includes('describe two features') ||
+      topic.toLowerCase().includes('describe one feature')
+    )
+      marks = 4;
+  }
+  let time = Math.round(marks * 1.25);
+  if (marks === 4) time = 5;
+  if (marks === 8) time = 10;
+  if (marks === 12) time = 15;
+  if (marks === 16) time = 20;
+
+  return {
+    cleanTopic: topic,
+    badgeHtml: ` <span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle; margin-left: 10px;">[${marks} marks &bull; ${time} mins]</span>`,
+  };
 };
 
-
 const processTaskTextWithTariff = (text, isExamContext = false) => {
-    if (!text) return { cleanText: "", badgeHtml: "" };
-    
-    let isExam = text.toLowerCase().includes('assessment') || /\b\d+\s*marks?\b/i.test(text) || (isExamContext && text.toLowerCase().includes('explain why'));
-    if (isExam) {
-        let marks = 8;
-        let time = 10;
-        let spag = 0;
-        
-        let match = text.match(/\(?\s*\b(\d+)\s*marks?(?:\s*\+\s*(\d+)\s*marks?\s*for\s*SPaG)?\s*\)?/i);
-        if (match) {
-            marks = parseInt(match[1]);
-            if (match[2]) {
-                spag = parseInt(match[2]);
-            }
-        } else {
-            if (text.toLowerCase().includes("narrative account")) marks = 8;
-            else if (text.toLowerCase().includes("explain why")) marks = 12;
-            else if (text.toLowerCase().includes("16 marks")) marks = 16;
-        }
+  if (!text) return { cleanText: '', badgeHtml: '' };
 
-        let totalMarks = marks + spag;
-        
-        if (totalMarks === 4) time = 5;
-        else if (totalMarks === 8) time = 10;
-        else if (totalMarks === 12) time = 15;
-        else if (totalMarks === 16) time = 20;
-        else if (totalMarks === 20) time = 25;
-        
-        let cleanText = text;
-        if (match) {
-            cleanText = text.replace(match[0], '').trim();
-        }
+  let isExam =
+    text.toLowerCase().includes('assessment') ||
+    /\b\d+\s*marks?\b/i.test(text) ||
+    (isExamContext && text.toLowerCase().includes('explain why'));
+  if (isExam) {
+    let marks = 8;
+    let time = 10;
+    let spag = 0;
 
-                // Also manually strip brackets if any exist, e.g. [16 marks 20 mins]
-        cleanText = cleanText.replace(/\s*\[\d+\s*marks?\s*\d*\s*mins?\]/g, '').trim();
-
-        if (typeof unitData !== 'undefined' && unitData.is_ks3) {
-             return {
-                cleanText: formatText(cleanText),
-                badgeHtml: ""
-             };
-        }
-        
-        return {
-            cleanText: formatText(cleanText),
-            badgeHtml: `<div style="margin-top: 5px; margin-bottom: 15px;"><span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle;">[${totalMarks} marks &bull; ${time} mins]</span></div>`
-        };
+    let match = text.match(/\(?\s*\b(\d+)\s*marks?(?:\s*\+\s*(\d+)\s*marks?\s*for\s*SPaG)?\s*\)?/i);
+    if (match) {
+      marks = parseInt(match[1]);
+      if (match[2]) {
+        spag = parseInt(match[2]);
+      }
+    } else {
+      if (text.toLowerCase().includes('narrative account')) marks = 8;
+      else if (text.toLowerCase().includes('explain why')) marks = 12;
+      else if (text.toLowerCase().includes('16 marks')) marks = 16;
     }
-    
+
+    let totalMarks = marks + spag;
+
+    if (totalMarks === 4) time = 5;
+    else if (totalMarks === 8) time = 10;
+    else if (totalMarks === 12) time = 15;
+    else if (totalMarks === 16) time = 20;
+    else if (totalMarks === 20) time = 25;
+
+    let cleanText = text;
+    if (match) {
+      cleanText = text.replace(match[0], '').trim();
+    }
+
+    // Also manually strip brackets if any exist, e.g. [16 marks 20 mins]
+    cleanText = cleanText.replace(/\s*\[\d+\s*marks?\s*\d*\s*mins?\]/g, '').trim();
+
+    if (typeof unitData !== 'undefined' && unitData.is_ks3) {
+      return {
+        cleanText: formatText(cleanText),
+        badgeHtml: '',
+      };
+    }
+
     return {
-        cleanText: formatText(text),
-        badgeHtml: ""
+      cleanText: formatText(cleanText),
+      badgeHtml: `<div style="margin-top: 5px; margin-bottom: 15px;"><span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle;">[${totalMarks} marks &bull; ${time} mins]</span></div>`,
     };
+  }
+
+  return {
+    cleanText: formatText(text),
+    badgeHtml: '',
+  };
 };
 
 const formatText = (text) => {
-  if (!text) return "";
+  if (!text) return '';
   return text
-    .replace(/\(Weighing the Evidence toggle tabs\)/gi, "")
+    .replace(/\(Weighing the Evidence toggle tabs\)/gi, '')
     .replace(/_{3,}/g, '[ . . . . . . . . ]')
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.*?)\*/g, "<em>$1</em>");
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>');
 };
 
 const badgeSource = (title, overrideLetter = null) => {
-    if (!title) return '';
-    if (overrideLetter) {
-        if (/(Source )\s*[A-Z]/i.test(title)) {
-            title = title.replace(/(Source )\s*[A-Z]/i, '$1' + overrideLetter);
-        } else if (/(Source)(?!s)/i.test(title)) {
-            title = title.replace(/(Source)/i, '$1 ' + overrideLetter + ':');
-        } else {
-            title = 'Source ' + overrideLetter + ': ' + title;
-        }
+  if (!title) return '';
+  if (overrideLetter) {
+    if (/(Source )\s*[A-Z]/i.test(title)) {
+      title = title.replace(/(Source )\s*[A-Z]/i, '$1' + overrideLetter);
+    } else if (/(Source)(?!s)/i.test(title)) {
+      title = title.replace(/(Source)/i, '$1 ' + overrideLetter + ':');
+    } else {
+      title = 'Source ' + overrideLetter + ': ' + title;
     }
-    return title.replace(/(Source [A-Z])/i, '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>');
+  }
+  return title.replace(
+    /(Source [A-Z])/i,
+    '<span style="background-color: #1e40af; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 0.9em; letter-spacing: 0.5px; display: inline-block; margin-bottom: 4px;">$1</span>',
+  );
 };
 
-const ignoredDirs = ["node_modules", "public", ".git", ".agents", "dist"];
+const ignoredDirs = ['node_modules', 'public', '.git', '.agents', 'dist'];
 let allDirs = fs
   .readdirSync(publicUnitsDir, { withFileTypes: true })
-  .filter(
-    (dirent) => dirent.isDirectory() && !ignoredDirs.includes(dirent.name),
-  )
+  .filter((dirent) => dirent.isDirectory() && !ignoredDirs.includes(dirent.name))
   .map((dirent) => dirent.name);
 
 const targetUnit = process.argv[2];
@@ -156,12 +159,12 @@ if (targetUnit && allDirs.includes(targetUnit)) {
 
 allDirs.forEach((unitId) => {
   console.log(`Processing workbooks for unit: ${unitId}`);
-  const dataPath = path.join(publicUnitsDir, unitId, "data.js");
+  const dataPath = path.join(publicUnitsDir, unitId, 'data.js');
   if (!fs.existsSync(dataPath)) return;
 
   let dataContent;
   try {
-    dataContent = fs.readFileSync(dataPath, "utf8");
+    dataContent = fs.readFileSync(dataPath, 'utf8');
   } catch (err) {
     console.warn(`⚠️ Warning: Could not read data.js for ${unitId}. Skipping.`, err.message);
     return;
@@ -177,9 +180,7 @@ allDirs.forEach((unitId) => {
   const jsonStr = dataContent.substring(startIndex, endIndex + 1);
   let unitData;
   try {
-    unitData = eval(
-      "(function(){ const mock_exams=[]; return " + jsonStr + ";})()",
-    );
+    unitData = eval('(function(){ const mock_exams=[]; return ' + jsonStr + ';})()');
   } catch (e) {
     console.error(`Error parsing data.js for ${unitId}:`, e.message);
     return;
@@ -187,60 +188,56 @@ allDirs.forEach((unitId) => {
 
   if (!unitData.lessons) return;
 
-  const markersPath = path.join(
-    PATHS.ROOT,
-    "scratch",
-    `pdf_markers_${unitId}.json`,
-  );
+  const markersPath = path.join(PATHS.ROOT, 'scratch', `pdf_markers_${unitId}.json`);
   let pdfMarkers = [];
   if (fs.existsSync(markersPath)) {
     try {
-      pdfMarkers = JSON.parse(fs.readFileSync(markersPath, "utf8"));
+      pdfMarkers = JSON.parse(fs.readFileSync(markersPath, 'utf8'));
     } catch (e) {
       console.error(`Error reading pdf markers for ${unitId}:`, e.message);
     }
   }
-  
+
   unitData.lessons.forEach((lesson, lIdx) => {
     if (lesson.exam_practice || lesson.extended) {
-        if (lesson.tasks) {
-            lesson.tasks = lesson.tasks.filter(t => {
-                let txt = t.question || t.text || t.instruction || '';
-                return !txt.toLowerCase().includes('lesson consolidation');
-            });
-        }
+      if (lesson.tasks) {
+        lesson.tasks = lesson.tasks.filter((t) => {
+          let txt = t.question || t.text || t.instruction || '';
+          return !txt.toLowerCase().includes('lesson consolidation');
+        });
+      }
     }
     if (lesson.tasks) {
-        lesson.tasks.sort((a, b) => {
-            let txtA = a.question || a.text || a.instruction || '';
-            let txtB = b.question || b.text || b.instruction || '';
-            let matchA = txtA.match(/Q(\d+)/i);
-            let matchB = txtB.match(/Q(\d+)/i);
-            if (matchA && matchB) {
-                return parseInt(matchA[1]) - parseInt(matchB[1]);
-            }
-            return 0;
-        });
+      lesson.tasks.sort((a, b) => {
+        let txtA = a.question || a.text || a.instruction || '';
+        let txtB = b.question || b.text || b.instruction || '';
+        let matchA = txtA.match(/Q(\d+)/i);
+        let matchB = txtB.match(/Q(\d+)/i);
+        if (matchA && matchB) {
+          return parseInt(matchA[1]) - parseInt(matchB[1]);
+        }
+        return 0;
+      });
     }
     if (lesson.questions) {
-        lesson.questions.sort((a, b) => {
-            let txtA = a.question || a.text || '';
-            let txtB = b.question || b.text || '';
-            let matchA = txtA.match(/Q(\d+)/i);
-            let matchB = txtB.match(/Q(\d+)/i);
-            if (matchA && matchB) {
-                return parseInt(matchA[1]) - parseInt(matchB[1]);
-            }
-            return 0;
-        });
+      lesson.questions.sort((a, b) => {
+        let txtA = a.question || a.text || '';
+        let txtB = b.question || b.text || '';
+        let matchA = txtA.match(/Q(\d+)/i);
+        let matchB = txtB.match(/Q(\d+)/i);
+        if (matchA && matchB) {
+          return parseInt(matchA[1]) - parseInt(matchB[1]);
+        }
+        return 0;
+      });
     }
-    
-      let allVideos = [];
-      let imgTags = "";
-      let sources = [];
-      let interpretations = [];
-      let sourceCharCode = 65;
-    if (typeof sanitizeLessonData === "function") sanitizeLessonData(lesson);
+
+    let allVideos = [];
+    let imgTags = '';
+    let sources = [];
+    let interpretations = [];
+    let sourceCharCode = 65;
+    if (typeof sanitizeLessonData === 'function') sanitizeLessonData(lesson);
 
     const startMarker = pdfMarkers.find((m) => m.marker === `L${lIdx}_Start`);
     if (startMarker) {
@@ -286,7 +283,7 @@ allDirs.forEach((unitId) => {
       title: wb.title,
       image: wb.image,
       filter: (l) => {
-        const prefix = wb.prefix || "";
+        const prefix = wb.prefix || '';
         return l.title.startsWith(prefix) || (l.id && l.id.startsWith(prefix));
       },
     }));
@@ -294,7 +291,7 @@ allDirs.forEach((unitId) => {
     // Generate one comprehensive workbook for the unit
     workbooksToGenerate = [
       {
-        name: "full",
+        name: 'full',
         title: unitData.title,
         filter: () => true,
       },
@@ -362,25 +359,21 @@ allDirs.forEach((unitId) => {
     const periodTitle = period.title;
     const periodName = period.name;
 
-    let bannerQuestion = unitData.enquiry || "Student Workbook";
-    if (periodName === "medieval")
-      bannerQuestion =
-        "How much did medicine really change in Medieval England?";
-    else if (periodName === "renaissance")
-      bannerQuestion =
-        "How much did medicine really change during the Medical Renaissance?";
-    else if (periodName === "18th_19th")
-      bannerQuestion =
-        "How much did medicine really change in 18th and 19th Century Britain?";
-    else if (periodName === "modern")
-      bannerQuestion = "How much did medicine really change in Modern Britain?";
-    else if (periodName === "western_front")
-      bannerQuestion =
-        "How did treatments and the trenches develop on the Western Front?";
+    let bannerQuestion = unitData.enquiry || 'Student Workbook';
+    if (periodName === 'medieval')
+      bannerQuestion = 'How much did medicine really change in Medieval England?';
+    else if (periodName === 'renaissance')
+      bannerQuestion = 'How much did medicine really change during the Medical Renaissance?';
+    else if (periodName === '18th_19th')
+      bannerQuestion = 'How much did medicine really change in 18th and 19th Century Britain?';
+    else if (periodName === 'modern')
+      bannerQuestion = 'How much did medicine really change in Modern Britain?';
+    else if (periodName === 'western_front')
+      bannerQuestion = 'How did treatments and the trenches develop on the Western Front?';
 
     let appendixData = [];
 
-    let progressTrackerRows = "";
+    let progressTrackerRows = '';
     periodLessons.forEach((l, i) => {
       progressTrackerRows += `<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
     });
@@ -390,15 +383,20 @@ allDirs.forEach((unitId) => {
       });
     }
 
-    
     let imageToUse = period.image || unitData.cover_image;
-    let heroImgSrc = imageToUse ? (typeof resolveAssetPath === "function" ? resolveAssetPath(imageToUse, 2) : `../..${imageToUse.startsWith("/") ? imageToUse : "/" + imageToUse}`) : '';
-    let heroHtml = heroImgSrc ? `<img src="${heroImgSrc}" style="max-height: 45vh; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">` : '';
+    let heroImgSrc = imageToUse
+      ? typeof resolveAssetPath === 'function'
+        ? resolveAssetPath(imageToUse, 2)
+        : `../..${imageToUse.startsWith('/') ? imageToUse : '/' + imageToUse}`
+      : '';
+    let heroHtml = heroImgSrc
+      ? `<img src="${heroImgSrc}" style="max-height: 45vh; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">`
+      : '';
     if (unitId === 'early_modern_world') {
-        heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
+      heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
     }
     if (unitId === 'edexcel_medicine') {
-        heroHtml = `<div style="border: 2px solid #1e3a8a; padding: 15px; margin-top: 20px; background-color: #f8fafc;">
+      heroHtml = `<div style="border: 2px solid #1e3a8a; padding: 15px; margin-top: 20px; background-color: #f8fafc;">
 <h3 style="color: #1e3a8a; margin-top: 0;">Edexcel Specification: c1250–c1500</h3>
 <ul style="font-size: 11pt; line-height: 1.5;">
 <li><strong>1. Causes of disease:</strong> Supernatural/religious explanations, Astrology, Four Humours, and Miasma.</li>
@@ -419,7 +417,7 @@ allDirs.forEach((unitId) => {
       <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
         <h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 38pt; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">${periodTitle}</h1>
 
-        ${(periodTitle || "").trim().toLowerCase() !== (unitData.title || "").trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
+        ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
         
         
         
@@ -436,15 +434,15 @@ allDirs.forEach((unitId) => {
       </div>
     </div>`;
     html += `
-    </div>
-    
     <div style="page-break-after: always; page-break-inside: avoid; display: flex; flex-direction: column; max-height: 95vh; overflow: hidden;">
       <h2 style="margin: 0; color: #1e3a8a; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">PROGRESS & ASSESSMENT TRACKER <span style="float: right; font-size: 0.8em; font-weight: normal; color: #333;">Target Grade: _________</span></h2>
       
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; margin-bottom: 8px;">
         <tbody>
 
-          ${(!["weimar_nazi_germany", "cme_new", "edexcel_medicine", "eee"].includes(unitId)) ? `
+          ${
+            !['weimar_nazi_germany', 'cme_new', 'edexcel_medicine', 'eee'].includes(unitId)
+              ? `
           <tr>
             <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold; background-color: #f1f5f9;">Level</td>
             <td style="border: 1px solid #333; padding: 4px 6px;">Emerging (1-2)</td>
@@ -452,12 +450,14 @@ allDirs.forEach((unitId) => {
             <td style="border: 1px solid #333; padding: 4px 6px;">Expected (4-5)</td>
             <td style="border: 1px solid #333; padding: 4px 6px;">Expected+ (6-7) / Greater Depth (8-9)</td>
           </tr>
-          ` : `
+          `
+              : `
           <tr>
             <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold; background-color: #f1f5f9;">Grade</td>
             <td style="border: 1px solid #333; padding: 4px 6px;" colspan="4">9-1 GCSE Grading Scale</td>
           </tr>
-          `}
+          `
+          }
         </tbody>
       </table>
 
@@ -485,55 +485,41 @@ allDirs.forEach((unitId) => {
     </div>
     `;
 
-    
     periodLessons.forEach((lesson, lessonIndex) => {
       let globalQNum = 1;
       let allVideos = [];
-      let imgTags = "";
+      let imgTags = '';
       let sources = [];
       let interpretations = [];
       let sourceCharCode = 65;
-    let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
-    // Synced Chronological Numbering matching generate_textbooks.js
+      let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
+      // Synced Chronological Numbering matching generate_textbooks.js
 
-
-    
-    if (lesson.narrative_blocks) {
-        lesson.narrative_blocks.forEach(block => {
-            if (block.tasks) {
-                block.tasks.forEach(task => { 
-                    if (currentUnitId === 'great_war' || currentUnitId === 'great_war_part2') { 
-                        if (typeof task.text === 'string') task.text = task.text.replace(/^Task\s*\d*:\s*/i, ''); 
-                        if (typeof task.question === 'string') task.question = task.question.replace(/^Task\s*\d*:\s*/i, ''); 
-                    } 
-
-                });
-            }
-
-
+      if (lesson.narrative_blocks) {
+        lesson.narrative_blocks.forEach((block) => {
+          if (block.tasks) {
+            block.tasks.forEach((task) => {
+              if (currentUnitId === 'great_war' || currentUnitId === 'great_war_part2') {
+                if (typeof task.text === 'string')
+                  task.text = task.text.replace(/^Task\s*\d*:\s*/i, '');
+                if (typeof task.question === 'string')
+                  task.question = task.question.replace(/^Task\s*\d*:\s*/i, '');
+              }
+            });
+          }
         });
-    }
+      }
 
+      if (lesson.sources) {
+      }
 
-
-
-    
-    if (lesson.sources) {
-
-    }
-
-
-    
-    if (lesson.gcse_task) {
+      if (lesson.gcse_task) {
         if (lesson.gcse_task.tasks) {
-
         } else {
-
         }
-    }
+      }
 
-    
-    html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
+      html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
       let flatQuestions = [];
       if (lesson.startPage) {
         html += `<div style="font-size: 11pt; color: #555; margin-bottom: 15px; font-style: italic;">(See Textbook Page ${lesson.startPage})</div>`;
@@ -546,17 +532,17 @@ allDirs.forEach((unitId) => {
           html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">`;
           lesson.a4_map.forEach((img) => {
             let mapPath =
-              typeof resolveAssetPath === "function"
+              typeof resolveAssetPath === 'function'
                 ? resolveAssetPath(img, 2)
-                : `../..${img.startsWith("/") ? img : "/" + img}`;
+                : `../..${img.startsWith('/') ? img : '/' + img}`;
             html += `<img src="${mapPath}" style="max-width: 48%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
           });
           html += `</div>`;
         } else {
           let mapPath =
-            typeof resolveAssetPath === "function"
+            typeof resolveAssetPath === 'function'
               ? resolveAssetPath(lesson.a4_map, 2)
-              : `../..${lesson.a4_map.startsWith("/") ? lesson.a4_map : "/" + lesson.a4_map}`;
+              : `../..${lesson.a4_map.startsWith('/') ? lesson.a4_map : '/' + lesson.a4_map}`;
           html += `<div style="page-break-after: always; width: 100%; height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">`;
           html += `<img src="${mapPath}" style="max-width: 100%; max-height: 100%; object-fit: contain;  padding: 5px; box-sizing: border-box;">`;
           html += `</div>`;
@@ -582,42 +568,45 @@ allDirs.forEach((unitId) => {
 
       // Primary Source
       if (lesson.primary_source) {
-        let _psHtml = "";
-        let srcs = Array.isArray((lesson.primary_source.src || lesson.primary_source.source))
-          ? (lesson.primary_source.src || lesson.primary_source.source)
-          : [(lesson.primary_source.src || lesson.primary_source.source)];
+        let _psHtml = '';
+        let srcs = Array.isArray(lesson.primary_source.src || lesson.primary_source.source)
+          ? lesson.primary_source.src || lesson.primary_source.source
+          : [lesson.primary_source.src || lesson.primary_source.source];
         let renderImages = false; // globally disabled for pupil workbooks to save space
         if (lesson.a4_map && (lesson.primary_source.src || lesson.primary_source.source)) {
           let a4Str = JSON.stringify(lesson.a4_map);
-          let srcStr = JSON.stringify((lesson.primary_source.src || lesson.primary_source.source));
-          if (a4Str === srcStr || lesson.a4_map === (lesson.primary_source.src || lesson.primary_source.source))
+          let srcStr = JSON.stringify(lesson.primary_source.src || lesson.primary_source.source);
+          if (
+            a4Str === srcStr ||
+            lesson.a4_map === (lesson.primary_source.src || lesson.primary_source.source)
+          )
             renderImages = false;
         }
 
-        imgTags = "";
+        imgTags = '';
         if (renderImages) {
           imgTags = srcs
             .map((src) => {
               let resolved =
-                typeof resolveAssetPath === "function"
+                typeof resolveAssetPath === 'function'
                   ? resolveAssetPath(src, 2)
-                  : `../..${src.startsWith("/") ? src : "/" + src}`;
+                  : `../..${src.startsWith('/') ? src : '/' + src}`;
               const style =
                 lesson.primary_source.custom_style ||
                 (srcs.length > 1
-                  ? "max-width: 100%; max-height: 450px; object-fit: contain; display: block; margin: 0 auto; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);"
-                  : "max-width: 100%; max-height: 350px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);");
+                  ? 'max-width: 100%; max-height: 450px; object-fit: contain; display: block; margin: 0 auto; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);'
+                  : 'max-width: 100%; max-height: 350px; object-fit: contain;  border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);');
               return `<img src="${resolved}" alt="Primary Source" style="${style}">`;
             })
-            .join(" ");
+            .join(' ');
         }
 
         html += `
         <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
-          ${(renderImages && lesson.primary_source.title) ? `<strong>${badgeSource(lesson.primary_source.title, String.fromCharCode(sourceCharCode++))}</strong><br>` : ""}
-          <div style="${srcs.length > 1 ? "display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;" : "display: flex; justify-content: center; gap: 10px;"} margin: 15px 0;">${imgTags}</div>
-          ${(renderImages && lesson.primary_source.caption) ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ""}
-          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace("Enquiry: ", "")}${lesson.primary_source.page ? ` [p. ${lesson.primary_source.page}]` : ""}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ""}
+          ${renderImages && lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, String.fromCharCode(sourceCharCode++))}</strong><br>` : ''}
+          <div style="${srcs.length > 1 ? 'display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;' : 'display: flex; justify-content: center; gap: 10px;'} margin: 15px 0;">${imgTags}</div>
+          ${renderImages && lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
+          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` [p. ${lesson.primary_source.page}]` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
         </div>
       `;
       }
@@ -628,7 +617,7 @@ allDirs.forEach((unitId) => {
       // Do Now
       html += `<div>`;
       if (lesson.do_now) {
-        if (lesson.do_now.type === "timeline") {
+        if (lesson.do_now.type === 'timeline') {
           html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
                      <h3 style="margin: 0; font-size: 11pt;">Chronological Domino Flowchart</h3>
@@ -640,56 +629,51 @@ allDirs.forEach((unitId) => {
           let shuffledEvents = [...(lesson.do_now.events || [])];
           for (let i = shuffledEvents.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [shuffledEvents[i], shuffledEvents[j]] = [
-              shuffledEvents[j],
-              shuffledEvents[i],
-            ];
+            [shuffledEvents[i], shuffledEvents[j]] = [shuffledEvents[j], shuffledEvents[i]];
           }
 
           shuffledEvents.forEach((ev, idx) => {
-            if (unitId === "cme_new") {
+            if (unitId === 'cme_new') {
               html += `<div style="flex: 1 1 30%; max-width: 31%; border: 1px solid #94a3b8; padding: 5px; box-sizing: border-box; box-shadow: 2px 2px 0px #cbd5e1; border-radius: 4px; background: #fff;">
-                        <strong style="font-size: 8pt; color: #1e3a8a;">${ev.year || ""}</strong><br>
-                        <strong style="font-size: 8pt;">${ev.title || ""}</strong><br>
-                        <span style="font-size: 7.5pt; color: #475569;">${ev.detail || ""}</span>
+                        <strong style="font-size: 8pt; color: #1e3a8a;">${ev.year || ''}</strong><br>
+                        <strong style="font-size: 8pt;">${ev.title || ''}</strong><br>
+                        <span style="font-size: 7.5pt; color: #475569;">${ev.detail || ''}</span>
                      </div>`;
             } else {
               html += `<div style="flex: 1 1 30%; max-width: 31%; border: 2px solid #334155; padding: 15px; box-sizing: border-box; box-shadow: 2px 2px 0px #cbd5e1; border-radius: 8px; background: #f8fafc;">
-                        <strong style="font-size: 9.5pt; color: #1e3a8a;">${ev.year || ""}</strong><br>
-                        <strong style="font-size: 9.5pt;">${ev.title || ""}</strong><br>
-                        <span style="font-size: 9pt; color: #475569;">${ev.detail || ""}</span>
+                        <strong style="font-size: 9.5pt; color: #1e3a8a;">${ev.year || ''}</strong><br>
+                        <strong style="font-size: 9.5pt;">${ev.title || ''}</strong><br>
+                        <span style="font-size: 9pt; color: #475569;">${ev.detail || ''}</span>
                      </div>`;
             }
           });
           html += `</div><div style="clear: both; margin-bottom: 5px;"></div>`;
 
           if (lesson.do_now.prediction_question) {
-            html += `<div class="do-now-q" style="margin-top: 5px; font-size: 9.5pt;"><strong>${lesson.do_now.qNum ? "Q" + lesson.do_now.qNum + ". " : "1. "}${lesson.do_now.prediction_question}</strong></div>`;
+            html += `<div class="do-now-q" style="margin-top: 5px; font-size: 9.5pt;"><strong>${lesson.do_now.qNum ? 'Q' + lesson.do_now.qNum + '. ' : '1. '}${lesson.do_now.prediction_question}</strong></div>`;
             html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
           }
           html += `</div>`;
-        } else if (lesson.do_now.type === "text") {
+        } else if (lesson.do_now.type === 'text') {
           html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
-                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || "Do Now Activity"}</h3>
+                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || 'Do Now Activity'}</h3>
                      <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 5</div>
                    </div>`;
-          html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${lesson.do_now.text}${lesson.startPage ? ` [p. ${lesson.startPage}]` : ""}</strong></div>`;
+          html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${lesson.do_now.text}${lesson.startPage ? ` [p. ${lesson.startPage}]` : ''}</strong></div>`;
           for (let i = 0; i < 5; i++) {
             html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
           }
           html += `</div>`;
-        } else if (lesson.do_now.type === "timeline") {
+        } else if (lesson.do_now.type === 'timeline') {
           html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px; page-break-inside: avoid;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
-                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || "Domino Flowchart"}</h3>
+                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || 'Domino Flowchart'}</h3>
                    </div>
-                   <p style="font-size: 9.5pt; font-style: italic; margin-bottom: 15px;">${lesson.do_now.text || "Draw arrows connecting the events in the correct chronological and causal order."}</p>
+                   <p style="font-size: 9.5pt; font-style: italic; margin-bottom: 15px;">${lesson.do_now.text || 'Draw arrows connecting the events in the correct chronological and causal order.'}</p>
                    <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 10px;">`;
 
-          let shuffledEvents = [...lesson.do_now.events].sort(
-            () => Math.random() - 0.5,
-          );
+          let shuffledEvents = [...lesson.do_now.events].sort(() => Math.random() - 0.5);
           shuffledEvents.forEach((ev) => {
             let rot = Math.random() * 6 - 3;
             html += `<div style="border: 2px solid #334155; padding: 10px; border-radius: 6px; background-color: #f8fafc; font-weight: bold; font-size: 9pt; width: 40%; text-align: center; transform: rotate(${rot}deg); box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">${ev}</div>`;
@@ -699,10 +683,9 @@ allDirs.forEach((unitId) => {
                  <div style="height: 40px;"></div>
                  </div>`;
         } else if (
-          lesson.do_now.type === "questions" ||
-          lesson.do_now.type === "retrieval" ||
-          (!lesson.do_now.type &&
-            (lesson.do_now.items || lesson.do_now.questions))
+          lesson.do_now.type === 'questions' ||
+          lesson.do_now.type === 'retrieval' ||
+          (!lesson.do_now.type && (lesson.do_now.items || lesson.do_now.questions))
         ) {
           let items = lesson.do_now.items || lesson.do_now.questions;
           let maxScore = items ? items.length : 5;
@@ -713,7 +696,7 @@ allDirs.forEach((unitId) => {
                    </div>`;
           if (items) {
             items.forEach((item, index) => {
-              html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">${unitId === "early_modern_world" ? (index + 1) + ". " : ""}${item.question}</div>`;
+              html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">${unitId === 'early_modern_world' ? index + 1 + '. ' : ''}${item.question}</div>`;
               let linesToDraw = 2;
               for (let i = 0; i < linesToDraw; i++) {
                 html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
@@ -744,13 +727,13 @@ allDirs.forEach((unitId) => {
         if (vocabStyle === 0) {
           if (lesson.vocab_cloze_text) {
             html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p>`;
-            let words = vocabTerms.map((v) => v.term).join(" &nbsp;|&nbsp; ");
+            let words = vocabTerms.map((v) => v.term).join(' &nbsp;|&nbsp; ');
             html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
             let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, ' [ . . . . . . . . ] ');
             html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
           } else {
-            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least ${vocabTerms.length >= 4 ? "FOUR" : vocabTerms.length === 3 ? "THREE" : vocabTerms.length === 2 ? "TWO" : "ONE"} of the vocabulary words below correctly.</p>`;
-            let words = vocabTerms.map((v) => v.term).join(" &nbsp;|&nbsp; ");
+            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least ${vocabTerms.length >= 4 ? 'FOUR' : vocabTerms.length === 3 ? 'THREE' : vocabTerms.length === 2 ? 'TWO' : 'ONE'} of the vocabulary words below correctly.</p>`;
+            let words = vocabTerms.map((v) => v.term).join(' &nbsp;|&nbsp; ');
             html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
             for (let i = 0; i < 4; i++) {
               html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
@@ -758,7 +741,7 @@ allDirs.forEach((unitId) => {
           }
         } else if (vocabStyle === 1) {
           html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a historically accurate sentence connecting two terms from the glossary box below.</p>`;
-          let words = vocabTerms.map((v) => v.term).join(" &nbsp;|&nbsp; ");
+          let words = vocabTerms.map((v) => v.term).join(' &nbsp;|&nbsp; ');
           html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
           html += `<strong style="font-size: 9.5pt;">Your Sentence:</strong><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
         } else if (vocabStyle === 2) {
@@ -768,7 +751,7 @@ allDirs.forEach((unitId) => {
           <div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div>
         `;
         }
-        html += `</div>`;
+        html += `</div></div>`;
       }
 
       html += `</div>`;
@@ -777,7 +760,7 @@ allDirs.forEach((unitId) => {
 
       // Sources
 
-            let isGCSE = unitId === "weimar_nazi_germany" || unitId === "cme_new";
+      let isGCSE = unitId === 'weimar_nazi_germany' || unitId === 'cme_new';
       if (lesson.sources && lesson.sources.length > 0 && !isGCSE) {
         const hasQuestions = lesson.sources.some((s) => s.question);
         if (hasQuestions) {
@@ -786,7 +769,7 @@ allDirs.forEach((unitId) => {
             if (source.question) {
               html += `
               <div class="source-container" style="border: none; padding-top: 0; margin-top: 0; margin-bottom: 10px; text-align: left;">
-                <div style="margin-top: 10px; text-align: left;"><strong>Q${globalQNum++} ${source.question}${source.page ? ` [p. ${source.page}]` : ""}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>
+                <div style="margin-top: 10px; text-align: left;"><strong>Q${globalQNum++} ${source.question}${source.page ? ` [p. ${source.page}]` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>
               </div>
             `;
             }
@@ -798,7 +781,7 @@ allDirs.forEach((unitId) => {
       // Narrative Blocks & Tasks
       if (lesson.narrative_blocks) {
         lesson.narrative_blocks.forEach((block, bIdx) => {
-          let textToRender = block.text || "";
+          let textToRender = block.text || '';
           const kiRegex = /\[Key Individual:\s*([^\]]+)\]/gi;
           textToRender = textToRender.replace(kiRegex, (match, p1) => {
             return `<strong>${p1.trim()}</strong>`;
@@ -809,35 +792,30 @@ allDirs.forEach((unitId) => {
             /<details[^>]*>/gi,
             '<div class="side-quest-box" style="border-top: 2px solid #e2e8f0; padding-top: 15px; margin: 15px 0; page-break-inside: auto;">',
           );
-          let isSideQuest = finalRenderedText.includes(
-            '<details class="side-quest-box"',
-          );
-          finalRenderedText = finalRenderedText.replace(
-            /<\/details>/gi,
-            "</div>",
-          ); // Close side-quest-box properly
+          let isSideQuest = finalRenderedText.includes('<details class="side-quest-box"');
+          finalRenderedText = finalRenderedText.replace(/<\/details>/gi, '</div>'); // Close side-quest-box properly
           finalRenderedText = finalRenderedText.replace(
             /<summary[^>]*>(.*?)<\/summary>/gi,
             '<h3 style="color: #334155; margin-top: 0; font-size: 14pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px dashed #94a3b8; padding-bottom: 8px; display: flex; align-items: center; gap: 10px; page-break-after: avoid; break-after: avoid;">$1</h3>',
           );
 
           let hasContent =
-            finalRenderedText.trim() !== "" ||
+            finalRenderedText.trim() !== '' ||
             block.hinge_question ||
             (block.tasks && block.tasks.length > 0) ||
             (block.source && block.source.question) ||
             block.extended;
           if (hasContent) {
-            let _nbHtml = "";
+            let _nbHtml = '';
             let _firstQNum = 9999;
             _nbHtml += `<div class="narrative-block" id="para-${bIdx + 1}">`;
-            if (finalRenderedText.trim() !== "") {
+            if (finalRenderedText.trim() !== '') {
               // Narrative text removed for Pupil Workbook
             }
 
             if (block.source && block.source.question) {
               _nbHtml += `<div class="task-box">`;
-              _nbHtml += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${globalQNum++}${block.source.question}${block.source.page ? ` [p. ${block.source.page}]` : ""}</h4>`;
+              _nbHtml += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${globalQNum++}${block.source.question}${block.source.page ? ` [p. ${block.source.page}]` : ''}</h4>`;
               for (let i = 0; i < 4; i++) {
                 _nbHtml += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
               }
@@ -845,10 +823,11 @@ allDirs.forEach((unitId) => {
             }
 
             if (block.hinge_question) {
-              if (block.hinge_question.qNum && block.hinge_question.qNum < _firstQNum) _firstQNum = block.hinge_question.qNum;
+              if (block.hinge_question.qNum && block.hinge_question.qNum < _firstQNum)
+                _firstQNum = block.hinge_question.qNum;
               _nbHtml += `<div class="task-box" style=" ">`;
               _nbHtml += `<p style="margin-top:0px; margin-bottom: 10px; color: #475569; font-size: 0.9em; text-transform: uppercase;"><strong>Knowledge Check (Q${globalQNum++})</strong></p>`;
-              _nbHtml += `<p style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></p>`;
+              _nbHtml += `<div style="margin-bottom: 15px;"><strong>${block.hinge_question.text || block.hinge_question.question}</strong></div>`;
               _nbHtml += `<ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">`;
               block.hinge_question.options.forEach((opt, idx) => {
                 _nbHtml += `<li style="margin-bottom: 8px;"><div style="display: inline-block; width: 16px; height: 16px; border: 1px solid #333; margin-right: 10px; border-radius: 3px; position: relative; top: 3px;"></div>${String.fromCharCode(65 + idx)}. ${opt}</li>`;
@@ -857,13 +836,11 @@ allDirs.forEach((unitId) => {
             }
 
             if (block.extended && block.extended.question) {
-              if (block.extended.qNum && block.extended.qNum < _firstQNum) _firstQNum = block.extended.qNum;
+              if (block.extended.qNum && block.extended.qNum < _firstQNum)
+                _firstQNum = block.extended.qNum;
               _nbHtml += `<div class="task-box" style="margin-bottom: 20px;">`;
-              _nbHtml += `<p style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">${block.extended.question}</p>`;
-              if (
-                block.extended.scaffolding &&
-                block.extended.scaffolding.length > 0
-              ) {
+              _nbHtml += `<div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">${block.extended.question}</div>`;
+              if (block.extended.scaffolding && block.extended.scaffolding.length > 0) {
                 _nbHtml += `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; color: #92400e;">`;
                 block.extended.scaffolding.forEach((hint) => {
                   _nbHtml += `<li>${formatText(hint)}</li>`;
@@ -881,20 +858,22 @@ allDirs.forEach((unitId) => {
             if (block.tasks && block.tasks.length > 0) {
               _nbHtml += `<div class="task-box">`;
               block.tasks.forEach((task) => {
-                if (task.type === "drawing" || task.type === "draw") {
+                if (task.type === 'drawing' || task.type === 'draw') {
                   _nbHtml += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
                   let _t = processTaskTextWithTariff(task.text || task.question);
-_nbHtml += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  _nbHtml += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${globalQNum++} ${_t.cleanText}</h4>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `<div style="height: 250px;"></div>`;
                   _nbHtml += `</div>`;
                   return;
                 }
-                if (task.type === "multiple_choice") {
+                if (task.type === 'multiple_choice') {
                   _nbHtml += `<div class="task-box">`;
-                  let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-_nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   task.questions.forEach((q, qIdx) => {
                     _nbHtml += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
                     q.options.forEach((opt) => {
@@ -905,11 +884,13 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `</div>`;
                   return;
                 }
-                if (task.type === "sorting") {
+                if (task.type === 'sorting') {
                   _nbHtml += `<div class="task-box">`;
-                  let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-_nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `<ul style="list-style-type:none; padding-left:0;">`;
                   task.events.forEach((ev) => {
                     _nbHtml += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
@@ -917,50 +898,49 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `</ul></div>`;
                   return;
                 }
-                if (task.type === "cloze") {
-                  let cloze = task.cloze_text.replace(
-                    /\[([^\]]+)\]/g,
-                    "[ . . . . . . . . ]",
-                  );
+                if (task.type === 'cloze') {
+                  let cloze = task.cloze_text.replace(/\[([^\]]+)\]/g, '[ . . . . . . . . ]');
                   _nbHtml += `<div class="task-box">`;
-                  let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-_nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
-                  _nbHtml += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  _nbHtml += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(' | ')}</p>`;
                   _nbHtml += `<p style="line-height: 2;">${cloze}</p>`;
                   _nbHtml += `</div>`;
                   return;
                 }
 
-                if (task.type === "physician_game") {
+                if (task.type === 'physician_game') {
                   _nbHtml += `<div class="task-box">`;
-                  let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-_nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
                   _nbHtml += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
                   _nbHtml += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
                   _nbHtml += `<tbody>`;
                   const patients = [
                     {
-                      name: "William",
+                      name: 'William',
                       symptoms:
-                        "High fever, shivering, and large, painful black swellings (buboes) in his armpits.",
+                        'High fever, shivering, and large, painful black swellings (buboes) in his armpits.',
                     },
                     {
-                      name: "Agnes",
-                      symptoms:
-                        "Coughing up blood, severe chest pain, and struggling to breathe.",
+                      name: 'Agnes',
+                      symptoms: 'Coughing up blood, severe chest pain, and struggling to breathe.',
                     },
                     {
-                      name: "John",
+                      name: 'John',
                       symptoms:
-                        "Fingers and toes have turned completely black. High fever and vomiting.",
+                        'Fingers and toes have turned completely black. High fever and vomiting.',
                     },
                     {
-                      name: "Thomas",
-                      symptoms:
-                        "A runny nose, a mild cough, and feeling a bit tired.",
+                      name: 'Thomas',
+                      symptoms: 'A runny nose, a mild cough, and feeling a bit tired.',
                     },
                   ];
                   patients.forEach((p) => {
@@ -973,11 +953,13 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `</tbody></table></div>`;
                   return;
                 }
-                if (task.type === "matching") {
+                if (task.type === 'matching') {
                   _nbHtml += `<div class="task-box">`;
-                  let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-_nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
                   const rightMixed = [...task.pairs];
                   task.pairs.forEach((p, i) => {
@@ -990,11 +972,13 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `</tbody></table></div>`;
                   return;
                 }
-                if (task.type === "table_planner") {
+                if (task.type === 'table_planner') {
                   _nbHtml += `<div class="task-box">`;
-                  let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-_nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
                   task.columns.forEach((c) => {
                     _nbHtml += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
@@ -1010,11 +994,11 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `</tbody></table></div>`;
                   return;
                 }
-                if (task.type === "think_pair_share") {
+                if (task.type === 'think_pair_share') {
                   _nbHtml += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
                   let _t = processTaskTextWithTariff(task.text || task.question);
-_nbHtml += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  _nbHtml += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${globalQNum++} ${_t.cleanText}</h4>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   _nbHtml += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
                    <thead><tr>
                      <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
@@ -1028,25 +1012,26 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   return;
                 }
                 if (true) {
-                  let isSixteen = (task.text || task.question || "").toLowerCase().includes("16 marks");
-                  let pbBefore = isSixteen ? 'page-break-before: always; margin-top: 30px;' : 'margin-top: 10px;';
-                  
-                  if (
-                    task.type === "vocab_match" ||
-                    task.type === "drag_drop_timeline"
-                  ) {
+                  let isSixteen = (task.text || task.question || '')
+                    .toLowerCase()
+                    .includes('16 marks');
+                  let pbBefore = isSixteen
+                    ? 'page-break-before: always; margin-top: 30px;'
+                    : 'margin-top: 10px;';
+
+                  if (task.type === 'vocab_match' || task.type === 'drag_drop_timeline') {
                     // Do nothing
                   } else {
                     let _t = processTaskTextWithTariff(task.text || task.question);
-_nbHtml += `<p style="${pbBefore}"><strong>Q${globalQNum++}. ${_t.cleanText}</strong></p>`;
-if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                    _nbHtml += `<div style="${pbBefore}; margin-bottom: 15px;"><strong>Q${globalQNum++}. ${_t.cleanText}</strong></div>`;
+                    if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                     if (task.type === 'extended_writing' && task.instructions) {
-                        _nbHtml += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
+                      _nbHtml += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
                     }
                   }
-                  
-                  let tText = (task.text || task.question || "").toLowerCase();
-                  if (tText.includes("16 marks")) {
+
+                  let tText = (task.text || task.question || '').toLowerCase();
+                  if (tText.includes('16 marks')) {
                     for (let i = 0; i < 40; i++) {
                       _nbHtml += `<div class="task-lines-large"></div>`;
                     }
@@ -1056,14 +1041,14 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                     }
                   } else {
                     let linesToDraw = 3;
-                    if (task.type === "extended_writing") {
+                    if (task.type === 'extended_writing') {
                       linesToDraw = 18;
                     } else if (
-                      task.type === "analysis" ||
-                      task.type === "debate" ||
-                      tText.includes("explain") ||
-                      tText.includes("describe") ||
-                      tText.includes("two ") ||
+                      task.type === 'analysis' ||
+                      task.type === 'debate' ||
+                      tText.includes('explain') ||
+                      tText.includes('describe') ||
+                      tText.includes('two ') ||
                       tText.length > 60
                     ) {
                       linesToDraw = 6;
@@ -1098,33 +1083,34 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
         });
       }
 
-
-    // Pair Share (Hidden for Great War units here, moved to later)
-    if (lesson.pair_share && !(unitId === "great_war" || unitId === "great_war_part2")) {
+      // Pair Share (Hidden for Great War units here, moved to later)
+      if (lesson.pair_share && !(unitId === 'great_war' || unitId === 'great_war_part2')) {
         html += `<div class="task-box" style="  ">`;
         html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
 
         if (lesson.pair_share.sources) {
-          let sourceHTML =
-            '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
+          let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
           lesson.pair_share.sources.forEach((srcObj) => {
             sourceHTML +=
               '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
-            if ((srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) && unitId !== 'cme_new') {
+            if (
+              (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) &&
+              unitId !== 'cme_new'
+            ) {
               let imgSrc =
-                typeof resolveAssetPath === "function"
-                  ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
-                  : (srcObj.src || srcObj.source || srcObj.image);
+                typeof resolveAssetPath === 'function'
+                  ? resolveAssetPath(srcObj.src || srcObj.source || srcObj.image, 2)
+                  : srcObj.src || srcObj.source || srcObj.image;
               sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-            } 
-        if (srcObj.text || srcObj.content) { 
+            }
+            if (srcObj.text || srcObj.content) {
               sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
             }
             if (srcObj.title)
               sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
-            sourceHTML += "</div>";
+            sourceHTML += '</div>';
           });
-          sourceHTML += "</div>";
+          sourceHTML += '</div>';
           html += sourceHTML;
         }
 
@@ -1139,198 +1125,211 @@ if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
         html += `</div>`;
       }
 
-    // Phase 1: Standard Tasks
-    if (lesson.tasks && lesson.tasks.length > 0) {
-      let originalTasks = lesson.tasks;
-      lesson.tasks = originalTasks.filter(t => t.type !== 'gcse_exam_practice' && t.type !== 'exam_practice' && t.type !== 'drawing' && t.type !== 'draw');
-      if (lesson.tasks.length > 0) {
-        html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
-        lesson.tasks.forEach((task, tIdx) => {
-          if (task.type === "spectrum_mapper") {
-            // html += `<div style="page-break-before: always;"></div>`;
-            html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || "Spectrum Planner"}</h2>`;
+      // Phase 1: Standard Tasks
+      if (lesson.tasks && lesson.tasks.length > 0) {
+        let originalTasks = lesson.tasks;
+        lesson.tasks = originalTasks.filter(
+          (t) =>
+            t.type !== 'gcse_exam_practice' &&
+            t.type !== 'exam_practice' &&
+            t.type !== 'drawing' &&
+            t.type !== 'draw',
+        );
+        if (lesson.tasks.length > 0) {
+          html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
+          lesson.tasks.forEach((task, tIdx) => {
+            if (task.type === 'spectrum_mapper') {
+              // html += `<div style="page-break-before: always;"></div>`;
+              html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || 'Spectrum Planner'}</h2>`;
 
-            // Draw the spectrum line
-            html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
-            html += `<div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14pt; margin-bottom: 10px;">`;
-            html += `<div>${task.labels[0]}</div><div>${task.labels[1]}</div>`;
-            html += `</div>`;
-            html += `<div style="height: 4px;  width: 100%; position: relative;">`;
-            html += `<div style="position: absolute; left: 0%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `<div style="position: absolute; left: 25%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `<div style="position: absolute; left: 50%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `<div style="position: absolute; left: 75%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `<div style="position: absolute; left: 100%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `</div></div>`;
-
-            html += `<h3 style="margin-top: 40px;">Factors to map:</h3>`;
-            html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">`;
-            task.items.forEach((item) => {
-              html += `<div style=" padding: 15px; width: 45%; border-radius: 8px;">`;
-              html += `<strong>${item.title}</strong><br>`;
-              if (item.desc)
-                html += `<span style="font-size: 0.9em; color: #555;">${item.desc}</span>`;
+              // Draw the spectrum line
+              html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
+              html += `<div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14pt; margin-bottom: 10px;">`;
+              html += `<div>${task.labels[0]}</div><div>${task.labels[1]}</div>`;
               html += `</div>`;
-            });
-            html += `</div>`;
+              html += `<div style="height: 4px;  width: 100%; position: relative;">`;
+              html += `<div style="position: absolute; left: 0%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `<div style="position: absolute; left: 25%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `<div style="position: absolute; left: 50%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `<div style="position: absolute; left: 75%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `<div style="position: absolute; left: 100%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `</div></div>`;
 
-            html += `<h3>Notes & Paragraph Plan</h3>`;
-            for (let i = 0; i < 10; i++) {
-              html += `<div class="task-lines-large"></div>`;
-            }
-
-            // Add two pages for the final essay
-            html += `<div style="page-break-before: always; margin-top: 20px;">`;
-            html += `<h2 style="color: #0284c7; font-size: 18pt;">Final Assessment Essay</h2>`;
-            html += `<p style="font-weight: bold; font-size: 12pt;">How 'modern' was Britain by 1750?</p>`;
-            for (let i = 0; i < 30; i++) {
-              html += `<div class="task-lines-large"></div>`;
-            }
-            html += `</div>`;
-            html += `<div style="page-break-before: always; margin-top: 20px;">`;
-            for (let i = 0; i < 35; i++) {
-              html += `<div class="task-lines-large"></div>`;
-            }
-            html += `</div>`;
-
-            return;
-          }
-
-          if (task.type === "drawing" || task.type === "draw") {
-            html += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
-            let _t = processTaskTextWithTariff(task.text || task.question);
-html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<div style="height: 250px;"></div>`;
-            html += `</div>`;
-            return;
-          }
-          if (task.type === "multiple_choice") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            task.questions.forEach((q, qIdx) => {
-              html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
-              q.options.forEach((opt) => {
-                html += `<li style="margin-bottom: 5px;"><input type="checkbox" style="margin-right:8px; position:relative; top:2px;">${opt}</li>`;
+              html += `<h3 style="margin-top: 40px;">Factors to map:</h3>`;
+              html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">`;
+              task.items.forEach((item) => {
+                html += `<div style=" padding: 15px; width: 45%; border-radius: 8px;">`;
+                html += `<strong>${item.title}</strong><br>`;
+                if (item.desc)
+                  html += `<span style="font-size: 0.9em; color: #555;">${item.desc}</span>`;
+                html += `</div>`;
               });
-              html += `</ul>`;
-            });
-            html += `</div>`;
-            return;
-          }
-          if (task.type === "sorting") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<ul style="list-style-type:none; padding-left:0;">`;
-            task.events.forEach((ev) => {
-              html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
-            });
-            html += `</ul></div>`;
-            return;
-          }
-          if (task.type === "cloze") {
-            let cloze = task.cloze_text.replace(
-              /\[([^\]]+)\]/g,
-              "[ . . . . . . . . ]",
-            );
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
-            html += `<p style="line-height: 2;">${cloze}</p>`;
-            html += `</div>`;
-            return;
-          }
+              html += `</div>`;
 
-          if (task.type === "physician_game") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
-            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
-            html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
-            html += `<tbody>`;
-            const patients = [
-              {
-                name: "William",
-                symptoms:
-                  "High fever, shivering, and large, painful black swellings (buboes) in his armpits.",
-              },
-              {
-                name: "Agnes",
-                symptoms:
-                  "Coughing up blood, severe chest pain, and struggling to breathe.",
-              },
-              {
-                name: "John",
-                symptoms:
-                  "Fingers and toes have turned completely black. High fever and vomiting.",
-              },
-              {
-                name: "Thomas",
-                symptoms:
-                  "A runny nose, a mild cough, and feeling a bit tired.",
-              },
-            ];
-            patients.forEach((p) => {
-              html += `<tr>
+              html += `<h3>Notes & Paragraph Plan</h3>`;
+              for (let i = 0; i < 10; i++) {
+                html += `<div class="task-lines-large"></div>`;
+              }
+
+              // Add two pages for the final essay
+              html += `<div style="page-break-before: always; margin-top: 20px;">`;
+              html += `<h2 style="color: #0284c7; font-size: 18pt;">Final Assessment Essay</h2>`;
+              html += `<p style="font-weight: bold; font-size: 12pt;">How 'modern' was Britain by 1750?</p>`;
+              for (let i = 0; i < 30; i++) {
+                html += `<div class="task-lines-large"></div>`;
+              }
+              html += `</div>`;
+              html += `<div style="page-break-before: always; margin-top: 20px;">`;
+              for (let i = 0; i < 35; i++) {
+                html += `<div class="task-lines-large"></div>`;
+              }
+              html += `</div>`;
+
+              return;
+            }
+
+            if (task.type === 'drawing' || task.type === 'draw') {
+              html += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
+              let _t = processTaskTextWithTariff(task.text || task.question);
+              html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<div style="height: 250px;"></div>`;
+              html += `</div>`;
+              return;
+            }
+            if (task.type === 'multiple_choice') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              task.questions.forEach((q, qIdx) => {
+                html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
+                q.options.forEach((opt) => {
+                  html += `<li style="margin-bottom: 5px;"><input type="checkbox" style="margin-right:8px; position:relative; top:2px;">${opt}</li>`;
+                });
+                html += `</ul>`;
+              });
+              html += `</div>`;
+              return;
+            }
+            if (task.type === 'sorting') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<ul style="list-style-type:none; padding-left:0;">`;
+              task.events.forEach((ev) => {
+                html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
+              });
+              html += `</ul></div>`;
+              return;
+            }
+            if (task.type === 'cloze') {
+              let cloze = task.cloze_text.replace(/\[([^\]]+)\]/g, '[ . . . . . . . . ]');
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(' | ')}</p>`;
+              html += `<p style="line-height: 2;">${cloze}</p>`;
+              html += `</div>`;
+              return;
+            }
+
+            if (task.type === 'physician_game') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
+              html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
+              html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
+              html += `<tbody>`;
+              const patients = [
+                {
+                  name: 'William',
+                  symptoms:
+                    'High fever, shivering, and large, painful black swellings (buboes) in his armpits.',
+                },
+                {
+                  name: 'Agnes',
+                  symptoms: 'Coughing up blood, severe chest pain, and struggling to breathe.',
+                },
+                {
+                  name: 'John',
+                  symptoms:
+                    'Fingers and toes have turned completely black. High fever and vomiting.',
+                },
+                {
+                  name: 'Thomas',
+                  symptoms: 'A runny nose, a mild cough, and feeling a bit tired.',
+                },
+              ];
+              patients.forEach((p) => {
+                html += `<tr>
                       <td style="border:1px solid #333; padding:8px; font-weight:bold;">${p.name}</td>
                       <td style="border:1px solid #333; padding:8px;">${p.symptoms}</td>
                       <td style="border:1px solid #333; padding:8px; height: 60px;"></td>
                     </tr>`;
-            });
-            html += `</tbody></table></div>`;
-            return;
-          }
-          if (task.type === "matching") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
-            const rightMixed = [...task.pairs];
-            task.pairs.forEach((p, i) => {
-              html += `<tr>
+              });
+              html += `</tbody></table></div>`;
+              return;
+            }
+            if (task.type === 'matching') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
+              const rightMixed = [...task.pairs];
+              task.pairs.forEach((p, i) => {
+                html += `<tr>
                  <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
                  <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
                  <td style="border:1px solid #333; padding:10px; width:40%;">${(rightMixed[i].right || '').replace(/\n/g, '<br>')}</td>
                </tr>`;
-            });
-            html += `</tbody></table></div>`;
-            return;
-          }
-          if (task.type === "table_planner") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
-            task.columns.forEach((c) => {
-              html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
-            });
-            html += `</tr></thead><tbody>`;
-            for (let i = 0; i < task.rows; i++) {
-              html += `<tr>`;
-              task.columns.forEach(() => {
-                html += `<td style="border: 1px solid #333; padding: 8px; height: 60px;"></td>`;
               });
-              html += `</tr>`;
+              html += `</tbody></table></div>`;
+              return;
             }
-            html += `</tbody></table></div>`;
-            return;
-          }
-          if (task.type === "think_pair_share") {
-            html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
-            let _t = processTaskTextWithTariff(task.text || task.question);
-html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
+            if (task.type === 'table_planner') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
+              task.columns.forEach((c) => {
+                html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
+              });
+              html += `</tr></thead><tbody>`;
+              for (let i = 0; i < task.rows; i++) {
+                html += `<tr>`;
+                task.columns.forEach(() => {
+                  html += `<td style="border: 1px solid #333; padding: 8px; height: 60px;"></td>`;
+                });
+                html += `</tr>`;
+              }
+              html += `</tbody></table></div>`;
+              return;
+            }
+            if (task.type === 'think_pair_share') {
+              html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
+              let _t = processTaskTextWithTariff(task.text || task.question);
+              html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
                <thead><tr>
                  <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
                  <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">2. Partner's Thoughts (Pair)</th>
@@ -1340,38 +1339,37 @@ if (_t.badgeHtml) html += _t.badgeHtml;
                  <td style="border:1px solid #333; padding:8px; height:120px;"></td>
                </tr></tbody>
              </table></div>`;
-            return;
-          }
+              return;
+            }
 
-          let qText = task.question || task.text || "";
-          qText = qText.replace(/\(Weighing the Evidence toggle tabs\)/ig, '');
-          html += `<div class="task-box" style="page-break-inside: auto;">`;
+            let qText = task.question || task.text || '';
+            qText = qText.replace(/\(Weighing the Evidence toggle tabs\)/gi, '');
+            html += `<div class="task-box" style="page-break-inside: auto;">`;
 
-          let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
-          if (match) {
-            let subhead = match[1];
-            let rest = match[2];
-            html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
-            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${rest}</p>`;
-          } else {
-            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${qText}</p>`;
-          }
-          let hasExamTaskLater =
-            lesson.gcse_task ||
-            lesson.exam_practice ||
-            (lesson.extended && lesson.extended.question);
-          let numLines =
-            !hasExamTaskLater && tIdx === lesson.tasks.length - 1 ? 20 : 6;
-          for (let i = 0; i < numLines; i++) {
-            html += `<div class="task-lines-large"></div>`;
-          }
-          html += `</div>`;
-        });
+            let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+            if (match) {
+              let subhead = match[1];
+              let rest = match[2];
+              html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
+              html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${rest}</div>`;
+            } else {
+              html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${qText}</div>`;
+            }
+            let hasExamTaskLater =
+              lesson.gcse_task ||
+              lesson.exam_practice ||
+              (lesson.extended && lesson.extended.question);
+            let numLines = !hasExamTaskLater && tIdx === lesson.tasks.length - 1 ? 20 : 6;
+            for (let i = 0; i < numLines; i++) {
+              html += `<div class="task-lines-large"></div>`;
+            }
+            html += `</div>`;
+          });
+        }
+        lesson.tasks = originalTasks; // Restore
       }
-      lesson.tasks = originalTasks; // Restore
-    }
 
-    // Phase 2: Historian's Corner
+      // Phase 2: Historian's Corner
       if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
         html += `<div class="task-box" style=" ">`;
         html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
@@ -1385,198 +1383,206 @@ if (_t.badgeHtml) html += _t.badgeHtml;
         html += `</div>`;
       }
 
-    // Phase 3 & 4: GCSE Exam Practice
-    if (lesson.tasks && lesson.tasks.length > 0) {
-      let originalTasks = lesson.tasks;
-      lesson.tasks = originalTasks.filter(t => t.type === 'gcse_exam_practice' || t.type === 'exam_practice');
-      if (lesson.tasks.length > 0) {
-        
-        lesson.tasks.forEach((task, tIdx) => {
-          if (task.type === "spectrum_mapper") {
-            // html += `<div style="page-break-before: always;"></div>`;
-            html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || "Spectrum Planner"}</h2>`;
+      // Phase 3 & 4: GCSE Exam Practice
+      if (lesson.tasks && lesson.tasks.length > 0) {
+        let originalTasks = lesson.tasks;
+        lesson.tasks = originalTasks.filter(
+          (t) => t.type === 'gcse_exam_practice' || t.type === 'exam_practice',
+        );
+        if (lesson.tasks.length > 0) {
+          lesson.tasks.forEach((task, tIdx) => {
+            if (task.type === 'spectrum_mapper') {
+              // html += `<div style="page-break-before: always;"></div>`;
+              html += `<h2 style="text-align: center; margin-bottom: 30px;">${task.text || 'Spectrum Planner'}</h2>`;
 
-            // Draw the spectrum line
-            html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
-            html += `<div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14pt; margin-bottom: 10px;">`;
-            html += `<div>${task.labels[0]}</div><div>${task.labels[1]}</div>`;
-            html += `</div>`;
-            html += `<div style="height: 4px;  width: 100%; position: relative;">`;
-            html += `<div style="position: absolute; left: 0%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `<div style="position: absolute; left: 25%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `<div style="position: absolute; left: 50%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `<div style="position: absolute; left: 75%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `<div style="position: absolute; left: 100%; top: -10px; width: 2px; height: 24px; "></div>`;
-            html += `</div></div>`;
-
-            html += `<h3 style="margin-top: 40px;">Factors to map:</h3>`;
-            html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">`;
-            task.items.forEach((item) => {
-              html += `<div style=" padding: 15px; width: 45%; border-radius: 8px;">`;
-              html += `<strong>${item.title}</strong><br>`;
-              if (item.desc)
-                html += `<span style="font-size: 0.9em; color: #555;">${item.desc}</span>`;
+              // Draw the spectrum line
+              html += `<div style="margin-top: 50px; margin-bottom: 50px; position: relative;">`;
+              html += `<div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14pt; margin-bottom: 10px;">`;
+              html += `<div>${task.labels[0]}</div><div>${task.labels[1]}</div>`;
               html += `</div>`;
-            });
-            html += `</div>`;
+              html += `<div style="height: 4px;  width: 100%; position: relative;">`;
+              html += `<div style="position: absolute; left: 0%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `<div style="position: absolute; left: 25%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `<div style="position: absolute; left: 50%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `<div style="position: absolute; left: 75%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `<div style="position: absolute; left: 100%; top: -10px; width: 2px; height: 24px; "></div>`;
+              html += `</div></div>`;
 
-            html += `<h3>Notes & Paragraph Plan</h3>`;
-            for (let i = 0; i < 10; i++) {
-              html += `<div class="task-lines-large"></div>`;
-            }
-
-            // Add two pages for the final essay
-            html += `<div style="page-break-before: always; margin-top: 20px;">`;
-            html += `<h2 style="color: #0284c7; font-size: 18pt;">Final Assessment Essay</h2>`;
-            html += `<p style="font-weight: bold; font-size: 12pt;">How 'modern' was Britain by 1750?</p>`;
-            for (let i = 0; i < 30; i++) {
-              html += `<div class="task-lines-large"></div>`;
-            }
-            html += `</div>`;
-            html += `<div style="page-break-before: always; margin-top: 20px;">`;
-            for (let i = 0; i < 35; i++) {
-              html += `<div class="task-lines-large"></div>`;
-            }
-            html += `</div>`;
-
-            return;
-          }
-
-          if (task.type === "drawing" || task.type === "draw") {
-            html += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
-            let _t = processTaskTextWithTariff(task.text || task.question);
-html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<div style="height: 250px;"></div>`;
-            html += `</div>`;
-            return;
-          }
-          if (task.type === "multiple_choice") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            task.questions.forEach((q, qIdx) => {
-              html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
-              q.options.forEach((opt) => {
-                html += `<li style="margin-bottom: 5px;"><input type="checkbox" style="margin-right:8px; position:relative; top:2px;">${opt}</li>`;
+              html += `<h3 style="margin-top: 40px;">Factors to map:</h3>`;
+              html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">`;
+              task.items.forEach((item) => {
+                html += `<div style=" padding: 15px; width: 45%; border-radius: 8px;">`;
+                html += `<strong>${item.title}</strong><br>`;
+                if (item.desc)
+                  html += `<span style="font-size: 0.9em; color: #555;">${item.desc}</span>`;
+                html += `</div>`;
               });
-              html += `</ul>`;
-            });
-            html += `</div>`;
-            return;
-          }
-          if (task.type === "sorting") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<ul style="list-style-type:none; padding-left:0;">`;
-            task.events.forEach((ev) => {
-              html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
-            });
-            html += `</ul></div>`;
-            return;
-          }
-          if (task.type === "cloze") {
-            let cloze = task.cloze_text.replace(
-              /\[([^\]]+)\]/g,
-              "[ . . . . . . . . ]",
-            );
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(" | ")}</p>`;
-            html += `<p style="line-height: 2;">${cloze}</p>`;
-            html += `</div>`;
-            return;
-          }
+              html += `</div>`;
 
-          if (task.type === "physician_game") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
-            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
-            html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
-            html += `<tbody>`;
-            const patients = [
-              {
-                name: "William",
-                symptoms:
-                  "High fever, shivering, and large, painful black swellings (buboes) in his armpits.",
-              },
-              {
-                name: "Agnes",
-                symptoms:
-                  "Coughing up blood, severe chest pain, and struggling to breathe.",
-              },
-              {
-                name: "John",
-                symptoms:
-                  "Fingers and toes have turned completely black. High fever and vomiting.",
-              },
-              {
-                name: "Thomas",
-                symptoms:
-                  "A runny nose, a mild cough, and feeling a bit tired.",
-              },
-            ];
-            patients.forEach((p) => {
-              html += `<tr>
+              html += `<h3>Notes & Paragraph Plan</h3>`;
+              for (let i = 0; i < 10; i++) {
+                html += `<div class="task-lines-large"></div>`;
+              }
+
+              // Add two pages for the final essay
+              html += `<div style="page-break-before: always; margin-top: 20px;">`;
+              html += `<h2 style="color: #0284c7; font-size: 18pt;">Final Assessment Essay</h2>`;
+              html += `<p style="font-weight: bold; font-size: 12pt;">How 'modern' was Britain by 1750?</p>`;
+              for (let i = 0; i < 30; i++) {
+                html += `<div class="task-lines-large"></div>`;
+              }
+              html += `</div>`;
+              html += `<div style="page-break-before: always; margin-top: 20px;">`;
+              for (let i = 0; i < 35; i++) {
+                html += `<div class="task-lines-large"></div>`;
+              }
+              html += `</div>`;
+
+              return;
+            }
+
+            if (task.type === 'drawing' || task.type === 'draw') {
+              html += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
+              let _t = processTaskTextWithTariff(task.text || task.question);
+              html += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<div style="height: 250px;"></div>`;
+              html += `</div>`;
+              return;
+            }
+            if (task.type === 'multiple_choice') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              task.questions.forEach((q, qIdx) => {
+                html += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
+                q.options.forEach((opt) => {
+                  html += `<li style="margin-bottom: 5px;"><input type="checkbox" style="margin-right:8px; position:relative; top:2px;">${opt}</li>`;
+                });
+                html += `</ul>`;
+              });
+              html += `</div>`;
+              return;
+            }
+            if (task.type === 'sorting') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<ul style="list-style-type:none; padding-left:0;">`;
+              task.events.forEach((ev) => {
+                html += `<li style="margin-bottom: 10px; display:flex; gap:10px;"><div style="width:30px; height:30px; border:1px solid #333; display:flex; align-items:center; justify-content:center;"></div><span>${ev}</span></li>`;
+              });
+              html += `</ul></div>`;
+              return;
+            }
+            if (task.type === 'cloze') {
+              let cloze = task.cloze_text.replace(/\[([^\]]+)\]/g, '[ . . . . . . . . ]');
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<p style="border: 1px solid #ccc; padding: 5px; font-weight: bold; font-size: 0.9em; text-align:center;">Word Bank: ${task.words.join(' | ')}</p>`;
+              html += `<p style="line-height: 2;">${cloze}</p>`;
+              html += `</div>`;
+              return;
+            }
+
+            if (task.type === 'physician_game') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<p style="font-style: italic;">Read the patient symptoms below. Write down your recommended medieval cure in the empty box. Your teacher will reveal the outcome!</p>`;
+              html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;">`;
+              html += `<thead><tr><th style="border:1px solid #333; padding:8px; width:20%; background:#f1f5f9;">Patient</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Symptoms</th><th style="border:1px solid #333; padding:8px; width:40%; background:#f1f5f9;">Your Recommended Cure</th></tr></thead>`;
+              html += `<tbody>`;
+              const patients = [
+                {
+                  name: 'William',
+                  symptoms:
+                    'High fever, shivering, and large, painful black swellings (buboes) in his armpits.',
+                },
+                {
+                  name: 'Agnes',
+                  symptoms: 'Coughing up blood, severe chest pain, and struggling to breathe.',
+                },
+                {
+                  name: 'John',
+                  symptoms:
+                    'Fingers and toes have turned completely black. High fever and vomiting.',
+                },
+                {
+                  name: 'Thomas',
+                  symptoms: 'A runny nose, a mild cough, and feeling a bit tired.',
+                },
+              ];
+              patients.forEach((p) => {
+                html += `<tr>
                       <td style="border:1px solid #333; padding:8px; font-weight:bold;">${p.name}</td>
                       <td style="border:1px solid #333; padding:8px;">${p.symptoms}</td>
                       <td style="border:1px solid #333; padding:8px; height: 60px;"></td>
                     </tr>`;
-            });
-            html += `</tbody></table></div>`;
-            return;
-          }
-          if (task.type === "matching") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
-            const rightMixed = [...task.pairs];
-            task.pairs.forEach((p, i) => {
-              html += `<tr>
+              });
+              html += `</tbody></table></div>`;
+              return;
+            }
+            if (task.type === 'matching') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
+              const rightMixed = [...task.pairs];
+              task.pairs.forEach((p, i) => {
+                html += `<tr>
                  <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
                  <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
                  <td style="border:1px solid #333; padding:10px; width:40%;">${(rightMixed[i].right || '').replace(/\n/g, '<br>')}</td>
                </tr>`;
-            });
-            html += `</tbody></table></div>`;
-            return;
-          }
-          if (task.type === "table_planner") {
-            html += `<div class="task-box">`;
-            let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
-            task.columns.forEach((c) => {
-              html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
-            });
-            html += `</tr></thead><tbody>`;
-            for (let i = 0; i < task.rows; i++) {
-              html += `<tr>`;
-              task.columns.forEach(() => {
-                html += `<td style="border: 1px solid #333; padding: 8px; height: 60px;"></td>`;
               });
-              html += `</tr>`;
+              html += `</tbody></table></div>`;
+              return;
             }
-            html += `</tbody></table></div>`;
-            return;
-          }
-          if (task.type === "think_pair_share") {
-            html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
-            let _t = processTaskTextWithTariff(task.text || task.question);
-html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${globalQNum++} ${_t.cleanText}</h4>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
-            html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
+            if (task.type === 'table_planner') {
+              html += `<div class="task-box">`;
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<table   style="page-break-inside: avoid; page-break-inside: avoid; width:100%; border-collapse:collapse; margin-top:10px; border: 1px solid #333;"><thead><tr>`;
+              task.columns.forEach((c) => {
+                html += `<th style="border: 1px solid #333; padding: 8px; background:#f1f5f9; color:#000;">${c}</th>`;
+              });
+              html += `</tr></thead><tbody>`;
+              for (let i = 0; i < task.rows; i++) {
+                html += `<tr>`;
+                task.columns.forEach(() => {
+                  html += `<td style="border: 1px solid #333; padding: 8px; height: 60px;"></td>`;
+                });
+                html += `</tr>`;
+              }
+              html += `</tbody></table></div>`;
+              return;
+            }
+            if (task.type === 'think_pair_share') {
+              html += `<div class="task-box" style="page-break-inside: avoid; box-sizing: border-box; border: 2px solid #10b981; padding: 15px; border-radius: 8px;">`;
+              let _t = processTaskTextWithTariff(task.text || task.question);
+              html += `<h4 style="margin-top: 0; color: #065f46;">Think-Pair-Share: Q${globalQNum++} ${_t.cleanText}</h4>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
+              html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border-collapse:collapse; margin-top:10px;">
                <thead><tr>
                  <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">1. My Thoughts (Think)</th>
                  <th style="border:1px solid #333; padding:8px; text-align:left; color:#000;">2. Partner's Thoughts (Pair)</th>
@@ -1586,72 +1592,70 @@ if (_t.badgeHtml) html += _t.badgeHtml;
                  <td style="border:1px solid #333; padding:8px; height:120px;"></td>
                </tr></tbody>
              </table></div>`;
-            return;
-          }
+              return;
+            }
 
-          let qText = task.question || task.text || "";
-          qText = qText.replace(/\(Weighing the Evidence toggle tabs\)/ig, '');
-          html += `<div class="task-box" style="page-break-inside: auto;">`;
+            let qText = task.question || task.text || '';
+            qText = qText.replace(/\(Weighing the Evidence toggle tabs\)/gi, '');
+            html += `<div class="task-box" style="page-break-inside: auto;">`;
 
-          let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
-          if (match) {
-            let subhead = match[1];
-            let rest = match[2];
-            html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
-            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${rest}</p>`;
-          } else {
-            html += `<p style="font-weight: bold; margin-top: 0;">Q${globalQNum++}. ${qText}</p>`;
-          }
-          let hasExamTaskLater =
-            lesson.gcse_task ||
-            lesson.exam_practice ||
-            (lesson.extended && lesson.extended.question);
-          let numLines =
-            !hasExamTaskLater && tIdx === lesson.tasks.length - 1 ? 20 : 6;
-          for (let i = 0; i < numLines; i++) {
-            html += `<div class="task-lines-large"></div>`;
-          }
-          html += `</div>`;
-        });
-      }
-      lesson.tasks = originalTasks; // Restore
-    }
-
-
-       else {
-        let skipConsolidation = lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
+            let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+            if (match) {
+              let subhead = match[1];
+              let rest = match[2];
+              html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
+              html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${rest}</div>`;
+            } else {
+              html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${qText}</div>`;
+            }
+            let hasExamTaskLater =
+              lesson.gcse_task ||
+              lesson.exam_practice ||
+              (lesson.extended && lesson.extended.question);
+            let numLines = !hasExamTaskLater && tIdx === lesson.tasks.length - 1 ? 20 : 6;
+            for (let i = 0; i < numLines; i++) {
+              html += `<div class="task-lines-large"></div>`;
+            }
+            html += `</div>`;
+          });
+        }
+        lesson.tasks = originalTasks; // Restore
+      } else {
+        let skipConsolidation =
+          lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
         if (!skipConsolidation) {
           html += `<div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;">`;
           html += `<h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2>`;
 
-        if (lesson.lesson_assessment) {
-          html += `<div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 8px; margin-bottom: 15px;">`;
-          html += `<p style="font-weight: bold; color: #166534; margin-top: 0;">${lesson.lesson_assessment.question}</p>`;
-          if (lesson.lesson_assessment.hints) {
-            html += `<p style="font-size: 0.95rem; margin-bottom: 5px;"><strong>Hints:</strong> ${lesson.lesson_assessment.hints}</p>`;
+          if (lesson.lesson_assessment) {
+            html += `<div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 8px; margin-bottom: 15px;">`;
+            html += `<div style="font-weight: bold; color: #166534; margin-top: 0; margin-bottom: 15px; font-size: 1.1em;">${lesson.lesson_assessment.question}</div>`;
+            if (lesson.lesson_assessment.hints) {
+              html += `<p style="font-size: 0.95rem; margin-bottom: 5px;"><strong>Hints:</strong> ${lesson.lesson_assessment.hints}</p>`;
+            }
+            if (lesson.lesson_assessment.sentence_starters) {
+              html += `<p style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0;"><strong>Sentence Starters:</strong></p>`;
+              html += `<ul style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0; padding-left: 20px;">`;
+              lesson.lesson_assessment.sentence_starters.forEach((starter) => {
+                html += `<li><em>${starter}</em></li>`;
+              });
+              html += `</ul>`;
+            }
+            html += `</div>`;
+          } else {
+            const consolText =
+              lesson.consolidation ||
+              "Reflect on today's learning and answer your teacher's final challenge.";
+            html += `<p style="font-weight: bold; margin-bottom: 15px;">${consolText}</p>`;
           }
-          if (lesson.lesson_assessment.sentence_starters) {
-            html += `<p style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0;"><strong>Sentence Starters:</strong></p>`;
-            html += `<ul style="font-size: 0.95rem; margin-top: 5px; margin-bottom: 0; padding-left: 20px;">`;
-            lesson.lesson_assessment.sentence_starters.forEach((starter) => {
-              html += `<li><em>${starter}</em></li>`;
-            });
-            html += `</ul>`;
+
+          for (let i = 0; i < 15; i++) {
+            html += `<div class="task-lines-large"></div>`;
           }
           html += `</div>`;
-        } else {
-          const consolText = lesson.consolidation || "Reflect on today's learning and answer your teacher's final challenge.";
-          html += `<p style="font-weight: bold; margin-bottom: 15px;">${consolText}</p>`;
-        }
-
-        for (let i = 0; i < 15; i++) {
-          html += `<div class="task-lines-large"></div>`;
-        }
-        html += `</div>`;
         }
       }
       // Inject General Notes Box
-      html += `<div style="">`;
       html += `
       <div style="page-break-before: always; margin-top: 20px;">
         <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
@@ -1662,12 +1666,9 @@ if (_t.badgeHtml) html += _t.badgeHtml;
       html += `</div>`;
 
       // Inject Discreet Grading Footer for the Lesson (KS3 ONLY)
-      const isGCSEUnit = [
-        "weimar_nazi_germany",
-        "cme_new",
-        "edexcel_medicine",
-        "eee",
-      ].includes(unitId);
+      const isGCSEUnit = ['weimar_nazi_germany', 'cme_new', 'edexcel_medicine', 'eee'].includes(
+        unitId,
+      );
       if (!isGCSEUnit) {
         html += `
         <div style="margin-top: 10px;"></div>
@@ -1684,31 +1685,23 @@ if (_t.badgeHtml) html += _t.badgeHtml;
       `;
       }
 
-
-      
-
-
-    // GCSE Task
-    let hasExamTask =
-        lesson.gcse_task ||
-        lesson.exam_practice ||
-        (lesson.extended && lesson.extended.question);
+      // GCSE Task
+      let hasExamTask =
+        lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
       if (hasExamTask) {
         html += `<div style="page-break-before: always; margin-top: 20px;">`;
         let fallbackExamTitle = [
-          "water_and_sanitation",
-          "early_modern_world",
-          "change_1450_1750",
-          "industrialisation_and_empire",
-          "great_war",
-          "great_war_part2",
+          'water_and_sanitation',
+          'early_modern_world',
+          'change_1450_1750',
+          'industrialisation_and_empire',
+          'great_war',
+          'great_war_part2',
         ].includes(unitId)
-          ? "Writing Practice"
-          : "GCSE Exam Practice";
+          ? 'Writing Practice'
+          : 'GCSE Exam Practice';
         let examTitle =
-          lesson.extended && lesson.extended.title
-            ? lesson.extended.title
-            : fallbackExamTitle;
+          lesson.extended && lesson.extended.title ? lesson.extended.title : fallbackExamTitle;
         html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${examTitle}</h2>`;
 
         const renderLines = (text, customLines) => {
@@ -1716,7 +1709,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             for (let i = 0; i < customLines; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
-          } else if (text.includes("16 marks") || text.includes("12 marks")) {
+          } else if (text.includes('16 marks') || text.includes('12 marks')) {
             for (let i = 0; i < 40; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
@@ -1724,24 +1717,22 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             for (let i = 0; i < 40; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
-          } else if (
-            text.includes("Explain why")
-          ) {
+          } else if (text.includes('Explain why')) {
             for (let i = 0; i < 64; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
-          } else if (text.includes("8 marks")) {
+          } else if (text.includes('8 marks')) {
             for (let i = 0; i < 32; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
-          } else if (text.includes("2 marks")) {
+          } else if (text.includes('2 marks')) {
             for (let i = 0; i < 3; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
           } else if (
-            text.includes("4 marks") ||
-            text.includes("Explain one way") ||
-            text.includes("Explain one consequence")
+            text.includes('4 marks') ||
+            text.includes('Explain one way') ||
+            text.includes('Explain one consequence')
           ) {
             for (let i = 0; i < 5; i++) {
               html += `<div class="task-lines-large"></div>`;
@@ -1753,82 +1744,88 @@ if (_t.badgeHtml) html += _t.badgeHtml;
           }
         };
 
-
-
-
         // Injected Pair Share for Great War units, immediately before extended writing
-        if (lesson.pair_share && (unitId === "great_war" || unitId === "great_war_part2")) {
-            html += `<div class="task-box" style="  ">`;
-            html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
+        if (lesson.pair_share && (unitId === 'great_war' || unitId === 'great_war_part2')) {
+          html += `<div class="task-box" style="  ">`;
+          html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
 
-            if (lesson.pair_share.sources) {
-              let sourceHTML =
-                '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
-              lesson.pair_share.sources.forEach((srcObj) => {
-                sourceHTML +=
-                  '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
-                if ((srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) && unitId !== 'cme_new') {
-                  let imgSrc =
-                    typeof resolveAssetPath === "function"
-                      ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
-                      : (srcObj.src || srcObj.source || srcObj.image);
-                  sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-                } 
-            if (srcObj.text || srcObj.content) { 
-                  sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
-                }
-                if (srcObj.title)
-                  sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
-                sourceHTML += "</div>";
-              });
-              sourceHTML += "</div>";
-              html += sourceHTML;
-            }
+          if (lesson.pair_share.sources) {
+            let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
+            lesson.pair_share.sources.forEach((srcObj) => {
+              sourceHTML +=
+                '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
+              if (
+                (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) &&
+                unitId !== 'cme_new'
+              ) {
+                let imgSrc =
+                  typeof resolveAssetPath === 'function'
+                    ? resolveAssetPath(srcObj.src || srcObj.source || srcObj.image, 2)
+                    : srcObj.src || srcObj.source || srcObj.image;
+                sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
+              }
+              if (srcObj.text || srcObj.content) {
+                sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
+              }
+              if (srcObj.title)
+                sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
+              sourceHTML += '</div>';
+            });
+            sourceHTML += '</div>';
+            html += sourceHTML;
+          }
 
-            html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${globalQNum++}. Prompt: ${lesson.pair_share.prompt}</p>`;
-            if (lesson.pair_share.think)
-              html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
-            html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
-            for (let i = 0; i < 6; i++) {
-              html += `<div class="task-lines-large"></div>`;
-            }
-            html += `</div>`;
-            html += `</div>`;
+          html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${globalQNum++}. Prompt: ${lesson.pair_share.prompt}</p>`;
+          if (lesson.pair_share.think)
+            html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
+          html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
+          for (let i = 0; i < 6; i++) {
+            html += `<div class="task-lines-large"></div>`;
+          }
+          html += `</div>`;
+          html += `</div>`;
         }
 
         if (lesson.extended && lesson.extended.question) {
-          
           let letterA = 'A';
           let letterB = 'B';
           if (lesson.extended.source_a || lesson.extended.source_b) {
-              letterA = String.fromCharCode(sourceCharCode++);
-              if (lesson.extended.source_b) letterB = String.fromCharCode(sourceCharCode++);
-              
-              if (lesson.extended.question) {
-                  lesson.extended.question = lesson.extended.question.replace(/Sources\s+A\s+and\s+B/g, 'Sources ' + letterA + ' and ' + letterB);
-                  lesson.extended.question = lesson.extended.question.replace(/Source\s+A/g, 'Source ' + letterA);
-                  lesson.extended.question = lesson.extended.question.replace(/Source\s+B/g, 'Source ' + letterB);
-              }
+            letterA = String.fromCharCode(sourceCharCode++);
+            if (lesson.extended.source_b) letterB = String.fromCharCode(sourceCharCode++);
+
+            if (lesson.extended.question) {
+              lesson.extended.question = lesson.extended.question.replace(
+                /Sources\s+A\s+and\s+B/g,
+                'Sources ' + letterA + ' and ' + letterB,
+              );
+              lesson.extended.question = lesson.extended.question.replace(
+                /Source\s+A/g,
+                'Source ' + letterA,
+              );
+              lesson.extended.question = lesson.extended.question.replace(
+                /Source\s+B/g,
+                'Source ' + letterB,
+              );
+            }
 
             html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 10px; ">`;
             if (lesson.extended.source_a) {
               const prov =
-                typeof lesson.extended.source_a === "string"
-                  ? ""
+                typeof lesson.extended.source_a === 'string'
+                  ? ''
                   : lesson.extended.source_a.provenance;
               const content =
-                typeof lesson.extended.source_a === "string"
+                typeof lesson.extended.source_a === 'string'
                   ? lesson.extended.source_a
                   : lesson.extended.source_a.content;
               const isImageA =
-                content.toLowerCase().endsWith(".png") ||
-                content.toLowerCase().endsWith(".jpg");
+                content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
               const renderedA = isImageA
-                ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath(content, 2) : `../..${content.startsWith("/") ? content : "/" + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
-                : content.replace(/\n/g, "<br>");
+                ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
+                : content.replace(/\n/g, '<br>');
               html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
                   <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterA}</strong>
-                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ""}
+                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
                   <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
                     ${renderedA}
                   </div>
@@ -1836,22 +1833,21 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             }
             if (lesson.extended.source_b) {
               const prov =
-                typeof lesson.extended.source_b === "string"
-                  ? ""
+                typeof lesson.extended.source_b === 'string'
+                  ? ''
                   : lesson.extended.source_b.provenance;
               const content =
-                typeof lesson.extended.source_b === "string"
+                typeof lesson.extended.source_b === 'string'
                   ? lesson.extended.source_b
                   : lesson.extended.source_b.content;
               const isImageB =
-                content.toLowerCase().endsWith(".png") ||
-                content.toLowerCase().endsWith(".jpg");
+                content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
               const renderedB = isImageB
-                ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath(content, 2) : `../..${content.startsWith("/") ? content : "/" + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
-                : content.replace(/\n/g, "<br>");
+                ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
+                : content.replace(/\n/g, '<br>');
               html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
                   <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterB}</strong>
-                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ""}
+                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
                   <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
                     ${renderedB}
                   </div>
@@ -1875,28 +1871,22 @@ if (_t.badgeHtml) html += _t.badgeHtml;
           let _extInfo = processTaskTextWithTariff(lesson.extended.question, true);
           html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${_extInfo.cleanText}</strong></div>`;
           if (_extInfo.badgeHtml) {
-              html += _extInfo.badgeHtml;
+            html += _extInfo.badgeHtml;
           }
-          if (
-            !lesson.extended.title ||
-            !lesson.extended.title.toLowerCase().includes("map task")
-          ) {
+          if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
             renderLines(lesson.extended.question, lesson.extended.lines);
           }
           html += `<br>`;
         }
 
-        
-
-        
         if (lesson.gcse_task) {
           html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto; border-top: none; padding-top: 0; margin-top: 0;">`;
 
           if (lesson.gcse_task.tasks) {
             lesson.gcse_task.tasks.forEach((task) => {
               let isLong =
-                task.text.includes("12 marks") ||
-                task.text.includes("16 marks") ||
+                task.text.includes('12 marks') ||
+                task.text.includes('16 marks') ||
                 task.marks === 12 ||
                 task.marks === 16;
               if (isLong) {
@@ -1906,41 +1896,57 @@ if (_t.badgeHtml) html += _t.badgeHtml;
                  </div>`;
               }
               let pbBefore = isLong
-                ? "page-break-before: always; margin-top: 30px;"
-                : "margin-top: 15px;";
-              let _t = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-html += `<div style="${pbBefore}"><strong>${"Q" + (globalQNum++) + ". "}${_t.cleanText}</strong></div>`;
-if (_t.badgeHtml) html += _t.badgeHtml;
+                ? 'page-break-before: always; margin-top: 30px;'
+                : 'margin-top: 15px;';
+              let _t = processTaskTextWithTariff(
+                task.text || task.question || task.instruction || task.title || '',
+              );
+              html += `<div style="${pbBefore}"><strong>${'Q' + globalQNum++ + '. '}${_t.cleanText}</strong></div>`;
+              if (_t.badgeHtml) html += _t.badgeHtml;
               renderLines(task.text);
               html += `<br>`;
             });
           } else if (lesson.gcse_task.sources) {
-          let letterA = String.fromCharCode(sourceCharCode++);
-          let letterB = lesson.gcse_task.sources.length > 1 ? String.fromCharCode(sourceCharCode++) : '';
-          
-          if (lesson.gcse_task.topic) {
-              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Sources\s+A\s+and\s+B/g, 'Sources ' + letterA + ' and ' + letterB);
-              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\s+A/g, 'Source ' + letterA);
-              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(/Source\s+B/g, 'Source ' + letterB);
-          }
+            let letterA = String.fromCharCode(sourceCharCode++);
+            let letterB =
+              lesson.gcse_task.sources.length > 1 ? String.fromCharCode(sourceCharCode++) : '';
+
+            if (lesson.gcse_task.topic) {
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(
+                /Sources\s+A\s+and\s+B/g,
+                'Sources ' + letterA + ' and ' + letterB,
+              );
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(
+                /Source\s+A/g,
+                'Source ' + letterA,
+              );
+              lesson.gcse_task.topic = lesson.gcse_task.topic.replace(
+                /Source\s+B/g,
+                'Source ' + letterB,
+              );
+            }
 
             html += `<div style="page-break-inside: avoid; break-inside: avoid; margin-top: 20px;">`;
-            let topicText = lesson.gcse_task.topic || "";
+            let topicText = lesson.gcse_task.topic || '';
             let tLower = topicText.toLowerCase();
             let isFullQuestion =
-              tLower.includes("write a narrative account") ||
-              tLower.includes("explain one consequence") ||
-              tLower.includes("explain the importance") ||
-              tLower.includes("how useful") ||
-              tLower.includes("explain why") ||
-              tLower.includes("describe");
+              tLower.includes('write a narrative account') ||
+              tLower.includes('explain one consequence') ||
+              tLower.includes('explain the importance') ||
+              tLower.includes('how useful') ||
+              tLower.includes('explain why') ||
+              tLower.includes('describe');
             if (isFullQuestion) {
-              let tariff = getTariffBadge(topicText); topicText = tariff.cleanTopic; html += `<p style="font-weight: bold; font-size: 13pt;">Q${globalQNum++}. ${topicText}${tariff.badgeHtml}</p>`;
-              if (tLower.includes("write a narrative account")) {
-                html += `<p style="font-size: 11pt; color: #475569; font-style: italic;">Read the historical sources below before writing your narrative account:</p>`;
+              let tariff = getTariffBadge(topicText);
+              topicText = tariff.cleanTopic;
+              html += `<div style="font-weight: bold; font-size: 13pt; margin-bottom: 10px;">Q${globalQNum++}. ${topicText}${tariff.badgeHtml}</div>`;
+              if (tLower.includes('write a narrative account')) {
+                html += `<div style="font-size: 11pt; color: #475569; font-style: italic; margin-bottom: 10px;">Read the historical sources below before writing your narrative account:</div>`;
               }
             } else {
-              let tariff = getTariffBadge(topicText); topicText = tariff.cleanTopic; html += `<p style="font-weight: bold; font-size: 13pt;">Q${globalQNum++}. How useful are Sources A and B for an enquiry into ${topicText}?${tariff.badgeHtml}</p>`;
+              let tariff = getTariffBadge(topicText);
+              topicText = tariff.cleanTopic;
+              html += `<div style="font-weight: bold; font-size: 13pt; margin-bottom: 10px;">Q${globalQNum++}. How useful are Sources A and B for an enquiry into ${topicText}?${tariff.badgeHtml}</div>`;
             }
 
             let sourceHTML =
@@ -1948,29 +1954,35 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             lesson.gcse_task.sources.forEach((srcObj, i) => {
               sourceHTML +=
                 '<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1; page-break-inside: avoid; break-inside: avoid;">' +
-                '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">Source ' + String.fromCharCode(65 + i) + '</strong>' +
-                (srcObj.title ? '<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic; text-align: left;">' + srcObj.title.replace(/Source [A-Z]:\s*/g, '') + '</span>' : '');
-              if ((srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) && unitId !== 'cme_new') {
+                '<strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem; text-align: left;">Source ' +
+                String.fromCharCode(65 + i) +
+                '</strong>' +
+                (srcObj.title
+                  ? '<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic; text-align: left;">' +
+                    srcObj.title.replace(/Source [A-Z]:\s*/g, '') +
+                    '</span>'
+                  : '');
+              if (
+                (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) &&
+                unitId !== 'cme_new'
+              ) {
                 let imgSrc =
-                  typeof resolveAssetPath === "function"
-                    ? resolveAssetPath((srcObj.src || srcObj.source || srcObj.image), 2)
-                    : (srcObj.src || srcObj.source || srcObj.image);
+                  typeof resolveAssetPath === 'function'
+                    ? resolveAssetPath(srcObj.src || srcObj.source || srcObj.image, 2)
+                    : srcObj.src || srcObj.source || srcObj.image;
                 sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-              } 
-        if (srcObj.text || srcObj.content) { 
+              }
+              if (srcObj.text || srcObj.content) {
                 sourceHTML += `<blockquote style="font-size: 12pt; font-style: italic; margin: 0 0 10px 0; text-align: left;">${srcObj.text}</blockquote>`;
               }
               sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
-              sourceHTML += "</div>";
+              sourceHTML += '</div>';
             });
-            sourceHTML += "</div>";
+            sourceHTML += '</div>';
             html += sourceHTML;
             html += `</div>`;
 
-            if (
-              unitId === "edexcel_medicine" ||
-              unitId === "weimar_nazi_germany"
-            ) {
+            if (unitId === 'edexcel_medicine' || unitId === 'weimar_nazi_germany') {
               html += `<h3 style="margin-top: 0;">Source Evaluation Notes</h3>
               <table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width: 100%; border-collapse: collapse; margin-bottom: 10px; ">
                 <tr><th style=" padding-top: 8px; padding-bottom: 8px; width: 10%;">Source</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">N.O.P.</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">Content</th><th style=" padding-top: 8px; padding-bottom: 8px; width: 30%;">Context</th></tr>
@@ -1988,11 +2000,11 @@ if (_t.badgeHtml) html += _t.badgeHtml;
               }
             }
           } else if (lesson.gcse_task.topic) {
-            let tariff = getTariffBadge(lesson.gcse_task.topic); lesson.gcse_task.topic = tariff.cleanTopic; html += `<p style="font-weight: bold; font-size: 13pt;">Q${globalQNum++}. ${lesson.gcse_task.topic}${tariff.badgeHtml}</p>`;
+            let tariff = getTariffBadge(lesson.gcse_task.topic);
+            lesson.gcse_task.topic = tariff.cleanTopic;
+            html += `<div style="font-weight: bold; font-size: 13pt; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.gcse_task.topic}${tariff.badgeHtml}</div>`;
 
-            if (
-              lesson.gcse_task.topic.toLowerCase().includes("narrative account")
-            ) {
+            if (lesson.gcse_task.topic.toLowerCase().includes('narrative account')) {
               html += `<div style="margin: 15px 0; padding-top: 12px; padding-bottom: 12px;   border-radius: 6px; ">
                 <strong style="color: #b71c1c; font-size: 11pt;">Planning your narrative account:</strong>
                 <p style="font-size: 10pt; margin-top: 5px; margin-bottom: 5px;">Remember to link your paragraphs chronologically. You could use these sentence starters:</p>
@@ -2024,14 +2036,14 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             let hasImage = source.src || source.source || source.image;
             // Strip purely visual sources from pupil workbook
             if (hasImage && !sourceContent && unitId === 'cme_new') return;
-            
+
             if (hasImage || source.caption || sourceContent) {
               html += `
               <div class="source-container" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 6px;">
-                ${source.title ? `<strong style="font-size: 11pt;">${source.title}</strong><br>` : ""}
-                ${(source.src || source.source || source.image) ? `<img src="${typeof resolveAssetPath === "function" ? resolveAssetPath((source.src || source.source || source.image), 2) : (source.src || source.source || source.image)}" alt="Source" style="max-width: 100%; max-height: 250px; margin-top: 10px;">` : ""}
-                ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${formatText(sourceContent)}</blockquote>` : ""}
-                ${source.caption ? `<div class="source-caption" style="margin-top: 5px; font-size: 10pt;">${source.caption}</div>` : ""}
+                ${source.title ? `<strong style="font-size: 11pt;">${source.title}</strong><br>` : ''}
+                ${source.src || source.source || source.image ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src || source.source || source.image, 2) : source.src || source.source || source.image}" alt="Source" style="max-width: 100%; max-height: 250px; margin-top: 10px;">` : ''}
+                ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${formatText(sourceContent)}</blockquote>` : ''}
+                ${source.caption ? `<div class="source-caption" style="margin-top: 5px; font-size: 10pt;">${source.caption}</div>` : ''}
               </div>
             `;
             }
@@ -2057,16 +2069,13 @@ if (_t.badgeHtml) html += _t.badgeHtml;
           epArray.forEach((ep, index) => {
             let qText = ep.question.toLowerCase();
             if (
-              qText.includes("explain why") ||
-              qText.includes("explain one consequence") ||
-              qText.includes("describe two features") ||
-              qText.includes("describe one feature")
+              qText.includes('explain why') ||
+              qText.includes('explain one consequence') ||
+              qText.includes('describe two features') ||
+              qText.includes('describe one feature')
             ) {
               questionsBefore.push({ ep, index });
-            } else if (
-              qText.includes("source") ||
-              qText.includes("interpretation")
-            ) {
+            } else if (qText.includes('source') || qText.includes('interpretation')) {
               questionsAfter.push({ ep, index });
             } else {
               if (index < 2) questionsBefore.push({ ep, index });
@@ -2076,23 +2085,19 @@ if (_t.badgeHtml) html += _t.badgeHtml;
 
           const renderQuestionLines = (qText) => {
             let lines = 8;
-            if (qText.includes("16 marks")) lines = 96;
+            if (qText.includes('16 marks')) lines = 96;
+            else if (qText.includes('12 marks') || qText.includes('Explain why')) lines = 64;
+            else if (qText.includes('8 marks')) lines = 32;
             else if (
-              qText.includes("12 marks") ||
-              qText.includes("Explain why")
-            )
-              lines = 64;
-            else if (qText.includes("8 marks")) lines = 32;
-            else if (
-              qText.includes("4 marks") ||
-              qText.includes("Explain one way") ||
-              qText.includes("Explain one consequence") ||
-              qText.includes("difference") ||
-              qText.includes("Suggest one reason")
+              qText.includes('4 marks') ||
+              qText.includes('Explain one way') ||
+              qText.includes('Explain one consequence') ||
+              qText.includes('difference') ||
+              qText.includes('Suggest one reason')
             )
               lines = 5;
-            else if (qText.includes("2 marks")) lines = 3;
-            let lHtml = "";
+            else if (qText.includes('2 marks')) lines = 3;
+            let lHtml = '';
             for (let i = 0; i < lines; i++) {
               lHtml += `<div class="task-lines-large"></div>`;
             }
@@ -2102,23 +2107,26 @@ if (_t.badgeHtml) html += _t.badgeHtml;
           const renderQuestionItem = (item) => {
             let ep = item.ep;
             let index = item.index;
-            let rawQText = ep.question || ep.text || "";
-            let marksStr = ep.marks ? ` (${ep.marks} marks)` : "";
-            if (rawQText.includes("marks)")) marksStr = "";
+            let rawQText = ep.question || ep.text || '';
+            let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
+            if (rawQText.includes('marks)')) marksStr = '';
             let isLong =
-              rawQText.includes("12 marks") ||
-              rawQText.includes("16 marks") ||
+              rawQText.includes('12 marks') ||
+              rawQText.includes('16 marks') ||
               ep.marks === 12 ||
               ep.marks === 16;
             let pbBefore = isLong
-              ? "page-break-before: always; margin-top: 30px;"
-              : "margin-top: 15px;";
+              ? 'page-break-before: always; margin-top: 30px;'
+              : 'margin-top: 15px;';
             let _tInfo3 = processTaskTextWithTariff(rawQText, true);
-            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${"Q" + (globalQNum++)}. ${_tInfo3.cleanText}</strong></div>`;
+            let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${'Q' + globalQNum++}. ${_tInfo3.cleanText}</strong></div>`;
             if (_tInfo3.badgeHtml) {
-                questionHtml += _tInfo3.badgeHtml.replace('<div style="margin-top: 5px; margin-bottom: 15px;">', '<div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;">');
+              questionHtml += _tInfo3.badgeHtml.replace(
+                '<div style="margin-top: 5px; margin-bottom: 15px;">',
+                '<div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;">',
+              );
             } else if (ep.marks) {
-                // ... fallback handled by existing code
+              // ... fallback handled by existing code
             }
             if (isLong) {
               questionHtml =
@@ -2130,12 +2138,11 @@ if (_t.badgeHtml) html += _t.badgeHtml;
 
             if (ep.stimulus && ep.stimulus.length > 0) {
               let isSources =
-                ep.question.toLowerCase().includes("useful") ||
-                ep.question.toLowerCase().includes("follow up") ||
+                ep.question.toLowerCase().includes('useful') ||
+                ep.question.toLowerCase().includes('follow up') ||
                 ep.stimulus.some(
                   (s) =>
-                    typeof s === "string" &&
-                    (s.includes("Source A") || s.includes("Source B")),
+                    typeof s === 'string' && (s.includes('Source A') || s.includes('Source B')),
                 );
               if (isSources) {
                 questionHtml += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 10px;">`;
@@ -2143,7 +2150,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
                   questionHtml += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
                        <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${String.fromCharCode(65 + i)}</strong>
                        <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
-                         ${formatText(stimText.replace(/<strong>Source [A-Z]:\s*<\/strong>/, "").replace(/\n/g, "<br>"))}
+                         ${formatText(stimText.replace(/<strong>Source [A-Z]:\s*<\/strong>/, '').replace(/\n/g, '<br>'))}
                        </div>
                      </div>`;
                 });
@@ -2170,9 +2177,8 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             sources = [];
             interpretations = [];
             epStimulus.forEach((stim, i) => {
-              let sTitle =
-                stim.title || `Source ${String.fromCharCode(65 + i)}`;
-              if (sTitle.toLowerCase().includes("interpretation")) {
+              let sTitle = stim.title || `Source ${String.fromCharCode(65 + i)}`;
+              if (sTitle.toLowerCase().includes('interpretation')) {
                 interpretations.push({ stim, sTitle });
               } else {
                 sources.push({ stim, sTitle });
@@ -2182,9 +2188,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             if (sources.length > 0) {
               html += `<div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px;">`;
               sources.forEach((item) => {
-                let content = formatText(
-                  item.stim.content || item.stim,
-                ).replace(/\n/g, "<br>");
+                let content = formatText(item.stim.content || item.stim).replace(/\n/g, '<br>');
                 html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
                       <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">${item.sTitle}</strong>
                       <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
@@ -2197,9 +2201,7 @@ if (_t.badgeHtml) html += _t.badgeHtml;
             if (interpretations.length > 0) {
               html += `<div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px;">`;
               interpretations.forEach((item) => {
-                let content = formatText(
-                  item.stim.content || item.stim,
-                ).replace(/\n/g, "<br>");
+                let content = formatText(item.stim.content || item.stim).replace(/\n/g, '<br>');
                 html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
                       <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">${item.sTitle}</strong>
                       <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
@@ -2219,40 +2221,37 @@ if (_t.badgeHtml) html += _t.badgeHtml;
         html += `</div>`;
       }
 
-    // Full Page Map
-    if (false && lesson.full_page_map) {
+      // Full Page Map
+      if (false && lesson.full_page_map) {
         let mapSrc =
-          typeof resolveAssetPath === "function"
+          typeof resolveAssetPath === 'function'
             ? resolveAssetPath(lesson.full_page_map, 2)
             : `../..${lesson.full_page_map}`;
         html += `<div style="page-break-before: always; height: 95vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;">`;
         html += `<img src="${mapSrc}" style="max-width: 100%; max-height: 95vh; object-fit: contain; margin: auto; display: block;">`;
         html += `</div>`;
       }
-allVideos = [];
+      allVideos = [];
       if (lesson.video) {
-        if (Array.isArray(lesson.video))
-          allVideos = allVideos.concat(lesson.video);
+        if (Array.isArray(lesson.video)) allVideos = allVideos.concat(lesson.video);
         else allVideos.push(lesson.video);
       }
       if (lesson.extra_videos && lesson.extra_videos.length > 0) {
         allVideos = allVideos.concat(lesson.extra_videos);
       }
-      flatQuestions.sort((a,b) => a.qNum - b.qNum);
-      flatQuestions.forEach(q => html += q.html);
+      flatQuestions.sort((a, b) => a.qNum - b.qNum);
+      flatQuestions.forEach((q) => (html += q.html));
 
       if (allVideos.length > 0) {
         appendixData.push({ title: lesson.title, videos: allVideos });
       }
     });
 
-    if (unitId === "cme_new") {
-      let allExamTasksHtml = "";
+    if (unitId === 'cme_new') {
+      let allExamTasksHtml = '';
       periodLessons.forEach((lesson) => {
         let hasExamTask =
-          lesson.gcse_task ||
-          lesson.exam_practice ||
-          (lesson.extended && lesson.extended.question);
+          lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
         if (hasExamTask) {
           allExamTasksHtml += `<div style="margin-bottom: 25px; padding: 15px; border: 1px solid #cbd5e1; border-radius: 8px; background-color: #f8fafc; page-break-inside: avoid;">`;
           allExamTasksHtml += `<h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 13pt;">From ${lesson.title}</h4>`;
@@ -2264,29 +2263,31 @@ allVideos = [];
           if (lesson.gcse_task) {
             if (lesson.gcse_task.tasks) {
               lesson.gcse_task.tasks.forEach((task) => {
-                let _t2 = processTaskTextWithTariff(task.text || task.question || task.instruction || task.title || '');
-allExamTasksHtml += `<div style="margin-top: 10px;"><strong>Q. ${_t2.cleanText}</strong></div>`;
-if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
+                let _t2 = processTaskTextWithTariff(
+                  task.text || task.question || task.instruction || task.title || '',
+                );
+                allExamTasksHtml += `<div style="margin-top: 10px;"><strong>Q. ${_t2.cleanText}</strong></div>`;
+                if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
               });
             } else if (lesson.gcse_task.topic) {
-              let topicText = lesson.gcse_task.topic || "";
+              let topicText = lesson.gcse_task.topic || '';
               let tLower = topicText.toLowerCase();
               let isFullQuestion =
-                tLower.includes("write a narrative account") ||
-                tLower.includes("explain one consequence") ||
-                tLower.includes("explain the importance") ||
-                tLower.includes("how useful") ||
-                tLower.includes("explain why") ||
-                tLower.includes("describe");
+                tLower.includes('write a narrative account') ||
+                tLower.includes('explain one consequence') ||
+                tLower.includes('explain the importance') ||
+                tLower.includes('how useful') ||
+                tLower.includes('explain why') ||
+                tLower.includes('describe');
               if (isFullQuestion) {
-                allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">Q.. ${topicText}</p>`;
+                allExamTasksHtml += `<div style="font-weight: bold; margin-bottom: 10px; margin-top: 10px;">Q.. ${topicText}</div>`;
               } else {
-                allExamTasksHtml += `<p style="font-weight: bold; margin-bottom: 5px;">Q.. How useful are Sources A and B for an enquiry into ${topicText}?</p>`;
+                allExamTasksHtml += `<div style="font-weight: bold; margin-bottom: 10px; margin-top: 10px;">Q.. How useful are Sources A and B for an enquiry into ${topicText}?</div>`;
               }
 
               if (lesson.gcse_task.sources) {
                 lesson.gcse_task.sources.forEach((srcObj, i) => {
-                  if (srcObj.type !== "visual") {
+                  if (srcObj.type !== 'visual') {
                     allExamTasksHtml += `<div style="margin-top: 10px; padding: 10px; border-left: 3px solid #ccc; font-style: italic; font-size: 11pt;"><strong>${srcObj.title}:</strong> ${srcObj.text}</div>`;
                   }
                 });
@@ -2296,18 +2297,14 @@ if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
 
           if (lesson.exam_practice) {
             let epArray = lesson.exam_practice;
-            if (
-              !Array.isArray(lesson.exam_practice) &&
-              lesson.exam_practice.questions
-            ) {
+            if (!Array.isArray(lesson.exam_practice) && lesson.exam_practice.questions) {
               epArray = lesson.exam_practice.questions;
             }
             if (epArray && epArray.length > 0) {
               epArray.forEach((ep, index) => {
-                let marksStr = ep.marks ? ` (${ep.marks} marks)` : "";
-                if (ep.question.includes("marks)")) marksStr = "";
-                if (ep.question.toLowerCase().includes("explain why"))
-                  marksStr = "";
+                let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
+                if (ep.question.includes('marks)')) marksStr = '';
+                if (ep.question.toLowerCase().includes('explain why')) marksStr = '';
                 let _tInfo2 = processTaskTextWithTariff(ep.question, true);
                 allExamTasksHtml += `<div style="margin-top: 10px;"><strong>${index + 1}. ${_tInfo2.cleanText}</strong></div>`;
                 if (_tInfo2.badgeHtml) allExamTasksHtml += _tInfo2.badgeHtml;
@@ -2337,7 +2334,7 @@ if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
       }
     }
 
-    if (unitId === "edexcel_medicine" || unitId === "western_front") {
+    if (unitId === 'edexcel_medicine' || unitId === 'western_front') {
       html += `
     <div style="page-break-before: always; padding: 20px;">
       <h2 style="text-align: center; font-size: 18pt; margin-bottom: 15px; font-family: 'Playfair Display', serif; color: #1a237e;">Factors Overview: ${periodTitle}</h2>
@@ -2364,8 +2361,7 @@ if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
 
     // QR Code Appendix removed per user request
 
-    const genDate =
-      new Date().toISOString().replace("T", " ").substring(0, 19) + " UTC";
+    const genDate = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
     html += `<div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: ${genDate} | Unit: ${unitId}</div>`;
     html += `<script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -2410,35 +2406,26 @@ if (_t2.badgeHtml) allExamTasksHtml += _t2.badgeHtml;
     html = html.replace(/src="\/assets\//g, 'src="../../assets/');
 
     // Clean up any remaining Key Individual tags globally across the entire HTML string
-    html = html.replace(
-      /\[Key Individual:\s*([^\]]+)\]/gi,
-      "<strong>$1</strong>",
-    );
+    html = html.replace(/\[Key Individual:\s*([^\]]+)\]/gi, '<strong>$1</strong>');
 
     // Print-specific UX fixes for interactive elements
-    html = html.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, ""); // Remove interactive buttons
-    html = html.replace(
-      /display:\s*none;?/gi,
-      "display: block; margin-top: 15px;",
-    ); // Stack toggle tabs
-    html = html.replace(/(?:using the toggle tabs,?\s*)/gi, ""); // Remove app-only phrasing
+    html = html.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, ''); // Remove interactive buttons
+    html = html.replace(/display:\s*none;?/gi, 'display: block; margin-top: 15px;'); // Stack toggle tabs
+    html = html.replace(/(?:using the toggle tabs,?\s*)/gi, ''); // Remove app-only phrasing
 
     // Safely strip HTML/Markdown link wrappers but preserve inner display text
     html = html.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
     html = html.replace(/<a[^>]*>(.*?)<\/a>/g, '$1');
 
-    
-  // Dynamically inject correct page numbers for ANY manual placeholder references 
-  // Syntax: [[PAGE_REF:Marker_Name]] e.g. [[PAGE_REF:L3_Start]]
-  html = html.replace(/\[\[PAGE_REF:([a-zA-Z0-9_]+)\]\]/g, (match, marker) => {
-    const markerObj = pdfMarkers.find(m => m.marker === marker);
-    return markerObj ? markerObj.page : 'XX';
-  });
+    // Dynamically inject correct page numbers for ANY manual placeholder references
+    // Syntax: [[PAGE_REF:Marker_Name]] e.g. [[PAGE_REF:L3_Start]]
+    html = html.replace(/\[\[PAGE_REF:([a-zA-Z0-9_]+)\]\]/g, (match, marker) => {
+      const markerObj = pdfMarkers.find((m) => m.marker === marker);
+      return markerObj ? markerObj.page : 'XX';
+    });
 
-  const filename =
-      period.name === "full"
-        ? "pupil_workbook.html"
-        : `pupil_workbook_${period.name}.html`;
+    const filename =
+      period.name === 'full' ? 'pupil_workbook.html' : `pupil_workbook_${period.name}.html`;
     const outPath = path.join(publicUnitsDir, unitId, filename);
     try {
       fs.writeFileSync(outPath, html);

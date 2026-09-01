@@ -11,6 +11,7 @@ import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
 import { renderLesson } from './engine/lesson_renderer.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js'; // Added for guided reading tab
+import { getAssetUrl } from './engine/assets.js';
 
 export function getUnits() {
   if (!window.db) return [];
@@ -749,7 +750,34 @@ export async function renderLessonsView() {
     window.scrollTo(0, 0);
   };
 
-  let headerHtml = `
+  let heroImageUrl = '';
+  if (data.cover_image && typeof data.cover_image === 'string') {
+    heroImageUrl = getAssetUrl(data.cover_image);
+  } else if (Array.isArray(data.cover_image) && data.cover_image.length > 0) {
+    heroImageUrl = getAssetUrl(data.cover_image[0]);
+  } else if (data.cover_sources && data.cover_sources.length > 0) {
+    heroImageUrl = getAssetUrl(data.cover_sources[0].image);
+  }
+
+  let headerHtml = '';
+  if (heroImageUrl) {
+    headerHtml = `
+      <div style="position: relative; text-align: center; padding: 80px 30px 60px 30px; background-image: url('${heroImageUrl}'); background-size: cover; background-position: center; border-radius: 0;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.85));"></div>
+        <div style="position: relative; z-index: 1;">
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: white; margin-bottom: 10px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${data.enquiry_question || data.enquiry || 'Unit Enquiry'}</h1>
+          <h2 style="font-size: 1.4rem; color: #cbd5e1; font-weight: 500; margin-top: 0; margin-bottom: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
+            ${data.title}
+          </h2>
+          ${data.cover_caption ? `<p style="margin-top: 20px; margin-bottom: 0; font-style: italic; color: #94a3b8; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${data.cover_caption}</p>` : ''}
+        </div>
+      </div>
+      <div style="padding: 20px 30px 0 30px; background: white;">
+        ${renderCoverSourcesHTML(data, true)}
+      </div>
+    `;
+  } else {
+    headerHtml = `
       <div style="text-align: center; padding: 40px 30px 20px 30px; background: white;">
         <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: #1a237e; margin-bottom: 10px; line-height: 1.2;">${data.enquiry_question || data.enquiry || 'Unit Enquiry'}</h1>
         <h2 style="font-size: 1.4rem; color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 30px;">
@@ -761,6 +789,7 @@ export async function renderLessonsView() {
         ${data.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 0; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${data.cover_caption}</p>` : ''}
       </div>
     `;
+  }
 
   container.innerHTML = `
     <div class="card" style="animation: fadeInUp 0.3s ease-out; padding: 0; overflow: hidden; background: white;">
