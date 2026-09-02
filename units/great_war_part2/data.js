@@ -384,6 +384,13 @@ export default {
     {
       id: 'lesson_2',
       title: 'Did British generals make the horror of trench warfare worse?',
+      vocabulary: [
+        { term: 'Trench', definition: 'A long, narrow ditch dug by soldiers for protection from enemy fire on the Western Front.' },
+        { term: 'No Mans Land', definition: 'The deadly strip of land between opposing trenches, swept by machine gun fire and barbed wire.' },
+        { term: 'Attrition', definition: 'A strategy of wearing down the enemy through continuous losses of personnel and material.' },
+        { term: 'Causation', definition: 'Understanding the reasons behind events — why did trench warfare cause such devastating casualties?' },
+        { term: 'Interpretation', definition: 'A historians explanation of events — the debate over whether generals were lions led by donkeys.' }
+      ],
       learning_objectives: [
         "Describe the key features of trench warfare and explain why it caused such devastating casualties",
         "Explain the debate around British military leadership: were generals incompetent or facing impossible circumstances?",

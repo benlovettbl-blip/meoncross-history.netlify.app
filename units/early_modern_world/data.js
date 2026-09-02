@@ -562,6 +562,13 @@ const early_modern_world = {
         },
       ],
       title: 'Who held global power in 1450?',
+      vocabulary: [
+        { term: 'Empire', definition: 'A large political unit controlling many territories — in 1450, the Ottoman, Ming, and Songhai empires were dominant.' },
+        { term: 'Trade', definition: 'The exchange of goods — the Silk Roads and Indian Ocean trade networks connected civilisations.' },
+        { term: 'Imperialism', definition: 'The policy of extending power through conquest, colonisation, or economic exploitation.' },
+        { term: 'Power', definition: 'Who held political, economic, and military power in the world of 1450?' },
+        { term: 'Civilisation', definition: 'A complex society with advanced cultural, political, and economic systems.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson challenges Eurocentric narratives by showing that in 1450, true global wealth and power were held by the Ottoman Empire, the Silk Road networks, and African Kingdoms.',
@@ -867,6 +874,13 @@ const early_modern_world = {
         },
       ],
       title: 'How did religious conflict trigger global exploration (1517–1588)?',
+      vocabulary: [
+        { term: 'Reformation', definition: 'The 16th-century religious movement that split Christianity into Catholic and Protestant branches.' },
+        { term: 'Exploration', definition: 'The voyages of discovery by European nations seeking new trade routes and territories.' },
+        { term: 'Church', definition: 'The Catholic Church — the dominant religious institution in Europe until the Reformation.' },
+        { term: 'Change', definition: 'The Reformation caused profound religious, political, and social change across Europe.' },
+        { term: 'Continuity', definition: 'Despite the Reformation, some aspects of religious life stayed the same.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson explores the causal link between the domestic and European religious upheaval of the Protestant Reformation and the subsequent global naval conflict between England and Spain. The objective is to help students understand how religious ideology directly fueled early imperialism and exploration.',
@@ -1311,6 +1325,13 @@ const early_modern_world = {
         },
       ],
       title: 'Trade or takeover: How did early encounters turn into empire?',
+      vocabulary: [
+        { term: 'Colonisation', definition: 'The process of establishing control over foreign territories and their peoples.' },
+        { term: 'Trade', definition: 'Early European encounters often began as trade but evolved into full-scale imperial conquest.' },
+        { term: 'Empire', definition: 'European powers like Spain, Portugal, and England built global empires from the 1500s.' },
+        { term: 'Causation', definition: 'Understanding why European exploration led to colonisation and empire-building.' },
+        { term: 'Propaganda', definition: 'European accounts of discovery were often propaganda justifying the seizure of other peoples lands.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson compares two contrasting forms of early English colonial expansion: desperate territorial settlement in North America (Roanoke/Jamestown) and polite mercantile trade with the powerful Mughal Empire in India. It aims to show students that the British Empire was not a monolithic, pre-planned military conquest, but a varied process driven by joint-stock capitalism that opportunistically shifted from trade to takeover.',
@@ -1699,6 +1720,13 @@ const early_modern_world = {
     {
       id: 'lesson_4',
       title: 'James I and the Gunpowder Plot: Why was religious division so volatile?',
+      vocabulary: [
+        { term: 'Religion', definition: 'The clash between Catholicism and Protestantism shaped English politics for over a century.' },
+        { term: 'Parliament', definition: 'The institution that made laws — James I clashed with Parliament over royal and religious power.' },
+        { term: 'Gunpowder Plot', definition: 'The 1605 Catholic conspiracy to blow up Parliament and kill King James I.' },
+        { term: 'Significance', definition: 'The plots significance lies in how it deepened anti-Catholic sentiment and strengthened Parliament.' },
+        { term: 'Treason', definition: 'The crime of betraying ones country — the plotters were convicted of high treason.' }
+      ],
       narrative_blocks: [
         {
           title: 'The Roots of Volatility',
@@ -1862,6 +1890,13 @@ const early_modern_world = {
         },
       ],
       title: 'Who controlled Britain? The Ideological Battle',
+      vocabulary: [
+        { term: 'Power', definition: 'The central question: who should hold supreme power — the monarchy or Parliament?' },
+        { term: 'Monarchy', definition: 'Rule by a king or queen — the Stuarts believed in the Divine Right of Kings.' },
+        { term: 'Parliament', definition: 'The assembly of elected representatives that challenged the kings absolute authority.' },
+        { term: 'Civil War', definition: 'An armed conflict between opposing groups within the same country — Englands Civil War (1642-1651).' },
+        { term: 'Democracy', definition: 'Government by the people — the Civil War raised radical questions about political power.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.',
@@ -2249,6 +2284,13 @@ const early_modern_world = {
         },
       ],
       title: 'Who controlled Britain? The Economic Shift',
+      vocabulary: [
+        { term: 'Trade', definition: 'Global trade transformed Englands economy and helped shift power from the monarchy to merchants.' },
+        { term: 'Revolution', definition: 'The Glorious Revolution of 1688 permanently transferred power from the Crown to Parliament.' },
+        { term: 'Slavery', definition: 'The enslavement of millions of Africans was central to the economic transformation of the early modern world.' },
+        { term: 'Change', definition: 'The economic shift from feudal agriculture to global trade was a fundamental change.' },
+        { term: 'Continuity', definition: 'Despite political revolutions, many ordinary peoples lives showed significant continuity.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.',
@@ -2546,6 +2588,13 @@ const early_modern_world = {
     {
       id: 'lesson_6',
       title: 'What were the mechanics of the Transatlantic Slave Trade?',
+      vocabulary: [
+        { term: 'Transatlantic Slave Trade', definition: 'The forced transportation of millions of Africans to the Americas to work as enslaved labourers.' },
+        { term: 'Slavery', definition: 'The ownership of human beings as property — a moral catastrophe at the heart of early modern trade.' },
+        { term: 'Trade', definition: 'The Triangular Trade connected Europe, Africa, and the Americas in a brutal economic system.' },
+        { term: 'Middle Passage', definition: 'The horrific sea journey across the Atlantic endured by enslaved Africans in appalling conditions.' },
+        { term: 'Profit', definition: 'The slave trade was driven by the desire for profit — human suffering was treated as a business.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson unpacks the brutal mechanics of the Transatlantic Slave Trade, focusing on the Triangular Trade system and how plantation economics generated immense wealth that shaped modern Britain.',
@@ -2923,6 +2972,13 @@ const early_modern_world = {
       id: 'lesson_7',
       banner: '/images/brookes_ship.jpg',
       title: 'How did enslaved Africans resist the Transatlantic Slave Trade?',
+      vocabulary: [
+        { term: 'Resistance', definition: 'Enslaved Africans resisted their captivity through rebellion, escape, cultural preservation, and sabotage.' },
+        { term: 'Abolition', definition: 'The movement to end the slave trade and slavery — achieved in the British Empire in 1807/1833.' },
+        { term: 'Propaganda', definition: 'Abolitionists used powerful propaganda to turn public opinion against slavery.' },
+        { term: 'Significance', definition: 'The abolition movement is significant as one of the first successful human rights campaigns.' },
+        { term: 'Agency', definition: 'The ability to act independently — enslaved people showed agency through their resistance.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson aims to dismantle the passive victim narrative of enslaved people by centering their active resistance (both covert and overt) against their enslavers.',
@@ -3480,6 +3536,13 @@ const early_modern_world = {
         },
       ],
       title: "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+      vocabulary: [
+        { term: 'Synthesis', definition: 'Bringing together knowledge from across the entire unit to form an overall judgement.' },
+        { term: 'Power', definition: 'By 1750, power had shifted dramatically from the monarchy to Parliament.' },
+        { term: 'Empire', definition: 'Britain had become a major global empire through trade, colonisation, and the slave trade.' },
+        { term: 'Revolution', definition: 'Political, religious, and economic revolutions transformed Britain between 1450 and 1750.' },
+        { term: 'Change', definition: 'The central question: how much had Britain really changed by 1750?' }
+      ],
       teacher_notes: {
         primer:
           "This is the final assessment lesson for the 1450-1750 unit. It requires students to weigh the 'pro-modern' elements (finance, empire, infrastructure) against the 'un-modern' realities (poverty, slavery, political inequality) and synthesize them into an essay.",

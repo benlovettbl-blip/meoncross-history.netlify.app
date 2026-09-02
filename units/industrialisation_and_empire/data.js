@@ -2604,6 +2604,13 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_8',
       title: 'Who truly benefited from 19th-century transformation?',
+      vocabulary: [
+        { term: 'Synthesis', definition: 'Bringing together knowledge from across a whole unit to form an overall judgement.' },
+        { term: 'Colonialism', definition: 'The policy and practice of acquiring control over other countries, exploiting them economically.' },
+        { term: 'Imperialism', definition: 'The broader ideology of expanding a nations influence through empire, trade, and military power.' },
+        { term: 'Power', definition: 'The central question: who held power in 19th-century Britain, and who was denied it?' },
+        { term: 'Urbanisation', definition: 'The growth of cities — by 1900, most Britons lived in urban rather than rural areas.' }
+      ],
       learning_objectives: [
         'Synthesise knowledge of industrialisation, empire, trade, democracy, and resistance across the 19th century',
         'Construct a sustained argument evaluating who truly benefited from Britains transformation',
