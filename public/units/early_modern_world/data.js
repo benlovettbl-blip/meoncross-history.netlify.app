@@ -667,11 +667,11 @@ const early_modern_world = {
       local_coastal_links: 'N/A',
       learning_objective:
         'To analyze the distribution of global power and wealth in the mid-15th century.',
-      disciplinary_concept: 'Historical Enquiry',
+      disciplinary_concept: 'Similarity and Difference',
       formative_assessment: {
         type: 'PEEL Paragraph',
         question:
-          'PEEL Paragraph (Enquiry): What was the primary motivation for early global explorers?',
+          'PEEL Paragraph (Similarity & Difference): Compare the global power of the Ottoman Empire and West Africa with that of Western Europe in 1450.',
       },
       teacher_notes: {
         primer:
@@ -1055,11 +1055,11 @@ const early_modern_world = {
       local_coastal_links: 'Reviews regional naval supremacy.',
       learning_objective:
         'To examine how the turmoil of religious conflict accelerated global exploration and expansion.',
-      disciplinary_concept: 'Historical Enquiry',
+      disciplinary_concept: 'Causation',
       formative_assessment: {
         type: 'PEEL Paragraph',
         question:
-          'PEEL Paragraph (Change & Continuity): How did the printing press revolutionize the spread of ideas?',
+          'PEEL Paragraph (Causation): Explain why religious conflict between Protestant England and Catholic Spain was a key cause of English global exploration.',
       },
       teacher_notes: {
         primer:
@@ -1582,11 +1582,11 @@ const early_modern_world = {
       local_coastal_links: "Explores Portsmouth's maritime trade.",
       learning_objective:
         'To evaluate the process by which early cultural encounters transitioned into colonial empires.',
-      disciplinary_concept: 'Historical Enquiry',
+      disciplinary_concept: 'Change and Continuity',
       formative_assessment: {
         type: 'PEEL Paragraph',
         question:
-          'Formative Question (Causation): Identify three major causes of the Protestant Reformation.',
+          'PEEL Paragraph (Change & Continuity): Explain how early English encounters in North America transitioned from peaceful trade to colonial takeover.',
       },
       teacher_notes: {
         primer:
@@ -2196,21 +2196,43 @@ const early_modern_world = {
       },
       teacher_notes: {
         primer:
-          'This lesson explores the roots of religious volatility and the mechanics of the Gunpowder Plot, ending with a detailed source evaluation.',
+          'This lesson explores the roots of religious volatility in Early Modern England, from the broken promises of James I to the mechanics and consequences of the Gunpowder Plot. Students will engage in source evaluation of the Monteagle Letter and contemporary propaganda.',
         objectives: [
           {
-            objective: 'Understand the motivations and consequences of the Gunpowder Plot.',
-            primer: 'Guide students through the narrative and focus on the religious motivations.',
-            question: 'What is the most significant consequence of the Gunpowder Plot?',
+            objective: 'Explain the religious tensions between Protestants and Catholics that motivated the Gunpowder Plot of 1605.',
+            primer: 'Guide students through the narrative blocks on recusancy fines, the Hampton Court Conference, and the growing desperation of English Catholics under James I.',
+            question: 'Why did the Catholic conspirators feel that violence was their only remaining option by 1605?',
+          },
+          {
+            objective: 'Analyse the Monteagle Letter as evidence of divided Catholic loyalties in Early Modern England.',
+            primer: 'Use the primary source gallery to have students interrogate the provenance and utility of the anonymous warning letter. Who sent it? Why? What does it reveal about the Catholic community?',
+            question: 'What does Lord Monteagle\'s decision to hand the letter to the King reveal about divisions within the Catholic community?',
+          },
+          {
+            objective: 'Evaluate the long-term consequences of the Gunpowder Plot for Catholic rights and religious toleration in England.',
+            primer: 'Direct students to consider how the Plot was used as propaganda to justify harsher anti-Catholic laws for over 200 years, including the Penal Laws.',
+            question: 'Was the Gunpowder Plot ultimately more damaging to English Catholics than to the Protestant establishment?',
           },
         ],
       },
+      learning_objective:
+        'To evaluate the causes and consequences of the Gunpowder Plot and assess its impact on religious toleration in England.',
+      disciplinary_concept: 'Causation and Consequence',
+      formative_assessment: {
+        type: 'PEEL Paragraph',
+        question:
+          'PEEL Paragraph (Causation & Consequence): Explain the causes of the Gunpowder Plot and evaluate its consequences for English Catholics.',
+      },
       learning_objectives: {
         overarching: 'James I and the Gunpowder Plot: Why was religious division so volatile?',
-        scaffolded: ['Understand the motivations and consequences of the Gunpowder Plot.'],
+        scaffolded: [
+          'Explain the religious tensions between Protestants and Catholics that motivated the Gunpowder Plot of 1605.',
+          'Analyse the Monteagle Letter as evidence of divided Catholic loyalties.',
+          'Evaluate the long-term consequences of the Gunpowder Plot for Catholic rights.',
+        ],
       },
       disciplinary_focus:
-        'Significance - Evaluating the impact of the Renaissance on art and science.',
+        'Causation and Consequence - Analysing the causes of the Gunpowder Plot and its impact on Catholic rights.',
     },
     {
       id: 'lesson_4',
@@ -2244,9 +2266,11 @@ const early_modern_world = {
       local_coastal_links: 'N/A',
       learning_objective:
         'To analyze the shift in political ideology regarding who truly controlled Britain during the Early Modern period.',
-      disciplinary_concept: 'Historical Enquiry',
+      disciplinary_concept: 'Causation',
       formative_assessment: {
-        type: 'Formative Comprehension & Retrieval Task',
+        type: 'PEEL Paragraph',
+        question:
+          'PEEL Paragraph (Causation): Explain why King Charles I and Parliament went to war in 1642.',
       },
       teacher_notes: {
         primer:
@@ -2653,7 +2677,7 @@ const early_modern_world = {
         ],
         lines: 15,
       },
-      disciplinary_focus: "Causation - Analyzing the reasons for the Spanish Armada's defeat.",
+      disciplinary_focus: 'Causation - Analysing the causes of the English Civil War.',
     },
     {
       id: 'lesson_5',
@@ -2687,26 +2711,39 @@ const early_modern_world = {
       local_coastal_links: 'N/A',
       learning_objective:
         'To examine the economic transformation of Britain and its reliance on emerging global trade networks.',
-      disciplinary_concept: 'Historical Enquiry',
+      disciplinary_concept: 'Change and Continuity',
       formative_assessment: {
-        type: 'Formative Comprehension & Retrieval Task',
+        type: 'PEEL Paragraph',
+        question:
+          'PEEL Paragraph (Change & Continuity): Explain how the rise of Atlantic trade and colonial wealth transformed the British economy by 1700.',
       },
       teacher_notes: {
         primer:
-          'This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.',
+          'This lesson focuses specifically on the 17th-century economic transformation of Britain. Students will examine how Atlantic trade in sugar, tobacco, and textiles generated unprecedented wealth, how the founding of the Bank of England (1694) and joint-stock companies created a Financial Revolution, and whether merchant capitalism had overtaken the monarchy as the true engine of British power by 1700.',
         objectives: [
           {
-            objective: 'Understand the major economic changes of the 17th century.',
+            objective:
+              'Explain how 17th-century colonial trade in sugar, tobacco, and textiles generated unprecedented wealth for Britain.',
             primer:
-              'Explain how global trade and the establishment of new colonies created wealth for European powers.',
-            question: 'How did colonial expansion lead to an economic shift in Europe?',
+              'Direct students to the narrative on the Barbados sugar boom and the Virginia tobacco trade, showing the scale of profits flowing back to London merchants.',
+            question:
+              'How did Caribbean sugar and Virginian tobacco transform the wealth of British port cities?',
           },
           {
-            objective: 'Analyze the impact of colonial wealth on social structures.',
+            objective:
+              'Analyse how the founding of the Bank of England (1694) and joint-stock companies created a Financial Revolution.',
             primer:
-              'Discuss how the influx of new goods and wealth changed the everyday lives of people.',
+              'Use Source A (Thomas Mun) and the Royal Exchange illustration to demonstrate how mercantile capitalism created new financial institutions that bypassed traditional feudal wealth.',
             question:
-              'What new goods were introduced through colonial trade, and how did they affect society?',
+              'Why was the creation of the Bank of England in 1694 a turning point in British economic history?',
+          },
+          {
+            objective:
+              'Evaluate whether merchant capitalism had overtaken the monarchy as the true engine of British power by 1700.',
+            primer:
+              'Use the Historical Interpretations section to have students weigh the relative power of the Crown versus the merchant class by the end of the 17th century.',
+            question:
+              'By 1700, who truly controlled Britain\'s growing power — the King or the merchants?',
           },
         ],
       },
@@ -2958,9 +2995,9 @@ const early_modern_world = {
       learning_objectives: {
         overarching: 'Who controlled Britain: The King, Parliament, or Imperial Profits?',
         scaffolded: [
-          'Analyze why Charles I and Parliament fought the English Civil War (1642–1651).',
-          'Evaluate how colonial wealth from sugar and tobacco reshaped British politics during the Commonwealth.',
-          'Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists.',
+          'Explain how 17th-century colonial trade in sugar, tobacco, and textiles generated unprecedented wealth for Britain.',
+          'Analyse how the founding of the Bank of England (1694) and joint-stock companies created a Financial Revolution.',
+          'Evaluate whether merchant capitalism had overtaken the monarchy as the true engine of British power by 1700.',
         ],
       },
       banner: '/images/early_mod_l4_banner.jpg',
@@ -3023,7 +3060,7 @@ const early_modern_world = {
         lines: 15,
       },
       disciplinary_focus:
-        'Change and Continuity - Tracing the economic shift towards global trade.',
+        'Change and Continuity - Examining the economic transformation of 17th-century Britain.',
     },
     {
       id: 'lesson_6',
@@ -3035,26 +3072,39 @@ const early_modern_world = {
       local_coastal_links: "Analyzes Southampton's dockyard role.",
       learning_objective:
         'To analyze the mechanics, scale, and human cost of the Transatlantic Slave Trade.',
-      disciplinary_concept: 'Historical Enquiry',
+      disciplinary_concept: 'Significance',
       formative_assessment: {
-        type: 'Formative Comprehension & Retrieval Task',
+        type: 'PEEL Paragraph',
+        question:
+          'PEEL Paragraph (Significance): Evaluate the significance of the Transatlantic Slave Trade in shaping modern Britain.',
       },
       teacher_notes: {
         primer:
           'This lesson unpacks the brutal mechanics of the Transatlantic Slave Trade, focusing on the Triangular Trade system and how plantation economics generated immense wealth that shaped modern Britain.',
         objectives: [
           {
-            objective: 'Understand the Triangular Trade and the middle passage.',
+            objective:
+              'Describe the mechanics of the Triangular Trade and the horrors of the Middle Passage.',
             primer:
-              'Focus on the Macro-History block to explain the flow of goods, enslaved people, and wealth.',
-            question: "What were the three main 'legs' of the Triangular Trade?",
+              'Use the flowchart source (Source B) and the Equiano extract to walk students through each leg of the Triangular Trade, emphasising the dehumanising conditions of the Middle Passage.',
+            question:
+              'What were the three legs of the Triangular Trade, and what was transported on each leg?',
           },
           {
-            objective: 'Evaluate the economic legacy of slavery on Britain.',
+            objective:
+              'Analyse how the Caribbean plantation system created a brutal "death camp" model of forced labour.',
             primer:
-              'Use the Digital Research Task to show how slave-generated wealth funded modern British institutions.',
+              'Direct students to the comparative case study of Caribbean sugar vs. Virginian tobacco, focusing on mortality rates and the concept of "expendable" labour.',
             question:
-              'How did the wealth from the slave trade continue to benefit Britain long after abolition?',
+              'Why was the Caribbean sugar system often described as a "death camp" model of slavery?',
+          },
+          {
+            objective:
+              'Evaluate the extent to which the profits of the slave trade built modern Britain.',
+            primer:
+              'Use the UCL Legacies of British Slavery database research task to connect the profits of slavery to specific British institutions, buildings, and families.',
+            question:
+              'How did the wealth generated by the slave trade shape the infrastructure and institutions of modern Britain?',
           },
         ],
       },
@@ -3077,8 +3127,9 @@ const early_modern_world = {
       learning_objectives: {
         overarching: 'What were the mechanics of the Transatlantic Slave Trade?',
         scaffolded: [
-          'Understand the Triangular Trade and the middle passage.',
-          'Evaluate the economic legacy of slavery on Britain.',
+          'Describe the mechanics of the Triangular Trade and the horrors of the Middle Passage.',
+          'Analyse how the Caribbean plantation system created a brutal "death camp" model of forced labour.',
+          'Evaluate the extent to which the profits of the slave trade built modern Britain.',
         ],
       },
       narrative_blocks: [
@@ -3465,7 +3516,7 @@ const early_modern_world = {
         ],
         lines: 15,
       },
-      disciplinary_focus: 'Significance - Understanding the consequences of the English Civil War.',
+      disciplinary_focus: 'Significance - Evaluating the lasting impact of the Transatlantic Slave Trade on modern Britain.',
     },
     {
       id: 'lesson_7',
@@ -3478,25 +3529,39 @@ const early_modern_world = {
       local_coastal_links: 'Connects to local D-Day ports.',
       learning_objective:
         'To evaluate the various ways in which enslaved Africans resisted their captivity and the slave trade system.',
-      disciplinary_concept: 'Historical Enquiry',
+      disciplinary_concept: 'Significance',
       formative_assessment: {
-        type: 'Formative Comprehension & Retrieval Task',
+        type: 'PEEL Paragraph',
+        question:
+          'PEEL Paragraph (Significance): Evaluate the significance of enslaved resistance in undermining the moral legitimacy of the Transatlantic Slave Trade.',
       },
       teacher_notes: {
         primer:
           'This lesson aims to dismantle the passive victim narrative of enslaved people by centering their active resistance (both covert and overt) against their enslavers.',
         objectives: [
           {
-            objective: 'Analyze primary sources from formerly enslaved Africans.',
-            primer: 'Use the Primary Source Deep Dive to interrogate authentic voices.',
+            objective:
+              'Explain the different methods of resistance used by enslaved Africans, including mutiny, rebellion, and cultural preservation.',
+            primer:
+              'Guide students through the spectrum of resistance, from everyday acts of defiance (feigning illness, breaking tools) to armed revolt (the Stono Rebellion, shipboard mutinies).',
             question:
-              "How does Olaudah Equiano's account challenge the idea that enslaved people were passive?",
+              'Why did enslaved Africans use a wide spectrum of resistance methods, from subtle sabotage to open rebellion?',
           },
           {
-            objective: 'Investigate the Jamaican Maroon Wars.',
-            primer: 'Use the Micro-History of  to explore armed rebellion.',
+            objective:
+              'Analyse how the Jamaican Maroons used guerrilla warfare to successfully resist British colonial power.',
+            primer:
+              'Use the micro-history of Nanny of the Maroons and the Blue Mountains to demonstrate how geography, military skill, and cultural unity enabled sustained resistance.',
             question:
-              'Why were the Jamaican Maroons so difficult for the British military to defeat?',
+              'What made the Jamaican Maroons so difficult for the British army to defeat?',
+          },
+          {
+            objective:
+              'Evaluate the significance of enslaved resistance in challenging the moral foundations of the Transatlantic Slave Trade.',
+            primer:
+              'Use the Historical Debates section to connect physical resistance to the intellectual arguments of the abolitionist movement, showing how both undermined the slave system.',
+            question:
+              'Did enslaved resistance or Parliamentary abolition do more to end the slave trade?',
           },
         ],
       },
@@ -3520,9 +3585,9 @@ const early_modern_world = {
       learning_objectives: {
         overarching: 'How did enslaved Africans resist the Transatlantic Slave Trade?',
         scaffolded: [
-          'Understand the different forms of covert and overt resistance.',
-          'Analyze primary sources from formerly enslaved Africans.',
-          'Investigate the Jamaican Maroon Wars.',
+          'Explain the different methods of resistance used by enslaved Africans, including mutiny, rebellion, and cultural preservation.',
+          'Analyse how the Jamaican Maroons used guerrilla warfare to successfully resist British colonial power.',
+          'Evaluate the significance of enslaved resistance in challenging the moral foundations of the Transatlantic Slave Trade.',
         ],
       },
       narrative_blocks: [
@@ -3979,7 +4044,7 @@ const early_modern_world = {
         ],
         lines: 15,
       },
-      disciplinary_focus: 'Causation - Why did the Witch Craze spread across early modern Europe?',
+      disciplinary_focus: 'Significance - Evaluating the significance of enslaved resistance.',
     },
     {
       id: 'lesson_8',
@@ -4106,7 +4171,7 @@ const early_modern_world = {
       local_coastal_links: 'N/A',
       learning_objective:
         "To synthesize historical evidence to determine the extent of Britain's 'modernity' by 1750.",
-      disciplinary_concept: 'Historical Enquiry',
+      disciplinary_concept: 'Change and Continuity',
       formative_assessment: {
         type: 'PEEL Paragraph',
         question:
@@ -4508,7 +4573,7 @@ const early_modern_world = {
         lines: 35,
       },
       banner: '/images/early_mod_l6_banner.jpg',
-      disciplinary_focus: 'Historical Enquiry - Evaluating the legacy of the Early Modern era.',
+      disciplinary_focus: 'Change and Continuity - Synthesising how Britain transformed between 1450 and 1750.',
     },
   ],
   portraits: [

@@ -283,13 +283,21 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                     }
 
                     // Extract heavy tasks from narrative_blocks
-                    if (lesson.narrative_blocks) {
+                    // Skip if formative_assessment already provided a clean assessment question
+                    const hasCleanAssessment = lesson.formative_assessment && (
+                        (lesson.formative_assessment.question) ||
+                        (Array.isArray(lesson.formative_assessment) && lesson.formative_assessment.some(fa => fa.question))
+                    );
+                    
+                    if (!hasCleanAssessment && lesson.narrative_blocks) {
                         lesson.narrative_blocks.forEach(block => {
                             if (block.tasks) {
                                 block.tasks.forEach(t => {
                                     if (t.type === 'extended_writing' || t.type === 'peel_paragraph') {
                                         let q = t.question || t.instruction || 'Extended Writing';
-                                        q = q.split('\n')[0].replace(/^Task\s+\d+:\s*/i, '');
+                                        // Sanitize: strip HTML tags, newline escapes, and limit length
+                                        q = q.replace(/<[^>]+>/g, '').replace(/\\n/g, ' ').split('\n')[0].replace(/^Task\s+\d+:\s*/i, '').trim();
+                                        if (q.length > 150) q = q.substring(0, 147) + '...';
                                         
                                         let concept = "Argumentation";
                                         if (discFocus.toLowerCase().includes("causation")) concept = "Causation";
@@ -300,7 +308,8 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                                         tasks.push(`PEEL Paragraph (${concept}): ${q}`);
                                     } else if (t.type === 'creative_writing') {
                                         let q = t.question || t.instruction || 'Creative Writing';
-                                        q = q.split('\n')[0].replace(/^Task\s+\d+:\s*/i, '');
+                                        q = q.replace(/<[^>]+>/g, '').replace(/\\n/g, ' ').split('\n')[0].replace(/^Task\s+\d+:\s*/i, '').trim();
+                                        if (q.length > 150) q = q.substring(0, 147) + '...';
                                         tasks.push(`Creative Task: ${q}`);
                                     }
                                 });
