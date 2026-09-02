@@ -56,7 +56,6 @@ const great_war = {
       "sequencing_retrieval": "Links past context of economic shifts.",
       "local_coastal_links": "N/A",
       "learning_objective": "To analyze the unification process and the creation of the German Empire in 1871.",
-      "disciplinary_concept": "Causation",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Causation): Explain how Otto von Bismarck used 'blood and iron' to unify Germany by 1871."
@@ -481,14 +480,15 @@ const great_war = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To analyze the unification process and the creation of the German Empire in 1871.",
-        "scaffolded": [
-          "Explain how Otto von Bismarck used 'blood and iron' diplomacy and three calculated wars to unify Germany by 1871.",
-          "Analyze the geographical impact of the new German Empire on the balance of power in Europe.",
-          "Evaluate the geopolitical consequences of German unification for the balance of power in Europe."
-        ]
-      }
+      "learning_objectives": [
+        "Explain how Otto von Bismarck used 'blood and iron' diplomacy and three calculated wars to unify Germany by 1871.",
+        "Analyze the geographical impact of the new German Empire on the balance of power in Europe.",
+        "Evaluate the geopolitical consequences of German unification for the balance of power in Europe."
+      ],
+      "disciplinary_focus": "Causation",
+      "assessments": [
+        "PEEL Paragraph (Causation): Explain how Otto von Bismarck used 'blood and iron' to unify Germany by 1871."
+      ]
     },
     {
       "id": "lesson_1",
@@ -499,7 +499,6 @@ const great_war = {
       "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
       "local_coastal_links": "N/A",
       "learning_objective": "To understand Why did the Franco-Prussian War create long-term hatred?",
-      "disciplinary_concept": "Significance",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Significance): Evaluate the significance of the Franco-Prussian War in creating long-term European tensions."
@@ -666,14 +665,11 @@ const great_war = {
         "topic": "the reasons for French hatred of Germany after 1871",
         "model_answer": "<strong>Source A is highly useful for revealing the deep, emotional humiliation felt by the French people;</strong> <strong style=\"color: #0284c7;\">it highlights the \"bleeding wounds of Alsace and Lorraine\" and the desire to \"take back what was stolen\".</strong> <strong style=\"color: #9333ea;\">The fact that this is a school textbook makes it incredibly useful for showing purpose: the French government was actively indoctrinating the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture.</strong> <strong style=\"color: #16a34a;\">This is supported by our contextual knowledge that France was forced to pay a crushing 5 billion franc ransom after the disastrous Franco-Prussian War of 1871, sparking a permanent desire for revanche.</strong><br><br><strong>Source B is also extremely useful because it provides the German perspective on this hostility.</strong> <strong style=\"color: #0284c7;\">Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a \"French war of revenge\" and argues that Germany must ensure France \"never finds an ally\".</strong> <strong style=\"color: #9333ea;\">Because this is a private letter to a fellow diplomat, its nature makes it a highly reliable reflection of Germany's genuine strategic fears without any public censorship.</strong> <strong style=\"color: #16a34a;\">This is accurate to the context, as Bismarck spent the next 20 years building a complex defensive web of alliances (such as the Dual Alliance) specifically to keep France isolated and prevent a two-front war.</strong>"
       },
-      "learning_objectives": {
-        "overarching": "To evaluate why the Franco-Prussian War created long-term hatred.",
-        "scaffolded": [
-          "Identify the penalties forced upon France in 1871.",
-          "Explain how the Ems Telegram sparked the Franco-Prussian War.",
-          "Evaluate the long-term impact on European relations."
-        ]
-      },
+      "learning_objectives": [
+        "Identify the penalties forced upon France in 1871.",
+        "Explain how the Ems Telegram sparked the Franco-Prussian War.",
+        "Evaluate the long-term impact on European relations."
+      ],
       "teacher_notes": {
         "primer": "The overarching goal of this lesson is to understand the long-term diplomatic impact of the Franco-Prussian War. The narrative goes beyond just the events of 1871. It focuses on the resulting *revanche* (French desire for revenge) and Bismarck's subsequent need to isolate France through a web of alliances. Ensure students understand that this single conflict permanently poisoned European relations, forcing the creation of the rigid alliance systems that ultimately dragged Europe into World War I.",
         "objectives": [
@@ -992,6 +988,10 @@ const great_war = {
             "Notre Dame Cathedral"
           ]
         }
+      ],
+      "disciplinary_focus": "Significance",
+      "assessments": [
+        "PEEL Paragraph (Significance): Evaluate the significance of the Franco-Prussian War in creating long-term European tensions."
       ]
     },
     {
@@ -1003,7 +1003,6 @@ const great_war = {
       "sequencing_retrieval": "Consolidates earlier themes of monarchical power.",
       "local_coastal_links": "N/A",
       "learning_objective": "To understand Why did the scramble for colonies turn empires into rivals?",
-      "disciplinary_concept": "Causation",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Causation): Explain how imperial rivalry in Africa increased tensions between the European Great Powers."
@@ -1177,14 +1176,11 @@ const great_war = {
         "topic": "the impact of Weltpolitik on international relations",
         "model_answer": "<strong>Source A is useful for showing the British perception of Weltpolitik as aggressive and threatening;</strong> <strong style=\"color: #0284c7;\">the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany's aggressive desire for a larger empire.</strong> <strong style=\"color: #9333ea;\">As a satirical British cartoon, its purpose is to influence public opinion by exaggerating the Kaiser's arrogance, which accurately reflects the growing anti-German anxiety among the British public.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of the Moroccan Crises (1905 and 1911), where Wilhelm's aggressive posturing in Africa actually backfired and drove Britain into a closer military alliance with France.</strong><br><br><strong>Source B is highly useful for understanding the genuine German intent behind Weltpolitik.</strong> <strong style=\"color: #0284c7;\">The Chancellor demands Germany's \"place in the sun\", openly declaring their ambition to build a massive overseas empire.</strong> <strong style=\"color: #9333ea;\">As a public speech to the Reichstag, its purpose is to rally domestic nationalist support and justify increased military spending to the German politicians.</strong> <strong style=\"color: #16a34a;\">We know from context that Kaiser Wilhelm II was deeply jealous of the British Empire and believed that for Germany to be a true 'World Power', it needed vast African colonies, which directly triggered the imperial rivalry that destabilised Europe.</strong>"
       },
-      "learning_objectives": {
-        "overarching": "To evaluate why the scramble for colonies turned empires into rivals.",
-        "scaffolded": [
-          "Identify the main European colonial powers and their territories.",
-          "Explain how Kaiser Wilhelm II's 'Place in the Sun' policy threatened Britain.",
-          "Evaluate the impact of the Moroccan Crises on the Entente Cordiale."
-        ]
-      },
+      "learning_objectives": [
+        "Identify the main European colonial powers and their territories.",
+        "Explain how Kaiser Wilhelm II's 'Place in the Sun' policy threatened Britain.",
+        "Evaluate the impact of the Moroccan Crises on the Entente Cordiale."
+      ],
       "teacher_notes": {
         "primer": "The overarching goal of this lesson is to evaluate why the scramble for colonies turned empires into rivals. Ensure students understand that this wasn't just about claiming land; it was an economic race for raw materials and a strategic naval race. The Moroccan Crises serve as the key case study of how Germany's aggressive attempts to break up the British-French alliance actually pushed them closer together.",
         "objectives": [
@@ -1450,6 +1446,10 @@ const great_war = {
             "It led to Britain abandoning its empire"
           ]
         }
+      ],
+      "disciplinary_focus": "Causation",
+      "assessments": [
+        "PEEL Paragraph (Causation): Explain how imperial rivalry in Africa increased tensions between the European Great Powers."
       ]
     },
     {
@@ -1461,7 +1461,6 @@ const great_war = {
       "sequencing_retrieval": "Connects earlier themes of political changes.",
       "local_coastal_links": "Details Hampshire's coastal defenses.",
       "learning_objective": "To understand Whose Navy Was Biggest and Best? The Arms Race",
-      "disciplinary_concept": "Causation",
       "formative_assessment": {
         "type": "PEEL Paragraph (Causation)",
         "question": "PEEL Paragraph (Causation): Explain why the Anglo-German naval arms race destroyed diplomatic relations between Britain and Germany."
@@ -1615,14 +1614,11 @@ const great_war = {
         "topic": "the effects of the Anglo-German naval arms race",
         "model_answer": "<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style=\"color: #0284c7;\">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style=\"color: #9333ea;\">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship's revolutionary, heavily-armored design.</strong> <strong style=\"color: #16a34a;\">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain's naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style=\"color: #0284c7;\">The slogan \"We want eight, and we won't wait!\" shows the intense public demand for more warships.</strong> <strong style=\"color: #9333ea;\">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of 'Jingoism'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany's 17.</strong>"
       },
-      "learning_objectives": {
-        "overarching": "To analyze how the naval arms race heightened tensions between Britain and Germany.",
-        "scaffolded": [
-          "Identify the significance of the HMS Dreadnought.",
-          "Explain the concept of the Two-Power Standard and Risk Theory.",
-          "Analyze how naval competition fed mutual suspicion."
-        ]
-      },
+      "learning_objectives": [
+        "Identify the significance of the HMS Dreadnought.",
+        "Explain the concept of the Two-Power Standard and Risk Theory.",
+        "Analyze how naval competition fed mutual suspicion."
+      ],
       "teacher_notes": {
         "primer": "The overarching goal is to analyze how the naval arms race heightened tensions between Britain and Germany. The key concept here is the 'security dilemma': Britain built ships to feel safe, which made Germany feel unsafe, so Germany built ships, which made Britain feel unsafe. The HMS Dreadnought is the central turning point in this escalation.",
         "objectives": [
@@ -1900,6 +1896,10 @@ const great_war = {
             "It made them give up their empire"
           ]
         }
+      ],
+      "disciplinary_focus": "Causation",
+      "assessments": [
+        "PEEL Paragraph (Causation): Explain why the Anglo-German naval arms race destroyed diplomatic relations between Britain and Germany."
       ]
     },
     {
@@ -1911,7 +1911,6 @@ const great_war = {
       "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
       "local_coastal_links": "N/A",
       "learning_objective": "To understand How did the alliance system turn a local Balkan crisis into a global war?",
-      "disciplinary_concept": "Causation and Consequence",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Causation & Consequence): Evaluate whether the Alliance System protected Europe or guaranteed a global war."
@@ -2081,14 +2080,11 @@ const great_war = {
         "topic": "the threat posed by Serbia to Austria-Hungary",
         "model_answer": "<strong>Source A is useful for illustrating why Austria-Hungary felt physically threatened in the Balkans;</strong> <strong style=\"color: #0284c7;\">the map shows how Serbia nearly doubled its territory after the Balkan Wars of 1912-1913.</strong> <strong style=\"color: #9333ea;\">As a geographical map, its nature provides objective, factual evidence of Serbia's dramatic expansion southward.</strong> <strong style=\"color: #16a34a;\">This matches our contextual knowledge that a larger, stronger Serbia acted as a powerful magnet for Slavic nationalism, deeply terrifying the Austro-Hungarian Empire, which contained millions of Serbs who wanted to break away and join this new 'Greater Serbia'.</strong><br><br><strong>Source B is crucial for understanding the aggressive mindset of the Austro-Hungarian military.</strong> <strong style=\"color: #0284c7;\">The diary describes Serbia as a \"viper that must be crushed\" to prevent the empire from being \"torn apart by Slavic nationalism\".</strong> <strong style=\"color: #9333ea;\">Because it is a private diary entry written by the Chief of Staff, its origin makes it an incredibly reliable, unfiltered record of the military command's genuine panic and their desire for a preventative war.</strong> <strong style=\"color: #16a34a;\">This is historically accurate, as the Austro-Hungarian leadership viewed the 1914 assassination of Archduke Franz Ferdinand not just as a tragedy, but as the perfect political excuse to finally invade and destroy Serbia before it grew too powerful.</strong>"
       },
-      "learning_objectives": {
-        "overarching": "To evaluate whether the alliance system provided security or created a dangerous threat.",
-        "scaffolded": [
-          "Identify the members of the Triple Alliance and the Triple Entente.",
-          "Explain why countries felt the need to form secret defensive treaties.",
-          "Evaluate how the alliance system could drag all of Europe into a regional conflict."
-        ]
-      },
+      "learning_objectives": [
+        "Identify the members of the Triple Alliance and the Triple Entente.",
+        "Explain why countries felt the need to form secret defensive treaties.",
+        "Evaluate how the alliance system could drag all of Europe into a regional conflict."
+      ],
       "teacher_notes": {
         "primer": "The overarching goal is to evaluate whether the alliance system provided security or created a dangerous threat. Students need to grasp the tragic irony of the alliances: they were built to act as a deterrent to stop wars, but they acted as a conveyor belt that dragged everyone into a global conflict once a local crisis broke out.",
         "objectives": [
@@ -2341,6 +2337,10 @@ const great_war = {
             "Britain"
           ]
         }
+      ],
+      "disciplinary_focus": "Causation and Consequence",
+      "assessments": [
+        "PEEL Paragraph (Causation & Consequence): Evaluate whether the Alliance System protected Europe or guaranteed a global war."
       ]
     },
     {
@@ -2352,7 +2352,6 @@ const great_war = {
       "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
       "local_coastal_links": "N/A",
       "learning_objective": "To understand how a wrong turn in Sarajevo triggered a world war.",
-      "disciplinary_concept": "Causation",
       "formative_assessment": {
         "type": "End of Unit Summative Assessment",
         "question": "Summative Assessment: Explain why the assassination of Archduke Franz Ferdinand in Sarajevo triggered a world war."
@@ -2527,14 +2526,11 @@ const great_war = {
         "topic": "the causes of the outbreak of World War I",
         "model_answer": "<strong>Source A is useful for showing the extreme volatility of the July Crisis;</strong> <strong style=\"color: #0284c7;\">it depicts the European leaders desperately trying to keep the lid on the boiling 'Balkan Troubles' pot.</strong> <strong style=\"color: #9333ea;\">As a satirical cartoon published in Britain, its purpose is to warn the public that the Great Powers were rapidly losing control of the diplomatic situation.</strong> <strong style=\"color: #16a34a;\">This reflects the historical reality that, due to the rigid Alliance System, the leaders knew that a local war in the Balkans would inevitably drag the entire continent into a catastrophic global conflict.</strong><br><br><strong>Source B is extremely useful for explaining the short-term trigger that turned the crisis into a war.</strong> <strong style=\"color: #0284c7;\">The telegram guarantees that the Kaiser will \"faithfully stand by Austria-Hungary\" regardless of the consequences.</strong> <strong style=\"color: #9333ea;\">As an official diplomatic communication (the 'Blank Check'), its nature makes it undeniable proof of Germany's unconditional military support for Austria.</strong> <strong style=\"color: #16a34a;\">This is vital contextual knowledge, as it was precisely this promise of German backing that gave Austria-Hungary the confidence to issue a deliberately unacceptable ultimatum to Serbia, knowing it would provoke Russia and trigger the First World War.</strong>"
       },
-      "learning_objectives": {
-        "overarching": "To analyze how a wrong turn in Sarajevo triggered a world war.",
-        "scaffolded": [
-          "Identify the events of 28 June 1914.",
-          "Explain how the assassination triggered the alliance system.",
-          "Analyze whether the resulting war was inevitable or accidental."
-        ]
-      },
+      "learning_objectives": [
+        "Identify the events of 28 June 1914.",
+        "Explain how the assassination triggered the alliance system.",
+        "Analyze whether the resulting war was inevitable or accidental."
+      ],
       "teacher_notes": {
         "primer": "The overarching goal is to analyze how a wrong turn in Sarajevo triggered a world war. This lesson brings all the long-term causes together into the short-term spark. Focus on the timeline: the sheer bad luck of the assassination itself, followed by the rapid, rigid escalation of the July Crisis driven by military timetables.",
         "objectives": [
@@ -2780,6 +2776,10 @@ const great_war = {
             "Because Germany sank a British ship"
           ]
         }
+      ],
+      "disciplinary_focus": "Causation",
+      "assessments": [
+        "Summative Assessment: Explain why the assassination of Archduke Franz Ferdinand in Sarajevo triggered a world war."
       ]
     },
     {
@@ -2790,7 +2790,6 @@ const great_war = {
       "sequencing_retrieval": "Synthesizes previous learning of global empires.",
       "local_coastal_links": "N/A",
       "learning_objective": "To synthesize knowledge and construct an assessment on the causes of the Great War.",
-      "disciplinary_concept": "Causation",
       "formative_assessment": {
         "type": "End of Unit Summative Assessment",
         "question": "Summative Assessment: Evaluate the most significant cause of the Great War."
@@ -2864,14 +2863,15 @@ const great_war = {
           ]
         }
       ],
-      "learning_objectives": {
-        "overarching": "To synthesize knowledge and construct an assessment on the causes of the Great War.",
-        "scaffolded": [
-          "To accurately sequence the key events of the July Crisis.",
-          "To write a structured essay evaluating the significance of the M.A.I.N causes of the war.",
-          "Evaluate which of the M.A.I.N. causes (Militarism, Alliances, Imperialism, Nationalism) was the most significant factor in causing the Great War."
-        ]
-      }
+      "learning_objectives": [
+        "To accurately sequence the key events of the July Crisis.",
+        "To write a structured essay evaluating the significance of the M.A.I.N causes of the war.",
+        "Evaluate which of the M.A.I.N. causes (Militarism, Alliances, Imperialism, Nationalism) was the most significant factor in causing the Great War."
+      ],
+      "disciplinary_focus": "Causation",
+      "assessments": [
+        "Summative Assessment: Evaluate the most significant cause of the Great War."
+      ]
     }
   ],
   "quizPack": [

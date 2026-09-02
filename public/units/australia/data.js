@@ -27,7 +27,6 @@ const unitData = {
       "sequencing_retrieval": "Connects previous learning of public health.",
       "local_coastal_links": "N/A",
       "learning_objective": "To analyze the motives and methods behind the initial British claiming of Australia.",
-      "disciplinary_concept": "Causation",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Causation): Explain why the British government sponsored James Cook's voyage and what the secret instructions reveal about imperial ambitions."
@@ -367,14 +366,15 @@ const unitData = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To analyze the motives and methods behind the initial British claiming of Australia.",
-        "scaffolded": [
-          "Explain the dual purpose of James Cook's voyage, contrasting the public scientific mission with the secret government orders to claim territory.",
-          "Analyse the indispensable navigational and diplomatic contributions of the Polynesian high priest and master star navigator, Tupaia.",
-          "Evaluate the first encounter at Botany Bay in 1770 from both the British perspective and the defensive spiritual perspective of the Gweagal people."
-        ]
-      }
+      "learning_objectives": [
+        "Explain the dual purpose of James Cook's voyage, contrasting the public scientific mission with the secret government orders to claim territory.",
+        "Analyse the indispensable navigational and diplomatic contributions of the Polynesian high priest and master star navigator, Tupaia.",
+        "Evaluate the first encounter at Botany Bay in 1770 from both the British perspective and the defensive spiritual perspective of the Gweagal people."
+      ],
+      "disciplinary_focus": "Causation",
+      "assessments": [
+        "PEEL Paragraph (Causation): Explain why the British government sponsored James Cook's voyage and what the secret instructions reveal about imperial ambitions."
+      ]
     },
     {
       "id": "lesson_2",
@@ -385,7 +385,6 @@ const unitData = {
       "sequencing_retrieval": "Retrieves previous learning of global empires.",
       "local_coastal_links": "N/A",
       "learning_objective": "To evaluate the challenges and societal structure of establishing a convict colony in Australia.",
-      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Change & Continuity): Explain how the convict transportation system shaped early Australian society."
@@ -769,14 +768,15 @@ const unitData = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To evaluate the challenges and societal structure of establishing a convict colony in Australia.",
-        "scaffolded": [
-          "Explain how the loss of the American colonies in 1776 directly caused a prison crisis in Britain that led to the system of transportation.",
-          "Describe the physical and environmental challenges faced by Captain Arthur Phillip and the convicts during their first year at Sydney Cove.",
-          "Analyse the work and social conditions of the convicts, contrasting general labor with the punishments of the chain road gangs."
-        ]
-      }
+      "learning_objectives": [
+        "Explain how the loss of the American colonies in 1776 directly caused a prison crisis in Britain that led to the system of transportation.",
+        "Describe the physical and environmental challenges faced by Captain Arthur Phillip and the convicts during their first year at Sydney Cove.",
+        "Analyse the work and social conditions of the convicts, contrasting general labor with the punishments of the chain road gangs."
+      ],
+      "disciplinary_focus": "Change and Continuity",
+      "assessments": [
+        "PEEL Paragraph (Change & Continuity): Explain how the convict transportation system shaped early Australian society."
+      ]
     },
     {
       "id": "lesson_3",
@@ -787,7 +787,6 @@ const unitData = {
       "sequencing_retrieval": "Synthesizes prior knowledge of warfare tactics.",
       "local_coastal_links": "N/A",
       "learning_objective": "To examine the nature and consequences of early encounters between British settlers and Indigenous Australians.",
-      "disciplinary_concept": "Consequence",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Consequence): Evaluate the devastating consequences of European colonisation on Aboriginal Australians."
@@ -980,14 +979,15 @@ const unitData = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To examine the nature and consequences of early encounters between British settlers and Indigenous Australians.",
-        "scaffolded": [
-          "Explain the devastating impact of European diseases, particularly the 1789 smallpox epidemic, on the Aboriginal population.",
-          "Analyze the resistance of Aboriginal leaders like Pemulwuy.",
-          "Examine the Myall Creek Massacre as an example of frontier violence."
-        ]
-      }
+      "learning_objectives": [
+        "Explain the devastating impact of European diseases, particularly the 1789 smallpox epidemic, on the Aboriginal population.",
+        "Analyze the resistance of Aboriginal leaders like Pemulwuy.",
+        "Examine the Myall Creek Massacre as an example of frontier violence."
+      ],
+      "disciplinary_focus": "Consequence",
+      "assessments": [
+        "PEEL Paragraph (Consequence): Evaluate the devastating consequences of European colonisation on Aboriginal Australians."
+      ]
     },
     {
       "id": "lesson_4",
@@ -998,7 +998,6 @@ const unitData = {
       "sequencing_retrieval": "Connects previous learning of public health.",
       "local_coastal_links": "N/A",
       "learning_objective": "To assess how Australia transformed from a penal colony into a functional free settlement.",
-      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Change & Continuity): Explain how Australia transitioned from a penal colony into a free settlement during the 19th century."
@@ -1205,14 +1204,15 @@ const unitData = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To assess how Australia transformed from a penal colony into a functional free settlement.",
-        "scaffolded": [
-          "Explain the role of the wool industry in making the colony economically viable.",
-          "Analyze the impact of the 1850s gold rushes on Australian society.",
-          "Examine the experiences and treatment of Chinese gold miners."
-        ]
-      }
+      "learning_objectives": [
+        "Explain the role of the wool industry in making the colony economically viable.",
+        "Analyze the impact of the 1850s gold rushes on Australian society.",
+        "Examine the experiences and treatment of Chinese gold miners."
+      ],
+      "disciplinary_focus": "Change and Continuity",
+      "assessments": [
+        "PEEL Paragraph (Change & Continuity): Explain how Australia transitioned from a penal colony into a free settlement during the 19th century."
+      ]
     },
     {
       "id": "lesson_5",
@@ -1223,7 +1223,6 @@ const unitData = {
       "sequencing_retrieval": "Recalls earlier themes of political changes.",
       "local_coastal_links": "N/A",
       "learning_objective": "To synthesize historical knowledge and construct a comprehensive narrative of early Australian history.",
-      "disciplinary_concept": "Significance",
       "formative_assessment": {
         "type": "End of Unit Summative Assessment",
         "question": "Summative Assessment: Evaluate the most significant turning point in Australia's colonial history."
@@ -1266,650 +1265,19 @@ const unitData = {
           ]
         }
       ],
-      "learning_objectives": {
-        "overarching": "To synthesize historical knowledge and construct a comprehensive narrative of early Australian history.",
-        "scaffolded": [
-          "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
-          "Evaluate the most significant turning point in Australia's transformation from a penal colony to a free settlement.",
-          "Construct a structured essay arguing which factor had the greatest impact on the development of colonial Australia."
-        ]
-      }
+      "learning_objectives": [
+        "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
+        "Evaluate the most significant turning point in Australia's transformation from a penal colony to a free settlement.",
+        "Construct a structured essay arguing which factor had the greatest impact on the development of colonial Australia."
+      ],
+      "disciplinary_focus": "Significance",
+      "assessments": [
+        "Summative Assessment: Evaluate the most significant turning point in Australia's colonial history."
+      ]
     }
   ],
-  "quizPack": [
-    {
-      "q": "In what year did the Franco-Prussian War end?",
-      "a": "1871",
-      "options": [
-        "1871",
-        "1882",
-        "1914",
-        "1890"
-      ],
-      "id": "gw_q1"
-    },
-    {
-      "q": "Which wealthy region did Germany take from France in 1871?",
-      "a": "Alsace-Lorraine",
-      "options": [
-        "Alsace-Lorraine",
-        "The Rhineland",
-        "The Sudetenland",
-        "The Ruhr Valley"
-      ],
-      "id": "gw_q2"
-    },
-    {
-      "q": "What was the French desire for revenge called?",
-      "a": "Revanche",
-      "options": [
-        "Revanche",
-        "Weltpolitik",
-        "Encirclement",
-        "Pan-Slavism"
-      ],
-      "id": "gw_q3"
-    },
-    {
-      "q": "Who was the German Chancellor that unified Germany?",
-      "a": "Otto von Bismarck",
-      "options": [
-        "Otto von Bismarck",
-        "Kaiser Wilhelm II",
-        "Count Leo von Caprivi",
-        "Theobald von Bethmann-Hollweg"
-      ],
-      "id": "gw_q4"
-    },
-    {
-      "q": "What was Bismarck's greatest strategic fear?",
-      "a": "A war on two fronts (Encirclement)",
-      "options": [
-        "A war on two fronts (Encirclement)",
-        "A British naval blockade",
-        "An uprising by the working class",
-        "The collapse of Austria-Hungary"
-      ],
-      "id": "gw_q5"
-    },
-    {
-      "q": "Which two countries did Bismarck fear would ally against Germany?",
-      "a": "France and Russia",
-      "options": [
-        "France and Russia",
-        "Britain and France",
-        "Russia and Austria-Hungary",
-        "Britain and Russia"
-      ],
-      "id": "gw_q6"
-    },
-    {
-      "q": "What was the secret 1887 agreement between Germany and Russia?",
-      "a": "The Reinsurance Treaty",
-      "options": [
-        "The Reinsurance Treaty",
-        "The Entente Cordiale",
-        "The Dual Alliance",
-        "The Treaty of London"
-      ],
-      "id": "gw_q7"
-    },
-    {
-      "q": "Which ambitious German Emperor dismissed Bismarck in 1890?",
-      "a": "Kaiser Wilhelm II",
-      "options": [
-        "Kaiser Wilhelm II",
-        "Kaiser Wilhelm I",
-        "Archduke Franz Ferdinand",
-        "Tsar Nicholas II"
-      ],
-      "id": "gw_q8"
-    },
-    {
-      "q": "What was Wilhelm II's aggressive global policy called?",
-      "a": "Weltpolitik (World Policy)",
-      "options": [
-        "Weltpolitik (World Policy)",
-        "Realpolitik",
-        "Lebensraum",
-        "Splendid Isolation"
-      ],
-      "id": "gw_q9"
-    },
-    {
-      "q": "What previous policy of Bismarck's focused on European peace?",
-      "a": "Realpolitik",
-      "options": [
-        "Realpolitik",
-        "Weltpolitik (World Policy)",
-        "Mitteleuropa",
-        "Pan-Slavism"
-      ],
-      "id": "gw_q10"
-    },
-    {
-      "q": "What agreement did Britain and France sign in 1904?",
-      "a": "The Entente Cordiale",
-      "options": [
-        "The Entente Cordiale",
-        "The Triple Entente",
-        "The Treaty of Versailles",
-        "The Reinsurance Treaty"
-      ],
-      "id": "gw_q11"
-    },
-    {
-      "q": "In which African country did Wilhelm provoke crises in 1905 and 1911?",
-      "a": "Morocco",
-      "options": [
-        "Morocco",
-        "Egypt",
-        "South Africa",
-        "Sudan"
-      ],
-      "id": "gw_q12"
-    },
-    {
-      "q": "What was the result of the First Moroccan (Tangier) Crisis?",
-      "a": "Britain and France grew closer, isolating Germany",
-      "options": [
-        "Britain and France grew closer, isolating Germany",
-        "Germany gained control of Morocco",
-        "The Entente Cordiale was dissolved",
-        "Russia declared war on Germany"
-      ],
-      "id": "gw_q13"
-    },
-    {
-      "q": "What name was given to Germany's aggressive threat of military force?",
-      "a": "Gunboat Diplomacy",
-      "options": [
-        "Gunboat Diplomacy",
-        "Dollar Diplomacy",
-        "Appeasement",
-        "Risk Theory"
-      ],
-      "id": "gw_q14"
-    },
-    {
-      "q": "What was the name of the German gunboat sent to Agadir in 1911?",
-      "a": "SMS Panther",
-      "options": [
-        "SMS Panther",
-        "HMS Dreadnought",
-        "SMS Emden",
-        "SMS Bismarck"
-      ],
-      "id": "gw_q15"
-    },
-    {
-      "q": "What was the British policy requiring their navy to be larger than the next two combined?",
-      "a": "The Two-Power Standard",
-      "options": [
-        "The Two-Power Standard",
-        "The Risk Theory",
-        "The Imperial Defense Act",
-        "The Continental Commitment"
-      ],
-      "id": "gw_q16"
-    },
-    {
-      "q": "What revolutionary British battleship was launched in 1906?",
-      "a": "HMS Dreadnought",
-      "options": [
-        "HMS Dreadnought",
-        "HMS Victory",
-        "HMS Invincible",
-        "HMS Iron Duke"
-      ],
-      "id": "gw_q17"
-    },
-    {
-      "q": "Why did the Dreadnought ironically threaten British supremacy?",
-      "a": "It made all older ships obsolete, resetting the naval race",
-      "options": [
-        "It made all older ships obsolete, resetting the naval race",
-        "It was too expensive to build more than one",
-        "It was easily destroyed by German U-Boats",
-        "Its guns could not hit moving targets"
-      ],
-      "id": "gw_q18"
-    },
-    {
-      "q": "What was Britain's traditional foreign policy of avoiding European alliances called?",
-      "a": "Splendid Isolation",
-      "options": [
-        "Splendid Isolation",
-        "The Two-Power Standard",
-        "Balance of Power",
-        "Appeasement"
-      ],
-      "id": "gw_q19"
-    },
-    {
-      "q": "What was German Admiral Tirpitz's naval strategy called?",
-      "a": "Risk Theory",
-      "options": [
-        "Risk Theory",
-        "The Schlieffen Plan",
-        "Weltpolitik",
-        "Unrestricted Submarine Warfare"
-      ],
-      "id": "gw_q20"
-    },
-    {
-      "q": "What volatile region was known as the 'Powder Keg of Europe'?",
-      "a": "The Balkans",
-      "options": [
-        "The Balkans",
-        "The Rhineland",
-        "The Middle East",
-        "The Caucasus"
-      ],
-      "id": "gw_q21"
-    },
-    {
-      "q": "What declining multi-ethnic empire dominated the northern Balkans?",
-      "a": "The Austro-Hungarian Empire",
-      "options": [
-        "The Austro-Hungarian Empire",
-        "The Ottoman Empire",
-        "The Russian Empire",
-        "The British Empire"
-      ],
-      "id": "gw_q22"
-    },
-    {
-      "q": "Which empire was retreating from the Balkans, leaving a power vacuum?",
-      "a": "The Ottoman Empire",
-      "options": [
-        "The Ottoman Empire",
-        "The Austro-Hungarian Empire",
-        "The Russian Empire",
-        "The German Empire"
-      ],
-      "id": "gw_q23"
-    },
-    {
-      "q": "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
-      "a": "Serbia",
-      "options": [
-        "Serbia",
-        "Bosnia",
-        "Croatia",
-        "Bulgaria"
-      ],
-      "id": "gw_q24"
-    },
-    {
-      "q": "Which region did Austria-Hungary formally annex in 1908?",
-      "a": "Bosnia",
-      "options": [
-        "Bosnia",
-        "Serbia",
-        "Romania",
-        "Albania"
-      ],
-      "id": "gw_q25"
-    },
-    {
-      "q": "Which major power considered itself the protector of the Slavic people?",
-      "a": "Russia",
-      "options": [
-        "Russia",
-        "Germany",
-        "France",
-        "Britain"
-      ],
-      "id": "gw_q26"
-    },
-    {
-      "q": "Who was the heir to the Austro-Hungarian throne?",
-      "a": "Archduke Franz Ferdinand",
-      "options": [
-        "Archduke Franz Ferdinand",
-        "Emperor Franz Joseph",
-        "Kaiser Wilhelm II",
-        "Tsar Nicholas II"
-      ],
-      "id": "gw_q27"
-    },
-    {
-      "q": "In which city was the Archduke assassinated?",
-      "a": "Sarajevo",
-      "options": [
-        "Sarajevo",
-        "Belgrade",
-        "Vienna",
-        "Berlin"
-      ],
-      "id": "gw_q28"
-    },
-    {
-      "q": "On what date was the Archduke assassinated?",
-      "a": "June 28, 1914",
-      "options": [
-        "June 28, 1914",
-        "July 23, 1914",
-        "August 4, 1914",
-        "November 11, 1918"
-      ],
-      "id": "gw_q29"
-    },
-    {
-      "q": "Who assassinated the Archduke?",
-      "a": "Gavrilo Princip",
-      "options": [
-        "Gavrilo Princip",
-        "Nedeljko Čabrinović",
-        "Dragutin Dimitrijević",
-        "Leon Trotsky"
-      ],
-      "id": "gw_q30"
-    },
-    {
-      "q": "What secret Serbian society did the assassin belong to?",
-      "a": "The Black Hand",
-      "options": [
-        "The Black Hand",
-        "The White Rose",
-        "The Young Turks",
-        "The Bolsheviks"
-      ],
-      "id": "gw_q31"
-    },
-    {
-      "q": "What unconditional promise did Germany give Austria-Hungary in July 1914?",
-      "a": "The 'Blank Check'",
-      "options": [
-        "The 'Blank Check'",
-        "The Reinsurance Treaty",
-        "The Entente Cordiale",
-        "The Ultimatum"
-      ],
-      "id": "gw_q32"
-    },
-    {
-      "q": "What is the month of diplomatic failures after the assassination called?",
-      "a": "The July Crisis",
-      "options": [
-        "The July Crisis",
-        "The Sarajevo Crisis",
-        "The Balkan Wars",
-        "The Blank Check Incident"
-      ],
-      "id": "gw_q33"
-    },
-    {
-      "q": "What did Austria-Hungary issue to Serbia on July 23?",
-      "a": "An ultimatum",
-      "options": [
-        "An ultimatum",
-        "A declaration of war",
-        "A peace treaty",
-        "A demand for reparations"
-      ],
-      "id": "gw_q34"
-    },
-    {
-      "q": "Which country began mobilizing its army to protect Serbia?",
-      "a": "Russia",
-      "options": [
-        "Russia",
-        "France",
-        "Britain",
-        "Germany"
-      ],
-      "id": "gw_q35"
-    },
-    {
-      "q": "What was the name of Germany's military strategy for a two-front war?",
-      "a": "The Schlieffen Plan",
-      "options": [
-        "The Schlieffen Plan",
-        "The Risk Theory",
-        "Plan XVII",
-        "The Bismarck Strategy"
-      ],
-      "id": "gw_q36"
-    },
-    {
-      "q": "Which neutral country did Germany invade to attack France?",
-      "a": "Belgium",
-      "options": [
-        "Belgium",
-        "Switzerland",
-        "The Netherlands",
-        "Luxembourg"
-      ],
-      "id": "gw_q37"
-    },
-    {
-      "q": "Which country declared war on Germany due to the invasion of Belgium?",
-      "a": "Britain",
-      "options": [
-        "Britain",
-        "Russia",
-        "Italy",
-        "The United States"
-      ],
-      "id": "gw_q38"
-    },
-    {
-      "q": "What was the alliance of Germany, Austria-Hungary, and Italy called?",
-      "a": "The Triple Alliance",
-      "options": [
-        "The Triple Alliance",
-        "The Triple Entente",
-        "The Central Powers",
-        "The League of Three Emperors"
-      ],
-      "id": "gw_q39"
-    },
-    {
-      "q": "What was the alliance of Britain, France, and Russia called?",
-      "a": "The Triple Entente",
-      "options": [
-        "The Triple Entente",
-        "The Triple Alliance",
-        "The Allied Powers",
-        "The Grand Alliance"
-      ],
-      "id": "gw_q40"
-    },
-    {
-      "q": "What treaty ended the First World War in 1919?",
-      "a": "The Treaty of Versailles",
-      "options": [
-        "The Treaty of Versailles",
-        "The Treaty of Brest-Litovsk",
-        "The Treaty of Trianon",
-        "The Congress of Vienna"
-      ],
-      "id": "gw_q41"
-    },
-    {
-      "q": "Which clause forced Germany to accept full responsibility for the war?",
-      "a": "Article 231 (War Guilt Clause)",
-      "options": [
-        "Article 231 (War Guilt Clause)",
-        "Article 48",
-        "The Blank Check",
-        "The Reparations Clause"
-      ],
-      "id": "gw_q42"
-    },
-    {
-      "q": "What is the term for a war launched to destroy a rising threat before it gets too strong?",
-      "a": "Preventative War",
-      "options": [
-        "Preventative War",
-        "Total War",
-        "War of Attrition",
-        "Proxy War"
-      ],
-      "id": "gw_q43"
-    },
-    {
-      "q": "Which historian famously argued Germany planned a war of aggression?",
-      "a": "Fritz Fischer",
-      "options": [
-        "Fritz Fischer",
-        "Margaret MacMillan",
-        "A.J.P. Taylor",
-        "Christopher Clark"
-      ],
-      "id": "gw_q44"
-    },
-    {
-      "q": "Which historian argued the nations blundered into war due to rigid alliances?",
-      "a": "Margaret MacMillan",
-      "options": [
-        "Margaret MacMillan",
-        "Fritz Fischer",
-        "Ian Kershaw",
-        "Richard Evans"
-      ],
-      "id": "gw_q45"
-    },
-    {
-      "q": "What was the 'quarantine line' of new states created after WWI called?",
-      "a": "Cordon Sanitaire",
-      "options": [
-        "Cordon Sanitaire",
-        "The Iron Curtain",
-        "The Maginot Line",
-        "Mitteleuropa"
-      ],
-      "id": "gw_q46"
-    },
-    {
-      "q": "Name one new state created by the Treaty of Versailles.",
-      "a": "Poland",
-      "options": [
-        "Poland",
-        "Serbia",
-        "Bulgaria",
-        "Romania"
-      ],
-      "id": "gw_q47"
-    },
-    {
-      "q": "What European power was completely dismantled by the peace treaties?",
-      "a": "The Austro-Hungarian Empire",
-      "options": [
-        "The Austro-Hungarian Empire",
-        "The German Empire",
-        "The British Empire",
-        "The Russian Empire"
-      ],
-      "id": "gw_q48"
-    },
-    {
-      "q": "What ideological threat did the Allies want to separate from Germany after the war?",
-      "a": "Soviet Communism",
-      "options": [
-        "Soviet Communism",
-        "Fascism",
-        "Anarchism",
-        "Imperialism"
-      ],
-      "id": "gw_q49"
-    },
-    {
-      "q": "Which country did Germany invade on 3 August 1914?",
-      "a": "Belgium",
-      "options": [
-        "Belgium",
-        "France",
-        "Russia",
-        "Serbia"
-      ],
-      "id": "gw_q50"
-    }
-  ],
-  "glossary": [
-    {
-      "term": "Alsace-Lorraine",
-      "definition": "A resource-rich border region taken by Germany from France in 1871."
-    },
-    {
-      "term": "Ems Telegram",
-      "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
-    },
-    {
-      "term": "Reparations",
-      "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
-    },
-    {
-      "term": "Siege",
-      "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
-    },
-    {
-      "term": "Imperialism",
-      "definition": "A policy of extending a country's power and influence through diplomacy or military force."
-    },
-    {
-      "term": "Scramble for Africa",
-      "definition": "The rapid invasion, annexation, and division of African territory by European powers."
-    },
-    {
-      "term": "Empire",
-      "definition": "An extensive group of states or countries ruled over by a single supreme authority."
-    },
-    {
-      "term": "Colony",
-      "definition": "A country or area under the full or partial political control of another country."
-    },
-    {
-      "term": "Dreadnought",
-      "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
-    },
-    {
-      "term": "Arms Race",
-      "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
-    },
-    {
-      "term": "Two-Power Standard",
-      "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
-    },
-    {
-      "term": "Naval Supremacy",
-      "definition": "Having the most powerful and dominant navy in the world."
-    },
-    {
-      "term": "Triple Entente",
-      "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
-    },
-    {
-      "term": "Triple Alliance",
-      "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
-    },
-    {
-      "term": "Reinsurance Treaty",
-      "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
-    },
-    {
-      "term": "Encirclement",
-      "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
-    },
-    {
-      "term": "Assassination",
-      "definition": "The murder of a prominent person, often a political leader or ruler."
-    },
-    {
-      "term": "Black Hand",
-      "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
-    },
-    {
-      "term": "Ultimatum",
-      "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
-    },
-    {
-      "term": "Mobilisation",
-      "definition": "The action of a country or its government preparing and organizing troops for active service."
-    }
-  ],
+  "quizPack": [],
+  "glossary": [],
   "key_individuals": [
     {
       "name": "Captain James Cook",

@@ -26,7 +26,6 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Builds earlier themes of political changes.",
       "local_coastal_links": "N/A",
       "learning_objective": "To analyze the technological drivers of the Industrial Revolution and the impact of local pioneers like the Fareham ironmaster.",
-      "disciplinary_concept": "Causation",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Causation): Explain why Britain was the first country to industrialise."
@@ -51,14 +50,11 @@ const industrialisation_and_empire = {
           }
         ]
       },
-      "learning_objectives": {
-        "overarching": "To explore: What powered the Industrial Revolution, and how did a Fareham ironmaster change the world",
-        "scaffolded": [
-          "Explain the difference between the domestic system and the factory system.",
-          "Explain the significance of Henry Cort's puddling and rolling processes.",
-          "Evaluate the importance of location versus innovation in Cort's success."
-        ]
-      },
+      "learning_objectives": [
+        "Explain the difference between the domestic system and the factory system.",
+        "Explain the significance of Henry Cort's puddling and rolling processes.",
+        "Evaluate the importance of location versus innovation in Cort's success."
+      ],
       "do_now": {
         "title": "Do Now: Recall",
         "substantive_concepts": "Evaluate key themes of political reform.",
@@ -349,7 +345,11 @@ const industrialisation_and_empire = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "disciplinary_focus": "Causation",
+      "assessments": [
+        "PEEL Paragraph (Causation): Explain why Britain was the first country to industrialise."
+      ]
     },
     {
       "id": "lesson_2",
@@ -360,7 +360,6 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Connects earlier themes of monarchical power.",
       "local_coastal_links": "N/A",
       "learning_objective": "To evaluate the harsh realities of industrial work and debate whether it represented progress or punishment.",
-      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Change & Continuity): Explain how working conditions in factories represented both progress and punishment for ordinary workers."
@@ -603,20 +602,21 @@ const industrialisation_and_empire = {
           ]
         }
       ],
-      "learning_objectives": {
-        "overarching": "To explore: Was industrial work progress or punishment",
-        "scaffolded": [
-          "Describe the working conditions of the early Industrial Revolution and their impact on workers.",
-          "Evaluate primary sources regarding child labour.",
-          "Analyse the 'Optimist vs. Pessimist' historical debate."
-        ]
-      },
+      "learning_objectives": [
+        "Describe the working conditions of the early Industrial Revolution and their impact on workers.",
+        "Evaluate primary sources regarding child labour.",
+        "Analyse the 'Optimist vs. Pessimist' historical debate."
+      ],
       "pair_share": {
         "prompt": "Discuss with your partner: Was factory work progress or punishment?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "disciplinary_focus": "Change and Continuity",
+      "assessments": [
+        "PEEL Paragraph (Change & Continuity): Explain how working conditions in factories represented both progress and punishment for ordinary workers."
+      ]
     },
     {
       "id": "lesson_3",
@@ -627,7 +627,6 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
       "local_coastal_links": "N/A",
       "learning_objective": "To examine the devastating impact of rapid industrialisation on the living conditions in British towns.",
-      "disciplinary_concept": "Consequence",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Consequence): Evaluate the impact of rapid urbanisation on public health in industrial Britain."
@@ -842,20 +841,21 @@ const industrialisation_and_empire = {
           "caption": "An engraving by Gustave Doré depicting the overcrowded and polluted back-to-back housing of Victorian London, published in 1872."
         }
       ],
-      "learning_objectives": {
-        "overarching": "To explore: Did industrialisation make British towns unlivable",
-        "scaffolded": [
-          "Analyse the contrast between imperial wealth and working-class squalor.",
-          "Evaluate the usefulness of contrasting primary sources.",
-          "Explain the catalysts for public health reform in 19th-century industrial towns."
-        ]
-      },
+      "learning_objectives": [
+        "Analyse the contrast between imperial wealth and working-class squalor.",
+        "Evaluate the usefulness of contrasting primary sources.",
+        "Explain the catalysts for public health reform in 19th-century industrial towns."
+      ],
       "pair_share": {
         "prompt": "Discuss with your partner: Did industrialisation make British towns unlivable?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
-      }
+      },
+      "disciplinary_focus": "Consequence",
+      "assessments": [
+        "PEEL Paragraph (Consequence): Evaluate the impact of rapid urbanisation on public health in industrial Britain."
+      ]
     },
     {
       "id": "lesson_4",
@@ -866,7 +866,6 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Synthesizes earlier themes of political changes.",
       "local_coastal_links": "N/A",
       "learning_objective": "To assess the economic and military mechanisms used to build and sustain the British Empire.",
-      "disciplinary_concept": "Significance",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Significance): Evaluate the significance of the East India Company in building and sustaining the British Empire."
@@ -1305,14 +1304,15 @@ const industrialisation_and_empire = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To assess the economic and military mechanisms used to build and sustain the British Empire.",
-        "scaffolded": [
-          "Explain the transition of imperial rule from private mercantilism to direct state control.",
-          "Evaluate how domestic industrial complexes sustained global naval supremacy.",
-          "Deconstruct primary source provenance to determine historical utility."
-        ]
-      }
+      "learning_objectives": [
+        "Explain the transition of imperial rule from private mercantilism to direct state control.",
+        "Evaluate how domestic industrial complexes sustained global naval supremacy.",
+        "Deconstruct primary source provenance to determine historical utility."
+      ],
+      "disciplinary_focus": "Significance",
+      "assessments": [
+        "PEEL Paragraph (Significance): Evaluate the significance of the East India Company in building and sustaining the British Empire."
+      ]
     },
     {
       "id": "lesson_5",
@@ -1323,7 +1323,6 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Retrieves core concepts of religious divides.",
       "local_coastal_links": "N/A",
       "learning_objective": "To analyze the causes, events, and consequences of the 1857 Indian Rebellion.",
-      "disciplinary_concept": "Causation and Consequence",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Causation & Consequence): Explain the causes of the 1857 Indian Rebellion and evaluate its consequences for British imperial rule."
@@ -1745,14 +1744,15 @@ const industrialisation_and_empire = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To analyze the causes, events, and consequences of the 1857 Indian Rebellion.",
-        "scaffolded": [
-          "Explain the deep-rooted causes of the 1857 Indian Rebellion beyond the immediate catalyst of the greased cartridges.",
-          "Analyse the brutal response of the British state.",
-          "Evaluate the long-term consequences of the 1857 Rebellion for the structure of British imperial rule in India."
-        ]
-      }
+      "learning_objectives": [
+        "Explain the deep-rooted causes of the 1857 Indian Rebellion beyond the immediate catalyst of the greased cartridges.",
+        "Analyse the brutal response of the British state.",
+        "Evaluate the long-term consequences of the 1857 Rebellion for the structure of British imperial rule in India."
+      ],
+      "disciplinary_focus": "Causation and Consequence",
+      "assessments": [
+        "PEEL Paragraph (Causation & Consequence): Explain the causes of the 1857 Indian Rebellion and evaluate its consequences for British imperial rule."
+      ]
     },
     {
       "id": "lesson_6",
@@ -1763,7 +1763,6 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Links core concepts of industrial growth.",
       "local_coastal_links": "N/A",
       "learning_objective": "To examine the methods and struggles of ordinary people fighting for political representation.",
-      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Change & Continuity): Evaluate the extent to which ordinary people gained genuine political power by 1850."
@@ -2181,14 +2180,15 @@ const industrialisation_and_empire = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To examine the methods and struggles of ordinary people fighting for political representation.",
-        "scaffolded": [
-          "Analyse how industrialisation and agricultural change provoked violent working-class resistance.",
-          "Evaluate how the Chartist movement shifted working-class strategy toward constitutional reform.",
-          "Assess primary source utility through provenance and tone analysis."
-        ]
-      }
+      "learning_objectives": [
+        "Analyse how industrialisation and agricultural change provoked violent working-class resistance.",
+        "Evaluate how the Chartist movement shifted working-class strategy toward constitutional reform.",
+        "Assess primary source utility through provenance and tone analysis."
+      ],
+      "disciplinary_focus": "Change and Continuity",
+      "assessments": [
+        "PEEL Paragraph (Change & Continuity): Evaluate the extent to which ordinary people gained genuine political power by 1850."
+      ]
     },
     {
       "id": "lesson_7",
@@ -2199,7 +2199,6 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Builds previous learning of public health.",
       "local_coastal_links": "N/A",
       "learning_objective": "To evaluate the slow expansion of democracy and the significance of the Reform Acts.",
-      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
         "type": "PEEL Paragraph",
         "question": "PEEL Paragraph (Change & Continuity): Explain how the Reform Acts gradually extended voting rights in 19th-century Britain."
@@ -2623,14 +2622,15 @@ const industrialisation_and_empire = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To evaluate the slow expansion of democracy and the significance of the Reform Acts.",
-        "scaffolded": [
-          "Explain the corruption of the unreformed electoral system and why it excluded ordinary people.",
-          "Analyse the consequences of the 1832 Great Reform Act and the 1872 Secret Ballot Act.",
-          "Evaluate primary sources to uncover political motives."
-        ]
-      }
+      "learning_objectives": [
+        "Explain the corruption of the unreformed electoral system and why it excluded ordinary people.",
+        "Analyse the consequences of the 1832 Great Reform Act and the 1872 Secret Ballot Act.",
+        "Evaluate primary sources to uncover political motives."
+      ],
+      "disciplinary_focus": "Change and Continuity",
+      "assessments": [
+        "PEEL Paragraph (Change & Continuity): Explain how the Reform Acts gradually extended voting rights in 19th-century Britain."
+      ]
     },
     {
       "id": "lesson_8",
@@ -2641,7 +2641,6 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Consolidates past context of chronological mapping.",
       "local_coastal_links": "N/A",
       "learning_objective": "To synthesize historical evidence to determine who truly benefited from the transformations of the 19th century.",
-      "disciplinary_concept": "Similarity and Difference",
       "formative_assessment": {
         "type": "End of Unit Summative Assessment",
         "question": "Summative Assessment: Evaluate who truly benefited from 19th-century industrial and imperial transformation."
@@ -3045,14 +3044,15 @@ const industrialisation_and_empire = {
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
       },
-      "learning_objectives": {
-        "overarching": "To synthesize historical evidence to determine who truly benefited from the transformations of the 19th century.",
-        "scaffolded": [
-          "Synthesize unit-wide knowledge to evaluate historical progress versus exploitation.",
-          "Deconstruct the Optimist and Pessimist historiographical debate.",
-          "Structure a rigorous 16-mark historical essay using balanced thematic analysis."
-        ]
-      }
+      "learning_objectives": [
+        "Synthesize unit-wide knowledge to evaluate historical progress versus exploitation.",
+        "Deconstruct the Optimist and Pessimist historiographical debate.",
+        "Structure a rigorous 16-mark historical essay using balanced thematic analysis."
+      ],
+      "disciplinary_focus": "Similarity and Difference",
+      "assessments": [
+        "Summative Assessment: Evaluate who truly benefited from 19th-century industrial and imperial transformation."
+      ]
     }
   ]
 };
