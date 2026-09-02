@@ -56,9 +56,10 @@ const great_war = {
       "sequencing_retrieval": "Links past context of economic shifts.",
       "local_coastal_links": "N/A",
       "learning_objective": "To analyze the unification process and the creation of the German Empire in 1871.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Causation",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Causation): Explain how Otto von Bismarck used 'blood and iron' to unify Germany by 1871."
       },
       "a4_map": [
         "/images/german_empire_1871.png",
@@ -68,7 +69,7 @@ const great_war = {
         "primer": "This lesson introduces students to the unification of Germany. Before understanding the alliance systems or the arms race, students must grasp the geographical and political shockwave caused by a unified, militaristic German Empire suddenly dominating Central Europe.",
         "objectives": [
           {
-            "objective": "Understand how Otto von Bismarck used 'blood and iron' to unify the German states.",
+            "objective": "Explain how Otto von Bismarck used 'blood and iron' diplomacy and three calculated wars to unify Germany by 1871.",
             "primer": "Focus on the 'Otto von Bismarck and Blood and Iron' narrative block. Emphasize that he preferred military force over democratic speeches.",
             "question": "What did Bismarck mean by 'blood and iron' and how did this differ from democratic methods?"
           },
@@ -478,7 +479,7 @@ const great_war = {
       "learning_objectives": {
         "overarching": "To analyze the unification process and the creation of the German Empire in 1871.",
         "scaffolded": [
-          "Understand how Otto von Bismarck used 'blood and iron' to unify the German states.",
+          "Explain how Otto von Bismarck used 'blood and iron' diplomacy and three calculated wars to unify Germany by 1871.",
           "Analyze the geographical impact of the new German Empire on the balance of power in Europe."
         ]
       }
@@ -494,7 +495,8 @@ const great_war = {
       "learning_objective": "To understand Why did the Franco-Prussian War create long-term hatred?",
       "disciplinary_concept": "Significance",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Significance): Evaluate the significance of the Franco-Prussian War in creating long-term European tensions."
       },
       "sources": [
         {
@@ -995,9 +997,10 @@ const great_war = {
       "sequencing_retrieval": "Consolidates earlier themes of monarchical power.",
       "local_coastal_links": "N/A",
       "learning_objective": "To understand Why did the scramble for colonies turn empires into rivals?",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Causation",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Causation): Explain how imperial rivalry in Africa increased tensions between the European Great Powers."
       },
       "sources": [
         {
@@ -1454,7 +1457,8 @@ const great_war = {
       "learning_objective": "To understand Whose Navy Was Biggest and Best? The Arms Race",
       "disciplinary_concept": "Causation",
       "formative_assessment": {
-        "type": "PEEL Paragraph (Causation)"
+        "type": "PEEL Paragraph (Causation)",
+        "question": "PEEL Paragraph (Causation): Explain why the Anglo-German naval arms race destroyed diplomatic relations between Britain and Germany."
       },
       "sources": [
         {
@@ -1901,9 +1905,10 @@ const great_war = {
       "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
       "local_coastal_links": "N/A",
       "learning_objective": "To understand How did the alliance system turn a local Balkan crisis into a global war?",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Causation and Consequence",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Causation & Consequence): Evaluate whether the Alliance System protected Europe or guaranteed a global war."
       },
       "sources": [
         {
@@ -2343,7 +2348,8 @@ const great_war = {
       "learning_objective": "To understand how a wrong turn in Sarajevo triggered a world war.",
       "disciplinary_concept": "Causation",
       "formative_assessment": {
-        "type": "End of Unit Summative Assessment"
+        "type": "End of Unit Summative Assessment",
+        "question": "Summative Assessment: Explain why the assassination of Archduke Franz Ferdinand in Sarajevo triggered a world war."
       },
       "sources": [
         {
@@ -2778,9 +2784,10 @@ const great_war = {
       "sequencing_retrieval": "Synthesizes previous learning of global empires.",
       "local_coastal_links": "N/A",
       "learning_objective": "To synthesize knowledge and construct an assessment on the causes of the Great War.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Causation",
       "formative_assessment": {
-        "type": "End of Unit Summative Assessment"
+        "type": "End of Unit Summative Assessment",
+        "question": "Summative Assessment: Evaluate the most significant cause of the Great War."
       },
       "teacher_notes": {
         "primer": "This is a capstone assessment lesson testing chronological understanding and historical causation.",
@@ -2794,6 +2801,11 @@ const great_war = {
             "objective": "To write a structured essay evaluating the significance of the M.A.I.N causes of the war.",
             "primer": "Use the M.A.I.N. significance diamond to scaffold their essay.",
             "question": "What is the most significant long-term cause of the Great War?"
+          },
+          {
+            "objective": "Evaluate which of the M.A.I.N. causes was the most significant factor in causing the Great War.",
+            "primer": "Guide students to use the M.A.I.N. significance diamond to rank causes, justify their top choice with cross-referenced evidence from the unit, and construct a counter-argument against the least significant cause.",
+            "question": "Can any single M.A.I.N. cause be held responsible for the Great War, or was it the combination that made conflict inevitable?"
           }
         ]
       },
@@ -2850,7 +2862,8 @@ const great_war = {
         "overarching": "To synthesize knowledge and construct an assessment on the causes of the Great War.",
         "scaffolded": [
           "To accurately sequence the key events of the July Crisis.",
-          "To write a structured essay evaluating the significance of the M.A.I.N causes of the war."
+          "To write a structured essay evaluating the significance of the M.A.I.N causes of the war.",
+          "Evaluate which of the M.A.I.N. causes (Militarism, Alliances, Imperialism, Nationalism) was the most significant factor in causing the Great War."
         ]
       }
     }
@@ -3620,5 +3633,3 @@ const great_war = {
     }
   ]
 };
-
-export default great_war;

@@ -1,4 +1,4 @@
-export const unitData = {
+const unitData = {
   "specification_file": "",
   "title": "KS3: History of Australia",
   "substantive_concepts": "Investigate historic themes of ideological shifts.",
@@ -27,9 +27,10 @@ export const unitData = {
       "sequencing_retrieval": "Connects previous learning of public health.",
       "local_coastal_links": "N/A",
       "learning_objective": "To analyze the motives and methods behind the initial British claiming of Australia.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Causation",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Causation): Explain why the British government sponsored James Cook's voyage and what the secret instructions reveal about imperial ambitions."
       },
       "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
       "teacher_notes": {
@@ -384,9 +385,10 @@ export const unitData = {
       "sequencing_retrieval": "Retrieves previous learning of global empires.",
       "local_coastal_links": "N/A",
       "learning_objective": "To evaluate the challenges and societal structure of establishing a convict colony in Australia.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Change & Continuity): Explain how the convict transportation system shaped early Australian society."
       },
       "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
       "teacher_notes": {
@@ -785,17 +787,18 @@ export const unitData = {
       "sequencing_retrieval": "Synthesizes prior knowledge of warfare tactics.",
       "local_coastal_links": "N/A",
       "learning_objective": "To examine the nature and consequences of early encounters between British settlers and Indigenous Australians.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Consequence",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Consequence): Evaluate the devastating consequences of European colonisation on Aboriginal Australians."
       },
       "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
       "teacher_notes": {
         "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
         "objectives": [
           {
-            "objective": "Understand the impact of European diseases on the Aboriginal population.",
-            "primer": "Discuss the 1789 smallpox epidemic, noting how it devastated communities like the Cadigal.",
+            "objective": "Explain the devastating impact of European diseases, particularly the 1789 smallpox epidemic, on the Aboriginal population.",
+            "primer": "Use the 1789 smallpox epidemic case study and the devastation of the Cadigal people to show how disease acted as a weapon of colonisation, even when unintentionally introduced.",
             "question": "Why were European diseases like smallpox so deadly to the Aboriginal populations?"
           },
           {
@@ -980,7 +983,7 @@ export const unitData = {
       "learning_objectives": {
         "overarching": "To examine the nature and consequences of early encounters between British settlers and Indigenous Australians.",
         "scaffolded": [
-          "Understand the impact of European diseases on the Aboriginal population.",
+          "Explain the devastating impact of European diseases, particularly the 1789 smallpox epidemic, on the Aboriginal population.",
           "Analyze the resistance of Aboriginal leaders like Pemulwuy.",
           "Examine the Myall Creek Massacre as an example of frontier violence."
         ]
@@ -995,9 +998,10 @@ export const unitData = {
       "sequencing_retrieval": "Connects previous learning of public health.",
       "local_coastal_links": "N/A",
       "learning_objective": "To assess how Australia transformed from a penal colony into a functional free settlement.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Change & Continuity): Explain how Australia transitioned from a penal colony into a free settlement during the 19th century."
       },
       "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
       "teacher_notes": {
@@ -1219,9 +1223,10 @@ export const unitData = {
       "sequencing_retrieval": "Recalls earlier themes of political changes.",
       "local_coastal_links": "N/A",
       "learning_objective": "To synthesize historical knowledge and construct a comprehensive narrative of early Australian history.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Significance",
       "formative_assessment": {
-        "type": "End of Unit Summative Assessment"
+        "type": "End of Unit Summative Assessment",
+        "question": "Summative Assessment: Evaluate the most significant turning point in Australia's colonial history."
       },
       "banner": "/images/sydney_cove.jpg",
       "banner_position": "center",
@@ -1233,6 +1238,16 @@ export const unitData = {
             "objective": "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
             "primer": "Direct students to Assessment 1 for a narrative account.",
             "question": "Can you sequence the key turning points in the colony's development?"
+          },
+          {
+            "objective": "Evaluate the most significant turning point in Australia's transformation from a penal colony to a free settlement.",
+            "primer": "Guide students to weigh competing turning points: Cook's arrival, the First Fleet, the end of transportation, the gold rushes, and the treatment of Indigenous Australians.",
+            "question": "Which single event or development most fundamentally changed Australia's trajectory?"
+          },
+          {
+            "objective": "Construct a structured essay arguing which factor had the greatest impact on the development of colonial Australia.",
+            "primer": "Scaffold the construction of a multi-paragraph essay with a clear thesis, supporting evidence from across the unit, and a balanced conclusion.",
+            "question": "How do you structure an argument when multiple factors seem equally significant?"
           }
         ]
       },
@@ -1254,7 +1269,9 @@ export const unitData = {
       "learning_objectives": {
         "overarching": "To synthesize historical knowledge and construct a comprehensive narrative of early Australian history.",
         "scaffolded": [
-          "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement."
+          "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
+          "Evaluate the most significant turning point in Australia's transformation from a penal colony to a free settlement.",
+          "Construct a structured essay arguing which factor had the greatest impact on the development of colonial Australia."
         ]
       }
     }

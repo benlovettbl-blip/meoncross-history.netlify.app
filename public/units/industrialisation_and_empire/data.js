@@ -26,15 +26,16 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Builds earlier themes of political changes.",
       "local_coastal_links": "N/A",
       "learning_objective": "To analyze the technological drivers of the Industrial Revolution and the impact of local pioneers like the Fareham ironmaster.",
-      "disciplinary_concept": "Change and Continuity",
+      "disciplinary_concept": "Causation",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Causation): Explain why Britain was the first country to industrialise."
       },
       "teacher_notes": {
         "primer": "This lesson introduces the shift from the domestic system to mass factory production during the Industrial Revolution, focusing on a local history case study of Henry Cort at the Funtley Ironworks. The goal is to connect major national/global shifts (steam, mass production, empire) to local geography and innovation.",
         "objectives": [
           {
-            "objective": "Understand the difference between the domestic system and the factory system.",
+            "objective": "Explain the difference between the domestic system and the factory system.",
             "primer": "Use the Core Narrative to explain how steam power freed manufacturing from being reliant on fast-flowing rivers.",
             "question": "What was the main difference in how goods were made before and after the invention of steam power?"
           },
@@ -53,7 +54,7 @@ const industrialisation_and_empire = {
       "learning_objectives": {
         "overarching": "To explore: What powered the Industrial Revolution, and how did a Fareham ironmaster change the world",
         "scaffolded": [
-          "Understand the difference between the domestic system and the factory system.",
+          "Explain the difference between the domestic system and the factory system.",
           "Explain the significance of Henry Cort's puddling and rolling processes.",
           "Evaluate the importance of location versus innovation in Cort's success."
         ]
@@ -361,13 +362,14 @@ const industrialisation_and_empire = {
       "learning_objective": "To evaluate the harsh realities of industrial work and debate whether it represented progress or punishment.",
       "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Change & Continuity): Explain how working conditions in factories represented both progress and punishment for ordinary workers."
       },
       "teacher_notes": {
         "primer": "This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.",
         "objectives": [
           {
-            "objective": "Understand the working conditions of the early Industrial Revolution with historical nuance.",
+            "objective": "Describe the working conditions of the early Industrial Revolution and their impact on workers.",
             "primer": "Ensure students realise that pre-industrial life (the domestic system) was also grueling and reliant on child labour; the key change was the scale, strict discipline, and unique physical dangers of the factory system.",
             "question": "Was the 'domestic system' a golden age of easy work before the factories arrived?"
           },
@@ -604,7 +606,7 @@ const industrialisation_and_empire = {
       "learning_objectives": {
         "overarching": "To explore: Was industrial work progress or punishment",
         "scaffolded": [
-          "Understand the working conditions of the early Industrial Revolution with historical nuance.",
+          "Describe the working conditions of the early Industrial Revolution and their impact on workers.",
           "Evaluate primary sources regarding child labour.",
           "Analyse the 'Optimist vs. Pessimist' historical debate."
         ]
@@ -625,9 +627,10 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
       "local_coastal_links": "N/A",
       "learning_objective": "To examine the devastating impact of rapid industrialisation on the living conditions in British towns.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Consequence",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Consequence): Evaluate the impact of rapid urbanisation on public health in industrial Britain."
       },
       "teacher_notes": {
         "primer": "This lesson explores the public health crisis triggered by rapid urbanisation. It challenges high-ability pupils by juxtaposing the grand architecture of the British Empire (built with local Fareham bricks) against the squalid reality of the slums. It introduces complex source evaluation using three contrasting, authentic written sources, and frames the topic within the 'Optimist vs. Pessimist' historiographical debate.",
@@ -643,7 +646,7 @@ const industrialisation_and_empire = {
             "question": "Why might a government report use different language to a letter written by a slum resident?"
           },
           {
-            "objective": "Understand the catalysts for public health reform.",
+            "objective": "Explain the catalysts for public health reform in 19th-century industrial towns.",
             "primer": "Ensure students grasp how 'Miasma Theory' delayed progress, and how the physical reality of the 'Great Stink' finally forced the government to abandon 'laissez-faire' policies.",
             "question": "Was it scientific discovery or political discomfort that finally triggered the building of London's sewers?"
           }
@@ -844,7 +847,7 @@ const industrialisation_and_empire = {
         "scaffolded": [
           "Analyse the contrast between imperial wealth and working-class squalor.",
           "Evaluate the usefulness of contrasting primary sources.",
-          "Understand the catalysts for public health reform."
+          "Explain the catalysts for public health reform in 19th-century industrial towns."
         ]
       },
       "pair_share": {
@@ -863,15 +866,16 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Synthesizes earlier themes of political changes.",
       "local_coastal_links": "N/A",
       "learning_objective": "To assess the economic and military mechanisms used to build and sustain the British Empire.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Significance",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Significance): Evaluate the significance of the East India Company in building and sustaining the British Empire."
       },
       "teacher_notes": {
         "primer": "This lesson investigates the core mechanisms of British imperial power in the 19th century, focusing on the interplay between trade, military execution, and industrial support. It introduces cognitive categorisation, significance mapping, and provenance analysis, anchoring global naval supremacy directly to the domestic workforce at Portsmouth Dockyard.",
         "objectives": [
           {
-            "objective": "Understand the transition of imperial rule from private mercantilism to direct state control.",
+            "objective": "Explain the transition of imperial rule from private mercantilism to direct state control.",
             "primer": "Guide pupils to analyze how the East India Company's search for market dominance systematically paved the way for the formal governance of the British Raj after 1857.",
             "question": "Which factor was more vital to the expansion of British power in India: corporate wealth or state military intervention?"
           },
@@ -1304,7 +1308,7 @@ const industrialisation_and_empire = {
       "learning_objectives": {
         "overarching": "To assess the economic and military mechanisms used to build and sustain the British Empire.",
         "scaffolded": [
-          "Understand the transition of imperial rule from private mercantilism to direct state control.",
+          "Explain the transition of imperial rule from private mercantilism to direct state control.",
           "Evaluate how domestic industrial complexes sustained global naval supremacy.",
           "Deconstruct primary source provenance to determine historical utility."
         ]
@@ -1319,15 +1323,16 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Retrieves core concepts of religious divides.",
       "local_coastal_links": "N/A",
       "learning_objective": "To analyze the causes, events, and consequences of the 1857 Indian Rebellion.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Causation and Consequence",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Causation & Consequence): Explain the causes of the 1857 Indian Rebellion and evaluate its consequences for British imperial rule."
       },
       "teacher_notes": {
         "primer": "This lesson contrasts domestic working-class resistance (Swing Riots/Chartism) with violent colonial resistance, shattering the myth of a passive Empire. It explores the causes of the 1857 Rebellion, the brutal suppression, and the monumental shift to the British Raj.",
         "objectives": [
           {
-            "objective": "Understand the deep-rooted causes of the 1857 Indian Rebellion.",
+            "objective": "Explain the deep-rooted causes of the 1857 Indian Rebellion beyond the immediate catalyst of the greased cartridges.",
             "primer": "Guide pupils to look beyond the immediate catalyst of the greased cartridges to the systemic disrespect and land grabs by the East India Company.",
             "question": "Was the rebellion simply a religious mutiny, or a broader war for independence?"
           },
@@ -1335,6 +1340,11 @@ const industrialisation_and_empire = {
             "objective": "Analyse the brutal response of the British state.",
             "primer": "Examine the disproportionate violence used by the British to suppress the rebellion, comparing it to the domestic response to Chartism.",
             "question": "Why did the British state react with such extreme violence in India compared to domestic unrest?"
+          },
+          {
+            "objective": "Evaluate the long-term consequences of the 1857 Rebellion for the structure of British imperial rule in India.",
+            "primer": "Guide students to examine how the rebellion led directly to the dissolution of the East India Company and the imposition of direct Crown rule (the British Raj), fundamentally changing the governance of India.",
+            "question": "Did the 1857 Rebellion ultimately weaken or strengthen British control over India?"
           }
         ]
       },
@@ -1738,8 +1748,9 @@ const industrialisation_and_empire = {
       "learning_objectives": {
         "overarching": "To analyze the causes, events, and consequences of the 1857 Indian Rebellion.",
         "scaffolded": [
-          "Understand the deep-rooted causes of the 1857 Indian Rebellion.",
-          "Analyse the brutal response of the British state."
+          "Explain the deep-rooted causes of the 1857 Indian Rebellion beyond the immediate catalyst of the greased cartridges.",
+          "Analyse the brutal response of the British state.",
+          "Evaluate the long-term consequences of the 1857 Rebellion for the structure of British imperial rule in India."
         ]
       }
     },
@@ -1752,9 +1763,10 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Links core concepts of industrial growth.",
       "local_coastal_links": "N/A",
       "learning_objective": "To examine the methods and struggles of ordinary people fighting for political representation.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Change & Continuity): Evaluate the extent to which ordinary people gained genuine political power by 1850."
       },
       "teacher_notes": {
         "primer": "This lesson evaluates how working-class resistance transformed from violent, uncoordinated machine-breaking into organized, mass political movements. It tests students' historical reasoning by contrasting the rural Hampshire Swing Riots with the urban constitutional challenge of Chartism, assessing how different social classes reacted to the pressures of an industrial economy.",
@@ -2187,15 +2199,16 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Builds previous learning of public health.",
       "local_coastal_links": "N/A",
       "learning_objective": "To evaluate the slow expansion of democracy and the significance of the Reform Acts.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Change and Continuity",
       "formative_assessment": {
-        "type": "Formative Comprehension & Retrieval Task"
+        "type": "PEEL Paragraph",
+        "question": "PEEL Paragraph (Change & Continuity): Explain how the Reform Acts gradually extended voting rights in 19th-century Britain."
       },
       "teacher_notes": {
         "primer": "This final lesson of the unit traces the slow, hard-fought transition of Britain from an aristocratic oligarchy to a burgeoning democracy. It emphasizes that political rights were not freely given but conceded gradually due to popular pressure, utilizing the local Hampshire context of 'rotten boroughs' to highlight the absurdity of the pre-reform system.",
         "objectives": [
           {
-            "objective": "Understand the corruption of the unreformed electoral system.",
+            "objective": "Explain the corruption of the unreformed electoral system and why it excluded ordinary people.",
             "primer": "Use the local case study of Hampshire's 'pocket' and 'rotten' boroughs to demonstrate how wealthy elites completely controlled Parliament before 1832.",
             "question": "How could a town with no people have two Members of Parliament, while a city of a hundred thousand had none?"
           },
@@ -2613,7 +2626,7 @@ const industrialisation_and_empire = {
       "learning_objectives": {
         "overarching": "To evaluate the slow expansion of democracy and the significance of the Reform Acts.",
         "scaffolded": [
-          "Understand the corruption of the unreformed electoral system.",
+          "Explain the corruption of the unreformed electoral system and why it excluded ordinary people.",
           "Analyse the consequences of the 1832 Great Reform Act and the 1872 Secret Ballot Act.",
           "Evaluate primary sources to uncover political motives."
         ]
@@ -2628,9 +2641,10 @@ const industrialisation_and_empire = {
       "sequencing_retrieval": "Consolidates past context of chronological mapping.",
       "local_coastal_links": "N/A",
       "learning_objective": "To synthesize historical evidence to determine who truly benefited from the transformations of the 19th century.",
-      "disciplinary_concept": "Historical Enquiry",
+      "disciplinary_concept": "Similarity and Difference",
       "formative_assessment": {
-        "type": "End of Unit Summative Assessment"
+        "type": "End of Unit Summative Assessment",
+        "question": "Summative Assessment: Evaluate who truly benefited from 19th-century industrial and imperial transformation."
       },
       "teacher_notes": {
         "primer": "This capstone lesson serves as the synthesis module for the entire 'Industrialisation and Empire' unit. Its pedagogical purpose is to guide high-ability pupils through the process of constructing a complex, balanced historical argument that weighs the structural advancements of technology and empire against the human cost of exploitation and political suppression.",
@@ -3042,5 +3056,3 @@ const industrialisation_and_empire = {
     }
   ]
 };
-
-export default industrialisation_and_empire;
