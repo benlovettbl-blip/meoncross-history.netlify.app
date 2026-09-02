@@ -1,13 +1,29 @@
 # KS3 History Units & Lessons
 
+### KS3: Water and Sanitation Through Time
+- **Lesson 1:** How much progress did the Romans make in public health?
+- **Lesson 2:** Why did public health decline during the Middle Ages?
+- **Lesson 3:** To what extent did towns become filthier during the Early Modern period?
+- **Lesson 4:** How did the Industrial Revolution lead to a public health crisis?
+- **Lesson 5:** Why did it take the 'Great Stink' to finally clean up Britain's streets?
+
+### KS3: Medieval England & The Struggle for Power (1066–1485)
+- **Lesson 1:** 1066 - Why did three men claim one throne, and how did William win?
+- **Lesson 2:** Castles, Terror, and the Domesday Book - How did William control England?
+- **Lesson 3:** Crown vs Church: Why did Henry II clash with Thomas Becket?
+- **Lesson 4:** Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?
+- **Lesson 5:** Doom Paintings and Tithes: What was life like in a medieval village?
+- **Lesson 6:** 1348: How did the Black Death shatter medieval social order?
+- **Lesson 7:** 1381: Why did the Peasants revolt, and did they achieve anything?
+- **Lesson 8:** The Wars of the Roses (1455–1485) - How did the medieval era end in blood?
+- **Lesson 9:** Assessment: How powerful was a medieval monarch?
+
 ### KS3: History of Australia
 - **Lesson 1:** Claiming Australia
 - **Lesson 2:** Creating a Convict Colony
 - **Lesson 3:** Encounters with the Indigenous Peoples
 - **Lesson 4:** From Penal Colony to Settlement
 - **Lesson 5:** End of Unit Assessment
-
-### KS3: The Cold War
 
 ### KS3: Early Modern World & Global Encounters (1450–1750)
 - **Lesson 1:** Who held global power in 1450?
@@ -46,12 +62,6 @@
 - **Lesson 7:** How did the road to democracy expand?
 - **Lesson 8:** Who truly benefited from 19th-century transformation?
 
+### KS3: The Cold War
+
 ### KS3: The Shoah
-
-### KS3: Water and Sanitation Through Time
-- **Lesson 1:** How much progress did the Romans make in public health?
-- **Lesson 2:** Why did public health decline during the Middle Ages?
-- **Lesson 3:** To what extent did towns become filthier during the Early Modern period?
-- **Lesson 4:** How did the Industrial Revolution lead to a public health crisis?
-- **Lesson 5:** Why did it take the 'Great Stink' to finally clean up Britain's streets?
-

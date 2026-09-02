@@ -1592,6 +1592,20 @@ export const unitData = {
         "What was the most important principle established by Magna Carta?",
         "Did King John keep his promises in the Magna Carta?"
       ],
+      
+      "historical_interpretations": {
+        "title": "Historical Interpretations: The Magna Carta",
+        "interpretation_a": {
+          "historian": "William Stubbs (1870)",
+          "text": "The Magna Carta was a glorious milestone in the history of human freedom. It laid the foundation for democracy, ensuring that the King was subject to the law just like every other citizen."
+        },
+        "interpretation_b": {
+          "historian": "Modern Historian View (2020)",
+          "text": "The Magna Carta was not about freedom for the ordinary people. It was a selfish, reactionary power grab by a small group of incredibly wealthy barons who only wanted to protect their own privileges and land from the King."
+        },
+        "question": "Which interpretation is more convincing? Use your knowledge of medieval society to support your answer.",
+        "scaffold": "I find Interpretation [A/B] more convincing because... For example, I know that..."
+      },
       "pair_share": {
         "prompt": "Discuss with your partner: Do you think the Magna Carta was about freedom for all people, or just the barons protecting their own wealth?",
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",

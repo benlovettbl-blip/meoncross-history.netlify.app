@@ -34437,6 +34437,19 @@
           "teacher_notes": {
             "source_context": "The visual sources in this assessment review the core themes of the unit, from the empowerment and exploitation of women in munitions factories to the enduring legacy of the conflict. **Hinge Question:** How does the image of women in munitions factories summarize the dramatic societal shifts caused by Total War?"
           },
+          "historical_interpretations": {
+            "title": "Historical Interpretations: General Haig",
+            "interpretation_a": {
+              "historian": "John Laffin (1988) - 'British Butchers and Bunglers'",
+              "text": "General Haig was an incompetent butcher who callously sent millions of young men to their deaths. He was a 'donkey' completely out of touch with the realities of modern trench warfare, ordering the same failed charges over and over again."
+            },
+            "interpretation_b": {
+              "historian": "Gary Sheffield (2001) - 'Forgotten Victory'",
+              "text": "General Haig was the 'Architect of Victory'. He faced an impossible task in a new type of industrial war that no one knew how to fight. Despite the tragic casualties, he learned from his mistakes and eventually led the British army to its greatest ever victory in 1918."
+            },
+            "question": "Which interpretation of General Haig do you find more convincing? Use your knowledge of the Battle of the Somme to support your answer.",
+            "scaffold": "I find Interpretation [A/B] more convincing because..."
+          },
           "pair_share": {
             "prompt": "Discuss with your partner: What was the most significant turning point of the Great War?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
@@ -38761,6 +38774,19 @@
             "What was the most important principle established by Magna Carta?",
             "Did King John keep his promises in the Magna Carta?"
           ],
+          "historical_interpretations": {
+            "title": "Historical Interpretations: The Magna Carta",
+            "interpretation_a": {
+              "historian": "William Stubbs (1870)",
+              "text": "The Magna Carta was a glorious milestone in the history of human freedom. It laid the foundation for democracy, ensuring that the King was subject to the law just like every other citizen."
+            },
+            "interpretation_b": {
+              "historian": "Modern Historian View (2020)",
+              "text": "The Magna Carta was not about freedom for the ordinary people. It was a selfish, reactionary power grab by a small group of incredibly wealthy barons who only wanted to protect their own privileges and land from the King."
+            },
+            "question": "Which interpretation is more convincing? Use your knowledge of medieval society to support your answer.",
+            "scaffold": "I find Interpretation [A/B] more convincing because... For example, I know that..."
+          },
           "pair_share": {
             "prompt": "Discuss with your partner: Do you think the Magna Carta was about freedom for all people, or just the barons protecting their own wealth?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",

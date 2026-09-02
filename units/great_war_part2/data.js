@@ -1884,6 +1884,20 @@ export default {
         source_context:
           'The visual sources in this assessment review the core themes of the unit, from the empowerment and exploitation of women in munitions factories to the enduring legacy of the conflict. **Hinge Question:** How does the image of women in munitions factories summarize the dramatic societal shifts caused by Total War?',
       },
+      
+      historical_interpretations: {
+        title: "Historical Interpretations: General Haig",
+        interpretation_a: {
+          historian: "John Laffin (1988) - 'British Butchers and Bunglers'",
+          text: "General Haig was an incompetent butcher who callously sent millions of young men to their deaths. He was a 'donkey' completely out of touch with the realities of modern trench warfare, ordering the same failed charges over and over again."
+        },
+        interpretation_b: {
+          historian: "Gary Sheffield (2001) - 'Forgotten Victory'",
+          text: "General Haig was the 'Architect of Victory'. He faced an impossible task in a new type of industrial war that no one knew how to fight. Despite the tragic casualties, he learned from his mistakes and eventually led the British army to its greatest ever victory in 1918."
+        },
+        question: "Which interpretation of General Haig do you find more convincing? Use your knowledge of the Battle of the Somme to support your answer.",
+        scaffold: "I find Interpretation [A/B] more convincing because..."
+      },
       pair_share: {
         prompt:
           'Discuss with your partner: What was the most significant turning point of the Great War?',
