@@ -2067,7 +2067,7 @@ allDirs.forEach((unitId) => {
           let questionsBefore = [];
           let questionsAfter = [];
           epArray.forEach((ep, index) => {
-            let qText = ep.question.toLowerCase();
+            let qText = (ep.question || ep.text || '').toLowerCase();
             if (
               qText.includes('explain why') ||
               qText.includes('explain one consequence') ||
@@ -2084,6 +2084,7 @@ allDirs.forEach((unitId) => {
           });
 
           const renderQuestionLines = (qText) => {
+            qText = qText || '';
             let lines = 8;
             if (qText.includes('16 marks')) lines = 96;
             else if (qText.includes('12 marks') || qText.includes('Explain why')) lines = 64;
@@ -2302,10 +2303,11 @@ allDirs.forEach((unitId) => {
             }
             if (epArray && epArray.length > 0) {
               epArray.forEach((ep, index) => {
+                let epQuestion = ep.question || ep.text || '';
                 let marksStr = ep.marks ? ` (${ep.marks} marks)` : '';
-                if (ep.question.includes('marks)')) marksStr = '';
-                if (ep.question.toLowerCase().includes('explain why')) marksStr = '';
-                let _tInfo2 = processTaskTextWithTariff(ep.question, true);
+                if (epQuestion.includes('marks)')) marksStr = '';
+                if (epQuestion.toLowerCase().includes('explain why')) marksStr = '';
+                let _tInfo2 = processTaskTextWithTariff(epQuestion, true);
                 allExamTasksHtml += `<div style="margin-top: 10px;"><strong>${index + 1}. ${_tInfo2.cleanText}</strong></div>`;
                 if (_tInfo2.badgeHtml) allExamTasksHtml += _tInfo2.badgeHtml;
               });

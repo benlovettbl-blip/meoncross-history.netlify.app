@@ -10034,7 +10034,12 @@
               "term": "Ottoman Empire",
               "definition": "A powerful Islamic empire that controlled the Middle East, North Africa, and Eastern Europe, acting as the gateway for trade."
             }
-          ]
+          ],
+          "disciplinary_focus": "Historical Enquiry - Analyzing the motivations behind early global exploration.",
+          "formative_assessment": {
+            "type": "PEEL Paragraph",
+            "question": "PEEL Paragraph (Enquiry): What was the primary motivation for early global explorers?"
+          }
         },
         {
           "id": "lesson_2",
@@ -10437,6 +10442,11 @@
               "Sentence Starter: This rivalry culminated in..."
             ],
             "lines": 15
+          },
+          "disciplinary_focus": "Change and Continuity - Examining the impact of the printing press on society.",
+          "formative_assessment": {
+            "type": "PEEL Paragraph",
+            "question": "PEEL Paragraph (Change & Continuity): How did the printing press revolutionize the spread of ideas?"
           }
         },
         {
@@ -10836,6 +10846,11 @@
               "Sentence Starter: However, they often used violence to secure a 'monopoly', allowing them to..."
             ],
             "lines": 15
+          },
+          "disciplinary_focus": "Causation - Investigating the causes of the Reformation.",
+          "formative_assessment": {
+            "type": "PEEL Paragraph",
+            "question": "Formative Question (Causation): Identify three major causes of the Protestant Reformation."
           }
         },
         {
@@ -10955,7 +10970,8 @@
                 "question": "What is the most significant consequence of the Gunpowder Plot?"
               }
             ]
-          }
+          },
+          "disciplinary_focus": "Significance - Evaluating the impact of the Renaissance on art and science."
         },
         {
           "id": "lesson_4",
@@ -11307,7 +11323,8 @@
               "Sentence Starter: By executing the King in 1649, it proved that..."
             ],
             "lines": 15
-          }
+          },
+          "disciplinary_focus": "Causation - Analyzing the reasons for the Spanish Armada's defeat."
         },
         {
           "id": "lesson_5",
@@ -11338,19 +11355,14 @@
             "primer": "This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.",
             "objectives": [
               {
-                "objective": "Analyze why King Charles I and Parliament fought the English Civil War (1642–1651).",
-                "primer": "Direct students to the tabs on 'The Crown' and 'Parliament' to understand the ideological clash between the Divine Right of Kings and Parliamentary consent.",
-                "question": "What was the 'Divine Right of Kings', and how did it lead Charles I into direct conflict with Parliament?"
+                "objective": "Understand the major economic changes of the 17th century.",
+                "primer": "Explain how global trade and the establishment of new colonies created wealth for European powers.",
+                "question": "How did colonial expansion lead to an economic shift in Europe?"
               },
               {
-                "objective": "Evaluate how colonial wealth from sugar and tobacco reshaped British politics during the Commonwealth.",
-                "primer": "Use the 'Atlantic Merchants' tab and Source A to show how Caribbean sugar profits directly funded the New Model Army.",
-                "question": "How did the switch to sugar production in Barbados financially impact the outcome of the English Civil War?"
-              },
-              {
-                "objective": "Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists.",
-                "primer": "Use the Historical Interpretations section at the end of the lesson to have students weigh Prof. Hill's political view against Prof. Williams' economic view.",
-                "question": "Based on the evidence, was the English Civil War ultimately won by religious ideals or by mercantile wealth?"
+                "objective": "Analyze the impact of colonial wealth on social structures.",
+                "primer": "Discuss how the influx of new goods and wealth changed the everyday lives of people.",
+                "question": "What new goods were introduced through colonial trade, and how did they affect society?"
               }
             ]
           },
@@ -11615,7 +11627,8 @@
               "Sentence Starter: Consequently, Britain could out-spend its rivals by building..."
             ],
             "lines": 15
-          }
+          },
+          "disciplinary_focus": "Change and Continuity - Tracing the economic shift towards global trade."
         },
         {
           "id": "lesson_6",
@@ -11743,7 +11756,7 @@
               "tasks": [
                 {
                   "type": "extended_writing",
-                  "question": "UCL Research Task Worksheet: Write down your findings for Task A and B, and write your 150-word summary for Task C here: Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
+                  "question": "UCL Research Task Worksheet: Summarize the core findings.\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
                   "lines": 20
                 }
               ]
@@ -11961,7 +11974,8 @@
               "Sentence Starter: Finally, the immense profits from raw materials (like sugar) flowed back into British ports like..."
             ],
             "lines": 15
-          }
+          },
+          "disciplinary_focus": "Significance - Understanding the consequences of the English Civil War."
         },
         {
           "id": "lesson_7",
@@ -12345,7 +12359,8 @@
               "Sentence Starter: Ultimately, the British were forced to..."
             ],
             "lines": 15
-          }
+          },
+          "disciplinary_focus": "Causation - Why did the Witch Craze spread across early modern Europe?"
         },
         {
           "id": "lesson_8",
@@ -12745,7 +12760,12 @@
             ],
             "lines": 35
           },
-          "banner": "/images/early_mod_l6_banner.jpg"
+          "banner": "/images/early_mod_l6_banner.jpg",
+          "disciplinary_focus": "Historical Enquiry - Evaluating the legacy of the Early Modern era.",
+          "formative_assessment": {
+            "type": "PEEL Paragraph",
+            "question": "PEEL Paragraph (Significance): What was the most significant change of the Early Modern era?"
+          }
         }
       ],
       "portraits": [
@@ -42694,6 +42714,10 @@
             "text": "<strong>Simon Schama</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
             "stretch_question": "According to Schama, was Roman public health purely about stopping disease, or was there another motivation?",
             "stretch_model": "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines."
+          },
+          "formative_assessment": {
+            "question": "PEEL Paragraph (Change & Continuity): How much progress did the Romans make in public health?",
+            "type": "PEEL Paragraph"
           }
         },
         {
@@ -42937,6 +42961,10 @@
             "text": "**Carole Rawcliffe** argues:\n\n\"Medieval towns were not entirely filthy; many had local laws requiring citizens to clean the street outside their house.\"",
             "stretch_question": "How does Rawcliffe challenge the idea that all medieval towns were completely disgusting?",
             "stretch_model": "The historian argues that..."
+          },
+          "formative_assessment": {
+            "question": "PEEL Paragraph (Causation): Why did public health decline during the Middle Ages?",
+            "type": "PEEL Paragraph"
           }
         },
         {
@@ -43165,6 +43193,10 @@
             "text": "**Roy Porter** argues:\n\n\"The rapid growth of London meant that traditional methods of waste disposal simply could not cope.\"",
             "stretch_question": "What does Porter say was the main reason towns became so filthy?",
             "stretch_model": "The historian argues that..."
+          },
+          "formative_assessment": {
+            "question": "PEEL Paragraph (Significance): To what extent did towns become filthier during the Early Modern period?",
+            "type": "PEEL Paragraph"
           }
         },
         {
@@ -43393,6 +43425,10 @@
             "text": "**Steven Johnson** argues:\n\n\"John Snow's map of the Broad Street cholera outbreak was a triumph of medical detective work.\"",
             "stretch_question": "Why does Johnson call Snow's work 'detective work'?",
             "stretch_model": "The historian argues that..."
+          },
+          "formative_assessment": {
+            "question": "PEEL Paragraph (Causation): How did the Industrial Revolution lead to a public health crisis?",
+            "type": "PEEL Paragraph"
           }
         },
         {
@@ -43636,6 +43672,10 @@
             "text": "**The Observer Newspaper, 1861** argues:\n\n\"Bazalgette's sewer system was the most extensive and wonderful work of modern times.\"",
             "stretch_question": "How did the media at the time view Bazalgette's sewers?",
             "stretch_model": "The historian argues that..."
+          },
+          "formative_assessment": {
+            "question": "PEEL Paragraph (Significance): Evaluate the impact of Joseph Bazalgette’s sewer system on London.",
+            "type": "PEEL Paragraph"
           }
         }
       ],
