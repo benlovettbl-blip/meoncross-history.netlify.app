@@ -319,6 +319,11 @@ export default {
         stretch_model:
           "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines.",
       },
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Change & Continuity): How much progress did the Romans make in public health?',
+        type: 'PEEL Paragraph',
+      },
     },
     {
       id: 'lesson_2',
@@ -595,6 +600,11 @@ export default {
           'How does Rawcliffe challenge the idea that all medieval towns were completely disgusting?',
         stretch_model: 'The historian argues that...',
       },
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Causation): Why did public health decline during the Middle Ages?',
+        type: 'PEEL Paragraph',
+      },
     },
     {
       id: 'lesson_3',
@@ -838,6 +848,11 @@ export default {
         text: '**Roy Porter** argues:\n\n"The rapid growth of London meant that traditional methods of waste disposal simply could not cope."',
         stretch_question: 'What does Porter say was the main reason towns became so filthy?',
         stretch_model: 'The historian argues that...',
+      },
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Significance): To what extent did towns become filthier during the Early Modern period?',
+        type: 'PEEL Paragraph',
       },
     },
     {
@@ -1092,6 +1107,11 @@ export default {
         text: '**Steven Johnson** argues:\n\n"John Snow\'s map of the Broad Street cholera outbreak was a triumph of medical detective work."',
         stretch_question: "Why does Johnson call Snow's work 'detective work'?",
         stretch_model: 'The historian argues that...',
+      },
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Causation): How did the Industrial Revolution lead to a public health crisis?',
+        type: 'PEEL Paragraph',
       },
     },
     {
@@ -1361,6 +1381,11 @@ export default {
         text: '**The Observer Newspaper, 1861** argues:\n\n"Bazalgette\'s sewer system was the most extensive and wonderful work of modern times."',
         stretch_question: "How did the media at the time view Bazalgette's sewers?",
         stretch_model: 'The historian argues that...',
+      },
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Significance): Evaluate the impact of Joseph Bazalgette’s sewer system on London.',
+        type: 'PEEL Paragraph',
       },
     },
   ],
