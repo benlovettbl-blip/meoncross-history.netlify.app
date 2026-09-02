@@ -39,7 +39,7 @@ function getFileHash(filePath) {
   const page = await browser.newPage();
   page.setDefaultNavigationTimeout(300000);
   
-  const unitArg = process.argv[2] || 'early_modern_world';
+  const unitArg = process.argv[2] || 'all';
   const targetFile = process.argv[3];
   
   const units = unitArg === 'all' 

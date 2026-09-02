@@ -21,6 +21,7 @@ export default {
   homepage_background: '/units/water_and_sanitation/assets/court_for_king_cholera.png',
   color: '#0288d1',
   enquiry: 'Why did it take so long to clean up Britain?',
+  cover_image: '/images/john_snow_cholera_map.jpg',
   specification_file: '/data/water_and_sanitation_overview.json',
   workbooks: [
     {

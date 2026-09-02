@@ -54,16 +54,20 @@ export default {
           "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
         objectives: [
           {
-            objective: 'Understand the short-term and long-term causes of WWI.',
-            primer:
-              'Guide students through the distinction between the trigger event and the underlying alliance structures.',
-            question: 'What was the spark that ignited the alliance system?',
+            objective: "Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire",
+            primer: "Focus on the role of Lord Kitchener's campaign and how peer pressure and patriotism forced many young men to sign up.",
+            question: "What were the main social and political pressures that led young men to enlist in 1914?"
           },
           {
-            objective: 'Empathize with the young men volunteering in 1914.',
-            primer: "Discuss the 'Pals' Battalions' and why propaganda was so effective.",
-            question: 'Why did young men think volunteering was a good idea in 1914?',
+            objective: "Explain why trench warfare on the Western Front created a devastating stalemate",
+            primer: "Highlight the failure of the Schlieffen Plan and how the introduction of machine guns and artillery made defensive positions impenetrable.",
+            question: "How did modern industrial weaponry create the stalemate of the trench system?"
           },
+          {
+            objective: "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict",
+            primer: "Contrast the romantic ideas of a short 'over by Christmas' adventure with the miserable realities of trench foot, shell shock, and mass casualties.",
+            question: "In what ways did the reality of fighting on the Western Front differ from what volunteers expected in 1914?"
+          }
         ],
         source_context:
           "The visual sources in this lesson (such as the map of alliances and the recruitment posters) highlight the two phases of the outbreak: the geopolitical trap of the alliance system, and the psychological manipulation of the British public. The propaganda posters in particular reveal how the government ruthlessly leveraged gender roles and peer pressure to feed the war machine. **Hinge Question:** Look closely at the 'Women of Britain Say GO!' poster; why was emotional blackmail considered more effective than simply ordering men to fight in 1914?",

@@ -20,7 +20,7 @@ const eee = {
   "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?",
   "enquiry_question": "From religious division to the Armada: How did Elizabeth secure her throne?",
   "desc": "Paper 2",
-  "cover_image": "/assets/placeholder_cover.jpg",
+
   "cover_caption": "Source A: The Armada Portrait of Queen Elizabeth I, painted to commemorate the defeat of the Spanish Armada (1588).",
   "workbooks": [
     {

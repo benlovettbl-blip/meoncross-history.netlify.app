@@ -33,28 +33,28 @@ const enquiryPatchMap = {
 const commonHead = `
     <head>
         <meta charset="UTF-8">
-        <title>Meoncross History Hub</title>
+        <title>Meoncross School History Department</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
             body { font-family: 'Outfit', sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 0; font-size: 11pt; line-height: 1.5; }
-            h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #0c2340; margin-top: 0; }
-            .cover-page { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f8fafc; border: 10px solid #d4af37; padding: 40px; box-sizing: border-box; }
-            .cover-title { font-size: 48pt; font-weight: 700; color: #0c2340; margin-bottom: 20px; }
-            .cover-subtitle { font-size: 24pt; color: #d4af37; font-family: 'Outfit', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; }
+            h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #1b365d; margin-top: 0; }
+            .cover-page { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f8fafc; border: 10px solid #facc15; padding: 40px; box-sizing: border-box; }
+            .cover-title { font-size: 48pt; font-weight: 700; color: #1b365d; margin-bottom: 20px; }
+            .cover-subtitle { font-size: 24pt; color: #facc15; font-family: 'Outfit', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; }
             .page-break { page-break-before: always; }
             .container { padding: 40px 60px; }
-            .header-banner { background: #0c2340; color: #fff; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; border-bottom: 4px solid #d4af37; }
+            .header-banner { background: #1b365d; color: #fff; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; border-bottom: 4px solid #facc15; }
             .header-banner h1 { color: #fff; margin: 0; font-size: 24pt; }
             .year-section { margin-bottom: 40px; }
-            .year-title { background: #d4af37; color: #0c2340; padding: 10px 20px; border-radius: 4px; font-size: 18pt; margin-bottom: 20px; display: inline-block; font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-            .unit-card { border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-bottom: 20px; background: #f1f5f9; border-left: 5px solid #0c2340; }
-            .unit-card h3 { font-size: 16pt; margin-bottom: 10px; color: #0c2340; }
+            .year-title { background: #facc15; color: #1b365d; padding: 10px 20px; border-radius: 4px; font-size: 18pt; margin-bottom: 20px; display: inline-block; font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+            .unit-card { border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-bottom: 20px; background: #f1f5f9; border-left: 5px solid #1b365d; }
+            .unit-card h3 { font-size: 16pt; margin-bottom: 10px; color: #1b365d; }
             .unit-card .enquiry { font-weight: 600; color: #b89c30; font-size: 12pt; margin-bottom: 10px; }
             .unit-card .desc { font-size: 11pt; color: #475569; }
             
             /* SOW Styles */
             .sow-unit-container { margin-bottom: 50px; page-break-inside: auto; }
-            .sow-unit-header { background: #0c2340; color: #fff; padding: 20px; border-radius: 8px 8px 0 0; border-bottom: 4px solid #d4af37; margin-bottom: 20px; }
+            .sow-unit-header { background: #1b365d; color: #fff; padding: 20px; border-radius: 8px 8px 0 0; border-bottom: 4px solid #facc15; margin-bottom: 20px; }
             .sow-unit-header h2 { color: #fff; margin: 0 0 10px 0; font-size: 22pt; }
             .sow-unit-header p { margin: 0; color: #e2e8f0; font-family: 'Outfit', sans-serif; font-size: 12pt; }
             .primer-box { background: #fef3c7; border: 1px solid #fde68a; border-left: 4px solid #d97706; padding: 15px; border-radius: 4px; margin-bottom: 25px; }
@@ -66,7 +66,7 @@ const commonHead = `
             th { background: #0f172a; color: #ffffff; text-align: left; padding: 14px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 10.5pt; border: none; }
             td { padding: 14px; border: none; vertical-align: top; font-size: 10pt; color: #334155; }
             
-            .lesson-num { font-weight: 700; color: #0c2340; white-space: nowrap; }
+            .lesson-num { font-weight: 700; color: #1b365d; white-space: nowrap; }
             .lesson-title { font-weight: 700; margin-bottom: 5px; color: #1e40af; font-size: 11pt; }
             
             .hinge-question { color: #b91c1c; font-style: italic; font-weight: 600; margin-top: 8px; display: block; border-left: 2px solid #ef4444; padding-left: 8px; }
@@ -86,8 +86,8 @@ function generateOverviewHTML(db) {
 
   html += `
         <div class="cover-page">
-            <div class="cover-title">Meoncross History Hub</div>
-            <div class="cover-subtitle">5-Year Curriculum Overview</div>
+            <div class="cover-title">Meoncross School History Department</div>
+            <div class="cover-subtitle">5-Year Curriculum Overview (2026-2027)</div>
             <div style="margin-top: 40px; font-size: 14pt; color: #475569;">Key Stage 3 & 4 (Years 7 - 11)</div>
         </div>
         <div class="page-break"></div>
@@ -118,7 +118,7 @@ function generateOverviewHTML(db) {
       html += `
                 <div class="unit-card">
                     <h3>${title}</h3>
-                    ${enquiry ? `<div class="enquiry"><strong style="color:#0c2340">Enquiry:</strong> ${enquiry}</div>` : ''}
+                    ${enquiry ? `<div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> ${enquiry}</div>` : ''}
                     <div class="desc">${desc}</div>
                 </div>
             `;
@@ -137,8 +137,8 @@ function generateSOWHTML(db, yearGroup, unitIds) {
 
   html += `
         <div class="cover-page">
-            <div class="cover-title">Meoncross History Hub</div>
-            <div class="cover-subtitle">${yearGroup} Scheme of Work</div>
+            <div class="cover-title">Meoncross School History Department</div>
+            <div class="cover-subtitle">${yearGroup} Scheme of Work (2026-2027)</div>
             <div style="margin-top: 40px; font-size: 14pt; color: #475569;">Teacher Companion Guide</div>
         </div>
     `;
@@ -151,7 +151,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             </div>
             
             <div style="margin-bottom: 30px;">
-                <h2 style="color: #0c2340; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">Strengths & Commendable Practices</h2>
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">Strengths & Commendable Practices</h2>
                 
                 <h3 style="color: #1e40af; margin-bottom: 5px;">Strong Local History Connections</h3>
                 <p style="margin-top: 0;">Integrating local context into national and global events serves as a fantastic pedagogical hook. Mentions of the "Fareham ironmaster" in the Industrialisation unit and the profound impact of the "Lost Generation" on the "village of Stubbington" directly ground the history for our pupils. This makes the narrative tangible and relevant to their lived environment, fostering deeper engagement.</p>
@@ -172,10 +172,10 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #d97706; padding: 20px; border-radius: 4px;">
                 <h2 style="color: #92400e; margin-top: 0; border-bottom: 1px solid #fcd34d; padding-bottom: 10px;">Points for Improvement for 2026/2027</h2>
                 
-                <h4 style="margin-bottom: 5px; color: #0c2340;">1. Overweighting the 20th Century</h4>
+                <h4 style="margin-bottom: 5px; color: #1b365d;">1. Overweighting the 20th Century</h4>
                 <p style="margin-top: 0; font-size: 10pt;">Currently, there are two whole units dedicated to the Great War, plus units mapped out for the Second World War, the Shoah, the Cold War, and Post-War Britain. While vital, this risks creating a "modern-heavy" curriculum, sometimes at the expense of early world history.</p>
                 
-                <h4 style="margin-bottom: 5px; color: #0c2340;">2. Pre-1450 Global Diversity</h4>
+                <h4 style="margin-bottom: 5px; color: #1b365d;">2. Pre-1450 Global Diversity</h4>
                 <p style="margin-top: 0; font-size: 10pt;">The curriculum would benefit from a deep dive into non-European civilizations before European contact. Exploring the Islamic Golden Age, the Mali Empire, or the Silk Roads <em>before</em> looking at European "Global Encounters" in 1450 would give pupils a much more balanced view of global history, rather than encountering diverse cultures primarily through the lens of European colonization.</p>
             </div>
             ${yearGroup === 'Year 9' ? `
@@ -193,7 +193,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             </div>
             
             <div style="margin-bottom: 30px;">
-                <h2 style="color: #0c2340; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">1. Local Context & Coastal Connections</h2>
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">1. Local Context & Coastal Connections</h2>
                 <p style="margin-top: 0; font-size: 11pt; color: #475569;">As a coastal school, our curriculum is intentionally designed to root global and national historical events in the maritime geography and lived environment of our pupils.</p>
                 <ul style="color: #334155; font-size: 10.5pt; line-height: 1.6;">
                     <li style="margin-bottom: 8px;"><strong>Oceanic Voyages & Penal Colonies:</strong> The Year 8 Australia unit is deeply tied to maritime history, the brutality of ocean voyages, and the establishment of coastal settlements like Botany Bay.</li>
@@ -204,7 +204,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             </div>
 
             <div style="margin-bottom: 30px;">
-                <h2 style="color: #0c2340; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">2. Historical Skills Progression</h2>
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">2. Historical Skills Progression</h2>
                 <p style="margin-top: 0; font-size: 11pt; color: #475569;">Our curriculum ensures rigorous, sequential development of disciplinary thinking from Year 7 through to Year 9, preparing pupils for GCSE demands.</p>
                 <ul style="color: #334155; font-size: 10.5pt; line-height: 1.6;">
                     <li style="margin-bottom: 8px;"><strong>Source Utility:</strong> Moves from basic comprehension in Year 7 to evaluating provenance, motive, and audience (e.g., analyzing WWI propaganda and recruitment posters) in Year 8.</li>
@@ -215,19 +215,20 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             </div>
 
             <div style="margin-bottom: 30px;">
-                <h2 style="color: #0c2340; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">3. Diversity, Equity & Representation</h2>
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">3. Diversity, Equity & Representation</h2>
                 <p style="margin-top: 0; font-size: 11pt; color: #475569;">We are committed to delivering a curriculum that de-centers traditional anglocentric narratives, elevating the voices of the marginalized and giving pupils a truly global perspective.</p>
                 <ul style="color: #334155; font-size: 10.5pt; line-height: 1.6;">
                     <li style="margin-bottom: 8px;"><strong>Indigenous Perspectives:</strong> The History of Australia unit critically examines the impact of British settlement on Indigenous peoples, moving beyond the traditional 'discovery' narrative.</li>
                     <li style="margin-bottom: 8px;"><strong>Enslaved Voices:</strong> The Early Modern World unit focuses on the mechanics of the Transatlantic Slave Trade and actively highlights how enslaved Africans resisted.</li>
                     <li style="margin-bottom: 8px;"><strong>The 'Ordinary' Voice:</strong> The Industrialisation unit explores how ordinary working-class people, rather than just monarchs, fought for a voice and the expansion of democracy.</li>
                     <li style="margin-bottom: 8px;"><strong>The Forgotten Armies:</strong> The Great War unit deliberately questions how much of a 'World' war it was by uncovering the forgotten contributions of the Empire's troops.</li>
+                    <li style="margin-bottom: 8px;"><strong>Experiential Learning (Ypres Trip):</strong> The upcoming Year 9 Battlefields Trip to Ypres provides an invaluable opportunity for pupils to walk the ground of the Great War, cementing their classroom learning with powerful lived experience.</li>
                 </ul>
             </div>
 
             <div style="margin-bottom: 30px;">
-                <h2 style="color: #0c2340; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">4. Pedagogical Strengths (SEND & Accessibility)</h2>
-                <p style="margin-top: 0; font-size: 11pt; color: #475569;">The integrated use of the Meoncross History Hub app alongside printed A4 workbooks and textbooks is deliberately designed to provide maximum support for SEND pupils:</p>
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">4. Pedagogical Strengths (SEND & Accessibility)</h2>
+                <p style="margin-top: 0; font-size: 11pt; color: #475569;">The integrated use of the Meoncross School History Department app alongside printed A4 workbooks and textbooks is deliberately designed to provide maximum support for SEND pupils:</p>
                 <ul style="color: #334155; font-size: 10.5pt; line-height: 1.6;">
                     <li style="margin-bottom: 8px;"><strong>Cognitive Offloading:</strong> The combination of guided workbooks directly matched to structured digital tasks significantly reduces working memory strain, allowing pupils to focus entirely on historical thinking.</li>
                     <li style="margin-bottom: 8px;"><strong>Dual Coding & Scaffolding:</strong> The app utilizes consistent visual layouts, dual-coded images for vocabulary, and highly structured scaffolding (like sentence starters and PEEL frameworks) to support pupils with dyslexia or processing needs.</li>
@@ -236,12 +237,12 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             </div>
 
             <div style="margin-bottom: 30px;">
-                <h2 style="color: #0c2340; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">5. Substantive Concept Mapping</h2>
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">5. Substantive Concept Mapping</h2>
                 <p style="margin-top: 0; font-size: 11pt; color: #475569;">In line with modern KS3 history pedagogy, we actively track and weave substantive concepts ("big ideas" like Empire, Religion, and Power) across different periods. Rather than teaching these as isolated definitions, pupils build complex mental schemas by encountering them in varied contexts—from the power of the Medieval Church, through to the ideological clashes of the Cold War.</p>
             </div>
 
             <div style="margin-bottom: 30px;">
-                <h2 style="color: #0c2340; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">6. "Worldbuilding" & Cultural Literacy</h2>
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">6. "Worldbuilding" & Cultural Literacy</h2>
                 <p style="margin-top: 0; font-size: 11pt; color: #475569;">Before pupils can effectively tackle abstract disciplinary concepts (such as causation or source utility), they require a rich "picture of the past". Our curriculum deliberately immerses pupils in the sensory and lived experiences of historical periods—such as daily life in a medieval village or the harsh realities of a WW1 trench—ensuring a secure cultural and chronological grounding prior to high-level analysis.</p>
             </div>
         </div>
@@ -286,14 +287,13 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                         <thead>
                             <tr>
                                 <th style="width: 25%">Lesson Number & Title</th>
-                                <th style="width: 25%">Learning Objectives</th>
-                                <th style="width: 15%">Disciplinary Focus</th>
-                                <th style="width: 35%">Core Assessment & Tasks</th>
+                                <th style="width: 30%">Learning Objectives</th>
+                                <th style="width: 45%">Core Assessment & Tasks</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="4" style="text-align: center; font-style: italic; color: #64748b; font-size: 14pt; padding: 20px;">Unit in Development – Content TBC</td>
+                                <td colspan="3" style="text-align: center; font-style: italic; color: #64748b; font-size: 14pt; padding: 20px;">Unit in Development – Content TBC</td>
                             </tr>
                         </tbody>
                     </table>
@@ -304,9 +304,8 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                         <thead>
                             <tr>
                                 <th style="width: 25%">Lesson Number & Title</th>
-                                <th style="width: 25%">Learning Objectives</th>
-                                <th style="width: 15%">Disciplinary Focus</th>
-                                <th style="width: 35%">Core Assessment & Tasks</th>
+                                <th style="width: 30%">Learning Objectives</th>
+                                <th style="width: 45%">Core Assessment & Tasks</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -532,9 +531,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                                 ${objsHTML}
                                 ${hinge ? `<span class="hinge-question">Hinge Q: ${hinge}</span>` : ''}
                             </td>
-                            <td>
-                                <strong>${discFocus}</strong>
-                            </td>
+                            
                             <td>
                                 ${tasksHTML}
                             </td>
@@ -623,7 +620,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
     displayHeaderFooter: true,
     headerTemplate: '<div></div>',
     footerTemplate:
-      '<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross History Hub - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+      '<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross School History Department - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
     margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
   });
   console.log('✅ Success! Overview PDF saved to: ' + overviewPdfPath);
@@ -646,7 +643,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
         printBackground: true,
         displayHeaderFooter: true,
         headerTemplate: '<div></div>',
-        footerTemplate: `<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross History Hub - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
+        footerTemplate: `<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross School History Department - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
         margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
       });
       console.log(`✅ Success! ${yearGroup} Scheme of Work PDF saved to: ` + pdfPath);

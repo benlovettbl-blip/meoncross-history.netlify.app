@@ -383,14 +383,14 @@ allDirs.forEach((unitId) => {
       });
     }
 
-    let imageToUse = period.image || unitData.cover_image;
+    let imageToUse = period.image || unitData.cover_image || unitData.homepage_background || unitData.banner;
     let heroImgSrc = imageToUse
       ? typeof resolveAssetPath === 'function'
         ? resolveAssetPath(imageToUse, 2)
         : `../..${imageToUse.startsWith('/') ? imageToUse : '/' + imageToUse}`
       : '';
     let heroHtml = heroImgSrc
-      ? `<img src="${heroImgSrc}" style="max-height: 45vh; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">`
+      ? `<img src="${heroImgSrc}" style="max-height: 40vh; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">`
       : '';
     if (unitId === 'early_modern_world') {
       heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
@@ -407,7 +407,7 @@ allDirs.forEach((unitId) => {
     }
 
     html += `
-    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; height: 80vh; box-sizing: border-box; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
+    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; height: 95vh; box-sizing: border-box; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
       ${heroHtml}
       
       <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box;">
@@ -415,9 +415,16 @@ allDirs.forEach((unitId) => {
       </div>
       
       <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
-        <h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 38pt; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">${periodTitle}</h1>
-
-        ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">${unitData.title}</h2>` : '<div style="margin-bottom: 15px;"></div>'}
+        ${(function() {
+          const finalCoverTitle = (unitData.enquiry || unitData.enquiry_question) ? (unitData.enquiry || unitData.enquiry_question) : (periodTitle === 'Complete Unit' ? unitData.title : periodTitle);
+          const titleFontSize = finalCoverTitle.length > 50 ? '28pt' : (finalCoverTitle.length > 35 ? '34pt' : '38pt');
+          return `<h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: ${titleFontSize}; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">
+            ${finalCoverTitle}
+          </h1>`;
+        })()}
+        <h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">
+          ${unitData.title} ${(periodTitle && periodTitle !== 'Complete Unit' && periodTitle !== unitData.title) ? ` - ${periodTitle}` : ''}
+        </h2>
         
         
         
@@ -434,7 +441,7 @@ allDirs.forEach((unitId) => {
       </div>
     </div>`;
     html += `
-    <div style="page-break-after: always; page-break-inside: avoid; display: flex; flex-direction: column; max-height: 95vh; overflow: hidden;">
+    <div style="page-break-after: always; page-break-inside: avoid; display: flex; flex-direction: column; height: 95vh; overflow: hidden;">
       <h2 style="margin: 0; color: #1e3a8a; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">PROGRESS & ASSESSMENT TRACKER <span style="float: right; font-size: 0.8em; font-weight: normal; color: #333;">Target Grade: _________</span></h2>
       
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; margin-bottom: 8px;">
@@ -461,8 +468,8 @@ allDirs.forEach((unitId) => {
         </tbody>
       </table>
 
-      <div style="width: 100%; display: flex; justify-content: center;">
-        <table style="page-break-inside: avoid; width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 8px;">
+      <div style="width: 100%; display: flex; justify-content: center; flex: 1; min-height: 0; overflow: hidden;">
+        <table style="page-break-inside: avoid; width: 100%; height: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 8px;">
           <thead>
             <tr style="background-color: #1a237e; color: white;">
               <th style="border: 1px solid #333; padding: 4px 6px; width: 35%;">Lesson / Assessment Title</th>
@@ -1655,36 +1662,6 @@ allDirs.forEach((unitId) => {
           html += `</div>`;
         }
       }
-      // Inject General Notes Box
-      html += `
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    `;
-      for (let i = 0; i < 12; i++) {
-        html += `<div class="task-lines-large"></div>`;
-      }
-      html += `</div>`;
-
-      // Inject Discreet Grading Footer for the Lesson (KS3 ONLY)
-      const isGCSEUnit = ['weimar_nazi_germany', 'cme_new', 'edexcel_medicine', 'eee'].includes(
-        unitId,
-      );
-      if (!isGCSEUnit) {
-        html += `
-        <div style="margin-top: 10px;"></div>
-        <div class="grading-footer">
-          <div class="grading-boxes">
-            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
-            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
-            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
-            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
-            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
-          </div>
-          <div>Teacher Comment: <span class="teacher-comment"></span></div>
-        </div>
-      `;
-      }
-
       // GCSE Task
       let hasExamTask =
         lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
@@ -2243,10 +2220,117 @@ allDirs.forEach((unitId) => {
       flatQuestions.sort((a, b) => a.qNum - b.qNum);
       flatQuestions.forEach((q) => (html += q.html));
 
+      // --- PUPIL VOICE (ROTATING DEBRIEF) ---
+      const debriefQuestions = [
+        "How did the events of today's lesson make you feel, and why?",
+        "Which part of today's lesson did you find the most difficult or confusing, and what did you do to overcome it?",
+        "If you were teaching this lesson to Year 6, what is the ONE most important thing you would make sure they remembered?",
+        "What is one question about today's topic that we didn't answer, that you'd like to research further?",
+        "Summarise today's lesson in exactly three words.",
+        "If you could interview one historical person from today's lesson, who would it be and what would you ask them?",
+        "How does what we learned today connect to anything else you've learned in history before?"
+      ];
+      
+      const q = debriefQuestions[lessonIndex % debriefQuestions.length];
+      
+      html += `<div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
+        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+        </h4>
+        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+          ${q}
+        </div>
+        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+      </div>`;
+      // --- END PUPIL VOICE ---
+
+      // Inject General Notes Box
+      html += `
+      <div style="page-break-before: always; margin-top: 20px;">
+        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+    `;
+      for (let i = 0; i < 18; i++) {
+        html += `<div class="task-lines-large"></div>`;
+      }
+      html += `</div>`;
+
+      // Inject Discreet Grading Footer for the Lesson (KS3 ONLY)
+      const isGCSEUnit = ['weimar_nazi_germany', 'cme_new', 'edexcel_medicine', 'eee'].includes(
+        unitId,
+      );
+      if (!isGCSEUnit) {
+        html += `
+        <div style="margin-top: 10px;"></div>
+        <div class="grading-footer">
+          <div class="grading-boxes">
+            <label class="grade-box"><input type="checkbox"> Emerging (1-2)</label>
+            <label class="grade-box"><input type="checkbox"> Emerging+ (3)</label>
+            <label class="grade-box"><input type="checkbox"> Expected (4-5)</label>
+            <label class="grade-box"><input type="checkbox"> Expected+ (6-7)</label>
+            <label class="grade-box"><input type="checkbox"> Greater Depth (8-9)</label>
+          </div>
+          <div>Teacher Comment: <span class="teacher-comment"></span></div>
+        </div>
+      `;
+      }
+
+
       if (allVideos.length > 0) {
         appendixData.push({ title: lesson.title, videos: allVideos });
       }
     });
+
+    // --- PUPIL VOICE (END OF UNIT CAPSTONE) ---
+    // Generate the holistic pupil voice page at the very end of the booklet
+    if (unitId !== 'v2-app' && periodLessons.length > 0) {
+      html += `<div style="page-break-before: always; padding: 20px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+          <h2 style="font-family: 'Playfair Display', serif; color: #1b365d; font-size: 24pt; margin: 0; border-bottom: 3px solid #facc15; display: inline-block; padding-bottom: 5px;">End of Unit: Pupil Voice</h2>
+          <p style="color: #475569; font-size: 11pt; margin-top: 10px;">Your feedback helps us improve. Take a moment to reflect on everything you've learned in this booklet.</p>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <strong style="font-size: 11pt; color: #0f172a;">1. Which specific lesson or topic did you enjoy the most this term, and why?</strong>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 22px; margin-top: 10px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 22px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 22px;"></div>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <strong style="font-size: 11pt; color: #0f172a;">2. Which historical figure or event did you find the most shocking or surprising?</strong>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 22px; margin-top: 10px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 22px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 22px;"></div>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <strong style="font-size: 11pt; color: #0f172a;">3. What is one topic from this booklet you wish we had spent more time on?</strong>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 22px; margin-top: 10px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 22px;"></div>
+        </div>
+
+        <div style="margin-bottom: 30px; background-color: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+          <strong style="font-size: 11pt; color: #0f172a; display: block; margin-bottom: 15px; text-align: center;">4. On a scale of 1-10, how confident do you feel about the knowledge in this booklet?</strong>
+          <div style="display: flex; justify-content: space-between; padding: 0 20px;">
+            <span style="font-weight: bold; color: #ef4444;">1<br><span style="font-size: 8pt; font-weight: normal; color: #64748b;">Not at all</span></span>
+            <span>2</span><span>3</span><span>4</span><span>5</span>
+            <span style="font-weight: bold; color: #eab308;">6<br><span style="font-size: 8pt; font-weight: normal; color: #64748b;">Okay</span></span>
+            <span>7</span><span>8</span><span>9</span>
+            <span style="font-weight: bold; color: #22c55e;">10<br><span style="font-size: 8pt; font-weight: normal; color: #64748b;">Very confident</span></span>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <strong style="font-size: 11pt; color: #0f172a;">5. Visual Reflection:</strong>
+          <p style="margin: 5px 0 10px 0; font-size: 9.5pt; color: #475569;">In the box below, draw an image or symbol that comes to mind when you think about this unit of study.</p>
+          <div style="width: 100%; height: 250px; border: 2px dashed #94a3b8; border-radius: 8px;"></div>
+        </div>
+
+      </div>`;
+    }
+    // --- END PUPIL VOICE CAPSTONE ---
 
     if (unitId === 'cme_new') {
       let allExamTasksHtml = '';

@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "sync": "node scripts/ai_heal_headings.cjs && node scripts/extract_units.cjs && node scripts/build_database.cjs && node scripts/verify_asset_paths.cjs && node scripts/generate_all_quiz_packs.cjs && node scripts/generate_pupil_workbooks.cjs && node scripts/generate_mastery_packs.cjs && node scripts/compress_images.cjs && npm run export:pdf",
+    "sync": "node scripts/ai_heal_headings.cjs && node scripts/extract_units.cjs && node scripts/build_database.cjs && node scripts/verify_asset_paths.cjs && node scripts/generate_all_quiz_packs.cjs && node scripts/generate_pupil_workbooks.cjs && node scripts/generate_mastery_packs.cjs && node scripts/compress_images.cjs && node scripts/generate_source_peel_metadata.cjs && npm run export:pdf",
     "build-unit": "node scripts/build_unit.js",
     "create-unit": "node scripts/create_unit.js",
     "test:content": "node scripts/test_content.mjs",
