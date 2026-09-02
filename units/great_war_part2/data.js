@@ -37,6 +37,18 @@ export default {
     {
       id: 'lesson_1',
       title: 'Why were young men so desperate to join the slaughter of 1914?',
+      learning_objectives: [
+        "Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire",
+        "Explain why trench warfare on the Western Front created a devastating stalemate",
+        "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict"
+      ],
+      vocabulary: [
+        { term: "Propaganda", definition: "Government-produced material designed to shape public opinion, recruit soldiers, and maintain morale." },
+        { term: "Empire", definition: "The British Empire — soldiers from across its colonies fought on the Western Front." },
+        { term: "Alliance", definition: "A formal agreement between nations to support each other in war." },
+        { term: "Stalemate", definition: "A situation where neither side can win or make progress — the defining feature of trench warfare." },
+        { term: "Trench warfare", definition: "A type of fighting from fortified ditches (trenches) that dominated the Western Front from 1914 to 1918." }
+      ],
       teacher_notes: {
         primer:
           "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
@@ -372,6 +384,11 @@ export default {
     {
       id: 'lesson_2',
       title: 'Did British generals make the horror of trench warfare worse?',
+      learning_objectives: [
+        "Describe the key features of trench warfare and explain why it caused such devastating casualties",
+        "Explain the debate around British military leadership: were generals incompetent or facing impossible circumstances?",
+        "Evaluate the significance of propaganda in shaping public perception of the war effort"
+      ],
       teacher_notes: {
         primer:
           'Explore the grim reality of trench warfare and the controversial leadership of generals like Haig.',
@@ -703,6 +720,18 @@ export default {
     {
       id: 'lesson_3',
       title: "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+      learning_objectives: [
+        "Describe the contribution of soldiers from across the British Empire, including troops from India, Africa, and the Caribbean",
+        "Explain why the contributions of imperial and colonial troops were marginalised in traditional British narratives of the war",
+        "Evaluate the significance of protest and resistance movements that emerged from colonial soldiers' wartime experiences"
+      ],
+      vocabulary: [
+        { term: "Empire", definition: "Soldiers from India, Africa, the Caribbean, and other colonies fought for Britain — their sacrifice was often forgotten." },
+        { term: "Protest", definition: "Actions taken to object to unfair treatment — colonial soldiers protested discrimination during and after the war." },
+        { term: "Resistance", definition: "Opposing unjust treatment — many colonial soldiers resisted the erasure of their wartime contributions." },
+        { term: "Marginalisation", definition: "The process of treating a group as insignificant or secondary — imperial troops were marginalised in war narratives." },
+        { term: "Commemoration", definition: "The act of remembering and honouring those who served — war memorials often excluded non-white soldiers." }
+      ],
       teacher_notes: {
         primer:
           'Humanize the contributions and sacrifices of non-white troops from the British Empire, exploring racial barriers.',
@@ -1001,6 +1030,19 @@ export default {
     {
       id: 'lesson_4',
       title: 'How did a war fought miles away completely control daily life in Britain?',
+      learning_objectives: [
+        "Describe the key features of the Home Front, including rationing, propaganda, and the role of women in industry",
+        "Explain how the war expanded the power of Parliament and challenged traditional ideas about democracy and gender",
+        "Evaluate the significance of the war as a catalyst for social and political change in Britain"
+      ],
+      vocabulary: [
+        { term: "Home Front", definition: "The civilian population and activities within a country at war, as opposed to the military front." },
+        { term: "Democracy", definition: "Government by the people — the war accelerated the expansion of voting rights, including for women." },
+        { term: "Parliament", definition: "The law-making body that passed wartime legislation like DORA (Defence of the Realm Act)." },
+        { term: "Propaganda", definition: "Material used to maintain civilian morale, encourage rationing, and recruit workers." },
+        { term: "Suffrage", definition: "The right to vote — women's war work helped secure partial female suffrage in 1918." },
+        { term: "Change", definition: "The war caused fundamental social and political change in Britain, challenging old class and gender structures." }
+      ],
       teacher_notes: {
         primer:
           "Examine how the concept of 'Total War' completely transformed the British home front, focusing on government control, conscription, and the complex, often temporary, shifts in women's social status.",
@@ -1277,6 +1319,18 @@ export default {
         'Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?',
       enquiry:
         'Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?',
+      learning_objectives: [
+        "Describe the key terms of the Treaty of Versailles and the competing aims of the Allied powers",
+        "Explain why the treaty created new tensions through trade restrictions, territorial changes, and the War Guilt Clause",
+        "Evaluate whether the Treaty of Versailles represented genuine change or simply planted the seeds for future conflict"
+      ],
+      vocabulary: [
+        { term: "Treaty of Versailles", definition: "The peace treaty signed in 1919 that officially ended the Great War and imposed harsh terms on Germany." },
+        { term: "Reparations", definition: "Financial compensation demanded from Germany for the damage caused during the war." },
+        { term: "War Guilt Clause", definition: "Article 231 of the Treaty, which forced Germany to accept full responsibility for causing the war." },
+        { term: "Continuity", definition: "When aspects of a situation remain the same — did the treaty solve the problems of 1914 or preserve them?" },
+        { term: "Revolution", definition: "Dramatic political upheaval — the war triggered revolutions in Russia (1917) and Germany (1918)." }
+      ],
       teacher_notes: {
         primer:
           'This lesson evaluates the conclusion of the First World War and introduces students to high-level historiographical debate regarding the Treaty of Versailles, shifting from basic source utility to complex interpretation analysis.',
@@ -1523,6 +1577,18 @@ export default {
       id: 'lesson_6',
       title: 'How did the "Lost Generation" impact the village of Stubbington?',
       enquiry: 'How did the "Lost Generation" impact the village of Stubbington?',
+      learning_objectives: [
+        "Describe the local impact of the Great War on communities like Stubbington, using evidence from war memorials and Church records",
+        "Explain the significance of the concept of the 'Lost Generation' for understanding the war's long-term social consequences",
+        "Evaluate primary sources (war memorials, photographs, local records) to construct a historically grounded account of local impact"
+      ],
+      vocabulary: [
+        { term: "Significance", definition: "The importance of an event — understanding why the 'Lost Generation' matters for local and national history." },
+        { term: "Commemoration", definition: "How we remember and honour those who died — through war memorials, Remembrance Day, and local records." },
+        { term: "Primary source", definition: "A document, photograph, or object created at the time of the event being studied." },
+        { term: "Lost Generation", definition: "The millions of young men killed in the Great War, leaving a devastating gap in communities across Britain." },
+        { term: "War memorial", definition: "A monument dedicated to the memory of those who died in war — Stubbington's memorial lists local men who were killed." }
+      ],
       teacher_notes: {
         primer:
           'This lesson concludes the unit by scaling down the macro-statistics of the Great War into a localized micro-history, focusing on the Stubbington War Memorial and the tragic loss of the Lowry brothers. This fosters historical empathy and helps students grasp the profound demographic and emotional toll of the conflict.',
@@ -1788,6 +1854,18 @@ export default {
       primer:
         'This formal assessment bridges Key Stage 3 historical skills with early GCSE demands, testing chronological recall, source utility evaluation, and historical judgement.',
       vocab: [],
+      learning_objectives: [
+        "Synthesise knowledge of trench warfare, the Home Front, imperial contributions, propaganda, and the Treaty of Versailles",
+        "Construct a sustained argument using specific evidence about the causes, course, and consequences of the Great War",
+        "Evaluate historical interpretations of the war, including the 'Lions led by Donkeys' debate"
+      ],
+      vocabulary: [
+        { term: "Synthesis", definition: "Combining knowledge from across the whole unit to construct a complete argument." },
+        { term: "Interpretation", definition: "How historians explain events differently — e.g., the 'Lions led by Donkeys' debate about General Haig." },
+        { term: "Evidence", definition: "Specific historical facts and examples used to support an argument." },
+        { term: "Evaluation", definition: "Making a judgement about the value, importance, or accuracy of historical evidence or interpretations." },
+        { term: "Propaganda", definition: "Biased information used to promote a cause — a key concept running through the entire Great War unit." }
+      ],
       do_now: {
         type: 'grid',
         tasks: [

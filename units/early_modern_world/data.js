@@ -13,6 +13,13 @@ const early_modern_world = {
     {
       lesson_index: 0,
       book_title: 'Lesson 1: Who held global power in 1450?',
+      vocabulary: [
+        { term: 'Empire', definition: 'A large political unit controlling many territories — in 1450, the Ottoman, Ming, and Songhai empires were dominant.' },
+        { term: 'Trade', definition: 'The exchange of goods — the Silk Roads and Indian Ocean trade networks connected civilisations.' },
+        { term: 'Imperialism', definition: 'The policy of extending power through conquest, colonisation, or economic exploitation.' },
+        { term: 'Power', definition: 'Who held political, economic, and military power in the world of 1450?' },
+        { term: 'Civilisation', definition: 'A complex society with advanced cultural, political, and economic systems.' }
+      ],
       author: 'Text Type: Stone Inscription (Admiral Zheng He, 1431)',
       cover_image: '/images/zheng_he.gif',
       author_context:
@@ -84,6 +91,13 @@ const early_modern_world = {
     {
       lesson_index: 2,
       book_title: 'Lesson 3: Trade or takeover: How did early encounters turn into empire?',
+      vocabulary: [
+        { term: 'Colonisation', definition: 'The process of establishing control over foreign territories and their peoples.' },
+        { term: 'Trade', definition: 'Early European encounters often began as trade but evolved into full-scale imperial conquest.' },
+        { term: 'Empire', definition: 'European powers like Spain, Portugal, and England built global empires from the 1500s.' },
+        { term: 'Causation', definition: 'Understanding why European exploration led to colonisation and empire-building.' },
+        { term: 'Propaganda', definition: 'European accounts of \'discovery\' were often propaganda justifying the seizure of other peoples\' lands.' }
+      ],
       author: 'Text Type: Scientific Report (Thomas Hariot, 1588)',
       cover_image: '/images/secoton.jpg',
       author_context:
@@ -119,6 +133,11 @@ const early_modern_world = {
       lesson_index: 3,
       book_title:
         'Lesson 4: James I and the Gunpowder Plot: Why was religious division so volatile?',
+        learning_objectives: [
+          'Describe the key features of the Gunpowder Plot (1605) and explain why religious division was so volatile under James I',
+          'Explain the significance of the clash between Catholicism and Protestantism for the stability of the English monarchy',
+          'Evaluate whether the Gunpowder Plot was a genuine Catholic conspiracy or a government provocation'
+        ],
       author: 'Text Type: Anonymous Warning Letter (26 October 1605)',
       cover_image: '/images/gunpowder.jpg',
       author_context:
@@ -153,6 +172,13 @@ const early_modern_world = {
     {
       lesson_index: 4,
       book_title: 'Lesson 5: Who controlled Britain? The Ideological Battle',
+      vocabulary: [
+        { term: 'Power', definition: 'The central question: who should hold supreme power — the monarchy or Parliament?' },
+        { term: 'Monarchy', definition: 'Rule by a king or queen — the Stuarts believed in the Divine Right of Kings.' },
+        { term: 'Parliament', definition: 'The assembly of elected representatives that challenged the king\'s absolute authority.' },
+        { term: 'Civil War', definition: 'An armed conflict between opposing groups within the same country — England\'s Civil War (1642-1651).' },
+        { term: 'Democracy', definition: 'Government by the people — the Civil War raised radical questions about who should have political power.' }
+      ],
       author: 'Text Type: Royal Speech (King James I, 1610)',
       cover_image: '/images/james_i.jpg',
       author_context:
@@ -222,6 +248,13 @@ const early_modern_world = {
     {
       lesson_index: 6,
       book_title: 'Lesson 7: What were the mechanics of the Transatlantic Slave Trade?',
+      vocabulary: [
+        { term: 'Transatlantic Slave Trade', definition: 'The forced transportation of millions of Africans to the Americas to work as enslaved labourers.' },
+        { term: 'Slavery', definition: 'The ownership of human beings as property — a moral catastrophe at the heart of early modern trade.' },
+        { term: 'Trade', definition: 'The \'Triangular Trade\' connected Europe, Africa, and the Americas in a brutal economic system.' },
+        { term: 'Middle Passage', definition: 'The horrific sea journey across the Atlantic endured by enslaved Africans in appalling conditions.' },
+        { term: 'Profit', definition: 'The slave trade was driven by the desire for profit — human suffering was treated as a business.' }
+      ],
       author: 'Text Type: Autobiography (Olaudah Equiano, 1789)',
       cover_image: '/images/brookes.jpg',
       author_context:
@@ -257,6 +290,13 @@ const early_modern_world = {
     {
       lesson_index: 7,
       book_title: 'Lesson 8: How did enslaved Africans resist the Transatlantic Slave Trade?',
+      vocabulary: [
+        { term: 'Resistance', definition: 'Enslaved Africans resisted their captivity through rebellion, escape, cultural preservation, and sabotage.' },
+        { term: 'Abolition', definition: 'The movement to end the slave trade and slavery — achieved in the British Empire in 1807/1833.' },
+        { term: 'Propaganda', definition: 'Abolitionists used powerful propaganda (images, pamphlets, testimonies) to turn public opinion against slavery.' },
+        { term: 'Significance', definition: 'The abolition movement is significant as one of the first successful human rights campaigns.' },
+        { term: 'Agency', definition: 'The ability to act independently — enslaved people showed agency through their resistance.' }
+      ],
       author: "Text Type: Ship Captain's Account (William Snelgrave, 1734)",
       cover_image: '/images/cape_coast.jpg',
       author_context:
@@ -292,6 +332,18 @@ const early_modern_world = {
     {
       lesson_index: 8,
       book_title: "Lesson 9: How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+      learning_objectives: [
+        'Synthesise knowledge of trade, empire, slavery, revolution, and power across the Early Modern period',
+        'Construct a sustained argument evaluating how far Britain had become a \'modern\' nation by 1750',
+        'Deploy specific evidence about the monarchy, Parliament, church, and colonisation to support a historical judgement'
+      ],
+      vocabulary: [
+        { term: 'Synthesis', definition: 'Bringing together knowledge from across the entire unit to form an overall judgement.' },
+        { term: 'Power', definition: 'By 1750, power had shifted dramatically from the monarchy to Parliament.' },
+        { term: 'Empire', definition: 'Britain had become a major global empire through trade, colonisation, and the slave trade.' },
+        { term: 'Revolution', definition: 'Political, religious, and economic revolutions transformed Britain between 1450 and 1750.' },
+        { term: 'Change', definition: 'The central question: how much had Britain really changed by 1750?' }
+      ],
       author: 'Text Type: Travel Book / Journal (Daniel Defoe, 1724–1727)',
       cover_image: '/images/industry_idleness.png',
       author_context:

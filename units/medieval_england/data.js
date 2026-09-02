@@ -6,6 +6,18 @@ export const unitData = {
   "lessons": [
     {
       "title": "Lesson 1: 1066 - Why did three men claim one throne, and how did William win?",
+      "learning_objectives": [
+        "Describe the three rival claims to the English throne in 1066 and assess which was strongest",
+        "Explain how the Battle of Hastings demonstrated the role of power, luck, and military strategy in shaping history",
+        "Evaluate the significance of the Norman Conquest as a turning point in English history"
+      ],
+      "vocabulary": [
+        { "term": "Power", "definition": "The ability to control people, events, or resources — a central theme of medieval history." },
+        { "term": "Claim", "definition": "A demand for the right to rule, based on blood ties, promises, or military strength." },
+        { "term": "Conquest", "definition": "The act of taking control of a country or territory by military force." },
+        { "term": "Anglo-Saxon", "definition": "The Germanic peoples who settled in England from the 5th century and ruled until the Norman Conquest of 1066." },
+        { "term": "Significance", "definition": "The importance of a historical event — why it mattered at the time and why it still matters today." }
+      ],
       "banner": "/images/battle_of_hastings_bayeux.jpg",
       "narrative_blocks": [
         {
@@ -417,6 +429,18 @@ export const unitData = {
     },
     {
       "title": "Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?",
+      "learning_objectives": [
+        "Explain how William used castles, the feudal system, and terror as tools of power and control",
+        "Describe how the Domesday Book functioned as a mechanism of royal authority and resistance suppression",
+        "Assess the effectiveness of William's methods in crushing Anglo-Saxon resistance"
+      ],
+      "vocabulary": [
+        { "term": "Feudal system", "definition": "The medieval social hierarchy where the king granted land to lords in exchange for military service, who in turn controlled peasants." },
+        { "term": "Resistance", "definition": "Actions taken to oppose or fight against those in power." },
+        { "term": "Propaganda", "definition": "Information (often biased or misleading) used to promote a political cause or point of view." },
+        { "term": "Domesday Book", "definition": "A comprehensive survey of England ordered by William I in 1086 to record who owned what land and its value." },
+        { "term": "Motte-and-bailey", "definition": "An early type of Norman castle with a raised mound (motte) topped by a wooden tower and an enclosed courtyard (bailey)." }
+      ],
       "banner": "/images/portchester_seawards.jpg",
       "teacher_notes": {
         "primer": "This lesson focuses on the brutal methods William the Conqueror used to secure his control over a hostile England following his victory at Hastings. Students will explore military control through castles, psychological and physical devastation in the Harrying of the North, and administrative dominance via the Domesday Book.",
@@ -856,6 +880,18 @@ export const unitData = {
     },
     {
       "title": "Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?",
+      "learning_objectives": [
+        "Explain why the relationship between the monarchy and the Church was a fundamental struggle for power in medieval England",
+        "Describe how the murder of Thomas Becket (1170) demonstrated the tension between feudal loyalty and religious authority",
+        "Evaluate the significance of the Becket affair for the balance of power between Church and Crown"
+      ],
+      "vocabulary": [
+        { "term": "Church", "definition": "The Catholic Church — the most powerful religious institution in medieval Europe, led by the Pope in Rome." },
+        { "term": "Monarchy", "definition": "Rule by a king or queen. In medieval England, the monarch claimed authority from God (Divine Right)." },
+        { "term": "Martyr", "definition": "A person who is killed because of their religious beliefs, often becoming a powerful symbol." },
+        { "term": "Excommunication", "definition": "Being expelled from the Catholic Church — the most severe spiritual punishment in the medieval world." },
+        { "term": "Canon law", "definition": "The system of laws and regulations made by the Church, which often clashed with the king's secular laws." }
+      ],
       "banner": "/images/becket_murder.jpg",
       "teacher_notes": {
         "primer": "This lesson focuses on the dramatic conflict between King Henry II and his former friend Archbishop Thomas Becket over legal jurisdiction and church independence, culminating in Becket's shocking murder.",
@@ -1223,6 +1259,18 @@ export const unitData = {
     },
     {
       "title": "Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?",
+      "learning_objectives": [
+        "Describe the key grievances that led the barons to challenge King John's power",
+        "Explain the significance of Magna Carta as a challenge to absolute monarchy and a step towards parliamentary democracy",
+        "Evaluate contrasting historical interpretations of Magna Carta: triumph of liberty or selfish baronial power grab?"
+      ],
+      "vocabulary": [
+        { "term": "Magna Carta", "definition": "The 'Great Charter' of 1215, forced upon King John by his barons, limiting royal power and establishing legal rights." },
+        { "term": "Democracy", "definition": "A system of government where power is held by the people, usually through elected representatives." },
+        { "term": "Parliament", "definition": "An assembly of representatives that gradually gained the power to make laws and hold the monarch to account." },
+        { "term": "Interpretation", "definition": "A particular way of explaining or understanding a historical event — historians often disagree in their interpretations." },
+        { "term": "Baron", "definition": "A powerful nobleman who held land from the king under the feudal system and owed military service in return." }
+      ],
       "banner": "/images/king_john_matthew_paris.jpg",
       "teacher_notes": {
         "primer": "This lesson focuses on the reign of King John, examining the cascading failures that led to the Barons' rebellion and the sealing of Magna Carta, while challenging pupils to evaluate its immediate reality versus its long-term mythological legacy.",
@@ -1615,6 +1663,18 @@ export const unitData = {
     },
     {
       "title": "Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?",
+      "learning_objectives": [
+        "Describe the key features of daily life for the peasantry in a medieval village",
+        "Explain how the feudal system and the Church controlled virtually every aspect of a peasant's existence",
+        "Assess the extent to which medieval peasants had any real power or agency within the feudal hierarchy"
+      ],
+      "vocabulary": [
+        { "term": "Peasantry", "definition": "The class of poor agricultural labourers who worked the land under the feudal system." },
+        { "term": "Tithe", "definition": "A tax of one-tenth of a person's produce or income, paid to the Church." },
+        { "term": "Feudalism", "definition": "The dominant social system in medieval Europe, based on land ownership, loyalty, and obligation." },
+        { "term": "Serf", "definition": "A peasant who was legally tied to the land they worked and could not leave without their lord's permission." },
+        { "term": "Strip farming", "definition": "The medieval agricultural system where peasants farmed narrow strips of land scattered across open fields." }
+      ],
       "banner": "/images/doom_painting.jpg",
       "teacher_notes": {
         "primer": "This lesson immerses students in the daily life of a medieval peasant, shifting the focus from political to social history. It emphasizes the cyclical nature of agricultural work, the oppressive taxation of the feudal system, and the psychological control exerted by the Catholic Church through concepts like Doom Paintings and Purgatory. This provides crucial context for understanding the Peasants' Revolt in the following lessons.",
@@ -1951,6 +2011,18 @@ export const unitData = {
     },
     {
       "title": "Lesson 6: 1348: How did the Black Death shatter medieval social order?",
+      "learning_objectives": [
+        "Describe the causes and spread of the Black Death across medieval England",
+        "Explain how the plague shattered the feudal system by empowering the peasantry through labour shortages",
+        "Evaluate the significance of the Black Death as a catalyst for change in medieval social order"
+      ],
+      "vocabulary": [
+        { "term": "Black Death", "definition": "The devastating plague pandemic of 1348-1350 that killed approximately one-third of England's population." },
+        { "term": "Change", "definition": "A fundamental shift in how things work — the Black Death caused dramatic change to medieval society." },
+        { "term": "Labour shortage", "definition": "A situation where there are not enough workers available, which gives remaining workers bargaining power." },
+        { "term": "Statute of Labourers", "definition": "A law passed in 1351 attempting to fix wages at pre-plague levels and prevent peasants from demanding higher pay." },
+        { "term": "Social order", "definition": "The hierarchical structure of society — in medieval England, this was the feudal pyramid of King, Lords, and Peasants." }
+      ],
       "banner": "/images/plague_burial.jpg",
       "teacher_notes": {
         "primer": "This lesson explains how the devastating biological shock of the Black Death fundamentally shattered the rigid feudal hierarchy by changing the economic balance of power between lords and peasants.",
@@ -2312,6 +2384,18 @@ export const unitData = {
     },
     {
       "title": "Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?",
+      "learning_objectives": [
+        "Explain the causes of the Peasants' Revolt, linking them to the decline of feudalism and growing resistance to royal power",
+        "Describe the key events of the revolt and the role of leaders like Wat Tyler",
+        "Evaluate whether the Peasants' Revolt was a failure or a significant step towards challenging the power of the monarchy and Parliament"
+      ],
+      "vocabulary": [
+        { "term": "Revolt", "definition": "An organised uprising against those in power, driven by grievance and a desire for change." },
+        { "term": "Poll tax", "definition": "A flat-rate tax charged on every adult, regardless of wealth — widely seen as deeply unfair to the peasantry." },
+        { "term": "Resistance", "definition": "Actions taken to oppose or challenge authority — the Peasants' Revolt was a dramatic act of resistance." },
+        { "term": "Wat Tyler", "definition": "The leader of the Peasants' Revolt of 1381, killed during negotiations with King Richard II." },
+        { "term": "Villeinage", "definition": "The condition of being a villein (serf) — tied to the land with obligations to a feudal lord." }
+      ],
       "banner": "/images/sudbury_execution.jpg",
       "teacher_notes": {
         "primer": "This lesson explores the explosive climax of decades of social tension following the Black Death. It examines the short and long-term causes of the 1381 Peasants' Revolt, the shocking breach of royal security in London, and the ambiguous legacy of the uprising.",
@@ -2673,6 +2757,18 @@ export const unitData = {
     },
     {
       "title": "Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?",
+      "learning_objectives": [
+        "Describe the causes of the Wars of the Roses and how rival claims to the monarchy led to civil war",
+        "Explain how propaganda and political manipulation shaped the conflict between York and Lancaster",
+        "Evaluate the significance of Henry VII's victory at Bosworth as the end of the medieval era and the birth of Tudor power"
+      ],
+      "vocabulary": [
+        { "term": "Monarchy", "definition": "Rule by a king or queen — the Wars of the Roses were a violent struggle between rival claimants to the English monarchy." },
+        { "term": "Dynasty", "definition": "A series of rulers from the same family, such as the Plantagenets, Yorkists, and Tudors." },
+        { "term": "Propaganda", "definition": "The use of biased information to shape public opinion — Tudor propaganda deliberately blackened Richard III's reputation." },
+        { "term": "Usurper", "definition": "A person who seizes power illegally or by force, without a legitimate claim." },
+        { "term": "Significance", "definition": "Why an event mattered — the Battle of Bosworth (1485) is significant because it ended the medieval era." }
+      ],
       "banner": "/images/bosworth_battle.jpg",
       "teacher_notes": {
         "primer": "This lesson closes the 100-year gap between the Peasants' Revolt and the Tudor period. It explores the chaotic 30-year civil war between the Houses of Lancaster and York, the mystery of the Princes in the Tower, and the climactic Battle of Bosworth where Henry Tudor seized the throne.",
@@ -2996,6 +3092,18 @@ export const unitData = {
     },
     {
       "title": "Lesson 9: Assessment: How powerful was a medieval monarch?",
+      "learning_objectives": [
+        "Synthesise knowledge of power, monarchy, feudalism, and the Church across the medieval period",
+        "Construct a sustained argument evaluating how far a medieval monarch's power was limited by resistance from barons, the Church, and the peasantry",
+        "Deploy specific historical evidence to support a judgement about the nature of medieval power"
+      ],
+      "vocabulary": [
+        { "term": "Synthesis", "definition": "Bringing together knowledge from across a whole unit to form an overall judgement." },
+        { "term": "Power", "definition": "The ability to control others — the central theme of this entire medieval unit." },
+        { "term": "Feudalism", "definition": "The social system based on land, loyalty, and obligation that defined medieval English society." },
+        { "term": "Evidence", "definition": "Historical facts, sources, or examples used to support an argument or judgement." },
+        { "term": "Judgement", "definition": "A considered conclusion reached after weighing up different pieces of evidence." }
+      ],
       "banner": "/images/domesday_book.jpg",
       "teacher_notes": {
         "primer": "This is a capstone assessment lesson. Rather than regurgitating previous narratives, it tests students' ability to synthesize knowledge from the entire unit. The lesson involves chronological retrieval practice, evaluation of differing historical interpretations, and scaffolding for a 12-mark essay.",

@@ -68,6 +68,13 @@ const industrialisation_and_empire = {
       id: 'lesson_1',
       title:
         'What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?',
+        vocabulary: [
+          { term: 'Industrial Revolution', definition: 'The rapid development of industry through the introduction of machinery and factory production, beginning in Britain around 1750.' },
+          { term: 'Empire', definition: 'A group of countries or territories controlled by one powerful nation, such as the British Empire.' },
+          { term: 'Trade', definition: 'The buying and selling of goods — Britain\'s global trade powered its industrial growth.' },
+          { term: 'Significance', definition: 'The importance of an event or development — why the Industrial Revolution matters.' },
+          { term: 'Innovation', definition: 'A new invention or method that changes how things are done.' }
+        ],
       teacher_notes: {
         primer:
           'This lesson introduces the shift from the domestic system to mass factory production during the Industrial Revolution, focusing on a local history case study of Henry Cort at the Funtley Ironworks. The goal is to connect major national/global shifts (steam, mass production, empire) to local geography and innovation.',
@@ -372,6 +379,13 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_2',
       title: 'Was industrial work progress or punishment?',
+      vocabulary: [
+        { term: 'Urbanisation', definition: 'The growth of towns and cities as people moved from rural areas to work in factories.' },
+        { term: 'Revolution', definition: 'A dramatic and fundamental change — the Industrial Revolution transformed British society.' },
+        { term: 'Causation', definition: 'Understanding the reasons behind events — why did factory conditions cause so much suffering?' },
+        { term: 'Child labour', definition: 'The exploitation of children as workers in factories and mines during the Industrial Revolution.' },
+        { term: 'Parliament', definition: 'The law-making body of Britain, which gradually passed Factory Acts to improve conditions.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.',
@@ -630,6 +644,13 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_3',
       title: 'Did industrialisation make British towns unlivable?',
+      vocabulary: [
+        { term: 'Industrialisation', definition: 'The transformation from an agricultural economy to one based on factory manufacturing.' },
+        { term: 'Public health', definition: 'The health of the population — industrialisation created enormous public health crises in cities.' },
+        { term: 'Cholera', definition: 'A deadly waterborne disease that devastated industrial towns due to contaminated water supplies.' },
+        { term: 'Change', definition: 'How things become different over time — industrial towns changed rapidly and dramatically.' },
+        { term: 'Slum', definition: 'An overcrowded, unsanitary area of housing where the urban poor lived during industrialisation.' }
+      ],
       teacher_notes: {
         primer:
           "This lesson explores the public health crisis triggered by rapid urbanisation. It challenges high-ability pupils by juxtaposing the grand architecture of the British Empire (built with local Fareham bricks) against the squalid reality of the slums. It introduces complex source evaluation using three contrasting, authentic written sources, and frames the topic within the 'Optimist vs. Pessimist' historiographical debate.",
@@ -850,6 +871,18 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_4',
       title: 'How was the British Empire built and sustained?',
+      learning_objectives: [
+        'Describe how the British Empire expanded through trade, military conquest, and colonisation across Asia and Africa',
+        'Explain how religious missions, economic exploitation, and resistance shaped the experience of empire for colonised peoples',
+        'Evaluate the significance of the British Empire in transforming global trade networks'
+      ],
+      vocabulary: [
+        { term: 'Empire', definition: 'The British Empire — the largest in history, spanning a quarter of the world\'s surface by 1900.' },
+        { term: 'Colonisation', definition: 'The process of establishing control over a foreign territory and its people.' },
+        { term: 'Trade', definition: 'The exchange of goods — the empire was built on global trade networks exploiting colonial resources.' },
+        { term: 'Resistance', definition: 'Actions taken by colonised peoples to oppose British rule and exploitation.' },
+        { term: 'Missionary', definition: 'A person sent to promote Christianity in foreign lands — often used to justify imperial expansion.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson investigates the core mechanisms of British imperial power in the 19th century, focusing on the interplay between trade, military execution, and industrial support. It introduces cognitive categorisation, significance mapping, and provenance analysis, anchoring global naval supremacy directly to the domestic workforce at Portsmouth Dockyard.',
@@ -1293,6 +1326,18 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_5',
       title: 'How did the Empire strike back? The 1857 Indian Rebellion',
+      learning_objectives: [
+        'Describe the causes and events of the Indian Rebellion of 1857 and the forms of resistance used by Indian soldiers',
+        'Explain how the rebellion challenged British imperial power and led to direct Crown rule over India',
+        'Evaluate the significance of the Indian Rebellion as an example of colonial resistance to empire'
+      ],
+      vocabulary: [
+        { term: 'Rebellion', definition: 'An armed uprising against authority — the Indian Rebellion of 1857 challenged British imperial power.' },
+        { term: 'Resistance', definition: 'Actions taken to oppose those in power — Indian soldiers (sepoys) resisted British rule.' },
+        { term: 'Crown rule', definition: 'Direct governance of India by the British monarchy, replacing the East India Company after 1858.' },
+        { term: 'Sepoy', definition: 'An Indian soldier serving in the British East India Company\'s army.' },
+        { term: 'Power', definition: 'The ability to control others — the rebellion exposed the limits of British imperial power.' }
+      ],
       teacher_notes: {
         primer:
           'This lesson contrasts domestic working-class resistance (Swing Riots/Chartism) with violent colonial resistance, shattering the myth of a passive Empire. It explores the causes of the 1857 Rebellion, the brutal suppression, and the monumental shift to the British Raj.',
@@ -1670,6 +1715,18 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_6',
       title: 'How did ordinary people fight for a voice?',
+      learning_objectives: [
+        'Describe the key protest movements of the 19th century, including Chartism and trade unionism',
+        'Explain how industrialisation created new forms of resistance and demands for democracy and parliamentary reform',
+        'Evaluate the significance of working-class protest in expanding the power of Parliament and moving towards democracy'
+      ],
+      vocabulary: [
+        { term: 'Chartism', definition: 'A working-class movement for political reform in the 1830s-40s, demanding universal male suffrage.' },
+        { term: 'Democracy', definition: 'Government by the people — the 19th century saw a gradual expansion of who could vote.' },
+        { term: 'Protest', definition: 'Public expression of dissent — workers protested terrible conditions and lack of political representation.' },
+        { term: 'Trade union', definition: 'An organisation of workers formed to protect their rights and negotiate better pay and conditions.' },
+        { term: 'Reform', definition: 'A change made to improve something — the Reform Acts gradually expanded the right to vote.' }
+      ],
       teacher_notes: {
         primer:
           "This lesson evaluates how working-class resistance transformed from violent, uncoordinated machine-breaking into organized, mass political movements. It tests students' historical reasoning by contrasting the rural Hampshire Swing Riots with the urban constitutional challenge of Chartism, assessing how different social classes reacted to the pressures of an industrial economy.",
@@ -2104,6 +2161,18 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_7',
       title: 'How did the road to democracy expand?',
+      learning_objectives: [
+        'Describe the key reforms that expanded democracy in 19th-century Britain, including the Reform Acts',
+        'Explain how protest, resistance, and propaganda drove the gradual extension of the right to vote',
+        'Evaluate the significance of the suffrage movement in transforming British democracy by 1900'
+      ],
+      vocabulary: [
+        { term: 'Suffrage', definition: 'The right to vote in political elections — expanded gradually through the Reform Acts.' },
+        { term: 'Parliament', definition: 'The institution that makes laws — 19th-century reform expanded who Parliament represented.' },
+        { term: 'Monarchy', definition: 'Rule by a king or queen — the monarchy\'s power declined as Parliament gained more authority.' },
+        { term: 'Propaganda', definition: 'Material designed to influence opinion — used by both reformers and opponents of democratic change.' },
+        { term: 'Franchise', definition: 'The right to vote — each Reform Act extended the franchise to more people.' }
+      ],
       teacher_notes: {
         primer:
           "This final lesson of the unit traces the slow, hard-fought transition of Britain from an aristocratic oligarchy to a burgeoning democracy. It emphasizes that political rights were not freely given but conceded gradually due to popular pressure, utilizing the local Hampshire context of 'rotten boroughs' to highlight the absurdity of the pre-reform system.",
@@ -2535,6 +2604,11 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_8',
       title: 'Who truly benefited from 19th-century transformation?',
+      learning_objectives: [
+        'Synthesise knowledge of industrialisation, empire, trade, democracy, and resistance across the 19th century',
+        'Construct a sustained argument evaluating who truly benefited from Britains transformation',
+        'Deploy specific evidence about power, colonialism, and urbanisation to support a historical judgement'
+      ],
       teacher_notes: {
         primer:
           "This capstone lesson serves as the synthesis module for the entire 'Industrialisation and Empire' unit. Its pedagogical purpose is to guide high-ability pupils through the process of constructing a complex, balanced historical argument that weighs the structural advancements of technology and empire against the human cost of exploitation and political suppression.",

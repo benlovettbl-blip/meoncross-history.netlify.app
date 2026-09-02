@@ -16,6 +16,18 @@ export const unitData = {
     {
       "id": "lesson_1",
       "title": "Claiming Australia",
+      "learning_objectives": [
+        "Describe how and why the British Empire claimed Australia, including Captain Cook's voyage and the concept of terra nullius",
+        "Explain the significance of colonisation for both the British Empire and the Indigenous Australian peoples",
+        "Evaluate whether the British arrival should be understood as discovery, settlement, or invasion"
+      ],
+      "vocabulary": [
+        { "term": "Colonisation", "definition": "The process of establishing control over a foreign territory — Britain colonised Australia from 1788." },
+        { "term": "Terra nullius", "definition": "A Latin legal term meaning 'land belonging to nobody' — used by Britain to justify claiming Australia." },
+        { "term": "Empire", "definition": "The British Empire expanded by claiming new territories like Australia for strategic and economic purposes." },
+        { "term": "Indigenous", "definition": "The original inhabitants of a land — Indigenous Australians had lived there for over 65,000 years." },
+        { "term": "Significance", "definition": "Why the colonisation of Australia matters — its consequences are still felt today." }
+      ],
       "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
       "teacher_notes": {
         "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
@@ -320,6 +332,18 @@ export const unitData = {
     {
       "id": "lesson_2",
       "title": "Creating a Convict Colony",
+      "learning_objectives": [
+        "Describe the key features of the convict transportation system and explain why Britain used Australia as a penal colony",
+        "Explain how the British Empire used convict labour to establish a colonial foothold in the Pacific",
+        "Evaluate the human cost of the convict system and its role in the revolution of Australian settlement"
+      ],
+      "vocabulary": [
+        { "term": "Convict", "definition": "A person found guilty of a crime — convicts were transported to Australia as punishment." },
+        { "term": "Transportation", "definition": "The practice of sending convicted criminals to distant colonies as a form of punishment." },
+        { "term": "Penal colony", "definition": "A settlement used to exile prisoners — Australia served as Britain's main penal colony from 1788." },
+        { "term": "Empire", "definition": "Convict transportation served the empire by providing free labour to build colonial settlements." },
+        { "term": "Revolution", "definition": "The American Revolution (1776) caused Britain to lose its American colonies, leading it to use Australia instead." }
+      ],
       "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
       "teacher_notes": {
         "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
@@ -653,6 +677,18 @@ export const unitData = {
     {
       "id": "lesson_3",
       "title": "Encounters with the Indigenous Peoples",
+      "learning_objectives": [
+        "Describe the impact of British colonisation on Indigenous Australian communities, including the destruction of trade, culture, and land",
+        "Explain how Indigenous Australians showed resistance to British settlement through both armed conflict and cultural survival",
+        "Evaluate the significance of these encounters for understanding the long-term consequences of empire"
+      ],
+      "vocabulary": [
+        { "term": "Resistance", "definition": "Actions taken by Indigenous Australians to oppose British colonisation and protect their land." },
+        { "term": "Dispossession", "definition": "The act of taking land and resources away from Indigenous peoples." },
+        { "term": "Frontier violence", "definition": "Armed conflict between settlers and Indigenous Australians along the expanding colonial frontier." },
+        { "term": "Trade", "definition": "Indigenous Australians had complex trade networks that were destroyed by colonisation." },
+        { "term": "Change", "definition": "Colonisation caused devastating and irreversible change to Indigenous Australian communities." }
+      ],
       "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
       "teacher_notes": {
         "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
@@ -835,6 +871,18 @@ export const unitData = {
     {
       "id": "lesson_4",
       "title": "From Penal Colony to Settlement",
+      "learning_objectives": [
+        "Describe how Australia transitioned from a penal colony to a free settlement through migration and the Gold Rush",
+        "Explain how empire, revolution, and change shaped the development of Australian society in the 19th century",
+        "Evaluate who benefited most from Australia's transformation and who was marginalised"
+      ],
+      "vocabulary": [
+        { "term": "Gold Rush", "definition": "The discovery of gold in the 1850s that triggered mass migration to Australia and transformed its economy." },
+        { "term": "Migration", "definition": "The movement of people — free settlers migrated to Australia seeking land, wealth, and opportunity." },
+        { "term": "Empire", "definition": "Australia remained part of the British Empire, exporting wool, gold, and other resources." },
+        { "term": "Change", "definition": "Australia changed dramatically from a penal colony to a prosperous, self-governing settlement." },
+        { "term": "Marginalisation", "definition": "The process of pushing a group to the edges of society — Indigenous Australians were increasingly marginalised." }
+      ],
       "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
       "teacher_notes": {
         "primer": "This lesson transitions the narrative from the early struggles of the convict colony to the explosive economic growth of the 1850s gold rushes. Students will explore how free settlers, the wool industry, and the arrival of global immigrants (especially Chinese miners) fundamentally changed the demographic and economic landscape of Australia.",
@@ -1031,6 +1079,18 @@ export const unitData = {
     {
       "id": "lesson_5",
       "title": "Lesson 5: Assessment - What's the story of Australia?",
+      "learning_objectives": [
+        "Synthesise knowledge of colonisation, empire, resistance, and change across the history of Australia",
+        "Construct a sustained argument evaluating whose perspective should shape how we remember Australia's history",
+        "Deploy specific evidence to support a judgement about the legacy of empire in Australia"
+      ],
+      "vocabulary": [
+        { "term": "Synthesis", "definition": "Combining all knowledge from the unit to form an overall judgement about Australia's history." },
+        { "term": "Empire", "definition": "The British Empire is the overarching framework for understanding Australia's colonial history." },
+        { "term": "Perspective", "definition": "A particular point of view — Indigenous and settler perspectives on Australian history differ fundamentally." },
+        { "term": "Evidence", "definition": "Historical facts and examples used to support an argument about the past." },
+        { "term": "Legacy", "definition": "The long-lasting impact of past events — the legacy of colonisation still shapes Australia today." }
+      ],
       "banner": "/images/sydney_cove.jpg",
       "banner_position": "center",
       "enquiry": "How did New South Wales develop, and how should we assess its history?",

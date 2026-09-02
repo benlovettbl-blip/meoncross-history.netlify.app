@@ -33,6 +33,18 @@ export default {
     {
       id: 'lesson_1',
       title: 'How much progress did the Romans make in public health?',
+      learning_objectives: [
+        "Describe the key features of Roman public health infrastructure, including aqueducts, bathhouses, and sewers",
+        "Explain how the Roman Empire's centralised power enabled large-scale public health projects",
+        "Evaluate the significance of Roman public health by assessing whether it represented genuine medical understanding or imperial prestige"
+      ],
+      vocabulary: [
+        { term: "Aqueduct", definition: "An artificial channel built by the Romans to transport fresh water from rivers and springs into towns and cities." },
+        { term: "Empire", definition: "A large political unit where one powerful state controls many different peoples and territories, such as the Roman Empire." },
+        { term: "Public health", definition: "The health of the population as a whole, including access to clean water, sanitation, and disease prevention." },
+        { term: "Sanitation", definition: "Systems for keeping places clean, especially the removal of waste and sewage to prevent disease." },
+        { term: "Continuity", definition: "When things stay the same over a long period of time, without significant change." }
+      ],
       video: {
         type: 'era',
         url: 'https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/',
@@ -328,6 +340,18 @@ export default {
     {
       id: 'lesson_2',
       title: 'Why did public health decline during the Middle Ages?',
+      learning_objectives: [
+        "Explain how the collapse of Roman imperial power led to the decline of organised public health systems",
+        "Describe the role of the medieval Church in shaping attitudes to disease and sanitation",
+        "Assess the significance of the Black Death (1348) as a turning point in medieval public health"
+      ],
+      vocabulary: [
+        { term: "Monarchy", definition: "A system of government where a king or queen holds supreme power, inherited through a royal family." },
+        { term: "Church", definition: "In medieval context, the Catholic Church — the dominant religious institution that influenced all aspects of life." },
+        { term: "Causation", definition: "The relationship between causes and effects — understanding why something happened." },
+        { term: "Miasma", definition: "The medieval theory that disease was caused by 'bad air' or foul-smelling vapours rising from rotting matter." },
+        { term: "Significance", definition: "The importance or impact of a historical event, person, or development — why it matters." }
+      ],
       do_now: {
         type: 'questions',
         items: [
@@ -609,6 +633,18 @@ export default {
     {
       id: 'lesson_3',
       title: 'To what extent did towns become filthier during the Early Modern period?',
+      learning_objectives: [
+        "Describe the public health challenges caused by rapid urbanisation in Early Modern towns",
+        "Explain why governments failed to act despite growing evidence of poor sanitation",
+        "Evaluate the extent to which continuity, rather than change, defined public health between 1500 and 1750"
+      ],
+      vocabulary: [
+        { term: "Urbanisation", definition: "The growth of towns and cities as people move from rural areas to urban centres." },
+        { term: "Cesspit", definition: "A pit for the disposal of liquid waste and sewage, common in Early Modern towns." },
+        { term: "Plague", definition: "A devastating infectious disease, such as the bubonic plague, that caused mass death in medieval and early modern England." },
+        { term: "Change", definition: "When things become different over time — a key concept in understanding historical development." },
+        { term: "Privy", definition: "An outdoor toilet, often shared by multiple families, that emptied into a cesspit or river." }
+      ],
       do_now: {
         type: 'questions',
         items: [
@@ -858,6 +894,19 @@ export default {
     {
       id: 'lesson_4',
       title: 'How did the Industrial Revolution lead to a public health crisis?',
+      learning_objectives: [
+        "Explain how industrialisation and mass migration to cities created unprecedented public health crises",
+        "Describe the role of key individuals (John Snow, Edwin Chadwick) in challenging existing beliefs about disease",
+        "Analyse the significance of the 1848 Public Health Act as an example of government intervention driven by causation evidence"
+      ],
+      vocabulary: [
+        { term: "Industrialisation", definition: "The transformation of an economy from agriculture to factory-based manufacturing, as occurred in Britain from the late 1700s." },
+        { term: "Migration", definition: "The movement of people from one place to another, often from rural to urban areas in search of work." },
+        { term: "Cholera", definition: "A deadly waterborne disease caused by contaminated drinking water, which devastated industrial towns." },
+        { term: "Parliament", definition: "The law-making body of the United Kingdom, responsible for debating and passing laws." },
+        { term: "Laissez-faire", definition: "A philosophy that the government should not interfere in the economy or people's lives — a barrier to public health reform." },
+        { term: "Revolution", definition: "A dramatic and fundamental change in society, politics, or technology." }
+      ],
       do_now: {
         type: 'questions',
         items: [
@@ -1117,6 +1166,18 @@ export default {
     {
       id: 'lesson_5',
       title: "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+      learning_objectives: [
+        "Explain why it took Parliament so long to act on public health reform despite mounting evidence",
+        "Describe how the 'Great Stink' of 1858 became a turning point that forced government action",
+        "Evaluate the significance of Joseph Bazalgette's sewer system as a landmark of change in public health"
+      ],
+      vocabulary: [
+        { term: "The Great Stink", definition: "The crisis of summer 1858 when the smell of sewage in the River Thames became so overwhelming that Parliament was forced to act." },
+        { term: "Germ theory", definition: "The scientific understanding (proved by Louis Pasteur in 1861) that diseases are caused by microscopic organisms, not 'bad air'." },
+        { term: "Turning point", definition: "A moment in history after which things changed significantly and permanently." },
+        { term: "Reform", definition: "A change made to improve something, often through new laws or policies." },
+        { term: "Infrastructure", definition: "The basic physical systems of a society, such as roads, sewers, water supplies, and buildings." }
+      ],
       do_now: {
         type: 'questions',
         items: [

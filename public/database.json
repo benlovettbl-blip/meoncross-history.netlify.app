@@ -18,6 +18,33 @@
         {
           "id": "lesson_1",
           "title": "Claiming Australia",
+          "learning_objectives": [
+            "Describe how and why the British Empire claimed Australia, including Captain Cook's voyage and the concept of terra nullius",
+            "Explain the significance of colonisation for both the British Empire and the Indigenous Australian peoples",
+            "Evaluate whether the British arrival should be understood as discovery, settlement, or invasion"
+          ],
+          "vocabulary": [
+            {
+              "term": "Colonisation",
+              "definition": "The process of establishing control over a foreign territory — Britain colonised Australia from 1788."
+            },
+            {
+              "term": "Terra nullius",
+              "definition": "A Latin legal term meaning 'land belonging to nobody' — used by Britain to justify claiming Australia."
+            },
+            {
+              "term": "Empire",
+              "definition": "The British Empire expanded by claiming new territories like Australia for strategic and economic purposes."
+            },
+            {
+              "term": "Indigenous",
+              "definition": "The original inhabitants of a land — Indigenous Australians had lived there for over 65,000 years."
+            },
+            {
+              "term": "Significance",
+              "definition": "Why the colonisation of Australia matters — its consequences are still felt today."
+            }
+          ],
           "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
           "teacher_notes": {
             "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
@@ -322,6 +349,33 @@
         {
           "id": "lesson_2",
           "title": "Creating a Convict Colony",
+          "learning_objectives": [
+            "Describe the key features of the convict transportation system and explain why Britain used Australia as a penal colony",
+            "Explain how the British Empire used convict labour to establish a colonial foothold in the Pacific",
+            "Evaluate the human cost of the convict system and its role in the revolution of Australian settlement"
+          ],
+          "vocabulary": [
+            {
+              "term": "Convict",
+              "definition": "A person found guilty of a crime — convicts were transported to Australia as punishment."
+            },
+            {
+              "term": "Transportation",
+              "definition": "The practice of sending convicted criminals to distant colonies as a form of punishment."
+            },
+            {
+              "term": "Penal colony",
+              "definition": "A settlement used to exile prisoners — Australia served as Britain's main penal colony from 1788."
+            },
+            {
+              "term": "Empire",
+              "definition": "Convict transportation served the empire by providing free labour to build colonial settlements."
+            },
+            {
+              "term": "Revolution",
+              "definition": "The American Revolution (1776) caused Britain to lose its American colonies, leading it to use Australia instead."
+            }
+          ],
           "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
           "teacher_notes": {
             "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
@@ -655,6 +709,33 @@
         {
           "id": "lesson_3",
           "title": "Encounters with the Indigenous Peoples",
+          "learning_objectives": [
+            "Describe the impact of British colonisation on Indigenous Australian communities, including the destruction of trade, culture, and land",
+            "Explain how Indigenous Australians showed resistance to British settlement through both armed conflict and cultural survival",
+            "Evaluate the significance of these encounters for understanding the long-term consequences of empire"
+          ],
+          "vocabulary": [
+            {
+              "term": "Resistance",
+              "definition": "Actions taken by Indigenous Australians to oppose British colonisation and protect their land."
+            },
+            {
+              "term": "Dispossession",
+              "definition": "The act of taking land and resources away from Indigenous peoples."
+            },
+            {
+              "term": "Frontier violence",
+              "definition": "Armed conflict between settlers and Indigenous Australians along the expanding colonial frontier."
+            },
+            {
+              "term": "Trade",
+              "definition": "Indigenous Australians had complex trade networks that were destroyed by colonisation."
+            },
+            {
+              "term": "Change",
+              "definition": "Colonisation caused devastating and irreversible change to Indigenous Australian communities."
+            }
+          ],
           "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
           "teacher_notes": {
             "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
@@ -837,6 +918,33 @@
         {
           "id": "lesson_4",
           "title": "From Penal Colony to Settlement",
+          "learning_objectives": [
+            "Describe how Australia transitioned from a penal colony to a free settlement through migration and the Gold Rush",
+            "Explain how empire, revolution, and change shaped the development of Australian society in the 19th century",
+            "Evaluate who benefited most from Australia's transformation and who was marginalised"
+          ],
+          "vocabulary": [
+            {
+              "term": "Gold Rush",
+              "definition": "The discovery of gold in the 1850s that triggered mass migration to Australia and transformed its economy."
+            },
+            {
+              "term": "Migration",
+              "definition": "The movement of people — free settlers migrated to Australia seeking land, wealth, and opportunity."
+            },
+            {
+              "term": "Empire",
+              "definition": "Australia remained part of the British Empire, exporting wool, gold, and other resources."
+            },
+            {
+              "term": "Change",
+              "definition": "Australia changed dramatically from a penal colony to a prosperous, self-governing settlement."
+            },
+            {
+              "term": "Marginalisation",
+              "definition": "The process of pushing a group to the edges of society — Indigenous Australians were increasingly marginalised."
+            }
+          ],
           "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
           "teacher_notes": {
             "primer": "This lesson transitions the narrative from the early struggles of the convict colony to the explosive economic growth of the 1850s gold rushes. Students will explore how free settlers, the wool industry, and the arrival of global immigrants (especially Chinese miners) fundamentally changed the demographic and economic landscape of Australia.",
@@ -1033,6 +1141,33 @@
         {
           "id": "lesson_5",
           "title": "Lesson 5: Assessment - What's the story of Australia?",
+          "learning_objectives": [
+            "Synthesise knowledge of colonisation, empire, resistance, and change across the history of Australia",
+            "Construct a sustained argument evaluating whose perspective should shape how we remember Australia's history",
+            "Deploy specific evidence to support a judgement about the legacy of empire in Australia"
+          ],
+          "vocabulary": [
+            {
+              "term": "Synthesis",
+              "definition": "Combining all knowledge from the unit to form an overall judgement about Australia's history."
+            },
+            {
+              "term": "Empire",
+              "definition": "The British Empire is the overarching framework for understanding Australia's colonial history."
+            },
+            {
+              "term": "Perspective",
+              "definition": "A particular point of view — Indigenous and settler perspectives on Australian history differ fundamentally."
+            },
+            {
+              "term": "Evidence",
+              "definition": "Historical facts and examples used to support an argument about the past."
+            },
+            {
+              "term": "Legacy",
+              "definition": "The long-lasting impact of past events — the legacy of colonisation still shapes Australia today."
+            }
+          ],
           "banner": "/images/sydney_cove.jpg",
           "banner_position": "center",
           "enquiry": "How did New South Wales develop, and how should we assess its history?",
@@ -9364,6 +9499,28 @@
         {
           "lesson_index": 0,
           "book_title": "Lesson 1: Who held global power in 1450?",
+          "vocabulary": [
+            {
+              "term": "Empire",
+              "definition": "A large political unit controlling many territories — in 1450, the Ottoman, Ming, and Songhai empires were dominant."
+            },
+            {
+              "term": "Trade",
+              "definition": "The exchange of goods — the Silk Roads and Indian Ocean trade networks connected civilisations."
+            },
+            {
+              "term": "Imperialism",
+              "definition": "The policy of extending power through conquest, colonisation, or economic exploitation."
+            },
+            {
+              "term": "Power",
+              "definition": "Who held political, economic, and military power in the world of 1450?"
+            },
+            {
+              "term": "Civilisation",
+              "definition": "A complex society with advanced cultural, political, and economic systems."
+            }
+          ],
           "author": "Text Type: Stone Inscription (Admiral Zheng He, 1431)",
           "cover_image": "/images/zheng_he.gif",
           "author_context": "Before European empires dominated the globe, Ming Dynasty China was the unquestioned superpower. Between 1405 and 1433, Admiral Zheng He led massive fleets of 'Treasure Ships' across the Indian Ocean to Africa and the Middle East. Before his final voyage, he carved this inscription into a stone pillar in Fujian, China.",
@@ -9424,6 +9581,28 @@
         {
           "lesson_index": 2,
           "book_title": "Lesson 3: Trade or takeover: How did early encounters turn into empire?",
+          "vocabulary": [
+            {
+              "term": "Colonisation",
+              "definition": "The process of establishing control over foreign territories and their peoples."
+            },
+            {
+              "term": "Trade",
+              "definition": "Early European encounters often began as trade but evolved into full-scale imperial conquest."
+            },
+            {
+              "term": "Empire",
+              "definition": "European powers like Spain, Portugal, and England built global empires from the 1500s."
+            },
+            {
+              "term": "Causation",
+              "definition": "Understanding why European exploration led to colonisation and empire-building."
+            },
+            {
+              "term": "Propaganda",
+              "definition": "European accounts of 'discovery' were often propaganda justifying the seizure of other peoples' lands."
+            }
+          ],
           "author": "Text Type: Scientific Report (Thomas Hariot, 1588)",
           "cover_image": "/images/secoton.jpg",
           "author_context": "Thomas Hariot was an English scientist who travelled to the Roanoke colony in North America in 1585. He traded peacefully with the Algonquin Native Americans, but soon noticed a terrifying, unintended consequence of the English arrival.",
@@ -9454,6 +9633,11 @@
         {
           "lesson_index": 3,
           "book_title": "Lesson 4: James I and the Gunpowder Plot: Why was religious division so volatile?",
+          "learning_objectives": [
+            "Describe the key features of the Gunpowder Plot (1605) and explain why religious division was so volatile under James I",
+            "Explain the significance of the clash between Catholicism and Protestantism for the stability of the English monarchy",
+            "Evaluate whether the Gunpowder Plot was a genuine Catholic conspiracy or a government provocation"
+          ],
           "author": "Text Type: Anonymous Warning Letter (26 October 1605)",
           "cover_image": "/images/gunpowder.jpg",
           "author_context": "On October 26, 1605, a Catholic nobleman named Lord Monteagle received this anonymous, cryptically written letter. He immediately took it to King James I's chief minister. It led directly to the discovery of Guy Fawkes beneath the Houses of Parliament.",
@@ -9484,6 +9668,28 @@
         {
           "lesson_index": 4,
           "book_title": "Lesson 5: Who controlled Britain? The Ideological Battle",
+          "vocabulary": [
+            {
+              "term": "Power",
+              "definition": "The central question: who should hold supreme power — the monarchy or Parliament?"
+            },
+            {
+              "term": "Monarchy",
+              "definition": "Rule by a king or queen — the Stuarts believed in the Divine Right of Kings."
+            },
+            {
+              "term": "Parliament",
+              "definition": "The assembly of elected representatives that challenged the king's absolute authority."
+            },
+            {
+              "term": "Civil War",
+              "definition": "An armed conflict between opposing groups within the same country — England's Civil War (1642-1651)."
+            },
+            {
+              "term": "Democracy",
+              "definition": "Government by the people — the Civil War raised radical questions about who should have political power."
+            }
+          ],
           "author": "Text Type: Royal Speech (King James I, 1610)",
           "cover_image": "/images/james_i.jpg",
           "author_context": "In 1610, King James I gave a speech to Parliament explaining the \"Divine Right of Kings.\" This was the ideology that Kings were chosen by God and answered to no one else. This exact mindset would eventually cause his son, Charles I, to lose his head in the English Civil War.",
@@ -9544,6 +9750,28 @@
         {
           "lesson_index": 6,
           "book_title": "Lesson 7: What were the mechanics of the Transatlantic Slave Trade?",
+          "vocabulary": [
+            {
+              "term": "Transatlantic Slave Trade",
+              "definition": "The forced transportation of millions of Africans to the Americas to work as enslaved labourers."
+            },
+            {
+              "term": "Slavery",
+              "definition": "The ownership of human beings as property — a moral catastrophe at the heart of early modern trade."
+            },
+            {
+              "term": "Trade",
+              "definition": "The 'Triangular Trade' connected Europe, Africa, and the Americas in a brutal economic system."
+            },
+            {
+              "term": "Middle Passage",
+              "definition": "The horrific sea journey across the Atlantic endured by enslaved Africans in appalling conditions."
+            },
+            {
+              "term": "Profit",
+              "definition": "The slave trade was driven by the desire for profit — human suffering was treated as a business."
+            }
+          ],
           "author": "Text Type: Autobiography (Olaudah Equiano, 1789)",
           "cover_image": "/images/brookes.jpg",
           "author_context": "Olaudah Equiano was kidnapped from West Africa as a child, enslaved, and eventually bought his freedom in London. In 1789, he published his autobiography, providing the British public with a rare, firsthand account of the absolute horror of the 'Middle Passage' aboard a slave ship.",
@@ -9574,6 +9802,28 @@
         {
           "lesson_index": 7,
           "book_title": "Lesson 8: How did enslaved Africans resist the Transatlantic Slave Trade?",
+          "vocabulary": [
+            {
+              "term": "Resistance",
+              "definition": "Enslaved Africans resisted their captivity through rebellion, escape, cultural preservation, and sabotage."
+            },
+            {
+              "term": "Abolition",
+              "definition": "The movement to end the slave trade and slavery — achieved in the British Empire in 1807/1833."
+            },
+            {
+              "term": "Propaganda",
+              "definition": "Abolitionists used powerful propaganda (images, pamphlets, testimonies) to turn public opinion against slavery."
+            },
+            {
+              "term": "Significance",
+              "definition": "The abolition movement is significant as one of the first successful human rights campaigns."
+            },
+            {
+              "term": "Agency",
+              "definition": "The ability to act independently — enslaved people showed agency through their resistance."
+            }
+          ],
           "author": "Text Type: Ship Captain's Account (William Snelgrave, 1734)",
           "cover_image": "/images/cape_coast.jpg",
           "author_context": "Enslaved Africans constantly resisted. Mutinies on slave ships were common but rarely succeeded due to European firepower. William Snelgrave was a British slave ship captain. In this text, he interrogates a group of enslaved men who had just attempted a bloody mutiny aboard his ship.",
@@ -9604,6 +9854,33 @@
         {
           "lesson_index": 8,
           "book_title": "Lesson 9: How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+          "learning_objectives": [
+            "Synthesise knowledge of trade, empire, slavery, revolution, and power across the Early Modern period",
+            "Construct a sustained argument evaluating how far Britain had become a 'modern' nation by 1750",
+            "Deploy specific evidence about the monarchy, Parliament, church, and colonisation to support a historical judgement"
+          ],
+          "vocabulary": [
+            {
+              "term": "Synthesis",
+              "definition": "Bringing together knowledge from across the entire unit to form an overall judgement."
+            },
+            {
+              "term": "Power",
+              "definition": "By 1750, power had shifted dramatically from the monarchy to Parliament."
+            },
+            {
+              "term": "Empire",
+              "definition": "Britain had become a major global empire through trade, colonisation, and the slave trade."
+            },
+            {
+              "term": "Revolution",
+              "definition": "Political, religious, and economic revolutions transformed Britain between 1450 and 1750."
+            },
+            {
+              "term": "Change",
+              "definition": "The central question: how much had Britain really changed by 1750?"
+            }
+          ],
           "author": "Text Type: Travel Book / Journal (Daniel Defoe, 1724–1727)",
           "cover_image": "/images/industry_idleness.png",
           "author_context": "Between 1724 and 1727, the author Daniel Defoe travelled across Great Britain. When he arrived in Yorkshire (Halifax), he was stunned. The medieval farming villages were gone. In their place, he saw the explosive beginnings of the Industrial Revolution, fueled by global trade.",
@@ -29459,6 +29736,33 @@
         {
           "id": "lesson_0",
           "title": "How was the German Empire created in 1871?",
+          "learning_objectives": [
+            "Describe how Otto von Bismarck used military force and political manipulation to unify Germany into a powerful empire by 1871",
+            "Explain how the creation of the German Empire shifted the balance of power in Europe and created tension with existing empires",
+            "Evaluate the significance of German unification as a long-term cause of the First World War"
+          ],
+          "vocabulary": [
+            {
+              "term": "Empire",
+              "definition": "A large political unit where one powerful state controls many different peoples and territories."
+            },
+            {
+              "term": "Nationalism",
+              "definition": "Extreme pride in one's country, often accompanied by a belief in its superiority over others."
+            },
+            {
+              "term": "Unification",
+              "definition": "The process of bringing separate states together into one nation — Bismarck unified Germany by 1871."
+            },
+            {
+              "term": "Power",
+              "definition": "The ability of a nation to influence or control others through military, economic, or political strength."
+            },
+            {
+              "term": "Significance",
+              "definition": "The importance of an event — why German unification mattered for the future of Europe."
+            }
+          ],
           "a4_map": [
             "/images/german_empire_1871.png",
             "/images/modern_germany_map.png"
@@ -29833,6 +30137,36 @@
         {
           "id": "lesson_1",
           "title": "How did the Franco-Prussian War create a lasting legacy of hatred?",
+          "learning_objectives": {
+            "overarching": "To evaluate why the Franco-Prussian War created long-term hatred.",
+            "scaffolded": [
+              "Identify the penalties forced upon France in 1871.",
+              "Explain how the Ems Telegram sparked the Franco-Prussian War.",
+              "Evaluate the long-term impact on European relations."
+            ]
+          },
+          "vocabulary": [
+            {
+              "term": "Alsace-Lorraine",
+              "definition": "The border region taken from France by Germany in 1871, creating a lasting source of bitterness."
+            },
+            {
+              "term": "Revanchism",
+              "definition": "A policy of seeking revenge — France's desire to reclaim Alsace-Lorraine drove its foreign policy."
+            },
+            {
+              "term": "Humiliation",
+              "definition": "The deep sense of national shame felt by France after its defeat in 1871."
+            },
+            {
+              "term": "Treaty of Frankfurt",
+              "definition": "The 1871 peace treaty that ended the Franco-Prussian War and imposed harsh terms on France."
+            },
+            {
+              "term": "Long-term cause",
+              "definition": "A factor that built up over many years and contributed to the outbreak of the Great War."
+            }
+          ],
           "sources": [
             {
               "title": "Map A: Alsace-Lorraine Border Region (1871)",
@@ -29956,14 +30290,6 @@
             "model_answer": "<strong>Source A is highly useful for revealing the deep, emotional humiliation felt by the French people;</strong> <strong style=\"color: #0284c7;\">it highlights the \"bleeding wounds of Alsace and Lorraine\" and the desire to \"take back what was stolen\".</strong> <strong style=\"color: #9333ea;\">The fact that this is a school textbook makes it incredibly useful for showing purpose: the French government was actively indoctrinating the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture.</strong> <strong style=\"color: #16a34a;\">This is supported by our contextual knowledge that France was forced to pay a crushing 5 billion franc ransom after the disastrous Franco-Prussian War of 1871, sparking a permanent desire for revanche.</strong><br><br><strong>Source B is also extremely useful because it provides the German perspective on this hostility.</strong> <strong style=\"color: #0284c7;\">Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a \"French war of revenge\" and argues that Germany must ensure France \"never finds an ally\".</strong> <strong style=\"color: #9333ea;\">Because this is a private letter to a fellow diplomat, its nature makes it a highly reliable reflection of Germany's genuine strategic fears without any public censorship.</strong> <strong style=\"color: #16a34a;\">This is accurate to the context, as Bismarck spent the next 20 years building a complex defensive web of alliances (such as the Dual Alliance) specifically to keep France isolated and prevent a two-front war.</strong>"
           },
           "learning_objective": "To understand Why did the Franco-Prussian War create long-term hatred?",
-          "learning_objectives": {
-            "overarching": "To evaluate why the Franco-Prussian War created long-term hatred.",
-            "scaffolded": [
-              "Identify the penalties forced upon France in 1871.",
-              "Explain how the Ems Telegram sparked the Franco-Prussian War.",
-              "Evaluate the long-term impact on European relations."
-            ]
-          },
           "teacher_notes": {
             "primer": "The overarching goal of this lesson is to understand the long-term diplomatic impact of the Franco-Prussian War. The narrative goes beyond just the events of 1871. It focuses on the resulting *revanche* (French desire for revenge) and Bismarck's subsequent need to isolate France through a web of alliances. Ensure students understand that this single conflict permanently poisoned European relations, forcing the creation of the rigid alliance systems that ultimately dragged Europe into World War I.",
             "objectives": [
@@ -30282,6 +30608,36 @@
         {
           "id": "lesson_2",
           "title": "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+          "learning_objectives": {
+            "overarching": "To evaluate why the scramble for colonies turned empires into rivals.",
+            "scaffolded": [
+              "Identify the main European colonial powers and their territories.",
+              "Explain how Kaiser Wilhelm II's 'Place in the Sun' policy threatened Britain.",
+              "Evaluate the impact of the Moroccan Crises on the Entente Cordiale."
+            ]
+          },
+          "vocabulary": [
+            {
+              "term": "Imperialism",
+              "definition": "The policy of extending a country's power through colonisation, trade, or military force."
+            },
+            {
+              "term": "Colony",
+              "definition": "A territory controlled and settled by a foreign power, often exploited for resources and labour."
+            },
+            {
+              "term": "Scramble for Africa",
+              "definition": "The rapid division of the African continent among European empires in the late 19th century."
+            },
+            {
+              "term": "Rivalry",
+              "definition": "Competition and hostility between nations, especially over colonies and global influence."
+            },
+            {
+              "term": "Trade",
+              "definition": "The exchange of goods and resources — controlling trade routes was a key goal of imperial competition."
+            }
+          ],
           "sources": [
             {
               "title": "Map A: Partition of Africa (1914)",
@@ -30432,14 +30788,6 @@
             "model_answer": "<strong>Source A is useful for showing the British perception of Weltpolitik as aggressive and threatening;</strong> <strong style=\"color: #0284c7;\">the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany's aggressive desire for a larger empire.</strong> <strong style=\"color: #9333ea;\">As a satirical British cartoon, its purpose is to influence public opinion by exaggerating the Kaiser's arrogance, which accurately reflects the growing anti-German anxiety among the British public.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of the Moroccan Crises (1905 and 1911), where Wilhelm's aggressive posturing in Africa actually backfired and drove Britain into a closer military alliance with France.</strong><br><br><strong>Source B is highly useful for understanding the genuine German intent behind Weltpolitik.</strong> <strong style=\"color: #0284c7;\">The Chancellor demands Germany's \"place in the sun\", openly declaring their ambition to build a massive overseas empire.</strong> <strong style=\"color: #9333ea;\">As a public speech to the Reichstag, its purpose is to rally domestic nationalist support and justify increased military spending to the German politicians.</strong> <strong style=\"color: #16a34a;\">We know from context that Kaiser Wilhelm II was deeply jealous of the British Empire and believed that for Germany to be a true 'World Power', it needed vast African colonies, which directly triggered the imperial rivalry that destabilised Europe.</strong>"
           },
           "learning_objective": "To understand Why did the scramble for colonies turn empires into rivals?",
-          "learning_objectives": {
-            "overarching": "To evaluate why the scramble for colonies turned empires into rivals.",
-            "scaffolded": [
-              "Identify the main European colonial powers and their territories.",
-              "Explain how Kaiser Wilhelm II's 'Place in the Sun' policy threatened Britain.",
-              "Evaluate the impact of the Moroccan Crises on the Entente Cordiale."
-            ]
-          },
           "teacher_notes": {
             "primer": "The overarching goal of this lesson is to evaluate why the scramble for colonies turned empires into rivals. Ensure students understand that this wasn't just about claiming land; it was an economic race for raw materials and a strategic naval race. The Moroccan Crises serve as the key case study of how Germany's aggressive attempts to break up the British-French alliance actually pushed them closer together.",
             "objectives": [
@@ -30690,6 +31038,36 @@
         {
           "id": "lesson_3",
           "title": "Why did a battleship building contest destroy Anglo-German relations?",
+          "learning_objectives": {
+            "overarching": "To analyze how the naval arms race heightened tensions between Britain and Germany.",
+            "scaffolded": [
+              "Identify the significance of the HMS Dreadnought.",
+              "Explain the concept of the Two-Power Standard and Risk Theory.",
+              "Analyze how naval competition fed mutual suspicion."
+            ]
+          },
+          "vocabulary": [
+            {
+              "term": "Arms race",
+              "definition": "A competition between nations to build up military strength, especially between Britain and Germany."
+            },
+            {
+              "term": "Dreadnought",
+              "definition": "A revolutionary battleship launched by Britain in 1906, triggering an intense naval arms race."
+            },
+            {
+              "term": "Militarism",
+              "definition": "The belief that a country should maintain a strong military and be prepared to use it aggressively."
+            },
+            {
+              "term": "Naval supremacy",
+              "definition": "Dominance of the seas — Britain's Royal Navy was the cornerstone of its imperial power."
+            },
+            {
+              "term": "Propaganda",
+              "definition": "Information used to shape public opinion — both sides used it to justify military spending."
+            }
+          ],
           "sources": [
             {
               "title": "Map A: The North Sea & Naval Chokepoints",
@@ -30825,14 +31203,6 @@
             "model_answer": "<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style=\"color: #0284c7;\">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style=\"color: #9333ea;\">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship's revolutionary, heavily-armored design.</strong> <strong style=\"color: #16a34a;\">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain's naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style=\"color: #0284c7;\">The slogan \"We want eight, and we won't wait!\" shows the intense public demand for more warships.</strong> <strong style=\"color: #9333ea;\">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style=\"color: #16a34a;\">This is supported by the context of 'Jingoism'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany's 17.</strong>"
           },
           "learning_objective": "To understand Whose Navy Was Biggest and Best? The Arms Race",
-          "learning_objectives": {
-            "overarching": "To analyze how the naval arms race heightened tensions between Britain and Germany.",
-            "scaffolded": [
-              "Identify the significance of the HMS Dreadnought.",
-              "Explain the concept of the Two-Power Standard and Risk Theory.",
-              "Analyze how naval competition fed mutual suspicion."
-            ]
-          },
           "teacher_notes": {
             "primer": "The overarching goal is to analyze how the naval arms race heightened tensions between Britain and Germany. The key concept here is the 'security dilemma': Britain built ships to feel safe, which made Germany feel unsafe, so Germany built ships, which made Britain feel unsafe. The HMS Dreadnought is the central turning point in this escalation.",
             "objectives": [
@@ -31095,6 +31465,36 @@
         {
           "id": "lesson_4",
           "title": "Did the Alliance System protect Europe or guarantee a global war?",
+          "learning_objectives": {
+            "overarching": "To evaluate whether the alliance system provided security or created a dangerous threat.",
+            "scaffolded": [
+              "Identify the members of the Triple Alliance and the Triple Entente.",
+              "Explain why countries felt the need to form secret defensive treaties.",
+              "Evaluate how the alliance system could drag all of Europe into a regional conflict."
+            ]
+          },
+          "vocabulary": [
+            {
+              "term": "Alliance",
+              "definition": "A formal agreement between countries to support each other, especially in wartime."
+            },
+            {
+              "term": "Triple Alliance",
+              "definition": "The military alliance of Germany, Austria-Hungary, and Italy, formed in 1882."
+            },
+            {
+              "term": "Triple Entente",
+              "definition": "The alliance of Britain, France, and Russia, formed by 1907."
+            },
+            {
+              "term": "Escalation",
+              "definition": "The process of a conflict becoming larger or more serious, drawing in more countries."
+            },
+            {
+              "term": "Obligation",
+              "definition": "A duty or commitment — alliance obligations meant countries were dragged into war."
+            }
+          ],
           "sources": [
             {
               "title": "Diagram A: The Alliance System (1914)",
@@ -31241,14 +31641,6 @@
             "model_answer": "<strong>Source A is useful for illustrating why Austria-Hungary felt physically threatened in the Balkans;</strong> <strong style=\"color: #0284c7;\">the map shows how Serbia nearly doubled its territory after the Balkan Wars of 1912-1913.</strong> <strong style=\"color: #9333ea;\">As a geographical map, its nature provides objective, factual evidence of Serbia's dramatic expansion southward.</strong> <strong style=\"color: #16a34a;\">This matches our contextual knowledge that a larger, stronger Serbia acted as a powerful magnet for Slavic nationalism, deeply terrifying the Austro-Hungarian Empire, which contained millions of Serbs who wanted to break away and join this new 'Greater Serbia'.</strong><br><br><strong>Source B is crucial for understanding the aggressive mindset of the Austro-Hungarian military.</strong> <strong style=\"color: #0284c7;\">The diary describes Serbia as a \"viper that must be crushed\" to prevent the empire from being \"torn apart by Slavic nationalism\".</strong> <strong style=\"color: #9333ea;\">Because it is a private diary entry written by the Chief of Staff, its origin makes it an incredibly reliable, unfiltered record of the military command's genuine panic and their desire for a preventative war.</strong> <strong style=\"color: #16a34a;\">This is historically accurate, as the Austro-Hungarian leadership viewed the 1914 assassination of Archduke Franz Ferdinand not just as a tragedy, but as the perfect political excuse to finally invade and destroy Serbia before it grew too powerful.</strong>"
           },
           "learning_objective": "To understand How did the alliance system turn a local Balkan crisis into a global war?",
-          "learning_objectives": {
-            "overarching": "To evaluate whether the alliance system provided security or created a dangerous threat.",
-            "scaffolded": [
-              "Identify the members of the Triple Alliance and the Triple Entente.",
-              "Explain why countries felt the need to form secret defensive treaties.",
-              "Evaluate how the alliance system could drag all of Europe into a regional conflict."
-            ]
-          },
           "teacher_notes": {
             "primer": "The overarching goal is to evaluate whether the alliance system provided security or created a dangerous threat. Students need to grasp the tragic irony of the alliances: they were built to act as a deterrent to stop wars, but they acted as a conveyor belt that dragged everyone into a global conflict once a local crisis broke out.",
             "objectives": [
@@ -31491,6 +31883,36 @@
         {
           "id": "lesson_5",
           "title": "Why did a single assassination in Sarajevo ignite a World War?",
+          "learning_objectives": {
+            "overarching": "To analyze how a wrong turn in Sarajevo triggered a world war.",
+            "scaffolded": [
+              "Identify the events of 28 June 1914.",
+              "Explain how the assassination triggered the alliance system.",
+              "Analyze whether the resulting war was inevitable or accidental."
+            ]
+          },
+          "vocabulary": [
+            {
+              "term": "Balkans",
+              "definition": "A region in southeastern Europe that was a hotbed of nationalist tensions before 1914."
+            },
+            {
+              "term": "Assassination",
+              "definition": "The deliberate killing of a political figure — the assassination of Franz Ferdinand triggered the war."
+            },
+            {
+              "term": "Ottoman Empire",
+              "definition": "The Turkish empire that controlled much of the Balkans but was declining by 1900."
+            },
+            {
+              "term": "Catalyst",
+              "definition": "An event that triggers a much larger process — the Sarajevo assassination was the catalyst for war."
+            },
+            {
+              "term": "Powder keg",
+              "definition": "A metaphor for a dangerous, volatile situation ready to explode."
+            }
+          ],
           "sources": [
             {
               "title": "Diagram A: The July Crisis Domino Effect",
@@ -31637,14 +32059,6 @@
             "model_answer": "<strong>Source A is useful for showing the extreme volatility of the July Crisis;</strong> <strong style=\"color: #0284c7;\">it depicts the European leaders desperately trying to keep the lid on the boiling 'Balkan Troubles' pot.</strong> <strong style=\"color: #9333ea;\">As a satirical cartoon published in Britain, its purpose is to warn the public that the Great Powers were rapidly losing control of the diplomatic situation.</strong> <strong style=\"color: #16a34a;\">This reflects the historical reality that, due to the rigid Alliance System, the leaders knew that a local war in the Balkans would inevitably drag the entire continent into a catastrophic global conflict.</strong><br><br><strong>Source B is extremely useful for explaining the short-term trigger that turned the crisis into a war.</strong> <strong style=\"color: #0284c7;\">The telegram guarantees that the Kaiser will \"faithfully stand by Austria-Hungary\" regardless of the consequences.</strong> <strong style=\"color: #9333ea;\">As an official diplomatic communication (the 'Blank Check'), its nature makes it undeniable proof of Germany's unconditional military support for Austria.</strong> <strong style=\"color: #16a34a;\">This is vital contextual knowledge, as it was precisely this promise of German backing that gave Austria-Hungary the confidence to issue a deliberately unacceptable ultimatum to Serbia, knowing it would provoke Russia and trigger the First World War.</strong>"
           },
           "learning_objective": "To understand how a wrong turn in Sarajevo triggered a world war.",
-          "learning_objectives": {
-            "overarching": "To analyze how a wrong turn in Sarajevo triggered a world war.",
-            "scaffolded": [
-              "Identify the events of 28 June 1914.",
-              "Explain how the assassination triggered the alliance system.",
-              "Analyze whether the resulting war was inevitable or accidental."
-            ]
-          },
           "teacher_notes": {
             "primer": "The overarching goal is to analyze how a wrong turn in Sarajevo triggered a world war. This lesson brings all the long-term causes together into the short-term spark. Focus on the timeline: the sheer bad luck of the assassination itself, followed by the rapid, rigid escalation of the July Crisis driven by military timetables.",
             "objectives": [
@@ -32756,6 +33170,33 @@
         {
           "id": "lesson_1",
           "title": "Why were young men so desperate to join the slaughter of 1914?",
+          "learning_objectives": [
+            "Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire",
+            "Explain why trench warfare on the Western Front created a devastating stalemate",
+            "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict"
+          ],
+          "vocabulary": [
+            {
+              "term": "Propaganda",
+              "definition": "Government-produced material designed to shape public opinion, recruit soldiers, and maintain morale."
+            },
+            {
+              "term": "Empire",
+              "definition": "The British Empire — soldiers from across its colonies fought on the Western Front."
+            },
+            {
+              "term": "Alliance",
+              "definition": "A formal agreement between nations to support each other in war."
+            },
+            {
+              "term": "Stalemate",
+              "definition": "A situation where neither side can win or make progress — the defining feature of trench warfare."
+            },
+            {
+              "term": "Trench warfare",
+              "definition": "A type of fighting from fortified ditches (trenches) that dominated the Western Front from 1914 to 1918."
+            }
+          ],
           "teacher_notes": {
             "primer": "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
             "objectives": [
@@ -33067,6 +33508,11 @@
         {
           "id": "lesson_2",
           "title": "Did British generals make the horror of trench warfare worse?",
+          "learning_objectives": [
+            "Describe the key features of trench warfare and explain why it caused such devastating casualties",
+            "Explain the debate around British military leadership: were generals incompetent or facing impossible circumstances?",
+            "Evaluate the significance of propaganda in shaping public perception of the war effort"
+          ],
           "teacher_notes": {
             "primer": "Explore the grim reality of trench warfare and the controversial leadership of generals like Haig.",
             "objectives": [
@@ -33354,6 +33800,33 @@
         {
           "id": "lesson_3",
           "title": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+          "learning_objectives": [
+            "Describe the contribution of soldiers from across the British Empire, including troops from India, Africa, and the Caribbean",
+            "Explain why the contributions of imperial and colonial troops were marginalised in traditional British narratives of the war",
+            "Evaluate the significance of protest and resistance movements that emerged from colonial soldiers' wartime experiences"
+          ],
+          "vocabulary": [
+            {
+              "term": "Empire",
+              "definition": "Soldiers from India, Africa, the Caribbean, and other colonies fought for Britain — their sacrifice was often forgotten."
+            },
+            {
+              "term": "Protest",
+              "definition": "Actions taken to object to unfair treatment — colonial soldiers protested discrimination during and after the war."
+            },
+            {
+              "term": "Resistance",
+              "definition": "Opposing unjust treatment — many colonial soldiers resisted the erasure of their wartime contributions."
+            },
+            {
+              "term": "Marginalisation",
+              "definition": "The process of treating a group as insignificant or secondary — imperial troops were marginalised in war narratives."
+            },
+            {
+              "term": "Commemoration",
+              "definition": "The act of remembering and honouring those who served — war memorials often excluded non-white soldiers."
+            }
+          ],
           "teacher_notes": {
             "primer": "Humanize the contributions and sacrifices of non-white troops from the British Empire, exploring racial barriers.",
             "objectives": [
@@ -33629,6 +34102,37 @@
         {
           "id": "lesson_4",
           "title": "How did a war fought miles away completely control daily life in Britain?",
+          "learning_objectives": [
+            "Describe the key features of the Home Front, including rationing, propaganda, and the role of women in industry",
+            "Explain how the war expanded the power of Parliament and challenged traditional ideas about democracy and gender",
+            "Evaluate the significance of the war as a catalyst for social and political change in Britain"
+          ],
+          "vocabulary": [
+            {
+              "term": "Home Front",
+              "definition": "The civilian population and activities within a country at war, as opposed to the military front."
+            },
+            {
+              "term": "Democracy",
+              "definition": "Government by the people — the war accelerated the expansion of voting rights, including for women."
+            },
+            {
+              "term": "Parliament",
+              "definition": "The law-making body that passed wartime legislation like DORA (Defence of the Realm Act)."
+            },
+            {
+              "term": "Propaganda",
+              "definition": "Material used to maintain civilian morale, encourage rationing, and recruit workers."
+            },
+            {
+              "term": "Suffrage",
+              "definition": "The right to vote — women's war work helped secure partial female suffrage in 1918."
+            },
+            {
+              "term": "Change",
+              "definition": "The war caused fundamental social and political change in Britain, challenging old class and gender structures."
+            }
+          ],
           "teacher_notes": {
             "primer": "Examine how the concept of 'Total War' completely transformed the British home front, focusing on government control, conscription, and the complex, often temporary, shifts in women's social status.",
             "objectives": [
@@ -33874,6 +34378,33 @@
           "id": "lesson_5",
           "title": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
           "enquiry": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+          "learning_objectives": [
+            "Describe the key terms of the Treaty of Versailles and the competing aims of the Allied powers",
+            "Explain why the treaty created new tensions through trade restrictions, territorial changes, and the War Guilt Clause",
+            "Evaluate whether the Treaty of Versailles represented genuine change or simply planted the seeds for future conflict"
+          ],
+          "vocabulary": [
+            {
+              "term": "Treaty of Versailles",
+              "definition": "The peace treaty signed in 1919 that officially ended the Great War and imposed harsh terms on Germany."
+            },
+            {
+              "term": "Reparations",
+              "definition": "Financial compensation demanded from Germany for the damage caused during the war."
+            },
+            {
+              "term": "War Guilt Clause",
+              "definition": "Article 231 of the Treaty, which forced Germany to accept full responsibility for causing the war."
+            },
+            {
+              "term": "Continuity",
+              "definition": "When aspects of a situation remain the same — did the treaty solve the problems of 1914 or preserve them?"
+            },
+            {
+              "term": "Revolution",
+              "definition": "Dramatic political upheaval — the war triggered revolutions in Russia (1917) and Germany (1918)."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson evaluates the conclusion of the First World War and introduces students to high-level historiographical debate regarding the Treaty of Versailles, shifting from basic source utility to complex interpretation analysis.",
             "objectives": [
@@ -34088,6 +34619,33 @@
           "id": "lesson_6",
           "title": "How did the \"Lost Generation\" impact the village of Stubbington?",
           "enquiry": "How did the \"Lost Generation\" impact the village of Stubbington?",
+          "learning_objectives": [
+            "Describe the local impact of the Great War on communities like Stubbington, using evidence from war memorials and Church records",
+            "Explain the significance of the concept of the 'Lost Generation' for understanding the war's long-term social consequences",
+            "Evaluate primary sources (war memorials, photographs, local records) to construct a historically grounded account of local impact"
+          ],
+          "vocabulary": [
+            {
+              "term": "Significance",
+              "definition": "The importance of an event — understanding why the 'Lost Generation' matters for local and national history."
+            },
+            {
+              "term": "Commemoration",
+              "definition": "How we remember and honour those who died — through war memorials, Remembrance Day, and local records."
+            },
+            {
+              "term": "Primary source",
+              "definition": "A document, photograph, or object created at the time of the event being studied."
+            },
+            {
+              "term": "Lost Generation",
+              "definition": "The millions of young men killed in the Great War, leaving a devastating gap in communities across Britain."
+            },
+            {
+              "term": "War memorial",
+              "definition": "A monument dedicated to the memory of those who died in war — Stubbington's memorial lists local men who were killed."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson concludes the unit by scaling down the macro-statistics of the Great War into a localized micro-history, focusing on the Stubbington War Memorial and the tragic loss of the Lowry brothers. This fosters historical empathy and helps students grasp the profound demographic and emotional toll of the conflict.",
             "objectives": [
@@ -34327,6 +34885,33 @@
           "title": "Assessment: The Great War",
           "primer": "This formal assessment bridges Key Stage 3 historical skills with early GCSE demands, testing chronological recall, source utility evaluation, and historical judgement.",
           "vocab": [],
+          "learning_objectives": [
+            "Synthesise knowledge of trench warfare, the Home Front, imperial contributions, propaganda, and the Treaty of Versailles",
+            "Construct a sustained argument using specific evidence about the causes, course, and consequences of the Great War",
+            "Evaluate historical interpretations of the war, including the 'Lions led by Donkeys' debate"
+          ],
+          "vocabulary": [
+            {
+              "term": "Synthesis",
+              "definition": "Combining knowledge from across the whole unit to construct a complete argument."
+            },
+            {
+              "term": "Interpretation",
+              "definition": "How historians explain events differently — e.g., the 'Lions led by Donkeys' debate about General Haig."
+            },
+            {
+              "term": "Evidence",
+              "definition": "Specific historical facts and examples used to support an argument."
+            },
+            {
+              "term": "Evaluation",
+              "definition": "Making a judgement about the value, importance, or accuracy of historical evidence or interpretations."
+            },
+            {
+              "term": "Propaganda",
+              "definition": "Biased information used to promote a cause — a key concept running through the entire Great War unit."
+            }
+          ],
           "do_now": {
             "type": "grid",
             "tasks": [
@@ -34642,6 +35227,28 @@
         {
           "id": "lesson_1",
           "title": "What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?",
+          "vocabulary": [
+            {
+              "term": "Industrial Revolution",
+              "definition": "The rapid development of industry through the introduction of machinery and factory production, beginning in Britain around 1750."
+            },
+            {
+              "term": "Empire",
+              "definition": "A group of countries or territories controlled by one powerful nation, such as the British Empire."
+            },
+            {
+              "term": "Trade",
+              "definition": "The buying and selling of goods — Britain's global trade powered its industrial growth."
+            },
+            {
+              "term": "Significance",
+              "definition": "The importance of an event or development — why the Industrial Revolution matters."
+            },
+            {
+              "term": "Innovation",
+              "definition": "A new invention or method that changes how things are done."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson introduces the shift from the domestic system to mass factory production during the Industrial Revolution, focusing on a local history case study of Henry Cort at the Funtley Ironworks. The goal is to connect major national/global shifts (steam, mass production, empire) to local geography and innovation.",
             "objectives": [
@@ -34915,6 +35522,28 @@
         {
           "id": "lesson_2",
           "title": "Was industrial work progress or punishment?",
+          "vocabulary": [
+            {
+              "term": "Urbanisation",
+              "definition": "The growth of towns and cities as people moved from rural areas to work in factories."
+            },
+            {
+              "term": "Revolution",
+              "definition": "A dramatic and fundamental change — the Industrial Revolution transformed British society."
+            },
+            {
+              "term": "Causation",
+              "definition": "Understanding the reasons behind events — why did factory conditions cause so much suffering?"
+            },
+            {
+              "term": "Child labour",
+              "definition": "The exploitation of children as workers in factories and mines during the Industrial Revolution."
+            },
+            {
+              "term": "Parliament",
+              "definition": "The law-making body of Britain, which gradually passed Factory Acts to improve conditions."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.",
             "objectives": [
@@ -35136,6 +35765,28 @@
         {
           "id": "lesson_3",
           "title": "Did industrialisation make British towns unlivable?",
+          "vocabulary": [
+            {
+              "term": "Industrialisation",
+              "definition": "The transformation from an agricultural economy to one based on factory manufacturing."
+            },
+            {
+              "term": "Public health",
+              "definition": "The health of the population — industrialisation created enormous public health crises in cities."
+            },
+            {
+              "term": "Cholera",
+              "definition": "A deadly waterborne disease that devastated industrial towns due to contaminated water supplies."
+            },
+            {
+              "term": "Change",
+              "definition": "How things become different over time — industrial towns changed rapidly and dramatically."
+            },
+            {
+              "term": "Slum",
+              "definition": "An overcrowded, unsanitary area of housing where the urban poor lived during industrialisation."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson explores the public health crisis triggered by rapid urbanisation. It challenges high-ability pupils by juxtaposing the grand architecture of the British Empire (built with local Fareham bricks) against the squalid reality of the slums. It introduces complex source evaluation using three contrasting, authentic written sources, and frames the topic within the 'Optimist vs. Pessimist' historiographical debate.",
             "objectives": [
@@ -35314,6 +35965,33 @@
         {
           "id": "lesson_4",
           "title": "How was the British Empire built and sustained?",
+          "learning_objectives": [
+            "Describe how the British Empire expanded through trade, military conquest, and colonisation across Asia and Africa",
+            "Explain how religious missions, economic exploitation, and resistance shaped the experience of empire for colonised peoples",
+            "Evaluate the significance of the British Empire in transforming global trade networks"
+          ],
+          "vocabulary": [
+            {
+              "term": "Empire",
+              "definition": "The British Empire — the largest in history, spanning a quarter of the world's surface by 1900."
+            },
+            {
+              "term": "Colonisation",
+              "definition": "The process of establishing control over a foreign territory and its people."
+            },
+            {
+              "term": "Trade",
+              "definition": "The exchange of goods — the empire was built on global trade networks exploiting colonial resources."
+            },
+            {
+              "term": "Resistance",
+              "definition": "Actions taken by colonised peoples to oppose British rule and exploitation."
+            },
+            {
+              "term": "Missionary",
+              "definition": "A person sent to promote Christianity in foreign lands — often used to justify imperial expansion."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson investigates the core mechanisms of British imperial power in the 19th century, focusing on the interplay between trade, military execution, and industrial support. It introduces cognitive categorisation, significance mapping, and provenance analysis, anchoring global naval supremacy directly to the domestic workforce at Portsmouth Dockyard.",
             "objectives": [
@@ -35697,6 +36375,33 @@
         {
           "id": "lesson_5",
           "title": "How did the Empire strike back? The 1857 Indian Rebellion",
+          "learning_objectives": [
+            "Describe the causes and events of the Indian Rebellion of 1857 and the forms of resistance used by Indian soldiers",
+            "Explain how the rebellion challenged British imperial power and led to direct Crown rule over India",
+            "Evaluate the significance of the Indian Rebellion as an example of colonial resistance to empire"
+          ],
+          "vocabulary": [
+            {
+              "term": "Rebellion",
+              "definition": "An armed uprising against authority — the Indian Rebellion of 1857 challenged British imperial power."
+            },
+            {
+              "term": "Resistance",
+              "definition": "Actions taken to oppose those in power — Indian soldiers (sepoys) resisted British rule."
+            },
+            {
+              "term": "Crown rule",
+              "definition": "Direct governance of India by the British monarchy, replacing the East India Company after 1858."
+            },
+            {
+              "term": "Sepoy",
+              "definition": "An Indian soldier serving in the British East India Company's army."
+            },
+            {
+              "term": "Power",
+              "definition": "The ability to control others — the rebellion exposed the limits of British imperial power."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson contrasts domestic working-class resistance (Swing Riots/Chartism) with violent colonial resistance, shattering the myth of a passive Empire. It explores the causes of the 1857 Rebellion, the brutal suppression, and the monumental shift to the British Raj.",
             "objectives": [
@@ -36061,6 +36766,33 @@
         {
           "id": "lesson_6",
           "title": "How did ordinary people fight for a voice?",
+          "learning_objectives": [
+            "Describe the key protest movements of the 19th century, including Chartism and trade unionism",
+            "Explain how industrialisation created new forms of resistance and demands for democracy and parliamentary reform",
+            "Evaluate the significance of working-class protest in expanding the power of Parliament and moving towards democracy"
+          ],
+          "vocabulary": [
+            {
+              "term": "Chartism",
+              "definition": "A working-class movement for political reform in the 1830s-40s, demanding universal male suffrage."
+            },
+            {
+              "term": "Democracy",
+              "definition": "Government by the people — the 19th century saw a gradual expansion of who could vote."
+            },
+            {
+              "term": "Protest",
+              "definition": "Public expression of dissent — workers protested terrible conditions and lack of political representation."
+            },
+            {
+              "term": "Trade union",
+              "definition": "An organisation of workers formed to protect their rights and negotiate better pay and conditions."
+            },
+            {
+              "term": "Reform",
+              "definition": "A change made to improve something — the Reform Acts gradually expanded the right to vote."
+            }
+          ],
           "teacher_notes": {
             "primer": "This lesson evaluates how working-class resistance transformed from violent, uncoordinated machine-breaking into organized, mass political movements. It tests students' historical reasoning by contrasting the rural Hampshire Swing Riots with the urban constitutional challenge of Chartism, assessing how different social classes reacted to the pressures of an industrial economy.",
             "objectives": [
@@ -36433,6 +37165,33 @@
         {
           "id": "lesson_7",
           "title": "How did the road to democracy expand?",
+          "learning_objectives": [
+            "Describe the key reforms that expanded democracy in 19th-century Britain, including the Reform Acts",
+            "Explain how protest, resistance, and propaganda drove the gradual extension of the right to vote",
+            "Evaluate the significance of the suffrage movement in transforming British democracy by 1900"
+          ],
+          "vocabulary": [
+            {
+              "term": "Suffrage",
+              "definition": "The right to vote in political elections — expanded gradually through the Reform Acts."
+            },
+            {
+              "term": "Parliament",
+              "definition": "The institution that makes laws — 19th-century reform expanded who Parliament represented."
+            },
+            {
+              "term": "Monarchy",
+              "definition": "Rule by a king or queen — the monarchy's power declined as Parliament gained more authority."
+            },
+            {
+              "term": "Propaganda",
+              "definition": "Material designed to influence opinion — used by both reformers and opponents of democratic change."
+            },
+            {
+              "term": "Franchise",
+              "definition": "The right to vote — each Reform Act extended the franchise to more people."
+            }
+          ],
           "teacher_notes": {
             "primer": "This final lesson of the unit traces the slow, hard-fought transition of Britain from an aristocratic oligarchy to a burgeoning democracy. It emphasizes that political rights were not freely given but conceded gradually due to popular pressure, utilizing the local Hampshire context of 'rotten boroughs' to highlight the absurdity of the pre-reform system.",
             "objectives": [
@@ -36811,6 +37570,11 @@
         {
           "id": "lesson_8",
           "title": "Who truly benefited from 19th-century transformation?",
+          "learning_objectives": [
+            "Synthesise knowledge of industrialisation, empire, trade, democracy, and resistance across the 19th century",
+            "Construct a sustained argument evaluating who truly benefited from Britains transformation",
+            "Deploy specific evidence about power, colonialism, and urbanisation to support a historical judgement"
+          ],
           "teacher_notes": {
             "primer": "This capstone lesson serves as the synthesis module for the entire 'Industrialisation and Empire' unit. Its pedagogical purpose is to guide high-ability pupils through the process of constructing a complex, balanced historical argument that weighs the structural advancements of technology and empire against the human cost of exploitation and political suppression.",
             "objectives": [
@@ -37188,6 +37952,33 @@
       "lessons": [
         {
           "title": "Lesson 1: 1066 - Why did three men claim one throne, and how did William win?",
+          "learning_objectives": [
+            "Describe the three rival claims to the English throne in 1066 and assess which was strongest",
+            "Explain how the Battle of Hastings demonstrated the role of power, luck, and military strategy in shaping history",
+            "Evaluate the significance of the Norman Conquest as a turning point in English history"
+          ],
+          "vocabulary": [
+            {
+              "term": "Power",
+              "definition": "The ability to control people, events, or resources — a central theme of medieval history."
+            },
+            {
+              "term": "Claim",
+              "definition": "A demand for the right to rule, based on blood ties, promises, or military strength."
+            },
+            {
+              "term": "Conquest",
+              "definition": "The act of taking control of a country or territory by military force."
+            },
+            {
+              "term": "Anglo-Saxon",
+              "definition": "The Germanic peoples who settled in England from the 5th century and ruled until the Norman Conquest of 1066."
+            },
+            {
+              "term": "Significance",
+              "definition": "The importance of a historical event — why it mattered at the time and why it still matters today."
+            }
+          ],
           "banner": "/images/battle_of_hastings_bayeux.jpg",
           "narrative_blocks": [
             {
@@ -37599,6 +38390,33 @@
         },
         {
           "title": "Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?",
+          "learning_objectives": [
+            "Explain how William used castles, the feudal system, and terror as tools of power and control",
+            "Describe how the Domesday Book functioned as a mechanism of royal authority and resistance suppression",
+            "Assess the effectiveness of William's methods in crushing Anglo-Saxon resistance"
+          ],
+          "vocabulary": [
+            {
+              "term": "Feudal system",
+              "definition": "The medieval social hierarchy where the king granted land to lords in exchange for military service, who in turn controlled peasants."
+            },
+            {
+              "term": "Resistance",
+              "definition": "Actions taken to oppose or fight against those in power."
+            },
+            {
+              "term": "Propaganda",
+              "definition": "Information (often biased or misleading) used to promote a political cause or point of view."
+            },
+            {
+              "term": "Domesday Book",
+              "definition": "A comprehensive survey of England ordered by William I in 1086 to record who owned what land and its value."
+            },
+            {
+              "term": "Motte-and-bailey",
+              "definition": "An early type of Norman castle with a raised mound (motte) topped by a wooden tower and an enclosed courtyard (bailey)."
+            }
+          ],
           "banner": "/images/portchester_seawards.jpg",
           "teacher_notes": {
             "primer": "This lesson focuses on the brutal methods William the Conqueror used to secure his control over a hostile England following his victory at Hastings. Students will explore military control through castles, psychological and physical devastation in the Harrying of the North, and administrative dominance via the Domesday Book.",
@@ -38038,6 +38856,33 @@
         },
         {
           "title": "Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?",
+          "learning_objectives": [
+            "Explain why the relationship between the monarchy and the Church was a fundamental struggle for power in medieval England",
+            "Describe how the murder of Thomas Becket (1170) demonstrated the tension between feudal loyalty and religious authority",
+            "Evaluate the significance of the Becket affair for the balance of power between Church and Crown"
+          ],
+          "vocabulary": [
+            {
+              "term": "Church",
+              "definition": "The Catholic Church — the most powerful religious institution in medieval Europe, led by the Pope in Rome."
+            },
+            {
+              "term": "Monarchy",
+              "definition": "Rule by a king or queen. In medieval England, the monarch claimed authority from God (Divine Right)."
+            },
+            {
+              "term": "Martyr",
+              "definition": "A person who is killed because of their religious beliefs, often becoming a powerful symbol."
+            },
+            {
+              "term": "Excommunication",
+              "definition": "Being expelled from the Catholic Church — the most severe spiritual punishment in the medieval world."
+            },
+            {
+              "term": "Canon law",
+              "definition": "The system of laws and regulations made by the Church, which often clashed with the king's secular laws."
+            }
+          ],
           "banner": "/images/becket_murder.jpg",
           "teacher_notes": {
             "primer": "This lesson focuses on the dramatic conflict between King Henry II and his former friend Archbishop Thomas Becket over legal jurisdiction and church independence, culminating in Becket's shocking murder.",
@@ -38405,6 +39250,33 @@
         },
         {
           "title": "Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?",
+          "learning_objectives": [
+            "Describe the key grievances that led the barons to challenge King John's power",
+            "Explain the significance of Magna Carta as a challenge to absolute monarchy and a step towards parliamentary democracy",
+            "Evaluate contrasting historical interpretations of Magna Carta: triumph of liberty or selfish baronial power grab?"
+          ],
+          "vocabulary": [
+            {
+              "term": "Magna Carta",
+              "definition": "The 'Great Charter' of 1215, forced upon King John by his barons, limiting royal power and establishing legal rights."
+            },
+            {
+              "term": "Democracy",
+              "definition": "A system of government where power is held by the people, usually through elected representatives."
+            },
+            {
+              "term": "Parliament",
+              "definition": "An assembly of representatives that gradually gained the power to make laws and hold the monarch to account."
+            },
+            {
+              "term": "Interpretation",
+              "definition": "A particular way of explaining or understanding a historical event — historians often disagree in their interpretations."
+            },
+            {
+              "term": "Baron",
+              "definition": "A powerful nobleman who held land from the king under the feudal system and owed military service in return."
+            }
+          ],
           "banner": "/images/king_john_matthew_paris.jpg",
           "teacher_notes": {
             "primer": "This lesson focuses on the reign of King John, examining the cascading failures that led to the Barons' rebellion and the sealing of Magna Carta, while challenging pupils to evaluate its immediate reality versus its long-term mythological legacy.",
@@ -38796,6 +39668,33 @@
         },
         {
           "title": "Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?",
+          "learning_objectives": [
+            "Describe the key features of daily life for the peasantry in a medieval village",
+            "Explain how the feudal system and the Church controlled virtually every aspect of a peasant's existence",
+            "Assess the extent to which medieval peasants had any real power or agency within the feudal hierarchy"
+          ],
+          "vocabulary": [
+            {
+              "term": "Peasantry",
+              "definition": "The class of poor agricultural labourers who worked the land under the feudal system."
+            },
+            {
+              "term": "Tithe",
+              "definition": "A tax of one-tenth of a person's produce or income, paid to the Church."
+            },
+            {
+              "term": "Feudalism",
+              "definition": "The dominant social system in medieval Europe, based on land ownership, loyalty, and obligation."
+            },
+            {
+              "term": "Serf",
+              "definition": "A peasant who was legally tied to the land they worked and could not leave without their lord's permission."
+            },
+            {
+              "term": "Strip farming",
+              "definition": "The medieval agricultural system where peasants farmed narrow strips of land scattered across open fields."
+            }
+          ],
           "banner": "/images/doom_painting.jpg",
           "teacher_notes": {
             "primer": "This lesson immerses students in the daily life of a medieval peasant, shifting the focus from political to social history. It emphasizes the cyclical nature of agricultural work, the oppressive taxation of the feudal system, and the psychological control exerted by the Catholic Church through concepts like Doom Paintings and Purgatory. This provides crucial context for understanding the Peasants' Revolt in the following lessons.",
@@ -39132,6 +40031,33 @@
         },
         {
           "title": "Lesson 6: 1348: How did the Black Death shatter medieval social order?",
+          "learning_objectives": [
+            "Describe the causes and spread of the Black Death across medieval England",
+            "Explain how the plague shattered the feudal system by empowering the peasantry through labour shortages",
+            "Evaluate the significance of the Black Death as a catalyst for change in medieval social order"
+          ],
+          "vocabulary": [
+            {
+              "term": "Black Death",
+              "definition": "The devastating plague pandemic of 1348-1350 that killed approximately one-third of England's population."
+            },
+            {
+              "term": "Change",
+              "definition": "A fundamental shift in how things work — the Black Death caused dramatic change to medieval society."
+            },
+            {
+              "term": "Labour shortage",
+              "definition": "A situation where there are not enough workers available, which gives remaining workers bargaining power."
+            },
+            {
+              "term": "Statute of Labourers",
+              "definition": "A law passed in 1351 attempting to fix wages at pre-plague levels and prevent peasants from demanding higher pay."
+            },
+            {
+              "term": "Social order",
+              "definition": "The hierarchical structure of society — in medieval England, this was the feudal pyramid of King, Lords, and Peasants."
+            }
+          ],
           "banner": "/images/plague_burial.jpg",
           "teacher_notes": {
             "primer": "This lesson explains how the devastating biological shock of the Black Death fundamentally shattered the rigid feudal hierarchy by changing the economic balance of power between lords and peasants.",
@@ -39493,6 +40419,33 @@
         },
         {
           "title": "Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?",
+          "learning_objectives": [
+            "Explain the causes of the Peasants' Revolt, linking them to the decline of feudalism and growing resistance to royal power",
+            "Describe the key events of the revolt and the role of leaders like Wat Tyler",
+            "Evaluate whether the Peasants' Revolt was a failure or a significant step towards challenging the power of the monarchy and Parliament"
+          ],
+          "vocabulary": [
+            {
+              "term": "Revolt",
+              "definition": "An organised uprising against those in power, driven by grievance and a desire for change."
+            },
+            {
+              "term": "Poll tax",
+              "definition": "A flat-rate tax charged on every adult, regardless of wealth — widely seen as deeply unfair to the peasantry."
+            },
+            {
+              "term": "Resistance",
+              "definition": "Actions taken to oppose or challenge authority — the Peasants' Revolt was a dramatic act of resistance."
+            },
+            {
+              "term": "Wat Tyler",
+              "definition": "The leader of the Peasants' Revolt of 1381, killed during negotiations with King Richard II."
+            },
+            {
+              "term": "Villeinage",
+              "definition": "The condition of being a villein (serf) — tied to the land with obligations to a feudal lord."
+            }
+          ],
           "banner": "/images/sudbury_execution.jpg",
           "teacher_notes": {
             "primer": "This lesson explores the explosive climax of decades of social tension following the Black Death. It examines the short and long-term causes of the 1381 Peasants' Revolt, the shocking breach of royal security in London, and the ambiguous legacy of the uprising.",
@@ -39854,6 +40807,33 @@
         },
         {
           "title": "Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?",
+          "learning_objectives": [
+            "Describe the causes of the Wars of the Roses and how rival claims to the monarchy led to civil war",
+            "Explain how propaganda and political manipulation shaped the conflict between York and Lancaster",
+            "Evaluate the significance of Henry VII's victory at Bosworth as the end of the medieval era and the birth of Tudor power"
+          ],
+          "vocabulary": [
+            {
+              "term": "Monarchy",
+              "definition": "Rule by a king or queen — the Wars of the Roses were a violent struggle between rival claimants to the English monarchy."
+            },
+            {
+              "term": "Dynasty",
+              "definition": "A series of rulers from the same family, such as the Plantagenets, Yorkists, and Tudors."
+            },
+            {
+              "term": "Propaganda",
+              "definition": "The use of biased information to shape public opinion — Tudor propaganda deliberately blackened Richard III's reputation."
+            },
+            {
+              "term": "Usurper",
+              "definition": "A person who seizes power illegally or by force, without a legitimate claim."
+            },
+            {
+              "term": "Significance",
+              "definition": "Why an event mattered — the Battle of Bosworth (1485) is significant because it ended the medieval era."
+            }
+          ],
           "banner": "/images/bosworth_battle.jpg",
           "teacher_notes": {
             "primer": "This lesson closes the 100-year gap between the Peasants' Revolt and the Tudor period. It explores the chaotic 30-year civil war between the Houses of Lancaster and York, the mystery of the Princes in the Tower, and the climactic Battle of Bosworth where Henry Tudor seized the throne.",
@@ -40177,6 +41157,33 @@
         },
         {
           "title": "Lesson 9: Assessment: How powerful was a medieval monarch?",
+          "learning_objectives": [
+            "Synthesise knowledge of power, monarchy, feudalism, and the Church across the medieval period",
+            "Construct a sustained argument evaluating how far a medieval monarch's power was limited by resistance from barons, the Church, and the peasantry",
+            "Deploy specific historical evidence to support a judgement about the nature of medieval power"
+          ],
+          "vocabulary": [
+            {
+              "term": "Synthesis",
+              "definition": "Bringing together knowledge from across a whole unit to form an overall judgement."
+            },
+            {
+              "term": "Power",
+              "definition": "The ability to control others — the central theme of this entire medieval unit."
+            },
+            {
+              "term": "Feudalism",
+              "definition": "The social system based on land, loyalty, and obligation that defined medieval English society."
+            },
+            {
+              "term": "Evidence",
+              "definition": "Historical facts, sources, or examples used to support an argument or judgement."
+            },
+            {
+              "term": "Judgement",
+              "definition": "A considered conclusion reached after weighing up different pieces of evidence."
+            }
+          ],
           "banner": "/images/domesday_book.jpg",
           "teacher_notes": {
             "primer": "This is a capstone assessment lesson. Rather than regurgitating previous narratives, it tests students' ability to synthesize knowledge from the entire unit. The lesson involves chronological retrieval practice, evaluation of differing historical interpretations, and scaffolding for a 12-mark essay.",
@@ -42494,6 +43501,33 @@
         {
           "id": "lesson_1",
           "title": "How much progress did the Romans make in public health?",
+          "learning_objectives": [
+            "Describe the key features of Roman public health infrastructure, including aqueducts, bathhouses, and sewers",
+            "Explain how the Roman Empire's centralised power enabled large-scale public health projects",
+            "Evaluate the significance of Roman public health by assessing whether it represented genuine medical understanding or imperial prestige"
+          ],
+          "vocabulary": [
+            {
+              "term": "Aqueduct",
+              "definition": "An artificial channel built by the Romans to transport fresh water from rivers and springs into towns and cities."
+            },
+            {
+              "term": "Empire",
+              "definition": "A large political unit where one powerful state controls many different peoples and territories, such as the Roman Empire."
+            },
+            {
+              "term": "Public health",
+              "definition": "The health of the population as a whole, including access to clean water, sanitation, and disease prevention."
+            },
+            {
+              "term": "Sanitation",
+              "definition": "Systems for keeping places clean, especially the removal of waste and sewage to prevent disease."
+            },
+            {
+              "term": "Continuity",
+              "definition": "When things stay the same over a long period of time, without significant change."
+            }
+          ],
           "video": {
             "type": "era",
             "url": "https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/",
@@ -42749,6 +43783,33 @@
         {
           "id": "lesson_2",
           "title": "Why did public health decline during the Middle Ages?",
+          "learning_objectives": [
+            "Explain how the collapse of Roman imperial power led to the decline of organised public health systems",
+            "Describe the role of the medieval Church in shaping attitudes to disease and sanitation",
+            "Assess the significance of the Black Death (1348) as a turning point in medieval public health"
+          ],
+          "vocabulary": [
+            {
+              "term": "Monarchy",
+              "definition": "A system of government where a king or queen holds supreme power, inherited through a royal family."
+            },
+            {
+              "term": "Church",
+              "definition": "In medieval context, the Catholic Church — the dominant religious institution that influenced all aspects of life."
+            },
+            {
+              "term": "Causation",
+              "definition": "The relationship between causes and effects — understanding why something happened."
+            },
+            {
+              "term": "Miasma",
+              "definition": "The medieval theory that disease was caused by 'bad air' or foul-smelling vapours rising from rotting matter."
+            },
+            {
+              "term": "Significance",
+              "definition": "The importance or impact of a historical event, person, or development — why it matters."
+            }
+          ],
           "do_now": {
             "type": "questions",
             "items": [
@@ -42996,6 +44057,33 @@
         {
           "id": "lesson_3",
           "title": "To what extent did towns become filthier during the Early Modern period?",
+          "learning_objectives": [
+            "Describe the public health challenges caused by rapid urbanisation in Early Modern towns",
+            "Explain why governments failed to act despite growing evidence of poor sanitation",
+            "Evaluate the extent to which continuity, rather than change, defined public health between 1500 and 1750"
+          ],
+          "vocabulary": [
+            {
+              "term": "Urbanisation",
+              "definition": "The growth of towns and cities as people move from rural areas to urban centres."
+            },
+            {
+              "term": "Cesspit",
+              "definition": "A pit for the disposal of liquid waste and sewage, common in Early Modern towns."
+            },
+            {
+              "term": "Plague",
+              "definition": "A devastating infectious disease, such as the bubonic plague, that caused mass death in medieval and early modern England."
+            },
+            {
+              "term": "Change",
+              "definition": "When things become different over time — a key concept in understanding historical development."
+            },
+            {
+              "term": "Privy",
+              "definition": "An outdoor toilet, often shared by multiple families, that emptied into a cesspit or river."
+            }
+          ],
           "do_now": {
             "type": "questions",
             "items": [
@@ -43228,6 +44316,37 @@
         {
           "id": "lesson_4",
           "title": "How did the Industrial Revolution lead to a public health crisis?",
+          "learning_objectives": [
+            "Explain how industrialisation and mass migration to cities created unprecedented public health crises",
+            "Describe the role of key individuals (John Snow, Edwin Chadwick) in challenging existing beliefs about disease",
+            "Analyse the significance of the 1848 Public Health Act as an example of government intervention driven by causation evidence"
+          ],
+          "vocabulary": [
+            {
+              "term": "Industrialisation",
+              "definition": "The transformation of an economy from agriculture to factory-based manufacturing, as occurred in Britain from the late 1700s."
+            },
+            {
+              "term": "Migration",
+              "definition": "The movement of people from one place to another, often from rural to urban areas in search of work."
+            },
+            {
+              "term": "Cholera",
+              "definition": "A deadly waterborne disease caused by contaminated drinking water, which devastated industrial towns."
+            },
+            {
+              "term": "Parliament",
+              "definition": "The law-making body of the United Kingdom, responsible for debating and passing laws."
+            },
+            {
+              "term": "Laissez-faire",
+              "definition": "A philosophy that the government should not interfere in the economy or people's lives — a barrier to public health reform."
+            },
+            {
+              "term": "Revolution",
+              "definition": "A dramatic and fundamental change in society, politics, or technology."
+            }
+          ],
           "do_now": {
             "type": "questions",
             "items": [
@@ -43460,6 +44579,33 @@
         {
           "id": "lesson_5",
           "title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+          "learning_objectives": [
+            "Explain why it took Parliament so long to act on public health reform despite mounting evidence",
+            "Describe how the 'Great Stink' of 1858 became a turning point that forced government action",
+            "Evaluate the significance of Joseph Bazalgette's sewer system as a landmark of change in public health"
+          ],
+          "vocabulary": [
+            {
+              "term": "The Great Stink",
+              "definition": "The crisis of summer 1858 when the smell of sewage in the River Thames became so overwhelming that Parliament was forced to act."
+            },
+            {
+              "term": "Germ theory",
+              "definition": "The scientific understanding (proved by Louis Pasteur in 1861) that diseases are caused by microscopic organisms, not 'bad air'."
+            },
+            {
+              "term": "Turning point",
+              "definition": "A moment in history after which things changed significantly and permanently."
+            },
+            {
+              "term": "Reform",
+              "definition": "A change made to improve something, often through new laws or policies."
+            },
+            {
+              "term": "Infrastructure",
+              "definition": "The basic physical systems of a society, such as roads, sewers, water supplies, and buildings."
+            }
+          ],
           "do_now": {
             "type": "questions",
             "items": [
