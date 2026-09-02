@@ -53,19 +53,15 @@ const commonHead = `
             .primer-box h4 { margin: 0 0 10px 0; color: #92400e; font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 10pt; letter-spacing: 1px; }
             
             table { width: 100%; border-collapse: collapse; margin-bottom: 30px; page-break-inside: auto; }
-            tr { page-break-inside: avoid; page-break-after: auto; }
-            th { background: #e2e8f0; color: #0f172a; text-align: left; padding: 12px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 11pt; border: 1px solid #cbd5e1; }
-            td { padding: 12px; border: 1px solid #cbd5e1; vertical-align: top; font-size: 10.5pt; color: #334155; }
+            tr { page-break-inside: avoid; page-break-after: auto; border-bottom: 1px solid #e2e8f0; }
+            tr:nth-child(even) { background-color: #f8fafc; }
+            th { background: #0f172a; color: #ffffff; text-align: left; padding: 14px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 10.5pt; border: none; }
+            td { padding: 14px; border: none; vertical-align: top; font-size: 10pt; color: #334155; }
             
             .lesson-num { font-weight: 700; color: #0c2340; white-space: nowrap; }
             .lesson-title { font-weight: 700; margin-bottom: 5px; color: #1e40af; font-size: 11pt; }
             
             .hinge-question { color: #b91c1c; font-style: italic; font-weight: 600; margin-top: 8px; display: block; border-left: 2px solid #ef4444; padding-left: 8px; }
-            
-            .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 30px; }
-            .vocab-item { border: 1px solid #e2e8f0; padding: 10px; border-radius: 4px; background: #fff; }
-            .vocab-term { font-weight: 700; color: #0c2340; margin-bottom: 4px; }
-            .vocab-def { font-size: 9.5pt; color: #475569; }
             
             ul.obj-list { margin: 5px 0 0 0; padding-left: 20px; }
             ul.obj-list li { margin-bottom: 5px; }
@@ -205,25 +201,27 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                     let objsHTML = '';
                     let hinge = '';
                     
-                    if (lesson.intent && Array.isArray(lesson.intent) && lesson.intent.length > 0) {
+                    if (lesson.learning_objectives && Array.isArray(lesson.learning_objectives.scaffolded) && lesson.learning_objectives.scaffolded.length > 0) {
+                        objsHTML = `<ul class="obj-list">` + lesson.learning_objectives.scaffolded.map(o => `<li>${o}</li>`).join('') + `</ul>`;
+                    } else if (lesson.intent && Array.isArray(lesson.intent) && lesson.intent.length > 0) {
                         objsHTML = `<ul class="obj-list">` + lesson.intent.map(o => `<li>${o}</li>`).join('') + `</ul>`;
-                    } else if (unitData.teacher_notes && unitData.teacher_notes.objectives) {
+                    } else if (lesson.learning_objective) {
+                        objsHTML = `<ul class="obj-list"><li>${lesson.learning_objective}</li></ul>`;
+                    } else {
+                        objsHTML = '<span style="color:#94a3b8; font-style:italic;">Historical Enquiry</span>';
+                    }
+
+                    // Extract Hinge Question from teacher_notes if available
+                    if (unitData.teacher_notes && unitData.teacher_notes.objectives) {
                         const lessonObjs = unitData.teacher_notes.objectives.filter(o => 
                             (lesson.learning_objective && o.objective === lesson.learning_objective) ||
+                            (lesson.learning_objectives && lesson.learning_objectives.scaffolded && lesson.learning_objectives.scaffolded.includes(o.objective)) ||
                             (lesson.title && o.objective && o.objective.includes(lesson.title.split(':')[0])) ||
                             (lesson.title && lesson.title.includes(o.objective))
                         );
-                        if (lessonObjs.length > 0) {
-                            objsHTML = `<ul class="obj-list">` + lessonObjs.map(o => `<li>${o.objective}</li>`).join('') + `</ul>`;
-                            const hingeObj = lessonObjs.find(o => o.question);
-                            if (hingeObj) hinge = hingeObj.question;
-                        }
-                    } 
-                    
-                    if (!objsHTML && lesson.learning_objective) {
-                         objsHTML = `<ul class="obj-list"><li>${lesson.learning_objective}</li></ul>`;
+                        const hingeObj = lessonObjs.find(o => o.question);
+                        if (hingeObj) hinge = hingeObj.question;
                     }
-                    if (!objsHTML) objsHTML = '<span style="color:#94a3b8; font-style:italic;">Historical Enquiry</span>';
 
                     // Extract Disciplinary Focus
                     let discFocus = lesson.disciplinary_concept || lesson.disciplinary_focus || lesson.historical_concept || '';
@@ -272,14 +270,14 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                     }
                     
                     let tasksHTML = tasks.length > 0 
-                        ? `<ul class="task-list">` + tasks.map(t => `<li>${t}</li>`).join('') + `</ul>`
+                        ? `<ul class="task-list">` + Array.from(new Set(tasks)).map(t => `<li>${t}</li>`).join('') + `</ul>`
                         : '<span style="color:#94a3b8; font-style:italic;">Narrative exploration and class discussion</span>';
 
                     html += `
                         <tr>
                             <td>
                                 <div class="lesson-num">Lesson ${idx + 1}</div>
-                                <div class="lesson-title">${lesson.title}</div>
+                                <div class="lesson-title">${lesson.title || 'Untitled Lesson'}</div>
                             </td>
                             <td>
                                 ${objsHTML}
@@ -299,19 +297,21 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             }
 
             if (vocabulary && vocabulary.length > 0) {
-                html += `
-                    <h3 style="color: #0c2340; border-bottom: 2px solid #cbd5e1; padding-bottom: 5px; margin-top: 40px;">Required Vocabulary</h3>
-                    <div class="vocab-grid">
-                `;
-                vocabulary.forEach(v => {
+                const words = vocabulary
+                    .map(v => v.term || v.word || v.keyword)
+                    .filter(w => w && w !== 'undefined')
+                    .map(w => w.trim());
+                
+                const uniqueWords = Array.from(new Set(words));
+                
+                if (uniqueWords.length > 0) {
                     html += `
-                        <div class="vocab-item">
-                            <div class="vocab-term">${v.term || v.word || v.keyword}</div>
-                            <div class="vocab-def">${v.definition}</div>
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 6px; margin-top: 30px; margin-bottom: 30px;">
+                            <strong style="color: #0f172a; font-family: 'Outfit', sans-serif;">Key Vocabulary:</strong> 
+                            <span style="color: #475569;">${uniqueWords.join(', ')}</span>
                         </div>
                     `;
-                });
-                html += `</div>`;
+                }
             }
 
             html += `</div>`;
