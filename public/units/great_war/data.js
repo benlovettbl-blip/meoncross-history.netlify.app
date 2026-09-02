@@ -77,6 +77,11 @@ const great_war = {
             "objective": "Analyze the geographical impact of the new German Empire on the balance of power in Europe.",
             "primer": "Focus on the 'Crowning a Kaiser' section and the taking of Alsace-Lorraine. Use the maps to show the massive new empire in the center of Europe.",
             "question": "Why would the creation of the German Empire and the annexation of Alsace-Lorraine terrify Germany's neighbors?"
+          },
+          {
+            "objective": "Evaluate the geopolitical consequences of German unification for the balance of power in Europe.",
+            "primer": "Guide students to consider how the sudden creation of a powerful, militarised state in the centre of Europe alarmed France and disrupted the existing balance of power, setting the stage for future alliances and conflicts.",
+            "question": "How did the creation of the German Empire in 1871 make a future European war more likely?"
           }
         ]
       },
@@ -480,7 +485,8 @@ const great_war = {
         "overarching": "To analyze the unification process and the creation of the German Empire in 1871.",
         "scaffolded": [
           "Explain how Otto von Bismarck used 'blood and iron' diplomacy and three calculated wars to unify Germany by 1871.",
-          "Analyze the geographical impact of the new German Empire on the balance of power in Europe."
+          "Analyze the geographical impact of the new German Empire on the balance of power in Europe.",
+          "Evaluate the geopolitical consequences of German unification for the balance of power in Europe."
         ]
       }
     },
