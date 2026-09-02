@@ -1276,8 +1276,672 @@ const unitData = {
       ]
     }
   ],
-  "quizPack": [],
-  "glossary": [],
+  "quizPack": [
+    {
+      "q": "What was the public scientific purpose of Captain Cook's 1768 voyage on the Endeavour?",
+      "a": "To observe the transit of Venus across the Sun",
+      "options": [
+        "To observe the transit of Venus across the Sun",
+        "To map the coastline of Antarctica",
+        "To establish a trading post in India",
+        "To find a new trade route to China"
+      ],
+      "id": "aus_q1"
+    },
+    {
+      "q": "Which prestigious institution funded Captain Cook's voyage?",
+      "a": "The Royal Society",
+      "options": [
+        "The Royal Society",
+        "The East India Company",
+        "The House of Lords",
+        "The British Museum"
+      ],
+      "id": "aus_q2"
+    },
+    {
+      "q": "What secret instructions did the British Admiralty give Captain Cook?",
+      "a": "To locate and claim the 'Great Southern Land' for Britain",
+      "options": [
+        "To locate and claim the 'Great Southern Land' for Britain",
+        "To establish a permanent military base in Tahiti",
+        "To capture French trading ships in the Pacific",
+        "To convert Indigenous peoples to Christianity"
+      ],
+      "id": "aus_q3"
+    },
+    {
+      "q": "Who was Tupaia?",
+      "a": "A Polynesian high priest and master star navigator from Ra'iatea",
+      "options": [
+        "A Polynesian high priest and master star navigator from Ra'iatea",
+        "A Dutch cartographer who had previously mapped Australia",
+        "A British marine officer who commanded the Endeavour's crew",
+        "A Māori warrior who attacked the Endeavour in New Zealand"
+      ],
+      "id": "aus_q4"
+    },
+    {
+      "q": "How did Tupaia navigate the Endeavour across the Pacific without European instruments?",
+      "a": "By reading the stars, bird flight patterns, cloud formations, and ocean currents",
+      "options": [
+        "By reading the stars, bird flight patterns, cloud formations, and ocean currents",
+        "By following a magnetic compass given to him by Joseph Banks",
+        "By using a French marine chronometer borrowed from Tahiti",
+        "By copying Portuguese maps stolen from a captured galleon"
+      ],
+      "id": "aus_q5"
+    },
+    {
+      "q": "Which Aboriginal group first encountered Captain Cook at Botany Bay in 1770?",
+      "a": "The Gweagal people of the Dharawal nation",
+      "options": [
+        "The Gweagal people of the Dharawal nation",
+        "The Wurundjeri people of Melbourne",
+        "The Wiradjuri people of western New South Wales",
+        "The Kaurna people of Adelaide"
+      ],
+      "id": "aus_q6"
+    },
+    {
+      "q": "Why did the Gweagal warriors oppose Cook's landing at Botany Bay?",
+      "a": "It was their spiritual and legal duty to protect their ancestral lands from uninvited strangers",
+      "options": [
+        "It was their spiritual and legal duty to protect their ancestral lands from uninvited strangers",
+        "They believed the British ships were sea monsters sent by evil spirits",
+        "They had been warned by French sailors that the British were hostile",
+        "They were protecting a hidden gold deposit on the beach"
+      ],
+      "id": "aus_q7"
+    },
+    {
+      "q": "What Latin legal term did the British use to falsely claim Australia was 'nobody's land'?",
+      "a": "Terra Nullius",
+      "options": [
+        "Terra Nullius",
+        "Habeas Corpus",
+        "Magna Carta",
+        "Caveat Emptor"
+      ],
+      "id": "aus_q8"
+    },
+    {
+      "q": "On which island did Captain Cook raise the Union Jack to claim the eastern coast for Britain?",
+      "a": "Possession Island",
+      "options": [
+        "Possession Island",
+        "Tasmania",
+        "Norfolk Island",
+        "Fraser Island"
+      ],
+      "id": "aus_q9"
+    },
+    {
+      "q": "Who was the wealthy botanist who led the Royal Society's scientific team on the Endeavour?",
+      "a": "Sir Joseph Banks",
+      "options": [
+        "Sir Joseph Banks",
+        "Sir Isaac Newton",
+        "Charles Darwin",
+        "Alexander von Humboldt"
+      ],
+      "id": "aus_q10"
+    },
+    {
+      "q": "Which global event in 1776 caused Britain to lose its primary location for transporting convicts?",
+      "a": "The American War of Independence",
+      "options": [
+        "The American War of Independence",
+        "The French Revolution",
+        "The Seven Years' War",
+        "The Napoleonic Wars"
+      ],
+      "id": "aus_q11"
+    },
+    {
+      "q": "What were 'hulks' in the context of British prisons?",
+      "a": "Old, decommissioned warships moored in rivers and used as overcrowded prisons",
+      "options": [
+        "Old, decommissioned warships moored in rivers and used as overcrowded prisons",
+        "Underground dungeons beneath the Tower of London",
+        "Factory workhouses for debtors and orphans",
+        "Prison islands in the English Channel"
+      ],
+      "id": "aus_q12"
+    },
+    {
+      "q": "How many ships made up the First Fleet that sailed to Australia in 1787?",
+      "a": "11 ships",
+      "options": [
+        "11 ships",
+        "7 ships",
+        "15 ships",
+        "3 ships"
+      ],
+      "id": "aus_q13"
+    },
+    {
+      "q": "Who was the first Governor of the New South Wales colony?",
+      "a": "Captain Arthur Phillip",
+      "options": [
+        "Captain Arthur Phillip",
+        "Captain James Cook",
+        "Governor Lachlan Macquarie",
+        "Sir Joseph Banks"
+      ],
+      "id": "aus_q14"
+    },
+    {
+      "q": "On what date did the British raise the flag at Sydney Cove?",
+      "a": "26 January 1788",
+      "options": [
+        "26 January 1788",
+        "4 July 1776",
+        "14 May 1787",
+        "1 January 1901"
+      ],
+      "id": "aus_q15"
+    },
+    {
+      "q": "Why did Governor Phillip abandon Botany Bay and move the settlement north?",
+      "a": "Botany Bay lacked fresh water, had poor soil, and offered no safe anchorage",
+      "options": [
+        "Botany Bay lacked fresh water, had poor soil, and offered no safe anchorage",
+        "A massive Aboriginal army was threatening to attack the fleet",
+        "A French fleet had already claimed Botany Bay",
+        "A deadly outbreak of scurvy forced them to sail on"
+      ],
+      "id": "aus_q16"
+    },
+    {
+      "q": "What radical step did Governor Phillip take to prevent starvation in the colony?",
+      "a": "He ordered that all food be rationed completely equally between officers and convicts",
+      "options": [
+        "He ordered that all food be rationed completely equally between officers and convicts",
+        "He sent half the convicts back to England on supply ships",
+        "He ordered the marines to trade with Aboriginal people for food",
+        "He allowed convicts to hunt kangaroos freely in the bush"
+      ],
+      "id": "aus_q17"
+    },
+    {
+      "q": "Who was Arthur Bowes Smyth?",
+      "a": "A naval surgeon aboard the Lady Penrhyn who wrote a famous eyewitness journal",
+      "options": [
+        "A naval surgeon aboard the Lady Penrhyn who wrote a famous eyewitness journal",
+        "The chaplain who led the first Christian service in Sydney",
+        "A convict who escaped the colony and lived with Aboriginal people",
+        "The architect who designed the first Government House in Sydney"
+      ],
+      "id": "aus_q18"
+    },
+    {
+      "q": "What punishment was given to difficult convicts who committed further crimes in the colony?",
+      "a": "They were sent to join road gangs and break stones in leg chains",
+      "options": [
+        "They were sent to join road gangs and break stones in leg chains",
+        "They were immediately sent back to England on storeships",
+        "They were sent to live with Aboriginal tribes as interpreters",
+        "They were confined to solitary cells beneath Sydney Cove"
+      ],
+      "id": "aus_q19"
+    },
+    {
+      "q": "How old was John Hudson, one of the youngest convicts on the First Fleet?",
+      "a": "9 years old",
+      "options": [
+        "9 years old",
+        "14 years old",
+        "16 years old",
+        "21 years old"
+      ],
+      "id": "aus_q20"
+    },
+    {
+      "q": "What was Elizabeth Beckford's crime that earned her 7 years' transportation?",
+      "a": "Stealing cheese",
+      "options": [
+        "Stealing cheese",
+        "Stealing a horse",
+        "Forging banknotes",
+        "Assaulting a police constable"
+      ],
+      "id": "aus_q21"
+    },
+    {
+      "q": "What devastating event struck the Aboriginal population around Sydney in 1789?",
+      "a": "A smallpox epidemic that killed up to 70% of the local population",
+      "options": [
+        "A smallpox epidemic that killed up to 70% of the local population",
+        "A massive drought that destroyed all their crops",
+        "A violent earthquake that destroyed their settlements",
+        "A cholera outbreak brought by convict ships"
+      ],
+      "id": "aus_q22"
+    },
+    {
+      "q": "Who was Bennelong?",
+      "a": "A senior Eora man kidnapped by the British to act as an intermediary",
+      "options": [
+        "A senior Eora man kidnapped by the British to act as an intermediary",
+        "The first Aboriginal person to serve in the British Army",
+        "A Dutch explorer who mapped the western coast of Australia",
+        "The Aboriginal leader who signed a peace treaty with Governor Phillip"
+      ],
+      "id": "aus_q23"
+    },
+    {
+      "q": "What was remarkable about Bennelong's letter of 1796?",
+      "a": "It is the earliest known letter written in English by an Aboriginal Australian",
+      "options": [
+        "It is the earliest known letter written in English by an Aboriginal Australian",
+        "It was a formal declaration of war against the British Empire",
+        "It was the first request for Aboriginal voting rights",
+        "It was a map showing the location of gold deposits"
+      ],
+      "id": "aus_q24"
+    },
+    {
+      "q": "Who was Pemulwuy?",
+      "a": "A Bidjigal warrior who led a 12-year guerrilla war against British settlers",
+      "options": [
+        "A Bidjigal warrior who led a 12-year guerrilla war against British settlers",
+        "The first Aboriginal person to travel to England",
+        "A convict who escaped and formed a resistance army",
+        "A French sailor who traded weapons to Aboriginal people"
+      ],
+      "id": "aus_q25"
+    },
+    {
+      "q": "What happened to Pemulwuy's head after he was killed in 1802?",
+      "a": "It was severed and sent to Sir Joseph Banks in London",
+      "options": [
+        "It was severed and sent to Sir Joseph Banks in London",
+        "It was buried with full military honours at Sydney Cove",
+        "It was preserved in the Australian Museum in Sydney",
+        "It was returned to his family for a traditional ceremony"
+      ],
+      "id": "aus_q26"
+    },
+    {
+      "q": "What was the Myall Creek Massacre of 1838?",
+      "a": "The unprovoked murder of 28 unarmed Aboriginal people by British stockmen",
+      "options": [
+        "The unprovoked murder of 28 unarmed Aboriginal people by British stockmen",
+        "A battle between Aboriginal warriors and British soldiers at a gold mine",
+        "The burning of a convict settlement by escaped prisoners",
+        "A violent clash between Chinese and European gold miners"
+      ],
+      "id": "aus_q27"
+    },
+    {
+      "q": "Why was the Myall Creek Massacre historically significant?",
+      "a": "Seven white men were executed for the murder of Aboriginal people for the first time",
+      "options": [
+        "Seven white men were executed for the murder of Aboriginal people for the first time",
+        "It led to the complete withdrawal of British troops from New South Wales",
+        "It resulted in the creation of the first Aboriginal parliament",
+        "It triggered a full-scale war between all Aboriginal nations and the British"
+      ],
+      "id": "aus_q28"
+    },
+    {
+      "q": "How did frontier settlers avoid prosecution for violence against Aboriginal people after Myall Creek?",
+      "a": "They used poisoned flour instead of guns to avoid detection",
+      "options": [
+        "They used poisoned flour instead of guns to avoid detection",
+        "They bribed local magistrates with gold nuggets",
+        "They moved their farms to territories outside British law",
+        "They disguised their attacks as natural bushfires"
+      ],
+      "id": "aus_q29"
+    },
+    {
+      "q": "What was the King's official policy towards Aboriginal Australians before the First Fleet sailed?",
+      "a": "'Amity and kindness' — to treat them with friendship and respect",
+      "options": [
+        "'Amity and kindness' — to treat them with friendship and respect",
+        "'Total domination' — to enslave and convert them immediately",
+        "'Strict separation' — to build walls between settlements and tribal lands",
+        "'Indifference' — to ignore them completely and claim all land"
+      ],
+      "id": "aus_q30"
+    },
+    {
+      "q": "Why were European diseases so catastrophically deadly to Aboriginal Australians?",
+      "a": "Australia had been isolated for millennia, so Indigenous people had zero natural immunity",
+      "options": [
+        "Australia had been isolated for millennia, so Indigenous people had zero natural immunity",
+        "Aboriginal people refused to accept British medicine and vaccinations",
+        "The British deliberately infected Aboriginal people with diseased blankets",
+        "Aboriginal people lived in unsanitary conditions with no access to clean water"
+      ],
+      "id": "aus_q31"
+    },
+    {
+      "q": "How did the expansion of British farms along the Hawkesbury River affect the Dharug people?",
+      "a": "It destroyed their hunting grounds and food sources, leading to starvation and violent conflict",
+      "options": [
+        "It destroyed their hunting grounds and food sources, leading to starvation and violent conflict",
+        "It created new opportunities for them to trade with wealthy squatters",
+        "It had no impact because the Dharug had already left the area",
+        "It improved their diet by giving them access to European crops"
+      ],
+      "id": "aus_q32"
+    },
+    {
+      "q": "Who introduced Spanish Merino sheep to Australia?",
+      "a": "John Macarthur",
+      "options": [
+        "John Macarthur",
+        "Governor Lachlan Macquarie",
+        "Captain Arthur Phillip",
+        "Sir Joseph Banks"
+      ],
+      "id": "aus_q33"
+    },
+    {
+      "q": "Why was the Merino sheep perfectly suited to Australia?",
+      "a": "The dry climate suited sheep farming and the wool was extremely valuable",
+      "options": [
+        "The dry climate suited sheep farming and the wool was extremely valuable",
+        "They could survive entirely on saltwater and seaweed",
+        "Their meat was popular with Aboriginal communities for trade",
+        "They were immune to all Australian diseases and parasites"
+      ],
+      "id": "aus_q34"
+    },
+    {
+      "q": "Who were the 'squatters' in colonial Australia?",
+      "a": "Wealthy settlers who illegally occupied massive tracts of Aboriginal land to graze sheep",
+      "options": [
+        "Wealthy settlers who illegally occupied massive tracts of Aboriginal land to graze sheep",
+        "Convicts who refused to work and squatted in their huts all day",
+        "Aboriginal leaders who occupied British farms in protest",
+        "British soldiers who abandoned their posts to search for gold"
+      ],
+      "id": "aus_q35"
+    },
+    {
+      "q": "Who were the first Europeans to cross the Blue Mountains in 1813?",
+      "a": "Blaxland, Wentworth, and Lawson",
+      "options": [
+        "Blaxland, Wentworth, and Lawson",
+        "Cook, Banks, and Tupaia",
+        "Phillip, Macquarie, and Hunter",
+        "Macarthur, Ruse, and Bligh"
+      ],
+      "id": "aus_q36"
+    },
+    {
+      "q": "Who discovered payable gold in New South Wales in 1851?",
+      "a": "Edward Hargreaves",
+      "options": [
+        "Edward Hargreaves",
+        "James Ruse",
+        "John Macarthur",
+        "Gregory Blaxland"
+      ],
+      "id": "aus_q37"
+    },
+    {
+      "q": "By how much did Australia's population grow between 1851 and 1860 due to the gold rushes?",
+      "a": "It nearly tripled, from 430,000 to over 1.1 million",
+      "options": [
+        "It nearly tripled, from 430,000 to over 1.1 million",
+        "It doubled, from 200,000 to 400,000",
+        "It increased by 10%, from 500,000 to 550,000",
+        "It decreased because convicts fled to the goldfields"
+      ],
+      "id": "aus_q38"
+    },
+    {
+      "q": "How many Chinese miners came to Australia during the gold rushes?",
+      "a": "Over 40,000",
+      "options": [
+        "Over 40,000",
+        "Around 500",
+        "Over 200,000",
+        "Exactly 10,000"
+      ],
+      "id": "aus_q39"
+    },
+    {
+      "q": "What nickname did Chinese miners give Australia?",
+      "a": "'New Gold Mountain'",
+      "options": [
+        "'New Gold Mountain'",
+        "'The Land of Eternal Summer'",
+        "'The Southern Kingdom'",
+        "'The Golden Island'"
+      ],
+      "id": "aus_q40"
+    },
+    {
+      "q": "What was the Eureka Rebellion of 1854?",
+      "a": "A violent uprising by gold miners protesting against unfair mining licenses and police corruption",
+      "options": [
+        "A violent uprising by gold miners protesting against unfair mining licenses and police corruption",
+        "An Aboriginal resistance campaign against British squatters in Victoria",
+        "A convict escape attempt from the goldfields of Ballarat",
+        "A naval battle between British and French ships in Sydney Harbour"
+      ],
+      "id": "aus_q41"
+    },
+    {
+      "q": "What discriminatory tax did the Victorian government impose on Chinese immigrants?",
+      "a": "A £10 poll tax on every Chinese person entering the colony",
+      "options": [
+        "A £10 poll tax on every Chinese person entering the colony",
+        "A 50% tax on all gold found by non-British miners",
+        "A £100 fee for permission to build a house",
+        "A monthly tax on wearing traditional clothing"
+      ],
+      "id": "aus_q42"
+    },
+    {
+      "q": "How did Chinese immigrants avoid the poll tax in Victoria?",
+      "a": "They were dropped off in South Australia and walked over 400 km to the Victorian goldfields",
+      "options": [
+        "They were dropped off in South Australia and walked over 400 km to the Victorian goldfields",
+        "They disguised themselves as British settlers using fake documents",
+        "They sailed directly to the goldfields via the Murray River",
+        "They bribed port officials with gold nuggets to avoid paying"
+      ],
+      "id": "aus_q43"
+    },
+    {
+      "q": "What racist policy did anti-Chinese sentiment help lay the foundations for?",
+      "a": "The 'White Australia Policy' enacted when Australia federated in 1901",
+      "options": [
+        "The 'White Australia Policy' enacted when Australia federated in 1901",
+        "The 'Immigration Quota Act' of 1855",
+        "The 'Chinese Exclusion Decree' of 1870",
+        "The 'British Subjects Only Act' of 1860"
+      ],
+      "id": "aus_q44"
+    },
+    {
+      "q": "Who was the first person to successfully grow wheat in Australia, proving the colony could feed itself?",
+      "a": "James Ruse at Experiment Farm",
+      "options": [
+        "James Ruse at Experiment Farm",
+        "John Macarthur at Camden Park",
+        "Governor Phillip at Government House",
+        "Captain Cook at Botany Bay"
+      ],
+      "id": "aus_q45"
+    },
+    {
+      "q": "Who was William Barak?",
+      "a": "A Wurundjeri leader who fought to protect the Coranderrk Aboriginal farming community",
+      "options": [
+        "A Wurundjeri leader who fought to protect the Coranderrk Aboriginal farming community",
+        "The first Aboriginal Member of Parliament in Victoria",
+        "A British judge who prosecuted the Myall Creek perpetrators",
+        "A Chinese gold miner who led the Lambing Flat resistance"
+      ],
+      "id": "aus_q46"
+    },
+    {
+      "q": "What was the 'Board for the Protection of Aborigines'?",
+      "a": "A government body that controlled where Aboriginal people could live and work",
+      "options": [
+        "A government body that controlled where Aboriginal people could live and work",
+        "A charitable organisation that provided free education to Aboriginal children",
+        "A military force that protected Aboriginal lands from squatters",
+        "A scientific committee that studied Aboriginal languages and customs"
+      ],
+      "id": "aus_q47"
+    },
+    {
+      "q": "In what year did Australia officially become the Commonwealth of Australia?",
+      "a": "1901",
+      "options": [
+        "1901",
+        "1851",
+        "1788",
+        "1876"
+      ],
+      "id": "aus_q48"
+    },
+    {
+      "q": "What was the Lambing Flat riot?",
+      "a": "A violent attack where European miners burned Chinese camps and beat Chinese miners",
+      "options": [
+        "A violent attack where European miners burned Chinese camps and beat Chinese miners",
+        "A peaceful protest by Aboriginal people against the Board",
+        "A convict uprising at the Parramatta Female Factory",
+        "A mutiny by soldiers against Governor Macquarie"
+      ],
+      "id": "aus_q49"
+    },
+    {
+      "q": "What was a 'Ticket of Leave' in colonial Australia?",
+      "a": "A document granting a well-behaved convict freedom to work for themselves before their sentence fully expired",
+      "options": [
+        "A document granting a well-behaved convict freedom to work for themselves before their sentence fully expired",
+        "A pass allowing Aboriginal people to enter British settlements",
+        "A mining license required to dig for gold on Crown land",
+        "A receipt for paying the Chinese poll tax in Victoria"
+      ],
+      "id": "aus_q50"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Terra Nullius",
+      "definition": "A Latin legal term meaning 'nobody's land', falsely used by the British to claim that Australia had no legal owners when Aboriginal people had lived there for over 60,000 years."
+    },
+    {
+      "term": "Endeavour",
+      "definition": "The Royal Navy ship commanded by Captain James Cook on his 1768–1771 voyage to the South Pacific and eastern Australia."
+    },
+    {
+      "term": "Transit of Venus",
+      "definition": "A rare astronomical event where Venus passes across the face of the Sun, used as the public cover for Cook's secret mission to find Australia."
+    },
+    {
+      "term": "Botany Bay",
+      "definition": "The bay on Australia's east coast where Captain Cook landed in 1770, named after the vast number of plant specimens collected by Sir Joseph Banks."
+    },
+    {
+      "term": "Gweagal",
+      "definition": "The specific Aboriginal Australian group of the Dharawal nation who first encountered Captain Cook at Botany Bay in 1770."
+    },
+    {
+      "term": "Star Navigation",
+      "definition": "The ancient Polynesian technique of navigating across oceans using the stars, bird flight patterns, ocean currents, and cloud formations, without any European instruments."
+    },
+    {
+      "term": "Transportation",
+      "definition": "The British penal system of sending convicted criminals across the world to distant colonies as a form of punishment."
+    },
+    {
+      "term": "Hulk",
+      "definition": "An old, decommissioned warship moored in rivers or ports and used as an overcrowded, disease-ridden temporary prison."
+    },
+    {
+      "term": "First Fleet",
+      "definition": "The 11 ships that departed Portsmouth in May 1787 carrying approximately 1,400 people (including 750 convicts) to establish the first British colony in Australia."
+    },
+    {
+      "term": "Convict",
+      "definition": "A person found guilty of a crime and sentenced by a court of law, often to transportation to a penal colony."
+    },
+    {
+      "term": "Governor",
+      "definition": "The official appointed to govern a colony or territory on behalf of the British Crown."
+    },
+    {
+      "term": "Rationing",
+      "definition": "The controlled distribution of limited food supplies to ensure fair distribution during times of scarcity."
+    },
+    {
+      "term": "Frontier",
+      "definition": "The extreme boundary of settled land beyond which lies wilderness; in Australia, the expanding and violent line of British settlement."
+    },
+    {
+      "term": "Guerrilla Warfare",
+      "definition": "A form of irregular warfare using small-group tactics like ambushes, raids, and hit-and-run attacks, as practised by Pemulwuy against the British."
+    },
+    {
+      "term": "Dispossession",
+      "definition": "The forcible removal of Aboriginal people from their ancestral lands by British settlers and colonial governments."
+    },
+    {
+      "term": "Massacre",
+      "definition": "The deliberate and brutal slaughter of a large number of defenceless people, as occurred at Myall Creek in 1838."
+    },
+    {
+      "term": "Smallpox",
+      "definition": "A deadly and highly contagious disease brought by European settlers that devastated Aboriginal populations who had no natural immunity."
+    },
+    {
+      "term": "Amity",
+      "definition": "Friendship and peaceful relations; the official but hollow British policy towards Aboriginal Australians before the First Fleet sailed."
+    },
+    {
+      "term": "Merino",
+      "definition": "A breed of sheep highly prized for its fine, soft wool, introduced by John Macarthur. The wool industry became the backbone of the early Australian economy."
+    },
+    {
+      "term": "Squatter",
+      "definition": "A settler who illegally occupied vast tracts of Crown (Aboriginal) land to graze livestock, later gaining legal recognition of their claims."
+    },
+    {
+      "term": "Gold Rush",
+      "definition": "The massive influx of free immigrants to Australia after the discovery of payable gold in New South Wales and Victoria in 1851."
+    },
+    {
+      "term": "Xenophobia",
+      "definition": "An intense fear or hatred of people from other countries or cultures, as directed against Chinese miners on the Australian goldfields."
+    },
+    {
+      "term": "Poll Tax",
+      "definition": "A discriminatory fee (£10) charged to every Chinese immigrant entering Victoria, designed to discourage non-European migration."
+    },
+    {
+      "term": "Federation",
+      "definition": "The process by which six separate Australian colonies united to become the Commonwealth of Australia on 1 January 1901."
+    },
+    {
+      "term": "Oral History",
+      "definition": "Historical knowledge passed down through spoken word across generations, crucial for understanding the Aboriginal perspective that was excluded from British written records."
+    },
+    {
+      "term": "Penal Colony",
+      "definition": "A settlement used to exile prisoners and separate them from the general population by housing them in a remote location, such as New South Wales."
+    },
+    {
+      "term": "White Australia Policy",
+      "definition": "The racist immigration policy enacted in 1901 that restricted non-European immigration to Australia, rooted in the anti-Chinese sentiment of the goldfield era."
+    },
+    {
+      "term": "Day of Mourning",
+      "definition": "A protest organised by Aboriginal leaders Jack Patten and William Ferguson on 26 January 1938, challenging the celebration of 150 years of British colonisation."
+    }
+  ],
   "key_individuals": [
     {
       "name": "Captain James Cook",
