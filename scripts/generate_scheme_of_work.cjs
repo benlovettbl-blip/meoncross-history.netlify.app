@@ -7,7 +7,7 @@ const publicDir = PATHS.PUBLIC;
 const pdfsDir = PATHS.PDFS;
 
 if (!fs.existsSync(pdfsDir)) {
-    fs.mkdirSync(pdfsDir, { recursive: true });
+  fs.mkdirSync(pdfsDir, { recursive: true });
 }
 
 // Year Group Mappings
@@ -18,8 +18,10 @@ const fullCurriculumMap = JSON.parse(fs.readFileSync(curriculumMapPath, 'utf8'))
 const curriculumMap = { ...fullCurriculumMap.KS3, ...fullCurriculumMap.KS4 };
 
 const enquiryPatchMap = {
-    "the_shoah": "How did a modern, civilized nation commit the systematic murder of six million Jewish people?",
-    "cold_war": "Why did the ideological clash between Capitalism and Communism bring the world to the brink of nuclear destruction?"
+  the_shoah:
+    'How did a modern, civilized nation commit the systematic murder of six million Jewish people?',
+  cold_war:
+    'Why did the ideological clash between Capitalism and Communism bring the world to the brink of nuclear destruction?',
 };
 
 const commonHead = `
@@ -74,9 +76,9 @@ const commonHead = `
 `;
 
 function generateOverviewHTML(db) {
-    let html = `<!DOCTYPE html><html lang="en">${commonHead}<body>`;
-    
-    html += `
+  let html = `<!DOCTYPE html><html lang="en">${commonHead}<body>`;
+
+  html += `
         <div class="cover-page">
             <div class="cover-title">Meoncross History Hub</div>
             <div class="cover-subtitle">5-Year Curriculum Overview</div>
@@ -89,41 +91,45 @@ function generateOverviewHTML(db) {
             </div>
     `;
 
-    for (const [yearGroup, unitIds] of Object.entries(curriculumMap)) {
-        html += `<div class="year-section"><div class="year-title">${yearGroup}</div>`;
-        for (const uid of unitIds) {
-            const unitData = db[uid]?.data;
-            if (!unitData) continue;
-            
-            const title = unitData.title || uid;
-            let enquiry = unitData.enquiry || unitData.enquiry_question || '';
-            if (enquiryPatchMap[uid]) {
-                enquiry = enquiryPatchMap[uid];
-            }
-            
-            const desc = unitData.desc || (unitData.lessons && unitData.lessons.length ? 'An in-depth study featuring ' + unitData.lessons.length + ' lessons.' : '');
+  for (const [yearGroup, unitIds] of Object.entries(curriculumMap)) {
+    html += `<div class="year-section"><div class="year-title">${yearGroup}</div>`;
+    for (const uid of unitIds) {
+      const unitData = db[uid]?.data;
+      if (!unitData) continue;
 
-            html += `
+      const title = unitData.title || uid;
+      let enquiry = unitData.enquiry || unitData.enquiry_question || '';
+      if (enquiryPatchMap[uid]) {
+        enquiry = enquiryPatchMap[uid];
+      }
+
+      const desc =
+        unitData.desc ||
+        (unitData.lessons && unitData.lessons.length
+          ? 'An in-depth study featuring ' + unitData.lessons.length + ' lessons.'
+          : '');
+
+      html += `
                 <div class="unit-card">
                     <h3>${title}</h3>
                     ${enquiry ? `<div class="enquiry"><strong style="color:#0c2340">Enquiry:</strong> ${enquiry}</div>` : ''}
                     <div class="desc">${desc}</div>
                 </div>
             `;
-        }
-        html += `</div>`;
     }
-    html += `</div></body></html>`;
-    
-    const outPath = path.join(publicDir, 'curriculum_overview.html');
-    fs.writeFileSync(outPath, html);
-    return outPath;
+    html += `</div>`;
+  }
+  html += `</div></body></html>`;
+
+  const outPath = path.join(publicDir, 'curriculum_overview.html');
+  fs.writeFileSync(outPath, html);
+  return outPath;
 }
 
 function generateSOWHTML(db, yearGroup, unitIds) {
-    let html = `<!DOCTYPE html><html lang="en">${commonHead}<body>`;
+  let html = `<!DOCTYPE html><html lang="en">${commonHead}<body>`;
 
-    html += `
+  html += `
         <div class="cover-page">
             <div class="cover-title">Meoncross History Hub</div>
             <div class="cover-subtitle">${yearGroup} Scheme of Work</div>
@@ -131,41 +137,41 @@ function generateSOWHTML(db, yearGroup, unitIds) {
         </div>
     `;
 
-    for (const uid of unitIds) {
-        const unitData = db[uid]?.data;
-        if (!unitData) continue;
-            
-            const title = unitData.title || uid;
-            let enquiry = unitData.enquiry || unitData.enquiry_question || '';
-            if (enquiryPatchMap[uid]) {
-                enquiry = enquiryPatchMap[uid];
-            }
-            
-            // Fix Vocab Bleed: Reset the vocabulary variable to empty before parsing each new unit
-            let vocabulary = [];
-            if (unitData.glossary && Array.isArray(unitData.glossary)) {
-                vocabulary = unitData.glossary;
-            }
+  for (const uid of unitIds) {
+    const unitData = db[uid]?.data;
+    if (!unitData) continue;
 
-            html += `<div class="container sow-unit-container">`;
-            html += `
+    const title = unitData.title || uid;
+    let enquiry = unitData.enquiry || unitData.enquiry_question || '';
+    if (enquiryPatchMap[uid]) {
+      enquiry = enquiryPatchMap[uid];
+    }
+
+    // Fix Vocab Bleed: Reset the vocabulary variable to empty before parsing each new unit
+    let vocabulary = [];
+    if (unitData.glossary && Array.isArray(unitData.glossary)) {
+      vocabulary = unitData.glossary;
+    }
+
+    html += `<div class="container sow-unit-container">`;
+    html += `
                 <div class="sow-unit-header">
                     <h2>${title}</h2>
                     <p><strong>${yearGroup}</strong> ${enquiry ? '| ' + enquiry : ''}</p>
                 </div>
             `;
 
-            if (unitData.teacher_notes && unitData.teacher_notes.primer) {
-                html += `
+    if (unitData.teacher_notes && unitData.teacher_notes.primer) {
+      html += `
                     <div class="primer-box">
                         <h4>Pedagogical Goals & Primer</h4>
                         <div>${unitData.teacher_notes.primer}</div>
                     </div>
                 `;
-            }
+    }
 
-            if (['cold_war', 'second_world_war', 'the_shoah'].includes(uid)) {
-                html += `
+    if (['cold_war', 'second_world_war', 'the_shoah'].includes(uid)) {
+      html += `
                     <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 9pt;">
                         <thead>
                             <tr>
@@ -182,8 +188,8 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                         </tbody>
                     </table>
                 `;
-            } else if (unitData.lessons && unitData.lessons.length > 0) {
-                html += `
+    } else if (unitData.lessons && unitData.lessons.length > 0) {
+      html += `
                     <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 9pt;">
                         <thead>
                             <tr>
@@ -195,137 +201,188 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                         </thead>
                         <tbody>
                 `;
-                
-                unitData.lessons.forEach((lesson, idx) => {
-                    // Extract Learning Objectives dynamically
-                    let objsHTML = '';
-                    let hinge = '';
-                    
-                    if (lesson.learning_objectives && Array.isArray(lesson.learning_objectives.scaffolded) && lesson.learning_objectives.scaffolded.length > 0) {
-                        objsHTML = `<ul class="obj-list">` + lesson.learning_objectives.scaffolded.map(o => `<li>${o}</li>`).join('') + `</ul>`;
-                    } else if (lesson.intent && Array.isArray(lesson.intent) && lesson.intent.length > 0) {
-                        objsHTML = `<ul class="obj-list">` + lesson.intent.map(o => `<li>${o}</li>`).join('') + `</ul>`;
-                    } else if (lesson.learning_objective) {
-                        objsHTML = `<ul class="obj-list"><li>${lesson.learning_objective}</li></ul>`;
-                    } else {
-                        objsHTML = '<span style="color:#94a3b8; font-style:italic;">Historical Enquiry</span>';
-                    }
 
-                    // Extract Hinge Question from teacher_notes if available
-                    if (unitData.teacher_notes && unitData.teacher_notes.objectives) {
-                        const lessonObjs = unitData.teacher_notes.objectives.filter(o => 
-                            (lesson.learning_objective && o.objective === lesson.learning_objective) ||
-                            (lesson.learning_objectives && lesson.learning_objectives.scaffolded && lesson.learning_objectives.scaffolded.includes(o.objective)) ||
-                            (lesson.title && o.objective && o.objective.includes(lesson.title.split(':')[0])) ||
-                            (lesson.title && lesson.title.includes(o.objective))
-                        );
-                        const hingeObj = lessonObjs.find(o => o.question);
-                        if (hingeObj) hinge = hingeObj.question;
-                    }
+      unitData.lessons.forEach((lesson, idx) => {
+        // Extract Learning Objectives dynamically
+        let objsHTML = '';
+        let hinge = '';
 
-                    // Extract Disciplinary Focus
-                    let discFocus = lesson.disciplinary_concept || lesson.disciplinary_focus || lesson.historical_concept || '';
-                    if (!discFocus) {
-                        // Fallback inference, no longer hardcoding 'Not specified' or 'Causation' blindly
-                        if (lesson.source_tasks || (lesson.formative_assessment && lesson.formative_assessment.type === 'source_utility')) discFocus = 'Source Utility';
-                        else if (lesson.peel_paragraph) discFocus = 'Historical Argumentation';
-                        else if (lesson.exam_practice && lesson.exam_practice.length > 0) discFocus = 'Historical Enquiry & Exam Skills';
-                        else discFocus = 'Historical Knowledge & Understanding'; // safe fallback
-                    }
+        if (
+          lesson.learning_objectives &&
+          Array.isArray(lesson.learning_objectives) &&
+          lesson.learning_objectives.length > 0
+        ) {
+          // Flat array of strings (Year 8+ format)
+          objsHTML =
+            `<ul class="obj-list">` +
+            lesson.learning_objectives.map((o) => `<li>${o}</li>`).join('') +
+            `</ul>`;
+        } else if (
+          lesson.learning_objectives &&
+          Array.isArray(lesson.learning_objectives.scaffolded) &&
+          lesson.learning_objectives.scaffolded.length > 0
+        ) {
+          // Nested object with scaffolded array (Year 7 / legacy format)
+          objsHTML =
+            `<ul class="obj-list">` +
+            lesson.learning_objectives.scaffolded.map((o) => `<li>${o}</li>`).join('') +
+            `</ul>`;
+        } else if (lesson.intent && Array.isArray(lesson.intent) && lesson.intent.length > 0) {
+          objsHTML =
+            `<ul class="obj-list">` + lesson.intent.map((o) => `<li>${o}</li>`).join('') + `</ul>`;
+        } else if (lesson.learning_objective) {
+          objsHTML = `<ul class="obj-list"><li>${lesson.learning_objective}</li></ul>`;
+        } else {
+          objsHTML = '<span style="color:#94a3b8; font-style:italic;">Historical Enquiry</span>';
+        }
 
-                    // Extract Core Assessment & Tasks
-                    let tasks = [];
+        // Extract Hinge Question from teacher_notes if available
+        if (unitData.teacher_notes && unitData.teacher_notes.objectives) {
+          const lessonObjs = unitData.teacher_notes.objectives.filter(
+            (o) =>
+              (lesson.learning_objective && o.objective === lesson.learning_objective) ||
+              (lesson.learning_objectives &&
+                lesson.learning_objectives.scaffolded &&
+                lesson.learning_objectives.scaffolded.includes(o.objective)) ||
+              (lesson.title && o.objective && o.objective.includes(lesson.title.split(':')[0])) ||
+              (lesson.title && lesson.title.includes(o.objective)),
+          );
+          const hingeObj = lessonObjs.find((o) => o.question);
+          if (hingeObj) hinge = hingeObj.question;
+        }
 
-                    // Formative Assessments
-                    if (lesson.formative_assessment) {
-                        const faArray = Array.isArray(lesson.formative_assessment) ? lesson.formative_assessment : [lesson.formative_assessment];
-                        faArray.forEach(fa => {
-                            if (fa.question) {
-                                tasks.push(`Assessment: ${fa.question}`);
-                            } else if (fa.type === 'source_utility') {
-                                tasks.push(`Source Utility Analysis`);
-                            } else {
-                                tasks.push(`Formative Assessment Activity`);
-                            }
-                        });
-                    }
+        // Extract Disciplinary Focus
+        let discFocus =
+          lesson.disciplinary_concept ||
+          lesson.disciplinary_focus ||
+          lesson.historical_concept ||
+          '';
+        if (!discFocus) {
+          // Fallback inference, no longer hardcoding 'Not specified' or 'Causation' blindly
+          if (
+            lesson.source_tasks ||
+            (lesson.formative_assessment && lesson.formative_assessment.type === 'source_utility')
+          )
+            discFocus = 'Source Utility';
+          else if (lesson.peel_paragraph) discFocus = 'Historical Argumentation';
+          else if (lesson.exam_practice && lesson.exam_practice.length > 0)
+            discFocus = 'Historical Enquiry & Exam Skills';
+          else discFocus = 'Historical Knowledge & Understanding'; // safe fallback
+        }
 
-                    // PEEL Paragraph
-                    if (lesson.peel_paragraph) {
-                        if (lesson.peel_paragraph.question) {
-                            let concept = "Argumentation";
-                            if (discFocus.toLowerCase().includes("causation")) concept = "Causation";
-                            else if (discFocus.toLowerCase().includes("change")) concept = "Change & Continuity";
-                            else if (discFocus.toLowerCase().includes("significance")) concept = "Significance";
-                            
-                            tasks.push(`PEEL Paragraph (${concept}): ${lesson.peel_paragraph.question}`);
-                        } else {
-                            tasks.push(`PEEL Paragraph Analysis`);
-                        }
-                    }
+        // Extract Core Assessment & Tasks
+        let tasks = [];
 
-                    // GCSE Exam Practice
-                    if (lesson.exam_practice && lesson.exam_practice.length > 0) {
-                        lesson.exam_practice.forEach(ep => {
-                            if (ep.question) {
-                                tasks.push(`Exam Practice (${ep.marks} marks): ${ep.question}`);
-                            } else if (ep.marks) {
-                                tasks.push(`GCSE Exam Practice (${ep.marks} marks)`);
-                            } else {
-                                tasks.push(`GCSE Exam Practice`);
-                            }
-                        });
-                    }
+        // Formative Assessments
+        if (lesson.formative_assessment) {
+          const faArray = Array.isArray(lesson.formative_assessment)
+            ? lesson.formative_assessment
+            : [lesson.formative_assessment];
+          faArray.forEach((fa) => {
+            if (fa.question) {
+              tasks.push(`Assessment: ${fa.question}`);
+            } else if (fa.type === 'source_utility') {
+              tasks.push(`Source Utility Analysis`);
+            } else {
+              tasks.push(`Formative Assessment Activity`);
+            }
+          });
+        }
 
-                    // Comprehension & Sources
-                    if (lesson.comprehension && lesson.comprehension.length > 0) {
-                        tasks.push(`Comprehension Quiz (${lesson.comprehension.length} questions)`);
-                    }
+        // PEEL Paragraph
+        if (lesson.peel_paragraph) {
+          if (lesson.peel_paragraph.question) {
+            let concept = 'Argumentation';
+            if (discFocus.toLowerCase().includes('causation')) concept = 'Causation';
+            else if (discFocus.toLowerCase().includes('change')) concept = 'Change & Continuity';
+            else if (discFocus.toLowerCase().includes('significance')) concept = 'Significance';
 
-                    // Extract heavy tasks from narrative_blocks
-                    // Skip if formative_assessment already provided a clean assessment question
-                    const hasCleanAssessment = lesson.formative_assessment && (
-                        (lesson.formative_assessment.question) ||
-                        (Array.isArray(lesson.formative_assessment) && lesson.formative_assessment.some(fa => fa.question))
-                    );
-                    
-                    if (!hasCleanAssessment && lesson.narrative_blocks) {
-                        lesson.narrative_blocks.forEach(block => {
-                            if (block.tasks) {
-                                block.tasks.forEach(t => {
-                                    if (t.type === 'extended_writing' || t.type === 'peel_paragraph') {
-                                        let q = t.question || t.instruction || 'Extended Writing';
-                                        // Sanitize: strip HTML tags, newline escapes, and limit length
-                                        q = q.replace(/<[^>]+>/g, '').replace(/\\n/g, ' ').split('\n')[0].replace(/^Task\s+\d+:\s*/i, '').trim();
-                                        if (q.length > 150) q = q.substring(0, 147) + '...';
-                                        
-                                        let concept = "Argumentation";
-                                        if (discFocus.toLowerCase().includes("causation")) concept = "Causation";
-                                        else if (discFocus.toLowerCase().includes("change")) concept = "Change & Continuity";
-                                        else if (discFocus.toLowerCase().includes("significance")) concept = "Significance";
-                                        else if (discFocus.toLowerCase().includes("utility")) concept = "Source Utility";
-                                        
-                                        tasks.push(`PEEL Paragraph (${concept}): ${q}`);
-                                    } else if (t.type === 'creative_writing') {
-                                        let q = t.question || t.instruction || 'Creative Writing';
-                                        q = q.replace(/<[^>]+>/g, '').replace(/\\n/g, ' ').split('\n')[0].replace(/^Task\s+\d+:\s*/i, '').trim();
-                                        if (q.length > 150) q = q.substring(0, 147) + '...';
-                                        tasks.push(`Creative Task: ${q}`);
-                                    }
-                                });
-                            }
-                        });
-                    }
-                    
-                    if (lesson.source_tasks && lesson.source_tasks.length > 0) {
-                        tasks.push('Primary Source Analysis');
-                    }
-                    
-                    let tasksHTML = tasks.length > 0 
-                        ? `<ul class="task-list">` + Array.from(new Set(tasks)).map(t => `<li>${t}</li>`).join('') + `</ul>`
-                        : '<span style="color:#94a3b8; font-style:italic;">Narrative exploration and class discussion</span>';
+            tasks.push(`PEEL Paragraph (${concept}): ${lesson.peel_paragraph.question}`);
+          } else {
+            tasks.push(`PEEL Paragraph Analysis`);
+          }
+        }
 
-                    html += `
+        // GCSE Exam Practice
+        if (lesson.exam_practice && lesson.exam_practice.length > 0) {
+          lesson.exam_practice.forEach((ep) => {
+            if (ep.question) {
+              tasks.push(`Exam Practice (${ep.marks} marks): ${ep.question}`);
+            } else if (ep.marks) {
+              tasks.push(`GCSE Exam Practice (${ep.marks} marks)`);
+            } else {
+              tasks.push(`GCSE Exam Practice`);
+            }
+          });
+        }
+
+        // Comprehension & Sources
+        if (lesson.comprehension && lesson.comprehension.length > 0) {
+          tasks.push(`Comprehension Quiz (${lesson.comprehension.length} questions)`);
+        }
+
+        // Extract heavy tasks from narrative_blocks
+        // Skip if formative_assessment already provided a clean assessment question
+        const hasCleanAssessment =
+          lesson.formative_assessment &&
+          (lesson.formative_assessment.question ||
+            (Array.isArray(lesson.formative_assessment) &&
+              lesson.formative_assessment.some((fa) => fa.question)));
+
+        if (!hasCleanAssessment && lesson.narrative_blocks) {
+          lesson.narrative_blocks.forEach((block) => {
+            if (block.tasks) {
+              block.tasks.forEach((t) => {
+                if (t.type === 'extended_writing' || t.type === 'peel_paragraph') {
+                  let q = t.question || t.instruction || 'Extended Writing';
+                  // Sanitize: strip HTML tags, newline escapes, and limit length
+                  q = q
+                    .replace(/<[^>]+>/g, '')
+                    .replace(/\\n/g, ' ')
+                    .split('\n')[0]
+                    .replace(/^Task\s+\d+:\s*/i, '')
+                    .trim();
+                  if (q.length > 150) q = q.substring(0, 147) + '...';
+
+                  let concept = 'Argumentation';
+                  if (discFocus.toLowerCase().includes('causation')) concept = 'Causation';
+                  else if (discFocus.toLowerCase().includes('change'))
+                    concept = 'Change & Continuity';
+                  else if (discFocus.toLowerCase().includes('significance'))
+                    concept = 'Significance';
+                  else if (discFocus.toLowerCase().includes('utility')) concept = 'Source Utility';
+
+                  tasks.push(`PEEL Paragraph (${concept}): ${q}`);
+                } else if (t.type === 'creative_writing') {
+                  let q = t.question || t.instruction || 'Creative Writing';
+                  q = q
+                    .replace(/<[^>]+>/g, '')
+                    .replace(/\\n/g, ' ')
+                    .split('\n')[0]
+                    .replace(/^Task\s+\d+:\s*/i, '')
+                    .trim();
+                  if (q.length > 150) q = q.substring(0, 147) + '...';
+                  tasks.push(`Creative Task: ${q}`);
+                }
+              });
+            }
+          });
+        }
+
+        if (lesson.source_tasks && lesson.source_tasks.length > 0) {
+          tasks.push('Primary Source Analysis');
+        }
+
+        let tasksHTML =
+          tasks.length > 0
+            ? `<ul class="task-list">` +
+              Array.from(new Set(tasks))
+                .map((t) => `<li>${t}</li>`)
+                .join('') +
+              `</ul>`
+            : '<span style="color:#94a3b8; font-style:italic;">Narrative exploration and class discussion</span>';
+
+        html += `
                         <tr>
                             <td>
                                 <div class="lesson-num">Lesson ${idx + 1}</div>
@@ -343,116 +400,119 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                             </td>
                         </tr>
                     `;
-                });
-                
-                html += `</tbody></table>`;
-            }
+      });
 
-            if (vocabulary && vocabulary.length > 0) {
-                const words = vocabulary
-                    .map(v => v.term || v.word || v.keyword)
-                    .filter(w => w && w !== 'undefined')
-                    .map(w => w.trim());
-                
-                const uniqueWords = Array.from(new Set(words));
-                
-                if (uniqueWords.length > 0) {
-                    html += `
+      html += `</tbody></table>`;
+    }
+
+    if (vocabulary && vocabulary.length > 0) {
+      const words = vocabulary
+        .map((v) => v.term || v.word || v.keyword)
+        .filter((w) => w && w !== 'undefined')
+        .map((w) => w.trim());
+
+      const uniqueWords = Array.from(new Set(words));
+
+      if (uniqueWords.length > 0) {
+        html += `
                         <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 6px; margin-top: 30px; margin-bottom: 30px;">
                             <strong style="color: #0f172a; font-family: 'Outfit', sans-serif;">Key Vocabulary:</strong> 
                             <span style="color: #475569;">${uniqueWords.join(', ')}</span>
                         </div>
                     `;
-                }
-            }
+      }
+    }
 
-            html += `</div>`;
-        }
+    html += `</div>`;
+  }
 
-    html += `</body></html>`;
-    const outPath = path.join(publicDir, 'scheme_of_work.html');
-    fs.writeFileSync(outPath, html);
-    return outPath;
+  html += `</body></html>`;
+  const outPath = path.join(publicDir, 'scheme_of_work.html');
+  fs.writeFileSync(outPath, html);
+  return outPath;
 }
 
 (async () => {
-    const dbPath = path.join(publicDir, 'database.json');
-    const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+  const dbPath = path.join(publicDir, 'database.json');
+  const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 
-    // Dynamically enrich the db with real data.js imports to ensure we don't miss nested arrays (like exam_practice, intent, peel_paragraph)
-    for (const [yearGroup, unitIds] of Object.entries(curriculumMap)) {
-        for (const uid of unitIds) {
-            if (['cold_war', 'second_world_war', 'the_shoah'].includes(uid)) {
-                continue; // Do not parse their data.js files
+  // Dynamically enrich the db with real data.js imports to ensure we don't miss nested arrays (like exam_practice, intent, peel_paragraph)
+  for (const [yearGroup, unitIds] of Object.entries(curriculumMap)) {
+    for (const uid of unitIds) {
+      if (['cold_war', 'second_world_war', 'the_shoah'].includes(uid)) {
+        continue; // Do not parse their data.js files
+      }
+      const dataPath = path.join(publicDir, 'units', uid, 'data.js');
+      if (fs.existsSync(dataPath)) {
+        try {
+          // Dynamically import the ES module
+          const dataModule = await import(require('url').pathToFileURL(dataPath).href);
+          if (dataModule && dataModule.unitData) {
+            if (!db[uid]) db[uid] = { data: {} };
+            if (dataModule.unitData.lessons) {
+              db[uid].data.lessons = dataModule.unitData.lessons;
             }
-            const dataPath = path.join(publicDir, 'units', uid, 'data.js');
-            if (fs.existsSync(dataPath)) {
-                try {
-                    // Dynamically import the ES module
-                    const dataModule = await import(require('url').pathToFileURL(dataPath).href);
-                    if (dataModule && dataModule.unitData) {
-                        if (!db[uid]) db[uid] = { data: {} };
-                        if (dataModule.unitData.lessons) {
-                            db[uid].data.lessons = dataModule.unitData.lessons;
-                        }
-                        if (dataModule.unitData.teacher_notes) {
-                            db[uid].data.teacher_notes = dataModule.unitData.teacher_notes;
-                        }
-                    }
-                } catch (e) {
-                    console.error('Error importing data.js for', uid, e);
-                }
+            if (dataModule.unitData.teacher_notes) {
+              db[uid].data.teacher_notes = dataModule.unitData.teacher_notes;
             }
+          }
+        } catch (e) {
+          console.error('Error importing data.js for', uid, e);
         }
+      }
     }
+  }
 
-    console.log('Generating HTML templates...');
-    const overviewHtmlPath = generateOverviewHTML(db);
-    
-    console.log('Launching Puppeteer to create PDFs...');
-    const browser = await puppeteer.launch({ headless: 'new' });
-    
-    // 1. Generate Overview PDF
-    console.log('Rendering Curriculum Overview PDF...');
-    const page1 = await browser.newPage();
-    await page1.goto(require('url').pathToFileURL(overviewHtmlPath).href, { waitUntil: 'networkidle0' });
-    const overviewPdfPath = path.join(pdfsDir, 'whole_school_curriculum_overview.pdf');
-    await page1.pdf({
-        path: overviewPdfPath,
+  console.log('Generating HTML templates...');
+  const overviewHtmlPath = generateOverviewHTML(db);
+
+  console.log('Launching Puppeteer to create PDFs...');
+  const browser = await puppeteer.launch({ headless: 'new' });
+
+  // 1. Generate Overview PDF
+  console.log('Rendering Curriculum Overview PDF...');
+  const page1 = await browser.newPage();
+  await page1.goto(require('url').pathToFileURL(overviewHtmlPath).href, {
+    waitUntil: 'networkidle0',
+  });
+  const overviewPdfPath = path.join(pdfsDir, 'whole_school_curriculum_overview.pdf');
+  await page1.pdf({
+    path: overviewPdfPath,
+    format: 'A4',
+    printBackground: true,
+    displayHeaderFooter: true,
+    headerTemplate: '<div></div>',
+    footerTemplate:
+      '<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross History Hub - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+    margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
+  });
+  console.log('✅ Success! Overview PDF saved to: ' + overviewPdfPath);
+
+  // 2. Generate SOW PDFs per Year Group
+  for (const [stage, stageMap] of Object.entries(fullCurriculumMap)) {
+    for (const [yearGroup, unitIds] of Object.entries(stageMap)) {
+      const safeYearName = yearGroup.toLowerCase().replace(' ', '_');
+      const htmlPath = generateSOWHTML(db, yearGroup, unitIds);
+
+      console.log(`Rendering ${yearGroup} Scheme of Work PDF...`);
+      const page = await browser.newPage();
+      await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0' });
+
+      // Adjust layout for standard portrait width
+      const pdfPath = path.join(pdfsDir, `${safeYearName}_sow.pdf`);
+      await page.pdf({
+        path: pdfPath,
         format: 'A4',
         printBackground: true,
         displayHeaderFooter: true,
         headerTemplate: '<div></div>',
-        footerTemplate: '<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross History Hub - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
-        margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' }
-    });
-    console.log('✅ Success! Overview PDF saved to: ' + overviewPdfPath);
-    
-    // 2. Generate SOW PDFs per Year Group
-    for (const [stage, stageMap] of Object.entries(fullCurriculumMap)) {
-        for (const [yearGroup, unitIds] of Object.entries(stageMap)) {
-            const safeYearName = yearGroup.toLowerCase().replace(' ', '_');
-            const htmlPath = generateSOWHTML(db, yearGroup, unitIds);
-            
-            console.log(`Rendering ${yearGroup} Scheme of Work PDF...`);
-            const page = await browser.newPage();
-            await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0' });
-            
-            // Adjust layout for standard portrait width
-            const pdfPath = path.join(pdfsDir, `${safeYearName}_sow.pdf`);
-            await page.pdf({
-                path: pdfPath,
-                format: 'A4',
-                printBackground: true,
-                displayHeaderFooter: true,
-                headerTemplate: '<div></div>',
-                footerTemplate: `<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross History Hub - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
-                margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' }
-            });
-            console.log(`✅ Success! ${yearGroup} Scheme of Work PDF saved to: ` + pdfPath);
-            await page.close();
-        }
+        footerTemplate: `<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross History Hub - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
+        margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
+      });
+      console.log(`✅ Success! ${yearGroup} Scheme of Work PDF saved to: ` + pdfPath);
+      await page.close();
     }
-    
-    await browser.close();
+  }
+
+  await browser.close();
 })();
