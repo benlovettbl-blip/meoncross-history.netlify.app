@@ -235,38 +235,81 @@ function generateSOWHTML(db, yearGroup, unitIds) {
 
                     // Extract Core Assessment & Tasks
                     let tasks = [];
+
+                    // Formative Assessments
                     if (lesson.formative_assessment) {
-                        if (Array.isArray(lesson.formative_assessment)) {
-                            lesson.formative_assessment.forEach(fa => tasks.push(`Formative Assessment: ${fa.type || 'Question'}`));
+                        const faArray = Array.isArray(lesson.formative_assessment) ? lesson.formative_assessment : [lesson.formative_assessment];
+                        faArray.forEach(fa => {
+                            if (fa.question) {
+                                tasks.push(`Assessment: ${fa.question}`);
+                            } else if (fa.type === 'source_utility') {
+                                tasks.push(`Source Utility Analysis`);
+                            } else {
+                                tasks.push(`Formative Assessment Activity`);
+                            }
+                        });
+                    }
+
+                    // PEEL Paragraph
+                    if (lesson.peel_paragraph) {
+                        if (lesson.peel_paragraph.question) {
+                            let concept = "Argumentation";
+                            if (discFocus.toLowerCase().includes("causation")) concept = "Causation";
+                            else if (discFocus.toLowerCase().includes("change")) concept = "Change & Continuity";
+                            else if (discFocus.toLowerCase().includes("significance")) concept = "Significance";
+                            
+                            tasks.push(`PEEL Paragraph (${concept}): ${lesson.peel_paragraph.question}`);
                         } else {
-                            tasks.push(`Formative Assessment: ${lesson.formative_assessment.type || 'Activity'}`);
+                            tasks.push(`PEEL Paragraph Analysis`);
                         }
                     }
-                    if (lesson.peel_paragraph) {
-                        tasks.push(`PEEL Paragraph: ${lesson.peel_paragraph.question || 'Analysis'}`);
-                    }
+
+                    // GCSE Exam Practice
                     if (lesson.exam_practice && lesson.exam_practice.length > 0) {
                         lesson.exam_practice.forEach(ep => {
-                            tasks.push(`GCSE Exam Practice: ${ep.type || 'Question'}`);
+                            if (ep.question) {
+                                tasks.push(`Exam Practice (${ep.marks} marks): ${ep.question}`);
+                            } else if (ep.marks) {
+                                tasks.push(`GCSE Exam Practice (${ep.marks} marks)`);
+                            } else {
+                                tasks.push(`GCSE Exam Practice`);
+                            }
+                        });
+                    }
+
+                    // Comprehension & Sources
+                    if (lesson.comprehension && lesson.comprehension.length > 0) {
+                        tasks.push(`Comprehension Quiz (${lesson.comprehension.length} questions)`);
+                    }
+
+                    // Extract heavy tasks from narrative_blocks
+                    if (lesson.narrative_blocks) {
+                        lesson.narrative_blocks.forEach(block => {
+                            if (block.tasks) {
+                                block.tasks.forEach(t => {
+                                    if (t.type === 'extended_writing' || t.type === 'peel_paragraph') {
+                                        let q = t.question || t.instruction || 'Extended Writing';
+                                        q = q.split('\n')[0].replace(/^Task\s+\d+:\s*/i, '');
+                                        
+                                        let concept = "Argumentation";
+                                        if (discFocus.toLowerCase().includes("causation")) concept = "Causation";
+                                        else if (discFocus.toLowerCase().includes("change")) concept = "Change & Continuity";
+                                        else if (discFocus.toLowerCase().includes("significance")) concept = "Significance";
+                                        else if (discFocus.toLowerCase().includes("utility")) concept = "Source Utility";
+                                        
+                                        tasks.push(`PEEL Paragraph (${concept}): ${q}`);
+                                    } else if (t.type === 'creative_writing') {
+                                        let q = t.question || t.instruction || 'Creative Writing';
+                                        q = q.split('\n')[0].replace(/^Task\s+\d+:\s*/i, '');
+                                        tasks.push(`Creative Task: ${q}`);
+                                    }
+                                });
+                            }
                         });
                     }
                     
-                    // Legacy fallbacks if the newer fields aren't present
-                    if (tasks.length === 0) {
-                        if (lesson.do_now) {
-                            if (lesson.do_now.type === 'timeline') tasks.push('Timeline Sequencing Retrieval');
-                            else if (lesson.do_now.type === 'vocab') tasks.push('Vocabulary Match Retrieval');
-                            else tasks.push('Q&A Recall Retrieval');
-                        }
-                        if (lesson.comprehension && lesson.comprehension.length > 0) {
-                            tasks.push(`${lesson.comprehension.length} Formative Comprehension Questions`);
-                        }
-                        if (lesson.pair_share) {
-                            tasks.push('Pair & Share Discussion Task');
-                        }
-                        if (lesson.source_tasks && lesson.source_tasks.length > 0) {
-                            tasks.push('Primary Source Analysis (PEEL Paragraphs)');
-                        }
+                    if (lesson.source_tasks && lesson.source_tasks.length > 0) {
+                        tasks.push('Primary Source Analysis');
                     }
                     
                     let tasksHTML = tasks.length > 0 
