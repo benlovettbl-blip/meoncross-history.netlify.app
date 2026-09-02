@@ -11,12 +11,15 @@ if (!fs.existsSync(pdfsDir)) {
 }
 
 // Year Group Mappings
-const curriculumMap = {
-    "Year 7": ['water_and_sanitation', 'medieval_england', 'early_modern_world'],
-    "Year 8": ['industrialisation_and_empire', 'australia', 'great_war'],
-    "Year 9": ['great_war_part2', 'the_shoah', 'cold_war', 'second_world_war', 'post_war_britain'],
-    "Year 10": ['cme_new', 'weimar_nazi_germany'],
-    "Year 11": ['edexcel_medicine', 'eee']
+const curriculumMapPath = path.join(__dirname, 'curriculum_map.json');
+const fullCurriculumMap = JSON.parse(fs.readFileSync(curriculumMapPath, 'utf8'));
+
+// Flatten for the overview PDF mapping
+const curriculumMap = { ...fullCurriculumMap.KS3, ...fullCurriculumMap.KS4 };
+
+const enquiryPatchMap = {
+    "the_shoah": "How did a modern, civilized nation commit the systematic murder of six million Jewish people?",
+    "cold_war": "Why did the ideological clash between Capitalism and Communism bring the world to the brink of nuclear destruction?"
 };
 
 const commonHead = `
@@ -42,6 +45,7 @@ const commonHead = `
             .unit-card .desc { font-size: 11pt; color: #475569; }
             
             /* SOW Styles */
+            .sow-unit-container { page-break-before: always; page-break-after: always; }
             .sow-unit-header { background: #0c2340; color: #fff; padding: 20px; border-radius: 8px 8px 0 0; border-bottom: 4px solid #d4af37; margin-bottom: 20px; }
             .sow-unit-header h2 { color: #fff; margin: 0 0 10px 0; font-size: 22pt; }
             .sow-unit-header p { margin: 0; color: #e2e8f0; font-family: 'Outfit', sans-serif; font-size: 12pt; }
@@ -55,16 +59,20 @@ const commonHead = `
             
             .lesson-num { font-weight: 700; color: #0c2340; white-space: nowrap; }
             .lesson-title { font-weight: 700; margin-bottom: 5px; color: #1e40af; font-size: 11pt; }
-            .do-now { background: #f8fafc; padding: 8px; border-radius: 4px; border: 1px solid #e2e8f0; font-size: 9pt; margin-top: 5px; }
-            .do-now-title { font-weight: 700; color: #64748b; text-transform: uppercase; font-size: 8pt; margin-bottom: 4px; }
             
             .hinge-question { color: #b91c1c; font-style: italic; font-weight: 600; margin-top: 8px; display: block; border-left: 2px solid #ef4444; padding-left: 8px; }
-            .key-obj { color: #047857; font-weight: 600; margin-bottom: 4px; display: block; }
             
             .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 30px; }
             .vocab-item { border: 1px solid #e2e8f0; padding: 10px; border-radius: 4px; background: #fff; }
             .vocab-term { font-weight: 700; color: #0c2340; margin-bottom: 4px; }
             .vocab-def { font-size: 9.5pt; color: #475569; }
+            
+            ul.obj-list { margin: 5px 0 0 0; padding-left: 20px; }
+            ul.obj-list li { margin-bottom: 5px; }
+            
+            .task-list { margin: 0; padding-left: 20px; color: #334155; }
+            .task-list li { margin-bottom: 4px; }
+            
         </style>
     </head>
 `;
@@ -92,7 +100,11 @@ function generateOverviewHTML(db) {
             if (!unitData) continue;
             
             const title = unitData.title || uid;
-            const enquiry = unitData.enquiry || unitData.enquiry_question || '';
+            let enquiry = unitData.enquiry || unitData.enquiry_question || '';
+            if (enquiryPatchMap[uid]) {
+                enquiry = enquiryPatchMap[uid];
+            }
+            
             const desc = unitData.desc || (unitData.lessons && unitData.lessons.length ? 'An in-depth study featuring ' + unitData.lessons.length + ' lessons.' : '');
 
             html += `
@@ -112,27 +124,34 @@ function generateOverviewHTML(db) {
     return outPath;
 }
 
-function generateSOWHTML(db) {
+function generateSOWHTML(db, yearGroup, unitIds) {
     let html = `<!DOCTYPE html><html lang="en">${commonHead}<body>`;
 
     html += `
         <div class="cover-page">
             <div class="cover-title">Meoncross History Hub</div>
-            <div class="cover-subtitle">Detailed Scheme of Work</div>
+            <div class="cover-subtitle">${yearGroup} Scheme of Work</div>
             <div style="margin-top: 40px; font-size: 14pt; color: #475569;">Teacher Companion Guide</div>
         </div>
-        <div class="page-break"></div>
     `;
 
-    for (const [yearGroup, unitIds] of Object.entries(curriculumMap)) {
-        for (const uid of unitIds) {
-            const unitData = db[uid]?.data;
-            if (!unitData) continue;
+    for (const uid of unitIds) {
+        const unitData = db[uid]?.data;
+        if (!unitData) continue;
             
             const title = unitData.title || uid;
-            const enquiry = unitData.enquiry || unitData.enquiry_question || '';
+            let enquiry = unitData.enquiry || unitData.enquiry_question || '';
+            if (enquiryPatchMap[uid]) {
+                enquiry = enquiryPatchMap[uid];
+            }
             
-            html += `<div class="container">`;
+            // Fix Vocab Bleed: Reset the vocabulary variable to empty before parsing each new unit
+            let vocabulary = [];
+            if (unitData.glossary && Array.isArray(unitData.glossary)) {
+                vocabulary = unitData.glossary;
+            }
+
+            html += `<div class="container sow-unit-container">`;
             html += `
                 <div class="sow-unit-header">
                     <h2>${title}</h2>
@@ -149,60 +168,128 @@ function generateSOWHTML(db) {
                 `;
             }
 
-            if (unitData.lessons && unitData.lessons.length > 0) {
+            if (['cold_war', 'second_world_war', 'the_shoah'].includes(uid)) {
                 html += `
-                    <table>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 9pt;">
                         <thead>
                             <tr>
-                                <th style="width: 8%">Lsn</th>
-                                <th style="width: 27%">Title & Objectives</th>
-                                <th style="width: 25%">Retrieval (Do Now)</th>
-                                <th style="width: 40%">Core Narrative & Assessment</th>
+                                <th style="width: 25%">Lesson Number & Title</th>
+                                <th style="width: 25%">Learning Objectives</th>
+                                <th style="width: 15%">Disciplinary Focus</th>
+                                <th style="width: 35%">Core Assessment & Tasks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4" style="text-align: center; font-style: italic; color: #64748b; font-size: 14pt; padding: 20px;">Unit in Development – Content TBC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+            } else if (unitData.lessons && unitData.lessons.length > 0) {
+                html += `
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 9pt;">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%">Lesson Number & Title</th>
+                                <th style="width: 25%">Learning Objectives</th>
+                                <th style="width: 15%">Disciplinary Focus</th>
+                                <th style="width: 35%">Core Assessment & Tasks</th>
                             </tr>
                         </thead>
                         <tbody>
                 `;
                 
                 unitData.lessons.forEach((lesson, idx) => {
-                    let doNowHTML = '-';
-                    if (lesson.do_now) {
-                        if (Array.isArray(lesson.do_now)) {
-                            doNowHTML = `<div class="do-now"><div class="do-now-title">Q&A Recall</div>` + 
-                                lesson.do_now.map(dn => `• ${dn.question}`).join('<br>') + `</div>`;
-                        } else if (lesson.do_now.type === 'timeline') {
-                            doNowHTML = `<div class="do-now"><div class="do-now-title">Timeline Sequencing</div>Sort events into chronological order.</div>`;
-                        } else if (lesson.do_now.type === 'vocab') {
-                            doNowHTML = `<div class="do-now"><div class="do-now-title">Vocabulary Match</div>Match key terms to definitions.</div>`;
-                        }
-                    }
-
+                    // Extract Learning Objectives dynamically
+                    let objsHTML = '';
                     let hinge = '';
-                    if (unitData.teacher_notes && unitData.teacher_notes.objectives) {
-                        const objMatch = unitData.teacher_notes.objectives.find(o => lesson.learning_objective && o.objective === lesson.learning_objective);
-                        if (objMatch && objMatch.question) {
-                            hinge = objMatch.question;
+                    
+                    if (lesson.intent && Array.isArray(lesson.intent) && lesson.intent.length > 0) {
+                        objsHTML = `<ul class="obj-list">` + lesson.intent.map(o => `<li>${o}</li>`).join('') + `</ul>`;
+                    } else if (unitData.teacher_notes && unitData.teacher_notes.objectives) {
+                        const lessonObjs = unitData.teacher_notes.objectives.filter(o => 
+                            (lesson.learning_objective && o.objective === lesson.learning_objective) ||
+                            (lesson.title && o.objective && o.objective.includes(lesson.title.split(':')[0])) ||
+                            (lesson.title && lesson.title.includes(o.objective))
+                        );
+                        if (lessonObjs.length > 0) {
+                            objsHTML = `<ul class="obj-list">` + lessonObjs.map(o => `<li>${o.objective}</li>`).join('') + `</ul>`;
+                            const hingeObj = lessonObjs.find(o => o.question);
+                            if (hingeObj) hinge = hingeObj.question;
                         }
+                    } 
+                    
+                    if (!objsHTML && lesson.learning_objective) {
+                         objsHTML = `<ul class="obj-list"><li>${lesson.learning_objective}</li></ul>`;
+                    }
+                    if (!objsHTML) objsHTML = '<span style="color:#94a3b8; font-style:italic;">Historical Enquiry</span>';
+
+                    // Extract Disciplinary Focus
+                    let discFocus = lesson.disciplinary_concept || lesson.disciplinary_focus || lesson.historical_concept || '';
+                    if (!discFocus) {
+                        // Fallback inference, no longer hardcoding 'Not specified' or 'Causation' blindly
+                        if (lesson.source_tasks || (lesson.formative_assessment && lesson.formative_assessment.type === 'source_utility')) discFocus = 'Source Utility';
+                        else if (lesson.peel_paragraph) discFocus = 'Historical Argumentation';
+                        else if (lesson.exam_practice && lesson.exam_practice.length > 0) discFocus = 'Historical Enquiry & Exam Skills';
+                        else discFocus = 'Historical Knowledge & Understanding'; // safe fallback
                     }
 
-                    let narrativeSummary = 'Focuses on the core historical narrative and primary sources.';
-                    if (lesson.content_blocks && lesson.content_blocks.length > 0) {
-                        const headings = lesson.content_blocks.map(b => b.heading).filter(Boolean);
-                        if (headings.length > 0) {
-                            narrativeSummary = headings.join(' • ');
+                    // Extract Core Assessment & Tasks
+                    let tasks = [];
+                    if (lesson.formative_assessment) {
+                        if (Array.isArray(lesson.formative_assessment)) {
+                            lesson.formative_assessment.forEach(fa => tasks.push(`Formative Assessment: ${fa.type || 'Question'}`));
+                        } else {
+                            tasks.push(`Formative Assessment: ${lesson.formative_assessment.type || 'Activity'}`);
                         }
                     }
+                    if (lesson.peel_paragraph) {
+                        tasks.push(`PEEL Paragraph: ${lesson.peel_paragraph.question || 'Analysis'}`);
+                    }
+                    if (lesson.exam_practice && lesson.exam_practice.length > 0) {
+                        lesson.exam_practice.forEach(ep => {
+                            tasks.push(`GCSE Exam Practice: ${ep.type || 'Question'}`);
+                        });
+                    }
+                    
+                    // Legacy fallbacks if the newer fields aren't present
+                    if (tasks.length === 0) {
+                        if (lesson.do_now) {
+                            if (lesson.do_now.type === 'timeline') tasks.push('Timeline Sequencing Retrieval');
+                            else if (lesson.do_now.type === 'vocab') tasks.push('Vocabulary Match Retrieval');
+                            else tasks.push('Q&A Recall Retrieval');
+                        }
+                        if (lesson.comprehension && lesson.comprehension.length > 0) {
+                            tasks.push(`${lesson.comprehension.length} Formative Comprehension Questions`);
+                        }
+                        if (lesson.pair_share) {
+                            tasks.push('Pair & Share Discussion Task');
+                        }
+                        if (lesson.source_tasks && lesson.source_tasks.length > 0) {
+                            tasks.push('Primary Source Analysis (PEEL Paragraphs)');
+                        }
+                    }
+                    
+                    let tasksHTML = tasks.length > 0 
+                        ? `<ul class="task-list">` + tasks.map(t => `<li>${t}</li>`).join('') + `</ul>`
+                        : '<span style="color:#94a3b8; font-style:italic;">Narrative exploration and class discussion</span>';
 
                     html += `
                         <tr>
-                            <td class="lesson-num">${idx + 1}</td>
                             <td>
+                                <div class="lesson-num">Lesson ${idx + 1}</div>
                                 <div class="lesson-title">${lesson.title}</div>
-                                ${lesson.learning_objective ? `<span class="key-obj">Objective: ${lesson.learning_objective}</span>` : ''}
                             </td>
-                            <td>${doNowHTML}</td>
                             <td>
-                                <div>${narrativeSummary}</div>
+                                ${objsHTML}
                                 ${hinge ? `<span class="hinge-question">Hinge Q: ${hinge}</span>` : ''}
+                            </td>
+                            <td>
+                                <strong>${discFocus}</strong>
+                            </td>
+                            <td>
+                                ${tasksHTML}
                             </td>
                         </tr>
                     `;
@@ -211,15 +298,15 @@ function generateSOWHTML(db) {
                 html += `</tbody></table>`;
             }
 
-            if (unitData.glossary && unitData.glossary.length > 0) {
+            if (vocabulary && vocabulary.length > 0) {
                 html += `
                     <h3 style="color: #0c2340; border-bottom: 2px solid #cbd5e1; padding-bottom: 5px; margin-top: 40px;">Required Vocabulary</h3>
                     <div class="vocab-grid">
                 `;
-                unitData.glossary.forEach(v => {
+                vocabulary.forEach(v => {
                     html += `
                         <div class="vocab-item">
-                            <div class="vocab-term">${v.term}</div>
+                            <div class="vocab-term">${v.term || v.word || v.keyword}</div>
                             <div class="vocab-def">${v.definition}</div>
                         </div>
                     `;
@@ -227,25 +314,8 @@ function generateSOWHTML(db) {
                 html += `</div>`;
             }
 
-            if (unitData.key_individuals && unitData.key_individuals.length > 0) {
-                html += `
-                    <h3 style="color: #0c2340; border-bottom: 2px solid #cbd5e1; padding-bottom: 5px; margin-top: 40px;">Key Historical Figures</h3>
-                    <div class="vocab-grid">
-                `;
-                unitData.key_individuals.forEach(ind => {
-                    html += `
-                        <div class="vocab-item">
-                            <div class="vocab-term">${ind.name}</div>
-                            <div class="vocab-def">${ind.role}</div>
-                        </div>
-                    `;
-                });
-                html += `</div>`;
-            }
-
-            html += `</div><div class="page-break"></div>`;
+            html += `</div>`;
         }
-    }
 
     html += `</body></html>`;
     const outPath = path.join(publicDir, 'scheme_of_work.html');
@@ -257,9 +327,35 @@ function generateSOWHTML(db) {
     const dbPath = path.join(publicDir, 'database.json');
     const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 
+    // Dynamically enrich the db with real data.js imports to ensure we don't miss nested arrays (like exam_practice, intent, peel_paragraph)
+    for (const [yearGroup, unitIds] of Object.entries(curriculumMap)) {
+        for (const uid of unitIds) {
+            if (['cold_war', 'second_world_war', 'the_shoah'].includes(uid)) {
+                continue; // Do not parse their data.js files
+            }
+            const dataPath = path.join(publicDir, 'units', uid, 'data.js');
+            if (fs.existsSync(dataPath)) {
+                try {
+                    // Dynamically import the ES module
+                    const dataModule = await import(require('url').pathToFileURL(dataPath).href);
+                    if (dataModule && dataModule.unitData) {
+                        if (!db[uid]) db[uid] = { data: {} };
+                        if (dataModule.unitData.lessons) {
+                            db[uid].data.lessons = dataModule.unitData.lessons;
+                        }
+                        if (dataModule.unitData.teacher_notes) {
+                            db[uid].data.teacher_notes = dataModule.unitData.teacher_notes;
+                        }
+                    }
+                } catch (e) {
+                    console.error('Error importing data.js for', uid, e);
+                }
+            }
+        }
+    }
+
     console.log('Generating HTML templates...');
     const overviewHtmlPath = generateOverviewHTML(db);
-    const sowHtmlPath = generateSOWHTML(db);
     
     console.log('Launching Puppeteer to create PDFs...');
     const browser = await puppeteer.launch({ headless: 'new' });
@@ -280,21 +376,31 @@ function generateSOWHTML(db) {
     });
     console.log('✅ Success! Overview PDF saved to: ' + overviewPdfPath);
     
-    // 2. Generate SOW PDF
-    console.log('Rendering Scheme of Work PDF...');
-    const page2 = await browser.newPage();
-    await page2.goto(require('url').pathToFileURL(sowHtmlPath).href, { waitUntil: 'networkidle0' });
-    const sowPdfPath = path.join(pdfsDir, 'whole_school_scheme_of_work.pdf');
-    await page2.pdf({
-        path: sowPdfPath,
-        format: 'A4',
-        printBackground: true,
-        displayHeaderFooter: true,
-        headerTemplate: '<div></div>',
-        footerTemplate: '<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross History Hub - Detailed Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
-        margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' }
-    });
-    console.log('✅ Success! Scheme of Work PDF saved to: ' + sowPdfPath);
+    // 2. Generate SOW PDFs per Year Group
+    for (const [stage, stageMap] of Object.entries(fullCurriculumMap)) {
+        for (const [yearGroup, unitIds] of Object.entries(stageMap)) {
+            const safeYearName = yearGroup.toLowerCase().replace(' ', '_');
+            const htmlPath = generateSOWHTML(db, yearGroup, unitIds);
+            
+            console.log(`Rendering ${yearGroup} Scheme of Work PDF...`);
+            const page = await browser.newPage();
+            await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0' });
+            
+            // Adjust layout for standard portrait width
+            const pdfPath = path.join(pdfsDir, `${safeYearName}_sow.pdf`);
+            await page.pdf({
+                path: pdfPath,
+                format: 'A4',
+                printBackground: true,
+                displayHeaderFooter: true,
+                headerTemplate: '<div></div>',
+                footerTemplate: `<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross History Hub - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
+                margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' }
+            });
+            console.log(`✅ Success! ${yearGroup} Scheme of Work PDF saved to: ` + pdfPath);
+            await page.close();
+        }
+    }
     
     await browser.close();
 })();

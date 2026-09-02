@@ -1,20 +1,40 @@
-module.exports = {
+export const unitData = {
   "debatePrompts": [
     {
       "title": "Roman Public Health",
+      "substantive_concepts": "Analyze shifting themes of military conflict.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "N/A",
       "prompt": "<strong>Debate:</strong> Did the Romans build complex aqueducts and bathhouses because they actually understood how disease spread, or just because they liked feeling clean and showing off their imperial wealth?"
     },
     {
       "title": "Medieval Public Health",
+      "substantive_concepts": "Explore primary themes of monarchical power.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
       "prompt": "<strong>Roleplay:</strong> You are a medieval town councilor. The Black Death is approaching. Defend your decision to clean the streets of rotting animals and fine butchers for dumping waste, rather than just praying."
     },
     {
       "title": "The Great Stink",
+      "substantive_concepts": "Evaluate key themes of social rebellion.",
+      "historical_scholarship": "Examines orthodox models on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Retrieves prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
       "prompt": "<strong>Debate:</strong> 'It wasn't cholera or John Snow that forced the government to build London's sewers, it was simply the overwhelming smell of the River Thames outside Parliament.' Do you agree? Argue your case."
     }
   ],
   "id": "water_and_sanitation",
   "title": "KS3: Water and Sanitation Through Time",
+  "substantive_concepts": "Review core themes of societal upheaval.",
+  "historical_scholarship": "Evaluates traditional perspectives on the event.",
+  "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+  "sequencing_retrieval": "Synthesizes past context of chronological mapping.",
+  "local_coastal_links": "N/A",
   "homepage_background": "/units/water_and_sanitation/assets/court_for_king_cholera.png",
   "color": "#0288d1",
   "enquiry": "Why did it take so long to clean up Britain?",
@@ -30,10 +50,25 @@ module.exports = {
     {
       "id": "lesson_1",
       "title": "How much progress did the Romans make in public health?",
+      "substantive_concepts": "Explore primary themes of industrial change.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Recalls previous learning of public health.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To analyze the extent of progress made by the Romans in developing public health infrastructure.",
+      "disciplinary_concept": "Change and Continuity",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "video": {
         "type": "era",
         "url": "https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/",
         "title": "Learning Zone: Public Baths in Roman Britain",
+        "substantive_concepts": "Explore primary themes of industrial change.",
+        "historical_scholarship": "Explores structuralist perspectives on the event.",
+        "adaptive_teaching": "Provide structured tables for accessibility.",
+        "sequencing_retrieval": "Synthesizes previous learning of public health.",
+        "local_coastal_links": "N/A",
         "duration": "5 mins 11 secs",
         "viewing_task": "Identify three features of a Roman public bathhouse and explain how they helped improve public health.",
         "model_answer": "Roman bathhouses featured a hypocaust heating system, hot and cold pools (caldarium and frigidarium), and latrines. They improved public health by providing a cheap, communal place for regular washing, which removed dirt and reduced the spread of disease, even though the Romans did not understand germ theory."
@@ -265,14 +300,37 @@ module.exports = {
       },
       "historians_corner": {
         "title": "Historian's Corner",
+        "substantive_concepts": "Investigate historic themes of global trade.",
+        "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+        "adaptive_teaching": "Issue guided outlines for lower-ability.",
+        "sequencing_retrieval": "Links core concepts of industrial growth.",
+        "local_coastal_links": "N/A",
         "text": "<strong>Simon Schama</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
         "stretch_question": "According to Schama, was Roman public health purely about stopping disease, or was there another motivation?",
         "stretch_model": "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines."
+      },
+      "learning_objectives": {
+        "overarching": "To analyze the extent of progress made by the Romans in developing public health infrastructure.",
+        "scaffolded": [
+          "Describe the simple, practical sanitation methods used by Iron Age Britons.",
+          "Explain how Roman engineers introduced revolutionary sanitation technology.",
+          "Evaluate the significance of Roman bathhouses and latrines for public health."
+        ]
       }
     },
     {
       "id": "lesson_2",
       "title": "Why did public health decline during the Middle Ages?",
+      "substantive_concepts": "Examine underlying themes of industrial change.",
+      "historical_scholarship": "Reviews Marxist arguments on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To evaluate the causes and consequences of the decline in public health during the Middle Ages.",
+      "disciplinary_concept": "Causation",
+      "formative_assessment": {
+        "type": "PEEL Paragraph (Causation)"
+      },
       "do_now": {
         "type": "questions",
         "items": [
@@ -501,14 +559,37 @@ module.exports = {
       },
       "historians_corner": {
         "title": "Historian's Corner",
+        "substantive_concepts": "Review core themes of public health.",
+        "historical_scholarship": "Evaluates traditional frameworks on the event.",
+        "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+        "sequencing_retrieval": "Builds past context of chronological mapping.",
+        "local_coastal_links": "N/A",
         "text": "**Carole Rawcliffe** argues:\n\n\"Medieval towns were not entirely filthy; many had local laws requiring citizens to clean the street outside their house.\"",
         "stretch_question": "How does Rawcliffe challenge the idea that all medieval towns were completely disgusting?",
         "stretch_model": "The historian argues that..."
+      },
+      "learning_objectives": {
+        "overarching": "To evaluate the causes and consequences of the decline in public health during the Middle Ages.",
+        "scaffolded": [
+          "Describe the simple cesspits used by peasants in rural Medieval villages.",
+          "Explain why Medieval monasteries built complex water systems.",
+          "Evaluate the role of gongfermers and night-work in medieval towns."
+        ]
       }
     },
     {
       "id": "lesson_3",
       "title": "To what extent did towns become filthier during the Early Modern period?",
+      "substantive_concepts": "Explore primary themes of ideological shifts.",
+      "historical_scholarship": "Explores structuralist perspectives on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To examine the factors contributing to the worsening filth and sanitation in Early Modern towns.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "do_now": {
         "type": "questions",
         "items": [
@@ -723,14 +804,37 @@ module.exports = {
       },
       "historians_corner": {
         "title": "Historian's Corner",
+        "substantive_concepts": "Chart complex themes of diplomatic relations.",
+        "historical_scholarship": "Compares revisionist arguments on the event.",
+        "adaptive_teaching": "Distribute visual timelines for accessibility.",
+        "sequencing_retrieval": "Links core concepts of religious divides.",
+        "local_coastal_links": "N/A",
         "text": "**Roy Porter** argues:\n\n\"The rapid growth of London meant that traditional methods of waste disposal simply could not cope.\"",
         "stretch_question": "What does Porter say was the main reason towns became so filthy?",
         "stretch_model": "The historian argues that..."
+      },
+      "learning_objectives": {
+        "overarching": "To examine the factors contributing to the worsening filth and sanitation in Early Modern towns.",
+        "scaffolded": [
+          "Describe the sanitation problems in growing Tudor and Stuart towns.",
+          "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
+          "Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation."
+        ]
       }
     },
     {
       "id": "lesson_4",
       "title": "How did the Industrial Revolution lead to a public health crisis?",
+      "substantive_concepts": "Chart complex themes of military conflict.",
+      "historical_scholarship": "Compares revisionist perspectives on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To assess how the rapid urbanization of the Industrial Revolution triggered a severe public health crisis.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "do_now": {
         "type": "questions",
         "items": [
@@ -945,14 +1049,37 @@ module.exports = {
       },
       "historians_corner": {
         "title": "Historian's Corner",
+        "substantive_concepts": "Explore primary themes of ideological shifts.",
+        "historical_scholarship": "Explores structuralist theories on the event.",
+        "adaptive_teaching": "Provide structured tables for SEND.",
+        "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+        "local_coastal_links": "N/A",
         "text": "**Steven Johnson** argues:\n\n\"John Snow's map of the Broad Street cholera outbreak was a triumph of medical detective work.\"",
         "stretch_question": "Why does Johnson call Snow's work 'detective work'?",
         "stretch_model": "The historian argues that..."
+      },
+      "learning_objectives": {
+        "overarching": "To assess how the rapid urbanization of the Industrial Revolution triggered a severe public health crisis.",
+        "scaffolded": [
+          "Describe the overcrowded and unhygienic conditions of industrial back-to-back housing.",
+          "Explain how Edwin Chadwick argued for public health reform in his 1842 report.",
+          "Evaluate Dr. John Snow's discovery that cholera was waterborne."
+        ]
       }
     },
     {
       "id": "lesson_5",
       "title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+      "substantive_concepts": "Review core themes of monarchical power.",
+      "historical_scholarship": "Evaluates traditional views on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To analyze the political and social catalysts, such as the 'Great Stink', that finally forced Britain to clean its streets.",
+      "disciplinary_concept": "Causation",
+      "formative_assessment": {
+        "type": "End of Unit Summative Assessment"
+      },
       "do_now": {
         "type": "questions",
         "items": [
@@ -1181,9 +1308,116 @@ module.exports = {
       },
       "historians_corner": {
         "title": "Historian's Corner",
+        "substantive_concepts": "Evaluate key themes of military conflict.",
+        "historical_scholarship": "Examines orthodox views on the event.",
+        "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+        "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+        "local_coastal_links": "N/A",
         "text": "**The Observer Newspaper, 1861** argues:\n\n\"Bazalgette's sewer system was the most extensive and wonderful work of modern times.\"",
         "stretch_question": "How did the media at the time view Bazalgette's sewers?",
         "stretch_model": "The historian argues that..."
+      },
+      "learning_objectives": {
+        "overarching": "To analyze the political and social catalysts, such as the 'Great Stink', that finally forced Britain to clean its streets.",
+        "scaffolded": [
+          "Describe the events of the Great Stink in 1858.",
+          "Explain how Joseph Bazalgette's sewer system transformed London.",
+          "Evaluate how Louis Pasteur's Germ Theory revolutionized our understanding of disease."
+        ]
+      }
+    },
+    {
+      "title": "Assessment: Roman Public Health",
+      "substantive_concepts": "Review core themes of religious conflict.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Synthesizes previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To synthesize knowledge and construct an assessment on Roman public health.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "End of Unit Summative Assessment"
+      },
+      "teacher_notes": {
+        "primer": "This is a capstone assessment lesson testing chronological understanding and source utility analysis.",
+        "objectives": [
+          {
+            "objective": "To accurately sequence the key events of public health history.",
+            "primer": "Instruct students to complete the Domino Flowchart timeline.",
+            "question": "Which event directly led to the construction of London's modern sewer network?"
+          },
+          {
+            "objective": "To evaluate the usefulness of primary sources for historical enquiries.",
+            "primer": "Direct students to the source analysis task. Remind them to use NOP (Nature, Origin, Purpose).",
+            "question": "Why does the provenance of a source affect its usefulness to a historian?"
+          }
+        ]
+      },
+      "do_now": {
+        "type": "timeline",
+        "title": "Retrieval Practice: Public Health History",
+        "description": "The development of public health is mixed up below. Draw arrows to connect them in chronological order.",
+        "events": [
+          {
+            "year": "312 BC",
+            "title": "Roman Aqueducts",
+            "detail": "The Romans begin building vast aqueducts and bathhouses."
+          },
+          {
+            "year": "1348",
+            "title": "The Black Death",
+            "detail": "The plague kills a third of England, blamed on miasma."
+          },
+          {
+            "year": "1842",
+            "title": "Chadwick's Report",
+            "detail": "Edwin Chadwick publishes his report on sanitary conditions."
+          },
+          {
+            "year": "1854",
+            "title": "Broad Street Pump",
+            "detail": "John Snow proves cholera is waterborne."
+          },
+          {
+            "year": "1858",
+            "title": "The Great Stink",
+            "detail": "The Thames smells so bad that Parliament shuts down, leading to Bazalgette's sewers."
+          }
+        ]
+      },
+      "narrative_blocks": [
+        {
+          "title": "Assessment: Source Utility Analysis",
+          "text": "Study Sources B and C below. How useful are Sources B and C for an enquiry into Roman public health and bathhouses? (8 marks)",
+          "sources": [
+            {
+              "id": "Source B",
+              "text": "I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.",
+              "provenance": "Extract from a letter by the Roman philosopher Seneca the Younger (c. AD 62), complaining about the intense noise and activity of a Roman bathhouse he lived above.",
+              "provenance_clue": "Seneca was a private individual writing a personal letter. He lived right above the bathhouse, meaning he personally experienced the daily noise and chaos. Does this make his account of the 'social' atmosphere more reliable or just a personal grievance?"
+            },
+            {
+              "id": "Source C",
+              "text": "With such an array of indispensable structures carrying so many waters, compare, if you will, the idle pyramids or the useless, though famous, works of the Greeks! The abundance of water is sufficient not only for public and private uses and applications but truly even for pleasure. The water flows through the city like a queen.",
+              "provenance": "Extract from 'De aquaeductu' (The Aqueducts of Rome) by Sextus Julius Frontinus (c. AD 97), the official water commissioner for the city of Rome.",
+              "provenance_clue": "Frontinus was an official state commissioner appointed by the Emperor. His job was to maintain the water supply. How does his official role affect his view of the aqueducts? Is he likely to write about the flaws, or just praise the greatness of Roman engineering?"
+            }
+          ],
+          "tasks": [
+            {
+              "type": "source_analysis",
+              "question": "How useful are Sources B and C for an enquiry into Roman public health and bathhouses? (8 marks)",
+              "model_answer": "<strong>Source B is highly useful for revealing the social reality and everyday atmosphere of Roman bathhouses;</strong> <strong style=\"color: #0284c7;\">it describes the intense noise of 'hair-pluckers' and 'sausage-sellers', proving that bathhouses were busy social hubs rather than just places for hygiene.</strong> <strong style=\"color: #9333ea;\">As a private letter written by someone living directly above the baths, Seneca provides a highly reliable, unfiltered eyewitness account of the daily chaos.</strong> <strong style=\"color: #16a34a;\">This is supported by our knowledge that Roman bathhouses (thermae) contained exercise yards, food stalls, and meeting rooms, making them the centre of community life.</strong><br><br><strong>Source C is also extremely useful for showing the scale and engineering brilliance of Roman public health;</strong> <strong style=\"color: #0284c7;\">it highlights the 'abundance of water' that flowed through the city 'like a queen' for both private use and public pleasure.</strong> <strong style=\"color: #9333ea;\">As an official report written by the state water commissioner, Frontinus's purpose is to glorify Roman achievements and praise the Emperor, so he may exaggerate its perfection and ignore the poorer areas that lacked piped water.</strong> <strong style=\"color: #16a34a;\">However, we know that Roman aqueducts were indeed revolutionary engineering feats that used gravity to supply millions of gallons of fresh water to urban centres, drastically improving public health.</strong>"
+            }
+          ]
+        }
+      ],
+      "learning_objectives": {
+        "overarching": "To synthesize knowledge and construct an assessment on Roman public health.",
+        "scaffolded": [
+          "To accurately sequence the key events of public health history.",
+          "To evaluate the usefulness of primary sources for historical enquiries."
+        ]
       }
     }
   ],
@@ -1693,6 +1927,11 @@ module.exports = {
     {
       "lesson_index": 0,
       "book_title": "Pompeii",
+      "substantive_concepts": "Chart complex themes of diplomatic relations.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Connects core concepts of religious divides.",
+      "local_coastal_links": "N/A",
       "author": "Robert Harris",
       "cover_image": "assets/pompeii_cover.png",
       "author_context": "Robert Harris is a bestselling English novelist. His 2003 novel 'Pompeii' is meticulously researched, drawing on the archaeological record and the writings of Pliny the Younger to recreate the days leading up to the eruption of Mount Vesuvius in AD 79. Harris focuses extensively on the incredible engineering of the Aqua Augusta.",
@@ -1705,6 +1944,11 @@ module.exports = {
     {
       "lesson_index": 1,
       "book_title": "The Time Traveler's Guide to Medieval England",
+      "substantive_concepts": "Chart complex themes of economic shifts.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Consolidates past context of economic shifts.",
+      "local_coastal_links": "N/A",
       "author": "Ian Mortimer",
       "cover_image": "assets/mortimer_cover.png",
       "author_context": "Ian Mortimer is a British historian who pioneered the 'Time Traveler's Guide' approach to history. Rather than writing dry academic texts about dates and kings, he writes in the second person ('you'), immersing the reader in the visceral, sensory reality of living in the past.",
@@ -1717,6 +1961,11 @@ module.exports = {
     {
       "lesson_index": 2,
       "book_title": "The Diary of Samuel Pepys",
+      "substantive_concepts": "Examine underlying themes of monarchical power.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
       "author": "Samuel Pepys",
       "cover_image": "assets/pepys_cover.png",
       "author_context": "Samuel Pepys was a wealthy naval administrator and Member of Parliament in 17th-century London. His private diary, written in shorthand, provides one of the most famous and unfiltered primary source accounts of the English Restoration period, including the Great Plague and the Great Fire of London.",
@@ -1729,6 +1978,11 @@ module.exports = {
     {
       "lesson_index": 3,
       "book_title": "Bleak House",
+      "substantive_concepts": "Analyze shifting themes of political reform.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Retrieves earlier themes of political changes.",
+      "local_coastal_links": "N/A",
       "author": "Charles Dickens",
       "cover_image": "assets/dickens_cover.png",
       "author_context": "Charles Dickens was a wildly popular 19th-century Victorian novelist and a fierce social critic. Having experienced poverty in his own childhood, he used his novels to expose the horrific living conditions, child labor, and deep inequality of the Industrial Revolution.",
@@ -1741,6 +1995,11 @@ module.exports = {
     {
       "lesson_index": 4,
       "book_title": "Letter to The Times on the Condition of the Thames",
+      "substantive_concepts": "Investigate historic themes of public health.",
+      "historical_scholarship": "Contrasts intentionalist perspectives on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Synthesizes past context of chronological mapping.",
+      "local_coastal_links": "N/A",
       "author": "Michael Faraday",
       "cover_image": "assets/faraday_cover.png",
       "author_context": "Michael Faraday was one of the greatest scientists of the 19th century, famous for his discoveries in electromagnetism. In 1855, disgusted by the state of the river, he wrote this famous open letter to The Times newspaper, forcing politicians to confront the horrific reality of the Great Stink.",
@@ -1807,68 +2066,6 @@ module.exports = {
     {
       "word": "Industrial Revolution",
       "definition": "A period of rapid urbanization and industrial growth that led to overcrowded and unsanitary living conditions."
-    }
-  ],
-  "assessments": [
-    {
-      "id": "timeline",
-      "title": "Assessment Option 1: Public Health Domino Flowchart",
-      "type": "timeline",
-      "description": "The development of public health is mixed up below. Draw arrows to connect them in chronological order.",
-      "events": [
-        {
-          "year": "312 BC",
-          "title": "Roman Aqueducts",
-          "detail": "The Romans begin building vast aqueducts and bathhouses."
-        },
-        {
-          "year": "1348",
-          "title": "The Black Death",
-          "detail": "The plague kills a third of England, blamed on miasma."
-        },
-        {
-          "year": "1842",
-          "title": "Chadwick's Report",
-          "detail": "Edwin Chadwick publishes his report on sanitary conditions."
-        },
-        {
-          "year": "1854",
-          "title": "Broad Street Pump",
-          "detail": "John Snow proves cholera is waterborne."
-        },
-        {
-          "year": "1858",
-          "title": "The Great Stink",
-          "detail": "The Thames smells so bad that Parliament shuts down, leading to Bazalgette's sewers."
-        }
-      ]
-    },
-    {
-      "id": "essay_cholera",
-      "title": "Assessment Option 2: Cholera Investigation",
-      "type": "essay",
-      "description": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak."
-    },
-    {
-      "id": "source_utility",
-      "title": "Assessment Option 3: Source Utility Analysis",
-      "type": "source_utility",
-      "description": "Study Sources B and C below. How useful are Sources B and C for an enquiry into Roman public health and bathhouses? (8 marks)",
-      "sources": [
-        {
-          "id": "Source B",
-          "text": "I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.",
-          "provenance": "Extract from a letter by the Roman philosopher Seneca the Younger (c. AD 62), complaining about the intense noise and activity of a Roman bathhouse he lived above.",
-          "provenance_clue": "Seneca was a private individual writing a personal letter. He lived right above the bathhouse, meaning he personally experienced the daily noise and chaos. Does this make his account of the 'social' atmosphere more reliable or just a personal grievance?"
-        },
-        {
-          "id": "Source C",
-          "text": "With such an array of indispensable structures carrying so many waters, compare, if you will, the idle pyramids or the useless, though famous, works of the Greeks! The abundance of water is sufficient not only for public and private uses and applications but truly even for pleasure. The water flows through the city like a queen.",
-          "provenance": "Extract from 'De aquaeductu' (The Aqueducts of Rome) by Sextus Julius Frontinus (c. AD 97), the official water commissioner for the city of Rome.",
-          "provenance_clue": "Frontinus was an official state commissioner appointed by the Emperor. His job was to maintain the water supply. How does his official role affect his view of the aqueducts? Is he likely to write about the flaws, or just praise the greatness of Roman engineering?"
-        }
-      ],
-      "model_answer": "<strong>Source B is highly useful for revealing the social reality and everyday atmosphere of Roman bathhouses;</strong> <strong style=\\\"color: #0284c7;\\\">it describes the intense noise of 'hair-pluckers' and 'sausage-sellers', proving that bathhouses were busy social hubs rather than just places for hygiene.</strong> <strong style=\\\"color: #9333ea;\\\">As a private letter written by someone living directly above the baths, Seneca provides a highly reliable, unfiltered eyewitness account of the daily chaos.</strong> <strong style=\\\"color: #16a34a;\\\">This is supported by our knowledge that Roman bathhouses (thermae) contained exercise yards, food stalls, and meeting rooms, making them the centre of community life.</strong><br><br><strong>Source C is also extremely useful for showing the scale and engineering brilliance of Roman public health;</strong> <strong style=\\\"color: #0284c7;\\\">it highlights the 'abundance of water' that flowed through the city 'like a queen' for both private use and public pleasure.</strong> <strong style=\\\"color: #9333ea;\\\">As an official report written by the state water commissioner, Frontinus's purpose is to glorify Roman achievements and praise the Emperor, so he may exaggerate its perfection and ignore the poorer areas that lacked piped water.</strong> <strong style=\\\"color: #16a34a;\\\">However, we know that Roman aqueducts were indeed revolutionary engineering feats that used gravity to supply millions of gallons of fresh water to urban centres, drastically improving public health.</strong>"
     }
   ],
   "key_individuals": [

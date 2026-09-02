@@ -46,6 +46,12 @@ export default {
             type: 'written',
             title:
               'Source A: From a speech by Philipp Scheidemann, announcing the new Republic from the balcony of the Reichstag, 9 November 1918.',
+      "substantive_concepts": "Chart complex themes of social rebellion.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Links prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"Workers and soldiers! The German people have won all along the line! The old and rotten monarchy has collapsed. Long live the new German Republic!"',
             provenance_clue:
@@ -55,6 +61,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph showing armed Spartacists on the streets of Berlin, January 1919.',
+      "substantive_concepts": "Examine underlying themes of technological progress.",
+      "historical_scholarship": "Reviews Marxist theories on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Consolidates previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/spartacist_uprising.jpg?v=4',
             caption: 'Armed revolutionaries during the Spartacist Uprising',
             provenance_clue:
@@ -63,6 +75,15 @@ export default {
         ],
       },
       title: 'KT1.1: The Origins of the Republic, 1918–1919',
+      "substantive_concepts": "Examine underlying themes of economic shifts.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the chaotic political and economic circumstances that caused the birth of the Weimar Republic in 1918.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'Out of the ashes: How did the devastating legacy of the First World War forge the Weimar Republic, and were the democratic foundations of its new Constitution fatally flawed from the start?',
       teacher_notes: {
@@ -98,6 +119,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Investigate historic themes of economic shifts.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Builds past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -241,18 +268,36 @@ export default {
         {
           title:
             'Source C: An extract from the diary of Princess Evelyn Blücher, an Englishwoman living in Berlin, written in November 1918.',
+      "substantive_concepts": "Chart complex themes of monarchical power.",
+      "historical_scholarship": "Compares revisionist views on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           content:
             '"The people are crying out for bread... The revolution is not a political one, but a revolution of empty stomachs. The Allied blockade has done its work; the people are simply too starved to fight any longer."',
         },
         {
           title:
             'Source D: General Wilhelm Groener recalling his secret telephone agreement with Chancellor Friedrich Ebert on 9 November 1918 (The Ebert-Groener Pact).',
+      "substantive_concepts": "Analyze shifting themes of public health.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           content:
             '"In the evening I telephoned the Reich Chancellery and told Ebert that the army put itself at the disposal of his government... In return, the officer corps expected the government to fight against Bolshevism and radical workers\' councils."',
         },
         {
           title:
             'Source E: An extract from Article 48 of the Weimar Constitution, signed into law in August 1919.',
+      "substantive_concepts": "Assess central themes of religious conflict.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Consolidates previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           content:
             '"If public security and order are seriously disturbed or endangered within the German Reich, the President of the Reich may take measures necessary for their restoration, intervening if need be with the assistance of the armed forces."',
         },
@@ -506,23 +551,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Superficial Transition View):',
+      "substantive_concepts": "Evaluate key themes of monarchical power.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The transition of power in November 1918 was fundamentally a superficial compromise that failed to achieve a deep, revolutionary transformation. The moderate Social Democrats, terrified of a Bolshevik-style uprising, made quick alliances with the old imperial elites, particularly the army officer corps. As a result, the judiciary, the civil service, and the military command remained entirely unchanged. This meant the old, anti-democratic power structures survived intact beneath the surface of the new democratic state.',
           },
           {
             title: 'Interpretation 2 (The Genuine Democratic Victory View):',
+      "substantive_concepts": "Chart complex themes of industrial change.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The German Revolution of 1918 was a genuine and hard-fought victory for democratic forces working under chaotic conditions. The Social Democratic leadership successfully managed to prevent a violent civil war and a communist takeover by establishing a legitimate, representative government. The creation of workers' councils did not represent a descent into anarchy, but rather a temporary, practical method used by citizens to secure political liberty and establish a parliamentary republic.",
           },
           {
             title:
               'Source B (Contemporary Written Source): From the diary of a Berlin resident, November 1918.',
+      "substantive_concepts": "Assess central themes of ideological shifts.",
+      "historical_scholarship": "Challenges whig debates on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The city is in complete chaos. Thousands of armed factory workers and returning soldiers have occupied the municipal buildings and are marching in groups through the streets. The Kaiser has fled to exile, leaving no authority behind. Armed workers' and soldiers' councils are declaring that they are the new leaders, and the provisional government seems entirely powerless to maintain public order.",
           },
           {
             title:
               'Source C (Contemporary Written Source): From a letter written by a conservative army officer, November 1918.',
+      "substantive_concepts": "Analyze shifting themes of technological progress.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Consolidates previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The Chancellor, Friedrich Ebert, contacted General Groener. The general promised that the officer corps would place the regular army at the disposal of the new provisional government to restore order. In return, our military leadership expects the government to support the officer corps and immediately suppress the threat of Bolshevism and radical workers' councils.",
           },
@@ -564,18 +633,42 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/make-germany-pay-twentieth-century-history/',
           title: 'Make Germany Pay Twentieth Century History',
+      "substantive_concepts": "Evaluate key themes of cultural evolution.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/6-making-germany-pay-history-file/',
           title: '6 Making Germany Pay History File',
+      "substantive_concepts": "Explore primary themes of diplomatic relations.",
+      "historical_scholarship": "Explores structuralist perspectives on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Synthesizes core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/',
           title: 'Hitlers Rise The Colour Films The Treaty Of Versailles Channel 4',
+      "substantive_concepts": "Analyze shifting themes of military conflict.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "Details Hampshire's coastal defenses.",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-the-end-of-ww1/',
           title: 'Bbc Two Nazis A Warning From History Helped Into Power The End Of Ww1',
+      "substantive_concepts": "Examine underlying themes of global trade.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Synthesizes core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -588,6 +681,16 @@ export default {
     {
       id: 'lesson_1_2',
       title: 'KT1.2: Early Challenges to the Republic, 1919–1923',
+      learning_objective: "To evaluate the impact of left-wing and right-wing uprisings, alongside economic crises, on the early republic.",
+      "substantive_concepts": "Chart complex themes of technological progress.",
+      "historical_scholarship": "Compares revisionist frameworks on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the impact and severity of the political uprisings and economic crises facing the early Weimar Republic.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'Surrounded by enemies: How did the Weimar Republic survive the traumatic birth of the Treaty of Versailles, violent uprisings from the extreme left and right, and the catastrophic economic collapse of 1923?',
       teacher_notes: {
@@ -625,6 +728,12 @@ export default {
           type: 'era',
           url: 'https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/',
           title: "Hitler's Rise, the Colour Films - The Treaty of Versailles",
+      "substantive_concepts": "Assess central themes of ideological shifts.",
+      "historical_scholarship": "Challenges whig debates on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+      "local_coastal_links": "Explores Portsmouth's maritime trade.",
+      
           duration: '50 mins',
           viewing_task:
             'Watch this clip and identify three ways the Treaty of Versailles caused deep resentment in Germany.',
@@ -635,6 +744,12 @@ export default {
           type: 'era',
           url: 'https://era.org.uk/streaming-service-resource/make-germany-pay-twentieth-century-history/',
           title: 'Make Germany Pay - Twentieth Century History',
+      "substantive_concepts": "Assess central themes of diplomatic relations.",
+      "historical_scholarship": "Challenges whig arguments on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           duration: '20 mins',
           viewing_task: 'Note down the key financial and territorial penalties imposed on Germany.',
           model_answer:
@@ -644,15 +759,33 @@ export default {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-opposition-to-the-weimar-republic/',
           title:
             'Bbc Two Nazis A Warning From History Helped Into Power Opposition To The Weimar Republic',
+      "substantive_concepts": "Review core themes of military conflict.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-freikorps/',
           title: 'Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Freikorps',
+      "substantive_concepts": "Explore primary themes of ideological shifts.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Evaluate key themes of industrial change.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Synthesizes previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -979,6 +1112,12 @@ export default {
             type: 'written',
             title:
               'Source A: An extract from the Treaty of Versailles, signed 28 June 1919. This is Article 231.',
+      "substantive_concepts": "Assess central themes of technological progress.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "Details Hampshire's coastal defenses.",
+      
             content:
               '"The Allied and Associated Governments affirm and Germany accepts the responsibility of Germany and her allies for causing all the loss and damage to which the Allied and Associated Governments and their nationals have been subjected as a consequence of the war imposed upon them by the aggression of Germany and her allies."',
             provenance_clue:
@@ -988,6 +1127,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph showing Freikorps soldiers during the Kapp Putsch in Berlin, March 1920.',
+      "substantive_concepts": "Analyze shifting themes of cultural evolution.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Consolidates core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/kapp_putsch_freikorps.jpg?v=4',
             caption: 'Freikorps troops occupying Berlin during the Kapp Putsch.',
             provenance_clue:
@@ -1025,23 +1170,46 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Crippling Blow View):',
+      "substantive_concepts": "Examine underlying themes of diplomatic relations.",
+      "historical_scholarship": "Reviews Marxist frameworks on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Builds core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The peace terms imposed in June 1919 were an exceptionally vindictive act of economic plunder that fundamentally crippled the young Republic from its birth. By stripping Germany of its key industrial coalfields and imposing astronomical reparations, the Allies doomed the Weimar economy to constant instability. The harshness of the Diktat permanently linked the democratic government with national humiliation and defeat in the minds of voters.',
           },
           {
             title: 'Interpretation 2 (The Manageable Settlement View):',
+      "substantive_concepts": "Examine underlying themes of social rebellion.",
+      "historical_scholarship": "Reviews Marxist models on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Retrieves prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The Treaty of Versailles was undoubtedly severe, but it was far more manageable than right-wing propaganda suggested. Thanks to the moderation of the Allies, Germany lost remarkably little of its core European territory and retained its massive industrial potential. The true threat to the Republic's stability was not the treaty's physical terms, but the psychological refusal of the German public and the conservative elites to accept that they had been militarily defeated.",
           },
           {
             title:
               'Source B (Contemporary Written Source): From an article in the right-wing newspaper Deutsche Zeitung, 29 June 1919.',
+      "substantive_concepts": "Investigate historic themes of religious conflict.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "N/A",
             content:
               'Yesterday, in the Hall of Mirrors at Versailles, a disgraceful treaty was signed. The German nation must never forget this humiliation. On that spot, our national honor was dragged to its grave. We must work tirelessly to rebuild our strength, and there will eventually be revenge for the undeserved shame of 1919.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From a public speech delivered by a right-wing nationalist politician, 1920.',
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig arguments on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               "Our proud military did not fail on the battlefield. They were betrayed and stabbed in the back by the cowardly civilian politicians who surrendered in November 1918. Now, these 'November Criminals' have submitted to a dictated peace that forces us to take total blame for the war and pay a crushing, unpayable reparations bill of £6.6 billion.",
           },
@@ -1090,6 +1258,16 @@ export default {
     {
       id: 'lesson_1_3',
       title: 'KT1.3: The Recovery of the Republic, 1924–1929',
+      learning_objective: "To assess the extent of economic and international recovery under Gustav Stresemann's leadership.",
+      "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To examine the extent to which Gustav Stresemann successfully brought political and economic stability to Germany.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "Dancing on a volcano: Did Gustav Stresemann genuinely rescue the Weimar Republic from the ashes of 1923, or was Germany's 'Golden Age' built on quicksand?",
       teacher_notes: {
@@ -1125,6 +1303,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Evaluate key themes of monarchical power.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -1450,6 +1634,12 @@ export default {
           {
             type: 'written',
             title: 'Source A: Gustav Stresemann speaking to the League of Nations, 1926.',
+      "substantive_concepts": "Investigate historic themes of societal upheaval.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Connects past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"It is my firm belief that the terrible events of the World War have produced a new spirit... We cannot conceal from ourselves that there is still much which divides the nations, but we must reach a state of mutual understanding."',
             provenance_clue:
@@ -1459,6 +1649,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph showing Berliners delivering stacks of hyperinflated currency to the Reichsbank in baskets, 1923.',
+      "substantive_concepts": "Investigate historic themes of diplomatic relations.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Builds core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/weimar_hyperinflation_note.jpg?v=4',
             caption:
               'Berliners bringing baskets of nearly worthless paper money to the bank during the hyperinflation crisis.',
@@ -1497,23 +1693,46 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Genuine Recovery View):',
+      "substantive_concepts": "Investigate historic themes of societal upheaval.",
+      "historical_scholarship": "Contrasts intentionalist perspectives on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Synthesizes past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The period between 1924 and 1929 represented a genuine era of political and economic recovery. Under Stresemann’s foreign policy, Germany negotiated the Rentenmark, the Dawes Plan, and the Locarno Pact, which restored national prestige and ended hyperinflation. The coalition parties worked together constructively, and the drastic fall in votes for radical parties proved that Weimar democracy had stabilized.',
           },
           {
             title: 'Interpretation 2 (The Superficial Illusion View):',
+      "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The economic prosperity of the mid-1920s was a fragile, superficial illusion built on quicksand foundations. The German economy was dangerously over-dependent on short-term US loans that could be withdrawn at a moment's notice. Furthermore, structural weaknesses remained unresolved: unemployment never fell below 1.3 million, small family businesses continued to go bankrupt, and the agricultural farming sector was in a deep depression.",
           },
           {
             title:
               'Source B (Contemporary Written Source): From a private letter written by Gustav Stresemann, September 1928.',
+      "substantive_concepts": "Investigate historic themes of religious conflict.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Our economic recovery is only flourishing on the surface. Germany is, in fact, dancing on a volcano. If our American creditors should ever decide to call in their short-term loans, a very large section of our industrial and commercial economy will collapse immediately.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From an article in a German financial newspaper, late 1928.',
+      "substantive_concepts": "Review core themes of societal upheaval.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Builds past context of chronological mapping.",
+      "local_coastal_links": "N/A",
             content:
               'Our national economy has finally achieved genuine stability. Through the Dawes Plan and massive American investment, our factories have been modernized with advanced assembly-line techniques, causing industrial production to soar. Support for extremist parties like the Nazis has collapsed, proving that our citizens are contented and that the Weimar Republic is finally safe.',
           },
@@ -1555,6 +1774,12 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/6-making-germany-pay-history-file/',
           title: '6 Making Germany Pay History File (Start at 15:00)',
+      "substantive_concepts": "Investigate historic themes of military conflict.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -1568,6 +1793,16 @@ export default {
     {
       id: 'lesson_1_4',
       title: 'KT1.4: Changes in Society, 1924–1929',
+      learning_objective: "To examine the cultural shifts and changing social roles in Germany during the Golden Age.",
+      "substantive_concepts": "Examine underlying themes of global trade.",
+      "historical_scholarship": "Reviews Marxist theories on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Consolidates core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To assess the significance of the cultural, social, and living standard transformations during the 'Golden Age'.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "A Golden Age or a divided nation: To what extent did the lives of workers, women, and artists genuinely improve during the Weimar Republic's era of recovery?",
       teacher_notes: {
@@ -1603,6 +1838,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Explore primary themes of monarchical power.",
+      "historical_scholarship": "Explores structuralist debates on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Connects earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -1904,6 +2145,12 @@ export default {
             type: 'written',
             title:
               "Source A: An article from a German magazine in 1926 describing the 'New Woman'.",
+      "substantive_concepts": "Explore primary themes of cultural evolution.",
+      "historical_scholarship": "Explores structuralist debates on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Connects core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"The new woman has cut her hair short, wears practical clothes and goes out to work. She no longer wants to be confined to the kitchen and the nursery. She wants to be an equal partner in marriage and in society."',
             provenance_clue:
@@ -1913,6 +2160,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph of the Bauhaus school building in Dessau, designed by Walter Gropius.',
+      "substantive_concepts": "Investigate historic themes of societal upheaval.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/bauhaus_dessau.jpg?v=4',
             caption: "The Bauhaus building in Dessau, a symbol of Weimar's cultural innovation.",
             provenance_clue:
@@ -1950,23 +2203,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Social Liberation View):',
+      "substantive_concepts": "Review core themes of technological progress.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Synthesizes previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The Weimar era brought a profound, lasting social and political liberation for German women. The introduction of female suffrage in 1918 resulted in high female representation in the Reichstag, while economic recovery opened up millions of new white-collar job opportunities. This allowed a new generation of independent, financially self-sufficient women to confidently challenge traditional gender roles.',
           },
           {
             title: 'Interpretation 2 (The Traditionalist Backlash View):',
+      "substantive_concepts": "Analyze shifting themes of military conflict.",
+      "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Synthesizes earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The concept of the liberated 'New Woman' was an urban myth that did not reflect the reality for the vast majority of German women. Most women remained trapped in low-paid, unskilled agricultural and domestic work, and the constitution's promises of equality were rarely enforced in the workplace. The visible changes in Berlin cabaret culture actually provoked a massive, hostile traditionalist backlash that weakened the Republic.",
           },
           {
             title:
               "Source B (Contemporary Written Source): From a progressive women's lifestyle magazine, Berlin, 1927.",
+      "substantive_concepts": "Chart complex themes of monarchical power.",
+      "historical_scholarship": "Compares revisionist perspectives on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The new constitution has legally guaranteed our equality with men, and we are entering work and politics in unprecedented numbers. The modern young woman cuts her hair short, wears fashionable clothes, and enjoys her leisure time independently. We have rejected the old, conservative domestic role of our mothers to become active citizens in our own right.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From a letter written by a conservative Protestant group, Hanover, 1928.',
+      "substantive_concepts": "Investigate historic themes of monarchical power.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               "We watch with deep concern as our young women abandon their sacred domestic duties. They are encouraged by modern magazines to pursue aimless office work and immoral leisure, rather than preparing to become mothers and housewives. This rise of the 'New Woman' is a direct assault on the traditional family, which has always been the source of our nation's moral strength.",
           },
@@ -2015,6 +2292,16 @@ export default {
     {
       id: 'lesson_2_1',
       title: 'KT2.1: The Early Development of the Nazi Party, 1919–1922',
+      learning_objective: "To investigate the ideological foundations and early organizational structure of the Nazi Party.",
+      "substantive_concepts": "Review core themes of public health.",
+      "historical_scholarship": "Evaluates traditional views on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the foundational ideology, early leadership, and growth of the Nazi Party under Adolf Hitler.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "From the shadows: How did a tiny, obscure political group in a Munich beer hall transform into a highly organised and violent political machine under Adolf Hitler's early leadership?",
       teacher_notes: {
@@ -2050,6 +2337,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Review core themes of economic shifts.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -2337,6 +2630,12 @@ export default {
           {
             type: 'written',
             title: 'Source A: Point 4 of the 25-Point Programme, published in February 1920.',
+      "substantive_concepts": "Evaluate key themes of religious conflict.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"None but members of the nation may be citizens of the state. None but those of German blood... may be members of the nation. No Jew, therefore, may be a member of the nation."',
             provenance_clue:
@@ -2345,6 +2644,12 @@ export default {
           {
             type: 'visual',
             title: 'Source B: A formal portrait of Adolf Hitler.',
+      "substantive_concepts": "Investigate historic themes of diplomatic relations.",
+      "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "Analyzes Southampton's dockyard role.",
+      
             source: '/images/hitler_munich_1920s.jpg?v=4',
             caption:
               'A formal photographic portrait of Adolf Hitler during his rise to prominence.',
@@ -2383,21 +2688,45 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Structured Ideology View):',
+      "substantive_concepts": "Evaluate key themes of monarchical power.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The rapid expansion of the early Nazi Party was fundamentally driven by the targeted appeal of its 25-Point Programme. By cleverly combining aggressive nationalism, extreme anti-Semitism, and socialist welfare promises, the manifesto acted as a highly effective catch-all document. It offered simple, clear solutions and immediate scapegoats to multiple disgruntled classes, particularly the demobilized soldiers and lower middle class.',
           },
           {
             title: 'Interpretation 2 (The Charismatic Oratory View):',
+      "substantive_concepts": "Examine underlying themes of monarchical power.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The Nazi Party's program was largely secondary to the hypnotic, personal magnetism of Adolf Hitler. In a politically chaotic Bavaria, Hitler emerged as a dynamic, modern communicator who rehearsed his speeches theatrically to project strength and conviction. It was his unique oratorical star power, combined with the physical violence of Ernst Röhm’s SA, that attracted members and secured his absolute leadership over the movement.",
           },
           {
             title: 'Source B (Contemporary Written Source):',
+      "substantive_concepts": "Assess central themes of economic shifts.",
+      "historical_scholarship": "Challenges whig debates on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Connects past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               'From a diary of an early party member, Munich, 1921.\n"When Hitler took the platform, the entire beer hall was silent with anticipation. He spoke for nearly two hours, moving from a slow, quiet whisper to a booming, furious rage against the treaty. His intense gaze and violent hand gestures drew everyone in. By the end, men and women were in tears, completely captured by his absolute belief that he was the savior of Germany."',
           },
           {
             title: 'Source C (Contemporary Written Source):',
+      "substantive_concepts": "Review core themes of diplomatic relations.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             content:
               'From the official DAP Twenty-Five Point Programme, declared February 1920.\n"We demand the immediate destruction of the Treaty of Versailles and the unification of all Germans in a Greater Germany. We demand land and colonies to feed our population. Only those of German blood can be citizens; therefore, no Jew may be a citizen. The state\'s primary duty is to provide jobs and livelihoods for citizens."',
           },
@@ -2439,6 +2768,12 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-stormtroopers/',
           title: 'Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Stormtroopers',
+      "substantive_concepts": "Examine underlying themes of industrial change.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Synthesizes previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -2452,6 +2787,16 @@ export default {
     {
       id: 'lesson_2_2',
       title: 'KT2.2: The Munich Putsch and the Lean Years, 1923–1929',
+      learning_objective: "To evaluate the causes of the Munich Putsch and its consequences for Nazi Party reorganization.",
+      "substantive_concepts": "Analyze shifting themes of technological progress.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Recalls previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the reasons for the failure of the Munich Putsch in 1923 and its long-term consequences for Nazi strategy.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "A spectacular failure or a political masterstroke: How did Hitler use the disaster of the Munich Putsch to completely rebuild the Nazi Party during its 'lean years'?",
       teacher_notes: {
@@ -2487,6 +2832,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Analyze shifting themes of economic shifts.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -2734,6 +3085,12 @@ export default {
           {
             type: 'written',
             title: 'Source A: Adolf Hitler speaking at his trial for treason, February 1924.',
+      "substantive_concepts": "Investigate historic themes of cultural evolution.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Connects core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"I alone bear the responsibility. But I am not a criminal because of that... There is no such thing as high treason against the traitors of 1918. I consider myself not a traitor, but a German, who wanted the best for his people."',
             provenance_clue:
@@ -2743,6 +3100,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph of the defendants of the Munich Putsch trial, including Hitler and Ludendorff, 1924.',
+      "substantive_concepts": "Explore primary themes of monarchical power.",
+      "historical_scholarship": "Explores structuralist models on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Retrieves earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/munich_putsch_defendants.jpg?v=4',
             caption: 'Hitler, Ludendorff, and other leaders posing during the Munich Putsch trial.',
             provenance_clue:
@@ -2780,21 +3143,45 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Political Failure View):',
+      "substantive_concepts": "Chart complex themes of political reform.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Connects earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             content:
               'During the era of economic stabilization, the Nazi Party was an irrelevant, failing extremist group whose message was treated as a joke by the vast majority of voters. With hyperinflation resolved and national pride partially restored under Stresemann, support for political extremism withered away, leaving the NSDAP as a spent force that was largely ignored by the German public.',
           },
           {
             title: 'Interpretation 2 (The Vital Reorganization View):',
+      "substantive_concepts": "Assess central themes of military conflict.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The period between 1924 and 1928 was a highly successful and vital era of party reorganization. By establishing regional Gaue, creating a centralized bureaucracy, and asserting absolute control under the Führerprinzip, Hitler transformed a chaotic paramilitary group into a highly disciplined, national political machine ready to exploit a future economic crisis.',
           },
           {
             title: 'Source B (Contemporary Written Source):',
+      "substantive_concepts": "Investigate historic themes of economic shifts.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               'From a letter written by a local Nazi party organizer in Hanover, May 1928.\n"Our election results are an absolute disaster; we have won only twelve seats in the Reichstag, and the public completely ignores us. People are happy with Stresemann’s American loans and do not want to hear our warnings. But we must not lose heart. Our party is now highly organized, we have divided Germany into Gaue, and we have established our own youth and professional leagues. We are waiting for the economic storm to break."',
           },
           {
             title: 'Source C (Contemporary Written Source):',
+      "substantive_concepts": "Investigate historic themes of diplomatic relations.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             content:
               'From notes taken at the Nazi Party conference in Bamberg, February 1926.\n"The Leader spoke for over two hours, asserting that there can be no division within our ranks. He declared that the NSDAP must be run strictly according to the Führerprinzip (the Leadership Principle), which demands absolute, unquestioning obedience to him as the supreme leader. The socialist proposals of the northern Gauleiters have been completely rejected, and the 25-Point Programme is declared unalterable."',
           },
@@ -2836,10 +3223,22 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-mein-kampf/',
           title: 'Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Mein Kampf',
+      "substantive_concepts": "Analyze shifting themes of religious conflict.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Retrieves previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-beer-hall-putsch/',
           title: 'Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Beer Hall Putsch',
+      "substantive_concepts": "Evaluate key themes of empire building.",
+      "historical_scholarship": "Examines orthodox models on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Retrieves prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -2852,6 +3251,16 @@ export default {
     {
       id: 'lesson_2_3',
       title: 'KT2.3: The Growth of Nazi Support, 1929–1932',
+      learning_objective: "To explain the political and economic reasons behind the surging popularity of the Nazi Party during the Great Depression.",
+      "substantive_concepts": "Assess central themes of global trade.",
+      "historical_scholarship": "Challenges whig arguments on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "Details Hampshire's coastal defenses.",
+      
+      "learning_objective": "To examine the political and economic factors that caused a massive surge in Nazi electoral support after the Wall Street Crash.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"Explain why (12 marks)"}],
       enquiry:
         'The shattered Republic: How did the economic earthquake of the Great Depression destroy Weimar democracy and propel Adolf Hitler from the political fringes to the brink of power?',
       teacher_notes: {
@@ -2887,6 +3296,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Evaluate key themes of monarchical power.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -3123,6 +3538,12 @@ export default {
           {
             type: 'written',
             title: 'Source A: A diary entry by a German middle-class teacher, 1931.',
+      "substantive_concepts": "Chart complex themes of empire building.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"The economic situation is terrifying. Unemployment is rising every week. The Weimar politicians do nothing but argue. Many of my friends are turning to the National Socialists because they promise strong leadership and a way out of this misery."',
             provenance_clue:
@@ -3132,6 +3553,12 @@ export default {
             type: 'visual',
             title:
               "Source B: A Nazi election poster from 1932. The caption reads 'Our Last Hope: Hitler'.",
+      "substantive_concepts": "Chart complex themes of military conflict.",
+      "historical_scholarship": "Compares revisionist views on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/nazi_poster_our_last_hope.jpg?v=4',
             caption: 'A famous Nazi propaganda poster aimed at millions of unemployed Germans.',
             provenance_clue:
@@ -3169,23 +3596,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Economic Depression View):',
+      "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The Nazi rise to power was fundamentally caused by the catastrophic economic distress of the Great Depression. The sudden withdrawal of US loans caused businesses to collapse and pushed unemployment over 6 million, which completely paralyzed the democratic system and forced desperate voters to turn to extremist parties. Without this economic crisis, the Nazis would have remained on the political margins.',
           },
           {
             title: "Interpretation 2 (The Hitler's Charisma View):",
+      "substantive_concepts": "Examine underlying themes of economic shifts.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Recalls past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The primary driver behind the surge in Nazi support was the unique, charismatic appeal of Adolf Hitler. At a time of intense national despair, Hitler brilliantly projected himself as a dynamic, modern, and strong leader who stood above traditional party politics. His powerful public speaking and carefully staged campaigns convinced Germans of all classes that he alone understood their personal suffering and could rescue the nation.',
           },
           {
             title:
               'Source B (Contemporary Written Source): From the diary of Luise Solmitz, a schoolteacher in Hamburg, March 1932.',
+      "substantive_concepts": "Analyze shifting themes of political reform.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               'There stood Hitler in a simple black coat, looking over the crowd of 120,000 people of all classes and ages. A forest of swastika flags unfurled, the joy of this moment showed itself in roaring salute. The crowd looked up to show Hitler with touching faith, as their helper, their savior, their deliverer from unbearable distress. He is the rescuer of the scholar, the farmer, the worker, and the unemployed.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From an article describing the conditions of the unemployed in Berlin, 1931.',
+      "substantive_concepts": "Assess central themes of societal upheaval.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Builds past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The municipal lodging houses are filled to capacity with young, unemployed men. They completely fill the streets, standing or lying about in silence. The streets are grey, their faces are grey, and even the hair on their heads and the stubble on the cheeks of the youngest there was grey with dust and their adversity. They have lost all hope, having been completely abandoned by the Weimar government's welfare cuts.",
           },
@@ -3227,6 +3678,12 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-sa-and-the-appeal-of-the-nazis-bbc-two/',
           title: 'Rise Of The Nazis The Sa And The Appeal Of The Nazis Bbc Two',
+      "substantive_concepts": "Analyze shifting themes of industrial change.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Consolidates previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -3239,6 +3696,16 @@ export default {
     {
       id: 'lesson_2_4',
       title: 'KT2.4: How Hitler Became Chancellor, 1932–1933',
+      learning_objective: "To analyze the political maneuvering and backroom deals that led to Hitler's appointment as Chancellor.",
+      "substantive_concepts": "Analyze shifting themes of political reform.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Links earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To assess the complex political intrigue and backroom deals that resulted in Hitler's appointment as Chancellor.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'The Backstairs Intrigue: How did secret political scheming, revenge, and a fatal underestimation rescue a struggling Adolf Hitler and hand him the Chancellorship of Germany?',
       teacher_notes: {
@@ -3272,6 +3739,12 @@ export default {
         ],
         source_context: {
           title: 'The Puppet Master?',
+      "substantive_concepts": "Review core themes of economic shifts.",
+      "historical_scholarship": "Evaluates traditional theories on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           caption:
             "A 1933 political cartoon showing Franz von Papen holding Hitler on his shoulders, presenting him to a massive crowd. Papen is whispering instructions into Hitler's ear.",
           image: '/images/papen_hitler_cartoon.jpg',
@@ -3286,6 +3759,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Assess central themes of diplomatic relations.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -3526,6 +4005,12 @@ export default {
             type: 'written',
             title:
               'Source A: A comment by Franz von Papen to a conservative friend in January 1933.',
+      "substantive_concepts": "Evaluate key themes of global trade.",
+      "historical_scholarship": "Examines orthodox theories on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Consolidates core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"We have hired him! Within two months we will have pushed Hitler so far into a corner that he\'ll squeak."',
             provenance_clue:
@@ -3535,6 +4020,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph of Adolf Hitler bowing to President Paul von Hindenburg at the Day of Potsdam, 21 March 1933.',
+      "substantive_concepts": "Examine underlying themes of cultural evolution.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Recalls core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/hitler_hindenburg_1933.jpg?v=4',
             caption: 'Hitler ceremonially greeting Hindenburg shortly after becoming Chancellor.',
             provenance_clue:
@@ -3572,23 +4063,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Democratic Collapse View):',
+      "substantive_concepts": "Assess central themes of industrial change.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Recalls previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Hitler’s rise to power was the inevitable result of the collapse of the Weimar democratic system. The Great Depression permanently paralyzed the Reichstag, forcing a reliance on Article 48 presidential emergency decrees that destroyed democratic legitimacy. By 1932, democracy was already dead, and the conservative elites had to hand power to Hitler because his party was the largest in the parliament.',
           },
           {
             title: 'Interpretation 2 (The Political Intrigue View):',
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Hitler’s appointment as Chancellor was not inevitable, but was the direct result of secret political scheming and backstairs intrigue. The Nazi vote was actually declining by late 1932, and the party was running out of money. Hitler was only rescued because Franz von Papen, President Hindenburg, and conservative landowners made the fatal, cynical miscalculation that they could use his mass popularity to serve their own authoritarian goals.',
           },
           {
             title:
               'Source B (Contemporary Written Source): From a letter written by Franz von Papen to President Hindenburg, January 1933.',
+      "substantive_concepts": "Assess central themes of cultural evolution.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Builds core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The only way to resolve the political deadlock is to appoint Hitler as Chancellor of a coalition cabinet. I have agreed to serve as Vice-Chancellor, and the majority of cabinet ministers will be conservative. Your Excellency need not fear his radicalism; we have pushed Hitler so far into a corner that we will easily be able to control him like a puppet.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From a dispatch by an American journalist stationed in Berlin, December 1932.',
+      "substantive_concepts": "Assess central themes of economic shifts.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The political gridlock is absolute. Chancellor von Schleicher has failed, and the streets are ruled by daily, violent battles between communist and Nazi paramilitaries. The public has completely lost faith in democracy. The government rules solely through unpopular emergency decrees, and the weary voice of the President is completely ignored.',
           },
@@ -3630,34 +4145,82 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/1-the-rise-of-hitler-history-file/',
           title: '1 The Rise Of Hitler History File',
+      "substantive_concepts": "Evaluate key themes of industrial change.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Recalls previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-chancellor/',
           title: 'Bbc Two Nazis A Warning From History Helped Into Power Chancellor',
+      "substantive_concepts": "Explore primary themes of diplomatic relations.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Recalls core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-chancellor-franz-von-papen-bbc-two/',
           title: 'Rise Of The Nazis Chancellor Franz Von Papen Bbc Two',
+      "substantive_concepts": "Chart complex themes of social rebellion.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-how-hitler-becomes-chancellor-bbc-two/',
           title: 'Rise Of The Nazis How Hitler Becomes Chancellor Bbc Two',
+      "substantive_concepts": "Investigate historic themes of cultural evolution.",
+      "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-reflections-on-hitlers-rise-to-power-bbc-two/',
           title: 'Rise Of The Nazis Reflections On Hitlers Rise To Power Bbc Two',
+      "substantive_concepts": "Evaluate key themes of religious conflict.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-one-andrew-marrs-history-of-the-world-adolf-hitlers-rise-to-power/',
           title: 'Bbc One Andrew Marrs History Of The World Adolf Hitlers Rise To Power',
+      "substantive_concepts": "Explore primary themes of technological progress.",
+      "historical_scholarship": "Explores structuralist frameworks on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-scheming-general-von-schleicher-bbc-two/',
           title: 'Rise Of The Nazis Scheming General Von Schleicher Bbc Two',
+      "substantive_concepts": "Examine underlying themes of political reform.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-mein-kampf-channel-4/',
           title: 'Hitlers Rise The Colour Films Mein Kampf Channel 4',
+      "substantive_concepts": "Examine underlying themes of political reform.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -3670,6 +4233,10 @@ export default {
     {
       id: 'lesson_3_1',
       title: 'Key Topic 3.1: The Creation of a Dictatorship, 1933–1934',
+      learning_objective: "To explain the legal and political steps Hitler took to dismantle the Weimar Republic and establish a dictatorship.",
+      "learning_objective": "To analyze the sequence of events and legislation that enabled Hitler to dismantle democracy and consolidate absolute power.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"Explain why (12 marks)"}],
       enquiry:
         'From chains to absolute control: How did Hitler completely dismantle the Weimar democracy and forge a totalitarian dictatorship in just 18 months?',
       teacher_notes: {
@@ -3704,6 +4271,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Evaluate key themes of social rebellion.",
+      "historical_scholarship": "Examines orthodox theories on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -3952,6 +4525,12 @@ export default {
             type: 'written',
             title:
               "Source A: Extract from the 'Decree for the Protection of the People and the State' (Reichstag Fire Decree), 28 February 1933.",
+      "substantive_concepts": "Explore primary themes of ideological shifts.",
+      "historical_scholarship": "Explores structuralist models on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Retrieves prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"Restrictions on personal liberty, on the right of free expression of opinion, including freedom of the press, on the right of assembly and the right of association, and violations of the privacy of postal, telegraphic, and telephonic communications... are permissible."',
             provenance_clue:
@@ -3961,6 +4540,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph showing the exterior of the Reichstag building on fire, February 1933.',
+      "substantive_concepts": "Explore primary themes of military conflict.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/reichstag_fire_ruins.jpg?v=4',
             caption: 'The Reichstag building engulfed in flames.',
             provenance_clue:
@@ -3998,23 +4583,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Legalistic Emergency View):',
+      "substantive_concepts": "Chart complex themes of political reform.",
+      "historical_scholarship": "Compares revisionist models on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Retrieves earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Hitler consolidated his dictatorship primarily by exploiting the Reichstag Fire to construct a legal state of emergency. By immediately securing the Decree for the Protection of the People and the State, the regime dismantled all constitutional civil liberties. This allowed them to legally terrorize the Communist Party, secure a parliamentary majority, and pass the Enabling Act, which permanently ended democracy.',
           },
           {
             title: 'Interpretation 2 (The Paramilitary Purge View):',
+      "substantive_concepts": "Examine underlying themes of public health.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The decisive turning point in the consolidation of the Nazi dictatorship was the elimination of the internal threat through the Night of the Long Knives in June 1934. By using the SS to violently execute Röhm and other SA rivals, Hitler secured the backing of the regular army and the industrial elites. The subsequent personal Oath of Allegiance sworn by the military cemented his absolute power as Führer.',
           },
           {
             title:
               "Source B (Contemporary Written Source): From police chief Rudolf Diels' secret report on the Reichstag Fire, February 1933.",
+      "substantive_concepts": "Examine underlying themes of monarchical power.",
+      "historical_scholarship": "Reviews Marxist frameworks on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "Reviews regional naval supremacy.",
+      
             content:
               "The Reichstag building was still burning when the leadership arrived. Hitler stood on the balcony, his face red from the heat, shouting uncontrollably: 'This is the signal for a Communist uprising! We will show them no mercy. Every Communist official must be arrested and shot on sight.' The list of arrests had already been prepared, and the police were put on high alert immediately.",
           },
           {
             title:
               'Source C (Contemporary Written Source): From a letter written by a senior German army officer, July 1934.',
+      "substantive_concepts": "Review core themes of cultural evolution.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             content:
               'We are deeply relieved that the Chancellor has crushed the leadership of the SA. Ernst Röhm’s plan to absorb our regular regiments into his three-million-strong militia threatened the honor and security of the army. By taking swift, bloody action against these armed thugs, Hitler has restored discipline and earned our absolute, unconditional loyalty.',
           },
@@ -4056,18 +4665,42 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/4-hitlers-germany-1933-36-twentieth-century-history/',
           title: '4 Hitlers Germany 1933 36 Twentieth Century History',
+      "substantive_concepts": "Analyze shifting themes of industrial change.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Links previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-unifying-germany/',
           title: 'Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Unifying Germany',
+      "substantive_concepts": "Evaluate key themes of ideological shifts.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-reichstag-fire-and-the-enabling-act-bbc-two/',
           title: 'Rise Of The Nazis The Reichstag Fire And The Enabling Act Bbc Two',
+      "substantive_concepts": "Explore primary themes of economic shifts.",
+      "historical_scholarship": "Explores structuralist perspectives on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-rise-of-the-dictatorship-bbc-two/',
           title: 'Rise Of The Nazis Rise Of The Dictatorship Bbc Two',
+      "substantive_concepts": "Analyze shifting themes of political reform.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Retrieves earlier themes of political changes.",
+      "local_coastal_links": "Analyzes Southampton's dockyard role.",
+      
         },
       ],
       pair_share: {
@@ -4081,6 +4714,10 @@ export default {
     {
       id: 'lesson_3_2',
       title: 'Key Topic 3.2: The Police State and Religion, 1933–1939',
+      learning_objective: "To assess the methods of terror and control exerted by the Nazi police state and its relationship with the Church.",
+      "learning_objective": "To evaluate the methods of terror used by the Nazi Police State to enforce conformity and suppress religious independence.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'The architecture of fear: How did Hitler construct a terrifying police state and attempt to crush the moral authority of the German churches?',
       teacher_notes: {
@@ -4123,6 +4760,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Investigate historic themes of societal upheaval.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -4406,6 +5049,12 @@ export default {
           {
             type: 'written',
             title: 'Source A: A secret report by a Gestapo agent in Leipzig, 1937.',
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "Explores Portsmouth's maritime trade.",
+      
             content:
               '"The mood of the population is marked by a deep-seated fear of being denounced. People are very careful about what they say in public spaces or even to acquaintances, as the network of informers is believed to be everywhere."',
             provenance_clue:
@@ -4415,6 +5064,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph of prisoners at the Dachau concentration camp during roll call, 1938.',
+      "substantive_concepts": "Assess central themes of ideological shifts.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/dachau_roll_call.jpg?v=4',
             caption:
               'Prisoners standing at attention in Dachau, the first Nazi concentration camp.',
@@ -4453,23 +5108,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Totalitarian Terror View):',
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The Nazi regime maintained absolute control through a pervasive, terrifying, and all-powerful system of terror. The overlapping networks of the SS, the SD, and the Gestapo achieved a comprehensive penetration of daily life. By bypassing the legal system, establishing biased 'People's Courts', and placing thousands in concentration camps without trial, the police state successfully intimidated and silenced the entire population.",
           },
           {
             title: 'Interpretation 2 (The Public Cooperation View):',
+      "substantive_concepts": "Assess central themes of diplomatic relations.",
+      "historical_scholarship": "Challenges whig debates on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Connects core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The image of an all-knowing Gestapo that monitored every citizen was largely a myth created by propaganda and public fear. In reality, the Gestapo was heavily understaffed and had very few officers in major cities. The system functioned only because of the voluntary cooperation of ordinary, non-party citizens. Since over 80% of political cases were initiated by unpaid public denunciations, the police state relied far more on public cooperation than on physical coercion.',
           },
           {
             title:
               'Source B (Contemporary Written Source): From a Gestapo arrest warrant issued in the Rhineland, July 1938.',
+      "substantive_concepts": "Analyze shifting themes of military conflict.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The suspect, a 64-year-old woman, was overheard by other customers in a café remarking that Mussolini had more political sense in one of his boots than Hitler has in his brain. The Gestapo was immediately alerted by telephone, and officers arrived to arrest the suspect five minutes later. She has been detained under a protective custody warrant (Schutzhaft).',
           },
           {
             title:
               "Source C (Contemporary Written Source): From the Nazi Party's official Organisation Book, detailing the role of Block Wardens.",
+      "substantive_concepts": "Investigate historic themes of societal upheaval.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               'It is the sacred duty of the local Block Warden (Blockleiter) to monitor every household in his designated building. You must listen to the daily gossip, identify any residents who spread rumors harmful to the party, or refuse to give the Hitler salute. Such individuals must be reported immediately to the local party leader so they can be turned over to the State Secret Police.',
           },
@@ -4512,18 +5191,42 @@ export default {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-political-prisoners-and-concentration-camps/',
           title:
             'Bbc Two Nazis A Warning From History Chaos And Consent Political Prisoners And Concentration Camps',
+      "substantive_concepts": "Analyze shifting themes of military conflict.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-the-gestapo/',
           title: 'Bbc Two Nazis A Warning From History Chaos And Consent The Gestapo',
+      "substantive_concepts": "Explore primary themes of military conflict.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-himmler-and-the-ss-bbc-two/',
           title: 'Rise Of The Nazis Himmler And The Ss Bbc Two',
+      "substantive_concepts": "Assess central themes of monarchical power.",
+      "historical_scholarship": "Challenges whig debates on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Connects earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-creation-of-the-gestapo-bbc-two/',
           title: 'Rise Of The Nazis The Creation Of The Gestapo Bbc Two',
+      "substantive_concepts": "Review core themes of societal upheaval.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -4537,6 +5240,10 @@ export default {
     {
       id: 'lesson_3_3',
       title: 'Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939',
+      learning_objective: "To evaluate the effectiveness of Nazi propaganda, censorship, and cultural control on the German population.",
+      "learning_objective": "To examine the significance and reach of Nazi propaganda and censorship in manipulating the German public.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'The war for the German mind: How did Joseph Goebbels use censorship, mass propaganda, and the arts to brainwash an entire nation?',
       teacher_notes: {
@@ -4580,6 +5287,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Investigate historic themes of cultural evolution.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -4839,6 +5552,12 @@ export default {
           {
             type: 'written',
             title: 'Source A: A speech by Joseph Goebbels to radio directors, March 1933.',
+      "substantive_concepts": "Investigate historic themes of religious conflict.",
+      "historical_scholarship": "Contrasts intentionalist perspectives on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Synthesizes previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"The radio will become the most important instrument of mass influence that has ever existed... We make no secret of it: the radio belongs to us, and to no one else. We will place the radio at the service of our ideology."',
             provenance_clue:
@@ -4848,6 +5567,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph of the Nuremberg Rallies, showing thousands of SA and SS men marching.',
+      "substantive_concepts": "Examine underlying themes of social rebellion.",
+      "historical_scholarship": "Reviews Marxist models on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Retrieves prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/nuremberg_rally.jpg?v=4',
             caption: 'The mass spectacle of the annual Nazi Party rally in Nuremberg.',
             provenance_clue:
@@ -4885,21 +5610,45 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Total Indoctrination View):',
+      "substantive_concepts": "Chart complex themes of political reform.",
+      "historical_scholarship": "Compares revisionist frameworks on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The Ministry of Popular Enlightenment and Propaganda was highly successful in coordinating and controling the minds of the German population. Goebbels recognized that by establishing absolute censorship over radio, cinema, and newspapers, the regime could isolate the public from alternative views. Through constant repetition and subtle cultural coordination, they successfully Nazified public attitudes.',
           },
           {
             title: 'Interpretation 2 (The Superficial Compliance View):',
+      "substantive_concepts": "Investigate historic themes of economic shifts.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The impact of Nazi propaganda was highly limited and achieved only a superficial compliance. While the regime succeeded in forcing outward displays of loyalty—such as the Hitler salute and attendance at state rallies—it failed to change deep-seated religious and political beliefs. Many Germans developed a cynical indifference to the repetitive propaganda, complying solely to protect themselves from Gestapo arrest.',
           },
           {
             title: 'Source B (Contemporary Written Source):',
+      "substantive_concepts": "Evaluate key themes of economic shifts.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Builds past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
             content:
               'From Goebbels\' written instructions to Nazi party speakers, July 1935.\n"The finest kind of propaganda does not reveal itself; it works invisibly, penetrating every cell of life so that the public has no idea of its goals. For Wednesday’s broadcast of the Leader\'s speech, all factory owners, offices, and shops must install speakers. The entire workforce must be gathered to listen, and the press must discuss this decision as the only possible path for Germany."',
           },
           {
             title: 'Source C (Contemporary Written Source):',
+      "substantive_concepts": "Chart complex themes of ideological shifts.",
+      "historical_scholarship": "Compares revisionist frameworks on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Builds prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               'From a private letter written by an ordinary citizen in Hamburg, 1937.\n"Every evening on the radio, we are subjected to the same repetitive speeches, military marches, and achievements of the state. The newspapers contain only approved Nazi articles, and we are expected to attend massive local rallies. While everyone stands and salutes to avoid trouble, behind closed doors, my family simply turns off the wireless, tired of the endless, mind-numbing propaganda."',
           },
@@ -4941,10 +5690,22 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-hitlers-leadership/',
           title: 'Bbc Two Nazis A Warning From History Chaos And Consent Hitlers Leadership',
+      "substantive_concepts": "Investigate historic themes of military conflict.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Connects earlier themes of political changes.",
+      "local_coastal_links": "Details Hampshire's coastal defenses.",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/great-continental-railway-journeys-nazi-olympic-games-of-1936-bbc-two/',
           title: 'Great Continental Railway Journeys Nazi Olympic Games Of 1936 Bbc Two',
+      "substantive_concepts": "Chart complex themes of monarchical power.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -4958,6 +5719,10 @@ export default {
     {
       id: 'lesson_3_4',
       title: 'Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939',
+      learning_objective: "To investigate the extent and nature of opposition to the Nazi regime from various sectors of society.",
+      "learning_objective": "To assess the varying degrees of opposition and resistance to the Nazi regime among the German population.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'Why was there so little active opposition to the Nazi regime, and how did underground networks, workers, and young people attempt to resist?',
       teacher_notes: {
@@ -5001,6 +5766,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Review core themes of cultural evolution.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -5300,6 +6071,12 @@ export default {
           {
             type: 'written',
             title: 'Source A: An extract from a sermon by Pastor Martin Niemöller, 1937.',
+      "substantive_concepts": "Review core themes of political reform.",
+      "historical_scholarship": "Evaluates traditional views on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"We have no more thought of using our own powers to escape the arm of the authorities than had the Apostles of old. No more are we ready to keep silent at man\'s behest when God commands us to speak."',
             provenance_clue:
@@ -5309,6 +6086,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A Gestapo photograph of Sophie Scholl taken after her capture, 18 February 1943.',
+      "substantive_concepts": "Review core themes of diplomatic relations.",
+      "historical_scholarship": "Evaluates traditional views on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/sophie_scholl_gestapo.jpg',
             caption: 'Sophie Scholl was a core member of the White Rose youth resistance group.',
             provenance_clue:
@@ -5346,23 +6129,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Brave Resistance View):',
+      "substantive_concepts": "Evaluate key themes of empire building.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The Christian Churches in Germany were largely successful in resisting the Nazi regime's attempts to achieve total control over religious life. Despite intense pressure, both the Catholic and Protestant Churches prevented the total Nazification of their institutions. The creation of the Confessing Church by thousands of brave pastors successfully defended theological independence, proving that religious faith remained a powerful barrier to totalitarian control.",
           },
           {
             title: 'Interpretation 2 (The Limited Conformity View):',
+      "substantive_concepts": "Analyze shifting themes of global trade.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Christian opposition to the Nazi regime was extremely limited, narrow, and ultimately failed to challenge the wider atrocities of the state. The vast majority of church leaders conformed because they shared Hitler’s hatred of communism and feared the destruction of their institutions. When pastors spoke out, their protests were strictly limited to defending church administration; they remained entirely silent during the persecution of minorities and the destruction of democracy.',
           },
           {
             title:
               'Source B (Contemporary Written Source): From a sermon preached by Pastor Martin Niemöller in Berlin, 1937.',
+      "substantive_concepts": "Review core themes of global trade.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Our fellow pastors are being arrested because they spoke the truth. The state-controlled Reich Church seeks to replace the Cross of Christ with the Swastika. We are told that if we remain silent, the Church will have peace. But I say to you, a silent Church is a dead Church. We must obey God rather than men, even if it leads us to the concentration camps.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From a secret Gestapo surveillance report on religious attitudes in Bavaria, 1937.',
+      "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+      "local_coastal_links": "Analyzes Southampton's dockyard role.",
+      
             content:
               'The influence of the Catholic Church on the rural population remains unbroken. The local population is ever under the strong influence of the priests and prefers to believe what they say from the pulpit rather than the words of our best party speakers. Direct arrests of these priests during services are restricted by the Concordat, which they exploit to spread subtle criticisms of the government.',
           },
@@ -5404,10 +6211,22 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/5-opposition-to-hitler-history-file/',
           title: '5 Opposition To Hitler History File',
+      "substantive_concepts": "Assess central themes of diplomatic relations.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-fighting-to-the-end-internal-criticism/',
           title: 'Bbc Two Nazis A Warning From History Fighting To The End Internal Criticism',
+      "substantive_concepts": "Explore primary themes of economic shifts.",
+      "historical_scholarship": "Explores structuralist frameworks on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Builds past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -5420,6 +6239,10 @@ export default {
     {
       id: 'lesson_4_1',
       title: 'Key Topic 4.1: Nazi Policies Towards Women, 1933–1939',
+      learning_objective: "To analyze the impact of Nazi ideological policies on the roles and lives of women in Germany.",
+      "learning_objective": "To analyze the ideological goals and practical consequences of Nazi social policies directed at women and the family.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'How did the Nazis attempt to reverse the freedoms of Weimar women, and why did their policies ultimately contradict their own economic goals?',
       teacher_notes: {
@@ -5462,6 +6285,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Analyze shifting themes of cultural evolution.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Builds core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -5740,6 +6569,12 @@ export default {
             type: 'written',
             title:
               "Source A: Extract from a speech by Hitler to the National Socialist Women's Organisation, 1934.",
+      "substantive_concepts": "Evaluate key themes of empire building.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"The slogan \'Emancipation of women\' was invented by Jewish intellectuals... Her world is her husband, her family, her children, and her home. We do not consider it correct for the woman to interfere in the world of the man."',
             provenance_clue:
@@ -5749,6 +6584,12 @@ export default {
             type: 'visual',
             title:
               "Source B: A photograph of the Honour Cross of the German Mother (Mother's Cross).",
+      "substantive_concepts": "Explore primary themes of societal upheaval.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/mothers_cross_award.jpg?v=4',
             caption:
               'The Honour Cross of the German Mother, a state decoration awarded to women who had large families.',
@@ -5787,23 +6628,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Ideological Success View):',
+      "substantive_concepts": "Chart complex themes of public health.",
+      "historical_scholarship": "Compares revisionist perspectives on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Nazi policies towards women successfully realized their domestic and racial ideals. Through marriage loans, financial child-subsidies, and the Mother’s Cross medal, the state successfully encouraged women to focus entirely on motherhood and raise the national birth rate. Out of national pride and economic comfort, the majority of women conformed willingly, returning to traditional domestic roles.',
           },
           {
             title: 'Interpretation 2 (The Economic Pragmatism View):',
+      "substantive_concepts": "Review core themes of monarchical power.",
+      "historical_scholarship": "Evaluates traditional theories on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Nazi policies towards women were an ideological failure that collapsed under economic necessity. While the regime wanted women to remain in the home, the demands of secret rearmament and conscription from 1936 onwards created severe labor shortages. The state had to completely abandon its domestic ideal, pulling millions of women back into grueling industrial and agricultural work.',
           },
           {
             title:
               "Source B (Contemporary Written Source): From a speech by Gertrude Scholtz-Klink, Head of the Nazi Women's Organisation, 1934.",
+      "substantive_concepts": "Examine underlying themes of cultural evolution.",
+      "historical_scholarship": "Reviews Marxist theories on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Consolidates core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The German woman has a glorious, sacred task in the life of the nation: the care of her husband, her home, and her family. Our mission is to be the helper and the comrade, nurturing the small world of the home so that the greater world of the state can be strong. We have proudly left the aimless office jobs to fulfill our true biological duty as mothers.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From a secret Social Democratic report on factory labor, Saxony, 1938.',
+      "substantive_concepts": "Review core themes of societal upheaval.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Synthesizes past context of chronological mapping.",
+      "local_coastal_links": "Analyzes Southampton's dockyard role.",
+      
             content:
               'The Nazi claims that women belong in the home are a complete joke. In this industrial district, the textile and arms factories are facing a catastrophic labor shortage because of conscription and rearmament. The government is actively recruiting married women back into the workforce, offering them cash incentives. Many women are working twelve-hour shifts while their children are neglected.',
           },
@@ -5852,6 +6717,10 @@ export default {
     {
       id: 'lesson_4_2',
       title: 'Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939',
+      learning_objective: "To examine the methods used by the Nazi state to indoctrinate and control the youth through education and organizations.",
+      "learning_objective": "To evaluate the methods and success of the Nazi regime in indoctrinating and controlling the youth of Germany.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'How did the Nazis use the education system and youth movements to indoctrinate the next generation, and how successful were they?',
       teacher_notes: {
@@ -5894,6 +6763,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Evaluate key themes of social rebellion.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Builds prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -6167,6 +7042,12 @@ export default {
             type: 'written',
             title:
               'Source A: A former member of the Hitler Youth recalling his experiences in a post-war interview.',
+      "substantive_concepts": "Review core themes of technological progress.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"We were constantly marching, singing, and listening to lectures about the greatness of the Führer. At first it was exciting, the camping and the sports. But by the time I was 15, it became exhausting and militarily strict."',
             provenance_clue:
@@ -6176,6 +7057,12 @@ export default {
             type: 'visual',
             title:
               'Source B: An illustration of the official pennant (flag) used by the League of German Girls (BDM).',
+      "substantive_concepts": "Assess central themes of diplomatic relations.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Consolidates core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/bdm_gymnastics.jpg?v=4',
             caption:
               'The official pennant of the League of German Girls, featuring the Hitler Youth emblem.',
@@ -6214,23 +7101,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Complete Indoctrination View):',
+      "substantive_concepts": "Investigate historic themes of monarchical power.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The Nazi regime was highly successful in achieving its primary aim of controlling and brainwashing the minds of the younger generation. By completely Nazifying the school curriculum, rewriting textbooks, and coordinating all leisure time through the Hitler Youth and BDM, they successfully isolated children from traditional family influences. This produced a generation of fanatically loyal supporters who genuinely idolized the Führer.',
           },
           {
             title: 'Interpretation 2 (The Absenteeism and Rebellion View):',
+      "substantive_concepts": "Examine underlying themes of military conflict.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The Nazification of German youth was only a superficial success that masked growing boredom, resentment, and active rebellion. Compulsory membership laws in 1936 alienated millions of teenagers as exciting camping trips were replaced by repetitive, grueling military drill. This led to massive absenteeism and the rapid growth of rebellious youth sub-cultures, like the Edelweiss Pirates, who actively rejected Nazi discipline.',
           },
           {
             title:
               'Source B (Contemporary Written Source): From a letter written by a 15-year-old boy in a Hitler Youth camp, 1936.',
+      "substantive_concepts": "Review core themes of empire building.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
             content:
               'We practically do not have a single minute of the day to ourselves in this camp. This is not camp life; it is military barrack life. Grueling military drill and exercises in the mud start right after a meager breakfast, and we have no athletics at all. We perform these exercises until our tongues hang out of our mouths, and we have only one wish: to sleep.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From a secret report by the Social Democratic Party in exile (SOPADE), 1938.',
+      "substantive_concepts": "Assess central themes of economic shifts.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "Details Hampshire's coastal defenses.",
+      
             content:
               'Enthusiasm for the Hitler Youth is declining rapidly. Now that membership has been made compulsory, the teenagers view the meetings as a boring chore rather than an exciting adventure. The boys are highly rebellious against the constant marching, and usually only a third of the group appears for roll-call. Many parents are secretly supporting their children’s truancy to protect them from this mind-numbing militarism.',
           },
@@ -6272,10 +7183,22 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/4-youth-in-hitlers-germany-history-file/',
           title: '4 Youth In Hitlers Germany History File',
+      "substantive_concepts": "Review core themes of global trade.",
+      "historical_scholarship": "Evaluates traditional theories on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Consolidates core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-2-german-youth/',
           title: 'Bbc Two The Dark Charisma Of Adolf Hitler Episode 2 German Youth',
+      "substantive_concepts": "Investigate historic themes of social rebellion.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Recalls prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -6289,6 +7212,10 @@ export default {
     {
       id: 'lesson_4_3',
       title: 'Key Topic 4.3: Employment and Living Standards, 1933–1939',
+      learning_objective: "To evaluate the success of Nazi economic policies in reducing unemployment and affecting the living standards of workers.",
+      "learning_objective": "To examine the extent to which Nazi economic policies genuinely improved employment and living standards.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "How did the Nazis achieve the 'economic miracle' of full employment, and did the standard of living actually improve for German workers?",
       teacher_notes: {
@@ -6331,6 +7258,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Explore primary themes of social rebellion.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Links prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -6637,6 +7570,12 @@ export default {
             type: 'written',
             title:
               'Source A: A report by the secret socialist opposition group (Sopade) smuggled out of Germany, 1938.',
+      "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+      "local_coastal_links": "Explores Portsmouth's maritime trade.",
+      
             content:
               '"The workers are complaining about the rising cost of living and the fact that wages are frozen. Although unemployment has disappeared, the working hours are long and the pace of work in the munitions factories is grueling."',
             provenance_clue:
@@ -6645,6 +7584,12 @@ export default {
           {
             type: 'visual',
             title: 'Source B: A photograph of a section of the new Reichsautobahn.',
+      "substantive_concepts": "Evaluate key themes of diplomatic relations.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/autobahn_construction.jpg?v=4',
             caption: 'A completed section of the new German motorway network.',
             provenance_clue:
@@ -6682,22 +7627,46 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1: The "Better Off" View',
+      "substantive_concepts": "Chart complex themes of economic shifts.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Consolidates past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The standard of living for German workers improved under the Nazi regime, helping to secure their loyalty. Full employment, stable prices, and popular state-run welfare and leisure programs like Strength through Joy (KdF) provided ordinary families with holidays, sports, and canteens they could never have accessed before. This material progress made many workers genuinely grateful to the regime.',
           },
           {
             title: 'Interpretation 2: The Exploitation View',
+      "substantive_concepts": "Evaluate key themes of societal upheaval.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
             content:
               "The apparent improvement in workers' living standards was a propaganda illusion that masked severe economic exploitation. Workers lost their independent trade unions, the right to strike, and their political voice. Real wages fell due to inflation, working hours increased significantly, and schemes like the Volkswagen savings program were outright con tricks designed to fund secret rearmament.",
           },
           {
             title: 'Source B: From a letter written by a German factory worker, 1937.',
+      "substantive_concepts": "Chart complex themes of public health.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Through the Strength through Joy (KdF) scheme, our lives have genuinely improved. We are able to go on cheap weekly theater trips and even subsidized holidays that were completely beyond our reach before. There is a real sense of comradeship, and we feel that the government genuinely values our hard work.',
           },
           {
             title:
               'Source C: From a report compiled by an undercover agent of the Social Democratic Party in exile (SOPADE), describing attitudes in a Berlin factory, 1938.',
+      "substantive_concepts": "Review core themes of diplomatic relations.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Connects core concepts of industrial growth.",
+      "local_coastal_links": "Analyzes Southampton's dockyard role.",
+      
             content:
               'The workers are deeply unhappy. It is true that everyone has a job, but their wages are frozen and the price of food has risen significantly. They are forced to work longer hours under compulsory service, and heavy deductions are taken directly from their pay. The KdF trips are viewed as a propaganda circus that only a few highly paid party favorites can actually afford.',
           },
@@ -6739,6 +7708,12 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/2-life-in-hitlers-germany-history-file/',
           title: '2 Life In Hitlers Germany History File',
+      "substantive_concepts": "Chart complex themes of ideological shifts.",
+      "historical_scholarship": "Compares revisionist views on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {
@@ -6752,6 +7727,10 @@ export default {
     {
       id: 'lesson_4_4',
       title: 'Key Topic 4.4: The Persecution of Minorities, 1933–1939',
+      learning_objective: "To trace the escalating persecution of Jewish people and other minority groups under Nazi racial ideology.",
+      "learning_objective": "To assess the escalating brutality and systematic persecution of Jewish people and other minorities in Nazi Germany.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'How and why did the Nazis persecute minorities, and how did the persecution of Jewish people escalate between 1933 and 1939?',
       teacher_notes: {
@@ -6794,6 +7773,12 @@ export default {
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Review core themes of religious conflict.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Retrieves previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -7099,6 +8084,12 @@ export default {
           {
             type: 'written',
             title: 'Source A: An extract from the Nuremberg Laws, 15 September 1935.',
+      "substantive_concepts": "Analyze shifting themes of monarchical power.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Links earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
             content:
               '"Marriages between Jews and subjects of the state of German or related blood are forbidden. Extramarital intercourse between Jews and subjects of the state of German or related blood is forbidden."',
             provenance_clue:
@@ -7108,6 +8099,12 @@ export default {
             type: 'visual',
             title:
               'Source B: A photograph showing the destroyed interior of the Fasanenstrasse Synagogue in Berlin after Kristallnacht, November 1938.',
+      "substantive_concepts": "Evaluate key themes of religious conflict.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Recalls previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
             source: '/images/kristallnacht_shop.jpg?v=4',
             caption:
               'The interior of a major Berlin synagogue destroyed during the November Pogrom.',
@@ -7146,23 +8143,47 @@ export default {
         stimulus: [
           {
             title: 'Interpretation 1 (The Planned State Pogrom View):',
+      "substantive_concepts": "Explore primary themes of social rebellion.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               'The anti-Semitic violence of Kristallnacht was a highly coordinated, systematic operation planned and executed entirely from above by Joseph Goebbels and the paramilitary SA, aiming to force Jewish families into absolute economic and physical isolation.',
           },
           {
             title: 'Interpretation 2 (The Public Fear/Isolation View):',
+      "substantive_concepts": "Investigate historic themes of ideological shifts.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
             content:
               "While the state-controlled press portrayed the violence of Kristallnacht as a spontaneous outburst of public anger, many ordinary Germans watched the destruction with deep alarm, concern, and disapproval. However, they remained completely silent and conformed to the regime's actions solely out of terror of the Gestapo and fear of immediate arrest.",
           },
           {
             title:
               'Source B (Contemporary Written Source): From a diary entry of a Berlin citizen, 10 November 1938.',
+      "substantive_concepts": "Evaluate key themes of empire building.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
             content:
               'Walking through the city today was horrifying. The shattered glass storefronts of Jewish-owned businesses lined the streets, with crude anti-Semitic insults painted across the bricks. The police stood by doing absolutely nothing. Uniformed SA men stood laughing next to destroyed properties, while a silent crowd of ordinary citizens watched the devastation from a distance with looks of shock and absolute terror.',
           },
           {
             title:
               'Source C (Contemporary Written Source): From an eyewitness report by a British diplomat stationed in Leipzig, November 1938.',
+      "substantive_concepts": "Explore primary themes of public health.",
+      "historical_scholarship": "Explores structuralist debates on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "Reviews regional naval supremacy.",
+      
             content:
               'The destruction of the synagogues and shops was executed with military precision. The perpetrators did not appear to be angry local citizens, but rather organized groups of SA men in civilian clothes who arrived in trucks carrying hammers and incendiary devices. The local police stood by and did nothing to interfere, having received strict orders from the Ministry of the Interior to let the violence proceed.',
           },
@@ -7204,19 +8225,43 @@ export default {
         {
           url: 'https://era.org.uk/streaming-service-resource/3-the-master-race-history-file/',
           title: '3 The Master Race History File',
+      "substantive_concepts": "Review core themes of cultural evolution.",
+      "historical_scholarship": "Evaluates traditional views on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-the-night-of-the-broken-glass/',
           title:
             'Bbc Two Nazis A Warning From History Chaos And Consent The Night Of The Broken Glass',
+      "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Builds past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-the-road-to-treblinka-the-jewish-question/',
           title: 'Bbc Two Nazis A Warning From History The Road To Treblinka The Jewish Question',
+      "substantive_concepts": "Chart complex themes of military conflict.",
+      "historical_scholarship": "Compares revisionist frameworks on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/my-family-the-holocaust-and-me-the-aftermath-of-kristallnacht-bbc-one/',
           title: 'My Family The Holocaust And Me The Aftermath Of Kristallnacht Bbc One',
+      "substantive_concepts": "Explore primary themes of economic shifts.",
+      "historical_scholarship": "Explores structuralist models on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Retrieves past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         },
       ],
       pair_share: {

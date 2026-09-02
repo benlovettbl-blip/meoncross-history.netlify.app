@@ -1,5 +1,10 @@
 const industrialisation_and_empire = {
   "title": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+  "substantive_concepts": "Evaluate key themes of monarchical power.",
+  "historical_scholarship": "Examines orthodox theories on the event.",
+  "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+  "sequencing_retrieval": "Consolidates earlier themes of monarchical power.",
+  "local_coastal_links": "N/A",
   "homepage_background": "/images/imperial_federation_map.jpg",
   "enquiry": "Industrialisation, Empire, and Power: How did 19th-century Britain transform at home and abroad?",
   "cover_image": "/images/imperial_federation_map.jpg",
@@ -15,6 +20,16 @@ const industrialisation_and_empire = {
     {
       "id": "lesson_1",
       "title": "What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?",
+      "substantive_concepts": "Investigate historic themes of political reform.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To analyze the technological drivers of the Industrial Revolution and the impact of local pioneers like the Fareham ironmaster.",
+      "disciplinary_concept": "Change and Continuity",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "teacher_notes": {
         "primer": "This lesson introduces the shift from the domestic system to mass factory production during the Industrial Revolution, focusing on a local history case study of Henry Cort at the Funtley Ironworks. The goal is to connect major national/global shifts (steam, mass production, empire) to local geography and innovation.",
         "objectives": [
@@ -45,6 +60,11 @@ const industrialisation_and_empire = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+        "substantive_concepts": "Evaluate key themes of political reform.",
+        "historical_scholarship": "Examines orthodox frameworks on the event.",
+        "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+        "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+        "local_coastal_links": "N/A",
         "type": "questions",
         "items": [
           {
@@ -72,6 +92,11 @@ const industrialisation_and_empire = {
       "narrative_blocks": [
         {
           "title": "What Powered the Revolution?",
+          "substantive_concepts": "Explore primary themes of economic shifts.",
+          "historical_scholarship": "Explores structuralist debates on the event.",
+          "adaptive_teaching": "Provide structured tables for EAL.",
+          "sequencing_retrieval": "Connects past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "Before Britain could build an industrial empire, it needed political and financial stability. This was achieved during the Glorious Revolution of 1688, when Parliament deposed the Catholic King James II and invited William of Orange to rule, on the strict condition that he sign the Bill of Rights (1689). This permanently shifted ultimate power from the Crown to Parliament, creating a Constitutional Monarchy. With this new political stability, Parliament established the Bank of England in 1694, providing the secure financial foundations that would soon fund massive factories, railways, and a globe-spanning empire.<br><br>Before the 1700s, Britain was an agricultural country. Most goods were made by hand in people's homes (the \"domestic system\"), and the only machines that existed were powered by natural, unreliable sources like wind, fast-flowing rivers, or the muscle power of horses. However, beneath Britain's soil lay massive reserves of **coal**—a fuel that burned much hotter than wood.\n\nIn 1712, Thomas Newcomen invented the first practical steam engine, which used burning coal to pump water out of deep mines. Later, in 1769, an engineer named **James Watt** drastically improved the design, making the steam engine much more efficient and powerful. Watt's steam engine changed everything: it meant that massive factories no longer needed to be built next to rivers. They could be built anywhere, powered entirely by coal and steam. This shift from farming and hand-crafting to mass factory production driven by steam power is known as the **Industrial Revolution**.\n\nHowever, to build these enormous new steam engines, factories, railways, and bridges, Britain desperately needed one crucial material: **iron**.",
           "tasks": [
             {
@@ -84,11 +109,21 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Problem with British Iron",
+          "substantive_concepts": "Investigate historic themes of public health.",
+          "historical_scholarship": "Contrasts intentionalist views on the event.",
+          "adaptive_teaching": "Issue guided outlines to aid focus.",
+          "sequencing_retrieval": "Recalls past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "text": "In the early 1700s, British iron was of terrible quality. It was known as \"pig iron\"—it was brittle and snapped easily because it was full of impurities (carbon). If the Royal Navy wanted strong, flexible iron (known as \"wrought iron\") for its ship masts and cannons, it had to buy it from Sweden or Russia at a massive cost.",
           "tasks": null
         },
         {
           "title": "Local History Case Study: Henry Cort at Funtley Ironworks",
+          "substantive_concepts": "Assess central themes of economic shifts.",
+          "historical_scholarship": "Challenges whig perspectives on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Synthesizes past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "text": "<strong>Source A:</strong> The man who solved this national crisis lived right here in Hampshire. Henry Cort was an ambitious navy agent who realized he could make a fortune if he could figure out how to mass-produce high-quality British iron. In 1775, he took over the **Funtley Ironworks** (just north of Fareham) because it was ideally located to supply the massive Royal Navy dockyards in nearby Portsmouth.\n\nAt Funtley, Cort invented two revolutionary processes in 1783 and 1784:\n\n1. **The Puddling Process:** He invented a new type of furnace where molten iron was stirred (or \"puddled\") with long iron rods to burn off carbon impurities.\n2. **The Rolling Mill:** Instead of hammering the iron into shape by hand, Cort passed the red-hot iron through heavy, grooved rollers to squeeze out the last impurities and shape it into rails and bars.",
           "hinge_question": {
             "qNum": "H1",
@@ -123,6 +158,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Impact and the Tragedy",
+          "substantive_concepts": "Assess central themes of diplomatic relations.",
+          "historical_scholarship": "Challenges whig frameworks on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+          "sequencing_retrieval": "Builds core concepts of industrial growth.",
+          "local_coastal_links": "N/A",
           "text": "Cort's inventions at Funtley changed the world. They allowed British iron production to multiply by 400% over the next twenty years, earning Cort the nickname \"the father of the iron trade.\" The rails for the new train networks and the iron for the ships that built the British Empire were made using Cort's methods.\n\nTragically, Cort did not die a wealthy hero. His business partner, Adam Jellicoe, had secretly stolen the money used to fund the Funtley Ironworks from the Royal Navy. When Jellicoe died, the government seized Cort's patents and ruined him. Cort died bankrupt and in poverty, but his local ingenuity powered a global empire.",
           "tasks": [
             {
@@ -141,6 +181,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Significance & Judgement",
+          "substantive_concepts": "Analyze shifting themes of military conflict.",
+          "historical_scholarship": "Synthesizes post-colonial views on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+          "sequencing_retrieval": "Recalls earlier themes of political changes.",
+          "local_coastal_links": "N/A",
           "text": "When assessing why the Funtley Ironworks was so successful in kickstarting the Industrial Revolution's iron industry, historians debate two main factors:\n\n**1. Geographical Luck (Location):** Funtley was situated just a few miles from the Portsmouth Royal Navy dockyards. In the 18th century, before the invention of trains, transporting heavy iron overland was incredibly expensive. Being located right next door to the largest industrial buyer of iron in the world (the Royal Navy) meant Cort had a massive, guaranteed market for his goods. Geography provided the economic opportunity.\n\n**2. Technological Genius (Innovation):** However, location alone wasn't enough. The Royal Navy desperately needed *wrought* iron (flexible and strong) for its ships and cannons, not the brittle British *pig iron* that snapped easily. Without Cort's brilliant inventions—the Puddling Furnace to burn off impurities and the Rolling Mill to speed up shaping—he would have had nothing useful to sell to the Navy. Innovation provided the solution to a national crisis.\n\nHistorians must weigh these two factors to decide which was *more* important to his success.",
           "tasks": [
             {
@@ -164,6 +209,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Historical Controversy: Where Did the Money Come From?",
+          "substantive_concepts": "Explore primary themes of monarchical power.",
+          "historical_scholarship": "Explores structuralist arguments on the event.",
+          "adaptive_teaching": "Provide structured tables for SEND.",
+          "sequencing_retrieval": "Links earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "Building massive ironworks like Funtley and funding the broader Industrial Revolution required unimaginable amounts of capital. Modern historians emphasize that this sudden wealth was intrinsically tied to the profits of the 18th-century Transatlantic Slave Trade. Although Britain abolished the trade in 1807 and slavery itself in 1833, the industrial economy was kickstarted by the immense wealth extracted from enslaved labor on Caribbean sugar plantations, and continued to rely on slave-picked American cotton.",
           "is_controversy": true,
           "tasks": [
@@ -179,6 +229,11 @@ const industrialisation_and_empire = {
         {
           "url": "https://era.org.uk/streaming-service-resource/bbc-two-black-and-british-a-forgotten-history-moral-mission-mississippi-cotton/",
           "title": "Black and British: Moral Mission (Mississippi Cotton)",
+          "substantive_concepts": "Investigate historic themes of religious conflict.",
+          "historical_scholarship": "Contrasts intentionalist perspectives on the event.",
+          "adaptive_teaching": "Issue guided outlines to aid focus.",
+          "sequencing_retrieval": "Synthesizes previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "duration": "10 mins 15 secs"
         }
       ],
@@ -207,11 +262,21 @@ const industrialisation_and_empire = {
       "sources": [
         {
           "title": "Source A: The Puddling Furnace",
+          "substantive_concepts": "Investigate historic themes of monarchical power.",
+          "historical_scholarship": "Contrasts intentionalist theories on the event.",
+          "adaptive_teaching": "Issue guided outlines to aid focus.",
+          "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+          "local_coastal_links": "N/A",
           "src": "/images/funtley_ironworks.jpg",
           "caption": "A historical cross-section diagram of a puddling furnace, the revolutionary process Henry Cort pioneered at his Funtley ironworks in Hampshire."
         },
         {
           "title": "Hampshire Administrative Map (1832)",
+          "substantive_concepts": "Chart complex themes of religious conflict.",
+          "historical_scholarship": "Compares revisionist theories on the event.",
+          "adaptive_teaching": "Distribute visual timelines for SEND.",
+          "sequencing_retrieval": "Consolidates previous learning of public health.",
+          "local_coastal_links": "N/A",
           "caption": "An authentic 1832 map showing the county of Hampshire.",
           "src": "/images/map_hampshire_1832.png",
           "hinge_question": "How does the geography of Hampshire, particularly its access to the coast and rivers, help explain why industrial sites like Funtley Ironworks were so successful?"
@@ -288,6 +353,16 @@ const industrialisation_and_empire = {
     {
       "id": "lesson_2",
       "title": "Was industrial work progress or punishment?",
+      "substantive_concepts": "Chart complex themes of military conflict.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Connects earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To evaluate the harsh realities of industrial work and debate whether it represented progress or punishment.",
+      "disciplinary_concept": "Change and Continuity",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "teacher_notes": {
         "primer": "This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.",
         "objectives": [
@@ -311,6 +386,11 @@ const industrialisation_and_empire = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+        "substantive_concepts": "Explore primary themes of military conflict.",
+        "historical_scholarship": "Explores structuralist debates on the event.",
+        "adaptive_teaching": "Provide structured tables for EAL.",
+        "sequencing_retrieval": "Connects earlier themes of monarchical power.",
+        "local_coastal_links": "N/A",
         "type": "questions",
         "items": [
           {
@@ -360,6 +440,11 @@ const industrialisation_and_empire = {
       "narrative_blocks": [
         {
           "title": "The Rise of the Machines (and the Domestic Reality)",
+          "substantive_concepts": "Explore primary themes of political reform.",
+          "historical_scholarship": "Explores structuralist perspectives on the event.",
+          "adaptive_teaching": "Provide structured tables for accessibility.",
+          "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "Before the 1700s, most goods were manufactured by hand in people's homes, known as the 'domestic system'. It is a common myth that this was a relaxed, golden age; in reality, working at home was backbreaking, poorly paid, and children worked long hours weaving or spinning. However, the transition to the 'factory system' completely transformed the scale and danger of British life.  As steam engines became more powerful, massive factories were built, causing rapid urbanisation. On a national level, this was incredible progress: Britain became the 'workshop of the world'. But for the workers, the reality was a brutal shock. The machines now dictated the pace of life. Shifts lasted 12 to 14 hours, six days a week. The noise was deafening, the air was polluted, and heavy machinery lacked safety guards, leading to horrific, unprecedented injuries.",
           "level_4": "Before factories, people made things at home. This was still very hard work, and children had to help. But when steam engines were invented, huge factories were built.  Millions moved to cities to work. This made Britain very rich. However, factory work was completely different to working at home. People worked up to 14 hours a day. The factories were noisy, dirty, and very dangerous because fast machines had no safety guards.",
           "tasks": [
@@ -373,6 +458,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Stolen Childhoods (The Sadler Report)",
+          "substantive_concepts": "Evaluate key themes of religious conflict.",
+          "historical_scholarship": "Examines orthodox arguments on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+          "sequencing_retrieval": "Links previous learning of public health.",
+          "local_coastal_links": "Reviews regional naval supremacy.",
           "text": "Factory and mine owners actively sought out child workers. Children were cheap (paid 10% of an adult's wage), easier to discipline, and small enough to crawl under moving machinery.  In 1832, Parliament sent Michael Sadler to investigate these conditions. His official report shocked the nation. One textile worker, Matthew Crabtree, was interviewed: 'I began work at eight years old... our common time was from six in the morning till half-past eight at night... we were frequently strapped [beaten] if we were too late or started to fall asleep.' The economic success of the early Industrial Revolution was largely built on the broken backs of these children.",
           "level_4": "Factory owners loved hiring children because they were cheap to pay, easy to boss around, and small enough to fit under machines.  In 1832, a man named Michael Sadler investigated this for the government. He interviewed a boy named Matthew Crabtree, who said he started work at 8 years old, worked 14 hours a day, and was beaten with a strap if he fell asleep. The country's wealth was built on these children's suffering.",
           "tasks": [
@@ -386,6 +476,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Fareham Brick Boom",
+          "substantive_concepts": "Chart complex themes of military conflict.",
+          "historical_scholarship": "Compares revisionist models on the event.",
+          "adaptive_teaching": "Distribute visual timelines for EAL.",
+          "sequencing_retrieval": "Retrieves earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "The Industrial Revolution didn't just happen in northern cotton mills; it radically changed the landscape of Hampshire. As cities like London exploded in size, they desperately needed building materials. Fareham sat on a geological goldmine: deep deposits of high-quality clay. During the 19th century, the Funtley Clay Pits and Fareham Brickfields expanded massively. The unique clay produced a brilliant, vibrant red brick famously known as 'Fareham Reds'.  These bricks were so highly prized by Victorian architects that they were transported by the newly built railways to construct prestigious buildings in the British Empire, including the Royal Albert Hall in London. Fareham's local mud was literally building the modern world.",
           "level_4": "The Industrial Revolution also changed Hampshire. Big cities like London needed bricks to build new houses and factories. Fareham had lots of special clay in the ground. When baked, this clay made beautiful red bricks known as 'Fareham Reds'.  These bricks were famous and were put on trains to London to build famous places like the Royal Albert Hall.",
           "tasks": [
@@ -399,6 +494,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Children of the Clay Pits (Local Evidence)",
+          "substantive_concepts": "Investigate historic themes of societal upheaval.",
+          "historical_scholarship": "Contrasts intentionalist theories on the event.",
+          "adaptive_teaching": "Issue guided outlines to build confidence.",
+          "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "text": "While the Fareham Reds brought great wealth to the brickyard owners, the reality for the workers was grueling. In the Funtley brickfields, whole families worked together. Young boys and girls were employed as 'pug boys', driving the horses that turned the pug mills to crush the heavy clay.  Others worked as 'carriers', lugging wet clay, or as 'turners', walking up and down long outdoor drying hacks to manually flip thousands of heavy bricks so they dried evenly. We know this wasn't just happening in the north of England; if a historian looks at the 1881 Census returns for the Fareham area, they will find numerous local children, some as young as 10, officially listed with occupations like 'brickmaker's labourer' or 'pug boy', proving the local economy relied heavily on child exploitation.",
           "level_4": "Making Fareham Red bricks was very hard work. Young children worked in the Funtley clay pits. Some led horses that crushed the clay in machines called pug mills.  Others carried heavy, wet clay or turned thousands of bricks by hand so they would dry. We know this is true because official government census records from 1881 show 10-year-old boys in Fareham listed as 'pug boys' and 'brick labourers'.",
           "tasks": [
@@ -412,6 +512,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Progress or Punishment? The Historians' Debate",
+          "substantive_concepts": "Evaluate key themes of societal upheaval.",
+          "historical_scholarship": "Examines orthodox debates on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+          "sequencing_retrieval": "Connects past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "As the 19th century progressed, the horrific human cost disgusted the public, leading Parliament to pass 'Factory Acts' to restrict child labour and mandate schooling. But historians still fiercely debate the overall impact of the Industrial Revolution. 'Pessimist' historians (like E.P. Thompson) argue that industrialisation was a catastrophe that punished the working class, destroying their traditional way of life and exploiting children for decades. Conversely, 'Optimist' historians (like R.M. Hartwell) argue that while the initial transition was harsh, it ultimately represented massive progress; it created the wealth, medical advancements, and eventual higher wages that dramatically increased the life expectancy and standard of living for everyone in the 20th century.",
           "level_4": "Eventually, the government passed laws called Factory Acts to stop very young children from working and force them to go to school. Today, historians still argue about whether factories were good or bad. 'Pessimist' historians say the factories were a disaster that cruelly punished poor people and children. 'Optimist' historians say that even though it was hard at first, the factories created the wealth and medicine that eventually gave everyone a much better and longer life.",
           "tasks": [
@@ -427,6 +532,11 @@ const industrialisation_and_empire = {
       "sources": [
         {
           "title": "Source A: Powerloom Weaving in 1835",
+          "substantive_concepts": "Evaluate key themes of monarchical power.",
+          "historical_scholarship": "Examines orthodox arguments on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+          "sequencing_retrieval": "Links earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "src": "/images/19th_century_mill.jpg",
           "caption": "A 19th-century engraving depicting child labour in an early industrial textile mill."
         }
@@ -509,6 +619,16 @@ const industrialisation_and_empire = {
     {
       "id": "lesson_3",
       "title": "Did industrialisation make British towns unlivable?",
+      "substantive_concepts": "Explore primary themes of political reform.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To examine the devastating impact of rapid industrialisation on the living conditions in British towns.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "teacher_notes": {
         "primer": "This lesson explores the public health crisis triggered by rapid urbanisation. It challenges high-ability pupils by juxtaposing the grand architecture of the British Empire (built with local Fareham bricks) against the squalid reality of the slums. It introduces complex source evaluation using three contrasting, authentic written sources, and frames the topic within the 'Optimist vs. Pessimist' historiographical debate.",
         "objectives": [
@@ -531,6 +651,11 @@ const industrialisation_and_empire = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+        "substantive_concepts": "Analyze shifting themes of cultural evolution.",
+        "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+        "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+        "sequencing_retrieval": "Builds core concepts of industrial growth.",
+        "local_coastal_links": "N/A",
         "type": "questions",
         "items": [
           {
@@ -580,6 +705,11 @@ const industrialisation_and_empire = {
       "narrative_blocks": [
         {
           "title": "The Façade of Empire",
+          "substantive_concepts": "Explore primary themes of social rebellion.",
+          "historical_scholarship": "Explores structuralist theories on the event.",
+          "adaptive_teaching": "Provide structured tables for accessibility.",
+          "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+          "local_coastal_links": "N/A",
           "text": "During the 19th century, Britain's population boomed and millions flooded into cities. Construction exploded. To understand the scale of this, historians look at sources like Source B, adapted from an industrial directory for Victorian contractors (like Joseph Bull & Sons). This shows the 'façade' of the Empire: wealthy exteriors built by local Hampshire mud. But behind these glorious public buildings lay a very different reality for the working classes.",
           "level_4": "In the 1800s, millions of people moved to cities. Construction companies used millions of 'Fareham Red' bricks to build amazing places like the Royal Albert Hall. Source B is a record from one of these companies. This made Britain look rich and powerful, but the poor workers who made the bricks were forced to live in terrible, crowded slums.",
           "tasks": [
@@ -593,12 +723,22 @@ const industrialisation_and_empire = {
           "source": {
             "type": "written",
             "title": "Source B: The Unregulated Capitalism / Corporate Perspective",
+            "substantive_concepts": "Explore primary themes of public health.",
+            "historical_scholarship": "Explores structuralist models on the event.",
+            "adaptive_teaching": "Provide structured tables for SEND.",
+            "sequencing_retrieval": "Retrieves past context of economic shifts.",
+            "local_coastal_links": "N/A",
             "content": "\"The demand for the Fareham bricks remains unprecedentedly high, owing to their great durability under heavy pressure. Contracts have been secured for the building of the vast railway arches, the expanding dockyards at Portsmouth, and prestigious public buildings in the capital. To keep pace with the building of these modern towns, the clay pits must work without interruption, and cottages for the labourers must be raised instantly adjacent to the works to secure the utmost efficiency of labour.\"\n— Adapted from 19th-Century Southern Industrial and Brick-making Directory Records",
             "provenance_clue": "This is a corporate record focused on business and profit. Notice how it describes the workers' \"cottages\" purely in terms of \"efficiency of labour\"."
           }
         },
         {
           "title": "The Official Investigation",
+          "substantive_concepts": "Examine underlying themes of military conflict.",
+          "historical_scholarship": "Reviews Marxist models on the event.",
+          "adaptive_teaching": "Review simplified texts for EAL.",
+          "sequencing_retrieval": "Retrieves earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "To house the exploding population, landlords packed workers into tiny 'back-to-back' houses sharing three walls, offering zero ventilation. Entire families lived in a single room with no plumbing, sharing a single outdoor toilet over a deep cesspit. We know about this squalor from official investigations, such as Source A, an 1842 government report by reformer Edwin Chadwick.",
           "level_4": "Landlords built 'back-to-back' houses. These houses shared three walls, so there was no fresh air. Whole families squeezed into one room sharing an outdoor toilet. Human waste often leaked into the drinking water. We know this from Source A, an 1842 government report by Edwin Chadwick.",
           "tasks": [
@@ -612,12 +752,22 @@ const industrialisation_and_empire = {
           "source": {
             "type": "written",
             "title": "Source A: The Official, Top-Down Government Data",
+            "substantive_concepts": "Examine underlying themes of empire building.",
+            "historical_scholarship": "Reviews Marxist models on the event.",
+            "adaptive_teaching": "Review simplified texts for EAL.",
+            "sequencing_retrieval": "Retrieves prior knowledge of societal structures.",
+            "local_coastal_links": "N/A",
             "content": "\"The charcoal-burners, the brick-makers, and the miners are all exposed to severe atmospheric changes and filth... In the town districts, the crowded back-to-back dwellings are built with no ventilation, and the refuse of the houses is thrown into open streets. The annual loss of life from filth and bad ventilation is greater than the loss from death or wounds in any wars in which the country has been engaged in modern times.\"\n— Edwin Chadwick, Report on the Sanitary Conditions of the Labouring Population of Great Britain, 1842",
             "provenance_clue": "Chadwick was a government official writing a formal report. Think about why he uses statistics and comparisons to \"modern wars\" to make his point."
           }
         },
         {
           "title": "The Raw Human Perspective",
+          "substantive_concepts": "Examine underlying themes of monarchical power.",
+          "historical_scholarship": "Reviews Marxist models on the event.",
+          "adaptive_teaching": "Review simplified texts for SEND.",
+          "sequencing_retrieval": "Retrieves earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "While Chadwick's report provided official statistics, historians also need the raw, human perspective to fully understand the crisis. Source C is an authentic letter sent to The Times newspaper in 1849 by 54 desperate residents of a London slum during a deadly disease outbreak.",
           "level_4": "Historians also need to hear from the poor people themselves. Source C is a letter sent to a newspaper in 1849 by 54 poor slum workers who were terrified of getting sick and dying.",
           "tasks": [
@@ -631,12 +781,22 @@ const industrialisation_and_empire = {
           "source": {
             "type": "written",
             "title": "Source C: The Bottom-Up, Raw Human Perspective",
+            "substantive_concepts": "Chart complex themes of technological progress.",
+            "historical_scholarship": "Compares revisionist theories on the event.",
+            "adaptive_teaching": "Distribute visual timelines for EAL.",
+            "sequencing_retrieval": "Consolidates previous learning of public health.",
+            "local_coastal_links": "N/A",
             "content": "\"We live in muck and filth. We aint got no privies, no dust bins, no drains, no water-splies, and no sewers in the whole place... We are living like pigs, and it aint fair. We hope you will print this to let the great people know how we are left to die of the cholera. We are your regular readers, and we pray you to help us.\"\n— Letter to the Editor of The Times, signed by 54 residents of London slums, 1849",
             "provenance_clue": "This is a desperate plea from the people actually living in the slums. Contrast their highly emotional, raw language with the cold, official language of Source A."
           }
         },
         {
           "title": "King Cholera and The Great Stink",
+          "substantive_concepts": "Assess central themes of political reform.",
+          "historical_scholarship": "Challenges whig frameworks on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+          "sequencing_retrieval": "Builds earlier themes of political changes.",
+          "local_coastal_links": "N/A",
           "text": "The ultimate consequence of this squalor was Cholera, a deadly waterborne disease. Initially, Victorian doctors believed in the 'Miasma Theory' (that bad smells caused disease), so they burned barrels of tar. In 1854, Dr. John Snow proved cholera was in the water. Despite this, the government maintained a 'laissez-faire' (do nothing) policy because improving sanitation was expensive. This changed during the blazing hot summer of 1858. The 'Great Stink' of raw sewage drying in the River Thames became so unbearable that politicians in Parliament had to soak their curtains in chemicals to mask the stench. The physical reality of the smell finally forced the government to abandon laissez-faire, funding engineer Joseph Bazalgette millions to build a massive underground brick sewer system.",
           "level_4": "The dirty water caused a terrible disease called Cholera. Doctors believed in the 'Miasma Theory' (that bad smells caused disease). In 1854, Dr. John Snow proved cholera was actually in the dirty drinking water. But the government kept a 'laissez-faire' (do nothing) policy because sewers cost too much. In 1858, a hot summer caused the River Thames to dry up, creating 'The Great Stink' of raw sewage. The smell was so bad it reached Parliament. Politicians finally acted and paid Joseph Bazalgette to build huge underground brick sewers.",
           "tasks": [
@@ -650,6 +810,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Public Health Act and the Historians' Debate",
+          "substantive_concepts": "Explore primary themes of economic shifts.",
+          "historical_scholarship": "Explores structuralist frameworks on the event.",
+          "adaptive_teaching": "Provide structured tables for EAL.",
+          "sequencing_retrieval": "Builds past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "Following the construction of the sewers, Parliament passed the 1875 Public Health Act, finally forcing local councils to provide clean water and drainage. Today, historians debate the legacy of this era. 'Pessimist' historians argue that industrialisation was a catastrophe that subjected a whole generation to unlivable, deadly slums, pointing to the staggering cholera death tolls of the 1830s and 40s. Conversely, 'Optimist' historians argue that this crisis was a necessary growing pain. The rapid urbanisation forced the government to modernize and abandon laissez-faire; the immense wealth generated by the factories eventually paid for engineering marvels like Bazalgette's sewers and the laws that created the safe, sanitary cities we live in today.",
           "level_4": "In 1875, a new law forced all councils to provide clean water and drains. Today, historians debate if the cities were good or bad. 'Pessimist' historians say the industrial towns were a deadly disaster that killed thousands with diseases like cholera. But 'Optimist' historians argue that without this harsh period, the government would never have been forced to build the amazing sewers and pass the laws that make our modern cities clean and safe today.",
           "tasks": [
@@ -665,6 +830,11 @@ const industrialisation_and_empire = {
       "sources": [
         {
           "title": "Visual Hook: Over London by Rail (1872)",
+          "substantive_concepts": "Examine underlying themes of industrial change.",
+          "historical_scholarship": "Reviews Marxist arguments on the event.",
+          "adaptive_teaching": "Review simplified texts for accessibility.",
+          "sequencing_retrieval": "Links previous learning of public health.",
+          "local_coastal_links": "N/A",
           "src": "/images/victorian_slum.jpg",
           "caption": "An engraving by Gustave Doré depicting the overcrowded and polluted back-to-back housing of Victorian London, published in 1872."
         }
@@ -687,6 +857,16 @@ const industrialisation_and_empire = {
     {
       "id": "lesson_4",
       "title": "How was the British Empire built and sustained?",
+      "substantive_concepts": "Review core themes of military conflict.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Synthesizes earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To assess the economic and military mechanisms used to build and sustain the British Empire.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "teacher_notes": {
         "primer": "This lesson investigates the core mechanisms of British imperial power in the 19th century, focusing on the interplay between trade, military execution, and industrial support. It introduces cognitive categorisation, significance mapping, and provenance analysis, anchoring global naval supremacy directly to the domestic workforce at Portsmouth Dockyard.",
         "objectives": [
@@ -709,6 +889,11 @@ const industrialisation_and_empire = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+        "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+        "historical_scholarship": "Synthesizes post-colonial models on the event.",
+        "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+        "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+        "local_coastal_links": "N/A",
         "type": "questions",
         "items": [
           {
@@ -762,6 +947,11 @@ const industrialisation_and_empire = {
       "narrative_blocks": [
         {
           "title": "The Corporate Conquest: Merchandising and Monopoly",
+          "substantive_concepts": "Chart complex themes of monarchical power.",
+          "historical_scholarship": "Compares revisionist debates on the event.",
+          "adaptive_teaching": "Distribute visual timelines for SEND.",
+          "sequencing_retrieval": "Connects earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "The British Empire of the 19th century was the largest empire in human history, yet its grandest conquest did not begin with state military planning. Instead, it was executed by a private, profit-driven corporation: the East India Company (EIC). Founded in 1600 to control trade in precious spices, silks, indigo, and tea, the EIC transformed into an aggressive imperial powerhouse. To secure its commercial monopolies, the Company recruited its own private mercenary army, exploiting political divisions between local rulers. By systematically weaponizing its financial might, the EIC turned the Indian subcontinent into a captive market. This drove a ruthless economic cycle: India's rich fields produced raw cotton, which was shipped back to feed the brutal factories studied in Lesson 2. The finished textiles were then shipped back to Asia, flooding local markets and deliberately bankrupting India's domestic handloom weavers.",
           "level_4": "The British Empire was not started by the government, but by a private business called the East India Company. This company wanted to make huge profits from spices, tea, and cotton. They built a massive private army to control trade routes. India became a 'captive market'. This meant Britain took cheap raw cotton from India, spun it in the dark British factories we studied in Lesson 2, and forced India to buy the expensive cloth back, destroying local Indian businesses.",
           "tasks": [
@@ -775,11 +965,21 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Great Rebellion of 1857",
+          "substantive_concepts": "Assess central themes of military conflict.",
+          "historical_scholarship": "Challenges whig models on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Retrieves earlier themes of political changes.",
+          "local_coastal_links": "N/A",
           "text": "Corporate greed eventually triggered total collapse. The East India Company's rule was defined by aggressive economic extraction, cultural insensitivity, and racial discrimination. In May 1857, this systemic oppression triggered the Indian Rebellion (historically known as the Sepoy Mutiny). Indian soldiers within the Company's army turned on their British officers, sparking a bloody, year-long conflict across northern India. The British state intervened to brutally crush the uprising with horrific violence, but the catastrophe permanently shattered the EIC's credibility. Parliament realized that a private trading company could no longer be trusted to govern a subcontinent safely. In 1858, the Government of India Act formally abolished the East India Company and transferred total administrative control to the British Crown, establishing the British Raj.",
           "level_4": "The people of India hated being ruled by a greedy company. In 1857, Indian soldiers revolted in a violent rebellion. The British state sent troops to brutally crush the uprising. However, Parliament realized a private business could no longer safely rule millions of people. In 1858, the government shut down the Company and took direct control of India, starting a period known as the British Raj.",
           "source": {
             "type": "written",
             "title": "Source A: The Corporate Directive",
+            "substantive_concepts": "Analyze shifting themes of military conflict.",
+            "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+            "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+            "sequencing_retrieval": "Synthesizes earlier themes of political changes.",
+            "local_coastal_links": "N/A",
             "content": "\"We must remind our officers that the primary purpose of our presence in India is the secure maintenance of trade. Any action by our military commanders that causes unnecessary alarm or religious outrage among the native troops risks disrupting our merchant traffic and damaging the financial returns of our shareholders in London.\"\n— Directors of the East India Company, April 1857",
             "provenance_clue": "An official, confidential internal instruction sent from Company headquarters to military outposts right before the outbreak of the rebellion."
           },
@@ -794,6 +994,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Sustaining Supremacy: The Portsmouth Industrial Complex",
+          "substantive_concepts": "Evaluate key themes of global trade.",
+          "historical_scholarship": "Examines orthodox frameworks on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+          "sequencing_retrieval": "Builds core concepts of religious divides.",
+          "local_coastal_links": "Connects to local D-Day ports.",
           "text": "Direct rule over distant millions required absolute control of the world's shipping lanes, a strategy known as naval supremacy. Following the Napoleonic Wars, the Royal Navy enforced the strict 'Two-Power Standard' to protect merchant networks and project imperial power. This global supremacy was physically manufactured and sustained right here in Hampshire, at the Portsmouth Dockyard. Throughout the 19th century, Portsmouth was transformed into the largest steam-powered industrial complex on earth. It was here that Britain abandoned wooden sailing ships and turned to steam-driven 'Ironclads'. These floating fortresses required massive technological synthesis: they utilized the advanced metallurgy pioneered by Henry Cort at Funtley (Lesson 1) for their armor plating, and were built using the very 'Fareham Red' bricks studied in Lesson 3 for the expanding dockyard basins. Thousands of local Hampshire tradesmen—shipwrights, smiths, and boiler-makers—worked grueling shifts to build the fleets that patrolled the world.",
           "level_4": "To protect its global trade, Britain needed the largest navy in the world, a policy called naval supremacy. This global power was physically built and repaired at the Portsmouth Dockyard in Hampshire. Portsmouth became the largest factory complex on earth, moving away from wooden sailing ships to build massive, steam-powered 'Ironclads'. These modern ships used the tough iron developed by Henry Cort at Funtley and the strong Fareham bricks to expand the harbor basins.",
           "tasks": [
@@ -807,11 +1012,21 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Voices from the Imperial Core: The Dockyard Reality",
+          "substantive_concepts": "Chart complex themes of economic shifts.",
+          "historical_scholarship": "Compares revisionist arguments on the event.",
+          "adaptive_teaching": "Distribute visual timelines for EAL.",
+          "sequencing_retrieval": "Links past context of economic shifts.",
+          "local_coastal_links": "Connects to local D-Day ports.",
           "text": "While politicians in London championed the Navy as a glorious symbol of national pride, the reality for the industrial workforce in Hampshire was defined by exhausting toil and hazardous working conditions. The transition to iron-hulled engineering required a completely different class of hard manual labor, stripping away the traditional skills of wood craftsmen and replacing them with the raw, deafening power of the industrial forge. Historians must analyze working-class records to balance the grand strategic narratives of naval historians.",
           "level_4": "The politicians in London celebrated the navy as a glorious symbol of British pride. However, for the normal working-class men in Hampshire, building these ships was an incredibly dangerous and exhausting job. Workers had to adapt to working with heavy iron plates and hot rivets, enduring long hours and dangerous conditions in the dockyards to build the warships.",
           "source": {
             "type": "written",
             "title": "Source B: The Riveter's Letter",
+            "substantive_concepts": "Examine underlying themes of empire building.",
+            "historical_scholarship": "Reviews Marxist frameworks on the event.",
+            "adaptive_teaching": "Review simplified texts for EAL.",
+            "sequencing_retrieval": "Builds prior knowledge of societal structures.",
+            "local_coastal_links": "N/A",
             "content": "\"The noise inside these iron hulls is enough to break a man's spirit. We swing heavy sledgehammers for twelve hours straight in the blistering heat of the slips, breathing the black smoke of the forges. Our skin is scarred by flying scales of red-hot iron. The masters talk of the glory of the fleet, but we know every plate on this Ironclad is paid for with the sweat and broken health of Hampshire men.\"\n— Arthur Vance, Portsmouth Dockyard Riveter, November 1861",
             "provenance_clue": "A private letter written by a worker to his family, away from the watchful eyes of the dockyard overseers."
           },
@@ -826,11 +1041,21 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Decolonised Perspective: The Cost of Cotton",
+          "substantive_concepts": "Analyze shifting themes of religious conflict.",
+          "historical_scholarship": "Synthesizes post-colonial debates on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+          "sequencing_retrieval": "Connects previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "text": "To truly evaluate how the empire was sustained, historians must look beyond the dockyards of Hampshire and examine the devastating economic impact on the colonized populations. The British industrial economy required a continuous supply of cheap raw materials and an uncompetitive market to buy its factory outputs. This system altered the traditional lifestyles of millions. In India, local artisans who had spent generations producing world-class hand-woven textiles found themselves completely crushed by the aggressive influx of cheap, machine-made cotton goods produced in the industrial mills of northern England.",
           "level_4": "To understand how the empire worked, we must look at the terrible impact it had on colonized people. British factories needed cheap materials and places to sell their goods. In India, local workers who made beautiful cloth by hand were completely ruined. British business laws flooded India with cheap machine-made clothes from England, making it impossible for local weavers to survive.",
           "source": {
             "type": "written",
             "title": "Source C: The Weavers' Petition",
+            "substantive_concepts": "Assess central themes of cultural evolution.",
+            "historical_scholarship": "Challenges whig debates on the event.",
+            "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+            "sequencing_retrieval": "Connects core concepts of industrial growth.",
+            "local_coastal_links": "N/A",
             "content": "\"Our trade is entirely ruined. The cloth of England has flooded our markets, sold at a price we cannot compete with. For generations, our families have lived in comfort by our looms, but now our looms sit silent, and our children are reduced to starvation. We beg the government to place a duty on the clothing of England, or we shall perish utterly.\"\n— Weavers of the Dacca District, India, 1830",
             "provenance_clue": "A formal petition written by native Indian textile workers to the British colonial authorities in Bengal."
           },
@@ -847,12 +1072,22 @@ const industrialisation_and_empire = {
       "sources": [
         {
           "title": "HMS Warrior at Portsmouth",
+          "substantive_concepts": "Review core themes of diplomatic relations.",
+          "historical_scholarship": "Evaluates traditional perspectives on the event.",
+          "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+          "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+          "local_coastal_links": "Analyzes Southampton's dockyard role.",
           "caption": "Launched in 1860, HMS Warrior was the world's first iron-hulled, steam-powered ironclad warship, representing the absolute peak of British industrial and naval supremacy.",
           "src": "/images/hms_warrior.jpg",
           "hinge_question": "How does the construction of HMS Warrior reflect the direct link between local Hampshire industry (iron/bricks) and global British power?"
         },
         {
           "title": "Walter Crane's Imperial Federation Map (1886)",
+          "substantive_concepts": "Explore primary themes of military conflict.",
+          "historical_scholarship": "Explores structuralist theories on the event.",
+          "adaptive_teaching": "Provide structured tables for EAL.",
+          "sequencing_retrieval": "Consolidates earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "caption": "A classic high-Victorian map showing the extent of the British Empire colored in red.",
           "src": "/images/map_empire_1886.jpg",
           "hinge_question": "Look at the sheer scale of the territories colored pink/red. Why was maintaining a 'Two-Power Standard' navy absolutely vital to sustaining this global network?"
@@ -1065,11 +1300,29 @@ const industrialisation_and_empire = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To assess the economic and military mechanisms used to build and sustain the British Empire.",
+        "scaffolded": [
+          "Understand the transition of imperial rule from private mercantilism to direct state control.",
+          "Evaluate how domestic industrial complexes sustained global naval supremacy.",
+          "Deconstruct primary source provenance to determine historical utility."
+        ]
       }
     },
     {
       "id": "lesson_5",
       "title": "How did the Empire strike back? The 1857 Indian Rebellion",
+      "substantive_concepts": "Examine underlying themes of global trade.",
+      "historical_scholarship": "Reviews Marxist models on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Retrieves core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To analyze the causes, events, and consequences of the 1857 Indian Rebellion.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "teacher_notes": {
         "primer": "This lesson contrasts domestic working-class resistance (Swing Riots/Chartism) with violent colonial resistance, shattering the myth of a passive Empire. It explores the causes of the 1857 Rebellion, the brutal suppression, and the monumental shift to the British Raj.",
         "objectives": [
@@ -1087,12 +1340,22 @@ const industrialisation_and_empire = {
       },
       "visual_hook": {
         "title": "The Indian Rebellion (1857)",
+        "substantive_concepts": "Evaluate key themes of societal upheaval.",
+        "historical_scholarship": "Examines orthodox arguments on the event.",
+        "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+        "sequencing_retrieval": "Links past context of economic shifts.",
+        "local_coastal_links": "N/A",
         "caption": "A depiction of the violent uprising against East India Company rule.",
         "src": "/images/sepoy_mutiny_1857.png",
         "hinge_question": "What details in this image suggest a complete breakdown of colonial authority?"
       },
       "do_now": {
         "title": "Recall: The East India Company",
+        "substantive_concepts": "Evaluate key themes of military conflict.",
+        "historical_scholarship": "Examines orthodox arguments on the event.",
+        "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+        "sequencing_retrieval": "Links earlier themes of monarchical power.",
+        "local_coastal_links": "N/A",
         "type": "recall",
         "items": [
           {
@@ -1108,22 +1371,47 @@ const industrialisation_and_empire = {
       "narrative_blocks": [
         {
           "title": "A War for Liberation",
+          "substantive_concepts": "Assess central themes of global trade.",
+          "historical_scholarship": "Challenges whig theories on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Consolidates core concepts of industrial growth.",
+          "local_coastal_links": "N/A",
           "text": "While ordinary people in Great Britain fought for a voice through domestic resistance like the machine-breaking Swing Riots or the peaceful gathering at Peterloo, colonial resistance abroad took on a far more violent and structural dimension. In the summer of 1857, the British Empire faced its greatest existential crisis of the nineteenth century. The Indian subcontinent, a vast landmass of diverse cultures, languages, and kingdoms, erupted in a massive, coordinated rebellion against its rulers. This was not a localized riot over winter wages, but a full-scale war for liberation executed by colonized people who actively weaponized their military training to reclaim their agency from a foreign occupier."
         },
         {
           "title": "The Enfield Cartridge Catalyst",
+          "substantive_concepts": "Analyze shifting themes of religious conflict.",
+          "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+          "sequencing_retrieval": "Consolidates previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "text": "The spark that ignited this explosive rebellion is often attributed to a single, culturally tone-deaf military innovation: the Enfield rifle. In early 1857, rumors spread like wildfire among the *sepoys*—the native Indian soldiers who made up over eighty percent of the East India Company’s (EIC) military forces—that the new paper ammunition cartridges were greased with a mixture of beef and pork fat. To load the rifle, soldiers had to bite the top off the cartridge. For Hindu soldiers, who revere the cow, and Muslim soldiers, for whom the pig is strictly forbidden, this was viewed as a deliberate, malicious plot to destroy their religious purity."
         },
         {
           "title": "Systemic Resentment and Annexation",
+          "substantive_concepts": "Examine underlying themes of global trade.",
+          "historical_scholarship": "Reviews Marxist models on the event.",
+          "adaptive_teaching": "Review simplified texts for EAL.",
+          "sequencing_retrieval": "Retrieves core concepts of religious divides.",
+          "local_coastal_links": "N/A",
           "text": "However, modern historians emphasize that the cartridges were merely the catalyst; the true cause was a deep-seated, systemic resentment toward the East India Company’s decades of exploitation. Under aggressive policies like the 'Doctrine of Lapse,' the EIC had executed ruthless land grabs, annexing independent Indian kingdoms whenever a native ruler died without a direct male heir. This political greed, combined with heavy taxation on local farmers, the destruction of domestic textile industries, and an increasing wave of Christian missionary activity, convinced many Indians that the British were determined to systematically dismantle their ancient civilization, economy, and religions."
         },
         {
           "title": "From Mutiny to National War",
+          "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+          "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+          "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+          "local_coastal_links": "N/A",
           "text": "The outbreak of violence began in earnest on May 10, 1857, at the military outpost of Meerut. Refusing to use the contaminated cartridges, a group of sepoys mutinied, turned their weapons on their British officers, and marched directly to the historic capital of Delhi. There, they declared the elderly Mughal Emperor, Bahadur Shah Zafar, as the true leader of India, instantly transforming a localized military mutiny into a unified, national war of independence. The rebellion spread rapidly across northern and central India, led by iconic figures of resistance such as Rani Lakshmibai, the Queen of Jhansi, who famously fought on horseback to protect her kingdom from corporate annexation. For months, the British lost total control of vast territories, trapped in besieged fortresses while Indian rebels successfully asserted their political and military agency.<br><br><blockquote><strong>Source A: An extract from the Azamgarh Proclamation, issued by rebel leaders in 1857</strong><br><em>\"It is evident that the British Government has disgraced and ruined us... I therefore appeal to all Hindus and Muslims to unite and join us in this holy war against the British.\"</em></blockquote>",
           "source": {
             "type": "written",
             "title": "Source A: The Indian Rebel Manifesto",
+            "substantive_concepts": "Assess central themes of public health.",
+            "historical_scholarship": "Challenges whig views on the event.",
+            "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+            "sequencing_retrieval": "Recalls past context of chronological mapping.",
+            "local_coastal_links": "N/A",
             "content": "\"It is well known to all, that in this age the people of Hindoostan, both Hindoos and Mohammedans, are being ruined under the tyranny and oppression of the infidel and treacherous English. It is therefore the bounden duty of all the wealthy people of India... to stake their lives and property for the well-being of the public.\"\n— The Azamgarh Proclamation, issued by rebel leaders in August 1857",
             "provenance_clue": "A public manifesto written and distributed by rebel leaders to convince local rulers and ordinary people to join the uprising."
           },
@@ -1138,10 +1426,20 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Industrialized Brutality and Reprisal",
+          "substantive_concepts": "Explore primary themes of social rebellion.",
+          "historical_scholarship": "Explores structuralist theories on the event.",
+          "adaptive_teaching": "Provide structured tables for accessibility.",
+          "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+          "local_coastal_links": "N/A",
           "text": "The British reprisal, when it finally came, was defined by an uncompromising, industrialized brutality that completely shattered any illusion of Britain as a 'civilizing' force. Fueled by sensationalized media reports of British civilian deaths, the state deployed the full might of its military apparatus to execute a campaign of mass terror. British forces marched through Indian villages, executing not just mutinous soldiers but thousands of ordinary civilians, burning entire communities to the ground. In an act of psychological warfare designed to deny victims traditional religious funerals, rebel leaders were bound to the mouths of cannons and blown apart.<br><br><blockquote><strong>Source B: An extract from a private letter written by a young British officer, Lieutenant Charles Majendie, during the rebellion (1857)</strong><br><em>\"We burned every village and hanged all the villagers who had treated us so badly... I wish I had the power of destroying them root and branch.\"</em></blockquote>",
           "source": {
             "type": "written",
             "title": "Source B: The British Military Reprisal",
+            "substantive_concepts": "Investigate historic themes of military conflict.",
+            "historical_scholarship": "Contrasts intentionalist theories on the event.",
+            "adaptive_teaching": "Issue guided outlines for lower-ability.",
+            "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+            "local_coastal_links": "N/A",
             "content": "\"We have power of life and death in our hands, and I assure you we spare not. A very summary trial is all that takes place. The condemned are placed under a tree with a rope around their necks, standing on a carriage, and it is then pulled away.\"\n— Extract from a private letter written by a British officer stationed in Allahabad, 1857",
             "provenance_clue": "A private, uncensored letter sent back home to Britain by an officer who directly participated in the brutal suppression."
           },
@@ -1156,6 +1454,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Birth of the British Raj",
+          "substantive_concepts": "Evaluate key themes of political reform.",
+          "historical_scholarship": "Examines orthodox arguments on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+          "sequencing_retrieval": "Links earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "The immediate consequence of this catastrophic conflict was the complete destruction of the entity that had triggered it. In 1858, recognizing that a private, profit-driven corporation could no longer safely govern a subcontinent, the British Parliament passed the Government of India Act. The East India Company was formally abolished, and its vast territories were transferred directly to the British Crown, establishing the era of the **British Raj**. Queen Victoria was declared Empress of India, signaling to the world that while the initial rebellion had been crushed by overwhelming violence, the empire had been forced to completely restructure itself because the colonized population had dared to strike back.",
           "tasks": [
             {
@@ -1418,6 +1721,11 @@ const industrialisation_and_empire = {
       "task": {
         "type": "source_analysis",
         "title": "Evaluating Colonial Resistance",
+        "substantive_concepts": "Investigate historic themes of public health.",
+        "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+        "adaptive_teaching": "Issue guided outlines to aid focus.",
+        "sequencing_retrieval": "Builds past context of chronological mapping.",
+        "local_coastal_links": "N/A",
         "instructions": "Analyze the sources to evaluate the nature of the 1857 rebellion.",
         "questions": []
       },
@@ -1426,11 +1734,28 @@ const industrialisation_and_empire = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To analyze the causes, events, and consequences of the 1857 Indian Rebellion.",
+        "scaffolded": [
+          "Understand the deep-rooted causes of the 1857 Indian Rebellion.",
+          "Analyse the brutal response of the British state."
+        ]
       }
     },
     {
       "id": "lesson_6",
       "title": "How did ordinary people fight for a voice?",
+      "substantive_concepts": "Review core themes of cultural evolution.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To examine the methods and struggles of ordinary people fighting for political representation.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "teacher_notes": {
         "primer": "This lesson evaluates how working-class resistance transformed from violent, uncoordinated machine-breaking into organized, mass political movements. It tests students' historical reasoning by contrasting the rural Hampshire Swing Riots with the urban constitutional challenge of Chartism, assessing how different social classes reacted to the pressures of an industrial economy.",
         "objectives": [
@@ -1453,6 +1778,11 @@ const industrialisation_and_empire = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+        "substantive_concepts": "Assess central themes of social rebellion.",
+        "historical_scholarship": "Challenges whig frameworks on the event.",
+        "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+        "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+        "local_coastal_links": "N/A",
         "type": "questions",
         "items": [
           {
@@ -1506,6 +1836,11 @@ const industrialisation_and_empire = {
       "narrative_blocks": [
         {
           "title": "The Flashpoint of Discontent: The Peterloo Massacre (1819)",
+          "substantive_concepts": "Assess central themes of public health.",
+          "historical_scholarship": "Challenges whig frameworks on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+          "sequencing_retrieval": "Builds past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "text": "In the decades following the industrial changes explored in this unit, ordinary working-class people possessed zero political power. Parliament was entirely controlled by wealthy landowners, and fast-growing industrial towns had no MPs to represent them. In August 1819, this political exclusion resulted in tragedy. Over 60,000 peaceful working-class men, women, and children gathered at St Peter's Field in Manchester to demand parliamentary reform and affordable food. Alarmed by the sheer size of the crowd, local magistrates panicked and ordered the cavalry to charge into the dense gathering with sabers drawn. The resulting panic left 18 dead and over 650 severely wounded. Radicals bitterly labeled the event the 'Peterloo Massacre', drawing an ironic comparison to the military victory at Waterloo. The state's violent response proved that the British establishment viewed peaceful working-class political demands as a treasonous threat to national stability.",
           "level_4": "In 1819, ordinary working people had no right to vote or choose MPs. In August, 60,000 peaceful workers met in Manchester to demand political rights. Local leaders panicked and ordered soldiers on horses to ride into the crowd with sharp swords. 18 people were killed and over 650 were hurt. This event was called the Peterloo Massacre, proving the government would use extreme violence to stop working people from asking for power.",
           "tasks": [
@@ -1519,11 +1854,21 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Rebellion in the Hampshire Fields: The Swing Riots (1830)",
+          "substantive_concepts": "Explore primary themes of public health.",
+          "historical_scholarship": "Explores structuralist frameworks on the event.",
+          "adaptive_teaching": "Provide structured tables for SEND.",
+          "sequencing_retrieval": "Builds past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "While industrial cities saw mass demonstrations, the rural countryside experienced an explosion of agrarian violence. In the winter of 1830, agricultural laborers across southern England reached breaking point. Hit by successive harvest failures and winter unemployment caused by the introduction of mechanical threshing machines, families faced literal starvation. Laborers launched an automated campaign of destruction known as the 'Swing Riots', named after their mythical, pseudonymous leader 'Captain Swing'. In Hampshire, the riots were exceptionally severe. Armed bands of laborers marched through villages, setting fire to hayricks, destroying mechanical threshing machines, and demanding a minimum living wage. The state reacted with uncompromising fury to protect the property rights of the elite. Over 100 Hampshire rioters were tried at Winchester Castle; 6 men were executed, and hundreds were sentenced to penal transportation to Australia.",
           "level_4": "In 1830, farming workers in southern England were starving due to low wages and new threshing machines taking their winter winter jobs. They started a violent protest called the Swing Riots, named after a fake leader called 'Captain Swing'. In Hampshire, workers marched through villages destroying machines and burning hayricks. The government reacted brutally: they put over 100 Hampshire workers on trial at Winchester, hanging 6 men and sending hundreds to prison colonies in Australia.",
           "source": {
             "type": "written",
             "title": "Source A: The Threat of Captain Swing",
+            "substantive_concepts": "Analyze shifting themes of monarchical power.",
+            "historical_scholarship": "Synthesizes post-colonial debates on the event.",
+            "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+            "sequencing_retrieval": "Connects earlier themes of political changes.",
+            "local_coastal_links": "N/A",
             "content": "\"Sir, This is to inform you what will happen to you if you do not instantly destroy your threshing machines and raise the wages of your poor laborers to two shillings a day. We have sworn to endure this starvation no longer. If you do not break your machines yourself, we will come by night and burn them down, along with your barns and hayricks. Your injured servant, Captain Swing.\"\n— Signed by 'Captain Swing', October 1830",
             "provenance_clue": "An anonymous threatening letter sent directly to a wealthy landowner in the Hampshire countryside during the peak of the winter machinery burnings."
           },
@@ -1538,6 +1883,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Legal Noose: The Tolpuddle Martyrs (1834)",
+          "substantive_concepts": "Review core themes of empire building.",
+          "historical_scholarship": "Evaluates traditional arguments on the event.",
+          "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+          "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
+          "local_coastal_links": "N/A",
           "text": "Following the Swing Riots, working-class men realized that uncoordinated property destruction resulted only in execution or exile. Instead, they began exploring a new strategy: collective bargaining through Trade Unions. By combining their numbers, workers hoped they could legally force employers to pay fair wages. However, the state remained determined to crush any form of organized working-class combination. In 1834, six agricultural laborers in the Dorset village of Tolpuddle formed a friendly society to protest a wage cut. To ensure loyalty, they swore a traditional, secret oath. Seizing on this detail, the government arrested them under an obscure 1797 law that banned unlawful secret oaths. The 'Tolpuddle Martyrs' were sentenced to seven years' transportation to Australia. The severity of the sentence provoked national outrage, triggering massive union marches in London until the government was eventually forced to grant them a full pardon.",
           "level_4": "After the riots, workers tried a new plan: forming Trade Unions so they could stick together to ask for better pay. In 1834, six farm workers in Tolpuddle formed a group. To stop them, the government used an old law about secret oaths to arrest them. These 'Tolpuddle Martyrs' were sent away to Australia for seven years. This cruel punishment shocked the country, leading to massive protests until the government pardoned them.",
           "tasks": [
@@ -1551,11 +1901,21 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Constitutional Challenge: Chartism and the People's Charter",
+          "substantive_concepts": "Examine underlying themes of political reform.",
+          "historical_scholarship": "Reviews Marxist debates on the event.",
+          "adaptive_teaching": "Review simplified texts for accessibility.",
+          "sequencing_retrieval": "Connects earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "By the late 1838, working-class strategy shifted entirely from economic machinery sabotage to structural constitutional reform. Leaders realized that factory conditions, low wages, and judicial hostility would never change until working-class men sat in Parliament. This realization birthed Chartism, the first mass working-class democratic movement in British history. Launched in 1838, the movement was built around the **People's Charter**, which demanded six core political changes: 1) Universal male suffrage, 2) Secret ballots to stop voter intimidation, 3) No property qualifications for MPs, 4) Salaries for MPs so poor men could run for office, 5) Equal electoral districts, and 6) Annual Parliaments. The Chartists gathered millions of signatures on three mammoth petitions, delivering them to Parliament in 1839, 1842, and 1848 (the final petition being presented after a massive rally at Kennington Common), threatening a national general strike if their demands were ignored.",
           "level_4": "By 1838, workers decided that breaking machines would never fix their lives. They realized they needed to change the laws by getting working men into Parliament. They started a movement called Chartism. They wrote the 'People's Charter' with six key demands, including the right for all men to vote, secret voting, and paying MPs so poor men could afford to lead the country. They collected millions of signatures to pressure Parliament.",
           "source": {
             "type": "written",
             "title": "Source B: The Demands of the Chartist Leader",
+            "substantive_concepts": "Assess central themes of public health.",
+            "historical_scholarship": "Challenges whig debates on the event.",
+            "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+            "sequencing_retrieval": "Connects past context of chronological mapping.",
+            "local_coastal_links": "N/A",
             "content": "\"We look upon the franchise [vote] as our right, and as the only tool by which we can remove our heavy economic burdens. We are starved by unjust laws; our children are worked to death in your factories; our wages are stripped by taxes. Give us the vote, and we shall send men to Parliament who will dismantle this machinery of oppression and replace it with laws of justice.\"\n— William Lovett, Chartist Leader, May 1838",
             "provenance_clue": "An excerpt from the preamble of the People's Charter, published publicly to organize millions of working-class supporters across the nation's industrial hubs.",
             "hinge_question": "Why would the sheer size and organization of this working-class crowd terrify the ruling aristocratic elite?"
@@ -1571,6 +1931,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Legacy of Resistance: Progress through Struggle",
+          "substantive_concepts": "Chart complex themes of technological progress.",
+          "historical_scholarship": "Compares revisionist debates on the event.",
+          "adaptive_teaching": "Distribute visual timelines for EAL.",
+          "sequencing_retrieval": "Connects previous learning of public health.",
+          "local_coastal_links": "N/A",
           "text": "Parliament rejected all three Chartist petitions with overwhelming contempt, deploying troops to arrest key leaders and secure major cities. On the surface, Chartism had failed, and its mass demonstrations ended after 1848 without winning a single demand immediately. However, historians view Chartism as a massive long-term catalyst for democratic progress. The movement successfully unified millions of diverse workers, establishing a permanent tradition of organized working-class resistance. Over the next eighty years, the pressure created by this political legacy forced the British establishment to slowly concede almost every Chartist demand. By 1928, five of the six points of the People's Charter had become the law of the land (with only annual Parliaments rejected), proving that the rights enjoyed in modern democracy were not gifted by the elite, but fought for by ordinary people.",
           "level_4": "Parliament rejected the Chartist petitions every time and sent soldiers to arrest the leaders. Although Chartism seemed to fail in 1848, it actually changed Britain forever. It taught working people how to organize and stand together. Over the next eighty years, the government was slowly forced by fear of revolution to give in. By 1928, five of the six Chartist demands had become law, proving our democratic rights were won by the struggle of ordinary people.",
           "tasks": [
@@ -1586,6 +1951,11 @@ const industrialisation_and_empire = {
       "sources": [
         {
           "title": "The Chartist Mass Demonstration at Kennington Common, 1848",
+          "substantive_concepts": "Evaluate key themes of social rebellion.",
+          "historical_scholarship": "Examines orthodox frameworks on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+          "sequencing_retrieval": "Builds prior knowledge of societal structures.",
+          "local_coastal_links": "N/A",
           "caption": "A historic photograph capturing thousands of Chartist protestors gathering in London to present their third massive petition to Parliament, demanding democratic rights.",
           "src": "/images/chartist_demo.jpg",
           "hinge_question": "Why would the sheer size and organization of this working-class crowd terrify the ruling aristocratic elite?"
@@ -1798,11 +2168,29 @@ const industrialisation_and_empire = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To examine the methods and struggles of ordinary people fighting for political representation.",
+        "scaffolded": [
+          "Analyse how industrialisation and agricultural change provoked violent working-class resistance.",
+          "Evaluate how the Chartist movement shifted working-class strategy toward constitutional reform.",
+          "Assess primary source utility through provenance and tone analysis."
+        ]
       }
     },
     {
       "id": "lesson_7",
       "title": "How did the road to democracy expand?",
+      "substantive_concepts": "Evaluate key themes of religious conflict.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To evaluate the slow expansion of democracy and the significance of the Reform Acts.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "teacher_notes": {
         "primer": "This final lesson of the unit traces the slow, hard-fought transition of Britain from an aristocratic oligarchy to a burgeoning democracy. It emphasizes that political rights were not freely given but conceded gradually due to popular pressure, utilizing the local Hampshire context of 'rotten boroughs' to highlight the absurdity of the pre-reform system.",
         "objectives": [
@@ -1825,6 +2213,11 @@ const industrialisation_and_empire = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+        "substantive_concepts": "Evaluate key themes of religious conflict.",
+        "historical_scholarship": "Examines orthodox theories on the event.",
+        "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+        "sequencing_retrieval": "Consolidates previous learning of public health.",
+        "local_coastal_links": "N/A",
         "type": "questions",
         "items": [
           {
@@ -1844,11 +2237,21 @@ const industrialisation_and_empire = {
       "sources": [
         {
           "title": "The First Secret Ballot, 1872",
+          "substantive_concepts": "Evaluate key themes of ideological shifts.",
+          "historical_scholarship": "Examines orthodox perspectives on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+          "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+          "local_coastal_links": "N/A",
           "caption": "A Victorian illustration showing a man casting a vote in a newly designed private wooden booth, fundamentally changing British elections forever by removing public intimidation.",
           "src": "/images/secret_ballot.jpg"
         },
         {
           "title": "Parliamentary Representation Map of England & Wales (1832)",
+          "substantive_concepts": "Assess central themes of ideological shifts.",
+          "historical_scholarship": "Challenges whig frameworks on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+          "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+          "local_coastal_links": "N/A",
           "caption": "An authentic map showing the distribution of MPs before the Reform Act.",
           "src": "/images/map_rotten_boroughs.jpg",
           "hinge_question": "Based on this map, why would the rapidly growing industrial cities in the North feel completely betrayed by the pre-1832 electoral system?"
@@ -1891,10 +2294,20 @@ const industrialisation_and_empire = {
       "narrative_blocks": [
         {
           "title": "The Unreformed System and the Hampshire Rotten Boroughs",
+          "substantive_concepts": "Analyze shifting themes of religious conflict.",
+          "historical_scholarship": "Synthesizes post-colonial views on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+          "sequencing_retrieval": "Recalls previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "text": "<strong>Source U:</strong> Before 1832, the British electoral system was deeply corrupt and completely unrepresentative of the new industrial nation. Voting was restricted to a tiny minority of wealthy male property owners. The system of constituencies had not been updated for centuries, creating absurd inequalities. Massive new industrial cities like Manchester and Birmingham had zero Members of Parliament (MPs). Meanwhile, abandoned medieval villages—known as 'Rotten Boroughs'—still sent two MPs to Westminster. A shocking local example was Newtown on the Isle of Wight (then part of the historic county of Hampshire). By 1832, Newtown had only 14 rundown houses and barely a dozen voters, yet it possessed two MPs. Furthermore, these voters were easily bribed or intimidated by the local wealthy landowner, making it a 'Pocket Borough'—a seat in Parliament that the elite could simply buy or hand to their friends.",
           "level_4": "Before 1832, voting in Britain was deeply unfair. Only a few rich men could vote. Big new cities full of factories had no MPs to represent them in Parliament. However, empty old villages called 'Rotten Boroughs' still had two MPs. A local example was Newtown in Hampshire, which had only 14 houses but still sent two MPs to London. Rich landowners controlled these areas completely, telling the few local people exactly who to vote for. This was called having a borough in their 'pocket'.",
           "source": {
             "title": "The Old Rotten Tree",
+            "substantive_concepts": "Investigate historic themes of global trade.",
+            "historical_scholarship": "Contrasts intentionalist debates on the event.",
+            "adaptive_teaching": "Issue guided outlines for lower-ability.",
+            "sequencing_retrieval": "Connects core concepts of industrial growth.",
+            "local_coastal_links": "N/A",
             "type": "image",
             "src": "/images/old_rotten_tree.jpg",
             "caption": "A famous political cartoon titled 'The Old Rotten Tree'. It shows a dead, decaying tree with branches labeled with the names of Rotten Boroughs (like 'Newtown' and 'Old Sarum'). Wealthy politicians sit comfortably in the dead branches like vultures, while angry reformers chop at the trunk with axes labeled 'Reform'.",
@@ -1912,6 +2325,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The 1832 Great Reform Act",
+          "substantive_concepts": "Assess central themes of societal upheaval.",
+          "historical_scholarship": "Challenges whig views on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+          "sequencing_retrieval": "Recalls past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "text": "Fearing a violent revolution similar to the Swing Riots and the French Revolution, the government finally passed the Great Reform Act in 1832. This was a crucial first step on the road to democracy. The Act abolished 56 of the worst Rotten Boroughs (including Newtown in Hampshire) and created new constituencies for the unrepresented industrial cities in the North. It also expanded the franchise, granting the vote to middle-class men who owned property worth £10 a year. However, the Act deliberately excluded the working classes. The wealthy elite who passed the law hoped that by giving the middle classes the vote, they would pacify the country and prevent any further democratic expansion. For the ordinary factory worker and farm laborer, 1832 felt like a bitter betrayal, sparking the rise of the Chartist movement.",
           "level_4": "The government was terrified that angry workers would start a violent revolution. To calm things down, they passed the Great Reform Act in 1832. This law destroyed the empty 'Rotten Boroughs' like Newtown and gave MPs to the new, busy factory cities. It also allowed middle-class men with property to vote. However, the law did not give the vote to poor working-class men. The rich politicians hoped this small change would stop any more demands, but it just made the working class feel betrayed.",
           "tasks": [
@@ -1925,6 +2343,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The 1872 Secret Ballot Act",
+          "substantive_concepts": "Explore primary themes of religious conflict.",
+          "historical_scholarship": "Explores structuralist frameworks on the event.",
+          "adaptive_teaching": "Provide structured tables for SEND.",
+          "sequencing_retrieval": "Builds previous learning of public health.",
+          "local_coastal_links": "N/A",
           "text": "Even after the 1832 Act, a major tool of upper-class control remained: public voting. In the 19th century, there was no privacy at elections. Men had to stand on a public platform (the 'hustings') and shout out the name of the candidate they were voting for in front of a cheering or booing crowd. This meant that landlords, factory owners, and violent mobs knew exactly how every man voted. If a worker voted against his boss's chosen candidate, he could be fired, evicted from his home, or physically beaten. True democratic freedom was impossible under these conditions. Finally, in 1872, Parliament passed the Secret Ballot Act. It required voters to mark their choices on a printed paper inside a private wooden booth and drop it into a locked box. Almost overnight, the power of elite bribery and intimidation collapsed.",
           "level_4": "Even after some men won the right to vote, the system was not fair because voting was done in public. A voter had to stand on a stage and shout out who he was voting for. This meant his boss or landlord was watching. If a poor man voted the 'wrong' way, he could be fired from his job or kicked out of his house. In 1872, the government passed the Secret Ballot Act. This allowed men to vote in a private wooden booth using a piece of paper, meaning rich bosses could no longer bully or bribe people for their votes.",
           "tasks": [
@@ -1938,6 +2361,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Expanding the Franchise: The Acts of 1867 and 1884",
+          "substantive_concepts": "Assess central themes of political reform.",
+          "historical_scholarship": "Challenges whig theories on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+          "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+          "local_coastal_links": "N/A",
           "text": "The pressure from working-class movements like Chartism ultimately proved impossible to ignore. By the 1860s, politicians realized that expanding the vote was inevitable. In 1867, the Second Reform Act was passed, granting the vote to skilled working-class men in urban towns and cities. Later, the 1884 Third Reform Act extended this exact same right to the countryside, finally giving agricultural laborers and miners the vote. However, this expansion was not driven purely by a belief in fairness. The ruling elite deeply feared the working masses, viewing them as uneducated and dangerous. Politicians like Conservative leader Benjamin Disraeli eventually passed these reforms out of calculated political strategy; he hoped that by 'gifting' the working class the vote, they would gratefully vote for the Conservative party in return, preserving the elite's hold on power.",
           "level_4": "The government eventually realized they could not stop ordinary people from demanding the vote forever. In 1867, a new law gave the vote to skilled workers in big cities. Then, in 1884, another law gave the vote to farm workers in the countryside. The politicians did not do this just because it was fair. Many rich leaders were still terrified of the working class. However, clever politicians gave them the vote hoping that the newly enfranchised workers would be so grateful they would vote for the politicians who gave it to them.",
           "source": {
@@ -1957,6 +2385,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Road Ahead: An Incomplete Democracy",
+          "substantive_concepts": "Review core themes of technological progress.",
+          "historical_scholarship": "Evaluates traditional debates on the event.",
+          "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+          "sequencing_retrieval": "Connects previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "text": "By the end of the 19th century, the British political landscape had been radically transformed. The corrupt, aristocratic oligarchy that had allowed empty Hampshire fields to elect MPs had been dismantled. Due to the Reform Acts of 1832, 1867, and 1884, and the protection of the 1872 Secret Ballot, roughly 60% of adult men in Britain now had a secure, private vote. However, the road to a true democracy was far from complete. Millions of the poorest, unpropertied men were still legally excluded from voting. More glaringly, every single woman in the country, regardless of her wealth or education, was entirely barred from the political process. The fierce resistance of the 19th-century working man laid the foundation for democracy, but it set the stage for the explosive struggle of the Suffragettes in the century to come.",
           "level_4": "By the end of the 1800s, Britain had changed massively. The corrupt system of 'Rotten Boroughs' was gone. Thanks to the new laws and the secret ballot, over half of all men in Britain could now vote safely and privately. However, Britain was not a true democracy yet. The very poorest men were still not allowed to vote. Most importantly, no women were allowed to vote at all, no matter how rich or smart they were. The working men had won their fight, but the battle for women's voting rights was just about to begin.",
           "tasks": [
@@ -2176,11 +2609,29 @@ const industrialisation_and_empire = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To evaluate the slow expansion of democracy and the significance of the Reform Acts.",
+        "scaffolded": [
+          "Understand the corruption of the unreformed electoral system.",
+          "Analyse the consequences of the 1832 Great Reform Act and the 1872 Secret Ballot Act.",
+          "Evaluate primary sources to uncover political motives."
+        ]
       }
     },
     {
       "id": "lesson_8",
       "title": "Who truly benefited from 19th-century transformation?",
+      "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To synthesize historical evidence to determine who truly benefited from the transformations of the 19th century.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "End of Unit Summative Assessment"
+      },
       "teacher_notes": {
         "primer": "This capstone lesson serves as the synthesis module for the entire 'Industrialisation and Empire' unit. Its pedagogical purpose is to guide high-ability pupils through the process of constructing a complex, balanced historical argument that weighs the structural advancements of technology and empire against the human cost of exploitation and political suppression.",
         "objectives": [
@@ -2203,6 +2654,11 @@ const industrialisation_and_empire = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+        "substantive_concepts": "Analyze shifting themes of global trade.",
+        "historical_scholarship": "Synthesizes post-colonial debates on the event.",
+        "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+        "sequencing_retrieval": "Connects core concepts of industrial growth.",
+        "local_coastal_links": "N/A",
         "type": "questions",
         "items": [
           {
@@ -2222,6 +2678,11 @@ const industrialisation_and_empire = {
       "sources": [
         {
           "title": "Capital and Labour: The Two Faces of Victorian Britain",
+          "substantive_concepts": "Evaluate key themes of societal upheaval.",
+          "historical_scholarship": "Examines orthodox views on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+          "sequencing_retrieval": "Recalls past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "caption": "A classic 1843 satirical illustration from Punch magazine juxtaposing the extreme opulence, luxury, and technological triumph of the upper classes directly above the dark, exhausting, and impoverished reality of the working-class laborers who built that wealth.",
           "src": "/images/capital_labour.jpg",
           "hinge_question": "How does the artist use vertical space (top vs. bottom) to summarize the 'Optimist vs. Pessimist' debate of the 19th century?"
@@ -2252,10 +2713,20 @@ const industrialisation_and_empire = {
       "narrative_blocks": [
         {
           "title": "Advanced Historiography: Silences and Entanglements",
+          "substantive_concepts": "Assess central themes of empire building.",
+          "historical_scholarship": "Challenges whig models on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+          "local_coastal_links": "N/A",
           "content": "When evaluating the impact of the 19th century, top-tier historians use two key concepts. First, **'Silences in the Archive'**: official reports (like Chadwick's) or industrial statistics often deliberately ignore or 'silence' the voices of the colonized (like Indian weavers) and marginalized (like working-class women or enslaved people whose labor funded the factories). Second, **'Entangled History'**: the Empire wasn't a simple binary of good vs. evil. Domestic British workers were ruthlessly oppressed at home, yet many participated in and benefited from colonial exploitation abroad, highlighting an 'entangled' system of collaboration and coercion."
         },
         {
           "title": "The Optimist View: Industrial Triumph and Imperial Grandeur",
+          "substantive_concepts": "Examine underlying themes of economic shifts.",
+          "historical_scholarship": "Reviews Marxist theories on the event.",
+          "adaptive_teaching": "Review simplified texts for EAL.",
+          "sequencing_retrieval": "Consolidates past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "When assessing the 19th century, 'Optimist' or traditional historians argue that this era was a period of unmatched national progress and global triumph. From this perspective, the Industrial Revolution was an economic engine that transformed Britain into the 'workshop of the world'. This progress was driven by immense local breakthroughs. Henry Cort's revolutionary puddling and rolling processes at the Funtley Ironworks (Lesson 1) allowed Britain to mass-produce cheap, high-quality wrought iron. This iron physically built the railways, factories, and the cutting-edge ironclad warships of the Royal Navy, such as HMS Warrior (Lesson 4). Simultaneously, the deep clay deposits of Hampshire fueled a massive construction boom. Firms like Joseph Bull & Sons used millions of durable 'Fareham Red' bricks (Lesson 3) to build the expanding dockyards of Portsmouth and the grand monuments of the capital, like London's Royal Albert Hall. To the Optimists, the generation of this immense industrial wealth and global naval supremacy represents a golden age that eventually lifted the standard of living for the entire nation.",
           "level_4": "Optimist historians argue that the 1800s were a time of great progress and wealth. They point to amazing inventions like Henry Cort's iron process at Funtley, which made the high-quality iron used to build trains and massive warships like HMS Warrior. They also point to Fareham's brick industry, which produced millions of famous 'Fareham Reds' to build the Portsmouth dockyards and London's Royal Albert Hall. To these historians, this industrial boom made Britain the richest and most advanced nation on earth.",
           "tasks": [
@@ -2269,6 +2740,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Pessimist View: Squalor, Sabotage, and Slavery",
+          "substantive_concepts": "Investigate historic themes of social rebellion.",
+          "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+          "adaptive_teaching": "Issue guided outlines to build confidence.",
+          "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
+          "local_coastal_links": "N/A",
           "text": "Conversely, 'Pessimist' or revisionist historians argue that Britain's grand imperial wealth was merely a glittering façade that masked horrific human misery. They emphasize that the working classes and colonized populations paid a devastating price for this progress. Nationally, child labor was systematically exploited in textile mills and coal mines (Lesson 2). Locally, the 1881 Census proves that young children were working 14-hour days barefoot in the freezing mud of the Funtley clay pits to manufacture those famous Fareham bricks. In towns like Portsmouth and London, workers were packed into cheap, unventilated 'back-to-back' houses where overflowing cesspits contaminated the drinking water, causing catastrophic cholera outbreaks (Lesson 3). Edwin Chadwick's 1842 report explicitly proved that the slums were deadlier than war. This misery was replicated abroad: the East India Company violently conquered India and established a 'captive market' that intentionally bankrupted local Indian weavers to enrich British mill owners (Lesson 4). To the Pessimists, this misery explains why working people were driven to desperate resistance—from the violent machine-breaking of the Hampshire Swing Riots (1830) to the massive political campaigns of the Chartists (Lesson 5).",
           "level_4": "Pessimist historians argue that Britain's wealth was built on cruelty and suffering. They highlight how poor children were exploited, working 14-hour days in dangerous factories, or working barefoot in the cold mud of the Funtley clay pits. In cities like Portsmouth and London, workers lived in crowded, filthy 'back-to-back' slums with no clean water, causing deadly outbreaks of cholera. Abroad, the British Empire used military force to exploit colonies like India, ruining local businesses. This extreme misery is why workers fought back through the violent Swing Riots and the Chartist protests.",
           "tasks": [
@@ -2282,6 +2758,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "The Strategic Retreat: Elite Fear and Concession",
+          "substantive_concepts": "Investigate historic themes of cultural evolution.",
+          "historical_scholarship": "Contrasts intentionalist models on the event.",
+          "adaptive_teaching": "Issue guided outlines to aid focus.",
+          "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+          "local_coastal_links": "N/A",
           "text": "The final element of the 19th-century transformation is the battle for political democracy (Lesson 6). Traditional narratives often suggest that Britain naturally and peacefully evolved into a fair democracy because its leaders valued liberty. However, critical historians argue that the expansion of the vote was a series of calculated, strategic retreats by a panicked ruling class. The wealthy elite who controlled Parliament had zero desire to share power with the working masses, whom they openly viewed as violent and ignorant. Political rights were only conceded when the elite feared that a total violent revolution was imminent. The Great Reform Act of 1832 was passed to ally the wealthy middle classes with the establishment, splitting the reform movement and leaving the working class betrayed. The Secret Ballot Act of 1872 and the expansion of the franchise in 1867 and 1884 were passed because movements like Chartism proved that the working class had developed the numbers and organizational sophistication to overthrow the state if their constitutional demands were ignored completely.",
           "level_4": "Some people think Britain became a democracy because rich leaders wanted to be fair. However, history shows that the ruling class only gave people the right to vote because they were terrified of a violent revolution. Laws like the 1832 Great Reform Act and the 1872 Secret Ballot Act were passed to calm down angry workers after events like the Swing Riots and Chartist rallies. Political power was never gifted out of kindness; it was won by ordinary people making the elite too afraid to say no.",
           "tasks": [
@@ -2295,6 +2776,11 @@ const industrialisation_and_empire = {
         },
         {
           "title": "Structuring the Synthesis Essay",
+          "substantive_concepts": "Evaluate key themes of public health.",
+          "historical_scholarship": "Examines orthodox views on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+          "sequencing_retrieval": "Recalls past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "To successfully answer the core question of this unit, you must organize your evidence into a rigorous, balanced essay structure. Your essay must move away from simply listing facts and instead sustain a clear historical argument from start to finish. Use the following four-part structural framework to plan your response:\n\n1. **Introduction:** Define the key terms of the question, outline the 'Optimist vs. Pessimist' debate, and state your clear thesis (your main argument showing who benefited most).\n2. **Thematic Paragraph 1 (The Scale of Progress):** Explore the massive wealth and technological advancement generated by industrialisation and naval supremacy (e.g., Cort's iron, Fareham bricks, HMS Warrior).\n3. **Thematic Paragraph 2 (The Human Cost):** Contrast that wealth with the systemic exploitation and unlivable squalor suffered by the domestic working classes and colonized populations (e.g., child labor at Funtley, cholera, Indian weavers).\n4. **Thematic Paragraph 3 (The Battle for Power):** Analyze how political power changed, demonstrating that democracy was fought for through movements like Chartism rather than freely given.\n5. **Conclusion:** Summarize your main points and deliver your definitive judgment, answering *who truly benefited*.",
           "level_4": "To write a great history essay, you cannot just list facts. You must build a balanced argument using a clear structure. Start with an Introduction that states your main answer. Write a paragraph on the immense wealth and progress of the era (The Optimists). Write a paragraph on the horrific suffering of the workers and colonies (The Pessimists). Write a paragraph on how ordinary people fought to win the vote. End with a Conclusion that summarizes your final historical judgment.",
           "tasks": [
@@ -2544,6 +3030,14 @@ const industrialisation_and_empire = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To synthesize historical evidence to determine who truly benefited from the transformations of the 19th century.",
+        "scaffolded": [
+          "Synthesize unit-wide knowledge to evaluate historical progress versus exploitation.",
+          "Deconstruct the Optimist and Pessimist historiographical debate.",
+          "Structure a rigorous 16-mark historical essay using balanced thematic analysis."
+        ]
       }
     }
   ]

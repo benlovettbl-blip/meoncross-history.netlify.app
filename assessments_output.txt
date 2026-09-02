@@ -1,0 +1,571 @@
+
+=== UNIT: water_and_sanitation ===
+Found 'assessments' array:
+[
+  {
+    id: 'timeline',
+    title: 'Assessment Option 1: Public Health Domino Flowchart',
+    substantive_concepts: 'Examine underlying themes of monarchical power.',
+    historical_scholarship: 'Reviews Marxist models on the event.',
+    adaptive_teaching: 'Review simplified texts for SEND.',
+    sequencing_retrieval: 'Retrieves earlier themes of monarchical power.',
+    local_coastal_links: 'N/A',
+    type: 'timeline',
+    description: 'The development of public health is mixed up below. Draw arrows to connect them in chronological order.',
+    events: [
+      {
+        year: '312 BC',
+        title: 'Roman Aqueducts',
+        substantive_concepts: 'Examine underlying themes of ideological shifts.',
+        historical_scholarship: 'Reviews Marxist debates on the event.',
+        adaptive_teaching: 'Review simplified texts for SEND.',
+        sequencing_retrieval: 'Connects prior knowledge of societal structures.',
+        local_coastal_links: 'N/A',
+        detail: 'The Romans begin building vast aqueducts and bathhouses.'
+      },
+      {
+        year: '1348',
+        title: 'The Black Death',
+        substantive_concepts: 'Analyze shifting themes of global trade.',
+        historical_scholarship: 'Synthesizes post-colonial models on the event.',
+        adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+        sequencing_retrieval: 'Retrieves core concepts of industrial growth.',
+        local_coastal_links: 'N/A',
+        detail: 'The plague kills a third of England, blamed on miasma.'
+      },
+      {
+        year: '1842',
+        title: "Chadwick's Report",
+        substantive_concepts: 'Evaluate key themes of monarchical power.',
+        historical_scholarship: 'Examines orthodox arguments on the event.',
+        adaptive_teaching: 'Deploy scaffolded tasks for SEND.',
+        sequencing_retrieval: 'Links earlier themes of monarchical power.',
+        local_coastal_links: 'Reviews regional naval supremacy.',
+        detail: 'Edwin Chadwick publishes his report on sanitary conditions.'
+      },
+      {
+        year: '1854',
+        title: 'Broad Street Pump',
+        substantive_concepts: 'Explore primary themes of global trade.',
+        historical_scholarship: 'Explores structuralist arguments on the event.',
+        adaptive_teaching: 'Provide structured tables for EAL.',
+        sequencing_retrieval: 'Links core concepts of religious divides.',
+        local_coastal_links: 'N/A',
+        detail: 'John Snow proves cholera is waterborne.'
+      },
+      {
+        year: '1858',
+        title: 'The Great Stink',
+        substantive_concepts: 'Review core themes of military conflict.',
+        historical_scholarship: 'Evaluates traditional arguments on the event.',
+        adaptive_teaching: 'Assign knowledge organizers for lower-ability.',
+        sequencing_retrieval: 'Links earlier themes of political changes.',
+        local_coastal_links: 'N/A',
+        detail: "The Thames smells so bad that Parliament shuts down, leading to Bazalgette's sewers."
+      }
+    ]
+  },
+  {
+    id: 'essay_cholera',
+    title: 'Assessment Option 2: Cholera Investigation',
+    substantive_concepts: 'Examine underlying themes of global trade.',
+    historical_scholarship: 'Reviews Marxist debates on the event.',
+    adaptive_teaching: 'Review simplified texts for EAL.',
+    sequencing_retrieval: 'Connects core concepts of religious divides.',
+    local_coastal_links: 'N/A',
+    type: 'essay',
+    description: "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak."
+  },
+  {
+    id: 'source_utility',
+    title: 'Assessment Option 3: Source Utility Analysis',
+    substantive_concepts: 'Review core themes of religious conflict.',
+    historical_scholarship: 'Evaluates traditional perspectives on the event.',
+    adaptive_teaching: 'Assign knowledge organizers to aid focus.',
+    sequencing_retrieval: 'Synthesizes previous learning of global empires.',
+    local_coastal_links: 'N/A',
+    type: 'source_utility',
+    description: 'Study Sources B and C below. How useful are Sources B and C for an enquiry into Roman public health and bathhouses? (8 marks)',
+    sources: [
+      {
+        id: 'Source B',
+        text: 'I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.',
+        provenance: 'Extract from a letter by the Roman philosopher Seneca the Younger (c. AD 62), complaining about the intense noise and activity of a Roman bathhouse he lived above.',
+        provenance_clue: "Seneca was a private individual writing a personal letter. He lived right above the bathhouse, meaning he personally experienced the daily noise and chaos. Does this make his account of the 'social' atmosphere more reliable or just a personal grievance?"
+      },
+      {
+        id: 'Source C',
+        text: 'With such an array of indispensable structures carrying so many waters, compare, if you will, the idle pyramids or the useless, though famous, works of the Greeks! The abundance of water is sufficient not only for public and private uses and applications but truly even for pleasure. The water flows through the city like a queen.',
+        provenance: "Extract from 'De aquaeductu' (The Aqueducts of Rome) by Sextus Julius Frontinus (c. AD 97), the official water commissioner for the city of Rome.",
+        provenance_clue: 'Frontinus was an official state commissioner appointed by the Emperor. His job was to maintain the water supply. How does his official role affect his view of the aqueducts? Is he likely to write about the flaws, or just praise the greatness of Roman engineering?'
+      }
+    ],
+    model_answer: `<strong>Source B is highly useful for revealing the social reality and everyday atmosphere of Roman bathhouses;</strong> <strong style=\\"color: #0284c7;\\">it describes the intense noise of 'hair-pluckers' and 'sausage-sellers', proving that bathhouses were busy social hubs rather than just places for hygiene.</strong> <strong style=\\"color: #9333ea;\\">As a private letter written by someone living directly above the baths, Seneca provides a highly reliable, unfiltered eyewitness account of the daily chaos.</strong> <strong style=\\"color: #16a34a;\\">This is supported by our knowledge that Roman bathhouses (thermae) contained exercise yards, food stalls, and meeting rooms, making them the centre of community life.</strong><br><br><strong>Source C is also extremely useful for showing the scale and engineering brilliance of Roman public health;</strong> <strong style=\\"color: #0284c7;\\">it highlights the 'abundance of water' that flowed through the city 'like a queen' for both private use and public pleasure.</strong> <strong style=\\"color: #9333ea;\\">As an official report written by the state water commissioner, Frontinus's purpose is to glorify Roman achievements and praise the Emperor, so he may exaggerate its perfection and ignore the poorer areas that lacked piped water.</strong> <strong style=\\"color: #16a34a;\\">However, we know that Roman aqueducts were indeed revolutionary engineering feats that used gravity to supply millions of gallons of fresh water to urban centres, drastically improving public health.</strong>`
+  }
+]
+
+=== UNIT: medieval_england ===
+Last Lesson:
+{
+  title: 'Lesson 9: Assessment: How powerful was a medieval monarch?',
+  substantive_concepts: 'Chart complex themes of religious conflict.',
+  historical_scholarship: 'Compares revisionist views on the event.',
+  adaptive_teaching: 'Distribute visual timelines for SEND.',
+  sequencing_retrieval: 'Recalls previous learning of public health.',
+  local_coastal_links: 'N/A',
+  learning_objective: 'To synthesize knowledge and construct an assessment on the true extent of medieval monarchical power.',
+  disciplinary_concept: 'Historical Enquiry',
+  formative_assessment: { type: 'End of Unit Summative Assessment' },
+  banner: '/images/domesday_book.jpg',
+  teacher_notes: {
+    primer: "This is a capstone assessment lesson. Rather than regurgitating previous narratives, it tests students' ability to synthesize knowledge from the entire unit. The lesson involves chronological retrieval practice, evaluation of differing historical interpretations, and scaffolding for a 12-mark essay.",
+    objectives: [
+      {
+        objective: 'To accurately sequence the key events of the medieval period.',
+        primer: 'Instruct students to complete the Domino Flowchart timeline, focusing on chronological and causal links between events.',
+        question: "Which event directly caused the severe labour shortage that eventually led to the Peasants' Revolt?"
+      },
+      {
+        objective: 'To evaluate differing historical interpretations of medieval royal power.',
+        primer: 'Read Interpretations A and B with the class. Discuss why historians might have such different views depending on which century they focus on.',
+        question: 'Why might a historian focusing on King John have a very different view of royal power than one focusing on William the Conqueror?'
+      },
+      {
+        objective: 'To write a structured essay explaining the decline of royal power.',
+        primer: 'Use the essay planning block to outline the PEEL structure. Encourage students to use evidence from at least three different centuries.',
+        question: 'What is your main point for paragraph two regarding the barons?'
+      }
+    ]
+  },
+  do_now: {
+    type: 'timeline',
+    title: 'Retrieval Practice: The Struggle for Power (1066–1381)',
+    substantive_concepts: 'Examine underlying themes of ideological shifts.',
+    historical_scholarship: 'Reviews Marxist views on the event.',
+    adaptive_teaching: 'Review simplified texts for SEND.',
+    sequencing_retrieval: 'Recalls prior knowledge of societal structures.',
+    local_coastal_links: 'N/A',
+    text: 'Review the events below. In your workbook, draw arrows connecting these events in the correct chronological and causal order.',
+    events: [
+      {
+        year: '1066',
+        title: 'The Norman Conquest',
+        substantive_concepts: 'Examine underlying themes of public health.',
+        historical_scholarship: 'Reviews Marxist theories on the event.',
+        adaptive_teaching: 'Review simplified texts for SEND.',
+        sequencing_retrieval: 'Consolidates past context of economic shifts.',
+        local_coastal_links: 'N/A',
+        detail: 'William the Conqueror defeats Harold Godwinson and unleashes the Harrying of the North.'
+      },
+      {
+        year: '1086',
+        title: 'The Domesday Book',
+        substantive_concepts: 'Review core themes of ideological shifts.',
+        historical_scholarship: 'Evaluates traditional arguments on the event.',
+        adaptive_teaching: 'Assign knowledge organizers to aid focus.',
+        sequencing_retrieval: 'Links prior knowledge of warfare tactics.',
+        local_coastal_links: 'N/A',
+        detail: 'A massive survey to assess the wealth of the country for taxation.'
+      },
+      {
+        year: '1170',
+        title: 'Murder of Thomas Becket',
+        substantive_concepts: 'Examine underlying themes of economic shifts.',
+        historical_scholarship: 'Reviews Marxist theories on the event.',
+        adaptive_teaching: 'Review simplified texts for EAL.',
+        sequencing_retrieval: 'Consolidates past context of economic shifts.',
+        local_coastal_links: 'N/A',
+        detail: 'The Archbishop of Canterbury is murdered by knights loyal to Henry II.'
+      },
+      {
+        year: '1215',
+        title: 'Magna Carta',
+        substantive_concepts: 'Evaluate key themes of empire building.',
+        historical_scholarship: 'Examines orthodox perspectives on the event.',
+        adaptive_teaching: 'Deploy scaffolded tasks for EAL.',
+        sequencing_retrieval: 'Synthesizes prior knowledge of societal structures.',
+        local_coastal_links: 'N/A',
+        detail: 'King John is forced by his barons to seal the Great Charter, limiting royal power.'
+      },
+      {
+        year: '1348',
+        title: 'The Black Death',
+        substantive_concepts: 'Examine underlying themes of public health.',
+        historical_scholarship: 'Reviews Marxist perspectives on the event.',
+        adaptive_teaching: 'Review simplified texts for SEND.',
+        sequencing_retrieval: 'Synthesizes past context of economic shifts.',
+        local_coastal_links: 'N/A',
+        detail: 'The bubonic plague arrives in England, killing a third of the population.'
+      },
+      {
+        year: '1381',
+        title: "The Peasants' Revolt",
+        substantive_concepts: 'Explore primary themes of economic shifts.',
+        historical_scholarship: 'Explores structuralist frameworks on the event.',
+        adaptive_teaching: 'Provide structured tables for EAL.',
+        sequencing_retrieval: 'Builds past context of economic shifts.',
+        local_coastal_links: 'N/A',
+        detail: 'Peasants rebel against the Poll Tax and demand the end of serfdom.'
+      }
+    ]
+  },
+  vocab: [
+    {
+      term: 'Feudalism',
+      definition: 'A social system where land is held in exchange for service or labour.'
+    },
+    {
+      term: 'Harrying',
+      definition: 'A brutal military campaign to destroy crops and starve rebels.'
+    },
+    {
+      term: 'Excommunication',
+      definition: 'Being officially thrown out of the Catholic Church.'
+    },
+    {
+      term: 'Magna Carta',
+      definition: "The 'Great Charter' that limited the King's power and established that no one is above the law."
+    },
+    {
+      term: 'Pestilence',
+      definition: 'A fatal epidemic disease, like the Black Death.'
+    },
+    {
+      term: 'Revolt',
+      definition: 'An uprising or rebellion against authority.'
+    }
+  ],
+  narrative_blocks: [
+    {
+      title: 'Block 1: Historical Interpretations',
+      substantive_concepts: 'Analyze shifting themes of monarchical power.',
+      historical_scholarship: 'Synthesizes post-colonial frameworks on the event.',
+      adaptive_teaching: 'Guide printed A4 workbooks to aid focus.',
+      sequencing_retrieval: 'Builds earlier themes of political changes.',
+      local_coastal_links: 'N/A',
+      text: 'Read the two historical interpretations below regarding the power of medieval monarchs. Consider what they focus on and how they differ.',
+      tasks: [
+        {
+          type: 'extended_writing',
+          question: 'Task 1: Which of the two interpretations do you find more convincing? Explain your answer using your own knowledge.',
+          model_answer: 'Interpretation B is more convincing because it acknowledges that while early Norman kings had absolute power, by the end of the medieval period, things had changed. For example, King John lost so much authority that he was forced by the barons to seal the Magna Carta in 1215, meaning the king was no longer above the law.'
+        }
+      ]
+    },
+    {
+      title: 'Interpretation A: Absolute Norman Power',
+      substantive_concepts: 'Review core themes of empire building.',
+      historical_scholarship: 'Evaluates traditional arguments on the event.',
+      adaptive_teaching: 'Assign knowledge organizers for lower-ability.',
+      sequencing_retrieval: 'Links prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      source: {
+        type: 'written',
+        content: 'William the Conqueror’s power was absolute. He ruled through fear and administration. With castles dominating every town and the Domesday Book recording every pig and cow, resistance was impossible.',
+        caption: 'Interpretation A: A modern historian writing about the early Norman period.',
+        source_context: 'Focuses entirely on the strength of William I and the immediate aftermath of 1066.'
+      }
+    },
+    {
+      title: 'Interpretation B: A Fragile Crown',
+      substantive_concepts: 'Examine underlying themes of cultural evolution.',
+      historical_scholarship: 'Reviews Marxist theories on the event.',
+      adaptive_teaching: 'Review simplified texts for SEND.',
+      sequencing_retrieval: 'Consolidates core concepts of religious divides.',
+      local_coastal_links: 'N/A',
+      source: {
+        type: 'written',
+        content: 'By 1215, the myth of absolute royal power was broken. King John’s incompetence allowed the barons to force him to obey the law, just like his subjects. By 1381, even the lowest peasants realized they had the power to shake the throne. By 1485, royal authority had completely collapsed into a 30-year civil war between rival noble houses.',
+        caption: 'Interpretation B: A modern historian writing about the Later Middle Ages.',
+        source_context: "Focuses on how the crown's authority weakened due to baronial rebellions and social changes."
+      }
+    },
+    {
+      title: 'Block 2: Planning Your Essay',
+      substantive_concepts: 'Explore primary themes of ideological shifts.',
+      historical_scholarship: 'Explores structuralist debates on the event.',
+      adaptive_teaching: 'Provide structured tables for SEND.',
+      sequencing_retrieval: 'Connects prior knowledge of societal structures.',
+      local_coastal_links: 'N/A',
+      text: "Use this block to plan your final assessment essay. A good history essay uses a clear structure, such as PEEL (Point, Evidence, Explain, Link).<br><br><strong>Paragraph 1: Early Norman Power</strong><br>How did early monarchs show their strength? (Hint: Think about William I, castles, and the Domesday Book).<br><br><strong>Paragraph 2: The Church and Barons</strong><br>How was royal power challenged by the Church and wealthy lords? (Hint: Think about Thomas Becket, and King John sealing Magna Carta).<br><br><strong>Paragraph 3: Peasants and Civil War</strong><br>How was the crown threatened by the lower classes and dynastic rivalries? (Hint: Think about the Peasants' Revolt in 1381 and the Wars of the Roses)."
+    },
+    {
+      title: 'Block 3: Final Assessment',
+      substantive_concepts: 'Review core themes of ideological shifts.',
+      historical_scholarship: 'Evaluates traditional arguments on the event.',
+      adaptive_teaching: 'Assign knowledge organizers to aid focus.',
+      sequencing_retrieval: 'Links prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      extended: {
+        question: 'Explain why royal power weakened between 1066 and 1485 (12 marks)',
+        lines: 18,
+        scaffolding: [
+          'Start with a clear introduction stating that while royal power was initially strong under William I, it was weakened by the Church, angry barons, and eventually the peasants.',
+          "Use your first paragraph to explain how Magna Carta limited the King's power in 1215.",
+          "Use your second paragraph to explain how the Peasants' Revolt (1381) and the Wars of the Roses (1455-1485) challenged the Crown's stability."
+        ]
+      },
+      tasks: [
+        {
+          type: 'extended_writing',
+          question: 'Explain why royal power weakened between 1066 and 1485 (12 marks)',
+          model_answer: 'Initially, royal power was absolute. William the Conqueror established total control after 1066 using brutal military force, such as the Harrying of the North, and built motte and bailey castles to intimidate the Anglo-Saxons. He also surveyed the entire country with the Domesday Book in 1086 to maximize taxation.\n' +
+            '\n' +
+            'However, royal power weakened over time due to challenges from the Church and the barons. King Henry II suffered a massive blow to his authority after the murder of Thomas Becket, and King John severely damaged the reputation of the monarchy by overtaxing his lords. In 1215, the barons rebelled and forced him to seal Magna Carta, a crucial turning point because it established that the King was no longer above the law.\n' +
+            '\n' +
+            "Furthermore, royal power completely collapsed in the later medieval period. The Peasants' Revolt of 1381 proved that even the lowest classes could organize massive armies to threaten the King. Finally, during the Wars of the Roses (1455-1485), the crown was violently usurped back and forth between rival nobles, proving that medieval monarchs had lost the absolute control established by William the Conqueror."
+        }
+      ]
+    }
+  ],
+  pair_share: {
+    prompt: 'Discuss with your partner: Based on everything we have studied, what was the most effective way for a medieval monarch to keep their power?',
+    think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
+    pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
+    share: "Share your pair's combined conclusion with the class."
+  }
+}
+
+=== UNIT: early_modern_world ===
+
+=== UNIT: industrialisation_and_empire ===
+
+=== UNIT: australia ===
+Last Lesson:
+{
+  id: 'lesson_5',
+  title: "Lesson 5: Assessment - What's the story of Australia?",
+  substantive_concepts: 'Review core themes of monarchical power.',
+  historical_scholarship: 'Evaluates traditional views on the event.',
+  adaptive_teaching: 'Assign knowledge organizers to aid focus.',
+  sequencing_retrieval: 'Recalls earlier themes of political changes.',
+  local_coastal_links: 'N/A',
+  learning_objective: 'To synthesize historical knowledge and construct a comprehensive narrative of early Australian history.',
+  disciplinary_concept: 'Historical Enquiry',
+  formative_assessment: { type: 'End of Unit Summative Assessment' },
+  banner: '/images/sydney_cove.jpg',
+  banner_position: 'center',
+  enquiry: 'How did New South Wales develop, and how should we assess its history?',
+  teacher_notes: {
+    primer: 'This is the final assessment lesson for the Australia unit. It provides two differentiated choices for students to demonstrate their historical knowledge and skills.',
+    objectives: [
+      {
+        objective: 'Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.',
+        primer: 'Direct students to Assessment 1 for a narrative account.',
+        question: "Can you sequence the key turning points in the colony's development?"
+      },
+      {
+        objective: 'Evaluate the usefulness of primary sources for historical enquiries.',
+        primer: 'Direct students to Assessment 2 for GCSE-style source utility practice.',
+        question: 'Why does the provenance of a source affect its usefulness to a historian?'
+      }
+    ]
+  },
+  narrative_blocks: [
+    {
+      type: 'narrative',
+      theme_heading: 'Assessment 1: Write a Narrative Account',
+      text: 'Write a narrative account analyzing the development of Australia between the years 1788 and 1855. \n' +
+        '\n' +
+        'You may use the following in your answer:\n' +
+        '* The near-starvation of the First Fleet (1788)\n' +
+        '* The introduction of Merino sheep and the wool industry\n' +
+        '\n' +
+        'You must also use information of your own.',
+      tasks: [
+        {
+          type: 'extended_writing',
+          question: 'Write a narrative account analyzing the development of Australia between the years 1788 and 1855.',
+          marks: '8',
+          instructions: 'Use these sentence starters to build your narrative in chronological order:\n' +
+            '\n' +
+            '1. The development of Australia began in 1788 when...\n' +
+            '2. This was a very difficult period because...\n' +
+            '3. However, the situation changed dramatically when John Macarthur...\n' +
+            '4. This led to New South Wales becoming a profitable colony because...\n' +
+            '5. Finally, the development of Australia accelerated in the 1850s due to...'
+        }
+      ]
+    },
+    {
+      type: 'narrative',
+      theme_heading: "Assessment 2: 'How Useful' Source Analysis",
+      text: '<p>Study Sources A and B below. Then answer the question: <strong>How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?</strong></p>\n' +
+        '\n' +
+        "<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n" +
+        "<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n" +
+        '<strong>Source A: Extract from a letter written by a British squatter in New South Wales, published in a London newspaper in 1840.</strong><br/><br/>"The land here is vast and entirely unimproved by the native people, who simply wander across it. We have brought civilization, built permanent farms, and our flocks of sheep are multiplying rapidly. We are turning a wasteland into a highly profitable jewel of the Empire. The natives are melting away, which is the natural outcome when a superior race arrives."<br/><br/><em>Provenance Clue: Written by a wealthy squatter trying to encourage more British investment, in an era where racism was common.</em>\n' +
+        '</div>\n' +
+        '\n' +
+        "<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n" +
+        '<strong>Source B: Extract from a report by Lancelot Threlkeld, a Christian missionary living among the Awabakal people, written in 1838.</strong><br/><br/>"It is a tragedy to witness the complete destruction of these people. The white settlers have stolen their hunting grounds. When the starving natives steal a single sheep to survive, they are hunted down and shot like dogs by the squatters. The British government has done nothing to protect them from this slaughter."<br/><br/><em>Provenance Clue: Written by a missionary whose job was to protect Aboriginal people, meaning he sympathised with them and saw the brutality of the squatters firsthand.</em>\n' +
+        '</div>\n' +
+        '</div>\n' +
+        '\n' +
+        "<div style='margin-top:20px; padding: 15px; background-color: #fffbeb; border-left: 4px solid #fbbf24;'>\n" +
+        '<h4>Scaffolding: How to analyze these sources</h4>\n' +
+        '<p>For <strong>both</strong> sources, make sure you address:</p>\n' +
+        '<ul>\n' +
+        '<li><strong>Content:</strong> What does the source actually say? What details are useful?</li>\n' +
+        '<li><strong>Context:</strong> What do you know about this from your lessons that supports or challenges the source?</li>\n' +
+        '<li><strong>Provenance (NOP):</strong> Who wrote it, when, and why? How does that affect its reliability and usefulness?</li>\n' +
+        '</ul>\n' +
+        '</div>',
+      tasks: [
+        {
+          type: 'source_analysis',
+          question: 'How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?',
+          marks: '8'
+        }
+      ]
+    }
+  ]
+}
+
+=== UNIT: great_war ===
+
+=== UNIT: great_war_part2 ===
+Last Lesson:
+{
+  id: 'lesson_7',
+  title: 'Assessment: The Great War',
+  substantive_concepts: 'Evaluate key themes of diplomatic relations.',
+  historical_scholarship: 'Examines orthodox views on the event.',
+  adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+  sequencing_retrieval: 'Recalls core concepts of religious divides.',
+  local_coastal_links: 'N/A',
+  learning_objective: 'To synthesize historical knowledge and construct a comprehensive assessment of the Great War.',
+  disciplinary_concept: 'Historical Enquiry',
+  formative_assessment: { type: 'End of Unit Summative Assessment' },
+  primer: 'This formal assessment bridges Key Stage 3 historical skills with early GCSE demands, testing chronological recall, source utility evaluation, and historical judgement.',
+  vocab: [],
+  do_now: {
+    type: 'grid',
+    tasks: [
+      {
+        question: 'What triggered the start of WWI in 1914?',
+        answer: 'The assassination of Archduke Franz Ferdinand.',
+        points: 1
+      },
+      {
+        question: 'What was the name of the British law that allowed the government to take control of industries?',
+        answer: 'DORA (Defence of the Realm Act).',
+        points: 2
+      },
+      {
+        question: 'Why did the Schlieffen Plan fail?',
+        answer: 'Belgium resisted, Russia mobilized faster than expected, and Britain intervened.',
+        points: 3
+      }
+    ]
+  },
+  narrative_blocks: [
+    {
+      text: 'Complete the automated multiple-choice quiz for this unit to test your foundational knowledge.',
+      tasks: [
+        {
+          text: '1a. Describe one feature of the Home Front during the First World War. (2 marks)<br>1b. Describe one feature of the Treaty of Versailles. (2 marks)',
+          model_answer: "1a. One feature of the Home Front was the mobilization of women. For example, thousands of women known as 'Munitionettes' worked in dangerous factories to produce shells.<br><br>1b. One feature of the Treaty of Versailles was its harsh military restrictions. For example, the German army was limited to 100,000 men and was not allowed submarines or an air force."
+        }
+      ]
+    },
+    {
+      text: "Study Source A (the painting of the 'Canary Girls' in the munitions factory).",
+      image: '/images/gw_munitionettes.jpg',
+      image_alt: 'Source A: A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote.',
+      tasks: [
+        {
+          text: 'How useful is Source A for an inquiry into the impact of the First World War on women? (8 marks)',
+          model_answer: 'Source A is highly useful for showing the reality of the Home Front, as it is a painting from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a painting is subjective and may have been created for propaganda to encourage recruitment, rather than showing the true dangers like TNT poisoning.'
+        }
+      ],
+      image_caption: 'Source A: A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote.'
+    },
+    {
+      text: 'Study Interpretation 1. <em>"The First World War was primarily won on the mud of the Western Front."</em>',
+      tasks: [
+        {
+          text: 'How far do you agree with Interpretation 1? Explain your answer using your own knowledge. (16 marks + 4 SPaG)',
+          model_answer: '<strong>Paragraph 1 (Agree - The Trenches):</strong> You could agree with the statement by discussing the sheer scale of the battles of attrition on the Western Front, such as the Somme and Passchendaele, where the German army was slowly ground down.<br><br><strong>Paragraph 2 (Disagree - Global Empire):</strong> You could disagree by arguing the war was a global conflict. The contribution of over 1.5 million men from the British Indian Army (including heroes like Khudadad Khan) and resources from across the Empire were crucial to preventing an early defeat.<br><br><strong>Paragraph 3 (Disagree - Home Front):</strong> You could also disagree by arguing the war was won on the Home Front. The mobilization of the entire civilian population, such as women in munitions factories, ensured the military had the supplies needed to win.<br><br><strong>Paragraph 4 (Disagree - Local Impact):</strong> You could also argue that focusing only on military victory ignores the devastating long-term social impact. Using local micro-histories, such as the 67 names on the Stubbington memorial or the tragedy of the three Lowry brothers, shows that the true cost of the war was felt in communities for decades.<br><br><strong>Conclusion:</strong> Summarize your overall judgement, balancing the military reality of the Western Front against the broader global and civilian contributions.'
+        }
+      ]
+    }
+  ],
+  quiz: [
+    {
+      q: 'In what year did the First World War begin?',
+      a: '1914',
+      options: [ '1914', '1918', '1939', '1911' ]
+    },
+    {
+      q: 'Which country was NOT part of the Triple Entente?',
+      a: 'Germany',
+      options: [ 'Germany', 'Britain', 'France', 'Russia' ]
+    },
+    {
+      q: 'What condition was caused by standing in cold, flooded trenches?',
+      a: 'Trench Foot',
+      options: [ 'Trench Foot', 'Shell Shock', 'Spanish Flu', 'Cholera' ]
+    },
+    {
+      q: 'How many men from the British Empire and Dominions served in the war?',
+      a: 'Nearly 3 million',
+      options: [ 'Nearly 3 million', '100,000', '500,000', '5 million' ]
+    },
+    {
+      q: 'What was the nickname given to women working with TNT in factories?',
+      a: 'Canary Girls',
+      options: [ 'Canary Girls', 'Tommies', 'Doughboys', 'Land Girls' ]
+    }
+  ],
+  teacher_notes: {
+    source_context: 'The visual sources in this assessment review the core themes of the unit, from the empowerment and exploitation of women in munitions factories to the enduring legacy of the conflict. **Hinge Question:** How does the image of women in munitions factories summarize the dramatic societal shifts caused by Total War?'
+  },
+  pair_share: {
+    prompt: 'Discuss with your partner: What was the most significant turning point of the Great War?',
+    think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
+    pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
+    share: "Share your pair's combined conclusion with the class."
+  }
+}
+
+=== UNIT: post_war_britain ===
+Last Lesson:
+{
+  title: 'Assessment: How has British identity transformed since 1945?',
+  substantive_concepts: 'Chart complex themes of political reform.',
+  historical_scholarship: 'Compares revisionist views on the event.',
+  adaptive_teaching: 'Distribute visual timelines for accessibility.',
+  sequencing_retrieval: 'Recalls earlier themes of monarchical power.',
+  local_coastal_links: 'N/A',
+  learning_objective: 'To synthesize historical trends and assess how British identity has transformed since 1945.',
+  disciplinary_concept: 'Change and Continuity',
+  formative_assessment: { type: 'End of Unit Summative Assessment' },
+  narrative_blocks: [
+    {
+      text: 'Placeholder content for Assessment: How has British identity transformed since 1945?',
+      level_2: '',
+      level_3: '',
+      level_4: ''
+    }
+  ],
+  do_now: { type: 'standard', questions: [] },
+  comprehension: [],
+  source_tasks: [],
+  teacher_notes: {
+    primer: 'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
+    objectives: [
+      {
+        objective: 'Understand the core concepts of Assessment: How has British identity transformed since 1945?',
+        primer: 'Guide students through the narrative and focus on the key turning points.',
+        question: 'What is the most significant consequence of the events studied today?'
+      }
+    ]
+  },
+  pair_share: {
+    prompt: 'Discuss with your partner: Has British identity transformed completely since 1945?',
+    think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
+    pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
+    share: "Share your pair's combined conclusion with the class."
+  }
+}

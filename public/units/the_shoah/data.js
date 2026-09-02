@@ -5,6 +5,9 @@ export const unitData = {
   "lessons": [
     {
       "title": "Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?",
+      "learning_objective": "To analyze how centuries of deep-rooted prejudice paved the way for Nazi anti-Semitic ideology.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "teacher_notes": {
         "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
         "objectives": [
@@ -38,6 +41,9 @@ export const unitData = {
     },
     {
       "title": "1933–1939: How were German Jews progressively stripped of citizenship and rights?",
+      "learning_objective": "To examine the progressive legislative steps taken between 1933 and 1939 to strip German Jews of their rights.",
+      "disciplinary_concept": "Change and Continuity",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "teacher_notes": {
         "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
         "objectives": [
@@ -71,6 +77,9 @@ export const unitData = {
     },
     {
       "title": "The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?",
+      "learning_objective": "To evaluate the escalation of persecution into systematic mass murder through the ghettos and Einsatzgruppen.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "teacher_notes": {
         "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
         "objectives": [
@@ -104,6 +113,9 @@ export const unitData = {
     },
     {
       "title": "The 'Final Solution': How did the death camps operate as industrialised extermination?",
+      "learning_objective": "To analyze the horrific mechanics and industrialised scale of extermination during the 'Final Solution'.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "teacher_notes": {
         "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
         "objectives": [
@@ -137,6 +149,9 @@ export const unitData = {
     },
     {
       "title": "Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?",
+      "learning_objective": "To assess the diverse forms of resistance, rescue, and the pervasive issue of complicity among ordinary citizens.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "teacher_notes": {
         "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
         "objectives": [
@@ -170,6 +185,9 @@ export const unitData = {
     },
     {
       "title": "Liberation and Legacy: What does survivor testimony teach us about humanity and memory?",
+      "learning_objective": "To examine the profound lessons regarding humanity and memory drawn from Holocaust survivor testimony.",
+      "disciplinary_concept": "Significance",
+      "formative_assessment": {"type":"Source Analysis Task"},
       "teacher_notes": {
         "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
         "objectives": [
@@ -203,6 +221,9 @@ export const unitData = {
     },
     {
       "title": "Assessment: The Shoah Enquiry",
+      "learning_objective": "To synthesize historical understanding and empathetic engagement in the final Shoah enquiry assessment.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"End of Unit Summative Assessment"},
       "teacher_notes": {
         "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
         "objectives": [

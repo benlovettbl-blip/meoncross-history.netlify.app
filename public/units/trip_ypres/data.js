@@ -109,6 +109,9 @@ export const unitData = {
     {
       "id": "day_0",
       "title": "Pre-Trip Information",
+      "learning_objective": "To prepare historically and logistically for the battlefield tour of Ypres.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "What to Pack & Logistics",
       "teacher_notes": {
         "primer": "Vital information for parents and pupils prior to departure.",
@@ -132,6 +135,9 @@ export const unitData = {
     {
       "id": "day_1",
       "title": "Day 1: Thursday 1st October 2026",
+      "learning_objective": "To analyze the initial landscape and historical context of the Ypres Salient.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Travel and Initial Explorations",
       "teacher_notes": {
         "primer": "Travel day from school to the Ypres Salient, featuring stops at Essex Farm, Langemarck, and Hooge Crater.",
@@ -338,6 +344,9 @@ export const unitData = {
     {
       "id": "day_2",
       "title": "Day 2: Friday 2nd October 2026",
+      "learning_objective": "To evaluate the strategic realities and human cost of the major offensives around Ypres.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Immersive Battlefield Study",
       "teacher_notes": {
         "primer": "A full day of guided study including the Menin Gate Last Post Ceremony.",
@@ -531,6 +540,9 @@ export const unitData = {
     {
       "id": "day_3",
       "title": "Day 3: Saturday 3rd October 2026",
+      "learning_objective": "To synthesize the battlefield experience and reflect on the legacy of the conflict during the final day.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Poperinge and the Journey Home",
       "banner": "/images/poperinge.png",
       "image": "/images/poperinge.png",
@@ -645,6 +657,9 @@ export const unitData = {
     {
       "id": "hero_0",
       "title": "Private T. J. Franklin",
+      "learning_objective": "To examine the individual wartime experience of Private T. J. Franklin.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -724,6 +739,9 @@ export const unitData = {
     {
       "id": "hero_1",
       "title": "Private W. Ayling",
+      "learning_objective": "To examine the individual wartime experience of Private W. Ayling.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -803,6 +821,9 @@ export const unitData = {
     {
       "id": "hero_2",
       "title": "Private S. Muckett",
+      "learning_objective": "To examine the individual wartime experience of Private S. Muckett.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -882,6 +903,9 @@ export const unitData = {
     {
       "id": "hero_3",
       "title": "Private A. Rye",
+      "learning_objective": "To examine the individual wartime experience of Private A. Rye.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -961,6 +985,9 @@ export const unitData = {
     {
       "id": "hero_4",
       "title": "Lance Corporal A. Ward",
+      "learning_objective": "To examine the individual wartime experience of Lance Corporal A. Ward.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -1040,6 +1067,9 @@ export const unitData = {
     {
       "id": "hero_5",
       "title": "Private C. Warland",
+      "learning_objective": "To examine the individual wartime experience of Private C. Warland.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -1119,6 +1149,9 @@ export const unitData = {
     {
       "id": "final_challenge",
       "title": "The Final Teacher Challenge",
+      "learning_objective": "To complete the final historical challenge requiring synthesis of tour knowledge.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Reflection & Synthesis",
       "banner": "/images/menin_gate.jpg",
       "teacher_notes": {
@@ -1155,6 +1188,9 @@ export const unitData = {
     {
       "id": "hero_lowry_william",
       "title": "William Augustine 'Harper' Lowry",
+      "learning_objective": "To examine the tragic local history and sacrifice of William Augustine 'Harper' Lowry.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -1195,6 +1231,9 @@ export const unitData = {
     {
       "id": "hero_lowry_auriol",
       "title": "Auriol 'Eric' Lowry",
+      "learning_objective": "To examine the tragic local history and sacrifice of Auriol 'Eric' Lowry.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -1235,6 +1274,9 @@ export const unitData = {
     {
       "id": "hero_lowry_cyril",
       "title": "Cyril John 'Patrick' Lowry",
+      "learning_objective": "To examine the tragic local history and sacrifice of Cyril John 'Patrick' Lowry.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {

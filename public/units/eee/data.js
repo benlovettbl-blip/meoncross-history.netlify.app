@@ -2,16 +2,34 @@ export default {
   debatePrompts: [
     {
       title: "Elizabeth's Religious Settlement",
+      "substantive_concepts": "Chart complex themes of public health.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
       prompt:
         "<strong>Debate:</strong> Was Elizabeth's 'Middle Way' a brilliant compromise that prevented civil war, or a cowardly failure to commit to true Protestantism? Argue your case.",
     },
     {
       title: 'The Problem of Mary, Queen of Scots',
+      "substantive_concepts": "Examine underlying themes of empire building.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
       prompt:
         '<strong>Roleplay:</strong> You are Sir Francis Walsingham in 1586. Convince Queen Elizabeth that executing her cousin Mary is the only way to save England from Catholic plots like the Babington Plot.',
     },
     {
       title: 'The Spanish Armada',
+      "substantive_concepts": "Investigate historic themes of cultural evolution.",
+      "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "Explores Portsmouth's maritime trade.",
+      
       prompt:
         "<strong>Debate:</strong> Did the Spanish Armada fail because of superior English tactics and naval technology, or was it simply defeated by disastrous Spanish planning and the weather (the 'Protestant Wind')? Pick a side.",
     },
@@ -98,11 +116,27 @@ export default {
     {
       id: 'lesson_1_1',
       title: 'KT1.1: The situation on Elizabeth’s accession, 1558',
+      learning_objective: "To analyze the political, religious, and economic challenges facing Elizabeth I upon inheriting the throne.",
+      "substantive_concepts": "Review core themes of social rebellion.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the precarious domestic and international challenges that Elizabeth I faced upon becoming queen.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"Describe one feature (2 marks) x2"}],
       enquiry:
         'From crippling debt to looming foreign invasions: How did a young, inexperienced, and contested queen secure a divided and vulnerable England in 1558?',
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Investigate historic themes of social rebellion.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -153,6 +187,12 @@ export default {
         type: 'youtube',
         url: 'https://www.youtube.com/watch?v=OOeal_k4bmE',
         title: 'Elizabeth I: From Prison to Palace (Episode 1)',
+      "substantive_concepts": "Investigate historic themes of diplomatic relations.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         duration: '49 mins 36 secs',
         viewing_task:
           'Watch this overview and note down the key dangers Elizabeth faced before and immediately after becoming queen.',
@@ -528,6 +568,12 @@ export default {
       sources: [
         {
           title: 'Source A: The Religious Divide',
+      "substantive_concepts": "Review core themes of industrial change.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Links previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/religious_divisions.jpg',
           caption:
             "A portrait of King Henry VIII, whose break with Rome initiated England's religious divisions.",
@@ -544,11 +590,27 @@ export default {
     {
       id: 'lesson_1_2',
       title: "KT1.2: The 'settlement' of religion, 1559",
+      learning_objective: "To evaluate the features of the Religious Settlement and how it attempted to find a middle way.",
+      "substantive_concepts": "Analyze shifting themes of technological progress.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Links previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the compromises and political strategy behind the creation of the Elizabethan Religious Settlement.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "How did Elizabeth I attempt to unite a religiously fractured England in 1559, and why did her 'Middle Way' immediately provoke outrage from both Puritans and Catholics?",
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Analyze shifting themes of technological progress.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -955,6 +1017,12 @@ export default {
       sources: [
         {
           title: 'Source A: The Act of Supremacy',
+      "substantive_concepts": "Assess central themes of political reform.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/act_of_supremacy.jpg',
           caption: 'A portrait of Queen Elizabeth I, Supreme Governor of the Church of England.',
           description: 'A portrait of Elizabeth as Supreme Governor of the Church of England.',
@@ -971,11 +1039,27 @@ export default {
     {
       id: 'lesson_1_3',
       title: 'KT1.3: Challenge to the religious settlement',
+      learning_objective: "To assess the nature and threat of Catholic and Puritan challenges to Elizabeth's religious policies.",
+      "substantive_concepts": "Investigate historic themes of ideological shifts.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To examine the various sources of opposition and challenge to Elizabeth's religious reforms from both Catholics and Puritans.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "Why did Elizabeth's 'Middle Way' face such fierce opposition, and why did the Catholic threat ultimately eclipse the Puritan grumblings?",
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Investigate historic themes of societal upheaval.",
+      "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -1377,6 +1461,12 @@ export default {
       sources: [
         {
           title: 'Source A: The Northern Earls',
+      "substantive_concepts": "Assess central themes of diplomatic relations.",
+      "historical_scholarship": "Challenges whig debates on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Connects core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/northern_earls.jpg',
           caption:
             'Thomas Percy, 7th Earl of Northumberland, one of the leaders of the 1569 rebellion.',
@@ -1394,11 +1484,27 @@ export default {
     {
       id: 'lesson_1_4',
       title: 'KT1.4: The problem of Mary, Queen of Scots',
+      learning_objective: "To examine the political dilemma posed by Mary, Queen of Scots' arrival in England.",
+      "substantive_concepts": "Review core themes of economic shifts.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To assess the political and religious threat posed by the arrival and imprisonment of Mary, Queen of Scots.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'Why did Mary, Queen of Scots pose such a unique and dangerous threat to Elizabeth, and how did her sudden arrival in England in 1568 create an unsolvable political dilemma?',
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Evaluate key themes of industrial change.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Synthesizes previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -1800,6 +1906,12 @@ export default {
       sources: [
         {
           title: 'Source A: Mary Queen of Scots',
+      "substantive_concepts": "Explore primary themes of technological progress.",
+      "historical_scholarship": "Explores structuralist debates on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Connects previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/mary_qos.jpg',
           caption: 'A portrait of Mary, Queen of Scots, a Catholic claimant to the English throne.',
           description:
@@ -1817,11 +1929,27 @@ export default {
     {
       id: 'lesson_2_1',
       title: 'KT2.1: Plots and revolts at home',
+      learning_objective: "To investigate the key plots against Elizabeth and the methods used by her spymasters to defeat them.",
+      "substantive_concepts": "Review core themes of empire building.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the causes and consequences of major domestic revolts and Catholic plots against Elizabeth's reign.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'Why did English Catholics continually plot to assassinate Elizabeth between 1569 and 1586, and how did Walsingham’s ruthless spy network ultimately lead to the execution of Mary, Queen of Scots?',
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Review core themes of political reform.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Connects earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -1873,6 +2001,12 @@ export default {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=vZRq1fuD4pE',
           title: 'Rebellion of the Northern Earls, 1569',
+      "substantive_concepts": "Review core themes of technological progress.",
+      "historical_scholarship": "Evaluates traditional views on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Recalls previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           duration: '13 mins 12 secs',
           viewing_task:
             'Note down the main causes of the Rebellion of the Northern Earls and why it ultimately failed.',
@@ -1883,6 +2017,12 @@ export default {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=PbXbn1ppTm0',
           title: 'The Babington Plot',
+      "substantive_concepts": "Review core themes of cultural evolution.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Connects core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           duration: '4 mins 37 secs',
           viewing_task:
             'How did Francis Walsingham use the Babington Plot to finally trap Mary, Queen of Scots?',
@@ -1893,6 +2033,12 @@ export default {
           type: 'era',
           url: 'https://era.org.uk/streaming-service-resource/elizabeth-is-secret-agents/',
           title: "Elizabeth I's Secret Agents",
+      "substantive_concepts": "Review core themes of technological progress.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Retrieves previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           duration: '45 mins 0 secs',
           viewing_task:
             "Describe the methods used by Francis Walsingham's spy network to protect the Queen.",
@@ -2257,6 +2403,12 @@ export default {
       sources: [
         {
           title: 'Source A: The Northern Earls',
+      "substantive_concepts": "Investigate historic themes of diplomatic relations.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/northern_earls.jpg',
           caption:
             'Thomas Percy, 7th Earl of Northumberland, one of the leaders of the 1569 rebellion.',
@@ -2274,11 +2426,27 @@ export default {
     {
       id: 'lesson_2_2',
       title: 'KT2.2: Relations with Spain',
+      learning_objective: "To explain the declining relations with Spain and the causes of the Anglo-Spanish war.",
+      "substantive_concepts": "Assess central themes of military conflict.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To examine the deteriorating political and commercial relationship between England and Spain leading up to open conflict.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "Why did the 'Cold War' between England and Spain ultimately erupt into the launch of the Spanish Armada in 1588, and how did Elizabeth survive the greatest military threat of her reign?",
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Explore primary themes of industrial change.",
+      "historical_scholarship": "Explores structuralist frameworks on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -2670,6 +2838,12 @@ export default {
       sources: [
         {
           title: 'Source A: The Spanish Armada',
+      "substantive_concepts": "Analyze shifting themes of monarchical power.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Retrieves earlier themes of political changes.",
+      "local_coastal_links": "Explores Portsmouth's maritime trade.",
+      
           image: '/images/spanish_armada_battle.jpg',
           caption:
             'A map showing the route and battles of the Spanish Armada around the British Isles.',
@@ -2687,11 +2861,27 @@ export default {
     {
       id: 'lesson_2_3',
       title: 'KT2.3: Outbreak of war with Spain, 1585–88',
+      learning_objective: "To analyze the factors leading to the defeat of the Spanish Armada and its historical consequences.",
+      "substantive_concepts": "Examine underlying themes of ideological shifts.",
+      "historical_scholarship": "Reviews Marxist frameworks on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Builds prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the causes of the Anglo-Spanish war and the significance of the English victory over the Spanish Armada.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "Why did the 'Cold War' between England and Spain finally escalate into open military conflict in 1585, and how did Robert Dudley's campaign in the Netherlands and Francis Drake's raid on Cadiz shape the coming war?",
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Analyze shifting themes of political reform.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Retrieves earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -3039,6 +3229,12 @@ export default {
       sources: [
         {
           title: 'Source A: Francis Drake',
+      "substantive_concepts": "Explore primary themes of ideological shifts.",
+      "historical_scholarship": "Explores structuralist debates on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/drake.jpg',
           caption: 'Sir Francis Drake, an English privateer who raided Spanish ships.',
           description: 'Sir Francis Drake, an English privateer who raided Spanish ships.',
@@ -3054,11 +3250,27 @@ export default {
     {
       id: 'lesson_3_1',
       title: 'KT3.1: Education and leisure',
+      learning_objective: "To evaluate the changing nature of education, pastimes, and the theater in Elizabethan society.",
+      "substantive_concepts": "Investigate historic themes of global trade.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Connects core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the development of education and the popular forms of leisure and entertainment in Elizabethan society.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'How did education and leisure activities reflect the strict social hierarchy of Elizabethan England, and why did the theatre emerge as such a revolutionary—and controversial—cultural phenomenon?',
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -3421,6 +3633,12 @@ export default {
       sources: [
         {
           title: 'Source A: William Shakespeare',
+      "substantive_concepts": "Examine underlying themes of political reform.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/swan_theatre.jpg',
           caption:
             'A portrait of William Shakespeare, the most famous playwright of the Elizabethan era.',
@@ -3439,11 +3657,27 @@ export default {
     {
       id: 'lesson_3_2',
       title: 'KT3.2: The Problem of Poverty',
+      learning_objective: "To assess the causes of rising poverty in Elizabethan England and the government's response to it.",
+      "substantive_concepts": "Examine underlying themes of monarchical power.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To examine the underlying causes of growing poverty and evaluate the effectiveness of the government's response.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         'Why did poverty and vagabondage explode into a national crisis during Elizabeth’s reign, and what forced the government to completely change its strategy from brutal punishment to national welfare?',
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Chart complex themes of industrial change.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -3829,6 +4063,12 @@ export default {
       sources: [
         {
           title: 'Source A: The Poor Law',
+      "substantive_concepts": "Review core themes of global trade.",
+      "historical_scholarship": "Evaluates traditional theories on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Consolidates core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/poor_law.jpg',
           caption:
             'The Royal Coat of Arms of Queen Elizabeth I, representing the government that passed the 1601 Poor Law.',
@@ -3847,11 +4087,27 @@ export default {
     {
       id: 'lesson_3_3',
       title: 'KT3.3: Exploration and voyages of discovery',
+      learning_objective: "To investigate the motivations for Elizabethan exploration and the significance of Francis Drake's circumnavigation.",
+      "substantive_concepts": "Review core themes of religious conflict.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Links previous learning of global empires.",
+      "local_coastal_links": "Explores Portsmouth's maritime trade.",
+      
+      "learning_objective": "To assess the motivations and historic impact of Elizabethan exploration and the circumnavigation of the globe.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "Why did the Elizabethan era become an 'Age of Discovery', and why did Walter Raleigh’s ambitious dream of a New World colony end in disaster?",
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Assess central themes of political reform.",
+      "historical_scholarship": "Challenges whig perspectives on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Synthesizes earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -4191,6 +4447,12 @@ export default {
       sources: [
         {
           title: 'Source A: The Golden Hind',
+      "substantive_concepts": "Explore primary themes of societal upheaval.",
+      "historical_scholarship": "Explores structuralist perspectives on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           image: '/images/golden_hind.jpg',
           caption:
             'A replica of the Golden Hind, the ship Francis Drake used to circumnavigate the globe.',
@@ -4209,11 +4471,27 @@ export default {
     {
       id: 'lesson_3_4',
       title: 'KT3.4: Raleigh and Virginia',
+      learning_objective: "To examine the reasons for the failure of Walter Raleigh's attempts to colonize Virginia.",
+      "substantive_concepts": "Examine underlying themes of societal upheaval.",
+      "historical_scholarship": "Reviews Marxist arguments on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the significance of Walter Raleigh and analyze the reasons for the failure of the early Virginia colonies.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       enquiry:
         "Why did Walter Raleigh’s ambitious dream of establishing an English empire in Virginia end in the mysterious disaster of the 'Lost Colony'?",
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
+      "substantive_concepts": "Examine underlying themes of social rebellion.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         instructions: 'Answer these questions in full sentences.',
         items: [
           {
@@ -4555,6 +4833,12 @@ export default {
       sources: [
         {
           title: 'Source A: Roanoke Colony',
+      "substantive_concepts": "Explore primary themes of public health.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           src: '/images/roanoke_colony.jpg',
           caption: 'A map of the failed Roanoke colony in Virginia.',
         },

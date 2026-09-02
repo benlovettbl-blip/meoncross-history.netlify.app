@@ -1,6 +1,11 @@
 export const unitData = {
   "specification_file": "",
   "title": "KS3: History of Australia",
+  "substantive_concepts": "Investigate historic themes of ideological shifts.",
+  "historical_scholarship": "Contrasts intentionalist theories on the event.",
+  "adaptive_teaching": "Issue guided outlines to aid focus.",
+  "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+  "local_coastal_links": "N/A",
   "homepage_background": "",
   "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",
   "cover_image": "/images/prison_hulks.jpg",
@@ -16,6 +21,16 @@ export const unitData = {
     {
       "id": "lesson_1",
       "title": "Claiming Australia",
+      "substantive_concepts": "Examine underlying themes of industrial change.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Connects previous learning of public health.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To analyze the motives and methods behind the initial British claiming of Australia.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "enquiry": "What is the significance of Captain Cook's voyage on the Endeavour in 1768 for the story of colonisation?",
       "teacher_notes": {
         "primer": "This lesson deconstructs the traditional progress narrative of Captain James Cook's landing in Australia in 1770. By analyzing the public scientific motives alongside secret imperial instructions, students will explore the crucial role of Polynesian star navigator Tupaia and evaluate the first encounter at Botany Bay from the defensive legal and spiritual perspective of the Gweagal Aboriginal people.",
@@ -159,6 +174,11 @@ export const unitData = {
             "id": "source_c",
             "type": "written",
             "title": "Source A: Secret Instructions to Captain Cook",
+            "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+            "historical_scholarship": "Synthesizes post-colonial views on the event.",
+            "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+            "sequencing_retrieval": "Recalls past context of chronological mapping.",
+            "local_coastal_links": "N/A",
             "caption": "Source A: Secret Instructions to Captain James Cook from the British Admiralty, 1768.",
             "content": "\"You are also with the Consent of the Natives to take possession of Convenient Situations in the Country in the Name of the King of Great Britain; or, if you find the Country uninhabited take Possession for His Majesty...\"",
             "source_context": "When Captain Cook set sail on the Endeavour, his primary public mission was scientific. However, he carried secret orders from the British government. These orders instructed him to find the hypothetical 'Great Southern Continent' and claim it for Britain 'with the Consent of the Natives'. This shows that the British government recognized the land might already be inhabited.",
@@ -187,6 +207,11 @@ export const unitData = {
             "id": "source_b",
             "type": "visual",
             "title": "Source B: A Portrait of Captain James Cook",
+            "substantive_concepts": "Chart complex themes of religious conflict.",
+            "historical_scholarship": "Compares revisionist theories on the event.",
+            "adaptive_teaching": "Distribute visual timelines for SEND.",
+            "sequencing_retrieval": "Consolidates previous learning of public health.",
+            "local_coastal_links": "Reviews regional naval supremacy.",
             "caption": "Source B: Portrait of Captain James Cook, painted by Nathaniel Dance-Holland, 1776.",
             "src": "/images/james_cook.jpg",
             "source_context": "This official portrait of Captain Cook presents him as a calm, heroic, and rational explorer. Such portraits were used to celebrate British naval supremacy and imperial expansion. However, they completely ignore the perspective of the Indigenous peoples whose lands were claimed without their consent.\n\n**Hinge Question:** How does this painting reflect British attitudes toward exploration and empire-building?",
@@ -210,6 +235,11 @@ export const unitData = {
             "id": "source_a",
             "type": "visual",
             "title": "Source C: Initial Encounter at Botany Bay",
+            "substantive_concepts": "Explore primary themes of religious conflict.",
+            "historical_scholarship": "Explores structuralist perspectives on the event.",
+            "adaptive_teaching": "Provide structured tables for SEND.",
+            "sequencing_retrieval": "Synthesizes previous learning of public health.",
+            "local_coastal_links": "N/A",
             "caption": "Source C: A contemporary sketch of two Gweagal men by Sydney Parkinson, 1770.",
             "src": "/images/gweagal_encounter.jpg",
             "source_context": "Sydney Parkinson was the lead botanical illustrator on the Endeavour. His sketch shows two Gweagal men standing peacefully by their canoes. This is highly significant because it completely contradicts Captain Cook's written journal, which claimed the men were instantly aggressive and violently attacked the British without provocation.\n\n**Hinge Question:** Why do you think a private sketch by a crew member might show a peaceful encounter, while the Captain's official logbook reported a violent, unprovoked attack?",
@@ -226,6 +256,11 @@ export const unitData = {
             "id": "source_e",
             "type": "visual",
             "title": "Source D: Botanical Illustration from the Endeavour",
+            "substantive_concepts": "Chart complex themes of religious conflict.",
+            "historical_scholarship": "Compares revisionist models on the event.",
+            "adaptive_teaching": "Distribute visual timelines for SEND.",
+            "sequencing_retrieval": "Retrieves previous learning of public health.",
+            "local_coastal_links": "N/A",
             "caption": "Source D: A botanical illustration of 'Acacia cunninghamii', collected at Botany Bay, 1770.",
             "src": "/images/botany_parkinson.jpg",
             "source_context": "Joseph Banks and his team collected thousands of plant specimens that were completely unknown to European science. This illustration highlights the scientific aspect of the expedition, which was used to justify the colonization of Australia as a 'discovery' rather than an invasion.\n\n**Hinge Question:** How did the British use 'science' and 'discovery' to justify claiming land that already belonged to Aboriginal people?",
@@ -242,6 +277,11 @@ export const unitData = {
             "id": "source_d",
             "type": "written",
             "title": "Source E: Aboriginal Oral History on Captain Cook",
+            "substantive_concepts": "Chart complex themes of empire building.",
+            "historical_scholarship": "Compares revisionist models on the event.",
+            "adaptive_teaching": "Distribute visual timelines for EAL.",
+            "sequencing_retrieval": "Retrieves prior knowledge of societal structures.",
+            "local_coastal_links": "N/A",
             "caption": "Source E: An Aboriginal oral history recounting the arrival of the Endeavour, passed down by the Dharawal people.",
             "content": "\"His maps were accurate in a geographical sense... but they did not show us our names for places. He didn't ask us.\"",
             "source_context": "Aboriginal oral histories provide a crucial counter-narrative to British written records. This account describes the Endeavour as a giant 'white bird' and records the immediate hostility and confusion caused by the British arrival, emphasizing the unprovoked violence of the encounter.",
@@ -295,6 +335,11 @@ export const unitData = {
         "type": "youtube",
         "url": "https://www.youtube.com/watch?v=Up94ItsNm2U",
         "title": "Tupaia's Endeavour | Official Trailer | DocPlay",
+        "substantive_concepts": "Review core themes of cultural evolution.",
+        "historical_scholarship": "Evaluates traditional arguments on the event.",
+        "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+        "sequencing_retrieval": "Links core concepts of industrial growth.",
+        "local_coastal_links": "N/A",
         "duration": "2 mins 19 secs",
         "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
         "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
@@ -304,6 +349,11 @@ export const unitData = {
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=i2nziqeKY-c",
           "title": "Sir David Attenborough on Joseph Banks",
+          "substantive_concepts": "Evaluate key themes of cultural evolution.",
+          "historical_scholarship": "Examines orthodox frameworks on the event.",
+          "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+          "sequencing_retrieval": "Builds core concepts of religious divides.",
+          "local_coastal_links": "N/A",
           "duration": "2 mins 8 secs",
           "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
           "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
@@ -315,11 +365,29 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To analyze the motives and methods behind the initial British claiming of Australia.",
+        "scaffolded": [
+          "Explain the dual purpose of James Cook's voyage, contrasting the public scientific mission with the secret government orders to claim territory.",
+          "Analyse the indispensable navigational and diplomatic contributions of the Polynesian high priest and master star navigator, Tupaia.",
+          "Evaluate the first encounter at Botany Bay in 1770 from both the British perspective and the defensive spiritual perspective of the Gweagal people."
+        ]
       }
     },
     {
       "id": "lesson_2",
       "title": "Creating a Convict Colony",
+      "substantive_concepts": "Investigate historic themes of industrial change.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Retrieves previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To evaluate the challenges and societal structure of establishing a convict colony in Australia.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "enquiry": "Whose story do we tell about the first colony in Australia in 1788?",
       "teacher_notes": {
         "primer": "This lesson investigates the establishment of Britain's first penal colony in Sydney Harbour in 1788. Students will analyze how the American War of Independence triggered a severe prison crisis, explore the harsh social and environmental realities faced by the First Fleet, and study the forced manual labor and rationing systems implemented under Governor Arthur Phillip.",
@@ -463,6 +531,11 @@ export const unitData = {
             "id": "source_a",
             "type": "visual",
             "title": "Prison Hulks in Portsmouth Harbour",
+            "substantive_concepts": "Assess central themes of social rebellion.",
+            "historical_scholarship": "Challenges whig models on the event.",
+            "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+            "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+            "local_coastal_links": "Analyzes Southampton's dockyard role.",
             "caption": "Source A: A contemporary sketch of Prison Hulks moored in Portsmouth Harbour, circa 1780.",
             "src": "/images/prison_hulks.jpg",
             "source_context": "After the American Revolution, Britain could no longer transport its convicts to America. The prison system became completely overwhelmed, leading to the use of 'hulks'—decommissioned, rotting warships anchored in rivers. These hulks were disease-ridden and horrifyingly overcrowded, which ultimately forced the government to look for a new penal colony.\n\n**Hinge Question:** Why would the British government choose to use rotting ships as prisons instead of simply building more prisons on land?",
@@ -484,20 +557,40 @@ export const unitData = {
         {
           "type": "historical_spotlight",
           "title": "First Fleet Profiles: Who Were the Convicts?",
+          "substantive_concepts": "Review core themes of empire building.",
+          "historical_scholarship": "Evaluates traditional arguments on the event.",
+          "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+          "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
+          "local_coastal_links": "Details Hampshire's coastal defenses.",
           "profiles": [
             {
               "name": "John Hudson",
               "subtitle": "The Youngest Convict (Age 13)",
+              "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+              "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+              "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+              "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+              "local_coastal_links": "N/A",
               "details": "John Hudson was a chimney sweep described at his trial as 'a boy 11 years old'. He was transported for seven years on the Friendship for stealing. He was so small he was forced to share a tiny sleeping space on the ship. Once in Sydney, he received 50 lashes for being out of his hut after 9pm."
             },
             {
               "name": "Elizabeth Beckford",
               "subtitle": "The Oldest Convict (Age 70)",
+              "substantive_concepts": "Examine underlying themes of technological progress.",
+              "historical_scholarship": "Reviews Marxist perspectives on the event.",
+              "adaptive_teaching": "Review simplified texts for EAL.",
+              "sequencing_retrieval": "Synthesizes previous learning of public health.",
+              "local_coastal_links": "N/A",
               "details": "Elizabeth Beckford was an elderly servant from London. She was sentenced to seven years transportation on the Lady Penrhyn for the petty crime of stealing cheese. She was 70 years old at the time of her trial and died shortly after."
             },
             {
               "name": "Elizabeth Fowles",
               "subtitle": "Unusual Crime",
+              "substantive_concepts": "Review core themes of social rebellion.",
+              "historical_scholarship": "Evaluates traditional arguments on the event.",
+              "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+              "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
+              "local_coastal_links": "N/A",
               "details": "Elizabeth was transported on the Lady Penrhyn. Her crime? Stealing clothing and killing a hen. For this, she spent seven years in exile. In the colony, she repeatedly rebelled, receiving 75 lashes for killing another hen, and 50 lashes for stealing clothing."
             }
           ]
@@ -603,6 +696,11 @@ export const unitData = {
         "type": "youtube",
         "url": "https://www.youtube.com/watch?v=M7O-6PDQp0A",
         "title": "Child Convicts of Australia – Chapter 1: Transportation and the First Fleet",
+        "substantive_concepts": "Chart complex themes of economic shifts.",
+        "historical_scholarship": "Compares revisionist arguments on the event.",
+        "adaptive_teaching": "Distribute visual timelines for EAL.",
+        "sequencing_retrieval": "Links past context of economic shifts.",
+        "local_coastal_links": "Connects to local D-Day ports.",
         "duration": "3 mins 41 secs",
         "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
         "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
@@ -612,6 +710,11 @@ export const unitData = {
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=5OWGbZJCn1k",
           "title": "Child Convicts of Australia – Chapter 2: A Day in the Life",
+          "substantive_concepts": "Analyze shifting themes of global trade.",
+          "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+          "sequencing_retrieval": "Links core concepts of industrial growth.",
+          "local_coastal_links": "N/A",
           "duration": "3 mins 8 secs",
           "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
           "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
@@ -620,6 +723,11 @@ export const unitData = {
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=nbaF5FBI2nE",
           "title": "Short History of Convict Australia (Full Episode)",
+          "substantive_concepts": "Assess central themes of global trade.",
+          "historical_scholarship": "Challenges whig views on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+          "local_coastal_links": "N/A",
           "duration": "50 mins 59 secs",
           "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
           "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
@@ -628,6 +736,11 @@ export const unitData = {
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=dwfYMI-buKY",
           "title": "Life on Board the First Colonising Ships to South Australia",
+          "substantive_concepts": "Chart complex themes of religious conflict.",
+          "historical_scholarship": "Compares revisionist frameworks on the event.",
+          "adaptive_teaching": "Distribute visual timelines for SEND.",
+          "sequencing_retrieval": "Builds previous learning of public health.",
+          "local_coastal_links": "Reviews regional naval supremacy.",
           "duration": "4 mins 54 secs",
           "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
           "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
@@ -636,6 +749,11 @@ export const unitData = {
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=gVQg_Sb1e1Q",
           "title": "Governor Arthur Phillip and the Eora [HD]",
+          "substantive_concepts": "Assess central themes of cultural evolution.",
+          "historical_scholarship": "Challenges whig views on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+          "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+          "local_coastal_links": "N/A",
           "duration": "9 mins 48 secs",
           "viewing_task": "As you watch the programme, note down three key facts about the topic discussed.",
           "model_answer": "Student answers will vary but should demonstrate active listening and extract relevant historical details."
@@ -648,11 +766,29 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To evaluate the challenges and societal structure of establishing a convict colony in Australia.",
+        "scaffolded": [
+          "Explain how the loss of the American colonies in 1776 directly caused a prison crisis in Britain that led to the system of transportation.",
+          "Describe the physical and environmental challenges faced by Captain Arthur Phillip and the convicts during their first year at Sydney Cove.",
+          "Analyse the work and social conditions of the convicts, contrasting general labor with the punishments of the chain road gangs."
+        ]
       }
     },
     {
       "id": "lesson_3",
       "title": "Encounters with the Indigenous Peoples",
+      "substantive_concepts": "Investigate historic themes of social rebellion.",
+      "historical_scholarship": "Contrasts intentionalist perspectives on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To examine the nature and consequences of early encounters between British settlers and Indigenous Australians.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "enquiry": "Was the colonization of Australia a story of 'amity and kindness' or frontier violence?",
       "teacher_notes": {
         "primer": "This lesson exposes the severe conflict and devastating consequences of British settlement on the Aboriginal Australian populations. Students will interrogate the vast gulf between King George III's official orders for amity, and the brutal reality of disease, dispossession, and frontier wars.",
@@ -756,6 +892,11 @@ export const unitData = {
             "id": "source_b",
             "type": "written",
             "title": "Bennelong's Letter to England",
+            "substantive_concepts": "Examine underlying themes of political reform.",
+            "historical_scholarship": "Reviews Marxist models on the event.",
+            "adaptive_teaching": "Review simplified texts for accessibility.",
+            "sequencing_retrieval": "Retrieves earlier themes of monarchical power.",
+            "local_coastal_links": "N/A",
             "caption": "Source A: An extract from a letter dictated by Bennelong to Governor Arthur Phillip, 1796.",
             "content": "\"I am very well. I hope you are very well. I live at the Governor’s. I have every day dinner there. I have not my wife: another black man took her... I would be very glad if you would send me two pair of stockings, and some handkerchiefs for my pocket, and some shoes...\"",
             "source_context": "Bennelong was a senior man of the Eora nation who was kidnapped by Governor Phillip to serve as a translator. He eventually traveled to England and met King George III. This letter demonstrates his complex position caught between two worlds, struggling to maintain his traditional authority while navigating the catastrophic invasion of his homeland.",
@@ -779,6 +920,11 @@ export const unitData = {
             "id": "source_a",
             "type": "visual",
             "title": "Early Settlement at Sydney Cove",
+            "substantive_concepts": "Assess central themes of monarchical power.",
+            "historical_scholarship": "Challenges whig theories on the event.",
+            "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+            "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+            "local_coastal_links": "N/A",
             "caption": "Source B: 'View of the Settlement on Sydney Cove, Port Jackson', a sketch by convict artist Thomas Watling, 1794.",
             "src": "/images/sydney_cove_1792.jpg",
             "source_context": "Thomas Watling was a skilled artist transported for forgery. His sketch shows the very early stages of the British settlement, highlighting how the landscape was rapidly being cleared of trees to build military barracks and governor's residences, fundamentally altering the local environment.\n\n**Hinge Question:** What evidence in this sketch suggests that the British intended to create a permanent, fortified settlement rather than a temporary prison camp?",
@@ -830,11 +976,29 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To examine the nature and consequences of early encounters between British settlers and Indigenous Australians.",
+        "scaffolded": [
+          "Understand the impact of European diseases on the Aboriginal population.",
+          "Analyze the resistance of Aboriginal leaders like Pemulwuy.",
+          "Examine the Myall Creek Massacre as an example of frontier violence."
+        ]
       }
     },
     {
       "id": "lesson_4",
       "title": "From Penal Colony to Settlement",
+      "substantive_concepts": "Examine underlying themes of industrial change.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Connects previous learning of public health.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To assess how Australia transformed from a penal colony into a functional free settlement.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "enquiry": "How did the discovery of gold transform Australia from a convict prison into a wealthy, diverse nation?",
       "teacher_notes": {
         "primer": "This lesson transitions the narrative from the early struggles of the convict colony to the explosive economic growth of the 1850s gold rushes. Students will explore how free settlers, the wool industry, and the arrival of global immigrants (especially Chinese miners) fundamentally changed the demographic and economic landscape of Australia.",
@@ -951,6 +1115,11 @@ export const unitData = {
             "id": "source_b",
             "type": "written",
             "title": "William Barak's Testimony",
+            "substantive_concepts": "Investigate historic themes of economic shifts.",
+            "historical_scholarship": "Contrasts intentionalist views on the event.",
+            "adaptive_teaching": "Issue guided outlines for lower-ability.",
+            "sequencing_retrieval": "Recalls past context of chronological mapping.",
+            "local_coastal_links": "N/A",
             "caption": "Source A: Extract from Wurundjeri leader William Barak's testimony to the 1881 Parliamentary Inquiry.",
             "content": "\"And we don't want any Board nor inspecting Captain Page over us... and then we will show to the country that we can work it [the farm] and make it pay, and I know it will.\"",
             "source_context": "By the late 1800s, Aboriginal people were often forced onto government-run reserves controlled by the 'Board for the Protection of Aborigines'. This Board strictly dictated where Aboriginal people could live and work. William Barak was the leader of Coranderrk, a highly successful Aboriginal farming community. When the Board tried to shut the farm down, Barak led a political campaign to prove Aboriginal people could run a profitable, independent farm without white interference.",
@@ -986,6 +1155,11 @@ export const unitData = {
             "id": "source_a",
             "type": "visual",
             "title": "The Australian Gold Rush",
+            "substantive_concepts": "Analyze shifting themes of economic shifts.",
+            "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+            "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+            "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+            "local_coastal_links": "N/A",
             "caption": "Source B: 'Ballarat 1853-54', an oil painting by Eugene von Guerard, 1854.",
             "src": "/images/ballarat_gold.jpg",
             "source_context": "The discovery of gold in 1851 sparked a massive influx of free immigrants to Australia. This painting shows the chaotic, sprawling nature of the gold diggings at Ballarat, where people from all over the world came to seek their fortune. Beyond the economic boom, the painting also vividly captures the devastating environmental impact of alluvial mining, showing a landscape completely stripped of trees and churned into mud.\n\n**Hinge Question:** How does this painting demonstrate that the Australian Gold Rush completely transformed both the environment and the population of the colony?",
@@ -1026,11 +1200,29 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To assess how Australia transformed from a penal colony into a functional free settlement.",
+        "scaffolded": [
+          "Explain the role of the wool industry in making the colony economically viable.",
+          "Analyze the impact of the 1850s gold rushes on Australian society.",
+          "Examine the experiences and treatment of Chinese gold miners."
+        ]
       }
     },
     {
       "id": "lesson_5",
       "title": "Lesson 5: Assessment - What's the story of Australia?",
+      "substantive_concepts": "Review core themes of monarchical power.",
+      "historical_scholarship": "Evaluates traditional views on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To synthesize historical knowledge and construct a comprehensive narrative of early Australian history.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "End of Unit Summative Assessment"
+      },
       "banner": "/images/sydney_cove.jpg",
       "banner_position": "center",
       "enquiry": "How did New South Wales develop, and how should we assess its history?",
@@ -1041,18 +1233,13 @@ export const unitData = {
             "objective": "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
             "primer": "Direct students to Assessment 1 for a narrative account.",
             "question": "Can you sequence the key turning points in the colony's development?"
-          },
-          {
-            "objective": "Evaluate the usefulness of primary sources for historical enquiries.",
-            "primer": "Direct students to Assessment 2 for GCSE-style source utility practice.",
-            "question": "Why does the provenance of a source affect its usefulness to a historian?"
           }
         ]
       },
       "narrative_blocks": [
         {
           "type": "narrative",
-          "theme_heading": "Assessment 1: Write a Narrative Account",
+          "theme_heading": "Assessment: Write a Narrative Account",
           "text": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855. \n\nYou may use the following in your answer:\n* The near-starvation of the First Fleet (1788)\n* The introduction of Merino sheep and the wool industry\n\nYou must also use information of your own.",
           "tasks": [
             {
@@ -1062,20 +1249,14 @@ export const unitData = {
               "instructions": "Use these sentence starters to build your narrative in chronological order:\n\n1. The development of Australia began in 1788 when...\n2. This was a very difficult period because...\n3. However, the situation changed dramatically when John Macarthur...\n4. This led to New South Wales becoming a profitable colony because...\n5. Finally, the development of Australia accelerated in the 1850s due to..."
             }
           ]
-        },
-        {
-          "type": "narrative",
-          "theme_heading": "Assessment 2: 'How Useful' Source Analysis",
-          "text": "<p>Study Sources A and B below. Then answer the question: <strong>How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?</strong></p>\n\n<div style='display:flex; gap: 20px; flex-wrap: wrap;'>\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source A: Extract from a letter written by a British squatter in New South Wales, published in a London newspaper in 1840.</strong><br/><br/>\"The land here is vast and entirely unimproved by the native people, who simply wander across it. We have brought civilization, built permanent farms, and our flocks of sheep are multiplying rapidly. We are turning a wasteland into a highly profitable jewel of the Empire. The natives are melting away, which is the natural outcome when a superior race arrives.\"<br/><br/><em>Provenance Clue: Written by a wealthy squatter trying to encourage more British investment, in an era where racism was common.</em>\n</div>\n\n<div style='flex:1; min-width:300px; background:#f0fdf4; padding:15px; border-left:4px solid #16a34a; margin-bottom:15px;'>\n<strong>Source B: Extract from a report by Lancelot Threlkeld, a Christian missionary living among the Awabakal people, written in 1838.</strong><br/><br/>\"It is a tragedy to witness the complete destruction of these people. The white settlers have stolen their hunting grounds. When the starving natives steal a single sheep to survive, they are hunted down and shot like dogs by the squatters. The British government has done nothing to protect them from this slaughter.\"<br/><br/><em>Provenance Clue: Written by a missionary whose job was to protect Aboriginal people, meaning he sympathised with them and saw the brutality of the squatters firsthand.</em>\n</div>\n</div>\n\n<div style='margin-top:20px; padding: 15px; background-color: #fffbeb; border-left: 4px solid #fbbf24;'>\n<h4>Scaffolding: How to analyze these sources</h4>\n<p>For <strong>both</strong> sources, make sure you address:</p>\n<ul>\n<li><strong>Content:</strong> What does the source actually say? What details are useful?</li>\n<li><strong>Context:</strong> What do you know about this from your lessons that supports or challenges the source?</li>\n<li><strong>Provenance (NOP):</strong> Who wrote it, when, and why? How does that affect its reliability and usefulness?</li>\n</ul>\n</div>",
-          "tasks": [
-            {
-              "type": "source_analysis",
-              "question": "How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?",
-              "marks": "8"
-            }
-          ]
         }
-      ]
+      ],
+      "learning_objectives": {
+        "overarching": "To synthesize historical knowledge and construct a comprehensive narrative of early Australian history.",
+        "scaffolded": [
+          "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement."
+        ]
+      }
     }
   ],
   "quizPack": [
@@ -1718,6 +1899,11 @@ export const unitData = {
       "group": "Explorers & Navigators",
       "image": "/images/james_cook.jpg",
       "title": "Commander of the Endeavour",
+      "substantive_concepts": "Analyze shifting themes of empire building.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
       "bio": "A British naval officer and explorer who commanded the Endeavour. He is famous for mapping the eastern coast of Australia in 1770 and claiming it for Great Britain under the false legal premise of Terra Nullius (nobody's land).",
       "key_achievements": [
         "Commanded the Endeavour expedition (1768-1771)",
@@ -1730,6 +1916,11 @@ export const unitData = {
       "group": "Explorers & Navigators",
       "image": "/images/joseph_banks.jpg",
       "title": "Lead Botanist on the Endeavour",
+      "substantive_concepts": "Explore primary themes of religious conflict.",
+      "historical_scholarship": "Explores structuralist models on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
       "bio": "A wealthy and highly influential British botanist who funded and led the scientific expedition on the Endeavour. He collected thousands of unknown plant species at Botany Bay and was a major advocate for establishing a penal colony in Australia.",
       "key_achievements": [
         "Led the Royal Society's scientific team on the Endeavour",
@@ -1742,6 +1933,11 @@ export const unitData = {
       "group": "Explorers & Navigators",
       "image": "/images/default_person.svg",
       "title": "Polynesian Star Navigator",
+      "substantive_concepts": "Evaluate key themes of political reform.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
       "bio": "A master Polynesian star navigator and high priest from Ra'iatea. He possessed a vast mental map of the Pacific Ocean and guided the Endeavour through treacherous waters. He also served as a crucial translator with the Māori in New Zealand.",
       "key_achievements": [
         "Navigated the Endeavour across 3,000 miles of ocean without instruments",
@@ -1754,6 +1950,11 @@ export const unitData = {
       "group": "Colonial Figures",
       "image": "/images/arthur_phillip.jpg",
       "title": "First Governor of New South Wales",
+      "substantive_concepts": "Examine underlying themes of empire building.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
       "bio": "The commander of the First Fleet and the first Governor of the penal colony. He was responsible for ensuring the survival of the settlement at Sydney Cove by enforcing strict rationing and forced manual labor.",
       "key_achievements": [
         "Commanded the First Fleet to Australia in 1788",
@@ -1766,6 +1967,11 @@ export const unitData = {
       "group": "Colonial Figures",
       "image": "/images/arthur_bowes_smyth.jpg",
       "title": "Naval Surgeon of the First Fleet",
+      "substantive_concepts": "Explore primary themes of diplomatic relations.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "Links to Solent naval history.",
       "bio": "A naval surgeon aboard the Lady Penrhyn, the ship carrying the majority of the female convicts. He kept a highly detailed eyewitness journal that provides invaluable historical insights into the lives and struggles of the first female convicts.",
       "key_achievements": [
         "Served as a surgeon on the First Fleet",
@@ -1778,6 +1984,11 @@ export const unitData = {
       "group": "Colonial Figures",
       "image": "/images/john_macarthur.jpg",
       "title": "Pioneer of the Wool Industry",
+      "substantive_concepts": "Review core themes of global trade.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Builds core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
       "bio": "A wealthy British army officer and landowner who introduced Merino sheep to Australia. He played a pivotal role in transforming New South Wales from an expensive penal colony into a highly profitable exporter of wool.",
       "key_achievements": [
         "Introduced Merino sheep to the Australian colonies",
@@ -1790,6 +2001,11 @@ export const unitData = {
       "group": "First Nations Leaders",
       "image": "/images/bennelong.jpg",
       "title": "Senior Wangal Leader",
+      "substantive_concepts": "Chart complex themes of military conflict.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Consolidates earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
       "bio": "A senior Eora man who was kidnapped by the British to act as an intermediary. He navigated the complex clash of two cultures, becoming the first Aboriginal Australian to travel to England, and wrote the earliest known letter in English by an Indigenous person.",
       "key_achievements": [
         "Acted as a crucial intermediary between the Eora and the British",
@@ -1802,6 +2018,11 @@ export const unitData = {
       "group": "First Nations Leaders",
       "image": "/images/pemulwuy.jpg",
       "title": "Bidjigal Resistance Leader",
+      "substantive_concepts": "Explore primary themes of political reform.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
       "bio": "A fierce Bidjigal warrior who refused to accept British colonization. He waged a highly organized, 12-year guerrilla war against British expansion in the Sydney region, leading attacks on farms and military outposts to defend his homeland.",
       "key_achievements": [
         "Led a 12-year guerrilla war of resistance against the British",
@@ -1814,6 +2035,11 @@ export const unitData = {
       "group": "First Nations Leaders",
       "image": "/images/william_barak.jpg",
       "title": "Wurundjeri Leader and Activist",
+      "substantive_concepts": "Analyze shifting themes of global trade.",
+      "historical_scholarship": "Synthesizes post-colonial debates on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Connects core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
       "bio": "A Wurundjeri leader who led a sophisticated political campaign in the late 19th century to protect the Coranderrk Aboriginal Station. He fought against the 'Board for the Protection of Aborigines', demanding land rights and self-determination for his people.",
       "key_achievements": [
         "Led the political fight to save the Coranderrk farming community",
@@ -1827,6 +2053,11 @@ export const unitData = {
     {
       "lesson_index": 0,
       "book_title": "Captain James Cook’s Journal",
+      "substantive_concepts": "Investigate historic themes of military conflict.",
+      "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Links earlier themes of political changes.",
+      "local_coastal_links": "N/A",
       "author": "Captain James Cook (22 August 1770)",
       "author_context": "In 1770, Captain James Cook sailed the HMS Endeavour along the eastern coast of Australia. The land had been inhabited by Indigenous Australians for over 60,000 years, but under European law, because they did not build towns or farm the land in a European way, the British considered it terra nullius—nobody's land.",
       "is_adapted": false,
@@ -1836,6 +2067,11 @@ export const unitData = {
     {
       "lesson_index": 1,
       "book_title": "A Narrative of the Expedition to Botany Bay",
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Builds past context of chronological mapping.",
+      "local_coastal_links": "N/A",
       "author": "Captain Watkin Tench (1789)",
       "author_context": "In 1788, the 'First Fleet' arrived at Sydney Cove. It was packed with British criminals—many of whom had only stolen food or clothes—sent across the world to build a new prison colony. Captain Watkin Tench was an officer in charge of the marines guarding the convicts. Here, he describes the brutal reality of their first few months ashore.",
       "is_adapted": false,
@@ -1845,6 +2081,11 @@ export const unitData = {
     {
       "lesson_index": 2,
       "book_title": "Sydney's First Four Years",
+      "substantive_concepts": "Evaluate key themes of social rebellion.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
       "author": "Captain Watkin Tench (April 1789)",
       "author_context": "Within a year of the British arriving, a terrifying disaster struck the local Indigenous tribes (the Eora people) around Sydney. Because Australia had been isolated from the rest of the world for millennia, the Indigenous people had absolutely no immunity to European diseases.",
       "is_adapted": false,
@@ -1854,6 +2095,11 @@ export const unitData = {
     {
       "lesson_index": 3,
       "book_title": "The Sydney Morning Herald",
+      "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
       "author": "Newspaper Report (19 May 1851)",
       "author_context": "For 60 years, Australia was seen as a miserable prison. But in 1851, everything changed. Gold was discovered in New South Wales and Victoria. Suddenly, instead of being dragged there in chains, thousands of free people from Britain, America, and China were desperately paying to sail to Australia.",
       "is_adapted": false,
@@ -1863,6 +2109,11 @@ export const unitData = {
     {
       "lesson_index": 4,
       "book_title": "Aborigines Claim Citizen Rights! (The Day of Mourning Manifesto)",
+      "substantive_concepts": "Evaluate key themes of monarchical power.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
       "author": "Jack Patten and William Ferguson (26 January 1938)",
       "author_context": "On January 26, 1938, white Australians celebrated the 150th anniversary of the arrival of the First Fleet with a massive party. On the exact same day, early Indigenous civil rights leaders Jack Patten and William Ferguson organized a 'Day of Mourning' and published this powerful manifesto to challenge the official 'story' of Australia.",
       "is_adapted": false,
@@ -1871,8 +2122,3 @@ export const unitData = {
     }
   ]
 };
-
-// Support both ES module and CommonJS environments (legacy fallback)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = unitData;
-}
