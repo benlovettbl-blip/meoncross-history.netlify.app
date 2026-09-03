@@ -35,7 +35,12 @@ function getFileHash(filePath) {
 }
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 600000, timeout: 300000 });
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    protocolTimeout: 600000,
+    timeout: 300000,
+    args: ['--allow-file-access-from-files', '--disable-web-security'],
+  });
   const page = await browser.newPage();
   page.setDefaultNavigationTimeout(300000);
   
