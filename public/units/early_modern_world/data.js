@@ -2185,7 +2185,7 @@ const early_modern_world = {
           tasks: [
             {
               type: 'source_analysis',
-              question: '1. Inference from Source A (2 Marks)',
+              question: 'What can you infer from Source A about how the plotters were viewed by contemporaries?',
           "model_answer": "Detailed historical explanation provided in class.",
           "starter": "This is because...",
               instructions:
@@ -2193,7 +2193,7 @@ const early_modern_world = {
             },
             {
               type: 'source_analysis',
-              question: '2. Utility & Provenance of Source A (8 Marks)',
+              question: 'How useful is Source A for understanding the threat posed by the Gunpowder Plot?',
           "model_answer": "Detailed historical explanation provided in class.",
           "starter": "This is because...",
               instructions:
@@ -2201,7 +2201,7 @@ const early_modern_world = {
             },
             {
               type: 'source_analysis',
-              question: '3. Analysis of Evidence in Source B (4 Marks)',
+              question: 'How does Source B provide evidence of Jacobean interrogation methods?',
           "model_answer": "Detailed historical explanation provided in class.",
           "starter": "This is because...",
               instructions:
@@ -2209,7 +2209,7 @@ const early_modern_world = {
             },
             {
               type: 'table_planner',
-              question: '4. Follow-Up Investigation (4 Marks)',
+              question: 'Follow-Up Investigation: The Monteagle Letter',
           "model_answer": "Detailed historical explanation provided in class.",
           "starter": "This is because...",
               instructions:
@@ -2236,7 +2236,7 @@ const early_modern_world = {
             },
             {
               type: 'extended_writing',
-              question: 'Essay Question (16 Marks)',
+              question: 'Was the Gunpowder Plot caused entirely by the persecution of English Catholics?',
           "model_answer": "Detailed historical explanation provided in class.",
           "starter": "This is because...",
               instructions:
@@ -4702,8 +4702,8 @@ const early_modern_world = {
       title: "End of Unit Assessment: How 'modern' was Britain by 1750?",
       exam_practice: {
         stimulus: [
-          "**Interpretation 1**: By 1750, Britain was already the world's first truly modern state. The Civil War and Glorious Revolution had replaced absolute royal tyranny with a constitutional monarchy governed through Parliament. The Bank of England (founded 1694) had invented the modern system of national debt and paper credit, allowing Britain to out-finance every rival in Europe. A vast global trade network stretched from India to the Caribbean, and over 1,500 miles of turnpike roads connected the nation. In commerce, finance, and political freedom, Britain was two hundred years ahead of the continent.",
-          "**Interpretation 2**: The idea that 18th-century Britain was a 'modern' nation is a dangerous myth. In reality, it remained a deeply traditional, unequal, and brutal society. Less than 5% of the male population could vote, and corrupt 'rotten boroughs' allowed wealthy aristocrats to buy their way into Parliament. The terrifying 'Bloody Code' imposed the death penalty for over 200 minor crimes. Britain's economic wealth was built entirely upon the barbaric machinery of the Transatlantic Slave Trade, in which millions of Africans were treated as property. For the vast majority of the population — the urban poor, women, and enslaved people — 1750 Britain was not modern at all."
+          "**Interpretation 1 (based on Paul Langford, 'A Polite and Commercial People', 1989)**: By 1750, Britain was already the world's first truly modern state. The Civil War and Glorious Revolution had replaced absolute royal tyranny with a constitutional monarchy governed through Parliament. The Bank of England (founded 1694) had invented the modern system of national debt and paper credit, allowing Britain to out-finance every rival in Europe. A vast global trade network stretched from India to the Caribbean, and over 1,500 miles of turnpike roads connected the nation. In commerce, finance, and political freedom, Britain was two hundred years ahead of the continent.",
+          "**Interpretation 2 (based on J.C.D. Clark, 'English Society 1688–1832', 1985)**: The idea that 18th-century Britain was a 'modern' nation is a dangerous myth. In reality, it remained a deeply traditional, unequal, and brutal society. Less than 5% of the male population could vote, and corrupt 'rotten boroughs' allowed wealthy aristocrats to buy their way into Parliament. The terrifying 'Bloody Code' imposed the death penalty for over 200 minor crimes. Britain's economic wealth was built entirely upon the barbaric machinery of the Transatlantic Slave Trade, in which millions of Africans were treated as property. For the vast majority of the population — the urban poor, women, and enslaved people — 1750 Britain was not modern at all."
         ],
         questions: [
           {
