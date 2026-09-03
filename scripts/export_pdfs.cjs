@@ -81,6 +81,29 @@ function getFileHash(filePath) {
 
         console.log('Generating PDF for ' + unit + '/' + file + '...');
         await page.goto(require('url').pathToFileURL(htmlPath).href, { waitUntil: 'networkidle2', timeout: 300000 });
+
+        // Convert all relative image src paths to base64 data URIs so Chromium's
+        // file:// security policy cannot block them from rendering in the PDF.
+        const htmlDir = path.dirname(htmlPath);
+        const imgSrcs = await page.evaluate(() =>
+          Array.from(document.querySelectorAll('img')).map(img => img.getAttribute('src'))
+        );
+        for (const src of imgSrcs) {
+          if (!src || src.startsWith('data:') || src.startsWith('http')) continue;
+          const absPath = path.resolve(htmlDir, src);
+          if (!fs.existsSync(absPath)) continue;
+          const ext = path.extname(absPath).toLowerCase().replace('.', '');
+          const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg'
+                     : ext === 'png' ? 'image/png'
+                     : ext === 'gif' ? 'image/gif'
+                     : ext === 'webp' ? 'image/webp'
+                     : 'image/jpeg';
+          const b64 = fs.readFileSync(absPath).toString('base64');
+          const dataUri = `data:${mime};base64,${b64}`;
+          await page.evaluate((oldSrc, newSrc) => {
+            document.querySelectorAll(`img[src="${oldSrc}"]`).forEach(img => img.src = newSrc);
+          }, src, dataUri);
+        }
         
         let success = false;
         let retries = 3;
