@@ -83,7 +83,8 @@ export function renderDashboard() {
     .filter((u) => year8Order.includes(u.id))
     .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));
 
-  // Year 9 Grouping
+  // Year 9 Grouping — hide units still under construction
+  const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
   const year9Order = [
     'great_war_part2',
     'the_shoah',
@@ -92,8 +93,15 @@ export function renderDashboard() {
     'post_war_britain',
   ];
   const year9Units = units
-    .filter((u) => year9Order.includes(u.id))
+    .filter((u) => year9Order.includes(u.id) && !underConstructionIds.includes(u.id))
     .sort((a, b) => year9Order.indexOf(a.id) - year9Order.indexOf(b.id));
+  // Names of coming-soon units for the strip
+  const comingSoonNames = [
+    'KS3: The Shoah',
+    'KS3: The Cold War',
+    'KS3: The Second World War',
+    'KS3: Rights, Protest & Post-War Britain',
+  ];
 
   // Year 10 Grouping
   const year10Order = ['cme_new', 'weimar_nazi_germany'];
@@ -135,15 +143,7 @@ export function renderDashboard() {
     const bgPos =
       unit.id === 'edexcel_medicine' ? 'center 10%' : unit.id === 'eee' ? 'center 10%' : 'center';
 
-    const underConstruction = [
-      'second_world_war',
-      'the_shoah',
-      'cold_war',
-      'post_war_britain',
-    ].includes(unit.id);
-    const badgeHtml = underConstruction
-      ? `<div style="position: absolute; top: 10px; right: 10px; background: #fef08a; color: #854d0e; border: 1px solid #eab308; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-person-digging"></i> Under Construction</div>`
-      : '';
+    const badgeHtml = '';
 
     html += `
       <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative;" data-action="launch-subapp" data-unit="${unit.id}">
@@ -168,6 +168,17 @@ export function renderDashboard() {
       </div>
     `;
   };
+
+  // ── Year-jump quick-nav strip ──────────────────────────────────────────
+  html += `
+    <nav aria-label="Jump to year group" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <a href="#year7-section"  style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s;" onmouseover="this.style.background='#1d4ed8';this.style.color='#fff'" onmouseout="this.style.background='#eff6ff';this.style.color='#1d4ed8'">Year 7</a>
+      <a href="#year8-section"  style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s;" onmouseover="this.style.background='#1d4ed8';this.style.color='#fff'" onmouseout="this.style.background='#eff6ff';this.style.color='#1d4ed8'">Year 8</a>
+      <a href="#year9-section"  style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s;" onmouseover="this.style.background='#1d4ed8';this.style.color='#fff'" onmouseout="this.style.background='#eff6ff';this.style.color='#1d4ed8'">Year 9</a>
+      <a href="#year10-section" style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; transition: all 0.2s;" onmouseover="this.style.background='#92400e';this.style.color='#fff'" onmouseout="this.style.background='#fef3c7';this.style.color='#92400e'">Year 10 — GCSE</a>
+      <a href="#year11-section" style="text-decoration:none; padding: 6px 18px; border-radius: 20px; font-size: 0.875rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; transition: all 0.2s;" onmouseover="this.style.background='#92400e';this.style.color='#fff'" onmouseout="this.style.background='#fef3c7';this.style.color='#92400e'">Year 11 — GCSE</a>
+    </nav>
+  `;
 
   if (tripUnits.length > 0) {
     tripUnits.forEach((unit, index) => {
@@ -202,7 +213,7 @@ export function renderDashboard() {
 
   if (year7Units.length > 0) {
     html += `
-      <h3 class="section-title">Year 7</h3>
+      <h3 class="section-title" id="year7-section">Year 7</h3>
       <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     year7Units.forEach(renderUnitCard);
@@ -211,25 +222,37 @@ export function renderDashboard() {
 
   if (year8Units.length > 0) {
     html += `
-      <h3 class="section-title">Year 8</h3>
+      <h3 class="section-title" id="year8-section">Year 8</h3>
       <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     year8Units.forEach(renderUnitCard);
     html += `</div>`;
   }
 
+  html += `<h3 class="section-title" id="year9-section">Year 9</h3>`;
+
   if (year9Units.length > 0) {
-    html += `
-      <h3 class="section-title">Year 9</h3>
-      <div class="modules-grid" style="margin-bottom: 2rem;">
-    `;
+    html += `<div class="modules-grid" style="margin-bottom: 1rem;">`;
     year9Units.forEach(renderUnitCard);
     html += `</div>`;
   }
 
+  // Coming-soon strip for Year 9 units still in development
+  if (comingSoonNames.length > 0) {
+    const pills = comingSoonNames.map(name =>
+      `<span style="background:#f1f5f9;border:1px solid #e2e8f0;color:#64748b;padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600;white-space:nowrap;"><i class="fa-solid fa-hammer" style="margin-right:5px;color:#94a3b8;"></i>${name}</span>`
+    ).join('');
+    html += `
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:10px;margin-bottom:2rem;">
+        <span style="font-size:0.8rem;font-weight:700;color:#94a3b8;white-space:nowrap;"><i class="fa-solid fa-circle-info"></i> Coming Soon:</span>
+        ${pills}
+      </div>
+    `;
+  }
+
   if (year10Units.length > 0) {
     html += `
-      <h3 class="section-title">Year 10 (GCSE)</h3>
+      <h3 class="section-title" id="year10-section">Year 10 <span style="font-size:0.7em;font-weight:600;background:#fef3c7;color:#92400e;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">GCSE</span></h3>
       <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     year10Units.forEach(renderUnitCard);
@@ -238,7 +261,7 @@ export function renderDashboard() {
 
   if (year11Units.length > 0) {
     html += `
-      <h3 class="section-title">Year 11 (GCSE)</h3>
+      <h3 class="section-title" id="year11-section">Year 11 <span style="font-size:0.7em;font-weight:600;background:#fef3c7;color:#92400e;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">GCSE</span></h3>
       <div class="modules-grid">
     `;
     year11Units.forEach(renderUnitCard);
