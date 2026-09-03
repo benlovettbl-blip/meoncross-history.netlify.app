@@ -210,7 +210,7 @@ export function renderDashboard() {
       early_modern_world: 'Early Modern World',
       industrialisation_and_empire: 'Industrialisation',
       australia: 'History of Australia',
-      great_war: 'Causes of the Great War',
+      great_war: 'Great War — Causes',
       great_war_part2: 'The Great War',
       the_shoah: 'The Shoah',
       cold_war: 'The Cold War',
