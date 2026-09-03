@@ -381,8 +381,8 @@ allDirs.forEach((unitId) => {
       progressTrackerRows += `<tr style="${bg}"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">${label}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
     });
 
-
-    let imageToUse = period.image || unitData.cover_image || unitData.homepage_background || unitData.banner;
+    let imageToUse =
+      period.image || unitData.cover_image || unitData.homepage_background || unitData.banner;
     let heroImgSrc = imageToUse
       ? typeof resolveAssetPath === 'function'
         ? resolveAssetPath(imageToUse, 2)
@@ -395,6 +395,9 @@ allDirs.forEach((unitId) => {
       heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
     }
     if (unitId === 'edexcel_medicine') {
+      // Build the cover image HTML using the period-specific asset if available, then fall back to unit cover
+      const medicineCoverImgSrc =
+        heroImgSrc || '../../units/edexcel_medicine/assets/medieval_pano_1784551792993.png';
       heroHtml = `<div style="border: 2px solid #1e3a8a; padding: 15px; margin-top: 20px; background-color: #f8fafc;">
 <h3 style="color: #1e3a8a; margin-top: 0;">Edexcel Specification: c1250–c1500</h3>
 <ul style="font-size: 11pt; line-height: 1.5;">
@@ -402,7 +405,10 @@ allDirs.forEach((unitId) => {
 <li><strong>2. Prevention and treatment:</strong> Religious actions, bloodletting, purging, purifying air.</li>
 <li><strong>3. Medical care:</strong> The role of physicians, apothecaries, barber surgeons, and hospitals.</li>
 <li><strong>4. Case Study: The Black Death (1348):</strong> Beliefs about its causes, treatments, and prevention.</li>
-</ul></div>`;
+</ul></div>
+<div style="flex: 1; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #f8fafc; min-height: 0;">
+  <img src="${medicineCoverImgSrc}" style="max-height: 100%; max-width: 100%; width: 100%; object-fit: cover; display: block;">
+</div>`;
     }
 
     html += `
@@ -414,15 +420,21 @@ allDirs.forEach((unitId) => {
       </div>
       
       <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
-        ${(function() {
-          const finalCoverTitle = (unitData.enquiry || unitData.enquiry_question) ? (unitData.enquiry || unitData.enquiry_question) : (periodTitle === 'Complete Unit' ? unitData.title : periodTitle);
-          const titleFontSize = finalCoverTitle.length > 50 ? '28pt' : (finalCoverTitle.length > 35 ? '34pt' : '38pt');
+        ${(function () {
+          const finalCoverTitle =
+            unitData.enquiry || unitData.enquiry_question
+              ? unitData.enquiry || unitData.enquiry_question
+              : periodTitle === 'Complete Unit'
+                ? unitData.title
+                : periodTitle;
+          const titleFontSize =
+            finalCoverTitle.length > 50 ? '28pt' : finalCoverTitle.length > 35 ? '34pt' : '38pt';
           return `<h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: ${titleFontSize}; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">
             ${finalCoverTitle}
           </h1>`;
         })()}
         <h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">
-          ${unitData.title} ${(periodTitle && periodTitle !== 'Complete Unit' && periodTitle !== unitData.title) ? ` - ${periodTitle}` : ''}
+          ${unitData.title} ${periodTitle && periodTitle !== 'Complete Unit' && periodTitle !== unitData.title ? ` - ${periodTitle}` : ''}
         </h2>
         
         
@@ -526,7 +538,9 @@ allDirs.forEach((unitId) => {
       }
 
       const isAssessmentLesson = lesson.title && lesson.title.startsWith('End of Unit Assessment');
-      const lessonLabel = isAssessmentLesson ? formatText(lesson.title) : `L${lessonIndex + 1}: ${formatText(lesson.title)}`;
+      const lessonLabel = isAssessmentLesson
+        ? formatText(lesson.title)
+        : `L${lessonIndex + 1}: ${formatText(lesson.title)}`;
       html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">${lessonLabel}</h2>`;
       let flatQuestions = [];
       if (lesson.startPage) {
@@ -2226,15 +2240,15 @@ allDirs.forEach((unitId) => {
       const debriefQuestions = [
         "How did the events of today's lesson make you feel, and why?",
         "Which part of today's lesson did you find the most difficult or confusing, and what did you do to overcome it?",
-        "If you were teaching this lesson to Year 6, what is the ONE most important thing you would make sure they remembered?",
+        'If you were teaching this lesson to Year 6, what is the ONE most important thing you would make sure they remembered?',
         "What is one question about today's topic that we didn't answer, that you'd like to research further?",
         "Summarise today's lesson in exactly three words.",
         "If you could interview one historical person from today's lesson, who would it be and what would you ask them?",
-        "How does what we learned today connect to anything else you've learned in history before?"
+        "How does what we learned today connect to anything else you've learned in history before?",
       ];
-      
+
       const q = debriefQuestions[lessonIndex % debriefQuestions.length];
-      
+
       html += `<div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
         <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
           <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
@@ -2278,7 +2292,6 @@ allDirs.forEach((unitId) => {
       `;
       }
 
-
       if (allVideos.length > 0) {
         appendixData.push({ title: lesson.title, videos: allVideos });
       }
@@ -2288,7 +2301,7 @@ allDirs.forEach((unitId) => {
     // Generate the holistic pupil voice page at the very end of the booklet
     if (unitId !== 'v2-app' && periodLessons.length > 0) {
       // Find the unit title from curriculum_meta.json or fallback
-      let titleDisplay = "this unit";
+      let titleDisplay = 'this unit';
       try {
         const metaPath = path.join(PATHS.PUBLIC, 'curriculum_meta.json');
         if (fs.existsSync(metaPath)) {
@@ -2302,7 +2315,7 @@ allDirs.forEach((unitId) => {
                 break;
               }
             }
-            if(found) break;
+            if (found) break;
           }
         }
       } catch (e) {
