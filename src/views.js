@@ -218,10 +218,10 @@ export function renderDashboard() {
       cold_war: 'The Cold War',
       second_world_war: 'The Second World War',
       post_war_britain: 'Post-War Britain',
-      cme_new: 'Conflict in the Middle East',
+      cme_new: 'Middle East',
       weimar_nazi_germany: 'Weimar & Nazi Germany',
       edexcel_medicine: 'Medicine Through Time',
-      eee: 'Early Elizabethan England',
+      eee: 'Elizabethan England',
     };
     const ctaLabel = unitShortNames[unit.id] || title;
 
@@ -241,8 +241,9 @@ export function renderDashboard() {
         </div>
         
         <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
-          <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" data-action="launch-subapp" data-unit="${unit.id}" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-            <i class="fa-solid fa-circle-play"></i> Open ${ctaLabel}
+          <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" data-action="launch-subapp" data-unit="${unit.id}" style="display: flex; align-items: center; justify-content: center; gap: 6px; padding-left: 8px; padding-right: 8px;">
+            <i class="fa-solid fa-circle-play" style="flex-shrink: 0;"></i> 
+            <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${ctaLabel}</span>
           </button>
         </div>
       </div>
