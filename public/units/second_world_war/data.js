@@ -5,6 +5,9 @@ export const unitData = {
   "lessons": [
     {
       "title": "Why did Hitler's expansionism trigger war in September 1939?",
+      "learning_objective": "To analyze the aggressive expansionist policies of Adolf Hitler that triggered war in 1939.",
+      "disciplinary_concept": "Causation",
+      "formative_assessment": {"type":"PEEL Paragraph (Causation)"},
       "narrative_blocks": [
         {
           "text": "Placeholder content for Why did Hitler's expansionism trigger war in September 1939?",
@@ -38,6 +41,9 @@ export const unitData = {
     },
     {
       "title": "Blitzkrieg, Dunkirk, and the Battle of Britain: How close was Britain to defeat in 1940?",
+      "learning_objective": "To evaluate the severity of the threat facing Britain during Blitzkrieg, Dunkirk, and the Battle of Britain.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "narrative_blocks": [
         {
           "text": "Placeholder content for Blitzkrieg, Dunkirk, and the Battle of Britain: How close was Britain to defeat in 1940?",
@@ -71,6 +77,9 @@ export const unitData = {
     },
     {
       "title": "Operation Barbarossa & Pearl Harbor: How did 1941 make the conflict truly global?",
+      "learning_objective": "To examine how Operation Barbarossa and Pearl Harbor transformed a European conflict into a truly global war.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "narrative_blocks": [
         {
           "text": "Placeholder content for Operation Barbarossa & Pearl Harbor: How did 1941 make the conflict truly global?",
@@ -104,6 +113,9 @@ export const unitData = {
     },
     {
       "title": "The Home Front: How did the Blitz, rationing, and women workers sustain the war effort?",
+      "learning_objective": "To assess the resilience of the Home Front through the Blitz, rationing, and the crucial role of women.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "narrative_blocks": [
         {
           "text": "Placeholder content for The Home Front: How did the Blitz, rationing, and women workers sustain the war effort?",
@@ -137,6 +149,9 @@ export const unitData = {
     },
     {
       "title": "Turning Points: Stalingrad, El Alamein, and D-Day.",
+      "learning_objective": "To analyze the strategic significance of major turning points including Stalingrad, El Alamein, and D-Day.",
+      "disciplinary_concept": "Significance",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "narrative_blocks": [
         {
           "text": "Placeholder content for Turning Points: Stalingrad, El Alamein, and D-Day.",
@@ -170,6 +185,9 @@ export const unitData = {
     },
     {
       "title": "Hiroshima and Nagasaki: Was the atomic bomb militarily necessary or the first move of the Cold War?",
+      "learning_objective": "To evaluate the military necessity and political motivations behind the atomic bombings of Hiroshima and Nagasaki.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "narrative_blocks": [
         {
           "text": "Placeholder content for Hiroshima and Nagasaki: Was the atomic bomb militarily necessary or the first move of the Cold War?",
@@ -203,6 +221,9 @@ export const unitData = {
     },
     {
       "title": "Assessment: What was the decisive turning point of the Second World War?",
+      "learning_objective": "To synthesize historical evidence to argue the most decisive turning point of the Second World War.",
+      "disciplinary_concept": "Significance",
+      "formative_assessment": {"type":"End of Unit Summative Assessment"},
       "narrative_blocks": [
         {
           "text": "Placeholder content for Assessment: What was the decisive turning point of the Second World War?",

@@ -1,5 +1,11 @@
-module.exports = {
+export const unitData = {
   "title": "KS3: The Great War (1914-1919)",
+      "substantive_concepts": "Review core themes of ideological shifts.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
   "homepage_background": "/images/stubbington_memorial_1.jpg",
   "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
   "cover_image": "/images/bg_great_war_part2.jpg",
@@ -16,14 +22,32 @@ module.exports = {
   "debatePrompts": [
     {
       "title": "Lions Led By Donkeys?",
+      "substantive_concepts": "Review core themes of ideological shifts.",
+      "historical_scholarship": "Evaluates traditional theories on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
       "prompt": "<strong>Debate:</strong> Were British generals like Sir Douglas Haig incompetent butchers who threw lives away at the Somme, or did they adapt as best as they could to a new, industrial type of war?"
     },
     {
       "title": "A Truly Global War?",
+      "substantive_concepts": "Chart complex themes of diplomatic relations.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Connects core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
       "prompt": "<strong>Debate:</strong> Was World War I truly a 'World' war, or was it just a European civil war that unfairly dragged in colonial subjects from India and Africa against their will?"
     },
     {
       "title": "The Treaty of Versailles",
+      "substantive_concepts": "Investigate historic themes of technological progress.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Connects previous learning of global empires.",
+      "local_coastal_links": "Details Hampshire's coastal defenses.",
+      
       "prompt": "<strong>Roleplay:</strong> You are French Prime Minister Georges Clemenceau in 1919. Explain to Woodrow Wilson why Germany must be utterly crushed, disarmed, and punished financially for the devastation of the war."
     }
   ],
@@ -31,6 +55,15 @@ module.exports = {
     {
       "id": "lesson_1",
       "title": "Why were young men so desperate to join the slaughter of 1914?",
+      "substantive_concepts": "Assess central themes of empire building.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the role of propaganda, peer pressure, and patriotism in motivating young men to enlist in 1914.",
+      "disciplinary_concept": "Causation",
+      "formative_assessment": {"type":"PEEL Paragraph (Causation)"},
       "teacher_notes": {
         "primer": "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
         "objectives": [
@@ -49,6 +82,12 @@ module.exports = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+      "substantive_concepts": "Examine underlying themes of public health.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "type": "quiz",
         "questions": [
           {
@@ -137,6 +176,12 @@ module.exports = {
       "narrative_blocks": [
         {
           "title": "The Spark & The Stampede",
+      "substantive_concepts": "Review core themes of industrial change.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "text": "In the summer of 1914, Europe resembled a giant tinderbox waiting for a spark.\n\n<strong>The Arms Race and Imperial Rivalry</strong><br>\nTo understand why Europe was so tense by 1914, we must look at the intense military and imperial competition between the Great Powers. A massive naval arms race was triggered in 1906 when Britain launched the <em>HMS Dreadnought</em>. This revolutionary battleship was heavily armoured with steel 28 cm thick, carried a crew of 800 sailors, and possessed huge guns that could blow up enemy ships from 32 km away. This made all older ships instantly obsolete. A frantic race began: between 1906 and 1914, Britain built 29 Dreadnoughts while Germany built 17.<br><br>Tensions were further pushed to breaking point by imperial clashes in North Africa. During the Second Moroccan Crisis in 1911, Germany sent the gunboat <em>SMS Panther</em> to the port of Agadir to aggressively challenge French control of the region, deeply alarming the British navy.\n\n<br><br><strong>The July Days: The Countdown to War</strong><br>\nThe assassination of Archduke Franz Ferdinand on 28 June 1914 triggered a rapid chain reaction known as the 'July Days'. On 23 July, Austria-Hungary sent a strict list of demands to Serbia, including a demand to let Austrian officials run the assassination inquiry. When Serbia refused this demand to protect its independence, Austria-Hungary declared war on 28 July. The alliance system then activated like clockwork: Germany warned Russia not to intervene, and when Russia mobilised its army, Germany declared war on Russia on 1 August. On 3 August, Germany declared war on France, and on 4 August, Britain declared war on Germany after German troops invaded neutral Belgium.<br><br>When Great Britain declared war on Germany on August 4, 1914, the British military faced an immediate crisis. Unlike its European rivals, Britain did not have conscription. Its small professional army was vastly outnumbered. To build a massive fighting force from scratch, Secretary of State for War Lord Horatio Kitchener launched the most famous recruitment campaign in British history. By the end of September 1914, over 750,000 British men had volunteered.",
           "tasks": [
             {
@@ -156,6 +201,12 @@ module.exports = {
         },
         {
           "title": "Local History: The Pompey Pals",
+      "substantive_concepts": "Examine underlying themes of political reform.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "text": "To encourage recruitment, the government promised that friends, sports teammates, and work colleagues could enlist and fight side-by-side in \"Pals Battalions.\" <div class=\"local-history-spotlight\"><strong>Local History: The Pompey Pals</strong><br>For men living in Stubbington, Fareham, and Portsmouth, the call to arms was answered locally with overwhelming enthusiasm. In August 1914, the Portsmouth Citizens Patriotic Recruiting Committee formed the 14th and 15th Battalions of the Hampshire Regiment, famously known as the \"Pompey Pals\". Men who had grown up on the same streets, worked in the same dockyards, and supported the same football teams now trained together, sharing tents and rations before crossing the Channel to France.<br><br>Tragically, the fatal flaw of the Pals Battalions was that industrialized slaughter could wipe out the male population of entire streets in a single afternoon. At the Battle of the Somme on September 3, 1916, 587 men from the 1st Pompey Pals went \"over the top\" near the River Ancre. Facing heavily fortified German machine guns, 457 of them became casualties (killed, wounded, or missing) in a single day. The devastating news arrived in Portsmouth via telegraph, shattering local families and leaving a deep, enduring scar on the community.</div>",
           "tasks": [
             {
@@ -175,6 +226,12 @@ module.exports = {
         },
         {
           "title": "Source Spotlight: Propaganda & Peer Pressure",
+      "substantive_concepts": "Explore primary themes of political reform.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "text": "The British government needed millions of men, and they used every psychological trick available to get them. <br><br><strong>'Women of Britain Say GO!' Poster (1915)</strong><br>This famous propaganda poster featured women and children looking out of a window as soldiers marched away. It was designed to weaponize guilt and masculinity, implying that real men protected women and children, and that women wanted their men to fight.<br><br><strong>The White Feather Campaign</strong><br>If official propaganda didn't work, social peer pressure often did. Admiral Charles Fitzgerald founded the 'Order of the White Feather' in 1914. He encouraged women to hand out white feathers—a traditional symbol of cowardice—to any young man seen out of uniform in public. This weaponized social shame. Many teenage boys, terrified of being humiliated in front of their friends or girlfriends, lied about their age to escape the shame, joining the army at just 15 or 16 years old.",
           "tasks": [
             {
@@ -192,6 +249,12 @@ module.exports = {
         },
         {
           "title": "Poetry as Propaganda: Jessie Pope",
+      "substantive_concepts": "Explore primary themes of political reform.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Consolidates earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "text": "Propaganda wasn't just found on posters; it was printed in popular newspapers in the form of jingoistic poetry. <strong>Jessie Pope</strong> was one of the most famous pro-war poets of 1914. Her poem <em>'Who's for the Game?'</em> was specifically written to pressure young men into enlisting by comparing the war to a friendly game of rugby.<br><br><blockquote><em>Who's for the game, the biggest that's played,<br>The red crashing game of a fight?<br>Who'll grip and tackle the job unafraid?<br>And who thinks he'd rather sit tight?...<br>Come along, lads—But you'll come on all right—<br>For there's only one course to pursue,<br>Your country is up to her neck in a fight,<br>And she's looking and calling for you.</em></blockquote><br>Pope's poetry weaponized masculinity, essentially calling anyone who didn't enlist a coward who 'thought he'd rather sit tight'. However, this romanticised view of war was later fiercely criticized by frontline soldiers and famous war poets like Wilfred Owen, who experienced the true, unglamorous horror of the trenches.",
           "image": "/images/gw_jessie_pope.jpg",
           "image_alt": "Source D: A photograph of Jessie Pope, a popular pro-war poet and journalist whose aggressively patriotic verses shamed young men into enlisting. Her simplistic, jingoistic poetry was later fiercely criticized by frontline soldiers like Wilfred Owen.",
@@ -209,6 +272,12 @@ module.exports = {
         },
         {
           "title": "Historical Interpretations: Why did they go?",
+      "substantive_concepts": "Investigate historic themes of monarchical power.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "text": "<ul><li><strong>The Traditional View:</strong> For decades, the popular narrative suggested these young men were simply naive. It was argued they were tricked by aggressive propaganda posters, bullied by women handing out white feathers (symbols of cowardice), or were simply seeking a cheap adventure to escape boring factory life, believing the war would be \"over by Christmas.\"</li><li><strong>The Revisionist View (Modern Historians):</strong> Historians like Catriona Pennell and Gary Sheffield challenge this \"gullible volunteer\" myth. Pennell argues that volunteers were not blindly enthusiastic; they made rational choices driven by genuine moral outrage over Germany's invasion of \"Brave Little Belgium\" and believed they were defending civilization. Sheffield highlights economic pragmatism: for working-class men, the army offered guaranteed daily pay (a shilling a day), regular meals, and a warm coat during a time of economic hardship.</li></ul>",
           "tasks": [
             {
@@ -235,6 +304,12 @@ module.exports = {
         },
         {
           "title": "Pair & Share Activity",
+      "substantive_concepts": "Review core themes of industrial change.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Synthesizes previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "text": "",
           "tasks": [
             {
@@ -245,6 +320,12 @@ module.exports = {
         },
         {
           "title": "Consolidation Task",
+      "substantive_concepts": "Review core themes of global trade.",
+      "historical_scholarship": "Evaluates traditional theories on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Consolidates core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "tasks": [
             {
               "type": "extended_writing",
@@ -317,6 +398,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-a-is-for-archduke-franz-ferdinand-bbc-two/",
           "title": "A is for Archduke Franz Ferdinand | WWI A-Z",
+      "substantive_concepts": "Assess central themes of political reform.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "duration": "2 mins 30 secs",
           "viewing_task": "Watch this quick summary and note down exactly how the assassination in Sarajevo triggered the outbreak of war.",
           "model_answer": "The assassination of Archduke Franz Ferdinand by Gavrilo Princip caused Austria-Hungary to declare war on Serbia, which dragged in Russia, Germany, and eventually Britain due to the alliance system."
@@ -325,6 +412,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-y-is-for-your-country-needs-you-bbc-two/",
           "title": "Y is for Your Country Needs You | WWI A-Z",
+      "substantive_concepts": "Explore primary themes of ideological shifts.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           "duration": "3 mins",
           "viewing_task": "How was Lord Kitchener's famous poster used to drum up initial excitement for the war?",
           "model_answer": "The poster used direct eye contact and a pointing finger to make young men feel personally responsible and pressured into joining the army, making them feel it was their patriotic duty."
@@ -333,6 +426,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-b-is-for-battalions-bbc-two/",
           "title": "B is for Battalions | WWI A-Z",
+      "substantive_concepts": "Explore primary themes of religious conflict.",
+      "historical_scholarship": "Explores structuralist frameworks on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
           "duration": "3 mins",
           "viewing_task": "Explain what a 'Pals Battalion' was and why it was an effective recruitment tactic.",
           "model_answer": "A Pals Battalion allowed groups of friends, neighbors, and workmates to join up and serve together. It was effective because men didn't want to be left behind while all their friends went off to fight."
@@ -342,6 +441,15 @@ module.exports = {
     {
       "id": "lesson_2",
       "title": "Did British generals make the horror of trench warfare worse?",
+      "substantive_concepts": "Examine underlying themes of economic shifts.",
+      "historical_scholarship": "Reviews Marxist models on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Retrieves past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the leadership of British generals and their responsibility for the horrors of trench warfare.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "teacher_notes": {
         "primer": "Explore the grim reality of trench warfare and the controversial leadership of generals like Haig.",
         "objectives": [
@@ -360,6 +468,12 @@ module.exports = {
       },
       "do_now": {
         "title": "Do Now: Retrieval Grid",
+      "substantive_concepts": "Explore primary themes of religious conflict.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Recalls previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "type": "grid",
         "items": [
           {
@@ -404,6 +518,12 @@ module.exports = {
       "narrative_blocks": [
         {
           "title": "The Core Narrative",
+      "substantive_concepts": "Evaluate key themes of political reform.",
+      "historical_scholarship": "Examines orthodox theories on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Consolidates earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "text": "By late 1914, the hope of a quick war vanished. Both sides dug a vast, unbroken network of defensive trenches stretching from the English Channel to the Swiss border, creating the stagnant deadlock of the Western Front. Life in these trenches was defined by extreme physical hardship and constant danger. Soldiers lived in subterranean dirt channels, constantly exposed to freezing mud, torrential rain, and waterlogged ground. This relentless dampness caused \"trench foot\"—a painful medical condition where a soldier's feet began to rot inside wet boots. Trenches also overflowed with rotting organic waste and human debris, attracting millions of disease-carrying black rats and lice, while the air was frequently poisoned by chlorine or mustard gas.<br><br><strong>Attrition and New Technologies</strong><br>\nWhen the rapid movement of 1914 broke down into the deadlock of the trenches, military leaders were forced to rely on a strategy of <strong>attrition</strong>—the brutal process of gradually destroying or weakening the enemy by attacking them continuously until they ran out of men and supplies.<br><br>To break the stalemate, new and highly dangerous technologies were deployed. In 1914, aircraft were incredibly fragile, constructed merely of wood and thick cloth held together by piano wire. Pilots flew in completely open cockpits without parachutes, relying entirely on thick gloves, layers of warm clothes, and leather helmets to stop themselves from freezing to death in the air.<br><br>This horrific reality of industrialized warfare became the backdrop for one of the greatest military debates in British history: the competence of its high command. On July 1, 1916, General Douglas Haig launched the Battle of the Somme to relieve pressure on the French army at Verdun. Believing that a week-long artillery bombardment had completely shattered the German defensive wire and dugouts, Haig ordered British troops to march slowly across No Man's Land in neat, orderly rows while carrying heavy equipment packs.<br><br>The result was an absolute slaughter. German defenders, who had safely survived the bombardment in deep, concrete-reinforced underground bunkers, emerged with machine guns the moment the shelling stopped. On the first day of the Somme alone, the British Army suffered 57,470 casualties, including 19,240 deaths—the bloodiest single day in British military history.<br><br>This disaster led to two sharply contrasting historical interpretations of General Haig. For decades, popular history portrayed Haig as a foolish, outdated \"donkey\" leading brave, patriotic \"lions\" to useless slaughter—a view heavily supported by wartime politicians and famous war poets. However, modern revisionist historians offer a different interpretation. They argue that Haig faced an unprecedented technological challenge, forced to fight a massive, industrialized war with no prior template. They point out that he eventually adapted his tactics to utilize tanks, creeping artillery barrages, and coordinated aircraft to secure the final Allied victory in 1918. Whether Haig was a callous butcher or a determined strategist remains a central question for historians.",
           "tasks": [
             {
@@ -418,6 +538,12 @@ module.exports = {
         },
         {
           "title": "Contemporary Source Evidence",
+      "substantive_concepts": "Analyze shifting themes of empire building.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
           "text": "Soldiers on the Western Front lived in a subterranean world of mud, fear, and disease. <br><br><strong>Physical Hardships</strong><br>The trenches were frequently flooded with freezing, foul-smelling water. Men often stood waist-deep in mud for days, leading to a horrifying fungal infection called <em>Trench Foot</em>. If left untreated, the foot would turn black and gangrenous, requiring amputation. Giant, disease-carrying black rats—some the size of cats—fed on unburied corpses and swarmed the dugouts. Lice infested the soldiers' clothing, causing 'Trench Fever', a disease characterized by high fever and severe joint pain.<br><br><strong>New Weapons of Terror</strong><br>Beyond the disease, the trenches offered no safety from the industrialized weapons of 1914. Artillery bombardments could last for weeks, firing millions of explosive shells that caused devastating shrapnel wounds and buried men alive. The psychological toll of this constant, deafening bombardment led to a new psychiatric condition called 'Shell Shock' (now known as PTSD). Furthermore, 1915 saw the introduction of poison gas (chlorine, phosgene, and mustard gas). Mustard gas was particularly feared; it was heavier than air, sinking into the bottom of trenches, and caused agonizing internal and external blisters, blinding its victims and destroying their lungs.",
           "tasks": [
             {
@@ -441,6 +567,12 @@ module.exports = {
         },
         {
           "title": "Source Spotlight: Eyewitness in the Mud",
+      "substantive_concepts": "Examine underlying themes of economic shifts.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Recalls past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "text": "To truly understand the conditions, we must read the words of the men who survived them.<br><br><strong>Extract from the diary of Private Arthur Savage (1915)</strong><br><em>\"The mud was so deep and thick that if you slipped off the duckboards, you would sink up to your waist. I saw men drown in that mud. The rats were as big as cats, and they were completely fearless. They would run across your face while you tried to sleep. But the worst was the smell—a mixture of cordite, chloride of lime, and the sweet, sickly stench of death that never left your nostrils.\"</em>",
           "tasks": [
             {
@@ -455,6 +587,12 @@ module.exports = {
         },
         {
           "title": "The Brutal Reality: Wilfred Owen",
+      "substantive_concepts": "Assess central themes of cultural evolution.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "text": "The horrific reality of the trenches stood in stark contrast to the jingoistic poetry of 1914. <strong>Wilfred Owen</strong>, an officer who suffered from shell shock, wrote poetry to expose the \"Pity of War\" and attack the lie that dying for your country was glorious. His most famous poem, <em>'Dulce et Decorum Est'</em>, describes a terrifying mustard gas attack.<br><br><blockquote><em>Gas! GAS! Quick, boys!—An ecstasy of fumbling<br>Fitting the clumsy helmets just in time,<br>But someone still was yelling out and stumbling<br>And flound'ring like a man in fire or lime.<br>Dim through the misty panes and thick green light,<br>As under a green sea, I saw him drowning.<br><br>...My friend, you would not tell with such high zest<br>To children ardent for some desperate glory,<br>The old Lie: Dulce et decorum est<br>Pro patria mori. (It is sweet and fitting to die for one's country)</em></blockquote>",
           "image": "/images/gw_wilfred_owen.jpg",
           "image_alt": "Source D: A portrait of Wilfred Owen, one of the greatest war poets in the English language. Having fought and suffered shell shock on the Western Front, his gritty, realistic poetry shattered the romantic illusions of war promoted by writers like Jessie Pope.",
@@ -472,6 +610,12 @@ module.exports = {
         },
         {
           "title": "Extension & Local History Task",
+      "substantive_concepts": "Evaluate key themes of political reform.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Connects earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "text": "Research tasks for independent study.",
           "tasks": [
             {
@@ -493,6 +637,12 @@ module.exports = {
         },
         {
           "title": "Pair & Share Activity",
+      "substantive_concepts": "Examine underlying themes of societal upheaval.",
+      "historical_scholarship": "Reviews Marxist frameworks on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Builds past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "text": "",
           "tasks": [
             {
@@ -503,6 +653,12 @@ module.exports = {
         },
         {
           "title": "Consolidation Task",
+      "substantive_concepts": "Examine underlying themes of empire building.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           "tasks": [
             {
               "type": "extended_writing",
@@ -611,6 +767,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-t-is-for-trenches-bbc-two/",
           "title": "T is for Trenches | WWI A-Z",
+      "substantive_concepts": "Explore primary themes of social rebellion.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           "duration": "3 mins",
           "viewing_task": "Describe three terrible conditions soldiers faced while living in the trenches.",
           "model_answer": "Soldiers faced deep, freezing mud, infestations of giant rats, and the constant threat of diseases like trench foot caused by standing in water for days."
@@ -619,6 +781,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-g-is-for-gas-bbc-two/",
           "title": "G is for Gas | WWI A-Z",
+      "substantive_concepts": "Investigate historic themes of public health.",
+      "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "duration": "3 mins",
           "viewing_task": "Watch the students examine the genuine gas mask. Why were gas attacks so terrifying for the soldiers?",
           "model_answer": "Gas attacks were terrifying because the gas (like chlorine or mustard gas) would blind them and destroy their lungs from the inside, causing a slow and agonizing death if they didn't get their clumsy masks on in time."
@@ -628,6 +796,15 @@ module.exports = {
     {
       "id": "lesson_3",
       "title": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+      "substantive_concepts": "Evaluate key themes of societal upheaval.",
+      "historical_scholarship": "Examines orthodox theories on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Consolidates past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To examine the crucial contributions of Empire troops and challenge the Eurocentric narrative of the war.",
+      "disciplinary_concept": "Causation",
+      "formative_assessment": {"type":"PEEL Paragraph (Causation)"},
       "teacher_notes": {
         "primer": "Humanize the contributions and sacrifices of non-white troops from the British Empire, exploring racial barriers.",
         "objectives": [
@@ -646,6 +823,12 @@ module.exports = {
       },
       "do_now": {
         "title": "Do Now: Recall",
+      "substantive_concepts": "Assess central themes of societal upheaval.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "type": "mixed",
         "items": [
           {
@@ -727,6 +910,12 @@ module.exports = {
       "narrative_blocks": [
         {
           "title": "The Core Narrative",
+      "substantive_concepts": "Investigate historic themes of ideological shifts.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
           "text": "When Britain declared war on Germany in 1914, it did not just commit the men of the British Isles; it committed a vast global empire. By the end of the conflict, nearly 3 million men from across the British Empire and its dominions had served.<br><br><strong>The Scale of the Contribution</strong><br>The sheer scale of the imperial effort was staggering. The British Indian Army sent over 1.5 million men to fight across multiple theaters, including the freezing trenches of Ypres and the scorching deserts of Mesopotamia. Without the arrival of two Indian divisions in late 1914, the British line on the Western Front might have collapsed entirely. <br><br>The bravery of these men was extraordinary. On 31 October 1914 at the First Battle of Ypres, Sepoy <strong>Khudadad Khan</strong> of the 129th Baluchis operated his machine gun under heavy fire until all the other men in his team were killed and he himself was severely wounded. He was the first Indian soldier to be awarded the Victoria Cross, Britain's highest military honor.<br><br>Meanwhile, the British West Indies Regiment (BWIR) raised over 15,000 men from the Caribbean, and hundreds of thousands of African men were recruited—often forcibly—to serve as soldiers and carriers in the brutal East African campaign, where disease and exhaustion claimed countless lives.",
           "tasks": [
             {
@@ -741,6 +930,12 @@ module.exports = {
         },
         {
           "title": "The Historians' Debate: How is the war remembered?",
+      "substantive_concepts": "Assess central themes of military conflict.",
+      "historical_scholarship": "Challenges whig debates on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Connects earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "text": "<strong>Racial Hierarchy and Discrimination</strong><br>Despite their immense sacrifices, soldiers of color faced systemic racism and a strict imperial racial hierarchy. The British War Office was deeply uncomfortable with the idea of non-white troops fighting and killing European armies. Consequently, many black soldiers, particularly in the BWIR, were stripped of their combat roles and reassigned to dangerous, degrading manual labor—digging trenches, carrying ammunition, and burying the dead under heavy artillery fire.<br><br>Black soldiers were paid less than their white counterparts, were barred from being promoted to commissioned officers, and were often denied access to the same canteens and hospitals. The tension reached breaking point in December 1918. BWIR soldiers in Taranto, Italy, mutinied over these exact degrading conditions. They were forced to clean the latrines of white Italian soldiers and were denied the pay rise that had been granted to white British troops. The mutiny was suppressed, the ringleaders were imprisoned, and the BWIR was rapidly disbanded, their contributions swept under the rug.",
           "tasks": [
             {
@@ -758,6 +953,12 @@ module.exports = {
         },
         {
           "title": "Fringes of History: The Chinese Labour Corps",
+      "substantive_concepts": "Evaluate key themes of religious conflict.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
           "text": "While millions of imperial soldiers fought on the front lines, the war effort relied equally on a massive, forgotten workforce. In 1916, facing critical manpower shortages, Britain recruited the <strong>Chinese Labour Corps (CLC)</strong>. Over 140,000 Chinese men were brought to the Western Front to do the grueling, dangerous manual labor required to keep the war machine running.<br><br>The CLC dug trenches, repaired roads under artillery fire, unloaded millions of tons of supplies at the docks, and were given the horrific task of clearing the battlefields and burying the rotting dead. Despite their essential contribution (without which the British Army could not have functioned), they were treated abysmally. They were kept in segregated camps behind barbed wire and paid a fraction of white soldiers' wages. Most tragically, when the war was won, the Chinese Labour Corps were deliberately <em>erased</em> from history. They were not invited to the Allied Victory Parade in London, and their massive contribution was ignored by historians for decades.",
           "image": "/images/gw_clc.jpg",
           "image_alt": "Source C: Members of the Chinese Labour Corps (CLC) clearing battlefield debris. Facing severe manpower shortages, Britain recruited over 140,000 Chinese workers for highly dangerous manual labor. They were paid a fraction of white soldiers' wages and deliberately excluded from victory parades.",
@@ -775,6 +976,12 @@ module.exports = {
         },
         {
           "title": "Source Spotlight: A 'White Man's War'?",
+      "substantive_concepts": "Evaluate key themes of social rebellion.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           "text": "For decades, the popular memory of the First World War was heavily Eurocentric—dominated by images of white British soldiers in the mud of the Western Front. Read the two contrasting interpretations below to understand how modern historians are challenging this narrative.<br><br><blockquote><strong>Interpretation 1: The Traditional (Eurocentric) Focus</strong><br><em>\"The Great War was a European tragedy, fought on the muddy fields of Flanders and the plains of France. It was here, in the brutal stalemate of the trenches, that the British soldier endured the ultimate test of endurance and secured the victory of the civilized world.\"</em><br>— <em>Adapted from the typical narrative focus of mid-20th-century British school textbooks</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Modern Global View</strong><br><em>\"The First World War was a truly global conflict... Yet in the decades that followed, the presence of hundreds of thousands of black and Asian soldiers was subtly marginalized. This historical amnesia was no accident. The narrative of a 'white man’s war' was constructed to preserve the racial hierarchy of the Empire.\"</em><br>— <em>Adapted from David Olusoga, The World's War (2014)</em></blockquote>",
           "tasks": [
             {
@@ -795,6 +1002,12 @@ module.exports = {
         },
         {
           "title": "Pair & Share Activity",
+      "substantive_concepts": "Review core themes of ideological shifts.",
+      "historical_scholarship": "Evaluates traditional theories on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
           "text": "",
           "tasks": [
             {
@@ -805,6 +1018,12 @@ module.exports = {
         },
         {
           "title": "Consolidation Task",
+      "substantive_concepts": "Review core themes of industrial change.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Retrieves previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "tasks": [
             {
               "type": "extended_writing",
@@ -877,6 +1096,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/tv-radio-resources/secondary-history/britain-europe-and-the-wider-world/",
           "title": "The Battle of Tanga | The World's War",
+      "substantive_concepts": "Assess central themes of military conflict.",
+      "historical_scholarship": "Challenges whig debates on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Connects earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "duration": "5 mins",
           "viewing_task": "Note down the vital contributions made by African and colonial troops during the Battle of Tanga.",
           "model_answer": "African and colonial troops did much of the fighting and heavy lifting in the East African campaign, completely shattering the myth that WW1 was only fought by white European soldiers in France."
@@ -885,6 +1110,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-e-is-for-empire-bbc-two/",
           "title": "E is for Empire | WWI A-Z",
+      "substantive_concepts": "Review core themes of religious conflict.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Links previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "duration": "3 mins",
           "viewing_task": "How did the wider British Empire contribute to the war effort?",
           "model_answer": "Millions of men from across the British Empire, including India, Australia, Canada, and Africa, provided vital combat troops, laborers, and essential resources that allowed Britain to continue fighting."
@@ -894,6 +1125,15 @@ module.exports = {
     {
       "id": "lesson_4",
       "title": "How did a war fought miles away completely control daily life in Britain?",
+      "substantive_concepts": "Investigate historic themes of public health.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the unprecedented extent of government control and the impact of total war on daily life in Britain.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "teacher_notes": {
         "primer": "Examine how the concept of 'Total War' completely transformed the British home front, focusing on government control, conscription, and the complex, often temporary, shifts in women's social status.",
         "objectives": [
@@ -912,6 +1152,12 @@ module.exports = {
       },
       "do_now": {
         "title": "Do Now: Retrieval Grid",
+      "substantive_concepts": "Investigate historic themes of monarchical power.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         "type": "grid",
         "items": [
           {
@@ -978,6 +1224,12 @@ module.exports = {
       "narrative_blocks": [
         {
           "title": "The Core Narrative",
+      "substantive_concepts": "Chart complex themes of societal upheaval.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Consolidates past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "text": "To win a total war of industrial survival, the British government realized it needed complete control over the civilian population. In August 1914, Parliament passed the <strong>Defence of the Realm Act (DORA)</strong>, granting the government sweeping, unprecedented powers over the daily lives of British citizens.<br><br><strong>Controlling the Home Front</strong><br>DORA allowed the government to bypass Parliament and issue direct orders. The rules ranged from the deadly serious to the bizarrely specific. Under DORA, it became illegal to fly a kite, light a bonfire, or feed wild animals, as these could potentially signal enemy zeppelins or waste valuable food. British Summer Time (Daylight Savings) was introduced to maximize factory working hours. Crucially, pub opening hours were strictly limited and alcohol was watered down, as the government feared that drunk munitions workers would slow down shell production.<br><br>DORA also introduced extreme censorship. The government controlled the newspapers, heavily censoring reports of British defeats and casualty numbers to maintain civilian morale. Letters written by soldiers at the front were read by officers, who used black markers to cross out any details about military locations, horrific trench conditions, or low morale before they could be sent home to families.",
           "tasks": [
             {
@@ -992,6 +1244,12 @@ module.exports = {
         },
         {
           "title": "The Historians' Debate: Did the war liberate women?",
+      "substantive_concepts": "Assess central themes of economic shifts.",
+      "historical_scholarship": "Challenges whig arguments on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "text": "<strong>The 'Canaries' and Total War</strong><br>With millions of men fighting overseas, the British economy faced collapse. The solution was the mass mobilization of women into the workforce. Over a million women took up jobs previously reserved exclusively for men—driving buses, working on farms (the Women's Land Army), and crucially, manufacturing weapons.<br><br>These female munitions workers were affectionately known as the \"Canaries.\" They worked long, exhausting shifts packing highly explosive TNT into artillery shells. The toxic chemicals turned their skin and hair a bright yellowish-orange (hence the nickname). The work was exceptionally dangerous; toxic jaundice caused liver failure, and accidental explosions were a constant threat. In 1917, the Silvertown munitions factory in London exploded, killing 73 people and destroying hundreds of homes. Despite the extreme danger and the toxic health effects, the Canaries produced over 80% of the weapons and shells used by the British Army, proving that women were entirely capable of performing heavy industrial labor.<br><br>Read the two contrasting interpretations below to understand how modern historians debate the impact of the war on women.<br><br><blockquote><strong>Interpretation 1: The Optimistic View</strong><br><em>\"The First World War was a massive engine of social change. By proving that women could successfully perform heavy industrial labor in the munitions factories, it shattered Victorian myths of female frailty. This undeniable contribution permanently altered the social status of women and was the direct cause of them finally winning the right to vote in 1918.\"</em><br>— <em>Adapted from Arthur Marwick, The Deluge (1965)</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Revisionist View</strong><br><em>\"The idea that the war 'liberated' women is largely a myth. The changes were a temporary illusion driven by national emergency. Women were still paid significantly less than men, and the moment the war ended in 1918, they were unceremoniously fired to make way for returning soldiers. Furthermore, the 1918 voting act completely ignored the young, working-class 'Canary Girls' who had actually risked their lives.\"</em><br>— <em>Adapted from Gail Braybon, Women Workers in the First World War (1981)</em></blockquote>",
           "tasks": [
             {
@@ -1005,6 +1263,12 @@ module.exports = {
         },
         {
           "title": "Fringes of History: Conscientious Objectors",
+      "substantive_concepts": "Examine underlying themes of societal upheaval.",
+      "historical_scholarship": "Reviews Marxist theories on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Consolidates past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "text": "When conscription (forced military service) was introduced in 1916, not everyone agreed to fight. Around 16,000 men refused to join the army on moral or religious grounds. They were known as <strong>Conscientious Objectors (or 'Conchies')</strong>.<br><br>Their treatment on the Home Front was brutal. They were widely viewed as cowards and traitors by the public and government. While some were allowed to do non-combat roles like driving ambulances under fire (which took immense bravery), absolutists who refused to contribute to the war effort in any way were thrown into harsh civilian prisons, where they faced solitary confinement, starvation diets, and forced labor. Some were even shipped to the front lines in France, court-martialed for refusing orders, and sentenced to be \"Shot at Dawn\" (though these death sentences were later commuted to 10 years in prison). Today, they are remembered for their bravery in standing up for their beliefs, commemorated by a special memorial at the National Memorial Arboretum.",
           "image": "/images/gw_arboretum.jpg",
           "image_alt": "Source C: The 'Shot at Dawn' Memorial, commemorating the 306 British and Commonwealth soldiers executed by firing squad for cowardice or desertion. Modern historians recognize that many of these men were actually suffering from severe, undiagnosed shell shock (PTSD).",
@@ -1022,6 +1286,12 @@ module.exports = {
         },
         {
           "title": "Source Spotlight: Censorship and Control",
+      "substantive_concepts": "Evaluate key themes of public health.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "Reviews regional naval supremacy.",
+      
           "text": "The government realized that controlling information was just as important as producing weapons.<br><br><strong>Source D: A censored letter home from the Somme (1916)</strong><br><em>\"Dear Mother, We are currently stationed at [CENSORED]. The weather is terrible, and the [CENSORED] is up to our knees. We lost [CENSORED] men yesterday during the push toward [CENSORED]. Don't worry about me, I am keeping my head down.\"</em>",
           "tasks": [
             {
@@ -1033,6 +1303,12 @@ module.exports = {
         },
         {
           "title": "Pair & Share Activity",
+      "substantive_concepts": "Chart complex themes of technological progress.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Connects previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
           "text": "",
           "tasks": [
             {
@@ -1043,6 +1319,12 @@ module.exports = {
         },
         {
           "title": "Consolidation Task",
+      "substantive_concepts": "Chart complex themes of cultural evolution.",
+      "historical_scholarship": "Compares revisionist frameworks on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Builds core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "tasks": [
             {
               "type": "extended_writing",
@@ -1115,6 +1397,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-w-is-for-women-bbc-two/",
           "title": "W is for Women | WWI A-Z",
+      "substantive_concepts": "Assess central themes of global trade.",
+      "historical_scholarship": "Challenges whig arguments on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "duration": "3 mins",
           "viewing_task": "What were the 'Munitionettes' and why was their work so dangerous?",
           "model_answer": "Munitionettes were the 1 million women who worked in munitions factories making shells. The work was incredibly dangerous due to the risk of massive factory explosions and toxic TNT poisoning, which turned their skin yellow (earning them the nickname 'Canaries')."
@@ -1123,6 +1411,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-c-is-for-conscription-bbc-two/",
           "title": "C is for Conscription | WWI A-Z",
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig perspectives on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Synthesizes past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "duration": "3 mins",
           "viewing_task": "Explain why the government was forced to introduce conscription in 1916.",
           "model_answer": "The initial rush of volunteers had dried up by 1915, and due to massive casualties on the Western Front, the government had to force men to join the army (conscription) to keep the military functioning."
@@ -1132,6 +1426,15 @@ module.exports = {
     {
       "id": "lesson_5",
       "title": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+      "substantive_concepts": "Chart complex themes of technological progress.",
+      "historical_scholarship": "Compares revisionist views on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Recalls previous learning of public health.",
+      "local_coastal_links": "Connects to local D-Day ports.",
+      
+      "learning_objective": "To assess whether the Treaty of Versailles successfully resolved the conflict or merely delayed a second war.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Formative Comprehension & Retrieval Task"},
       "enquiry": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
       "teacher_notes": {
         "primer": "This lesson evaluates the conclusion of the First World War and introduces students to high-level historiographical debate regarding the Treaty of Versailles, shifting from basic source utility to complex interpretation analysis.",
@@ -1151,6 +1454,12 @@ module.exports = {
       },
       "do_now": {
         "title": "Do Now: Retrieval Grid",
+      "substantive_concepts": "Chart complex themes of diplomatic relations.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
         "type": "grid",
         "items": [
           {
@@ -1212,6 +1521,12 @@ module.exports = {
       "narrative_blocks": [
         {
           "title": "The Core Narrative",
+      "substantive_concepts": "Review core themes of military conflict.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "text": "When the guns finally fell silent on November 11, 1918, the world was left in ruins. Millions were dead, empires had collapsed, and the map of Europe had to be redrawn. In January 1919, the victorious Allied leaders gathered at the Palace of Versailles in Paris to decide the fate of a defeated Germany. The conference was dominated by the \"Big Three\":<br><br><ul><li><strong>Georges Clemenceau (France):</strong> Known as 'The Tiger', Clemenceau wanted revenge. Most of the fighting on the Western Front had taken place on French soil, destroying their industry and land. He wanted Germany crippled militarily and financially so they could never attack France again.</li><li><strong>Woodrow Wilson (USA):</strong> An idealist who had only joined the war in 1917. Wilson wanted a fair peace based on his 'Fourteen Points'. He believed punishing Germany too harshly would only lead to a future war for revenge. He also proposed a 'League of Nations' to solve future disputes peacefully.</li><li><strong>David Lloyd George (Britain):</strong> A pragmatist caught in the middle. He had just won a British election promising to \"Make Germany Pay!\", but privately, he worried that a destroyed Germany would lead to a communist revolution and would ruin British trade in Europe.</li></ul>",
           "tasks": [
             {
@@ -1226,6 +1541,12 @@ module.exports = {
         },
         {
           "title": "The Historians' Debate: A Doomed Peace?",
+      "substantive_concepts": "Review core themes of public health.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "text": "<strong>The Terms of the Treaty: A Diktat</strong><br>Germany was not invited to negotiate; they were simply handed the treaty and forced to sign it under the threat of invasion. For this reason, Germans bitterly referred to the treaty as a <strong>Diktat</strong> (a dictated peace). The terms were deliberately devastating:<br><br><ul><li><strong>Territory (Land):</strong> Germany lost 13% of its European land and 12% of its population. The wealthy coal fields of the Saar were given to France for 15 years, and the industrial region of Alsace-Lorraine was returned to France. Crucially, the 'Polish Corridor' was carved out of Germany, splitting the country in two.</li><li><strong>Military:</strong> The proud German army was slashed to just 100,000 men. They were banned from having an air force (Luftwaffe), tanks, or submarines. The Rhineland (the border area with France) was demilitarized.</li><li><strong>Reparations (Money):</strong> Germany was ordered to pay a staggering £6.6 billion in reparations to the Allies for the damage caused by the war—an impossible sum that would shatter the German economy.</li><li><strong>Blame:</strong> The most hated term was Article 231 (The War Guilt Clause), which forced Germany to accept 100% of the blame for starting the war.</li></ul><br><br>Read the two contrasting interpretations below to understand how historians debate the legacy of the Treaty of Versailles.<br><br><blockquote><strong>Interpretation 1: The Traditional View</strong><br><em>\"The Treaty of Versailles was a disastrous, vindictive peace. The economic reparations imposed on Germany are completely impossible to pay and will inevitably lead to the total financial collapse of central Europe. By stripping Germany of its wealth and humiliating its people, the Allies have virtually guaranteed a war of vengeance in the near future.\"</em><br>— <em>Adapted from John Maynard Keynes, The Economic Consequences of the Peace (1919)</em></blockquote><br><br><blockquote><strong>Interpretation 2: The Revisionist View</strong><br><em>\"The Treaty of Versailles was actually quite lenient compared to the brutal treaty Germany had forced upon Russia in 1918. Germany remained largely intact and structurally wealthy. The true failure was not that the treaty was too harsh, but that the Allies lacked the political will and unity to actually enforce it in the 1930s, allowing Hitler to easily tear it up.\"</em><br>— <em>Adapted from Margaret MacMillan, Peacemakers (2001)</em></blockquote>",
           "tasks": [
             {
@@ -1243,6 +1564,12 @@ module.exports = {
         },
         {
           "title": "Pair & Share Activity",
+      "substantive_concepts": "Assess central themes of ideological shifts.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
           "text": "",
           "tasks": [
             {
@@ -1253,6 +1580,12 @@ module.exports = {
         },
         {
           "title": "Consolidation Task",
+      "substantive_concepts": "Assess central themes of industrial change.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Recalls previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "tasks": [
             {
               "type": "extended_writing",
@@ -1325,6 +1658,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/tv-radio-resources/secondary-history/britain-europe-and-the-wider-world/",
           "title": "The Treaty of Versailles | Hitler's Rise: The Colour Films",
+      "substantive_concepts": "Assess central themes of societal upheaval.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "Analyzes Southampton's dockyard role.",
+      
           "duration": "5 mins",
           "viewing_task": "Watch the colorized footage and list two ways the Treaty of Versailles punished Germany.",
           "model_answer": "1. It forced Germany to accept full blame for the war (the War Guilt clause). 2. It imposed devastating financial reparations that shattered the German economy."
@@ -1333,6 +1672,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/tv-radio-resources/secondary-history/britain-europe-and-the-wider-world/",
           "title": "The end of WW1 | Nazis: A Warning from History",
+      "substantive_concepts": "Evaluate key themes of technological progress.",
+      "historical_scholarship": "Examines orthodox theories on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Consolidates previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
           "duration": "5 mins",
           "viewing_task": "How did the German public react to the peace terms?",
           "model_answer": "They were deeply bitter and felt betrayed, viewing the treaty as a 'Diktat' (a dictated peace) that humiliated their nation and stripped them of their dignity."
@@ -1342,6 +1687,9 @@ module.exports = {
     {
       "id": "lesson_6",
       "title": "How did the \"Lost Generation\" impact the village of Stubbington?",
+      "learning_objective": "To evaluate the impact of the First World War on local communities and the legacy of the 'Lost Generation'.",
+      "disciplinary_concept": "Change and Continuity",
+      "formative_assessment": {"type": "PEEL Paragraph (Significance)"},
       "enquiry": "How did the \"Lost Generation\" impact the village of Stubbington?",
       "teacher_notes": {
         "primer": "This lesson concludes the unit by scaling down the macro-statistics of the Great War into a localized micro-history, focusing on the Stubbington War Memorial and the tragic loss of the Lowry brothers. This fosters historical empathy and helps students grasp the profound demographic and emotional toll of the conflict.",
@@ -1361,6 +1709,12 @@ module.exports = {
       },
       "do_now": {
         "title": "Do Now: Retrieval Grid",
+      "substantive_concepts": "Evaluate key themes of economic shifts.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "type": "grid",
         "items": [
           {
@@ -1422,6 +1776,12 @@ module.exports = {
       "narrative_blocks": [
         {
           "title": "Stubbington's Lost Generation",
+      "substantive_concepts": "Assess central themes of economic shifts.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "text": "To look at the wooden shelter in the centre of Stubbington's village green today, you might think it is just a quiet place to sit. But if you look up at the timber beams under its roof, you will find 67 names carved into the wood. These are the names of the young people from Stubbington and Hill Head who went off to fight in the First World War and never returned.<br><br>For a small, rural village, the war was not a distant political event—it was a devastating local tragedy that tore through families, streets, and schoolrooms. Behind every name on that memorial is a shattered family.",
           "tasks": [
             {
@@ -1445,6 +1805,12 @@ module.exports = {
         },
         {
           "title": "The Tragedy of the Lowry Brothers",
+      "substantive_concepts": "Evaluate key themes of economic shifts.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "text": "Of all the families in the parish, none paid a heavier price than the Lowrys. William and Annie Lowry lived in a grand house called Manor Way Grange. They had three sons, all of whom went off to fight. Not one of them came home.<br><br><strong>William \"Harper\" Lowry (25)</strong>, a brilliant Cambridge student, joined the Indian Army. On 4th June 1915, he was killed leading a desperate charge up a narrow ravine at Gallipoli under intense Turkish machine-gun fire. His body was never found.<br><br><strong>Cyril \"Patrick\" Lowry (20)</strong> joined the West Yorkshire Regiment. In a heartbreaking twist of fate, he served in the exact same battalion commanded by his older brother, Eric. On 25th March 1918, Patrick was killed in action during a massive German offensive near the Somme—in full view of his own brother. His body was never recovered.<br><br><strong>Auriol \"Eric\" Lowry (25)</strong>, the highly decorated middle brother, had survived the heartbreak of seeing his younger brother die. An exceptionally brave leader who won the DSO and Military Cross, his time ran out just weeks before the war ended. On 23rd September 1918, he was hit by a machine-gun bullet and died in his runner's arms.<br><br>Devastated by the loss of all three sons, their father built the Lowry Memorial Hall in Lee-on-the-Solent to ensure his boys would never be forgotten.",
           "tasks": [
             {
@@ -1463,6 +1829,12 @@ module.exports = {
         },
         {
           "title": "Nita Madeline King & A Father's Grief",
+      "substantive_concepts": "Examine underlying themes of cultural evolution.",
+      "historical_scholarship": "Reviews Marxist models on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Retrieves core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "text": "Among the list of fallen soldiers on the village green, one name stands out as different: <strong>Nita Madeline King</strong>. She is the <em>only woman</em> commemorated on the Stubbington War Memorial.<br><br>Nita (29) wanted to do her part and volunteered for the Queen Mary's Army Auxiliary Corps (QMAAC). She was sent to Wimereux in France, a massive, high-pressure hospital centre for thousands of wounded soldiers. But the enemy in Wimereux was not just bullets—it was disease. In the crowded military hospitals, Nita contracted cerebrospinal meningitis and died on 25th May 1917. Following her death, her grieving mother, Lydia, became the primary force behind building the Stubbington War Memorial, donating a fortune (£200) to ensure the village had a beautiful wooden shelter.<br><br><strong>The Father Who Carved His Son's Name</strong><br>Arthur Tribbeck, a local carpenter, was chosen by the village to build the wooden shelter with his own hands. Tragically, as he constructed it, he had to prepare the timber to hold the name of his own son, <strong>Harold Tribbeck</strong>. Harold had bravely refused to have his leg amputated after a terrible wound in 1918, and died of gangrene aged just 21.<br><br><strong>The Dead Man's Penny</strong><br>For the families of the fallen, the British government issued a bronze memorial plaque, which became colloquially known as the \"Dead Man's Penny\". Over 1.3 million of these heavy, impersonal plaques were sent through the post to grieving families like the Lowrys and the Tribbecks, serving as a cold bureaucratic acknowledgment of a devastating personal loss.",
           "tasks": [
             {
@@ -1474,6 +1846,12 @@ module.exports = {
         },
         {
           "title": "Pair & Share Activity",
+      "substantive_concepts": "Examine underlying themes of societal upheaval.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Recalls past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "text": "",
           "tasks": [
             {
@@ -1484,6 +1862,12 @@ module.exports = {
         },
         {
           "title": "Consolidation Task",
+      "substantive_concepts": "Examine underlying themes of empire building.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           "tasks": [
             {
               "type": "extended_writing",
@@ -1556,6 +1940,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/tv-radio-resources/secondary-history/britain-europe-and-the-wider-world/",
           "title": "The history of The Cenotaph | Remembrance Sunday",
+      "substantive_concepts": "Explore primary themes of technological progress.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Recalls previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
           "duration": "5 mins",
           "viewing_task": "What is the powerful significance of the Unknown Warrior at the Cenotaph?",
           "model_answer": "The Unknown Warrior represents all the unidentified soldiers who died in the war, allowing grieving families with no grave to visit to have a national symbol to mourn at."
@@ -1564,6 +1954,12 @@ module.exports = {
           "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/wwi-a-z-r-is-for-remembrance-bbc-two/",
           "title": "R is for Remembrance | WWI A-Z",
+      "substantive_concepts": "Evaluate key themes of diplomatic relations.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Synthesizes core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "duration": "2 mins",
           "viewing_task": "Why was the national act of remembrance established on November 11th?",
           "model_answer": "It was established to mark the exact date and time the Armistice was signed in 1918 (the 11th hour of the 11th day of the 11th month), ensuring the country never forgets the sacrifice of the dead."
@@ -1572,121 +1968,57 @@ module.exports = {
     },
     {
       "id": "lesson_7",
-      "title": "Assessment: The Great War",
-      "primer": "This formal assessment bridges Key Stage 3 historical skills with early GCSE demands, testing chronological recall, source utility evaluation, and historical judgement.",
-      "vocab": [],
-      "do_now": {
-        "type": "grid",
-        "tasks": [
+      "title": "End of Unit Assessment: The Historians' Debate on the Treaty of Versailles",
+      "exam_practice": {
+        "stimulus": [
+          "**Interpretation 1 (based on Margaret MacMillan, 'Peacemakers', 2001):** The Treaty of Versailles was a reasonable and pragmatic compromise given the impossible circumstances of 1919. The victorious leaders faced enormous public pressure to punish Germany, yet the treaty stopped short of destroying the German state entirely. Germany kept its national unity, its industrial heartland, and its potential to recover. The reparations bill, while enormous on paper, was repeatedly reduced and restructured throughout the 1920s. The real failure was not the treaty itself, but the refusal of Britain and France to enforce it consistently in the 1930s when Hitler began openly violating its terms.",
+          "**Interpretation 2 (based on John Maynard Keynes, 'The Economic Consequences of the Peace', 1919):** The Treaty of Versailles was a vindictive catastrophe that made a second world war inevitable. By imposing crippling reparations of \u00a36.6 billion, stripping Germany of 13% of its territory and 10% of its population, and forcing the humiliating 'War Guilt Clause' (Article 231) onto a proud nation, the Allied leaders planted the seeds of German resentment and extremism. The treaty did not create lasting peace; it created a twenty-year ceasefire. It was only a matter of time before a demagogue like Hitler would exploit the fury of a humiliated people to tear the treaty apart and plunge Europe back into war."
+        ],
+        "questions": [
           {
-            "question": "What triggered the start of WWI in 1914?",
-            "answer": "The assassination of Archduke Franz Ferdinand.",
-            "points": 1
+            "question": "What is the main difference between Interpretation 1 and Interpretation 2 regarding the Treaty of Versailles?",
+            "marks": 4
           },
           {
-            "question": "What was the name of the British law that allowed the government to take control of industries?",
-            "answer": "DORA (Defence of the Realm Act).",
-            "points": 2
+            "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views about the Treaty of Versailles. You may use evidence from this unit to help explain your answer.",
+            "marks": 4
           },
           {
-            "question": "Why did the Schlieffen Plan fail?",
-            "answer": "Belgium resisted, Russia mobilized faster than expected, and Britain intervened.",
-            "points": 3
+            "question": "How far do you agree with Interpretation 2 that the Treaty of Versailles was 'a vindictive catastrophe that made a second world war inevitable'?\n\nExplain your answer, using your own knowledge and both interpretations.",
+            "marks": 16
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Complete the automated multiple-choice quiz for this unit to test your foundational knowledge.",
-          "tasks": [
-            {
-              "text": "1a. Describe one feature of the Home Front during the First World War. (2 marks)<br>1b. Describe one feature of the Treaty of Versailles. (2 marks)",
-              "model_answer": "1a. One feature of the Home Front was the mobilization of women. For example, thousands of women known as 'Munitionettes' worked in dangerous factories to produce shells.<br><br>1b. One feature of the Treaty of Versailles was its harsh military restrictions. For example, the German army was limited to 100,000 men and was not allowed submarines or an air force."
-            }
-          ]
-        },
-        {
-          "text": "Study Source A (the painting of the 'Canary Girls' in the munitions factory).",
-          "image": "/images/gw_munitionettes.jpg",
-          "image_alt": "Source A: A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote.",
-          "tasks": [
-            {
-              "text": "How useful is Source A for an inquiry into the impact of the First World War on women? (8 marks)",
-              "model_answer": "Source A is highly useful for showing the reality of the Home Front, as it is a painting from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a painting is subjective and may have been created for propaganda to encourage recruitment, rather than showing the true dangers like TNT poisoning."
-            }
-          ],
-          "image_caption": "Source A: A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote."
-        },
-        {
-          "text": "Study Interpretation 1. <em>\"The First World War was primarily won on the mud of the Western Front.\"</em>",
-          "tasks": [
-            {
-              "text": "How far do you agree with Interpretation 1? Explain your answer using your own knowledge. (16 marks + 4 SPaG)",
-              "model_answer": "<strong>Paragraph 1 (Agree - The Trenches):</strong> You could agree with the statement by discussing the sheer scale of the battles of attrition on the Western Front, such as the Somme and Passchendaele, where the German army was slowly ground down.<br><br><strong>Paragraph 2 (Disagree - Global Empire):</strong> You could disagree by arguing the war was a global conflict. The contribution of over 1.5 million men from the British Indian Army (including heroes like Khudadad Khan) and resources from across the Empire were crucial to preventing an early defeat.<br><br><strong>Paragraph 3 (Disagree - Home Front):</strong> You could also disagree by arguing the war was won on the Home Front. The mobilization of the entire civilian population, such as women in munitions factories, ensured the military had the supplies needed to win.<br><br><strong>Paragraph 4 (Disagree - Local Impact):</strong> You could also argue that focusing only on military victory ignores the devastating long-term social impact. Using local micro-histories, such as the 67 names on the Stubbington memorial or the tragedy of the three Lowry brothers, shows that the true cost of the war was felt in communities for decades.<br><br><strong>Conclusion:</strong> Summarize your overall judgement, balancing the military reality of the Western Front against the broader global and civilian contributions."
-            }
-          ]
-        }
-      ],
-      "quiz": [
-        {
-          "q": "In what year did the First World War begin?",
-          "a": "1914",
-          "options": [
-            "1914",
-            "1918",
-            "1939",
-            "1911"
-          ]
-        },
-        {
-          "q": "Which country was NOT part of the Triple Entente?",
-          "a": "Germany",
-          "options": [
-            "Germany",
-            "Britain",
-            "France",
-            "Russia"
-          ]
-        },
-        {
-          "q": "What condition was caused by standing in cold, flooded trenches?",
-          "a": "Trench Foot",
-          "options": [
-            "Trench Foot",
-            "Shell Shock",
-            "Spanish Flu",
-            "Cholera"
-          ]
-        },
-        {
-          "q": "How many men from the British Empire and Dominions served in the war?",
-          "a": "Nearly 3 million",
-          "options": [
-            "Nearly 3 million",
-            "100,000",
-            "500,000",
-            "5 million"
-          ]
-        },
-        {
-          "q": "What was the nickname given to women working with TNT in factories?",
-          "a": "Canary Girls",
-          "options": [
-            "Canary Girls",
-            "Tommies",
-            "Doughboys",
-            "Land Girls"
-          ]
-        }
-      ],
-      "teacher_notes": {
-        "source_context": "The visual sources in this assessment review the core themes of the unit, from the empowerment and exploitation of women in munitions factories to the enduring legacy of the conflict. **Hinge Question:** How does the image of women in munitions factories summarize the dramatic societal shifts caused by Total War?"
+      "extended": {
+        "title": "Final Assessment",
+        "question": "How far do you agree with Interpretation 2 that the Treaty of Versailles was 'a vindictive catastrophe that made a second world war inevitable'? (16 marks)",
+        "hints": [
+          "Intro: Define the debate. State that historians disagree about whether Versailles was a reasonable compromise or a disastrous mistake.",
+          "Para 1 (Agree with Interpretation 2): Discuss the harshness of the terms \u2014 \u00a36.6 billion reparations, Article 231 (War Guilt), loss of territory (Alsace-Lorraine, Polish Corridor), military restrictions (100,000 army, no air force). Explain how this humiliation fuelled extremist movements like the Nazis.",
+          "Para 2 (Disagree \u2014 support Interpretation 1): Argue that Germany was not destroyed. It kept its industrial base, national unity, and population. The reparations were reduced (Dawes Plan 1924, Young Plan 1929). The real problem was the failure to enforce the treaty in the 1930s when Hitler remilitarised the Rhineland.",
+          "Para 3 (Your own judgement): Was the treaty the CAUSE of WW2, or was it Hitler's aggression? Could the treaty have worked if it had been properly enforced?",
+          "Conclusion: State your overall judgement clearly. Was Keynes right that the treaty was a 'vindictive catastrophe', or was MacMillan right that the real failure came later?"
+        ]
       },
-      "pair_share": {
-        "prompt": "Discuss with your partner: What was the most significant turning point of the Great War?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
+      "teacher_notes": {
+        "primer": "This Year 9 capstone assessment provides a rigorous introduction to the full Edexcel Paper 3 (Section B) Interpretations format (4+4+16 marks). It is designed as the final bridge between KS3 and GCSE, preparing pupils for the exact question styles they will encounter in Year 10. The two interpretations are based on real historians (Margaret MacMillan and John Maynard Keynes) to model proper historiographical engagement.",
+        "objectives": [
+          {
+            "objective": "Identify and explain the main difference between two historical interpretations.",
+            "primer": "For the 4-mark 'difference' question, pupils must identify ONE clear difference and support it with a specific quote or reference from EACH interpretation. A common mistake is to describe the interpretations separately without explicitly stating HOW they differ.",
+            "question": "How can you structure your answer to make the contrast between the two interpretations absolutely clear to the examiner?"
+          },
+          {
+            "objective": "Suggest reasons why two historians might produce different interpretations of the same event.",
+            "primer": "Teach pupils the three main reasons interpretations differ: (1) Different emphasis on evidence (one focuses on political terms, the other on economic consequences), (2) Different historical context (Keynes wrote in 1919, MacMillan wrote with the benefit of hindsight in 2001), (3) Different values or purpose (Keynes wanted to change policy, MacMillan wanted to reassess a long-standing narrative).",
+            "question": "How might the fact that Keynes wrote his book in 1919 \u2014 just months after the treaty was signed \u2014 affect his interpretation compared to MacMillan writing in 2001?"
+          },
+          {
+            "objective": "Construct a balanced, evidence-rich 16-mark essay evaluating a historical interpretation.",
+            "primer": "Scaffold the essay structure: pupils need at least three developed paragraphs (agree, disagree, own judgement) plus a clear introduction and conclusion. Each paragraph must reference BOTH interpretations AND the pupil's own factual knowledge from the unit. The conclusion must contain a clear, justified overall judgement \u2014 sitting on the fence is not acceptable at this level.",
+            "question": "What makes a conclusion excellent rather than average? What does 'justified judgement' actually look like in practice?"
+          }
+        ]
       }
     }
   ],

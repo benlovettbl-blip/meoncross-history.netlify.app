@@ -18,7 +18,7 @@ export function initEventDelegation() {
           window.switchView(target.dataset.view, target.dataset.unit);
         }
         break;
-      
+
       case 'open-modal':
         if (window.openModal) {
           window.openModal(target.dataset.src);
@@ -26,17 +26,30 @@ export function initEventDelegation() {
         break;
 
       case 'toggle-element':
-        if (window.toggleElement) {
-          window.toggleElement(target.dataset.targetId);
+        const targetId = target.dataset.targetId || target.getAttribute('data-target-id');
+        const el = document.getElementById(targetId);
+        if (el) {
+          const currentComputed = window.getComputedStyle(el).display;
+          const isCurrentlyHidden = currentComputed === 'none' || el.style.display === 'none';
+
+          if (isCurrentlyHidden) {
+            el.classList.add('revealed');
+            el.style.display = 'block';
+          } else {
+            el.classList.remove('revealed');
+            el.style.display = 'none';
+          }
+        } else if (window.toggleElement) {
+          window.toggleElement(targetId);
         }
         break;
-      
+
       case 'render-lesson':
         if (window.renderLessonByIndex) {
           window.renderLessonByIndex(parseInt(target.dataset.index, 10));
         }
         break;
-        
+
       case 'read-aloud':
         if (window.readAloudText) {
           window.readAloudText(target);
@@ -47,15 +60,19 @@ export function initEventDelegation() {
         if (window.openDebateModal) window.openDebateModal();
         break;
       case 'open-tour-guide-modal':
-        if (window.openTourGuideModal) window.openTourGuideModal(parseInt(target.dataset.index, 10));
+        if (window.openTourGuideModal)
+          window.openTourGuideModal(parseInt(target.dataset.index, 10));
         break;
       case 'open-video-modal':
         const youtubeId = target.dataset.youtube;
         if (youtubeId) {
           const overlay = document.createElement('div');
           overlay.className = 'modal-overlay no-print';
-          overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
-          overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+          overlay.style.cssText =
+            'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
+          overlay.onclick = function (e) {
+            if (e.target === overlay) overlay.remove();
+          };
           overlay.innerHTML = `
             <div class="modal-content" style="background: transparent; width: 90%; max-width: 900px; position: relative;">
               <button onclick="this.closest('.modal-overlay').remove()" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">&times;</button>
@@ -74,7 +91,8 @@ export function initEventDelegation() {
         if (window.toggleMap) window.toggleMap(target);
         break;
       case 'open-gallery':
-        if (window.openGallery) window.openGallery(target.dataset.gallery, parseInt(target.dataset.index, 10));
+        if (window.openGallery)
+          window.openGallery(target.dataset.gallery, parseInt(target.dataset.index, 10));
         break;
       case 'check-debate':
         if (window.checkDebate) window.checkDebate(target.dataset.id);
@@ -88,7 +106,7 @@ export function initEventDelegation() {
       case 'scroll-to-para':
         if (window.scrollToPara) window.scrollToPara(target.dataset.target);
         break;
-      
+
       case 'toggle-caption-blur':
         target.classList.toggle('blurred');
         const i = target.querySelector('i');
@@ -102,11 +120,12 @@ export function initEventDelegation() {
           target.title = 'Click to hide caption';
         }
         break;
-        
+
       case 'flip-card':
         const inner = target.querySelector('.flip-card-inner');
         if (inner) {
-          inner.style.transform = inner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+          inner.style.transform =
+            inner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
         }
         break;
 
@@ -118,17 +137,30 @@ export function initEventDelegation() {
         e.preventDefault();
         if (window.toggleAllAnswers) window.toggleAllAnswers(target.closest('details'));
         break;
-        
+
       case 'reveal-all-models':
-        target.closest('.phase-card').querySelectorAll('.model-box').forEach(c => c.style.display = c.style.display === 'block' ? 'none' : 'block');
+        target
+          .closest('.phase-card')
+          .querySelectorAll('.model-box, .answer')
+          .forEach((c) => {
+            const isCurrentlyHidden =
+              window.getComputedStyle(c).display === 'none' || c.style.display === 'none';
+            if (isCurrentlyHidden) {
+              c.classList.add('revealed');
+              c.style.display = 'block';
+            } else {
+              c.classList.remove('revealed');
+              c.style.display = 'none';
+            }
+          });
         break;
-        
+
       case 'reveal-hinge':
         const hingeContent = document.getElementById(target.dataset.target);
         if (hingeContent) hingeContent.style.display = 'block';
         target.style.display = 'none';
         break;
-        
+
       case 'hinge-mcq-select':
         const parent = target.parentElement;
         const explanation = parent.nextElementSibling;
@@ -147,7 +179,7 @@ export function initEventDelegation() {
         }
         if (explanation) explanation.style.display = 'block';
         break;
-        
+
       case 'toggle-chevron':
         const content = target.nextElementSibling;
         const icon = target.querySelector('.chevron-icon');
@@ -164,36 +196,37 @@ export function initEventDelegation() {
         const overlay = target.closest('.modal-overlay');
         if (overlay) overlay.remove();
         break;
-      
+
       case 'close-modal-overlay':
         if (e.target === target) target.remove();
         break;
-        
+
       case 'toggle-wb-answer':
         const ans = target.querySelector('.wb-answer');
         if (ans) ans.classList.toggle('revealed');
         break;
-        
+
       case 'close-milestone-overlay':
         if (e.target === target && window.closeMilestoneModal) window.closeMilestoneModal();
         break;
-        
+
       case 'close-milestone':
         if (window.closeMilestoneModal) window.closeMilestoneModal();
         break;
-        
+
       case 'close-quiz-overlay':
         if (e.target === target && window.closeQuizModal) window.closeQuizModal();
         break;
-        
+
       case 'close-quiz':
         if (window.closeQuizModal) window.closeQuizModal();
         break;
-        
+
       case 'check-quiz-answer':
-        if (window.checkQuizAnswer) window.checkQuizAnswer(target, parseInt(target.dataset.idx, 10));
+        if (window.checkQuizAnswer)
+          window.checkQuizAnswer(target, parseInt(target.dataset.idx, 10));
         break;
-        
+
       case 'reveal-quiz-answer':
         if (target.nextElementSibling) target.nextElementSibling.style.display = 'block';
         target.style.display = 'none';
@@ -204,47 +237,54 @@ export function initEventDelegation() {
       case 'launch-subapp':
         if (window.launchSubApp) window.launchSubApp(target.dataset.unit);
         break;
-        
+
       case 'open-link':
         window.open(target.dataset.url, '_blank');
         break;
-        
+
       case 'toggle-bookmark':
         if (window.toggleBookmarkQuestion) window.toggleBookmarkQuestion(target.dataset.id);
         break;
-        
+
       case 'submit-quiz-answer':
-        if (window.submitQuizAnswer) window.submitQuizAnswer(target.dataset.id, target.dataset.opt, target);
+        if (window.submitQuizAnswer)
+          window.submitQuizAnswer(target.dataset.id, target.dataset.opt, target);
         break;
-        
+
       case 'print-booklet':
         if (window.printBooklet) window.printBooklet();
         break;
-        
+
       case 'view-lesson-detail':
         if (window.viewLessonDetail) window.viewLessonDetail(parseInt(target.dataset.index, 10));
         break;
-        
+
       case 'reveal-taboo-hint':
         const hintBox = document.getElementById('taboo-hint-box');
         if (hintBox) hintBox.style.display = 'block';
         target.style.display = 'none';
         break;
-        
+
       case 'next-taboo-card':
         if (window.showRandomTabooCard) window.showRandomTabooCard();
         break;
-        
+
       case 'play-decisions-scenario':
         if (window.playDecisionsScenario) window.playDecisionsScenario(target.dataset.id);
         break;
-        
+
       case 'play-decisions-phase2':
-        if (window.playDecisionsPhase2) window.playDecisionsPhase2(target.dataset.id, target.dataset.choice);
+        if (window.playDecisionsPhase2)
+          window.playDecisionsPhase2(target.dataset.id, target.dataset.choice);
         break;
-        
+
       case 'play-decisions-phase3':
-        if (window.playDecisionsPhase3) window.playDecisionsPhase3(target.dataset.id, target.dataset.choice, target.dataset.phase);
+        if (window.playDecisionsPhase3)
+          window.playDecisionsPhase3(
+            target.dataset.id,
+            target.dataset.choice,
+            target.dataset.phase,
+          );
         break;
 
       case 'quiz-zone-back':
@@ -253,11 +293,11 @@ export function initEventDelegation() {
         if (modeSelect) modeSelect.style.display = 'block';
         if (quizUi) quizUi.style.display = 'none';
         break;
-        
+
       case 'set-spec-rag':
         if (window.setSpecRag) window.setSpecRag(target.dataset.id, target.dataset.color);
         break;
-        
+
       case 'open-timeline-lesson':
         if (window.openTimelineLesson) window.openTimelineLesson(target.dataset.id);
         break;

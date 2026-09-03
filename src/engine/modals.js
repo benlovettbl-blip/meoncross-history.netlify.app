@@ -6,160 +6,209 @@ let glossaryPopover = null;
 let activeVocabElement = null;
 
 export function openCurriculumModal() {
-    let modal = document.getElementById('curriculum-modal');
-    if (!modal) {
-      modal = document.createElement('div');
-      modal.id = 'curriculum-modal';
-      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
-      
-      const content = document.createElement('div');
-      content.style.cssText = 'background:#ffffff;padding:30px;border-radius:12px;width:90%;max-width:500px;color:#333333;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
-      
-      content.innerHTML = `
+  let modal = document.getElementById('curriculum-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'curriculum-modal';
+    modal.style.cssText =
+      'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
+
+    const content = document.createElement('div');
+    content.style.cssText =
+      'background:#ffffff;padding:30px;border-radius:12px;width:90%;max-width:500px;color:#333333;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
+
+    content.innerHTML = `
         <h2 style="margin-top:0"><i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge Setup</h2>
         <p style="opacity:0.8;font-size:0.95rem;">Select the units your class has already been taught. The app will dynamically generate "PAST TOPIC" Do Now retrieval questions from these units.</p>
         <div id="unit-checkboxes" style="display:flex;flex-direction:column;gap:12px;margin:25px 0;">
         </div>
         <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
-          <button id="close-curriculum" class="btn btn-primary">Save & Close</button>
+          <button id="close-curriculum" class="btn-pedagogy-primary">Save & Close</button>
         </div>
       `;
-      modal.appendChild(content);
-      document.body.appendChild(modal);
+    modal.appendChild(content);
+    document.body.appendChild(modal);
 
-      const availableUnits = [
-        { id: 'norman_conquest', title: 'The Norman Conquest' },
-        { id: 'water_and_sanitation', title: 'Water & Health Through Time' },
-        { id: 'change_1450_1750', title: 'Change 1450-1750 (Tudors)' }
-      ];
+    const availableUnits = [
+      { id: 'norman_conquest', title: 'The Norman Conquest' },
+      { id: 'water_and_sanitation', title: 'Water & Health Through Time' },
+      { id: 'change_1450_1750', title: 'Change 1450-1750 (Tudors)' },
+    ];
 
-      const container = content.querySelector('#unit-checkboxes');
-      const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+    const container = content.querySelector('#unit-checkboxes');
+    const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
 
-      availableUnits.forEach(u => {
-        const label = document.createElement('label');
-        label.style.display = 'flex';
-        label.style.alignItems = 'center';
-        label.style.gap = '10px';
-        label.style.cursor = 'pointer';
-        label.style.fontSize = '1.1rem';
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.value = u.id;
-        checkbox.style.width = '20px';
-        checkbox.style.height = '20px';
-        checkbox.checked = taught.includes(u.id);
-        checkbox.addEventListener('change', () => {
-          let current = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
-          if (checkbox.checked) current.push(u.id);
-          else current = current.filter(id => id !== u.id);
-          localStorage.setItem('taughtUnits', JSON.stringify([...new Set(current)]));
-        });
-        label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(u.title));
-        container.appendChild(label);
+    availableUnits.forEach((u) => {
+      const label = document.createElement('label');
+      label.style.display = 'flex';
+      label.style.alignItems = 'center';
+      label.style.gap = '10px';
+      label.style.cursor = 'pointer';
+      label.style.fontSize = '1.1rem';
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.value = u.id;
+      checkbox.style.width = '20px';
+      checkbox.style.height = '20px';
+      checkbox.checked = taught.includes(u.id);
+      checkbox.addEventListener('change', () => {
+        let current = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+        if (checkbox.checked) current.push(u.id);
+        else current = current.filter((id) => id !== u.id);
+        localStorage.setItem('taughtUnits', JSON.stringify([...new Set(current)]));
       });
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(u.title));
+      container.appendChild(label);
+    });
 
-      content.querySelector('#close-curriculum').addEventListener('click', () => {
-        document.body.removeChild(modal);
-        // Refresh page to apply new Do Nows if we are currently looking at one
-        location.reload();
-      });
-    }
+    content.querySelector('#close-curriculum').addEventListener('click', () => {
+      document.body.removeChild(modal);
+      // Refresh page to apply new Do Nows if we are currently looking at one
+      location.reload();
+    });
   }
+}
 
 export function openTaskWhiteboard() {
-    const modal = document.getElementById('task-whiteboard-modal');
-    if (!modal) return;
-    
-    const container = document.getElementById('whiteboard-questions-container');
-    container.innerHTML = '';
-    
-    const activeLesson = window.currentActiveLesson || appStore.state.activeUnitData.lessons[0];
-    
-    assignQuestionNumbers(activeLesson);
-    
-    let html = '';
-    
-    const addQuestionCard = (qNum, questionText, answerText) => {
-      const finalAnswer = window.formatBold(answerText) || "Model answer to be discussed in class.";
-      const prefix = qNum && qNum !== '-' && qNum !== 'Do Now' ? `Q${qNum}. ` : (qNum === 'Do Now' ? '<strong>[Do Now]</strong> ' : '');
-      html += `
+  const modal = document.getElementById('task-whiteboard-modal');
+  if (!modal) return;
+
+  const container = document.getElementById('whiteboard-questions-container');
+  container.innerHTML = '';
+
+  const activeLesson = window.currentActiveLesson || appStore.state.activeUnitData.lessons[0];
+
+  assignQuestionNumbers(activeLesson);
+
+  let html = '';
+
+  const addQuestionCard = (qNum, questionText, answerText) => {
+    const finalAnswer = window.formatBold(answerText) || 'Model answer to be discussed in class.';
+    const prefix =
+      qNum && qNum !== '-' && qNum !== 'Do Now'
+        ? `Q${qNum}. `
+        : qNum === 'Do Now'
+          ? '<strong>[Do Now]</strong> '
+          : '';
+    html += `
         <div class="wb-question-card" style="cursor:pointer;" data-action="toggle-wb-answer" title="Click to reveal answer">
           <div style="font-weight: bold;">${prefix}${questionText}</div>
           <div class="wb-answer">${finalAnswer}</div>
         </div>
       `;
-    };
+  };
 
-    if (activeLesson.do_now) {
-      if (activeLesson.do_now.type === "timeline" && activeLesson.do_now.prediction_question) {
-        addQuestionCard('Do Now', activeLesson.do_now.prediction_question, activeLesson.do_now.model || activeLesson.do_now.answer || '');
-      } else if (activeLesson.do_now.type === "questions") {
-        activeLesson.do_now.items.forEach(item => {
-           addQuestionCard('Do Now', item.question, item.answer || '');
+  if (activeLesson.do_now) {
+    if (activeLesson.do_now.type === 'timeline' && activeLesson.do_now.prediction_question) {
+      addQuestionCard(
+        'Do Now',
+        activeLesson.do_now.prediction_question,
+        activeLesson.do_now.model || activeLesson.do_now.answer || '',
+      );
+    } else if (activeLesson.do_now.type === 'questions') {
+      activeLesson.do_now.items.forEach((item) => {
+        addQuestionCard('Do Now', item.question, item.answer || '');
+      });
+    }
+  }
+
+  if (activeLesson.primary_source && activeLesson.primary_source.question) {
+    addQuestionCard(
+      activeLesson.primary_source.qNum,
+      activeLesson.primary_source.question,
+      activeLesson.primary_source.model_answer || '',
+    );
+  }
+
+  if (activeLesson.sources) {
+    activeLesson.sources.forEach((source) => {
+      if (source.question) addQuestionCard(source.qNum, source.question, source.model_answer || '');
+    });
+  }
+
+  if (activeLesson.tasks) {
+    activeLesson.tasks.forEach((task) => {
+      addQuestionCard(
+        task.qNum,
+        task.text || task.question || '',
+        task.model || task.model_answer || '',
+      );
+    });
+  }
+
+  if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
+    addQuestionCard(
+      activeLesson.historians_corner.qNum,
+      activeLesson.historians_corner.stretch_question,
+      activeLesson.historians_corner.model_answer || '',
+    );
+  }
+
+  if (activeLesson.narrative_blocks) {
+    activeLesson.narrative_blocks.forEach((block) => {
+      if (block.source && block.source.question) {
+        addQuestionCard(block.source.qNum, block.source.question, block.source.model_answer || '');
+      }
+      if (block.tasks) {
+        block.tasks.forEach((task) => {
+          if (task.type !== 'vocab_match') {
+            addQuestionCard(
+              task.qNum,
+              task.text || task.question || '',
+              task.model || task.model_answer || '',
+            );
+          }
         });
       }
-    }
-
-    if (activeLesson.primary_source && activeLesson.primary_source.question) {
-      addQuestionCard(activeLesson.primary_source.qNum, activeLesson.primary_source.question, activeLesson.primary_source.model_answer || '');
-    }
-    
-    if (activeLesson.sources) {
-      activeLesson.sources.forEach(source => {
-        if (source.question) addQuestionCard(source.qNum, source.question, source.model_answer || '');
-      });
-    }
-
-    if (activeLesson.tasks) {
-      activeLesson.tasks.forEach(task => {
-        addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
-      });
-    }
-
-    if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
-      addQuestionCard(activeLesson.historians_corner.qNum, activeLesson.historians_corner.stretch_question, activeLesson.historians_corner.model_answer || '');
-    }
-    
-    if (activeLesson.narrative_blocks) {
-      activeLesson.narrative_blocks.forEach(block => {
-        if (block.source && block.source.question) {
-          addQuestionCard(block.source.qNum, block.source.question, block.source.model_answer || '');
-        }
-        if (block.tasks) {
-          block.tasks.forEach(task => {
-            if (task.type !== 'vocab_match') {
-              addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
-            }
-          });
-        }
-        if (block.hinge_question) {
-          addQuestionCard(block.hinge_question.qNum, block.hinge_question.question || block.hinge_question, block.hinge_question.model_answer || '');
-        }
-      });
-    }
-    
-    if (activeLesson.extended && activeLesson.extended.question) {
-      addQuestionCard(activeLesson.extended.qNum, activeLesson.extended.question, activeLesson.extended.model_answer || '');
-    }
-
-    if (activeLesson.gcse_task && (activeLesson.gcse_task.question || activeLesson.gcse_task.prompt)) {
-      addQuestionCard(activeLesson.gcse_task.qNum, activeLesson.gcse_task.question || activeLesson.gcse_task.prompt, activeLesson.gcse_task.model_answer || '');
-    }
-
-    if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
-      addQuestionCard(activeLesson.pair_share.qNum, activeLesson.pair_share.prompt, "Discuss in pairs.");
-    }
-    
-    if (activeLesson.debate_prep) {
-       addQuestionCard('-', `Debate Prep: ${activeLesson.debate_prep.question}`, `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map(a=>`<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map(a=>`<li>${a}</li>`).join('')}</ul>`);
-    }
-
-    
-    container.innerHTML = html;
-    modal.classList.add('visible');
+      if (block.hinge_question) {
+        addQuestionCard(
+          block.hinge_question.qNum,
+          block.hinge_question.question || block.hinge_question,
+          block.hinge_question.model_answer || '',
+        );
+      }
+    });
   }
+
+  if (activeLesson.extended && activeLesson.extended.question) {
+    addQuestionCard(
+      activeLesson.extended.qNum,
+      activeLesson.extended.question,
+      activeLesson.extended.model_answer || '',
+    );
+  }
+
+  if (
+    activeLesson.gcse_task &&
+    (activeLesson.gcse_task.question || activeLesson.gcse_task.prompt)
+  ) {
+    addQuestionCard(
+      activeLesson.gcse_task.qNum,
+      activeLesson.gcse_task.question || activeLesson.gcse_task.prompt,
+      activeLesson.gcse_task.model_answer || '',
+    );
+  }
+
+  if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
+    addQuestionCard(
+      activeLesson.pair_share.qNum,
+      activeLesson.pair_share.prompt,
+      'Discuss in pairs.',
+    );
+  }
+
+  if (activeLesson.debate_prep) {
+    addQuestionCard(
+      '-',
+      `Debate Prep: ${activeLesson.debate_prep.question}`,
+      `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map((a) => `<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map((a) => `<li>${a}</li>`).join('')}</ul>`,
+    );
+  }
+
+  container.innerHTML = html;
+  modal.classList.add('visible');
+}
 
 export function initGlossaryPopover() {
   if (!document.getElementById('global-glossary-popover')) {
@@ -173,7 +222,7 @@ export function initGlossaryPopover() {
   const showPopover = (e) => {
     const target = e.target.closest('.vocab-word');
     if (!target) return;
-    
+
     const definition = target.getAttribute('data-definition');
     if (!definition) return;
 
@@ -185,10 +234,10 @@ export function initGlossaryPopover() {
     // Calculate position
     const rect = target.getBoundingClientRect();
     const popoverRect = glossaryPopover.getBoundingClientRect();
-    
+
     let top = rect.top - popoverRect.height - 10;
-    let left = rect.left + (rect.width / 2) - (popoverRect.width / 2);
-    
+    let left = rect.left + rect.width / 2 - popoverRect.width / 2;
+
     // Boundary detection
     let arrowLeft = '50%';
     glossaryPopover.classList.remove('arrow-top');
@@ -204,17 +253,17 @@ export function initGlossaryPopover() {
       const overflow = 10 - left;
       left = 10;
       arrowLeft = `calc(50% - ${overflow}px)`;
-    } 
+    }
     // Right boundary
     else if (left + popoverRect.width > window.innerWidth - 10) {
-      const overflow = (left + popoverRect.width) - (window.innerWidth - 10);
+      const overflow = left + popoverRect.width - (window.innerWidth - 10);
       left = window.innerWidth - 10 - popoverRect.width;
       arrowLeft = `calc(50% + ${overflow}px)`;
     }
 
     glossaryPopover.style.top = `${top}px`;
     glossaryPopover.style.left = `${left}px`;
-    
+
     let arrowStyle = document.getElementById('popover-arrow-style');
     if (!arrowStyle) {
       arrowStyle = document.createElement('style');
@@ -238,7 +287,7 @@ export function initGlossaryPopover() {
   document.body.addEventListener('mouseout', (e) => {
     if (e.target.closest('.vocab-word')) hidePopover(e);
   });
-  
+
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.vocab-word')) {
       if (activeVocabElement === e.target.closest('.vocab-word')) {
@@ -251,12 +300,12 @@ export function initGlossaryPopover() {
       hidePopover(e);
     }
   });
-  
+
   window.addEventListener('scroll', hidePopover, { passive: true });
   window.addEventListener('resize', hidePopover, { passive: true });
 }
 
-window.openKeyInfoModal = function() {
+window.openKeyInfoModal = function () {
   const info = window.currentUnitData && window.currentUnitData.key_info;
   if (!info) return;
   const overlay = document.createElement('div');
@@ -283,27 +332,32 @@ window.openKeyInfoModal = function() {
     </div>
   `;
   document.body.appendChild(overlay);
-}
+};
 
-window.openTourGuideModal = function(lessonIndex) {
-    const lesson = window.currentUnitData.lessons[lessonIndex];
-    if (!lesson || !lesson.tour_guide_script) return;
-    
-    const overlay = document.createElement('div');
-    overlay.className = 'modal-overlay no-print';
-    overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
-    overlay.onclick = function(e) {
-      if (e.target === overlay) overlay.remove();
-    };
-    
-    let blocksHtml = lesson.tour_guide_script.map(block => `
+window.openTourGuideModal = function (lessonIndex) {
+  const lesson = window.currentUnitData.lessons[lessonIndex];
+  if (!lesson || !lesson.tour_guide_script) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay no-print';
+  overlay.style.cssText =
+    'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
+  overlay.onclick = function (e) {
+    if (e.target === overlay) overlay.remove();
+  };
+
+  let blocksHtml = lesson.tour_guide_script
+    .map(
+      (block) => `
       <div style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
         <h4 style="color: #1e293b; font-size: 1.25rem; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 12px;">${block.theme_heading}</h4>
         <div style="font-size: 1.1rem; line-height: 1.6; color: #334155;">${block.text}</div>
       </div>
-    `).join('');
+    `,
+    )
+    .join('');
 
-    overlay.innerHTML = `
+  overlay.innerHTML = `
       <div class="modal-content" style="background: white; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; padding: 40px; border-radius: 12px; font-family: 'Outfit', sans-serif;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #6366f1; padding-bottom: 15px;">
           <h3 style="margin: 0; color: #1e293b; font-size: 1.8rem;"><i class="fa-solid fa-bullhorn" style="color:#6366f1; margin-right:12px;"></i> Tour Guide Script</h3>
@@ -315,11 +369,11 @@ window.openTourGuideModal = function(lessonIndex) {
         </div>
       </div>
     `;
-    document.body.appendChild(overlay);
-  }
+  document.body.appendChild(overlay);
+};
 
-window.openDebateModal = function() {
-    window.injectDebateModalIfNeeded();
+window.openDebateModal = function () {
+  window.injectDebateModalIfNeeded();
   const modal = document.getElementById('debateModal');
   modal.style.display = 'flex';
   // Trigger reflow
@@ -327,9 +381,9 @@ window.openDebateModal = function() {
   modal.style.opacity = '1';
   modal.querySelector('.modal-content').style.transform = 'scale(1)';
   window.renderDebatePrompt();
-}
+};
 
-window.closeDebateModal = function() {
+window.closeDebateModal = function () {
   const modal = document.getElementById('debateModal');
   if (modal) {
     modal.style.opacity = '0';
@@ -338,12 +392,17 @@ window.closeDebateModal = function() {
       modal.style.display = 'none';
     }, 300);
   }
-}
+};
 
-window.renderDebatePrompt = function() {
-  if (!window.currentUnitData || !window.currentUnitData.debatePrompts || window.currentUnitData.debatePrompts.length === 0) {
-    document.getElementById('debateTopicSubtitle').innerText = "No prompts available";
-    document.getElementById('debateModalContent').innerHTML = "No debate prompts found for this unit.";
+window.renderDebatePrompt = function () {
+  if (
+    !window.currentUnitData ||
+    !window.currentUnitData.debatePrompts ||
+    window.currentUnitData.debatePrompts.length === 0
+  ) {
+    document.getElementById('debateTopicSubtitle').innerText = 'No prompts available';
+    document.getElementById('debateModalContent').innerHTML =
+      'No debate prompts found for this unit.';
     document.getElementById('btn-show-starter').style.display = 'none';
     return;
   }
@@ -351,13 +410,13 @@ window.renderDebatePrompt = function() {
   const promptData = prompts[window.currentDebateIndex];
   document.getElementById('debateTopicSubtitle').innerText = promptData.title;
   document.getElementById('debateModalContent').innerHTML = promptData.prompt;
-  
+
   const starterContainer = document.getElementById('debateSentenceStarterContainer');
   const starterBtn = document.getElementById('btn-show-starter');
-  
+
   // Hide starter by default when changing prompts
   if (starterContainer) starterContainer.style.display = 'none';
-  
+
   if (promptData.sentence_starter && starterBtn) {
     starterBtn.style.display = 'inline-block';
     starterBtn.innerText = 'Show Hint';
@@ -365,9 +424,9 @@ window.renderDebatePrompt = function() {
   } else if (starterBtn) {
     starterBtn.style.display = 'none';
   }
-}
+};
 
-window.toggleDebateStarter = function() {
+window.toggleDebateStarter = function () {
   const container = document.getElementById('debateSentenceStarterContainer');
   const btn = document.getElementById('btn-show-starter');
   if (container.style.display === 'none') {
@@ -377,18 +436,18 @@ window.toggleDebateStarter = function() {
     container.style.display = 'none';
     btn.innerText = 'Show Hint';
   }
-}
+};
 
-window.cycleDebatePrompt = function(direction) {
+window.cycleDebatePrompt = function (direction) {
   if (!window.currentUnitData || !window.currentUnitData.debatePrompts) return;
   const prompts = window.currentUnitData.debatePrompts;
   window.currentDebateIndex += direction;
   if (window.currentDebateIndex < 0) window.currentDebateIndex = prompts.length - 1;
   if (window.currentDebateIndex >= prompts.length) window.currentDebateIndex = 0;
   window.renderDebatePrompt();
-}
+};
 
-window.injectMilestoneModalIfNeeded = function() {
+window.injectMilestoneModalIfNeeded = function () {
   if (document.getElementById('milestoneModal')) return;
   const html = `
   <div id="milestoneModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" data-action="close-milestone-overlay">
@@ -400,14 +459,14 @@ window.injectMilestoneModalIfNeeded = function() {
     </div>
   </div>`;
   document.body.insertAdjacentHTML('beforeend', html);
-}
+};
 
-window.showMilestoneModal = function(id) {
+window.showMilestoneModal = function (id) {
   window.injectMilestoneModalIfNeeded();
   if (!window.currentUnitData || !window.currentUnitData.milestones) return;
   const data = window.currentUnitData.milestones[id];
   if (!data) return;
-  
+
   const contentBox = document.getElementById('modalMilestoneContent');
   if (contentBox) {
     contentBox.innerHTML = `
@@ -421,7 +480,7 @@ window.showMilestoneModal = function(id) {
       </div>
     `;
   }
-  
+
   const modal = document.getElementById('milestoneModal');
   if (modal) {
     modal.style.display = 'flex';
@@ -430,9 +489,9 @@ window.showMilestoneModal = function(id) {
     modal.style.opacity = '1';
     modal.querySelector('.modal-content').style.transform = 'scale(1)';
   }
-}
+};
 
-window.closeMilestoneModal = function() {
+window.closeMilestoneModal = function () {
   const modal = document.getElementById('milestoneModal');
   if (modal) {
     modal.style.opacity = '0';
@@ -441,9 +500,9 @@ window.closeMilestoneModal = function() {
       modal.style.display = 'none';
     }, 300);
   }
-}
+};
 
-window.injectQuizModalIfNeeded = function() {
+window.injectQuizModalIfNeeded = function () {
   if (document.getElementById('quizModal')) return;
   const html = `
   <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" data-action="close-quiz-overlay">
@@ -464,20 +523,20 @@ window.injectQuizModalIfNeeded = function() {
       
       <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
         <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
-        <button id="quiz-next-btn" class="btn btn-primary" style="display: none;" data-action="next-quiz-question">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+        <button id="quiz-next-btn" class="btn-pedagogy-primary" style="display: none;" data-action="next-quiz-question">Next Question <i class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
   </div>`;
   document.body.insertAdjacentHTML('beforeend', html);
-}
+};
 
-window.startQuiz = function(lessonId) {
+window.startQuiz = function (lessonId) {
   window.injectQuizModalIfNeeded();
   if (!window.currentUnitData || !window.currentUnitData.lessons) return;
-  const lesson = window.currentUnitData.lessons.find(l => l.id === lessonId);
+  const lesson = window.currentUnitData.lessons.find((l) => l.id === lessonId);
   if (!lesson || !lesson.quiz || lesson.quiz.length === 0) return;
-  
-  window.currentQuizData = lesson.quiz.map(q => {
+
+  window.currentQuizData = lesson.quiz.map((q) => {
     if (!q.options && q.distractors && q.distractors.length > 0) {
       let opts = [q.answer || q.a, ...q.distractors];
       opts = opts.sort(() => Math.random() - 0.5);
@@ -492,25 +551,26 @@ window.startQuiz = function(lessonId) {
   });
   window.currentQuizIndex = 0;
   window.currentQuizLessonId = lessonId;
-  
+
   window.renderQuizQuestion();
-  
+
   const modal = document.getElementById('quizModal');
   modal.style.display = 'flex';
   void modal.offsetWidth; // Trigger reflow
   modal.style.opacity = '1';
   modal.querySelector('.modal-content').style.transform = 'scale(1)';
-}
+};
 
-window.renderQuizQuestion = function() {
+window.renderQuizQuestion = function () {
   const qData = window.currentQuizData[window.currentQuizIndex];
-  document.getElementById('quiz-progress').innerText = `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
-  
+  document.getElementById('quiz-progress').innerText =
+    `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
+
   let optionsHtml = '';
   if (qData.options) {
     qData.options.forEach((opt, idx) => {
       optionsHtml += `
-        <button class="quiz-option-btn" data-idx="${idx}" data-action="check-quiz-answer" data-idx="${idx}" style="display: block; width: 100%; text-align: left; padding: 15px; margin-bottom: 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.05rem; color: #334155; cursor: pointer; transition: all 0.2s;">
+        <button class="btn-quiz-option quiz-option-btn" data-idx="${idx}" data-action="check-quiz-answer">
           <span style="display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #e2e8f0; border-radius: 50%; margin-right: 15px; font-weight: bold; color: #64748b;">${String.fromCharCode(65 + idx)}</span>
           ${opt}
         </button>
@@ -524,21 +584,21 @@ window.renderQuizQuestion = function() {
       </div>
     `;
   }
-  
+
   document.getElementById('quiz-question-container').innerHTML = `
     <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 20px; line-height: 1.4;">${qData.question || qData.q}</h3>
     ${optionsHtml}
   `;
-  
+
   document.getElementById('quiz-feedback').innerHTML = '';
-  
+
   const nextBtn = document.getElementById('quiz-next-btn');
   if (!qData.options) {
     nextBtn.style.display = 'none'; // Will be revealed when answer is shown
   } else {
     nextBtn.style.display = 'none';
   }
-  
+
   if (window.currentQuizIndex >= window.currentQuizData.length - 1) {
     nextBtn.innerHTML = 'Finish <i class="fa-solid fa-check"></i>';
     nextBtn.onclick = window.closeQuizModal;
@@ -546,15 +606,17 @@ window.renderQuizQuestion = function() {
     nextBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
     nextBtn.onclick = window.nextQuizQuestion;
   }
-}
+};
 
-window.checkQuizAnswer = function(btnEl, selectedIdx) {
+window.checkQuizAnswer = function (btnEl, selectedIdx) {
   const qData = window.currentQuizData[window.currentQuizIndex];
-  const isCorrect = (selectedIdx === qData.answer);
-  
+  const isCorrect = selectedIdx === qData.answer;
+
   // Disable all buttons
-  const allBtns = document.getElementById('quiz-question-container').querySelectorAll('.quiz-option-btn');
-  allBtns.forEach(btn => {
+  const allBtns = document
+    .getElementById('quiz-question-container')
+    .querySelectorAll('.quiz-option-btn');
+  allBtns.forEach((btn) => {
     btn.disabled = true;
     btn.style.cursor = 'default';
     if (parseInt(btn.dataset.idx) === qData.answer) {
@@ -564,39 +626,44 @@ window.checkQuizAnswer = function(btnEl, selectedIdx) {
       btn.innerHTML = '<i class="fa-solid fa-check-circle"></i> ' + btn.innerHTML;
     }
   });
-  
+
   const feedbackEl = document.getElementById('quiz-feedback');
   if (isCorrect) {
-    feedbackEl.innerHTML = '<span style="color: #22c55e;"><i class="fa-solid fa-star"></i> Correct!</span>';
+    feedbackEl.innerHTML =
+      '<span style="color: #22c55e;"><i class="fa-solid fa-star"></i> Correct!</span>';
   } else {
     btnEl.style.borderColor = '#ef4444';
     btnEl.style.background = '#fef2f2';
     btnEl.style.color = '#b91c1c';
     btnEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + btnEl.innerHTML;
-    feedbackEl.innerHTML = '<span style="color: #ef4444;">Incorrect. Review the answer above.</span>';
+    feedbackEl.innerHTML =
+      '<span style="color: #ef4444;">Incorrect. Review the answer above.</span>';
   }
-  
+
   if (window.currentQuizIndex < window.currentQuizData.length - 1) {
-    document.getElementById('quiz-next-btn').innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+    document.getElementById('quiz-next-btn').innerHTML =
+      'Next Question <i class="fa-solid fa-arrow-right"></i>';
     document.getElementById('quiz-next-btn').style.display = 'block';
     document.getElementById('quiz-next-btn').onclick = window.nextQuizQuestion;
   } else {
-    document.getElementById('quiz-next-btn').innerHTML = 'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
+    document.getElementById('quiz-next-btn').innerHTML =
+      'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
     document.getElementById('quiz-next-btn').style.display = 'block';
-    document.getElementById('quiz-next-btn').onclick = function() {
-       document.getElementById('quiz-question-container').innerHTML = '<h3 style="text-align:center; color: #15803d;"><i class="fa-solid fa-trophy"></i> Quiz Complete!</h3>';
-       document.getElementById('quiz-feedback').innerHTML = '';
-       document.getElementById('quiz-next-btn').style.display = 'none';
+    document.getElementById('quiz-next-btn').onclick = function () {
+      document.getElementById('quiz-question-container').innerHTML =
+        '<h3 style="text-align:center; color: #15803d;"><i class="fa-solid fa-trophy"></i> Quiz Complete!</h3>';
+      document.getElementById('quiz-feedback').innerHTML = '';
+      document.getElementById('quiz-next-btn').style.display = 'none';
     };
   }
-}
+};
 
-window.nextQuizQuestion = function() {
+window.nextQuizQuestion = function () {
   window.currentQuizIndex++;
   window.renderQuizQuestion();
-}
+};
 
-window.closeQuizModal = function() {
+window.closeQuizModal = function () {
   const modal = document.getElementById('quizModal');
   if (modal) {
     modal.style.opacity = '0';
@@ -605,214 +672,236 @@ window.closeQuizModal = function() {
       modal.style.display = 'none';
     }, 300);
   }
-}
+};
 
-window.openModal = function(src) {
-      const modal = document.createElement('div');
-      modal.style.position = 'fixed';
-      modal.style.top = '0';
-      modal.style.left = '0';
-      modal.style.width = '100vw';
-      modal.style.height = '100vh';
-      modal.style.backgroundColor = 'rgba(0,0,0,0.85)';
-      modal.style.zIndex = '999999';
-      modal.style.display = 'flex';
-      modal.style.justifyContent = 'center';
-      modal.style.alignItems = 'center';
-      
-      const img = document.createElement('img');
-      img.src = src;
-      img.style.maxWidth = '90%';
-      img.style.maxHeight = '90%';
-      img.style.borderRadius = '8px';
-      img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
-      img.style.transition = 'transform 0.1s ease';
+window.openModal = function (src) {
+  const modal = document.createElement('div');
+  modal.style.position = 'fixed';
+  modal.style.top = '0';
+  modal.style.left = '0';
+  modal.style.width = '100vw';
+  modal.style.height = '100vh';
+  modal.style.backgroundColor = 'rgba(0,0,0,0.85)';
+  modal.style.zIndex = '999999';
+  modal.style.display = 'flex';
+  modal.style.justifyContent = 'center';
+  modal.style.alignItems = 'center';
+
+  const img = document.createElement('img');
+  img.src = src;
+  img.style.maxWidth = '90%';
+  img.style.maxHeight = '90%';
+  img.style.borderRadius = '8px';
+  img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+  img.style.transition = 'transform 0.1s ease';
+  img.style.cursor = 'zoom-in';
+
+  let scale = 1;
+  modal.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scale += e.deltaY * -0.005;
+    scale = Math.min(Math.max(1, scale), 5);
+    const rect = img.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    if (scale === 1) {
+      img.style.transformOrigin = 'center center';
       img.style.cursor = 'zoom-in';
-
-      let scale = 1;
-      modal.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        scale += e.deltaY * -0.005;
-        scale = Math.min(Math.max(1, scale), 5); 
-        const rect = img.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        if (scale === 1) {
-            img.style.transformOrigin = 'center center';
-            img.style.cursor = 'zoom-in';
-        } else if (e.deltaY < 0) {
-            img.style.transformOrigin = `${x}% ${y}%`;
-            img.style.cursor = 'zoom-out';
-        }
-        img.style.transform = `scale(${scale})`;
-      });
-
-      modal.onclick = (e) => {
-          if (scale > 1) {
-              scale = 1;
-              img.style.transform = `scale(1)`;
-              img.style.cursor = 'zoom-in';
-          } else {
-              modal.remove();
-          }
-      };
-      
-      modal.appendChild(img);
-      document.body.appendChild(modal);
+    } else if (e.deltaY < 0) {
+      img.style.transformOrigin = `${x}% ${y}%`;
+      img.style.cursor = 'zoom-out';
     }
+    img.style.transform = `scale(${scale})`;
+  });
 
-window.openGallery = function(encodedData, startIndex) {
-    const images = JSON.parse(decodeURIComponent(encodedData));
-    let currentIndex = startIndex;
+  modal.onclick = (e) => {
+    if (scale > 1) {
+      scale = 1;
+      img.style.transform = `scale(1)`;
+      img.style.cursor = 'zoom-in';
+    } else {
+      modal.remove();
+    }
+  };
 
-    const modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100vw';
-    modal.style.height = '100vh';
-    modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
-    modal.style.zIndex = '999999';
-    modal.style.display = 'flex';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '20px';
-    closeBtn.style.right = '20px';
-    closeBtn.style.background = 'none';
-    closeBtn.style.border = 'none';
-    closeBtn.style.color = 'white';
-    closeBtn.style.fontSize = '2rem';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.onclick = () => modal.remove();
-    modal.appendChild(closeBtn);
+  modal.appendChild(img);
+  document.body.appendChild(modal);
+};
 
-    const imgContainer = document.createElement('div');
-    imgContainer.style.position = 'relative';
-    imgContainer.style.width = '80%';
-    imgContainer.style.height = '80%';
-    imgContainer.style.display = 'flex';
-    imgContainer.style.flexDirection = 'column';
-    imgContainer.style.justifyContent = 'center';
-    imgContainer.style.alignItems = 'center';
+window.openGallery = function (encodedData, startIndex) {
+  const images = JSON.parse(decodeURIComponent(encodedData));
+  let currentIndex = startIndex;
 
-    const img = document.createElement('img');
-    img.style.maxWidth = '100%';
-    img.style.maxHeight = '90%';
-    img.style.objectFit = 'contain';
-    img.style.borderRadius = '8px';
-    img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
-    img.style.transition = 'transform 0.1s ease';
-    img.style.cursor = 'zoom-in';
-    imgContainer.appendChild(img);
+  const modal = document.createElement('div');
+  modal.style.position = 'fixed';
+  modal.style.top = '0';
+  modal.style.left = '0';
+  modal.style.width = '100vw';
+  modal.style.height = '100vh';
+  modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+  modal.style.zIndex = '999999';
+  modal.style.display = 'flex';
+  modal.style.justifyContent = 'center';
+  modal.style.alignItems = 'center';
 
-    const caption = document.createElement('div');
-    caption.style.color = 'white';
-    caption.style.marginTop = '15px';
-    caption.style.fontSize = '1.1rem';
-    caption.style.textAlign = 'center';
-    imgContainer.appendChild(caption);
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  closeBtn.style.position = 'absolute';
+  closeBtn.style.top = '20px';
+  closeBtn.style.right = '20px';
+  closeBtn.style.background = 'none';
+  closeBtn.style.border = 'none';
+  closeBtn.style.color = 'white';
+  closeBtn.style.fontSize = '2rem';
+  closeBtn.style.cursor = 'pointer';
+  closeBtn.onclick = () => modal.remove();
+  modal.appendChild(closeBtn);
 
-    modal.appendChild(imgContainer);
+  const imgContainer = document.createElement('div');
+  imgContainer.style.position = 'relative';
+  imgContainer.style.width = '80%';
+  imgContainer.style.height = '80%';
+  imgContainer.style.display = 'flex';
+  imgContainer.style.flexDirection = 'column';
+  imgContainer.style.justifyContent = 'center';
+  imgContainer.style.alignItems = 'center';
 
-    let scale = 1;
-    imgContainer.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      scale += e.deltaY * -0.005;
-      scale = Math.min(Math.max(1, scale), 5); 
-      const rect = img.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      if (scale === 1) {
-          img.style.transformOrigin = 'center center';
-          img.style.cursor = 'zoom-in';
-      } else if (e.deltaY < 0) {
-          img.style.transformOrigin = `${x}% ${y}%`;
-          img.style.cursor = 'zoom-out';
-      }
-      img.style.transform = `scale(${scale})`;
-    });
+  const img = document.createElement('img');
+  img.style.maxWidth = '100%';
+  img.style.maxHeight = '90%';
+  img.style.objectFit = 'contain';
+  img.style.borderRadius = '8px';
+  img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+  img.style.transition = 'transform 0.1s ease';
+  img.style.cursor = 'zoom-in';
+  imgContainer.appendChild(img);
 
-    imgContainer.onclick = (e) => {
-        if (scale > 1) {
-            scale = 1;
-            img.style.transform = `scale(1)`;
-            img.style.cursor = 'zoom-in';
-        }
-    };
+  const caption = document.createElement('div');
+  caption.style.color = 'white';
+  caption.style.marginTop = '15px';
+  caption.style.fontSize = '1.1rem';
+  caption.style.textAlign = 'center';
+  imgContainer.appendChild(caption);
 
-    const prevBtn = document.createElement('button');
-    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
-    prevBtn.style.position = 'absolute';
-    prevBtn.style.left = '5%';
-    prevBtn.style.top = '50%';
-    prevBtn.style.transform = 'translateY(-50%)';
-    prevBtn.style.background = 'rgba(255,255,255,0.2)';
-    prevBtn.style.border = 'none';
-    prevBtn.style.color = 'white';
-    prevBtn.style.fontSize = '2rem';
-    prevBtn.style.width = '60px';
-    prevBtn.style.height = '60px';
-    prevBtn.style.borderRadius = '50%';
-    prevBtn.style.cursor = 'pointer';
-    prevBtn.style.display = 'flex';
-    prevBtn.style.justifyContent = 'center';
-    prevBtn.style.alignItems = 'center';
-    prevBtn.onclick = (e) => { e.stopPropagation(); scale = 1; img.style.transform = 'scale(1)'; if (currentIndex > 0) { currentIndex--; updateImage(); } };
-    modal.appendChild(prevBtn);
+  modal.appendChild(imgContainer);
 
-    const nextBtn = document.createElement('button');
-    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
-    nextBtn.style.position = 'absolute';
-    nextBtn.style.right = '5%';
-    nextBtn.style.top = '50%';
-    nextBtn.style.transform = 'translateY(-50%)';
-    nextBtn.style.background = 'rgba(255,255,255,0.2)';
-    nextBtn.style.border = 'none';
-    nextBtn.style.color = 'white';
-    nextBtn.style.fontSize = '2rem';
-    nextBtn.style.width = '60px';
-    nextBtn.style.height = '60px';
-    nextBtn.style.borderRadius = '50%';
-    nextBtn.style.cursor = 'pointer';
-    nextBtn.style.display = 'flex';
-    nextBtn.style.justifyContent = 'center';
-    nextBtn.style.alignItems = 'center';
-    nextBtn.onclick = (e) => { e.stopPropagation(); scale = 1; img.style.transform = 'scale(1)'; if (currentIndex < images.length - 1) { currentIndex++; updateImage(); } };
-    modal.appendChild(nextBtn);
+  let scale = 1;
+  imgContainer.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scale += e.deltaY * -0.005;
+    scale = Math.min(Math.max(1, scale), 5);
+    const rect = img.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    if (scale === 1) {
+      img.style.transformOrigin = 'center center';
+      img.style.cursor = 'zoom-in';
+    } else if (e.deltaY < 0) {
+      img.style.transformOrigin = `${x}% ${y}%`;
+      img.style.cursor = 'zoom-out';
+    }
+    img.style.transform = `scale(${scale})`;
+  });
 
-    const updateImage = () => {
-      img.src = images[currentIndex].src;
-      caption.innerHTML = images[currentIndex].alt || '';
-      prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
-      nextBtn.style.display = currentIndex < images.length - 1 ? 'flex' : 'none';
-    };
+  imgContainer.onclick = (e) => {
+    if (scale > 1) {
+      scale = 1;
+      img.style.transform = `scale(1)`;
+      img.style.cursor = 'zoom-in';
+    }
+  };
 
-    modal.onclick = (e) => {
-      if (e.target === modal || e.target === imgContainer) modal.remove();
-    };
-    
-    const keyHandler = (e) => {
-      if (!document.body.contains(modal)) {
-        document.removeEventListener('keydown', keyHandler);
-        return;
-      }
-      if (e.key === 'Escape') modal.remove();
-      if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; updateImage(); }
-      if (e.key === 'ArrowRight' && currentIndex < images.length - 1) { currentIndex++; updateImage(); }
-    };
-    document.addEventListener('keydown', keyHandler);
+  const prevBtn = document.createElement('button');
+  prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+  prevBtn.style.position = 'absolute';
+  prevBtn.style.left = '5%';
+  prevBtn.style.top = '50%';
+  prevBtn.style.transform = 'translateY(-50%)';
+  prevBtn.style.background = 'rgba(255,255,255,0.2)';
+  prevBtn.style.border = 'none';
+  prevBtn.style.color = 'white';
+  prevBtn.style.fontSize = '2rem';
+  prevBtn.style.width = '60px';
+  prevBtn.style.height = '60px';
+  prevBtn.style.borderRadius = '50%';
+  prevBtn.style.cursor = 'pointer';
+  prevBtn.style.display = 'flex';
+  prevBtn.style.justifyContent = 'center';
+  prevBtn.style.alignItems = 'center';
+  prevBtn.onclick = (e) => {
+    e.stopPropagation();
+    scale = 1;
+    img.style.transform = 'scale(1)';
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateImage();
+    }
+  };
+  modal.appendChild(prevBtn);
 
-    updateImage();
-    document.body.appendChild(modal);
-  }
+  const nextBtn = document.createElement('button');
+  nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+  nextBtn.style.position = 'absolute';
+  nextBtn.style.right = '5%';
+  nextBtn.style.top = '50%';
+  nextBtn.style.transform = 'translateY(-50%)';
+  nextBtn.style.background = 'rgba(255,255,255,0.2)';
+  nextBtn.style.border = 'none';
+  nextBtn.style.color = 'white';
+  nextBtn.style.fontSize = '2rem';
+  nextBtn.style.width = '60px';
+  nextBtn.style.height = '60px';
+  nextBtn.style.borderRadius = '50%';
+  nextBtn.style.cursor = 'pointer';
+  nextBtn.style.display = 'flex';
+  nextBtn.style.justifyContent = 'center';
+  nextBtn.style.alignItems = 'center';
+  nextBtn.onclick = (e) => {
+    e.stopPropagation();
+    scale = 1;
+    img.style.transform = 'scale(1)';
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      updateImage();
+    }
+  };
+  modal.appendChild(nextBtn);
 
-window.openTeacherGuideModal = function() {
-    if (document.getElementById('teacherGuideModal')) return;
-    const html = `
+  const updateImage = () => {
+    img.src = images[currentIndex].src;
+    caption.innerHTML = images[currentIndex].alt || '';
+    prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+    nextBtn.style.display = currentIndex < images.length - 1 ? 'flex' : 'none';
+  };
+
+  modal.onclick = (e) => {
+    if (e.target === modal || e.target === imgContainer) modal.remove();
+  };
+
+  const keyHandler = (e) => {
+    if (!document.body.contains(modal)) {
+      document.removeEventListener('keydown', keyHandler);
+      return;
+    }
+    if (e.key === 'Escape') modal.remove();
+    if (e.key === 'ArrowLeft' && currentIndex > 0) {
+      currentIndex--;
+      updateImage();
+    }
+    if (e.key === 'ArrowRight' && currentIndex < images.length - 1) {
+      currentIndex++;
+      updateImage();
+    }
+  };
+  document.addEventListener('keydown', keyHandler);
+
+  updateImage();
+  document.body.appendChild(modal);
+};
+
+window.openTeacherGuideModal = function () {
+  if (document.getElementById('teacherGuideModal')) return;
+  const html = `
     <div id="teacherGuideModal" class="modal-overlay no-print" style="display: flex; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" data-action="close-modal-overlay">
       <div class="modal-content" style="background: white; border-radius: 12px; padding: 40px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; color: #1e293b; position: relative; font-family: 'Outfit', sans-serif;">
         <button data-action="close-modal" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; color: #64748b; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
@@ -839,15 +928,14 @@ window.openTeacherGuideModal = function() {
         <p style="font-size: 1.05rem; line-height: 1.6;"><strong>Your Role:</strong> Let the pupils spread out to find their assigned graves and read the biography on their phones. At the end of the visit, gather them together and ask them to orally tell the rest of the group the story of "their" soldier.</p>
         
         <div style="margin-top: 40px; text-align: center;">
-          <button class="btn btn-primary" data-action="close-modal" style="background: #4f46e5; color: white; padding: 10px 30px; font-size: 1.1rem; border-radius: 8px; border: none; cursor: pointer;">Got it!</button>
+          <button class="btn-pedagogy-primary" data-action="close-modal" style="background: #4f46e5; color: white; padding: 10px 30px; font-size: 1.1rem; border-radius: 8px; border: none; cursor: pointer;">Got it!</button>
         </div>
       </div>
     </div>
     `;
-    document.body.insertAdjacentHTML('beforeend', html);
-    const modal = document.getElementById('teacherGuideModal');
-    // Trigger reflow for animation
-    void modal.offsetWidth;
-    modal.style.opacity = '1';
-  }
-
+  document.body.insertAdjacentHTML('beforeend', html);
+  const modal = document.getElementById('teacherGuideModal');
+  // Trigger reflow for animation
+  void modal.offsetWidth;
+  modal.style.opacity = '1';
+};

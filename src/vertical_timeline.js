@@ -1,38 +1,44 @@
 export function renderVerticalTimeline(container, timelineData, unitData) {
-    if (!timelineData || !Array.isArray(timelineData) || timelineData.length === 0) {
-        container.innerHTML = '<p style="text-align: center; color: #64748b; font-size: 1.1rem; padding: 40px;">No timeline events found for this unit.</p>';
-        return;
-    }
+  if (!timelineData || !Array.isArray(timelineData) || timelineData.length === 0) {
+    container.innerHTML =
+      '<p style="text-align: center; color: #64748b; font-size: 1.1rem; padding: 40px;">No timeline events found for this unit.</p>';
+    return;
+  }
 
-    // Attach global handler for opening lessons from timeline
-    if (!window.openTimelineLesson) {
-        window.openTimelineLesson = function(lessonId) {
-            if (window.db && window.currentUnitId && window.db[window.currentUnitId]) {
-                const ud = window.db[window.currentUnitId].data;
-                if (ud && ud.lessons) {
-                    const lesson = ud.lessons.find(l => l.id === lessonId);
-                    if (lesson) {
-                        window.dispatchEvent(new CustomEvent('renderLessonEvent', { detail: lesson }));
-                    }
-                }
-            }
-        };
-    }
+  // Attach global handler for opening lessons from timeline
+  if (!window.openTimelineLesson) {
+    window.openTimelineLesson = function (lessonId) {
+      if (window.db && window.currentUnitId && window.db[window.currentUnitId]) {
+        const ud = window.db[window.currentUnitId].data;
+        if (ud && ud.lessons) {
+          const lesson = ud.lessons.find((l) => l.id === lessonId);
+          if (lesson) {
+            window.dispatchEvent(new CustomEvent('renderLessonEvent', { detail: lesson }));
+          }
+        }
+      }
+    };
+  }
 
-    // Determine the structure type
-    const isGrouped = timelineData.length > 0 && timelineData[0].events && Array.isArray(timelineData[0].events);
+  // Determine the structure type
+  const isGrouped =
+    timelineData.length > 0 && timelineData[0].events && Array.isArray(timelineData[0].events);
 
-    // Extract unique themes
-    const themes = new Set();
-    if (isGrouped) {
-        timelineData.forEach(group => {
-            group.events.forEach(evt => { if (evt.theme) themes.add(evt.theme); });
-        });
-    } else {
-        timelineData.forEach(evt => { if (evt.theme) themes.add(evt.theme); });
-    }
+  // Extract unique themes
+  const themes = new Set();
+  if (isGrouped) {
+    timelineData.forEach((group) => {
+      group.events.forEach((evt) => {
+        if (evt.theme) themes.add(evt.theme);
+      });
+    });
+  } else {
+    timelineData.forEach((evt) => {
+      if (evt.theme) themes.add(evt.theme);
+    });
+  }
 
-    let html = `
+  let html = `
     <style>
         .timeline-filters {
             text-align: center;
@@ -199,81 +205,97 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
     </style>
     `;
 
-    if (themes.size > 0) {
-        html += `
+  if (themes.size > 0) {
+    html += `
         <div class="timeline-filters">
             <button class="timeline-filter-btn active" data-theme="all">All</button>
-            ${Array.from(themes).map(theme => `<button class="timeline-filter-btn" data-theme="${theme}">${theme}</button>`).join('')}
+            ${Array.from(themes)
+              .map(
+                (theme) =>
+                  `<button class="timeline-filter-btn" data-theme="${theme}">${theme}</button>`,
+              )
+              .join('')}
         </div>
         `;
-    }
+  }
 
-    html += `
+  html += `
     <div class="timeline-container" id="timeline-container-main">
     `;
 
-    let delay = 0;
+  let delay = 0;
 
-    if (isGrouped) {
-        timelineData.forEach(group => {
-            // Strictly use lesson_banner_id if provided. This prevents banners from showing on incorrect groups.
-            const targetLessonId = group.lesson_banner_id;
-            const lessonObj = (targetLessonId && unitData && unitData.lessons) ? unitData.lessons.find(l => l.id === targetLessonId) : null;
-            if (lessonObj) {
-                html += `
+  if (isGrouped) {
+    timelineData.forEach((group) => {
+      // Strictly use lesson_banner_id if provided. This prevents banners from showing on incorrect groups.
+      const targetLessonId = group.lesson_banner_id;
+      const lessonObj =
+        targetLessonId && unitData && unitData.lessons
+          ? unitData.lessons.find((l) => l.id === targetLessonId)
+          : null;
+      if (lessonObj) {
+        html += `
                 <div class="timeline-lesson-banner sticky-lesson-header" style="z-index: 100; background: linear-gradient(135deg, #1e3a8a, #312e81); padding: 15px 20px; border-radius: 8px; margin: 40px 0 25px 0; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #a5b4fc;">
                     <div style="font-size: 1.15rem; font-weight: 600;"><i class="fa-solid fa-book-open" style="color: #fde047; margin-right: 12px;"></i> ${lessonObj.title || group.title}</div>
-                    <button class="btn btn-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" data-action="open-timeline-lesson" data-id="${lessonObj.id}"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
+                    <button class="btn-pedagogy-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" data-action="open-timeline-lesson" data-id="${lessonObj.id}"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
                 </div>
                 `;
-            } else {
-                html += `<div class="timeline-group-title">${group.title}</div>`;
-            }
-            
-            group.events.forEach(evt => {
-                html += `
+      } else {
+        html += `<div class="timeline-group-title">${group.title}</div>`;
+      }
+
+      group.events.forEach((evt) => {
+        html += `
                 <div class="timeline-event" data-theme="${evt.theme || ''}" style="animation-delay: ${delay}s">
                     <div class="timeline-card">
                         ${evt.key_topic ? `<div class="timeline-kt">${evt.key_topic}</div>` : ''}
-                        ${evt.image ? `
+                        ${
+                          evt.image
+                            ? `
                         <div class="timeline-image-wrapper">
                             <img src="${evt.image}" class="timeline-image" alt="${evt.image_caption || evt.title || evt.text || 'Timeline Image'}">
                             ${evt.image_caption ? `<div class="timeline-image-caption">${evt.image_caption}</div>` : ''}
                         </div>
-                        ` : ''}
+                        `
+                            : ''
+                        }
                         ${evt.date ? `<div class="timeline-date">${evt.date}</div>` : ''}
                         <p class="timeline-desc">${evt.text}</p>
                         ${evt.category ? `<div class="timeline-category">${evt.category}</div>` : ''}
                     </div>
                 </div>
                 `;
-                delay += 0.05;
-            });
-        });
-    } else {
-        timelineData.forEach(evt => {
-            if (evt.lesson_banner_id && unitData && unitData.lessons) {
-                const lessonObj = unitData.lessons.find(l => l.id === evt.lesson_banner_id);
-                if (lessonObj) {
-                    html += `
+        delay += 0.05;
+      });
+    });
+  } else {
+    timelineData.forEach((evt) => {
+      if (evt.lesson_banner_id && unitData && unitData.lessons) {
+        const lessonObj = unitData.lessons.find((l) => l.id === evt.lesson_banner_id);
+        if (lessonObj) {
+          html += `
                     <div class="timeline-lesson-banner sticky-lesson-header" style="background: linear-gradient(135deg, #1e3a8a, #312e81); padding: 15px 20px; border-radius: 8px; margin: 40px 0 25px 0; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 2px solid #a5b4fc; z-index: 100;">
                         <div style="font-size: 1.15rem; font-weight: 600;"><i class="fa-solid fa-book-open" style="color: #fde047; margin-right: 12px;"></i> ${lessonObj.title}</div>
-                        <button class="btn btn-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" data-action="open-timeline-lesson" data-id="${lessonObj.id}"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
+                        <button class="btn-pedagogy-primary" style="background: #10b981; border: none; padding: 6px 14px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px;" data-action="open-timeline-lesson" data-id="${lessonObj.id}"><i class="fa-solid fa-circle-play"></i> Jump to Lesson</button>
                     </div>
                     `;
-                }
-            }
+        }
+      }
 
-            html += `
+      html += `
             <div class="timeline-event" data-theme="${evt.theme || ''}" style="animation-delay: ${delay}s">
                 <div class="timeline-card">
                     ${evt.key_topic ? `<div class="timeline-kt">${evt.key_topic}</div>` : ''}
-                    ${evt.image ? `
+                    ${
+                      evt.image
+                        ? `
                     <div class="timeline-image-wrapper">
                         <img src="${evt.image}" class="timeline-image" alt="${evt.image_caption || evt.title || evt.text || 'Timeline Image'}">
                         ${evt.image_caption ? `<div class="timeline-image-caption">${evt.image_caption}</div>` : ''}
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
                     ${evt.date ? `<div class="timeline-date">${evt.date}</div>` : ''}
                     ${evt.title ? `<div class="timeline-title">${evt.title}</div>` : ''}
                     ${evt.description ? `<p class="timeline-desc">${evt.description}</p>` : ''}
@@ -282,38 +304,38 @@ export function renderVerticalTimeline(container, timelineData, unitData) {
                 </div>
             </div>
             `;
-            delay += 0.05;
-        });
-    }
+      delay += 0.05;
+    });
+  }
 
-    html += `</div>`;
-    container.innerHTML = html;
+  html += `</div>`;
+  container.innerHTML = html;
 
-    // Attach filter logic
-    if (themes.size > 0) {
-        const filterBtns = container.querySelectorAll('.timeline-filter-btn');
-        const events = container.querySelectorAll('.timeline-event');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active state
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const selectedTheme = btn.dataset.theme;
-                
-                events.forEach(event => {
-                    if (selectedTheme === 'all' || event.dataset.theme === selectedTheme) {
-                        event.style.display = 'block';
-                        // Reset animation to replay it
-                        event.style.animation = 'none';
-                        event.offsetHeight; // trigger reflow
-                        event.style.animation = null;
-                    } else {
-                        event.style.display = 'none';
-                    }
-                });
-            });
+  // Attach filter logic
+  if (themes.size > 0) {
+    const filterBtns = container.querySelectorAll('.timeline-filter-btn');
+    const events = container.querySelectorAll('.timeline-event');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const selectedTheme = btn.dataset.theme;
+
+        events.forEach((event) => {
+          if (selectedTheme === 'all' || event.dataset.theme === selectedTheme) {
+            event.style.display = 'block';
+            // Reset animation to replay it
+            event.style.animation = 'none';
+            event.offsetHeight; // trigger reflow
+            event.style.animation = null;
+          } else {
+            event.style.display = 'none';
+          }
         });
-    }
+      });
+    });
+  }
 }

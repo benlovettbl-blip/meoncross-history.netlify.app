@@ -14,7 +14,7 @@ export const unitData = {
   "extended": {
     "question": "1 (a). How useful are Sources A and B for an enquiry into the devastated landscape of the Ypres Salient? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
     "scaffolding": [
-      "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+      "<strong>Provenance Clues:</strong> Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
     ],
     "source_a": {
       "provenance": "The Menin Road, a painting by official British War Artist Paul Nash, commissioned in 1919.",
@@ -109,6 +109,9 @@ export const unitData = {
     {
       "id": "day_0",
       "title": "Pre-Trip Information",
+      "learning_objective": "To prepare historically and logistically for the battlefield tour of Ypres.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "What to Pack & Logistics",
       "teacher_notes": {
         "primer": "Vital information for parents and pupils prior to departure.",
@@ -132,6 +135,9 @@ export const unitData = {
     {
       "id": "day_1",
       "title": "Day 1: Thursday 1st October 2026",
+      "learning_objective": "To analyze the initial landscape and historical context of the Ypres Salient.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Travel and Initial Explorations",
       "teacher_notes": {
         "primer": "Travel day from school to the Ypres Salient, featuring stops at Essex Farm, Langemarck, and Hooge Crater.",
@@ -224,7 +230,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "Essex Farm & The Advanced Dressing Station",
-          "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_essex_farm.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"John McCrae\"/><br><small>Lt Col John McCrae, author of In Flanders Fields</small></div>Essex Farm served as an Advanced Dressing Station (ADS). Medical officers worked in cramped, concrete dugouts just hundreds of yards from the fighting to stabilize the wounded before they could be evacuated to hospitals further back.<br><br><strong>Key Facts:</strong><ul><li>Triage was practiced here: sorting casualties based on the severity of their wounds.</li><li>In May 1915, Canadian surgeon Lt Col John McCrae wrote the famous poem <em>In Flanders Fields</em> while stationed here after burying his friend Alexis Helmer.</li><li>Valentine Joe Strudwick, one of the youngest casualties of the war at just 15 years old, is buried here.</li></ul>"
+          "text": "<div class=\"source-box\" style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/ypres_essex_farm.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"John McCrae\"/><br><small>Lt Col John McCrae, author of In Flanders Fields</small></div>Essex Farm served as an Advanced Dressing Station (ADS). Medical officers worked in cramped, concrete dugouts just hundreds of yards from the fighting to stabilize the wounded before they could be evacuated to hospitals further back.<br><br><strong>Key Facts:</strong><ul><li>Triage was practiced here: sorting casualties based on the severity of their wounds.</li><li>In May 1915, Canadian surgeon Lt Col John McCrae wrote the famous poem <em>In Flanders Fields</em> while stationed here after burying his friend Alexis Helmer.</li><li>Valentine Joe Strudwick, one of the youngest casualties of the war at just 15 years old, is buried here.</li></ul><br><blockquote><strong>Written Source:</strong><br><em>\"In Flanders fields the poppies blow<br>Between the crosses, row on row,<br>That mark our place; and in the sky<br>The larks, still bravely singing, fly<br>Scarce heard amid the guns below.<br><br>We are the Dead. Short days ago<br>We lived, felt dawn, saw sunset glow,<br>Loved and were loved, and now we lie<br>In Flanders fields.<br><br>Take up our quarrel with the foe:<br>To you from failing hands we throw<br>The torch; be yours to hold it high.<br>If ye break faith with us who die<br>We shall not sleep, though poppies grow<br>In Flanders fields.\"</em><br>— <strong>Lieutenant-Colonel John McCrae</strong>, Canadian Army Medical Corps, composed at Essex Farm (May 1915).</blockquote>"
         },
         {
           "type": "narrative",
@@ -301,7 +307,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "2:30 PM – Essex Farm Dressing Station",
-          "text": "\"As we pull up to our first stop, I want you to ask yourselves: what is the youngest age you can imagine going to war? Here lies Valentine Joe Strudwick, a Commonwealth soldier who died at just 15 years old. Essex Farm was an Advanced Dressing Station. Stretchers were carried through the mud to this exact spot. It was right here, surrounded by the dying, that a Canadian surgeon named John McCrae wrote the famous poem, In Flanders Fields. You are standing on the frontline of First World War medicine.\"<br><br><strong>Teacher Points:</strong><ul><li>Advanced Dressing Stations (ADS) like this were just a few hundred yards behind the frontline, often housed in concrete bunkers or dugouts to survive shelling.</li><li>Medical officers here practiced triage, sorting the wounded into three groups: those who would return to duty, those needing immediate surgery, and those beyond help.</li><li>John McCrae wrote his poem in May 1915 after burying a close friend, Alexis Helmer, whose grave was later destroyed by artillery fire.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>\"In Flanders fields the poppies blow / Between the crosses, row on row, / That mark our place; and in the sky / The larks, still bravely singing, fly / Scarce heard amid the guns below.\"</em><br>— <strong>Lieutenant-Colonel John McCrae</strong>, Canadian Army Medical Corps, composed at Essex Farm (May 1915).</blockquote>"
+          "text": "\"As we pull up to our first stop, I want you to ask yourselves: what is the youngest age you can imagine going to war? Here lies Valentine Joe Strudwick, a Commonwealth soldier who died at just 15 years old. Essex Farm was an Advanced Dressing Station. Stretchers were carried through the mud to this exact spot. It was right here, surrounded by the dying, that a Canadian surgeon named John McCrae wrote the famous poem, In Flanders Fields. You are standing on the frontline of First World War medicine.\"<br><br><strong>Teacher Points:</strong><ul><li>Advanced Dressing Stations (ADS) like this were just a few hundred yards behind the frontline, often housed in concrete bunkers or dugouts to survive shelling.</li><li>Medical officers here practiced triage, sorting the wounded into three groups: those who would return to duty, those needing immediate surgery, and those beyond help.</li><li>John McCrae wrote his poem in May 1915 after burying a close friend, Alexis Helmer, whose grave was later destroyed by artillery fire.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>\"In Flanders fields the poppies blow<br>Between the crosses, row on row,<br>That mark our place; and in the sky<br>The larks, still bravely singing, fly<br>Scarce heard amid the guns below.<br><br>We are the Dead. Short days ago<br>We lived, felt dawn, saw sunset glow,<br>Loved and were loved, and now we lie<br>In Flanders fields.<br><br>Take up our quarrel with the foe:<br>To you from failing hands we throw<br>The torch; be yours to hold it high.<br>If ye break faith with us who die<br>We shall not sleep, though poppies grow<br>In Flanders fields.\"</em><br>— <strong>Lieutenant-Colonel John McCrae</strong>, Canadian Army Medical Corps, composed at Essex Farm (May 1915).</blockquote>"
         },
         {
           "type": "narrative",
@@ -318,7 +324,7 @@ export const unitData = {
       "extended": {
         "question": "1 (a). How useful are Sources A and B for an enquiry into the difficult conditions faced by the medical services at Passchendaele and Ypres? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
         "scaffolding": [
-          "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+          "<strong>Provenance Clues:</strong> Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
         ],
         "source_a": {
           "provenance": "A photograph taken by official war photographer Frank Hurley showing Australian soldiers walking along a duckboard track through the shattered landscape of Chateau Wood during the Battle of Passchendaele, 1917.",
@@ -338,6 +344,9 @@ export const unitData = {
     {
       "id": "day_2",
       "title": "Day 2: Friday 2nd October 2026",
+      "learning_objective": "To evaluate the strategic realities and human cost of the major offensives around Ypres.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Immersive Battlefield Study",
       "teacher_notes": {
         "primer": "A full day of guided study including the Menin Gate Last Post Ceremony.",
@@ -511,7 +520,7 @@ export const unitData = {
       "extended": {
         "question": "1 (a). How useful are Sources A and B for an enquiry into the physical conditions of the landscape and trench warfare on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)",
         "scaffolding": [
-          "**Provenance Clues:** Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
+          "<strong>Provenance Clues:</strong> Analyze the Nature, Origin, and Purpose of the source. Ask yourself: Who wrote it? When? Why? How does their motive or the intended audience affect what they have written and its usefulness for the enquiry?"
         ],
         "source_a": {
           "provenance": "A photograph showing the devastating impact of artillery fire and mud on the landscape during the Battle of Passchendaele, 1917.",
@@ -531,7 +540,13 @@ export const unitData = {
     {
       "id": "day_3",
       "title": "Day 3: Saturday 3rd October 2026",
+      "learning_objective": "To synthesize the battlefield experience and reflect on the legacy of the conflict during the final day.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Poperinge and the Journey Home",
+      "banner": "/images/poperinge.png",
+      "image": "/images/poperinge.png",
+      "cover_image": "/images/poperinge.png",
       "teacher_notes": {
         "primer": "Final visits in Ypres and Poperinge before travelling back to Meoncross School.",
         "objectives": []
@@ -605,7 +620,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "Ypres Ramparts",
-          "text": "<div style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I.png\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\" alt=\"St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I\" /><br><small style=\"color: #64748b;\">St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I</small></div>The medieval ramparts of Ypres provided some of the only cover in the destroyed city. Soldiers dug deep into the ancient moated defenses to hide from the shelling. The Ramparts Cemetery is one of the most picturesque on the Western Front, built directly into the town's defenses.<br><br><blockquote><strong>Written Source:</strong><br><em>\"Who will remember, passing through this Gate, / The unheroic dead who fed the guns? / Who shall absolve the foulness of their fate...\"</em><br>— <strong>Siegfried Sassoon</strong>, On Passing the New Menin Gate</blockquote><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Ancient Defenses</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-shield-halved\"></i> Look at the thick brick walls of the Ramparts. Why do you think soldiers chose to dig their dugouts into medieval defenses rather than staying in the open town? How does the Ramparts Cemetery differ in atmosphere from Tyne Cot?</p><ul style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <li>The Ramparts were originally medieval fortifications, massively expanded and reinforced in the 17th century by the famous French military engineer Vauban.</li> <li>Because the brick and earth walls were incredibly thick, they survived the relentless German artillery barrages that completely leveled the rest of the town.</li> <li>British troops honeycombed these ancient walls, digging extensive subterranean dugouts to house battalion headquarters, dormitories, and advanced dressing stations safely out of the blast zones.</li> </ul></div></div>"
+          "text": "<div style=\"text-align: center; margin-bottom: 20px;\"><img src=\"/images/St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I.png\" style=\"max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);\" alt=\"St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I\" /><br><small style=\"color: #64748b;\">St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I</small></div>The medieval ramparts of Ypres provided some of the only cover in the destroyed city. Soldiers dug deep into the ancient moated defenses to hide from the shelling. The Ramparts Cemetery is one of the most picturesque on the Western Front, built directly into the town's defenses.<br><br><blockquote><strong>Written Source:</strong><br><em>\"Who will remember, passing through this Gate,<br>the unheroic dead who fed the guns?<br>Who shall absolve the foulness of their fate,-<br>Those doomed, conscripted, unvictorious ones?<br><br>Crudely renewed, the Salient holds its own.<br>Paid are its dim defenders by this pomp;<br>Paid, with a pile of peace-complacent stone,<br>The armies who endured that sullen swamp.<br><br>Here was the world’s worst wound. And here with pride<br>‘Their name liveth for ever’, the Gateway claims.<br>Was ever an immolation so belied<br>as these intolerably nameless names?<br>Well might the Dead who struggled in the slime<br>Rise and deride this sepulchre of crime.\"</em><br>— <strong>Siegfried Sassoon</strong>, On Passing the New Menin Gate<br><br><a href=\"https://war-poetry.com/siegfried-sassoon-on-passing-the-new-menin-gate/\" target=\"_blank\" style=\"color: #0284c7; text-decoration: underline;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Read more about Siegfried Sassoon's poem</a></blockquote><br><div style=\"text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><h4 style=\"color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;\"><i class=\"fa-solid fa-clipboard-list\"></i> Task: Ancient Defenses</h4><div style=\"background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;\"><p style=\"margin: 0; color: #334155; font-weight: bold;\"><i class=\"fa-solid fa-shield-halved\"></i> Look at the thick brick walls of the Ramparts. Why do you think soldiers chose to dig their dugouts into medieval defenses rather than staying in the open town? How does the Ramparts Cemetery differ in atmosphere from Tyne Cot?</p><ul style=\"margin-top: 15px; color: #475569; font-size: 0.95rem;\"> <li>The Ramparts were originally medieval fortifications, massively expanded and reinforced in the 17th century by the famous French military engineer Vauban.</li> <li>Because the brick and earth walls were incredibly thick, they survived the relentless German artillery barrages that completely leveled the rest of the town.</li> <li>British troops honeycombed these ancient walls, digging extensive subterranean dugouts to house battalion headquarters, dormitories, and advanced dressing stations safely out of the blast zones.</li> </ul></div></div>"
         },
         {
           "type": "narrative",
@@ -622,7 +637,7 @@ export const unitData = {
         {
           "type": "narrative",
           "theme_heading": "9:15 AM – Menin Gate & Ramparts Walk",
-          "text": "\"Before we leave Ypres, we're going back to the Menin Gate in the daylight to get a closer look at the memorial. Without the crowds from last night, you can actually walk the panels and read the names. From here, we'll take a walk along the old medieval ramparts of the town to the Ramparts Cemetery. It’s a peaceful spot now, but a century ago, soldiers dug into these ancient walls to hide from the constant shelling of the city.\"<br><br><strong>Teacher Points:</strong><ul><li>Look at the rank abbreviations on the walls; you will see hundreds of ordinary \"Pte\" (Privates), but also officers, showing that artillery shells did not discriminate by rank.</li><li>The Ramparts Cemetery was used by troops defending the city and is one of the most picturesque war cemeteries, built directly into the moated defenses of Ypres.</li><li>Ypres was completely leveled by artillery during the war; the beautiful medieval buildings in the town square you see today were meticulously rebuilt brick-by-brick in the 1920s.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>\"Who will remember, passing through this Gate, / The unheroic dead who fed the guns? / Who shall absolve the foulness of their fate,— / Those doomed, conscripted, unvictorious ones?\"</em><br>— <strong>Siegfried Sassoon</strong>, highlighting the bitter reality of the missing in his poem On Passing the New Menin Gate.</blockquote>"
+          "text": "\"Before we leave Ypres, we're going back to the Menin Gate in the daylight to get a closer look at the memorial. Without the crowds from last night, you can actually walk the panels and read the names. From here, we'll take a walk along the old medieval ramparts of the town to the Ramparts Cemetery. It’s a peaceful spot now, but a century ago, soldiers dug into these ancient walls to hide from the constant shelling of the city.\"<br><br><strong>Teacher Points:</strong><ul><li>Look at the rank abbreviations on the walls; you will see hundreds of ordinary \"Pte\" (Privates), but also officers, showing that artillery shells did not discriminate by rank.</li><li>The Ramparts Cemetery was used by troops defending the city and is one of the most picturesque war cemeteries, built directly into the moated defenses of Ypres.</li><li>Ypres was completely leveled by artillery during the war; the beautiful medieval buildings in the town square you see today were meticulously rebuilt brick-by-brick in the 1920s.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>\"Who will remember, passing through this Gate,<br>the unheroic dead who fed the guns?<br>Who shall absolve the foulness of their fate,-<br>Those doomed, conscripted, unvictorious ones?<br><br>Crudely renewed, the Salient holds its own.<br>Paid are its dim defenders by this pomp;<br>Paid, with a pile of peace-complacent stone,<br>The armies who endured that sullen swamp.<br><br>Here was the world’s worst wound. And here with pride<br>‘Their name liveth for ever’, the Gateway claims.<br>Was ever an immolation so belied<br>as these intolerably nameless names?<br>Well might the Dead who struggled in the slime<br>Rise and deride this sepulchre of crime.\"</em><br>— <strong>Siegfried Sassoon</strong>, highlighting the bitter reality of the missing in his poem On Passing the New Menin Gate.<br><br><a href=\"https://war-poetry.com/siegfried-sassoon-on-passing-the-new-menin-gate/\" target=\"_blank\" style=\"color: #0284c7; text-decoration: underline;\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i> Read more about Siegfried Sassoon's poem</a></blockquote>"
         },
         {
           "type": "narrative",
@@ -642,6 +657,9 @@ export const unitData = {
     {
       "id": "hero_0",
       "title": "Private T. J. Franklin",
+      "learning_objective": "To examine the individual wartime experience of Private T. J. Franklin.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -721,6 +739,9 @@ export const unitData = {
     {
       "id": "hero_1",
       "title": "Private W. Ayling",
+      "learning_objective": "To examine the individual wartime experience of Private W. Ayling.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -800,6 +821,9 @@ export const unitData = {
     {
       "id": "hero_2",
       "title": "Private S. Muckett",
+      "learning_objective": "To examine the individual wartime experience of Private S. Muckett.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -879,6 +903,9 @@ export const unitData = {
     {
       "id": "hero_3",
       "title": "Private A. Rye",
+      "learning_objective": "To examine the individual wartime experience of Private A. Rye.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -958,6 +985,9 @@ export const unitData = {
     {
       "id": "hero_4",
       "title": "Lance Corporal A. Ward",
+      "learning_objective": "To examine the individual wartime experience of Lance Corporal A. Ward.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -1037,6 +1067,9 @@ export const unitData = {
     {
       "id": "hero_5",
       "title": "Private C. Warland",
+      "learning_objective": "To examine the individual wartime experience of Private C. Warland.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -1116,6 +1149,9 @@ export const unitData = {
     {
       "id": "final_challenge",
       "title": "The Final Teacher Challenge",
+      "learning_objective": "To complete the final historical challenge requiring synthesis of tour knowledge.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Reflection & Synthesis",
       "banner": "/images/menin_gate.jpg",
       "teacher_notes": {
@@ -1152,6 +1188,9 @@ export const unitData = {
     {
       "id": "hero_lowry_william",
       "title": "William Augustine 'Harper' Lowry",
+      "learning_objective": "To examine the tragic local history and sacrifice of William Augustine 'Harper' Lowry.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -1192,6 +1231,9 @@ export const unitData = {
     {
       "id": "hero_lowry_auriol",
       "title": "Auriol 'Eric' Lowry",
+      "learning_objective": "To examine the tragic local history and sacrifice of Auriol 'Eric' Lowry.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {
@@ -1232,6 +1274,9 @@ export const unitData = {
     {
       "id": "hero_lowry_cyril",
       "title": "Cyril John 'Patrick' Lowry",
+      "learning_objective": "To examine the tragic local history and sacrifice of Cyril John 'Patrick' Lowry.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {"type":"Digital Tour Guide Reflection"},
       "enquiry": "Local Hero",
       "banner": "/images/stubbington_memorial.jpg",
       "teacher_notes": {

@@ -1,5 +1,13 @@
 const eee = {
-  "debatePrompts": [
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next unit."
+    ]
+  },  "debatePrompts": [
     {
       "title": "Elizabeth's Religious Settlement",
       "prompt": "<strong>Debate:</strong> Was Elizabeth's 'Middle Way' a brilliant compromise that prevented civil war, or a cowardly failure to commit to true Protestantism? Argue your case."
@@ -20,7 +28,7 @@ const eee = {
   "enquiry": "From religious division to the Armada: How did Elizabeth secure her throne?",
   "enquiry_question": "From religious division to the Armada: How did Elizabeth secure her throne?",
   "desc": "Paper 2",
-  "cover_image": "/assets/placeholder_cover.jpg",
+
   "cover_caption": "Source A: The Armada Portrait of Queen Elizabeth I, painted to commemorate the defeat of the Spanish Armada (1588).",
   "workbooks": [
     {
@@ -1261,7 +1269,15 @@ const eee = {
     {
       "id": "lesson_1_4",
       "title": "KT1.4: The problem of Mary, Queen of Scots",
-      "enquiry": "Why did Mary, Queen of Scots pose such a unique and dangerous threat to Elizabeth, and how did her sudden arrival in England in 1568 create an unsolvable political dilemma?",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "enquiry": "Why did Mary, Queen of Scots pose such a unique and dangerous threat to Elizabeth, and how did her sudden arrival in England in 1568 create an unsolvable political dilemma?",
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
@@ -2741,7 +2757,15 @@ const eee = {
     {
       "id": "lesson_2_4",
       "title": "KT2.4: The Armada",
-      "enquiry": "Why did King Philip II launch the 'Invincible' Spanish Armada in 1588, and how did its catastrophic failure shape Elizabeth's legacy and the future of Europe?",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "enquiry": "Why did King Philip II launch the 'Invincible' Spanish Armada in 1588, and how did its catastrophic failure shape Elizabeth's legacy and the future of Europe?",
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
@@ -4209,7 +4233,15 @@ const eee = {
     {
       "id": "lesson_3_4",
       "title": "KT3.4: Raleigh and Virginia",
-      "enquiry": "Why did Walter Raleigh’s ambitious dream of establishing an English empire in Virginia end in the mysterious disaster of the 'Lost Colony'?",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "enquiry": "Why did Walter Raleigh’s ambitious dream of establishing an English empire in Virginia end in the mysterious disaster of the 'Lost Colony'?",
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",

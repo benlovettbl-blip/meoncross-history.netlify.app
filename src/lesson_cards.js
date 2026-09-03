@@ -1,3 +1,5 @@
+import { getAssetUrl } from './engine/assets.js';
+
 export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitData) {
   let lessonsHTML = `
       <style>
@@ -43,39 +45,174 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         }
       </style>
     `;
-    
-  if (currentUnitId === 'edexcel_medicine' || currentUnitId === 'cme_new' || currentUnitId === 'weimar_nazi_germany' || currentUnitId === 'eee') {
+
+  if (
+    currentUnitId === 'edexcel_medicine' ||
+    currentUnitId === 'cme_new' ||
+    currentUnitId === 'weimar_nazi_germany' ||
+    currentUnitId === 'eee'
+  ) {
     let periods = [];
     if (currentUnitId === 'edexcel_medicine') {
       periods = [
-        { id: 'medieval', title: 'Medieval (c1250-c1500)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: '/images/banner_medicine_medieval.jpg', enquiry: 'How much did medicine really change in Medieval England?' },
-        { id: 'renaissance', title: 'Renaissance (c1500-c1700)', prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #064e3b, #059669)', border: '#059669', image: '/images/banner_medicine_renaissance.jpg', enquiry: 'Why did the Medical Renaissance have so little impact on everyday treatments?' },
-        { id: '18th_19th', title: '18th & 19th C (c1700-c1900)', prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #475569, #d97706)', border: '#d97706', image: '/images/banner_medicine_18th_19th.jpg', enquiry: 'How did the Industrial Revolution transform the understanding and prevention of disease?' },
-        { id: 'modern', title: 'Modern (c1900-present)', prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #0c4a6e, #0284c7)', border: '#0284c7', image: '/images/banner_medicine_modern.png', enquiry: 'How did technology and government intervention revolutionize 20th-century medicine?' },
-        { id: 'western_front', title: 'Western Front', prefix: 'lesson_5_', gradient: 'linear-gradient(135deg, #422006, #65a30d)', border: '#65a30d', image: '/images/banner_medicine_western_front.jpg', enquiry: 'How did the horrific conditions of trench warfare drive rapid medical innovation?' }
+        {
+          id: 'medieval',
+          title: 'Medieval (c1250-c1500)',
+          prefix: 'lesson_1_',
+          gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)',
+          border: '#dc2626',
+          image: '/images/banner_medicine_medieval.jpg',
+          enquiry: 'How much did medicine really change in Medieval England?',
+        },
+        {
+          id: 'renaissance',
+          title: 'Renaissance (c1500-c1700)',
+          prefix: 'lesson_2_',
+          gradient: 'linear-gradient(135deg, #064e3b, #059669)',
+          border: '#059669',
+          image: '/images/banner_medicine_renaissance.jpg',
+          enquiry: 'Why did the Medical Renaissance have so little impact on everyday treatments?',
+        },
+        {
+          id: '18th_19th',
+          title: '18th & 19th C (c1700-c1900)',
+          prefix: 'lesson_3_',
+          gradient: 'linear-gradient(135deg, #475569, #d97706)',
+          border: '#d97706',
+          image: '/images/banner_medicine_18th_19th.jpg',
+          enquiry:
+            'How did the Industrial Revolution transform the understanding and prevention of disease?',
+        },
+        {
+          id: 'modern',
+          title: 'Modern (c1900-present)',
+          prefix: 'lesson_4_',
+          gradient: 'linear-gradient(135deg, #0c4a6e, #0284c7)',
+          border: '#0284c7',
+          image: '/images/banner_medicine_modern.png',
+          enquiry:
+            'How did technology and government intervention revolutionize 20th-century medicine?',
+        },
+        {
+          id: 'western_front',
+          title: 'Western Front',
+          prefix: 'lesson_5_',
+          gradient: 'linear-gradient(135deg, #422006, #65a30d)',
+          border: '#65a30d',
+          image: '/images/banner_medicine_western_front.jpg',
+          enquiry:
+            'How did the horrific conditions of trench warfare drive rapid medical innovation?',
+        },
       ];
     } else if (currentUnitId === 'cme_new') {
       periods = [
-        { id: 'KT1', title: 'Key Topic 1: The Birth of Israel', prefix: 'KT1', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'assets/cme_new_kt1_cover.png', enquiry: 'How and why was the state of Israel established?' },
-        { id: 'KT2', title: 'Key Topic 2: Escalating Conflict', prefix: 'KT2', gradient: 'linear-gradient(135deg, #7f1d1d, #ef4444)', border: '#ef4444', image: 'assets/cme_new_yom_kippur_crossing.png', enquiry: 'What drove the major conflicts in the Middle East from 1967-1973?' },
-        { id: 'KT3', title: 'Key Topic 3: Attempts at Peace', prefix: 'KT3', gradient: 'linear-gradient(135deg, #064e3b, #10b981)', border: '#10b981', image: 'assets/cme_new_camp_david_accords.png', enquiry: 'Why has lasting peace in the Middle East been so difficult to achieve?', bgPos: 'center 20%' }
+        {
+          id: 'KT1',
+          title: 'Key Topic 1: The Birth of Israel',
+          prefix: 'KT1',
+          gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
+          border: '#3b82f6',
+          image: 'assets/cme_new_kt1_cover.png',
+          enquiry: 'How and why was the state of Israel established?',
+        },
+        {
+          id: 'KT2',
+          title: 'Key Topic 2: Escalating Conflict',
+          prefix: 'KT2',
+          gradient: 'linear-gradient(135deg, #7f1d1d, #ef4444)',
+          border: '#ef4444',
+          image: 'assets/cme_new_yom_kippur_crossing.png',
+          enquiry: 'What drove the major conflicts in the Middle East from 1967-1973?',
+        },
+        {
+          id: 'KT3',
+          title: 'Key Topic 3: Attempts at Peace',
+          prefix: 'KT3',
+          gradient: 'linear-gradient(135deg, #064e3b, #10b981)',
+          border: '#10b981',
+          image: 'assets/cme_new_camp_david_accords.png',
+          enquiry: 'Why has lasting peace in the Middle East been so difficult to achieve?',
+          bgPos: 'center 20%',
+        },
       ];
-    } else if (currentUnitId === 'weimar_nazi_germany' || (currentUnitData && currentUnitData.title && currentUnitData.title.includes('Weimar'))) {
+    } else if (
+      currentUnitId === 'weimar_nazi_germany' ||
+      (currentUnitData && currentUnitData.title && currentUnitData.title.includes('Weimar'))
+    ) {
       periods = [
-        { id: 'KT1', title: 'Key Topic 1: The Weimar Republic (1918-29)', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'images/weimar_kt1_cover.jpg', enquiry: 'To what extent did the Weimar Republic recover from its early crises?' },
-        { id: 'KT2', title: "Key Topic 2: Hitler's Rise to Power, 1919-33", prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'images/weimar_kt2_cover.jpg', enquiry: 'How did a tiny obscure political group transform?' },
-        { id: 'KT3', title: "Key Topic 3: Nazi Control and Dictatorship", prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #4b5563, #1f2937)', border: '#1f2937', image: 'images/weimar_kt3_cover.jpg', enquiry: 'From chains to absolute control' },
-        { id: 'KT4', title: "Key Topic 4: Life in Nazi Germany, 1933-39", prefix: 'lesson_4_', gradient: 'linear-gradient(135deg, #4d7c0f, #65a30d)', border: '#65a30d', image: 'images/weimar_kt4_cover.jpg', enquiry: 'Did life improve under the Nazis?' }
+        {
+          id: 'KT1',
+          title: 'Key Topic 1: The Weimar Republic (1918-29)',
+          prefix: 'lesson_1_',
+          gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
+          border: '#3b82f6',
+          image: 'images/weimar_kt1_cover.jpg',
+          enquiry: 'To what extent did the Weimar Republic recover from its early crises?',
+        },
+        {
+          id: 'KT2',
+          title: "Key Topic 2: Hitler's Rise to Power, 1919-33",
+          prefix: 'lesson_2_',
+          gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)',
+          border: '#dc2626',
+          image: 'images/weimar_kt2_cover.jpg',
+          enquiry: 'How did a tiny obscure political group transform?',
+        },
+        {
+          id: 'KT3',
+          title: 'Key Topic 3: Nazi Control and Dictatorship',
+          prefix: 'lesson_3_',
+          gradient: 'linear-gradient(135deg, #4b5563, #1f2937)',
+          border: '#1f2937',
+          image: 'images/weimar_kt3_cover.jpg',
+          enquiry: 'From chains to absolute control',
+        },
+        {
+          id: 'KT4',
+          title: 'Key Topic 4: Life in Nazi Germany, 1933-39',
+          prefix: 'lesson_4_',
+          gradient: 'linear-gradient(135deg, #4d7c0f, #65a30d)',
+          border: '#65a30d',
+          image: 'images/weimar_kt4_cover.jpg',
+          enquiry: 'Did life improve under the Nazis?',
+        },
       ];
-    } else if (currentUnitId === 'eee' || (currentUnitData && currentUnitData.title && currentUnitData.title.includes('Elizabeth'))) {
+    } else if (
+      currentUnitId === 'eee' ||
+      (currentUnitData && currentUnitData.title && currentUnitData.title.includes('Elizabeth'))
+    ) {
       periods = [
-        { id: 'KT1', title: 'Key Topic 1: Queen, government and religion, 1558-69', prefix: 'lesson_1_', gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)', border: '#3b82f6', image: 'assets/placeholder_cover.jpg', enquiry: 'From religious division to the Armada: How did Elizabeth secure her throne?' },
-        { id: 'KT2', title: "Key Topic 2: Challenges to Elizabeth at home and abroad, 1569-88", prefix: 'lesson_2_', gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)', border: '#dc2626', image: 'assets/placeholder_cover.jpg', enquiry: 'Why did plots and foreign threats push Elizabeth towards war?' },
-        { id: 'KT3', title: "Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88", prefix: 'lesson_3_', gradient: 'linear-gradient(135deg, #4b5563, #1f2937)', border: '#1f2937', image: 'assets/placeholder_cover.jpg', enquiry: 'What was life like during the Elizabethan Golden Age?' }
+        {
+          id: 'KT1',
+          title: 'Key Topic 1: Queen, government and religion, 1558-69',
+          prefix: 'lesson_1_',
+          gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
+          border: '#3b82f6',
+          image: 'assets/placeholder_cover.jpg',
+          enquiry: 'From religious division to the Armada: How did Elizabeth secure her throne?',
+        },
+        {
+          id: 'KT2',
+          title: 'Key Topic 2: Challenges to Elizabeth at home and abroad, 1569-88',
+          prefix: 'lesson_2_',
+          gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)',
+          border: '#dc2626',
+          image: 'assets/placeholder_cover.jpg',
+          enquiry: 'Why did plots and foreign threats push Elizabeth towards war?',
+        },
+        {
+          id: 'KT3',
+          title: 'Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88',
+          prefix: 'lesson_3_',
+          gradient: 'linear-gradient(135deg, #4b5563, #1f2937)',
+          border: '#1f2937',
+          image: 'assets/placeholder_cover.jpg',
+          enquiry: 'What was life like during the Elizabethan Golden Age?',
+        },
       ];
     }
-    
-    periods.forEach(p => {
+
+    periods.forEach((p) => {
       lessonsHTML += `
         <div class="premium-banner">
           <div class="premium-banner-bg" style="background-image: url('${p.image}'); background-position: ${p.bgPos || 'center'};"></div>
@@ -88,24 +225,27 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           </div>
         </div>
       `;
-      lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left;">';
-      
+      lessonsHTML +=
+        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left;">';
+
       let foundAny = false;
       unitData.lessons.forEach((lesson, index) => {
-        if ((lesson.id && lesson.id.startsWith(p.prefix)) || (lesson.title && lesson.title.startsWith(p.prefix))) {
+        if (
+          (lesson.id && lesson.id.startsWith(p.prefix)) ||
+          (lesson.title && lesson.title.startsWith(p.prefix))
+        ) {
           foundAny = true;
           lessonsHTML += `
-            <div class="homepage-lesson-card" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
+            <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
               <h3 style="margin-top: 0; color: #1a237e; font-size: 1rem; margin-bottom: 5px; font-family: 'Outfit', sans-serif;">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
               <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.9rem; line-height: 1.3;">${lesson.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
             </div>
           `;
         }
       });
-      
 
       if (!foundAny) {
-         lessonsHTML += `<p style="color: #64748b; font-style: italic; margin-left: 10px;">No lessons found for this period.</p>`;
+        lessonsHTML += `<p style="color: #64748b; font-style: italic; margin-left: 10px;">No lessons found for this period.</p>`;
       }
       lessonsHTML += '</div>';
     });
@@ -124,13 +264,14 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     });
 
     if (preparations.length > 0) {
-        // Preparations are now handled in the hero header in core_app.js
+      // Preparations are now handled in the hero header in core_app.js
     }
 
-    lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
+    lessonsHTML +=
+      '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
     days.forEach((d, i) => {
-        lessonsHTML += `
-          <div class="homepage-lesson-card" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
+      lessonsHTML += `
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
             <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Day ${i + 1}</h3>
             <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${d.lesson.title.replace(/^Day \d+:\s*/, '')}</p>
           </div>
@@ -138,14 +279,14 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     });
     lessonsHTML += '</div>';
 
-
-
     if (heroes.length > 0) {
-      lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px;"><i class="fa-solid fa-ribbon"></i> The Fallen</h2>';
-      lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
-      heroes.forEach(h => {
-          lessonsHTML += `
-            <div class="homepage-lesson-card" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #ef4444; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
+      lessonsHTML +=
+        '<h2 style="margin-top: 40px; text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px;"><i class="fa-solid fa-ribbon"></i> The Fallen</h2>';
+      lessonsHTML +=
+        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
+      heroes.forEach((h) => {
+        lessonsHTML += `
+            <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #ef4444; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
               <h3 style="margin-top: 0; color: #7f1d1d; font-size: 1.1rem; margin-bottom: 0px; font-family: 'Playfair Display', serif;">${h.lesson.title}</h3>
             </div>
           `;
@@ -154,85 +295,114 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     }
 
     if (unitData.extended) {
-      lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px;"><i class="fa-solid fa-pen-nib"></i> Assessment Practice</h2>';
+      lessonsHTML +=
+        '<h2 style="margin-top: 40px; text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px;"><i class="fa-solid fa-pen-nib"></i> Assessment Practice</h2>';
       lessonsHTML += `
         <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; text-align: left;">
           <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.1rem; margin-bottom: 15px;">${unitData.extended.question}</h3>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-            ${unitData.extended.source_a ? `
+            ${
+              unitData.extended.source_a
+                ? `
               <div>
                 <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source A:</strong> ${unitData.extended.source_a.provenance}</p>
                 ${unitData.extended.source_a.content}
               </div>
-            ` : ''}
-            ${unitData.extended.source_b ? `
+            `
+                : ''
+            }
+            ${
+              unitData.extended.source_b
+                ? `
               <div>
                 <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source B:</strong> ${unitData.extended.source_b.provenance}</p>
                 ${unitData.extended.source_b.content}
               </div>
-            ` : ''}
+            `
+                : ''
+            }
           </div>
 
-          ${unitData.extended.provenance_clue ? `
+          ${
+            unitData.extended.provenance_clue
+              ? `
             <div style="background: #fdf2f8; border: 1px solid #fbcfe8; border-left: 4px solid #ec4899; padding: 15px; border-radius: 4px; margin-top: 20px;">
               <p style="margin: 0; font-size: 0.95rem; color: #831843;"><i class="fa-solid fa-lightbulb" style="margin-right: 8px;"></i><strong>Provenance Clue:</strong> ${unitData.extended.provenance_clue}</p>
             </div>
-          ` : ''}
+          `
+              : ''
+          }
           
-          ${unitData.extended.scaffolding && unitData.extended.scaffolding.length > 0 ? `
+          ${
+            unitData.extended.scaffolding && unitData.extended.scaffolding.length > 0
+              ? `
             <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 4px; margin-top: 20px;">
               <p style="margin: 0 0 10px 0; font-weight: bold; color: #1e3a8a;"><i class="fa-solid fa-hammer" style="margin-right: 8px;"></i>Scaffolding</p>
               <ul style="margin: 0; padding-left: 20px; color: #334155;">
-                ${unitData.extended.scaffolding.map(s => `<li style="margin-bottom: 5px;">${s}</li>`).join('')}
+                ${unitData.extended.scaffolding.map((s) => `<li style="margin-bottom: 5px;">${s}</li>`).join('')}
               </ul>
             </div>
-          ` : ''}
+          `
+              : ''
+          }
         </div>
       `;
     }
-
   } else {
-    lessonsHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; text-align: left;">';
+    lessonsHTML =
+      '<h2 style="font-family: \'Playfair Display\', serif; color: #1a237e; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; margin-bottom: 20px;">Key Topic Lessons</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">';
     if (unitData.lessons) {
       unitData.lessons.forEach((lesson, index) => {
-        let bgStyle = "background: white; border: 1px solid #e2e8f0;";
-        let titleColor = "#1a237e";
-        let textColor = "#475569";
-        
-        if (lesson.banner || lesson.cover_image) {
-            let imgUrl = typeof getAssetUrl === 'function' ? getAssetUrl(lesson.banner || lesson.cover_image) : (lesson.banner || lesson.cover_image);
-            bgStyle = `background: linear-gradient(to bottom, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.9) 100%), url('${imgUrl}') center/cover; border: none; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end;`;
-            titleColor = "#f8fafc";
-            textColor = "#e2e8f0";
+        let bgStyle = 'background: white; border: 1px solid #e2e8f0;';
+        let titleColor = '#1a237e';
+        let textColor = '#475569';
+        let textShadow = 'none';
+
+        let candidateImg = lesson.banner || lesson.cover_image;
+        if (!candidateImg && lesson.sources && lesson.sources.length > 0) {
+          candidateImg = lesson.sources[0].src || lesson.sources[0].image_url;
+        }
+
+        if (candidateImg) {
+          let imgUrl = getAssetUrl(candidateImg);
+          bgStyle = `background: linear-gradient(to bottom, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.9) 100%), url('${imgUrl}') center/cover; border: none; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end;`;
+          titleColor = '#f8fafc';
+          textColor = '#e2e8f0';
+          textShadow = '0 2px 4px rgba(0,0,0,0.5)';
         }
 
         let cardContent = `
-            <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
-            <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.95rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">${lesson.title}</p>
+            <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: ${textShadow};">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
+            <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.95rem; text-shadow: ${textShadow};">${lesson.title}</p>
         `;
 
         if (lesson.enquiry) {
-            cardContent = `
-                <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}: ${lesson.title}</h3>
-                <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.9rem; font-style: italic; text-shadow: 0 1px 3px rgba(0,0,0,0.5); line-height: 1.3;">${lesson.enquiry}</p>
+          cardContent = `
+                <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: ${textShadow};">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}: ${lesson.title}</h3>
+                <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.9rem; font-style: italic; text-shadow: ${textShadow}; line-height: 1.3;">${lesson.enquiry}</p>
             `;
         }
 
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-index="${index}" style="${bgStyle} border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${index}" style="${bgStyle} border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
             ${cardContent}
           </div>
         `;
       });
     }
     lessonsHTML += '</div>';
-    
 
-    if (unitData.mock_exams && Array.isArray(unitData.mock_exams) && unitData.mock_exams.length > 0) {
-      lessonsHTML += '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Mock Exams</h2>';
-      lessonsHTML += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
-      unitData.mock_exams.forEach(mock => {
+    if (
+      unitData.mock_exams &&
+      Array.isArray(unitData.mock_exams) &&
+      unitData.mock_exams.length > 0
+    ) {
+      lessonsHTML +=
+        '<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Mock Exams</h2>';
+      lessonsHTML +=
+        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
+      unitData.mock_exams.forEach((mock) => {
         const mockUrl = currentUnitId ? `/units/${currentUnitId}/${mock.url}` : mock.url;
         lessonsHTML += `
           <div class="homepage-lesson-card" style="background: #fdf2f8; border: 2px dashed #db2777; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center;" data-action="open-link" data-url="${mockUrl}" onmouseover="this.style.background='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.background='#fdf2f8'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">

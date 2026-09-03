@@ -1,0 +1,501 @@
+{
+  "water_and_sanitation": {
+    "title": "KS3: Water and Sanitation Through Time",
+    "lessons": [
+      {
+        "title": "How much progress did the Romans make in public health?",
+        "source_task_count": 1,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Why did public health decline during the Middle Ages?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "To what extent did towns become filthier during the Early Modern period?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "How did the Industrial Revolution lead to a public health crisis?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      }
+    ]
+  },
+  "medieval_england": {
+    "title": "KS3: Medieval England & The Struggle for Power (1066–1485)",
+    "lessons": [
+      {
+        "title": "Lesson 1: 1066 - Why did three men claim one throne, and how did William win?",
+        "source_task_count": 2,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Task 3: Source Analysis (Source A) According to Source A, what was the main reason King Harold lost the battle?  *Hint:",
+          "Task 4: Source Analysis (Source B) Look at Source B (The Bayeux Tapestry). How does this source support the idea that Ha"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?",
+        "source_task_count": 1,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Task: Look at Source B (Portchester Castle). Why would this towering stone keep be absolutely terrifying for the local E"
+        ],
+        "peel_task_examples": [
+          "Task 2: Explain why William carried out the Harrying of the North and what the consequences were for the people living i"
+        ]
+      },
+      {
+        "title": "Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?",
+        "source_task_count": 0,
+        "peel_task_count": 1,
+        "source_task_examples": [],
+        "peel_task_examples": [
+          "Task 1: Explain why Henry II chose to appoint Thomas Becket as Archbishop of Canterbury in 1162, and explain why this ap"
+        ]
+      },
+      {
+        "title": "Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?",
+        "source_task_count": 2,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Task: Look at Source A (The Medieval Church Interior). List three different activities taking place in the church other",
+          "Task: Look at Source A (the medieval parish church). Identify three different activities taking place inside the church,"
+        ],
+        "peel_task_examples": [
+          "Task 1: Explain why the parish church was the most important building in a medieval village, referencing both its religi"
+        ]
+      },
+      {
+        "title": "Lesson 6: 1348: How did the Black Death shatter medieval social order?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Lesson 9: Assessment: How powerful was a medieval monarch?",
+        "source_task_count": 0,
+        "peel_task_count": 1,
+        "source_task_examples": [],
+        "peel_task_examples": [
+          "Explain why royal power weakened between 1066 and 1485 (12 marks)"
+        ]
+      }
+    ]
+  },
+  "early_modern_world": {
+    "title": "KS3: Early Modern World & Global Encounters (1450–1750)",
+    "lessons": [
+      {
+        "title": "Who held global power in 1450?",
+        "source_task_count": 6,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Study Source A. What does this 1375 map detail suggest about how trade was conducted between Europe and Asia before the",
+          "Study Source B. What does the eyewitness account suggest about the power of the Ottoman Empire compared to Christian Eur",
+          "Study Source D. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "How did religious conflict trigger global exploration (1517–1588)?",
+        "source_task_count": 4,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Study Source A (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for e",
+          "Look at Source C. Why would a map showing the Pope dividing the entire undiscovered world between Spain and Portugal abs",
+          "How does the author’s perspective in Source C differ from Source B regarding Francis Drake and the conflict?"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Trade or takeover: How did early encounters turn into empire?",
+        "source_task_count": 3,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Study Source A (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between Eng",
+          "What was the primary motivation stated in Source B for colonizing Virginia, and why might the Virginia Company emphasize",
+          "Using Source C, explain why the East India Company was forced to act politely toward Mughal rulers in 1616, whereas Engl"
+        ],
+        "peel_task_examples": [
+          "Using Source C, explain why the East India Company was forced to act politely toward Mughal rulers in 1616, whereas Engl"
+        ]
+      },
+      {
+        "title": "James I and the Gunpowder Plot: Why was religious division so volatile?",
+        "source_task_count": 3,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Study Source A. What does this engraving tell us about how the Gunpowder Plot conspirators were viewed by the public at",
+          "Study Source B. What does the stark difference between Guy Fawkes's two signatures reveal about his treatment in the Tow",
+          "Study Source C. Why was this anonymous letter so important to the failure of the Gunpowder Plot?"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Who controlled Britain? The Ideological Battle",
+        "source_task_count": 3,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?",
+          "How does Source C reveal a completely different reason for Parliament’s victory over the King compared to the official r",
+          "Look at Source D. What does Cromwell accuse MPs of becoming? Why is this ironic given that merchant wealth helped bring"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Who controlled Britain? The Economic Shift",
+        "source_task_count": 2,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Based on Source A, how did the visual appearance of London change as it became a global financial hub?",
+          "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previ"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "What were the mechanics of the Transatlantic Slave Trade?",
+        "source_task_count": 3,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?",
+          "Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?",
+          "Study Source C. Why do you think absentee landlords back in London were able to ignore the brutality shown in illustrati"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
+        "source_task_count": 7,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Study Source B. How did the geography of Jamaica shown in the map help the Maroons wage a successful guerrilla war again",
+          "Inferring Motive (Source A): Why did jumping overboard represent a powerful act of resistance for enslaved Africans, eve",
+          "Evaluating Significance (Equiano's Portrait & Source A): Why was Equiano’s autobiography so historically revolutionary w"
+        ],
+        "peel_task_examples": [
+          "Give one example of covert resistance and explain why an enslaved person might choose it over overt resistance."
+        ]
+      },
+      {
+        "title": "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+        "source_task_count": 5,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?",
+          "Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was",
+          "Reconciling Contradictions: How can Source C and Source D offer completely opposite views of Britain in the late 1740s/1"
+        ],
+        "peel_task_examples": []
+      }
+    ]
+  },
+  "industrialisation_and_empire": {
+    "title": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+    "lessons": [
+      {
+        "title": "What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Was industrial work progress or punishment?",
+        "source_task_count": 1,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "How useful is the 1832 Sadler Report for a historian studying the reality of child labour?"
+        ],
+        "peel_task_examples": [
+          "Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress"
+        ]
+      },
+      {
+        "title": "Did industrialisation make British towns unlivable?",
+        "source_task_count": 3,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Conceptual Analysis: Based on Source B, what was the primary concern of the Victorian contractors when building 'cottage",
+          "Language Analysis: Look at Source A. Why do you think Edwin Chadwick chose to compare the deaths in the slums to the dea",
+          "Source Comparison: How does Source C provide a different historical perspective to Source B?"
+        ],
+        "peel_task_examples": [
+          "Extended Writing: Write a structured paragraph answering: 'To what extent did industrialisation make British towns unliv"
+        ]
+      },
+      {
+        "title": "How was the British Empire built and sustained?",
+        "source_task_count": 1,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Compare the perspective of the dockyard worker in the source with the official government policy of the 'Two-Power Stand"
+        ],
+        "peel_task_examples": [
+          "Synthesis Assessment (8 Marks): 'The British Empire was built and sustained by technological progress rather than violen"
+        ]
+      },
+      {
+        "title": "How did the Empire strike back? The 1857 Indian Rebellion",
+        "source_task_count": 2,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Source Analysis: According to Source A, how did the rebel leaders attempt to unite the diverse religious populations of",
+          "Provenance Analysis: Why might a private letter from a British officer stationed in India in 1857 (Source B) be a highly"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "How did ordinary people fight for a voice?",
+        "source_task_count": 1,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Analyze how the provenance and anonymous nature of the 'Captain Swing' source impact its usefulness for a historian inve"
+        ],
+        "peel_task_examples": [
+          "Synthesis Assessment (8 Marks): 'The violent machine-breaking of the Swing Riots posed a far greater threat to the Briti"
+        ]
+      },
+      {
+        "title": "How did the road to democracy expand?",
+        "source_task_count": 1,
+        "peel_task_count": 2,
+        "source_task_examples": [
+          "Source Utility: How useful is the satirical cartoon 'The Old Rotten Tree' for a historian studying the unreformed electo"
+        ],
+        "peel_task_examples": [
+          "Exam Practice (8 Marks): Explain two consequences of the 1832 Great Reform Act.",
+          "Synthesis Assessment: To what extent was Britain a fully functioning democracy by the end of 1884? Use evidence from acr"
+        ]
+      },
+      {
+        "title": "Who truly benefited from 19th-century transformation?",
+        "source_task_count": 0,
+        "peel_task_count": 2,
+        "source_task_examples": [],
+        "peel_task_examples": [
+          "Historical Reasoning: Explain why it is historically inaccurate to argue that the British ruling class expanded the righ",
+          "Capstone Essay (16 Marks): 'The transformation of 19th-century Britain was a triumph of progress that benefited the enti"
+        ]
+      }
+    ]
+  },
+  "australia": {
+    "title": "KS3: History of Australia",
+    "lessons": [
+      {
+        "title": "Claiming Australia",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Creating a Convict Colony",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Encounters with the Indigenous Peoples",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "From Penal Colony to Settlement",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Lesson 5: Assessment - What's the story of Australia?",
+        "source_task_count": 1,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?"
+        ],
+        "peel_task_examples": []
+      }
+    ]
+  },
+  "great_war": {
+    "title": "KS3: Causes of the Great War",
+    "lessons": [
+      {
+        "title": "How was the German Empire created in 1871?",
+        "source_task_count": 0,
+        "peel_task_count": 1,
+        "source_task_examples": [],
+        "peel_task_examples": [
+          "Explain why Bismarck's policy of 'Blood and Iron' was successful in uniting Germany."
+        ]
+      },
+      {
+        "title": "How did the Franco-Prussian War create a lasting legacy of hatred?",
+        "source_task_count": 0,
+        "peel_task_count": 1,
+        "source_task_examples": [],
+        "peel_task_examples": [
+          "Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany."
+        ]
+      },
+      {
+        "title": "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Why did a battleship building contest destroy Anglo-German relations?",
+        "source_task_count": 0,
+        "peel_task_count": 1,
+        "source_task_examples": [],
+        "peel_task_examples": [
+          "Explain why the naval race between Britain and Germany damaged their relations."
+        ]
+      },
+      {
+        "title": "Did the Alliance System protect Europe or guarantee a global war?",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Why did a single assassination in Sarajevo ignite a World War?",
+        "source_task_count": 0,
+        "peel_task_count": 1,
+        "source_task_examples": [],
+        "peel_task_examples": [
+          "Explain why the assassination of Archduke Franz Ferdinand led to the outbreak of the First World War."
+        ]
+      }
+    ]
+  },
+  "great_war_part2": {
+    "title": "KS3: The Great War (1914-1919)",
+    "lessons": [
+      {
+        "title": "Why were young men so desperate to join the slaughter of 1914?",
+        "source_task_count": 2,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Study Source C (the \"Women of Britain Say GO!\" poster). How does this piece of propaganda attempt to emotionally manipul",
+          "Study Source D (the photograph of Jessie Pope). Why might frontline soldiers, such as Wilfred Owen, have fiercely critic"
+        ],
+        "peel_task_examples": [
+          "Explain why so many young British men eagerly volunteered for the army in 1914."
+        ]
+      },
+      {
+        "title": "Did British generals make the horror of trench warfare worse?",
+        "source_task_count": 2,
+        "peel_task_count": 2,
+        "source_task_examples": [
+          "Study Source B. Look closely at the zig-zag pattern of the trench system. What was the practical military purpose of dig",
+          "Study Source D (the portrait of Wilfred Owen). How did the poetry of soldiers like Owen fundamentally differ from the pr"
+        ],
+        "peel_task_examples": [
+          "**Historical Interpretations:** Explain why popular history books might refer to British soldiers as \"Lions led by Donke",
+          "Explain why the conditions in the trenches were so difficult for soldiers."
+        ]
+      },
+      {
+        "title": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+        "source_task_count": 2,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Q5. Study Source B and read the text on Racial Hierarchy. How does the impression given by the photograph contrast with",
+          "Study Source C (Members of the Chinese Labour Corps). Why was the recruitment of the CLC critical to the British war eff"
+        ],
+        "peel_task_examples": [
+          "Explain why the contribution of Empire troops was so important to the British war effort."
+        ]
+      },
+      {
+        "title": "How did a war fought miles away completely control daily life in Britain?",
+        "source_task_count": 1,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Study Source C (The 'Shot at Dawn' Memorial). Based on modern historical understanding, why is the execution of these 30"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+        "source_task_count": 1,
+        "peel_task_count": 1,
+        "source_task_examples": [
+          "Study Source B (the 1919 political cartoon). What is the cartoonist suggesting about the long-term consequences of the T"
+        ],
+        "peel_task_examples": [
+          "Explain why the Treaty of Versailles caused so much resentment in Germany."
+        ]
+      },
+      {
+        "title": "How did the \"Lost Generation\" impact the village of Stubbington?",
+        "source_task_count": 2,
+        "peel_task_count": 0,
+        "source_task_examples": [
+          "Study Source A (the Stubbington War Memorial). Why are local memorials like this crucial for a historian studying the hu",
+          "Study Source B (the \"Dead Man's Penny\"). What does this source tell us about how the British government attempted to con"
+        ],
+        "peel_task_examples": []
+      },
+      {
+        "title": "Assessment: The Great War",
+        "source_task_count": 0,
+        "peel_task_count": 0,
+        "source_task_examples": [],
+        "peel_task_examples": []
+      }
+    ]
+  }
+}

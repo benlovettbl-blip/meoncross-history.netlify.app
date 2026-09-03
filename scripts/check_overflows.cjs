@@ -1,0 +1,105 @@
+const puppeteer = require('puppeteer');
+
+(async () => {
+  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 600000 });
+  const page = await browser.newPage();
+  
+  // Set viewport to simulate a mobile screen
+  await page.setViewport({ width: 375, height: 812, isMobile: true });
+  
+  const arg = process.argv[2] || 'water_and_sanitation';
+  const path = require('path');
+  
+  let htmlPath;
+  if (arg.endsWith('.html')) {
+    htmlPath = path.resolve(arg);
+  } else {
+    htmlPath = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook.html');
+  }
+  
+  const LOCAL_URL = require('url').pathToFileURL(htmlPath).href;
+  
+  console.log(`Navigating to ${LOCAL_URL}...`);
+  await page.goto(LOCAL_URL, { waitUntil: 'domcontentloaded', timeout: 300000 });
+  
+  // Wait for React/scripts to render the main content
+  try {
+    await page.waitForSelector('.page, .page-landscape', { timeout: 60000 });
+  } catch (e) {
+    console.log('Timeout waiting for .page elements, continuing anyway...');
+  }
+  await new Promise(r => setTimeout(r, 3000)); // Buffer for images/layout to settle
+  
+  console.log('Page loaded. Running overflow detection...');
+  
+  const overflows = await page.evaluate(() => {
+    const issues = [];
+    
+    // Force all pages to be visible for checking
+    const allPages = document.querySelectorAll('.page, .page-landscape');
+    allPages.forEach(p => { 
+      p.style.display = 'flex'; 
+    });
+    
+    // Wait a tiny bit for layout to settle (though synchronously is usually fine after display:flex)
+    allPages.forEach(p => {
+      const pageBounds = p.getBoundingClientRect();
+      const pageId = p.id || 'unknown-page';
+      
+      // We check all elements inside the page
+      const elements = p.querySelectorAll('*');
+      elements.forEach(el => {
+        // Ignore hidden elements, empty containers, scripts, styles
+        if (el.style.display === 'none' || el.tagName === 'SCRIPT' || el.tagName === 'STYLE') return;
+        
+        const bounds = el.getBoundingClientRect();
+        
+        // Skip elements with 0 width/height
+        if (bounds.width === 0 || bounds.height === 0) return;
+        
+        // Check if element spills out of the bottom of the page
+        // Tolerance of 10px to avoid false positives with borders/shadows
+        if (bounds.bottom > pageBounds.bottom + 10) {
+           issues.push({
+             page: pageId,
+             element: el.tagName,
+             classes: el.className,
+             text: el.textContent.substring(0, 50).trim().replace(/\n/g, ' '),
+             overflowBottom: Math.round(bounds.bottom - pageBounds.bottom)
+           });
+        }
+      });
+    });
+    
+    return issues;
+  });
+  
+  console.log('\n--- Overflow Report ---');
+  if (overflows.length === 0) {
+    console.log('✅ All pages fit perfectly! No overflows detected.');
+  } else {
+    console.log(`❌ Found ${overflows.length} elements spilling off their pages:\n`);
+    
+    // De-duplicate issues (since a parent spilling might cause children to spill)
+    // We group by page to make it readable
+    const issuesByPage = {};
+    overflows.forEach(o => {
+      if (!issuesByPage[o.page]) issuesByPage[o.page] = [];
+      issuesByPage[o.page].push(o);
+    });
+    
+    for (const [pageId, issues] of Object.entries(issuesByPage)) {
+       console.log(`\nPage ID: ${pageId}`);
+       issues.forEach(i => {
+          console.log(`  - <${i.element} class="${i.classes}"> "${i.text}" (Spills by ${i.overflowBottom}px)`);
+       });
+    }
+  }
+  console.log('-----------------------\n');
+  
+  await browser.close();
+  
+  if (overflows.length > 0) {
+    process.exit(1);
+  }
+})();

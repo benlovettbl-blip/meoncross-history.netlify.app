@@ -1,0 +1,1063 @@
+
+=== UNIT: early_modern_world ===
+Last Lesson:
+{
+  id: 'lesson_8',
+  quiz: [
+    {
+      question: 'In what year was the Bank of England established, revolutionizing British national debt and finance?',
+      options: [ '1492', '1694', '1600', '1750' ],
+      answer: 1,
+      explanation: '1694'
+    },
+    {
+      question: 'What famous 1751 William Hogarth engraving depicted the social decay and poverty caused by alcohol addiction in London slums?',
+      options: [
+        'Gin Lane',
+        'Beer Street',
+        "The Rake's Progress",
+        "A Harlot's Progress"
+      ],
+      answer: 0,
+      explanation: 'Gin Lane'
+    },
+    {
+      question: 'Roughly what percentage of the male population had the right to vote in British parliamentary elections in 1750?',
+      options: [
+        'Around 20%',
+        'Less than 5% (approx. 3-5%)',
+        'About 50%',
+        'Over 80%'
+      ],
+      answer: 1,
+      explanation: 'Less than 5% (approx. 3-5%)'
+    },
+    {
+      question: 'What term was used to describe private toll roads constructed in the 18th century to speed up travel and trade?',
+      options: [
+        'Roman Roads',
+        'Canal Paths',
+        'Turnpike Roads',
+        'Macadam Highways'
+      ],
+      answer: 2,
+      explanation: 'Turnpike Roads'
+    },
+    {
+      question: 'Which two European revolutions (1642-1651 & 1688) permanently reduced the absolute power of the British monarchy?',
+      options: [
+        'The English Civil War and the Glorious Revolution',
+        'The French Revolution and the American Revolution',
+        'The Industrial Revolution and the Agrarian Revolution',
+        'The Protestant Reformation and the Renaissance'
+      ],
+      answer: 0,
+      explanation: 'The English Civil War and the Glorious Revolution'
+    },
+    {
+      question: 'What informal term was given to the 18th-century English criminal code that carried over 200 capital offenses?',
+      options: [
+        'Magna Carta',
+        'The Bill of Rights',
+        "The 'Bloody Code'",
+        'The Napoleonic Code'
+      ],
+      answer: 2,
+      explanation: "The 'Bloody Code'"
+    },
+    {
+      question: 'Which institution, founded in London in 1600, was by 1750 establishing territorial footholds in Mughal India?',
+      options: [
+        'The Virginia Company',
+        'The Royal African Company',
+        'The South Sea Company',
+        'The East India Company (EIC)'
+      ],
+      answer: 3,
+      explanation: 'The East India Company (EIC)'
+    },
+    {
+      question: 'What was the name given to corrupt parliamentary constituencies with very few voters that were easily bought by aristocrats?',
+      options: [
+        'Pocket Counties',
+        'Gerrymandered Districts',
+        'Burgage Plots',
+        'Rotten Boroughs'
+      ],
+      answer: 3,
+      explanation: 'Rotten Boroughs'
+    },
+    {
+      question: 'Name two major consumer goods imported into Britain in 1750 that relied directly on Caribbean plantation slave labor.',
+      options: [
+        'Tea and Silk',
+        'Sugar and Tobacco',
+        'Cotton and Wool',
+        'Spices and Porcelain'
+      ],
+      answer: 1,
+      explanation: 'Sugar and Tobacco'
+    },
+    {
+      question: "Which major historical transformation, beginning around 1750, would turn Britain into the 'Workshop of the World'?",
+      options: [
+        'The Commercial Revolution',
+        'The Scientific Revolution',
+        'The Agricultural Revolution',
+        'The Industrial Revolution'
+      ],
+      answer: 3,
+      explanation: 'The Industrial Revolution'
+    }
+  ],
+  flashcards: [
+    {
+      term: 'King George II',
+      definition: 'Governed through a constitutional monarchy via Parliament.'
+    },
+    {
+      term: 'Pierre-Jean Grosley',
+      definition: 'Observed the extreme contrasts of wealth and poverty in London in 1750.'
+    },
+    {
+      term: 'Henry Fielding',
+      definition: 'Author who reported on rampant crime and poverty in 1751 London.'
+    },
+    {
+      term: 'William Hogarth',
+      definition: "Famous for his 1751 engraving 'Gin Lane' depicting social decay."
+    }
+  ],
+  title: "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+  substantive_concepts: 'Chart complex themes of military conflict.',
+  historical_scholarship: 'Compares revisionist views on the event.',
+  adaptive_teaching: 'Distribute visual timelines for EAL.',
+  sequencing_retrieval: 'Recalls earlier themes of monarchical power.',
+  local_coastal_links: 'N/A',
+  learning_objective: "To synthesize historical evidence to determine the extent of Britain's 'modernity' by 1750.",
+  disciplinary_concept: 'Historical Enquiry',
+  formative_assessment: { type: 'End of Unit Summative Assessment' },
+  teacher_notes: {
+    primer: "This is the final assessment lesson for the 1450-1750 unit. It requires students to weigh the 'pro-modern' elements (finance, empire, infrastructure) against the 'un-modern' realities (poverty, slavery, political inequality) and synthesize them into an essay.",
+    objectives: [
+      {
+        objective: "Define what historians mean by a 'modern' state in the context of 18th-century Europe.",
+        primer: "Review the '1450 vs 1750' flowchart and prompt students to define modernity.",
+        question: "What specific economic and political institutions made Britain look 'modern' by 1750?"
+      },
+      {
+        objective: 'Synthesise domestic social realities with imperial/commercial expansion across the period 1450–1750.',
+        primer: "Use the toggle tabs ('Argument A' vs 'Argument B') to help students categorize the evidence.",
+        question: 'How did the wealth of the British Empire contrast with the lives of the poor in London slums?'
+      },
+      {
+        objective: "Construct a high-level, structured final essay evaluating the extent of Britain's 'modernity' by 1750.",
+        primer: 'Direct students to the Essay Synthesis Builder at the bottom of the page to plan their 4-paragraph essay.',
+        question: "What is your nuanced overall judgment regarding Britain's modernity by 1750?"
+      }
+    ]
+  },
+  do_now: {
+    title: 'Do Now: Previous Knowledge',
+    substantive_concepts: 'Explore primary themes of social rebellion.',
+    historical_scholarship: 'Explores structuralist debates on the event.',
+    adaptive_teaching: 'Provide structured tables for accessibility.',
+    sequencing_retrieval: 'Connects prior knowledge of societal structures.',
+    local_coastal_links: 'N/A',
+    type: 'questions',
+    items: [
+      {
+        question: 'What was the primary function of the 1607 Jamestown Fort design?',
+        answer: 'Defense against both Spanish attacks and the local Powhatan confederacy.'
+      },
+      {
+        question: 'Why did Oliver Cromwell execute King Charles I in 1649?',
+        answer: 'For committing high treason against Parliament and the English people.'
+      },
+      {
+        question: "What was the strategic advantage of the Jamaican Maroons' location?",
+        answer: 'The rugged, mountainous terrain allowed them to launch devastating guerrilla attacks on British plantations while remaining virtually impossible for the British army to conquer.'
+      },
+      {
+        question: 'What motivated the creation of the Royal African Company?',
+        answer: 'To monopolize the highly profitable Transatlantic Slave Trade for the British Crown and its merchants.'
+      }
+    ]
+  },
+  vocab: [
+    {
+      term: 'Modernity',
+      definition: 'In history, the transition away from traditional, agricultural, feudal societies towards commercial, secular, and industrialized ones.'
+    },
+    {
+      term: 'Comprehensive',
+      definition: 'Taking a complete mental view of a wide series of events across a long period of time.'
+    },
+    {
+      term: 'National Debt',
+      definition: 'Money borrowed by a government (often via a central bank like the Bank of England) to fund state activities like war.'
+    },
+    {
+      term: 'Rotten Borough',
+      definition: 'A tiny parliamentary constituency with very few voters, easily bought or controlled by a wealthy aristocrat.'
+    },
+    {
+      term: 'The Bloody Code',
+      definition: 'The harsh 18th-century English legal system which mandated the death penalty for over 200 minor crimes.'
+    }
+  ],
+  vocab_cloze_text: "To write a successful [Comprehensive] essay, historians must evaluate both progress and backwardness. By 1750, Britain's [Modernity] was visible in its global trade network and the creation of a [National Debt] managed by the Bank of England. However, this wealth contrasted sharply with brutal domestic laws like [The Bloody Code] and an unfair political system where corrupt [Rotten Borough] seats allowed wealthy elites to buy their way into Parliament.",
+  narrative_blocks: [
+    {
+      title: 'Micro-History: The Contrast of London Bridge (1750)',
+      substantive_concepts: 'Analyze shifting themes of military conflict.',
+      historical_scholarship: 'Synthesizes post-colonial theories on the event.',
+      adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+      sequencing_retrieval: 'Consolidates earlier themes of political changes.',
+      local_coastal_links: 'N/A',
+      text: 'In October 1750, a French aristocrat named Pierre-Jean Grosley stood on London Bridge and looked out over the River Thames.<br><br>To his right, he saw a forest of wooden masts belonging to over 1,000 merchant ships. These vessels had arrived from Canton, Calcutta, Barbados, and Virginia, packed with tea, silk, raw sugar, and tobacco. Nearby stood the <strong>Bank of England</strong> and the <strong>Royal Exchange</strong>, where stockbrokers traded paper credit, fire insurance, and national debt using complex mathematics that stunned the rest of Europe. London was the financial beating heart of a global, capitalist empire.<br><br>Then Grosley walked off the bridge and turned into the narrow alleys of St. Giles.<br><br>Within five minutes, the scent of expensive Indian spices was replaced by the stench of open sewage, rotting garbage, and cheap gin. He passed desperate mothers pouring raw grain spirit down the throats of crying infants to quiet them. In these slums, 50% of children died before the age of five. Medical care still relied on bloodletting with leeches, public executions at Tyburn Tree drew crowds of 30,000 howling spectators, and women had zero legal rights, remaining the legal property of their husbands.<br><br>Grosley was left with a baffling paradox: <strong>Was Britain in 1750 a hyper-modern global superpower, or a brutal, unequal medieval society wearing a wig?</strong>',
+      images: [
+        {
+          image: '/images/early_mod_l6_banner.jpg',
+          image_alt: 'London Bridge from St Olaf Stairs (1632)',
+          image_context: 'Observe the dense, chaotic jumble of timber-framed houses crowding the bridge. This reveals the severely overcrowded, unsanitary, and highly flammable nature of Early Modern London, making it a perfect breeding ground for both the Great Plague and the Great Fire. **Hinge Question:** What were the major risks of living in such densely packed, unregulated urban environments?',
+          image_caption: "A 1632 painting by Claude de Jongh showing London Bridge. By the 18th century, the River Thames was choked with global merchant shipping, reflecting London's explosion in population and its status as the center of a global empire.",
+          source_letter: 'A'
+        },
+        {
+          image: '/images/gin_lane.jpg',
+          image_alt: "William Hogarth's Gin Lane (1751)",
+          image_context: "Notice the horrific details: a mother dropping her baby, starvation, suicide, and collapsing buildings. Hogarth created this satirical engraving as propaganda to expose the devastating social decay, poverty, and misery caused by the unchecked 'Gin Craze' among London's poorest classes. **Hinge Question:** Is this image a reliable reflection of daily life in 1751, or an exaggerated moral panic designed to shock the viewer?",
+          image_caption: "William Hogarth's 1751 engraving 'Gin Lane' depicts the horrifying social decay, poverty, and alcohol addiction rampant in 18th-century London slums. Hogarth created this print as a direct piece of propaganda to support the Gin Act, seeking to reduce the mass consumption of cheap spirits.",
+          source_letter: 'B'
+        }
+      ]
+    },
+    {
+      title: 'Macro-History: The Ideology of Empire',
+      substantive_concepts: 'Investigate historic themes of social rebellion.',
+      historical_scholarship: 'Contrasts intentionalist theories on the event.',
+      adaptive_teaching: 'Issue guided outlines to build confidence.',
+      sequencing_retrieval: 'Consolidates prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      text: 'As Britain grew incredibly wealthy from the transatlantic slave trade and the East India Company, it developed a powerful new self-image. The British elite did not view themselves as brutal conquerors; instead, they believed they were bringing civilization and order to the world. Art from this period heavily utilized classical mythology to portray Britannia as a righteous, glorious figure receiving the willing submission and wealth of the globe.'
+    },
+    {
+      title: 'Analyzing Source A',
+      substantive_concepts: 'Investigate historic themes of empire building.',
+      historical_scholarship: 'Contrasts intentionalist models on the event.',
+      adaptive_teaching: 'Issue guided outlines for lower-ability.',
+      sequencing_retrieval: 'Retrieves prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      image: '/images/global_britannia.jpg',
+      image_alt: 'The East Offering its Riches to Britannia (1778)',
+      source_letter: 'A',
+      tasks: [
+        {
+          type: 'source_analysis',
+          question: 'Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?',
+          model_answer: 'The painting glorifies the empire by showing a majestic Britannia peacefully receiving riches from willing, kneeling figures representing Asia and Africa. It masks the brutal realities by completely ignoring the violence, exploitation, and slavery (like the Transatlantic slave trade) that actually generated this wealth.'
+        }
+      ],
+      image_caption: 'The East Offering its Riches to Britannia (1778)'
+    },
+    {
+      title: 'Macro-History: Weighing the Evidence (1450 vs. 1750)',
+      substantive_concepts: 'Assess central themes of religious conflict.',
+      historical_scholarship: 'Challenges whig frameworks on the event.',
+      adaptive_teaching: 'Utilize vocab matchers to aid focus.',
+      sequencing_retrieval: 'Builds previous learning of global empires.',
+      local_coastal_links: 'N/A',
+      text: `To answer our key enquiry, we must step back and examine the transformation of Britain over the entire 300-year span of this unit.<br><br><div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; font-family: monospace; text-align: center; margin-bottom: 20px;">  <div style="background: #475569; color: white; padding: 10px; border-radius: 6px; font-weight: bold;">1450: FEUDAL & ISOLATED</div>  <p style="color: #64748b; font-size: 0.9rem;">• Absolute Monarchy • Subsistence Agriculture • Regional Trade • No Colonies</p>  <div style="font-size: 1.5rem; color: #94a3b8; margin: 10px 0;">⬇ [300 YEARS OF TRANSFORMATION] ⬇</div>  <div style="background: #0f172a; color: white; padding: 10px; border-radius: 6px; font-weight: bold; margin-bottom: 10px;">1750: THE PRE-INDUSTRIAL STATE</div>  <div style="display: flex; gap: 10px;">    <div style="flex: 1; background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 6px; text-align: left;">       <strong style="color: #059669;">✅ PRO-MODERN ELEMENTS</strong><br>       <ul style="padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #065f46;">         <li>Constitutional Monarchy</li><li>Global Commercial Empire</li><li>Financial System (Bank of England)</li><li>Early Infrastructure (Turnpikes)</li>       </ul>    </div>    <div style="flex: 1; background: #fef2f2; border: 1px solid #ef4444; padding: 15px; border-radius: 6px; text-align: left;">       <strong style="color: #dc2626;">❌ UN-MODERN REALITIES</strong><br>       <ul style="padding-left: 15px; margin: 5px 0; font-size: 0.85rem; line-height: 1.5; color: #991b1b;">         <li>Disenfranchisement (<5% vote)</li><li>Brutal 'Bloody Code'</li><li>Empire built on slavery</li><li>Pre-Industrial Technology</li>       </ul>    </div>  </div></div>Explore the two sides of the argument below to decide if Britain was truly 'modern':<br><br><div style="display: flex; gap: 15px; margin-top: 15px;">    <div style="flex: 1; padding: 25px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px;">        <h3 style="margin-top: 0; color: #059669; text-align: center; border-bottom: 2px solid #bbf7d0; padding-bottom: 10px;">Argument A: Global Wealth (Modern)</h3>        <h4 style="color: #047857; margin-bottom: 5px;">Britain Was Superbly "Modern" by 1750</h4>        <ul style="line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #064e3b;">            <li><strong>Constitutional Balance:</strong> The Civil War (1642–1651) and Glorious Revolution (1688) permanently ended absolute royal tyranny. King George II governed <em>through</em> Parliament.</li>            <li><strong>The Financial Revolution:</strong> Founded in 1694, the <strong>Bank of England</strong> invented the modern system of national debt and paper banknotes, allowing Britain to out-finance rivals.</li>            <li><strong>Global Economic Integration:</strong> British citizens drank tea from China, sweetened with Caribbean sugar, smoked Virginia tobacco, and wore Bengal cotton.</li>            <li><strong>Transport Infrastructure:</strong> By 1750, over 1,500 miles of <strong>Turnpike Roads</strong> (paved toll roads) connected London to provincial towns, cutting travel times in half.</li>        </ul>    </div>    <div style="flex: 1; padding: 25px; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px;">        <h3 style="margin-top: 0; color: #dc2626; text-align: center; border-bottom: 2px solid #fecaca; padding-bottom: 10px;">Argument B: Domestic Reality (Un-Modern)</h3>        <h4 style="color: #b91c1c; margin-bottom: 5px;">Britain Remained Profoundly "Un-Modern" by 1750</h4>        <ul style="line-height: 1.8; font-size: 0.95rem; padding-left: 20px; color: #7f1d1d;">            <li><strong>Political Inequality:</strong> Parliament was controlled entirely by wealthy aristocrats. Less than <strong>5% of the male population</strong> had the right to vote. Rotten boroughs bought and sold elections.</li>            <li><strong>The "Bloody Code":</strong> The legal system terrorized criminals. Over 200 offenses carried the death penalty, including stealing a sheep or picking a pocket.</li>            <li><strong>An Empire Built on Slavery:</strong> Britain’s economic "modernity" was completely reliant on the barbaric machinery of the Transatlantic Slave Trade.</li>            <li><strong>Pre-Industrial Technology:</strong> In 1750, 80% of the population still lived in rural villages. Factories did not yet exist. Power came from human muscles, horses, wind, and water.</li>        </ul>    </div></div>`,
+      tasks: [
+        {
+          type: 'drawing',
+          lines: 10,
+          question: 'Drawing Task: Draw a single symbol or logo that you feel best represents the state of 18th-century Britain (e.g., a combination of a bank, a ship, and chains).'
+        }
+      ]
+    },
+    {
+      title: 'Analyzing Source B',
+      substantive_concepts: 'Evaluate key themes of diplomatic relations.',
+      historical_scholarship: 'Examines orthodox perspectives on the event.',
+      adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+      sequencing_retrieval: 'Synthesizes core concepts of religious divides.',
+      local_coastal_links: 'N/A',
+      image: '/images/royal_exchange_courtyard.jpg',
+      image_alt: 'The Royal Exchange, London (1644)',
+      source_letter: 'B',
+      tasks: [
+        {
+          type: 'source_analysis',
+          question: 'Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.',
+          model_answer: "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'.",
+          text: 'Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.'
+        }
+      ],
+      image_caption: 'The Royal Exchange, London (1644)'
+    },
+    {
+      title: 'Primary Source Analysis: The Dual Reality',
+      substantive_concepts: 'Review core themes of societal upheaval.',
+      historical_scholarship: 'Evaluates traditional arguments on the event.',
+      adaptive_teaching: 'Assign knowledge organizers to build confidence.',
+      sequencing_retrieval: 'Links past context of chronological mapping.',
+      local_coastal_links: 'N/A',
+      text: `Analyze these two contrasting contemporary accounts written in the mid-18th century.<br><br><blockquote style="border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;"><strong>Source C: From a German Visitor's Diary (Pehr Kalm, 1748)</strong><br><em>"In England, even the common country people live well and wear clean linen. Their homes are built of brick or stone, not clay. Every village hath its turnpike road, and goods are transported with incredible speed by wagon and barge. The law protects the poorest peasant from the nobleman; no man may be imprisoned without trial. In commerce and freedom of speech, Britain is two hundred years ahead of the continent."</em></blockquote>`,
+      tasks: [
+        {
+          type: 'think_pair_share',
+          question: 'Reconciling Contradictions: How can Source C and Source D offer completely opposite views of Britain in the late 1740s/1750s without either author necessarily lying?',
+          model_answer: 'The sources do not contradict each other; they reflect extreme class and geographical inequality. Source C describes the rising prosperity of the middle classes and infrastructure across the country, while Source D focuses entirely on the extreme, diseased poverty and crime of the urban underclass in London slums.'
+        }
+      ],
+      source_letter: 'C'
+    },
+    {
+      title: 'Primary Source Analysis: The Dark Side',
+      substantive_concepts: 'Assess central themes of societal upheaval.',
+      historical_scholarship: 'Challenges whig perspectives on the event.',
+      adaptive_teaching: 'Utilize vocab matchers to build confidence.',
+      sequencing_retrieval: 'Synthesizes past context of chronological mapping.',
+      local_coastal_links: 'N/A',
+      text: `<blockquote style="border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;"><strong>Source D: From a London Magistrate's Report on Crime (Henry Fielding, 1751)</strong><br><em>"The streets of this great city are daily rendered unsafe by bands of armed footpads and cutpurses... Multitudes of wretches perish annually of sheer cold and gin-poisoning in the cellars of St. Giles, unheeded by any magistrate. Our prisons are foul dens of typhus fever where accused men rot for months before trial. We boast of our liberties, yet our poor live in a state of barbarism lower than the beasts."</em></blockquote>`,
+      tasks: [
+        {
+          type: 'source_analysis',
+          question: 'Synthesis Challenge: Combine the insights from Sources C and D with your knowledge of the Atlantic Slave Trade to write a nuanced 3-sentence summary of British society in 1750.',
+          model_answer: "By 1750, Britain was a society of extreme contradictions, boasting a global commercial empire funded by the brutal exploitation of the Transatlantic Slave Trade. While the middle classes enjoyed unprecedented wealth, constitutional rights, and modern infrastructure, the vast majority of the urban poor lived in disease-ridden slums ruled by a terrifying criminal code. Therefore, Britain's 'modernity' was only a glittering veneer applied to a deeply unequal society."
+        }
+      ],
+      source_letter: 'D'
+    },
+    {
+      title: 'Urban Sprawl: Mapping 18th-Century London',
+      substantive_concepts: 'Chart complex themes of military conflict.',
+      historical_scholarship: 'Compares revisionist theories on the event.',
+      adaptive_teaching: 'Distribute visual timelines for EAL.',
+      sequencing_retrieval: 'Consolidates earlier themes of monarchical power.',
+      local_coastal_links: 'N/A',
+      image: '/images/rocque_map.jpg',
+      image_alt: "John Rocque's Map of London (1746)",
+      image_context: 'Look at the vast, sprawling, densely packed streets spreading out in all directions. By 1746, London had exploded into the largest and wealthiest metropolis in the world, fueled by global trade, but this rapid expansion also created unprecedented extremes of wealth and poverty. **Hinge Question:** What challenges would a government face when trying to police and provide sanitation for a city growing this rapidly?',
+      image_caption: "John Rocque's Map of London (1746)",
+      tasks: [
+        {
+          type: 'source_analysis',
+          question: "How does the density and infrastructure of London shown in Source E (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
+          model_answer: "The sprawling, densely packed streets and complex networks of roads show a massive shift away from rural farming and towards centralized, urban trade and industry. It physically demonstrates Britain's growing wealth, exploding population, and transition into an industrial powerhouse."
+        }
+      ],
+      source_letter: 'E'
+    },
+    {
+      title: "Historiographical Debate: 'The First Modern Society'?",
+      substantive_concepts: 'Examine underlying themes of social rebellion.',
+      historical_scholarship: 'Reviews Marxist frameworks on the event.',
+      adaptive_teaching: 'Review simplified texts for accessibility.',
+      sequencing_retrieval: 'Builds prior knowledge of societal structures.',
+      local_coastal_links: 'N/A',
+      text: `<div style="border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; margin-top: 15px;">    <div style="display: flex; background: #f1f5f9; border-bottom: 1px solid #cbd5e1;">        <button id="histBtn1" onclick="document.getElementById('hist1').style.display='block'; document.getElementById('hist2').style.display='none'; this.style.background='#fff'; this.nextElementSibling.style.background='#f1f5f9';" style="flex: 1; padding: 12px; border: none; background: #fff; cursor: pointer; font-weight: bold; font-size: 1rem; color: #1e40af;">Interpretation A: ]</button>        <button id="histBtn2" onclick="document.getElementById('hist1').style.display='none'; document.getElementById('hist2').style.display='block'; this.style.background='#fff'; this.previousElementSibling.style.background='#f1f5f9';" style="flex: 1; padding: 12px; border: none; background: #f1f5f9; border-left: 1px solid #cbd5e1; cursor: pointer; font-weight: bold; font-size: 1rem; color: #b45309;">Interpretation B: ]</button>    </div>    <div id="hist1" style="padding: 25px; display: block; background: #f0f9ff;">        <h4 style="margin-top: 0; color: #1e40af;">Historian Perspective A:  (1990)</h4>        <p><em>"By 1750, Britain was already the world’s first modern, secular, consumer society. It possessed a constitutional government, a vibrant free press, unmatched global trade, and an enterprising middle class that valued property, science, and progress."</em></p>    </div>    <div id="hist2" style="padding: 25px; display: none; background: #fff7ed;">        <h4 style="margin-top: 0; color: #b45309;">Historian Perspective B:  (1985)</h4>        <p><em>"18th-century Britain was not a 'modern' nation; it was an Ancien Régime—a deeply traditional, aristocratic, and religious society dominated by the Anglican Church, wealthy landowners, and a hereditary monarchy. Most people’s daily lives were governed by ancient custom, local isolated community, and rural poverty."</em></p>    </div></div>`
+    },
+    {
+      title: 'Synthesis Essay Planning Task',
+      substantive_concepts: 'Evaluate key themes of public health.',
+      historical_scholarship: 'Examines orthodox perspectives on the event.',
+      adaptive_teaching: 'Deploy scaffolded tasks for SEND.',
+      sequencing_retrieval: 'Synthesizes past context of economic shifts.',
+      local_coastal_links: 'N/A',
+      text: `To conclude this entire 1450–1750 unit, you will write a 4-paragraph final essay answering the enquiry question: <strong>"How 'modern' was Britain by 1750?"</strong>`,
+      tasks: [
+        {
+          type: 'table_planner',
+          columns: [
+            'Point (Your claim)',
+            'Evidence (Historical facts)',
+            'Explanation (Why this matters)'
+          ],
+          rows: 3,
+          question: 'Assessment Planner: Structure your argument before you write your final essay.'
+        },
+        {
+          type: 'spectrum_mapper',
+          labels: [ 'Deeply Traditional (Un-Modern)', 'Highly Modern' ],
+          items: [
+            {
+              id: 'gov',
+              title: 'Constitutional Monarchy',
+              substantive_concepts: 'Analyze shifting themes of religious conflict.',
+              historical_scholarship: 'Synthesizes post-colonial debates on the event.',
+              adaptive_teaching: 'Guide printed A4 workbooks to aid focus.',
+              sequencing_retrieval: 'Connects previous learning of global empires.',
+              local_coastal_links: 'N/A',
+              desc: 'Power shared with Parliament, restricted by Bill of Rights.'
+            },
+            {
+              id: 'fin',
+              title: 'Bank of England & Debt',
+              substantive_concepts: 'Examine underlying themes of diplomatic relations.',
+              historical_scholarship: 'Reviews Marxist views on the event.',
+              adaptive_teaching: 'Review simplified texts for accessibility.',
+              sequencing_retrieval: 'Recalls core concepts of religious divides.',
+              local_coastal_links: 'N/A',
+              desc: 'Centralized finance and paper credit.'
+            },
+            {
+              id: 'soc',
+              title: 'The Bloody Code',
+              substantive_concepts: 'Examine underlying themes of ideological shifts.',
+              historical_scholarship: 'Reviews Marxist frameworks on the event.',
+              adaptive_teaching: 'Review simplified texts for SEND.',
+              sequencing_retrieval: 'Builds prior knowledge of societal structures.',
+              local_coastal_links: 'N/A',
+              desc: 'Capital punishment for minor property crimes.'
+            },
+            {
+              id: 'leg',
+              title: 'Women as Property',
+              substantive_concepts: 'Analyze shifting themes of military conflict.',
+              historical_scholarship: 'Synthesizes post-colonial models on the event.',
+              adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+              sequencing_retrieval: 'Retrieves earlier themes of political changes.',
+              local_coastal_links: 'N/A',
+              desc: 'Patriarchal legal system with minimal rights.'
+            },
+            {
+              id: 'trd',
+              title: 'Global Trade & Mercantilism',
+              substantive_concepts: 'Explore primary themes of ideological shifts.',
+              historical_scholarship: 'Explores structuralist theories on the event.',
+              adaptive_teaching: 'Provide structured tables for SEND.',
+              sequencing_retrieval: 'Consolidates prior knowledge of societal structures.',
+              local_coastal_links: 'Reviews regional naval supremacy.',
+              desc: 'Worldwide networks of goods and capital.'
+            },
+            {
+              id: 'slv',
+              title: 'Transatlantic Chattel Slavery',
+              substantive_concepts: 'Analyze shifting themes of technological progress.',
+              historical_scholarship: 'Synthesizes post-colonial views on the event.',
+              adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+              sequencing_retrieval: 'Recalls previous learning of global empires.',
+              local_coastal_links: 'N/A',
+              desc: 'Millions of humans treated as property for profit.'
+            }
+          ],
+          question: 'Map these historical realities onto the spectrum below to plan your argument.',
+          model_answer: `<div style="background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px;">  <h3 style="margin-top: 0; color: #38bdf8; text-align: center;">📝 ESSAY SYNTHESIS BUILDER</h3>  <p style="text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">Use this matrix to structure your paragraphs.</p>  <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">    <thead>      <tr style="background: #334155;">        <th style="padding: 12px; border: 1px solid #475569; text-align: left; width: 20%;">Paragraph</th>        <th style="padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;">Core Argument</th>        <th style="padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;">Specific Historical Evidence</th>      </tr>    </thead>    <tbody>      <tr>        <td style="padding: 12px; border: 1px solid #475569; background: #0f172a;"><strong>1. Introduction</strong></td>        <td style="padding: 12px; border: 1px solid #475569;">Define "modernity", state your thesis line, and address limitations.</td>        <td style="padding: 12px; border: 1px solid #475569; color: #cbd5e1;">"Although Britain appeared hyper-modern financially, its social realities remained deeply traditional..."</td>      </tr>      <tr>        <td style="padding: 12px; border: 1px solid #475569; background: #0f172a;"><strong>2. Modern Aspects</strong></td>        <td style="padding: 12px; border: 1px solid #475569;">Evidence that Britain WAS modern (Commerce, Finance, Governance).</td>        <td style="padding: 12px; border: 1px solid #475569; color: #cbd5e1;">Bank of England (1694), Parliament, Global Trade. <br><em>"On one hand, Britain appeared hyper-modern by 1750 because..."</em></td>      </tr>      <tr>        <td style="padding: 12px; border: 1px solid #475569; background: #0f172a;"><strong>3. Traditional Aspects</strong></td>        <td style="padding: 12px; border: 1px solid #475569;">Evidence that Britain WAS NOT modern (Social inequality, Slavery).</td>        <td style="padding: 12px; border: 1px solid #475569; color: #cbd5e1;">Chattel Slavery, Bloody Code, Women's Rights. <br><em>"However, beneath this modern surface lay deeply un-modern realities, such as..."</em></td>      </tr>      <tr>        <td style="padding: 12px; border: 1px solid #475569; background: #0f172a;"><strong>4. Conclusion</strong></td>        <td style="padding: 12px; border: 1px solid #475569;">Nuanced overall judgment.</td>        <td style="padding: 12px; border: 1px solid #475569; color: #cbd5e1;"><em>"Therefore, rather than being a fully modern state, 1750 Britain was best described as..."</em></td>      </tr>    </tbody>  </table></div>`
+        }
+      ]
+    },
+    { title: 'Lesson Reflection' },
+    {
+      title: 'Urban Poverty: The Mudlarks of London',
+      substantive_concepts: 'Review core themes of industrial change.',
+      historical_scholarship: 'Evaluates traditional views on the event.',
+      adaptive_teaching: 'Assign knowledge organizers to build confidence.',
+      sequencing_retrieval: 'Recalls previous learning of global empires.',
+      local_coastal_links: 'N/A',
+      text: '<div style="text-align:center; margin:15px 0;">\n' +
+        '  <img src="/images/sidequest_mudlark.jpg" style="max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;" onclick="window.openModal && window.openModal(this.src)"/>\n' +
+        '  <br/>\n' +
+        `  <i style="font-size:0.9em; color:#64748b;"><strong>Source F:</strong> An authentic drawing of 'Mudlarks' scavenging in the freezing River Thames, showing the extreme poverty that still haunted London.</i>\n` +
+        '</div>\n' +
+        "<p>By 1750, wealthy Londoners were discussing Enlightenment science in elegant coffee houses. But for the desperately poor, this 'modern' city was a brutal slum. Driven by plummeting grain prices, a horrifying epidemic known as the Gin Craze gripped the capital. Gin was cheaper than beer and safer to drink than the filthy Thames water, devastating working-class slums with addiction, crime, and starvation. Meanwhile, desperate children known as 'Mudlarks' spent their days wading thigh-deep in the freezing, sewage-filled mud of the River Thames just to scavenge for dropped scraps of coal or copper to sell for a penny. For the urban poor, 1750 did not feel 'modern'—it felt lethal.</p>",
+      source_letter: 'F',
+      tasks: [
+        {
+          type: 'source_analysis',
+          question: "Study Source F. How does the existence of 'Mudlarks' challenge the idea that 1750 London was entirely prosperous and modern?",
+          model_answer: "Source F shows desperate children scavenging in freezing, sewage-filled mud just to survive. This challenges the idea of a 'modern' London by highlighting the extreme, lethal poverty that existed right alongside the wealthy coffee houses."
+        }
+      ]
+    }
+  ],
+  learning_objectives: {
+    overarching: "How 'modern' was Britain by 1750? (Periodisation and final essay synthesis)",
+    scaffolded: [
+      "Define what historians mean by a 'modern' state in the context of 18th-century Europe.",
+      'Synthesise domestic social realities with imperial/commercial expansion across the period 1450–1750.',
+      "Construct a high-level, structured final essay evaluating the extent of Britain's 'modernity' by 1750."
+    ]
+  },
+  extended: {
+    title: 'Final Assessment',
+    substantive_concepts: 'Examine underlying themes of ideological shifts.',
+    historical_scholarship: 'Reviews Marxist frameworks on the event.',
+    adaptive_teaching: 'Review simplified texts for SEND.',
+    sequencing_retrieval: 'Builds prior knowledge of societal structures.',
+    local_coastal_links: 'N/A',
+    question: "How 'modern' was Britain by 1750?",
+    hints: [
+      'Intro: Define modernity and state your overall argument (it was modern economically, but traditional socially).',
+      'Para 1 (Modern): Discuss the Financial Revolution, Bank of England, and global trade (East India Company).',
+      'Para 2 (Traditional): Discuss the brutal social realities (The Bloody Code, chattel slavery, Mudlarks).',
+      'Conclusion: Summarise your judgment. Was the modernity just an illusion for the rich?'
+    ],
+    lines: 35
+  },
+  banner: '/images/early_mod_l6_banner.jpg'
+}
+
+=== UNIT: industrialisation_and_empire ===
+Last Lesson:
+{
+  id: 'lesson_8',
+  title: 'Who truly benefited from 19th-century transformation?',
+  substantive_concepts: 'Analyze shifting themes of societal upheaval.',
+  historical_scholarship: 'Synthesizes post-colonial theories on the event.',
+  adaptive_teaching: 'Guide printed A4 workbooks to build confidence.',
+  sequencing_retrieval: 'Consolidates past context of chronological mapping.',
+  local_coastal_links: 'N/A',
+  learning_objective: 'To synthesize historical evidence to determine who truly benefited from the transformations of the 19th century.',
+  disciplinary_concept: 'Historical Enquiry',
+  formative_assessment: { type: 'End of Unit Summative Assessment' },
+  teacher_notes: {
+    primer: "This capstone lesson serves as the synthesis module for the entire 'Industrialisation and Empire' unit. Its pedagogical purpose is to guide high-ability pupils through the process of constructing a complex, balanced historical argument that weighs the structural advancements of technology and empire against the human cost of exploitation and political suppression.",
+    objectives: [
+      {
+        objective: 'Synthesize unit-wide knowledge to evaluate historical progress versus exploitation.',
+        primer: 'Train pupils to categorize and cross-reference evidence from prior lessons, linking technological milestones directly to their socio-economic consequences.',
+        question: 'Can an historical era be categorized as an era of progress if the advancements were built on systemic exploitation?'
+      },
+      {
+        objective: 'Deconstruct the Optimist and Pessimist historiographical debate.',
+        primer: 'Equip students with the analytical vocabulary required to structure a multi-perspective synthesis essay, moving past one-sided descriptions into high-level evaluative judgments.',
+        question: 'How do historians use the exact same factual database to arrive at completely opposing historical interpretations?'
+      },
+      {
+        objective: 'Structure a rigorous 16-mark historical essay using balanced thematic analysis.',
+        primer: 'Scaffold the construction of an analytical essay, ensuring pupils lead with a clear thesis statement, deploy precise evidence, and maintain a sustained line of judgment through to the conclusion.',
+        question: 'What distinguishes an informative essay that merely describes facts from an analytical essay that sustains an historical argument?'
+      }
+    ]
+  },
+  do_now: {
+    title: 'Do Now: Recall',
+    substantive_concepts: 'Analyze shifting themes of global trade.',
+    historical_scholarship: 'Synthesizes post-colonial debates on the event.',
+    adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+    sequencing_retrieval: 'Connects core concepts of industrial growth.',
+    local_coastal_links: 'N/A',
+    type: 'questions',
+    items: [
+      {
+        question: "What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?",
+        answer: 'A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.'
+      },
+      {
+        question: 'How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?',
+        answer: 'The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.'
+      },
+      {
+        question: 'Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?',
+        answer: "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation."
+      }
+    ]
+  },
+  sources: [
+    {
+      title: 'Capital and Labour: The Two Faces of Victorian Britain',
+      substantive_concepts: 'Evaluate key themes of societal upheaval.',
+      historical_scholarship: 'Examines orthodox views on the event.',
+      adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+      sequencing_retrieval: 'Recalls past context of economic shifts.',
+      local_coastal_links: 'N/A',
+      caption: 'A classic 1843 satirical illustration from Punch magazine juxtaposing the extreme opulence, luxury, and technological triumph of the upper classes directly above the dark, exhausting, and impoverished reality of the working-class laborers who built that wealth.',
+      src: '/images/capital_labour.jpg',
+      hinge_question: "How does the artist use vertical space (top vs. bottom) to summarize the 'Optimist vs. Pessimist' debate of the 19th century?"
+    }
+  ],
+  vocab: [
+    {
+      term: 'Synthesis',
+      definition: 'The act of combining different ideas, data points, and historical interpretations into a single, cohesive, and balanced argument.'
+    },
+    {
+      term: 'Historiographical Debate',
+      definition: 'The ongoing disagreement between different schools of historians regarding how a specific past event or era should be interpreted.'
+    },
+    {
+      term: 'Façade',
+      definition: 'An outward appearance or deceptive exterior that hides a very different, often unpleasant, reality beneath it.'
+    },
+    {
+      term: 'Oligarchy',
+      definition: 'A small group of wealthy, privileged people who hold absolute control over a country or organization.'
+    },
+    {
+      term: 'Concession',
+      definition: 'Something granted or yielded by a group in power, often reluctantly, in response to intense political pressure or demands.'
+    }
+  ],
+  narrative_blocks: [
+    {
+      title: 'Advanced Historiography: Silences and Entanglements',
+      substantive_concepts: 'Assess central themes of empire building.',
+      historical_scholarship: 'Challenges whig models on the event.',
+      adaptive_teaching: 'Utilize vocab matchers for lower-ability.',
+      sequencing_retrieval: 'Retrieves prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      content: "When evaluating the impact of the 19th century, top-tier historians use two key concepts. First, **'Silences in the Archive'**: official reports (like Chadwick's) or industrial statistics often deliberately ignore or 'silence' the voices of the colonized (like Indian weavers) and marginalized (like working-class women or enslaved people whose labor funded the factories). Second, **'Entangled History'**: the Empire wasn't a simple binary of good vs. evil. Domestic British workers were ruthlessly oppressed at home, yet many participated in and benefited from colonial exploitation abroad, highlighting an 'entangled' system of collaboration and coercion."
+    },
+    {
+      title: 'The Optimist View: Industrial Triumph and Imperial Grandeur',
+      substantive_concepts: 'Examine underlying themes of economic shifts.',
+      historical_scholarship: 'Reviews Marxist theories on the event.',
+      adaptive_teaching: 'Review simplified texts for EAL.',
+      sequencing_retrieval: 'Consolidates past context of economic shifts.',
+      local_coastal_links: 'N/A',
+      text: "When assessing the 19th century, 'Optimist' or traditional historians argue that this era was a period of unmatched national progress and global triumph. From this perspective, the Industrial Revolution was an economic engine that transformed Britain into the 'workshop of the world'. This progress was driven by immense local breakthroughs. Henry Cort's revolutionary puddling and rolling processes at the Funtley Ironworks (Lesson 1) allowed Britain to mass-produce cheap, high-quality wrought iron. This iron physically built the railways, factories, and the cutting-edge ironclad warships of the Royal Navy, such as HMS Warrior (Lesson 4). Simultaneously, the deep clay deposits of Hampshire fueled a massive construction boom. Firms like Joseph Bull & Sons used millions of durable 'Fareham Red' bricks (Lesson 3) to build the expanding dockyards of Portsmouth and the grand monuments of the capital, like London's Royal Albert Hall. To the Optimists, the generation of this immense industrial wealth and global naval supremacy represents a golden age that eventually lifted the standard of living for the entire nation.",
+      level_4: "Optimist historians argue that the 1800s were a time of great progress and wealth. They point to amazing inventions like Henry Cort's iron process at Funtley, which made the high-quality iron used to build trains and massive warships like HMS Warrior. They also point to Fareham's brick industry, which produced millions of famous 'Fareham Reds' to build the Portsmouth dockyards and London's Royal Albert Hall. To these historians, this industrial boom made Britain the richest and most advanced nation on earth.",
+      tasks: [
+        {
+          type: 'categorisation',
+          qNum: 1,
+          question: "Categorise the following list of historical facts into either 'Evidence of National Progress & Wealth' (The Optimist View) or 'Evidence of Working-Class / Colonial Exploitation' (The Pessimist View) by writing them under the correct headings:\n" +
+            "1. Henry Cort's puddling process increases iron production by 400%.\n" +
+            "2. The 1881 Fareham Census records 10-year-old boys working as 'pug boys' in clay pits.\n" +
+            "3. Indian handloom weavers are forced into starvation by English 'captive market' trade laws.\n" +
+            '4. Fareham Red bricks are selected to construct the Royal Albert Hall in London.\n' +
+            '5. Edwin Chadwick records that deaths from filth and overcrowding in industrial towns outnumber casualties in modern wars.\n' +
+            "6. HMS Warrior enforces the 'Two-Power Standard' globally, protecting merchant shipping lanes.",
+          model_answer: '### Evidence of National Progress & Wealth (Optimist View)\n' +
+            "* **Fact 1:** Henry Cort's puddling process increases iron production by 400%.\n" +
+            '* **Fact 4:** Fareham Red bricks are selected to construct the Royal Albert Hall in London.\n' +
+            "* **Fact 6:** HMS Warrior enforces the 'Two-Power Standard' globally, protecting merchant shipping lanes.\n" +
+            '\n' +
+            '### Evidence of Working-Class / Colonial Exploitation (Pessimist View)\n' +
+            "* **Fact 2:** The 1881 Fareham Census records 10-year-old boys working as 'pug boys' in clay pits.\n" +
+            "* **Fact 3:** Indian handloom weavers are forced into starvation by English 'captive market' trade laws.\n" +
+            '* **Fact 5:** Edwin Chadwick records that deaths from filth and overcrowding in industrial towns outnumber casualties in modern wars.'
+        }
+      ]
+    },
+    {
+      title: 'The Pessimist View: Squalor, Sabotage, and Slavery',
+      substantive_concepts: 'Investigate historic themes of social rebellion.',
+      historical_scholarship: 'Contrasts intentionalist arguments on the event.',
+      adaptive_teaching: 'Issue guided outlines to build confidence.',
+      sequencing_retrieval: 'Links prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      text: "Conversely, 'Pessimist' or revisionist historians argue that Britain's grand imperial wealth was merely a glittering façade that masked horrific human misery. They emphasize that the working classes and colonized populations paid a devastating price for this progress. Nationally, child labor was systematically exploited in textile mills and coal mines (Lesson 2). Locally, the 1881 Census proves that young children were working 14-hour days barefoot in the freezing mud of the Funtley clay pits to manufacture those famous Fareham bricks. In towns like Portsmouth and London, workers were packed into cheap, unventilated 'back-to-back' houses where overflowing cesspits contaminated the drinking water, causing catastrophic cholera outbreaks (Lesson 3). Edwin Chadwick's 1842 report explicitly proved that the slums were deadlier than war. This misery was replicated abroad: the East India Company violently conquered India and established a 'captive market' that intentionally bankrupted local Indian weavers to enrich British mill owners (Lesson 4). To the Pessimists, this misery explains why working people were driven to desperate resistance—from the violent machine-breaking of the Hampshire Swing Riots (1830) to the massive political campaigns of the Chartists (Lesson 5).",
+      level_4: "Pessimist historians argue that Britain's wealth was built on cruelty and suffering. They highlight how poor children were exploited, working 14-hour days in dangerous factories, or working barefoot in the cold mud of the Funtley clay pits. In cities like Portsmouth and London, workers lived in crowded, filthy 'back-to-back' slums with no clean water, causing deadly outbreaks of cholera. Abroad, the British Empire used military force to exploit colonies like India, ruining local businesses. This extreme misery is why workers fought back through the violent Swing Riots and the Chartist protests.",
+      tasks: [
+        {
+          type: 'paragraph_drafting',
+          qNum: 2,
+          question: "Using the Point, Evidence, Explanation (P.E.E.) framework, write a high-quality paragraph arguing that the working classes paid the physical price for Britain's industrial and imperial progress.",
+          model_answer: "**Point:** The working classes paid a devastating physical and human price to fuel Britain's industrial and imperial wealth. \n" +
+            '\n' +
+            "**Evidence:** For example, while famous 'Fareham Red' bricks were used to build grand imperial monuments like the Royal Albert Hall, official local evidence like the 1881 Census reveals that children as young as ten were forced to work barefoot as 'pug boys' and brick turners for 14 hours a day in the freezing mud of the Funtley clay pits. Furthermore, Edwin Chadwick's 1842 report proved that workers in industrial towns were packed into unventilated back-to-back slums where filth and contaminated water caused deadly cholera outbreaks, making the slums deadlier than modern warfare. \n" +
+            '\n' +
+            '**Explanation:** This proves that the progress celebrated by the wealthy elite was entirely dependent on the exploitation of the poor. The stunning infrastructure of the British Empire was not a reflection of national well-being, but was physically bought through the shortened lives, broken health, and hazardous labor of working-class families.'
+        }
+      ]
+    },
+    {
+      title: 'The Strategic Retreat: Elite Fear and Concession',
+      substantive_concepts: 'Investigate historic themes of cultural evolution.',
+      historical_scholarship: 'Contrasts intentionalist models on the event.',
+      adaptive_teaching: 'Issue guided outlines to aid focus.',
+      sequencing_retrieval: 'Retrieves core concepts of industrial growth.',
+      local_coastal_links: 'N/A',
+      text: 'The final element of the 19th-century transformation is the battle for political democracy (Lesson 6). Traditional narratives often suggest that Britain naturally and peacefully evolved into a fair democracy because its leaders valued liberty. However, critical historians argue that the expansion of the vote was a series of calculated, strategic retreats by a panicked ruling class. The wealthy elite who controlled Parliament had zero desire to share power with the working masses, whom they openly viewed as violent and ignorant. Political rights were only conceded when the elite feared that a total violent revolution was imminent. The Great Reform Act of 1832 was passed to ally the wealthy middle classes with the establishment, splitting the reform movement and leaving the working class betrayed. The Secret Ballot Act of 1872 and the expansion of the franchise in 1867 and 1884 were passed because movements like Chartism proved that the working class had developed the numbers and organizational sophistication to overthrow the state if their constitutional demands were ignored completely.',
+      level_4: 'Some people think Britain became a democracy because rich leaders wanted to be fair. However, history shows that the ruling class only gave people the right to vote because they were terrified of a violent revolution. Laws like the 1832 Great Reform Act and the 1872 Secret Ballot Act were passed to calm down angry workers after events like the Swing Riots and Chartist rallies. Political power was never gifted out of kindness; it was won by ordinary people making the elite too afraid to say no.',
+      tasks: [
+        {
+          type: 'short_answer',
+          qNum: 3,
+          question: 'Historical Reasoning: Explain why it is historically inaccurate to argue that the British ruling class expanded the right to vote out of a belief in fairness and equality.',
+          model_answer: "It is inaccurate because primary evidence proves the ruling elite deeply feared and despised the working classes, viewing them as violent and incapable of governance, as seen in MP Robert Lowe's 1866 speech. Legislation like the 1832 Great Reform Act and the 1872 Secret Ballot Act were strategic concessions passed out of fear of revolution, not fairness. The elite only expanded the franchise to pacify mass movements like Chartism and protect their own property from being overthrown by a working-class revolt."
+        }
+      ]
+    },
+    {
+      title: 'Structuring the Synthesis Essay',
+      substantive_concepts: 'Evaluate key themes of public health.',
+      historical_scholarship: 'Examines orthodox views on the event.',
+      adaptive_teaching: 'Deploy scaffolded tasks for SEND.',
+      sequencing_retrieval: 'Recalls past context of economic shifts.',
+      local_coastal_links: 'N/A',
+      text: 'To successfully answer the core question of this unit, you must organize your evidence into a rigorous, balanced essay structure. Your essay must move away from simply listing facts and instead sustain a clear historical argument from start to finish. Use the following four-part structural framework to plan your response:\n' +
+        '\n' +
+        "1. **Introduction:** Define the key terms of the question, outline the 'Optimist vs. Pessimist' debate, and state your clear thesis (your main argument showing who benefited most).\n" +
+        "2. **Thematic Paragraph 1 (The Scale of Progress):** Explore the massive wealth and technological advancement generated by industrialisation and naval supremacy (e.g., Cort's iron, Fareham bricks, HMS Warrior).\n" +
+        '3. **Thematic Paragraph 2 (The Human Cost):** Contrast that wealth with the systemic exploitation and unlivable squalor suffered by the domestic working classes and colonized populations (e.g., child labor at Funtley, cholera, Indian weavers).\n' +
+        '4. **Thematic Paragraph 3 (The Battle for Power):** Analyze how political power changed, demonstrating that democracy was fought for through movements like Chartism rather than freely given.\n' +
+        '5. **Conclusion:** Summarize your main points and deliver your definitive judgment, answering *who truly benefited*.',
+      level_4: 'To write a great history essay, you cannot just list facts. You must build a balanced argument using a clear structure. Start with an Introduction that states your main answer. Write a paragraph on the immense wealth and progress of the era (The Optimists). Write a paragraph on the horrific suffering of the workers and colonies (The Pessimists). Write a paragraph on how ordinary people fought to win the vote. End with a Conclusion that summarizes your final historical judgment.',
+      tasks: [
+        {
+          type: 'extended_writing',
+          qNum: 4,
+          question: "Capstone Essay (16 Marks): 'The transformation of 19th-century Britain was a triumph of progress that benefited the entire nation.' To what extent do you agree with this interpretation? Write a comprehensive, balanced synthesis essay utilizing evidence from across the entire unit.",
+          model_answer: "The transformation of nineteenth-century Britain was a complex process that fundamentally reshaped the nation's economy, global standing, and political landscape. Traditional or 'Optimist' historians have long interpreted this era as a triumph of progress that ultimately advanced the standard of living for the entire population. However, a rigorous examination of the evidence reveals that this interpretation is deeply flawed. While industrialisation and imperialism generated unprecedented wealth and global dominance, this progress was entirely dependent upon the severe exploitation of the domestic working class and colonized populations. Therefore, the transformation of the nineteenth century was not a collective national triumph, but an unequal victory where the wealthy elite benefited exponentially at the direct physical and economic expense of the poor.\n" +
+            '\n' +
+            "On one hand, it is undeniable that the nineteenth century represented an era of spectacular technological and industrial progress, generating vast wealth. As 'Optimist' historians highlight, Britain truly became the 'workshop of the world'. This structural progress was driven by remarkable local innovation, such as the metallurgy pioneered by Henry Cort at the Funtley Ironworks. Cort’s puddling and rolling processes allowed Britain to mass-produce high-quality wrought iron on an unprecedented scale, providing the material necessary to build the national railway network, heavy machinery, and the global fleets of the Royal Navy. This naval supremacy was physically manufactured at massive industrial hubs like Portsmouth Dockyard, where advanced warships like HMS Warrior were constructed to enforce the 'Two-Power Standard' and protect global merchant trade. Simultaneously, local resources like the Funtley clay pits boomed, producing millions of highly durable 'Fareham Red' bricks that constructed the infrastructure of Portsmouth and grand imperial monuments like London's Royal Albert Hall. To the ruling elite and the growing middle classes, this immense economic expansion and global power represented absolute national progress.\n" +
+            '\n' +
+            "However, this glittering façade of imperial grandeur completely masked a dark and destructive reality for the ordinary people whose labor sustained it. 'Pessimist' historians correctly argue that the working class paid for this wealth with their health, safety, and lives. Nationally, the factory system subjected families to exhausting 14-hour shifts in toxic, unprotected environments. Locally, the 1881 Fareham Census provides quantitative proof that child labor was a vital element of the local economy, recording children as young as ten working as 'pug boys' and brick turners barefoot in the freezing mud of the Funtley brickfields. Furthermore, rapid, unregulated urbanisation turned growing industrial towns into death traps. Workers in Portsmouth and London were crammed into unventilated back-to-back slums where overflowing cesspits routinely contaminated the shared water supply, resulting in devastating waterborne cholera outbreaks. This squalor was so severe that Edwin Chadwick's 1842 government report calculated that deaths from filth and overcrowding outnumbered military casualties in modern wars. This pattern of aggressive extraction was replicated globally; the East India Company used its private military force to subjugate India, establishing a captive market that intentionally flooded the continent with cheap British textiles, systematically bankrupting millions of native Indian weavers. Thus, for the vast majority of people under British rule, the transformation felt like an intense punishment rather than progress.\n" +
+            '\n' +
+            "This severe socio-economic imbalance explains why ordinary people were forced to launch organized political campaigns to fight for a democratic voice. The political transformation of the nineteenth century proves that democracy was not a benevolent gift from a progressive ruling class, but a series of forced concessions. Terrified by outbreaks of working-class desperation—such as the violent machine-breaking of the 1830 Hampshire Swing Riots—the aristocratic oligarchy passed the 1832 Great Reform Act. However, this act deliberately excluded the working class, granting the franchise only to middle-class property owners to divide the reform movement. This betrayal sparked the rise of Chartism, the first mass working-class political movement. Through the People's Charter, ordinary people demanded structural reforms like universal male suffrage and the secret ballot to protect voters from landlord intimidation. Although Parliament repeatedly rejected their massive petitions, the constant threat of working-class revolution eventually forced the elite to retreat, passing the 1872 Secret Ballot Act and expanding the vote in 1867 and 1884. This political struggle proves that the working class had to fight fiercely to secure even a fraction of the benefits of the modern state.\n" +
+            '\n' +
+            'In conclusion, the interpretation that the transformation of nineteenth-century Britain was a triumph that benefited the entire nation is largely unsustainable. While the era achieved staggering progress in metallurgy, construction, and global naval power, the benefits of these achievements were concentrated almost exclusively in the hands of wealthy industrialists, elite landowners, and the growing middle class. In stark contrast, the ordinary working men, women, and children of places like Funtley and Portsmouth, alongside millions of colonized subjects in India, were systematically exploited to fuel this economic engine. The unlivable squalor of the slums, the physical destruction of child labor, and the necessity of mass movements like Chartism prove that the majority of the population experienced the era as a period of profound hardship. Ultimately, the 19th century transformed Britain into a global superpower, but it was a triumph built entirely on the broken health and political exclusion of the working class.'
+        }
+      ]
+    }
+  ],
+  quiz: [
+    {
+      question: 'Which historical perspective argues that 19th-century Britain experienced unmatched national progress?',
+      options: [
+        'The Optimist View',
+        'The Pessimist View',
+        'The Marxist View',
+        'The Traditional View'
+      ],
+      answer: 'The Optimist View'
+    },
+    {
+      question: 'What local Hampshire industrialist revolutionized iron production with the puddling process?',
+      options: [
+        'Henry Cort',
+        'Isambard Kingdom Brunel',
+        'George Stephenson',
+        'Edwin Chadwick'
+      ],
+      answer: 'Henry Cort'
+    },
+    {
+      question: "How much did Henry Cort's puddling process increase iron production?",
+      options: [ '400%', '100%', '50%', '1000%' ],
+      answer: '400%'
+    },
+    {
+      question: "What famous London monument was built using 'Fareham Red' bricks?",
+      options: [
+        'The Royal Albert Hall',
+        'The Tower of London',
+        'Buckingham Palace',
+        "St. Paul's Cathedral"
+      ],
+      answer: 'The Royal Albert Hall'
+    },
+    {
+      question: "What ship, built with advanced iron processes, helped enforce the global 'Two-Power Standard'?",
+      options: [ 'HMS Warrior', 'HMS Victory', 'HMS Dreadnought', 'HMS Beagle' ],
+      answer: 'HMS Warrior'
+    },
+    {
+      question: "Which historical perspective argues that Britain's wealth masked horrific human misery and exploitation?",
+      options: [
+        'The Pessimist View',
+        'The Optimist View',
+        'The Capitalist View',
+        'The Whig View'
+      ],
+      answer: 'The Pessimist View'
+    },
+    {
+      question: 'According to the 1881 Census, what job did 10-year-old boys perform barefoot in the Funtley clay pits?',
+      options: [ 'Pug boys', 'Chimney sweeps', 'Piecers', 'Trappers' ],
+      answer: 'Pug boys'
+    },
+    {
+      question: 'How long were the typical working shifts for child laborers in the Funtley brickfields?',
+      options: [ '14 hours', '8 hours', '10 hours', '18 hours' ],
+      answer: '14 hours'
+    },
+    {
+      question: "What deadly waterborne disease repeatedly broke out in unventilated 'back-to-back' slums?",
+      options: [ 'Cholera', 'Smallpox', 'Tuberculosis', 'Typhoid' ],
+      answer: 'Cholera'
+    },
+    {
+      question: 'Who published an 1842 report proving that slums were deadlier than modern wars?',
+      options: [
+        'Edwin Chadwick',
+        'Lord Shaftesbury',
+        'Charles Dickens',
+        'Henry Cort'
+      ],
+      answer: 'Edwin Chadwick'
+    },
+    {
+      question: 'How did the East India Company violently destroy the local Indian textile economy?',
+      options: [
+        "By establishing a 'captive market' that flooded India with cheap British goods",
+        'By burning down all Indian textile mills',
+        'By blocking all global trade routes to India',
+        'By paying Indian weavers double their standard wages'
+      ],
+      answer: "By establishing a 'captive market' that flooded India with cheap British goods"
+    },
+    {
+      question: 'What Hampshire-based event in 1830 saw agricultural workers violently break threshing machines?',
+      options: [
+        'The Swing Riots',
+        'The Luddite Rebellions',
+        'The Chartism Rallies',
+        'The Funtley Strike'
+      ],
+      answer: 'The Swing Riots'
+    },
+    {
+      question: 'Why do critical historians argue the 1832 Great Reform Act was passed?',
+      options: [
+        'Out of elite fear of violent revolution',
+        'Because the elite believed in equality',
+        'To give the working class political power',
+        'To abolish the monarchy'
+      ],
+      answer: 'Out of elite fear of violent revolution'
+    },
+    {
+      question: 'Who was deliberately excluded from voting by the £10 property qualification in the 1832 Great Reform Act?',
+      options: [
+        'The working class',
+        'The middle class',
+        'The aristocracy',
+        'Industrial factory owners'
+      ],
+      answer: 'The working class'
+    },
+    {
+      question: 'What was the name of the first mass working-class political movement that rose in response to the 1832 betrayal?',
+      options: [
+        'Chartism',
+        'Suffragettes',
+        'Trade Unionism',
+        'The Swing Rioters'
+      ],
+      answer: 'Chartism'
+    },
+    {
+      question: "Which 1872 Act collapsed the elite's mechanism of landlord bribery and voter intimidation?",
+      options: [
+        'The Secret Ballot Act',
+        'The Great Reform Act',
+        'The Factory Act',
+        'The Representation of the People Act'
+      ],
+      answer: 'The Secret Ballot Act'
+    },
+    {
+      question: "In historical writing, what does 'synthesis' mean?",
+      options: [
+        'Combining different data points and interpretations into a balanced argument',
+        'Listing historical facts in chronological order',
+        'Writing from a purely biased perspective',
+        'Ignoring evidence that contradicts your main point'
+      ],
+      answer: 'Combining different data points and interpretations into a balanced argument'
+    },
+    {
+      question: "What was a 'Rotten Borough' in the pre-reform British electoral system?",
+      options: [
+        'A voting district with virtually no population that still sent two MPs to Parliament',
+        'A corrupt town council that stole tax money',
+        'An industrial city with massive populations but zero MPs',
+        'A district that only allowed the working class to vote'
+      ],
+      answer: 'A voting district with virtually no population that still sent two MPs to Parliament'
+    },
+    {
+      question: "Which local Hampshire town is a famous example of a 'Rotten Borough' with only 14 houses?",
+      options: [
+        'Newtown on the Isle of Wight',
+        'Fareham',
+        'Portsmouth',
+        'Winchester'
+      ],
+      answer: 'Newtown on the Isle of Wight'
+    },
+    {
+      question: "What best summarizes the overarching conclusion of the 'Industrialisation and Empire' unit?",
+      options: [
+        '19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects',
+        '19th-century progress benefited every social class equally and peacefully',
+        '19th-century wealth was generated entirely without the use of child labor or colonialism',
+        '19th-century political reform was a gift willingly handed down by a progressive aristocracy'
+      ],
+      answer: '19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects'
+    },
+    {
+      question: "What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?",
+      options: [
+        'A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.',
+        'Incorrect Option A',
+        'Incorrect Option B',
+        'Incorrect Option C'
+      ],
+      answer: 'A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.'
+    },
+    {
+      question: 'How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?',
+      options: [
+        'The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.',
+        'Incorrect Option A',
+        'Incorrect Option B',
+        'Incorrect Option C'
+      ],
+      answer: 'The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.'
+    },
+    {
+      question: 'Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?',
+      options: [
+        "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.",
+        'Incorrect Option A',
+        'Incorrect Option B',
+        'Incorrect Option C'
+      ],
+      answer: "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation."
+    }
+  ],
+  pair_share: {
+    prompt: 'Discuss with your partner: Who truly benefited the most from the 19th-century transformation?',
+    think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
+    pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
+    share: "Share your pair's combined conclusion with the class."
+  }
+}
+
+=== UNIT: great_war ===
+Found 'assessments' array:
+[
+  {
+    id: 'timeline',
+    title: 'Assessment Option 1: The July Crisis Domino Flowchart',
+    substantive_concepts: 'Explore primary themes of monarchical power.',
+    historical_scholarship: 'Explores structuralist perspectives on the event.',
+    adaptive_teaching: 'Provide structured tables for SEND.',
+    sequencing_retrieval: 'Synthesizes earlier themes of monarchical power.',
+    local_coastal_links: 'N/A',
+    type: 'timeline',
+    description: "The rapid escalation of the 'July Crisis' in 1914 is mixed up below. Read each event carefully, then use your pen to draw arrows connecting the boxes in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).",
+    events: [
+      {
+        year: '28 June 1914',
+        title: 'The Spark',
+        substantive_concepts: 'Assess central themes of social rebellion.',
+        historical_scholarship: 'Challenges whig views on the event.',
+        adaptive_teaching: 'Utilize vocab matchers to build confidence.',
+        sequencing_retrieval: 'Recalls prior knowledge of warfare tactics.',
+        local_coastal_links: 'N/A',
+        detail: 'Gavrilo Princip assassinates Archduke Franz Ferdinand in Sarajevo.'
+      },
+      {
+        year: '5 July 1914',
+        title: 'The Blank Cheque',
+        substantive_concepts: 'Examine underlying themes of political reform.',
+        historical_scholarship: 'Reviews Marxist perspectives on the event.',
+        adaptive_teaching: 'Review simplified texts for accessibility.',
+        sequencing_retrieval: 'Synthesizes earlier themes of monarchical power.',
+        local_coastal_links: 'N/A',
+        detail: 'Germany promises unconditional support to Austria-Hungary for any action against Serbia.'
+      },
+      {
+        year: '23 July 1914',
+        title: 'The Ultimatum',
+        substantive_concepts: 'Examine underlying themes of military conflict.',
+        historical_scholarship: 'Reviews Marxist perspectives on the event.',
+        adaptive_teaching: 'Review simplified texts for EAL.',
+        sequencing_retrieval: 'Synthesizes earlier themes of monarchical power.',
+        local_coastal_links: 'N/A',
+        detail: 'Austria-Hungary issues a harsh ultimatum to Serbia, knowing they will likely reject it.'
+      },
+      {
+        year: '30 July 1914',
+        title: 'Russian Mobilisation',
+        substantive_concepts: 'Analyze shifting themes of cultural evolution.',
+        historical_scholarship: 'Synthesizes post-colonial models on the event.',
+        adaptive_teaching: 'Guide printed A4 workbooks to aid focus.',
+        sequencing_retrieval: 'Retrieves core concepts of industrial growth.',
+        local_coastal_links: 'N/A',
+        detail: 'Russia mobilises its massive army to defend its Slavic ally, Serbia.'
+      },
+      {
+        year: '3 August 1914',
+        title: 'The Schlieffen Plan',
+        substantive_concepts: 'Evaluate key themes of public health.',
+        historical_scholarship: 'Examines orthodox views on the event.',
+        adaptive_teaching: 'Deploy scaffolded tasks for SEND.',
+        sequencing_retrieval: 'Recalls past context of economic shifts.',
+        local_coastal_links: 'N/A',
+        detail: 'Germany declares war on France and invades neutral Belgium to avoid a two-front war.'
+      }
+    ]
+  },
+  {
+    id: 'diamond9',
+    title: 'Assessment Option 2: The M.A.I.N. Significance Diamond',
+    substantive_concepts: 'Evaluate key themes of religious conflict.',
+    historical_scholarship: 'Examines orthodox models on the event.',
+    adaptive_teaching: 'Deploy scaffolded tasks for SEND.',
+    sequencing_retrieval: 'Retrieves previous learning of public health.',
+    local_coastal_links: 'N/A',
+    type: 'diamond9',
+    description: "Arrange the 9 key causes of the Great War into a 'Diamond 9' shape, placing the most significant long-term or short-term cause at the top and the least significant at the bottom. Write two short paragraphs justifying your top choice and your bottom choice.",
+    factors: [
+      'The Assassination of Franz Ferdinand (The Spark)',
+      'The Alliance System dividing Europe',
+      "Germany's 'Blank Cheque' to Austria",
+      'Anglo-German Naval Race (Militarism)',
+      'The scramble for Imperial colonies in Africa',
+      'Serbian Nationalism (The Black Hand)',
+      'Russian Mobilisation schedules',
+      "The Schlieffen Plan's invasion of Belgium",
+      'The decline of the Ottoman Empire (Balkan instability)'
+    ]
+  },
+  {
+    id: 'source_utility',
+    title: 'Assessment Option 3: Source Utility Analysis',
+    substantive_concepts: 'Examine underlying themes of public health.',
+    historical_scholarship: 'Reviews Marxist debates on the event.',
+    adaptive_teaching: 'Review simplified texts for SEND.',
+    sequencing_retrieval: 'Connects past context of economic shifts.',
+    local_coastal_links: 'N/A',
+    type: 'source_utility',
+    description: 'Study Sources B and C below. How useful are Sources B and C for an enquiry into the causes of the Great War? (8 marks)',
+    sources: [
+      {
+        id: 'Source B',
+        text: 'The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.',
+        provenance: 'Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919.',
+        provenance_clue: "Bethmann Hollweg was the German Chancellor during the outbreak of the war. Because he is writing his memoirs *after* Germany lost, is he likely to accept blame or try to defend his country's actions?"
+      },
+      {
+        id: 'Source C',
+        text: 'The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.',
+        provenance: "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919.",
+        provenance_clue: "The Treaty of Versailles was written entirely by the victorious Allies. Since they had just defeated Germany, do they have a motive to exaggerate Germany's guilt to justify harsh punishments?"
+      }
+    ]
+  },
+  {
+    id: 'interpretations',
+    title: "Assessment Option 4: The Historians' Debate",
+    substantive_concepts: 'Review core themes of empire building.',
+    historical_scholarship: 'Evaluates traditional models on the event.',
+    adaptive_teaching: 'Assign knowledge organizers for lower-ability.',
+    sequencing_retrieval: 'Retrieves prior knowledge of warfare tactics.',
+    local_coastal_links: 'N/A',
+    type: 'interpretations',
+    description: 'Study Interpretations 1 and 2 below, which match Sources B and C from the previous assessment. Then answer the three Edexcel GCSE Paper 3 questions.',
+    interpretations: [
+      {
+        id: 'Interpretation 1',
+        text: 'No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first.'
+      },
+      {
+        id: 'Interpretation 2',
+        text: "The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe."
+      }
+    ],
+    questions: [
+      '1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)',
+      '2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)',
+      '3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)'
+    ]
+  }
+]

@@ -4,26 +4,62 @@ export const unitData = {
   "debatePrompts": [
     {
       "title": "Medieval Medicine: Faith vs Reason",
+      "substantive_concepts": "Chart complex themes of economic shifts.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Consolidates past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
       "prompt": "<strong>Roleplay:</strong> You are a physician in 1348. The Black Death has reached your town. The Mayor wants to know if he should ban foreigners or pay for extra church services. What is your advice and how do you justify it using the ideas of the time?"
     },
     {
       "title": "The Renaissance: Challenging the Ancients",
+      "substantive_concepts": "Evaluate key themes of ideological shifts.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
       "prompt": "<strong>Debate:</strong> 'Vesalius's work on anatomy was brilliant, but completely useless for saving lives.' Do you agree? Argue your case using evidence of how surgery actually worked in the 1500s."
     },
     {
       "title": "Industrial Revolution: The Germ Theory",
+      "substantive_concepts": "Investigate historic themes of technological progress.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Recalls previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
       "prompt": "<strong>Roleplay:</strong> You are Louis Pasteur in 1861. A skeptical doctor tells you that disease causes germs to spontaneously generate. How do you explain your swan-neck flask experiment to prove him wrong?"
     },
     {
       "title": "Industrial Public Health",
+      "substantive_concepts": "Review core themes of political reform.",
+      "historical_scholarship": "Evaluates traditional theories on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
       "prompt": "<strong>Debate:</strong> Did John Snow's work on the Broad Street pump actually change government attitudes to public health, or was it the 'Great Stink' of 1858 that finally forced action? Pick a side."
     },
     {
       "title": "Modern Medicine: The Penicillin Story",
+      "substantive_concepts": "Explore primary themes of industrial change.",
+      "historical_scholarship": "Explores structuralist models on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
       "prompt": "<strong>Roleplay:</strong> You are Howard Florey asking the US government for funding in 1941 to mass-produce Penicillin. You need to convince them that this mold is worth millions of dollars of investment during a world war. Give your pitch."
     },
     {
       "title": "The Western Front",
+      "substantive_concepts": "Analyze shifting themes of monarchical power.",
+      "historical_scholarship": "Synthesizes post-colonial debates on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Connects earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
       "prompt": "<strong>Debate:</strong> 'War is the ultimate catalyst for medical progress.' Using evidence from the trench systems and casualty clearing stations of WW1, argue for or against this statement."
     }
   ],
@@ -35,11 +71,23 @@ export const unitData = {
     {
       "id": "mock_2025_clone",
       "title": "Edexcel GCSE: Medicine Through Time with the Western Front",
+      "substantive_concepts": "Evaluate key themes of diplomatic relations.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Builds core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
       "paper_reference": "1HI0/11",
       "total_marks": 52,
       "time_minutes": 80,
       "section_a": {
         "title": "SECTION A: The British sector of the Western Front, 1914-18: injuries, treatment and the trenches",
+      "substantive_concepts": "Evaluate key themes of industrial change.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "questions": [
           {
             "num": "1 (a)",
@@ -84,6 +132,12 @@ export const unitData = {
       },
       "section_b": {
         "title": "SECTION B: Medicine in Britain, c1250-present",
+      "substantive_concepts": "Examine underlying themes of political reform.",
+      "historical_scholarship": "Reviews Marxist arguments on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "questions": [
           {
             "num": "3",
@@ -136,6 +190,12 @@ export const unitData = {
       "time_minutes": 80,
       "section_a": {
         "title": "SECTION A: The British sector of the Western Front, 1914-18: injuries, treatment and the trenches",
+      "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+      "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "questions": [
           {
             "num": "1 (a)",
@@ -181,6 +241,12 @@ export const unitData = {
       },
       "section_b": {
         "title": "SECTION B: Medicine in Britain, c1250-present",
+      "substantive_concepts": "Review core themes of military conflict.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Links earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         "questions": [
           {
             "num": "3",
@@ -235,6 +301,12 @@ export const unitData = {
       "time_minutes": 80,
       "section_a": {
         "title": "SECTION A: The British sector of the Western Front, 1914-18: injuries, treatment and the trenches",
+      "substantive_concepts": "Assess central themes of economic shifts.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "questions": [
           {
             "num": "1 (a)",
@@ -279,6 +351,12 @@ export const unitData = {
       },
       "section_b": {
         "title": "SECTION B: Medicine in Britain, c1250-present",
+      "substantive_concepts": "Investigate historic themes of industrial change.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Consolidates previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         "questions": [
           {
             "num": "3",
@@ -333,6 +411,12 @@ export const unitData = {
       "time_minutes": 80,
       "section_a": {
         "title": "SECTION A: The British sector of the Western Front, 1914-18: injuries, treatment and the trenches",
+      "substantive_concepts": "Investigate historic themes of religious conflict.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Connects previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         "questions": [
           {
             "num": "1 (a)",
@@ -378,6 +462,12 @@ export const unitData = {
       },
       "section_b": {
         "title": "SECTION B: Medicine in Britain, c1250-present",
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "questions": [
           {
             "num": "3",
@@ -430,6 +520,12 @@ export const unitData = {
     {
       "id": "medieval",
       "title": "Medieval",
+      "substantive_concepts": "Analyze shifting themes of public health.",
+      "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Synthesizes past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
       "prefix": "lesson_1_",
       "image": "/units/edexcel_medicine/assets/medieval_pano_1784551792993.png",
       "enquiry": "How much did medicine really change in Medieval England?"
@@ -437,6 +533,12 @@ export const unitData = {
     {
       "id": "renaissance",
       "title": "Renaissance",
+      "substantive_concepts": "Analyze shifting themes of political reform.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
       "prefix": "lesson_2_",
       "image": "/units/edexcel_medicine/assets/renaissance_pano_1784551804068.png",
       "enquiry": "Why did the Medical Renaissance have so little impact on everyday treatments?"
@@ -444,6 +546,12 @@ export const unitData = {
     {
       "id": "18th_19th",
       "title": "18th & 19th C",
+      "substantive_concepts": "Evaluate key themes of monarchical power.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
       "prefix": "lesson_3_",
       "image": "/units/edexcel_medicine/assets/industrial_pano_1784551813599.png",
       "enquiry": "How did the Industrial Revolution transform the understanding and prevention of disease?"
@@ -451,6 +559,12 @@ export const unitData = {
     {
       "id": "modern",
       "title": "Modern",
+      "substantive_concepts": "Examine underlying themes of public health.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
       "prefix": "lesson_4_",
       "image": "/units/edexcel_medicine/assets/modern_pano_1784551822373.png",
       "enquiry": "How did technology and government intervention revolutionize 20th-century medicine?"
@@ -458,6 +572,12 @@ export const unitData = {
     {
       "id": "western_front",
       "title": "Western Front",
+      "substantive_concepts": "Chart complex themes of ideological shifts.",
+      "historical_scholarship": "Compares revisionist views on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
       "prefix": "lesson_5_",
       "image": "/units/edexcel_medicine/assets/western_front_pano_1784551831887.png",
       "enquiry": "How did the horrific conditions of trench warfare drive rapid medical innovation?"
@@ -510,6 +630,15 @@ export const unitData = {
     {
       "id": "lesson_1_1",
       "title": "KT1.1: What did Medieval people believe caused illness?",
+      "substantive_concepts": "Chart complex themes of technological progress.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Consolidates previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the supernatural and rational beliefs regarding the causes of illness in the Medieval period.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT1.1: What did Medieval people believe caused illness?",
       "hook_text": "During the medieval period, life was difficult, and sudden illness was terrifying. Without microscopes or an understanding of germs, people desperately sought ways to make sense of sickness. The explanations they relied on-ranging from God's wrath to the alignment of the stars and the imbalance of bodily fluids-shaped every aspect of medical treatment for centuries. Understanding these beliefs is the key to understanding all of medieval medicine.",
       "teacher_notes": {
@@ -530,6 +659,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Explore primary themes of empire building.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Links prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -749,10 +884,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Medieval Church's Impact on Medicine",
+      "substantive_concepts": "Explore primary themes of industrial change.",
+      "historical_scholarship": "Explores structuralist models on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "text": "For decades, traditional historians portrayed the medieval Catholic Church as a dogmatic institution that actively and deliberately stifled medical progress by banning dissections and imprisoning independent researchers like Roger Bacon. However, modern revisionist historians argue that the Church was not deliberately preventing progress. They point out that without the Church's libraries, the vital ancient medical texts of Hippocrates and Galen would have been lost entirely. Furthermore, they argue that the level of medieval technology meant that microbes could not be observed anyway, meaning that treatment would remain ineffective regardless of religious dominance, and that the Church was the only institution actively offering organised care to the sick through monastic hospitals."
       },
       "gcse_task": {
         "title": "Edexcel 12-Mark Essay Practice (Section B)",
+      "substantive_concepts": "Chart complex themes of economic shifts.",
+      "historical_scholarship": "Compares revisionist views on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Recalls past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -772,6 +919,12 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Homo_signorum-1580.png/500px-Homo_signorum-1580.png",
           "title": "The 'Zodiac Man' (Homo Signorum)",
+      "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Builds past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A 14th-century detailed drawing showing how different astrological star signs govern different body parts.",
           "think_wonder": "Why are the signs of the zodiac drawn over specific body parts? How do you think a medieval physician used this chart to decide when to treat a patient?",
           "hinge_question": "If you were a medieval physician consulting this Zodiac Man, how would your treatment plan change depending on the time of year? Does this show that medieval medicine was entirely irrational, or did it have its own internal logic?"
@@ -779,6 +932,12 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Chart_for_diagnosis_by_examination_of_urine._Wellcome_L0005642.jpg/500px-Chart_for_diagnosis_by_examination_of_urine._Wellcome_L0005642.jpg",
           "title": "Medieval Urine Chart",
+      "substantive_concepts": "Analyze shifting themes of industrial change.",
+      "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Synthesizes previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A circular chart showing 20 different shades and consistencies of urine.",
           "think_wonder": "What is this physician doing? Why would the colour, smell, and even taste of urine be considered the most important diagnostic tool in the 1300s?",
           "hinge_question": "Why did medieval physicians rely so heavily on observing urine rather than cutting into the body to see what was wrong? What does this tell us about their understanding of anatomy?"
@@ -1002,6 +1161,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "Sketch the Four Humours",
+      "substantive_concepts": "Chart complex themes of religious conflict.",
+      "historical_scholarship": "Compares revisionist models on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Draw the Four Humours wheel, making sure to link each humour to its corresponding season, element, and temperature (e.g. Blood = Spring, Air, Hot/Wet)."
       },
       "video": [
@@ -1029,6 +1194,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: The Four Humours",
+      "substantive_concepts": "Assess central themes of industrial change.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Retrieves previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/four_humours.jpg",
           "caption": "A medieval diagram showing the Theory of the Four Humours."
         }
@@ -1037,6 +1208,15 @@ export const unitData = {
     {
       "id": "lesson_1_2",
       "title": "KT1.2: How did Medieval people try to prevent and treat disease?",
+      "substantive_concepts": "Assess central themes of religious conflict.",
+      "historical_scholarship": "Challenges whig perspectives on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Synthesizes previous learning of global empires.",
+      "local_coastal_links": "Explores Portsmouth's maritime trade.",
+      
+      "learning_objective": "To examine the methods and efficacy of preventing and treating disease during the Middle Ages.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT1.2: How did Medieval people try to prevent and treat disease?",
       "hook_text": "In medieval England, a lack of scientific knowledge meant treatments were heavily based on religion, superstition, and the Ancient Greeks. Care was mostly provided at home by women, while the wealthy paid for university-trained physicians. The methods used to treat and prevent sickness directly matched people's beliefs about what caused disease, resulting in a bizarre mix of herbal remedies, prayer, and drastic measures like bloodletting to balance the body.",
       "teacher_notes": {
@@ -1057,6 +1237,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Analyze shifting themes of public health.",
+      "historical_scholarship": "Synthesizes post-colonial debates on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Connects past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -1273,10 +1459,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Effectiveness of Medieval Hospitals",
+      "substantive_concepts": "Investigate historic themes of military conflict.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         "text": "Traditional historical accounts often dismissed medieval hospitals as dirty, unhygienic places of death where patients shared beds and received no real medicine. However, modern revisionist historians point out that judged by medieval standards, monastic hospitals actually maintained high standards of cleanliness, as bed linens and clothing were regularly washed by nuns. While they did not perform surgery and excluded infectious patients to prevent the spread of disease, they provided crucial spiritual care, warmth, and nutritious food. For patients not suffering from terminal illnesses, monastic care focusing on 'care, not cure' was highly successful in allowing the body to rest and recover in a comfortable, sanitary environment."
       },
       "gcse_task": {
         "title": "Edexcel 12-Mark Essay Practice (Section B)",
+      "substantive_concepts": "Analyze shifting themes of social rebellion.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -1296,12 +1494,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Calendar%2C_January%2C_Two_bloodlettings%2C_inbetween_Aquarius%27%27_-_Psalter_of_Eleanor_of_Aquitaine_%28ca._1185%29_-_KB_76_F_13%2C_folium_002r.jpg/500px-Calendar%2C_January%2C_Two_bloodlettings%2C_inbetween_Aquarius%27%27_-_Psalter_of_Eleanor_of_Aquitaine_%28ca._1185%29_-_KB_76_F_13%2C_folium_002r.jpg",
           "title": "Medieval Bloodletting",
+      "substantive_concepts": "Review core themes of cultural evolution.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Builds core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A graphic manuscript illumination showing a surgeon slicing a patient's arm to drain blood into a bowl.",
           "think_wonder": "What is being done to this patient's arm? Why might bleeding someone out intentionally be considered a 'cure'?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/The_H%C3%B4tel_Dieu%2C_Paris%3B_interior_showing_patients_being_nurse_Wellcome_V0014307.jpg/500px-The_H%C3%B4tel_Dieu%2C_Paris%3B_interior_showing_patients_being_nurse_Wellcome_V0014307.jpg",
           "title": "The Hotel-Dieu Hospital",
+      "substantive_concepts": "Analyze shifting themes of military conflict.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "caption": "An illumination showing nuns caring for patients in a large, religious hospital ward.",
           "think_wonder": "Notice who is providing the care. Why are there no trained doctors visible? What does this tell us about the purpose of a medieval hospital?"
         }
@@ -1724,6 +1934,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "The Apothecary's Shop",
+      "substantive_concepts": "Examine underlying themes of empire building.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Sketch an apothecary mixing herbal remedies. Label at least three common ingredients they might use (like honey, mint, or theriac)."
       },
       "video": [
@@ -1735,6 +1951,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: Medieval Bloodletting",
+      "substantive_concepts": "Examine underlying themes of cultural evolution.",
+      "historical_scholarship": "Reviews Marxist arguments on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/bloodletting.jpg",
           "caption": "A manuscript illustration of a physician performing bloodletting."
         }
@@ -1743,6 +1965,15 @@ export const unitData = {
     {
       "id": "lesson_1_3",
       "title": "KT1.3: How did people respond to the Black Death?",
+      "substantive_concepts": "Assess central themes of empire building.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the social and medical responses to the devastation of the Black Death.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT1.3: How did people respond to the Black Death?",
       "hook_text": "In 1348, a devastating pandemic known as the Black Death struck England, rapidly wiping out at least a third of the population. Because medieval people had no scientific understanding of bacteria or germs, they desperately blamed the crisis on God, astrology, and foul air. This catastrophic event reveals the horrifying reality of medieval medicine, highlighting how powerless people were when forced to rely on religion and ancient, flawed theories in the face of a true public health emergency.",
       "teacher_notes": {
@@ -1763,6 +1994,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Builds core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -1978,10 +2215,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Socio-Economic Impact of the Black Death",
+      "substantive_concepts": "Explore primary themes of monarchical power.",
+      "historical_scholarship": "Explores structuralist debates on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Connects earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians are deeply divided over the long-term impact of the Black Death on medieval English society. Traditional historians, such as G.M. Trevelyan, argued that the demographic catastrophe was a massive watershed of progress-the crucial turning point that caused severe labor shortages, ended feudalism, and paved the way for the Renaissance and Industrial Revolution. Conversely, modern revisionist historians argue that the Black Death did not suddenly destroy the feudal system overnight. Instead, they suggest it merely accelerated economic trends that were already underway, pointing to the immediate return of the plague every 10 to 20 years which caused prolonged economic depression and stagnation, rather than rapid modernizing progress."
       },
       "gcse_task": {
         "title": "Edexcel 12-Mark Essay Practice (Section B)",
+      "substantive_concepts": "Explore primary themes of religious conflict.",
+      "historical_scholarship": "Explores structuralist debates on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Connects previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -2001,12 +2250,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Burying_Plague_Victims_of_Tournai.jpg",
           "title": "The Tournai Mass Burial (1349)",
+      "substantive_concepts": "Examine underlying themes of global trade.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Connects core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "caption": "An illumination showing citizens stacking dozens of wooden coffins into deep trenches.",
           "think_wonder": "What does the sheer number of coffins suggest about the scale of the disaster? Why have normal burial practices collapsed?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/The_flagellants_at_Doornik_in_1349.jpg/500px-The_flagellants_at_Doornik_in_1349.jpg",
           "title": "Flagellants Whipping Themselves",
+      "substantive_concepts": "Examine underlying themes of technological progress.",
+      "historical_scholarship": "Reviews Marxist arguments on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
           "caption": "An illustration of a procession of flagellants whipping their own backs in public.",
           "think_wonder": "Why are these people intentionally hurting themselves? What do they believe this will achieve in the eyes of God?"
         }
@@ -2229,6 +2490,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "Plague Symptoms",
+      "substantive_concepts": "Examine underlying themes of economic shifts.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Draw a patient suffering from the bubonic plague, clearly labeling the key symptom: a large, dark swelling (bubo) in the armpit or groin."
       },
       "video": [
@@ -2236,6 +2503,12 @@ export const unitData = {
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=zR2A7o90L9A",
           "title": "BBC Teach: The Black Death",
+      "substantive_concepts": "Review core themes of monarchical power.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Links earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "duration": "4 mins",
           "viewing_task": "How did people respond to the devastating outbreak of the Black Death in 1348?",
           "model_answer": "People responded with panic. Some whipped themselves to earn God's forgiveness (flagellants), others blamed minority groups, while local governments ordered streets to be cleaned to remove bad smells."
@@ -2252,6 +2525,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: The Black Death",
+      "substantive_concepts": "Explore primary themes of global trade.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Consolidates core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/black_death.jpg",
           "caption": "An illustration showing victims of the Black Death covered in buboes."
         }
@@ -2260,6 +2539,15 @@ export const unitData = {
     {
       "id": "lesson_2_1",
       "title": "KT2.1: Did the Renaissance change beliefs about the causes of illness?",
+      "substantive_concepts": "Assess central themes of societal upheaval.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To assess the extent to which the Renaissance transformed beliefs about the causes of illness.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"Explain why (12 marks)"}],
       "enquiry_question": "KT2.1: Did the Renaissance change beliefs about the causes of illness?",
       "hook_text": "The Medical Renaissance was an exciting era of intellectual shift. As the Church's influence slowly declined, a new 'scientific approach' emerged that encouraged questioning traditional authority. While ordinary people still clung to old superstitions and the Four Humours, brilliant individuals and new technologies began to challenge ancient medical ideas, laying the vital foundations for modern medicine.",
       "teacher_notes": {
@@ -2280,6 +2568,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Review core themes of diplomatic relations.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -2502,10 +2796,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Pace of Change in Renaissance Medicine",
+      "substantive_concepts": "Review core themes of global trade.",
+      "historical_scholarship": "Evaluates traditional perspectives on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians often debate the extent to which the Renaissance c1500-c1700 represented a genuine breakthrough or a period of stagnation in the understanding of disease causes. Traditional historians emphasize a 'Scientific Revolution,' pointing to the works of Vesalius, Harvey, and Leeuwenhoek as a rapid and complete dismantling of medieval Galenism. However, revisionist historians argue that this period was actually characterized by overwhelming continuity for the average patient. They argue that while elite physicians in organizations like the Royal Society debated new ideas, daily treatments (such as bleeding and purging to balance the humours) remained completely unchanged. Because there was no scientific proof that Leeuwenhoek's 'animalcules' actually caused disease, everyday medical practice clung tightly to the Theory of the Four Humours and miasma for centuries after the Renaissance."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+      "historical_scholarship": "Synthesizes post-colonial debates on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Connects past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -2530,12 +2836,24 @@ export const unitData = {
         {
           "source": "/images/vesalius_muscle_men.jpg",
           "title": "Vesalius' 'Muscle Men'",
+      "substantive_concepts": "Chart complex themes of ideological shifts.",
+      "historical_scholarship": "Compares revisionist frameworks on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Builds prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A hyper-detailed, incredibly accurate anatomical drawing of a flayed human body standing against an Italian landscape.",
           "think_wonder": "Compare this drawing to the medieval 'Zodiac Man'. How was this astonishing level of anatomical detail achieved, and why was it so dangerous to discover?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Leonardo_da_Vinci_-_RCIN_919126%2C_v%2C_A_sketch_of_the_liver%2C_heart_and_kidneys_c._1515-16.jpg/500px-Leonardo_da_Vinci_-_RCIN_919126%2C_v%2C_A_sketch_of_the_liver%2C_heart_and_kidneys_c._1515-16.jpg",
           "title": "Da Vinci Anatomical Sketch",
+      "substantive_concepts": "Explore primary themes of monarchical power.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A detailed sketch of the human skull and spine by Leonardo da Vinci.",
           "think_wonder": "Why would an artist need to understand the human skeleton in such intricate detail? How does this cross the line between art and medicine?"
         }
@@ -2758,6 +3076,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "The Printing Press",
+      "substantive_concepts": "Assess central themes of religious conflict.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Recalls previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Sketch a simple printing press and explain in a speech bubble why this invention was so dangerous to the Catholic Church's control of knowledge."
       },
       "video": [
@@ -2773,6 +3097,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: The Printing Press",
+      "substantive_concepts": "Examine underlying themes of diplomatic relations.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Synthesizes core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/printing_press.jpg",
           "caption": "An early printing press, which helped spread new medical ideas during the Renaissance."
         }
@@ -2781,6 +3111,15 @@ export const unitData = {
     {
       "id": "lesson_2_2",
       "title": "KT2.2: Did treatments improve during the Renaissance?",
+      "substantive_concepts": "Chart complex themes of technological progress.",
+      "historical_scholarship": "Compares revisionist perspectives on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Synthesizes previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the progress and limitations of medical treatments during the Renaissance.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT2.2: Did treatments improve during the Renaissance?",
       "hook_text": "The Medical Renaissance saw an explosion of scientific curiosity, yet this rarely translated into better everyday medical care. While pioneer anatomists fundamentally transformed medical training by proving ancient authorities wrong, the average patient still relied on traditional herbal remedies, bleeding, and local wise women. The unexpected closure of monastery hospitals forced a massive rethink in healthcare, slowly paving the way for specialised hospitals focused on actually curing the sick.",
       "teacher_notes": {
@@ -2801,6 +3140,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Explore primary themes of technological progress.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Consolidates previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -3016,10 +3361,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over Renaissance Progress: Breakthrough or Backstep?",
+      "substantive_concepts": "Evaluate key themes of public health.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Recalls past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians actively debate whether the Renaissance represented genuine progress in patient care or a period of regression. Traditionalist accounts often celebrated the 'rebirth' of medical science, highlighting how the shift towards chemical cures and Vesalian anatomy laid the foundations of modern clinical practice. However, revisionist social historians argue that for the average sick person, the Renaissance was actually a time of decline in care. They point out that Henry VIII's closure of the monasteries in 1536 destroyed the medieval hospital safety net, leaving thousands of poor patients without any institutional care. Furthermore, they highlight that some new treatments, such as using highly toxic mercury to treat syphilis or smoking tobacco as a 'cure-all' defense against plague, actually did far more physical harm than medieval herbal remedies ever did."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Chart complex themes of military conflict.",
+      "historical_scholarship": "Compares revisionist frameworks on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -3044,12 +3401,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/%28Venice%29_The_Quack_Doctor_by_Matteo_Ghidoni_dei_Pitocchi_-_Museo_Querini_Stampalia.jpg/500px-%28Venice%29_The_Quack_Doctor_by_Matteo_Ghidoni_dei_Pitocchi_-_Museo_Querini_Stampalia.jpg",
           "title": "A Quack Doctor",
+      "substantive_concepts": "Investigate historic themes of societal upheaval.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A contemporary painting of an eccentric 'quack' performing to a crowd to sell bottled remedies.",
           "think_wonder": "Why are people buying medicine from a performer instead of a trained physician? How safe do you think these 'cure-all' potions really were?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Culpeper%27s_English_physician_and_complete_herbal_BHL3588298.jpg/500px-Culpeper%27s_English_physician_and_complete_herbal_BHL3588298.jpg",
           "title": "Printed Herbal Book",
+      "substantive_concepts": "Evaluate key themes of political reform.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "caption": "The title page of Nicholas Culpeper's famous printed book of herbal remedies.",
           "think_wonder": "How would mass-producing cheap books about herbal remedies change the way ordinary people treated illnesses?"
         }
@@ -3272,6 +3641,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "Sydenham at the Bedside",
+      "substantive_concepts": "Chart complex themes of political reform.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Draw Thomas Sydenham observing a patient. Instead of a book in his hand, draw him taking notes on the patient's actual symptoms."
       },
       "video": [
@@ -3283,6 +3658,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: Pare and Paracelsus",
+      "substantive_concepts": "Evaluate key themes of public health.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/pare_treatment.jpg",
           "caption": "A contemporary portrait of Ambroise Paré, the famous Renaissance surgeon who revolutionized the treatment of gunshot wounds."
         }
@@ -3291,6 +3672,15 @@ export const unitData = {
     {
       "id": "lesson_2_3",
       "title": "KT2.3: How significant were William Harvey and the Great Plague?",
+      "substantive_concepts": "Investigate historic themes of monarchical power.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the historical significance of William Harvey and the response to the Great Plague.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"How far do you agree? (16 marks)"}],
       "enquiry_question": "KT2.3: How significant were William Harvey and the Great Plague?",
       "hook_text": "By the 17th century, medical knowledge was advancing, but practical treatment lagged far behind. William Harvey's brilliant discovery of blood circulation proved ancient theories wrong and laid the foundations for modern physiology, though it saved no lives at the time. Meanwhile, the devastating Great Plague of 1665 demonstrated that without an understanding of germs, even organized government action was powerless to stop a catastrophic epidemic.",
       "teacher_notes": {
@@ -3311,6 +3701,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -3530,10 +3926,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Significance of William Harvey",
+      "substantive_concepts": "Explore primary themes of technological progress.",
+      "historical_scholarship": "Explores structuralist models on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians often debate whether William Harvey represents a sudden turning point or a very gradual stepping stone in medicine. Traditionalist historians celebrate his work as a revolutionary breakthrough that demolished Galenic physiology. However, revisionist historians emphasize the extreme limits of his immediate significance. They point out that a lot of contemporary doctors simply ignored or openly criticized Harvey because his discovery offered no practical treatment for sick patients. As a result, English medical textbooks continued to print Galen's flawed theories until 1651, and Harvey's findings were not taught in universities until 1673, decades after his discovery."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Assess central themes of cultural evolution.",
+      "historical_scholarship": "Challenges whig views on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -3558,12 +3966,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/William_Harvey%2C_De_Motu_Cordis-_valves_in_veins_%2811291149393%29.jpg/500px-William_Harvey%2C_De_Motu_Cordis-_valves_in_veins_%2811291149393%29.jpg",
           "title": "Harvey's Diagram of Vein Valves",
+      "substantive_concepts": "Review core themes of public health.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A sketch of a human arm with a tourniquet, showing fingers pressing on the veins.",
           "think_wonder": "What is the hand doing to the vein? What does this simple experiment prove about the direction that blood flows?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Bill_of_Mortality.jpg",
           "title": "London Bill of Mortality (1665)",
+      "substantive_concepts": "Examine underlying themes of monarchical power.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A printed broadsheet grimly listing the thousands of people who died from the plague in a single week.",
           "think_wonder": "What do these terrifying numbers tell us about the impact of the Great Plague? Why are city officials tracking the deaths so carefully?"
         }
@@ -3786,6 +4206,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "The Plague Doctor",
+      "substantive_concepts": "Review core themes of public health.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Draw a 1665 Plague Doctor. Label his protective clothing, including the thick leather cloak, wooden stick, and the beak filled with herbs."
       },
       "video": [
@@ -3801,6 +4227,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: Harvey on the Heart",
+      "substantive_concepts": "Review core themes of global trade.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/harvey_veins.jpg",
           "caption": "William Harvey demonstrating the circulation of blood and valves in the veins."
         }
@@ -3809,6 +4241,15 @@ export const unitData = {
     {
       "id": "lesson_3_1",
       "title": "KT3.1: What breakthrough discoveries changed our understanding of disease causes?",
+      "substantive_concepts": "Review core themes of empire building.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+      "local_coastal_links": "Details Hampshire's coastal defenses.",
+      
+      "learning_objective": "To examine the breakthrough discoveries that revolutionised our understanding of the causes of disease.",
+      "disciplinary_concept": "Causation",
+      "exam_practice": [{"type":"Explain why (12 marks)"}],
       "enquiry_question": "KT3.1: What breakthrough discoveries changed our understanding of disease causes?",
       "hook_text": "In the 18th and 19th centuries, the Industrial Revolution created overcrowded, dirty cities, making epidemic diseases a massive threat. While scientists had finally discarded ancient beliefs like the Four Humours, they incorrectly assumed that rotting dirt created the germs they could now see under microscopes. However, the brilliant experiments of Louis Pasteur and Robert Koch finally solved the mystery of illness, moving medicine into a truly scientific era.",
       "teacher_notes": {
@@ -3829,6 +4270,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Chart complex themes of societal upheaval.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -4049,10 +4496,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Pace of the Germ Theory Revolution",
+      "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+      "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians actively debate how quickly Germ Theory transformed medical beliefs in Britain. While traditional narratives present Pasteur's 1861 publication as an overnight revolution that instantly swept away ancient superstitions, modern revisionist historians argue that the transition was incredibly slow and highly contested. They point out that Pasteur was a chemist, not a doctor, and his early work focused on wine and vinegar, leading prominent British medical authorities like Dr. Henry Bastian to reject his ideas for decades. It was only after Robert Koch identified specific human pathogens (such as the tuberculosis microbe in 1882) and developed practical laboratory techniques that the wider medical community gradually accepted the link between germs and disease."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Examine underlying themes of industrial change.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Synthesizes previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -4077,12 +4536,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Swan-necked_flask_used_by_Pasteur._Wellcome_M0012521.jpg/500px-Swan-necked_flask_used_by_Pasteur._Wellcome_M0012521.jpg",
           "title": "Pasteur's Swan-Neck Flask",
+      "substantive_concepts": "Examine underlying themes of diplomatic relations.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Recalls core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of an original swan-necked flask used by Louis Pasteur in his experiments to disprove spontaneous generation.",
           "think_wonder": "Why didn't the liquid in the curved flask rot? What invisible thing is being kept out?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Robert_Koch_in_seine_Laboratorium.jpg/500px-Robert_Koch_in_seine_Laboratorium.jpg",
           "title": "Robert Koch at the Microscope",
+      "substantive_concepts": "Chart complex themes of cultural evolution.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Consolidates core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of Robert Koch in his laboratory looking through a microscope.",
           "think_wonder": "What is he looking for? How did this technology change medicine forever?"
         }
@@ -4305,6 +4776,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "Pasteur's Swan-Neck Flask",
+      "substantive_concepts": "Chart complex themes of ideological shifts.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Sketch Louis Pasteur's famous swan-neck flask experiment. Show how the curved neck prevented airborne bacteria from reaching the liquid inside."
       },
       "video": [
@@ -4320,6 +4797,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: Pasteur in the Lab",
+      "substantive_concepts": "Chart complex themes of public health.",
+      "historical_scholarship": "Compares revisionist perspectives on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/pasteur_lab.jpg",
           "caption": "Louis Pasteur working in his laboratory to prove Germ Theory."
         }
@@ -4328,6 +4811,15 @@ export const unitData = {
     {
       "id": "lesson_3_2",
       "title": "KT3.2: How did the Industrial Revolution transform prevention and treatment?",
+      "substantive_concepts": "Chart complex themes of technological progress.",
+      "historical_scholarship": "Compares revisionist models on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze how the Industrial Revolution simultaneously hindered and transformed disease prevention and treatment.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT3.2: How did the Industrial Revolution transform prevention and treatment?",
       "hook_text": "The 19th century witnessed a dramatic revolution in how society treated the sick and prevented disease. Driven by the devastating impact of industrial slums and the breakthrough of Germ Theory, the government finally abandoned its 'laissez-faire' attitude to enforce public health. Simultaneously, brilliant pioneers transformed terrifying, deadly hospitals and surgical theatres into clean, scientific environments, drastically improving the chances of human survival.",
       "teacher_notes": {
@@ -4353,6 +4845,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Chart complex themes of global trade.",
+      "historical_scholarship": "Compares revisionist debates on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Connects core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -4583,10 +5081,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the 'Black Period' of Surgery",
+      "substantive_concepts": "Explore primary themes of industrial change.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians frequently debate the immediate consequences of James Simpson's 1847 discovery of chloroform. While popular history often celebrates chloroform as an overnight triumph that ended the horror of conscious amputations, medical historians point out that it ushered in a devastating 'Black Period' for British surgery. Because patients were unconscious and relaxed, surgeons attempted far deeper, more complex, and longer internal operations. However, because Lister's carbolic antiseptics were not introduced until 1865, surgeons still operated in filthy environments with unwashed hands and blood-stained coats. As a result, the 'Black Period' actually saw a dramatic increase in postoperative deaths from gangrene and infection, leading some historians to argue that the discovery of anaesthetics was a step backward for patient survival until antiseptics were finally developed."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Investigate historic themes of empire building.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -4612,12 +5122,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Nightingale-mortality.jpg/500px-Nightingale-mortality.jpg",
           "title": "Florence Nightingale's 'Rose Diagram'",
+      "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "caption": "Her revolutionary statistical coxcomb chart showing deaths in the Crimean War.",
           "think_wonder": "Look closely at the blue areas vs the red areas. Why did Nightingale invent a visual diagram instead of just handing the government a boring list of numbers?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Southworth_%26_Hawes_-_First_etherized_operation_%28re-enactment%29.jpg/500px-Southworth_%26_Hawes_-_First_etherized_operation_%28re-enactment%29.jpg",
           "title": "Early Chloroform Surgery",
+      "substantive_concepts": "Analyze shifting themes of military conflict.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Retrieves earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of a Victorian operating theatre with a patient completely unconscious under a cloth mask.",
           "think_wonder": "Notice how calm the patient is. How did the invention of this invisible gas completely revolutionize the speed and success of surgery?"
         }
@@ -4840,6 +5362,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "The Carbolic Spray",
+      "substantive_concepts": "Evaluate key themes of ideological shifts.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Draw Joseph Lister operating on a patient while a cumbersome machine sprays carbolic acid over the wound to kill bacteria."
       },
       "video": [
@@ -4863,6 +5391,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: Florence Nightingale",
+      "substantive_concepts": "Explore primary themes of cultural evolution.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/nightingale.jpg",
           "caption": "Florence Nightingale tending to patients in the clean wards she established at Scutari."
         }
@@ -4871,6 +5405,15 @@ export const unitData = {
     {
       "id": "lesson_3_3",
       "title": "KT3.3: How significant were Edward Jenner and John Snow?",
+      "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+      "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the significance of Edward Jenner's vaccination and John Snow's work on cholera.",
+      "disciplinary_concept": "Significance",
+      "exam_practice": [{"type":"How far do you agree? (16 marks)"}],
       "enquiry_question": "KT3.3: How significant were Edward Jenner and John Snow?",
       "hook_text": "The 18th and 19th centuries witnessed two monumental breakthroughs in the prevention of deadly diseases. Edward Jenner's pioneering smallpox vaccination provided the world's first scientifically tested method of immunity, saving millions globally. Decades later, John Snow's brilliant, logical investigation into cholera proved that lethal epidemics were water-borne, fundamentally shattering the ancient miasma theory. Together, these two men laid the vital foundations for modern public health and immunology.",
       "teacher_notes": {
@@ -4891,6 +5434,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Assess central themes of religious conflict.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -5108,10 +5657,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Catalysts for Victorian Public Health Reform",
+      "substantive_concepts": "Chart complex themes of ideological shifts.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Links prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians debate the extent to which John Snow's 1854 Broad Street investigation was the primary driver behind the cleanup of Victorian London. Traditional narratives portray Snow as a lone hero whose pump-handle intervention instantly convinced the government to abandon laissez-faire and build a new sewer system. However, revisionist historians argue that Snow's work had very little immediate impact because the medical establishment and the General Board of Health clung obstinately to miasma theory. They suggest that the real turning point was the combination of 'The Great Stink' of 1858, which physically disrupted Parliament, and the 1867 Reform Act, which gave working-class men the vote and forced politicians to promise sanitary reforms to win elections. This culminated in the compulsory 1875 Public Health Act once Pasteur's Germ Theory finally provided the scientific proof that Snow lacked."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Investigate historic themes of monarchical power.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Retrieves earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -5136,12 +5697,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/The_cow_pock.jpg/500px-The_cow_pock.jpg",
           "title": "The Cow-Pock Cartoon",
+      "substantive_concepts": "Evaluate key themes of social rebellion.",
+      "historical_scholarship": "Examines orthodox perspectives on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           "caption": "James Gillray's famous cartoon showing cows literally bursting out of people's arms after taking Jenner's vaccine.",
           "think_wonder": "What were people terrified would happen if they took Jenner's new vaccine? Why was there such fierce, hysterical opposition to his idea?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/500px-Snow-cholera-map-1.jpg",
           "title": "John Snow's Ghost Map",
+      "substantive_concepts": "Examine underlying themes of monarchical power.",
+      "historical_scholarship": "Reviews Marxist arguments on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "caption": "The original map of Soho showing black bars clustered around the Broad Street pump.",
           "think_wonder": "Why are all the black bars (representing deaths) clustered around that specific street corner? What does this visual map prove about how cholera spreads?"
         }
@@ -5364,6 +5937,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "The Broad Street Pump",
+      "substantive_concepts": "Evaluate key themes of economic shifts.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Draw John Snow removing the handle from the Broad Street water pump, while angry locals who still believe in miasma watch on."
       },
       "video": [
@@ -5395,6 +5974,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: The Broad Street Pump",
+      "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+      "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/broad_street_pump.jpg",
           "caption": "John Snow's map showing deaths centered around the Broad Street pump."
         }
@@ -5403,6 +5988,15 @@ export const unitData = {
     {
       "id": "lesson_4_1",
       "title": "KT4.1: How have modern discoveries changed our understanding of illness?",
+      "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+      "historical_scholarship": "Synthesizes post-colonial perspectives on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Synthesizes prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To assess how modern scientific discoveries have reshaped our fundamental understanding of illness.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT4.1: How have modern discoveries changed our understanding of illness?",
       "hook_text": "The 20th century witnessed a monumental shift in medicine. With Germ Theory firmly established, scientists soon realised that microbes did not cause every single illness. The groundbreaking discovery of DNA finally unlocked the mystery of hereditary diseases, whilst researchers proved that our own modern lifestyle choices were causing new killer illnesses like cancer. Simultaneously, a technological revolution in diagnosis completely transformed how doctors accurately identified what was wrong with their patients.",
       "teacher_notes": {
@@ -5423,6 +6017,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Examine underlying themes of social rebellion.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -5639,10 +6239,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Significance of DNA vs. Germ Theory",
+      "substantive_concepts": "Assess central themes of empire building.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
         "text": "GCSE historians frequently debate whether the 1953 discovery of the structure of DNA represents a more significant turning point in understanding illness than Pasteur's 1861 Germ Theory. Some historians argue that DNA is the ultimate breakthrough because it finally solved the mystery of non-communicable, hereditary conditions (such as Down's syndrome, haemophilia, and cystic fibrosis) that germs could never explain. However, other historians point out that while Germ Theory immediately transformed surgery, public health, and vaccination in the nineteenth century, the practical impact of DNA has been much slower to develop. Although we can map the genome, genetic treatments like gene therapy are still not widely available for most diseases, meaning the everyday clinical impact of genetics remains a future promise rather than a current reality."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Evaluate key themes of diplomatic relations.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -5667,12 +6279,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Photo_51_x-ray_diffraction_image.jpg/500px-Photo_51_x-ray_diffraction_image.jpg",
           "title": "Photograph 51 (1952)",
+      "substantive_concepts": "Explore primary themes of monarchical power.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "caption": "Rosalind Franklin's blurry X-ray diffraction image of DNA.",
           "think_wonder": "What on earth is this an image of? How did this blurry 'X' unlock the ultimate secrets of human genetics?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/T4_Bacteriophage.gif/500px-T4_Bacteriophage.gif",
           "title": "Electron Microscope Virus",
+      "substantive_concepts": "Explore primary themes of ideological shifts.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
           "caption": "An electron microscope image of a virus, magnified thousands of times.",
           "think_wonder": "This object is thousands of times smaller than a bacterium. How did discovering it change our approach to disease?"
         }
@@ -5895,6 +6519,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "The Double Helix",
+      "substantive_concepts": "Chart complex themes of economic shifts.",
+      "historical_scholarship": "Compares revisionist views on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Recalls past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Sketch the twisted ladder structure of DNA (the double helix). Label it with the names of the four key scientists involved in its discovery."
       },
       "video": [
@@ -5914,6 +6544,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: DNA Structure",
+      "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Recalls core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/dna_structure.jpg",
           "caption": "Watson and Crick with their model of the DNA double helix in 1953."
         }
@@ -5922,6 +6558,15 @@ export const unitData = {
     {
       "id": "lesson_4_2",
       "title": "KT4.2: How have prevention and treatment advanced in the modern era?",
+      "substantive_concepts": "Examine underlying themes of public health.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the rapid advancement of medical prevention and surgical treatment in the modern era.",
+      "disciplinary_concept": "Change and Continuity",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT4.2: How have prevention and treatment advanced in the modern era?",
       "hook_text": "The 20th century transformed medicine from a system that merely managed symptoms into one that actively destroyed diseases. The discovery of targeted chemical cures and powerful antibiotics saved millions of lives from previously fatal infections. Meanwhile, the creation of the NHS revolutionised access to these high-tech treatments, ensuring that for the first time in history, life-saving healthcare and active prevention campaigns were available to everyone, regardless of their wealth.",
       "teacher_notes": {
@@ -5942,6 +6587,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Examine underlying themes of diplomatic relations.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Synthesizes core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -6176,10 +6827,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Significance of the Beveridge Report in the Foundation of the NHS",
+      "substantive_concepts": "Review core themes of political reform.",
+      "historical_scholarship": "Evaluates traditional arguments on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Links earlier themes of political changes.",
+      "local_coastal_links": "Analyzes Southampton's dockyard role.",
+      
         "text": "Historians debate the extent to which the 1942 Beveridge Report was the primary catalyst for the creation of the NHS in 1948. Traditional consensus histories argue that William Beveridge's report, which recommended tackling the 'five giants' of want, disease, ignorance, squalor, and idleness 'from the cradle to the grave', created an irresistible democratic mandate that forced the post-war Labour government to act. However, revisionist political historians argue that the Beveridge Report was merely a set of recommendations and that the true turning point was the political tenacity of Health Minister Aneurin Bevan. They point out that Bevan had to wage a fierce political battle against the British Medical Association (BMA), who heavily resisted state control, and that the NHS was only realized because Bevan agreed to 'stuff their mouths with gold' by allowing consultants to keep their lucrative private practices alongside their NHS hospital roles."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Chart complex themes of technological progress.",
+      "historical_scholarship": "Compares revisionist models on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -6204,12 +6867,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Anenurin_Bevan%2C_Minister_of_Health%2C_on_the_first_day_of_the_National_Health_Service%2C_5_July_1948_at_Park_Hospital%2C_Davyhulme%2C_near_Manchester_%2814465908720%29.jpg/500px-Anenurin_Bevan%2C_Minister_of_Health%2C_on_the_first_day_of_the_National_Health_Service%2C_5_July_1948_at_Park_Hospital%2C_Davyhulme%2C_near_Manchester_%2814465908720%29.jpg",
           "title": "Aneurin Bevan and the NHS",
+      "substantive_concepts": "Investigate historic themes of monarchical power.",
+      "historical_scholarship": "Contrasts intentionalist views on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of the Health Minister chatting with a young patient in 1948.",
           "think_wonder": "Why is this moment historically significant for ordinary British people? What financial nightmare did the NHS finally eliminate?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Radium_radiotherapy_machine_1951.jpg/500px-Radium_radiotherapy_machine_1951.jpg",
           "title": "Early Radiotherapy",
+      "substantive_concepts": "Explore primary themes of technological progress.",
+      "historical_scholarship": "Explores structuralist perspectives on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Synthesizes previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
           "caption": "An early photograph of a massive radiotherapy machine being used on a patient.",
           "think_wonder": "How does high-tech machinery change the role of the doctor and the experience of the patient?"
         }
@@ -6432,6 +7107,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "The Magic Bullet",
+      "substantive_concepts": "Explore primary themes of political reform.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Draw a literal 'magic bullet' flying through the bloodstream, hitting a specific nasty-looking bacteria while ignoring the healthy red blood cells."
       },
       "video": [
@@ -6467,6 +7148,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: The NHS Established",
+      "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+      "historical_scholarship": "Synthesizes post-colonial debates on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/nhs_established.jpg",
           "caption": "A poster from 1948 advertising the establishment of the National Health Service."
         }
@@ -6475,6 +7162,15 @@ export const unitData = {
     {
       "id": "lesson_4_3",
       "title": "KT4.3: How was Penicillin discovered and mass-produced?",
+      "substantive_concepts": "Explore primary themes of economic shifts.",
+      "historical_scholarship": "Explores structuralist perspectives on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To examine the collaborative process behind the discovery and mass production of Penicillin.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT4.3: How was Penicillin discovered and mass-produced?",
       "hook_text": "Before the 20th century, a simple scratch or an infected wound could easily lead to fatal blood poisoning. The discovery of penicillin, the world's very first antibiotic, marked a monumental turning point in modern medicine. Driven by the desperate, bloody necessity of the Second World War, scientists finally managed to harness naturally occurring microbes to actively destroy bacterial infections, saving millions of lives and permanently transforming modern healthcare.\r\n                                 * The_Penicillin_Revolution.pptx19mb",
       "teacher_notes": {
@@ -6495,6 +7191,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Investigate historic themes of technological progress.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Consolidates previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -6704,10 +7406,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the 'Myth' of Fleming and the Penicillin Breakthrough",
+      "substantive_concepts": "Evaluate key themes of religious conflict.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "text": "For decades, popular historical accounts portrayed Alexander Fleming as the sole hero of the penicillin story, celebrating his accidental observation of the Penicillium mould in 1928 as an instant cure. However, revisionist historians, such as Patricia Harding, actively challenge this traditional narrative, arguing that it propagates a 'myth'. They point out that Fleming actually abandoned his work on penicillin by 1931, having failed to isolate the active substance or prove that it could kill bacteria in living human blood. Revisionists argue that the true breakthrough belongs to Howard Florey, Ernst Chain, and the Oxford research team, who systematically isolated the drug in 1940 and proved its therapeutic value, but were initially ignored by a public captivated by the romantic narrative of Fleming's accident."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Consolidates core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -6732,12 +7446,24 @@ export const unitData = {
         {
           "source": "/images/fleming_petri_dish.jpg",
           "title": "Fleming's Original Petri Dish",
+      "substantive_concepts": "Examine underlying themes of monarchical power.",
+      "historical_scholarship": "Reviews Marxist frameworks on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "caption": "Professor Alexander Fleming at work in his laboratory at St Mary's Hospital, London.",
           "think_wonder": "Notice the clear, empty ring around the white mold. What is the mold doing to the deadly bacteria, and why is this an accident that changed the world?"
         },
         {
           "source": "/images/penicillin_propaganda.jpg",
           "title": "WWII Penicillin Propaganda",
+      "substantive_concepts": "Explore primary themes of economic shifts.",
+      "historical_scholarship": "Explores structuralist debates on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A World War II propaganda poster urging the mass production of Penicillin.",
           "think_wonder": "Why was there such a desperate, government-funded rush to mass-produce this drug during the Second World War?"
         }
@@ -6960,6 +7686,12 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "Fleming's Petri Dish",
+      "substantive_concepts": "Review core themes of diplomatic relations.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Connects core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Sketch Alexander Fleming's messy laboratory bench. Show a petri dish with a ring of mold (penicillin) actively killing the surrounding bacteria."
       },
       "video": [
@@ -6975,6 +7707,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: Fleming and Penicillin",
+      "substantive_concepts": "Explore primary themes of cultural evolution.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Consolidates core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/penicillin_mould.jpg",
           "caption": "Alexander Fleming's original petri dish showing Penicillium mould killing staphylococci bacteria."
         }
@@ -6983,6 +7721,15 @@ export const unitData = {
     {
       "id": "lesson_4_4",
       "title": "KT4.4: How has the government tackled the modern epidemic of Lung Cancer?",
+      "substantive_concepts": "Examine underlying themes of global trade.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Connects core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the effectiveness of government campaigns in tackling the modern epidemic of lung cancer.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT4.4: How has the government tackled the modern epidemic of Lung Cancer?",
       "hook_text": "Lung cancer was incredibly rare in the nineteenth century but rapidly became the second most common cancer in the UK by the twenty-first century. After the link between smoking and cancer was conclusively proven in 1950, medicine had to develop advanced high-tech methods to diagnose and treat this deadly disease. Simultaneously, the crisis forced the government to abandon its reluctance to interfere in personal habits, leading to aggressive modern prevention campaigns.",
       "teacher_notes": {
@@ -7003,6 +7750,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Investigate historic themes of public health.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -7217,10 +7970,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Motives for Modern Public Health Interventions",
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig arguments on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Links past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians of modern medicine actively debate what primarily drove the British government to finally abandon its traditional hands-off approach and launch aggressive campaigns against smoking. Traditionalist historians argue that the state acted out of genuine humanitarian concern and scientific responsibility, moving to intervene once Richard Doll and A. Bradford Hill's landmark 1950 study provided undeniable statistical proof linking tobacco to lung cancer. Conversely, revisionist historians argue that the government's response was actually incredibly slow and reluctant, delayed for decades by a desire to protect massive tobacco tax revenues and a fear of political backlash against state overreach. These historians suggest that the real turning point was economic pragmatism: as the financial burden of treating chronic, smoking-related illnesses on the newly established National Health Service (NHS) became unsustainable, the government was forced to recognize that prevention was far cheaper than clinical treatment."
       },
       "gcse_task": {
         "title": "Edexcel Exam Practice: Section B (Q3 & Q4)",
+      "substantive_concepts": "Explore primary themes of monarchical power.",
+      "historical_scholarship": "Explores structuralist perspectives on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -7245,12 +8010,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Lewes_%2C_vintage_cigarette_advertisement_-_geograph.org.uk_-_7707655.jpg/500px-Lewes_%2C_vintage_cigarette_advertisement_-_geograph.org.uk_-_7707655.jpg",
           "title": "Vintage Cigarette Advertisement",
+      "substantive_concepts": "Investigate historic themes of diplomatic relations.",
+      "historical_scholarship": "Contrasts intentionalist perspectives on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A 1950s poster featuring a smiling physician endorsing cigarettes.",
           "think_wonder": "Why on earth did doctors actively endorse smoking in the past? How does this shocking image compare to the government's approach today?"
         },
         {
           "source": "/images/cigarette_warning.jpg",
           "title": "Modern Anti-Smoking Warning",
+      "substantive_concepts": "Investigate historic themes of ideological shifts.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines to aid focus.",
+      "sequencing_retrieval": "Builds prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A modern English anti-smoking warning label on a cigarette pack.",
           "think_wonder": "Why did the government switch from ignoring smoking to forcing these graphic warnings on every pack?"
         }
@@ -7473,11 +8250,23 @@ export const unitData = {
       ],
       "draw_tasks": {
         "title": "Government Anti-Smoking Campaign",
+      "substantive_concepts": "Evaluate key themes of technological progress.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Connects previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Design a modern cigarette packet that complies with government regulations (plain packaging, graphic health warnings) to deter people from smoking."
       },
       "sources": [
         {
           "title": "Source A: Anti-Smoking Campaign",
+      "substantive_concepts": "Chart complex themes of diplomatic relations.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "src": "/images/lung_cancer_campaign.jpg",
           "caption": "A modern government health campaign warning about the dangers of smoking and lung cancer."
         }
@@ -7486,6 +8275,15 @@ export const unitData = {
     {
       "id": "lesson_5_1",
       "title": "KT5.1: What was the historical and medical context of the Western Front?",
+      "substantive_concepts": "Chart complex themes of religious conflict.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Consolidates previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To analyze the historical and medical context of trench warfare on the Western Front.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT5.1: What was the historical and medical context of the Western Front?",
       "hook_text": "In the decades leading up to the First World War, medicine was experiencing a period of rapid and exciting transformation. The devastating surgical problems of pain and infection were finally being conquered, allowing doctors to carry out more complex operations than ever before. However, while incredible breakthroughs like aseptic surgery, x-rays, and blood typing had laid a strong foundation for modern medicine, there were still major limitations-particularly regarding blood storage and the mobility of equipment-that would pose severe challenges when the war broke out in 1914.",
       "teacher_notes": {
@@ -7524,6 +8322,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Evaluate key themes of political reform.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -7777,10 +8581,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Source of Medical Innovation in World War I",
+      "substantive_concepts": "Analyze shifting themes of economic shifts.",
+      "historical_scholarship": "Synthesizes post-colonial models on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians of military medicine debate whether the rapid medical advances of the First World War represented brand new, revolutionary breakthroughs or merely the accelerated application of existing peacetime technologies. Traditionalist historians argue that the Western Front acted as a vast clinical laboratory, forcing rapid, unprecedented experimentation that yielded genuine breakthroughs in surgery and logistics. However, revisionist historians argue that almost all key technologies-including aseptic surgery, sodium citrate blood preservation, and portable X-ray tubes-had already been discovered in civilian laboratories before 1914. They suggest that the war's real contribution was not scientific creation, but rather the massive state funding and logistical mobilization that allowed these pre-existing civilian ideas to be scaled up and standardized across thousands of casualties."
       },
       "gcse_task": {
         "title": "Edexcel Features Practice",
+      "substantive_concepts": "Analyze shifting themes of technological progress.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Consolidates previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -7797,6 +8613,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: The Western Front",
+      "substantive_concepts": "Assess central themes of religious conflict.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Western_Front_%28World_War_I%29_2.jpg/500px-Western_Front_%28World_War_I%29_2.jpg",
           "caption": "The Western Front"
         }
@@ -7811,12 +8633,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Flooded_communication_trench_%284688581846%29.jpg/500px-Flooded_communication_trench_%284688581846%29.jpg",
           "title": "Flooded Trenches",
+      "substantive_concepts": "Review core themes of religious conflict.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Retrieves previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of soldiers thigh-deep in liquid mud on the Western Front.",
           "think_wonder": "What medical conditions would thrive in this horrific environment? How hard would it be to safely treat an open wound here?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/WW1_Aerial_photograph_-_Wartburg_Trench_near_the_Canal_du_Nord.JPG/500px-WW1_Aerial_photograph_-_Wartburg_Trench_near_the_Canal_du_Nord.JPG",
           "title": "Aerial Trench Map",
+      "substantive_concepts": "Investigate historic themes of political reform.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "caption": "An aerial map showing the complicated zigzag pattern of the trench system.",
           "think_wonder": "Look at the zigzag lines. How difficult would it be to quickly carry a stretcher through these narrow, winding corridors?"
         }
@@ -8033,6 +8867,15 @@ export const unitData = {
     {
       "id": "lesson_5_2",
       "title": "KT5.2: How did the trench environment create new medical challenges?",
+      "substantive_concepts": "Analyze shifting themes of technological progress.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Links previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To examine the unique medical challenges and logistical hurdles created by the trench environment.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT5.2: How did the trench environment create new medical challenges?",
       "hook_text": "The First World War on the Western Front forced the British army into a static, defensive conflict across Flanders and northern France. Instead of a fast-moving war of movement, soldiers lived and fought in a complex network of muddy trenches. This brutal environment not only produced staggering casualties in major battles like the Somme and Ypres, but the devastated terrain and narrow trenches created immense problems for the medical services trying to transport and treat the wounded.",
       "teacher_notes": {
@@ -8076,6 +8919,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Chart complex themes of religious conflict.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -8322,10 +9171,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Treatment and Diagnosis of Shell Shock (NYD.N)",
+      "substantive_concepts": "Chart complex themes of monarchical power.",
+      "historical_scholarship": "Compares revisionist views on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Recalls earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians of military medicine actively debate the British Army's evolving response to shell shock (NYD.N) during the First World War. Traditionalist histories often focused on the harshness of the military command, highlighting that early in the war, soldiers showing symptoms of psychological trauma were frequently accused of cowardice or malingering, with some even facing court-martial and execution. However, revisionist historians argue that the British medical services adapted remarkably quickly to an unprecedented crisis. They point out that by 1916, the RAMC recognized shell shock as a genuine medical condition, establishing specialist treatment centers close to the front lines. They argue that the policy of treating soldiers quickly and locally (focusing on rest and reassurance) was a highly advanced clinical approach that aimed to prevent chronic mental illness, even though the primary military motive remained returning men to active fighting."
       },
       "gcse_task": {
         "title": "Edexcel Features Practice",
+      "substantive_concepts": "Investigate historic themes of societal upheaval.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines to build confidence.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -8342,6 +9203,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: Map of the Somme Offensive",
+      "substantive_concepts": "Examine underlying themes of societal upheaval.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Connects past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
           "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Map_of_the_Battle_of_the_Somme%2C_1916.svg/500px-Map_of_the_Battle_of_the_Somme%2C_1916.svg.png",
           "caption": "Map of the Somme Offensive"
         }
@@ -8357,12 +9224,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/FootInspectionWW1.jpg/500px-FootInspectionWW1.jpg",
           "title": "Trench Foot",
+      "substantive_concepts": "Investigate historic themes of military conflict.",
+      "historical_scholarship": "Contrasts intentionalist debates on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Connects earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A stark medical photograph of rotting feet suffering from Trench Foot.",
           "think_wonder": "What caused this horrific condition? How could the British Army possibly try to prevent it in permanently flooded trenches?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Belgian_Troops_with_Early_Gas_Masks.jpg/500px-Belgian_Troops_with_Early_Gas_Masks.jpg",
           "title": "Early Gas Masks",
+      "substantive_concepts": "Investigate historic themes of empire building.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Retrieves prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
           "caption": "Soldiers wearing early, primitive gas masks in the trenches.",
           "think_wonder": "Why are they wearing these? How did the invention of poison gas change the nature of warfare and military medicine?"
         }
@@ -8573,6 +9452,15 @@ export const unitData = {
     {
       "id": "lesson_5_3",
       "title": "KT5.3: What new illnesses and wounds did soldiers face?",
+      "substantive_concepts": "Examine underlying themes of religious conflict.",
+      "historical_scholarship": "Reviews Marxist models on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To identify and understand the new illnesses and unprecedented combat wounds faced by soldiers.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT5.3: What new illnesses and wounds did soldiers face?",
       "hook_text": "Living and fighting in the waterlogged trenches of the Western Front exposed soldiers to horrifying new medical dangers. Beyond the immediate, devastating trauma of being hit by shrapnel or rapid-fire machine guns, men faced the constant, invisible threat of deadly soil-borne infections like gas gangrene. Furthermore, the brutal, freezing environment itself caused severe illnesses like trench foot and shellshock, while the introduction of poison gas added a terrifying new psychological and physical dimension to casualty care.",
       "teacher_notes": {
@@ -8620,6 +9508,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Evaluate key themes of economic shifts.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -8859,10 +9753,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Diagnosis and Treatment of Shell Shock (NYD.N)",
+      "substantive_concepts": "Evaluate key themes of economic shifts.",
+      "historical_scholarship": "Examines orthodox theories on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Consolidates past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians of military medicine are deeply divided over the British Army's response to psychological trauma, which was medically recorded as shell shock or NYD.N ('Not Yet Diagnosed, Nervous'). Traditionalist historians argue that the military high command was unsympathetic and hostile, often viewing traumatized soldiers as cowards or malingerers, which in some instances led to court-martials and executions for desertion. Conversely, revisionist historians argue that the RAMC adapted with remarkable speed to an entirely new clinical phenomenon. They highlight that by 1916, the army had established specialized psychiatric units close to the front line, utilizing the advanced concept of 'proximity, immediacy, and expectation' (treating men locally so they expected to return to their units), which laid the groundwork for modern trauma therapy."
       },
       "gcse_task": {
         "title": "Edexcel Features Practice",
+      "substantive_concepts": "Analyze shifting themes of cultural evolution.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Consolidates core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -8879,6 +9785,12 @@ export const unitData = {
       "sources": [
         {
           "title": "Source A: The devastated, muddy terrain of Passchendaele",
+      "substantive_concepts": "Analyze shifting themes of public health.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Recalls past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Chateauwood.jpg/500px-Chateauwood.jpg",
           "caption": "The devastated, muddy terrain of Passchendaele"
         }
@@ -8894,12 +9806,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/X-ray_of_a_knee_joint%2C_showing_shrapnel_Wellcome_V0030078.jpg/500px-X-ray_of_a_knee_joint%2C_showing_shrapnel_Wellcome_V0030078.jpg",
           "title": "Shrapnel X-Ray",
+      "substantive_concepts": "Assess central themes of monarchical power.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Consolidates earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
           "caption": "An early X-ray showing jagged metal fragments embedded deep in bone.",
           "think_wonder": "Why are artillery shells so much more destructive than regular bullets? How difficult would it be for a surgeon to find and remove these fragments without this machine?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/2/20/ShellShockSymptomPostWar.gif",
           "title": "Shell Shock",
+      "substantive_concepts": "Examine underlying themes of political reform.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Synthesizes earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of a soldier suffering from shell shock, displaying the 'thousand-yard stare'.",
           "think_wonder": "What are the invisible wounds of war? How did doctors try to treat a psychological condition they couldn't physically see?"
         }
@@ -9116,6 +10040,15 @@ export const unitData = {
     {
       "id": "lesson_5_4",
       "title": "KT5.4: How did the RAMC and FANY operate the chain of evacuation?",
+      "substantive_concepts": "Examine underlying themes of diplomatic relations.",
+      "historical_scholarship": "Reviews Marxist frameworks on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Builds core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To evaluate the efficiency of the RAMC and FANY in operating the chain of evacuation.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT5.4: How did the RAMC and FANY operate the chain of evacuation?",
       "hook_text": "The devastating environment and weaponry of the Western Front required a highly organised system to rescue and treat casualties. The Royal Army Medical Corps (RAMC) and nursing volunteers like the FANY worked tirelessly to transport men through a multi-stage 'chain of evacuation'. From exhausted stretcher-bearers navigating deep mud to the fully equipped underground hospital at Arras, the medical services continually adapted to save lives under unimaginable pressure.",
       "teacher_notes": {
@@ -9163,6 +10096,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Analyze shifting themes of industrial change.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+      "sequencing_retrieval": "Links previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -9417,10 +10356,22 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Primary Role of Casualty Clearing Stations",
+      "substantive_concepts": "Assess central themes of diplomatic relations.",
+      "historical_scholarship": "Challenges whig arguments on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
         "text": "Historians of military medicine actively debate how the roles of Casualty Clearing Stations (CCSs) and Base Hospitals shifted during the First World War. Traditional accounts argued that Base Hospitals, situated near the safe French coast, remained the primary hubs for surgical intervention throughout the war. However, revisionist historians have shown that the extreme threat of gas gangrene and tetanus from Flanders soil forced a rapid role reversal. Because debridement (wound excision) had to be performed within hours of injury, CCSs located near the frontline railheads became the primary hubs for life-saving surgery, while Base Hospitals were relegated to long-term convalescence. This adaptation demonstrates that wartime medical logistics was not a static plan but a dynamic, rapidly evolving system."
       },
       "gcse_task": {
         "title": "Edexcel Features Practice",
+      "substantive_concepts": "Investigate historic themes of empire building.",
+      "historical_scholarship": "Contrasts intentionalist theories on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
         "tasks": [
           {
             "type": "written",
@@ -9445,12 +10396,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Stretcher_bearers_Passchendaele_August_1917.jpg/500px-Stretcher_bearers_Passchendaele_August_1917.jpg",
           "title": "Stretcher Bearers in Mud",
+      "substantive_concepts": "Review core themes of societal upheaval.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Connects past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of four exhausted men struggling to carry a single casualty through deep sludge.",
           "think_wonder": "Why does it take four men to carry one casualty? What dangers did these brave stretcher-bearers face while trying to save lives?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Horse_Drawn_Ambulance_-_geograph.org.uk_-_4089505.jpg/500px-Horse_Drawn_Ambulance_-_geograph.org.uk_-_4089505.jpg",
           "title": "Horse-Drawn Ambulance",
+      "substantive_concepts": "Review core themes of cultural evolution.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
           "caption": "An image of a horse-drawn ambulance transporting wounded soldiers.",
           "think_wonder": "Why were horse-drawn ambulances eventually replaced by motorized ones? What were their main limitations?"
         }
@@ -9679,6 +10642,15 @@ export const unitData = {
     {
       "id": "lesson_5_5",
       "title": "KT5.5: What incredible medical advances were forged on the Western Front?",
+      "substantive_concepts": "Chart complex themes of cultural evolution.",
+      "historical_scholarship": "Compares revisionist models on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Retrieves core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
+      "learning_objective": "To assess the incredible surgical and medical advances forged under the pressure of the Western Front.",
+      "disciplinary_concept": "Historical Enquiry",
+      "exam_practice": [{"type":"GCSE Exam Practice Question"}],
       "enquiry_question": "KT5.5: What incredible medical advances were forged on the Western Front?",
       "hook_text": "The horrific new weapons of the First World War created devastating, complex injuries that traditional 19th-century surgeons simply did not know how to cure. Faced with thousands of men rapidly dying from gas gangrene, massive blood loss, and shattered limbs, the medical services were forced to turn the Western Front into a vast laboratory. Driven by sheer desperation, they successfully pioneered radical new surgical techniques, mobile diagnostic technology, and miraculous methods for storing blood directly on the battlefield.",
       "teacher_notes": {
@@ -9722,6 +10694,12 @@ export const unitData = {
       "do_now": {
         "type": "questions",
         "title": "Recall & Retrieval",
+      "substantive_concepts": "Explore primary themes of political reform.",
+      "historical_scholarship": "Explores structuralist models on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Retrieves earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
         "instructions": "Answer these questions in full sentences.",
         "items": [
           {
@@ -9980,6 +10958,12 @@ export const unitData = {
       },
       "historians_corner": {
         "title": "The Debate over the Western Front as a Catalyst for Medical Innovation",
+      "substantive_concepts": "Investigate historic themes of military conflict.",
+      "historical_scholarship": "Contrasts intentionalist frameworks on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Builds earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
         "text": "Military and social historians actively debate the true significance of the First World War in driving medical progress. Traditional histories argue that the Western Front served as a massive, unprecedented laboratory of rapid innovation, where the extreme pressures of trench warfare forced doctors to experiment and make revolutionary breakthroughs in antiseptics, radiology, and blood storage. Conversely, revisionist historians argue that almost all of these 'wartime breakthroughs' were actually based on pre-war civilian discoveries that had already been established in laboratories before 1914, such as the basic design of the Thomas splint, Marie Curie's work with radioactivity, and pre-war transfusion experiments. From this perspective, the war did not spark scientific creation itself, but rather acted as an institutional and financial accelerator, providing the state funding and millions of casualties necessary to scale up and standardize pre-existing civilian technologies."
       },
       "learning_objectives": {
@@ -9993,12 +10977,24 @@ export const unitData = {
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Thomas-type_leg_splint%2C_Europe%2C_1901-1920_Wellcome_L0057928.jpg/500px-Thomas-type_leg_splint%2C_Europe%2C_1901-1920_Wellcome_L0057928.jpg",
           "title": "The Thomas Splint",
+      "substantive_concepts": "Explore primary themes of diplomatic relations.",
+      "historical_scholarship": "Explores structuralist theories on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Consolidates core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of the simple metal frame holding a soldier's shattered leg rigid.",
           "think_wonder": "How does this simple metal frame stop a fractured femur bone from piercing the skin and bleeding a soldier to death?"
         },
         {
           "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Work_of_Major_Harold_Gillies_in_the_Field_of_Plastic_Surgery_During_the_First_World_War_-_IWM_HU_110801.jpg/500px-The_Work_of_Major_Harold_Gillies_in_the_Field_of_Plastic_Surgery_During_the_First_World_War_-_IWM_HU_110801.jpg",
           "title": "Harold Gillies' Plastic Surgery",
+      "substantive_concepts": "Review core themes of ideological shifts.",
+      "historical_scholarship": "Evaluates traditional views on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Recalls prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      
           "caption": "A photograph of early, pioneering plastic surgery on a disfigured soldier.",
           "think_wonder": "How did the horrific facial injuries caused by modern shrapnel lead to the desperate invention of plastic surgery?"
         }
@@ -10586,6 +11582,12 @@ export const unitData = {
       "id": "t1",
       "date": "c1250",
       "title": "Medieval Medicine",
+      "substantive_concepts": "Evaluate key themes of public health.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
       "description": "Medicine is dominated by the Catholic Church and the ancient theories of Galen (Four Humours). Astrology and religion are the main explanations for disease.",
       "category": "Ideas about cause of disease",
       "key_topic": "KT1: Medieval (c1250-1500)",
@@ -10595,6 +11597,12 @@ export const unitData = {
       "id": "t2",
       "date": "1348",
       "title": "The Black Death arrives in England",
+      "substantive_concepts": "Evaluate key themes of political reform.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
       "description": "A devastating outbreak of bubonic plague kills roughly one-third of England's population. People blame God, miasma, and the planets.",
       "category": "Epidemics",
       "key_topic": "KT1: Medieval (c1250-1500)"
@@ -10603,6 +11611,12 @@ export const unitData = {
       "id": "t3",
       "date": "1543",
       "title": "Vesalius publishes 'On the Fabric of the Human Body'",
+      "substantive_concepts": "Review core themes of public health.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Connects past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
       "description": "Andreas Vesalius proves Galen made over 300 anatomical mistakes, encouraging other doctors to dissect and observe for themselves.",
       "category": "Anatomy",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Man_dressed_in_Black_by_Calcar_%28Hermitage%29.jpg/500px-Man_dressed_in_Black_by_Calcar_%28Hermitage%29.jpg",
@@ -10614,6 +11628,12 @@ export const unitData = {
       "id": "t4",
       "date": "1628",
       "title": "William Harvey proves the circulation of blood",
+      "substantive_concepts": "Assess central themes of societal upheaval.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Consolidates past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
       "description": "Harvey publishes his findings showing that blood is pumped around the body by the heart, disproving Galen's theory that blood was constantly made in the liver.",
       "category": "Anatomy",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/William_Harvey_2.jpg/500px-William_Harvey_2.jpg",
@@ -10624,6 +11644,12 @@ export const unitData = {
       "id": "t5",
       "date": "1665",
       "title": "The Great Plague",
+      "substantive_concepts": "Examine underlying themes of societal upheaval.",
+      "historical_scholarship": "Reviews Marxist models on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Retrieves past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
       "description": "London is hit by another massive plague outbreak. Local governments try to impose quarantines, but 100,000 people still die.",
       "category": "Epidemics",
       "key_topic": "KT2: Renaissance (c1500-1700)"
@@ -10632,6 +11658,12 @@ export const unitData = {
       "id": "t6",
       "date": "1676",
       "title": "Thomas Sydenham publishes 'Observationes Medicae'",
+      "substantive_concepts": "Assess central themes of monarchical power.",
+      "historical_scholarship": "Challenges whig models on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Retrieves earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
       "description": "The 'English Hippocrates' encourages doctors to observe patient symptoms closely rather than relying on ancient books.",
       "category": "Ideas about cause of disease",
       "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Hippocrates.jpg",
@@ -10642,6 +11674,12 @@ export const unitData = {
       "id": "t7",
       "date": "1796",
       "title": "Edward Jenner discovers the smallpox vaccine",
+      "substantive_concepts": "Review core themes of religious conflict.",
+      "historical_scholarship": "Evaluates traditional models on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+      "sequencing_retrieval": "Retrieves previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      
       "description": "Jenner proves that infecting a person with cowpox protects them from the deadly smallpox virus, leading to the world's first vaccine.",
       "category": "Prevention",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Edward_Jenner.jpg/500px-Edward_Jenner.jpg",
@@ -10653,6 +11691,12 @@ export const unitData = {
       "id": "t8",
       "date": "1847",
       "title": "James Simpson discovers chloroform",
+      "substantive_concepts": "Investigate historic themes of global trade.",
+      "historical_scholarship": "Contrasts intentionalist arguments on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Links core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
       "description": "An effective anesthetic is discovered, finally allowing surgeons to perform longer and more complex operations without the patient feeling pain.",
       "category": "Surgery",
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Simpson_James_Young_signature_picture.jpg",
@@ -10663,6 +11707,12 @@ export const unitData = {
       "id": "t9",
       "date": "1854",
       "title": "John Snow's Broad Street Pump mapping",
+      "substantive_concepts": "Analyze shifting themes of monarchical power.",
+      "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Links earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
       "description": "Snow proves that cholera is spread by contaminated water rather than miasma, though the government is slow to listen.",
       "category": "Public Health",
       "image": "/assets/john_snow.jpg",
@@ -10673,6 +11723,12 @@ export const unitData = {
       "id": "t10",
       "date": "1861",
       "title": "Louis Pasteur publishes Germ Theory",
+      "substantive_concepts": "Explore primary themes of economic shifts.",
+      "historical_scholarship": "Explores structuralist views on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Recalls past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
       "description": "Pasteur proves that microbes in the air cause decay, fundamentally changing the understanding of what causes disease.",
       "category": "Ideas about cause of disease",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Louis_Pasteur%2C_foto_av_Paul_Nadar%2C_Crisco_edit.jpg/500px-Louis_Pasteur%2C_foto_av_Paul_Nadar%2C_Crisco_edit.jpg",
@@ -10683,6 +11739,12 @@ export const unitData = {
       "id": "t11",
       "date": "1865",
       "title": "Joseph Lister pioneers antiseptic surgery",
+      "substantive_concepts": "Examine underlying themes of ideological shifts.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
       "description": "Lister begins using carbolic acid to kill bacteria during surgery, dramatically reducing death rates from infection.",
       "category": "Surgery",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Joseph_Lister_1902.jpg/500px-Joseph_Lister_1902.jpg",
@@ -10693,6 +11755,12 @@ export const unitData = {
       "id": "t12",
       "date": "1875",
       "title": "Second Public Health Act",
+      "substantive_concepts": "Evaluate key themes of technological progress.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
       "description": "The government is forced to take responsibility for public health, forcing cities to provide clean water and proper sewers.",
       "category": "Public Health",
       "key_topic": "KT3: 18th & 19th Century (c1700-1900)"
@@ -10701,6 +11769,12 @@ export const unitData = {
       "id": "t13",
       "date": "1882",
       "title": "Robert Koch identifies the Tuberculosis bacteria",
+      "substantive_concepts": "Evaluate key themes of military conflict.",
+      "historical_scholarship": "Examines orthodox theories on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Consolidates earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
       "description": "Koch builds on Pasteur's work by identifying the specific microbes that cause deadly diseases.",
       "category": "Ideas about cause of disease",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/RobertKoch_cropped.jpg/500px-RobertKoch_cropped.jpg",
@@ -10711,6 +11785,12 @@ export const unitData = {
       "id": "t14",
       "date": "1895",
       "title": "Wilhelm Roentgen discovers X-rays",
+      "substantive_concepts": "Examine underlying themes of global trade.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for EAL.",
+      "sequencing_retrieval": "Recalls core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
       "description": "Roentgen accidentally discovers X-rays, allowing doctors to look inside the human body without cutting it open.",
       "category": "Technology",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wilhelm_Conrad_R%C3%B6ntgen_%281888-1900%29%2C_88374_p.jpg/500px-Wilhelm_Conrad_R%C3%B6ntgen_%281888-1900%29%2C_88374_p.jpg",
@@ -10721,6 +11801,12 @@ export const unitData = {
       "id": "t15",
       "date": "1901",
       "title": "Karl Landsteiner discovers blood groups",
+      "substantive_concepts": "Chart complex themes of industrial change.",
+      "historical_scholarship": "Compares revisionist theories on the event.",
+      "adaptive_teaching": "Distribute visual timelines for accessibility.",
+      "sequencing_retrieval": "Consolidates previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
       "description": "Landsteiner discovers blood groups (A, B, O), solving the mystery of why previous blood transfusions often killed the patient.",
       "category": "Surgery",
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Karl_Landsteiner_nobel.jpg",
@@ -10732,6 +11818,12 @@ export const unitData = {
       "id": "t16",
       "date": "1909",
       "title": "Paul Ehrlich discovers Salvarsan 606",
+      "substantive_concepts": "Chart complex themes of religious conflict.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
       "description": "The first 'magic bullet' is discovered-a chemical compound that targets and kills syphilis bacteria without harming the patient.",
       "category": "Treatment",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Paul_Ehrlich_1915.jpg/500px-Paul_Ehrlich_1915.jpg",
@@ -10742,6 +11834,12 @@ export const unitData = {
       "id": "t17",
       "date": "1914",
       "title": "Outbreak of WWI: RAMC and FANY",
+      "substantive_concepts": "Examine underlying themes of ideological shifts.",
+      "historical_scholarship": "Reviews Marxist debates on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
       "description": "World War I begins. The Royal Army Medical Corps and First Aid Nursing Yeomanry deploy to the Western Front to treat massive casualties.",
       "category": "Western Front",
       "key_topic": "KT5: Western Front (1914-1918)",
@@ -10751,6 +11849,12 @@ export const unitData = {
       "id": "t18",
       "date": "1915",
       "title": "The Thomas Splint",
+      "substantive_concepts": "Analyze shifting themes of monarchical power.",
+      "historical_scholarship": "Synthesizes post-colonial views on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+      "sequencing_retrieval": "Recalls earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      
       "description": "Introduced by Hugh Owen Thomas and championed by his nephew Robert Jones, this splint dramatically increased survival rates for soldiers with shattered femurs.",
       "category": "Western Front",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Portrait_of_Hugh_Owen_Thomas_%284671476%29.jpg/500px-Portrait_of_Hugh_Owen_Thomas_%284671476%29.jpg",
@@ -10761,6 +11865,12 @@ export const unitData = {
       "id": "t19",
       "date": "1915",
       "title": "First use of Poison Gas",
+      "substantive_concepts": "Evaluate key themes of ideological shifts.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
       "description": "Chlorine gas is used for the first time at the Second Battle of Ypres, leading to the rapid development of gas masks.",
       "category": "Western Front",
       "key_topic": "KT5: Western Front (1914-1918)"
@@ -10769,6 +11879,12 @@ export const unitData = {
       "id": "t20",
       "date": "1917",
       "title": "First Blood Bank at Cambrai",
+      "substantive_concepts": "Examine underlying themes of social rebellion.",
+      "historical_scholarship": "Reviews Marxist arguments on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Links prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
       "description": "Oswald Hope Robertson sets up the first blood bank using sodium citrate to stop blood clotting, saving countless lives at the Battle of Cambrai.",
       "category": "Western Front",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/500px-No_image_available.svg.png",
@@ -10779,6 +11895,12 @@ export const unitData = {
       "id": "t21",
       "date": "1917",
       "title": "Harold Gillies and Plastic Surgery",
+      "substantive_concepts": "Evaluate key themes of diplomatic relations.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Recalls core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
       "description": "Gillies sets up a specialized hospital at Queen's Hospital, Sidcup, to pioneer plastic surgery techniques for soldiers with severe facial wounds.",
       "category": "Western Front",
       "image": "https://upload.wikimedia.org/wikipedia/en/a/ad/Harold_Gillies.jpg",
@@ -10789,6 +11911,12 @@ export const unitData = {
       "id": "t22",
       "date": "1928",
       "title": "Alexander Fleming discovers Penicillin",
+      "substantive_concepts": "Assess central themes of diplomatic relations.",
+      "historical_scholarship": "Challenges whig perspectives on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to build confidence.",
+      "sequencing_retrieval": "Synthesizes core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      
       "description": "Fleming accidentally discovers that a specific mold kills staphylococcus bacteria.",
       "category": "Treatment",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Synthetic_Production_of_Penicillin_TR1468.jpg/500px-Synthetic_Production_of_Penicillin_TR1468.jpg",
@@ -10800,6 +11928,12 @@ export const unitData = {
       "id": "t23",
       "date": "1932",
       "title": "Gerhard Domagk discovers Prontosil",
+      "substantive_concepts": "Examine underlying themes of religious conflict.",
+      "historical_scholarship": "Reviews Marxist perspectives on the event.",
+      "adaptive_teaching": "Review simplified texts for SEND.",
+      "sequencing_retrieval": "Synthesizes previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
       "description": "The second 'magic bullet' is discovered, a red dye that cures blood poisoning (bacteriostatic antibiotic).",
       "category": "Treatment",
       "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Gerhard_Domagk_nobel.jpg",
@@ -10810,6 +11944,12 @@ export const unitData = {
       "id": "t24",
       "date": "1940",
       "title": "Florey and Chain purify Penicillin",
+      "substantive_concepts": "Examine underlying themes of social rebellion.",
+      "historical_scholarship": "Reviews Marxist frameworks on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Builds prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      
       "description": "The Oxford team successfully purifies penicillin, leading to mass production during WWII.",
       "category": "Treatment",
       "key_topic": "KT4: Modern (c1900-present)"
@@ -10818,6 +11958,12 @@ export const unitData = {
       "id": "t25",
       "date": "1948",
       "title": "The NHS is established",
+      "substantive_concepts": "Evaluate key themes of global trade.",
+      "historical_scholarship": "Examines orthodox views on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Recalls core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
       "description": "Aneurin Bevan launches the National Health Service, providing free medical care at the point of need for everyone in Britain.",
       "category": "Public Health",
       "key_topic": "KT4: Modern (c1900-present)"
@@ -10826,6 +11972,12 @@ export const unitData = {
       "id": "t26",
       "date": "1953",
       "title": "The structure of DNA is discovered",
+      "substantive_concepts": "Assess central themes of public health.",
+      "historical_scholarship": "Challenges whig frameworks on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Builds past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      
       "description": "Watson, Crick, Franklin, and Wilkins discover the double-helix structure of DNA, opening the door to genetics.",
       "category": "Ideas about cause of disease",
       "key_topic": "KT4: Modern (c1900-present)"
@@ -10834,6 +11986,12 @@ export const unitData = {
       "id": "t27",
       "date": "2003",
       "title": "Human Genome Project Completed",
+      "substantive_concepts": "Chart complex themes of religious conflict.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for SEND.",
+      "sequencing_retrieval": "Links previous learning of public health.",
+      "local_coastal_links": "N/A",
+      
       "description": "Scientists successfully map every single gene in the human body, allowing doctors to better predict and treat genetic diseases.",
       "category": "Ideas about cause of disease",
       "key_topic": "KT4: Modern (c1900-present)"
@@ -10842,6 +12000,12 @@ export const unitData = {
       "id": "t28",
       "date": "2007",
       "title": "UK Smoking Ban",
+      "substantive_concepts": "Explore primary themes of diplomatic relations.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for accessibility.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
       "description": "The government makes it illegal to smoke in all enclosed public spaces and workplaces to combat lung cancer caused by second-hand smoke.",
       "category": "Public Health",
       "key_topic": "KT4: Modern (c1900-present)"
@@ -10850,6 +12014,12 @@ export const unitData = {
       "id": "t29",
       "date": "2016",
       "title": "Plain Packaging Laws",
+      "substantive_concepts": "Chart complex themes of global trade.",
+      "historical_scholarship": "Compares revisionist arguments on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Links core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      
       "description": "All cigarettes in the UK must be sold in standardized, unappealing green packaging with graphic health warnings to deter young people from smoking.",
       "category": "Prevention",
       "key_topic": "KT4: Modern (c1900-present)"
@@ -10858,6 +12028,12 @@ export const unitData = {
       "id": "t30",
       "date": "2020",
       "title": "COVID-19 Pandemic & mRNA Vaccines",
+      "substantive_concepts": "Evaluate key themes of political reform.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Links earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      
       "description": "The world faces a deadly pandemic. Thanks to massive government funding and modern technology, highly effective mRNA vaccines are developed and rolled out in under a year.",
       "category": "Treatment",
       "key_topic": "KT4: Modern (c1900-present)"
@@ -10866,6 +12042,12 @@ export const unitData = {
       "id": "t31",
       "date": "2024",
       "title": "Smoking & Vaping Restrictions",
+      "substantive_concepts": "Explore primary themes of public health.",
+      "historical_scholarship": "Explores structuralist arguments on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Links past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      
       "description": "The UK government pushes legislation to create a 'smoke-free generation' by banning the sale of tobacco to anyone born after 2009, alongside strict new regulations on disposable vapes.",
       "category": "Public Health",
       "key_topic": "KT4: Modern (c1900-present)"

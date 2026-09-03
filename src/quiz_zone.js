@@ -1,103 +1,109 @@
 import { updateLeitnerBox, saveProgress } from './storage.js';
 
 export function renderQuizZone(container, unitData) {
-    // --- 1. DATA PREPARATION ---
-    let quizPack = [];
-    let masterBank = [];
-    let vocabBank = [];
-    let portraitBank = [];
-    
-    let groupedLevels = {};
-    let groupedFlashcardLevels = {};
+  // --- 1. DATA PREPARATION ---
+  let quizPack = [];
+  let masterBank = [];
+  let vocabBank = [];
+  let portraitBank = [];
 
-    // Dynamically build banks
-    if (unitData.lessons) {
-        unitData.lessons.forEach(l => {
-            let topicKey = l.title; // e.g. "KT1.1: What did Medieval people..."
-            
-            if (!groupedLevels[topicKey]) {
-                groupedLevels[topicKey] = { title: topicKey, questions: [] };
-            }
-            if (!groupedFlashcardLevels[topicKey]) {
-                groupedFlashcardLevels[topicKey] = { title: topicKey, questions: [] };
-            }
+  let groupedLevels = {};
+  let groupedFlashcardLevels = {};
 
-            const addQuestion = (q, options, a, img) => {
-                const questionObj = { q, a, options, img, source: l.title };
-                quizPack.push(questionObj);
-                groupedLevels[topicKey].questions.push(questionObj);
-            };
+  // Dynamically build banks
+  if (unitData.lessons) {
+    unitData.lessons.forEach((l) => {
+      let topicKey = l.title; // e.g. "KT1.1: What did Medieval people..."
 
-            // For quizPack (structured quizzes)
-            const lessonQuiz = l.quiz || l.quiz_questions;
-            if (lessonQuiz && Array.isArray(lessonQuiz)) {
-                lessonQuiz.forEach(q => {
-                    const qText = q.question || q.q;
-                    if (qText === "Who is this historical figure?") {
-                        portraitBank.push({ q: qText, a: q.options ? q.options[q.answer] : q.a, options: q.options, img: q.img, source: l.title });
-                    } else {
-                        // Handle cases where the answer might be an index instead of text, and ensure robust option handling
-                        let answerText = q.a || q.answer;
-                        if (q.options && typeof q.answer === 'number') {
-                            answerText = q.options[q.answer];
-                        }
-                        addQuestion(qText, q.options, answerText, q.img);
-                    }
-                });
-            } 
-            if (l.do_now && l.do_now.type === 'questions' && l.do_now.items) {
-                l.do_now.items.forEach(item => {
-                    addQuestion(item.question, null, item.answer);
-                });
-            }
+      if (!groupedLevels[topicKey]) {
+        groupedLevels[topicKey] = { title: topicKey, questions: [] };
+      }
+      if (!groupedFlashcardLevels[topicKey]) {
+        groupedFlashcardLevels[topicKey] = { title: topicKey, questions: [] };
+      }
 
-            // For Vocab and Flashcards (masterBank)
-            const addFlashcard = (q, a) => {
-                const questionObj = { q, a, source: l.title };
-                masterBank.push(questionObj);
-                groupedFlashcardLevels[topicKey].questions.push(questionObj);
-            };
+      const addQuestion = (q, options, a, img) => {
+        const questionObj = { q, a, options, img, source: l.title };
+        quizPack.push(questionObj);
+        groupedLevels[topicKey].questions.push(questionObj);
+      };
 
-            if (l.vocab) {
-                l.vocab.forEach(v => {
-                    vocabBank.push({ term: v.term, definition: v.definition });
-                    addFlashcard(`What is the definition of "${v.term}"?`, v.definition);
-                    addFlashcard(`Which term matches this definition: "${v.definition}"?`, v.term);
-                });
+      // For quizPack (structured quizzes)
+      const lessonQuiz = l.quiz || l.quiz_questions;
+      if (lessonQuiz && Array.isArray(lessonQuiz)) {
+        lessonQuiz.forEach((q) => {
+          const qText = q.question || q.q;
+          if (qText === 'Who is this historical figure?') {
+            portraitBank.push({
+              q: qText,
+              a: q.options ? q.options[q.answer] : q.a,
+              options: q.options,
+              img: q.img,
+              source: l.title,
+            });
+          } else {
+            // Handle cases where the answer might be an index instead of text, and ensure robust option handling
+            let answerText = q.a || q.answer;
+            if (q.options && typeof q.answer === 'number') {
+              answerText = q.options[q.answer];
             }
-            if (l.do_now && l.do_now.type === "questions") {
-                const items = l.do_now.items || l.do_now.tasks || [];
-                items.forEach(item => {
-                    const qText = item.question || item.q;
-                    const aText = item.answer || item.a;
-                    if (qText && aText) {
-                        addFlashcard(qText, aText);
-                    }
-                });
-            }
-            if (l.knowledge_check) {
-                l.knowledge_check.forEach(item => {
-                    addFlashcard(item.question, item.answer);
-                });
-            }
+            addQuestion(qText, q.options, answerText, q.img);
+          }
         });
-    }
+      }
+      if (l.do_now && l.do_now.type === 'questions' && l.do_now.items) {
+        l.do_now.items.forEach((item) => {
+          addQuestion(item.question, null, item.answer);
+        });
+      }
 
-    // Deduplicate
-    masterBank = masterBank.filter((v, i, a) => a.findIndex(t => (t.q === v.q)) === i);
-    vocabBank = vocabBank.filter((v, i, a) => a.findIndex(t => (t.term === v.term)) === i);
+      // For Vocab and Flashcards (masterBank)
+      const addFlashcard = (q, a) => {
+        const questionObj = { q, a, source: l.title };
+        masterBank.push(questionObj);
+        groupedFlashcardLevels[topicKey].questions.push(questionObj);
+      };
 
-    if (quizPack.length === 0 && masterBank.length === 0) {
-        container.innerHTML = `<div style="padding: 40px; text-align: center; color: #64748b;">No quiz or revision data available for this unit.</div>`;
-        return;
-    }
+      if (l.vocab) {
+        l.vocab.forEach((v) => {
+          vocabBank.push({ term: v.term, definition: v.definition });
+          addFlashcard(`What is the definition of "${v.term}"?`, v.definition);
+          addFlashcard(`Which term matches this definition: "${v.definition}"?`, v.term);
+        });
+      }
+      if (l.do_now && l.do_now.type === 'questions') {
+        const items = l.do_now.items || l.do_now.tasks || [];
+        items.forEach((item) => {
+          const qText = item.question || item.q;
+          const aText = item.answer || item.a;
+          if (qText && aText) {
+            addFlashcard(qText, aText);
+          }
+        });
+      }
+      if (l.knowledge_check) {
+        l.knowledge_check.forEach((item) => {
+          addFlashcard(item.question, item.answer);
+        });
+      }
+    });
+  }
 
-    // Level setup
-    const levels = Object.values(groupedLevels).filter(lvl => lvl.questions.length > 0);
-    const bossQuestions = [...quizPack].sort(() => 0.5 - Math.random()).slice(0, 15);
+  // Deduplicate
+  masterBank = masterBank.filter((v, i, a) => a.findIndex((t) => t.q === v.q) === i);
+  vocabBank = vocabBank.filter((v, i, a) => a.findIndex((t) => t.term === v.term) === i);
 
-    // --- 2. UI SHELL ---
-    container.innerHTML = `
+  if (quizPack.length === 0 && masterBank.length === 0) {
+    container.innerHTML = `<div style="padding: 40px; text-align: center; color: #64748b;">No quiz or revision data available for this unit.</div>`;
+    return;
+  }
+
+  // Level setup
+  const levels = Object.values(groupedLevels).filter((lvl) => lvl.questions.length > 0);
+  const bossQuestions = [...quizPack].sort(() => 0.5 - Math.random()).slice(0, 15);
+
+  // --- 2. UI SHELL ---
+  container.innerHTML = `
         <div style="max-width: 800px; margin: 0 auto; padding-bottom: 50px; font-family: 'Inter', sans-serif;">
             <div style="text-align: center; margin-bottom: 40px;">
                 <h1 style="font-size: 2.5rem; color: #1a237e; margin-bottom: 10px;"><i class="fa-solid fa-gamepad"></i> Interactive Revision Hub</h1>
@@ -123,13 +129,17 @@ export function renderQuizZone(container, unitData) {
                         <h3 style="margin:0 0 10px 0; color: #1e3a8a; font-size: 1.5rem;">Vocab Match-Up</h3>
                         <p style="color: #64748b; margin:0;">Drag and drop to match 5 key terms to their definitions.</p>
                     </div>
-                    ${portraitBank.length > 0 ? `
+                    ${
+                      portraitBank.length > 0
+                        ? `
                     <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s;" onmouseover="this.style.borderColor='#1e3a8a'; this.style.background='#f8fafc';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='white';" id="btn-mode-portrait">
                         <i class="fa-solid fa-user-tie" style="font-size: 3rem; color: #db2777; margin-bottom: 15px;"></i>
                         <h3 style="margin:0 0 10px 0; color: #1e3a8a; font-size: 1.5rem;">Who Am I? (Portraits)</h3>
                         <p style="color: #64748b; margin:0;">Identify ${portraitBank.length} historical figures by their portraits.</p>
                     </div>
-                    ` : ''}
+                    `
+                        : ''
+                    }
                 </div>
             </div>
 
@@ -138,58 +148,60 @@ export function renderQuizZone(container, unitData) {
         </div>
     `;
 
-    // References
-    const modeSelect = container.querySelector('#mode-select-container');
-    const uiContainer = container.querySelector('#quiz-ui-container');
-    let activeMode = null;
+  // References
+  const modeSelect = container.querySelector('#mode-select-container');
+  const uiContainer = container.querySelector('#quiz-ui-container');
+  let activeMode = null;
 
-    // Menu Navigation
-    container.querySelector('#btn-mode-levels').addEventListener('click', () => {
-        activeMode = 'levels';
-        modeSelect.style.display = 'none';
-        uiContainer.style.display = 'block';
-        renderLevelSelect(false);
+  // Menu Navigation
+  container.querySelector('#btn-mode-levels').addEventListener('click', () => {
+    activeMode = 'levels';
+    modeSelect.style.display = 'none';
+    uiContainer.style.display = 'block';
+    renderLevelSelect(false);
+  });
+
+  container.querySelector('#btn-mode-flashcard').addEventListener('click', () => {
+    activeMode = 'flashcard';
+    modeSelect.style.display = 'none';
+    uiContainer.style.display = 'block';
+    startFlashcardFrenzy();
+  });
+
+  container.querySelector('#btn-mode-vocab').addEventListener('click', () => {
+    activeMode = 'vocab';
+    modeSelect.style.display = 'none';
+    uiContainer.style.display = 'block';
+    startVocabMatchUp();
+  });
+
+  if (portraitBank.length > 0) {
+    container.querySelector('#btn-mode-portrait').addEventListener('click', () => {
+      activeMode = 'portrait';
+      modeSelect.style.display = 'none';
+      uiContainer.style.display = 'block';
+      startQuiz(portraitBank, 'Who Am I? (Portraits)', false);
     });
+  }
 
-    container.querySelector('#btn-mode-flashcard').addEventListener('click', () => {
-        activeMode = 'flashcard';
-        modeSelect.style.display = 'none';
-        uiContainer.style.display = 'block';
-        startFlashcardFrenzy();
-    });
-
-    container.querySelector('#btn-mode-vocab').addEventListener('click', () => {
-        activeMode = 'vocab';
-        modeSelect.style.display = 'none';
-        uiContainer.style.display = 'block';
-        startVocabMatchUp();
-    });
-
-    if (portraitBank.length > 0) {
-        container.querySelector('#btn-mode-portrait').addEventListener('click', () => {
-            activeMode = 'portrait';
-            modeSelect.style.display = 'none';
-            uiContainer.style.display = 'block';
-            startQuiz(portraitBank, 'Who Am I? (Portraits)', false);
-        });
+  function shuffleArray(array) {
+    const newArr = [...array];
+    for (let i = newArr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
     }
+    return newArr;
+  }
 
-    function shuffleArray(array) {
-        const newArr = [...array];
-        for (let i = newArr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-        }
-        return newArr;
-    }
+  // ==========================================
+  // 1. LEVELLED QUIZZES LOGIC
+  // ==========================================
+  function renderLevelSelect(isFlashcard = false) {
+    let currentLevels = isFlashcard
+      ? Object.values(groupedFlashcardLevels).filter((lvl) => lvl.questions.length > 0)
+      : levels;
 
-    // ==========================================
-    // 1. LEVELLED QUIZZES LOGIC
-    // ==========================================
-    function renderLevelSelect(isFlashcard = false) {
-        let currentLevels = isFlashcard ? Object.values(groupedFlashcardLevels).filter(lvl => lvl.questions.length > 0) : levels;
-        
-        let levelHtml = `
+    let levelHtml = `
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h2 style="color: #0f172a; margin: 0;">Select a ${isFlashcard ? 'Flashcard Deck' : 'Topic'}</h2>
                 <button id="btn-back-main" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Back</button>
@@ -197,81 +209,94 @@ export function renderQuizZone(container, unitData) {
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
         `;
 
-        currentLevels.forEach((lvl, index) => {
-            levelHtml += `
+    currentLevels.forEach((lvl, index) => {
+      levelHtml += `
                 <div class="quiz-level-card" data-level="${index}" style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                     <div style="font-size: 2rem; color: ${isFlashcard ? '#f59e0b' : '#3b82f6'}; margin-bottom: 10px;"><i class="fa-solid ${isFlashcard ? 'fa-bolt' : 'fa-unlock-keyhole'}"></i></div>
                     <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1.1rem; line-height: 1.3;">${lvl.title}</h3>
                     <p style="margin: 0; color: #64748b; font-size: 0.9rem; margin-top: 8px;">${lvl.questions.length} ${isFlashcard ? 'Cards' : 'Questions'}</p>
                 </div>
             `;
-        });
+    });
 
-        if (!isFlashcard) {
-            levelHtml += `
+    if (!isFlashcard) {
+      levelHtml += `
                 <div class="quiz-boss-card" style="background: linear-gradient(135deg, #1e1b4b, #312e81); border: 2px solid #4f46e5; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);">
                     <div style="font-size: 2rem; color: #fbbf24; margin-bottom: 10px;"><i class="fa-solid fa-crown"></i></div>
                     <h3 style="margin: 0 0 5px 0; color: white;">The Ultimate Test</h3>
                     <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem;">15 Random Questions</p>
                 </div>`;
-        }
-        levelHtml += `</div>`;
-        
-        uiContainer.innerHTML = levelHtml;
-
-        uiContainer.querySelector('#btn-back-main').addEventListener('click', () => {
-            uiContainer.style.display = 'none';
-            modeSelect.style.display = 'block';
-        });
-
-        const cards = uiContainer.querySelectorAll('.quiz-level-card');
-        cards.forEach(card => {
-            card.addEventListener('mouseover', () => { card.style.borderColor = isFlashcard ? '#f59e0b' : '#3b82f6'; card.style.transform = 'translateY(-3px)'; });
-            card.addEventListener('mouseout', () => { card.style.borderColor = '#e2e8f0'; card.style.transform = 'translateY(0)'; });
-            card.addEventListener('click', () => {
-                const idx = parseInt(card.dataset.level);
-                if (isFlashcard) {
-                    startFlashcardUI(currentLevels[idx].questions, currentLevels[idx].title);
-                } else {
-                    startQuiz(currentLevels[idx].questions, currentLevels[idx].title, true);
-                }
-            });
-        });
-
-        if (!isFlashcard) {
-            const bossCard = uiContainer.querySelector('.quiz-boss-card');
-            bossCard.addEventListener('mouseover', () => { bossCard.style.transform = 'translateY(-3px) scale(1.02)'; });
-            bossCard.addEventListener('mouseout', () => { bossCard.style.transform = 'translateY(0) scale(1)'; });
-            bossCard.addEventListener('click', () => {
-                startQuiz(bossQuestions, `The Ultimate Test`, true);
-            });
-        }
     }
+    levelHtml += `</div>`;
 
-    function startQuiz(questionsSet, title, trackProgress) {
-        let currentIndex = 0;
-        let score = 0;
-        
-        const allAnswers = questionsSet.map(q => q.a);
-        const sessionQuestions = questionsSet.map(q => {
-            let options = q.options;
-            if (!options) {
-                const wrongAnswers = allAnswers.filter(a => a !== q.a).sort(() => 0.5 - Math.random()).slice(0, 3);
-                while (wrongAnswers.length < 3) wrongAnswers.push("Incorrect Option");
-                options = [q.a, ...wrongAnswers];
-            }
-            return { ...q, shuffledOptions: shuffleArray(options) };
-        });
+    uiContainer.innerHTML = levelHtml;
 
-        function renderQuestion() {
-            if (currentIndex >= sessionQuestions.length) {
-                renderResults(score, sessionQuestions.length, trackProgress);
-                return;
-            }
+    uiContainer.querySelector('#btn-back-main').addEventListener('click', () => {
+      uiContainer.style.display = 'none';
+      modeSelect.style.display = 'block';
+    });
 
-            const q = sessionQuestions[currentIndex];
+    const cards = uiContainer.querySelectorAll('.quiz-level-card');
+    cards.forEach((card) => {
+      card.addEventListener('mouseover', () => {
+        card.style.borderColor = isFlashcard ? '#f59e0b' : '#3b82f6';
+        card.style.transform = 'translateY(-3px)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.borderColor = '#e2e8f0';
+        card.style.transform = 'translateY(0)';
+      });
+      card.addEventListener('click', () => {
+        const idx = parseInt(card.dataset.level);
+        if (isFlashcard) {
+          startFlashcardUI(currentLevels[idx].questions, currentLevels[idx].title);
+        } else {
+          startQuiz(currentLevels[idx].questions, currentLevels[idx].title, true);
+        }
+      });
+    });
 
-            let qHtml = `
+    if (!isFlashcard) {
+      const bossCard = uiContainer.querySelector('.quiz-boss-card');
+      bossCard.addEventListener('mouseover', () => {
+        bossCard.style.transform = 'translateY(-3px) scale(1.02)';
+      });
+      bossCard.addEventListener('mouseout', () => {
+        bossCard.style.transform = 'translateY(0) scale(1)';
+      });
+      bossCard.addEventListener('click', () => {
+        startQuiz(bossQuestions, `The Ultimate Test`, true);
+      });
+    }
+  }
+
+  function startQuiz(questionsSet, title, trackProgress) {
+    let currentIndex = 0;
+    let score = 0;
+
+    const allAnswers = questionsSet.map((q) => q.a);
+    const sessionQuestions = questionsSet.map((q) => {
+      let options = q.options;
+      if (!options) {
+        const wrongAnswers = allAnswers
+          .filter((a) => a !== q.a)
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 3);
+        while (wrongAnswers.length < 3) wrongAnswers.push('Incorrect Option');
+        options = [q.a, ...wrongAnswers];
+      }
+      return { ...q, shuffledOptions: shuffleArray(options) };
+    });
+
+    function renderQuestion() {
+      if (currentIndex >= sessionQuestions.length) {
+        renderResults(score, sessionQuestions.length, trackProgress);
+        return;
+      }
+
+      const q = sessionQuestions[currentIndex];
+
+      let qHtml = `
                 <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; color: #64748b; font-size: 0.9rem;">
                         <span><strong>${title}</strong></span>
@@ -280,94 +305,114 @@ export function renderQuizZone(container, unitData) {
                     <h2 style="font-size: 1.5rem; color: #0f172a; margin-bottom: 30px;">${q.q}</h2>
                     ${q.img ? `<img src="${q.img}" style="max-height: 300px; max-width: 100%; border-radius: 8px; margin-bottom: 25px; object-fit: contain; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">` : ''}
                     <div id="quiz-options" style="display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: 0 auto;">
-                        ${q.shuffledOptions.map((opt, i) => `
-                            <button class="quiz-option-btn" data-answer="${opt.replace(/"/g, '&quot;')}" style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 15px; font-size: 1.1rem; color: #334155; cursor: pointer; transition: all 0.2s; text-align: left; position: relative;">
+                        ${q.shuffledOptions
+                          .map(
+                            (opt, i) => `
+                            <button class="btn-quiz-option quiz-option-btn" data-answer="${opt.replace(/"/g, '&quot;')}">
                                 <span style="display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #e2e8f0; border-radius: 50%; margin-right: 15px; font-weight: bold; color: #64748b;">${String.fromCharCode(65 + i)}</span>
                                 ${opt}
                             </button>
-                        `).join('')}
+                        `,
+                          )
+                          .join('')}
                     </div>
                     <div id="quiz-feedback" style="margin-top: 25px; min-height: 50px;"></div>
                 </div>
             `;
 
-            uiContainer.innerHTML = qHtml;
+      uiContainer.innerHTML = qHtml;
 
-            const btns = uiContainer.querySelectorAll('.quiz-option-btn');
-            btns.forEach(btn => {
-                btn.addEventListener('mouseover', () => { if(!btn.disabled) { btn.style.background = '#eff6ff'; btn.style.borderColor = '#bfdbfe'; }});
-                btn.addEventListener('mouseout', () => { if(!btn.disabled) { btn.style.background = '#f8fafc'; btn.style.borderColor = '#e2e8f0'; }});
-                btn.addEventListener('click', () => {
-                    if (btn.disabled) return;
-                    btns.forEach(b => b.disabled = true); // Lock all
+      const btns = uiContainer.querySelectorAll('.quiz-option-btn');
+      btns.forEach((btn) => {
+        btn.addEventListener('mouseover', () => {
+          if (!btn.disabled) {
+            btn.style.background = '#eff6ff';
+            btn.style.borderColor = '#bfdbfe';
+          }
+        });
+        btn.addEventListener('mouseout', () => {
+          if (!btn.disabled) {
+            btn.style.background = '#f8fafc';
+            btn.style.borderColor = '#e2e8f0';
+          }
+        });
+        btn.addEventListener('click', () => {
+          if (btn.disabled) return;
+          btns.forEach((b) => (b.disabled = true)); // Lock all
 
-                    const selected = btn.dataset.answer;
-                    const correct = q.a;
+          const selected = btn.dataset.answer;
+          const correct = q.a;
 
-                    if (selected === correct) {
-                        btn.style.background = '#dcfce7';
-                        btn.style.borderColor = '#22c55e';
-                        btn.style.color = '#166534';
-                        score++;
-                        uiContainer.querySelector('#quiz-feedback').innerHTML = `<div style="color: #16a34a; font-weight: bold; font-size: 1.2rem;"><i class="fa-solid fa-circle-check"></i> Correct!</div>`;
-                        
-                        if (trackProgress && q.id) {
-                            updateLeitnerBox(q.id, true);
-                            saveProgress();
-                        }
-                    } else {
-                        btn.style.background = '#fee2e2';
-                        btn.style.borderColor = '#ef4444';
-                        btn.style.color = '#991b1b';
-                        
-                        const correctBtn = Array.from(btns).find(b => b.dataset.answer === correct);
-                        if (correctBtn) {
-                            correctBtn.style.background = '#dcfce7';
-                            correctBtn.style.borderColor = '#22c55e';
-                        }
-                        uiContainer.querySelector('#quiz-feedback').innerHTML = `<div style="color: #dc2626; font-weight: bold; font-size: 1.2rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrect. The answer was ${correct}</div>`;
-                        
-                        if (trackProgress && q.id) {
-                            updateLeitnerBox(q.id, false);
-                            saveProgress();
-                        }
-                    }
+          if (selected === correct) {
+            btn.style.background = '#dcfce7';
+            btn.style.borderColor = '#22c55e';
+            btn.style.color = '#166534';
+            score++;
+            uiContainer.querySelector('#quiz-feedback').innerHTML =
+              `<div style="color: #16a34a; font-weight: bold; font-size: 1.2rem;"><i class="fa-solid fa-circle-check"></i> Correct!</div>`;
 
-                    const nextBtn = document.createElement('button');
-                    nextBtn.innerHTML = currentIndex === sessionQuestions.length - 1 ? 'See Results <i class="fa-solid fa-arrow-right"></i>' : 'Next Question <i class="fa-solid fa-arrow-right"></i>';
-                    nextBtn.style.cssText = "margin-top: 15px; background: #3b82f6; color: white; border: none; padding: 12px 25px; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.2s;";
-                    nextBtn.addEventListener('click', () => {
-                        currentIndex++;
-                        renderQuestion();
-                    });
-                    uiContainer.querySelector('#quiz-feedback').appendChild(nextBtn);
-                });
-            });
-        }
-        renderQuestion();
+            if (trackProgress && q.id) {
+              updateLeitnerBox(q.id, true);
+              saveProgress();
+            }
+          } else {
+            btn.style.background = '#fee2e2';
+            btn.style.borderColor = '#ef4444';
+            btn.style.color = '#991b1b';
+
+            const correctBtn = Array.from(btns).find((b) => b.dataset.answer === correct);
+            if (correctBtn) {
+              correctBtn.style.background = '#dcfce7';
+              correctBtn.style.borderColor = '#22c55e';
+            }
+            uiContainer.querySelector('#quiz-feedback').innerHTML =
+              `<div style="color: #dc2626; font-weight: bold; font-size: 1.2rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrect. The answer was ${correct}</div>`;
+
+            if (trackProgress && q.id) {
+              updateLeitnerBox(q.id, false);
+              saveProgress();
+            }
+          }
+
+          const nextBtn = document.createElement('button');
+          nextBtn.innerHTML =
+            currentIndex === sessionQuestions.length - 1
+              ? 'See Results <i class="fa-solid fa-arrow-right"></i>'
+              : 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+          nextBtn.style.cssText =
+            'margin-top: 15px; background: #3b82f6; color: white; border: none; padding: 12px 25px; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.2s;';
+          nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            renderQuestion();
+          });
+          uiContainer.querySelector('#quiz-feedback').appendChild(nextBtn);
+        });
+      });
+    }
+    renderQuestion();
+  }
+
+  function renderResults(score, total, fromLevels) {
+    const percentage = Math.round((score / total) * 100);
+    let message = '';
+    let color = '';
+    let icon = '';
+
+    if (percentage >= 80) {
+      message = 'Excellent work! You have a great historical memory.';
+      color = '#16a34a'; // green
+      icon = 'fa-trophy';
+    } else if (percentage >= 50) {
+      message = "Good effort! A little more revision and you'll master it.";
+      color = '#ca8a04'; // yellow
+      icon = 'fa-star';
+    } else {
+      message = 'Keep practicing! Review your notes and try again.';
+      color = '#dc2626'; // red
+      icon = 'fa-book-open';
     }
 
-    function renderResults(score, total, fromLevels) {
-        const percentage = Math.round((score / total) * 100);
-        let message = '';
-        let color = '';
-        let icon = '';
-
-        if (percentage >= 80) {
-            message = "Excellent work! You have a great historical memory.";
-            color = "#16a34a"; // green
-            icon = "fa-trophy";
-        } else if (percentage >= 50) {
-            message = "Good effort! A little more revision and you'll master it.";
-            color = "#ca8a04"; // yellow
-            icon = "fa-star";
-        } else {
-            message = "Keep practicing! Review your notes and try again.";
-            color = "#dc2626"; // red
-            icon = "fa-book-open";
-        }
-
-        let resHtml = `
+    let resHtml = `
             <div style="background: white; border-radius: 12px; padding: 40px 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;">
                 <div style="font-size: 4rem; color: ${color}; margin-bottom: 10px;"><i class="fa-solid ${icon}"></i></div>
                 <h2 style="font-size: 2rem; color: #0f172a; margin-bottom: 10px;">Quiz Complete!</h2>
@@ -377,109 +422,146 @@ export function renderQuizZone(container, unitData) {
                 <button id="back-to-menu-btn" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 12px 25px; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-right: 10px;">
                     <i class="fa-solid fa-list"></i> Main Menu
                 </button>
-                ${fromLevels ? `
+                ${
+                  fromLevels
+                    ? `
                 <button id="back-to-levels-btn" style="background: #3b82f6; color: white; border: none; padding: 12px 25px; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer;">
                     <i class="fa-solid fa-arrow-left"></i> Back to Levels
-                </button>` : ''}
+                </button>`
+                    : ''
+                }
             </div>
         `;
-        uiContainer.innerHTML = resHtml;
+    uiContainer.innerHTML = resHtml;
 
-        uiContainer.querySelector('#back-to-menu-btn').addEventListener('click', () => {
-            uiContainer.style.display = 'none';
-            modeSelect.style.display = 'block';
-        });
-        if (fromLevels) {
-            uiContainer.querySelector('#back-to-levels-btn').addEventListener('click', () => renderLevelSelect(false));
-        }
+    uiContainer.querySelector('#back-to-menu-btn').addEventListener('click', () => {
+      uiContainer.style.display = 'none';
+      modeSelect.style.display = 'block';
+    });
+    if (fromLevels) {
+      uiContainer
+        .querySelector('#back-to-levels-btn')
+        .addEventListener('click', () => renderLevelSelect(false));
+    }
+  }
+
+  // ==========================================
+  // 2. FLASHCARD FRENZY LOGIC
+  // ==========================================
+  function startFlashcardFrenzy() {
+    if (masterBank.length === 0) {
+      uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">No flashcard data available.</div><button data-action="quiz-zone-back" style="padding: 10px; cursor: pointer;">Back</button>`;
+      return;
     }
 
-
-    // ==========================================
-    // 2. FLASHCARD FRENZY LOGIC
-    // ==========================================
-    function startFlashcardFrenzy() {
-        if (masterBank.length === 0) {
-            uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">No flashcard data available.</div><button data-action="quiz-zone-back" style="padding: 10px; cursor: pointer;">Back</button>`;
-            return;
-        }
-        
-        let themeHtml = `
+    let themeHtml = `
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h2 style="color: #0f172a; margin: 0;">Select a Flashcard Theme</h2>
                 <button id="btn-back-main" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Back</button>
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
         `;
-        
-        const themes = [
-            { id: 'all', title: 'All Units (Random)', color: '#1e3a8a', icon: 'fa-layer-group', lessons: [] },
-            { id: 'trade', title: 'Exploration & Trade', color: '#10b981', icon: 'fa-globe', lessons: ['1450', 'Trade or takeover'] },
-            { id: 'conflict', title: 'Conflict & Power', color: '#ef4444', icon: 'fa-gavel', lessons: ['Who controlled Britain', 'enslaved Africans'] },
-            { id: 'religion', title: 'Religion & Society', color: '#8b5cf6', icon: 'fa-church', lessons: ['religious conflict', 'modern'] }
-        ];
 
-        themes.forEach(t => {
-            themeHtml += `
+    const themes = [
+      {
+        id: 'all',
+        title: 'All Units (Random)',
+        color: '#1e3a8a',
+        icon: 'fa-layer-group',
+        lessons: [],
+      },
+      {
+        id: 'trade',
+        title: 'Exploration & Trade',
+        color: '#10b981',
+        icon: 'fa-globe',
+        lessons: ['1450', 'Trade or takeover'],
+      },
+      {
+        id: 'conflict',
+        title: 'Conflict & Power',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        lessons: ['Who controlled Britain', 'enslaved Africans'],
+      },
+      {
+        id: 'religion',
+        title: 'Religion & Society',
+        color: '#8b5cf6',
+        icon: 'fa-church',
+        lessons: ['religious conflict', 'modern'],
+      },
+    ];
+
+    themes.forEach((t) => {
+      themeHtml += `
                 <div class="theme-card" data-theme="${t.id}" style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                     <div style="font-size: 2.5rem; color: ${t.color}; margin-bottom: 15px;"><i class="fa-solid ${t.icon}"></i></div>
                     <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1.1rem; line-height: 1.3;">${t.title}</h3>
                 </div>
             `;
-        });
-        
-        themeHtml += `</div>
+    });
+
+    themeHtml += `</div>
         <div style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
             <h3 style="color: #475569; font-size: 1rem; margin-bottom: 10px;">Or revise by specific lesson:</h3>
             <button id="btn-by-lesson" style="background: white; color: #3b82f6; border: 2px solid #3b82f6; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">View Lesson Decks</button>
         </div>`;
-        
-        uiContainer.innerHTML = themeHtml;
-        
-        uiContainer.querySelector('#btn-back-main').addEventListener('click', () => {
-            uiContainer.style.display = 'none';
-            modeSelect.style.display = 'block';
-        });
 
-        uiContainer.querySelector('#btn-by-lesson').addEventListener('click', () => {
-            renderLevelSelect(true);
-        });
+    uiContainer.innerHTML = themeHtml;
 
-        uiContainer.querySelectorAll('.theme-card').forEach(card => {
-            card.addEventListener('mouseover', () => { card.style.transform = 'translateY(-3px)'; card.style.borderColor = '#94a3b8'; });
-            card.addEventListener('mouseout', () => { card.style.transform = 'translateY(0)'; card.style.borderColor = '#e2e8f0'; });
-            card.addEventListener('click', () => {
-                const themeId = card.dataset.theme;
-                const theme = themes.find(t => t.id === themeId);
-                
-                let filteredBank = masterBank;
-                if (themeId !== 'all') {
-                    filteredBank = masterBank.filter(q => theme.lessons.some(keyword => q.source && q.source.includes(keyword)));
-                }
-                
-                if (filteredBank.length === 0) {
-                    alert("No flashcards found for this theme!");
-                    return;
-                }
-                
-                startFlashcardUI(filteredBank, theme.title);
-            });
-        });
-    }
+    uiContainer.querySelector('#btn-back-main').addEventListener('click', () => {
+      uiContainer.style.display = 'none';
+      modeSelect.style.display = 'block';
+    });
 
-    function startFlashcardUI(questionsSet, title) {
-        let currentIndex = 0;
-        const sessionQuestions = shuffleArray([...questionsSet]); // Shuffle the deck
+    uiContainer.querySelector('#btn-by-lesson').addEventListener('click', () => {
+      renderLevelSelect(true);
+    });
 
-        function renderCard() {
-            if (currentIndex >= sessionQuestions.length) {
-                renderFlashcardResults();
-                return;
-            }
+    uiContainer.querySelectorAll('.theme-card').forEach((card) => {
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'translateY(-3px)';
+        card.style.borderColor = '#94a3b8';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.borderColor = '#e2e8f0';
+      });
+      card.addEventListener('click', () => {
+        const themeId = card.dataset.theme;
+        const theme = themes.find((t) => t.id === themeId);
 
-            const q = sessionQuestions[currentIndex];
+        let filteredBank = masterBank;
+        if (themeId !== 'all') {
+          filteredBank = masterBank.filter((q) =>
+            theme.lessons.some((keyword) => q.source && q.source.includes(keyword)),
+          );
+        }
 
-            let qHtml = `
+        if (filteredBank.length === 0) {
+          alert('No flashcards found for this theme!');
+          return;
+        }
+
+        startFlashcardUI(filteredBank, theme.title);
+      });
+    });
+  }
+
+  function startFlashcardUI(questionsSet, title) {
+    let currentIndex = 0;
+    const sessionQuestions = shuffleArray([...questionsSet]); // Shuffle the deck
+
+    function renderCard() {
+      if (currentIndex >= sessionQuestions.length) {
+        renderFlashcardResults();
+        return;
+      }
+
+      const q = sessionQuestions[currentIndex];
+
+      let qHtml = `
                 <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; position: relative;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; color: #64748b; font-size: 0.9rem;">
                         <span><strong>${title}</strong></span>
@@ -510,44 +592,44 @@ export function renderQuizZone(container, unitData) {
                 </div>
             `;
 
-            uiContainer.innerHTML = qHtml;
+      uiContainer.innerHTML = qHtml;
 
-            const flashcardInner = uiContainer.querySelector('#flashcard-inner');
-            const flashcardContainer = uiContainer.querySelector('#flashcard-container');
-            const actions = uiContainer.querySelector('#flashcard-actions');
-            let flipped = false;
+      const flashcardInner = uiContainer.querySelector('#flashcard-inner');
+      const flashcardContainer = uiContainer.querySelector('#flashcard-container');
+      const actions = uiContainer.querySelector('#flashcard-actions');
+      let flipped = false;
 
-            flashcardContainer.addEventListener('click', () => {
-                if (!flipped) {
-                    flashcardInner.style.transform = 'rotateY(180deg)';
-                    actions.style.display = 'flex';
-                    flipped = true;
-                }
-            });
-
-            uiContainer.querySelector('#btn-wrong').addEventListener('click', (e) => {
-                e.stopPropagation(); // prevent triggering the container flip click if overlapping
-                if (q.id) {
-                    updateLeitnerBox(q.id, false);
-                    saveProgress();
-                }
-                currentIndex++;
-                renderCard();
-            });
-
-            uiContainer.querySelector('#btn-right').addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (q.id) {
-                    updateLeitnerBox(q.id, true);
-                    saveProgress();
-                }
-                currentIndex++;
-                renderCard();
-            });
+      flashcardContainer.addEventListener('click', () => {
+        if (!flipped) {
+          flashcardInner.style.transform = 'rotateY(180deg)';
+          actions.style.display = 'flex';
+          flipped = true;
         }
+      });
 
-        function renderFlashcardResults() {
-            let resHtml = `
+      uiContainer.querySelector('#btn-wrong').addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent triggering the container flip click if overlapping
+        if (q.id) {
+          updateLeitnerBox(q.id, false);
+          saveProgress();
+        }
+        currentIndex++;
+        renderCard();
+      });
+
+      uiContainer.querySelector('#btn-right').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (q.id) {
+          updateLeitnerBox(q.id, true);
+          saveProgress();
+        }
+        currentIndex++;
+        renderCard();
+      });
+    }
+
+    function renderFlashcardResults() {
+      let resHtml = `
                 <div style="background: white; border-radius: 12px; padding: 40px 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;">
                     <div style="font-size: 4rem; color: #f59e0b; margin-bottom: 10px;"><i class="fa-solid fa-bolt"></i></div>
                     <h2 style="font-size: 2rem; color: #0f172a; margin-bottom: 10px;">Deck Complete!</h2>
@@ -561,47 +643,54 @@ export function renderQuizZone(container, unitData) {
                     </button>
                 </div>
             `;
-            uiContainer.innerHTML = resHtml;
+      uiContainer.innerHTML = resHtml;
 
-            uiContainer.querySelector('#back-to-menu-btn').addEventListener('click', () => {
-                uiContainer.style.display = 'none';
-                modeSelect.style.display = 'block';
-            });
-            uiContainer.querySelector('#back-to-levels-btn').addEventListener('click', () => renderLevelSelect(true));
-        }
-
-        renderCard();
+      uiContainer.querySelector('#back-to-menu-btn').addEventListener('click', () => {
+        uiContainer.style.display = 'none';
+        modeSelect.style.display = 'block';
+      });
+      uiContainer
+        .querySelector('#back-to-levels-btn')
+        .addEventListener('click', () => renderLevelSelect(true));
     }
 
-    // ==========================================
-    // 3. VOCAB MATCH-UP LOGIC
-    // ==========================================
-    function startVocabMatchUp() {
-        if (vocabBank.length < 5) {
-            uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">Not enough vocabulary data available for match-up (needs 5).</div><button data-action="quiz-zone-back" style="padding: 10px; cursor: pointer;">Back</button>`;
-            return;
-        }
+    renderCard();
+  }
 
-        let shuffledVocab = shuffleArray([...vocabBank]).slice(0, 5);
-        let terms = shuffleArray([...shuffledVocab]);
-        let defs = shuffleArray([...shuffledVocab]);
+  // ==========================================
+  // 3. VOCAB MATCH-UP LOGIC
+  // ==========================================
+  function startVocabMatchUp() {
+    if (vocabBank.length < 5) {
+      uiContainer.innerHTML = `<div style="text-align: center; padding: 30px;">Not enough vocabulary data available for match-up (needs 5).</div><button data-action="quiz-zone-back" style="padding: 10px; cursor: pointer;">Back</button>`;
+      return;
+    }
 
-        // Global functions for drag and drop
-        window.dragVocab = function(ev) { ev.dataTransfer.setData("text", ev.target.id); };
-        window.allowDropVocab = function(ev) { ev.preventDefault(); };
-        window.dropVocab = function(ev) {
-            ev.preventDefault();
-            const data = ev.dataTransfer.getData("text");
-            const draggedEl = document.getElementById(data);
-            let target = ev.target;
-            while (target && !target.classList.contains('vocab-dropzone')) target = target.parentElement;
-            if (target && draggedEl) {
-                if (target.children.length > 0) document.getElementById('vocab-terms-column').appendChild(target.children[0]);
-                target.appendChild(draggedEl);
-            }
-        };
+    let shuffledVocab = shuffleArray([...vocabBank]).slice(0, 5);
+    let terms = shuffleArray([...shuffledVocab]);
+    let defs = shuffleArray([...shuffledVocab]);
 
-        let html = `
+    // Global functions for drag and drop
+    window.dragVocab = function (ev) {
+      ev.dataTransfer.setData('text', ev.target.id);
+    };
+    window.allowDropVocab = function (ev) {
+      ev.preventDefault();
+    };
+    window.dropVocab = function (ev) {
+      ev.preventDefault();
+      const data = ev.dataTransfer.getData('text');
+      const draggedEl = document.getElementById(data);
+      let target = ev.target;
+      while (target && !target.classList.contains('vocab-dropzone')) target = target.parentElement;
+      if (target && draggedEl) {
+        if (target.children.length > 0)
+          document.getElementById('vocab-terms-column').appendChild(target.children[0]);
+        target.appendChild(draggedEl);
+      }
+    };
+
+    let html = `
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h2 style="color: #0f172a; margin: 0;">Vocab Match-Up</h2>
                 <button id="btn-back-main-vocab" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Back</button>
@@ -612,12 +701,16 @@ export function renderQuizZone(container, unitData) {
                     ${terms.map((v, i) => `<div id="vocab-term-${i}" data-term="${v.term.replace(/"/g, '&quot;')}" class="vocab-term-card" draggable="true" ondragstart="window.dragVocab(event)" style="background: #eff6ff; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px; font-weight: bold; cursor: grab; text-align: center;">${v.term}</div>`).join('')}
                 </div>
                 <div id="vocab-defs-column" style="display:flex; flex-direction: column; gap:15px;">
-                    ${defs.map(v => `
+                    ${defs
+                      .map(
+                        (v) => `
                         <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; display: flex; align-items: stretch; min-height: 60px;">
                             <div class="vocab-dropzone" data-def="${v.term.replace(/"/g, '&quot;')}" ondragover="window.allowDropVocab(event)" ondrop="window.dropVocab(event)" style="flex: 0 0 150px; border-right: 2px dashed #94a3b8; background: white; border-top-left-radius: 8px; border-bottom-left-radius: 8px; padding: 10px; display:flex; align-items:center; justify-content:center;"></div>
                             <div style="padding: 15px; flex: 1; display:flex; align-items:center;">${v.definition}</div>
                         </div>
-                    `).join('')}
+                    `,
+                      )
+                      .join('')}
                 </div>
             </div>
             <div style="text-align: center;">
@@ -626,51 +719,50 @@ export function renderQuizZone(container, unitData) {
             </div>
         `;
 
-        uiContainer.innerHTML = html;
+    uiContainer.innerHTML = html;
 
-        uiContainer.querySelector('#btn-back-main-vocab').addEventListener('click', () => {
-            uiContainer.style.display = 'none';
-            modeSelect.style.display = 'block';
-        });
+    uiContainer.querySelector('#btn-back-main-vocab').addEventListener('click', () => {
+      uiContainer.style.display = 'none';
+      modeSelect.style.display = 'block';
+    });
 
-        uiContainer.querySelector('#btn-check-vocab').addEventListener('click', () => {
-            let correct = 0;
-            const dropzones = uiContainer.querySelectorAll('.vocab-dropzone');
-            let allFilled = true;
+    uiContainer.querySelector('#btn-check-vocab').addEventListener('click', () => {
+      let correct = 0;
+      const dropzones = uiContainer.querySelectorAll('.vocab-dropzone');
+      let allFilled = true;
 
-            dropzones.forEach(dz => {
-                dz.style.background = 'white';
-                if (dz.children.length === 0) {
-                    allFilled = false;
-                    return;
-                }
-                const termEl = dz.children[0];
-                if (termEl.getAttribute('data-term') === dz.getAttribute('data-def')) {
-                    correct++;
-                    dz.style.background = '#dcfce7';
-                    termEl.style.borderColor = '#16a34a';
-                } else {
-                    dz.style.background = '#fee2e2';
-                    termEl.style.borderColor = '#dc2626';
-                }
-            });
+      dropzones.forEach((dz) => {
+        dz.style.background = 'white';
+        if (dz.children.length === 0) {
+          allFilled = false;
+          return;
+        }
+        const termEl = dz.children[0];
+        if (termEl.getAttribute('data-term') === dz.getAttribute('data-def')) {
+          correct++;
+          dz.style.background = '#dcfce7';
+          termEl.style.borderColor = '#16a34a';
+        } else {
+          dz.style.background = '#fee2e2';
+          termEl.style.borderColor = '#dc2626';
+        }
+      });
 
-            const feedback = uiContainer.querySelector('#vocab-feedback');
-            if (!allFilled) {
-                feedback.style.color = '#d97706';
-                feedback.innerText = "Please match all terms before checking!";
-                return;
-            }
+      const feedback = uiContainer.querySelector('#vocab-feedback');
+      if (!allFilled) {
+        feedback.style.color = '#d97706';
+        feedback.innerText = 'Please match all terms before checking!';
+        return;
+      }
 
-            if (correct === 5) {
-                feedback.style.color = '#16a34a';
-                feedback.innerText = "Perfect! 5/5 Correct.";
-                setTimeout(() => renderResults(5, 5, false), 2000);
-            } else {
-                feedback.style.color = '#dc2626';
-                feedback.innerText = `You got ${correct}/5 correct. Check the red boxes and try again!`;
-            }
-        });
-    }
-
+      if (correct === 5) {
+        feedback.style.color = '#16a34a';
+        feedback.innerText = 'Perfect! 5/5 Correct.';
+        setTimeout(() => renderResults(5, 5, false), 2000);
+      } else {
+        feedback.style.color = '#dc2626';
+        feedback.innerText = `You got ${correct}/5 correct. Check the red boxes and try again!`;
+      }
+    });
+  }
 }

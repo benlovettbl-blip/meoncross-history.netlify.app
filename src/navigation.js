@@ -4,7 +4,19 @@
 
 import { appStore } from './engine/store.js';
 import { state } from './state.js';
-import { renderDashboard, renderInteractiveQuiz, renderTimeline, renderBookletView, renderProfileView, renderDecisionsView, renderTabooView, renderLessonsView } from './views.js';
+import {
+  renderDashboard,
+  renderInteractiveQuiz,
+  renderTimeline,
+  renderBookletView,
+  renderProfileView,
+  renderDecisionsView,
+  renderTabooView,
+  renderLessonsView,
+  renderIndividualsView,
+  renderReadingView,
+} from './views.js'; // Trigger HMR
+import { renderCurriculumMap } from './curriculum_map.js';
 
 // Subscribe to state changes to handle DOM updates independently of the router
 export function initNavigationUI() {
@@ -42,6 +54,7 @@ export function initNavigationUI() {
         if (viewName === 'timeline') displayName = 'Chronological Timeline';
         if (viewName === 'booklet') displayName = 'Printable A4 Booklet';
         if (viewName === 'profile') displayName = 'Student Profile';
+        if (viewName === 'curriculum') displayName = 'Curriculum Overview';
 
         breadcrumbs.innerHTML = `
           <span data-action="switch-view" data-view="dashboard" style="cursor: pointer; text-decoration: underline; color: var(--primary);">Dashboard</span>
@@ -53,7 +66,7 @@ export function initNavigationUI() {
     }
 
     // Update active sidebar nav
-    document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
+    document.querySelectorAll('.sidebar-nav .nav-item').forEach((item) => {
       item.classList.remove('active');
     });
     const navItem = document.getElementById(`nav-${viewName}`);
@@ -64,13 +77,13 @@ export function initNavigationUI() {
 export async function switchView(viewName, param = null, skipHistory = false) {
   // Update state; the subscriber will handle UI changes
   appStore.state.currentView = viewName;
-  
+
   if (!skipHistory) {
     const url = new URL(window.location);
     url.searchParams.set('view', viewName);
     if (param) url.searchParams.set('unit', param);
     else url.searchParams.delete('unit');
-    window.history.pushState({ view: viewName, unit: param }, "", url);
+    window.history.pushState({ view: viewName, unit: param }, '', url);
   }
 
   // Handle view rendering
@@ -96,17 +109,26 @@ export async function switchView(viewName, param = null, skipHistory = false) {
   } else if (viewName === 'lessons') {
     if (param) await loadUnit(param);
     renderLessonsView();
+  } else if (viewName === 'individuals') {
+    if (param) await loadUnit(param);
+    renderIndividualsView();
+  } else if (viewName === 'reading') {
+    if (param) await loadUnit(param);
+    renderReadingView();
+  } else if (viewName === 'curriculum') {
+    await renderCurriculumMap();
   }
 }
 
 // Dynamically fetch and parse the compiled JSON for a unit
 async function loadUnit(unitId) {
-  if (state.selectedUnitId === unitId && state.activeUnitData.subtopics && state.activeUnitData.subtopics.length > 0) {
+  const currentLessons = state.activeUnitData.lessons || state.activeUnitData.subtopics;
+  if (state.selectedUnitId === unitId && currentLessons && currentLessons.length > 0) {
     return; // Already loaded
   }
 
   state.selectedUnitId = unitId;
-  
+
   if (state.db && state.db[unitId]) {
     const unitPayload = state.db[unitId];
     state.activeUnitData = unitPayload.data || {};
@@ -114,12 +136,61 @@ async function loadUnit(unitId) {
     console.error('Unit not found in database.json:', unitId);
     state.activeUnitData = {};
   }
-  
+
+  // Fallback: Dynamically generate quizData from lesson do_now quizzes if missing
+  if (!state.activeUnitData.quizData) {
+    const extractedQuizData = [];
+    const lessonsList = state.activeUnitData.lessons || state.activeUnitData.subtopics || [];
+    lessonsList.forEach((lesson, lIdx) => {
+      const baseId = lesson.id || `lesson_${lIdx}`;
+      if (lesson.do_now && lesson.do_now.type === 'quiz' && lesson.do_now.questions) {
+        lesson.do_now.questions.forEach((q, idx) => {
+          extractedQuizData.push({
+            id: `q_${baseId}_${idx}`,
+            question: q.question,
+            options: q.options,
+            answer: q.options[q.answer],
+            distractors: q.options.filter((opt, i) => i !== q.answer),
+            explanation: q.explanation || 'No further explanation provided.',
+          });
+        });
+      }
+      if (lesson.part3 && Array.isArray(lesson.part3)) {
+        lesson.part3.forEach((stmt, idx) => {
+          extractedQuizData.push({
+            id: `q_${baseId}_p3_${idx}`,
+            question: `True or False: ${stmt.text}`,
+            options: ['True', 'False'],
+            answer: 'True', // Historically they are all correct core statements
+            distractors: ['False'],
+            explanation: 'This is a core historical statement from the lesson.',
+          });
+        });
+      }
+    });
+    if (extractedQuizData.length > 0) {
+      state.activeUnitData.quizData = extractedQuizData;
+    }
+  }
+
+  // Fallback: Map 'timeline' array to 'timelineEvents' if missing but 'timeline' exists
+  if (
+    !state.activeUnitData.timelineEvents &&
+    state.activeUnitData.timeline &&
+    Array.isArray(state.activeUnitData.timeline)
+  ) {
+    state.activeUnitData.timelineEvents = state.activeUnitData.timeline.map((t) => ({
+      year: t.date || t.year,
+      text: t.description || t.text,
+      title: t.title || '',
+    }));
+  }
+
   // Add loaded questions to general index to support Leitner status mapping
   if (!state.allQuestions) state.allQuestions = [];
   if (state.activeUnitData.quizData) {
-    state.activeUnitData.quizData.forEach(q => {
-      if (!state.allQuestions.some(existing => existing.id === q.id)) {
+    state.activeUnitData.quizData.forEach((q) => {
+      if (!state.allQuestions.some((existing) => existing.id === q.id)) {
         state.allQuestions.push(q);
       }
     });
@@ -128,31 +199,96 @@ async function loadUnit(unitId) {
   const navDecisions = document.getElementById('nav-decisions');
   const navTaboo = document.getElementById('nav-taboo');
   const navLessons = document.getElementById('nav-lessons');
-  if (navDecisions && navTaboo && navLessons) {
-    if (unitId.startsWith('gcse_') || unitId === 'edexcel_medicine' || unitId === 'eee') {
+  const navInteractive = document.getElementById('nav-interactive');
+  const navTimeline = document.getElementById('nav-timeline');
+  const navBooklet = document.getElementById('nav-booklet');
+  const navIndividuals = document.getElementById('nav-individuals');
+  const navReading = document.getElementById('nav-reading');
+
+  if (navLessons) {
+    navLessons.style.display = 'flex';
+    navLessons.dataset.action = 'switch-view';
+    navLessons.dataset.view = 'lessons';
+    navLessons.dataset.unit = unitId;
+    navLessons.onclick = () => switchView('lessons', unitId);
+  }
+
+  if (navInteractive) {
+    navInteractive.style.display = 'flex';
+    navInteractive.dataset.action = 'switch-view';
+    navInteractive.dataset.view = 'interactive';
+    navInteractive.dataset.unit = unitId;
+    navInteractive.onclick = () => switchView('interactive', unitId);
+  }
+
+  if (navTimeline) {
+    navTimeline.style.display = 'flex';
+    navTimeline.dataset.action = 'switch-view';
+    navTimeline.dataset.view = 'timeline';
+    navTimeline.dataset.unit = unitId;
+    navTimeline.onclick = () => switchView('timeline', unitId);
+  }
+
+  if (navBooklet) {
+    navBooklet.style.display = 'flex';
+    navBooklet.dataset.action = 'switch-view';
+    navBooklet.dataset.view = 'booklet';
+    navBooklet.dataset.unit = unitId;
+    navBooklet.onclick = () => switchView('booklet', unitId);
+  }
+
+  const keyIndividualsData =
+    (state.activeUnitData && state.activeUnitData.key_individuals) ||
+    (state.activeUnitData && state.activeUnitData.biographies);
+  if (navIndividuals && keyIndividualsData && keyIndividualsData.length > 0) {
+    navIndividuals.style.display = 'flex';
+    navIndividuals.dataset.action = 'switch-view';
+    navIndividuals.dataset.view = 'individuals';
+    navIndividuals.dataset.unit = unitId;
+    navIndividuals.onclick = () => switchView('individuals', unitId);
+  } else if (navIndividuals) {
+    navIndividuals.style.display = 'none';
+  }
+
+  if (
+    navReading &&
+    state.activeUnitData &&
+    state.activeUnitData.guided_reading &&
+    state.activeUnitData.guided_reading.length > 0
+  ) {
+    navReading.style.display = 'flex';
+    navReading.dataset.action = 'switch-view';
+    navReading.dataset.view = 'reading';
+    navReading.dataset.unit = unitId;
+    navReading.onclick = () => switchView('reading', unitId);
+  } else if (navReading) {
+    navReading.style.display = 'none';
+  }
+
+  if (navDecisions && navTaboo) {
+    if (
+      unitId.startsWith('gcse_') ||
+      unitId === 'edexcel_medicine' ||
+      unitId === 'eee' ||
+      unitId === 'cme_new'
+    ) {
       if (unitId === 'gcse_elizabethan_england' || unitId === 'eee') {
         navDecisions.style.display = 'none';
       } else {
         navDecisions.style.display = 'flex';
+        navDecisions.dataset.action = 'switch-view';
+        navDecisions.dataset.view = 'decisions';
+        navDecisions.dataset.unit = unitId;
+        navDecisions.onclick = () => switchView('decisions', unitId);
       }
       navTaboo.style.display = 'flex';
-      navLessons.style.display = 'flex';
-      navDecisions.dataset.action = 'switch-view';
-      navDecisions.dataset.view = 'decisions';
-      navDecisions.dataset.unit = unitId;
       navTaboo.dataset.action = 'switch-view';
       navTaboo.dataset.view = 'taboo';
       navTaboo.dataset.unit = unitId;
-      navLessons.dataset.action = 'switch-view';
-      navLessons.dataset.view = 'lessons';
-      navLessons.dataset.unit = unitId;
-      navDecisions.onclick = () => switchView('decisions', unitId);
       navTaboo.onclick = () => switchView('taboo', unitId);
-      navLessons.onclick = () => switchView('lessons', unitId);
     } else {
       navDecisions.style.display = 'none';
       navTaboo.style.display = 'none';
-      navLessons.style.display = 'none';
     }
   }
 }

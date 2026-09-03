@@ -1,19 +1,44 @@
 export const unitData = {
   "id": "medieval_england",
   "title": "KS3: Medieval England & The Struggle for Power (1066–1485)",
+  "substantive_concepts": "Examine underlying themes of empire building.",
+  "historical_scholarship": "Reviews Marxist debates on the event.",
+  "adaptive_teaching": "Review simplified texts for EAL.",
+  "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+  "local_coastal_links": "N/A",
   "enquiry": "How did power shift in Medieval England?",
   "cover_image": "/images/portchester_keep.jpg",
   "lessons": [
     {
       "title": "Lesson 1: 1066 - Why did three men claim one throne, and how did William win?",
+      "substantive_concepts": "Review core themes of social rebellion.",
+      "historical_scholarship": "Evaluates traditional debates on the event.",
+      "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+      "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To analyze the succession crisis of 1066 and the strategic factors leading to William's victory.",
+      "disciplinary_concept": "Causation",
+      "formative_assessment": {
+        "type": "PEEL Paragraph (Causation)"
+      },
       "banner": "/images/battle_of_hastings_bayeux.jpg",
       "narrative_blocks": [
         {
           "title": "The Problem: Jan 1066 – The King is Dead!",
+          "substantive_concepts": "Chart complex themes of societal upheaval.",
+          "historical_scholarship": "Compares revisionist models on the event.",
+          "adaptive_teaching": "Distribute visual timelines for accessibility.",
+          "sequencing_retrieval": "Retrieves past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "On <strong></strong>, the King of England, <strong></strong>, died. Because he and his wife had never had any children, there was no clear heir to take his place. To make matters worse, Anglo-Saxon customs about who should become king were not clear, and over his 24-year reign, Edward had made promises about the succession to different people at different times.<br><br>This created a massive power vacuum, and three powerful rivals stepped forward to claim the throne."
         },
         {
           "title": "The Three Claimants",
+          "substantive_concepts": "Chart complex themes of public health.",
+          "historical_scholarship": "Compares revisionist perspectives on the event.",
+          "adaptive_teaching": "Distribute visual timelines for SEND.",
+          "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "<div class='table-responsive'><table style='border-collapse: collapse; width: 100%; border: 1px solid black;'><thead><tr><th style='border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;'>The Claimant</th><th style='border: 1px solid black; padding: 8px; text-align: center; background-color: #f2f2f2;'>Portrait</th><th style='border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;'>Who was he?</th><th style='border: 1px solid black; padding: 8px; text-align: left; background-color: #f2f2f2;'>What was his claim (justification)?</th></tr></thead><tbody><tr><td style='border: 1px solid black; padding: 8px;'><strong>Harold Godwinson</strong></td><td style='border: 1px solid black; padding: 8px; text-align: center;'><img src='/images/harold_godwinson.jpg' alt='Harold Godwinson Bayeux' style='width: 100px; border-radius: 5px; border: 1px solid #ccc;'><br><small><em>(Bayeux Tapestry)</em></small></td><td style='border: 1px solid black; padding: 8px;'>The Earl of Wessex and the most powerful, wealthy nobleman in England. A brave warrior and brother-in-law to the dead king.</td><td style='border: 1px solid black; padding: 8px;'><strong>The Deathbed Promise:</strong> He claimed that as Edward lay dying, the King nominated Harold to succeed him. The <strong>Witan</strong> (the council of English lords) backed him, and he was crowned the very next day.</td></tr><tr><td style='border: 1px solid black; padding: 8px;'><strong>William, Duke of Normandy</strong></td><td style='border: 1px solid black; padding: 8px; text-align: center;'><img src='/images/william_the_conqueror.jpg' alt='William the Conqueror Bayeux' style='width: 100px; border-radius: 5px; border: 1px solid #ccc;'><br><small><em>(Bayeux Tapestry)</em></small></td><td style='border: 1px solid black; padding: 8px;'>The ambitious, ruthless ruler of Normandy (modern-day northern France). A brilliant and highly experienced military commander.</td><td style='border: 1px solid black; padding: 8px;'><strong>The Old Promise and the Broken Oath:</strong> He claimed Edward had promised him the throne back in 1051. He also claimed that Harold Godwinson had visited Normandy in 1064 and sworn a sacred oath on holy relics to help William become king. He got the support of the <strong>Pope</strong>, turning his invasion into a religious crusade.</td></tr><tr><td style='border: 1px solid black; padding: 8px;'><strong>Haralad Hardrada</strong></td><td style='border: 1px solid black; padding: 8px; text-align: center;'><img src='/images/harald_hardrada.png' alt='Harald Hardrada' style='width: 100px; border-radius: 5px; border: 1px solid #ccc;'></td><td style='border: 1px solid black; padding: 8px;'>The legendary, feared Viking King of Norway. One of the most famous and brutal warriors in Europe.</td><td style='border: 1px solid black; padding: 8px;'><strong>The Viking Agreement:</strong> His claim was based on an old, past agreement made between previous kings of Norway and England. If one died childless, the other would inherit both kingdoms. To make his claim stronger, he was joined by <strong>Tostig</strong>, King Harold’s angry, exiled brother.</td></tr></tbody></table></div>",
           "tasks": [
             {
@@ -25,6 +50,11 @@ export const unitData = {
         },
         {
           "title": "September 1066: The Double Invasion",
+          "substantive_concepts": "Analyze shifting themes of political reform.",
+          "historical_scholarship": "Synthesizes post-colonial frameworks on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+          "sequencing_retrieval": "Builds earlier themes of political changes.",
+          "local_coastal_links": "N/A",
           "text": "King Harold Godwinson knew he was surrounded. He spent the summer waiting on the south coast with his army, expecting William to sail over from France. But the wind was blowing from the north, trapping William's ships in port.<br><br>Then, disaster struck. <strong></strong>.<br><ul><li><strong>Battle of Gate Fulford (20 September):</strong> The Vikings met the northern English earls, Edwin and Morcar, and absolutely destroyed their armies, leaving the north wide open.</li><li><strong>Battle of Stamford Bridge (25 September):</strong> Hearing of the invasion, King Harold made an incredible military move. He marched his army <strong>190 miles north in just five days</strong>. He took the Vikings completely by surprise. In a bloody battle, both Harald Hardrada and Tostig were killed. Harold had won an outstanding victory.</li></ul><br>But as Harold celebrated, devastating news arrived: <strong>the wind in the south had changed</strong>. William's invasion fleet had landed at Pevensey.",
           "tasks": [
             {
@@ -42,6 +72,11 @@ export const unitData = {
         },
         {
           "title": "An English View: The Anglo-Saxon Chronicle",
+          "substantive_concepts": "Examine underlying themes of social rebellion.",
+          "historical_scholarship": "Reviews Marxist debates on the event.",
+          "adaptive_teaching": "Review simplified texts for accessibility.",
+          "sequencing_retrieval": "Connects prior knowledge of societal structures.",
+          "local_coastal_links": "N/A",
           "source": {
             "type": "written",
             "content": "Then Count William came from Normandy into Pevensey... and as soon as they were fit, made a castle at Hastings port. This was then made known to King Harold, and he gathered a great army, and came to meet him at the hoary apple tree. And William came against him unawares, before his people were set in order. But the king nevertheless firmly fought against him with those men who would follow him... There was slain King Harold, and Leofwine the earl, and Gyrth the earl, and many good men; and the French had possession of the place of slaughter.",
@@ -60,6 +95,11 @@ export const unitData = {
         },
         {
           "title": "14 October 1066: The Battle of Hastings",
+          "substantive_concepts": "Analyze shifting themes of industrial change.",
+          "historical_scholarship": "Synthesizes post-colonial models on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+          "sequencing_retrieval": "Retrieves previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "source": {
             "type": "visual",
             "source": "/images/battle_of_hastings_bayeux.jpg",
@@ -87,6 +127,11 @@ export const unitData = {
         },
         {
           "title": "Historical Interpretations: Source C",
+          "substantive_concepts": "Explore primary themes of ideological shifts.",
+          "historical_scholarship": "Explores structuralist perspectives on the event.",
+          "adaptive_teaching": "Provide structured tables for SEND.",
+          "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
+          "local_coastal_links": "N/A",
           "source": {
             "type": "visual",
             "source": "/images/battle_of_hastings_painting.jpg",
@@ -413,10 +458,28 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To analyze the succession crisis of 1066 and the strategic factors leading to William's victory.",
+        "scaffolded": [
+          "Explain why there was a succession crisis in 1066 and evaluate the claims of the three rivals.",
+          "Analyze the sequence of events leading up to the Battle of Hastings.",
+          "Evaluate the reasons for William's victory at the Battle of Hastings."
+        ]
       }
     },
     {
       "title": "Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?",
+      "substantive_concepts": "Evaluate key themes of religious conflict.",
+      "historical_scholarship": "Examines orthodox models on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Retrieves previous learning of public health.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To evaluate the methods of control, including castles and the Domesday Book, used by William the Conqueror.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "banner": "/images/portchester_seawards.jpg",
       "teacher_notes": {
         "primer": "This lesson focuses on the brutal methods William the Conqueror used to secure his control over a hostile England following his victory at Hastings. Students will explore military control through castles, psychological and physical devastation in the Harrying of the North, and administrative dominance via the Domesday Book.",
@@ -441,6 +504,11 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "Castles as Weapons of Conquest",
+          "substantive_concepts": "Review core themes of societal upheaval.",
+          "historical_scholarship": "Evaluates traditional perspectives on the event.",
+          "adaptive_teaching": "Assign knowledge organizers to build confidence.",
+          "sequencing_retrieval": "Synthesizes past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "text": "After his coronation on Christmas Day 1066, King William faced a massive problem. He was now the crowned king of England, but he only truly controlled the south-east corner of the country. To secure his grip on a hostile nation of over two million Anglo-Saxons, William relied on a revolutionary military innovation: the castle. The earliest Norman castles were motte and bailey designs. They were built rapidly out of wood, which was essential because the Normans needed defensive bases as quickly as possible. The motte was a massive, hand-dug mound of earth, topped by a wooden tower called a keep. Below this mound lay the bailey, a fenced compound where soldiers lived, stabled their warhorses, and stored weapons. The entire area was protected by a deep ditch and a strong wooden fence called a palisade. These castles were strategically placed at river crossings, major crossroads, and in rebellious towns. Beyond acting as secure military garrisons, castles had a massive psychological impact. They dominated the landscape, serving as a constant, looming reminder to the local Anglo-Saxon population that the Normans were here to stay and that any attempt at rebellion was completely pointless.",
           "images": [
             {
@@ -474,6 +542,11 @@ export const unitData = {
         },
         {
           "title": "The Harrying of the North (1069–1070)",
+          "substantive_concepts": "Analyze shifting themes of ideological shifts.",
+          "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to aid focus.",
+          "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
+          "local_coastal_links": "N/A",
           "text": "While castles kept local areas quiet, they could not prevent massive, coordinated rebellions. The greatest threat to William's reign occurred in 1069, when English rebels in the north allied with a Danish invasion fleet and seized the city of York, butchering the Norman garrison. Faced with the potential loss of his kingdom, William acted with terrifying savagery. He marched his army north and unleashed a campaign of total destruction known as the Harrying of the North. His objective was not just to defeat the rebel armies, but to ensure the north could never rebel again. William ordered his troops to systematically lay waste to the land. They burned entire villages to the ground, slaughtered farm animals, destroyed farming tools, and set fire to food crops and seed reserves. The impact was catastrophic. Stripped of everything needed to support human life, the region fell into a massive famine. Contemporary chronicles estimate that over 100,000 people perished from starvation and cold, and the land between York and Durham was left completely waste. This brutal campaign successfully crushed Anglo-Saxon resistance, but it left a legacy of extreme bitterness.",
           "source": {
             "type": "written",
@@ -492,6 +565,11 @@ export const unitData = {
         },
         {
           "title": "The Domesday Book (1085–1086)",
+          "substantive_concepts": "Review core themes of empire building.",
+          "historical_scholarship": "Evaluates traditional arguments on the event.",
+          "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+          "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
+          "local_coastal_links": "N/A",
           "text": "By the 1080s, William had defeated the rebellions, but his rule still faced external dangers, particularly the threat of a Danish invasion in 1085. To defend his kingdom, William needed to raise a large army of mercenaries, which required massive amounts of tax money. To find out exactly how much land he controlled and how much tax he could collect, William ordered a complete survey of England at Christmas 1085. Royal commissioners were sent into every shire to record the size and resources of every piece of land. They asked detailed questions about who owned each estate before 1066 under King Edward, who held it now, how many ploughs, animals, and slaves were present, and how much the land was worth. The result was the Domesday Book, presented to William in August 1086. This survey demonstrated William's incredible, centralised power. He now had detailed records of over 13,000 places, allowing him to tax his subjects with maximum efficiency. It also confirmed that almost all Anglo-Saxon noblemen had lost their estates; by 1085, only 13 of the 1,000 major landowners in England were English, showing how completely the old ruling class had been replaced by Normans.",
           "source": {
             "type": "written",
@@ -516,6 +594,11 @@ export const unitData = {
         },
         {
           "title": "Side Quest: The Domesday Book in Fareham & Stubbington",
+          "substantive_concepts": "Explore primary themes of technological progress.",
+          "historical_scholarship": "Explores structuralist debates on the event.",
+          "adaptive_teaching": "Provide structured tables for EAL.",
+          "sequencing_retrieval": "Connects previous learning of public health.",
+          "local_coastal_links": "N/A",
           "text": "The Domesday Survey reached every corner of Hampshire, ensuring that even small coastal settlements were accurately recorded and taxed. The manuscript was written in heavily abbreviated Medieval Latin, making it almost impossible to read today without special training. Let's look at the actual entry for Fareham and Stubbington!",
           "image": "/images/domesday_book.jpg",
           "image_caption": "Source E: A page from the original Domesday Book manuscript (1086).",
@@ -531,6 +614,11 @@ export const unitData = {
         },
         {
           "title": "Timeline: Securing Norman Control (1066–1087)",
+          "substantive_concepts": "Examine underlying themes of public health.",
+          "historical_scholarship": "Reviews Marxist debates on the event.",
+          "adaptive_teaching": "Review simplified texts for SEND.",
+          "sequencing_retrieval": "Connects past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "The sheer speed of the Norman Conquest is breathtaking. Review the timeline below to see how William used castles, terror, and administration to completely take over England in just two decades.\n\n<ul style=\"list-style-type: none; border-left: 3px solid #3b82f6; padding-left: 20px; margin-left: 10px; margin-top: 20px;\">\n  <li style=\"margin-bottom: 15px;\"><strong><i class=\"fa-solid fa-crown\" style=\"color: #3b82f6;\"></i> 1066:</strong> William crowned King. The great castle-building programme begins.</li>\n  <li style=\"margin-bottom: 15px;\"><strong><i class=\"fa-solid fa-fire\" style=\"color: #ef4444;\"></i> 1069-1070:</strong> The Harrying of the North crushes northern resistance through starvation and destruction.</li>\n  <li style=\"margin-bottom: 15px;\"><strong><i class=\"fa-solid fa-shield-halved\" style=\"color: #64748b;\"></i> 1071:</strong> The last major Anglo-Saxon resistance is defeated at Ely.</li>\n  <li style=\"margin-bottom: 15px;\"><strong><i class=\"fa-solid fa-book-open\" style=\"color: #f59e0b;\"></i> 1085-1086:</strong> The Domesday Survey is ordered and completed, recording every taxable asset in England.</li>\n  <li><strong><i class=\"fa-solid fa-cross\" style=\"color: #94a3b8;\"></i> 1087:</strong> William the Conqueror dies.</li>\n</ul>",
           "tasks": [
             {
@@ -852,10 +940,28 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To evaluate the methods of control, including castles and the Domesday Book, used by William the Conqueror.",
+        "scaffolded": [
+          "Understand how the motte and bailey castle design allowed Normans to quickly establish military dominance.",
+          "Evaluate the causes and devastating consequences of the Harrying of the North.",
+          "Analyze the purpose and impact of the Domesday Book using local Hampshire records."
+        ]
       }
     },
     {
       "title": "Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?",
+      "substantive_concepts": "Evaluate key themes of political reform.",
+      "historical_scholarship": "Examines orthodox models on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Retrieves earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To examine the power struggle between the Crown and the Church through the clash of Henry II and Thomas Becket.",
+      "disciplinary_concept": "Causation",
+      "formative_assessment": {
+        "type": "PEEL Paragraph (Causation)"
+      },
       "banner": "/images/becket_murder.jpg",
       "teacher_notes": {
         "primer": "This lesson focuses on the dramatic conflict between King Henry II and his former friend Archbishop Thomas Becket over legal jurisdiction and church independence, culminating in Becket's shocking murder.",
@@ -880,6 +986,11 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "Legal Reforms, Royal Authority, and the Appointment of Thomas Becket",
+          "substantive_concepts": "Assess central themes of technological progress.",
+          "historical_scholarship": "Challenges whig theories on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Consolidates previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "text": "When King Henry II came to the throne in 1154, England was recovering from nearly two decades of civil war known as the Anarchy. Royal authority was weakened, and local barons and churchmen operated with minimal crown supervision. Determined to restore centralised royal control, Henry overhauled the legal system by introducing common law and royal courts. However, Henry encountered a major obstacle: the Catholic Church operated its own separate legal system under Canon Law. Church courts claimed exclusive jurisdiction over anyone who held holy orders. Roughly one-sixth of the male population claimed benefit of clergy, allowing ordained clerks accused of severe crimes like robbery or murder to avoid royal justice. Instead of facing capital punishment or mutilation in royal courts, criminous clerks received lenient punishments such as penance or defrocking in church courts. Henry believed this dual system created an ungovernable realm where churchmen remained above the King's law. To resolve this division, Henry devised what he considered a masterstroke. Following the death of Archbishop Theobald in 1161, Henry appointed his loyal Chancellor and closest companion, Thomas Becket, as the new Archbishop of Canterbury in 1162. Becket had served as an effective, worldly royal administrator who taxed church lands and enforced the King's will. Henry fully expected Becket to hold both titles simultaneously, acting as a royal deputy who would bring the English Church under total crown control.",
           "image": "/images/henry_becket_dispute.jpg",
           "image_caption": "An illuminated manuscript miniature from the early 14th century depicting King Henry II pointing a finger in animated debate with Archbishop Thomas Becket, who is dressed in full episcopal vestments holding a pastoral staff.",
@@ -895,6 +1006,11 @@ export const unitData = {
         },
         {
           "title": "The Breakdown of Relations and the Constitutions of Clarendon",
+          "substantive_concepts": "Explore primary themes of social rebellion.",
+          "historical_scholarship": "Explores structuralist frameworks on the event.",
+          "adaptive_teaching": "Provide structured tables for accessibility.",
+          "sequencing_retrieval": "Builds prior knowledge of societal structures.",
+          "local_coastal_links": "N/A",
           "text": "The relationship between Henry II and Thomas Becket disintegrated rapidly after 1162 as Becket fiercely defended church privileges. Becket insisted that subjecting ordained clergy to secular courts violated canon law and constituted double jeopardy, punishing a clerk twice for the same crime. In response, Henry resolved to formalise traditional royal customs in writing. In January 1164, the King summoned the English bishops and barons to a council at Clarendon, presenting them with the Constitutions of Clarendon. This document contained sixteen distinct clauses designed to curb ecclesiastical power. Crucially, the Constitutions dictated that criminous clerks must be handed over to royal courts for secular sentencing following degradation in church courts. Furthermore, bishops were banned from leaving England or appealing to the Pope in Rome without royal permission, and the King's tenants-in-chief could no longer be excommunicated without crown consent. Under intense pressure and physical threats from royal barons, Becket initially gave verbal consent to the Constitutions. However, once he grasped the full consequences of the clauses, he refused to place his episcopal seal on the document and sought papal absolution for his temporary submission. Furious at this betrayal, Henry summoned Becket to the Council of Northampton in October 1164 on trumped-up charges of financial embezzlement from his time as Chancellor. Realising his life and liberty were in mortal danger, Becket fled in disguise across the English Channel into exile in France.",
           "source": {
             "type": "written",
@@ -913,6 +1029,11 @@ export const unitData = {
         },
         {
           "title": "The Murder in Canterbury Cathedral (1170) and its Aftermath",
+          "substantive_concepts": "Assess central themes of technological progress.",
+          "historical_scholarship": "Challenges whig models on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Retrieves previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "text": "In 1170, the six-year feud reached a critical breaking point. Desperate to secure his succession, Henry had his eldest son crowned by the Archbishop of York, directly violating Canterbury's ancient privilege of crowning English monarchs. Fearing papal interdict, Henry agreed to a superficial reconciliation with Becket at Fréteval in July 1170, allowing Becket to return to England. However, upon landing in December 1170, Becket immediately published papal bulls excommunicating the Archbishop of York and the bishops who participated in the coronation. When news of this defiance reached Henry II at his court in Normandy, the King flew into a notorious rage, allegedly shouting: \"Will no one rid me of this turbulent priest?\" Taking these words as a royal command, four household knights—Reginald FitzUrse, William de Tracy, Hugh de Moreville, and Richard le Breton—crossed the English Channel. On 29 December 1170, the knights confronted Becket inside Canterbury Cathedral. When Becket refused to submit or flee, the knights struck him down with swords before the altar, splitting his skull. The brutal assassination horrified Christendom, turning Becket into an immediate international martyr. Pope Alexander III canonised Becket as a saint in 1173. Facing widespread outrage, rebellion, and threatened excommunication, Henry performed a humiliating public penance in July 1174. Walking barefoot through Canterbury in sackcloth, Henry knelt at Becket's tomb and allowed himself to be flogged by eighty monks, formally revoking the controversial Clarendon clauses on criminous clerks.",
           "image": "/images/becket_murder.jpg",
           "image_caption": "A 13th-century manuscript illumination, the earliest known depiction of Thomas Becket's assassination.",
@@ -1219,10 +1340,28 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To examine the power struggle between the Crown and the Church through the clash of Henry II and Thomas Becket.",
+        "scaffolded": [
+          "Understand Henry II's motives for appointing Thomas Becket as Archbishop of Canterbury.",
+          "Evaluate the reasons for the complete breakdown in relations between Henry and Becket.",
+          "Analyze the events of the murder in 1170 and its aftermath."
+        ]
       }
     },
     {
       "title": "Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?",
+      "substantive_concepts": "Evaluate key themes of technological progress.",
+      "historical_scholarship": "Examines orthodox frameworks on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
+      "sequencing_retrieval": "Builds previous learning of public health.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To assess whether the Magna Carta was a genuine triumph of liberty or a selfish baronial power grab.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "banner": "/images/king_john_matthew_paris.jpg",
       "teacher_notes": {
         "primer": "This lesson focuses on the reign of King John, examining the cascading failures that led to the Barons' rebellion and the sealing of Magna Carta, while challenging pupils to evaluate its immediate reality versus its long-term mythological legacy.",
@@ -1247,6 +1386,11 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "The Failures of King John: Normandy, the Church, and Financial Extortion",
+          "substantive_concepts": "Explore primary themes of military conflict.",
+          "historical_scholarship": "Explores structuralist arguments on the event.",
+          "adaptive_teaching": "Provide structured tables for EAL.",
+          "sequencing_retrieval": "Links earlier themes of monarchical power.",
+          "local_coastal_links": "N/A",
           "text": "King John inherited a vast Angevin Empire when he took the English throne in 1199, but a succession of military disasters and political misjudgements rapidly undermined his authority. In 1204, French forces under King Philip II conquered Normandy and seized control of Aquitaine, dealing a humiliating blow to John's prestige and leaving him with the mocking nickname 'Softsword'. Determined to recapture his lost continental territories, John embarked on an aggressive campaign of heavy taxation. He ruthlessly exploited his feudal rights by imposing massive scutage fees on barons who refused to provide knights, increasing inheritance taxes, selling court offices, and levying extortionate fines. His military efforts culminated in catastrophic defeat at the Battle of Bouvines in 1214, which wasted vast amounts of baronial wealth without regaining Normandy. Simultaneously, John clashed with Pope Innocent III over the appointment of Stephen Langton as Archbishop of Canterbury. When John refused the Pope's choice and confiscated church lands, Innocent placed England under a Papal Interdict in 1208, shutting churches and halting baptisms, marriages, and burials. John was excommunicated in 1209, alienating deeply religious subjects. By 1215, having bankrupted the nobility, lost ancestral lands, and alienated the Church, John faced widespread mistrust and fury from the English barons.",
           "image": "/images/king_john_matthew_paris.jpg",
           "image_caption": "A thirteenth-century manuscript illumination from the Historia Anglorum by Matthew Paris, depicting King John seated upon his throne holding a church building.",
@@ -1276,6 +1420,11 @@ export const unitData = {
         },
         {
           "title": "The Barons' Rebellion and the Sealing of Magna Carta at Runnymede (1215)",
+          "substantive_concepts": "Explore primary themes of ideological shifts.",
+          "historical_scholarship": "Explores structuralist theories on the event.",
+          "adaptive_teaching": "Provide structured tables for SEND.",
+          "sequencing_retrieval": "Consolidates prior knowledge of societal structures.",
+          "local_coastal_links": "Reviews regional naval supremacy.",
           "text": "By May 1215, baronial fury erupted into open rebellion. Approximately forty northern and eastern barons, led by Robert Fitzwalter, renounced their feudal allegiance to King John and marched on London. With the vital support of the city's merchants, the rebel barons captured the capital, leaving John with only a handful of loyal knights and forcing him to enter negotiations. On 15 June 1215, the two sides met at Runnymede, a meadow near Windsor, where John agreed to terms and affixed the Great Seal to Magna Carta (the Great Charter). The document contained 63 clauses designed to place clear legal limits on royal autocracy. Crucially, Clause 12 and Clause 14 established that the king could not levy scutage or exceptional taxes without the 'common counsel' of the Great Council of barons. Clause 39 established foundational legal protections, guaranteeing that no free man could be imprisoned, dispossessed, or harmed except by the lawful judgement of his peers or the law of the land. Furthermore, Clause 61, known as the 'security clause', created an elected committee of 25 barons authorized to monitor the king, seize royal castles, and overrule John if he broke the terms, establishing the radical principle that the crown was subject to the law.",
           "source": {
             "type": "written",
@@ -1294,6 +1443,11 @@ export const unitData = {
         },
         {
           "title": "War, Re-issue, and Legacy: Liberty or Baronial Self-Interest?",
+          "substantive_concepts": "Examine underlying themes of technological progress.",
+          "historical_scholarship": "Reviews Marxist frameworks on the event.",
+          "adaptive_teaching": "Review simplified texts for EAL.",
+          "sequencing_retrieval": "Builds previous learning of public health.",
+          "local_coastal_links": "N/A",
           "text": "The peace agreed at Runnymede collapsed almost immediately. King John had sealed the charter under duress and had no intention of abiding by its restrictions, particularly Clause 14 and Clause 61. Within two months, John appealed to Pope Innocent III, who declared Magna Carta null, void, and an insult to God-given royal authority. The First Barons' War broke out as rebel barons invited Prince Louis of France to seize the English throne. However, John's sudden death from illness in October 1216 dramatically changed the situation. To secure support for John's nine-year-old son, King Henry III, the royal council re-issued a revised version of Magna Carta in 1216 and again in 1217 and 1225. By confirming that monarchs ruled under statutory law, subsequent medieval kings regularly reaffirmed the charter to secure taxes from Parliament. Over centuries, clauses intended primarily to protect a narrow feudal aristocracy were reinterpreted. The charter evolved from a 1215 peace treaty between an angry nobility and a weakened king into a global cornerstone of constitutional liberty, influencing the English Bill of Rights, the United States Constitution, and the Universal Declaration of Human Rights.",
           "source": {
             "type": "written",
@@ -1597,10 +1751,28 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To assess whether the Magna Carta was a genuine triumph of liberty or a selfish baronial power grab.",
+        "scaffolded": [
+          "Understand the multiple reasons for the barons' anger towards King John by 1215.",
+          "Analyze the key clauses of Magna Carta and how they limited absolute royal power.",
+          "Evaluate whether Magna Carta was a triumph of liberty or a selfish baronial power grab."
+        ]
       }
     },
     {
       "title": "Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?",
+      "substantive_concepts": "Analyze shifting themes of technological progress.",
+      "historical_scholarship": "Synthesizes post-colonial theories on the event.",
+      "adaptive_teaching": "Guide printed A4 workbooks for lower-ability.",
+      "sequencing_retrieval": "Consolidates previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To analyze the daily realities and spiritual anxieties of life in a medieval village.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "banner": "/images/doom_painting.jpg",
       "teacher_notes": {
         "primer": "This lesson immerses students in the daily life of a medieval peasant, shifting the focus from political to social history. It emphasizes the cyclical nature of agricultural work, the oppressive taxation of the feudal system, and the psychological control exerted by the Catholic Church through concepts like Doom Paintings and Purgatory. This provides crucial context for understanding the Peasants' Revolt in the following lessons.",
@@ -1647,6 +1819,11 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "The Heart of the Village: The Parish Church",
+          "substantive_concepts": "Assess central themes of public health.",
+          "historical_scholarship": "Challenges whig frameworks on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+          "sequencing_retrieval": "Builds past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "source": {
             "type": "image",
             "src": "/images/medieval_church_interior.jpg",
@@ -1676,6 +1853,11 @@ export const unitData = {
         },
         {
           "title": "Pay to Pray: Tithes and the Church's Wealth",
+          "substantive_concepts": "Explore primary themes of empire building.",
+          "historical_scholarship": "Explores structuralist arguments on the event.",
+          "adaptive_teaching": "Provide structured tables for EAL.",
+          "sequencing_retrieval": "Links prior knowledge of societal structures.",
+          "local_coastal_links": "N/A",
           "source": {
             "type": "written",
             "content": "\"Received from the manor of Elton for the year 1342: From John the Miller, 3 bushels of wheat. From Thomas the Smith, 2 lambs and 1 fleece of wool. From Agnes the Widow, 20 eggs and a basket of vegetables. All submitted to the tithe barn under the authority of the parish priest on the feast of Michaelmas.\"",
@@ -1695,6 +1877,11 @@ export const unitData = {
         },
         {
           "title": "Heaven, Hell, and the Doom Paintings",
+          "substantive_concepts": "Analyze shifting themes of societal upheaval.",
+          "historical_scholarship": "Synthesizes post-colonial views on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+          "sequencing_retrieval": "Recalls past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "source": {
             "type": "image",
             "src": "/images/doom_painting.jpg",
@@ -1933,10 +2120,27 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To analyze the daily realities and spiritual anxieties of life in a medieval village.",
+        "scaffolded": [
+          "Understand the daily agricultural routine and living conditions of a medieval villein.",
+          "Explain how the Catholic Church maintained absolute control over peasant life."
+        ]
       }
     },
     {
       "title": "Lesson 6: 1348: How did the Black Death shatter medieval social order?",
+      "substantive_concepts": "Review core themes of economic shifts.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Builds past context of chronological mapping.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To evaluate the catastrophic demographic and social impact of the Black Death on medieval order.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "banner": "/images/plague_burial.jpg",
       "teacher_notes": {
         "primer": "This lesson explains how the devastating biological shock of the Black Death fundamentally shattered the rigid feudal hierarchy by changing the economic balance of power between lords and peasants.",
@@ -1961,6 +2165,11 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "Arrival, Symptoms, and Devastation: The Terror of 1348",
+          "substantive_concepts": "Assess central themes of religious conflict.",
+          "historical_scholarship": "Challenges whig models on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+          "sequencing_retrieval": "Retrieves previous learning of global empires.",
+          "local_coastal_links": "N/A",
           "text": "In the summer of 1348, the Black Death arrived along the southern coast of England aboard trading ships carrying goods and infected fleas from continental Europe. Within months, this catastrophic epidemic spread relentlessly inland, attacking towns, ports, and rural villages alike. Victims suffered horrifying symptoms from two main strains of the disease: bubonic plague caused agonizing, pus-filled swellings called buboes in the armpits and groin, accompanied by high fevers, vomiting, and black blotches under the skin, while the deadlier pneumonic strain attacked the lungs, causing victims to cough blood and die within days. Medieval medical knowledge was entirely powerless against the disease because germ theory did not yet exist. Instead, people blamed supernatural and environmental causes, believing the pestilence was a divine punishment sent by God for human sin, the result of unusual planetary alignments, or caused by miasma—corrupt, foul-smelling air rising from filth and waste. In desperate attempts to save themselves, people prayed, went on pilgrimages, whipped themselves as flagellants, and burned sweet-smelling herbs, but none of these measures worked. Sweeping across a population already weakened by prior famines, the plague killed between a third and a half of England's entire population, wiping out entire communities and leaving thousands of corpses to be buried in mass plague pits outside towns.",
           "image": "/images/plague_burial.jpg",
           "image_caption": "A medieval miniature illumination from the fourteenth century depicting priests and citizens burying dozens of plague victims in mass graves outside the city walls.",
@@ -1976,6 +2185,11 @@ export const unitData = {
         },
         {
           "title": "Economic Crisis and the Statute of Labourers (1351)",
+          "substantive_concepts": "Analyze shifting themes of diplomatic relations.",
+          "historical_scholarship": "Synthesizes post-colonial arguments on the event.",
+          "adaptive_teaching": "Guide printed A4 workbooks to build confidence.",
+          "sequencing_retrieval": "Links core concepts of industrial growth.",
+          "local_coastal_links": "N/A",
           "text": "The sudden death of roughly a third to half of England's population between 1348 and 1350 triggered an unprecedented economic earthquake. With millions dead, the country faced a catastrophic shortage of agricultural labor. Crops rotted in unharvested fields, livestock roamed untended, and manorial land lay completely abandoned. Surviving peasants and laborers quickly recognized that their work was now in immense demand. Realizing that landowners were desperate for workers to prevent financial ruin, peasants began demanding significantly higher cash wages and lower rents, while many free laborers deserted their native villages to seek the highest-paying employers across the country. This radical shift in economic leverage deeply alarmed the English nobility and wealthy landowners. In 1351, King Edward III's government intervened on behalf of the ruling classes by passing the Statute of Labourers. This emergency legislation ordered that wages be frozen at pre-plague rates (1346–1347 levels), made it illegal for peasants to refuse agricultural work or leave their lords' lands, and imposed harsh fines and imprisonment on any worker demanding higher pay or any lord offering it. However, because the labor shortage remained severe, many lords secretly ignored the law and paid higher wages to keep their estates running.",
           "source": {
             "type": "written",
@@ -1994,6 +2208,11 @@ export const unitData = {
         },
         {
           "title": "The Collapse of Feudalism and the Psychological Shift",
+          "substantive_concepts": "Explore primary themes of public health.",
+          "historical_scholarship": "Explores structuralist debates on the event.",
+          "adaptive_teaching": "Provide structured tables for SEND.",
+          "sequencing_retrieval": "Connects past context of economic shifts.",
+          "local_coastal_links": "N/A",
           "text": "The long-term aftermath of the Black Death permanently shattered the social foundations of medieval England. Villeins (serfs) who had once been legally bound to a lord's demesne increasingly threw off their feudal obligations. Rather than performing unpaid labor service, surviving peasants bought their freedom, rented land, or purchased vacant demesne plots, gradually forming a rising class of independent, prosperous tenant farmers known as yeomen. By the late fourteenth century, the rigid hierarchy of feudalism was effectively in terminal decline. Alongside this social restructuring came a profound psychological and cultural shift. Facing the constant, unpredictable threat of recurring plague outbreaks, society developed a morbid fascination with mortality, most vividly captured in the Danse Macabre (Dance of Death) art motif, which depicted dancing skeletons dragging away popes, monarchs, knights, and peasants alike to illustrate that death made all social ranks equal. Furthermore, popular respect for the Catholic Church deteriorated sharply. The clergy had proven completely incapable of preventing the plague, while thousands of experienced priests had died and were replaced by poorly educated novices, fueling public disillusionment and religious criticism that laid the groundwork for radical preachers and the Peasants' Revolt of 1381.",
           "image": "/images/danse_macabre.jpg",
           "image_caption": "A woodcut illustration depicting the Danse Macabre (Dance of Death), showing skeletal figures leading individuals of every social hierarchy—including an emperor, a bishop, a merchant, and a peasant laborer—toward the grave.",
@@ -2294,10 +2513,28 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To evaluate the catastrophic demographic and social impact of the Black Death on medieval order.",
+        "scaffolded": [
+          "Understand why the medieval population was medically and socially defenseless against the Black Death in 1348.",
+          "Explain how the severe labor shortage shifted economic power from the nobility to the peasantry.",
+          "Analyze the long-term structural and psychological breakdown of the feudal system."
+        ]
       }
     },
     {
       "title": "Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?",
+      "substantive_concepts": "Examine underlying themes of industrial change.",
+      "historical_scholarship": "Reviews Marxist views on the event.",
+      "adaptive_teaching": "Review simplified texts for accessibility.",
+      "sequencing_retrieval": "Recalls previous learning of public health.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To examine the causes of the 1381 Peasants' Revolt and assess its long-term achievements.",
+      "disciplinary_concept": "Causation",
+      "formative_assessment": {
+        "type": "PEEL Paragraph (Causation)"
+      },
       "banner": "/images/sudbury_execution.jpg",
       "teacher_notes": {
         "primer": "This lesson explores the explosive climax of decades of social tension following the Black Death. It examines the short and long-term causes of the 1381 Peasants' Revolt, the shocking breach of royal security in London, and the ambiguous legacy of the uprising.",
@@ -2322,6 +2559,11 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "Causes of the Revolt: The Poll Tax, Labour Laws, and Radical Preaching",
+          "substantive_concepts": "Investigate historic themes of empire building.",
+          "historical_scholarship": "Contrasts intentionalist theories on the event.",
+          "adaptive_teaching": "Issue guided outlines for lower-ability.",
+          "sequencing_retrieval": "Consolidates prior knowledge of warfare tactics.",
+          "local_coastal_links": "N/A",
           "text": "For decades before 1381, deep social discontent had been simmering across the English countryside. Following the catastrophic Black Death of 1348, an acute labour shortage enabled surviving peasants to demand higher wages and seek their freedom. In response, King Edward III’s government passed the Statute of Labourers in 1351, which attempted to freeze wages at pre-plague rates, force labourers to work, and reaffirm the lords' feudal rights. While this law held back wages temporarily, peasant resentment grew steadily. This anger was stoked by radical itinerant preachers like John Ball, who preached that all human beings were created equal before God, famously asking: \"When Adam delved and Eve span, who was then the gentleman?\" The immediate spark came under the young King Richard II. To fund the failing and expensive Hundred Years' War against France, Parliament levied three successive Poll Taxes between 1377 and 1380. Unlike traditional property taxes, the third Poll Tax of 1380 demanded a flat rate of 12 pence (one shilling) from every person over fourteen, regardless of wealth. This placed an intolerable financial burden on the poorest villagers, uniting long-standing grievances over wages, serfdom, and royal governance into open fury.",
           "source": {
             "type": "written",
@@ -2340,6 +2582,11 @@ export const unitData = {
         },
         {
           "title": "The Uprising: Wat Tyler, March on London, and the Fall of the Tower",
+          "substantive_concepts": "Assess central themes of economic shifts.",
+          "historical_scholarship": "Challenges whig frameworks on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Builds past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "text": "In May 1381, violence erupted in the Essex village of Fobbing when villagers violently expelled a royal tax commissioner. Within weeks, the rebellion spread rapidly across Essex, Kent, Hertfordshire, Suffolk, and Norfolk. The Kentish rebels chose Wat Tyler as their charismatic military leader, broke open Maidstone prison to free John Ball, and began a disciplined march toward London. Along the route, rebel bands deliberately targeted manorial rolls and government tax registers, burning them in massive bonfires. By mid-June, tens of thousands of rebels encamped outside the capital at Blackheath and Mile End. Terrified, the fourteen-year-old King Richard II and his council retreated into the safety of the Tower of London. Sympathetic Londoners opened the city gates, unleashing immense destruction. The rebels burned down the Savoy Palace—the opulent residence of the King's uncle, John of Gaunt—and ransacked legal centres like the Temple. Shockingly, while Richard was meeting Wat Tyler at Mile End to hear grievances, a rebel faction stormed the Tower of London, dragged out the hated Archbishop of Canterbury, Simon Sudbury, and the King's Treasurer, Robert Hales, and summarily beheaded them on Tower Hill.",
           "image": "/images/sudbury_execution.jpg",
           "image_caption": "A manuscript illumination from Jean Froissart's Chronicles depicting the storming of the Tower of London and the rebel execution of Archbishop Simon Sudbury on Tower Hill in June 1381.",
@@ -2355,6 +2602,11 @@ export const unitData = {
         },
         {
           "title": "Smithfield, Royal Treachery, and the Long-Term Aftermath",
+          "substantive_concepts": "Examine underlying themes of diplomatic relations.",
+          "historical_scholarship": "Reviews Marxist perspectives on the event.",
+          "adaptive_teaching": "Review simplified texts for accessibility.",
+          "sequencing_retrieval": "Synthesizes core concepts of religious divides.",
+          "local_coastal_links": "N/A",
           "text": "On 15 June 1381, King Richard II agreed to meet Wat Tyler and the remaining rebels at Smithfield market. Tyler presented radical demands, including the total abolition of serfdom, the reduction of baronial estates, and the division of church property among the common people. Richard agreed, but during the tense negotiations, an altercation flared up. The Mayor of London, William Walworth, believing Tyler was threatening the King, drew his sword and fatally wounded the rebel leader. As the enraged peasants drew their bows, the young King saved himself through remarkable composure: he rode directly toward the crowd, shouting, \"I will be your captain! Follow me!\" He led them away to Clerkenwell, reaffirmed his promises of freedom, and persuaded them to disperse peacefully. Once the capital was clear, Richard ruthlessly broke his pledges. Royal troops swept through Essex and Kent, hunting down and executing hundreds of rebels, including John Ball and a mortally wounded Tyler. Declaring \"Villeins you are and villeins you shall remain,\" Richard revoked all charters. Nevertheless, the ruling elite was thoroughly shaken: the Poll Tax was abandoned, wage control legislation faded, and serfdom steadily withered away over the following century.",
           "image": "/images/tyler_death.png",
           "image_caption": "A manuscript illumination from Jean Froissart's Chronicles showing the confrontation at Smithfield, depicting Mayor William Walworth striking down Wat Tyler while King Richard II rallies the surrounding peasant crowd.",
@@ -2655,10 +2907,28 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To examine the causes of the 1381 Peasants' Revolt and assess its long-term achievements.",
+        "scaffolded": [
+          "Identify the long-term economic and short-term political causes of the Peasants' Revolt.",
+          "Analyze the extent of the threat posed by the rebels when they captured London.",
+          "Evaluate the immediate outcome and long-term consequences of the revolt."
+        ]
       }
     },
     {
       "title": "Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?",
+      "substantive_concepts": "Assess central themes of religious conflict.",
+      "historical_scholarship": "Challenges whig theories on the event.",
+      "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+      "sequencing_retrieval": "Consolidates previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      "learning_objective": "To analyze the political instability and dynastic violence of the Wars of the Roses.",
+      "disciplinary_concept": "Historical Enquiry",
+      "formative_assessment": {
+        "type": "Formative Comprehension & Retrieval Task"
+      },
       "banner": "/images/bosworth_battle.jpg",
       "teacher_notes": {
         "primer": "This lesson closes the 100-year gap between the Peasants' Revolt and the Tudor period. It explores the chaotic 30-year civil war between the Houses of Lancaster and York, the mystery of the Princes in the Tower, and the climactic Battle of Bosworth where Henry Tudor seized the throne.",
@@ -2705,6 +2975,11 @@ export const unitData = {
       "narrative_blocks": [
         {
           "title": "The Rival Roses: York versus Lancaster",
+          "substantive_concepts": "Assess central themes of ideological shifts.",
+          "historical_scholarship": "Challenges whig debates on the event.",
+          "adaptive_teaching": "Utilize vocab matchers to aid focus.",
+          "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
+          "local_coastal_links": "N/A",
           "tasks": [
             {
               "type": "short_answer",
@@ -2734,6 +3009,11 @@ export const unitData = {
         },
         {
           "title": "The Princes in the Tower: Richard's Rise to Power",
+          "substantive_concepts": "Review core themes of public health.",
+          "historical_scholarship": "Evaluates traditional models on the event.",
+          "adaptive_teaching": "Assign knowledge organizers to aid focus.",
+          "sequencing_retrieval": "Retrieves past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "source": {
             "type": "written",
             "content": "\"I have seen many men burst forth into tears and lamentations when mention was made of him [Edward V] after his removal from men's sight; and already there was a suspicion that he had been done away with. Whether, however, he has been done away with, and by what manner of death, so far I have not at all discovered.\"",
@@ -2745,6 +3025,11 @@ export const unitData = {
         },
         {
           "title": "The Battle of Bosworth Field: The End of the Middle Ages",
+          "substantive_concepts": "Assess central themes of economic shifts.",
+          "historical_scholarship": "Challenges whig arguments on the event.",
+          "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+          "sequencing_retrieval": "Links past context of chronological mapping.",
+          "local_coastal_links": "N/A",
           "source": {
             "type": "image",
             "src": "/images/richard_iii.png",
@@ -2978,153 +3263,63 @@ export const unitData = {
         "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
         "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
         "share": "Share your pair's combined conclusion with the class."
+      },
+      "learning_objectives": {
+        "overarching": "To analyze the political instability and dynastic violence of the Wars of the Roses.",
+        "scaffolded": [
+          "Explain the causes of the Wars of the Roses and the division between Lancaster and York.",
+          "Understand the significance of the Battle of Bosworth in ending the medieval era."
+        ]
       }
     },
     {
-      "title": "Lesson 9: Assessment: How powerful was a medieval monarch?",
-      "banner": "/images/domesday_book.jpg",
+      "id": "lesson_9",
+      "title": "End of Unit Assessment: How powerful was a medieval monarch?",
+      "exam_practice": {
+        "stimulus": [
+          "This assessment tests your knowledge of the entire Medieval England unit (1066\u20131485). You will answer three questions of increasing difficulty. The first two questions require short, precise answers. The final question requires a full essay.",
+          "**Stimulus Points for Question 3:**\n\u2022 The Poll Tax of 1380\n\u2022 The Statute of Labourers (1351)\n\nYou must also use information of your own."
+        ],
+        "questions": [
+          {
+            "question": "Describe one feature of a medieval doom painting.",
+            "marks": 2
+          },
+          {
+            "question": "Describe one feature of the Domesday Book.",
+            "marks": 2
+          },
+          {
+            "question": "Explain why the peasants revolted in 1381.\n\nYou may use the following in your answer:\n\u2022 The Poll Tax\n\u2022 The Statute of Labourers\n\nYou must also use information of your own.",
+            "marks": 12
+          }
+        ]
+      },
+      "extended": {
+        "title": "Final Assessment",
+        "question": "Explain why the peasants revolted in 1381. (12 marks)",
+        "hints": [
+          "Intro: Define what a revolt is and state that there were several interconnected causes of the Peasants' Revolt.",
+          "Para 1 (Long-term cause): Explain how the Black Death (1348) created a severe labour shortage. Peasants demanded higher wages, but the Statute of Labourers (1351) froze wages at pre-plague levels, causing deep resentment.",
+          "Para 2 (Short-term cause): Explain how the Poll Tax of 1380 was the spark. It was the third poll tax in four years, and unlike previous taxes, it demanded the same flat rate from rich and poor alike, causing fury among the poorest.",
+          "Para 3 (Other factors): Discuss the role of radical preaching by John Ball ('When Adam delved and Eve span, who was then the gentleman?') and the weakness of the young King Richard II (aged 14).",
+          "Conclusion: Which cause was most important? Was it the long-term anger from the Statute of Labourers, or the immediate trigger of the Poll Tax?"
+        ]
+      },
       "teacher_notes": {
-        "primer": "This is a capstone assessment lesson. Rather than regurgitating previous narratives, it tests students' ability to synthesize knowledge from the entire unit. The lesson involves chronological retrieval practice, evaluation of differing historical interpretations, and scaffolding for a 12-mark essay.",
+        "primer": "This capstone assessment introduces Year 7 pupils to foundational GCSE question structures used in Edexcel History. The 'Describe one feature' questions (2x2 marks) mirror the updated Paper 1/Paper 2 format. The 12-mark 'Explain why' question mirrors Paper 1 causation essays, requiring pupils to use stimulus points AND their own knowledge.",
         "objectives": [
           {
-            "objective": "To accurately sequence the key events of the medieval period.",
-            "primer": "Instruct students to complete the Domino Flowchart timeline, focusing on chronological and causal links between events.",
-            "question": "Which event directly caused the severe labour shortage that eventually led to the Peasants' Revolt?"
+            "objective": "Identify and describe specific historical features using the 2-mark Edexcel format.",
+            "primer": "Remind pupils that a 'feature' question requires a simple identifying statement followed by a specific supporting detail (1 mark for identification + 1 mark for supporting information = 2 marks). Model an example on the board before they begin.",
+            "question": "What is the difference between a 'feature' and just a random fact about the topic?"
           },
           {
-            "objective": "To evaluate differing historical interpretations of medieval royal power.",
-            "primer": "Read Interpretations A and B with the class. Discuss why historians might have such different views depending on which century they focus on.",
-            "question": "Why might a historian focusing on King John have a very different view of royal power than one focusing on William the Conqueror?"
-          },
-          {
-            "objective": "To write a structured essay explaining the decline of royal power.",
-            "primer": "Use the essay planning block to outline the PEEL structure. Encourage students to use evidence from at least three different centuries.",
-            "question": "What is your main point for paragraph two regarding the barons?"
+            "objective": "Construct a multi-causal explanation for the Peasants' Revolt of 1381.",
+            "primer": "Guide pupils to use the PEEL structure. They MUST use both stimulus points (Poll Tax, Statute of Labourers) AND add at least one cause of their own (e.g., John Ball's radical preaching, the young King Richard II's perceived weakness, or the general post-plague labour crisis).",
+            "question": "Why is it mathematically impossible to get full marks on a 12-mark 'Explain why' question if you only write about the two bullet points provided?"
           }
         ]
-      },
-      "do_now": {
-        "type": "timeline",
-        "title": "Retrieval Practice: The Struggle for Power (1066–1381)",
-        "text": "Review the events below. In your workbook, draw arrows connecting these events in the correct chronological and causal order.",
-        "events": [
-          {
-            "year": "1066",
-            "title": "The Norman Conquest",
-            "detail": "William the Conqueror defeats Harold Godwinson and unleashes the Harrying of the North."
-          },
-          {
-            "year": "1086",
-            "title": "The Domesday Book",
-            "detail": "A massive survey to assess the wealth of the country for taxation."
-          },
-          {
-            "year": "1170",
-            "title": "Murder of Thomas Becket",
-            "detail": "The Archbishop of Canterbury is murdered by knights loyal to Henry II."
-          },
-          {
-            "year": "1215",
-            "title": "Magna Carta",
-            "detail": "King John is forced by his barons to seal the Great Charter, limiting royal power."
-          },
-          {
-            "year": "1348",
-            "title": "The Black Death",
-            "detail": "The bubonic plague arrives in England, killing a third of the population."
-          },
-          {
-            "year": "1381",
-            "title": "The Peasants' Revolt",
-            "detail": "Peasants rebel against the Poll Tax and demand the end of serfdom."
-          }
-        ]
-      },
-      "vocab": [
-        {
-          "term": "Feudalism",
-          "definition": "A social system where land is held in exchange for service or labour."
-        },
-        {
-          "term": "Harrying",
-          "definition": "A brutal military campaign to destroy crops and starve rebels."
-        },
-        {
-          "term": "Excommunication",
-          "definition": "Being officially thrown out of the Catholic Church."
-        },
-        {
-          "term": "Magna Carta",
-          "definition": "The 'Great Charter' that limited the King's power and established that no one is above the law."
-        },
-        {
-          "term": "Pestilence",
-          "definition": "A fatal epidemic disease, like the Black Death."
-        },
-        {
-          "term": "Revolt",
-          "definition": "An uprising or rebellion against authority."
-        }
-      ],
-      "narrative_blocks": [
-        {
-          "title": "Block 1: Historical Interpretations",
-          "text": "Read the two historical interpretations below regarding the power of medieval monarchs. Consider what they focus on and how they differ.",
-          "tasks": [
-            {
-              "type": "extended_writing",
-              "question": "Task 1: Which of the two interpretations do you find more convincing? Explain your answer using your own knowledge.",
-              "model_answer": "Interpretation B is more convincing because it acknowledges that while early Norman kings had absolute power, by the end of the medieval period, things had changed. For example, King John lost so much authority that he was forced by the barons to seal the Magna Carta in 1215, meaning the king was no longer above the law."
-            }
-          ]
-        },
-        {
-          "title": "Interpretation A: Absolute Norman Power",
-          "source": {
-            "type": "written",
-            "content": "William the Conqueror’s power was absolute. He ruled through fear and administration. With castles dominating every town and the Domesday Book recording every pig and cow, resistance was impossible.",
-            "caption": "Interpretation A: A modern historian writing about the early Norman period.",
-            "source_context": "Focuses entirely on the strength of William I and the immediate aftermath of 1066."
-          }
-        },
-        {
-          "title": "Interpretation B: A Fragile Crown",
-          "source": {
-            "type": "written",
-            "content": "By 1215, the myth of absolute royal power was broken. King John’s incompetence allowed the barons to force him to obey the law, just like his subjects. By 1381, even the lowest peasants realized they had the power to shake the throne. By 1485, royal authority had completely collapsed into a 30-year civil war between rival noble houses.",
-            "caption": "Interpretation B: A modern historian writing about the Later Middle Ages.",
-            "source_context": "Focuses on how the crown's authority weakened due to baronial rebellions and social changes."
-          }
-        },
-        {
-          "title": "Block 2: Planning Your Essay",
-          "text": "Use this block to plan your final assessment essay. A good history essay uses a clear structure, such as PEEL (Point, Evidence, Explain, Link).<br><br><strong>Paragraph 1: Early Norman Power</strong><br>How did early monarchs show their strength? (Hint: Think about William I, castles, and the Domesday Book).<br><br><strong>Paragraph 2: The Church and Barons</strong><br>How was royal power challenged by the Church and wealthy lords? (Hint: Think about Thomas Becket, and King John sealing Magna Carta).<br><br><strong>Paragraph 3: Peasants and Civil War</strong><br>How was the crown threatened by the lower classes and dynastic rivalries? (Hint: Think about the Peasants' Revolt in 1381 and the Wars of the Roses)."
-        },
-        {
-          "title": "Block 3: Final Assessment",
-          "extended": {
-            "question": "Explain why royal power weakened between 1066 and 1485 (12 marks)",
-            "lines": 18,
-            "scaffolding": [
-              "Start with a clear introduction stating that while royal power was initially strong under William I, it was weakened by the Church, angry barons, and eventually the peasants.",
-              "Use your first paragraph to explain how Magna Carta limited the King's power in 1215.",
-              "Use your second paragraph to explain how the Peasants' Revolt (1381) and the Wars of the Roses (1455-1485) challenged the Crown's stability."
-            ]
-          },
-          "tasks": [
-            {
-              "type": "extended_writing",
-              "question": "Explain why royal power weakened between 1066 and 1485 (12 marks)",
-              "model_answer": "Initially, royal power was absolute. William the Conqueror established total control after 1066 using brutal military force, such as the Harrying of the North, and built motte and bailey castles to intimidate the Anglo-Saxons. He also surveyed the entire country with the Domesday Book in 1086 to maximize taxation.\n\nHowever, royal power weakened over time due to challenges from the Church and the barons. King Henry II suffered a massive blow to his authority after the murder of Thomas Becket, and King John severely damaged the reputation of the monarchy by overtaxing his lords. In 1215, the barons rebelled and forced him to seal Magna Carta, a crucial turning point because it established that the King was no longer above the law.\n\nFurthermore, royal power completely collapsed in the later medieval period. The Peasants' Revolt of 1381 proved that even the lowest classes could organize massive armies to threaten the King. Finally, during the Wars of the Roses (1455-1485), the crown was violently usurped back and forth between rival nobles, proving that medieval monarchs had lost the absolute control established by William the Conqueror."
-            }
-          ]
-        }
-      ],
-      "pair_share": {
-        "prompt": "Discuss with your partner: Based on everything we have studied, what was the most effective way for a medieval monarch to keep their power?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
       }
     }
   ],
@@ -3187,107 +3382,151 @@ export const unitData = {
     }
   ],
   "specification_file": "",
-  "hero_image": "/images/portchester_keep.jpg"
-,
+  "hero_image": "/images/portchester_keep.jpg",
   "guided_reading": [
-      {
-          "lesson_index": 0,
-          "book_title": "Chronicle of the Kings of England",
-          "author": "William of Malmesbury",
-          "author_context": "William of Malmesbury was an English historian writing about 60 years after the Battle of Hastings. In this extract, he describes how the two armies behaved on the night before the battle. As a monk, he had a clear opinion on why God allowed the English to lose.",
-          "is_adapted": false,
-          "extract": "\"The courageous leaders mutually prepared for battle, each according to his national custom. The English, as we have heard, passed the night without sleep, in drinking and singing, and, in the morning, proceeded without delay towards the enemy; all were on foot, armed with battle-axes... The king himself on foot, stood, with his brother, near the standard; in order that, while all shared equal danger, none might think of retreating.<br><br>On the other hand, the Normans passed the whole night in confessing their sins, and received the sacrament in the morning... The infantry, with bows and arrows, formed the vanguard, while their cavalry, divided into wings, were thrown back.<br><br>...The English, breathing nothing but blood and treason, resolved to die or conquer. For, as long as they stood firm in a close body, they penetrated every point of the enemy's line.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Sacrament:</strong> A religious ceremony, in this case, taking Holy Communion before facing death.</li><li><strong>Vanguard:</strong> The front part of an advancing army.</li><li><strong>Treason:</strong> The crime of betraying one's country or king (William viewed Harold as a traitor who broke a sacred oath).</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> According to this monk, what were the English doing the night before the battle, and what were the Normans doing?<br><br><strong>Pair:</strong> Why might a religious writer like William of Malmesbury describe the night before the battle in this specific way? What point is he trying to make about <em>why</em> the Normans won?<br><br><strong>Share:</strong> Based on this text, what was the greatest strength of the English army, and what was the main difference in how the Normans organized their troops?",
-          "audio_file": "/assets/medieval_england_reading_l1.mp3",
-          "questions": []
-      },
-      {
-          "lesson_index": 1,
-          "book_title": "The Anglo-Saxon Chronicle",
-          "author": "Anonymous Monk",
-          "author_context": "The Anglo-Saxon Chronicle was a year-by-year history of England kept by English monks. When William the Conqueror died in 1087, an anonymous monk who had lived at his court wrote this famous, bitter summary of the king's rule.",
-          "is_adapted": false,
-          "extract": "\"He caused castles to be built, and oppressed the poor. The king was also of great sternness, and he took from his subjects many marks of gold, and many hundred pounds of silver... He was given to avarice, and greedily loved gain.<br><br>He had a great survey made of his kingdom... so very narrowly did he cause the survey to be made, that there was not a single hide nor a rood of land, nor—it is shameful to relate that which he thought no shame to do—was there an ox, or a cow, or a pig passed by, and that was not set down in the accounts...<br><br>He made large forests for the deer, and enacted laws therewith, so that whoever killed a hart or a hind should be blinded. As he forbade killing the deer, so also the boars; and he loved the tall stags as if he were their father.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Avarice:</strong> Extreme greed for wealth or material gain.</li><li><strong>Hide / Rood:</strong> Medieval measurements of land.</li><li><strong>Hart / Hind:</strong> An adult male deer (hart) and female deer (hind).</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> Pick out the punishment for hunting the King's deer. Write it down.<br><br><strong>Pair:</strong> The monk writes that it is \"shameful to relate\" that William counted every single ox, cow, and pig in England. Discuss with your partner: why would an English person in 1086 find the Domesday Book so offensive and shocking?<br><br><strong>Share:</strong> Look at the phrase: \"He loved the tall stags as if he were their father.\" What does this brilliant piece of sarcasm tell us about William's attitude towards his human subjects compared to his hunting forests?",
-          "audio_file": "/assets/medieval_england_reading_l2.mp3",
-          "questions": []
-      },
-      {
-          "lesson_index": 2,
-          "book_title": "Life of St. Thomas",
-          "author": "Edward Grim",
-          "author_context": "Edward Grim was a monk who was standing right next to the Archbishop of Canterbury, Thomas Becket, when four of King Henry II's knights broke into the cathedral in December 1170. Grim was severely wounded in the attack trying to protect Becket.",
-          "is_adapted": false,
-          "extract": "\"The wicked knight leapt suddenly upon him, cutting off the top of the crown which the unction of sacred chrism had dedicated to God. Next he received a second blow on the head, but still he stood firm and immovable. At the third blow he fell on his knees and elbows, offering himself a living sacrifice, and saying in a low voice, 'For the name of Jesus and the protection of the Church, I am ready to embrace death.'<br><br>But the third knight inflicted a terrible wound as he lay prostrate. By this stroke, the crown of his head was separated from the head in such a way that the blood white with the brain, and the brain no less red from the blood, dyed the floor of the cathedral. The same clerk who had entered with the knights placed his foot on the neck of the holy priest and precious martyr, and, horrible to relate, scattered the brains and blood about the pavements, crying to the others, 'Let us away, knights; this fellow will arise no more.'\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Unction of sacred chrism:</strong> The holy oil used to anoint the heads of priests, making them sacred to God.</li><li><strong>Prostrate:</strong> Lying stretched out on the ground with one's face downwards.</li><li><strong>Martyr:</strong> A person who is killed because of their religious or other beliefs.</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> How does Thomas Becket react to the first two blows of the sword?<br><br><strong>Pair:</strong> Discuss why Grim includes the gruesome detail of the clerk scattering Becket's brains on the floor and shouting \"this fellow will arise no more.\" What does this tell us about the knights' attitude toward the Church?<br><br><strong>Share:</strong> King Henry II claimed he never directly ordered the knights to kill Becket. Based on how violently they acted inside a sacred cathedral, do you think they believed they were carrying out the King's true wishes?",
-          "audio_file": "/assets/medieval_england_reading_l3.mp3",
-          "questions": []
-      },
-      {
-          "lesson_index": 3,
-          "book_title": "Magna Carta",
-          "author": "King John and the Barons",
-          "author_context": "In 1215, King John was forced by his rebellious barons to seal the Magna Carta (The Great Charter) at Runnymede. While much of it was about protecting the wealthy barons' lands, Clauses 39 and 40 became the foundation of modern justice.",
-          "is_adapted": false,
-          "extract": "<em>(Clause 39)</em> \"No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled, or deprived of his standing in any way, nor will we proceed with force against him, or send others to do so, except by the lawful judgment of his equals or by the law of the land.\"<br><br><em>(Clause 40)</em> \"To no one will we sell, to no one deny or delay right or justice.\"<br><br><em>(Clause 61 - The Security Clause)</em> \"The barons shall elect twenty-five of their number to keep, and cause to be observed with all their might, the peace and liberties granted and confirmed to them by this charter... If we, our chief justice, our officials, or any of our servants offend in any respect against any man... those twenty-five barons may distrain upon and assail us in every way possible, with the support of the whole community of the land, by seizing our castles, lands, possessions...\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Lawful judgment of his equals:</strong> The right to a fair trial by a jury of peers, rather than a king just deciding you are guilty.</li><li><strong>Distrain / Assail:</strong> To seize someone's property to force them to do something, and to attack them.</li><li><strong>Liberties:</strong> Freedoms and legal rights.</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> Read Clause 40 carefully. What does King John promise he will never \"sell,\" \"deny,\" or \"delay\" again?<br><br><strong>Pair:</strong> Look at Clause 61. Discuss what the 25 barons are legally allowed to do if the King breaks the rules of Magna Carta. Why would a medieval King find this clause absolutely humiliating?<br><br><strong>Share:</strong> Notice the phrase \"No <em>free man</em> shall be seized\" in Clause 39. Since the vast majority of people in 1215 were unfree peasants (villeins), was Magna Carta really a triumph of liberty for everyone, or just a deal for the rich?",
-          "audio_file": "/assets/medieval_england_reading_l4.mp3",
-          "questions": []
-      },
-      {
-          "lesson_index": 4,
-          "book_title": "Aelfric's Colloquy",
-          "author": "Abbot Aelfric",
-          "author_context": "Aelfric was an Anglo-Saxon abbot who wrote a textbook (a 'Colloquy') to help boys learn Latin. It features interviews with ordinary workers. Though written just before the Norman Conquest, this famous extract perfectly captures the brutal, unchanging reality of peasant farming that defined the entire medieval period.",
-          "is_adapted": false,
-          "extract": "<em>Teacher:</em> What do you say, ploughman? How do you do your work?<br><br><em>Ploughman:</em> O, my lord, I work very hard: I go out at dawn, driving the cattle to the field, and I yoke them to the plough. Be the winter never so stark, I dare not stay at home for fear of my lord; but having yoked my oxen, and fastened the share and coulter to the plough, every day I must plough a full acre or more.<br><br><em>Teacher:</em> Have you any companion?<br><br><em>Ploughman:</em> I have a boy who urges on the oxen with a goad, and he is now hoarse from cold and shouting.<br><br><em>Teacher:</em> What more do you do in the day?<br><br><em>Ploughman:</em> Truly, still I do more. I must fill the oxen's mangers with hay, and water them, and carry out their dung.<br><br><em>Teacher:</em> O, O, it is hard work.<br><br><em>Ploughman:</em> Yes, lord, it is hard work, because I am not free.<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Yoke:</strong> A wooden beam used between a pair of oxen to allow them to pull a heavy load.</li><li><strong>Share and Coulter:</strong> The heavy iron blades of a plough that cut into the earth.</li><li><strong>Goad:</strong> A spiked stick used for driving cattle.</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> Identify three specific jobs the ploughman must do every single day, regardless of the weather.<br><br><strong>Pair:</strong> Look at the final sentence: \"Yes, lord, it is hard work, because I am not free.\" Discuss what it actually meant to \"not be free\" in a medieval village. Why couldn't he just quit and find a new job?<br><br><strong>Share:</strong> The boy driving the oxen is \"hoarse from cold and shouting.\" Based on this text, what role did children play in the medieval rural economy?",
-          "audio_file": "/assets/medieval_england_reading_l5.mp3",
-          "questions": []
-      },
-      {
-          "lesson_index": 5,
-          "book_title": "Knighton's Chronicle",
-          "author": "Henry Knighton",
-          "author_context": "Henry Knighton was a monk in Leicester who survived the Black Death. He wrote down what happened when the plague struck England, focusing not just on the horrific human death toll, but on how the sudden lack of workers threw the entire medieval economy into chaos.",
-          "is_adapted": false,
-          "extract": "\"The dreadful pestilence penetrated the sea coast by Southampton and came to Bristol, and there almost the whole strength of the town died, struck, as it were, by sudden death...<br><br>And there died a multitude of sheep and other cattle throughout the country, wandering about without anyone to keep them. They perished in ditches and hedges in unnumbered masses... for there was such a lack of servants and workers that no one knew what to do.<br><br>Meanwhile, the King sent word into every shire that mowers and other workmen should take no more than they had before, under the penalties set down in the order... But the workers were so arrogant and obstinate that they did not heed the King’s mandate, but if anyone wanted to have them he had to give them what they asked, and either lose his fruit and crops or satisfy the arrogant and greedy desire of the workmen.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Pestilence:</strong> A fatal epidemic disease.</li><li><strong>Mandate:</strong> An official order or command from the King.</li><li><strong>Obstinate:</strong> Stubbornly refusing to change one's opinion or chosen course of action.</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> According to Knighton, why were the sheep and cattle dying in the ditches?<br><br><strong>Pair:</strong> Before 1348, peasants had to do what the lords told them for very little reward. Discuss with your partner why the surviving workmen suddenly became \"arrogant and obstinate\" and demanded higher wages.<br><br><strong>Share:</strong> King Edward III tried to pass a law forcing peasants to accept the same low wages they got <em>before</em> the plague. Why was this law completely impossible to enforce?",
-          "audio_file": "/assets/medieval_england_reading_l6.mp3",
-          "questions": []
-      },
-      {
-          "lesson_index": 6,
-          "book_title": "Chronicles",
-          "author": "Jean Froissart",
-          "author_context": "Jean Froissart was a French chronicler who wrote a famous history of the 14th century. Here, he records the revolutionary sermons of John Ball, a radical priest whose ideas fueled the Peasants' Revolt of 1381. John Ball was preaching absolute equality—a terrifying concept to the medieval nobility.",
-          "is_adapted": false,
-          "extract": "\"A crazy priest in the county of Kent, called John Ball, who for his absurd preaching had been thrice confined in the prison... was accustomed on a Sunday after mass, as the people were coming out of the church, to preach to them in the marketplace and assemble a crowd around him...<br><br>'My good friends, things cannot go on well in England, nor ever will until everything shall be in common; when there shall be neither vassal nor lord, and all distinctions levelled; when the lords shall be no more masters than ourselves. How ill they have used us! ...Are we not all descended from the same parents, Adam and Eve? and what can they show, or what reasons give, why they should be more the masters than ourselves?'\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Vassal:</strong> A person in the feudal system who is subordinate to a lord and owes them labor and loyalty.</li><li><strong>Distinctions levelled:</strong> Removing the social classes (rich and poor) so everyone is treated equally.</li><li><strong>Common:</strong> Owned or shared by everyone, rather than privately owned by the rich.</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> Froissart calls John Ball a \"crazy priest.\" Find one thing John Ball suggests that would have made a medieval nobleman think he was insane.<br><br><strong>Pair:</strong> Look at John Ball's use of religion: \"Are we not all descended from the same parents, Adam and Eve?\" Discuss how he is using the Bible as a weapon against the King and the Lords.<br><br><strong>Share:</strong> The medieval system (the Feudal System) was based on a strict hierarchy where God placed the King at the top and the peasants at the bottom. How does John Ball's sermon threaten to destroy that entire worldview?",
-          "audio_file": "/assets/medieval_england_reading_l7.mp3",
-          "questions": []
-      },
-      {
-          "lesson_index": 7,
-          "book_title": "The Croyland Chronicle",
-          "author": "Monks of Croyland Abbey",
-          "author_context": "The Croyland Chronicle was written by monks with deep connections to the royal court. This extract describes the brutal climax of the Wars of the Roses at the Battle of Bosworth in 1485, where King Richard III led a desperate, suicidal cavalry charge directly at Henry Tudor.",
-          "is_adapted": false,
-          "extract": "\"A fierce and most cruel battle was joined by the vanguards... But when the king [Richard III] saw that in the place where the earl of Richmond [Henry Tudor], his enemy, was standing, there were not many soldiers, he spurred his horse and rode outside his own lines, and made an attack on the earl's position.<br><br>The fighting was extremely fierce... and King Richard fell in the field, pierced with numerous deadly wounds, fighting manfully and most valiantly in the thickest press of his enemies.<br><br>...The body of the said King Richard was found stripped of all its clothing, and was thrown over a horse, the head and arms hanging down on one side, and the legs on the other; and in this most wretched condition he was carried into Leicester. And the earl of Richmond, receiving the crown from the Lord Stanley, was hailed by the whole army as King Henry the Seventh.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Vanguard:</strong> The leading units advancing into battle.</li><li><strong>Valiantly:</strong> With courage or determination.</li><li><strong>Wretched:</strong> In a very unhappy, unfortunate, or undignified state.</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> According to this chronicle, did King Richard III die running away, or fighting? Note down the exact phrase that proves your answer.<br><br><strong>Pair:</strong> Discuss the treatment of Richard III's dead body. Why would the victorious Henry Tudor want the dead king to be stripped naked and draped over a horse for everyone in Leicester to see?<br><br><strong>Share:</strong> At the Battle of Hastings in 1066, King Harold died on the battlefield and the crown was taken by force. In 1485 at Bosworth, Richard III died on the battlefield and the crown was taken by force. After 400 years, had royal power in England really changed at all?",
-          "audio_file": "/assets/medieval_england_reading_l8.mp3",
-          "questions": []
-      },
-      {
-          "lesson_index": 8,
-          "book_title": "On the Laws and Customs of England",
-          "author": "Henry de Bracton",
-          "author_context": "Henry de Bracton was a judge in the 1250s who wrote a massive book attempting to explain the laws of England. In this famous passage, he wrestles with the ultimate question of the Middle Ages: is the King above the law, or is the King subject to the law?",
-          "is_adapted": false,
-          "extract": "\"The king has no equal within his realm. Subjects cannot be the equals of the ruler, because he would thereby lose his rule, since equal can have no authority over equal...<br><br>But the king himself ought not to be subject to man, but subject to God and to the law, for the law makes the king. Let the king, therefore, bestow upon the law what the law bestows upon him, namely, rule and power. For there is no king where will rules rather than the law.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Realm:</strong> A kingdom.</li><li><strong>Bestow:</strong> To grant or present an honor, right, or gift.</li><li><strong>Will rules rather than the law:</strong> When a king acts purely on his own selfish desires and moods (\"will\") instead of following established rules.</li></ul></div>",
-          "hinge_question": "<strong>Think:</strong> Write down Bracton's explanation for why no subject can ever be equal to the King.<br><br><strong>Pair:</strong> \"There is no king where will rules rather than the law.\" Discuss what this means. According to Bracton, what happens to a King if he ignores the law and just does whatever he wants?<br><br><strong>Share:</strong> Think back across the whole unit (William the Conqueror, Henry II and Becket, King John and Magna Carta, Richard III). Give an example of a medieval monarch who thought they were above the law, and discuss what happened to them.",
-          "audio_file": "/assets/medieval_england_reading_l9.mp3",
-          "questions": []
-      }
+    {
+      "lesson_index": 0,
+      "book_title": "Chronicle of the Kings of England",
+      "substantive_concepts": "Investigate historic themes of global trade.",
+      "historical_scholarship": "Contrasts intentionalist models on the event.",
+      "adaptive_teaching": "Issue guided outlines for lower-ability.",
+      "sequencing_retrieval": "Retrieves core concepts of industrial growth.",
+      "local_coastal_links": "N/A",
+      "author": "William of Malmesbury",
+      "author_context": "William of Malmesbury was an English historian writing about 60 years after the Battle of Hastings. In this extract, he describes how the two armies behaved on the night before the battle. As a monk, he had a clear opinion on why God allowed the English to lose.",
+      "is_adapted": false,
+      "extract": "\"The courageous leaders mutually prepared for battle, each according to his national custom. The English, as we have heard, passed the night without sleep, in drinking and singing, and, in the morning, proceeded without delay towards the enemy; all were on foot, armed with battle-axes... The king himself on foot, stood, with his brother, near the standard; in order that, while all shared equal danger, none might think of retreating.<br><br>On the other hand, the Normans passed the whole night in confessing their sins, and received the sacrament in the morning... The infantry, with bows and arrows, formed the vanguard, while their cavalry, divided into wings, were thrown back.<br><br>...The English, breathing nothing but blood and treason, resolved to die or conquer. For, as long as they stood firm in a close body, they penetrated every point of the enemy's line.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Sacrament:</strong> A religious ceremony, in this case, taking Holy Communion before facing death.</li><li><strong>Vanguard:</strong> The front part of an advancing army.</li><li><strong>Treason:</strong> The crime of betraying one's country or king (William viewed Harold as a traitor who broke a sacred oath).</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> According to this monk, what were the English doing the night before the battle, and what were the Normans doing?<br><br><strong>Pair:</strong> Why might a religious writer like William of Malmesbury describe the night before the battle in this specific way? What point is he trying to make about <em>why</em> the Normans won?<br><br><strong>Share:</strong> Based on this text, what was the greatest strength of the English army, and what was the main difference in how the Normans organized their troops?",
+      "audio_file": "/assets/medieval_england_reading_l1.mp3",
+      "questions": []
+    },
+    {
+      "lesson_index": 1,
+      "book_title": "The Anglo-Saxon Chronicle",
+      "substantive_concepts": "Chart complex themes of economic shifts.",
+      "historical_scholarship": "Compares revisionist perspectives on the event.",
+      "adaptive_teaching": "Distribute visual timelines for EAL.",
+      "sequencing_retrieval": "Synthesizes past context of economic shifts.",
+      "local_coastal_links": "N/A",
+      "author": "Anonymous Monk",
+      "author_context": "The Anglo-Saxon Chronicle was a year-by-year history of England kept by English monks. When William the Conqueror died in 1087, an anonymous monk who had lived at his court wrote this famous, bitter summary of the king's rule.",
+      "is_adapted": false,
+      "extract": "\"He caused castles to be built, and oppressed the poor. The king was also of great sternness, and he took from his subjects many marks of gold, and many hundred pounds of silver... He was given to avarice, and greedily loved gain.<br><br>He had a great survey made of his kingdom... so very narrowly did he cause the survey to be made, that there was not a single hide nor a rood of land, nor—it is shameful to relate that which he thought no shame to do—was there an ox, or a cow, or a pig passed by, and that was not set down in the accounts...<br><br>He made large forests for the deer, and enacted laws therewith, so that whoever killed a hart or a hind should be blinded. As he forbade killing the deer, so also the boars; and he loved the tall stags as if he were their father.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Avarice:</strong> Extreme greed for wealth or material gain.</li><li><strong>Hide / Rood:</strong> Medieval measurements of land.</li><li><strong>Hart / Hind:</strong> An adult male deer (hart) and female deer (hind).</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> Pick out the punishment for hunting the King's deer. Write it down.<br><br><strong>Pair:</strong> The monk writes that it is \"shameful to relate\" that William counted every single ox, cow, and pig in England. Discuss with your partner: why would an English person in 1086 find the Domesday Book so offensive and shocking?<br><br><strong>Share:</strong> Look at the phrase: \"He loved the tall stags as if he were their father.\" What does this brilliant piece of sarcasm tell us about William's attitude towards his human subjects compared to his hunting forests?",
+      "audio_file": "/assets/medieval_england_reading_l2.mp3",
+      "questions": []
+    },
+    {
+      "lesson_index": 2,
+      "book_title": "Life of St. Thomas",
+      "substantive_concepts": "Evaluate key themes of diplomatic relations.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
+      "sequencing_retrieval": "Connects core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      "author": "Edward Grim",
+      "author_context": "Edward Grim was a monk who was standing right next to the Archbishop of Canterbury, Thomas Becket, when four of King Henry II's knights broke into the cathedral in December 1170. Grim was severely wounded in the attack trying to protect Becket.",
+      "is_adapted": false,
+      "extract": "\"The wicked knight leapt suddenly upon him, cutting off the top of the crown which the unction of sacred chrism had dedicated to God. Next he received a second blow on the head, but still he stood firm and immovable. At the third blow he fell on his knees and elbows, offering himself a living sacrifice, and saying in a low voice, 'For the name of Jesus and the protection of the Church, I am ready to embrace death.'<br><br>But the third knight inflicted a terrible wound as he lay prostrate. By this stroke, the crown of his head was separated from the head in such a way that the blood white with the brain, and the brain no less red from the blood, dyed the floor of the cathedral. The same clerk who had entered with the knights placed his foot on the neck of the holy priest and precious martyr, and, horrible to relate, scattered the brains and blood about the pavements, crying to the others, 'Let us away, knights; this fellow will arise no more.'\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Unction of sacred chrism:</strong> The holy oil used to anoint the heads of priests, making them sacred to God.</li><li><strong>Prostrate:</strong> Lying stretched out on the ground with one's face downwards.</li><li><strong>Martyr:</strong> A person who is killed because of their religious or other beliefs.</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> How does Thomas Becket react to the first two blows of the sword?<br><br><strong>Pair:</strong> Discuss why Grim includes the gruesome detail of the clerk scattering Becket's brains on the floor and shouting \"this fellow will arise no more.\" What does this tell us about the knights' attitude toward the Church?<br><br><strong>Share:</strong> King Henry II claimed he never directly ordered the knights to kill Becket. Based on how violently they acted inside a sacred cathedral, do you think they believed they were carrying out the King's true wishes?",
+      "audio_file": "/assets/medieval_england_reading_l3.mp3",
+      "questions": []
+    },
+    {
+      "lesson_index": 3,
+      "book_title": "Magna Carta",
+      "substantive_concepts": "Evaluate key themes of cultural evolution.",
+      "historical_scholarship": "Examines orthodox debates on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Connects core concepts of religious divides.",
+      "local_coastal_links": "N/A",
+      "author": "King John and the Barons",
+      "author_context": "In 1215, King John was forced by his rebellious barons to seal the Magna Carta (The Great Charter) at Runnymede. While much of it was about protecting the wealthy barons' lands, Clauses 39 and 40 became the foundation of modern justice.",
+      "is_adapted": false,
+      "extract": "<em>(Clause 39)</em> \"No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled, or deprived of his standing in any way, nor will we proceed with force against him, or send others to do so, except by the lawful judgment of his equals or by the law of the land.\"<br><br><em>(Clause 40)</em> \"To no one will we sell, to no one deny or delay right or justice.\"<br><br><em>(Clause 61 - The Security Clause)</em> \"The barons shall elect twenty-five of their number to keep, and cause to be observed with all their might, the peace and liberties granted and confirmed to them by this charter... If we, our chief justice, our officials, or any of our servants offend in any respect against any man... those twenty-five barons may distrain upon and assail us in every way possible, with the support of the whole community of the land, by seizing our castles, lands, possessions...\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Lawful judgment of his equals:</strong> The right to a fair trial by a jury of peers, rather than a king just deciding you are guilty.</li><li><strong>Distrain / Assail:</strong> To seize someone's property to force them to do something, and to attack them.</li><li><strong>Liberties:</strong> Freedoms and legal rights.</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> Read Clause 40 carefully. What does King John promise he will never \"sell,\" \"deny,\" or \"delay\" again?<br><br><strong>Pair:</strong> Look at Clause 61. Discuss what the 25 barons are legally allowed to do if the King breaks the rules of Magna Carta. Why would a medieval King find this clause absolutely humiliating?<br><br><strong>Share:</strong> Notice the phrase \"No <em>free man</em> shall be seized\" in Clause 39. Since the vast majority of people in 1215 were unfree peasants (villeins), was Magna Carta really a triumph of liberty for everyone, or just a deal for the rich?",
+      "audio_file": "/assets/medieval_england_reading_l4.mp3",
+      "questions": []
+    },
+    {
+      "lesson_index": 4,
+      "book_title": "Aelfric's Colloquy",
+      "substantive_concepts": "Explore primary themes of monarchical power.",
+      "historical_scholarship": "Explores structuralist frameworks on the event.",
+      "adaptive_teaching": "Provide structured tables for SEND.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      "author": "Abbot Aelfric",
+      "author_context": "Aelfric was an Anglo-Saxon abbot who wrote a textbook (a 'Colloquy') to help boys learn Latin. It features interviews with ordinary workers. Though written just before the Norman Conquest, this famous extract perfectly captures the brutal, unchanging reality of peasant farming that defined the entire medieval period.",
+      "is_adapted": false,
+      "extract": "<em>Teacher:</em> What do you say, ploughman? How do you do your work?<br><br><em>Ploughman:</em> O, my lord, I work very hard: I go out at dawn, driving the cattle to the field, and I yoke them to the plough. Be the winter never so stark, I dare not stay at home for fear of my lord; but having yoked my oxen, and fastened the share and coulter to the plough, every day I must plough a full acre or more.<br><br><em>Teacher:</em> Have you any companion?<br><br><em>Ploughman:</em> I have a boy who urges on the oxen with a goad, and he is now hoarse from cold and shouting.<br><br><em>Teacher:</em> What more do you do in the day?<br><br><em>Ploughman:</em> Truly, still I do more. I must fill the oxen's mangers with hay, and water them, and carry out their dung.<br><br><em>Teacher:</em> O, O, it is hard work.<br><br><em>Ploughman:</em> Yes, lord, it is hard work, because I am not free.<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Yoke:</strong> A wooden beam used between a pair of oxen to allow them to pull a heavy load.</li><li><strong>Share and Coulter:</strong> The heavy iron blades of a plough that cut into the earth.</li><li><strong>Goad:</strong> A spiked stick used for driving cattle.</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> Identify three specific jobs the ploughman must do every single day, regardless of the weather.<br><br><strong>Pair:</strong> Look at the final sentence: \"Yes, lord, it is hard work, because I am not free.\" Discuss what it actually meant to \"not be free\" in a medieval village. Why couldn't he just quit and find a new job?<br><br><strong>Share:</strong> The boy driving the oxen is \"hoarse from cold and shouting.\" Based on this text, what role did children play in the medieval rural economy?",
+      "audio_file": "/assets/medieval_england_reading_l5.mp3",
+      "questions": []
+    },
+    {
+      "lesson_index": 5,
+      "book_title": "Knighton's Chronicle",
+      "substantive_concepts": "Explore primary themes of military conflict.",
+      "historical_scholarship": "Explores structuralist frameworks on the event.",
+      "adaptive_teaching": "Provide structured tables for EAL.",
+      "sequencing_retrieval": "Builds earlier themes of monarchical power.",
+      "local_coastal_links": "N/A",
+      "author": "Henry Knighton",
+      "author_context": "Henry Knighton was a monk in Leicester who survived the Black Death. He wrote down what happened when the plague struck England, focusing not just on the horrific human death toll, but on how the sudden lack of workers threw the entire medieval economy into chaos.",
+      "is_adapted": false,
+      "extract": "\"The dreadful pestilence penetrated the sea coast by Southampton and came to Bristol, and there almost the whole strength of the town died, struck, as it were, by sudden death...<br><br>And there died a multitude of sheep and other cattle throughout the country, wandering about without anyone to keep them. They perished in ditches and hedges in unnumbered masses... for there was such a lack of servants and workers that no one knew what to do.<br><br>Meanwhile, the King sent word into every shire that mowers and other workmen should take no more than they had before, under the penalties set down in the order... But the workers were so arrogant and obstinate that they did not heed the King’s mandate, but if anyone wanted to have them he had to give them what they asked, and either lose his fruit and crops or satisfy the arrogant and greedy desire of the workmen.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Pestilence:</strong> A fatal epidemic disease.</li><li><strong>Mandate:</strong> An official order or command from the King.</li><li><strong>Obstinate:</strong> Stubbornly refusing to change one's opinion or chosen course of action.</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> According to Knighton, why were the sheep and cattle dying in the ditches?<br><br><strong>Pair:</strong> Before 1348, peasants had to do what the lords told them for very little reward. Discuss with your partner why the surviving workmen suddenly became \"arrogant and obstinate\" and demanded higher wages.<br><br><strong>Share:</strong> King Edward III tried to pass a law forcing peasants to accept the same low wages they got <em>before</em> the plague. Why was this law completely impossible to enforce?",
+      "audio_file": "/assets/medieval_england_reading_l6.mp3",
+      "questions": []
+    },
+    {
+      "lesson_index": 6,
+      "book_title": "Chronicles",
+      "substantive_concepts": "Evaluate key themes of ideological shifts.",
+      "historical_scholarship": "Examines orthodox arguments on the event.",
+      "adaptive_teaching": "Deploy scaffolded tasks for SEND.",
+      "sequencing_retrieval": "Links prior knowledge of societal structures.",
+      "local_coastal_links": "N/A",
+      "author": "Jean Froissart",
+      "author_context": "Jean Froissart was a French chronicler who wrote a famous history of the 14th century. Here, he records the revolutionary sermons of John Ball, a radical priest whose ideas fueled the Peasants' Revolt of 1381. John Ball was preaching absolute equality—a terrifying concept to the medieval nobility.",
+      "is_adapted": false,
+      "extract": "\"A crazy priest in the county of Kent, called John Ball, who for his absurd preaching had been thrice confined in the prison... was accustomed on a Sunday after mass, as the people were coming out of the church, to preach to them in the marketplace and assemble a crowd around him...<br><br>'My good friends, things cannot go on well in England, nor ever will until everything shall be in common; when there shall be neither vassal nor lord, and all distinctions levelled; when the lords shall be no more masters than ourselves. How ill they have used us! ...Are we not all descended from the same parents, Adam and Eve? and what can they show, or what reasons give, why they should be more the masters than ourselves?'\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Vassal:</strong> A person in the feudal system who is subordinate to a lord and owes them labor and loyalty.</li><li><strong>Distinctions levelled:</strong> Removing the social classes (rich and poor) so everyone is treated equally.</li><li><strong>Common:</strong> Owned or shared by everyone, rather than privately owned by the rich.</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> Froissart calls John Ball a \"crazy priest.\" Find one thing John Ball suggests that would have made a medieval nobleman think he was insane.<br><br><strong>Pair:</strong> Look at John Ball's use of religion: \"Are we not all descended from the same parents, Adam and Eve?\" Discuss how he is using the Bible as a weapon against the King and the Lords.<br><br><strong>Share:</strong> The medieval system (the Feudal System) was based on a strict hierarchy where God placed the King at the top and the peasants at the bottom. How does John Ball's sermon threaten to destroy that entire worldview?",
+      "audio_file": "/assets/medieval_england_reading_l7.mp3",
+      "questions": []
+    },
+    {
+      "lesson_index": 7,
+      "book_title": "The Croyland Chronicle",
+      "substantive_concepts": "Review core themes of technological progress.",
+      "historical_scholarship": "Evaluates traditional frameworks on the event.",
+      "adaptive_teaching": "Assign knowledge organizers for lower-ability.",
+      "sequencing_retrieval": "Builds previous learning of global empires.",
+      "local_coastal_links": "N/A",
+      "author": "Monks of Croyland Abbey",
+      "author_context": "The Croyland Chronicle was written by monks with deep connections to the royal court. This extract describes the brutal climax of the Wars of the Roses at the Battle of Bosworth in 1485, where King Richard III led a desperate, suicidal cavalry charge directly at Henry Tudor.",
+      "is_adapted": false,
+      "extract": "\"A fierce and most cruel battle was joined by the vanguards... But when the king [Richard III] saw that in the place where the earl of Richmond [Henry Tudor], his enemy, was standing, there were not many soldiers, he spurred his horse and rode outside his own lines, and made an attack on the earl's position.<br><br>The fighting was extremely fierce... and King Richard fell in the field, pierced with numerous deadly wounds, fighting manfully and most valiantly in the thickest press of his enemies.<br><br>...The body of the said King Richard was found stripped of all its clothing, and was thrown over a horse, the head and arms hanging down on one side, and the legs on the other; and in this most wretched condition he was carried into Leicester. And the earl of Richmond, receiving the crown from the Lord Stanley, was hailed by the whole army as King Henry the Seventh.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Vanguard:</strong> The leading units advancing into battle.</li><li><strong>Valiantly:</strong> With courage or determination.</li><li><strong>Wretched:</strong> In a very unhappy, unfortunate, or undignified state.</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> According to this chronicle, did King Richard III die running away, or fighting? Note down the exact phrase that proves your answer.<br><br><strong>Pair:</strong> Discuss the treatment of Richard III's dead body. Why would the victorious Henry Tudor want the dead king to be stripped naked and draped over a horse for everyone in Leicester to see?<br><br><strong>Share:</strong> At the Battle of Hastings in 1066, King Harold died on the battlefield and the crown was taken by force. In 1485 at Bosworth, Richard III died on the battlefield and the crown was taken by force. After 400 years, had royal power in England really changed at all?",
+      "audio_file": "/assets/medieval_england_reading_l8.mp3",
+      "questions": []
+    },
+    {
+      "lesson_index": 8,
+      "book_title": "On the Laws and Customs of England",
+      "substantive_concepts": "Assess central themes of military conflict.",
+      "historical_scholarship": "Challenges whig arguments on the event.",
+      "adaptive_teaching": "Utilize vocab matchers for lower-ability.",
+      "sequencing_retrieval": "Links earlier themes of political changes.",
+      "local_coastal_links": "N/A",
+      "author": "Henry de Bracton",
+      "author_context": "Henry de Bracton was a judge in the 1250s who wrote a massive book attempting to explain the laws of England. In this famous passage, he wrestles with the ultimate question of the Middle Ages: is the King above the law, or is the King subject to the law?",
+      "is_adapted": false,
+      "extract": "\"The king has no equal within his realm. Subjects cannot be the equals of the ruler, because he would thereby lose his rule, since equal can have no authority over equal...<br><br>But the king himself ought not to be subject to man, but subject to God and to the law, for the law makes the king. Let the king, therefore, bestow upon the law what the law bestows upon him, namely, rule and power. For there is no king where will rules rather than the law.\"<br><br><div style=\"background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;\"><strong style=\"color: #334155;\">Glossary</strong><ul style=\"margin-top: 10px; margin-bottom: 0;\"><li><strong>Realm:</strong> A kingdom.</li><li><strong>Bestow:</strong> To grant or present an honor, right, or gift.</li><li><strong>Will rules rather than the law:</strong> When a king acts purely on his own selfish desires and moods (\"will\") instead of following established rules.</li></ul></div>",
+      "hinge_question": "<strong>Think:</strong> Write down Bracton's explanation for why no subject can ever be equal to the King.<br><br><strong>Pair:</strong> \"There is no king where will rules rather than the law.\" Discuss what this means. According to Bracton, what happens to a King if he ignores the law and just does whatever he wants?<br><br><strong>Share:</strong> Think back across the whole unit (William the Conqueror, Henry II and Becket, King John and Magna Carta, Richard III). Give an example of a medieval monarch who thought they were above the law, and discuss what happened to them.",
+      "audio_file": "/assets/medieval_england_reading_l9.mp3",
+      "questions": []
+    }
   ]
 };
