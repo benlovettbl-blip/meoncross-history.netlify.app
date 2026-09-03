@@ -145,6 +145,26 @@ export function renderDashboard() {
 
     const badgeHtml = '';
 
+    // Derive a short, friendly label for the CTA button
+    const unitShortNames = {
+      water_and_sanitation: 'Water & Sanitation',
+      medieval_england: 'Medieval England',
+      early_modern_world: 'Early Modern World',
+      industrialisation_and_empire: 'Industrialisation & Empire',
+      australia: 'History of Australia',
+      great_war: 'Causes of the Great War',
+      great_war_part2: 'The Great War',
+      the_shoah: 'The Shoah',
+      cold_war: 'The Cold War',
+      second_world_war: 'The Second World War',
+      post_war_britain: 'Post-War Britain',
+      cme_new: 'Conflict in the Middle East',
+      weimar_nazi_germany: 'Weimar & Nazi Germany',
+      edexcel_medicine: 'Medicine Through Time',
+      eee: 'Early Elizabethan England',
+    };
+    const ctaLabel = unitShortNames[unit.id] || title;
+
     html += `
       <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative;" data-action="launch-subapp" data-unit="${unit.id}">
         ${badgeHtml}
@@ -162,7 +182,7 @@ export function renderDashboard() {
         
         <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
           <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" data-action="launch-subapp" data-unit="${unit.id}">
-            <i class="fa-solid fa-circle-play"></i> Launch Study App
+            <i class="fa-solid fa-circle-play"></i> Open ${ctaLabel}
           </button>
         </div>
       </div>
@@ -187,25 +207,22 @@ export function renderDashboard() {
       const title = 'Featured Battlefield Tour: Ypres & The Salient';
 
       html += `
-        <div class="featured-trip-banner" style="display: flex; flex-wrap: wrap; width: 100%; margin-top: 2.5rem; margin-bottom: 2.5rem; background: var(--bg-card, #ffffff); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid var(--border-glass, #e2e8f0); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-          <div style="flex: 2; min-width: 300px; padding: 40px 50px; display: flex; flex-direction: column; justify-content: center;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--primary, #1e3a8a); margin: 0 0 12px 0; line-height: 1.2;">${title}</h2>
-            <p style="font-size: 1.1rem; color: var(--text-secondary, #475569); margin: 0 0 25px 0; max-width: 90%; line-height: 1.6;">
-              ${unit.desc || unit.enquiry_question || unit.enquiry || 'Join us on our historical expedition to the Western Front. Explore the trenches, honor the fallen, and understand the realities of WW1.'}
-            </p>
-            <div style="display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
-              <span style="background: rgba(59, 130, 246, 0.1); color: #2563eb; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-calendar-days"></i> 1st-4th Oct 2026</span>
-              <span style="background: rgba(16, 185, 129, 0.1); color: #059669; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-map-location-dot"></i> Itinerary</span>
-              <span style="background: rgba(245, 158, 11, 0.1); color: #d97706; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-suitcase-rolling"></i> Prep Pack</span>
-              <span style="background: rgba(139, 92, 246, 0.1); color: #7c3aed; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-book-open-reader"></i> Site Guide</span>
+        <div class="featured-trip-banner" style="display: flex; flex-wrap: wrap; width: 100%; margin-top: 0; margin-bottom: 2rem; background: var(--bg-card, #ffffff); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border-glass, #e2e8f0); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="flex: 3; min-width: 260px; padding: 22px 32px; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px;">
+              <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary, #1e3a8a); margin: 0; line-height: 1.2;">${title}</h2>
+              <span style="background: rgba(59,130,246,0.1); color: #2563eb; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.8rem; white-space:nowrap;"><i class="fa-solid fa-calendar-days"></i> 1st–4th Oct 2026</span>
             </div>
-            <div>
-              <button class="btn-pedagogy-primary" style="padding: 14px 28px; font-size: 1.15rem; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border-radius: 8px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; transition: background 0.2s;" data-action="launch-subapp" data-unit="${unit.id}" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
-                <i class="fa-solid fa-compass" style="margin-right: 8px;"></i> Launch Tour App
+            <div style="display: flex; gap: 10px; align-items:center; flex-wrap: wrap;">
+              <span style="background: rgba(16,185,129,0.1); color: #059669; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-map-location-dot"></i> Itinerary</span>
+              <span style="background: rgba(245,158,11,0.1); color: #d97706; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-suitcase-rolling"></i> Prep Pack</span>
+              <span style="background: rgba(139,92,246,0.1); color: #7c3aed; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-book-open-reader"></i> Site Guide</span>
+              <button class="btn-pedagogy-primary" style="padding: 8px 20px; font-size: 0.95rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; margin-left:auto;" data-action="launch-subapp" data-unit="${unit.id}" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                <i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Launch Tour App
               </button>
             </div>
           </div>
-          <div style="flex: 1; min-width: 300px; min-height: 350px; background-image: url('${imageUrl}'); background-position: center; background-size: cover; border-left: 4px solid var(--primary, #1e3a8a);"></div>
+          <div style="flex: 1; min-width: 200px; min-height: 130px; max-height: 160px; background-image: url('${imageUrl}'); background-position: center; background-size: cover; border-left: 3px solid var(--primary, #1e3a8a);"></div>
         </div>
       `;
     });
