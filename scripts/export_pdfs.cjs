@@ -90,8 +90,20 @@ function getFileHash(filePath) {
         );
         for (const src of imgSrcs) {
           if (!src || src.startsWith('data:') || src.startsWith('http')) continue;
-          const absPath = path.resolve(htmlDir, src);
-          if (!fs.existsSync(absPath)) continue;
+          
+          let absPath;
+          if (src.startsWith('/')) {
+            // It's a root-relative path (e.g., /images/...), so resolve from the public directory
+            absPath = path.join(publicDir, src);
+          } else {
+            // It's a relative path (e.g., ../../images/...), so resolve from the HTML file's directory
+            absPath = path.resolve(htmlDir, src);
+          }
+          
+          if (!fs.existsSync(absPath)) {
+            console.warn(`Warning: Image not found: ${absPath} (original src: ${src})`);
+            continue;
+          }
           const ext = path.extname(absPath).toLowerCase().replace('.', '');
           const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg'
                      : ext === 'png' ? 'image/png'
