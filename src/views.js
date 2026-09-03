@@ -66,15 +66,15 @@ export function renderDashboard() {
           <button id="theme-toggle-btn" title="Change Theme" style="background: rgba(255,255,255,0.9); border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 5px; font-size: 0.78rem; font-weight: 600; color: #334155; transition: all 0.2s;" onmouseover="this.style.borderColor='#1e3a8a'" onmouseout="this.style.borderColor='#e2e8f0'">
             <i class="fa-solid fa-palette" style="color:#6366f1;"></i> <span id="theme-toggle-label">Theme</span>
           </button>
-          <div id="theme-popover" style="display:none; position:absolute; top:calc(100% + 8px); right:0; background:#fff; border:1.5px solid #e2e8f0; border-radius:10px; padding:10px 14px; box-shadow:0 8px 24px rgba(0,0,0,0.12); z-index:9999; min-width:180px;">
-            <p style="font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; opacity:0.5; margin:0 0 8px;">Choose Theme</p>
+          <div id="theme-popover" style="display:none; position:absolute; top:calc(100% + 8px); right:0; background:var(--bg-card, #fff); border:1.5px solid var(--border-glass, #e2e8f0); border-radius:10px; padding:10px 14px; box-shadow:0 8px 24px rgba(0,0,0,0.15); z-index:9999; min-width:180px;">
+            <p style="font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--text-primary,#334155); opacity:0.5; margin:0 0 8px;">Choose Theme</p>
             <div style="display:flex; gap:10px; align-items:center;">
               <button class="theme-btn" data-theme="primary" title="History Hub (Default)"><span class="color-dot primary"></span></button>
               <button class="theme-btn" data-theme="desert" title="Sand"><span class="color-dot desert"></span></button>
               <button class="theme-btn" data-theme="space" title="Deep Space"><span class="color-dot space"></span></button>
               <button class="theme-btn" data-theme="coral" title="Coral"><span class="color-dot coral"></span></button>
             </div>
-            <div style="margin-top:8px;"><span style="font-size:0.68rem; opacity:0.4;">History Hub · Sand · Space · Coral</span></div>
+            <div style="margin-top:8px;"><span style="font-size:0.68rem; color:var(--text-primary,#334155); opacity:0.35;">History Hub · Sand · Space · Coral</span></div>
           </div>
         </div>
       </div>
@@ -187,8 +187,15 @@ export function renderDashboard() {
       displayDesc = title;
     }
 
-    const bgPos =
-      unit.id === 'edexcel_medicine' ? 'center 10%' : unit.id === 'eee' ? 'center 10%' : 'center';
+    // cover_image_position: pulled from unit data first, then a per-unit fallback map
+    const positionFallbacks = {
+      edexcel_medicine: 'center 10%',
+      eee:              'center 10%',
+      australia:        'center 60%',
+      great_war_part2:  'center 30%',
+      weimar_nazi_germany: 'center 20%',
+    };
+    const bgPos = unit.cover_image_position || positionFallbacks[unit.id] || 'center';
 
     const badgeHtml = '';
 
@@ -348,7 +355,7 @@ export function renderDashboard() {
         </div>
         
         <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
-          <button class="btn-pedagogy-primary btn-pedagogy-sm w-full">
+          <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
             <i class="fa-solid fa-external-link-alt"></i> Open Legacy App
           </button>
         </div>
