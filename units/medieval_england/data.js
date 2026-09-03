@@ -1,5 +1,13 @@
 export const unitData = {
-  "id": "medieval_england",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next unit."
+    ]
+  },  "id": "medieval_england",
   "title": "KS3: Medieval England & The Struggle for Power (1066–1485)",
   "enquiry": "How did power shift in Medieval England?",
   "cover_image": "/images/portchester_keep.jpg",

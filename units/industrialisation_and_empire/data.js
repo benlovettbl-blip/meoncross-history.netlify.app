@@ -2604,7 +2604,15 @@ const industrialisation_and_empire = {
     {
       id: 'lesson_8',
       title: 'Who truly benefited from 19th-century transformation?',
-      vocabulary: [
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next unit."
+    ]
+  },      vocabulary: [
         { term: 'Synthesis', definition: 'Bringing together knowledge from across a whole unit to form an overall judgement.' },
         { term: 'Colonialism', definition: 'The policy and practice of acquiring control over other countries, exploiting them economically.' },
         { term: 'Imperialism', definition: 'The broader ideology of expanding a nations influence through empire, trade, and military power.' },

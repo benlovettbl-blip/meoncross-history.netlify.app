@@ -1,6 +1,14 @@
 {
   "australia": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "specification_file": "",
       "title": "KS3: History of Australia",
       "homepage_background": "",
@@ -2011,6 +2019,14 @@
   },
   "cme_new": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "cover_image": "/images/cme_cover.jpg",
       "title": "Paper 2: Conflict in the Middle East, 1945-1995",
       "cover_caption": "Camp David Accords",
@@ -9241,6 +9257,14 @@
   },
   "cold_war": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "id": "cold_war",
       "title": "KS3: The Cold War",
       "enquiry": "KS3: The Cold War",
@@ -12948,6 +12972,14 @@
             }
           ],
           "title": "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
+          "lesson_reflection": {
+            "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+            "instructions": [
+              "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+              "Complete the EBI (Even Better If) section — what did you find most challenging?",
+              "Circle your effort level (1-5) and set a specific target for the next unit."
+            ]
+          },
           "vocabulary": [
             {
               "term": "Synthesis",
@@ -14264,6 +14296,14 @@
   },
   "edexcel_medicine": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "title": "Paper 1: Medicine Through Time with the Western Front",
       "enquiry_question": "From humours to DNA: What drove the biggest breakthroughs in medical history?",
       "debatePrompts": [
@@ -25139,6 +25179,14 @@
   },
   "eee": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "debatePrompts": [
         {
           "title": "Elizabeth's Religious Settlement",
@@ -29902,6 +29950,14 @@
   },
   "great_war": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "debatePrompts": [
         {
           "title": "Bismarck & Unification",
@@ -35052,6 +35108,14 @@
         {
           "id": "lesson_7",
           "title": "Assessment: The Great War",
+          "lesson_reflection": {
+            "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+            "instructions": [
+              "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+              "Complete the EBI (Even Better If) section — what did you find most challenging?",
+              "Circle your effort level (1-5) and set a specific target for the next unit."
+            ]
+          },
           "primer": "This formal assessment bridges Key Stage 3 historical skills with early GCSE demands, testing chronological recall, source utility evaluation, and historical judgement.",
           "vocab": [],
           "learning_objectives": [
@@ -37739,6 +37803,14 @@
         {
           "id": "lesson_8",
           "title": "Who truly benefited from 19th-century transformation?",
+          "lesson_reflection": {
+            "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+            "instructions": [
+              "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+              "Complete the EBI (Even Better If) section — what did you find most challenging?",
+              "Circle your effort level (1-5) and set a specific target for the next unit."
+            ]
+          },
           "vocabulary": [
             {
               "term": "Synthesis",
@@ -38136,6 +38208,14 @@
   },
   "medieval_england": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "id": "medieval_england",
       "title": "KS3: Medieval England & The Struggle for Power (1066–1485)",
       "enquiry": "How did power shift in Medieval England?",
@@ -41686,6 +41766,14 @@
   },
   "post_war_britain": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "id": "post_war_britain",
       "title": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
       "enquiry": "How has British identity transformed since 1945?",
@@ -41897,6 +41985,14 @@
   },
   "second_world_war": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "id": "second_world_war",
       "title": "KS3: The Second World War (1939–1945)",
       "enquiry": "What was the decisive turning point of the Second World War?",
@@ -42141,6 +42237,14 @@
   },
   "the_shoah": {
     "data": {
+      "lesson_reflection": {
+        "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+        "instructions": [
+          "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+          "Complete the EBI (Even Better If) section — what did you find most challenging?",
+          "Circle your effort level (1-5) and set a specific target for the next unit."
+        ]
+      },
       "id": "the_shoah",
       "title": "KS3: The Shoah",
       "enquiry": "KS3: The Shoah",
@@ -45045,6 +45149,14 @@
         {
           "id": "lesson_6",
           "title": "End of Unit Assessment: Cholera Investigation",
+          "lesson_reflection": {
+            "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+            "instructions": [
+              "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+              "Complete the EBI (Even Better If) section — what did you find most challenging?",
+              "Circle your effort level (1-5) and set a specific target for the next unit."
+            ]
+          },
           "extended": {
             "question": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak. (8 marks)",
             "hints": [
@@ -52445,6 +52557,14 @@
         {
           "id": "lesson_4_4",
           "title": "Key Topic 4.4: The Persecution of Minorities, 1933–1939",
+          "lesson_reflection": {
+            "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+            "instructions": [
+              "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+              "Complete the EBI (Even Better If) section — what did you find most challenging?",
+              "Circle your effort level (1-5) and set a specific target for the next unit."
+            ]
+          },
           "enquiry": "How and why did the Nazis persecute minorities, and how did the persecution of Jewish people escalate between 1933 and 1939?",
           "teacher_notes": {
             "primer": "This lesson addresses the grim reality of Nazi racial policies, moving from the philosophical basis of Social Darwinism to the concrete brutality against the disabled, Roma, and Jewish people. It carefully tracks the escalation of anti-Semitism from early boycotts to the Nuremberg Laws, bureaucratic dehumanisation, and the violence of Kristallnacht.",

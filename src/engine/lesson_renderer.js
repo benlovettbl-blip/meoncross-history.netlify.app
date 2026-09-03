@@ -2013,6 +2013,37 @@ export function renderLesson(lesson) {
     `;
   }
 
+  // --- LESSON REFLECTION / DIRT PROMPT ---
+  // Renders a visual prompt at the end of the final lesson,
+  // directing pupils to the DIRT page in their printed workbook.
+  if (lesson.lesson_reflection) {
+    const ref = lesson.lesson_reflection;
+    let instructionsHtml = '';
+    if (ref.instructions && ref.instructions.length > 0) {
+      instructionsHtml = `<ul style="margin: 12px 0 0 0; padding-left: 20px; color: #1e40af; font-size: 1rem; line-height: 1.7;">
+        ${ref.instructions.map(i => `<li>${i}</li>`).join('')}
+      </ul>`;
+    }
+    html += `
+      <div class="phase-card no-print" style="padding: 30px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 2px solid #3b82f6; border-radius: 12px; margin-bottom: 30px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -20px; right: -20px; opacity: 0.08; font-size: 12rem; color: #1e40af;"><i class="fa-solid fa-book-open-reader"></i></div>
+        <div style="position: relative; z-index: 2;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <div style="background: #3b82f6; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+            <div>
+              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.3rem;">End of Unit Reflection & Pupil Voice</h3>
+              <p style="margin: 2px 0 0; color: #3b82f6; font-size: 0.9rem; font-weight: 600;">DIRT — Dedicated Improvement and Reflection Time</p>
+            </div>
+          </div>
+          <p style="color: #1e40af; font-size: 1.05rem; line-height: 1.6; margin: 0;">${ref.prompt}</p>
+          ${instructionsHtml}
+        </div>
+      </div>
+    `;
+  }
+
   // Previous / Next Lesson Navigation Buttons
   if (currentIndex !== -1) {
     html += `<div style="display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; margin-bottom: 40px;">`;

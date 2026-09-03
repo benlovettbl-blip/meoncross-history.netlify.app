@@ -1,5 +1,13 @@
 export const unitData = {
-  "specification_file": "",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next unit."
+    ]
+  },  "specification_file": "",
   "title": "KS3: History of Australia",
   "homepage_background": "",
   "enquiry": "Invasion, Settlement, or Survival? How should we remember the colonization of Australia?",

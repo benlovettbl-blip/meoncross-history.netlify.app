@@ -3536,7 +3536,15 @@ const early_modern_world = {
         },
       ],
       title: "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
-      vocabulary: [
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next unit."
+    ]
+  },      vocabulary: [
         { term: 'Synthesis', definition: 'Bringing together knowledge from across the entire unit to form an overall judgement.' },
         { term: 'Power', definition: 'By 1750, power had shifted dramatically from the monarchy to Parliament.' },
         { term: 'Empire', definition: 'Britain had become a major global empire through trade, colonisation, and the slave trade.' },
