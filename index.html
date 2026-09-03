@@ -111,24 +111,7 @@
           </div>
         </nav>
 
-        <!-- Theme Controls -->
-        <div class="sidebar-footer">
-          <span class="theme-label">Active Theme</span>
-          <div class="theme-switcher">
-            <button class="theme-btn" data-theme="primary" title="Mr Lovett's History Hub Theme">
-              <span class="color-dot primary"></span>
-            </button>
-            <button class="theme-btn" data-theme="desert" title="Sand Theme">
-              <span class="color-dot desert"></span>
-            </button>
-            <button class="theme-btn" data-theme="space" title="Deep Space Dark Theme">
-              <span class="color-dot space"></span>
-            </button>
-            <button class="theme-btn" data-theme="coral" title="Ocean Coral Theme">
-              <span class="color-dot coral"></span>
-            </button>
-          </div>
-        </div>
+        <!-- Theme Controls moved to header -->
       </aside>
 
       <!-- Main Content Wrapper -->
@@ -142,6 +125,24 @@
               <i class="fa-solid fa-arrow-left"></i> <span>Dashboard</span>
             </button>
             <div class="breadcrumbs" id="header-breadcrumbs" style="display: none"></div>
+          </div>
+          <!-- Persistent Theme Toggle (always visible in header) -->
+          <div id="header-theme-toggle" style="position: relative; margin: 0 12px;">
+            <button id="theme-toggle-btn" title="Change Theme" style="background: var(--bg-card, #f8fafc); border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 8px; padding: 6px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: var(--text-primary, #1e293b); transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary, #1e3a8a)'" onmouseout="this.style.borderColor='var(--border-glass, #e2e8f0)'">
+              <i class="fa-solid fa-palette"></i> <span id="theme-toggle-label" style="font-size:0.75rem;">Theme</span>
+            </button>
+            <div id="theme-popover" style="display:none; position: absolute; top: calc(100% + 8px); right: 0; background: var(--bg-card, #fff); border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 10px; padding: 10px 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 9999; min-width: 170px;">
+              <p style="font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; opacity:0.5; margin:0 0 8px;">Choose Theme</p>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <button class="theme-btn" data-theme="primary" title="History Hub (Default)"><span class="color-dot primary"></span></button>
+                <button class="theme-btn" data-theme="desert" title="Sand"><span class="color-dot desert"></span></button>
+                <button class="theme-btn" data-theme="space" title="Deep Space"><span class="color-dot space"></span></button>
+                <button class="theme-btn" data-theme="coral" title="Coral"><span class="color-dot coral"></span></button>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:4px; margin-top:10px;">
+                <span style="font-size:0.7rem; opacity:0.4;">History Hub · Sand · Space · Coral</span>
+              </div>
+            </div>
           </div>
           <div class="header-right">
             <span class="school-tag"

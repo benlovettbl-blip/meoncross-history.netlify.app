@@ -36,7 +36,7 @@ export function bindEvents() {
     navProfile.addEventListener('click', () => switchView('profile'));
   }
 
-  // Bind theme selector clicks
+  // Bind theme selector clicks (both sidebar dots and header popover)
   document.querySelectorAll('.theme-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const themeName = e.currentTarget.getAttribute('data-theme');
@@ -46,9 +46,37 @@ export function bindEvents() {
 
       // Update active class
       document.querySelectorAll('.theme-btn').forEach((b) => b.classList.remove('active'));
-      e.currentTarget.classList.add('active');
+      document.querySelectorAll(`.theme-btn[data-theme="${themeName}"]`).forEach(b => b.classList.add('active'));
+
+      // Close the popover after selection and update label
+      const popover = document.getElementById('theme-popover');
+      if (popover) popover.style.display = 'none';
+      const label = document.getElementById('theme-toggle-label');
+      const names = { primary: 'History Hub', desert: 'Sand', space: 'Deep Space', coral: 'Coral' };
+      if (label) label.textContent = names[themeName] || 'Theme';
     });
   });
+
+  // Wire up the header palette toggle button
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const themePopover = document.getElementById('theme-popover');
+  if (themeToggleBtn && themePopover) {
+    themeToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      themePopover.style.display = themePopover.style.display === 'none' ? 'block' : 'none';
+    });
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!themeToggleBtn.contains(e.target) && !themePopover.contains(e.target)) {
+        themePopover.style.display = 'none';
+      }
+    });
+    // Set initial label based on saved theme
+    const savedTheme = localStorage.getItem('history_theme') || 'primary';
+    const names = { primary: 'History Hub', desert: 'Sand', space: 'Deep Space', coral: 'Coral' };
+    const label = document.getElementById('theme-toggle-label');
+    if (label) label.textContent = names[savedTheme] || 'Theme';
+  }
 
   // Mobile navigation drawer toggle
   const menuToggle = document.getElementById('sidebar-toggle-btn');
