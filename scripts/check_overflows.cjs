@@ -7,9 +7,16 @@ const puppeteer = require('puppeteer');
   // Set viewport to simulate a mobile screen
   await page.setViewport({ width: 375, height: 812, isMobile: true });
   
-  const unitId = process.argv[2] || 'water_and_sanitation';
+  const arg = process.argv[2] || 'water_and_sanitation';
   const path = require('path');
-  const htmlPath = path.join(__dirname, '..', 'public', 'units', unitId, 'pupil_workbook.html');
+  
+  let htmlPath;
+  if (arg.endsWith('.html')) {
+    htmlPath = path.resolve(arg);
+  } else {
+    htmlPath = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook.html');
+  }
+  
   const LOCAL_URL = require('url').pathToFileURL(htmlPath).href;
   
   console.log(`Navigating to ${LOCAL_URL}...`);
