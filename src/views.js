@@ -191,7 +191,7 @@ export function renderDashboard() {
     const positionFallbacks = {
       edexcel_medicine: 'center 10%',
       eee:              'center 10%',
-      australia:        'center 60%',
+      australia:        'center 70%',
       great_war_part2:  'center top',
       weimar_nazi_germany: 'center 20%',
     };
