@@ -530,7 +530,8 @@ allDirs.forEach((unitId) => {
       html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">${lessonLabel}</h2>`;
       let flatQuestions = [];
       if (lesson.startPage) {
-        html += `<div style="font-size: 11pt; color: #555; margin-bottom: 15px; font-style: italic;">(See Textbook Page ${lesson.startPage})</div>`;
+        // Page references removed — they become stale when content changes
+        html += `<div style="margin-bottom: 10px;"></div>`;
       } else {
         html += `<div style="margin-bottom: 10px;"></div>`;
       }

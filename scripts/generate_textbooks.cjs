@@ -403,7 +403,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
           ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
-          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` (See Textbook Page ${lesson.primary_source.page})` : ''}</strong></div>` : ''}
+          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</strong></div>` : ''}
           
         </div>
       `;
@@ -529,7 +529,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
               ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source">` : ''}
               ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
               ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
-              ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div>` : ''}
+              ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${source.question}</strong></div>` : ''}
             </div>
           `;
         }
@@ -590,7 +590,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
               ${(block.source.src || block.source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((block.source.src || block.source.source), 2) : (block.source.src || block.source.source)}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
               ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
               ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
-              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${block.source.question}${block.source.page ? ` (See Textbook Page ${block.source.page})` : ''}</strong></div>` : ''}
+              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${block.source.question}</strong></div>` : ''}
             </div>
           `;
         }
@@ -1080,7 +1080,7 @@ html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top
                 ${(source.src || source.source) ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath((source.src || source.source), 2) : (source.src || source.source)}" alt="Source">` : ''}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
                 ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
-                ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${source.question}${source.page ? ` (See Textbook Page ${source.page})` : ''}</strong></div>` : ''}
+                ${source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${source.question}</strong></div>` : ''}
               </div>
             `;
           }
