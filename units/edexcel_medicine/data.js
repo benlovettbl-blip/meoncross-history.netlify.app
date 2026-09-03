@@ -1751,7 +1751,15 @@ export const unitData = {
     {
       "id": "lesson_1_3",
       "title": "KT1.3: How did people respond to the Black Death?",
-      "enquiry_question": "KT1.3: How did people respond to the Black Death?",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "enquiry_question": "KT1.3: How did people respond to the Black Death?",
       "hook_text": "In 1348, a devastating pandemic known as the Black Death struck England, rapidly wiping out at least a third of the population. Because medieval people had no scientific understanding of bacteria or germs, they desperately blamed the crisis on God, astrology, and foul air. This catastrophic event reveals the horrifying reality of medieval medicine, highlighting how powerless people were when forced to rely on religion and ancient, flawed theories in the face of a true public health emergency.",
       "teacher_notes": {
         "primer": "The pedagogical goal of this lesson is to enable students to analyze and evaluate the varying ways medieval people responded to the Black Death, recognizing that while their treatments seem bizarre today, they were logical and rational within their contemporary worldview of religion and miasma.",
@@ -3299,7 +3307,15 @@ export const unitData = {
     {
       "id": "lesson_2_3",
       "title": "KT2.3: How significant were William Harvey and the Great Plague?",
-      "enquiry_question": "KT2.3: How significant were William Harvey and the Great Plague?",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "enquiry_question": "KT2.3: How significant were William Harvey and the Great Plague?",
       "hook_text": "By the 17th century, medical knowledge was advancing, but practical treatment lagged far behind. William Harvey's brilliant discovery of blood circulation proved ancient theories wrong and laid the foundations for modern physiology, though it saved no lives at the time. Meanwhile, the devastating Great Plague of 1665 demonstrated that without an understanding of germs, even organized government action was powerless to stop a catastrophic epidemic.",
       "teacher_notes": {
         "primer": "The goal of this lesson is to help students evaluate the concepts of change, continuity, and significance through two key Renaissance case studies: William Harvey's physiological breakthroughs and the municipal response to the 1665 Great Plague.",
@@ -4879,7 +4895,15 @@ export const unitData = {
     {
       "id": "lesson_3_3",
       "title": "KT3.3: How significant were Edward Jenner and John Snow?",
-      "enquiry_question": "KT3.3: How significant were Edward Jenner and John Snow?",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "enquiry_question": "KT3.3: How significant were Edward Jenner and John Snow?",
       "hook_text": "The 18th and 19th centuries witnessed two monumental breakthroughs in the prevention of deadly diseases. Edward Jenner's pioneering smallpox vaccination provided the world's first scientifically tested method of immunity, saving millions globally. Decades later, John Snow's brilliant, logical investigation into cholera proved that lethal epidemics were water-borne, fundamentally shattering the ancient miasma theory. Together, these two men laid the vital foundations for modern public health and immunology.",
       "teacher_notes": {
         "primer": "The goal of this lesson is to help students evaluate the concepts of significance, causation, and limitations through two crucial 19th-century case studies: Edward Jenner and John Snow. Students must grasp that while both pioneers used scientific observation to challenge old ideas, their discoveries faced severe social, institutional, and professional opposition, and their widespread acceptance was heavily dependent on later developments in bacteriology.",
@@ -6991,7 +7015,15 @@ export const unitData = {
     {
       "id": "lesson_4_4",
       "title": "KT4.4: How has the government tackled the modern epidemic of Lung Cancer?",
-      "enquiry_question": "KT4.4: How has the government tackled the modern epidemic of Lung Cancer?",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "enquiry_question": "KT4.4: How has the government tackled the modern epidemic of Lung Cancer?",
       "hook_text": "Lung cancer was incredibly rare in the nineteenth century but rapidly became the second most common cancer in the UK by the twenty-first century. After the link between smoking and cancer was conclusively proven in 1950, medicine had to develop advanced high-tech methods to diagnose and treat this deadly disease. Simultaneously, the crisis forced the government to abandon its reluctance to interfere in personal habits, leading to aggressive modern prevention campaigns.",
       "teacher_notes": {
         "primer": "The overarching pedagogical goal of this lesson is to enable students to analyze how the modern fight against lung cancer serves as a crucial case study for the themes of change and continuity in public health. By comparing 21st-century state campaigns with 19th-century sanitary reforms, students will understand how the role of the government has evolved from a laissez-faire stance to active lifestyle regulation, and how science and technology have shifted medical diagnosis and treatment away from hospital-based cures toward high-tech targeted therapies and proactive state prevention.",
@@ -9687,7 +9719,15 @@ export const unitData = {
     {
       "id": "lesson_5_5",
       "title": "KT5.5: What incredible medical advances were forged on the Western Front?",
-      "enquiry_question": "KT5.5: What incredible medical advances were forged on the Western Front?",
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "enquiry_question": "KT5.5: What incredible medical advances were forged on the Western Front?",
       "hook_text": "The horrific new weapons of the First World War created devastating, complex injuries that traditional 19th-century surgeons simply did not know how to cure. Faced with thousands of men rapidly dying from gas gangrene, massive blood loss, and shattered limbs, the medical services were forced to turn the Western Front into a vast laboratory. Driven by sheer desperation, they successfully pioneered radical new surgical techniques, mobile diagnostic technology, and miraculous methods for storing blood directly on the battlefield.",
       "teacher_notes": {
         "primer": "The overarching pedagogical goal of this lesson is to enable students to analyze and evaluate the medical and surgical advances pioneered on the Western Front, categorizing them into wound treatment, fracture stabilization, mobile radiology, and blood transfusion, while evaluating the extent to which war acted as a catalyst for rapid progress.",

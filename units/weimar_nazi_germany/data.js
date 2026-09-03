@@ -1593,7 +1593,15 @@ const weimar_nazi_germany = {
     {
       id: 'lesson_1_4',
       title: 'KT1.4: Changes in Society, 1924–1929',
-      enquiry:
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      enquiry:
         "A Golden Age or a divided nation: To what extent did the lives of workers, women, and artists genuinely improve during the Weimar Republic's era of recovery?",
       teacher_notes: {
         primer:
@@ -3296,7 +3304,15 @@ const weimar_nazi_germany = {
     {
       id: 'lesson_2_4',
       title: 'KT2.4: How Hitler Became Chancellor, 1932–1933',
-      enquiry:
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      enquiry:
         'The Backstairs Intrigue: How did secret political scheming, revenge, and a fatal underestimation rescue a struggling Adolf Hitler and hand him the Chancellorship of Germany?',
       teacher_notes: {
         primer:
@@ -5031,7 +5047,15 @@ const weimar_nazi_germany = {
     {
       id: 'lesson_3_4',
       title: 'Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939',
-      enquiry:
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      enquiry:
         'Why was there so little active opposition to the Nazi regime, and how did underground networks, workers, and young people attempt to resist?',
       teacher_notes: {
         primer:

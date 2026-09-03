@@ -1263,7 +1263,15 @@ export default {
     {
       "id": "lesson_4",
       "title": "KT1.3: Increased Tension, 1955–1963",
-      "quiz": [
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "quiz": [
         {
           "question": "What was a major cause of increased tension between Israel and its neighbors from 1955 to 1963?",
           "options": [
@@ -2788,7 +2796,15 @@ export default {
     {
       "id": "lesson_7",
       "title": "KT2.3: Israel and Egypt, 1967–1973",
-      "teacher_notes": {
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "teacher_notes": {
         "primer": "This lesson focuses on the transition from the War of Attrition to the dramatic outbreak of the Yom Kippur War. Students will explore Sadat's diplomatic maneuvers, the failure of the Bar Lev Line, and the devastating global impact of the OPEC oil weapon.",
         "objectives": [
           {
@@ -4371,7 +4387,15 @@ export default {
     {
       "id": "lesson_10",
       "title": "KT3.3: Attempts at a solution, 1988–1995",
-      "teacher_notes": {
+
+  lesson_reflection: {
+    prompt: "You have reached the end of this Key Topic booklet! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+    instructions: [
+      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+      "Complete the EBI (Even Better If) section — what did you find most challenging?",
+      "Circle your effort level (1-5) and set a specific target for the next Key Topic."
+    ]
+  },      "teacher_notes": {
         "primer": "This final lesson explores the culmination of the peace process, analyzing the geopolitical shifts that forced the PLO and Israel to the negotiating table, the breakthrough of the Oslo Accords, and the tragic collapse of the process following Rabin's assassination.",
         "objectives": [
           {
