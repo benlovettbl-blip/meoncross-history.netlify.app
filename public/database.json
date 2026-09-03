@@ -45046,7 +45046,13 @@
           "id": "lesson_6",
           "title": "End of Unit Assessment: Cholera Investigation",
           "extended": {
-            "question": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak. (8 marks)"
+            "question": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak. (8 marks)",
+            "hints": [
+              "Paragraph 1: Discuss the short-term significance (e.g. proving cholera was waterborne and challenging the Miasma theory).",
+              "Paragraph 2: Discuss the long-term significance (e.g. providing evidence that helped convince the government to fund Bazalgette's sewers).",
+              "Key vocabulary to use: Broad Street Pump, waterborne, Miasma theory, Germ theory."
+            ],
+            "starter": "One major reason John Snow’s discovery was significant in the short term was..."
           }
         }
       ],

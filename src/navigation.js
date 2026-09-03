@@ -16,6 +16,7 @@ import {
   renderIndividualsView,
   renderReadingView,
 } from './views.js'; // Trigger HMR
+import { renderCurriculumMap } from './curriculum_map.js';
 
 // Subscribe to state changes to handle DOM updates independently of the router
 export function initNavigationUI() {
@@ -53,6 +54,7 @@ export function initNavigationUI() {
         if (viewName === 'timeline') displayName = 'Chronological Timeline';
         if (viewName === 'booklet') displayName = 'Printable A4 Booklet';
         if (viewName === 'profile') displayName = 'Student Profile';
+        if (viewName === 'curriculum') displayName = 'Curriculum Overview';
 
         breadcrumbs.innerHTML = `
           <span data-action="switch-view" data-view="dashboard" style="cursor: pointer; text-decoration: underline; color: var(--primary);">Dashboard</span>
@@ -113,6 +115,8 @@ export async function switchView(viewName, param = null, skipHistory = false) {
   } else if (viewName === 'reading') {
     if (param) await loadUnit(param);
     renderReadingView();
+  } else if (viewName === 'curriculum') {
+    await renderCurriculumMap();
   }
 }
 
