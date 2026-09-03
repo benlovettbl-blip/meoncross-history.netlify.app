@@ -92,9 +92,12 @@ export function bindEvents() {
         .sort((a, b) => orderArray.indexOf(a.id) - orderArray.indexOf(b.id));
     };
 
+    const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
     const year7Units = getOrderedUnits(['water_and_sanitation', 'medieval_england', 'early_modern_world']);
-    const year8Units = getOrderedUnits(['industrialisation_and_empire', 'australia', 'great_war']);
-    const year9Units = getOrderedUnits(['great_war_part2', 'the_shoah', 'cold_war', 'second_world_war', 'post_war_britain']);
+    // great_war_part2 sits with Year 8 chronologically (Part 1 causes → Part 2 events)
+    const year8Units = getOrderedUnits(['industrialisation_and_empire', 'australia', 'great_war', 'great_war_part2']);
+    const year9Units = getOrderedUnits(['great_war_part2', 'the_shoah', 'cold_war', 'second_world_war', 'post_war_britain'])
+      .filter(u => !underConstructionIds.includes(u.id) && u.id !== 'great_war_part2');
     const year10Units = getOrderedUnits(['cme_new', 'weimar_nazi_germany']);
     const year11Units = getOrderedUnits(['edexcel_medicine', 'eee']);
     const tripUnits = getOrderedUnits(['trip_ypres']);
@@ -159,7 +162,49 @@ export function bindEvents() {
     renderAccordionGroup('School Trips & Tours', tripUnits, true);
     renderAccordionGroup('Year 7', year7Units, true);
     renderAccordionGroup('Year 8', year8Units, true);
-    renderAccordionGroup('Year 9', year9Units, true);
+
+    // Year 9: show accordion even when only coming-soon units exist
+    const header9 = document.createElement('div');
+    header9.innerHTML = `<span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); font-weight: 600; display: flex; align-items: center; justify-content: space-between;"><span style="flex-grow: 1;">Year 9</span><i class="fa-solid fa-chevron-down" style="transition: transform 0.2s; font-size: 0.7rem;"></i></span>`;
+    header9.style.margin = '10px 16px 8px';
+    header9.style.cursor = 'pointer';
+    const content9 = document.createElement('div');
+    content9.style.display = 'none';
+    header9.addEventListener('click', () => {
+      const isOpen = content9.style.display === 'block';
+      content9.style.display = isOpen ? 'none' : 'block';
+      const icon = header9.querySelector('i');
+      icon.classList.toggle('fa-chevron-up', !isOpen);
+      icon.classList.toggle('fa-chevron-down', isOpen);
+    });
+    if (year9Units.length > 0) {
+      year9Units.forEach((unit) => {
+        const link = document.createElement('div');
+        link.className = 'nav-item';
+        link.style.cssText = 'cursor:pointer;display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:6px;margin:0 8px 4px 8px;color:rgba(255,255,255,0.85);';
+        link.addEventListener('mouseenter', () => { link.style.background = 'rgba(255,255,255,0.1)'; link.style.color = '#fff'; });
+        link.addEventListener('mouseleave', () => { link.style.background = 'transparent'; link.style.color = 'rgba(255,255,255,0.85)'; });
+        link.innerHTML = `<i class="fa-solid fa-book" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${unit.title || 'Untitled Unit'}</span>`;
+        link.addEventListener('click', () => { if (window.launchSubApp) window.launchSubApp(unit.id); });
+        content9.appendChild(link);
+      });
+    }
+    // Coming-soon dimmed entries
+    const comingSoon9 = [
+      'KS3: The Shoah',
+      'KS3: The Cold War',
+      'KS3: The Second World War',
+      'KS3: Rights, Protest & Post-War Britain',
+    ];
+    comingSoon9.forEach(name => {
+      const item = document.createElement('div');
+      item.style.cssText = 'display:flex;align-items:center;gap:8px;padding:6px 16px;border-radius:6px;margin:0 8px 2px 8px;color:rgba(255,255,255,0.3);font-size:0.8rem;cursor:default;';
+      item.innerHTML = `<i class="fa-solid fa-hammer" style="width:20px;text-align:center;"></i> <span>${name} <em style="font-size:0.75em;">(coming soon)</em></span>`;
+      content9.appendChild(item);
+    });
+    sidebarUnitsContainer.appendChild(header9);
+    sidebarUnitsContainer.appendChild(content9);
+
     renderAccordionGroup('Year 10', year10Units, false);
     renderAccordionGroup('Year 11', year11Units, false);
   }

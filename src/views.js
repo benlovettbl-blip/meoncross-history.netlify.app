@@ -77,16 +77,15 @@ export function renderDashboard() {
     .filter((u) => year7Order.includes(u.id))
     .sort((a, b) => year7Order.indexOf(a.id) - year7Order.indexOf(b.id));
 
-  // Year 8 Grouping
-  const year8Order = ['industrialisation_and_empire', 'australia', 'great_war'];
+  // Year 8 Grouping — great_war_part2 follows great_war chronologically
+  const year8Order = ['industrialisation_and_empire', 'australia', 'great_war', 'great_war_part2'];
   const year8Units = units
     .filter((u) => year8Order.includes(u.id))
     .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));
 
-  // Year 9 Grouping — hide units still under construction
+  // Year 9 Grouping — hide units still under construction; great_war_part2 moved to Year 8
   const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
   const year9Order = [
-    'great_war_part2',
     'the_shoah',
     'cold_war',
     'second_world_war',
