@@ -3273,177 +3273,52 @@ export const unitData = {
       }
     },
     {
-      "title": "Lesson 9: Assessment: How powerful was a medieval monarch?",
-      "substantive_concepts": "Chart complex themes of religious conflict.",
-      "historical_scholarship": "Compares revisionist views on the event.",
-      "adaptive_teaching": "Distribute visual timelines for SEND.",
-      "sequencing_retrieval": "Recalls previous learning of public health.",
-      "local_coastal_links": "N/A",
-      "learning_objective": "To synthesize knowledge and construct an assessment on the true extent of medieval monarchical power.",
-      "disciplinary_concept": "Historical Enquiry",
-      "formative_assessment": {
-        "type": "End of Unit Summative Assessment"
+      "id": "lesson_9",
+      "title": "End of Unit Assessment: How powerful was a medieval monarch?",
+      "exam_practice": {
+        "stimulus": [
+          "This assessment tests your knowledge of the entire Medieval England unit (1066\u20131485). You will answer three questions of increasing difficulty. The first two questions require short, precise answers. The final question requires a full essay.",
+          "**Stimulus Points for Question 3:**\n\u2022 The Poll Tax of 1380\n\u2022 The Statute of Labourers (1351)\n\nYou must also use information of your own."
+        ],
+        "questions": [
+          {
+            "question": "Describe one feature of a medieval doom painting.",
+            "marks": 2
+          },
+          {
+            "question": "Describe one feature of the Domesday Book.",
+            "marks": 2
+          },
+          {
+            "question": "Explain why the peasants revolted in 1381.\n\nYou may use the following in your answer:\n\u2022 The Poll Tax\n\u2022 The Statute of Labourers\n\nYou must also use information of your own.",
+            "marks": 12
+          }
+        ]
       },
-      "banner": "/images/domesday_book.jpg",
+      "extended": {
+        "title": "Final Assessment",
+        "question": "Explain why the peasants revolted in 1381. (12 marks)",
+        "hints": [
+          "Intro: Define what a revolt is and state that there were several interconnected causes of the Peasants' Revolt.",
+          "Para 1 (Long-term cause): Explain how the Black Death (1348) created a severe labour shortage. Peasants demanded higher wages, but the Statute of Labourers (1351) froze wages at pre-plague levels, causing deep resentment.",
+          "Para 2 (Short-term cause): Explain how the Poll Tax of 1380 was the spark. It was the third poll tax in four years, and unlike previous taxes, it demanded the same flat rate from rich and poor alike, causing fury among the poorest.",
+          "Para 3 (Other factors): Discuss the role of radical preaching by John Ball ('When Adam delved and Eve span, who was then the gentleman?') and the weakness of the young King Richard II (aged 14).",
+          "Conclusion: Which cause was most important? Was it the long-term anger from the Statute of Labourers, or the immediate trigger of the Poll Tax?"
+        ]
+      },
       "teacher_notes": {
-        "primer": "This is a capstone assessment lesson. Rather than regurgitating previous narratives, it tests students' ability to synthesize knowledge from the entire unit. The lesson involves chronological retrieval practice, evaluation of differing historical interpretations, and scaffolding for a 12-mark essay.",
+        "primer": "This capstone assessment introduces Year 7 pupils to foundational GCSE question structures used in Edexcel History. The 'Describe one feature' questions (2x2 marks) mirror the updated Paper 1/Paper 2 format. The 12-mark 'Explain why' question mirrors Paper 1 causation essays, requiring pupils to use stimulus points AND their own knowledge.",
         "objectives": [
           {
-            "objective": "To accurately sequence the key events of the medieval period.",
-            "primer": "Instruct students to complete the Domino Flowchart timeline, focusing on chronological and causal links between events.",
-            "question": "Which event directly caused the severe labour shortage that eventually led to the Peasants' Revolt?"
+            "objective": "Identify and describe specific historical features using the 2-mark Edexcel format.",
+            "primer": "Remind pupils that a 'feature' question requires a simple identifying statement followed by a specific supporting detail (1 mark for identification + 1 mark for supporting information = 2 marks). Model an example on the board before they begin.",
+            "question": "What is the difference between a 'feature' and just a random fact about the topic?"
           },
           {
-            "objective": "To write a structured essay explaining the decline of royal power.",
-            "primer": "Use the essay planning block to outline the PEEL structure. Encourage students to use evidence from at least three different centuries.",
-            "question": "What is your main point for paragraph two regarding the barons?"
+            "objective": "Construct a multi-causal explanation for the Peasants' Revolt of 1381.",
+            "primer": "Guide pupils to use the PEEL structure. They MUST use both stimulus points (Poll Tax, Statute of Labourers) AND add at least one cause of their own (e.g., John Ball's radical preaching, the young King Richard II's perceived weakness, or the general post-plague labour crisis).",
+            "question": "Why is it mathematically impossible to get full marks on a 12-mark 'Explain why' question if you only write about the two bullet points provided?"
           }
-        ]
-      },
-      "do_now": {
-        "type": "timeline",
-        "title": "Retrieval Practice: The Struggle for Power (1066–1381)",
-        "substantive_concepts": "Examine underlying themes of ideological shifts.",
-        "historical_scholarship": "Reviews Marxist views on the event.",
-        "adaptive_teaching": "Review simplified texts for SEND.",
-        "sequencing_retrieval": "Recalls prior knowledge of societal structures.",
-        "local_coastal_links": "N/A",
-        "text": "Review the events below. In your workbook, draw arrows connecting these events in the correct chronological and causal order.",
-        "events": [
-          {
-            "year": "1066",
-            "title": "The Norman Conquest",
-            "substantive_concepts": "Examine underlying themes of public health.",
-            "historical_scholarship": "Reviews Marxist theories on the event.",
-            "adaptive_teaching": "Review simplified texts for SEND.",
-            "sequencing_retrieval": "Consolidates past context of economic shifts.",
-            "local_coastal_links": "N/A",
-            "detail": "William the Conqueror defeats Harold Godwinson and unleashes the Harrying of the North."
-          },
-          {
-            "year": "1086",
-            "title": "The Domesday Book",
-            "substantive_concepts": "Review core themes of ideological shifts.",
-            "historical_scholarship": "Evaluates traditional arguments on the event.",
-            "adaptive_teaching": "Assign knowledge organizers to aid focus.",
-            "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
-            "local_coastal_links": "N/A",
-            "detail": "A massive survey to assess the wealth of the country for taxation."
-          },
-          {
-            "year": "1170",
-            "title": "Murder of Thomas Becket",
-            "substantive_concepts": "Examine underlying themes of economic shifts.",
-            "historical_scholarship": "Reviews Marxist theories on the event.",
-            "adaptive_teaching": "Review simplified texts for EAL.",
-            "sequencing_retrieval": "Consolidates past context of economic shifts.",
-            "local_coastal_links": "N/A",
-            "detail": "The Archbishop of Canterbury is murdered by knights loyal to Henry II."
-          },
-          {
-            "year": "1215",
-            "title": "Magna Carta",
-            "substantive_concepts": "Evaluate key themes of empire building.",
-            "historical_scholarship": "Examines orthodox perspectives on the event.",
-            "adaptive_teaching": "Deploy scaffolded tasks for EAL.",
-            "sequencing_retrieval": "Synthesizes prior knowledge of societal structures.",
-            "local_coastal_links": "N/A",
-            "detail": "King John is forced by his barons to seal the Great Charter, limiting royal power."
-          },
-          {
-            "year": "1348",
-            "title": "The Black Death",
-            "substantive_concepts": "Examine underlying themes of public health.",
-            "historical_scholarship": "Reviews Marxist perspectives on the event.",
-            "adaptive_teaching": "Review simplified texts for SEND.",
-            "sequencing_retrieval": "Synthesizes past context of economic shifts.",
-            "local_coastal_links": "N/A",
-            "detail": "The bubonic plague arrives in England, killing a third of the population."
-          },
-          {
-            "year": "1381",
-            "title": "The Peasants' Revolt",
-            "substantive_concepts": "Explore primary themes of economic shifts.",
-            "historical_scholarship": "Explores structuralist frameworks on the event.",
-            "adaptive_teaching": "Provide structured tables for EAL.",
-            "sequencing_retrieval": "Builds past context of economic shifts.",
-            "local_coastal_links": "N/A",
-            "detail": "Peasants rebel against the Poll Tax and demand the end of serfdom."
-          }
-        ]
-      },
-      "vocab": [
-        {
-          "term": "Feudalism",
-          "definition": "A social system where land is held in exchange for service or labour."
-        },
-        {
-          "term": "Harrying",
-          "definition": "A brutal military campaign to destroy crops and starve rebels."
-        },
-        {
-          "term": "Excommunication",
-          "definition": "Being officially thrown out of the Catholic Church."
-        },
-        {
-          "term": "Magna Carta",
-          "definition": "The 'Great Charter' that limited the King's power and established that no one is above the law."
-        },
-        {
-          "term": "Pestilence",
-          "definition": "A fatal epidemic disease, like the Black Death."
-        },
-        {
-          "term": "Revolt",
-          "definition": "An uprising or rebellion against authority."
-        }
-      ],
-      "narrative_blocks": [
-        {
-          "title": "Block 1: Planning Your Essay",
-          "substantive_concepts": "Explore primary themes of ideological shifts.",
-          "historical_scholarship": "Explores structuralist debates on the event.",
-          "adaptive_teaching": "Provide structured tables for SEND.",
-          "sequencing_retrieval": "Connects prior knowledge of societal structures.",
-          "local_coastal_links": "N/A",
-          "text": "Use this block to plan your final assessment essay. A good history essay uses a clear structure, such as PEEL (Point, Evidence, Explain, Link).<br><br><strong>Paragraph 1: Early Norman Power</strong><br>How did early monarchs show their strength? (Hint: Think about William I, castles, and the Domesday Book).<br><br><strong>Paragraph 2: The Church and Barons</strong><br>How was royal power challenged by the Church and wealthy lords? (Hint: Think about Thomas Becket, and King John sealing Magna Carta).<br><br><strong>Paragraph 3: Peasants and Civil War</strong><br>How was the crown threatened by the lower classes and dynastic rivalries? (Hint: Think about the Peasants' Revolt in 1381 and the Wars of the Roses)."
-        },
-        {
-          "title": "Block 2: Final Assessment",
-          "substantive_concepts": "Review core themes of ideological shifts.",
-          "historical_scholarship": "Evaluates traditional arguments on the event.",
-          "adaptive_teaching": "Assign knowledge organizers to aid focus.",
-          "sequencing_retrieval": "Links prior knowledge of warfare tactics.",
-          "local_coastal_links": "N/A",
-          "extended": {
-            "question": "Explain why royal power weakened between 1066 and 1485 (12 marks)",
-            "lines": 18,
-            "scaffolding": [
-              "Start with a clear introduction stating that while royal power was initially strong under William I, it was weakened by the Church, angry barons, and eventually the peasants.",
-              "Use your first paragraph to explain how Magna Carta limited the King's power in 1215.",
-              "Use your second paragraph to explain how the Peasants' Revolt (1381) and the Wars of the Roses (1455-1485) challenged the Crown's stability."
-            ]
-          },
-          "tasks": [
-            {
-              "type": "extended_writing",
-              "question": "Explain why royal power weakened between 1066 and 1485 (12 marks)",
-              "model_answer": "Initially, royal power was absolute. William the Conqueror established total control after 1066 using brutal military force, such as the Harrying of the North, and built motte and bailey castles to intimidate the Anglo-Saxons. He also surveyed the entire country with the Domesday Book in 1086 to maximize taxation.\n\nHowever, royal power weakened over time due to challenges from the Church and the barons. King Henry II suffered a massive blow to his authority after the murder of Thomas Becket, and King John severely damaged the reputation of the monarchy by overtaxing his lords. In 1215, the barons rebelled and forced him to seal Magna Carta, a crucial turning point because it established that the King was no longer above the law.\n\nFurthermore, royal power completely collapsed in the later medieval period. The Peasants' Revolt of 1381 proved that even the lowest classes could organize massive armies to threaten the King. Finally, during the Wars of the Roses (1455-1485), the crown was violently usurped back and forth between rival nobles, proving that medieval monarchs had lost the absolute control established by William the Conqueror."
-            }
-          ]
-        }
-      ],
-      "pair_share": {
-        "prompt": "Discuss with your partner: Based on everything we have studied, what was the most effective way for a medieval monarch to keep their power?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
-      },
-      "learning_objectives": {
-        "overarching": "To synthesize knowledge and construct an assessment on the true extent of medieval monarchical power.",
-        "scaffolded": [
-          "To accurately sequence the key events of the medieval period.",
-          "To write a structured essay explaining the decline of royal power."
         ]
       }
     }

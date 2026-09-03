@@ -1968,130 +1968,57 @@ export const unitData = {
     },
     {
       "id": "lesson_7",
-      "title": "Assessment: The Great War",
-      "substantive_concepts": "Evaluate key themes of diplomatic relations.",
-      "historical_scholarship": "Examines orthodox views on the event.",
-      "adaptive_teaching": "Deploy scaffolded tasks for accessibility.",
-      "sequencing_retrieval": "Recalls core concepts of religious divides.",
-      "local_coastal_links": "N/A",
-      
-      "learning_objective": "To synthesize historical knowledge and construct a comprehensive assessment of the Great War.",
-      "disciplinary_concept": "Historical Enquiry",
-      "formative_assessment": {"type":"End of Unit Summative Assessment"},
-      "primer": "This formal assessment bridges Key Stage 3 historical skills with early GCSE demands, testing chronological recall, source utility evaluation, and historical judgement.",
-      "vocab": [],
-      "do_now": {
-        "type": "grid",
-        "tasks": [
+      "title": "End of Unit Assessment: The Historians' Debate on the Treaty of Versailles",
+      "exam_practice": {
+        "stimulus": [
+          "**Interpretation 1 (based on Margaret MacMillan, 'Peacemakers', 2001):** The Treaty of Versailles was a reasonable and pragmatic compromise given the impossible circumstances of 1919. The victorious leaders faced enormous public pressure to punish Germany, yet the treaty stopped short of destroying the German state entirely. Germany kept its national unity, its industrial heartland, and its potential to recover. The reparations bill, while enormous on paper, was repeatedly reduced and restructured throughout the 1920s. The real failure was not the treaty itself, but the refusal of Britain and France to enforce it consistently in the 1930s when Hitler began openly violating its terms.",
+          "**Interpretation 2 (based on John Maynard Keynes, 'The Economic Consequences of the Peace', 1919):** The Treaty of Versailles was a vindictive catastrophe that made a second world war inevitable. By imposing crippling reparations of \u00a36.6 billion, stripping Germany of 13% of its territory and 10% of its population, and forcing the humiliating 'War Guilt Clause' (Article 231) onto a proud nation, the Allied leaders planted the seeds of German resentment and extremism. The treaty did not create lasting peace; it created a twenty-year ceasefire. It was only a matter of time before a demagogue like Hitler would exploit the fury of a humiliated people to tear the treaty apart and plunge Europe back into war."
+        ],
+        "questions": [
           {
-            "question": "What triggered the start of WWI in 1914?",
-            "answer": "The assassination of Archduke Franz Ferdinand.",
-            "points": 1
+            "question": "What is the main difference between Interpretation 1 and Interpretation 2 regarding the Treaty of Versailles?",
+            "marks": 4
           },
           {
-            "question": "What was the name of the British law that allowed the government to take control of industries?",
-            "answer": "DORA (Defence of the Realm Act).",
-            "points": 2
+            "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views about the Treaty of Versailles. You may use evidence from this unit to help explain your answer.",
+            "marks": 4
           },
           {
-            "question": "Why did the Schlieffen Plan fail?",
-            "answer": "Belgium resisted, Russia mobilized faster than expected, and Britain intervened.",
-            "points": 3
+            "question": "How far do you agree with Interpretation 2 that the Treaty of Versailles was 'a vindictive catastrophe that made a second world war inevitable'?\n\nExplain your answer, using your own knowledge and both interpretations.",
+            "marks": 16
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "text": "Complete the automated multiple-choice quiz for this unit to test your foundational knowledge.",
-          "tasks": [
-            {
-              "text": "1a. Describe one feature of the Home Front during the First World War. (2 marks)<br>1b. Describe one feature of the Treaty of Versailles. (2 marks)",
-              "model_answer": "1a. One feature of the Home Front was the mobilization of women. For example, thousands of women known as 'Munitionettes' worked in dangerous factories to produce shells.<br><br>1b. One feature of the Treaty of Versailles was its harsh military restrictions. For example, the German army was limited to 100,000 men and was not allowed submarines or an air force."
-            }
-          ]
-        },
-        {
-          "text": "Study Source A (the painting of the 'Canary Girls' in the munitions factory).",
-          "image": "/images/gw_munitionettes.jpg",
-          "image_alt": "Source A: A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote.",
-          "tasks": [
-            {
-              "text": "How useful is Source A for an inquiry into the impact of the First World War on women? (8 marks)",
-              "model_answer": "Source A is highly useful for showing the reality of the Home Front, as it is a painting from the time demonstrating women taking on heavy industrial roles previously reserved for men. However, its utility is limited because a painting is subjective and may have been created for propaganda to encourage recruitment, rather than showing the true dangers like TNT poisoning."
-            }
-          ],
-          "image_caption": "Source A: A painting capturing the immense scale of female labor in British munitions factories. This unprecedented entry of women into heavy industry shattered Victorian gender norms and played a critical role in the passing of the Representation of the People Act 1918, which finally granted some women the right to vote."
-        },
-        {
-          "text": "Study Interpretation 1. <em>\"The First World War was primarily won on the mud of the Western Front.\"</em>",
-          "tasks": [
-            {
-              "text": "How far do you agree with Interpretation 1? Explain your answer using your own knowledge. (16 marks + 4 SPaG)",
-              "model_answer": "<strong>Paragraph 1 (Agree - The Trenches):</strong> You could agree with the statement by discussing the sheer scale of the battles of attrition on the Western Front, such as the Somme and Passchendaele, where the German army was slowly ground down.<br><br><strong>Paragraph 2 (Disagree - Global Empire):</strong> You could disagree by arguing the war was a global conflict. The contribution of over 1.5 million men from the British Indian Army (including heroes like Khudadad Khan) and resources from across the Empire were crucial to preventing an early defeat.<br><br><strong>Paragraph 3 (Disagree - Home Front):</strong> You could also disagree by arguing the war was won on the Home Front. The mobilization of the entire civilian population, such as women in munitions factories, ensured the military had the supplies needed to win.<br><br><strong>Paragraph 4 (Disagree - Local Impact):</strong> You could also argue that focusing only on military victory ignores the devastating long-term social impact. Using local micro-histories, such as the 67 names on the Stubbington memorial or the tragedy of the three Lowry brothers, shows that the true cost of the war was felt in communities for decades.<br><br><strong>Conclusion:</strong> Summarize your overall judgement, balancing the military reality of the Western Front against the broader global and civilian contributions."
-            }
-          ]
-        }
-      ],
-      "quiz": [
-        {
-          "q": "In what year did the First World War begin?",
-          "a": "1914",
-          "options": [
-            "1914",
-            "1918",
-            "1939",
-            "1911"
-          ]
-        },
-        {
-          "q": "Which country was NOT part of the Triple Entente?",
-          "a": "Germany",
-          "options": [
-            "Germany",
-            "Britain",
-            "France",
-            "Russia"
-          ]
-        },
-        {
-          "q": "What condition was caused by standing in cold, flooded trenches?",
-          "a": "Trench Foot",
-          "options": [
-            "Trench Foot",
-            "Shell Shock",
-            "Spanish Flu",
-            "Cholera"
-          ]
-        },
-        {
-          "q": "How many men from the British Empire and Dominions served in the war?",
-          "a": "Nearly 3 million",
-          "options": [
-            "Nearly 3 million",
-            "100,000",
-            "500,000",
-            "5 million"
-          ]
-        },
-        {
-          "q": "What was the nickname given to women working with TNT in factories?",
-          "a": "Canary Girls",
-          "options": [
-            "Canary Girls",
-            "Tommies",
-            "Doughboys",
-            "Land Girls"
-          ]
-        }
-      ],
-      "teacher_notes": {
-        "source_context": "The visual sources in this assessment review the core themes of the unit, from the empowerment and exploitation of women in munitions factories to the enduring legacy of the conflict. **Hinge Question:** How does the image of women in munitions factories summarize the dramatic societal shifts caused by Total War?"
+      "extended": {
+        "title": "Final Assessment",
+        "question": "How far do you agree with Interpretation 2 that the Treaty of Versailles was 'a vindictive catastrophe that made a second world war inevitable'? (16 marks)",
+        "hints": [
+          "Intro: Define the debate. State that historians disagree about whether Versailles was a reasonable compromise or a disastrous mistake.",
+          "Para 1 (Agree with Interpretation 2): Discuss the harshness of the terms \u2014 \u00a36.6 billion reparations, Article 231 (War Guilt), loss of territory (Alsace-Lorraine, Polish Corridor), military restrictions (100,000 army, no air force). Explain how this humiliation fuelled extremist movements like the Nazis.",
+          "Para 2 (Disagree \u2014 support Interpretation 1): Argue that Germany was not destroyed. It kept its industrial base, national unity, and population. The reparations were reduced (Dawes Plan 1924, Young Plan 1929). The real problem was the failure to enforce the treaty in the 1930s when Hitler remilitarised the Rhineland.",
+          "Para 3 (Your own judgement): Was the treaty the CAUSE of WW2, or was it Hitler's aggression? Could the treaty have worked if it had been properly enforced?",
+          "Conclusion: State your overall judgement clearly. Was Keynes right that the treaty was a 'vindictive catastrophe', or was MacMillan right that the real failure came later?"
+        ]
       },
-      "pair_share": {
-        "prompt": "Discuss with your partner: What was the most significant turning point of the Great War?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
+      "teacher_notes": {
+        "primer": "This Year 9 capstone assessment provides a rigorous introduction to the full Edexcel Paper 3 (Section B) Interpretations format (4+4+16 marks). It is designed as the final bridge between KS3 and GCSE, preparing pupils for the exact question styles they will encounter in Year 10. The two interpretations are based on real historians (Margaret MacMillan and John Maynard Keynes) to model proper historiographical engagement.",
+        "objectives": [
+          {
+            "objective": "Identify and explain the main difference between two historical interpretations.",
+            "primer": "For the 4-mark 'difference' question, pupils must identify ONE clear difference and support it with a specific quote or reference from EACH interpretation. A common mistake is to describe the interpretations separately without explicitly stating HOW they differ.",
+            "question": "How can you structure your answer to make the contrast between the two interpretations absolutely clear to the examiner?"
+          },
+          {
+            "objective": "Suggest reasons why two historians might produce different interpretations of the same event.",
+            "primer": "Teach pupils the three main reasons interpretations differ: (1) Different emphasis on evidence (one focuses on political terms, the other on economic consequences), (2) Different historical context (Keynes wrote in 1919, MacMillan wrote with the benefit of hindsight in 2001), (3) Different values or purpose (Keynes wanted to change policy, MacMillan wanted to reassess a long-standing narrative).",
+            "question": "How might the fact that Keynes wrote his book in 1919 \u2014 just months after the treaty was signed \u2014 affect his interpretation compared to MacMillan writing in 2001?"
+          },
+          {
+            "objective": "Construct a balanced, evidence-rich 16-mark essay evaluating a historical interpretation.",
+            "primer": "Scaffold the essay structure: pupils need at least three developed paragraphs (agree, disagree, own judgement) plus a clear introduction and conclusion. Each paragraph must reference BOTH interpretations AND the pupil's own factual knowledge from the unit. The conclusion must contain a clear, justified overall judgement \u2014 sitting on the fence is not acceptable at this level.",
+            "question": "What makes a conclusion excellent rather than average? What does 'justified judgement' actually look like in practice?"
+          }
+        ]
       }
     }
   ],

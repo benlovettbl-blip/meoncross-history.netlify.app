@@ -1216,64 +1216,48 @@ const unitData = {
     },
     {
       "id": "lesson_5",
-      "title": "Lesson 5: Assessment - What's the story of Australia?",
-      "substantive_concepts": "Review core themes of monarchical power.",
-      "historical_scholarship": "Evaluates traditional views on the event.",
-      "adaptive_teaching": "Assign knowledge organizers to aid focus.",
-      "sequencing_retrieval": "Recalls earlier themes of political changes.",
-      "local_coastal_links": "N/A",
-      "learning_objective": "To synthesize historical knowledge and construct a comprehensive narrative of early Australian history.",
-      "formative_assessment": {
-        "type": "End of Unit Summative Assessment",
-        "question": "Summative Assessment: Evaluate the most significant turning point in Australia's colonial history."
-      },
-      "banner": "/images/sydney_cove.jpg",
-      "banner_position": "center",
-      "enquiry": "How did New South Wales develop, and how should we assess its history?",
-      "teacher_notes": {
-        "primer": "This is the final assessment lesson for the Australia unit. It provides two differentiated choices for students to demonstrate their historical knowledge and skills.",
-        "objectives": [
+      "title": "End of Unit Assessment: What is the story of Australia?",
+      "exam_practice": {
+        "stimulus": [
+          "This assessment tests your knowledge of the entire Australia unit. You will complete two tasks: a Narrative Account essay and a Source Utility evaluation.",
+          "**Source A:** An excerpt from the journal of Captain Arthur Phillip, first Governor of New South Wales, written in 1790:\n\n\u201cThe lands around Sydney Cove have proved far less fertile than was initially hoped. The convicts are weak and malnourished, and many lack even the most basic skills in farming or construction. Without urgent supplies from England, I fear this settlement cannot survive another year. The native people, who appeared at first to be timid and curious, have grown increasingly hostile since we occupied their fishing grounds and fresh water sources.\u201d"
+        ],
+        "questions": [
           {
-            "objective": "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
-            "primer": "Direct students to Assessment 1 for a narrative account.",
-            "question": "Can you sequence the key turning points in the colony's development?"
+            "question": "Write a narrative account analysing the development of Australia between the years 1788 and 1855.\n\nYou may use the following in your answer:\n\u2022 The near-starvation of the First Fleet (1788)\n\u2022 The introduction of Merino sheep and the wool industry\n\nYou must also use information of your own.",
+            "marks": 8
           },
           {
-            "objective": "Evaluate the most significant turning point in Australia's transformation from a penal colony to a free settlement.",
-            "primer": "Guide students to weigh competing turning points: Cook's arrival, the First Fleet, the end of transportation, the gold rushes, and the treatment of Indigenous Australians.",
-            "question": "Which single event or development most fundamentally changed Australia's trajectory?"
-          },
-          {
-            "objective": "Construct a structured essay arguing which factor had the greatest impact on the development of colonial Australia.",
-            "primer": "Scaffold the construction of a multi-paragraph essay with a clear thesis, supporting evidence from across the unit, and a balanced conclusion.",
-            "question": "How do you structure an argument when multiple factors seem equally significant?"
+            "question": "How useful is Source A for an enquiry into the early struggles of the Sydney Cove penal colony?\n\nExplain your answer, using Source A and your own knowledge.",
+            "marks": 8
           }
         ]
       },
-      "narrative_blocks": [
-        {
-          "type": "narrative",
-          "theme_heading": "Assessment: Write a Narrative Account",
-          "text": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855. \n\nYou may use the following in your answer:\n* The near-starvation of the First Fleet (1788)\n* The introduction of Merino sheep and the wool industry\n\nYou must also use information of your own.",
-          "tasks": [
-            {
-              "type": "extended_writing",
-              "question": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855.",
-              "marks": "8",
-              "instructions": "Use these sentence starters to build your narrative in chronological order:\n\n1. The development of Australia began in 1788 when...\n2. This was a very difficult period because...\n3. However, the situation changed dramatically when John Macarthur...\n4. This led to New South Wales becoming a profitable colony because...\n5. Finally, the development of Australia accelerated in the 1850s due to..."
-            }
-          ]
-        }
-      ],
-      "learning_objectives": [
-        "Synthesize knowledge of the development of New South Wales from a penal colony to a profitable settlement.",
-        "Evaluate the most significant turning point in Australia's transformation from a penal colony to a free settlement.",
-        "Construct a structured essay arguing which factor had the greatest impact on the development of colonial Australia."
-      ],
-      "disciplinary_focus": "Significance",
-      "assessments": [
-        "Summative Assessment: Evaluate the most significant turning point in Australia's colonial history."
-      ]
+      "extended": {
+        "title": "Final Assessment",
+        "question": "Write a narrative account analysing the development of Australia between the years 1788 and 1855. (8 marks)",
+        "hints": [
+          "Start chronologically: Describe the desperate early years of the Sydney Cove settlement (1788). The First Fleet arrived with convicts who had no farming skills, tools were inadequate, and the soil was poor.",
+          "Explain the turning point: How did John Macarthur's introduction of Merino sheep transform NSW from a failing prison into a profitable wool-exporting colony?",
+          "Include your own knowledge: What other factors contributed to Australia's development? (e.g., the end of convict transportation, the gold rushes of the 1850s, the brutal dispossession of Indigenous peoples).",
+          "End with a clear conclusion: By 1855, how had Australia fundamentally changed from the starving penal colony of 1788?"
+        ]
+      },
+      "teacher_notes": {
+        "primer": "This Year 8 assessment steps up the GCSE skills ladder by introducing the Narrative Account (8 marks) and Source Utility (8 marks) question formats. The Narrative Account requires chronological storytelling with analytical links between events. The Source Utility question requires pupils to evaluate content, provenance, and limitations of a primary source.",
+        "objectives": [
+          {
+            "objective": "Write a coherent narrative account that analyses change over time (1788\u20131855).",
+            "primer": "Emphasise that a narrative account is NOT just a list of events. Pupils must use connective language to show how one development LED TO another (e.g., 'This meant that...', 'As a result of this...', 'This was a turning point because...'). The best answers will explain WHY changes happened, not just describe them.",
+            "question": "What is the difference between describing events in order and analysing how they connect to each other?"
+          },
+          {
+            "objective": "Evaluate the utility of Source A by considering its content and provenance.",
+            "primer": "Teach pupils the COP framework: Content (what does it say?), Origin (who wrote it, when, and why?), Purpose (what was the author trying to achieve?). Remind them that utility is not about whether the source is 'biased' but about what it is useful FOR in relation to the specific enquiry question.",
+            "question": "Captain Phillip was writing to the British government to request emergency supplies. How might this purpose affect what he chose to include or exaggerate in his journal?"
+          }
+        ]
+      }
     }
   ],
   "quizPack": [
