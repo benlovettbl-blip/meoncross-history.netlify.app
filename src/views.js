@@ -192,12 +192,16 @@ export function renderDashboard() {
       edexcel_medicine: 'center 10%',
       eee:              'center 10%',
       australia:        'center 60%',
-      great_war_part2:  'center 30%',
+      great_war_part2:  'center top',
       weimar_nazi_germany: 'center 20%',
     };
     const bgPos = unit.cover_image_position || positionFallbacks[unit.id] || 'center';
 
-    const badgeHtml = '';
+    const gcseUnitIds = ['cme_new', 'weimar_nazi_germany', 'edexcel_medicine', 'eee'];
+    const isGcse = gcseUnitIds.includes(unit.id);
+    const gcseBadge = isGcse
+      ? `<span style="position:absolute; top:10px; left:10px; z-index:10; background:#f59e0b; color:#fff; font-size:0.65rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; padding:3px 9px; border-radius:20px; box-shadow:0 2px 6px rgba(0,0,0,0.25);">GCSE</span>`
+      : '';
 
     // Derive a short, friendly label for the CTA button
     const unitShortNames = {
@@ -221,7 +225,7 @@ export function renderDashboard() {
 
     html += `
       <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative;" data-action="launch-subapp" data-unit="${unit.id}">
-        ${badgeHtml}
+        ${gcseBadge}
         ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
         <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
           <div class="module-header" style="margin-bottom: 8px;">

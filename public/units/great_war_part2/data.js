@@ -6,7 +6,7 @@ export const unitData = {
       "sequencing_retrieval": "Connects prior knowledge of warfare tactics.",
       "local_coastal_links": "N/A",
       
-  "homepage_background": "/images/stubbington_memorial_1.jpg",
+  "homepage_background": "/images/armistice_1918.jpg",
   "enquiry": "How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?",
   "cover_image": "/images/bg_great_war_part2.jpg",
   "cover_caption": "The cover image displays two powerful historical sources that bookend the First World War: on the left, an illustration of the assassination of Archduke Franz Ferdinand in Sarajevo (the spark that ignited the conflict in 1914), and on the right, the official Treaty of Versailles document (the controversial peace settlement signed in 1919).",
