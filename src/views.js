@@ -84,7 +84,12 @@ export function renderDashboard() {
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const themePopover = document.getElementById('theme-popover');
     const themeToggleLabel = document.getElementById('theme-toggle-label');
-    const themeNames = { primary: 'History Hub', desert: 'Sand', space: 'Deep Space', coral: 'Coral' };
+    const themeNames = {
+      primary: 'History Hub',
+      desert: 'Sand',
+      space: 'Deep Space',
+      coral: 'Coral',
+    };
     if (themeToggleBtn && themePopover) {
       // Set initial label
       const currentTheme = localStorage.getItem('history_theme') || 'primary';
@@ -105,7 +110,9 @@ export function renderDashboard() {
           document.documentElement.setAttribute('data-theme', themeName);
           localStorage.setItem('history_theme', themeName);
           document.querySelectorAll('.theme-btn').forEach((b) => b.classList.remove('active'));
-          document.querySelectorAll(`.theme-btn[data-theme="${themeName}"]`).forEach(b => b.classList.add('active'));
+          document
+            .querySelectorAll(`.theme-btn[data-theme="${themeName}"]`)
+            .forEach((b) => b.classList.add('active'));
           if (themeToggleLabel) themeToggleLabel.textContent = themeNames[themeName] || 'Theme';
           themePopover.style.display = 'none';
         });
@@ -133,12 +140,7 @@ export function renderDashboard() {
 
   // Year 9 Grouping — hide units still under construction; great_war_part2 moved to Year 8
   const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
-  const year9Order = [
-    'the_shoah',
-    'cold_war',
-    'second_world_war',
-    'post_war_britain',
-  ];
+  const year9Order = ['the_shoah', 'cold_war', 'second_world_war', 'post_war_britain'];
   const year9Units = units
     .filter((u) => year9Order.includes(u.id) && !underConstructionIds.includes(u.id))
     .sort((a, b) => year9Order.indexOf(a.id) - year9Order.indexOf(b.id));
@@ -190,9 +192,9 @@ export function renderDashboard() {
     // cover_image_position: pulled from unit data first, then a per-unit fallback map
     const positionFallbacks = {
       edexcel_medicine: 'center 10%',
-      eee:              'center 10%',
-      australia:        'center 70%',
-      great_war_part2:  'center top',
+      eee: 'center 10%',
+      australia: 'center 70%',
+      great_war_part2: 'center top',
       weimar_nazi_germany: 'center 20%',
     };
     const bgPos = unit.cover_image_position || positionFallbacks[unit.id] || 'center';
@@ -209,8 +211,8 @@ export function renderDashboard() {
       medieval_england: 'Medieval England',
       early_modern_world: 'Early Modern World',
       industrialisation_and_empire: 'Industrialisation',
-      australia: 'History of Australia',
-      great_war: 'Great War — Causes',
+      australia: 'Australia',
+      great_war: 'Great War Causes',
       great_war_part2: 'The Great War',
       the_shoah: 'The Shoah',
       cold_war: 'The Cold War',
@@ -314,9 +316,12 @@ export function renderDashboard() {
 
   // Coming-soon strip for Year 9 units still in development
   if (comingSoonNames.length > 0) {
-    const pills = comingSoonNames.map(name =>
-      `<span style="background:#f1f5f9;border:1px solid #e2e8f0;color:#64748b;padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600;white-space:nowrap;"><i class="fa-solid fa-hammer" style="margin-right:5px;color:#94a3b8;"></i>${name}</span>`
-    ).join('');
+    const pills = comingSoonNames
+      .map(
+        (name) =>
+          `<span style="background:#f1f5f9;border:1px solid #e2e8f0;color:#64748b;padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600;white-space:nowrap;"><i class="fa-solid fa-hammer" style="margin-right:5px;color:#94a3b8;"></i>${name}</span>`,
+      )
+      .join('');
     html += `
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:10px;margin-bottom:2rem;">
         <span style="font-size:0.8rem;font-weight:700;color:#94a3b8;white-space:nowrap;"><i class="fa-solid fa-circle-info"></i> Coming Soon:</span>
