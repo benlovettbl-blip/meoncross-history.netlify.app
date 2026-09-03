@@ -1,46 +1,27 @@
-export const unitData = {
+export default {
   debatePrompts: [
     {
       title: 'Roman Public Health',
-      substantive_concepts: 'Analyze shifting themes of military conflict.',
-      historical_scholarship: 'Synthesizes post-colonial frameworks on the event.',
-      adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
-      sequencing_retrieval: 'Builds earlier themes of political changes.',
-      local_coastal_links: 'N/A',
       prompt:
         '<strong>Debate:</strong> Did the Romans build complex aqueducts and bathhouses because they actually understood how disease spread, or just because they liked feeling clean and showing off their imperial wealth?',
     },
     {
       title: 'Medieval Public Health',
-      substantive_concepts: 'Explore primary themes of monarchical power.',
-      historical_scholarship: 'Explores structuralist arguments on the event.',
-      adaptive_teaching: 'Provide structured tables for SEND.',
-      sequencing_retrieval: 'Links earlier themes of monarchical power.',
-      local_coastal_links: 'N/A',
       prompt:
         '<strong>Roleplay:</strong> You are a medieval town councilor. The Black Death is approaching. Defend your decision to clean the streets of rotting animals and fine butchers for dumping waste, rather than just praying.',
     },
     {
       title: 'The Great Stink',
-      substantive_concepts: 'Evaluate key themes of social rebellion.',
-      historical_scholarship: 'Examines orthodox models on the event.',
-      adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
-      sequencing_retrieval: 'Retrieves prior knowledge of societal structures.',
-      local_coastal_links: 'N/A',
       prompt:
         "<strong>Debate:</strong> 'It wasn't cholera or John Snow that forced the government to build London's sewers, it was simply the overwhelming smell of the River Thames outside Parliament.' Do you agree? Argue your case.",
     },
   ],
   id: 'water_and_sanitation',
   title: 'KS3: Water and Sanitation Through Time',
-  substantive_concepts: 'Review core themes of societal upheaval.',
-  historical_scholarship: 'Evaluates traditional perspectives on the event.',
-  adaptive_teaching: 'Assign knowledge organizers to build confidence.',
-  sequencing_retrieval: 'Synthesizes past context of chronological mapping.',
-  local_coastal_links: 'N/A',
   homepage_background: '/units/water_and_sanitation/assets/court_for_king_cholera.png',
   color: '#0288d1',
   enquiry: 'Why did it take so long to clean up Britain?',
+  cover_image: '/images/john_snow_cholera_map.jpg',
   specification_file: '/data/water_and_sanitation_overview.json',
   workbooks: [
     {
@@ -53,28 +34,22 @@ export const unitData = {
     {
       id: 'lesson_1',
       title: 'How much progress did the Romans make in public health?',
-      substantive_concepts: 'Explore primary themes of industrial change.',
-      historical_scholarship: 'Explores structuralist views on the event.',
-      adaptive_teaching: 'Provide structured tables for accessibility.',
-      sequencing_retrieval: 'Recalls previous learning of public health.',
-      local_coastal_links: 'N/A',
-      learning_objective:
-        'To analyze the extent of progress made by the Romans in developing public health infrastructure.',
-      disciplinary_concept: 'Change and Continuity',
-      formative_assessment: {
-        type: 'PEEL Paragraph',
-        question:
-          'PEEL Paragraph (Change & Continuity): How much progress did the Romans make in public health?',
-      },
+      learning_objectives: [
+        "Describe the key features of Roman public health infrastructure, including aqueducts, bathhouses, and sewers",
+        "Explain how the Roman Empire's centralised power enabled large-scale public health projects",
+        "Evaluate the significance of Roman public health by assessing whether it represented genuine medical understanding or imperial prestige"
+      ],
+      vocabulary: [
+        { term: "Aqueduct", definition: "An artificial channel built by the Romans to transport fresh water from rivers and springs into towns and cities." },
+        { term: "Empire", definition: "A large political unit where one powerful state controls many different peoples and territories, such as the Roman Empire." },
+        { term: "Public health", definition: "The health of the population as a whole, including access to clean water, sanitation, and disease prevention." },
+        { term: "Sanitation", definition: "Systems for keeping places clean, especially the removal of waste and sewage to prevent disease." },
+        { term: "Continuity", definition: "When things stay the same over a long period of time, without significant change." }
+      ],
       video: {
         type: 'era',
         url: 'https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/',
         title: 'Learning Zone: Public Baths in Roman Britain',
-        substantive_concepts: 'Explore primary themes of industrial change.',
-        historical_scholarship: 'Explores structuralist perspectives on the event.',
-        adaptive_teaching: 'Provide structured tables for accessibility.',
-        sequencing_retrieval: 'Synthesizes previous learning of public health.',
-        local_coastal_links: 'N/A',
         duration: '5 mins 11 secs',
         viewing_task:
           'Identify three features of a Roman public bathhouse and explain how they helped improve public health.',
@@ -144,6 +119,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Identify how Iron Age communities managed their waste.',
+              answer:
+                'Iron Age communities usually lived near natural water sources such as rivers or springs. However, as settlements grew into towns, these natural sources became polluted or insufficient, leading to the need for engineered water systems.',
               model_answer:
                 'Iron Age settlements were small and spread out, meaning simple garden cesspits were highly practical and did not contaminate local drinking wells.',
               starter: 'Iron Age communities managed their waste by...',
@@ -160,6 +137,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Describe the purpose of Roman conduits and aqueducts.',
+              answer:
+                'Roman conduits and aqueducts were engineered to transport fresh, clean water from distant springs directly into towns and cities, providing a constant supply for public fountains, bathhouses, and private homes of the wealthy.',
               model_answer:
                 'Roman conduits introduced the first centralized public utilities, bringing running water over miles using gravity to supply urban areas.',
               starter: 'The purpose of Roman conduits and aqueducts was to...',
@@ -168,6 +147,8 @@ export const unitData = {
             {
               question:
                 'Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?',
+              answer:
+                'The source demonstrates advancement through its complex engineering, showing a sophisticated lead pipe system (plumbing) that supplied fresh water. However, it shows limitations because such advanced plumbing was a luxury reserved exclusively for the homes of wealthy elites, leaving the poor majority to rely on public fountains and less hygienic conditions.',
               text: 'Enquiry: How does this source demonstrate both the advancements and limitations of Roman public health?',
             },
           ],
@@ -184,10 +165,14 @@ export const unitData = {
             {
               type: 'short_answer',
               text: 'Based on what you have learned about Roman sanitation, why do you think a wealthy palace like Fishbourne would have its own private bathhouse and hypocaust system, while ordinary Romano-British people did not?',
+              answer:
+                'A private bathhouse and hypocaust (underfloor heating) required immense resources, engineering skill, and slave labor to maintain the fires. Only the wealthiest elites, like the owner of Fishbourne Palace, could afford this level of luxury, while ordinary Romano-Britons lived in simple roundhouses and relied on communal Roman baths in nearby towns.',
             },
             {
               question:
                 'How does the archaeological evidence at Fishbourne support the idea that elite Romans valued hygiene and comfort?',
+              answer:
+                'The ruins at Fishbourne reveal extensive plumbing for fresh water and a sophisticated hypocaust heating system. This proves that wealthy elites went to great lengths and expense to ensure they had access to hot, clean water for daily bathing and comfortable living conditions, a hallmark of Roman civilization.',
               model_answer:
                 'Fishbourne Roman Palace contains extensive remains of private bathhouses and underfloor heating (hypocausts), proving that wealthy elite Romans spent vast sums of money to ensure their personal hygiene and comfort.',
               text: 'How does the archaeological evidence at Fishbourne support the idea that elite Romans valued hygiene and comfort?',
@@ -210,6 +195,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Explain how bathhouses and latrines improved public health in Roman towns.',
+              answer:
+                '<strong>Point 1: Hygiene and Cleanliness</strong><br>Bathhouses provided cheap, regular access to hot and cold baths for the public, which drastically improved personal hygiene and reduced skin diseases and pests like lice.<br><br><strong>Point 2: Waste Management</strong><br>Public latrines were often built over flowing water (sometimes the wastewater from the baths), meaning human waste was continuously flushed away into underground sewers, keeping the streets cleaner.<br><br><strong>Point 3: Social Hubs</strong><br>Beyond hygiene, bathhouses served as crucial social and exercise centers, promoting overall well-being and a sense of civilized community in Roman towns.',
               model_answer:
                 'They maintained public health and hygiene in crowded Roman towns and forts, using continuously flowing water to flush away waste.',
               starter: 'Bathhouses and latrines improved public health because...',
@@ -218,6 +205,8 @@ export const unitData = {
             {
               question:
                 'Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?',
+              answer:
+                "Seneca's description reveals that the bathhouse was far more than just a place to wash. It was a loud, chaotic, and vibrant social hub filled with people exercising, getting massages, and vendors loudly selling food and drinks, demonstrating its central role in daily Roman life.",
               model_answer:
                 'Seneca reveals that Roman bathhouses were incredibly noisy and chaotic. They were not just for washing, but served as busy social hubs where people exercised, argued, bought food from vendors, and conducted business.',
               text: 'Enquiry: According to Seneca, what does this source reveal about the social and commercial atmosphere inside a Roman bathhouse?',
@@ -238,6 +227,8 @@ export const unitData = {
             {
               type: 'written',
               text: "Evaluate the impact of the Roman withdrawal on Britain's sanitation.",
+              answer:
+                "The Roman withdrawal had a catastrophic impact on Britain's sanitation. The complex infrastructure of aqueducts, sewers, and bathhouses quickly fell into ruin because the Anglo-Saxons lacked the engineering knowledge and centralized government required to maintain them, returning Britain to primitive, unhygienic living conditions.",
               model_answer:
                 'It led to a technological collapse where centralized running water and sewer systems were abandoned for centuries.',
               starter: 'The Roman withdrawal significantly impacted sanitation because...',
@@ -335,43 +326,33 @@ export const unitData = {
       },
       historians_corner: {
         title: "Historian's Corner",
-        substantive_concepts: 'Investigate historic themes of global trade.',
-        historical_scholarship: 'Contrasts intentionalist arguments on the event.',
-        adaptive_teaching: 'Issue guided outlines for lower-ability.',
-        sequencing_retrieval: 'Links core concepts of industrial growth.',
-        local_coastal_links: 'N/A',
         text: "<strong>Simon Schama</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
         stretch_question:
           'According to Schama, was Roman public health purely about stopping disease, or was there another motivation?',
         stretch_model:
           "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines.",
       },
-      learning_objectives: {
-        overarching:
-          'To analyze the extent of progress made by the Romans in developing public health infrastructure.',
-        scaffolded: [
-          'Describe the simple, practical sanitation methods used by Iron Age Britons.',
-          'Explain how Roman engineers introduced revolutionary sanitation technology.',
-          'Evaluate the significance of Roman bathhouses and latrines for public health.',
-        ],
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Change & Continuity): How much progress did the Romans make in public health?',
+        type: 'PEEL Paragraph',
       },
     },
     {
       id: 'lesson_2',
       title: 'Why did public health decline during the Middle Ages?',
-      substantive_concepts: 'Examine underlying themes of industrial change.',
-      historical_scholarship: 'Reviews Marxist arguments on the event.',
-      adaptive_teaching: 'Review simplified texts for accessibility.',
-      sequencing_retrieval: 'Links previous learning of public health.',
-      local_coastal_links: 'N/A',
-      learning_objective:
-        'To evaluate the causes and consequences of the decline in public health during the Middle Ages.',
-      disciplinary_concept: 'Causation',
-      formative_assessment: {
-        type: 'PEEL Paragraph',
-        question:
-          'PEEL Paragraph (Causation): Why did public health decline during the Middle Ages?',
-      },
+      learning_objectives: [
+        "Explain how the collapse of Roman imperial power led to the decline of organised public health systems",
+        "Describe the role of the medieval Church in shaping attitudes to disease and sanitation",
+        "Assess the significance of the Black Death (1348) as a turning point in medieval public health"
+      ],
+      vocabulary: [
+        { term: "Monarchy", definition: "A system of government where a king or queen holds supreme power, inherited through a royal family." },
+        { term: "Church", definition: "In medieval context, the Catholic Church — the dominant religious institution that influenced all aspects of life." },
+        { term: "Causation", definition: "The relationship between causes and effects — understanding why something happened." },
+        { term: "Miasma", definition: "The medieval theory that disease was caused by 'bad air' or foul-smelling vapours rising from rotting matter." },
+        { term: "Significance", definition: "The importance or impact of a historical event, person, or development — why it matters." }
+      ],
       do_now: {
         type: 'questions',
         items: [
@@ -430,6 +411,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Identify the main method of waste disposal in medieval villages like Wharram Percy.',
+              answer:
+                'In medieval villages like Wharram Percy, the main method of waste disposal was using simple cesspits dug in the garden, or throwing waste directly onto a midden (rubbish heap) to be used later as fertilizer for the fields.',
               model_answer:
                 'They were simple, low-cost earth pits that worked safely in rural areas due to low population density, but were dangerous in towns.',
               starter: 'The main method of waste disposal in medieval villages was...',
@@ -446,6 +429,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Describe the sanitation facilities found in medieval monasteries like Canterbury Priory.',
+              answer:
+                "Medieval monasteries often had highly advanced sanitation facilities compared to towns. They built complex systems of lead pipes to bring in fresh spring water, settling tanks to purify it, and built their latrines ('reredorters') over running streams to automatically flush waste away.",
               model_answer:
                 'Monasteries preserved advanced plumbing and color-coded lead pipes, demonstrating that wealth and literacy enabled high sanitation standards.',
               starter: 'Medieval monasteries had sanitation facilities such as...',
@@ -454,6 +439,8 @@ export const unitData = {
             {
               question:
                 'Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?',
+              answer:
+                'The detailed plumbing plan of Canterbury Priory suggests that monasteries were the primary preservers of Roman-style engineering and public health knowledge. Unlike the chaotic towns, monks possessed the wealth, literacy, and organizational skills necessary to build and maintain sophisticated, hygienic water systems.',
               text: 'Enquiry: What does this highly detailed plumbing plan suggest about the role of monasteries in preserving public health during the Medieval era?',
             },
           ],
@@ -470,6 +457,8 @@ export const unitData = {
             {
               type: 'short_answer',
               text: 'How does the water management system at Titchfield Abbey support the idea that monasteries were much healthier places to live than Medieval towns?',
+              answer:
+                'Titchfield Abbey used an advanced system of fishponds, conduits, and running streams to ensure a constant supply of fresh water and effective waste removal. This separation of clean drinking water from sewage meant monks rarely suffered from the waterborne diseases that constantly ravaged the overcrowded, filthy medieval towns.',
             },
           ],
           text: '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Titchfield Abbey\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Located right in Fareham, this Premonstratensian abbey relied on the River Meon. Like most monasteries, it had highly advanced water management for the time, including fresh water piped in for washing (the lavatorium) and a reredorter (latrine block) cleverly positioned over a running stream to carry waste away. The impressive stone ruins and medieval floor tiles are still visible today. <br><br><a href=\'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official English Heritage Titchfield Abbey website</a>\n    </p>\n</div>',
@@ -485,6 +474,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Explain why overcrowded medieval towns faced a filtration crisis.',
+              answer:
+                "<strong>Point 1: Population Density</strong><br>As towns grew rapidly inside defensive walls, houses were built close together, meaning cesspits were dug far too close to the shallow wells used for drinking water.<br><br><strong>Point 2: Permeable Soil</strong><br>Most cesspits were unlined, allowing raw human sewage to filter directly through the soil and contaminate the town's groundwater and drinking wells.<br><br><strong>Point 3: Lack of Infrastructure</strong><br>Unlike monasteries or Roman cities, medieval towns lacked centralized sewers or piped water, leaving them entirely reliant on these easily contaminated local sources, leading to deadly outbreaks of dysentery.",
               model_answer:
                 'Overcrowded medieval towns suffered from contaminated wells, forcing poorer citizens to buy polluted river water from water sellers.',
               starter: 'Overcrowded medieval towns faced a filtration crisis because...',
@@ -501,6 +492,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Explain the role of gongfermers in medieval towns.',
+              answer:
+                'Gongfermers played a crucial, albeit unpleasant, role in medieval towns by manually emptying overflowing cesspits during the night. They shoveled the human waste into carts and transported it outside the town walls to be sold as fertilizer, helping to prevent the towns from completely drowning in their own filth.',
               model_answer:
                 'Gongfermers were vital manual laborers who cleared cesspits by night, which was the only way to manage town waste before sewers existed.',
               starter: 'The role of gongfermers was to...',
@@ -517,6 +510,8 @@ export const unitData = {
             {
               type: 'written',
               text: "Evaluate the significance of Edward III's cleanliness mandate in 1349.",
+              answer:
+                "Edward III's 1349 mandate to clean the streets was significant as an early example of state intervention in public health. However, its effectiveness was severely limited because it was a desperate reaction to the Black Death based on the incorrect 'miasma' theory (bad air), and the king provided no funding or permanent infrastructure to actually solve the sanitation crisis.",
               model_answer:
                 'It showed an early royal recognition that street filth caused sickness, attempting to force town councils to take responsibility.',
               starter: "Edward III's cleanliness mandate was significant because...",
@@ -625,42 +620,32 @@ export const unitData = {
       },
       historians_corner: {
         title: "Historian's Corner",
-        substantive_concepts: 'Review core themes of public health.',
-        historical_scholarship: 'Evaluates traditional frameworks on the event.',
-        adaptive_teaching: 'Assign knowledge organizers to aid focus.',
-        sequencing_retrieval: 'Builds past context of chronological mapping.',
-        local_coastal_links: 'N/A',
         text: '**Carole Rawcliffe** argues:\n\n"Medieval towns were not entirely filthy; many had local laws requiring citizens to clean the street outside their house."',
         stretch_question:
           'How does Rawcliffe challenge the idea that all medieval towns were completely disgusting?',
         stretch_model: 'The historian argues that...',
       },
-      learning_objectives: {
-        overarching:
-          'To evaluate the causes and consequences of the decline in public health during the Middle Ages.',
-        scaffolded: [
-          'Describe the simple cesspits used by peasants in rural Medieval villages.',
-          'Explain why Medieval monasteries built complex water systems.',
-          'Evaluate the role of gongfermers and night-work in medieval towns.',
-        ],
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Causation): Why did public health decline during the Middle Ages?',
+        type: 'PEEL Paragraph',
       },
     },
     {
       id: 'lesson_3',
       title: 'To what extent did towns become filthier during the Early Modern period?',
-      substantive_concepts: 'Explore primary themes of ideological shifts.',
-      historical_scholarship: 'Explores structuralist perspectives on the event.',
-      adaptive_teaching: 'Provide structured tables for SEND.',
-      sequencing_retrieval: 'Synthesizes prior knowledge of societal structures.',
-      local_coastal_links: 'N/A',
-      learning_objective:
-        'To examine the factors contributing to the worsening filth and sanitation in Early Modern towns.',
-      disciplinary_concept: 'Historical Enquiry',
-      formative_assessment: {
-        type: 'PEEL Paragraph',
-        question:
-          'PEEL Paragraph (Significance): To what extent did towns become filthier during the Early Modern period?',
-      },
+      learning_objectives: [
+        "Describe the public health challenges caused by rapid urbanisation in Early Modern towns",
+        "Explain why governments failed to act despite growing evidence of poor sanitation",
+        "Evaluate the extent to which continuity, rather than change, defined public health between 1500 and 1750"
+      ],
+      vocabulary: [
+        { term: "Urbanisation", definition: "The growth of towns and cities as people move from rural areas to urban centres." },
+        { term: "Cesspit", definition: "A pit for the disposal of liquid waste and sewage, common in Early Modern towns." },
+        { term: "Plague", definition: "A devastating infectious disease, such as the bubonic plague, that caused mass death in medieval and early modern England." },
+        { term: "Change", definition: "When things become different over time — a key concept in understanding historical development." },
+        { term: "Privy", definition: "An outdoor toilet, often shared by multiple families, that emptied into a cesspit or river." }
+      ],
       do_now: {
         type: 'questions',
         items: [
@@ -721,6 +706,7 @@ export const unitData = {
             {
               type: 'written',
               text: 'Identify who invented the first flushing water closet.',
+              answer: 'The first flushing water closet was invented by Sir John Harington in 1596.',
               model_answer:
                 'He invented the first water closet in 1596, but it failed to catch on because Britain lacked the water infrastructure to support it.',
               starter: 'The first flushing water closet was invented by...',
@@ -729,6 +715,8 @@ export const unitData = {
             {
               question:
                 'Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?',
+              answer:
+                "Harington's flushing toilet failed to catch on because Britain completely lacked the underground sewer infrastructure needed to make it work. Without a sewer to flush the waste into, the toilet simply flushed into an existing cesspit, meaning it offered no real advantage over a traditional privy for the massive cost of installation.",
               text: 'Enquiry: Why do you think this brilliant invention failed to catch on in Early Modern Britain despite its obvious sanitary benefits?',
             },
           ],
@@ -747,6 +735,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Describe the purpose of the New River project in 1613.',
+              answer:
+                'The New River project was an ambitious engineering feat designed to bring fresh, clean drinking water from springs in Hertfordshire over 20 miles directly into the heart of London, bypassing the heavily polluted River Thames.',
               model_answer:
                 'It was a massive engineering project that brought fresh spring water 38 miles into London, supplying clean water to wealthy homes.',
               starter: 'The purpose of the New River project was to...',
@@ -756,11 +746,13 @@ export const unitData = {
           theme_heading: "London's New Water Architecture",
         },
         {
-          image: '/images/placeholder.jpg',
+          image: '/assets/water_local_southsea.jpg',
           tasks: [
             {
               type: 'short_answer',
               text: 'If you lived in the overcrowded, walled town of Tudor Portsmouth, what risks would you face from the lack of proper sewers and overflowing cesspits?',
+              answer:
+                "Living in Tudor Portsmouth, you would face extreme risks of waterborne diseases like dysentery and typhoid because the overflowing cesspits constantly leaked into the town's drinking wells. The filthy streets, covered in human and animal waste, also created a foul miasma and attracted rats, increasing the risk of plague.",
             },
           ],
           text: "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Tudor Portsmouth & Southsea Castle\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        As Portsmouth grew into a vital naval hub under Henry VIII, the cramped, walled town became notoriously filthy, relying entirely on overflowing cesspits and open gutters. You can contrast this with the dedicated (though basic) latrine chutes built into the walls of nearby Southsea Castle for soldiers. The famous 'Cowdray Engraving' (shown here) is an authentic historical source depicting the devastating sinking of Henry VIII's flagship, the Mary Rose, right off the coast of Southsea Castle in 1545. <br><br><a href='https://maryrose.org/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the official Mary Rose Museum website</a>\n    </p>\n</div>",
@@ -776,6 +768,8 @@ export const unitData = {
             {
               type: 'written',
               text: "Explain what Samuel Pepys' diary reveals about Early Modern privies.",
+              answer:
+                "Pepys' diary reveals that Early Modern privies were often overflowing, poorly maintained, and deeply unhygienic. His account of stepping into his neighbor's sewage, which had flooded his own cellar, vividly illustrates how closely packed housing and inadequate cesspits created horrific living conditions even for wealthy citizens in London.",
               model_answer:
                 'It provided a direct primary account of how poorly built cellar privies leaked raw sewage into neighboring basements, creating severe smells.',
               starter: "Samuel Pepys' diary reveals that Early Modern privies...",
@@ -792,6 +786,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Evaluate the effectiveness of Early Modern water sellers for public health.',
+              answer:
+                "Early Modern water sellers (or 'cobs') provided a vital service by delivering water to households that had no local supply. However, their effectiveness for public health was very poor because the water they sold was often drawn directly from polluted rivers or contaminated conduits, meaning they were frequently distributing waterborne diseases directly to people's doors.",
               model_answer:
                 'They filled the gap for poorer citizens who lacked piped connections, selling river water in barrels, though this water was often dirty.',
               starter: 'Early Modern water sellers were only partially effective because...',
@@ -886,41 +882,32 @@ export const unitData = {
       },
       historians_corner: {
         title: "Historian's Corner",
-        substantive_concepts: 'Chart complex themes of diplomatic relations.',
-        historical_scholarship: 'Compares revisionist arguments on the event.',
-        adaptive_teaching: 'Distribute visual timelines for accessibility.',
-        sequencing_retrieval: 'Links core concepts of religious divides.',
-        local_coastal_links: 'N/A',
         text: '**Roy Porter** argues:\n\n"The rapid growth of London meant that traditional methods of waste disposal simply could not cope."',
         stretch_question: 'What does Porter say was the main reason towns became so filthy?',
         stretch_model: 'The historian argues that...',
       },
-      learning_objectives: {
-        overarching:
-          'To examine the factors contributing to the worsening filth and sanitation in Early Modern towns.',
-        scaffolded: [
-          'Describe the sanitation problems in growing Tudor and Stuart towns.',
-          "Explain why early flushing toilets like Sir John Harington's failed to catch on.",
-          "Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation.",
-        ],
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Significance): To what extent did towns become filthier during the Early Modern period?',
+        type: 'PEEL Paragraph',
       },
     },
     {
       id: 'lesson_4',
       title: 'How did the Industrial Revolution lead to a public health crisis?',
-      substantive_concepts: 'Chart complex themes of military conflict.',
-      historical_scholarship: 'Compares revisionist perspectives on the event.',
-      adaptive_teaching: 'Distribute visual timelines for EAL.',
-      sequencing_retrieval: 'Synthesizes earlier themes of monarchical power.',
-      local_coastal_links: 'N/A',
-      learning_objective:
-        'To assess how the rapid urbanization of the Industrial Revolution triggered a severe public health crisis.',
-      disciplinary_concept: 'Historical Enquiry',
-      formative_assessment: {
-        type: 'PEEL Paragraph',
-        question:
-          'PEEL Paragraph (Causation): How did the Industrial Revolution lead to a public health crisis?',
-      },
+      learning_objectives: [
+        "Explain how industrialisation and mass migration to cities created unprecedented public health crises",
+        "Describe the role of key individuals (John Snow, Edwin Chadwick) in challenging existing beliefs about disease",
+        "Analyse the significance of the 1848 Public Health Act as an example of government intervention driven by causation evidence"
+      ],
+      vocabulary: [
+        { term: "Industrialisation", definition: "The transformation of an economy from agriculture to factory-based manufacturing, as occurred in Britain from the late 1700s." },
+        { term: "Migration", definition: "The movement of people from one place to another, often from rural to urban areas in search of work." },
+        { term: "Cholera", definition: "A deadly waterborne disease caused by contaminated drinking water, which devastated industrial towns." },
+        { term: "Parliament", definition: "The law-making body of the United Kingdom, responsible for debating and passing laws." },
+        { term: "Laissez-faire", definition: "A philosophy that the government should not interfere in the economy or people's lives — a barrier to public health reform." },
+        { term: "Revolution", definition: "A dramatic and fundamental change in society, politics, or technology." }
+      ],
       do_now: {
         type: 'questions',
         items: [
@@ -981,6 +968,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Identify two effects of the industrial population surge on factory towns.',
+              answer:
+                '1. Extreme overcrowding as landlords built cheap, back-to-back housing to cram in as many workers as possible.<br>2. A complete collapse of sanitation, with dozens of families forced to share a single, overflowing privy and a contaminated water pump.',
               model_answer:
                 'It caused unprecedented crowding in factory towns, overwhelming traditional waste systems and causing severe cholera outbreaks.',
               starter: 'Two effects of the industrial population surge were...',
@@ -997,6 +986,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Describe the living conditions in industrial back-to-back housing.',
+              answer:
+                'Back-to-back housing was cramped, poorly ventilated, and completely lacked indoor plumbing. Families often lived in a single damp room, and whole streets shared one outside toilet and a single water pump, which was frequently contaminated by the nearby overflowing cesspits.',
               model_answer:
                 'They represented the cheapest, unhealthiest housing where thousands shared single, polluted pumps and overflowing outdoor privies.',
               starter: 'Living conditions in industrial back-to-back housing were...',
@@ -1006,11 +997,13 @@ export const unitData = {
           theme_heading: 'Squalid Urban Living',
         },
         {
-          image: '/assets/fareham_chimney.png',
+          image: '/assets/water_local_cholera.jpg',
           tasks: [
             {
               type: 'short_answer',
               text: 'Why did rapid population growth in places like Portsea make the 1849 cholera outbreak so devastating for the local community?',
+              answer:
+                'The rapid population growth in Portsea meant the town was severely overcrowded with inadequate sanitation. Thousands of people shared contaminated wells and lived in squalid, densely packed housing, creating the perfect conditions for cholera to spread rapidly through the water supply, resulting in an exceptionally high death toll.',
             },
           ],
           text: '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: The 1849 Portsmouth Cholera Epidemic\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        As the Industrial Revolution caused Portsea\'s population to explode around the dockyard, overcrowding led to severe sanitation crises. In the summer of 1849, a devastating cholera outbreak hit Portsmouth, killing over 800 people. Primary sources from the time, such as Robert Rawlinson\'s 1850 sanitary report, detailed horrific scenes of open sewers running directly into the streets and drinking wells contaminated by overflowing cesspits. It perfectly mirrors the national crisis and the deadly consequences of the Miasma theory. <br><br><a href=\'https://portsmouthmuseum.co.uk/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Discover more local history at Portsmouth Museum</a>\n    </p>\n</div>',
@@ -1026,6 +1019,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Explain how the cholera epidemics forced the government to act.',
+              answer:
+                '<strong>Point 1: Sheer Scale of Death</strong><br>The terrifying mortality rates of the cholera epidemics (especially in 1831 and 1848) caused widespread panic, proving that the laissez-faire (leave alone) attitude was no longer sustainable.<br><br><strong>Point 2: Economic Impact</strong><br>The government realized that diseases were killing the workforce and leaving thousands of orphans, which massively increased the burden on the poor rates (workhouses), making public health a financial necessity.<br><br><strong>Point 3: Public Pressure and Reports</strong><br>Investigative reports, particularly by Edwin Chadwick, provided undeniable statistical proof that the filthy conditions were causing the disease, forcing Parliament to pass the first Public Health Act in 1848.',
               model_answer:
                 'They caused national panic and killed thousands, forcing the government to investigate public health and challenge laissez-faire.',
               starter: 'The cholera epidemics forced the government to act by...',
@@ -1034,6 +1029,8 @@ export const unitData = {
             {
               question:
                 "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?",
+              answer:
+                "Dr. Snow used this 'Ghost Map' to plot the exact locations of cholera deaths, revealing a dense cluster around the Broad Street water pump. This provided irrefutable visual evidence that cholera was spread through contaminated water, not through 'bad air' (miasma) as the medical establishment incorrectly believed.",
               text: "Enquiry: How did Dr. Snow use this map to challenge the prevailing 'miasma' theory of disease?",
             },
           ],
@@ -1052,6 +1049,8 @@ export const unitData = {
             {
               type: 'written',
               text: "Evaluate the significance of Edwin Chadwick's 1842 report.",
+              answer:
+                "Edwin Chadwick's 1842 report was highly significant as it was the first time the government used statistical evidence to prove the direct link between poverty, squalor, and disease. It shattered the laissez-faire attitude and directly led to the 1848 Public Health Act, laying the foundation for modern state intervention in sanitation.",
               model_answer:
                 'It legally documented the links between poor sanitation and low life expectancy, recommending clean water and street flushing.',
               starter: "Edwin Chadwick's 1842 report was significant because...",
@@ -1155,41 +1154,31 @@ export const unitData = {
       },
       historians_corner: {
         title: "Historian's Corner",
-        substantive_concepts: 'Explore primary themes of ideological shifts.',
-        historical_scholarship: 'Explores structuralist theories on the event.',
-        adaptive_teaching: 'Provide structured tables for SEND.',
-        sequencing_retrieval: 'Consolidates prior knowledge of societal structures.',
-        local_coastal_links: 'N/A',
         text: '**Steven Johnson** argues:\n\n"John Snow\'s map of the Broad Street cholera outbreak was a triumph of medical detective work."',
         stretch_question: "Why does Johnson call Snow's work 'detective work'?",
         stretch_model: 'The historian argues that...',
       },
-      learning_objectives: {
-        overarching:
-          'To assess how the rapid urbanization of the Industrial Revolution triggered a severe public health crisis.',
-        scaffolded: [
-          'Describe the overcrowded and unhygienic conditions of industrial back-to-back housing.',
-          'Explain how Edwin Chadwick argued for public health reform in his 1842 report.',
-          "Evaluate Dr. John Snow's discovery that cholera was waterborne.",
-        ],
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Causation): How did the Industrial Revolution lead to a public health crisis?',
+        type: 'PEEL Paragraph',
       },
     },
     {
       id: 'lesson_5',
       title: "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
-      substantive_concepts: 'Review core themes of monarchical power.',
-      historical_scholarship: 'Evaluates traditional views on the event.',
-      adaptive_teaching: 'Assign knowledge organizers to aid focus.',
-      sequencing_retrieval: 'Recalls earlier themes of political changes.',
-      local_coastal_links: 'N/A',
-      learning_objective:
-        "To analyze the political and social catalysts, such as the 'Great Stink', that finally forced Britain to clean its streets.",
-      disciplinary_concept: 'Causation',
-      formative_assessment: {
-        type: 'PEEL Paragraph',
-        question:
-          'PEEL Paragraph (Significance): Evaluate the impact of Joseph Bazalgette’s sewer system on London.',
-      },
+      learning_objectives: [
+        "Explain why it took Parliament so long to act on public health reform despite mounting evidence",
+        "Describe how the 'Great Stink' of 1858 became a turning point that forced government action",
+        "Evaluate the significance of Joseph Bazalgette's sewer system as a landmark of change in public health"
+      ],
+      vocabulary: [
+        { term: "The Great Stink", definition: "The crisis of summer 1858 when the smell of sewage in the River Thames became so overwhelming that Parliament was forced to act." },
+        { term: "Germ theory", definition: "The scientific understanding (proved by Louis Pasteur in 1861) that diseases are caused by microscopic organisms, not 'bad air'." },
+        { term: "Turning point", definition: "A moment in history after which things changed significantly and permanently." },
+        { term: "Reform", definition: "A change made to improve something, often through new laws or policies." },
+        { term: "Infrastructure", definition: "The basic physical systems of a society, such as roads, sewers, water supplies, and buildings." }
+      ],
       do_now: {
         type: 'questions',
         items: [
@@ -1251,6 +1240,8 @@ export const unitData = {
             {
               type: 'written',
               text: "Identify what John Snow's Broad Street map proved about cholera.",
+              answer:
+                "John Snow's map proved that cholera was a waterborne disease spread by consuming contaminated water, rather than being spread by 'miasma' (bad air).",
               model_answer:
                 'It scientifically proved cholera was waterborne by tracing deaths to the Broad Street pump, challenging the miasma theory.',
               starter: "John Snow's Broad Street map proved that...",
@@ -1267,6 +1258,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Describe the impact of the Great Stink on Parliament in 1858.',
+              answer:
+                'The Great Stink of 1858 created such an overpowering, putrid smell from the sewage-filled Thames that it forced Parliament to soak their curtains in chloride of lime. When that failed, they were finally driven to act, immediately passing legislation and providing £3 million to build a massive new sewer system.',
               model_answer:
                 "The overwhelming smell in 1858 disrupted Parliament, forcing politicians to immediately pass legislation to fund London's sewers.",
               starter: 'The Great Stink impacted Parliament by...',
@@ -1281,6 +1274,8 @@ export const unitData = {
             {
               type: 'short_answer',
               text: 'How did the construction of the Eastney Beam Engine House in 1887 solve the exact same public health crisis in Portsmouth that Bazalgette solved in London?',
+              answer:
+                "Just like Bazalgette's system in London, the Eastney Beam Engine House used massive steam-powered pumps to intercept Portsmouth's raw sewage and physically pump it out into the Solent on the ebb tide. This prevented the sewage from backing up into the streets and contaminating the town, eliminating the risk of cholera.",
             },
           ],
           text: "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
@@ -1296,6 +1291,8 @@ export const unitData = {
             {
               type: 'written',
               text: "Explain how Joseph Bazalgette's sewer system solved London's waste problem.",
+              answer:
+                "<strong>Point 1: Intercepting Sewers</strong><br>Bazalgette built 83 miles of massive intercepting sewers parallel to the Thames, which caught the raw sewage before it could flow into the river, immediately improving the river's water quality and eliminating the 'Great Stink'.<br><br><strong>Point 2: Steam Pumping Stations</strong><br>He designed magnificent pumping stations, like Crossness, to lift the sewage using powerful steam engines, allowing it to flow downhill out towards the Thames estuary.<br><br><strong>Point 3: Tidal Release</strong><br>The system stored the sewage in massive reservoirs and released it only on the ebbing (outgoing) tide, ensuring the waste was carried safely out to sea rather than washing back into the city.",
               model_answer:
                 'It was a massive engineering feat of 1,300 miles of brick sewers that diverted sewage away from central London, saving thousands of lives.',
               starter: "Joseph Bazalgette's sewer system solved the problem by...",
@@ -1304,6 +1301,8 @@ export const unitData = {
             {
               question:
                 "Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?",
+              answer:
+                'The colossal scale and high-quality engineering of the brickwork reveals that the Victorian government had completely abandoned laissez-faire attitudes. They were willing to invest unprecedented amounts of money and resources into permanent, monumental public infrastructure to permanently solve the sanitation crisis.',
               text: "Enquiry: What does the sheer scale of this brickwork reveal about the Victorian government's response to the Great Stink of 1858?",
             },
           ],
@@ -1322,6 +1321,8 @@ export const unitData = {
             {
               type: 'written',
               text: "Explain the link between Louis Pasteur's Germ Theory and sanitation.",
+              answer:
+                "Pasteur's Germ Theory (1861) proved scientifically that microbes (germs) caused disease and decay. This provided the undeniable scientific backing needed to justify massive government spending on sanitation, proving that cleaning up filth and providing pure water would definitively stop the spread of deadly diseases like cholera and typhoid.",
               model_answer:
                 'It proved that bacteria cause disease, providing the scientific backing needed to enforce clean water laws.',
               starter: "Louis Pasteur's Germ Theory linked to sanitation because...",
@@ -1338,6 +1339,8 @@ export const unitData = {
             {
               type: 'written',
               text: 'Evaluate the significance of the 1875 Public Health Act for modern sanitation.',
+              answer:
+                'The 1875 Public Health Act was immensely significant because it was the first time the government made sanitation *compulsory*. It forced local councils to provide clean water, build sewers, and employ Medical Officers of Health, fundamentally changing the role of the state and permanently eradicating cholera in Britain.',
               model_answer:
                 'It ended laissez-faire by making it a legal duty for local councils to provide clean water, street lighting, and sewer connections.',
               starter: 'The Public Health Act of 1875 was significant because...',
@@ -1437,132 +1440,22 @@ export const unitData = {
       },
       historians_corner: {
         title: "Historian's Corner",
-        substantive_concepts: 'Evaluate key themes of military conflict.',
-        historical_scholarship: 'Examines orthodox views on the event.',
-        adaptive_teaching: 'Deploy scaffolded tasks for EAL.',
-        sequencing_retrieval: 'Recalls earlier themes of monarchical power.',
-        local_coastal_links: 'N/A',
         text: '**The Observer Newspaper, 1861** argues:\n\n"Bazalgette\'s sewer system was the most extensive and wonderful work of modern times."',
         stretch_question: "How did the media at the time view Bazalgette's sewers?",
         stretch_model: 'The historian argues that...',
       },
-      learning_objectives: {
-        overarching:
-          "To analyze the political and social catalysts, such as the 'Great Stink', that finally forced Britain to clean its streets.",
-        scaffolded: [
-          'Describe the events of the Great Stink in 1858.',
-          "Explain how Joseph Bazalgette's sewer system transformed London.",
-          "Evaluate how Louis Pasteur's Germ Theory revolutionized our understanding of disease.",
-        ],
+      formative_assessment: {
+        question:
+          'PEEL Paragraph (Significance): Evaluate the impact of Joseph Bazalgette’s sewer system on London.',
+        type: 'PEEL Paragraph',
       },
     },
     {
-      title: 'Assessment: Roman Public Health',
-      substantive_concepts: 'Review core themes of religious conflict.',
-      historical_scholarship: 'Evaluates traditional perspectives on the event.',
-      adaptive_teaching: 'Assign knowledge organizers to aid focus.',
-      sequencing_retrieval: 'Synthesizes previous learning of global empires.',
-      local_coastal_links: 'N/A',
-      learning_objective:
-        'To synthesize knowledge and construct an assessment on Roman public health.',
-      disciplinary_concept: 'Historical Enquiry',
-      formative_assessment: {
-        type: 'PEEL Paragraph',
-        question:
-          'PEEL Paragraph (Significance): How did the Liberal Reforms (1906-1914) improve public health?',
-      },
-      teacher_notes: {
-        primer:
-          'This is a capstone assessment lesson testing chronological understanding and source utility analysis.',
-        objectives: [
-          {
-            objective: 'To accurately sequence the key events of public health history.',
-            primer: 'Instruct students to complete the Domino Flowchart timeline.',
-            question:
-              "Which event directly led to the construction of London's modern sewer network?",
-          },
-          {
-            objective: 'To evaluate the usefulness of primary sources for historical enquiries.',
-            primer:
-              'Direct students to the source analysis task. Remind them to use NOP (Nature, Origin, Purpose).',
-            question: 'Why does the provenance of a source affect its usefulness to a historian?',
-          },
-        ],
-      },
-      do_now: {
-        type: 'timeline',
-        title: 'Retrieval Practice: Public Health History',
-        description:
-          'The development of public health is mixed up below. Draw arrows to connect them in chronological order.',
-        events: [
-          {
-            year: '312 BC',
-            title: 'Roman Aqueducts',
-            detail: 'The Romans begin building vast aqueducts and bathhouses.',
-          },
-          {
-            year: '1348',
-            title: 'The Black Death',
-            detail: 'The plague kills a third of England, blamed on miasma.',
-          },
-          {
-            year: '1842',
-            title: "Chadwick's Report",
-            detail: 'Edwin Chadwick publishes his report on sanitary conditions.',
-          },
-          {
-            year: '1854',
-            title: 'Broad Street Pump',
-            detail: 'John Snow proves cholera is waterborne.',
-          },
-          {
-            year: '1858',
-            title: 'The Great Stink',
-            detail:
-              "The Thames smells so bad that Parliament shuts down, leading to Bazalgette's sewers.",
-          },
-        ],
-      },
-      narrative_blocks: [
-        {
-          title: 'Assessment: Source Utility Analysis',
-          text: 'Study Sources B and C below. How useful are Sources B and C for an enquiry into Roman public health and bathhouses? (8 marks)',
-          sources: [
-            {
-              id: 'Source B',
-              text: 'I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.',
-              provenance:
-                'Extract from a letter by the Roman philosopher Seneca the Younger (c. AD 62), complaining about the intense noise and activity of a Roman bathhouse he lived above.',
-              provenance_clue:
-                "Seneca was a private individual writing a personal letter. He lived right above the bathhouse, meaning he personally experienced the daily noise and chaos. Does this make his account of the 'social' atmosphere more reliable or just a personal grievance?",
-            },
-            {
-              id: 'Source C',
-              text: 'With such an array of indispensable structures carrying so many waters, compare, if you will, the idle pyramids or the useless, though famous, works of the Greeks! The abundance of water is sufficient not only for public and private uses and applications but truly even for pleasure. The water flows through the city like a queen.',
-              provenance:
-                "Extract from 'De aquaeductu' (The Aqueducts of Rome) by Sextus Julius Frontinus (c. AD 97), the official water commissioner for the city of Rome.",
-              provenance_clue:
-                'Frontinus was an official state commissioner appointed by the Emperor. His job was to maintain the water supply. How does his official role affect his view of the aqueducts? Is he likely to write about the flaws, or just praise the greatness of Roman engineering?',
-            },
-          ],
-          tasks: [
-            {
-              type: 'source_analysis',
-              question:
-                'How useful are Sources B and C for an enquiry into Roman public health and bathhouses? (8 marks)',
-              model_answer:
-                '<strong>Source B is highly useful for revealing the social reality and everyday atmosphere of Roman bathhouses;</strong> <strong style="color: #0284c7;">it describes the intense noise of \'hair-pluckers\' and \'sausage-sellers\', proving that bathhouses were busy social hubs rather than just places for hygiene.</strong> <strong style="color: #9333ea;">As a private letter written by someone living directly above the baths, Seneca provides a highly reliable, unfiltered eyewitness account of the daily chaos.</strong> <strong style="color: #16a34a;">This is supported by our knowledge that Roman bathhouses (thermae) contained exercise yards, food stalls, and meeting rooms, making them the centre of community life.</strong><br><br><strong>Source C is also extremely useful for showing the scale and engineering brilliance of Roman public health;</strong> <strong style="color: #0284c7;">it highlights the \'abundance of water\' that flowed through the city \'like a queen\' for both private use and public pleasure.</strong> <strong style="color: #9333ea;">As an official report written by the state water commissioner, Frontinus\'s purpose is to glorify Roman achievements and praise the Emperor, so he may exaggerate its perfection and ignore the poorer areas that lacked piped water.</strong> <strong style="color: #16a34a;">However, we know that Roman aqueducts were indeed revolutionary engineering feats that used gravity to supply millions of gallons of fresh water to urban centres, drastically improving public health.</strong>',
-            },
-          ],
-        },
-      ],
-      learning_objectives: {
-        overarching: 'To synthesize knowledge and construct an assessment on Roman public health.',
-        scaffolded: [
-          'To accurately sequence the key events of public health history.',
-          'To evaluate the usefulness of primary sources for historical enquiries.',
-        ],
-      },
+      id: 'lesson_6',
+      title: 'End of Unit Assessment: Cholera Investigation',
+      extended: {
+        question: 'Explain the significance of John Snow\'s discovery during the 1854 Broad Street Cholera outbreak. (8 marks)'
+      }
     },
   ],
   quizPack: [
@@ -2006,11 +1899,6 @@ export const unitData = {
     {
       lesson_index: 0,
       book_title: 'Pompeii',
-      substantive_concepts: 'Chart complex themes of diplomatic relations.',
-      historical_scholarship: 'Compares revisionist debates on the event.',
-      adaptive_teaching: 'Distribute visual timelines for accessibility.',
-      sequencing_retrieval: 'Connects core concepts of religious divides.',
-      local_coastal_links: 'N/A',
       author: 'Robert Harris',
       cover_image: 'assets/pompeii_cover.png',
       author_context:
@@ -2026,11 +1914,6 @@ export const unitData = {
     {
       lesson_index: 1,
       book_title: "The Time Traveler's Guide to Medieval England",
-      substantive_concepts: 'Chart complex themes of economic shifts.',
-      historical_scholarship: 'Compares revisionist theories on the event.',
-      adaptive_teaching: 'Distribute visual timelines for EAL.',
-      sequencing_retrieval: 'Consolidates past context of economic shifts.',
-      local_coastal_links: 'N/A',
       author: 'Ian Mortimer',
       cover_image: 'assets/mortimer_cover.png',
       author_context:
@@ -2046,11 +1929,6 @@ export const unitData = {
     {
       lesson_index: 2,
       book_title: 'The Diary of Samuel Pepys',
-      substantive_concepts: 'Examine underlying themes of monarchical power.',
-      historical_scholarship: 'Reviews Marxist views on the event.',
-      adaptive_teaching: 'Review simplified texts for SEND.',
-      sequencing_retrieval: 'Recalls earlier themes of monarchical power.',
-      local_coastal_links: 'N/A',
       author: 'Samuel Pepys',
       cover_image: 'assets/pepys_cover.png',
       author_context:
@@ -2066,11 +1944,6 @@ export const unitData = {
     {
       lesson_index: 3,
       book_title: 'Bleak House',
-      substantive_concepts: 'Analyze shifting themes of political reform.',
-      historical_scholarship: 'Synthesizes post-colonial models on the event.',
-      adaptive_teaching: 'Guide printed A4 workbooks to build confidence.',
-      sequencing_retrieval: 'Retrieves earlier themes of political changes.',
-      local_coastal_links: 'N/A',
       author: 'Charles Dickens',
       cover_image: 'assets/dickens_cover.png',
       author_context:
@@ -2086,11 +1959,6 @@ export const unitData = {
     {
       lesson_index: 4,
       book_title: 'Letter to The Times on the Condition of the Thames',
-      substantive_concepts: 'Investigate historic themes of public health.',
-      historical_scholarship: 'Contrasts intentionalist perspectives on the event.',
-      adaptive_teaching: 'Issue guided outlines to aid focus.',
-      sequencing_retrieval: 'Synthesizes past context of chronological mapping.',
-      local_coastal_links: 'N/A',
       author: 'Michael Faraday',
       cover_image: 'assets/faraday_cover.png',
       author_context:
@@ -2176,6 +2044,7 @@ export const unitData = {
         'A period of rapid urbanization and industrial growth that led to overcrowded and unsanitary living conditions.',
     },
   ],
+  
   key_individuals: [
     {
       id: 'seneca',

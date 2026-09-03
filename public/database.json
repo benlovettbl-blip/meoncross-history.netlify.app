@@ -32497,6 +32497,30 @@
               ]
             }
           ]
+        },
+        {
+          "id": "lesson_6",
+          "title": "End of Unit Assessment: The Historians' Debate",
+          "exam_practice": {
+            "stimulus": [
+              "**Interpretation 1**: No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first.",
+              "**Interpretation 2**: The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe."
+            ],
+            "questions": [
+              {
+                "question": "1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)",
+                "marks": 4
+              },
+              {
+                "question": "2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
+                "marks": 4
+              },
+              {
+                "question": "3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)",
+                "marks": 16
+              }
+            ]
+          }
         }
       ],
       "quizPack": [
@@ -33236,99 +33260,6 @@
           ],
           "is_adapted": true,
           "hinge_question": "Why does the narrator argue that the older generation and teachers like Kantorek betrayed the 'Iron Youth' of Germany?"
-        }
-      ],
-      "assessments": [
-        {
-          "id": "timeline",
-          "title": "Assessment Option 1: The July Crisis Domino Flowchart",
-          "type": "timeline",
-          "description": "The rapid escalation of the 'July Crisis' in 1914 is mixed up below. Read each event carefully, then use your pen to draw arrows connecting the boxes in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).",
-          "events": [
-            {
-              "year": "28 June 1914",
-              "title": "The Spark",
-              "detail": "Gavrilo Princip assassinates Archduke Franz Ferdinand in Sarajevo."
-            },
-            {
-              "year": "5 July 1914",
-              "title": "The Blank Cheque",
-              "detail": "Germany promises unconditional support to Austria-Hungary for any action against Serbia."
-            },
-            {
-              "year": "23 July 1914",
-              "title": "The Ultimatum",
-              "detail": "Austria-Hungary issues a harsh ultimatum to Serbia, knowing they will likely reject it."
-            },
-            {
-              "year": "30 July 1914",
-              "title": "Russian Mobilisation",
-              "detail": "Russia mobilises its massive army to defend its Slavic ally, Serbia."
-            },
-            {
-              "year": "3 August 1914",
-              "title": "The Schlieffen Plan",
-              "detail": "Germany declares war on France and invades neutral Belgium to avoid a two-front war."
-            }
-          ]
-        },
-        {
-          "id": "diamond9",
-          "title": "Assessment Option 2: The M.A.I.N. Significance Diamond",
-          "type": "diamond9",
-          "description": "Arrange the 9 key causes of the Great War into a 'Diamond 9' shape, placing the most significant long-term or short-term cause at the top and the least significant at the bottom. Write two short paragraphs justifying your top choice and your bottom choice.",
-          "factors": [
-            "The Assassination of Franz Ferdinand (The Spark)",
-            "The Alliance System dividing Europe",
-            "Germany's 'Blank Cheque' to Austria",
-            "Anglo-German Naval Race (Militarism)",
-            "The scramble for Imperial colonies in Africa",
-            "Serbian Nationalism (The Black Hand)",
-            "Russian Mobilisation schedules",
-            "The Schlieffen Plan's invasion of Belgium",
-            "The decline of the Ottoman Empire (Balkan instability)"
-          ]
-        },
-        {
-          "id": "source_utility",
-          "title": "Assessment Option 3: Source Utility Analysis",
-          "type": "source_utility",
-          "description": "Study Sources B and C below. How useful are Sources B and C for an enquiry into the causes of the Great War? (8 marks)",
-          "sources": [
-            {
-              "id": "Source B",
-              "text": "The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.",
-              "provenance": "Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919.",
-              "provenance_clue": "Bethmann Hollweg was the German Chancellor during the outbreak of the war. Because he is writing his memoirs *after* Germany lost, is he likely to accept blame or try to defend his country's actions?"
-            },
-            {
-              "id": "Source C",
-              "text": "The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.",
-              "provenance": "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919.",
-              "provenance_clue": "The Treaty of Versailles was written entirely by the victorious Allies. Since they had just defeated Germany, do they have a motive to exaggerate Germany's guilt to justify harsh punishments?"
-            }
-          ]
-        },
-        {
-          "id": "interpretations",
-          "title": "Assessment Option 4: The Historians' Debate",
-          "type": "interpretations",
-          "description": "Study Interpretations 1 and 2 below, which match Sources B and C from the previous assessment. Then answer the three Edexcel GCSE Paper 3 questions.",
-          "interpretations": [
-            {
-              "id": "Interpretation 1",
-              "text": "No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first."
-            },
-            {
-              "id": "Interpretation 2",
-              "text": "The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe."
-            }
-          ],
-          "questions": [
-            "1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)",
-            "2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
-            "3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)"
-          ]
         }
       ]
     }
@@ -45096,6 +45027,13 @@
             "question": "PEEL Paragraph (Significance): Evaluate the impact of Joseph Bazalgette’s sewer system on London.",
             "type": "PEEL Paragraph"
           }
+        },
+        {
+          "id": "lesson_6",
+          "title": "End of Unit Assessment: Cholera Investigation",
+          "extended": {
+            "question": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak. (8 marks)"
+          }
         }
       ],
       "quizPack": [
@@ -45718,68 +45656,6 @@
         {
           "word": "Industrial Revolution",
           "definition": "A period of rapid urbanization and industrial growth that led to overcrowded and unsanitary living conditions."
-        }
-      ],
-      "assessments": [
-        {
-          "id": "timeline",
-          "title": "Assessment Option 1: Public Health Domino Flowchart",
-          "type": "timeline",
-          "description": "The development of public health is mixed up below. Draw arrows to connect them in chronological order.",
-          "events": [
-            {
-              "year": "312 BC",
-              "title": "Roman Aqueducts",
-              "detail": "The Romans begin building vast aqueducts and bathhouses."
-            },
-            {
-              "year": "1348",
-              "title": "The Black Death",
-              "detail": "The plague kills a third of England, blamed on miasma."
-            },
-            {
-              "year": "1842",
-              "title": "Chadwick's Report",
-              "detail": "Edwin Chadwick publishes his report on sanitary conditions."
-            },
-            {
-              "year": "1854",
-              "title": "Broad Street Pump",
-              "detail": "John Snow proves cholera is waterborne."
-            },
-            {
-              "year": "1858",
-              "title": "The Great Stink",
-              "detail": "The Thames smells so bad that Parliament shuts down, leading to Bazalgette's sewers."
-            }
-          ]
-        },
-        {
-          "id": "essay_cholera",
-          "title": "Assessment Option 2: Cholera Investigation",
-          "type": "essay",
-          "description": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak."
-        },
-        {
-          "id": "source_utility",
-          "title": "Assessment Option 3: Source Utility Analysis",
-          "type": "source_utility",
-          "description": "Study Sources B and C below. How useful are Sources B and C for an enquiry into Roman public health and bathhouses? (8 marks)",
-          "sources": [
-            {
-              "id": "Source B",
-              "text": "I am surrounded by all kinds of noise... picture to yourself the assortment of sounds, which are strong enough to make me hate my very powers of hearing! When the gentlemen are exercising with their lead weights... I hear their groans... and next, hear the screech of a hair-plucker... and the various cries of the sausage-seller, the baker, and the sweet-seller, who hawk their goods about the baths.",
-              "provenance": "Extract from a letter by the Roman philosopher Seneca the Younger (c. AD 62), complaining about the intense noise and activity of a Roman bathhouse he lived above.",
-              "provenance_clue": "Seneca was a private individual writing a personal letter. He lived right above the bathhouse, meaning he personally experienced the daily noise and chaos. Does this make his account of the 'social' atmosphere more reliable or just a personal grievance?"
-            },
-            {
-              "id": "Source C",
-              "text": "With such an array of indispensable structures carrying so many waters, compare, if you will, the idle pyramids or the useless, though famous, works of the Greeks! The abundance of water is sufficient not only for public and private uses and applications but truly even for pleasure. The water flows through the city like a queen.",
-              "provenance": "Extract from 'De aquaeductu' (The Aqueducts of Rome) by Sextus Julius Frontinus (c. AD 97), the official water commissioner for the city of Rome.",
-              "provenance_clue": "Frontinus was an official state commissioner appointed by the Emperor. His job was to maintain the water supply. How does his official role affect his view of the aqueducts? Is he likely to write about the flaws, or just praise the greatness of Roman engineering?"
-            }
-          ],
-          "model_answer": "<strong>Source B is highly useful for revealing the social reality and everyday atmosphere of Roman bathhouses;</strong> <strong style=\\\"color: #0284c7;\\\">it describes the intense noise of 'hair-pluckers' and 'sausage-sellers', proving that bathhouses were busy social hubs rather than just places for hygiene.</strong> <strong style=\\\"color: #9333ea;\\\">As a private letter written by someone living directly above the baths, Seneca provides a highly reliable, unfiltered eyewitness account of the daily chaos.</strong> <strong style=\\\"color: #16a34a;\\\">This is supported by our knowledge that Roman bathhouses (thermae) contained exercise yards, food stalls, and meeting rooms, making them the centre of community life.</strong><br><br><strong>Source C is also extremely useful for showing the scale and engineering brilliance of Roman public health;</strong> <strong style=\\\"color: #0284c7;\\\">it highlights the 'abundance of water' that flowed through the city 'like a queen' for both private use and public pleasure.</strong> <strong style=\\\"color: #9333ea;\\\">As an official report written by the state water commissioner, Frontinus's purpose is to glorify Roman achievements and praise the Emperor, so he may exaggerate its perfection and ignore the poorer areas that lacked piped water.</strong> <strong style=\\\"color: #16a34a;\\\">However, we know that Roman aqueducts were indeed revolutionary engineering feats that used gravity to supply millions of gallons of fresh water to urban centres, drastically improving public health.</strong>"
         }
       ],
       "key_individuals": [

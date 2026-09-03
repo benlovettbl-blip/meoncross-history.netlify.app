@@ -672,6 +672,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Similarity & Difference): Compare the global power of the Ottoman Empire and West Africa with that of Western Europe in 1450.',
+          model_answer: "In 1450, the Ottoman Empire and West African kingdoms like Mali possessed vast wealth, advanced trade networks, and powerful militaries. In contrast, Western Europe was relatively fractured, poorer, and isolated from the major global trade routes of the Silk Road and Indian Ocean.",
+          starter: "In 1450, the Ottoman Empire and West Africa were significantly more powerful than Western Europe because...",
       },
       teacher_notes: {
         primer:
@@ -730,6 +732,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Study Source A. What does this 1375 map detail suggest about how trade was conducted between Europe and Asia before the discovery of sea routes?',
+          "starter": "Source A shows merchants traveling in large caravans...",
               model_answer:
                 'Source A shows merchants traveling in large caravans using camels and horses. This suggests that trade before 1450 relied on slow, grueling overland journeys across massive continents, requiring pack animals to transport luxury goods like silk and spices.',
             },
@@ -758,6 +761,8 @@ const early_modern_world = {
                 },
               ],
               question: 'Knowledge Check: Review the events of 1450.',
+          "model_answer": "Self-assessed knowledge check.",
+          "starter": "N/A",
             },
           ],
         },
@@ -774,6 +779,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Study Source B. What does the eyewitness account suggest about the power of the Ottoman Empire compared to Christian Europe in 1453?',
+          "starter": "Source B suggests the Ottoman Empire was vastly...",
               model_answer:
                 "Source B suggests the Ottoman Empire was vastly more powerful, disciplined, and wealthy than Christian Europe. The mention of the Sultan's 'great pomp', 'absolute' power, and the fact that European rulers 'quaked with fear' highlights the severe power imbalance.",
             },
@@ -782,6 +788,8 @@ const early_modern_world = {
               lines: 10,
               question:
                 "Drawing Task: Draw a quick sketch comparing a poor European peasant's hut in 1450 with the grand palace of the Ming Emperor or Oba of Benin.",
+          "model_answer": "Teacher to review sketches.",
+          "starter": "My drawing includes...",
             },
           ],
         },
@@ -797,6 +805,8 @@ const early_modern_world = {
             {
               type: 'multiple_choice',
               question: 'Knowledge Check: Global Power in 1450',
+          "model_answer": "Self-assessed knowledge check.",
+          "starter": "N/A",
               questions: [
                 {
                   q: 'How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?',
@@ -835,12 +845,14 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Study Source D. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?',
+          "starter": "The artist likely exaggerates the size of the...",
               model_answer:
                 'The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss.',
             },
             {
               question:
                 'Study Source D (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?',
+          "starter": "This visual source is significant as it provides...",
               model_answer:
                 'This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period.',
             },
@@ -871,6 +883,7 @@ const early_modern_world = {
             {
               question:
                 'Study Source E (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?',
+          "starter": "The intricate craftsmanship of the Benin Bronze Plaque...",
               model_answer:
                 'The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African "backwardness".',
             },
@@ -900,6 +913,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'What impression do Sources E and F give about the balance of power between Europe and the rest of the world in the 15th century?',
+          "starter": "Both sources suggest that Europe was relatively weak...",
               model_answer:
                 "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source F (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source F highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth.",
             },
@@ -928,6 +942,7 @@ const early_modern_world = {
               type: 'think_pair_share',
               question:
                 "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
+          "starter": "Traditional textbooks may have minimized Eastern wealth to...",
               model_answer:
                 "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies.",
             },
@@ -949,6 +964,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 "How does the evidence in Source F and the description of the peasant's 'pottage' contrast with the lives of the Oba of Benin or the Ming Emperor?",
+          "starter": "Unlike the Oba of Benin with his bronze...",
               model_answer:
                 'Unlike the Oba of Benin with his bronze plaques or the Ming Emperor in silk, the English peasant lived in poverty in a dark mud hut, relying on a bland stew just to survive.',
             },
@@ -956,6 +972,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 "Why does this evidence support the idea that Europe was an 'isolated outpost' in 1450?",
+          "starter": "It shows that ordinary Europeans were completely oblivious...",
               model_answer:
                 'It shows that ordinary Europeans were completely oblivious to the vast wealth of the Silk Road or African trade networks, rarely traveling far from their poor, localized villages.',
             },
@@ -1060,6 +1077,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Causation): Explain why religious conflict between Protestant England and Catholic Spain was a key cause of English global exploration.',
+          model_answer: "As a Protestant nation, England faced constant threat from Catholic Spain. To undermine Spain\'s power and fund their own defense, English privateers like Francis Drake were encouraged to explore the globe to raid Spanish treasure ships and establish rival trade routes and colonies.",
+          starter: "Religious conflict with Catholic Spain caused English global exploration because...",
       },
       teacher_notes: {
         primer:
@@ -1168,6 +1187,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Why did the Spanish attack Francis Drake and  at San Juan de Ulúa despite having signed a truce?',
+          "starter": "The Spanish believed they had exclusive control over...",
               model_answer:
                 'The Spanish believed they had exclusive control over the Americas by papal decree, making any Protestant English ships trading or anchoring there illegal.',
             },
@@ -1217,10 +1237,13 @@ const early_modern_world = {
               lines: 10,
               question:
                 'Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships.',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
             },
             {
               question:
                 "Study Source A (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
+          "starter": "Mercator's projection was revolutionary because it represented sailing...",
               model_answer:
                 "Mercator's projection was revolutionary because it represented sailing courses of constant bearing as straight lines. This made oceanic navigation significantly easier and more accurate, directly enabling the global expansion of European empires.",
             },
@@ -1272,6 +1295,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Look at Source C. Why would a map showing the Pope dividing the entire undiscovered world between Spain and Portugal absolutely infuriate Protestant monarchs like Queen Elizabeth I?',
+          "starter": "As a Protestant, Elizabeth did not recognize the...",
               model_answer:
                 "As a Protestant, Elizabeth did not recognize the Pope's authority. Seeing the Catholic Church claim the power to hand over the entire globe to her Catholic rivals (Spain and Portugal) would have been deeply insulting and politically unacceptable, motivating her to challenge their monopoly.",
             },
@@ -1279,6 +1303,7 @@ const early_modern_world = {
               type: 'analysis',
               question:
                 'How did Queen Elizabeth I use privateers as a strategic tool against Spain?',
+          "starter": "Elizabeth used privateers because England lacked the funds...",
               model_answer:
                 "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war.",
             },
@@ -1298,6 +1323,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Describe the two main reasons the Spanish Armada failed to invade England.',
+          "starter": "The Armada failed due to English tactics, such...",
               model_answer:
                 "The Armada failed due to English tactics, such as using faster ships with long-range cannons and launching fire ships that scattered the Spanish fleet at Calais, and bad weather—the 'Protestant Wind' that destroyed fleeing Spanish ships on the rocky coasts of Scotland and Ireland.",
             },
@@ -1316,6 +1342,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'How does the author’s perspective in Source C differ from Source B regarding Francis Drake and the conflict?',
+          "starter": "Source B frames the conflict as a holy...",
               model_answer:
                 "Source B frames the conflict as a holy defense of England against 'enemies of my God', portraying the English as righteous defenders. Source C, written by a Spanish Catholic, views Drake as a 'thief' and a 'heretic' fighting to destroy the Catholic Church, focusing on his piracy and religious desecration rather than legitimate warfare.",
             },
@@ -1345,12 +1372,14 @@ const early_modern_world = {
               type: 'analysis',
               question:
                 "What message was the artist of the Armada Portrait trying to convey about England's future?",
+          "starter": "The artist was conveying that England, having destroyed...",
               model_answer:
                 'The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe).',
             },
             {
               question:
                 "Study Source F (The Armada Portrait of Queen Elizabeth I). How does the artist use symbolism in this painting to project Elizabeth's power following the defeat of the Spanish Armada?",
+          "starter": "The portrait is filled with imperial symbolism. Elizabeth's...",
               model_answer:
                 "The portrait is filled with imperial symbolism. Elizabeth's hand rests on a globe, symbolizing England's growing global ambitions, while the background scenes explicitly contrast the destruction of the Spanish fleet with the calm strength of the English navy.",
             },
@@ -1371,6 +1400,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 "How does the revisionist view (Perspective B) challenge the traditional view (Perspective A) of the Armada's defeat?",
+          "starter": "Perspective A argues the defeat was a divine...",
               model_answer:
                 "Perspective A argues the defeat was a divine, miraculous event driven by the 'Protestant Wind' sent by God. Perspective B challenges this by arguing it was actually caused by human errors and Spanish structural flaws—such as poor logistics, rigid tactics, and superior English ship design—with the weather only playing a secondary role at the end.",
             },
@@ -1392,6 +1422,7 @@ const early_modern_world = {
               type: 'think_pair_share',
               question:
                 "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
+          "starter": "Textbooks often focus on the heroic, patriotic narrative...",
               model_answer:
                 'Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors.',
             },
@@ -1404,6 +1435,8 @@ const early_modern_world = {
                 "The Pope splits the 'New World' between Spain and Portugal.",
               ],
               question: 'Number these events from 1 to 4 in the order they happened.',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
             },
           ],
           source_letter: 'F',
@@ -1587,6 +1620,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Change & Continuity): Explain how early English encounters in North America transitioned from peaceful trade to colonial takeover.',
+          model_answer: "Initially, English settlers relied on Indigenous peoples for survival and trade. However, as the English population grew and their demand for land and resources (such as tobacco) increased, they began to violently displace Indigenous tribes, transforming the relationship into a brutal colonial takeover.",
+          starter: "Early English encounters transitioned from peaceful trade to colonial takeover because...",
       },
       teacher_notes: {
         primer:
@@ -1695,6 +1730,7 @@ const early_modern_world = {
               model_answer:
                 'She was brought by the Virginia Company as a living advertisement to prove to rich investors that native populations could be converted to Christianity, civilized, and integrated into a profitable English empire.',
               text: 'Fill in the blanks using the words provided to summarize the story of Matoaka (Pocahontas).',
+          "starter": "She was brought by the Virginia Company as...",
               cloze_text:
                 "Matoaka, often known as [Pocahontas], was brought to the court of King [James I] in London. The Virginia Company used her as a living piece of [propaganda] to convince wealthy investors that the indigenous people of America could be 'civilized' and [converted] to Christianity, hiding the brutal reality of the early colonial encounters.",
               words: ['propaganda', 'James I', 'converted', 'Pocahontas'],
@@ -1745,6 +1781,7 @@ const early_modern_world = {
               type: 'analysis',
               question:
                 'How did the funding of early English colonial expansion differ from the Spanish model?',
+          "starter": "Unlike Spain, which used royal armies funded directly...",
               model_answer:
                 'Unlike Spain, which used royal armies funded directly by the King, English expansion was driven by private capitalism. Wealthy merchants formed joint-stock companies to pool their money and share the financial risk of overseas voyages, as the English Crown was too poor to fund them.',
             },
@@ -1753,10 +1790,13 @@ const early_modern_world = {
               lines: 10,
               question:
                 "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses.",
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
             },
             {
               question:
                 'Study Source A (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?',
+          "starter": "The image suggests that the Mughal Empire was...",
               model_answer:
                 'The image suggests that the Mughal Empire was vastly wealthier and more powerful than England at this time. Sir Thomas Roe is depicted as a minor supplicant seeking trading privileges from a dominant and magnificent imperial court.',
             },
@@ -1776,6 +1816,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'What was the primary motivation stated in Source B for colonizing Virginia, and why might the Virginia Company emphasize religious duty over profit?',
+          "starter": "Source B states that the primary motivation was...",
               model_answer:
                 'Source B states that the primary motivation was to spread the Christian religion to "savages" and bring them to "human civility". The Virginia Company likely emphasized this religious duty to gain moral and royal approval, masking their underlying desire for profit and making the colonial venture seem like a noble, God-ordained mission.',
             },
@@ -1783,6 +1824,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Using Source C, explain why the East India Company was forced to act politely toward Mughal rulers in 1616, whereas English settlers in Virginia acted aggressively toward Native Americans.',
+          "starter": "Source C shows that the Mughal Empire was...",
               model_answer: 'Source C shows that the Mughal Empire was incredibly wealthy...',
             },
           ],
@@ -1802,6 +1844,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?',
+          "starter": "It shows that Europeans did not dominate trade...",
               model_answer:
                 'It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade.',
             },
@@ -1832,6 +1875,7 @@ const early_modern_world = {
               type: 'analysis',
               question:
                 'What does the design of the Jamestown Fort suggest about the relationship between the English settlers and the local indigenous population?',
+          "starter": "The triangular design, high palisade walls, and corner...",
               model_answer:
                 'The triangular design, high palisade walls, and corner cannons suggest that the English settlers felt highly vulnerable and expected hostile attacks. It shows that the relationship was characterized by fear, mistrust, and military conflict rather than peaceful cooperation and trade.',
             },
@@ -1851,6 +1895,7 @@ const early_modern_world = {
               type: 'think_pair_share',
               question:
                 'How do Perspective A and Perspective B disagree on the origins of the British Empire?',
+          "starter": "Perspective A argues the Empire was an \"accidental\"...",
               model_answer:
                 'Perspective A argues the Empire was an "accidental" and organic growth created by small merchants just seeking honest trade, without any grand military plan. Perspective B strongly disagrees, arguing the Empire was a deliberate, greedy corporate strategy from the start, designed to extract wealth and subjugate local populations whenever possible.',
             },
@@ -1872,6 +1917,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 "How does this 'ground-up' detail change our understanding of why Native Americans became hostile to the Jamestown settlers?",
+          "starter": "It shows that hostility wasn't just about politics...",
               model_answer:
                 "It shows that hostility wasn't just about politics or land ownership; it was a desperate reaction to an ecological disaster that was literally eating their food supply.",
             },
@@ -2076,18 +2122,24 @@ const early_modern_world = {
             {
               type: 'extended_writing',
               question: 'Task 1: The Foreign Diplomat’s Confidential Dispatch',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
               instructions:
                 'Take on the role of a foreign ambassador visiting London in 1605. Write a confidential report back to your home court explaining why religious division in England is so intense. Include your impressions of King James, his falling out with Church leaders and Parliament, and the growing Catholic resentment over the expulsion of priests.',
             },
             {
               type: 'extended_writing',
               question: 'Task 2: Prosecution Speech at Westminster',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
               instructions:
                 'It is 27 January 1606, and the trial of the surviving conspirators has begun before Lord Chief Justice Sir John Popham. Write the opening speech for the prosecution outlining the charges—treason, attempted murder of the King, and conspiracy to reintroduce Catholicism—explaining why treason against the Protestant Crown requires the harshest public punishment.',
             },
             {
               type: 'extended_writing',
               question: 'Task 3: Eyewitness Letter Home',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
               instructions:
                 'Imagine you were a Londoner who witnessed the capture of Guy Fawkes and the subsequent execution of the conspirators in January 1606. Write a letter to a friend describing the mood of the city, explaining why most citizens were relieved the plot failed, and reflecting on how the King wants the fifth of November remembered.',
             },
@@ -2134,24 +2186,32 @@ const early_modern_world = {
             {
               type: 'source_analysis',
               question: '1. Inference from Source A (2 Marks)',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
               instructions:
                 'What can you infer from the 1605 engraving about how the plotters were viewed by contemporaries? Support your inference with a specific visual detail.',
             },
             {
               type: 'source_analysis',
               question: '2. Utility & Provenance of Source A (8 Marks)',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
               instructions:
                 'How useful is Source A for an enquiry into the threat posed by the Gunpowder Plot? Evaluate the content of the engraving and its provenance.',
             },
             {
               type: 'source_analysis',
               question: '3. Analysis of Evidence in Source B (4 Marks)',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
               instructions:
                 "Explain how the physical difference between Guy Fawkes's early signature and his later signature can be used as evidence of Jacobean interrogation methods.",
             },
             {
               type: 'table_planner',
               question: '4. Follow-Up Investigation (4 Marks)',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
               instructions:
                 'Investigate the official government account of the plot based on the Monteagle letter (Source C).',
               columns: ['Enquiry Field', 'Student Response'],
@@ -2177,6 +2237,8 @@ const early_modern_world = {
             {
               type: 'extended_writing',
               question: 'Essay Question (16 Marks)',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
               instructions:
                 '"The Gunpowder Plot was caused entirely by the harsh persecution and broken promises of King James I."\nHow far do you agree with this statement?\n\nIn your answer, ensure you:\n- Examine the impact of recusancy penalties and the banishment of Catholic priests.\n- Consider alternative perspectives, including religious extremism or political exploitation by Robert Cecil.\n- Conclude with a clear, balanced historical judgement supported by evidence.',
             },
@@ -2184,6 +2246,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Study Source C. What does this execution scene suggest about how the government punished treason in the 17th century?',
+          "starter": "Source C depicts a brutal, public execution where...",
               model_answer:
                 'Source C depicts a brutal, public execution where conspirators are hanged, drawn, and quartered. This suggests that the government used extreme, theatrical violence to deter others and demonstrate the absolute power of the monarch.',
             },
@@ -2222,6 +2285,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Causation & Consequence): Explain the causes of the Gunpowder Plot and evaluate its consequences for English Catholics.',
+          model_answer: "The Gunpowder Plot was caused by the ongoing persecution of Catholics under King James I. When the plot was discovered, it had disastrous consequences for English Catholics, leading to widespread anti-Catholic paranoia and even harsher anti-Catholic laws that lasted for centuries.",
+          starter: "The Gunpowder Plot was caused by... and its consequences were...",
       },
       learning_objectives: {
         overarching: 'James I and the Gunpowder Plot: Why was religious division so volatile?',
@@ -2271,6 +2336,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Causation): Explain why King Charles I and Parliament went to war in 1642.',
+          model_answer: "King Charles I believed in the Divine Right of Kings and repeatedly bypassed Parliament to raise taxes, while also imposing controversial religious changes. Parliament\'s growing demand for power and their refusal to fund his wars led to a complete breakdown in relations, resulting in the Civil War.",
+          starter: "King Charles I and Parliament went to war in 1642 because...",
       },
       teacher_notes: {
         primer:
@@ -2380,6 +2447,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Why was the execution of King Charles I such a shocking event in European history?',
+          "starter": "It was shocking because never before in European...",
               model_answer:
                 'It was shocking because never before in European history had a monarch been put on trial, condemned, and legally executed by his own Parliament and people.',
             },
@@ -2387,6 +2455,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Study Source A. Why did the monarch combine the English and Scottish symbols into a single Coat of Arms?',
+          "starter": "The monarch combined them to create a single...",
               model_answer:
                 'The monarch combined them to create a single, unified visual identity for the newly formed nation of Great Britain, attempting to project stability after the 1707 Act of Union.',
             },
@@ -2425,6 +2494,7 @@ const early_modern_world = {
               type: 'analysis',
               question:
                 'How did the Atlantic Merchants use their wealth to influence the outcome of the English Civil War?',
+          "starter": "The Atlantic Merchants, who hated Charles I for...",
               model_answer:
                 "The Atlantic Merchants, who hated Charles I for his royal monopolies, used the immense profits from Caribbean sugar and Virginian tobacco to fund Parliament's New Model Army, effectively paying for the military machine that defeated the King.",
             },
@@ -2443,6 +2513,7 @@ const early_modern_world = {
               type: 'think_pair_share',
               question:
                 'How does Source C reveal a completely different reason for Parliament’s victory over the King compared to the official reason given in Source B?',
+          "starter": "Source B gives an official, ideological reason for...",
               model_answer:
                 "Source B gives an official, ideological reason for victory, claiming Parliament was defending the laws of the land against a 'tyrannical' King. Source C reveals the hidden economic truth: Parliament won because of immense wealth generated by Barbados sugar, stating directly that without it, the 'New Model Army would starve for want of pay'.",
             },
@@ -2450,6 +2521,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Look at Source D. What does Cromwell accuse MPs of becoming? Why is this ironic given that merchant wealth helped bring Cromwell to power?',
+          "starter": "Cromwell accuses MPs of becoming 'lovers of money'...",
               model_answer:
                 "Cromwell accuses MPs of becoming 'lovers of money' and corrupt ('noblemen for gold'). This is highly ironic because Cromwell himself relied entirely on the massive financial wealth of the Atlantic merchants to build and fund his New Model Army and secure his rise to power.",
             },
@@ -2468,6 +2540,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Which historian argues that the conflict was primarily about political and class rights, and which argues it was about establishing the conditions for global capitalism and empire?',
+          "starter": "Professor Christopher Hill focuses on the political revolution...",
               model_answer:
                 'Professor Christopher Hill focuses on the political revolution and the destruction of the absolute monarchy. Professor Eric Williams argues the true victory was economic, laying the foundation for imperial merchants and global joint-stock capitalism.',
             },
@@ -2487,6 +2560,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'What radical belief did the Diggers hold about private property and the earth?',
+          "starter": "They believed the earth was a 'common treasury...",
               model_answer:
                 "They believed the earth was a 'common treasury for all' and that private property should be completely abolished.",
             },
@@ -2494,6 +2568,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Why did wealthy Parliamentarians like Oliver Cromwell violently crush the Diggers?',
+          "starter": "The Diggers' ideas threatened the wealth and power...",
               model_answer:
                 "The Diggers' ideas threatened the wealth and power of the landowners, making their vision of total equality too extreme for Parliament.",
             },
@@ -2716,6 +2791,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Change & Continuity): Explain how the rise of Atlantic trade and colonial wealth transformed the British economy by 1700.',
+          model_answer: "The Atlantic trade brought immense colonial wealth into Britain through the exploitation of enslaved labor and cash crops like sugar and tobacco. This wealth fueled the growth of British port cities, banking systems, and manufacturing, laying the groundwork for the Industrial Revolution.",
+          starter: "The rise of Atlantic trade transformed the British economy by...",
       },
       teacher_notes: {
         primer:
@@ -2837,6 +2914,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Based on Source A, how did the visual appearance of London change as it became a global financial hub?',
+          "starter": "The River Thames became choked with a 'forest...",
               model_answer:
                 "The River Thames became choked with a 'forest of wooden ship masts' from global trading vessels, and the city saw the rise of grand financial institutions like the Royal Exchange.",
               text: 'Based on Source A, how did the visual appearance of London change as it became a global financial hub?',
@@ -2868,6 +2946,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 "Look at Source E. What did the design of the 1651 Great Seal signal about Britain's new priorities compared to the previous 600 years?",
+          "starter": "It signalled a shift from a monarchy to...",
               model_answer:
                 "It signalled a shift from a monarchy to a republic, emphasizing Parliament, maritime power, and imperial expansion over royal bloodlines by erasing the King's face entirely.",
             },
@@ -2887,6 +2966,7 @@ const early_modern_world = {
               type: 'think_pair_share',
               question:
                 "How do Interpretation 1 and Interpretation 2 differ in identifying the true 'winner' of the Civil War?",
+          "starter": "Interpretation 1 argues that Parliament and democratic political...",
               model_answer:
                 'Interpretation 1 argues that Parliament and democratic political ideals were the winners, as the monarchy could never again rule absolutely without their consent. Interpretation 2 argues that the true winners were neither the King nor Parliament, but the wealthy Atlantic merchants whose colonial profits made them the permanent driving force of British politics.',
             },
@@ -3077,6 +3157,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Significance): Evaluate the significance of the Transatlantic Slave Trade in shaping modern Britain.',
+          model_answer: "The Transatlantic Slave Trade generated massive profits that funded the development of British industries, port cities like Bristol and Liverpool, and grand country estates. Much of Britain\'s modern economic foundation was built directly on the brutal exploitation of enslaved African people.",
+          starter: "The Transatlantic Slave Trade was highly significant in shaping modern Britain because...",
       },
       teacher_notes: {
         primer:
@@ -3157,12 +3239,14 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'How did powerful African empires like the Dahomey acquire people to sell into slavery?',
+          "starter": "They launched military campaigns against rival inland groups...",
               model_answer:
                 'They launched military campaigns against rival inland groups and sold the prisoners of war.',
             },
             {
               type: 'comprehension',
               question: 'What goods did European merchants trade in exchange for enslaved people?',
+          "starter": "They traded manufactured goods like brass, textiles, and...",
               model_answer:
                 'They traded manufactured goods like brass, textiles, and European firearms.',
             },
@@ -3170,6 +3254,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Study Source A. What does the heavy fortification of Cape Coast Castle tell us about the nature of the slave trade?',
+          "starter": "The fortifications show that the trade was highly...",
               model_answer:
                 "The fortifications show that the trade was highly competitive and militarized, as the forts were built to defend the 'cargo' from rival European navies, not just to imprison people.",
             },
@@ -3178,6 +3263,8 @@ const early_modern_world = {
               lines: 10,
               question:
                 "Drawing Task: Draw a flowchart mapping the 'Triangular Trade' between Europe, Africa, and the Americas, labeling the goods traded at each point.",
+          "model_answer": "Teacher to review flowchart.",
+          "starter": "My flowchart maps...",
             },
           ],
           image_caption: 'Cape Coast Castle, a European slave fort on the Gold Coast',
@@ -3206,6 +3293,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?',
+          "starter": "European merchants traded manufactured goods such as guns...",
               model_answer:
                 'European merchants traded manufactured goods such as guns, alcohol, textiles, and metal in exchange for captured African people.',
               text: 'Based on Source B (the flowchart), what specific goods were exchanged for enslaved Africans in West Africa?',
@@ -3236,6 +3324,7 @@ const early_modern_world = {
             {
               type: 'comprehension',
               question: "What is an 'absentee landlord'?",
+          "starter": "A rich plantation owner who lived in Britain...",
               model_answer:
                 'A rich plantation owner who lived in Britain and never visited their estate, leaving brutal overseers in charge.',
             },
@@ -3243,6 +3332,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 "Why was the Caribbean sugar system often described as a 'death camp' model?",
+          "starter": "Because overseers calculated it was cheaper to work...",
               model_answer:
                 'Because overseers calculated it was cheaper to work enslaved people to death and simply buy replacements, leading to horrific mortality rates.',
             },
@@ -3250,6 +3340,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Study Source C. Why do you think absentee landlords back in London were able to ignore the brutality shown in illustrations like this?',
+          "starter": "Because they lived thousands of miles away in...",
               model_answer:
                 'Because they lived thousands of miles away in luxury; they only saw the massive profits from the sugar, not the physical suffering and brutal labor required to produce it.',
             },
@@ -3534,6 +3625,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Significance): Evaluate the significance of enslaved resistance in undermining the moral legitimacy of the Transatlantic Slave Trade.',
+          model_answer: "Enslaved resistance, ranging from everyday defiance to massive rebellions like the Haitian Revolution, proved that enslaved people continually fought for their humanity. This resistance shattered the racist pro-slavery arguments of docility and heavily influenced the success of the abolition movement in Britain.",
+          starter: "Enslaved resistance was significant in undermining the Slave Trade because...",
       },
       teacher_notes: {
         primer:
@@ -3604,6 +3697,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Study Source B. How did the geography of Jamaica shown in the map help the Maroons wage a successful guerrilla war against the British?',
+          "starter": "The 1775 map shows Jamaica's rugged, mountainous interior...",
               model_answer:
                 "The 1775 map shows Jamaica's rugged, mountainous interior (the Blue Mountains). This harsh, inaccessible terrain allowed the Maroons to build hidden strongholds like Nanny Town and use the dense rainforest camouflage to launch surprise attacks on the British.",
             },
@@ -3611,6 +3705,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'How does the story of Queen Nanny challenge the traditional historical narrative about the abolition of slavery?',
+          "starter": "Queen Nanny's successful armed rebellion challenges the myth...",
               model_answer:
                 "Queen Nanny's successful armed rebellion challenges the myth that enslaved people were passive victims waiting for white European abolitionists to free them, proving instead that African resistance was active, organized, and capable of forcing imperial powers into treaties.",
             },
@@ -3619,6 +3714,8 @@ const early_modern_world = {
               lines: 10,
               question:
                 'Drawing Task: Sketch a visual representation of Queen Nanny’s hidden mountain stronghold and how it helped the Maroons resist the British.',
+          "model_answer": "Detailed historical explanation provided in class.",
+          "starter": "This is because...",
             },
           ],
           images: [
@@ -3656,6 +3753,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Give one example of covert resistance and explain why an enslaved person might choose it over overt resistance.',
+          "starter": "An example of covert resistance is breaking tools...",
               model_answer:
                 "An example of covert resistance is breaking tools or slowing down work. An enslaved person might choose this because it was less likely to result in immediate, fatal punishment compared to an armed rebellion, yet it still effectively harmed the slave owner's profits.",
             },
@@ -3684,6 +3782,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Inferring Motive (Source A): Why did jumping overboard represent a powerful act of resistance for enslaved Africans, even though it resulted in death?',
+          "starter": "Jumping overboard was a powerful act of resistance...",
               model_answer:
                 "Jumping overboard was a powerful act of resistance because it was a total rejection of their commodification; by taking their own lives, they reclaimed control over their own bodies and actively destroyed the 'property' and profits of the slave traders.",
             },
@@ -3691,6 +3790,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 "Evaluating Significance (Equiano's Portrait & Source A): Why was Equiano’s autobiography so historically revolutionary when published in London in 1789?",
+          "starter": "Equiano's autobiography was revolutionary because it was written...",
               model_answer:
                 "Equiano's autobiography was revolutionary because it was written by an educated African man, which completely destroyed racist European arguments that Africans were intellectually inferior or suited only for brutal labor. It provided undeniable, first-hand evidence of the horrors of slavery directly to the British public.",
             },
@@ -3721,6 +3821,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Based on the geography in Source D, why did the Stono Rebellion march specifically head South towards St. Augustine rather than inland, and what does this reveal about international rivalries?',
+          "starter": "They headed South toward St. Augustine in Spanish...",
               model_answer:
                 'They headed South toward St. Augustine in Spanish Florida because the Spanish governor had promised freedom to any enslaved person who escaped from the British colonies. This reveals that enslaved Africans strategically understood and exploited the geopolitical rivalries between European empires to seek their freedom.',
             },
@@ -3745,6 +3846,8 @@ const early_modern_world = {
               ],
               question:
                 'Match the aspects of the Stono Rebellion to their correct historical descriptions.',
+          "model_answer": "Self-assessed matching task.",
+          "starter": "N/A",
             },
           ],
           image_caption: 'Map of the Stono Rebellion route (1739)',
@@ -3773,12 +3876,14 @@ const early_modern_world = {
               type: 'think_pair_share',
               question:
                 'Compare Source F with the story of Queen Nanny. Why is it dangerous to rely solely on portraits like Source C when trying to understand how and why the slave trade was eventually abolished?',
+          "starter": "Relying only on portraits of wealthy white men...",
               model_answer:
                 "Relying only on portraits of wealthy white men like Wilberforce ignores the active, dangerous, and crucial role that enslaved people played in their own liberation (like Queen Nanny's military resistance). It creates a false 'White Savior' narrative that erases Black agency from history.",
             },
             {
               type: 'think_pair_share',
               question: "What is the 'White Savior Narrative' in the context of the slave trade?",
+          "starter": "The traditional historical view that slavery was abolished...",
               model_answer:
                 'The traditional historical view that slavery was abolished almost entirely because of the moral campaigning of upper-class white politicians like William Wilberforce.',
             },
@@ -3786,12 +3891,14 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'According to modern historians like Eric Williams, what were the *true* underlying reasons slavery ended?',
+          "starter": "Slavery ended because it was becoming less economically...",
               model_answer:
                 'Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain.',
             },
             {
               question:
                 'Study Source F (Portrait of a British politician and abolitionist). Why were portraits like this important for the abolitionist movement in the late 18th century?',
+          "starter": "Portraits and visual propaganda were crucial tools for...",
               model_answer:
                 'Portraits and visual propaganda were crucial tools for abolitionists to humanize their cause, raise public awareness, and project an image of moral authority in their long political campaign to end the transatlantic slave trade.',
             },
@@ -3835,6 +3942,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 "Study Source E. Why might enslaved people's deep botanical knowledge of plants like cassava have been a more terrifying form of resistance for plantation owners than an armed rebellion?",
+          "starter": "Armed rebellions could be seen and fought with...",
               model_answer:
                 'Armed rebellions could be seen and fought with military force. Botanical knowledge allowed enslaved people to silently and undetectably poison their enslavers through their daily food. This created constant, paranoid terror because the threat was invisible and came from within their own households.',
             },
@@ -3842,6 +3950,7 @@ const early_modern_world = {
               type: 'comprehension',
               question:
                 'Why might psychological and chemical resistance have been just as effective as armed rebellion?',
+          "starter": "It was silent, difficult to detect, and created...",
               model_answer:
                 'It was silent, difficult to detect, and created a state of constant, paranoid terror among the enslavers without the immediate risk of a military defeat.',
             },
@@ -4176,6 +4285,8 @@ const early_modern_world = {
         type: 'PEEL Paragraph',
         question:
           'PEEL Paragraph (Significance): What was the most significant change of the Early Modern era?',
+          model_answer: "The most significant change was Europe\'s expansion across the globe. Through exploration, colonialism, and the horrific Transatlantic Slave Trade, Europe shifted from being a fractured, isolated region in 1450 to dominating global trade and wealth by 1750, fundamentally altering world history.",
+          starter: "The most significant change of the Early Modern era was...",
       },
       teacher_notes: {
         primer:
@@ -4318,6 +4429,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Study Source A. How does this painting glorify the British Empire while masking the brutal realities of colonization?',
+          "starter": "The painting glorifies the empire by showing a...",
               model_answer:
                 'The painting glorifies the empire by showing a majestic Britannia peacefully receiving riches from willing, kneeling figures representing Asia and Africa. It masks the brutal realities by completely ignoring the violence, exploitation, and slavery (like the Transatlantic slave trade) that actually generated this wealth.',
             },
@@ -4338,6 +4450,8 @@ const early_modern_world = {
               lines: 10,
               question:
                 'Drawing Task: Draw a single symbol or logo that you feel best represents the state of 18th-century Britain (e.g., a combination of a bank, a ship, and chains).',
+          "model_answer": "Teacher to review drawing.",
+          "starter": "My symbol represents...",
             },
           ],
         },
@@ -4356,6 +4470,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.',
+          "starter": "Pro-modern political evidence is that the Glorious Revolution...",
               model_answer:
                 "Pro-modern political evidence is that the Glorious Revolution ended absolute tyranny and established a Constitutional Monarchy. Un-modern political evidence is that less than 5% of the male population could vote and Parliament was deeply corrupt with 'rotten boroughs'.",
               text: 'Based on Source B (Weighing the Evidence toggle tabs), identify one piece of political evidence that proves Britain was modern, and one piece of political evidence proving it was un-modern.',
@@ -4376,6 +4491,7 @@ const early_modern_world = {
               type: 'think_pair_share',
               question:
                 'Reconciling Contradictions: How can Source C and Source D offer completely opposite views of Britain in the late 1740s/1750s without either author necessarily lying?',
+          "starter": "The sources do not contradict each other; they...",
               model_answer:
                 'The sources do not contradict each other; they reflect extreme class and geographical inequality. Source C describes the rising prosperity of the middle classes and infrastructure across the country, while Source D focuses entirely on the extreme, diseased poverty and crime of the urban underclass in London slums.',
             },
@@ -4395,6 +4511,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 'Synthesis Challenge: Combine the insights from Sources C and D with your knowledge of the Atlantic Slave Trade to write a nuanced 3-sentence summary of British society in 1750.',
+          "starter": "By 1750, Britain was a society of extreme...",
               model_answer:
                 "By 1750, Britain was a society of extreme contradictions, boasting a global commercial empire funded by the brutal exploitation of the Transatlantic Slave Trade. While the middle classes enjoyed unprecedented wealth, constitutional rights, and modern infrastructure, the vast majority of the urban poor lived in disease-ridden slums ruled by a terrifying criminal code. Therefore, Britain's 'modernity' was only a glittering veneer applied to a deeply unequal society.",
             },
@@ -4418,6 +4535,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 "How does the density and infrastructure of London shown in Source E (1746) provide hard evidence for a 'modernizing' Britain compared to the agricultural society you studied in 1450?",
+          "starter": "The sprawling, densely packed streets and complex networks...",
               model_answer:
                 "The sprawling, densely packed streets and complex networks of roads show a massive shift away from rural farming and towards centralized, urban trade and industry. It physically demonstrates Britain's growing wealth, exploding population, and transition into an industrial powerhouse.",
             },
@@ -4452,6 +4570,8 @@ const early_modern_world = {
               rows: 3,
               question:
                 'Assessment Planner: Structure your argument before you write your final essay.',
+          "model_answer": "Teacher to review essay plans.",
+          "starter": "My argument is structured...",
             },
             {
               type: 'spectrum_mapper',
@@ -4520,6 +4640,7 @@ const early_modern_world = {
               ],
               question:
                 'Map these historical realities onto the spectrum below to plan your argument.',
+          "starter": "<div style=\"background: #1e293b; color: #f8fafc; padding: 25px; border-radius...",
               model_answer:
                 '<div style="background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 8px;">  <h3 style="margin-top: 0; color: #38bdf8; text-align: center;">📝 ESSAY SYNTHESIS BUILDER</h3>  <p style="text-align: center; color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">Use this matrix to structure your paragraphs.</p>  <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">    <thead>      <tr style="background: #334155;">        <th style="padding: 12px; border: 1px solid #475569; text-align: left; width: 20%;">Paragraph</th>        <th style="padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;">Core Argument</th>        <th style="padding: 12px; border: 1px solid #475569; text-align: left; width: 40%;">Specific Historical Evidence</th>      </tr>    </thead>    <tbody>      <tr>        <td style="padding: 12px; border: 1px solid #475569; background: #0f172a;"><strong>1. Introduction</strong></td>        <td style="padding: 12px; border: 1px solid #475569;">Define "modernity", state your thesis line, and address limitations.</td>        <td style="padding: 12px; border: 1px solid #475569; color: #cbd5e1;">"Although Britain appeared hyper-modern financially, its social realities remained deeply traditional..."</td>      </tr>      <tr>        <td style="padding: 12px; border: 1px solid #475569; background: #0f172a;"><strong>2. Modern Aspects</strong></td>        <td style="padding: 12px; border: 1px solid #475569;">Evidence that Britain WAS modern (Commerce, Finance, Governance).</td>        <td style="padding: 12px; border: 1px solid #475569; color: #cbd5e1;">Bank of England (1694), Parliament, Global Trade. <br><em>"On one hand, Britain appeared hyper-modern by 1750 because..."</em></td>      </tr>      <tr>        <td style="padding: 12px; border: 1px solid #475569; background: #0f172a;"><strong>3. Traditional Aspects</strong></td>        <td style="padding: 12px; border: 1px solid #475569;">Evidence that Britain WAS NOT modern (Social inequality, Slavery).</td>        <td style="padding: 12px; border: 1px solid #475569; color: #cbd5e1;">Chattel Slavery, Bloody Code, Women\'s Rights. <br><em>"However, beneath this modern surface lay deeply un-modern realities, such as..."</em></td>      </tr>      <tr>        <td style="padding: 12px; border: 1px solid #475569; background: #0f172a;"><strong>4. Conclusion</strong></td>        <td style="padding: 12px; border: 1px solid #475569;">Nuanced overall judgment.</td>        <td style="padding: 12px; border: 1px solid #475569; color: #cbd5e1;"><em>"Therefore, rather than being a fully modern state, 1750 Britain was best described as..."</em></td>      </tr>    </tbody>  </table></div>',
             },
@@ -4542,6 +4663,7 @@ const early_modern_world = {
               type: 'source_analysis',
               question:
                 "Study Source F. How does the existence of 'Mudlarks' challenge the idea that 1750 London was entirely prosperous and modern?",
+          "starter": "Source F shows desperate children scavenging in freezing...",
               model_answer:
                 "Source F shows desperate children scavenging in freezing, sewage-filled mud just to survive. This challenges the idea of a 'modern' London by highlighting the extreme, lethal poverty that existed right alongside the wealthy coffee houses.",
             },
@@ -4574,6 +4696,42 @@ const early_modern_world = {
       },
       banner: '/images/early_mod_l6_banner.jpg',
       disciplinary_focus: 'Change and Continuity - Synthesising how Britain transformed between 1450 and 1750.',
+    },
+    {
+      id: 'lesson_9',
+      title: "End of Unit Assessment: How 'modern' was Britain by 1750?",
+      exam_practice: {
+        stimulus: [
+          "**Interpretation 1**: By 1750, Britain was already the world's first truly modern state. The Civil War and Glorious Revolution had replaced absolute royal tyranny with a constitutional monarchy governed through Parliament. The Bank of England (founded 1694) had invented the modern system of national debt and paper credit, allowing Britain to out-finance every rival in Europe. A vast global trade network stretched from India to the Caribbean, and over 1,500 miles of turnpike roads connected the nation. In commerce, finance, and political freedom, Britain was two hundred years ahead of the continent.",
+          "**Interpretation 2**: The idea that 18th-century Britain was a 'modern' nation is a dangerous myth. In reality, it remained a deeply traditional, unequal, and brutal society. Less than 5% of the male population could vote, and corrupt 'rotten boroughs' allowed wealthy aristocrats to buy their way into Parliament. The terrifying 'Bloody Code' imposed the death penalty for over 200 minor crimes. Britain's economic wealth was built entirely upon the barbaric machinery of the Transatlantic Slave Trade, in which millions of Africans were treated as property. For the vast majority of the population — the urban poor, women, and enslaved people — 1750 Britain was not modern at all."
+        ],
+        questions: [
+          {
+            question: "1. What is the main difference between Interpretation 1 and Interpretation 2 regarding how 'modern' Britain was by 1750? (4 marks)",
+            marks: 4
+          },
+          {
+            question: "2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views about Britain by 1750. You may use evidence from this unit to help explain your answer. (4 marks)",
+            marks: 4
+          },
+          {
+            question: "3. How far do you agree with Interpretation 1 that Britain was 'the world's first truly modern state' by 1750? Explain your answer, using your own knowledge and both interpretations. (16 marks)",
+            marks: 16
+          }
+        ]
+      },
+      extended: {
+        title: 'Final Assessment',
+        question: "How far do you agree with Interpretation 1 that Britain was 'the world\\'s first truly modern state' by 1750? Explain your answer, using your own knowledge and both interpretations. (16 marks)",
+        hints: [
+          'Intro: Define what historians mean by a \'modern\' state and state your overall argument.',
+          'Para 1 (Modern): Discuss the Financial Revolution (Bank of England), constitutional monarchy (Glorious Revolution), and global trade (East India Company, Triangular Trade).',
+          'Para 2 (Un-Modern): Discuss the brutal social realities — the Bloody Code, chattel slavery, fewer than 5% of men could vote, women had no legal rights, urban poverty (Mudlarks, Gin Craze).',
+          'Para 3 (Evaluation): Was the wealth of 1750 built on exploitation? Can a society be called \'modern\' if its prosperity depends on slavery?',
+          'Conclusion: Reach a nuanced judgment. Perhaps Britain was economically modern but socially medieval — a \'modern veneer over a brutal reality\'.'
+        ],
+        lines: 40
+      }
     },
   ],
   portraits: [

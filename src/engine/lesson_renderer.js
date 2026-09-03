@@ -650,15 +650,19 @@ export function renderLesson(lesson) {
   if (lesson.learning_objectives) {
     // Smart check: Only render overarching objective if it differs from the main lesson title
     let overarchingHtml = '';
-    const cleanTitle = (lesson.title || '').replace(/^Lesson\s*\d+:\s*/i, '').trim();
-    const cleanObj = (lesson.learning_objectives.overarching || '').trim();
+    const cleanTitle = (lesson.title || '').replace(/^Lesson\\s*\\d+:\\s*/i, '').trim();
+    const cleanObj = (!Array.isArray(lesson.learning_objectives) && lesson.learning_objectives.overarching) ? lesson.learning_objectives.overarching.trim() : '';
     if (cleanObj && cleanObj !== cleanTitle) {
       overarchingHtml = `
           <p style="font-size: 1.1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 15px;">
-            ${lesson.learning_objectives.overarching}
+            ${cleanObj}
           </p>
         `;
     }
+
+    const scaffoldedObjs = Array.isArray(lesson.learning_objectives) 
+      ? lesson.learning_objectives 
+      : (lesson.learning_objectives.scaffolded || []);
 
     htmlDoNow += `
         <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
@@ -667,7 +671,7 @@ export function renderLesson(lesson) {
           </h3>
           ${overarchingHtml}
           <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
-            ${lesson.learning_objectives.scaffolded.map((obj) => `<li style="margin-bottom: 8px;">${obj}</li>`).join('')}
+            ${scaffoldedObjs.map((obj) => `<li style="margin-bottom: 8px;">${obj}</li>`).join('')}
           </ul>
         </div>
       `;
@@ -1977,6 +1981,36 @@ export function renderLesson(lesson) {
           </div>
         </div>
       `;
+  }
+
+  // Extension Task
+  if (lesson.extension_task) {
+    html += `
+        <div class="phase-card extension-task-card no-print" style="padding: 25px; background: linear-gradient(to right, #f8fafc, #f1f5f9); border: 2px dashed #cbd5e1; border-radius: 8px; margin-bottom: 30px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -15px; right: -15px; opacity: 0.05; font-size: 10rem; color: #1e3a8a;"><i class="fa-solid fa-laptop-code"></i></div>
+          <div style="position: relative; z-index: 2;">
+            <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+              <i class="fa-solid fa-magnifying-glass-plus" style="color: #facc15;"></i> ${lesson.extension_task.title}
+            </h3>
+            <p style="color: #334155; font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+              ${lesson.extension_task.instructions}
+            </p>
+            ${lesson.extension_task.search_terms && lesson.extension_task.search_terms.length > 0 ? `
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px; margin-bottom: 15px;">
+              <strong style="color: #0f172a; display: block; margin-bottom: 8px;"><i class="fa-brands fa-google" style="color: #ea4335; margin-right: 5px;"></i> Suggested Search Terms:</strong>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                ${lesson.extension_task.search_terms.map(t => `<span style="background: #f1f5f9; padding: 4px 10px; border-radius: 4px; border: 1px solid #e2e8f0; font-family: monospace; font-size: 0.95rem; color: #475569; user-select: all;">"${t}"</span>`).join('')}
+              </div>
+            </div>
+            ` : ''}
+            ${lesson.extension_task.hyperlinks && lesson.extension_task.hyperlinks.length > 0 ? `
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              ${lesson.extension_task.hyperlinks.map(l => `<a href="${l.url}" target="_blank" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #94a3b8;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #3b82f6;"></i> ${l.text}</a>`).join('')}
+            </div>
+            ` : ''}
+          </div>
+        </div>
+    `;
   }
 
   // Previous / Next Lesson Navigation Buttons

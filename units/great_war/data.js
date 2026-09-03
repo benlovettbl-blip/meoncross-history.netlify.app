@@ -2529,6 +2529,44 @@ const great_war = {
           ]
         }
       ]
+    },
+    {
+      "id": "lesson_6",
+      "title": "End of Unit Assessment: The Historians' Debate",
+      "exam_practice": {
+        "sources": [
+          {
+            "id": "Source B",
+            "text": "The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.",
+            "provenance": "Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919.",
+            "provenance_clue": "Bethmann Hollweg was the German Chancellor during the outbreak of the war. Because he is writing his memoirs *after* Germany lost, is he likely to accept blame or try to defend his country's actions?"
+          },
+          {
+            "id": "Source C",
+            "text": "The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.",
+            "provenance": "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919.",
+            "provenance_clue": "The Treaty of Versailles was written entirely by the victorious Allies. Since they had just defeated Germany, do they have a motive to exaggerate Germany's guilt to justify harsh punishments?"
+          }
+        ],
+        "stimulus": [
+          "**Interpretation 1**: No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first.",
+          "**Interpretation 2**: The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe."
+        ],
+        "questions": [
+          {
+            "question": "1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)",
+            "marks": 4
+          },
+          {
+            "question": "2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
+            "marks": 4
+          },
+          {
+            "question": "3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)",
+            "marks": 16
+          }
+        ]
+      }
     }
   ],
   "quizPack": [
@@ -3268,99 +3306,6 @@ const great_war = {
       ],
       "is_adapted": true,
       "hinge_question": "Why does the narrator argue that the older generation and teachers like Kantorek betrayed the 'Iron Youth' of Germany?"
-    }
-  ],
-  "assessments": [
-    {
-      "id": "timeline",
-      "title": "Assessment Option 1: The July Crisis Domino Flowchart",
-      "type": "timeline",
-      "description": "The rapid escalation of the 'July Crisis' in 1914 is mixed up below. Read each event carefully, then use your pen to draw arrows connecting the boxes in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).",
-      "events": [
-        {
-          "year": "28 June 1914",
-          "title": "The Spark",
-          "detail": "Gavrilo Princip assassinates Archduke Franz Ferdinand in Sarajevo."
-        },
-        {
-          "year": "5 July 1914",
-          "title": "The Blank Cheque",
-          "detail": "Germany promises unconditional support to Austria-Hungary for any action against Serbia."
-        },
-        {
-          "year": "23 July 1914",
-          "title": "The Ultimatum",
-          "detail": "Austria-Hungary issues a harsh ultimatum to Serbia, knowing they will likely reject it."
-        },
-        {
-          "year": "30 July 1914",
-          "title": "Russian Mobilisation",
-          "detail": "Russia mobilises its massive army to defend its Slavic ally, Serbia."
-        },
-        {
-          "year": "3 August 1914",
-          "title": "The Schlieffen Plan",
-          "detail": "Germany declares war on France and invades neutral Belgium to avoid a two-front war."
-        }
-      ]
-    },
-    {
-      "id": "diamond9",
-      "title": "Assessment Option 2: The M.A.I.N. Significance Diamond",
-      "type": "diamond9",
-      "description": "Arrange the 9 key causes of the Great War into a 'Diamond 9' shape, placing the most significant long-term or short-term cause at the top and the least significant at the bottom. Write two short paragraphs justifying your top choice and your bottom choice.",
-      "factors": [
-        "The Assassination of Franz Ferdinand (The Spark)",
-        "The Alliance System dividing Europe",
-        "Germany's 'Blank Cheque' to Austria",
-        "Anglo-German Naval Race (Militarism)",
-        "The scramble for Imperial colonies in Africa",
-        "Serbian Nationalism (The Black Hand)",
-        "Russian Mobilisation schedules",
-        "The Schlieffen Plan's invasion of Belgium",
-        "The decline of the Ottoman Empire (Balkan instability)"
-      ]
-    },
-    {
-      "id": "source_utility",
-      "title": "Assessment Option 3: Source Utility Analysis",
-      "type": "source_utility",
-      "description": "Study Sources B and C below. How useful are Sources B and C for an enquiry into the causes of the Great War? (8 marks)",
-      "sources": [
-        {
-          "id": "Source B",
-          "text": "The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.",
-          "provenance": "Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919.",
-          "provenance_clue": "Bethmann Hollweg was the German Chancellor during the outbreak of the war. Because he is writing his memoirs *after* Germany lost, is he likely to accept blame or try to defend his country's actions?"
-        },
-        {
-          "id": "Source C",
-          "text": "The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.",
-          "provenance": "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919.",
-          "provenance_clue": "The Treaty of Versailles was written entirely by the victorious Allies. Since they had just defeated Germany, do they have a motive to exaggerate Germany's guilt to justify harsh punishments?"
-        }
-      ]
-    },
-    {
-      "id": "interpretations",
-      "title": "Assessment Option 4: The Historians' Debate",
-      "type": "interpretations",
-      "description": "Study Interpretations 1 and 2 below, which match Sources B and C from the previous assessment. Then answer the three Edexcel GCSE Paper 3 questions.",
-      "interpretations": [
-        {
-          "id": "Interpretation 1",
-          "text": "No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first."
-        },
-        {
-          "id": "Interpretation 2",
-          "text": "The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe."
-        }
-      ],
-      "questions": [
-        "1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)",
-        "2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
-        "3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)"
-      ]
     }
   ]
 };

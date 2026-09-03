@@ -375,13 +375,12 @@ allDirs.forEach((unitId) => {
 
     let progressTrackerRows = '';
     periodLessons.forEach((l, i) => {
-      progressTrackerRows += `<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">L${i + 1}: ${l.title}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
+      const isAssessment = l.title && l.title.startsWith('End of Unit Assessment');
+      const label = isAssessment ? `Assessment: ${l.title}` : `L${i + 1}: ${l.title}`;
+      const bg = isAssessment ? '' : 'background-color: #f1f5f9;';
+      progressTrackerRows += `<tr style="${bg}"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">${label}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
     });
-    if (unitData.assessments) {
-      unitData.assessments.forEach((a) => {
-        progressTrackerRows += `<tr style=""><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">Assessment: ${a.title}</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>\n`;
-      });
-    }
+
 
     let imageToUse = period.image || unitData.cover_image || unitData.homepage_background || unitData.banner;
     let heroImgSrc = imageToUse
@@ -526,7 +525,9 @@ allDirs.forEach((unitId) => {
         }
       }
 
-      html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}</h2>`;
+      const isAssessmentLesson = lesson.title && lesson.title.startsWith('End of Unit Assessment');
+      const lessonLabel = isAssessmentLesson ? formatText(lesson.title) : `L${lessonIndex + 1}: ${formatText(lesson.title)}`;
+      html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">${lessonLabel}</h2>`;
       let flatQuestions = [];
       if (lesson.startPage) {
         html += `<div style="font-size: 11pt; color: #555; margin-bottom: 15px; font-style: italic;">(See Textbook Page ${lesson.startPage})</div>`;
