@@ -219,7 +219,7 @@ export function renderDashboard() {
       second_world_war: 'The Second World War',
       post_war_britain: 'Post-War Britain',
       cme_new: 'Middle East',
-      weimar_nazi_germany: 'Weimar & Nazi Germany',
+      weimar_nazi_germany: 'Weimar Germany',
       edexcel_medicine: 'Medicine Through Time',
       eee: 'Elizabethan England',
     };
