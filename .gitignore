@@ -5,8 +5,7 @@ dist/
 .gemini/
 .env*
 src/data/elizabethan_old/
-t e m p _ b a c k u p s /  
- temp_backups/
+temp_backups/
 *.zip
 scratch/
 *backup*

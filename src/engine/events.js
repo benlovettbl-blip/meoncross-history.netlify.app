@@ -5,9 +5,7 @@
 import { appStore } from './store.js';
 
 export function initEventDelegation() {
-  console.log('[DEBUG] initEventDelegation CALLED and binding click to document.body');
   document.body.addEventListener('click', (e) => {
-    console.log('[DEBUG] Global click intercepted by events.js on:', e.target);
     // Find the closest element with a data-action attribute
     const target = e.target.closest('[data-action]');
     if (!target) return;
@@ -29,9 +27,7 @@ export function initEventDelegation() {
 
       case 'toggle-element':
         const targetId = target.dataset.targetId || target.getAttribute('data-target-id');
-        console.log('[DEBUG] toggle-element triggered. targetId:', targetId);
         const el = document.getElementById(targetId);
-        console.log('[DEBUG] toggle-element element found:', el);
         if (el) {
           const currentComputed = window.getComputedStyle(el).display;
           const isCurrentlyHidden = currentComputed === 'none' || el.style.display === 'none';
@@ -43,9 +39,7 @@ export function initEventDelegation() {
             el.classList.remove('revealed');
             el.style.display = 'none';
           }
-          console.log('[DEBUG] toggle-element toggled hidden state to:', !isCurrentlyHidden);
         } else if (window.toggleElement) {
-          console.log('[DEBUG] toggle-element falling back to window.toggleElement');
           window.toggleElement(targetId);
         }
         break;

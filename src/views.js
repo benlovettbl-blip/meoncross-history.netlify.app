@@ -12,6 +12,7 @@ import { renderLesson } from './engine/lesson_renderer.js';
 import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js'; // Added for guided reading tab
 import { getAssetUrl } from './engine/assets.js';
+import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
 
 export function getUnits() {
   if (!window.db) return [];
@@ -83,7 +84,13 @@ export function renderDashboard() {
     .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));
 
   // Year 9 Grouping
-  const year9Order = ['great_war_part2', 'the_shoah', 'cold_war', 'second_world_war', 'post_war_britain'];
+  const year9Order = [
+    'great_war_part2',
+    'the_shoah',
+    'cold_war',
+    'second_world_war',
+    'post_war_britain',
+  ];
   const year9Units = units
     .filter((u) => year9Order.includes(u.id))
     .sort((a, b) => year9Order.indexOf(a.id) - year9Order.indexOf(b.id));
@@ -785,9 +792,17 @@ export async function renderLessonsView() {
   };
 
   let heroImageUrl = '';
-  if (data.cover_image && typeof data.cover_image === 'string' && !data.cover_image.includes('placeholder_cover')) {
+  if (
+    data.cover_image &&
+    typeof data.cover_image === 'string' &&
+    !data.cover_image.includes('placeholder_cover')
+  ) {
     heroImageUrl = getAssetUrl(data.cover_image);
-  } else if (Array.isArray(data.cover_image) && data.cover_image.length > 0 && !data.cover_image[0].includes('placeholder_cover')) {
+  } else if (
+    Array.isArray(data.cover_image) &&
+    data.cover_image.length > 0 &&
+    !data.cover_image[0].includes('placeholder_cover')
+  ) {
     heroImageUrl = getAssetUrl(data.cover_image[0]);
   } else if (data.homepage_background) {
     heroImageUrl = getAssetUrl(data.homepage_background);
@@ -894,12 +909,7 @@ export function renderReadingView() {
     return;
   }
 
-  console.log('[DEBUG] Calling initGuidedReadingTask with data length:', readingData.length);
   initGuidedReadingTask(contentArea, readingData, state);
-  console.log(
-    '[DEBUG] contentArea innerHTML length after initGuidedReadingTask:',
-    contentArea.innerHTML.length,
-  );
 
   contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }

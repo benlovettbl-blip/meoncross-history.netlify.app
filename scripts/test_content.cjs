@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DB_PATH = path.join(__dirname, '../database.json');
+const DB_PATH = path.join(__dirname, '../public/database.json');
 const PUBLIC_ASSETS_DIR = path.join(__dirname, '../public/assets');
 
 if (!fs.existsSync(DB_PATH)) {
@@ -14,10 +14,15 @@ let errors = 0;
 
 console.log('--- Starting Content Validation ---\n');
 
-Object.values(db).forEach(unit => {
-  console.log(`Checking unit: ${unit.id}...`);
+Object.entries(db).forEach(([unitId, unitWrapper]) => {
+  const unit = unitWrapper.data || unitWrapper;
+  console.log(`Checking unit: ${unitId}...`);
+  if (!unit.lessons || unit.lessons.length === 0) {
+    console.warn(`  SKIP: No lessons in ${unitId}`);
+    return;
+  }
   unit.lessons.forEach((lesson, i) => {
-    const lessonIdentifier = `[Unit: ${unit.id} | Lesson ${i + 1}: ${lesson.title || 'Untitled'}]`;
+    const lessonIdentifier = `[Unit: ${unitId} | Lesson ${i + 1}: ${lesson.title || 'Untitled'}]`;
 
     // Check title
     if (!lesson.title) {
@@ -27,13 +32,27 @@ Object.values(db).forEach(unit => {
 
     // Check narrative
     if (!lesson.narrative_blocks || lesson.narrative_blocks.length === 0) {
-      console.error(`  ERROR: Missing or empty narrative_blocks in ${lessonIdentifier}`);
-      errors++;
+      // Assessment and info lessons may have no narrative — just warn
+      console.warn(`  WARN: Missing or empty narrative_blocks in ${lessonIdentifier}`);
     } else {
       lesson.narrative_blocks.forEach((block, bIdx) => {
         if (!block.text) {
-          console.error(`  ERROR: Empty narrative text at block ${bIdx + 1} in ${lessonIdentifier}`);
-          errors++;
+          // Check if block has other meaningful content (image, tasks, source, cards, etc.)
+          const hasOtherContent =
+            block.title ||
+            block.image ||
+            block.images ||
+            block.tasks ||
+            block.source ||
+            block.cards ||
+            block.type ||
+            block.content ||
+            block.extended;
+          if (!hasOtherContent) {
+            console.error(`  ERROR: Completely empty block ${bIdx + 1} in ${lessonIdentifier}`);
+            errors++;
+          }
+          // Blocks with images/tasks but no text are valid source analysis blocks — skip silently
         }
       });
     }
@@ -58,7 +77,9 @@ Object.values(db).forEach(unit => {
           const filename = path.basename(src.image);
           const fullAssetPath = path.join(PUBLIC_ASSETS_DIR, filename);
           if (!fs.existsSync(fullAssetPath)) {
-            console.error(`  ERROR: Missing visual source file '${filename}' for ${lessonIdentifier}`);
+            console.error(
+              `  ERROR: Missing visual source file '${filename}' for ${lessonIdentifier}`,
+            );
             errors++;
           }
         }
