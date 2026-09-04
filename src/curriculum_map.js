@@ -41,13 +41,32 @@ export async function renderCurriculumMap() {
             History Department &mdash; Years 7&ndash;11 &middot; 2026&ndash;2027
           </p>
         </div>
-        <a href="/pdfs/curriculum_overview_tabular.pdf" target="_blank"
-           style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px;
-                  background:var(--primary); color:#fff; border-radius:8px; text-decoration:none;
-                  font-weight:600; font-size:0.85rem; transition:opacity 0.2s;"
-           onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-          <i class="fa-solid fa-file-pdf"></i> Download PDF
-        </a>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <a href="/pdfs/curriculum_overview_tabular.pdf" target="_blank"
+             style="display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
+                    background:var(--primary, #1e3a8a); color:#fff; border-radius:8px; text-decoration:none;
+                    font-weight:600; font-size:0.85rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all 0.2s;"
+             onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
+            <i class="fa-solid fa-table"></i> Tabular Overview (PDF)
+          </a>
+          <a href="/pdfs/whole_school_curriculum_overview.pdf" target="_blank"
+             style="display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
+                    background:#1b365d; color:#fff; border-radius:8px; text-decoration:none;
+                    font-weight:600; font-size:0.85rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all 0.2s;"
+             onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
+            <i class="fa-solid fa-book-open"></i> Full SOW (PDF)
+          </a>
+          <a href="/pdfs/history_marking_and_feedback_policy.pdf" target="_blank"
+             style="display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
+                    background:#334155; color:#fff; border-radius:8px; text-decoration:none;
+                    font-weight:600; font-size:0.85rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all 0.2s;"
+             onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
+            <i class="fa-solid fa-file-shield"></i> Marking Policy (PDF)
+          </a>
+        </div>
       </div>
       <div id="curriculum-map-body" style="display:flex; flex-direction:column; gap:32px;">
         <div style="text-align:center; padding:40px; color:var(--text-muted);">
@@ -78,16 +97,26 @@ export async function renderCurriculumMap() {
     const isGCSE = yearGroup.ks.includes('4');
 
     const section = document.createElement('div');
-    section.style.cssText = 'border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.1);';
+    section.style.cssText =
+      'border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.1);';
 
     // Year header
+    const safeYearName = yearGroup.year.toLowerCase().replace(' ', '_');
     section.innerHTML = `
-      <div style="background:${colours.bg}; color:#fff; padding:14px 20px; border-bottom:3px solid ${colours.accent}; display:flex; align-items:center; justify-content:space-between;">
+      <div style="background:${colours.bg}; color:#fff; padding:14px 20px; border-bottom:3px solid ${colours.accent}; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
         <div>
           <h2 style="font-family:'Playfair Display',serif; font-size:1.2rem; margin:0; color:#fff;">${yearGroup.year}</h2>
           <span style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:${colours.accent}; font-weight:600;">${yearGroup.ks}</span>
         </div>
-        ${isGCSE ? `<span style="background:${colours.accent}; color:${colours.bg}; padding:3px 10px; border-radius:20px; font-size:0.75rem; font-weight:700;">GCSE</span>` : ''}
+        <div style="display:flex; align-items:center; gap:10px;">
+          ${isGCSE ? `<span style="background:${colours.accent}; color:${colours.bg}; padding:3px 10px; border-radius:20px; font-size:0.75rem; font-weight:700;">GCSE</span>` : ''}
+          <a href="/pdfs/${safeYearName}_sow.pdf" target="_blank"
+             style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:5px 12px; border-radius:6px; font-size:0.75rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:all 0.2s;"
+             onmouseover="this.style.background='rgba(255,255,255,0.28)'"
+             onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+            <i class="fa-solid fa-file-pdf"></i> ${yearGroup.year} SOW (PDF)
+          </a>
+        </div>
       </div>
     `;
 
@@ -102,7 +131,10 @@ export async function renderCurriculumMap() {
 
     for (const unit of yearGroup.units) {
       const isRevision = unit.uid === '_revision';
-      const termLabel = unit.terms.length === 1 ? unit.terms[0] : `${unit.terms[0]} – ${unit.terms[unit.terms.length - 1]}`;
+      const termLabel =
+        unit.terms.length === 1
+          ? unit.terms[0]
+          : `${unit.terms[0]} – ${unit.terms[unit.terms.length - 1]}`;
 
       const card = document.createElement('div');
       card.style.cssText = `
@@ -117,14 +149,15 @@ export async function renderCurriculumMap() {
       `;
 
       // Make KS3 unit titles clickable to navigate to that unit
-      const titleLink = (!isRevision && !isGCSE)
-        ? `<a href="#" onclick="event.preventDefault(); window.switchView('lessons','${unit.uid}');" 
+      const titleLink =
+        !isRevision && !isGCSE
+          ? `<a href="#" onclick="event.preventDefault(); window.switchView('lessons','${unit.uid}');" 
              style="color:${colours.bg}; text-decoration:none; font-weight:700; font-size:0.95rem; 
                     font-family:'Playfair Display',serif; line-height:1.3; display:block;
                     transition:color 0.2s;" 
              onmouseover="this.style.color='var(--primary)'" 
              onmouseout="this.style.color='${colours.bg}'">${unit.shortTitle}</a>`
-        : `<span style="color:${colours.bg}; font-weight:700; font-size:0.95rem; font-family:'Playfair Display',serif; line-height:1.3;">${unit.shortTitle}</span>`;
+          : `<span style="color:${colours.bg}; font-weight:700; font-size:0.95rem; font-family:'Playfair Display',serif; line-height:1.3;">${unit.shortTitle}</span>`;
 
       card.innerHTML = `
         <!-- Term badge -->
@@ -143,11 +176,21 @@ export async function renderCurriculumMap() {
         </p>
 
         <!-- Vocab pill strip -->
-        ${unit.vocab ? `
+        ${
+          unit.vocab
+            ? `
           <div style="display:flex; flex-wrap:wrap; gap:5px;">
-            ${unit.vocab.split(',').map(v => `<span style="background:var(--surface-secondary,#f1f5f9); border:1px solid var(--border,#e2e8f0); border-radius:12px; padding:2px 8px; font-size:0.7rem; color:var(--text-secondary,#475569);">${v.trim()}</span>`).join('')}
+            ${unit.vocab
+              .split(',')
+              .map(
+                (v) =>
+                  `<span style="background:var(--surface-secondary,#f1f5f9); border:1px solid var(--border,#e2e8f0); border-radius:12px; padding:2px 8px; font-size:0.7rem; color:var(--text-secondary,#475569);">${v.trim()}</span>`,
+              )
+              .join('')}
           </div>
-        ` : ''}
+        `
+            : ''
+        }
 
         <!-- Divider -->
         <hr style="border:none; border-top:1px solid var(--border,#e2e8f0); margin:4px 0;">
@@ -177,7 +220,7 @@ export async function renderCurriculumMap() {
       `;
 
       // Rotate chevron on open/close
-      card.querySelector('details')?.addEventListener('toggle', function() {
+      card.querySelector('details')?.addEventListener('toggle', function () {
         const chevron = this.querySelector('.fa-chevron-right');
         if (chevron) chevron.style.transform = this.open ? 'rotate(90deg)' : 'rotate(0deg)';
       });
