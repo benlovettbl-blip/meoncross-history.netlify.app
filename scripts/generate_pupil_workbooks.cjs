@@ -129,6 +129,28 @@ const formatText = (text) => {
     .replace(/\*(.*?)\*/g, '<em>$1</em>');
 };
 
+// Narrative blocks sometimes consist entirely of a "[Key Individual: Name]" tag (or a bare
+// name matching one) as a pointer to the unit's key_individuals biography data, rather than
+// containing prose directly. Render the full biography instead of just bolding the name.
+const renderKeyIndividualBlock = (unitData, rawText) => {
+  if (!rawText || !Array.isArray(unitData.key_individuals)) return null;
+  const trimmed = rawText.trim();
+  const bracketMatch = trimmed.match(/^\[Key Individual:\s*([^\]]+)\]$/i);
+  const name = bracketMatch ? bracketMatch[1].trim() : trimmed;
+  const person = unitData.key_individuals.find(
+    (k) => k.name && k.name.toLowerCase() === name.toLowerCase(),
+  );
+  if (!person) return null;
+  if (!bracketMatch && trimmed.length > 60) return null; // avoid matching prose that merely mentions a name
+  return `<div style="border: 1px solid #cbd5e1; border-left: 4px solid #1e3a8a; border-radius: 6px; padding: 12px 15px; margin: 10px 0;">
+      <h4 style="margin: 0 0 4px 0; color: #1e3a8a; font-size: 12pt;">${person.name}${person.role ? ` <span style="font-weight: 400; color: #64748b; font-size: 10pt;">&mdash; ${person.role}</span>` : ''}</h4>
+      ${person.bio ? `<p style="margin: 6px 0;">${person.bio}</p>` : ''}
+      ${person.actions ? `<p style="margin: 6px 0;"><strong>Key actions:</strong> ${person.actions}</p>` : ''}
+      ${person.achievements ? `<p style="margin: 6px 0;"><strong>Significance:</strong> ${person.achievements}</p>` : ''}
+      ${person.limitations ? `<p style="margin: 6px 0;"><strong>Limitations:</strong> ${person.limitations}</p>` : ''}
+    </div>`;
+};
+
 const badgeSource = (title, overrideLetter = null) => {
   if (!title) return '';
   if (overrideLetter) {
@@ -880,12 +902,17 @@ allDirs.forEach((unitId) => {
       if (lesson.narrative_blocks) {
         lesson.narrative_blocks.forEach((block, bIdx) => {
           let textToRender = block.text || '';
-          const kiRegex = /\[Key Individual:\s*([^\]]+)\]/gi;
-          textToRender = textToRender.replace(kiRegex, (match, p1) => {
-            return `<strong>${p1.trim()}</strong>`;
-          });
+          const kiCard = renderKeyIndividualBlock(unitData, textToRender);
+          if (kiCard) {
+            textToRender = kiCard;
+          } else {
+            const kiRegex = /\[Key Individual:\s*([^\]]+)\]/gi;
+            textToRender = textToRender.replace(kiRegex, (match, p1) => {
+              return `<strong>${p1.trim()}</strong>`;
+            });
+          }
 
-          let finalRenderedText = formatText(textToRender);
+          let finalRenderedText = kiCard ? textToRender : formatText(textToRender);
           finalRenderedText = finalRenderedText.replace(
             /<details[^>]*>/gi,
             '<div class="side-quest-box" style="border-top: 2px solid #e2e8f0; padding-top: 15px; margin: 15px 0; page-break-inside: auto;">',
