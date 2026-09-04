@@ -126,12 +126,15 @@ export function renderHomepage() {
     }
   }
 
-  const contentArea = document.getElementById('content-area');
+  const isTripUnit =
+    appStore.state.activeUnitData.type === 'trip' ||
+    window.currentUnitId === 'trip_ypres' ||
+    (unitData && unitData.type === 'trip');
   contentArea.innerHTML = `
       <div>
         ${topSectionHTML}
         
-        <h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">${appStore.state.activeUnitData.type === 'trip' ? 'Tour Itinerary' : 'Key Topic Lessons'}</h2>
+        ${isTripUnit ? '' : `<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Key Topic Lessons</h2>`}
         ${lessonsHTML}
       </div>
     `;
@@ -177,10 +180,32 @@ export function renderSidebar() {
 
   // Trip Days Sidebar Tabs
   if (appStore.state.activeUnitData.type === 'trip') {
+    let prepPack = null;
     const days = [];
+    let finalChallenge = null;
+
     appStore.state.activeUnitData.lessons.forEach((lesson, index) => {
-      if (lesson.id && lesson.id.startsWith('day_')) days.push({ lesson, index });
+      if (lesson.id === 'day_0') prepPack = { lesson, index };
+      else if (lesson.id === 'day_1' || lesson.id === 'day_2' || lesson.id === 'day_3')
+        days.push({ lesson, index });
+      else if (lesson.id === 'final_challenge') finalChallenge = { lesson, index };
     });
+
+    if (prepPack) {
+      const prepLink = document.createElement('a');
+      prepLink.className = 'lesson-link';
+      prepLink.innerHTML =
+        '<i class="fa-solid fa-suitcase-rolling" style="margin-right: 8px; color: #0284c7;"></i> Pre-Trip Information';
+      prepLink.href = '#';
+      prepLink.onclick = (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
+        prepLink.classList.add('active');
+        window.renderLessonByIndex(prepPack.index);
+      };
+      navContainer.appendChild(prepLink);
+    }
+
     days.forEach((d) => {
       const dayLink = document.createElement('a');
       dayLink.className = 'lesson-link';
@@ -196,6 +221,21 @@ export function renderSidebar() {
       };
       navContainer.appendChild(dayLink);
     });
+
+    if (finalChallenge) {
+      const challengeLink = document.createElement('a');
+      challengeLink.className = 'lesson-link';
+      challengeLink.innerHTML =
+        '<i class="fa-solid fa-award" style="margin-right: 8px; color: #f59e0b;"></i> Synthesis Challenge';
+      challengeLink.href = '#';
+      challengeLink.onclick = (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
+        challengeLink.classList.add('active');
+        window.renderLessonByIndex(finalChallenge.index);
+      };
+      navContainer.appendChild(challengeLink);
+    }
   }
 
   // The Fallen / Local Heroes Sidebar Accordion (Trips only) - Removed per user request

@@ -8,7 +8,7 @@ import { getProfile, setMockUser } from './auth.js';
 import { getMasteryStatus, updateLeitnerBox, toggleBookmark, saveProgress } from './storage.js';
 import { renderCoverSourcesHTML } from './cover_sources.js';
 import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
-import { renderLesson } from './engine/lesson_renderer.js';
+import { renderLesson } from './engine/lesson_renderer.js'; // force-refresh
 import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js'; // Added for guided reading tab
 import { getAssetUrl } from './engine/assets.js';
@@ -271,7 +271,7 @@ export function renderDashboard() {
           <div style="flex: 3; min-width: 260px; padding: 22px 32px; display: flex; flex-direction: column; justify-content: center;">
             <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px;">
               <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary, #1e3a8a); margin: 0; line-height: 1.2;">${title}</h2>
-              <span style="background: rgba(59,130,246,0.1); color: #2563eb; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.8rem; white-space:nowrap;"><i class="fa-solid fa-calendar-days"></i> 1st–4th Oct 2026</span>
+              <span style="background: rgba(59,130,246,0.1); color: #2563eb; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.8rem; white-space:nowrap;"><i class="fa-solid fa-calendar-days"></i> 1st–3rd Oct 2026 (3 Days)</span>
             </div>
             <div style="display: flex; gap: 10px; align-items:center; flex-wrap: wrap;">
               <span style="background: rgba(16,185,129,0.1); color: #059669; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-map-location-dot"></i> Itinerary</span>
@@ -866,6 +866,8 @@ export async function renderLessonsView() {
   const container = document.getElementById('main-content');
   const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
   const data = state.activeUnitData;
+  window.currentUnitData = data;
+  window.currentUnitId = unitId;
 
   const lessonsList = data.lessons || data.subtopics;
   if (!data || !lessonsList || lessonsList.length === 0) {

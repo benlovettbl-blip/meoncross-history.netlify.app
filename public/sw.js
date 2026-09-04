@@ -55,6 +55,11 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
+  // Bypass entirely on localhost/127.0.0.1 for live development
+  if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
+    return;
+  }
+
   // Skip Chrome extension requests or non-http protocols
   if (!url.protocol.startsWith('http')) return;
 

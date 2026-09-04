@@ -132,6 +132,12 @@ async function loadUnit(unitId) {
   if (state.db && state.db[unitId]) {
     const unitPayload = state.db[unitId];
     state.activeUnitData = unitPayload.data || {};
+    window.currentUnitData = state.activeUnitData;
+    window.currentUnitId = unitId;
+    if (appStore && appStore.state) {
+      appStore.state.activeUnitData = state.activeUnitData;
+      appStore.state.selectedUnitId = unitId;
+    }
   } else {
     console.error('Unit not found in database.json:', unitId);
     state.activeUnitData = {};

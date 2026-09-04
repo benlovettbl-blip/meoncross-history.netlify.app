@@ -1,4 +1,4 @@
-import { getAssetUrl } from './engine/assets.js';
+import { getAssetUrl } from './engine/assets.js'; // refreshed
 
 export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitData) {
   let lessonsHTML = `
@@ -249,15 +249,31 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       }
       lessonsHTML += '</div>';
     });
-  } else if (unitData.type === 'trip') {
+  } else if (
+    (unitData &&
+      (unitData.type === 'trip' ||
+        unitData.id === 'trip_ypres' ||
+        (unitData.title && unitData.title.includes('Battlefield')))) ||
+    currentUnitId === 'trip_ypres' ||
+    (currentUnitData &&
+      (currentUnitData.type === 'trip' ||
+        currentUnitData.id === 'trip_ypres' ||
+        (currentUnitData.title && currentUnitData.title.includes('Battlefield'))))
+  ) {
+    const targetData = unitData && unitData.lessons ? unitData : currentUnitData || {};
     const days = [];
     const meninGateHeroes = [];
     const tyneCotHeroes = [];
     const lowryBrothers = [];
     let finalChallenge = null;
+    let prepPack = null;
 
-    unitData.lessons.forEach((lesson, index) => {
-      if (lesson.id === 'hero_0' || lesson.id === 'hero_1') {
+    (targetData.lessons || []).forEach((lesson, index) => {
+      if (lesson.id === 'day_0') {
+        prepPack = { lesson, index };
+      } else if (lesson.id === 'day_1' || lesson.id === 'day_2' || lesson.id === 'day_3') {
+        days.push({ lesson, index });
+      } else if (lesson.id === 'hero_0' || lesson.id === 'hero_1') {
         meninGateHeroes.push({ lesson, index });
       } else if (lesson.id && ['hero_2', 'hero_3', 'hero_4', 'hero_5'].includes(lesson.id)) {
         tyneCotHeroes.push({ lesson, index });
@@ -265,14 +281,32 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         lowryBrothers.push({ lesson, index });
       } else if (lesson.id === 'final_challenge') {
         finalChallenge = { lesson, index };
-      } else if (lesson.id !== 'day_0') {
-        days.push({ lesson, index });
       }
     });
 
+    if (prepPack) {
+      lessonsHTML += `
+        <div style="margin-top: 25px; margin-bottom: 25px;">
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${prepPack.index}" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 1.5px solid #cbd5e1; border-left: 5px solid #0284c7; border-radius: 8px; padding: 18px 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+            <div style="display: flex; align-items: center; gap: 15px;">
+              <div style="background: #e0f2fe; color: #0284c7; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                <i class="fa-solid fa-suitcase-rolling"></i>
+              </div>
+              <div>
+                <h3 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Logistics</h3>
+                <p style="margin: 3px 0 0 0; color: #475569; font-size: 0.9rem;">Parent briefing notes, luggage checklist, emergency contacts &amp; accommodation details</p>
+              </div>
+            </div>
+            <span style="font-size: 0.8rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 6px 14px; border-radius: 20px; border: 1px solid #bae6fd;"><i class="fa-solid fa-arrow-right" style="margin-left: 4px;"></i> View Prep Pack</span>
+          </div>
+        </div>
+      `;
+    }
+
     lessonsHTML += `
-      <h2 style="margin-top: 30px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-family: 'Playfair Display', serif; display: flex; align-items: center; gap: 10px;">
-        <i class="fa-solid fa-route" style="color: #2563eb;"></i> 3-Day Expedition Itinerary
+      <h2 style="margin-top: 30px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-family: 'Playfair Display', serif; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+        <span><i class="fa-solid fa-route" style="color: #2563eb;"></i> 3-Day Expedition Itinerary</span>
+        <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #dbeafe; color: #1d4ed8; padding: 4px 12px; border-radius: 20px;">Strictly 3 Days · 1st–3rd October 2026</span>
       </h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">
     `;
@@ -296,6 +330,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
               <span style="font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #b45309; padding: 3px 8px; border-radius: 12px; border: 1px solid #fde68a;">Reflection</span>
             </div>
             <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${finalChallenge.lesson.title}</p>
+            <p style="margin: 8px 0 0 0; color: #64748b; font-size: 0.85rem; font-style: italic;">The Final Teacher Challenge: Reflection &amp; Historical Evaluation</p>
           </div>
         `;
     }
@@ -306,11 +341,26 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       <div style="margin-top: 45px;">
         <h2 style="text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px; font-family: 'Playfair Display', serif; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
           <span><i class="fa-solid fa-cross" style="margin-right: 10px;"></i> The Fallen: Local Heroes of the Salient</span>
-          <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 20px;">Stubbington &amp; Lee-on-the-Solent</span>
+          <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 20px;">Field Investigations · Not Extra Trip Days</span>
         </h2>
         <p style="color: #475569; font-size: 0.95rem; margin-top: 10px; line-height: 1.5;">
-          During our tour, pupils will locate these six young men from our home villages who died in the Ypres Salient. None have a known grave in the grass—all are commemorated on the great memorial walls.
+          During our 3-day tour, pupils will locate these young men from our home villages (Stubbington, Chark, Lee-on-the-Solent) who died in the Ypres Salient. They are commemorated on the physical memorial panels visited during Days 1, 2, and 3.
         </p>
+
+        <!-- Crofton Parish Memorial Tablet Spotlight -->
+        <div style="margin-top: 20px; background: #fdfaf6; border: 1.5px solid #dcd3c6; border-radius: 10px; padding: 20px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+          <div style="flex: 0 0 160px; text-align: center;">
+            <img src="/images/stubbington_memorial_2.jpg" alt="Crofton Parish Memorial Tablet" style="max-width: 100%; border-radius: 6px; border: 1px solid #cbd5e1; cursor: zoom-in; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" data-action="open-modal">
+            <small style="display: block; margin-top: 5px; color: #78350f; font-weight: 600; font-size: 0.78rem;"><i class="fa-solid fa-church"></i> Holy Rood Church, Stubbington</small>
+          </div>
+          <div style="flex: 1; min-width: 250px;">
+            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fef3c7; color: #92400e; padding: 3px 9px; border-radius: 12px;">The Home Link</span>
+            <h4 style="margin: 6px 0 8px 0; color: #1e3a8a; font-size: 1.15rem; font-family: 'Playfair Display', serif;">The Crofton Parish Memorial Tablet</h4>
+            <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+              Every one of our six Salient fallen—along with the three Lowry brothers—is carved side-by-side into this marble tablet in Holy Rood Church. On this tour, our mission is to trace their names from our home village to the great memorial walls of Flanders.
+            </p>
+          </div>
+        </div>
       </div>
 
       <!-- Menin Gate Group -->
@@ -325,11 +375,14 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     `;
     meninGateHeroes.forEach((h) => {
       const heroData =
-        unitData.local_heroes?.find(
+        targetData.local_heroes?.find(
           (lh) =>
             lh.name.includes(h.lesson.title.split(' ')[1]) ||
             h.lesson.title.includes(lh.name.split(' ')[lh.name.split(' ').length - 1]),
         ) || {};
+      const isFound =
+        typeof localStorage !== 'undefined' &&
+        localStorage.getItem('trip_found_' + h.lesson.id) === 'true';
       lessonsHTML += `
         <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #fed7aa; border-left: 5px solid #ea580c; border-radius: 8px; padding: 18px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
@@ -337,7 +390,11 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             <span style="font-size: 0.75rem; font-weight: 700; background: #ffedd5; color: #c2410c; padding: 2px 7px; border-radius: 10px; white-space: nowrap;">Panel 35</span>
           </div>
           <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">${heroData.regiment || '1st Battalion, Hampshire Regiment'}</p>
-          <p style="margin: 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Local Hampshire connection'}</p>
+          <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Local Hampshire connection'}</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fed7aa; padding-top: 8px; font-size: 0.78rem;">
+            <span style="color: #1e3a8a; font-weight: 600;"><i class="fa-solid fa-church" style="margin-right: 4px;"></i>Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
+            ${isFound ? '<span style="color: #16a34a; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Found</span>' : '<span style="color: #94a3b8;"><i class="fa-regular fa-circle"></i> On-site quest</span>'}
+          </div>
         </div>
       `;
     });
@@ -357,12 +414,15 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     `;
     tyneCotHeroes.forEach((h) => {
       const heroData =
-        unitData.local_heroes?.find(
+        targetData.local_heroes?.find(
           (lh) =>
             lh.name.includes(h.lesson.title.split(' ')[1]) ||
             h.lesson.title.includes(lh.name.split(' ')[lh.name.split(' ').length - 1]),
         ) || {};
       const panelLabel = h.lesson.id === 'hero_5' ? 'Panels 14–17' : 'Panels 88–90';
+      const isFound =
+        typeof localStorage !== 'undefined' &&
+        localStorage.getItem('trip_found_' + h.lesson.id) === 'true';
       lessonsHTML += `
         <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 8px; padding: 18px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
@@ -370,7 +430,11 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             <span style="font-size: 0.75rem; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 2px 7px; border-radius: 10px; white-space: nowrap;">${panelLabel}</span>
           </div>
           <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">${heroData.regiment || ''}</p>
-          <p style="margin: 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Local Hampshire connection'}</p>
+          <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Local Hampshire connection'}</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fecaca; padding-top: 8px; font-size: 0.78rem;">
+            <span style="color: #1e3a8a; font-weight: 600;"><i class="fa-solid fa-church" style="margin-right: 4px;"></i>Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
+            ${isFound ? '<span style="color: #16a34a; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Found</span>' : '<span style="color: #94a3b8;"><i class="fa-regular fa-circle"></i> On-site quest</span>'}
+          </div>
         </div>
       `;
     });
@@ -410,30 +474,30 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       `;
     }
 
-    if (unitData.extended) {
+    if (targetData.extended) {
       lessonsHTML +=
         '<h2 style="margin-top: 40px; text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px;"><i class="fa-solid fa-pen-nib"></i> Assessment Practice</h2>';
       lessonsHTML += `
         <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; text-align: left;">
-          <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.1rem; margin-bottom: 15px;">${unitData.extended.question}</h3>
+          <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.1rem; margin-bottom: 15px;">${targetData.extended.question}</h3>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
             ${
-              unitData.extended.source_a
+              targetData.extended.source_a
                 ? `
               <div>
-                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source A:</strong> ${unitData.extended.source_a.provenance}</p>
-                ${unitData.extended.source_a.content}
+                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source A:</strong> ${targetData.extended.source_a.provenance}</p>
+                ${targetData.extended.source_a.content}
               </div>
             `
                 : ''
             }
             ${
-              unitData.extended.source_b
+              targetData.extended.source_b
                 ? `
               <div>
-                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source B:</strong> ${unitData.extended.source_b.provenance}</p>
-                ${unitData.extended.source_b.content}
+                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source B:</strong> ${targetData.extended.source_b.provenance}</p>
+                ${targetData.extended.source_b.content}
               </div>
             `
                 : ''
@@ -441,22 +505,22 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           </div>
 
           ${
-            unitData.extended.provenance_clue
+            targetData.extended.provenance_clue
               ? `
             <div style="background: #fdf2f8; border: 1px solid #fbcfe8; border-left: 4px solid #ec4899; padding: 15px; border-radius: 4px; margin-top: 20px;">
-              <p style="margin: 0; font-size: 0.95rem; color: #831843;"><i class="fa-solid fa-lightbulb" style="margin-right: 8px;"></i><strong>Provenance Clue:</strong> ${unitData.extended.provenance_clue}</p>
+              <p style="margin: 0; font-size: 0.95rem; color: #831843;"><i class="fa-solid fa-lightbulb" style="margin-right: 8px;"></i><strong>Provenance Clue:</strong> ${targetData.extended.provenance_clue}</p>
             </div>
           `
               : ''
           }
           
           ${
-            unitData.extended.scaffolding && unitData.extended.scaffolding.length > 0
+            targetData.extended.scaffolding && targetData.extended.scaffolding.length > 0
               ? `
             <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 4px; margin-top: 20px;">
               <p style="margin: 0 0 10px 0; font-weight: bold; color: #1e3a8a;"><i class="fa-solid fa-hammer" style="margin-right: 8px;"></i>Scaffolding</p>
               <ul style="margin: 0; padding-left: 20px; color: #334155;">
-                ${unitData.extended.scaffolding.map((s) => `<li style="margin-bottom: 5px;">${s}</li>`).join('')}
+                ${targetData.extended.scaffolding.map((s) => `<li style="margin-bottom: 5px;">${s}</li>`).join('')}
               </ul>
             </div>
           `
@@ -465,6 +529,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         </div>
       `;
     }
+    return lessonsHTML;
   } else {
     lessonsHTML =
       '<h2 style="font-family: \'Playfair Display\', serif; color: #1a237e; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; margin-bottom: 20px;">Key Topic Lessons</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">';
@@ -488,14 +553,23 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           textShadow = '0 2px 4px rgba(0,0,0,0.5)';
         }
 
+        let cardBadge = `Lesson ${index + 1}`;
+        if (lesson.id && lesson.id.startsWith('hero_')) {
+          cardBadge = 'Local Hero';
+        } else if (lesson.id === 'day_0') {
+          cardBadge = 'Pre-Trip';
+        } else if (lesson.id && lesson.id.startsWith('day_')) {
+          cardBadge = `Day ${lesson.id.split('_')[1]}`;
+        }
+
         let cardContent = `
-            <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: ${textShadow};">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
+            <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: ${textShadow};">${cardBadge}</h3>
             <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.95rem; text-shadow: ${textShadow};">${lesson.title}</p>
         `;
 
         if (lesson.enquiry) {
           cardContent = `
-                <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: ${textShadow};">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}: ${lesson.title}</h3>
+                <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: ${textShadow};">${cardBadge}: ${lesson.title}</h3>
                 <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.9rem; font-style: italic; text-shadow: ${textShadow}; line-height: 1.3;">${lesson.enquiry}</p>
             `;
         }

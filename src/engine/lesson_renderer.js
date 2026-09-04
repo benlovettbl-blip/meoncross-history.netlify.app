@@ -3,6 +3,9 @@ import { generateKeyIndividualEmbedHTML } from '../key_individuals.js';
 import { appStore } from './store.js';
 import { getAssetUrl } from './assets.js';
 
+// Module-level fallback to ensure isGCSE never throws ReferenceError
+var isGCSE = false;
+
 window.formatBold = function (text) {
   if (!text) return '';
   let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -87,6 +90,18 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
 
 export function renderLesson(lesson) {
   window.postRenderHooks = [];
+  const activeUnit =
+    window.currentUnitData || (appStore && appStore.state && appStore.state.activeUnitData) || {};
+  const unitId =
+    activeUnit.id ||
+    (typeof window !== 'undefined' && window.location && window.location.search
+      ? new URLSearchParams(window.location.search).get('id') ||
+        new URLSearchParams(window.location.search).get('unit')
+      : null) ||
+    window.currentUnitId;
+  const isEarlyModern = unitId === 'early_modern_world';
+  const isGCSE =
+    unitId === 'weimar_nazi_germany' || unitId === 'cme_new' || activeUnit.isGCSE || false;
   let htmlDoNow = '',
     htmlPrimary = '',
     htmlSources1 = '',
@@ -145,7 +160,17 @@ export function renderLesson(lesson) {
   // Tabs container logic
   let heroImage =
     lesson.banner || window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
-  const isTrip = window.currentUnitData && window.currentUnitData.type === 'trip';
+  const isTrip =
+    (window.currentUnitData && window.currentUnitData.type === 'trip') ||
+    (appStore.state.activeUnitData && appStore.state.activeUnitData.type === 'trip') ||
+    window.currentUnitId === 'trip_ypres' ||
+    appStore.state.selectedUnitId === 'trip_ypres' ||
+    lesson.cwgc_data !== undefined ||
+    lesson.id === 'day_0' ||
+    (lesson.id &&
+      (lesson.id.startsWith('day_') ||
+        lesson.id.startsWith('hero_') ||
+        lesson.id === 'final_challenge'));
   let lessonPrefix = 'Lesson';
   let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
 
@@ -161,8 +186,18 @@ export function renderLesson(lesson) {
     else if (ktMatch[1].startsWith('5')) heroImage = '/images/banner_medicine_western_front.jpg';
   }
 
-  if (isTrip && lesson.id && lesson.id.startsWith('day_')) {
-    lessonPrefix = `Day ${lesson.id.split('_')[1]}`;
+  if (isTrip) {
+    if (lesson.id === 'day_0') {
+      lessonPrefix = 'Expedition Briefing';
+    } else if (lesson.id && lesson.id.startsWith('day_')) {
+      lessonPrefix = `Day ${lesson.id.split('_')[1]} · Field Guide`;
+    } else if (lesson.id && lesson.id.startsWith('hero_lowry_')) {
+      lessonPrefix = 'Home Front Memorial · Manor Way Grange';
+    } else if (lesson.id && lesson.id.startsWith('hero_')) {
+      lessonPrefix = 'Local Hero · Fallen of the Salient';
+    } else if (lesson.id === 'final_challenge') {
+      lessonPrefix = 'Pilgrimage Reflection';
+    }
   } else if (ktMatch) {
     lessonPrefix = `KT ${ktMatch[1]}`;
   } else if (lesson.id && lesson.id.startsWith('lesson_')) {
@@ -183,15 +218,21 @@ export function renderLesson(lesson) {
   let targetText = headerEnquiry || lesson.title || '';
   let stickyHeaderText = '';
 
-  if (/^(?:KT|Key Topic|Lesson)\s*[\d\.]+/i.test(targetText)) {
+  if (isTrip) {
+    stickyHeaderText = `${lessonPrefix}: ${lesson.title.split('(')[0].trim()}`;
+  } else if (/^(?:KT|Key Topic|Lesson)\s*[\d\.]+/i.test(targetText)) {
     stickyHeaderText = targetText;
   } else {
     stickyHeaderText = `${lessonPrefix}: ${targetText}`;
   }
 
   // Sticky Header (No visible background, but opaque to hide scrolling text)
-  const currentIndex = appStore.state.activeUnitData.lessons.findIndex(
-    (l) => l.title === lesson.title,
+  const allUnitLessons =
+    (appStore.state.activeUnitData && appStore.state.activeUnitData.lessons) ||
+    (window.currentUnitData && window.currentUnitData.lessons) ||
+    [];
+  const currentIndex = allUnitLessons.findIndex(
+    (l) => l.title === lesson.title || (lesson.id && l.id === lesson.id),
   );
   html += `
       <div class="sticky-lesson-header">
@@ -651,7 +692,10 @@ export function renderLesson(lesson) {
     // Smart check: Only render overarching objective if it differs from the main lesson title
     let overarchingHtml = '';
     const cleanTitle = (lesson.title || '').replace(/^Lesson\\s*\\d+:\\s*/i, '').trim();
-    const cleanObj = (!Array.isArray(lesson.learning_objectives) && lesson.learning_objectives.overarching) ? lesson.learning_objectives.overarching.trim() : '';
+    const cleanObj =
+      !Array.isArray(lesson.learning_objectives) && lesson.learning_objectives.overarching
+        ? lesson.learning_objectives.overarching.trim()
+        : '';
     if (cleanObj && cleanObj !== cleanTitle) {
       overarchingHtml = `
           <p style="font-size: 1.1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 15px;">
@@ -660,9 +704,9 @@ export function renderLesson(lesson) {
         `;
     }
 
-    const scaffoldedObjs = Array.isArray(lesson.learning_objectives) 
-      ? lesson.learning_objectives 
-      : (lesson.learning_objectives.scaffolded || []);
+    const scaffoldedObjs = Array.isArray(lesson.learning_objectives)
+      ? lesson.learning_objectives
+      : lesson.learning_objectives.scaffolded || [];
 
     htmlDoNow += `
         <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
@@ -1752,13 +1796,72 @@ export function renderLesson(lesson) {
     }
   }
 
-  let myUnitData = window.currentUnitData || {};
-  const unitId = myUnitData.id || new URLSearchParams(window.location.search).get('id');
-  const isEarlyModern = unitId === 'early_modern_world';
-  let isGCSE = unitId === 'weimar_nazi_germany' || unitId === 'cme_new';
+  let htmlCwgc = '';
+  if (isTrip && lesson.cwgc_data) {
+    const cd = lesson.cwgc_data;
+    const isFound =
+      typeof localStorage !== 'undefined' &&
+      localStorage.getItem('trip_found_' + lesson.id) === 'true';
+    htmlCwgc = `
+      <div class="cwgc-plaque-container" style="margin-bottom: 25px; background: #fff; border: 2px solid #b45309; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(180, 83, 9, 0.12);">
+        <div style="background: linear-gradient(135deg, #78350f, #92400e); color: white; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <i class="fa-solid fa-monument" style="font-size: 1.4rem; color: #fde68a;"></i>
+            <div>
+              <div style="font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #fde68a; font-weight: 700;">Commonwealth War Graves Commission</div>
+              <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Playfair Display', serif;">Official Record of the Fallen · Ypres Salient</div>
+            </div>
+          </div>
+          <button id="btn-toggle-found-${lesson.id}" class="btn" data-action="toggle-trip-found" data-id="${lesson.id}" style="${isFound ? 'background: #10b981; color: white;' : 'background: #fef3c7; color: #92400e;'} font-weight: 700; font-size: 0.85rem; border: none; padding: 8px 14px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); transition: all 0.2s;">
+            ${isFound ? '<i class="fa-solid fa-circle-check"></i> <span>Located on Memorial!</span>' : '<i class="fa-regular fa-circle-check"></i> <span>Field Check: Mark as Found</span>'}
+          </button>
+        </div>
+        <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; background: #fff;">
+          <div style="border-left: 3px solid #b45309; padding-left: 12px;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #78350f; font-weight: 700;">Rank &amp; Service Number</div>
+            <div style="font-size: 1rem; color: #1e293b; font-weight: 600; margin-top: 2px;">${cd.rank || 'Private'} · #${cd.service_number}</div>
+          </div>
+          <div style="border-left: 3px solid #b45309; padding-left: 12px;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #78350f; font-weight: 700;">Regiment &amp; Battalion</div>
+            <div style="font-size: 1rem; color: #1e293b; font-weight: 600; margin-top: 2px;">${cd.regiment}</div>
+          </div>
+          <div style="border-left: 3px solid #b45309; padding-left: 12px;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #78350f; font-weight: 700;">Date of Death &amp; Age</div>
+            <div style="font-size: 1rem; color: #1e293b; font-weight: 600; margin-top: 2px;">${cd.date_of_death} (Age ${cd.age})</div>
+          </div>
+          <div style="border-left: 3px solid #dc2626; padding-left: 12px; background: #fef2f2; border-radius: 0 6px 6px 0; padding-top: 6px; padding-bottom: 6px;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #991b1b; font-weight: 700;">Official Memorial Location</div>
+            <div style="font-size: 1.02rem; color: #7f1d1d; font-weight: 700; margin-top: 2px;">${cd.memorial} · <span style="background: #dc2626; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem;">${cd.panel}</span></div>
+          </div>
+          ${
+            cd.hometown
+              ? `
+          <div style="border-left: 3px solid #64748b; padding-left: 12px; grid-column: 1 / -1;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #475569; font-weight: 700;">Home Connection</div>
+            <div style="font-size: 0.95rem; color: #334155; margin-top: 2px;">${cd.hometown} ${cd.parents ? `(Son of ${cd.parents})` : ''}</div>
+          </div>`
+              : ''
+          }
+          ${
+            cd.tablet_inscription
+              ? `
+          <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 12px; grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <span style="font-size: 0.82rem; font-weight: 700; color: #1e3a8a;"><i class="fa-solid fa-church" style="margin-right: 6px;"></i>Holy Rood Church Crofton Parish Memorial Tablet:</span>
+              <span style="font-family: 'Courier New', monospace; font-weight: 700; background: #e2e8f0; padding: 2px 8px; border-radius: 4px; margin-left: 8px; font-size: 1rem; color: #0f172a;">${cd.tablet_inscription}</span>
+            </div>
+            <span style="font-size: 0.8rem; color: #64748b;"><i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i>Stubbington Village Center</span>
+          </div>`
+              : ''
+          }
+        </div>
+      </div>
+    `;
+  }
 
   if (isTrip) {
     html +=
+      htmlCwgc +
       htmlNarrative +
       htmlDoNow +
       htmlPrimary +
@@ -1770,14 +1873,14 @@ export function renderLesson(lesson) {
     html +=
       htmlDoNow +
       htmlPrimary +
-      (isGCSE ? '' : htmlSources1) +
+      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlNarrative +
       htmlPairShare +
       htmlHistorian +
       htmlTasks;
   } else {
     html +=
-      (isGCSE ? '' : htmlSources1) +
+      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlPrimary +
       htmlDoNow +
       htmlNarrative +
@@ -1786,7 +1889,7 @@ export function renderLesson(lesson) {
       htmlPairShare;
   }
 
-  if (isGCSE) {
+  if (typeof isGCSE !== 'undefined' && isGCSE) {
     html += htmlSources1;
   }
   if (
@@ -1995,19 +2098,27 @@ export function renderLesson(lesson) {
             <p style="color: #334155; font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
               ${lesson.extension_task.instructions}
             </p>
-            ${lesson.extension_task.search_terms && lesson.extension_task.search_terms.length > 0 ? `
+            ${
+              lesson.extension_task.search_terms && lesson.extension_task.search_terms.length > 0
+                ? `
             <div style="background: white; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px; margin-bottom: 15px;">
               <strong style="color: #0f172a; display: block; margin-bottom: 8px;"><i class="fa-brands fa-google" style="color: #ea4335; margin-right: 5px;"></i> Suggested Search Terms:</strong>
               <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                ${lesson.extension_task.search_terms.map(t => `<span style="background: #f1f5f9; padding: 4px 10px; border-radius: 4px; border: 1px solid #e2e8f0; font-family: monospace; font-size: 0.95rem; color: #475569; user-select: all;">"${t}"</span>`).join('')}
+                ${lesson.extension_task.search_terms.map((t) => `<span style="background: #f1f5f9; padding: 4px 10px; border-radius: 4px; border: 1px solid #e2e8f0; font-family: monospace; font-size: 0.95rem; color: #475569; user-select: all;">"${t}"</span>`).join('')}
               </div>
             </div>
-            ` : ''}
-            ${lesson.extension_task.hyperlinks && lesson.extension_task.hyperlinks.length > 0 ? `
+            `
+                : ''
+            }
+            ${
+              lesson.extension_task.hyperlinks && lesson.extension_task.hyperlinks.length > 0
+                ? `
             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-              ${lesson.extension_task.hyperlinks.map(l => `<a href="${l.url}" target="_blank" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #94a3b8;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #3b82f6;"></i> ${l.text}</a>`).join('')}
+              ${lesson.extension_task.hyperlinks.map((l) => `<a href="${l.url}" target="_blank" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #94a3b8;"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #3b82f6;"></i> ${l.text}</a>`).join('')}
             </div>
-            ` : ''}
+            `
+                : ''
+            }
           </div>
         </div>
     `;
@@ -2021,7 +2132,7 @@ export function renderLesson(lesson) {
     let instructionsHtml = '';
     if (ref.instructions && ref.instructions.length > 0) {
       instructionsHtml = `<ul style="margin: 12px 0 0 0; padding-left: 20px; color: #1e40af; font-size: 1rem; line-height: 1.7;">
-        ${ref.instructions.map(i => `<li>${i}</li>`).join('')}
+        ${ref.instructions.map((i) => `<li>${i}</li>`).join('')}
       </ul>`;
     }
     html += `
@@ -2049,13 +2160,47 @@ export function renderLesson(lesson) {
     html += `<div style="display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e2e8f0; margin-bottom: 40px;">`;
 
     if (currentIndex > 0) {
-      html += `<button class="btn btn-secondary" data-action="render-lesson" data-index="${currentIndex - 1}"><i class="fa-solid fa-arrow-left"></i> Previous ${isTrip ? 'Day' : 'Lesson'}</button>`;
+      const prevLesson = allUnitLessons[currentIndex - 1];
+      let prevLabel = 'Previous Lesson';
+      if (isTrip && prevLesson) {
+        if (prevLesson.id === 'day_0') {
+          prevLabel = 'Pre-Trip Briefing';
+        } else if (prevLesson.id && prevLesson.id.startsWith('day_')) {
+          prevLabel = `Previous Day (${prevLesson.title.split(':')[0]})`;
+        } else if (prevLesson.id && prevLesson.id.startsWith('hero_lowry_')) {
+          prevLabel = `Previous Study: ${prevLesson.title.split('(')[0].trim()}`;
+        } else if (prevLesson.id && prevLesson.id.startsWith('hero_')) {
+          prevLabel = `Previous Hero: ${prevLesson.title.split('(')[0].trim()}`;
+        } else if (prevLesson.id === 'final_challenge') {
+          prevLabel = 'Synthesis Challenge';
+        } else {
+          prevLabel = 'Previous';
+        }
+      }
+      html += `<button class="btn btn-secondary" data-action="render-lesson" data-index="${currentIndex - 1}"><i class="fa-solid fa-arrow-left"></i> ${prevLabel}</button>`;
     } else {
       html += `<div></div>`;
     }
 
-    if (currentIndex < appStore.state.activeUnitData.lessons.length - 1) {
-      html += `<button class="btn-pedagogy-primary" data-action="render-lesson" data-index="${currentIndex + 1}">Next ${isTrip ? 'Day' : 'Lesson'} <i class="fa-solid fa-arrow-right"></i></button>`;
+    if (currentIndex < allUnitLessons.length - 1) {
+      const nextLesson = allUnitLessons[currentIndex + 1];
+      let nextLabel = 'Next Lesson';
+      if (isTrip && nextLesson) {
+        if (nextLesson.id === 'day_0') {
+          nextLabel = 'Pre-Trip Briefing';
+        } else if (nextLesson.id && nextLesson.id.startsWith('day_')) {
+          nextLabel = `Next Day (${nextLesson.title.split(':')[0]})`;
+        } else if (nextLesson.id && nextLesson.id.startsWith('hero_lowry_')) {
+          nextLabel = `Home Front: ${nextLesson.title.split('(')[0].trim()}`;
+        } else if (nextLesson.id && nextLesson.id.startsWith('hero_')) {
+          nextLabel = `Local Hero: ${nextLesson.title.split('(')[0].trim()}`;
+        } else if (nextLesson.id === 'final_challenge') {
+          nextLabel = 'Synthesis Challenge';
+        } else {
+          nextLabel = 'Next';
+        }
+      }
+      html += `<button class="btn-pedagogy-primary" data-action="render-lesson" data-index="${currentIndex + 1}">${nextLabel} <i class="fa-solid fa-arrow-right"></i></button>`;
     } else {
       html += `<div></div>`;
     }
@@ -2068,7 +2213,10 @@ export function renderLesson(lesson) {
   contentArea.innerHTML = html;
 
   if (lesson.quiz && lesson.quiz.length > 0) {
-    if (document.getElementById('quiz-progress')) {
+    if (
+      document.getElementById('quiz-progress') &&
+      typeof window.renderQuizQuestion === 'function'
+    ) {
       window.renderQuizQuestion();
     }
   }
@@ -2180,6 +2328,3 @@ export function assignQuestionNumbers(lesson) {
   if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
   if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
 }
-
-// Keep global bindings for now
-window.formatBold = formatBold;
