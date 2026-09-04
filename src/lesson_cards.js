@@ -250,48 +250,164 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       lessonsHTML += '</div>';
     });
   } else if (unitData.type === 'trip') {
-    const preparations = [];
     const days = [];
-    const heroes = [];
+    const meninGateHeroes = [];
+    const tyneCotHeroes = [];
+    const lowryBrothers = [];
+    let finalChallenge = null;
+
     unitData.lessons.forEach((lesson, index) => {
-      if (lesson.id && lesson.id.startsWith('hero_')) {
-        heroes.push({ lesson, index });
-      } else if (lesson.id === 'day_0') {
-        preparations.push({ lesson, index });
-      } else if (lesson.id !== 'final_challenge') {
+      if (lesson.id === 'hero_0' || lesson.id === 'hero_1') {
+        meninGateHeroes.push({ lesson, index });
+      } else if (lesson.id && ['hero_2', 'hero_3', 'hero_4', 'hero_5'].includes(lesson.id)) {
+        tyneCotHeroes.push({ lesson, index });
+      } else if (lesson.id && lesson.id.startsWith('hero_lowry_')) {
+        lowryBrothers.push({ lesson, index });
+      } else if (lesson.id === 'final_challenge') {
+        finalChallenge = { lesson, index };
+      } else if (lesson.id !== 'day_0') {
         days.push({ lesson, index });
       }
     });
 
-    if (preparations.length > 0) {
-      // Preparations are now handled in the hero header in core_app.js
-    }
-
-    lessonsHTML +=
-      '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
+    lessonsHTML += `
+      <h2 style="margin-top: 30px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-family: 'Playfair Display', serif; display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid fa-route" style="color: #2563eb;"></i> 3-Day Expedition Itinerary
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">
+    `;
     days.forEach((d, i) => {
       lessonsHTML += `
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="margin-top: 0; color: #1a237e; font-size: 1.1rem; margin-bottom: 10px;">Day ${i + 1}</h3>
-            <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${d.lesson.title.replace(/^Day \d+:\s*/, '')}</p>
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-top: 4px solid #2563eb; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.15rem; font-family: 'Playfair Display', serif;">Day ${i + 1}</h3>
+              <span style="font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; padding: 3px 8px; border-radius: 12px; border: 1px solid #bfdbfe;">Field Guide</span>
+            </div>
+            <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem; line-height: 1.4;">${d.lesson.title.replace(/^Day \d+:\s*/, '')}</p>
+            <p style="margin: 8px 0 0 0; color: #64748b; font-size: 0.85rem; font-style: italic;">${d.lesson.enquiry || ''}</p>
           </div>
         `;
     });
+    if (finalChallenge) {
+      lessonsHTML += `
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${finalChallenge.index}" style="background: white; border: 1px solid #cbd5e1; border-top: 4px solid #f59e0b; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';" onmouseout="this.style.transform='translateY(0)';">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h3 style="margin: 0; color: #b45309; font-size: 1.15rem; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-award" style="margin-right: 6px;"></i> Synthesis Challenge</h3>
+              <span style="font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #b45309; padding: 3px 8px; border-radius: 12px; border: 1px solid #fde68a;">Reflection</span>
+            </div>
+            <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${finalChallenge.lesson.title}</p>
+          </div>
+        `;
+    }
     lessonsHTML += '</div>';
 
-    if (heroes.length > 0) {
-      lessonsHTML +=
-        '<h2 style="margin-top: 40px; text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px;"><i class="fa-solid fa-ribbon"></i> The Fallen</h2>';
-      lessonsHTML +=
-        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
-      heroes.forEach((h) => {
+    // The Fallen: Physical Memorials visited on the tour
+    lessonsHTML += `
+      <div style="margin-top: 45px;">
+        <h2 style="text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px; font-family: 'Playfair Display', serif; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <span><i class="fa-solid fa-cross" style="margin-right: 10px;"></i> The Fallen: Local Heroes of the Salient</span>
+          <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 20px;">Stubbington &amp; Lee-on-the-Solent</span>
+        </h2>
+        <p style="color: #475569; font-size: 0.95rem; margin-top: 10px; line-height: 1.5;">
+          During our tour, pupils will locate these six young men from our home villages who died in the Ypres Salient. None have a known grave in the grass—all are commemorated on the great memorial walls.
+        </p>
+      </div>
+
+      <!-- Menin Gate Group -->
+      <div style="margin-top: 25px;">
+        <div style="background: #f8fafc; border-left: 4px solid #b91c1c; padding: 10px 15px; border-radius: 4px; margin-bottom: 15px;">
+          <h4 style="margin: 0; color: #7f1d1d; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-archway" style="color: #b91c1c;"></i> Ypres (Menin Gate) Memorial · Panel 35
+          </h4>
+          <span style="font-size: 0.85rem; color: #64748b;">Visited on Day 2 during the 8:00 PM Last Post Ceremony</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; text-align: left;">
+    `;
+    meninGateHeroes.forEach((h) => {
+      const heroData =
+        unitData.local_heroes?.find(
+          (lh) =>
+            lh.name.includes(h.lesson.title.split(' ')[1]) ||
+            h.lesson.title.includes(lh.name.split(' ')[lh.name.split(' ').length - 1]),
+        ) || {};
+      lessonsHTML += `
+        <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #fed7aa; border-left: 5px solid #ea580c; border-radius: 8px; padding: 18px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <h3 style="margin: 0; color: #7f1d1d; font-size: 1.1rem; font-family: 'Playfair Display', serif;">${h.lesson.title.split('(')[0].trim()}</h3>
+            <span style="font-size: 0.75rem; font-weight: 700; background: #ffedd5; color: #c2410c; padding: 2px 7px; border-radius: 10px; white-space: nowrap;">Panel 35</span>
+          </div>
+          <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">${heroData.regiment || '1st Battalion, Hampshire Regiment'}</p>
+          <p style="margin: 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Local Hampshire connection'}</p>
+        </div>
+      `;
+    });
+    lessonsHTML += `
+        </div>
+      </div>
+
+      <!-- Tyne Cot Group -->
+      <div style="margin-top: 30px;">
+        <div style="background: #f8fafc; border-left: 4px solid #b91c1c; padding: 10px 15px; border-radius: 4px; margin-bottom: 15px;">
+          <h4 style="margin: 0; color: #7f1d1d; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-monument" style="color: #b91c1c;"></i> Tyne Cot Memorial to the Missing · Passchendaele
+          </h4>
+          <span style="font-size: 0.85rem; color: #64748b;">Visited on Day 2 · Inscribed on the great rear memorial wall</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; text-align: left;">
+    `;
+    tyneCotHeroes.forEach((h) => {
+      const heroData =
+        unitData.local_heroes?.find(
+          (lh) =>
+            lh.name.includes(h.lesson.title.split(' ')[1]) ||
+            h.lesson.title.includes(lh.name.split(' ')[lh.name.split(' ').length - 1]),
+        ) || {};
+      const panelLabel = h.lesson.id === 'hero_5' ? 'Panels 14–17' : 'Panels 88–90';
+      lessonsHTML += `
+        <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 8px; padding: 18px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <h3 style="margin: 0; color: #7f1d1d; font-size: 1.1rem; font-family: 'Playfair Display', serif;">${h.lesson.title.split('(')[0].trim()}</h3>
+            <span style="font-size: 0.75rem; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 2px 7px; border-radius: 10px; white-space: nowrap;">${panelLabel}</span>
+          </div>
+          <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">${heroData.regiment || ''}</p>
+          <p style="margin: 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Local Hampshire connection'}</p>
+        </div>
+      `;
+    });
+    lessonsHTML += `
+        </div>
+      </div>
+    `;
+
+    // The Lowry Brothers: A Village's Sacrifice
+    if (lowryBrothers.length > 0) {
+      lessonsHTML += `
+        <div style="margin-top: 45px; background: #fdfaf6; border: 1.5px solid #e7dfd5; border-radius: 10px; padding: 25px;">
+          <div style="border-bottom: 1.5px solid #e7dfd5; padding-bottom: 12px; margin-bottom: 18px;">
+            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fef3c7; color: #92400e; padding: 3px 9px; border-radius: 12px; display: inline-block; margin-bottom: 8px;">
+              <i class="fa-solid fa-house-chimney-crack" style="margin-right: 5px;"></i> Home Front Memorial Story
+            </span>
+            <h3 style="margin: 0 0 6px 0; color: #1e293b; font-size: 1.35rem; font-family: 'Playfair Display', serif;">
+              A Village's Sacrifice: The Lowry Brothers of Manor Way Grange
+            </h3>
+            <p style="margin: 0; color: #475569; font-size: 0.92rem; line-height: 1.5;">
+              The names of William ('Harper'), Auriol ('Eric'), and Cyril ('Patrick') Lowry are carved into the Stubbington War Memorial. While their graves and memorials lie across Gallipoli, Arras, and the Somme rather than the Ypres Salient, their story represents the devastating cost of the war on individual Hampshire families.
+            </p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; text-align: left;">
+      `;
+      lowryBrothers.forEach((b) => {
         lessonsHTML += `
-            <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #ef4444; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
-              <h3 style="margin-top: 0; color: #7f1d1d; font-size: 1.1rem; margin-bottom: 0px; font-family: 'Playfair Display', serif;">${h.lesson.title}</h3>
-            </div>
-          `;
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${b.index}" style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+            <h4 style="margin: 0 0 6px 0; color: #1e3a8a; font-size: 1.05rem; font-family: 'Playfair Display', serif;">${b.lesson.title}</h4>
+            <p style="margin: 0; color: #64748b; font-size: 0.85rem; line-height: 1.4;">${b.lesson.enquiry || 'Manor Way Grange, Lee-on-the-Solent'}</p>
+          </div>
+        `;
       });
-      lessonsHTML += '</div>';
+      lessonsHTML += `
+          </div>
+        </div>
+      `;
     }
 
     if (unitData.extended) {
