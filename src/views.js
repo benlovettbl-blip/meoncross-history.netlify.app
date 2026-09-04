@@ -226,7 +226,7 @@ export function renderDashboard() {
     const ctaLabel = unitShortNames[unit.id] || title;
 
     html += `
-      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative;" data-action="launch-subapp" data-unit="${unit.id}">
+      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.1}s; cursor: pointer; position: relative; ${isGcse ? 'border-top: 3px solid #f59e0b;' : ''}" data-action="launch-subapp" data-unit="${unit.id}">
         ${gcseBadge}
         ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
         <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">

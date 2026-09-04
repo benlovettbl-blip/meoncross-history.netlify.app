@@ -395,20 +395,91 @@ allDirs.forEach((unitId) => {
       heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
     }
     if (unitId === 'edexcel_medicine') {
-      // Build the cover image HTML using the period-specific asset if available, then fall back to unit cover
+      // Period-specific authentic cover images
+      const medicinePanoMap = {
+        medieval: '../../units/edexcel_medicine/assets/authentic_medieval.jpg',
+        renaissance: '../../units/edexcel_medicine/assets/authentic_renaissance.jpg',
+        '18th_19th': '../../units/edexcel_medicine/assets/authentic_18th_19th.jpg',
+        modern: '../../units/edexcel_medicine/assets/authentic_modern.jpg',
+        western_front: '../../units/edexcel_medicine/assets/authentic_western_front.jpg',
+      };
+
+      // Period-specific Edexcel enquiry questions (baked into generator — do not use generic title)
+      const medicineEnquiryMap = {
+        medieval:
+          'Why did medieval medicine change so little — and what finally broke the deadlock?',
+        renaissance: 'Did the Renaissance truly revolutionise medicine, or was it all talk?',
+        '18th_19th': 'Was the 19th century the real turning point for medicine in Britain?',
+        modern:
+          'Why has medicine advanced more in the 20th century than in all previous history combined?',
+        western_front: 'How did the horror of the Western Front both damage and advance medicine?',
+      };
+
+      // Period-specific Edexcel specification bullet points for page 2
+      const medicineSpecMap = {
+        medieval: {
+          heading: 'Edexcel Specification: c1250–c1500',
+          bullets: [
+            '<strong>1. Causes of disease:</strong> Supernatural/religious explanations, Astrology, Four Humours, and Miasma.',
+            '<strong>2. Prevention and treatment:</strong> Religious actions, bloodletting, purging, purifying air.',
+            '<strong>3. Medical care:</strong> The role of physicians, apothecaries, barber surgeons, and hospitals.',
+            '<strong>4. Case Study: The Black Death (1348):</strong> Beliefs about its causes, treatments, and prevention.',
+          ],
+        },
+        renaissance: {
+          heading: 'Edexcel Specification: c1500–c1700',
+          bullets: [
+            '<strong>1. Causes of disease:</strong> Continuity of the Four Humours; new ideas from Vesalius and Harvey.',
+            '<strong>2. Treatments:</strong> Continuity of Galenic remedies; new chemical cures (Paracelsus).',
+            '<strong>3. Impact of the Renaissance:</strong> The printing press, the Royal Society, and scientific method.',
+            '<strong>4. Case Study: The Great Plague (1665):</strong> Causes, responses, and impact.',
+          ],
+        },
+        '18th_19th': {
+          heading: 'Edexcel Specification: c1700–c1900',
+          bullets: [
+            '<strong>1. Causes of disease:</strong> From miasma to germ theory (Pasteur, Koch).',
+            '<strong>2. Prevention:</strong> Jenner and the smallpox vaccine; public health reform.',
+            '<strong>3. Treatment:</strong> Simpson and anaesthetics; Lister and antiseptics; Nightingale and nursing.',
+            '<strong>4. Case Study: Cholera and the Broad Street Pump (Snow, 1854).</strong>',
+          ],
+        },
+        modern: {
+          heading: 'Edexcel Specification: c1900–present',
+          bullets: [
+            '<strong>1. Causes of disease:</strong> Lifestyle factors, genetics, and the role of the NHS.',
+            '<strong>2. Prevention:</strong> Immunisation programmes, screening, and public health campaigns.',
+            '<strong>3. Treatment:</strong> Fleming and penicillin; blood transfusions; transplants; radiotherapy.',
+            '<strong>4. Modern Britain:</strong> The founding of the NHS (1948) and its ongoing impact.',
+          ],
+        },
+        western_front: {
+          heading: 'Edexcel Specification: The Western Front, c1914–c1918',
+          bullets: [
+            '<strong>1. Nature of warfare:</strong> The scale of casualties and the challenge for medical services.',
+            '<strong>2. Surgical advances:</strong> Blood transfusions, X-rays, and the development of triage.',
+            '<strong>3. Treatment of wounds:</strong> Shell shock, infection, and the Thomas splint.',
+            '<strong>4. The RAMC and FANY:</strong> The organisation of medical care on the Western Front.',
+          ],
+        },
+      };
+
       const medicineCoverImgSrc =
-        heroImgSrc || '../../units/edexcel_medicine/assets/medieval_pano_1784551792993.png';
-      heroHtml = `<div style="border: 2px solid #1e3a8a; padding: 15px; margin-top: 20px; background-color: #f8fafc;">
-<h3 style="color: #1e3a8a; margin-top: 0;">Edexcel Specification: c1250–c1500</h3>
-<ul style="font-size: 11pt; line-height: 1.5;">
-<li><strong>1. Causes of disease:</strong> Supernatural/religious explanations, Astrology, Four Humours, and Miasma.</li>
-<li><strong>2. Prevention and treatment:</strong> Religious actions, bloodletting, purging, purifying air.</li>
-<li><strong>3. Medical care:</strong> The role of physicians, apothecaries, barber surgeons, and hospitals.</li>
-<li><strong>4. Case Study: The Black Death (1348):</strong> Beliefs about its causes, treatments, and prevention.</li>
-</ul></div>
-<div style="flex: 1; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #f8fafc; min-height: 0;">
+        heroImgSrc || medicinePanoMap[periodName] || medicinePanoMap.medieval;
+      const medicineEnquiry = medicineEnquiryMap[periodName] || medicineEnquiryMap.medieval;
+      const medicineSpec = medicineSpecMap[periodName] || medicineSpecMap.medieval;
+
+      // Cover page: just the image, no spec box
+      heroHtml = `<div style="flex: 1; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #f8fafc; min-height: 0;">
   <img src="${medicineCoverImgSrc}" style="max-height: 100%; max-width: 100%; width: 100%; object-fit: cover; display: block;">
 </div>`;
+
+      // Store spec and enquiry for injection into page 2 below
+      unitData._medicineEnquiry = medicineEnquiry;
+      unitData._medicineSpecHtml = `<div style="border: 2px solid #1e3a8a; padding: 10px 15px; margin-bottom: 12px; background-color: #f0f4ff; flex-shrink: 0; border-radius: 4px;">
+        <h3 style="color: #1e3a8a; margin: 0 0 6px 0; font-size: 12pt;">${medicineSpec.heading}</h3>
+        <ul style="font-size: 10pt; line-height: 1.4; margin: 0; padding-left: 18px;">${medicineSpec.bullets.map((b) => `<li>${b}</li>`).join('')}</ul>
+      </div>`;
     }
 
     html += `
@@ -421,12 +492,15 @@ allDirs.forEach((unitId) => {
       
       <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
         ${(function () {
+          // For edexcel_medicine, use the period-specific enquiry question baked into the generator
           const finalCoverTitle =
-            unitData.enquiry || unitData.enquiry_question
-              ? unitData.enquiry || unitData.enquiry_question
-              : periodTitle === 'Complete Unit'
-                ? unitData.title
-                : periodTitle;
+            unitId === 'edexcel_medicine' && unitData._medicineEnquiry
+              ? unitData._medicineEnquiry
+              : unitData.enquiry || unitData.enquiry_question
+                ? unitData.enquiry || unitData.enquiry_question
+                : periodTitle === 'Complete Unit'
+                  ? unitData.title
+                  : periodTitle;
           const titleFontSize =
             finalCoverTitle.length > 50 ? '28pt' : finalCoverTitle.length > 35 ? '34pt' : '38pt';
           return `<h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: ${titleFontSize}; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">
@@ -453,6 +527,7 @@ allDirs.forEach((unitId) => {
     </div>`;
     html += `
     <div style="page-break-after: always; page-break-inside: avoid; display: flex; flex-direction: column; height: 95vh; overflow: hidden;">
+      ${unitId === 'edexcel_medicine' && unitData._medicineSpecHtml ? unitData._medicineSpecHtml : ''}
       <h2 style="margin: 0; color: #1e3a8a; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">PROGRESS & ASSESSMENT TRACKER <span style="float: right; font-size: 0.8em; font-weight: normal; color: #333;">Target Grade: _________</span></h2>
       
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; margin-bottom: 8px;">
