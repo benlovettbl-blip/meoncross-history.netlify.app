@@ -2169,26 +2169,68 @@
             ]
           },
           "teacher_notes": {
-            "primer": "Before diving into the historical narrative of the Middle East conflict, students must establish a foundational understanding of the region's geography. The complexities of borders, waterways, and contested territories (like the Sinai and Golan Heights) are critical for comprehending the stakes of the wars they will study.",
+            "primer": "This foundational lesson establishes the critical geopolitical, historical, and geographic groundwork for GCSE Paper 2 (Conflict in the Middle East, 1945–1995). Before students can analyze the 1948 Arab-Israeli War or subsequent crises, they must understand how British and French imperial partition carved up the Ottoman Empire, why contradictory wartime pledges bred enduring mutual mistrust between Arab and Jewish populations, and how the physical terrain and maritime chokepoints shaped strategic military conflict.",
             "objectives": [
               {
-                "objective": "Identify the key countries and capital cities involved in the Arab-Israeli conflict.",
-                "primer": "Have students use atlases or the provided interactive map to label Egypt, Syria, Jordan, Lebanon, and Israel on a blank map.",
-                "question": "Which two capital cities are geographically closest to Israel's northern borders?"
+                "objective": "Understand how the collapse of the Ottoman Empire after WW1 and the secret Sykes-Picot Agreement (1916) created artificial borders and European mandates in the Middle East.",
+                "primer": "Direct students to Narrative Block 1. Highlight how British and French diplomats (Mark Sykes and François Georges-Picot) drew arbitrary straight lines across desert territory without consulting indigenous populations, trapping diverse ethnic and religious communities within artificial states.",
+                "question": "Why did drawing arbitrary straight lines across former Ottoman lands create long-term political instability in the modern Middle East?"
               },
               {
-                "objective": "Locate strategic chokepoints and contested regions.",
-                "primer": "Guide students to shade the Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights, and highlight the Suez Canal and Straits of Tiran.",
-                "question": "Why would control of the Straits of Tiran be vital to Israel's economy?"
+                "objective": "Examine conflicting British wartime promises: the McMahon-Hussein Correspondence (1915) versus the Balfour Declaration (1917).",
+                "primer": "Lead a comparative source analysis of Britain's contradictory commitments during WW1. Guide students to see how both Arabs and Zionists felt legitimately promised sovereignty over Palestine.",
+                "question": "How did Britain's simultaneous promises to Sharif Hussein and Lord Rothschild make future conflict over Palestine almost unavoidable?"
               },
               {
-                "objective": "Locate and label the Occupied Territories (West Bank, Gaza Strip, Golan Heights, Sinai Peninsula).",
-                "primer": "Guide students to shade the specific territories captured by Israel during the 1967 Six Day War, as these form the crux of the subsequent narrative.",
-                "question": "Why would the capture of the Golan Heights from Syria be seen as strategically vital for Israel?"
+                "objective": "Define and contrast the core historical ideologies of Zionism and Arab Nationalism.",
+                "primer": "Discuss Theodor Herzl's vision of a Jewish national sanctuary in response to European anti-Semitic pogroms versus the Arab struggle for self-determination after centuries of Ottoman Turkish rule.",
+                "question": "Why did both Zionists and Arab Nationalists regard sovereignty over Palestine as an existential necessity for their collective survival?"
+              },
+              {
+                "objective": "Identify the strategic geography of the region, including vital maritime chokepoints (Suez Canal, Straits of Tiran) and contested territories (West Bank, Gaza Strip, Golan Heights, Sinai Peninsula).",
+                "primer": "Walk students through Narrative Block 3 and the map exercises, connecting physical geography (waterways and high ground) to the military triggers of the 1956 Suez Crisis and 1967 Six-Day War.",
+                "question": "Why would Egypt's closure of the Straits of Tiran or nationalisation of the Suez Canal be considered a direct act of war by Israel and Western powers?"
               }
             ]
           },
-          "narrative_blocks": [],
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "The Collapse of the Ottoman Empire & The Sykes-Picot Mandates (1916–1920)",
+              "text": "For over four centuries leading up to the First World War, the Middle East was ruled as part of the vast Turkish <strong>Ottoman Empire</strong>. The region was not divided into modern nation-states like Lebanon, Syria, Jordan, or Iraq; instead, it was administered as administrative provinces (vilayets) under the Ottoman Sultan in Constantinople.<br><br>When the Ottoman Empire entered World War One on the side of Germany and the Central Powers in October 1914, Britain and France realised that victory would give them the opportunity to dismember the Turkish empire and expand their own imperial influence. In May 1916, British diplomat Sir Mark Sykes and French diplomat François Georges-Picot drew up a secret treaty known as the <strong>Sykes-Picot Agreement</strong>. Using a ruler on a map, they carved the Middle East into British and French spheres of direct control and influence.<br><br>Following the Allied victory in 1918 and the collapse of the Ottoman Empire, the newly established <strong>League of Nations</strong> formalised this partition through the <strong>Mandates System</strong> at the San Remo Conference (1920). Under this system, European powers were granted authority to govern former Ottoman territories until they were deemed 'able to stand by themselves':<ul><li><strong>French Mandates:</strong> Syria and Lebanon.</li><li><strong>British Mandates:</strong> Mesopotamia (modern Iraq), Transjordan (modern Jordan), and <strong>Palestine</strong>.</li></ul>These straight-line borders completely ignored traditional tribal loyalties, religious sects (Sunni, Shia, Christian, Druze, Jewish), and geographical natural boundaries. This artificial map sowed the seeds of chronic regional instability that persists to this day.",
+              "tasks": [
+                {
+                  "type": "comprehension",
+                  "question": "Explain why the Sykes-Picot Agreement and League of Nations mandates created artificial borders in the Middle East.",
+                  "model": "The Sykes-Picot Agreement created artificial borders because British and French diplomats divided the collapsed Ottoman Empire according to European imperial interests rather than local realities. They drew arbitrary straight lines across maps without consulting the indigenous inhabitants, grouping distinct religious sects and rival tribes into newly created states while splitting historic communities across national frontiers."
+                }
+              ]
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "Conflicting Pledges: McMahon-Hussein, The Balfour Declaration & Competing Nationalisms",
+              "text": "During the desperate fighting of World War One, the British government made contradictory promises to both Arab and Jewish leaders in order to secure wartime support, creating a legacy of bitter betrayal.<br><br><strong>1. The McMahon-Hussein Correspondence (1915–1916):</strong><br>Sir Henry McMahon, the British High Commissioner in Cairo, exchanged ten letters with <strong>Sharif Hussein of Mecca</strong>, the guardian of Islam's holy sites. In exchange for the Arabs launching an armed uprising (the Great Arab Revolt, assisted by T.E. Lawrence) against Turkish Ottoman forces, Britain promised to support an independent, unified Arab state across the Middle East. Arab leaders believed this pledge encompassed Palestine, though Britain later disputed the exact borders intended.<br><br><strong>2. The Balfour Declaration (2 November 1917):</strong><br>Just two years later, British Foreign Secretary Arthur Balfour sent an official letter to Lord Walter Rothschild, a prominent leader of the British Jewish community. The declaration stated: <em>'His Majesty's Government view with favour the establishment in Palestine of a national home for the Jewish people...'</em>. While it added that nothing should prejudice the civil and religious rights of existing non-Jewish communities, it made no mention of their political or national rights, despite Arabs making up over 90% of Palestine's population at the time.<br><br><strong>The Ideological Collision: Zionism vs. Arab Nationalism:</strong><ul><li><strong>Zionism:</strong> A political movement established in 1897 by Austrian Jewish journalist Theodor Herzl. In the wake of horrific anti-Semitic pogroms across Russia and Eastern Europe, Herzl argued that Jewish people would never be safe from persecution until they possessed their own sovereign homeland in their ancestral biblical home (Eretz Israel / Palestine).</li><li><strong>Arab Nationalism:</strong> An emerging political movement seeking self-determination, sovereignty, and dignity for Arab peoples. Arab nationalists rejected European colonial tutelage, arguing that having lived continuously in Palestine for centuries, the Arab population held an undisputed right to self-government and national independence.</li></ul>Britain had promised the same sliver of land to two different peoples with mutually irreconcilable aspirations.",
+              "tasks": [
+                {
+                  "type": "comprehension",
+                  "question": "Explain the fundamental contradiction between the McMahon-Hussein Correspondence and the Balfour Declaration.",
+                  "model": "The fundamental contradiction was that Britain pledged the same territory to two opposing nationalist movements. Through the McMahon-Hussein Correspondence, Arab leaders were led to believe Britain would support an independent Arab kingdom including Palestine in reward for fighting the Ottomans. However, the Balfour Declaration officially promised British backing for a Jewish national home in Palestine, ignoring the political self-determination of the existing 90% Arab majority."
+                }
+              ]
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "Strategic Geography: Chokepoints, Borders & Contested Zones",
+              "text": "Understanding the physical geography of the Middle East is essential to understanding the military strategies, casus belli (reasons for war), and peace negotiations of the Arab-Israeli conflict.<br><br><strong>Strategic Maritime Chokepoints:</strong><ul><li><strong>The Suez Canal:</strong> Completed by French and Egyptian engineers in 1869, this 120-mile artificial sea-level waterway cuts across Egypt to link the Mediterranean Sea directly to the Red Sea. For Britain, it was the 'imperial lifeline' to India and Middle Eastern oil routes. When Egyptian President Gamal Abdel Nasser nationalised the canal in 1956, it triggered the Suez Crisis.</li><li><strong>The Straits of Tiran & Gulf of Aqaba:</strong> A narrow passage of water between the Sinai Peninsula and the Arabian coast. It provides Israel with its sole maritime access from the southern port of Eilat to the Red Sea and international markets in Asia and Africa. Egyptian blockades of the Straits in 1956 and June 1967 were treated by Israel as acts of war.</li></ul><br><strong>The Contested Territories (Pre- and Post-1967):</strong><ul><li><strong>The West Bank & East Jerusalem:</strong> The hill country west of the River Jordan, containing ancient sacred sites revered by Jews (Western Wall, Temple Mount), Muslims (Al-Aqsa Mosque, Dome of the Rock), and Christians (Church of the Holy Sepulchre). Annexed by Jordan in 1948, it was captured and occupied by Israel during the 1967 Six-Day War.</li><li><strong>The Gaza Strip:</strong> A narrow, densely populated coastal strip bordering south-west Israel and Egypt's Sinai desert. Administered under Egyptian military rule from 1948 until captured by Israel in 1967.</li><li><strong>The Golan Heights:</strong> A steep, strategic volcanic plateau in south-western Syria. Rising high above the Sea of Galilee and northern Israeli kibbutzim, Syrian artillery repeatedly shelled Israeli farms below until Israel captured and fortified the heights in 1967.</li><li><strong>The Sinai Peninsula:</strong> A massive triangular desert buffer of 60,000 square kilometres connecting Africa and Asia. It was captured by Israel in 1956 (and returned in 1957) and captured again in 1967, before being returned to Egypt under the historic 1978–1979 Camp David Accords.</li></ul>",
+              "tasks": [
+                {
+                  "type": "comprehension",
+                  "question": "Why were the Golan Heights and the Straits of Tiran of supreme strategic importance in the Arab-Israeli wars?",
+                  "model": "The Golan Heights were strategically vital because their high elevation gave Syrian artillery commanding sightlines to shell civilian Israeli settlements across the Galilee plain, making capture of the high plateau essential for Israeli border security. The Straits of Tiran were crucial because they represented Israel's only southern maritime corridor to the Red Sea and global oil supplies; when Egypt closed this chokepoint in 1967, it severed Israel's trade lifeline and triggered the Six-Day War."
+                }
+              ]
+            }
+          ],
           "extended": {
             "title": "Map Task: The Geopolitical Landscape",
             "paragraphs": [
@@ -2242,7 +2284,73 @@
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
           },
-          "consolidation": "Why is the geography of the Middle East so geopolitically important?"
+          "consolidation": "Why is the geography of the Middle East so geopolitically important?",
+          "learning_objectives": [
+            "Understand how the collapse of the Ottoman Empire after WW1 and the secret Sykes-Picot Agreement (1916) created artificial borders and European mandates in the Middle East.",
+            "Examine conflicting British wartime promises: the McMahon-Hussein Correspondence (1915) versus the Balfour Declaration (1917).",
+            "Define and contrast the core historical ideologies of Zionism and Arab Nationalism.",
+            "Identify the strategic geography of the region, including vital maritime chokepoints (Suez Canal, Straits of Tiran) and contested territories (West Bank, Gaza Strip, Golan Heights, Sinai Peninsula)."
+          ],
+          "vocab": [
+            {
+              "term": "Sykes-Picot Agreement",
+              "definition": "A secret 1916 pact between Britain and France dividing Ottoman Arab lands into European spheres of influence."
+            },
+            {
+              "term": "Mandate",
+              "definition": "An authorization granted by the League of Nations to a European power to govern a former Ottoman territory until independence."
+            },
+            {
+              "term": "Balfour Declaration",
+              "definition": "A 1917 letter from British Foreign Secretary Arthur Balfour declaring support for a Jewish national home in Palestine."
+            },
+            {
+              "term": "Zionism",
+              "definition": "The nationalist movement advocating for the re-establishment and protection of a Jewish nation state in their ancestral homeland."
+            },
+            {
+              "term": "Arab Nationalism",
+              "definition": "A nationalist ideology celebrating the glorious heritage of the Arab world and demanding independence from imperial control."
+            },
+            {
+              "term": "Chokepoint",
+              "definition": "A narrow, strategic maritime passage (like the Suez Canal or Straits of Tiran) whose closure can cripple trade and cause war."
+            },
+            {
+              "term": "Contested Territory",
+              "definition": "Land claimed by more than one sovereign nation or people, including the West Bank, Gaza, Golan Heights, and Sinai."
+            }
+          ],
+          "flashcards": [
+            {
+              "term": "Sykes-Picot Agreement (1916)",
+              "definition": "Secret pact where Britain and France partitioned Arab provinces of the Ottoman Empire into colonial spheres."
+            },
+            {
+              "term": "League of Nations Mandate",
+              "definition": "System giving Britain and France legal control over former Ottoman lands, creating artificial borders."
+            },
+            {
+              "term": "McMahon-Hussein Letters (1915)",
+              "definition": "British promises of an independent Arab state in exchange for an Arab revolt against the Ottoman Turks."
+            },
+            {
+              "term": "Balfour Declaration (1917)",
+              "definition": "British pledge to support a 'national home for the Jewish people' in Palestine."
+            },
+            {
+              "term": "Zionism",
+              "definition": "Movement founded by Theodor Herzl seeking a sovereign Jewish state to escape European anti-Semitism."
+            },
+            {
+              "term": "Straits of Tiran",
+              "definition": "Narrow maritime passage into the Gulf of Aqaba; Egyptian blockades in 1956 and 1967 sparked major wars."
+            },
+            {
+              "term": "Golan Heights",
+              "definition": "Elevated Syrian plateau captured by Israel in 1967 to stop Syrian artillery shelling northern settlements."
+            }
+          ]
         },
         {
           "id": "lesson_2",
@@ -42601,8 +42709,24 @@
           "title": "Pre-Trip Information",
           "enquiry": "What to Pack & Logistics",
           "teacher_notes": {
-            "primer": "Vital information for parents and pupils prior to departure.",
-            "objectives": []
+            "primer": "Vital pre-departure preparation ensuring high standards of student readiness, respectful commemoration, and structured historical fieldwork in the Ypres Salient.",
+            "objectives": [
+              {
+                "objective": "Review logistics, essential clothing, and personal equipment required for the 3-day battlefield tour.",
+                "primer": "Direct students to verify each item on the packing checklist with parents before the briefing meeting.",
+                "question": "Why does the heavy clay soil of Flanders make sturdy waterproof footwear a safety necessity on battlefield sites?"
+              },
+              {
+                "objective": "Understand the solemnity, respectful conduct, and codes of commemoration observed across Commonwealth and German war cemeteries.",
+                "primer": "Emphasize respectful behavior and reverence at memorials, particularly during the evening Menin Gate ceremony.",
+                "question": "Why do international war cemeteries enforce strict codes of respectful conduct rather than operating like conventional tourist attractions?"
+              },
+              {
+                "objective": "Examine the geographic and historical significance of the Ypres Salient to prepare for on-site field enquiries.",
+                "primer": "Prime students on the topographic vulnerability of the Salient and the local Hampshire casualties they will encounter.",
+                "question": "What military disadvantage did British forces face by defending a salient surrounded on three sides by German high ground?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -42617,6 +42741,28 @@
           },
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Review logistics, essential clothing, and personal equipment required for the 3-day battlefield tour.",
+            "Understand the solemnity, respectful conduct, and codes of commemoration observed across Commonwealth and German war cemeteries.",
+            "Examine the geographic and historical significance of the Ypres Salient to prepare for on-site field enquiries."
+          ],
+          "narrative_blocks": [
+            {
+              "type": "narrative",
+              "theme_heading": "Essential Kit, Footwear & Logistics Guide",
+              "text": "Preparing thoroughly for our three-day expedition to the Ypres Salient is essential for your comfort, safety, and historical enquiry. The battlefield terrain in Flanders consists of heavy, moisture-retentive clay that quickly turns slick and treacherous in wet weather. Proper footwear and layered clothing are non-negotiable requirements.<br><br><strong>Essential Equipment Checklist:</strong><ul><li><strong>Footwear:</strong> Sturdy walking boots or strong, treaded walking shoes. Fashion trainers with smooth soles are unsafe in wet trench clay.</li><li><strong>Waterproofs:</strong> A durable waterproof and windproof coat (with hood) and lightweight waterproof trousers.</li><li><strong>Layering:</strong> Warm fleece or sweater, several pairs of thick walking socks, and thermal base layers for cold mornings.</li><li><strong>Fieldwork Gear:</strong> History Hub field notebook, two reliable black/blue pens, and a mobile phone/tablet with this digital guide bookmarked.</li><li><strong>Documentation:</strong> Valid passport and GHIC/EHIC medical card handed in to school travel leads.</li><li><strong>Personal Bag:</strong> A lightweight day rucksack for carrying water, lunch, and camera on battlefield stops.</li></ul>"
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "Code of Respect, Remembrance & Memorial Etiquette",
+              "text": "During this tour, you are visiting active international cemeteries, mass graves, and sacred memorials where over 200,000 men lie buried or commemorated. These are solemn resting places, not recreation parks. Every Meoncross student represents our school, our local community, and the descendants of the fallen.<br><br><strong>Key Expectations on Memorial Ground:</strong><ul><li><strong>Dignity & Silence:</strong> Maintain quiet, respectful voices. Mobile phones must be switched to silent mode.</li><li><strong>Preservation:</strong> Never run across grave plots, lean against headstones, climb on memorial walls, or scramble up trench revetments.</li><li><strong>The Menin Gate Ceremony:</strong> At 8:00 PM each evening, the town of Ypres silences all traffic for the sounding of the Last Post. We will assemble in complete silence at 7:30 PM. No talking, chewing gum, or laughing is permitted during the ceremony.</li><li><strong>Reflection:</strong> Look closely at the personal inscriptions chosen by grieving mothers, wives, and fathers at the base of CWGC headstones.</li></ul>"
+            },
+            {
+              "type": "narrative",
+              "theme_heading": "Historical Fieldwork: The Salient & The Hampshire Regiment",
+              "text": "The town of Ypres (pronounced <em>'Wipers'</em> by British Tommies) occupied a vital strategic position blocking the German advance towards the French Channel ports of Dunkirk and Calais. Throughout 1914–1918, Allied soldiers defended a protruding bulge in the frontline known as the 'Salient'.<br><br><strong>Why Fieldwork Matters:</strong><br>By walking the ground at Essex Farm, Langemarck, Hooge Crater, Sanctuary Wood, and Tyne Cot, you will see first-hand how elevation and drainage dictated life and death. You will also search out specific soldiers from Stubbington, Lee-on-the-Solent, Chark, and Fareham—such as Private Thomas Franklin, Private Walter Ayling, and the three Lowry brothers—connecting the names on our village war memorials directly to the fields of Flanders."
+            }
           ]
         },
         {
@@ -42625,7 +42771,23 @@
           "enquiry": "Travel and Initial Explorations",
           "teacher_notes": {
             "primer": "Travel day from school to the Ypres Salient, featuring stops at Essex Farm, Langemarck, and Hooge Crater.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Trace the medical evacuation pathway from frontlines to the Advanced Dressing Station at Essex Farm.",
+                "primer": "Highlight John McCrae's dual role as surgeon and poet, examining triage in the concrete bunkers.",
+                "question": "How did the immediate proximity of Advanced Dressing Stations to the front line affect the survival rate of wounded soldiers?"
+              },
+              {
+                "objective": "Contrast the somber, dark architectural design and collective mourning at Langemarck German Cemetery with British CWGC sites.",
+                "primer": "Guide students past the Kameradengrab (mass grave) and bronze panels, deconstructing the heroic 'Student Myth'.",
+                "question": "How does the architecture and oak shading of Langemarck communicate a fundamentally different message about loss compared to British cemeteries?"
+              },
+              {
+                "objective": "Examine the preserved trench systems, mine craters, and material culture at Hooge Crater Museum.",
+                "primer": "Focus student attention on deep mine craters and physical trench construction along the Menin Road.",
+                "question": "What does the cratered landscape at Hooge reveal about the changing technology of underground and artillery warfare in 1915?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -42823,6 +42985,11 @@
           },
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Trace the medical evacuation pathway from frontlines to the Advanced Dressing Station at Essex Farm.",
+            "Contrast the somber, dark architectural design and collective mourning at Langemarck German Cemetery with British CWGC sites.",
+            "Examine the preserved trench systems, mine craters, and material culture at Hooge Crater Museum."
           ]
         },
         {
@@ -42831,7 +42998,33 @@
           "enquiry": "Immersive Battlefield Study",
           "teacher_notes": {
             "primer": "A full day of guided study including the Menin Gate Last Post Ceremony.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Analyze the introduction and horrific tactical impact of poison gas at the Brooding Soldier memorial (St Julien).",
+                "primer": "Examine the Canadian defense against the first chlorine gas attack in April 1915.",
+                "question": "Why did the German introduction of chlorine gas at Second Ypres shatter existing conventions of warfare?"
+              },
+              {
+                "objective": "Evaluate preserved trench networks and battlefield topography at Sanctuary Wood (Hill 62).",
+                "primer": "Have students navigate the mud and wooden revetments to experience trench claustrophobia.",
+                "question": "How does the physical terrain of Sanctuary Wood explain why maintaining trench defenses in wet clay was so exhausting?"
+              },
+              {
+                "objective": "Investigate Tyne Cot, the largest Commonwealth war cemetery in the world, and reflect on the scale of loss during the Third Battle of Ypres (Passchendaele).",
+                "primer": "Guide students around the German pillboxes captured by Australian troops and the Memorial to the Missing.",
+                "question": "Why did Sir Herbert Baker incorporate captured German concrete pillboxes directly into the design of Tyne Cot Cemetery?"
+              },
+              {
+                "objective": "Examine medical care, triage, and multi-faith burial diversity at Lijssenthoek Casualty Clearing Station.",
+                "primer": "Explore the railway evacuation link and the graves of British, French, German, and Chinese Labour Corps personnel.",
+                "question": "What does the presence of international graves at Lijssenthoek reveal about the global workforce required to sustain the Western Front?"
+              },
+              {
+                "objective": "Participate in the Last Post Ceremony at the Menin Gate and locate local Hampshire Regiment fallen.",
+                "primer": "Stand with pupils for the 8 PM bugle call, locating Private Franklin and Private Ayling on the stone panels.",
+                "question": "Why has the daily sounding of the Last Post by the Ypres fire brigade continued unbroken since 1928?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43016,6 +43209,13 @@
           },
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Analyze the introduction and horrific tactical impact of poison gas at the Brooding Soldier memorial (St Julien).",
+            "Evaluate preserved trench networks and battlefield topography at Sanctuary Wood (Hill 62).",
+            "Investigate Tyne Cot, the largest Commonwealth war cemetery in the world, and reflect on the scale of loss during the Third Battle of Ypres (Passchendaele).",
+            "Examine medical care, triage, and multi-faith burial diversity at Lijssenthoek Casualty Clearing Station.",
+            "Participate in the Last Post Ceremony at the Menin Gate and locate local Hampshire Regiment fallen."
           ]
         },
         {
@@ -43024,7 +43224,23 @@
           "enquiry": "Poperinge and the Journey Home",
           "teacher_notes": {
             "primer": "Final visits in Ypres and Poperinge before travelling back to Meoncross School.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Explore the medieval and 17th-century fortifications of Ypres Ramparts and their use as British headquarters and field shelters.",
+                "primer": "Direct students to inspect the casemates where The Wipers Times was printed and staff officers worked.",
+                "question": "How did the thick brick ramparts designed by Vauban provide unexpected protection against 20th-century high-explosive artillery?"
+              },
+              {
+                "objective": "Investigate Talbot House ('Every Man's Club') in Poperinge as an egalitarian haven from front-line trauma.",
+                "primer": "Focus on Tubby Clayton's rule: 'All rank abandon, ye who enter here' and the upper-room chapel.",
+                "question": "Why was an officer-free communal space like Talbot House psychologically vital for men returning from the trenches?"
+              },
+              {
+                "objective": "Analyze military discipline, shell shock, and executions in the Poperinge Death Cells.",
+                "primer": "Examine the courtyard execution post and discuss contemporary vs. modern understandings of post-traumatic stress and cowardice.",
+                "question": "How does the history of the Poperinge executions illustrate the British Army's rigid enforcement of military discipline under extreme trauma?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43127,6 +43343,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Explore the medieval and 17th-century fortifications of Ypres Ramparts and their use as British headquarters and field shelters.",
+            "Investigate Talbot House ('Every Man's Club') in Poperinge as an egalitarian haven from front-line trauma.",
+            "Analyze military discipline, shell shock, and executions in the Poperinge Death Cells."
           ]
         },
         {
@@ -43136,7 +43357,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of Private T. J. Franklin, who lived at Lived at Meadow Cottage, Chark and is resting at Menin Gate, Ypres.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Investigate the civilian background and local connection of Private T. J. Franklin in Chark and Stubbington.",
+                "primer": "Connect his pre-war life at Meadow Cottage, Chark to his military service.",
+                "question": "How does tracing a soldier's home village change our emotional connection to battlefield casualties?"
+              },
+              {
+                "objective": "Examine his deployment with the 1st Hampshire Regiment and sacrifice at Frezenberg Ridge during Second Ypres.",
+                "primer": "Discuss the defensive rearguard action during the German gas assault of April 1915.",
+                "question": "What tactical role did the 1st Hampshire Regiment play in covering the Allied withdrawal to Frezenberg Ridge?"
+              },
+              {
+                "objective": "Evaluate the commemoration of soldiers with no known grave on the Menin Gate memorial.",
+                "primer": "Guide students to locate his name on the Hampshire Regiment panel.",
+                "question": "Why was the Menin Gate chosen to bear the names of 54,000 Commonwealth soldiers who have no known resting place?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43206,6 +43443,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Investigate the civilian background and local connection of Private T. J. Franklin in Chark and Stubbington.",
+            "Examine his deployment with the 1st Hampshire Regiment and sacrifice at Frezenberg Ridge during Second Ypres.",
+            "Evaluate the commemoration of soldiers with no known grave on the Menin Gate memorial."
           ]
         },
         {
@@ -43215,7 +43457,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of Private W. Ayling, who lived at Lived in Stubbington Lane; worked as a Baker Boy and is resting at Menin Gate, Ypres.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Trace the life of Walter Ayling, a 20-year-old baker boy from Stubbington Lane.",
+                "primer": "Relate his youthful trade in Stubbington to the sudden reality of trench warfare.",
+                "question": "What does Walter Ayling's civilian trade tell us about the demographic makeup of early volunteer and regular recruits?"
+              },
+              {
+                "objective": "Analyze the conditions of trench mortar bombardment faced by the 1st Hampshires in July 1915.",
+                "primer": "Explain the destructive power and psychological terror of German Minenwerfer mortar fire.",
+                "question": "Why were trench mortars particularly terrifying for infantry holding static trench positions?"
+              },
+              {
+                "objective": "Reflect on how communities like Stubbington bore the loss of their working-class youth.",
+                "primer": "Discuss the collective grief experienced by small rural Hampshire villages.",
+                "question": "How did the loss of young tradesmen like Ayling affect the post-war fabric of local villages?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43285,6 +43543,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Trace the life of Walter Ayling, a 20-year-old baker boy from Stubbington Lane.",
+            "Analyze the conditions of trench mortar bombardment faced by the 1st Hampshires in July 1915.",
+            "Reflect on how communities like Stubbington bore the loss of their working-class youth."
           ]
         },
         {
@@ -43294,7 +43557,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of Private S. Muckett, who lived at Lived at Brown's Farm; worked as a Grocer's Errand Boy and is resting at Tyne Cot British Cemetery.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Examine the civilian life of Sidney Muckett from Brown's Farm and his service in the 15th Hampshire Regiment.",
+                "primer": "Highlight his work as a grocer's errand boy before deploying to Flanders.",
+                "question": "How did young men from rural agricultural backgrounds adapt to the mechanised conditions of the Western Front?"
+              },
+              {
+                "objective": "Analyze the tactics and mud conditions of the Battle of Menin Road Ridge (September 1917).",
+                "primer": "Explain General Plumer's 'bite and hold' tactics used in September 1917.",
+                "question": "Why did the 'bite and hold' strategy succeed at Menin Road Ridge where earlier massive offensives failed?"
+              },
+              {
+                "objective": "Locate his grave at Tyne Cot Cemetery and consider the significance of individual CWGC headstones.",
+                "primer": "Guide students to his headstone and personal family inscription.",
+                "question": "What does the personal inscription chosen by Sidney Muckett's family convey about their mourning process?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43364,6 +43643,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Examine the civilian life of Sidney Muckett from Brown's Farm and his service in the 15th Hampshire Regiment.",
+            "Analyze the tactics and mud conditions of the Battle of Menin Road Ridge (September 1917).",
+            "Locate his grave at Tyne Cot Cemetery and consider the significance of individual CWGC headstones."
           ]
         },
         {
@@ -43373,7 +43657,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of Private A. Rye, who lived at Lived at Lower Crabthorne; Nurseryman and is resting at Tyne Cot British Cemetery.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Trace the life of Arthur Rye, a nurseryman from Lower Crabthorne, and his service with the 14th Hampshire Regiment.",
+                "primer": "Connect his peacetime work with plants and earth to the devastated lunar wasteland of Polygon Wood.",
+                "question": "How does Arthur Rye's nursery work contrast with the obliterated landscape of Flanders in late 1917?"
+              },
+              {
+                "objective": "Analyze the fierce fighting in Polygon Wood during the Third Battle of Ypres.",
+                "primer": "Discuss the struggle for pillboxes and shattered tree stumps across Polygon Wood.",
+                "question": "Why was capturing the high ground of Polygon Wood considered critical for the Allied advance toward Passchendaele?"
+              },
+              {
+                "objective": "Assess the emotional impact of visiting a locally connected headstone at Tyne Cot.",
+                "primer": "Encourage quiet reflection at his grave site.",
+                "question": "Why is visiting an identifiable local casualty more impactful than viewing broad casualty statistics?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43443,6 +43743,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Trace the life of Arthur Rye, a nurseryman from Lower Crabthorne, and his service with the 14th Hampshire Regiment.",
+            "Analyze the fierce fighting in Polygon Wood during the Third Battle of Ypres.",
+            "Assess the emotional impact of visiting a locally connected headstone at Tyne Cot."
           ]
         },
         {
@@ -43452,7 +43757,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of Lance Corporal A. Ward, who lived at Lived at Balmoral, Gosport Road and is resting at Tyne Cot British Cemetery.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Examine the military career of Lance Corporal Arthur Ward from Balmoral, Gosport Road.",
+                "primer": "Discuss Ward's leadership role as an NCO in the 15th Hampshires.",
+                "question": "What responsibilities and risks were placed on junior NCOs like Lance Corporal Ward during mobile attacks?"
+              },
+              {
+                "objective": "Analyze the final Hundred Days Offensive in October 1918 and the liberation of Flanders.",
+                "primer": "Contrast the mobile warfare of autumn 1918 with earlier static trench stalemates.",
+                "question": "How did Allied tactics change in the autumn of 1918 compared to the stalemate of 1917?"
+              },
+              {
+                "objective": "Consider the tragedy of soldiers killed just weeks before the 11th November 1918 Armistice.",
+                "primer": "Reflect on how families coped with loss occurring on the very eve of peace.",
+                "question": "Why do casualties suffered in the final weeks of the war evoke such intense poignancy?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43522,6 +43843,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Examine the military career of Lance Corporal Arthur Ward from Balmoral, Gosport Road.",
+            "Analyze the final Hundred Days Offensive in October 1918 and the liberation of Flanders.",
+            "Consider the tragedy of soldiers killed just weeks before the 11th November 1918 Armistice."
           ]
         },
         {
@@ -43531,7 +43857,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of Private C. Warland, who lived at Lived at Canford and is resting at Tyne Cot British Cemetery.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Investigate the story of Private Charles Warland from Canford and the 3/4th Queen's (Royal West Surrey) Regiment.",
+                "primer": "Trace his regiment's attack across the mud on 4th October 1917.",
+                "question": "What obstacles did the Queen's Regiment face when advancing toward Juniper Trench in driving rain?"
+              },
+              {
+                "objective": "Analyze the assault on Juniper Trench during the Battle of Broodseinde (October 1917).",
+                "primer": "Explain the Broodseinde battle and its brief moment of tactical success before the autumn rains set in.",
+                "question": "Why did initial British optimism at Broodseinde quickly dissolve into the disaster of Passchendaele?"
+              },
+              {
+                "objective": "Reflect on the collective memory of the Southern England regiments in the Ypres Salient.",
+                "primer": "Examine the shared history of young men from Hampshire, Dorset, and Surrey fighting side by side.",
+                "question": "How did recruitment and regimental traditions shape the morale of Southern English battalions?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43601,6 +43943,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Investigate the story of Private Charles Warland from Canford and the 3/4th Queen's (Royal West Surrey) Regiment.",
+            "Analyze the assault on Juniper Trench during the Battle of Broodseinde (October 1917).",
+            "Reflect on the collective memory of the Southern England regiments in the Ypres Salient."
           ]
         },
         {
@@ -43615,6 +43962,16 @@
                 "objective": "Synthesize learning from various historical sites into a cohesive understanding of the Great War.",
                 "primer": "Guide students through a structured reflection of the sites visited.",
                 "question": "Which location we visited left the most profound impact on you, and why?"
+              },
+              {
+                "objective": "Evaluate how modern European societies commemorate catastrophic industrial warfare.",
+                "primer": "Compare CWGC individual headstones, German mass graves, and local village war memorials.",
+                "question": "How does the architecture of commemoration reflect different national approaches to grief and memory?"
+              },
+              {
+                "objective": "Articulate a considered, personal reflection on the enduring human cost of the Great War.",
+                "primer": "Support pupils in completing their final synthesis reflection before departing for the UK.",
+                "question": "How will your experience walking the ground in Flanders alter how you observe Remembrance Day each November?"
               }
             ]
           },
@@ -43637,6 +43994,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Synthesize fieldwork observations from cemeteries, trenches, and memorials into an overarching historical enquiry.",
+            "Evaluate how modern European societies commemorate catastrophic industrial warfare.",
+            "Articulate a considered, personal reflection on the enduring human cost of the Great War."
           ]
         },
         {
@@ -43646,7 +44008,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of William Augustine 'Harper' Lowry, who lived at Manor Way Grange.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Examine the life and military career of Captain Harper Lowry of Manor Way Grange, Lee-on-the-Solent.",
+                "primer": "Explore his career as an officer in the Indian Army and eldest brother of the family.",
+                "question": "How did British officers serving in Indian Army regiments bridge cultural and language divides with their men?"
+              },
+              {
+                "objective": "Analyze his service with the 14th King George's Own Ferozepore Sikhs and the charge at Gully Ravine (Gallipoli, 1915).",
+                "primer": "Examine the devastating casualties suffered by the 14th Sikhs at Gully Ravine on 4th June 1915.",
+                "question": "What tactical errors at Gallipoli resulted in the near-total destruction of Harper Lowry's battalion at Gully Ravine?"
+              },
+              {
+                "objective": "Evaluate how one family experienced catastrophic bereavement across multiple theatres of war.",
+                "primer": "Connect Harper's death in Turkey to his brothers' fates in France and Belgium.",
+                "question": "How does the story of the Lowry brothers illustrate the global reach and multi-front toll of the Great War?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43677,6 +44055,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Examine the life and military career of Captain Harper Lowry of Manor Way Grange, Lee-on-the-Solent.",
+            "Analyze his service with the 14th King George's Own Ferozepore Sikhs and the charge at Gully Ravine (Gallipoli, 1915).",
+            "Evaluate how one family experienced catastrophic bereavement across multiple theatres of war."
           ]
         },
         {
@@ -43686,7 +44069,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of Auriol 'Eric' Lowry, who lived at Manor Way Grange.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Investigate the wartime command of Major Auriol 'Eric' Lowry of the West Yorkshire Regiment.",
+                "primer": "Discuss Eric's rapid promotion and decorated leadership under fire.",
+                "question": "What qualities enabled officers like Eric Lowry to maintain battalion discipline under catastrophic artillery fire?"
+              },
+              {
+                "objective": "Analyze the desperate combat at Westhoek Ridge during the Third Battle of Ypres (1917).",
+                "primer": "Trace the attack on the pillboxes of Westhoek Ridge in August 1917.",
+                "question": "Why did Westhoek Ridge present such a formidable defensive barrier for advancing British troops?"
+              },
+              {
+                "objective": "Reflect on the psychological burden of commanding a battalion while watching family members fight and fall.",
+                "primer": "Examine the trauma of surviving when two brothers did not.",
+                "question": "What psychological challenges did surviving officers face after witnessing the loss of their men and siblings?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43717,6 +44116,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Investigate the wartime command of Major Auriol 'Eric' Lowry of the West Yorkshire Regiment.",
+            "Analyze the desperate combat at Westhoek Ridge during the Third Battle of Ypres (1917).",
+            "Reflect on the psychological burden of commanding a battalion while watching family members fight and fall."
           ]
         },
         {
@@ -43726,7 +44130,23 @@
           "banner": "/images/stubbington_memorial.jpg",
           "teacher_notes": {
             "primer": "The story of Cyril John 'Patrick' Lowry, who lived at Manor Way Grange.",
-            "objectives": []
+            "objectives": [
+              {
+                "objective": "Examine the short life and frontline combat of 20-year-old Lieutenant Patrick Lowry of Lee-on-the-Solent.",
+                "primer": "Relate Patrick's service under his brother Eric's battalion command in 1918.",
+                "question": "How did brotherly relationships operate within the formal hierarchy of a British infantry battalion?"
+              },
+              {
+                "objective": "Analyze the chaotic German Spring Offensive of March 1918 (Operation Michael) on the Somme.",
+                "primer": "Detail the German stormtrooper breakthrough and the desperate British defensive retreat.",
+                "question": "Why did the German Spring Offensive of 1918 create such panic and fluid movement after years of static trench lines?"
+              },
+              {
+                "objective": "Evaluate how the Lowry family memorializes the sacrifice of their young sons in Hampshire and France.",
+                "primer": "Discuss the memorial plaque at St Faith's Church and the memory preserved in Lee-on-the-Solent.",
+                "question": "How do memorial plaques in local parish churches preserve the memory of families who sacrificed multiple sons?"
+              }
+            ]
           },
           "do_now": {
             "type": "timeline",
@@ -43757,6 +44177,11 @@
           ],
           "tasks": [
             "Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic."
+          ],
+          "learning_objectives": [
+            "Examine the short life and frontline combat of 20-year-old Lieutenant Patrick Lowry of Lee-on-the-Solent.",
+            "Analyze the chaotic German Spring Offensive of March 1918 (Operation Michael) on the Somme.",
+            "Evaluate how the Lowry family memorializes the sacrifice of their young sons in Hampshire and France."
           ]
         }
       ],
@@ -43983,16 +44408,28 @@
           ],
           "flashcards": [
             {
-              "term": "cesspit",
-              "definition": "A pit for the disposal of liquid waste and sewage."
+              "term": "Aqueduct",
+              "definition": "A monumental stone bridge and channel built by Roman engineers to carry fresh spring water over valleys into cities using gravity."
             },
             {
-              "term": "conduit",
-              "definition": "A channel or pipe for conveying water or other fluid."
+              "term": "Conduit",
+              "definition": "A covered channel, lead pipe, or stone waterway designed to transport fresh water to public fountains and bathhouses."
             },
             {
-              "term": "latrine",
-              "definition": "A toilet or outhouse, especially a communal one in a camp or barracks."
+              "term": "Hypocaust",
+              "definition": "An ingenious Roman underfloor central heating system that circulated hot furnace air beneath bathhouses and private villas."
+            },
+            {
+              "term": "Latrine",
+              "definition": "A communal public toilet facility, frequently flushed by continuous water channels flowing beneath stone bench seats."
+            },
+            {
+              "term": "Cesspit",
+              "definition": "An underground pit or dry well used for the collection and storage of human waste, common in rural settlements and small towns."
+            },
+            {
+              "term": "Strigil",
+              "definition": "A curved bronze scraper used by Romans in bathhouses to scrape oil, dirt, and sweat off the skin instead of modern soap."
             }
           ],
           "quiz": [
@@ -44035,20 +44472,152 @@
                 "A wet sponge attached to the end of a shared wooden stick"
               ],
               "answer": 3
+            },
+            {
+              "question": "Which Emperor ordered the construction of a famous 73-mile defensive wall with fort bathhouses across northern Britain?",
+              "options": [
+                "Julius Caesar",
+                "Emperor Hadrian",
+                "Nero",
+                "Augustus"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was the primary purpose of Roman public aqueducts?",
+              "options": [
+                "To provide water exclusively to the Emperor’s palace",
+                "To flood valleys during barbarian sieges",
+                "To transport clean spring water continuously into towns using gravity",
+                "To drain rainwater from farmer fields"
+              ],
+              "answer": 2
+            },
+            {
+              "question": "In a Roman town, where did wastewater from public baths and latrines drain?",
+              "options": [
+                "Into underground stone sewers like the Cloaca Maxima that discharged into local rivers",
+                "Into wooden barrels collected weekly by horses",
+                "Directly onto the pedestrian pavements",
+                "Into private garden cesspits in every household"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What did wealthy Romans use to heat their private villas and bathhouses?",
+              "options": [
+                "Cast iron radiators connected to coal boilers",
+                "A hypocaust system circulating hot furnace air beneath raised floors",
+                "Open campfires in the middle of living rooms",
+                "Electric heating coils embedded in plaster walls"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why did the Romans build public bathhouses in almost every military fort and town?",
+              "options": [
+                "To serve as emergency hospitals during foreign invasions",
+                "Because bathing, exercise, and socialising were central to Roman civic culture and soldier fitness",
+                "Because it was a religious law mandated by the Senate",
+                "To generate municipal tax revenue from entrance fees"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What instrument did Romans use to clean their skin in the bathhouse instead of soap?",
+              "options": [
+                "A sponge on a stick",
+                "A metal scraper called a strigil used with olive oil",
+                "Coarse river sand and ash",
+                "Rough wool cloths"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What happened to Roman water and sanitation infrastructure after the legions left Britain in 410 AD?",
+              "options": [
+                "Anglo-Saxon settlers expanded the stone sewer networks",
+                "Town populations collapsed and stone aqueducts fell into decay and disrepair",
+                "British kings introduced national water taxes to preserve the pipes",
+                "The Roman Catholic Church rebuilt the conduits with lead pipes"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why did Iron Age Britons have fewer sanitation crises before the Roman invasion?",
+              "options": [
+                "They had advanced underground plumbing in roundhouses",
+                "Their dispersed, small population meant waste did not build up enough to contaminate water supplies",
+                "They possessed scientific knowledge of bacteria",
+                "They boiled all drinking water over wood fires"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What material was commonly used by Roman engineers to line water conduits and cisterns to make them watertight?",
+              "options": [
+                "Waterproof hydraulic mortar (opus signinum)",
+                "Sheets of vulcanised rubber",
+                "Thick layers of animal fat",
+                "Glazed ceramic tiles bonded with tar"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What was the caldarium inside a Roman public bathhouse?",
+              "options": [
+                "The cold plunge pool",
+                "The hot, steamy bathing room",
+                "The changing room with wall cubbies",
+                "The open-air exercise wrestling yard"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Who paid for the construction of most public bathhouses and fountains in Roman Britain?",
+              "options": [
+                "Wealthy local magistrates and benefactors seeking political status",
+                "Compulsory taxes collected from enslaved people",
+                "Foreign merchants visiting from Gaul",
+                "The Roman Emperor directly from his private treasury"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What health hazard was unwittingly introduced by Roman plumbing in Britain?",
+              "options": [
+                "Asbestos poisoning from wall insulation",
+                "Lead poisoning from lead water pipes and cooking vessels",
+                "Arsenic contamination in ceramic tiles",
+                "Mercury poisoning from bronze taps"
+              ],
+              "answer": 1
             }
           ],
           "vocab": [
             {
-              "term": "cesspit",
-              "definition": "A pit for the disposal of liquid waste and sewage."
+              "term": "Aqueduct",
+              "definition": "A monumental stone bridge and channel built by Roman engineers to carry fresh spring water over valleys into cities using gravity."
             },
             {
-              "term": "conduit",
-              "definition": "A channel or pipe for conveying water or other fluid."
+              "term": "Conduit",
+              "definition": "A covered channel, lead pipe, or stone waterway designed to transport fresh water to public fountains and bathhouses."
             },
             {
-              "term": "latrine",
-              "definition": "A toilet or outhouse, especially a communal one in a camp or barracks."
+              "term": "Hypocaust",
+              "definition": "An ingenious Roman underfloor central heating system that circulated hot furnace air beneath bathhouses and private villas."
+            },
+            {
+              "term": "Latrine",
+              "definition": "A communal public toilet facility, frequently flushed by continuous water channels flowing beneath stone bench seats."
+            },
+            {
+              "term": "Cesspit",
+              "definition": "An underground pit or dry well used for the collection and storage of human waste, common in rural settlements and small towns."
+            },
+            {
+              "term": "Strigil",
+              "definition": "A curved bronze scraper used by Romans in bathhouses to scrape oil, dirt, and sweat off the skin instead of modern soap."
             }
           ],
           "vocab_cloze_text": "The Romans built massive aqueducts that acted as a [conduit] for fresh water. For waste, they used a [cesspit] or went to a communal [latrine] where water flushed the waste away.",
@@ -44253,12 +44822,28 @@
           ],
           "flashcards": [
             {
-              "term": "gongfermer",
-              "definition": "A medieval worker who cleared human waste from cesspits."
+              "term": "Gongfermer",
+              "definition": "A medieval night-soil laborer paid to dig out and remove raw human excrement from domestic cesspits under cover of darkness."
             },
             {
-              "term": "miasma",
-              "definition": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease."
+              "term": "Miasma Theory",
+              "definition": "The incorrect medical belief that infectious epidemic diseases were directly caused by breathing poisonous vapors or foul smells."
+            },
+            {
+              "term": "Monastery",
+              "definition": "A religious community of monks or nuns that often maintained the highest medieval hygiene standards, possessing clean leats and stone lavatoria."
+            },
+            {
+              "term": "Leat",
+              "definition": "An artificial water ditch or channel diverted from a clean river to supply fresh running water to a town, mill, or monastery."
+            },
+            {
+              "term": "Privy",
+              "definition": "A simple wooden or stone outhouse toilet built directly over a garden cesspit, a cesspool, or an open drainage ditch."
+            },
+            {
+              "term": "Black Death (1348)",
+              "definition": "A catastrophic bubonic and pneumonic plague epidemic that wiped out roughly one third to one half of the entire population of Britain."
             }
           ],
           "quiz": [
@@ -44301,28 +44886,152 @@
                 "They used electric pumps to draw water from deep aquifers"
               ],
               "answer": 2
+            },
+            {
+              "question": "Why were medieval Christian monasteries cleaner and healthier than towns?",
+              "options": [
+                "Monks possessed modern chemical disinfectants",
+                "Monasteries were carefully sited near fresh rivers with dedicated leats, fresh-water lavatoria, and isolated infirmaries",
+                "Monks were immune to epidemic diseases",
+                "The Pope funded private stone sewer systems in every abbey"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was the primary medieval theory used to explain why diseases like the Black Death spread?",
+              "options": [
+                "Germ Theory",
+                "Miasma Theory (bad air and poisonous stenches)",
+                "Atomic Theory",
+                "Cellular Mutation"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What medieval occupation involved emptying city cesspits and privy vaults?",
+              "options": [
+                "Pardoner",
+                "Gongfermer (or Nightman)",
+                "Scrivener",
+                "Chamberlain"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "In what year did the catastrophic Black Death first arrive in Britain through the Dorset port of Melcombe Regis?",
+              "options": [
+                "1066",
+                "1215",
+                "1348",
+                "1485"
+              ],
+              "answer": 2
+            },
+            {
+              "question": "How did medieval town councils like London attempt to combat street filth?",
+              "options": [
+                "By building nationwide underground sewer networks",
+                "By passing municipal laws fining residents who threw waste into the street and appointing rakers",
+                "By establishing free hospitals in every borough",
+                "By ordering all citizens to boil water daily"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Where did most ordinary medieval townspeople obtain their drinking water?",
+              "options": [
+                "From lead pipes directly inside their kitchens",
+                "From communal public conduits, town wells, or local water carriers called cobs",
+                "From bottled spring water sold in markets",
+                "From underground reservoirs maintained by the Crown"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What did medieval people believe caused the Black Death besides miasma?",
+              "options": [
+                "God’s wrath punishing humanity for sin, and planetary alignments",
+                "Contaminated milk from local dairy cows",
+                "Bacterial infection spread through unwashed hands",
+                "Tainted wheat contaminated with ergot mould"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Why did medieval butchers create a major public health nuisance in towns?",
+              "options": [
+                "They charged excessive prices for beef and mutton",
+                "They dumped animal blood, entrails, and offal into public streets and rivers like the Fleet",
+                "They refused to sell meat to religious minorities",
+                "They kept live pigs inside churchyards during mass"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was a medieval \"privy\"?",
+              "options": [
+                "A private legal document signed by a sheriff",
+                "A basic outhouse toilet built over a cesspit or watercourse",
+                "A secret Catholic prayer chapel",
+                "A private bedroom chamber in a castle"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What proportion of the British population is estimated to have died during the 1348–1349 Black Death?",
+              "options": [
+                "Roughly 5%",
+                "Roughly 10–15%",
+                "Between 30% and 50%",
+                "Over 90%"
+              ],
+              "answer": 2
+            },
+            {
+              "question": "What did the 1388 Parliament of Cambridge attempt to do regarding public health?",
+              "options": [
+                "It passed an Act forbidding the dumping of dung, offal, and animal entrails into ditches and rivers",
+                "It ordered all cesspits to be lined with Roman lead",
+                "It banned gongfermers from working in towns",
+                "It forced all monasteries to admit infected plague victims"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Why did the Great Conduit in London (built in 1245) become famous?",
+              "options": [
+                "It carried clean spring water from Tyburn into Cheapside through lead pipes",
+                "It was the first sewer designed to process human waste",
+                "It was powered by a giant steam engine",
+                "It was constructed entirely from gold by King Henry III"
+              ],
+              "answer": 0
             }
           ],
           "vocab": [
             {
-              "term": "gongfermer",
-              "definition": "A medieval worker who cleared human waste from cesspits."
+              "term": "Gongfermer",
+              "definition": "A medieval night-soil laborer paid to dig out and remove raw human excrement from domestic cesspits under cover of darkness."
             },
             {
-              "term": "miasma",
-              "definition": "A highly unpleasant or unhealthy smell or vapor, formerly believed to cause disease."
+              "term": "Miasma Theory",
+              "definition": "The incorrect medical belief that infectious epidemic diseases were directly caused by breathing poisonous vapors or foul smells."
             },
             {
-              "term": "monastery",
-              "definition": "A building or buildings occupied by a community of monks living under religious vows."
+              "term": "Monastery",
+              "definition": "A religious community of monks or nuns that often maintained the highest medieval hygiene standards, possessing clean leats and stone lavatoria."
             },
             {
-              "term": "cesspit",
-              "definition": "A pit for the disposal of liquid waste and sewage."
+              "term": "Leat",
+              "definition": "An artificial water ditch or channel diverted from a clean river to supply fresh running water to a town, mill, or monastery."
             },
             {
-              "term": "privy",
-              "definition": "A toilet, especially a simple one such as an outhouse."
+              "term": "Privy",
+              "definition": "A simple wooden or stone outhouse toilet built directly over a garden cesspit, a cesspool, or an open drainage ditch."
+            },
+            {
+              "term": "Black Death (1348)",
+              "definition": "A catastrophic bubonic and pneumonic plague epidemic that wiped out roughly one third to one half of the entire population of Britain."
             }
           ],
           "vocab_cloze_text": "During the Middle Ages, people feared [miasma] (bad air) caused disease. Without sewers, waste went into a [cesspit] or a simple [privy], which was eventually emptied by a [gongfermer]. The cleanest places were usually a [monastery] where monks lived.",
@@ -44512,12 +45221,28 @@
           ],
           "flashcards": [
             {
-              "term": "conduit",
-              "definition": "A channel or pipe for conveying water."
+              "term": "Water Closet (1596)",
+              "definition": "An early mechanical flushing toilet invented by Sir John Harington for Queen Elizabeth I, which failed to spread due to a lack of city sewers."
             },
             {
-              "term": "water closet",
-              "definition": "A flush toilet, or a room containing one."
+              "term": "Conduit System",
+              "definition": "A municipal network of wooden or lead pipes that supplied clean spring water to communal public cisterns in growing early modern towns."
+            },
+            {
+              "term": "Scavenger",
+              "definition": "A city official employed by London parish wards to supervise the raking, sweeping, and removal of street filth and animal dung."
+            },
+            {
+              "term": "Great Plague of 1665",
+              "definition": "The last major bubonic plague epidemic in England, which killed approximately 100,000 Londoners in filthy, overcrowded parishes."
+            },
+            {
+              "term": "Night Soil",
+              "definition": "Human excrement collected from urban cesspits at night and carted out to countryside market gardens to be sold as agricultural fertilizer."
+            },
+            {
+              "term": "Urbanisation",
+              "definition": "The rapid population growth and physical expansion of towns, which overwhelmed medieval waste systems in the 17th and 18th centuries."
             }
           ],
           "quiz": [
@@ -44560,28 +45285,152 @@
                 "Joseph Bazalgette"
               ],
               "answer": 1
+            },
+            {
+              "question": "What devastating disease struck London in 1665, killing an estimated 100,000 people?",
+              "options": [
+                "The Spanish Flu",
+                "The Great Plague",
+                "Cholera",
+                "Typhus"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What preventative measure did London authorities take during the 1665 Great Plague when someone fell ill?",
+              "options": [
+                "They quarantined the entire household inside, painting a red cross on the door with \"Lord have mercy upon us\"",
+                "They vaccinated all neighbors with cowpox",
+                "They forced infected families onto ships anchored in the English Channel",
+                "They tore down the house and burned all belongings immediately"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What was Sir John Harington’s 1596 invention called in his satirical book?",
+              "options": [
+                "The Hydro-Pneumatic Chamber",
+                "The Metamorphosis of Ajax (a pun on \"a jakes\", meaning a privy)",
+                "The Royal Steam Flush",
+                "The Sanitary Engine"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why did London’s rapid population growth between 1500 and 1700 make public health worse?",
+              "options": [
+                "The city expanded into swampy marshes with no building regulations, overcrowding timber houses and overflowing cesspits",
+                "Food production stopped entirely across England",
+                "Foreign traders brought modern factories into residential lanes",
+                "The King banned all doctors from practicing medicine"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What did early modern Londoners believe smoking tobacco would do during the 1665 plague?",
+              "options": [
+                "Cure coughs and tuberculosis",
+                "Ward off poisonous miasmas and prevent plague infection",
+                "Repel fleas living in bedstraw",
+                "Signal to doctors that a household was wealthy"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Who were \"searchers of the dead\" during early modern plague outbreaks?",
+              "options": [
+                "Royal physicians trained at Oxford University",
+                "Elderly parish women appointed to inspect corpses and report the official cause of death",
+                "Military officers who collected weapons from dead soldiers",
+                "Gravediggers who excavated mass burial pits"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What happened to London’s hygiene and disease levels after the Great Fire of 1666?",
+              "options": [
+                "Plague returned with greater intensity the next summer",
+                "The fire destroyed thousands of rat-infested wooden tenements, and rebuilt streets were wider and brick-built",
+                "The government banned all private toilets in London",
+                "The River Thames dried up completely"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What were early modern \"Bills of Mortality\"?",
+              "options": [
+                "Tax demands sent to surviving family members",
+                "Weekly published parish statistics listing total deaths and their recorded causes",
+                "Warrants for the arrest of plague breakers",
+                "Passports required to leave quarantined towns"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was the Great Conduit water system supplemented by in London in 1613?",
+              "options": [
+                "Sir Hugh Myddelton’s New River project, bringing fresh Hertfordshire spring water along a 40-mile canal",
+                "Bazalgette’s Victorian sewer system",
+                "A network of steam-powered desalination plants on the coast",
+                "Imported barrels of French bottled mineral water"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Why were early modern London cesspits often built directly underneath house floorboards?",
+              "options": [
+                "To keep the waste warm during winter frosts",
+                "Because urban land was extremely scarce and houses had no gardens or backyards",
+                "Because building codes required waste to stay indoors",
+                "To prevent neighbors from stealing valuable manure"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What did early modern physicians wear to protect themselves when examining plague victims?",
+              "options": [
+                "Rubber surgical gloves and paper face masks",
+                "Beaked leather masks filled with fragrant dried herbs, long waxed coats, and wide-brimmed hats",
+                "White linen coats boiled in carbolic acid",
+                "Iron armor suits to block poisonous vapors"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "How did wealthy early modern citizens protect their drinking water compared to the poor?",
+              "options": [
+                "They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week",
+                "They had private water filtration plants in their gardens",
+                "They drank only distilled alcohol and never touched water",
+                "They boiled all river water using gas stoves"
+              ],
+              "answer": 0
             }
           ],
           "vocab": [
             {
-              "term": "conduit",
-              "definition": "A channel or pipe for conveying water."
+              "term": "Water Closet (1596)",
+              "definition": "An early mechanical flushing toilet invented by Sir John Harington for Queen Elizabeth I, which failed to spread due to a lack of city sewers."
             },
             {
-              "term": "water closet",
-              "definition": "A flush toilet, or a room containing one."
+              "term": "Conduit System",
+              "definition": "A municipal network of wooden or lead pipes that supplied clean spring water to communal public cisterns in growing early modern towns."
             },
             {
-              "term": "miasma",
-              "definition": "A highly unpleasant or unhealthy smell or vapor, formerly thought to cause disease."
+              "term": "Scavenger",
+              "definition": "A city official employed by London parish wards to supervise the raking, sweeping, and removal of street filth and animal dung."
             },
             {
-              "term": "gong farmer",
-              "definition": "A person employed to empty cesspits and privies in early modern cities."
+              "term": "Great Plague of 1665",
+              "definition": "The last major bubonic plague epidemic in England, which killed approximately 100,000 Londoners in filthy, overcrowded parishes."
             },
             {
-              "term": "urbanisation",
-              "definition": "The increase in the proportion of people living in towns and cities."
+              "term": "Night Soil",
+              "definition": "Human excrement collected from urban cesspits at night and carted out to countryside market gardens to be sold as agricultural fertilizer."
+            },
+            {
+              "term": "Urbanisation",
+              "definition": "The rapid population growth and physical expansion of towns, which overwhelmed medieval waste systems in the 17th and 18th centuries."
             }
           ],
           "vocab_cloze_text": "As [urbanisation] grew, towns became overcrowded. People still blamed [miasma] for illness. Waste went into a [cesspit] cleaned by a [gong farmer]. Sometimes water flowed through a [conduit], but only the rich had a new [water closet].",
@@ -44775,12 +45624,28 @@
           ],
           "flashcards": [
             {
-              "term": "urbanization",
-              "definition": "The process of making an area more urban (city-like)."
+              "term": "Laissez-faire",
+              "definition": "The political belief that national government should not interfere in the economy, private business, or living conditions of ordinary citizens."
             },
             {
-              "term": "cholera",
-              "definition": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies."
+              "term": "Cholera (1831)",
+              "definition": "A deadly waterborne bacterial disease causing rapid, violent dehydration and death within hours, which first invaded Britain in October 1831."
+            },
+            {
+              "term": "Back-to-back Housing",
+              "definition": "Cramped, poorly ventilated terraced housing built cheaply by factory owners, lacking gardens, private drains, or indoor plumbing."
+            },
+            {
+              "term": "Cesspool Overflow",
+              "definition": "The hazardous saturation of urban basements and courtyard soil caused by thousands of unlined waste pits seeping into drinking wells."
+            },
+            {
+              "term": "Edwin Chadwick",
+              "definition": "A civil servant whose 1842 Report on the Sanitary Condition of the Labouring Population proved filth caused disease and economic loss."
+            },
+            {
+              "term": "Public Health Act 1848",
+              "definition": "Britain’s first national public health law, which created a General Board of Health but was voluntary rather than compulsory for towns."
             }
           ],
           "quiz": [
@@ -44823,28 +45688,152 @@
                 "It grew from 3 million to 9 million."
               ],
               "answer": 1
+            },
+            {
+              "question": "In what year did Asiatic Cholera first arrive on British shores in the port of Sunderland?",
+              "options": [
+                "1789",
+                "1831",
+                "1854",
+                "1875"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What nickname did the terrified Victorian public give to cholera because of its horrifying physical symptoms?",
+              "options": [
+                "The Black Death",
+                "King Cholera (or the Blue Death)",
+                "The White Plague",
+                "The Yellow Fever"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was the central argument of Edwin Chadwick’s landmark 1842 Sanitary Report?",
+              "options": [
+                "That poverty and illness were moral failings that the government should ignore",
+                "That filthy living conditions caused disease, which created poverty, burdening taxpayers with higher poor rates",
+                "That cholera was transmitted by invisible airborne bacteria that only affected criminals",
+                "That private water companies should be given total control of all British rivers"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why were Victorian \"back-to-back\" houses so hazardous to public health?",
+              "options": [
+                "They were built of unpainted timber that caught fire easily",
+                "They shared common side and rear walls with no through-ventilation, and multiple families shared a single privy in an unpaved court",
+                "They were constructed directly over active coal mines",
+                "They were legally restricted to housing cows and horses"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What does the economic and political philosophy of \"laissez-faire\" mean?",
+              "options": [
+                "Total government ownership and control of all factories and homes",
+                "A policy of non-intervention where government leaves trade and public life to private individuals",
+                "A military dictatorship governed by generals",
+                "A legal system based on medieval Roman law"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why did ratepayers (local taxpayers and landlords) vigorously oppose Chadwick’s sanitation proposals in the 1840s?",
+              "options": [
+                "They believed clean water was un-Christian",
+                "They did not want their local taxes increased to pay for expensive sewer pipes and drainage",
+                "They wanted the government to build railways instead",
+                "They feared running water would weaken the British race"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was the fatal flaw of the Public Health Act of 1848?",
+              "options": [
+                "It was completely voluntary: councils were only forced to act if the death rate exceeded 23 per 1,000",
+                "It made building sewers illegal in northern cities",
+                "It appointed only military officers as sanitary inspectors",
+                "It required every citizen to buy an expensive flushing toilet"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "How quickly could cholera kill a previously healthy Victorian adult?",
+              "options": [
+                "Within a few weeks of gradual fever",
+                "Within 12 to 24 hours of violent diarrhoea, vomiting, and extreme dehydration",
+                "Over six months of weight loss",
+                "Instantly upon inhaling a foul street odor"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was the average life expectancy for a working-class labourer in industrial Manchester in the 1840s?",
+              "options": [
+                "Around 65 years",
+                "Around 50 years",
+                "Under 20 years (approx. 17–19 years)",
+                "Around 40 years"
+              ],
+              "answer": 2
+            },
+            {
+              "question": "Where did human waste go when private flush water closets were installed in wealthy Victorian homes before 1855?",
+              "options": [
+                "Into advanced chemical recycling plants",
+                "Directly into existing cesspools underneath houses or into street gutters flowing into the Thames",
+                "Into sealed cast-iron tanks buried deep in the country",
+                "Onto train cars that dumped it in the North Sea"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why was the 1848 General Board of Health disbanded in 1854?",
+              "options": [
+                "Because cholera had been completely wiped out of Europe",
+                "Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers",
+                "Because Queen Victoria ordered all health boards closed",
+                "Because Parliament ran out of money during the Crimean War"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was a \"court\" or \"yard\" in an early 19th-century industrial town?",
+              "options": [
+                "A tennis court used by wealthy factory owners",
+                "A narrow, enclosed dead-end alley packed with back-to-back dwellings and shared privies",
+                "A legal building where sanitary trials took place",
+                "A designated open park reserved for children"
+              ],
+              "answer": 1
             }
           ],
           "vocab": [
             {
-              "term": "urbanization",
-              "definition": "The process of making an area more urban (city-like)."
+              "term": "Laissez-faire",
+              "definition": "The political belief that national government should not interfere in the economy, private business, or living conditions of ordinary citizens."
             },
             {
-              "term": "cholera",
-              "definition": "An infectious and often fatal bacterial disease of the small intestine, typically contracted from infected water supplies."
+              "term": "Cholera (1831)",
+              "definition": "A deadly waterborne bacterial disease causing rapid, violent dehydration and death within hours, which first invaded Britain in October 1831."
             },
             {
-              "term": "epidemic",
-              "definition": "A widespread occurrence of an infectious disease in a community at a particular time."
+              "term": "Back-to-back Housing",
+              "definition": "Cramped, poorly ventilated terraced housing built cheaply by factory owners, lacking gardens, private drains, or indoor plumbing."
             },
             {
-              "term": "public health",
-              "definition": "The health of the population as a whole, especially as monitored and regulated by the state."
+              "term": "Cesspool Overflow",
+              "definition": "The hazardous saturation of urban basements and courtyard soil caused by thousands of unlined waste pits seeping into drinking wells."
             },
             {
-              "term": "laissez-faire",
-              "definition": "A policy or attitude of letting things take their own course, without interfering."
+              "term": "Edwin Chadwick",
+              "definition": "A civil servant whose 1842 Report on the Sanitary Condition of the Labouring Population proved filth caused disease and economic loss."
+            },
+            {
+              "term": "Public Health Act 1848",
+              "definition": "Britain’s first national public health law, which created a General Board of Health but was voluntary rather than compulsory for towns."
             }
           ],
           "vocab_cloze_text": "Rapid [urbanization] meant cities grew too fast. The government believed in [laissez-faire], doing nothing to help. This led to a terrible [epidemic] of [cholera], forcing people to finally take [public health] seriously.",
@@ -45049,12 +46038,28 @@
           ],
           "flashcards": [
             {
-              "term": "sewer",
-              "definition": "An underground conduit for carrying off drainage water and waste matter."
+              "term": "The Great Stink (1858)",
+              "definition": "An unbearable summer crisis in London when hot weather caused untreated sewage in the River Thames to ferment, halting Parliament."
             },
             {
-              "term": "germ theory",
-              "definition": "The theory that infectious diseases are caused by certain microbes."
+              "term": "Sir Joseph Bazalgette",
+              "definition": "The visionary chief engineer of the Metropolitan Board of Works who designed and constructed London’s monumental underground sewer network."
+            },
+            {
+              "term": "Intercepting Sewers",
+              "definition": "Massive underground brick tunnels built parallel to the Thames to capture London’s sewage and transport it downstream away from the city."
+            },
+            {
+              "term": "River Thames",
+              "definition": "London’s central waterway, which had functioned as an open sewer and source of drinking water until Bazalgette diverted waste eastward."
+            },
+            {
+              "term": "Germ Theory (1861)",
+              "definition": "The revolutionary scientific discovery by French chemist Louis Pasteur proving that microscopic living organisms cause decay and infectious diseases."
+            },
+            {
+              "term": "Public Health Act 1875",
+              "definition": "A landmark compulsory law that forced all British local councils to provide clean piped water, inspect sewers, and collect household refuse."
             }
           ],
           "quiz": [
@@ -45097,28 +46102,152 @@
                 "Specialized gongfermers were banned from working in towns."
               ],
               "answer": 0
+            },
+            {
+              "question": "What famous environmental crisis in London during the blazing summer of 1858 forced politicians to act?",
+              "options": [
+                "The Great London Fog",
+                "The Great Stink of the River Thames",
+                "The Great Frost",
+                "The Acid Rain Outbreak"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "How did politicians in the Houses of Parliament try to cope with the foul fumes of the Great Stink in 1858?",
+              "options": [
+                "They wore gas masks designed for coal miners",
+                "They soaked parliamentary window curtains in chloride of lime to neutralize the stench",
+                "They held their debates on open rowboats in the English Channel",
+                "They adjourned Parliament and moved the government to Manchester"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Who was appointed chief engineer of the Metropolitan Board of Works to design London’s new sewer system?",
+              "options": [
+                "Isambard Kingdom Brunel",
+                "Sir Joseph Bazalgette",
+                "George Stephenson",
+                "Thomas Telford"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "How did Bazalgette’s intercepting sewer system solve London’s sewage crisis?",
+              "options": [
+                "By pumping wastewater uphill into giant evaporators",
+                "By building 82 miles of underground brick tunnels parallel to the Thames to carry sewage east of London",
+                "By filtering sewage through giant charcoal beds inside Westminster",
+                "By dumping all waste into deep underground coal mines"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What remarkable design decision did Bazalgette make when sizing his underground sewer tunnels?",
+              "options": [
+                "He calculated the maximum flow needed, and then doubled the diameter to handle future population growth",
+                "He made them just wide enough for a single worker to crawl through",
+                "He built them out of timber to keep construction costs cheap",
+                "He designed them to run on natural steam power"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What type of mortar did Bazalgette use to ensure the brick sewers would not decay from water and waste acids?",
+              "options": [
+                "Common sand and lime plaster",
+                "Portland cement, tested rigorously for strength and waterproof durability",
+                "Animal glue mixed with coal dust",
+                "Uncured river clay"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What major medical breakthrough in 1861 by Louis Pasteur finally discredited the Miasma Theory?",
+              "options": [
+                "The discovery of penicillin",
+                "The publication of Germ Theory, proving microbes cause disease and fermentation",
+                "The invention of the stethoscope",
+                "The discovery of blood groups"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why is the Public Health Act of 1875 considered a massive turning point in British history?",
+              "options": [
+                "It ended laissez-faire by making it compulsory for local councils to provide clean water, pave streets, and inspect drains",
+                "It made free medical treatment available to all citizens through the NHS",
+                "It banned all factories from burning coal in cities",
+                "It forced all citizens to undergo daily mandatory exercise"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What grand public embankments were built in London on top of Bazalgette’s low-level intercepting sewers?",
+              "options": [
+                "The Victoria, Albert, and Chelsea Embankments along the Thames",
+                "The Tower Bridge Walkways",
+                "The Hyde Park Corner overpasses",
+                "The Regent Street shopping colonnades"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "When cholera struck London for the final time in 1866, what did the health statistics reveal about Bazalgette’s sewers?",
+              "options": [
+                "Deaths were highest in the areas connected to the new sewers",
+                "Areas connected to Bazalgette’s new sewers suffered virtually no cholera deaths, proving clean drainage saved lives",
+                "The sewers collapsed under the weight of storm floods",
+                "The disease spread evenly across all London boroughs"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What Victorian engineering landmarks were constructed by Bazalgette to pump sewage up to river discharge levels?",
+              "options": [
+                "The Abbey Mills and Crossness Pumping Stations, nicknamed \"Cathedrals of Sewage\"",
+                "The Royal Albert Docks",
+                "The Crystal Palace water towers",
+                "The Greenwich Maritime Observatory"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "What political change in 1867 helped encourage Parliament to pass stronger public health laws like the 1875 Act?",
+              "options": [
+                "The abolition of the House of Lords",
+                "The Second Reform Act, which gave the vote to urban working-class men",
+                "Queen Victoria declared herself Empress of India",
+                "The outbreak of the Franco-Prussian War"
+              ],
+              "answer": 1
             }
           ],
           "vocab": [
             {
-              "term": "sewer",
-              "definition": "An underground conduit for carrying off drainage water and waste matter."
+              "term": "The Great Stink (1858)",
+              "definition": "An unbearable summer crisis in London when hot weather caused untreated sewage in the River Thames to ferment, halting Parliament."
             },
             {
-              "term": "germ theory",
-              "definition": "The theory that infectious diseases are caused by certain microbes."
+              "term": "Sir Joseph Bazalgette",
+              "definition": "The visionary chief engineer of the Metropolitan Board of Works who designed and constructed London’s monumental underground sewer network."
             },
             {
-              "term": "sewage",
-              "definition": "Waste water and excrement conveyed in sewers."
+              "term": "Intercepting Sewers",
+              "definition": "Massive underground brick tunnels built parallel to the Thames to capture London’s sewage and transport it downstream away from the city."
             },
             {
-              "term": "civil engineering",
-              "definition": "The design and construction of public works, such as dams, bridges and other large-scale projects."
+              "term": "River Thames",
+              "definition": "London’s central waterway, which had functioned as an open sewer and source of drinking water until Bazalgette diverted waste eastward."
             },
             {
-              "term": "infrastructure",
-              "definition": "The basic physical and organizational structures and facilities needed for the operation of a society."
+              "term": "Germ Theory (1861)",
+              "definition": "The revolutionary scientific discovery by French chemist Louis Pasteur proving that microscopic living organisms cause decay and infectious diseases."
+            },
+            {
+              "term": "Public Health Act 1875",
+              "definition": "A landmark compulsory law that forced all British local councils to provide clean piped water, inspect sewers, and collect household refuse."
             }
           ],
           "vocab_cloze_text": "The Great Stink forced the government to build a new [sewer] system to carry away [sewage]. This huge [civil engineering] project improved the city's [infrastructure]. Later, Pasteur's [germ theory] finally proved exactly why the dirty water was making people sick.",
@@ -45165,7 +46294,288 @@
               "Key vocabulary to use: Broad Street Pump, waterborne, Miasma theory, Germ theory."
             ],
             "starter": "One major reason John Snow’s discovery was significant in the short term was..."
-          }
+          },
+          "vocab": [
+            {
+              "term": "Dr John Snow",
+              "definition": "A pioneer Victorian physician and epidemiologist who mapped the 1854 Broad Street cholera outbreak and proved the disease was waterborne."
+            },
+            {
+              "term": "Broad Street Pump",
+              "definition": "A communal Soho drinking water well whose handle Dr John Snow removed in September 1854 after identifying it as the source of cholera."
+            },
+            {
+              "term": "Waterborne Disease",
+              "definition": "An illness transmitted through drinking or washing in water contaminated by pathogenic microorganisms, such as cholera and typhoid."
+            },
+            {
+              "term": "Epidemiological Mapping",
+              "definition": "The scientific method of plotting disease cases on a geographic street map to identify the physical source and pattern of an epidemic."
+            },
+            {
+              "term": "Miasma Myth",
+              "definition": "The deeply entrenched Victorian conviction that foul smells caused disease, which delayed the acceptance of waterborne and germ theories."
+            },
+            {
+              "term": "Public Health Reform",
+              "definition": "The gradual transition from government non-intervention to state regulation ensuring clean water, sanitation, and compulsory hygiene laws."
+            }
+          ],
+          "flashcards": [
+            {
+              "term": "Dr John Snow",
+              "definition": "A pioneer Victorian physician and epidemiologist who mapped the 1854 Broad Street cholera outbreak and proved the disease was waterborne."
+            },
+            {
+              "term": "Broad Street Pump",
+              "definition": "A communal Soho drinking water well whose handle Dr John Snow removed in September 1854 after identifying it as the source of cholera."
+            },
+            {
+              "term": "Waterborne Disease",
+              "definition": "An illness transmitted through drinking or washing in water contaminated by pathogenic microorganisms, such as cholera and typhoid."
+            },
+            {
+              "term": "Epidemiological Mapping",
+              "definition": "The scientific method of plotting disease cases on a geographic street map to identify the physical source and pattern of an epidemic."
+            },
+            {
+              "term": "Miasma Myth",
+              "definition": "The deeply entrenched Victorian conviction that foul smells caused disease, which delayed the acceptance of waterborne and germ theories."
+            },
+            {
+              "term": "Public Health Reform",
+              "definition": "The gradual transition from government non-intervention to state regulation ensuring clean water, sanitation, and compulsory hygiene laws."
+            }
+          ],
+          "quiz": [
+            {
+              "question": "What was Dr John Snow’s revolutionary hypothesis regarding how cholera was transmitted in 1849?",
+              "options": [
+                "It was caused by inhaling sewer gas in damp cellars",
+                "It was a waterborne disease transmitted by swallowing invisible contaminated water or food",
+                "It was an airborne virus passed through sneezing",
+                "It was a moral punishment inflicted on heavy alcohol drinkers"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "During the September 1854 cholera outbreak in Soho, what specific piece of evidence did John Snow create to prove his theory?",
+              "options": [
+                "A chemical formula for purifying well water",
+                "A street map plotting each cholera death as a black bar outside houses near the Broad Street pump",
+                "A microscope image of the cholera bacterium",
+                "A signed confession from the owner of the local water company"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What did John Snow convince the parish Board of Guardians to do on 8 September 1854 to halt the Soho epidemic?",
+              "options": [
+                "Burn down all houses on Broad Street",
+                "Remove the handle from the Broad Street water pump so residents could not drink the water",
+                "Dump lime into all churchyard cesspits",
+                "Evacuate all Soho residents to Hyde Park"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was discovered when inspectors later excavated the Broad Street pump well?",
+              "options": [
+                "A cracked brick cesspool from house number 40 was leaking baby cholera waste directly into the well water",
+                "Roman lead pipes were contaminating the supply with heavy metals",
+                "Dead rats had blocked the iron suction valve",
+                "The water was completely pure spring water with no foreign matter"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Why were workers at the nearby Broad Street brewery completely unaffected by the 1854 cholera epidemic?",
+              "options": [
+                "They had natural genetic immunity to cholera",
+                "They were allowed free beer and had their own private deep well on site, so they never drank from the Broad Street pump",
+                "They wore rubber masks during work shifts",
+                "They boiled their clothing in vinegar every evening"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Why did the British medical establishment and General Board of Health initially reject John Snow’s discovery?",
+              "options": [
+                "Because Snow refused to publish his research papers",
+                "Because powerful authorities like Edwin Chadwick and Florence Nightingale were deeply committed to Miasma Theory",
+                "Because Snow was an unqualified quack with no medical degree",
+                "Because cholera had already disappeared from Britain forever"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What German bacteriologist finally isolated and proved the cholera bacterium (Vibrio cholerae) under a microscope in 1883?",
+              "options": [
+                "Louis Pasteur",
+                "Robert Koch",
+                "Alexander Fleming",
+                "Joseph Lister"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "How did John Snow use the Lambeth Water Company versus Southwark & Vauxhall Water Company data to prove his waterborne theory?",
+              "options": [
+                "He compared customers on the same streets: those drinking from Lambeth (intake moved upriver) had vastly lower deaths than those drinking Southwark sewage",
+                "He showed that water companies paid taxes to the Crown",
+                "He demonstrated that water tasted sweeter when boiled",
+                "He proved that pipes made of wood caused more disease than iron"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Which historical period made the LEAST progress in public health engineering in Britain?",
+              "options": [
+                "The Roman Period (43–410 AD)",
+                "The Early Middle Ages (500–1000 AD)",
+                "The Victorian Era (1850–1900)",
+                "The Early Modern Period (1500–1750)"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was the primary obstacle preventing earlier public health reform throughout British history?",
+              "options": [
+                "The complete absence of running rivers in Britain",
+                "Laissez-faire government attitudes, high costs for ratepayers, and stubborn adherence to Miasma Theory",
+                "Hostility from foreign European powers",
+                "A total lack of iron and brick building materials"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "Which of the following was a key feature of the compulsory Public Health Act of 1875?",
+              "options": [
+                "Every local council was legally required to appoint a Medical Officer of Health and a Sanitary Inspector",
+                "Citizens were banned from drinking river water under penalty of death",
+                "All hospitals were nationalised into the NHS immediately",
+                "Every household was given free indoor electricity"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "How did Roman public health differ fundamentally from Victorian public health?",
+              "options": [
+                "Romans had Germ Theory while Victorians believed in evil spirits",
+                "Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws",
+                "Romans only allowed emperors to drink clean water",
+                "Victorians had worse technology than Iron Age peasants"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What role did Edwin Chadwick play in the story of British public health?",
+              "options": [
+                "He proved cholera was waterborne using street maps",
+                "He demonstrated statistically that poor sanitation caused illness and poverty, campaigning for the 1848 Public Health Act",
+                "He invented the first flushing toilet for Queen Victoria",
+                "He discovered penicillin during the Crimean War"
+              ],
+              "answer": 1
+            },
+            {
+              "question": "What was the significance of Joseph Bazalgette’s intercepting sewer system for the city of London?",
+              "options": [
+                "It eradicated waterborne cholera from London and created a clean urban drainage infrastructure that still operates today",
+                "It was demolished after five years due to structural flaws",
+                "It provided clean drinking water directly to private taps in all homes",
+                "It eliminated all crime from the East End"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Why did John Snow’s investigation become famous as a founding moment of modern medical science?",
+              "options": [
+                "It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics",
+                "It proved that prayers in church cured bacterial infection",
+                "It established the first private pharmaceutical corporation in England",
+                "It was the first medical study funded by the British royal family"
+              ],
+              "answer": 0
+            },
+            {
+              "question": "Looking back across all six lessons, why was progress in British public health NOT a simple straight line of improvement?",
+              "options": [
+                "Because Roman sanitary engineering collapsed in the Middle Ages, urbanisation overwhelmed early modern towns, and scientific understanding was delayed by false theories like miasma",
+                "Because British citizens repeatedly destroyed water pipes during civil wars",
+                "Because infectious diseases only existed during the Victorian era",
+                "Because the British climate changed from tropical to cold in 1500"
+              ],
+              "answer": 0
+            }
+          ],
+          "learning_objectives": [
+            "Evaluate how Dr John Snow used map data and scientific deduction to prove cholera was waterborne in 1854.",
+            "Explain the shift from laissez-faire government attitudes to compulsory state intervention in British public health.",
+            "Produce a structured 8-mark explanation assessing the significance of Victorian sanitation reforms."
+          ],
+          "do_now": {
+            "type": "questions",
+            "title": "Unit Recall & Retrieval (Rome to Industrial Era)",
+            "instructions": "Answer these retrieval questions in full sentences from your memory of Lessons 1–5.",
+            "items": [
+              {
+                "question": "What Roman engineering structure carried fresh water across valleys into towns?",
+                "answer": "An aqueduct, using the pull of gravity."
+              },
+              {
+                "question": "What was a medieval worker who cleared cesspits at night called?",
+                "answer": "A gongfermer (or nightman)."
+              },
+              {
+                "question": "What incorrect theory claimed that foul smells and poisonous air caused disease?",
+                "answer": "The Miasma Theory."
+              },
+              {
+                "question": "In what year did Asiatic cholera first strike Britain?",
+                "answer": "1831 (in Sunderland)."
+              },
+              {
+                "question": "What 1858 environmental crisis forced Parliament to fund London’s new sewer system?",
+                "answer": "The Great Stink of the River Thames."
+              }
+            ]
+          },
+          "narrative_blocks": [
+            {
+              "title": "The Soho Epidemic and the Broad Street Pump (1854)",
+              "text": "In late August 1854, a terrifying outbreak of cholera exploded in the densely populated Soho district of London. Within ten days, more than 500 people had died in a radius of just 250 yards. Prevailing medical opinion, led by Edwin Chadwick and Florence Nightingale, blamed the epidemic on miasma—the noxious fumes rising from London’s overcrowded cesspools.\n\nHowever, Dr John Snow, an experienced physician and anaesthetist who had observed previous cholera epidemics, had published a radical hypothesis in 1849 arguing that cholera was an exclusively waterborne disease transmitted through swallowing contaminated water or food.",
+              "tasks": [
+                {
+                  "type": "written",
+                  "text": "Explain why the medical establishment initially refused to believe cholera was waterborne in 1854.",
+                  "model_answer": "The medical establishment, including prominent figures like Chadwick and Nightingale, strongly believed in Miasma Theory—that diseases were caused by breathing foul smells and toxic fumes. Because Soho smelled terrible and cholera was terrifying and fast-acting, authorities assumed bad air was responsible and resisted new ideas."
+                }
+              ]
+            },
+            {
+              "title": "Epidemiological Mapping: The Scientific Method in Action",
+              "text": "To test his waterborne hypothesis, John Snow carried out a meticulous investigation. He obtained the names and addresses of all cholera victims in Soho and plotted them as black bars on a detailed street map. The spatial distribution revealed that deaths were overwhelmingly clustered around the public water pump on Broad Street.\n\nCrucially, Snow investigated the anomalies: workers at the nearby Broad Street brewery did not contract cholera because they had their own private deep well and were allowed free beer, while a widow living miles away in Hampstead died because she liked the taste of the Broad Street water and had it carted to her home daily.",
+              "tasks": [
+                {
+                  "type": "written",
+                  "text": "How did John Snow’s investigation of the brewery workers strengthen his hypothesis?",
+                  "model_answer": "The brewery workers were surrounded by cholera deaths in Soho but remained completely unaffected. When Snow investigated, he found they never drank pump water because the brewery had its own private well and gave workers free beer. This anomalous negative evidence proved that living in the smelly area did not cause cholera; drinking the specific contaminated pump water did."
+                }
+              ]
+            },
+            {
+              "title": "The Turning Point: Removing the Handle and Legacy",
+              "text": "On 7 September 1854, Snow presented his evidence to the parish Board of Guardians. Convinced by his map data, they removed the handle from the Broad Street pump the following morning. The epidemic quickly abated. Later excavations revealed that a cracked domestic cesspool at 40 Broad Street was leaking raw sewage directly into the well water.\n\nCombined with Louis Pasteur’s Germ Theory in 1861 and the Great Stink of 1858, Snow’s discovery broke the intellectual grip of Miasma Theory and laid the foundation for modern epidemiology and the compulsory Public Health Act of 1875.",
+              "tasks": [
+                {
+                  "type": "written",
+                  "text": "Explain the long-term significance of John Snow’s work for modern public health.",
+                  "model_answer": "John Snow’s investigation is recognized as the founding moment of modern epidemiology. By demonstrating that data mapping and rigorous scientific deduction could isolate the source of an epidemic, he paved the way for modern disease control and helped convince Victorian authorities that investing millions in clean water and Bazalgette’s sewers was a matter of life and death."
+                }
+              ]
+            }
+          ]
         }
       ],
       "quizPack": [
