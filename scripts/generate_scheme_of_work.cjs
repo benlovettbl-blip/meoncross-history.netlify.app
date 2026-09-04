@@ -47,7 +47,7 @@ const commonHead = `
             .header-banner h1 { color: #fff; margin: 0; font-size: 24pt; }
             .year-section { margin-bottom: 40px; }
             .year-title { background: #facc15; color: #1b365d; padding: 10px 20px; border-radius: 4px; font-size: 18pt; margin-bottom: 20px; display: inline-block; font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-            .unit-card { border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-bottom: 20px; background: #f1f5f9; border-left: 5px solid #1b365d; }
+            .unit-card { page-break-inside: avoid; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-bottom: 20px; background: #f1f5f9; border-left: 5px solid #1b365d; }
             .unit-card h3 { font-size: 16pt; margin-bottom: 10px; color: #1b365d; }
             .unit-card .enquiry { font-weight: 600; color: #b89c30; font-size: 12pt; margin-bottom: 10px; }
             .unit-card .desc { font-size: 11pt; color: #475569; }
@@ -178,12 +178,16 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                 <h4 style="margin-bottom: 5px; color: #1b365d;">2. Pre-1450 Global Diversity</h4>
                 <p style="margin-top: 0; font-size: 10pt;">The curriculum would benefit from a deep dive into non-European civilizations before European contact. Exploring the Islamic Golden Age, the Mali Empire, or the Silk Roads <em>before</em> looking at European "Global Encounters" in 1450 would give pupils a much more balanced view of global history, rather than encountering diverse cultures primarily through the lens of European colonization.</p>
             </div>
-            ${yearGroup === 'Year 9' ? `
+            ${
+              yearGroup === 'Year 9'
+                ? `
             <div style="margin-top: 30px; background: #eff6ff; border: 1px solid #bfdbfe; border-left: 5px solid #3b82f6; padding: 20px; border-radius: 4px;">
                 <h2 style="color: #1e3a8a; margin-top: 0;">Notice on Year 9 Curriculum Development</h2>
                 <p style="margin: 0; color: #1e40af; font-weight: 600; font-size: 11pt;">Please note that the Year 9 units are currently incomplete. These units (including The Second World War, The Shoah, and The Cold War) will be fully built and mapped out over the next few months to ensure they meet our high pedagogical standards.</p>
             </div>
-            ` : ''}
+            `
+                : ''
+            }
         </div>
 
         <div class="page-break"></div>
@@ -367,27 +371,27 @@ function generateSOWHTML(db, yearGroup, unitIds) {
           lesson.historical_concept ||
           '';
         if (!discFocus) {
-           // Check source_tasks from lesson data OR from metadata fallback
-           const metaLesson = sourcePeelMeta[uid]?.lessons?.[idx];
-           const hasSourceTasks = lesson.source_tasks ||
-             (metaLesson && metaLesson.source_task_count > 0) ||
-             (lesson.formative_assessment && lesson.formative_assessment.type === 'source_utility');
-           
-           if (hasSourceTasks)
-             discFocus = 'Source Utility';
+          // Check source_tasks from lesson data OR from metadata fallback
+          const metaLesson = sourcePeelMeta[uid]?.lessons?.[idx];
+          const hasSourceTasks =
+            lesson.source_tasks ||
+            (metaLesson && metaLesson.source_task_count > 0) ||
+            (lesson.formative_assessment && lesson.formative_assessment.type === 'source_utility');
+
+          if (hasSourceTasks) discFocus = 'Source Utility';
           else if (lesson.peel_paragraph) discFocus = 'Historical Argumentation';
           else if (lesson.exam_practice && lesson.exam_practice.length > 0)
             discFocus = 'Historical Enquiry & Exam Skills';
           else {
             // Bespoke labels to avoid repetitive "Historical Knowledge & Understanding"
             const bespokeLabels = {
-              medieval_england: "Medieval Society & Power",
-              industrialisation_and_empire: "Empire & Societal Shift",
-              great_war: "Geopolitical Context",
-              great_war_part2: "Modern Warfare Dynamics",
-              water_and_sanitation: "Chronological Frameworks",
-              early_modern_world: "Global Trade & Colonisation",
-              australia: "Indigenous Encounters & Settlement"
+              medieval_england: 'Medieval Society & Power',
+              industrialisation_and_empire: 'Empire & Societal Shift',
+              great_war: 'Geopolitical Context',
+              great_war_part2: 'Modern Warfare Dynamics',
+              water_and_sanitation: 'Chronological Frameworks',
+              early_modern_world: 'Global Trade & Colonisation',
+              australia: 'Indigenous Encounters & Settlement',
             };
             discFocus = bespokeLabels[uid] || 'Knowledge & Schema Building';
           }
@@ -441,13 +445,20 @@ function generateSOWHTML(db, yearGroup, unitIds) {
 
         // Comprehension & Sources
         if (lesson.comprehension && lesson.comprehension.length > 0) {
-          const quizLabels = ['Knowledge Recall Quiz', 'Comprehension Activity', 'Core Knowledge Check', `Recall Quiz (${lesson.comprehension.length} questions)`];
+          const quizLabels = [
+            'Knowledge Recall Quiz',
+            'Comprehension Activity',
+            'Core Knowledge Check',
+            `Recall Quiz (${lesson.comprehension.length} questions)`,
+          ];
           tasks.push(quizLabels[idx % quizLabels.length]);
         }
 
         // Interpretations
         if (lesson.historical_interpretations) {
-          tasks.push(`Historical Interpretations: ${lesson.historical_interpretations.title || 'Evaluating Historians'}`);
+          tasks.push(
+            `Historical Interpretations: ${lesson.historical_interpretations.title || 'Evaluating Historians'}`,
+          );
         }
 
         // Extract heavy tasks from narrative_blocks
@@ -500,15 +511,26 @@ function generateSOWHTML(db, yearGroup, unitIds) {
 
         // Source tasks from data.js or metadata fallback
         const metaL = sourcePeelMeta[uid]?.lessons?.[idx];
-        const hasSourceTasks = lesson.source_tasks?.length > 0 || (metaL && metaL.source_task_count > 0);
-        const hasPeelTasks = (metaL && metaL.peel_task_count > 0);
+        const hasSourceTasks =
+          lesson.source_tasks?.length > 0 || (metaL && metaL.source_task_count > 0);
+        const hasPeelTasks = metaL && metaL.peel_task_count > 0;
 
         if (hasSourceTasks) {
-          const sourceLabels = ['Evaluating Primary Evidence', 'Interrogating Historical Sources', 'Primary Source Analysis', 'Working with Contemporary Accounts'];
+          const sourceLabels = [
+            'Evaluating Primary Evidence',
+            'Interrogating Historical Sources',
+            'Primary Source Analysis',
+            'Working with Contemporary Accounts',
+          ];
           tasks.push(sourceLabels[idx % sourceLabels.length]);
         }
         if (hasPeelTasks) {
-          const peelLabels = ['Extended Writing (PEEL)', 'Structured Paragraph', 'Exam Practice Writing', 'Analytical Essay'];
+          const peelLabels = [
+            'Extended Writing (PEEL)',
+            'Structured Paragraph',
+            'Exam Practice Writing',
+            'Analytical Essay',
+          ];
           tasks.push(peelLabels[idx % peelLabels.length]);
         }
 

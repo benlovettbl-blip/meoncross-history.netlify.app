@@ -1,95 +1,674 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>History Curriculum Overview 2026-2027</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
-        * { box-sizing: border-box; }
-        body { font-family: 'Outfit', sans-serif; font-size: 8.5pt; color: #1e293b; margin: 0; padding: 0; line-height: 1.45; }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Outfit', sans-serif;
+        font-size: 8.5pt;
+        color: #1e293b;
+        margin: 0;
+        padding: 0;
+        line-height: 1.45;
+      }
 
-        .cover-page {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center; background: #f8fafc;
-            border: 10px solid #facc15; padding: 40px;
-        }
-        .cover-title { font-family: 'Playfair Display', serif; font-size: 42pt; font-weight: 700; color: #1b365d; margin-bottom: 15px; }
-        .cover-subtitle { font-size: 20pt; color: #facc15; font-family: 'Outfit', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; }
-        .cover-info { margin-top: 30px; font-size: 13pt; color: #475569; }
+      .cover-page {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #f8fafc;
+        border: 10px solid #facc15;
+        padding: 40px;
+      }
+      .cover-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 42pt;
+        font-weight: 700;
+        color: #1b365d;
+        margin-bottom: 15px;
+      }
+      .cover-subtitle {
+        font-size: 20pt;
+        color: #facc15;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      .cover-info {
+        margin-top: 30px;
+        font-size: 13pt;
+        color: #475569;
+      }
 
-        .page-break { page-break-before: always; }
-        .container { padding: 15px 20px; }
+      .page-break {
+        page-break-before: always;
+      }
+      .container {
+        padding: 15px 20px;
+      }
 
-        .year-header {
-            background: #1b365d; color: #fff; padding: 12px 20px; border-radius: 6px;
-            margin-bottom: 15px; border-bottom: 3px solid #facc15; text-align: center;
-        }
-        .year-header h2 { font-family: 'Playfair Display', serif; color: #fff; margin: 0; font-size: 16pt; }
-        .year-header .ks { font-family: 'Outfit', sans-serif; color: #facc15; font-size: 9pt; text-transform: uppercase; letter-spacing: 2px; margin-top: 3px; }
+      .year-header {
+        background: #1b365d;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        border-bottom: 3px solid #facc15;
+        text-align: center;
+      }
+      .year-header h2 {
+        font-family: 'Playfair Display', serif;
+        color: #fff;
+        margin: 0;
+        font-size: 16pt;
+      }
+      .year-header .ks {
+        font-family: 'Outfit', sans-serif;
+        color: #facc15;
+        font-size: 9pt;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 3px;
+      }
 
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { border: 1px solid #cbd5e1; padding: 7px 9px; vertical-align: top; }
-        th { background: #0f172a; color: #fff; text-align: center; font-weight: 600; font-size: 9pt; letter-spacing: 0.5px; }
-        .row-header {
-            background: #e8edf5; font-weight: 700; width: 11%; text-align: left;
-            font-size: 8pt; color: #0f172a; vertical-align: middle;
-        }
-        tr:nth-child(odd) td:not(.row-header) { background: #ffffff; }
-        tr:nth-child(even) td:not(.row-header) { background: #f8fafc; }
-        td strong { color: #1b365d; }
-        td ul { padding-left: 14px; margin: 2px 0; }
-        td li { margin-bottom: 2px; }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #cbd5e1;
+        padding: 7px 9px;
+        vertical-align: top;
+      }
+      th {
+        background: #0f172a;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+        font-size: 9pt;
+        letter-spacing: 0.5px;
+      }
+      .row-header {
+        background: #e8edf5;
+        font-weight: 700;
+        width: 11%;
+        text-align: left;
+        font-size: 8pt;
+        color: #0f172a;
+        vertical-align: middle;
+      }
+      tr {
+        page-break-inside: avoid;
+      }
+      tr:nth-child(odd) td:not(.row-header) {
+        background: #ffffff;
+      }
+      tr:nth-child(even) td:not(.row-header) {
+        background: #f8fafc;
+      }
+      td strong {
+        color: #1b365d;
+      }
+      td ul {
+        padding-left: 14px;
+        margin: 2px 0;
+      }
+      td li {
+        margin-bottom: 2px;
+      }
 
-        tr.topic-row td { background: #eff6ff !important; font-weight: 600; }
-        tr.topic-row td strong { color: #1d4ed8; font-size: 9.5pt; }
+      tr.topic-row td {
+        background: #eff6ff !important;
+        font-weight: 600;
+      }
+      tr.topic-row td strong {
+        color: #1d4ed8;
+        font-size: 9.5pt;
+      }
     </style>
-</head>
-<body>
-
-<div class="cover-page">
-    <div class="cover-title">Meoncross School<br>History Department</div>
-    <div class="cover-subtitle">Curriculum Overview</div>
-    <div class="cover-info">Key Stages 3 &amp; 4 &nbsp;|&nbsp; Years 7 – 11 &nbsp;|&nbsp; 2026-2027</div>
-</div>
-<div class="page-break"></div>
-<div class="container">
-    <div class="year-header">
+  </head>
+  <body>
+    <div class="cover-page">
+      <div class="cover-title">Meoncross School<br />History Department</div>
+      <div class="cover-subtitle">Curriculum Overview</div>
+      <div class="cover-info">
+        Key Stages 3 &amp; 4 &nbsp;|&nbsp; Years 7 – 11 &nbsp;|&nbsp; 2026-2027
+      </div>
+    </div>
+    <div class="page-break"></div>
+    <div class="container">
+      <div class="year-header">
         <h2>Year 7 – History Curriculum Overview (2026-2027)</h2>
         <div class="ks">Key Stage 3</div>
-    </div>
-    <table>
+      </div>
+      <table>
         <tr>
-            <th class="row-header"></th><th style="width: 14.8%">Autumn 1</th><th style="width: 14.8%">Autumn 2</th><th style="width: 14.8%">Spring 1</th><th style="width: 14.8%">Spring 2</th><th style="width: 14.8%">Summer 1</th><th style="width: 14.8%">Summer 2</th></tr><tr class="topic-row"><td class="row-header">Topic</td><td colspan="2"><strong>Water & Sanitation Through Time</strong></td><td colspan="2"><strong>Medieval England (1066–1485)</strong></td><td colspan="2"><strong>Early Modern World (1450–1750)</strong></td></tr><tr><td class="row-header">Summary of Objectives</td><td colspan="2">Pupils trace the history of public health from Roman aqueducts through medieval cesspits to Victorian sewers, evaluating why progress was not linear and how government attitudes shaped change over time.</td><td colspan="2">Pupils explore the power struggles that defined England from the Norman Conquest to the Wars of the Roses, examining how monarchs, the Church, and ordinary people competed for authority and power.</td><td colspan="2">Pupils examine why Europe was not the centre of global power in 1450, how religious conflict triggered exploration, and how early trading encounters escalated into empire and the Transatlantic Slave Trade.</td></tr><tr><td class="row-header">Knowledge & Skills</td><td colspan="2"><strong>Key Vocab:</strong> Aqueduct, Cesspit, Miasma Theory, Cholera, Laissez-faire, Germ Theory, Public Health Act 1848<br><strong>Skills:</strong> Change & Continuity, Causation, Source Comprehension, PEEL Paragraphs</td><td colspan="2"><strong>Key Vocab:</strong> Feudalism, Domesday Book, Magna Carta, Crusade, Black Death, Peasants' Revolt<br><strong>Skills:</strong> Causation, Significance, Source Utility, Historical Argumentation (PEEL)</td><td colspan="2"><strong>Key Vocab:</strong> Reformation, Conquistador, Transatlantic Slave Trade, East India Company, Colonisation, Triangular Trade<br><strong>Skills:</strong> Significance, Historical Interpretations, Comparative Analysis, Extended Writing (PEEL)</td></tr><tr><td class="row-header">Assessment</td><td colspan="2">Extended PEEL paragraphs at the end of each period studied. Unit assessment: "Why did it take so long to clean up Britain?" (extended writing)</td><td colspan="2">Formative PEEL paragraphs throughout. Final assessment: 12-mark extended essay — "Explain why the peasants revolted in 1381."</td><td colspan="2">Formative PEEL paragraphs and source work throughout. Final assessment: "To what extent was greed the main cause of European exploration?"</td></tr><tr><td class="row-header">SMSC</td><td colspan="2"><strong>Social:</strong> Responsibility for community health. <strong>Moral:</strong> Should governments compel people to change behaviour for the public good? <strong>Cultural:</strong> How different civilisations approached hygiene.</td><td colspan="2"><strong>Spiritual:</strong> Power and influence of the medieval Church. <strong>Social:</strong> Feudal hierarchy and peasant resistance. <strong>Moral:</strong> Is rebellion ever justified?</td><td colspan="2"><strong>Moral:</strong> Ethics of colonisation, slavery, and cultural destruction. <strong>Social:</strong> Impact of global trade on indigenous societies. <strong>Cultural:</strong> Encountering and evaluating diverse civilisations.</td></tr><tr><td class="row-header">Careers</td><td colspan="2">Public Health Officer, Epidemiologist, Archaeologist, Environmental Scientist</td><td colspan="2">Archivist, Heritage Site Manager, Historian, Lawyer</td><td colspan="2">Museum Curator, International Relations Analyst, Human Rights Lawyer</td></tr></table></div><div class="page-break"></div>
-<div class="container">
-    <div class="year-header">
+          <th class="row-header"></th>
+          <th style="width: 14.8%">Autumn 1</th>
+          <th style="width: 14.8%">Autumn 2</th>
+          <th style="width: 14.8%">Spring 1</th>
+          <th style="width: 14.8%">Spring 2</th>
+          <th style="width: 14.8%">Summer 1</th>
+          <th style="width: 14.8%">Summer 2</th>
+        </tr>
+        <tr class="topic-row">
+          <td class="row-header">Topic</td>
+          <td colspan="2"><strong>Water & Sanitation Through Time</strong></td>
+          <td colspan="2"><strong>Medieval England (1066–1485)</strong></td>
+          <td colspan="2"><strong>Early Modern World (1450–1750)</strong></td>
+        </tr>
+        <tr>
+          <td class="row-header">Summary of Objectives</td>
+          <td colspan="2">
+            Pupils trace the history of public health from Roman aqueducts through medieval cesspits
+            to Victorian sewers, evaluating why progress was not linear and how government attitudes
+            shaped change over time.
+          </td>
+          <td colspan="2">
+            Pupils explore the power struggles that defined England from the Norman Conquest to the
+            Wars of the Roses, examining how monarchs, the Church, and ordinary people competed for
+            authority and power.
+          </td>
+          <td colspan="2">
+            Pupils examine why Europe was not the centre of global power in 1450, how religious
+            conflict triggered exploration, and how early trading encounters escalated into empire
+            and the Transatlantic Slave Trade.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Knowledge & Skills</td>
+          <td colspan="2">
+            <strong>Key Vocab:</strong> Aqueduct, Cesspit, Miasma Theory, Cholera, Laissez-faire,
+            Germ Theory, Public Health Act 1848<br /><strong>Skills:</strong> Change & Continuity,
+            Causation, Source Comprehension, PEEL Paragraphs
+          </td>
+          <td colspan="2">
+            <strong>Key Vocab:</strong> Feudalism, Domesday Book, Magna Carta, Crusade, Black Death,
+            Peasants' Revolt<br /><strong>Skills:</strong> Causation, Significance, Source Utility,
+            Historical Argumentation (PEEL)
+          </td>
+          <td colspan="2">
+            <strong>Key Vocab:</strong> Reformation, Conquistador, Transatlantic Slave Trade, East
+            India Company, Colonisation, Triangular Trade<br /><strong>Skills:</strong>
+            Significance, Historical Interpretations, Comparative Analysis, Extended Writing (PEEL)
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Assessment</td>
+          <td colspan="2">
+            Extended PEEL paragraphs at the end of each period studied. Unit assessment: "Why did it
+            take so long to clean up Britain?" (extended writing)
+          </td>
+          <td colspan="2">
+            Formative PEEL paragraphs throughout. Final assessment: 12-mark extended essay —
+            "Explain why the peasants revolted in 1381."
+          </td>
+          <td colspan="2">
+            Formative PEEL paragraphs and source work throughout. Final assessment: "To what extent
+            was greed the main cause of European exploration?"
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">SMSC</td>
+          <td colspan="2">
+            <strong>Social:</strong> Responsibility for community health.
+            <strong>Moral:</strong> Should governments compel people to change behaviour for the
+            public good? <strong>Cultural:</strong> How different civilisations approached hygiene.
+          </td>
+          <td colspan="2">
+            <strong>Spiritual:</strong> Power and influence of the medieval Church.
+            <strong>Social:</strong> Feudal hierarchy and peasant resistance.
+            <strong>Moral:</strong> Is rebellion ever justified?
+          </td>
+          <td colspan="2">
+            <strong>Moral:</strong> Ethics of colonisation, slavery, and cultural destruction.
+            <strong>Social:</strong> Impact of global trade on indigenous societies.
+            <strong>Cultural:</strong> Encountering and evaluating diverse civilisations.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Careers</td>
+          <td colspan="2">
+            Public Health Officer, Epidemiologist, Archaeologist, Environmental Scientist
+          </td>
+          <td colspan="2">Archivist, Heritage Site Manager, Historian, Lawyer</td>
+          <td colspan="2">Museum Curator, International Relations Analyst, Human Rights Lawyer</td>
+        </tr>
+      </table>
+    </div>
+    <div class="page-break"></div>
+    <div class="container">
+      <div class="year-header">
         <h2>Year 8 – History Curriculum Overview (2026-2027)</h2>
         <div class="ks">Key Stage 3</div>
-    </div>
-    <table>
+      </div>
+      <table>
         <tr>
-            <th class="row-header"></th><th style="width: 14.8%">Autumn 1</th><th style="width: 14.8%">Autumn 2</th><th style="width: 14.8%">Spring 1</th><th style="width: 14.8%">Spring 2</th><th style="width: 14.8%">Summer 1</th><th style="width: 14.8%">Summer 2</th></tr><tr class="topic-row"><td class="row-header">Topic</td><td colspan="2"><strong>Industrialisation & Empire (1750–1900)</strong></td><td colspan="1"><strong>History of Australia</strong></td><td colspan="2"><strong>Causes of the Great War</strong></td><td colspan="1"><strong>The Great War (1914–1919)</strong></td></tr><tr><td class="row-header">Summary of Objectives</td><td colspan="2">Pupils investigate how industrialisation transformed Britain into the world's first industrial superpower and evaluate the human cost of factory life, urbanisation, and imperial expansion across the globe.</td><td colspan="1">Pupils critically examine the British colonisation of Australia, from the decision to establish a penal colony to the devastating and lasting impact on Indigenous peoples and their enduring resistance.</td><td colspan="2">Pupils analyse the complex web of long and short-term causes of the First World War, including militarism, imperialism, the alliance system, nationalism, and the assassination of Franz Ferdinand.</td><td colspan="1">Pupils investigate the lived experience of the trenches, challenge the "Lions led by Donkeys" debate, uncover the forgotten contributions of Empire troops, and evaluate the consequences of the Treaty of Versailles.</td></tr><tr><td class="row-header">Knowledge & Skills</td><td colspan="2"><strong>Key Vocab:</strong> Industrial Revolution, Urbanisation, Child Labour, Imperialism, Chartism, Free Trade, Working Class<br><strong>Skills:</strong> Change & Continuity, Source Analysis, Comparative Judgement, Extended Writing</td><td colspan="1"><strong>Key Vocab:</strong> Terra Nullius, Convict, Indigenous, Dreaming, Dispossession, Penal Colony, First Fleet<br><strong>Skills:</strong> Empathy & Perspective, Source Evaluation, Historical Significance, Causation</td><td colspan="2"><strong>Key Vocab:</strong> Militarism, Alliance System, Imperialism, Nationalism, Assassination, Schlieffen Plan, Arms Race<br><strong>Skills:</strong> Causation (Long & Short-term), Source Utility, Historical Interpretations, PEEL Paragraphs</td><td colspan="1"><strong>Key Vocab:</strong> Trench Warfare, Attrition, Shell Shock, Somme, Treaty of Versailles, Conscription, Empire Troops<br><strong>Skills:</strong> Historical Interpretations, Source Utility, Evaluative Judgement, Essay Writing</td></tr><tr><td class="row-header">Assessment</td><td colspan="2">Formative source analysis and knowledge checks. Final assessment: "Was the British Empire a force for good or harm?" (extended judgement essay)</td><td colspan="1">Analytical written response: "How significant was the impact of British colonisation on Indigenous Australians?"</td><td colspan="2">Formative source utility tasks throughout. Final assessment: "Was the assassination of Franz Ferdinand the main cause of the First World War?" (16-mark essay)</td><td colspan="1">Final assessment: "How far do you agree that the Treaty of Versailles made a second world war inevitable?" (16-mark interpretations essay)</td></tr><tr><td class="row-header">SMSC</td><td colspan="2"><strong>Social:</strong> Urbanisation, child labour, and inequality. <strong>Moral:</strong> Was Empire a force for good or exploitation? <strong>Cultural:</strong> Impact of industrialisation on working-class life and identity.</td><td colspan="1"><strong>Cultural:</strong> Respect for Indigenous Australian heritage and traditions. <strong>Moral:</strong> Legacies of penal transportation and dispossession. <strong>Social:</strong> Long-term impact of colonialism on First Nations peoples.</td><td colspan="2"><strong>Moral:</strong> Duty, sacrifice, and the ethics of warfare. <strong>Social:</strong> Impact of war on local communities — Stubbington's "Lost Generation". <strong>Cultural:</strong> War poetry, propaganda, and remembrance.</td><td colspan="1"><strong>Moral:</strong> The "Lions led by Donkeys" debate. <strong>Social:</strong> Forgotten contributions of Empire soldiers. <strong>Cultural:</strong> Remembrance, the Ypres Battlefield Tour, and collective memory.</td></tr><tr><td class="row-header">Careers</td><td colspan="2">Urban Planner, Economist, Politician, Museum Educator</td><td colspan="1">Anthropologist, Human Rights Advocate, Social Worker, Journalist</td><td colspan="2">Military Historian, Diplomat, Archivist, Journalist</td><td colspan="1">Military Historian, Diplomat, Archivist, Documentary Maker</td></tr></table></div><div class="page-break"></div>
-<div class="container">
-    <div class="year-header">
+          <th class="row-header"></th>
+          <th style="width: 14.8%">Autumn 1</th>
+          <th style="width: 14.8%">Autumn 2</th>
+          <th style="width: 14.8%">Spring 1</th>
+          <th style="width: 14.8%">Spring 2</th>
+          <th style="width: 14.8%">Summer 1</th>
+          <th style="width: 14.8%">Summer 2</th>
+        </tr>
+        <tr class="topic-row">
+          <td class="row-header">Topic</td>
+          <td colspan="2"><strong>Industrialisation & Empire (1750–1900)</strong></td>
+          <td colspan="1"><strong>History of Australia</strong></td>
+          <td colspan="2"><strong>Causes of the Great War</strong></td>
+          <td colspan="1"><strong>The Great War (1914–1919)</strong></td>
+        </tr>
+        <tr>
+          <td class="row-header">Summary of Objectives</td>
+          <td colspan="2">
+            Pupils investigate how industrialisation transformed Britain into the world's first
+            industrial superpower and evaluate the human cost of factory life, urbanisation, and
+            imperial expansion across the globe.
+          </td>
+          <td colspan="1">
+            Pupils critically examine the British colonisation of Australia, from the decision to
+            establish a penal colony to the devastating and lasting impact on Indigenous peoples and
+            their enduring resistance.
+          </td>
+          <td colspan="2">
+            Pupils analyse the complex web of long and short-term causes of the First World War,
+            including militarism, imperialism, the alliance system, nationalism, and the
+            assassination of Franz Ferdinand.
+          </td>
+          <td colspan="1">
+            Pupils investigate the lived experience of the trenches, challenge the "Lions led by
+            Donkeys" debate, uncover the forgotten contributions of Empire troops, and evaluate the
+            consequences of the Treaty of Versailles.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Knowledge & Skills</td>
+          <td colspan="2">
+            <strong>Key Vocab:</strong> Industrial Revolution, Urbanisation, Child Labour,
+            Imperialism, Chartism, Free Trade, Working Class<br /><strong>Skills:</strong> Change &
+            Continuity, Source Analysis, Comparative Judgement, Extended Writing
+          </td>
+          <td colspan="1">
+            <strong>Key Vocab:</strong> Terra Nullius, Convict, Indigenous, Dreaming, Dispossession,
+            Penal Colony, First Fleet<br /><strong>Skills:</strong> Empathy & Perspective, Source
+            Evaluation, Historical Significance, Causation
+          </td>
+          <td colspan="2">
+            <strong>Key Vocab:</strong> Militarism, Alliance System, Imperialism, Nationalism,
+            Assassination, Schlieffen Plan, Arms Race<br /><strong>Skills:</strong> Causation (Long
+            & Short-term), Source Utility, Historical Interpretations, PEEL Paragraphs
+          </td>
+          <td colspan="1">
+            <strong>Key Vocab:</strong> Trench Warfare, Attrition, Shell Shock, Somme, Treaty of
+            Versailles, Conscription, Empire Troops<br /><strong>Skills:</strong> Historical
+            Interpretations, Source Utility, Evaluative Judgement, Essay Writing
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Assessment</td>
+          <td colspan="2">
+            Formative source analysis and knowledge checks. Final assessment: "Was the British
+            Empire a force for good or harm?" (extended judgement essay)
+          </td>
+          <td colspan="1">
+            Analytical written response: "How significant was the impact of British colonisation on
+            Indigenous Australians?"
+          </td>
+          <td colspan="2">
+            Formative source utility tasks throughout. Final assessment: "Was the assassination of
+            Franz Ferdinand the main cause of the First World War?" (16-mark essay)
+          </td>
+          <td colspan="1">
+            Final assessment: "How far do you agree that the Treaty of Versailles made a second
+            world war inevitable?" (16-mark interpretations essay)
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">SMSC</td>
+          <td colspan="2">
+            <strong>Social:</strong> Urbanisation, child labour, and inequality.
+            <strong>Moral:</strong> Was Empire a force for good or exploitation?
+            <strong>Cultural:</strong> Impact of industrialisation on working-class life and
+            identity.
+          </td>
+          <td colspan="1">
+            <strong>Cultural:</strong> Respect for Indigenous Australian heritage and traditions.
+            <strong>Moral:</strong> Legacies of penal transportation and dispossession.
+            <strong>Social:</strong> Long-term impact of colonialism on First Nations peoples.
+          </td>
+          <td colspan="2">
+            <strong>Moral:</strong> Duty, sacrifice, and the ethics of warfare.
+            <strong>Social:</strong> Impact of war on local communities — Stubbington's "Lost
+            Generation". <strong>Cultural:</strong> War poetry, propaganda, and remembrance.
+          </td>
+          <td colspan="1">
+            <strong>Moral:</strong> The "Lions led by Donkeys" debate.
+            <strong>Social:</strong> Forgotten contributions of Empire soldiers.
+            <strong>Cultural:</strong> Remembrance, the Ypres Battlefield Tour, and collective
+            memory.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Careers</td>
+          <td colspan="2">Urban Planner, Economist, Politician, Museum Educator</td>
+          <td colspan="1">Anthropologist, Human Rights Advocate, Social Worker, Journalist</td>
+          <td colspan="2">Military Historian, Diplomat, Archivist, Journalist</td>
+          <td colspan="1">Military Historian, Diplomat, Archivist, Documentary Maker</td>
+        </tr>
+      </table>
+    </div>
+    <div class="page-break"></div>
+    <div class="container">
+      <div class="year-header">
         <h2>Year 9 – History Curriculum Overview (2026-2027)</h2>
         <div class="ks">Key Stage 3</div>
-    </div>
-    <table>
+      </div>
+      <table>
         <tr>
-            <th class="row-header"></th><th style="width: 14.8%">Autumn 1</th><th style="width: 14.8%">Autumn 2</th><th style="width: 14.8%">Spring 1</th><th style="width: 14.8%">Spring 2</th><th style="width: 14.8%">Summer 1</th><th style="width: 14.8%">Summer 2</th></tr><tr class="topic-row"><td class="row-header">Topic</td><td colspan="2"><strong>The Second World War (1939–1945)</strong></td><td colspan="1"><strong>The Shoah</strong></td><td colspan="2"><strong>The Cold War</strong></td><td colspan="1"><strong>Rights, Protest & Post-War Britain</strong></td></tr><tr><td class="row-header">Summary of Objectives</td><td colspan="2">Pupils examine the causes, turning points, and global impact of the Second World War, from Hitler's expansionism and the fall of France to the D-Day landings and the decision to drop the atomic bomb.</td><td colspan="1">Pupils study the deep roots of antisemitism, the escalating persecution of Jewish people under Nazi rule, and the systematic genocide of the Holocaust, developing an understanding of moral responsibility and remembrance.</td><td colspan="2">Pupils explore how the wartime alliance between the USA and USSR collapsed into ideological rivalry, examining key flashpoints from the Berlin Blockade to the Cuban Missile Crisis and the fall of the Berlin Wall.</td><td colspan="1">Pupils evaluate the transformation of Britain from 1945 to 2000 — from the creation of the Welfare State and the NHS to the Windrush generation and the ongoing struggle for equality and civil rights.</td></tr><tr><td class="row-header">Knowledge & Skills</td><td colspan="2"><strong>Key Vocab:</strong> Appeasement, Blitzkrieg, Evacuation, Resistance, D-Day, Atomic Bomb, Unconditional Surrender<br><strong>Skills:</strong> Causation, Consequence, Change & Continuity, Source Evaluation</td><td colspan="1"><strong>Key Vocab:</strong> Antisemitism, Pogrom, Nuremberg Laws, Kristallnacht, Ghetto, Einsatzgruppen, Final Solution<br><strong>Skills:</strong> Source Evaluation, Causation, Historical Significance, Extended Writing</td><td colspan="2"><strong>Key Vocab:</strong> Capitalism, Communism, Iron Curtain, Proxy War, Nuclear Deterrence, Berlin Wall, Détente<br><strong>Skills:</strong> Causation, Consequence, Source Utility, Comparative Analysis</td><td colspan="1"><strong>Key Vocab:</strong> Welfare State, NHS, Windrush, Civil Rights, Feminist Movement, Deindustrialisation, Multicultural<br><strong>Skills:</strong> Change & Continuity, Significance, Source Analysis, Extended Writing</td></tr><tr><td class="row-header">Assessment</td><td colspan="2">Formative knowledge checks and source work. Final assessment: "Was the dropping of the atomic bomb on Japan justified?" (extended moral argument essay)</td><td colspan="1">Analytical essay: "How did ordinary people become perpetrators of genocide?" Pupil Voice reflection exercise on Holocaust Memorial Day.</td><td colspan="2">Formative knowledge checks and source tasks. Final assessment: "Who was more to blame for the Cold War — the USA or the USSR?" (extended judgement essay)</td><td colspan="1">Final assessment: "How much did Britain change between 1945 and 2000?" — a thematic extended writing response.</td></tr><tr><td class="row-header">SMSC</td><td colspan="2"><strong>Moral:</strong> Dilemmas of total war, civilian targeting, and the atomic bomb. <strong>Social:</strong> Resilience, evacuation, and the Home Front. <strong>Cultural:</strong> Wartime propaganda and its lasting cultural impact.</td><td colspan="1"><strong>Moral:</strong> Profound reflection on genocide, prejudice, and human rights. <strong>Social:</strong> Bystander responsibility and moral courage. <strong>Spiritual:</strong> The Holocaust's impact on faith and human meaning.</td><td colspan="2"><strong>Moral:</strong> Ethics of nuclear deterrence and proxy wars. <strong>Social:</strong> Ideological division of the world. <strong>Cultural:</strong> The propaganda war, the space race, and cultural competition.</td><td colspan="1"><strong>Social:</strong> Creation of the Welfare State, Windrush, and multiculturalism. <strong>Moral:</strong> Equality, protest, and civil rights in post-war Britain. <strong>Cultural:</strong> Immigration and the evolution of British identity.</td></tr><tr><td class="row-header">Careers</td><td colspan="2">Military Analyst, Historian, Journalist, Charity/Aid Worker</td><td colspan="1">Human Rights Advocate, Educator, Ethics Adviser, Museum Curator</td><td colspan="2">Political Scientist, Intelligence Analyst, Diplomat, Journalist</td><td colspan="1">Sociologist, Public Policy Analyst, Civil Servant, Teacher</td></tr></table></div><div class="page-break"></div>
-<div class="container">
-    <div class="year-header">
+          <th class="row-header"></th>
+          <th style="width: 14.8%">Autumn 1</th>
+          <th style="width: 14.8%">Autumn 2</th>
+          <th style="width: 14.8%">Spring 1</th>
+          <th style="width: 14.8%">Spring 2</th>
+          <th style="width: 14.8%">Summer 1</th>
+          <th style="width: 14.8%">Summer 2</th>
+        </tr>
+        <tr class="topic-row">
+          <td class="row-header">Topic</td>
+          <td colspan="2"><strong>The Second World War (1939–1945)</strong></td>
+          <td colspan="1"><strong>The Shoah</strong></td>
+          <td colspan="2"><strong>The Cold War</strong></td>
+          <td colspan="1"><strong>Rights, Protest & Post-War Britain</strong></td>
+        </tr>
+        <tr>
+          <td class="row-header">Summary of Objectives</td>
+          <td colspan="2">
+            Pupils examine the causes, turning points, and global impact of the Second World War,
+            from Hitler's expansionism and the fall of France to the D-Day landings and the decision
+            to drop the atomic bomb.
+          </td>
+          <td colspan="1">
+            Pupils study the deep roots of antisemitism, the escalating persecution of Jewish people
+            under Nazi rule, and the systematic genocide of the Holocaust, developing an
+            understanding of moral responsibility and remembrance.
+          </td>
+          <td colspan="2">
+            Pupils explore how the wartime alliance between the USA and USSR collapsed into
+            ideological rivalry, examining key flashpoints from the Berlin Blockade to the Cuban
+            Missile Crisis and the fall of the Berlin Wall.
+          </td>
+          <td colspan="1">
+            Pupils evaluate the transformation of Britain from 1945 to 2000 — from the creation of
+            the Welfare State and the NHS to the Windrush generation and the ongoing struggle for
+            equality and civil rights.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Knowledge & Skills</td>
+          <td colspan="2">
+            <strong>Key Vocab:</strong> Appeasement, Blitzkrieg, Evacuation, Resistance, D-Day,
+            Atomic Bomb, Unconditional Surrender<br /><strong>Skills:</strong> Causation,
+            Consequence, Change & Continuity, Source Evaluation
+          </td>
+          <td colspan="1">
+            <strong>Key Vocab:</strong> Antisemitism, Pogrom, Nuremberg Laws, Kristallnacht, Ghetto,
+            Einsatzgruppen, Final Solution<br /><strong>Skills:</strong> Source Evaluation,
+            Causation, Historical Significance, Extended Writing
+          </td>
+          <td colspan="2">
+            <strong>Key Vocab:</strong> Capitalism, Communism, Iron Curtain, Proxy War, Nuclear
+            Deterrence, Berlin Wall, Détente<br /><strong>Skills:</strong> Causation, Consequence,
+            Source Utility, Comparative Analysis
+          </td>
+          <td colspan="1">
+            <strong>Key Vocab:</strong> Welfare State, NHS, Windrush, Civil Rights, Feminist
+            Movement, Deindustrialisation, Multicultural<br /><strong>Skills:</strong> Change &
+            Continuity, Significance, Source Analysis, Extended Writing
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Assessment</td>
+          <td colspan="2">
+            Formative knowledge checks and source work. Final assessment: "Was the dropping of the
+            atomic bomb on Japan justified?" (extended moral argument essay)
+          </td>
+          <td colspan="1">
+            Analytical essay: "How did ordinary people become perpetrators of genocide?" Pupil Voice
+            reflection exercise on Holocaust Memorial Day.
+          </td>
+          <td colspan="2">
+            Formative knowledge checks and source tasks. Final assessment: "Who was more to blame
+            for the Cold War — the USA or the USSR?" (extended judgement essay)
+          </td>
+          <td colspan="1">
+            Final assessment: "How much did Britain change between 1945 and 2000?" — a thematic
+            extended writing response.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">SMSC</td>
+          <td colspan="2">
+            <strong>Moral:</strong> Dilemmas of total war, civilian targeting, and the atomic bomb.
+            <strong>Social:</strong> Resilience, evacuation, and the Home Front.
+            <strong>Cultural:</strong> Wartime propaganda and its lasting cultural impact.
+          </td>
+          <td colspan="1">
+            <strong>Moral:</strong> Profound reflection on genocide, prejudice, and human rights.
+            <strong>Social:</strong> Bystander responsibility and moral courage.
+            <strong>Spiritual:</strong> The Holocaust's impact on faith and human meaning.
+          </td>
+          <td colspan="2">
+            <strong>Moral:</strong> Ethics of nuclear deterrence and proxy wars.
+            <strong>Social:</strong> Ideological division of the world.
+            <strong>Cultural:</strong> The propaganda war, the space race, and cultural competition.
+          </td>
+          <td colspan="1">
+            <strong>Social:</strong> Creation of the Welfare State, Windrush, and multiculturalism.
+            <strong>Moral:</strong> Equality, protest, and civil rights in post-war Britain.
+            <strong>Cultural:</strong> Immigration and the evolution of British identity.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Careers</td>
+          <td colspan="2">Military Analyst, Historian, Journalist, Charity/Aid Worker</td>
+          <td colspan="1">Human Rights Advocate, Educator, Ethics Adviser, Museum Curator</td>
+          <td colspan="2">Political Scientist, Intelligence Analyst, Diplomat, Journalist</td>
+          <td colspan="1">Sociologist, Public Policy Analyst, Civil Servant, Teacher</td>
+        </tr>
+      </table>
+    </div>
+    <div class="page-break"></div>
+    <div class="container">
+      <div class="year-header">
         <h2>Year 10 – History Curriculum Overview (2026-2027)</h2>
         <div class="ks">Key Stage 4 – Edexcel GCSE History</div>
-    </div>
-    <table>
+      </div>
+      <table>
         <tr>
-            <th class="row-header"></th><th style="width: 14.8%">Autumn 1</th><th style="width: 14.8%">Autumn 2</th><th style="width: 14.8%">Spring 1</th><th style="width: 14.8%">Spring 2</th><th style="width: 14.8%">Summer 1</th><th style="width: 14.8%">Summer 2</th></tr><tr class="topic-row"><td class="row-header">Topic</td><td colspan="3"><strong>Paper 2: Conflict in the Middle East (1945–1995)</strong></td><td colspan="3"><strong>Paper 3: Weimar & Nazi Germany (1918–39)</strong></td></tr><tr><td class="row-header">Summary of Objectives</td><td colspan="3">Pupils study the origins and escalation of the Arab-Israeli conflict from the end of the British Mandate to the Oslo Accords, analysing the wars of 1948, 1956, 1967, and 1973 and the search for peace.</td><td colspan="3">Pupils analyse the rise and fall of the Weimar Republic, Hitler's consolidation of power, and the structures of the Nazi totalitarian state, developing skills to evaluate sources and historical interpretations.</td></tr><tr><td class="row-header">Knowledge & Skills</td><td colspan="3"><strong>Key Vocab:</strong> Zionism, Mandate, Balfour Declaration, Intifada, PLO, Occupied Territories, Oslo Accords<br><strong>Skills:</strong> Consequence (4 marks), Narrative Account (8 marks), Importance (16 marks), GCSE Exam Technique</td><td colspan="3"><strong>Key Vocab:</strong> Hyperinflation, Reichstag, Enabling Act, Gestapo, Propaganda, Kristallnacht, Autarky<br><strong>Skills:</strong> Source Inference (4 marks), Source Utility (12 marks), Interpretations (20 marks), GCSE Exam Technique</td></tr><tr><td class="row-header">Assessment</td><td colspan="3">Edexcel Paper 2 exam practice throughout: 4-mark consequence questions, 8-mark narratives, and 16-mark importance essays. End of unit mock under timed conditions.</td><td colspan="3">Edexcel Paper 3 exam practice: 4-mark inference, 12-mark utility, and 20-mark interpretations essays. End of unit timed mock assessment.</td></tr><tr><td class="row-header">SMSC</td><td colspan="3"><strong>Moral:</strong> Ethics of partition, displacement, and military conflict. <strong>Social:</strong> Impact of prolonged war on civilian populations and refugees. <strong>Cultural:</strong> Religious and national identity in the Middle East.</td><td colspan="3"><strong>Moral:</strong> How democracy can be destroyed from within. <strong>Social:</strong> Impact of propaganda and totalitarianism on everyday society. <strong>Cultural:</strong> Weimar cultural revolution versus Nazi cultural control.</td></tr><tr><td class="row-header">Careers</td><td colspan="3">Diplomat, Foreign Correspondent, International Aid Worker, Political Analyst</td><td colspan="3">Political Analyst, Human Rights Lawyer, Journalist, Educator</td></tr></table></div><div class="page-break"></div>
-<div class="container">
-    <div class="year-header">
+          <th class="row-header"></th>
+          <th style="width: 14.8%">Autumn 1</th>
+          <th style="width: 14.8%">Autumn 2</th>
+          <th style="width: 14.8%">Spring 1</th>
+          <th style="width: 14.8%">Spring 2</th>
+          <th style="width: 14.8%">Summer 1</th>
+          <th style="width: 14.8%">Summer 2</th>
+        </tr>
+        <tr class="topic-row">
+          <td class="row-header">Topic</td>
+          <td colspan="3"><strong>Paper 2: Conflict in the Middle East (1945–1995)</strong></td>
+          <td colspan="3"><strong>Paper 3: Weimar & Nazi Germany (1918–39)</strong></td>
+        </tr>
+        <tr>
+          <td class="row-header">Summary of Objectives</td>
+          <td colspan="3">
+            Pupils study the origins and escalation of the Arab-Israeli conflict from the end of the
+            British Mandate to the Oslo Accords, analysing the wars of 1948, 1956, 1967, and 1973
+            and the search for peace.
+          </td>
+          <td colspan="3">
+            Pupils analyse the rise and fall of the Weimar Republic, Hitler's consolidation of
+            power, and the structures of the Nazi totalitarian state, developing skills to evaluate
+            sources and historical interpretations.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Knowledge & Skills</td>
+          <td colspan="3">
+            <strong>Key Vocab:</strong> Zionism, Mandate, Balfour Declaration, Intifada, PLO,
+            Occupied Territories, Oslo Accords<br /><strong>Skills:</strong> Consequence (4 marks),
+            Narrative Account (8 marks), Importance (16 marks), GCSE Exam Technique
+          </td>
+          <td colspan="3">
+            <strong>Key Vocab:</strong> Hyperinflation, Reichstag, Enabling Act, Gestapo,
+            Propaganda, Kristallnacht, Autarky<br /><strong>Skills:</strong> Source Inference (4
+            marks), Source Utility (12 marks), Interpretations (20 marks), GCSE Exam Technique
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Assessment</td>
+          <td colspan="3">
+            Edexcel Paper 2 exam practice throughout: 4-mark consequence questions, 8-mark
+            narratives, and 16-mark importance essays. End of unit mock under timed conditions.
+          </td>
+          <td colspan="3">
+            Edexcel Paper 3 exam practice: 4-mark inference, 12-mark utility, and 20-mark
+            interpretations essays. End of unit timed mock assessment.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">SMSC</td>
+          <td colspan="3">
+            <strong>Moral:</strong> Ethics of partition, displacement, and military conflict.
+            <strong>Social:</strong> Impact of prolonged war on civilian populations and refugees.
+            <strong>Cultural:</strong> Religious and national identity in the Middle East.
+          </td>
+          <td colspan="3">
+            <strong>Moral:</strong> How democracy can be destroyed from within.
+            <strong>Social:</strong> Impact of propaganda and totalitarianism on everyday society.
+            <strong>Cultural:</strong> Weimar cultural revolution versus Nazi cultural control.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Careers</td>
+          <td colspan="3">
+            Diplomat, Foreign Correspondent, International Aid Worker, Political Analyst
+          </td>
+          <td colspan="3">Political Analyst, Human Rights Lawyer, Journalist, Educator</td>
+        </tr>
+      </table>
+    </div>
+    <div class="page-break"></div>
+    <div class="container">
+      <div class="year-header">
         <h2>Year 11 – History Curriculum Overview (2026-2027)</h2>
         <div class="ks">Key Stage 4 – Edexcel GCSE History</div>
-    </div>
-    <table>
+      </div>
+      <table>
         <tr>
-            <th class="row-header"></th><th style="width: 14.8%">Autumn 1</th><th style="width: 14.8%">Autumn 2</th><th style="width: 14.8%">Spring 1</th><th style="width: 14.8%">Spring 2</th><th style="width: 14.8%">Summer 1</th><th style="width: 14.8%">Summer 2</th></tr><tr class="topic-row"><td class="row-header">Topic</td><td colspan="3"><strong>Paper 1: Medicine Through Time</strong></td><td colspan="2"><strong>Paper 2: Early Elizabethan England (1558–88)</strong></td><td colspan="1"><strong>GCSE Revision & Examinations</strong></td></tr><tr><td class="row-header">Summary of Objectives</td><td colspan="3">Pupils study how ideas about the cause, prevention, and treatment of disease changed from the medieval period to the present day, and how the extreme conditions of the Western Front drove surgical innovation.</td><td colspan="2">Pupils examine the political, religious, and social challenges Elizabeth I faced — from the religious settlement and Catholic plots to the threat of the Spanish Armada — and evaluate her success as a monarch.</td><td colspan="1">Targeted revision across all three papers using past papers, walking-talking mocks, and bespoke exam technique workshops.</td></tr><tr><td class="row-header">Knowledge & Skills</td><td colspan="3"><strong>Key Vocab:</strong> Four Humours, Miasma, Vaccination, Germ Theory, Penicillin, Blood Transfusion, RAMC<br><strong>Skills:</strong> Source Utility (8 marks), Features (2+2 marks), Similarity/Difference (8 marks), Factors (16 marks + SPaG)</td><td colspan="2"><strong>Key Vocab:</strong> Religious Settlement, Puritan, Recusant, Mary Queen of Scots, Spanish Armada, Privateer, Poor Law<br><strong>Skills:</strong> Consequence (4 marks), Narrative Account (8 marks), Importance (16 marks), GCSE Exam Technique</td><td colspan="1"><strong>Skills:</strong> Timed exam practice, Source inference and utility, Extended writing, Self-assessment using mark schemes</td></tr><tr><td class="row-header">Assessment</td><td colspan="3">Edexcel Paper 1 exam practice throughout. End of unit timed mock: 16-mark essay — "The most important factor in the development of medicine was science and technology. How far do you agree?"</td><td colspan="2">Edexcel Paper 2 exam practice: 4-mark consequence, 8-mark narrative, and 16-mark importance essays. End of unit timed mock.</td><td colspan="1">Full timed mocks across Paper 1, 2, and 3. Walking-talking mock sessions and targeted one-to-one intervention.</td></tr><tr><td class="row-header">SMSC</td><td colspan="3"><strong>Social:</strong> Government responsibility for public health then and now. <strong>Moral:</strong> Ethics of medical experimentation, vaccination, and access to healthcare. <strong>Cultural:</strong> How religious and scientific beliefs have shaped medical practice.</td><td colspan="2"><strong>Spiritual:</strong> Religious conflict and the Elizabethan Religious Settlement. <strong>Cultural:</strong> Elizabethan theatre, maritime exploration, and court culture. <strong>Social:</strong> Poverty, vagrancy, and Elizabethan social control.</td><td colspan="1">Resilience, self-regulation, growth mindset, and managing exam pressure.</td></tr><tr><td class="row-header">Careers</td><td colspan="3">Doctor, Medical Researcher, Public Health Policy Maker, Pharmacist</td><td colspan="2">Heritage Consultant, Historian, Teacher, Lawyer</td><td colspan="1">All career pathways — analytical thinking, written communication, and structured argument are transferable skills for any profession.</td></tr></table></div></body></html>
+          <th class="row-header"></th>
+          <th style="width: 14.8%">Autumn 1</th>
+          <th style="width: 14.8%">Autumn 2</th>
+          <th style="width: 14.8%">Spring 1</th>
+          <th style="width: 14.8%">Spring 2</th>
+          <th style="width: 14.8%">Summer 1</th>
+          <th style="width: 14.8%">Summer 2</th>
+        </tr>
+        <tr class="topic-row">
+          <td class="row-header">Topic</td>
+          <td colspan="3"><strong>Paper 1: Medicine Through Time</strong></td>
+          <td colspan="2"><strong>Paper 2: Early Elizabethan England (1558–88)</strong></td>
+          <td colspan="1"><strong>GCSE Revision & Examinations</strong></td>
+        </tr>
+        <tr>
+          <td class="row-header">Summary of Objectives</td>
+          <td colspan="3">
+            Pupils study how ideas about the cause, prevention, and treatment of disease changed
+            from the medieval period to the present day, and how the extreme conditions of the
+            Western Front drove surgical innovation.
+          </td>
+          <td colspan="2">
+            Pupils examine the political, religious, and social challenges Elizabeth I faced — from
+            the religious settlement and Catholic plots to the threat of the Spanish Armada — and
+            evaluate her success as a monarch.
+          </td>
+          <td colspan="1">
+            Targeted revision across all three papers using past papers, walking-talking mocks, and
+            bespoke exam technique workshops.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Knowledge & Skills</td>
+          <td colspan="3">
+            <strong>Key Vocab:</strong> Four Humours, Miasma, Vaccination, Germ Theory, Penicillin,
+            Blood Transfusion, RAMC<br /><strong>Skills:</strong> Source Utility (8 marks), Features
+            (2+2 marks), Similarity/Difference (8 marks), Factors (16 marks + SPaG)
+          </td>
+          <td colspan="2">
+            <strong>Key Vocab:</strong> Religious Settlement, Puritan, Recusant, Mary Queen of
+            Scots, Spanish Armada, Privateer, Poor Law<br /><strong>Skills:</strong> Consequence (4
+            marks), Narrative Account (8 marks), Importance (16 marks), GCSE Exam Technique
+          </td>
+          <td colspan="1">
+            <strong>Skills:</strong> Timed exam practice, Source inference and utility, Extended
+            writing, Self-assessment using mark schemes
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Assessment</td>
+          <td colspan="3">
+            Edexcel Paper 1 exam practice throughout. End of unit timed mock: 16-mark essay — "The
+            most important factor in the development of medicine was science and technology. How far
+            do you agree?"
+          </td>
+          <td colspan="2">
+            Edexcel Paper 2 exam practice: 4-mark consequence, 8-mark narrative, and 16-mark
+            importance essays. End of unit timed mock.
+          </td>
+          <td colspan="1">
+            Full timed mocks across Paper 1, 2, and 3. Walking-talking mock sessions and targeted
+            one-to-one intervention.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">SMSC</td>
+          <td colspan="3">
+            <strong>Social:</strong> Government responsibility for public health then and now.
+            <strong>Moral:</strong> Ethics of medical experimentation, vaccination, and access to
+            healthcare. <strong>Cultural:</strong> How religious and scientific beliefs have shaped
+            medical practice.
+          </td>
+          <td colspan="2">
+            <strong>Spiritual:</strong> Religious conflict and the Elizabethan Religious Settlement.
+            <strong>Cultural:</strong> Elizabethan theatre, maritime exploration, and court culture.
+            <strong>Social:</strong> Poverty, vagrancy, and Elizabethan social control.
+          </td>
+          <td colspan="1">
+            Resilience, self-regulation, growth mindset, and managing exam pressure.
+          </td>
+        </tr>
+        <tr>
+          <td class="row-header">Careers</td>
+          <td colspan="3">Doctor, Medical Researcher, Public Health Policy Maker, Pharmacist</td>
+          <td colspan="2">Heritage Consultant, Historian, Teacher, Lawyer</td>
+          <td colspan="1">
+            All career pathways — analytical thinking, written communication, and structured
+            argument are transferable skills for any profession.
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
