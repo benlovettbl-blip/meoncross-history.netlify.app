@@ -132,23 +132,22 @@ export function renderDashboard() {
     .filter((u) => year7Order.includes(u.id))
     .sort((a, b) => year7Order.indexOf(a.id) - year7Order.indexOf(b.id));
 
-  // Year 8 Grouping — great_war_part2 follows great_war chronologically
-  const year8Order = ['industrialisation_and_empire', 'australia', 'great_war', 'great_war_part2'];
+  // Year 8 Grouping
+  const year8Order = ['early_modern_world', 'industrialisation_and_empire', 'australia'];
   const year8Units = units
     .filter((u) => year8Order.includes(u.id))
     .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));
 
-  // Year 9 Grouping — hide units still under construction; great_war_part2 moved to Year 8
-  const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
-  const year9Order = ['the_shoah', 'cold_war', 'second_world_war', 'post_war_britain'];
+  // Year 9 Grouping — great_war and great_war_part2 are ready; remaining 3 under construction
+  const underConstructionIds = ['the_shoah', 'cold_war', 'post_war_britain'];
+  const year9Order = ['great_war', 'great_war_part2', 'the_shoah', 'cold_war', 'post_war_britain'];
   const year9Units = units
     .filter((u) => year9Order.includes(u.id) && !underConstructionIds.includes(u.id))
     .sort((a, b) => year9Order.indexOf(a.id) - year9Order.indexOf(b.id));
   // Names of coming-soon units for the strip
   const comingSoonNames = [
-    'KS3: The Shoah',
+    'KS3: The Shoah & World War II',
     'KS3: The Cold War',
-    'KS3: The Second World War',
     'KS3: Rights, Protest & Post-War Britain',
   ];
 
