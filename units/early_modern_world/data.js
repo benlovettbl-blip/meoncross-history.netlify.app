@@ -14,11 +14,29 @@ const early_modern_world = {
       lesson_index: 0,
       book_title: 'Lesson 1: Who held global power in 1450?',
       vocabulary: [
-        { term: 'Empire', definition: 'A large political unit controlling many territories — in 1450, the Ottoman, Ming, and Songhai empires were dominant.' },
-        { term: 'Trade', definition: 'The exchange of goods — the Silk Roads and Indian Ocean trade networks connected civilisations.' },
-        { term: 'Imperialism', definition: 'The policy of extending power through conquest, colonisation, or economic exploitation.' },
-        { term: 'Power', definition: 'Who held political, economic, and military power in the world of 1450?' },
-        { term: 'Civilisation', definition: 'A complex society with advanced cultural, political, and economic systems.' }
+        {
+          term: 'Empire',
+          definition:
+            'A large political unit controlling many territories — in 1450, the Ottoman, Ming, and Songhai empires were dominant.',
+        },
+        {
+          term: 'Trade',
+          definition:
+            'The exchange of goods — the Silk Roads and Indian Ocean trade networks connected civilisations.',
+        },
+        {
+          term: 'Imperialism',
+          definition:
+            'The policy of extending power through conquest, colonisation, or economic exploitation.',
+        },
+        {
+          term: 'Power',
+          definition: 'Who held political, economic, and military power in the world of 1450?',
+        },
+        {
+          term: 'Civilisation',
+          definition: 'A complex society with advanced cultural, political, and economic systems.',
+        },
       ],
       author: 'Text Type: Stone Inscription (Admiral Zheng He, 1431)',
       cover_image: '/images/zheng_he.gif',
@@ -92,11 +110,31 @@ const early_modern_world = {
       lesson_index: 2,
       book_title: 'Lesson 3: Trade or takeover: How did early encounters turn into empire?',
       vocabulary: [
-        { term: 'Colonisation', definition: 'The process of establishing control over foreign territories and their peoples.' },
-        { term: 'Trade', definition: 'Early European encounters often began as trade but evolved into full-scale imperial conquest.' },
-        { term: 'Empire', definition: 'European powers like Spain, Portugal, and England built global empires from the 1500s.' },
-        { term: 'Causation', definition: 'Understanding why European exploration led to colonisation and empire-building.' },
-        { term: 'Propaganda', definition: 'European accounts of \'discovery\' were often propaganda justifying the seizure of other peoples\' lands.' }
+        {
+          term: 'Colonisation',
+          definition:
+            'The process of establishing control over foreign territories and their peoples.',
+        },
+        {
+          term: 'Trade',
+          definition:
+            'Early European encounters often began as trade but evolved into full-scale imperial conquest.',
+        },
+        {
+          term: 'Empire',
+          definition:
+            'European powers like Spain, Portugal, and England built global empires from the 1500s.',
+        },
+        {
+          term: 'Causation',
+          definition:
+            'Understanding why European exploration led to colonisation and empire-building.',
+        },
+        {
+          term: 'Propaganda',
+          definition:
+            "European accounts of 'discovery' were often propaganda justifying the seizure of other peoples' lands.",
+        },
       ],
       author: 'Text Type: Scientific Report (Thomas Hariot, 1588)',
       cover_image: '/images/secoton.jpg',
@@ -133,11 +171,11 @@ const early_modern_world = {
       lesson_index: 3,
       book_title:
         'Lesson 4: James I and the Gunpowder Plot: Why was religious division so volatile?',
-        learning_objectives: [
-          'Describe the key features of the Gunpowder Plot (1605) and explain why religious division was so volatile under James I',
-          'Explain the significance of the clash between Catholicism and Protestantism for the stability of the English monarchy',
-          'Evaluate whether the Gunpowder Plot was a genuine Catholic conspiracy or a government provocation'
-        ],
+      learning_objectives: [
+        'Describe the key features of the Gunpowder Plot (1605) and explain why religious division was so volatile under James I',
+        'Explain the significance of the clash between Catholicism and Protestantism for the stability of the English monarchy',
+        'Evaluate whether the Gunpowder Plot was a genuine Catholic conspiracy or a government provocation',
+      ],
       author: 'Text Type: Anonymous Warning Letter (26 October 1605)',
       cover_image: '/images/gunpowder.jpg',
       author_context:
@@ -173,11 +211,31 @@ const early_modern_world = {
       lesson_index: 4,
       book_title: 'Lesson 5: Who controlled Britain? The Ideological Battle',
       vocabulary: [
-        { term: 'Power', definition: 'The central question: who should hold supreme power — the monarchy or Parliament?' },
-        { term: 'Monarchy', definition: 'Rule by a king or queen — the Stuarts believed in the Divine Right of Kings.' },
-        { term: 'Parliament', definition: 'The assembly of elected representatives that challenged the king\'s absolute authority.' },
-        { term: 'Civil War', definition: 'An armed conflict between opposing groups within the same country — England\'s Civil War (1642-1651).' },
-        { term: 'Democracy', definition: 'Government by the people — the Civil War raised radical questions about who should have political power.' }
+        {
+          term: 'Power',
+          definition:
+            'The central question: who should hold supreme power — the monarchy or Parliament?',
+        },
+        {
+          term: 'Monarchy',
+          definition:
+            'Rule by a king or queen — the Stuarts believed in the Divine Right of Kings.',
+        },
+        {
+          term: 'Parliament',
+          definition:
+            "The assembly of elected representatives that challenged the king's absolute authority.",
+        },
+        {
+          term: 'Civil War',
+          definition:
+            "An armed conflict between opposing groups within the same country — England's Civil War (1642-1651).",
+        },
+        {
+          term: 'Democracy',
+          definition:
+            'Government by the people — the Civil War raised radical questions about who should have political power.',
+        },
       ],
       author: 'Text Type: Royal Speech (King James I, 1610)',
       cover_image: '/images/james_i.jpg',
@@ -249,11 +307,31 @@ const early_modern_world = {
       lesson_index: 6,
       book_title: 'Lesson 7: What were the mechanics of the Transatlantic Slave Trade?',
       vocabulary: [
-        { term: 'Transatlantic Slave Trade', definition: 'The forced transportation of millions of Africans to the Americas to work as enslaved labourers.' },
-        { term: 'Slavery', definition: 'The ownership of human beings as property — a moral catastrophe at the heart of early modern trade.' },
-        { term: 'Trade', definition: 'The \'Triangular Trade\' connected Europe, Africa, and the Americas in a brutal economic system.' },
-        { term: 'Middle Passage', definition: 'The horrific sea journey across the Atlantic endured by enslaved Africans in appalling conditions.' },
-        { term: 'Profit', definition: 'The slave trade was driven by the desire for profit — human suffering was treated as a business.' }
+        {
+          term: 'Transatlantic Slave Trade',
+          definition:
+            'The forced transportation of millions of Africans to the Americas to work as enslaved labourers.',
+        },
+        {
+          term: 'Slavery',
+          definition:
+            'The ownership of human beings as property — a moral catastrophe at the heart of early modern trade.',
+        },
+        {
+          term: 'Trade',
+          definition:
+            "The 'Triangular Trade' connected Europe, Africa, and the Americas in a brutal economic system.",
+        },
+        {
+          term: 'Middle Passage',
+          definition:
+            'The horrific sea journey across the Atlantic endured by enslaved Africans in appalling conditions.',
+        },
+        {
+          term: 'Profit',
+          definition:
+            'The slave trade was driven by the desire for profit — human suffering was treated as a business.',
+        },
       ],
       author: 'Text Type: Autobiography (Olaudah Equiano, 1789)',
       cover_image: '/images/brookes.jpg',
@@ -291,11 +369,31 @@ const early_modern_world = {
       lesson_index: 7,
       book_title: 'Lesson 8: How did enslaved Africans resist the Transatlantic Slave Trade?',
       vocabulary: [
-        { term: 'Resistance', definition: 'Enslaved Africans resisted their captivity through rebellion, escape, cultural preservation, and sabotage.' },
-        { term: 'Abolition', definition: 'The movement to end the slave trade and slavery — achieved in the British Empire in 1807/1833.' },
-        { term: 'Propaganda', definition: 'Abolitionists used powerful propaganda (images, pamphlets, testimonies) to turn public opinion against slavery.' },
-        { term: 'Significance', definition: 'The abolition movement is significant as one of the first successful human rights campaigns.' },
-        { term: 'Agency', definition: 'The ability to act independently — enslaved people showed agency through their resistance.' }
+        {
+          term: 'Resistance',
+          definition:
+            'Enslaved Africans resisted their captivity through rebellion, escape, cultural preservation, and sabotage.',
+        },
+        {
+          term: 'Abolition',
+          definition:
+            'The movement to end the slave trade and slavery — achieved in the British Empire in 1807/1833.',
+        },
+        {
+          term: 'Propaganda',
+          definition:
+            'Abolitionists used powerful propaganda (images, pamphlets, testimonies) to turn public opinion against slavery.',
+        },
+        {
+          term: 'Significance',
+          definition:
+            'The abolition movement is significant as one of the first successful human rights campaigns.',
+        },
+        {
+          term: 'Agency',
+          definition:
+            'The ability to act independently — enslaved people showed agency through their resistance.',
+        },
       ],
       author: "Text Type: Ship Captain's Account (William Snelgrave, 1734)",
       cover_image: '/images/cape_coast.jpg',
@@ -334,15 +432,33 @@ const early_modern_world = {
       book_title: "Lesson 9: How 'modern' was Britain by 1750? (Synthesis & Assessment)",
       learning_objectives: [
         'Synthesise knowledge of trade, empire, slavery, revolution, and power across the Early Modern period',
-        'Construct a sustained argument evaluating how far Britain had become a \'modern\' nation by 1750',
-        'Deploy specific evidence about the monarchy, Parliament, church, and colonisation to support a historical judgement'
+        "Construct a sustained argument evaluating how far Britain had become a 'modern' nation by 1750",
+        'Deploy specific evidence about the monarchy, Parliament, church, and colonisation to support a historical judgement',
       ],
       vocabulary: [
-        { term: 'Synthesis', definition: 'Bringing together knowledge from across the entire unit to form an overall judgement.' },
-        { term: 'Power', definition: 'By 1750, power had shifted dramatically from the monarchy to Parliament.' },
-        { term: 'Empire', definition: 'Britain had become a major global empire through trade, colonisation, and the slave trade.' },
-        { term: 'Revolution', definition: 'Political, religious, and economic revolutions transformed Britain between 1450 and 1750.' },
-        { term: 'Change', definition: 'The central question: how much had Britain really changed by 1750?' }
+        {
+          term: 'Synthesis',
+          definition:
+            'Bringing together knowledge from across the entire unit to form an overall judgement.',
+        },
+        {
+          term: 'Power',
+          definition: 'By 1750, power had shifted dramatically from the monarchy to Parliament.',
+        },
+        {
+          term: 'Empire',
+          definition:
+            'Britain had become a major global empire through trade, colonisation, and the slave trade.',
+        },
+        {
+          term: 'Revolution',
+          definition:
+            'Political, religious, and economic revolutions transformed Britain between 1450 and 1750.',
+        },
+        {
+          term: 'Change',
+          definition: 'The central question: how much had Britain really changed by 1750?',
+        },
       ],
       author: 'Text Type: Travel Book / Journal (Daniel Defoe, 1724–1727)',
       cover_image: '/images/industry_idleness.png',
@@ -541,33 +657,61 @@ const early_modern_world = {
       id: 'lesson_1',
       flashcards: [
         {
-          term: 'Niccolò Barbaro',
-          definition: 'Witnessed and recorded the fall of Constantinople in 1453.',
+          term: 'Ming Dynasty',
+          definition:
+            'The ruling imperial dynasty of China (1368–1644), famous for immense wealth, porcelain, and Admiral Zheng He’s massive treasure fleets across the Indian Ocean.',
         },
         {
-          term: 'Sultan Mehmed II',
-          definition: 'Captured Constantinople in 1453, destroying the Byzantine Empire.',
+          term: 'Ottoman Empire',
+          definition:
+            'A powerful Islamic empire founded in Anatolia that conquered Constantinople in 1453, controlling crucial overland trade routes between Europe and Asia.',
         },
         {
-          term: 'Mansa Musa',
-          definition: 'Renowned for his immense gold wealth and famous pilgrimage to Mecca.',
+          term: 'Songhai Empire',
+          definition:
+            'A vast West African trading empire centered in Timbuktu and Gao, renowned for its Islamic scholarship and control of the trans-Saharan gold and salt trade.',
         },
         {
-          term: 'Admiral Zheng He',
-          definition: 'Commanded massive Chinese treasure fleets across the Indian Ocean.',
+          term: 'Silk Roads',
+          definition:
+            'An ancient network of overland trade routes connecting China and India to the Mediterranean, carrying silk, spices, porcelain, and ideas across Afro-Eurasia.',
         },
         {
-          term: 'Christopher Columbus',
-          definition: 'His 1492 voyage to the Americas initiated European global expansion.',
+          term: 'Fall of Constantinople (1453)',
+          definition:
+            'The capture of the Byzantine capital by Ottoman Sultan Mehmed II, which blocked European merchants from overland Asian trade and forced them to sail west.',
+        },
+        {
+          term: 'Eurocentrism',
+          definition:
+            'The misleading historical bias of viewing world history solely through European perspectives and assuming Europe was always the dominant civilization.',
         },
       ],
       title: 'Who held global power in 1450?',
       vocabulary: [
-        { term: 'Empire', definition: 'A large political unit controlling many territories — in 1450, the Ottoman, Ming, and Songhai empires were dominant.' },
-        { term: 'Trade', definition: 'The exchange of goods — the Silk Roads and Indian Ocean trade networks connected civilisations.' },
-        { term: 'Imperialism', definition: 'The policy of extending power through conquest, colonisation, or economic exploitation.' },
-        { term: 'Power', definition: 'Who held political, economic, and military power in the world of 1450?' },
-        { term: 'Civilisation', definition: 'A complex society with advanced cultural, political, and economic systems.' }
+        {
+          term: 'Empire',
+          definition:
+            'A large political unit controlling many territories — in 1450, the Ottoman, Ming, and Songhai empires were dominant.',
+        },
+        {
+          term: 'Trade',
+          definition:
+            'The exchange of goods — the Silk Roads and Indian Ocean trade networks connected civilisations.',
+        },
+        {
+          term: 'Imperialism',
+          definition:
+            'The policy of extending power through conquest, colonisation, or economic exploitation.',
+        },
+        {
+          term: 'Power',
+          definition: 'Who held political, economic, and military power in the world of 1450?',
+        },
+        {
+          term: 'Civilisation',
+          definition: 'A complex society with advanced cultural, political, and economic systems.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -821,19 +965,34 @@ const early_modern_world = {
       },
       vocab: [
         {
-          term: 'Silk Road',
-          definition:
-            'An ancient network of trade routes connecting East Asia to the Mediterranean and Europe.',
-        },
-        {
           term: 'Ming Dynasty',
           definition:
-            'The ruling dynasty of China from 1368 to 1644, known for its wealth and technological advancements.',
+            'The ruling imperial dynasty of China (1368–1644), famous for immense wealth, porcelain, and Admiral Zheng He’s massive treasure fleets across the Indian Ocean.',
         },
         {
           term: 'Ottoman Empire',
           definition:
-            'A powerful Islamic empire that controlled the Middle East, North Africa, and Eastern Europe, acting as the gateway for trade.',
+            'A powerful Islamic empire founded in Anatolia that conquered Constantinople in 1453, controlling crucial overland trade routes between Europe and Asia.',
+        },
+        {
+          term: 'Songhai Empire',
+          definition:
+            'A vast West African trading empire centered in Timbuktu and Gao, renowned for its Islamic scholarship and control of the trans-Saharan gold and salt trade.',
+        },
+        {
+          term: 'Silk Roads',
+          definition:
+            'An ancient network of overland trade routes connecting China and India to the Mediterranean, carrying silk, spices, porcelain, and ideas across Afro-Eurasia.',
+        },
+        {
+          term: 'Fall of Constantinople (1453)',
+          definition:
+            'The capture of the Byzantine capital by Ottoman Sultan Mehmed II, which blocked European merchants from overland Asian trade and forced them to sail west.',
+        },
+        {
+          term: 'Eurocentrism',
+          definition:
+            'The misleading historical bias of viewing world history solely through European perspectives and assuming Europe was always the dominant civilization.',
         },
       ],
       disciplinary_focus:
@@ -848,38 +1007,62 @@ const early_modern_world = {
       id: 'lesson_2',
       flashcards: [
         {
-          term: 'Martin Luther',
-          definition: 'His 1517 protests sparked the Protestant Reformation, dividing Europe.',
-        },
-        {
-          term: 'Pope Alexander VI',
+          term: 'Protestant Reformation',
           definition:
-            'Issued the 1494 Treaty of Tordesillas dividing the Americas between Spain and Portugal.',
+            'The 16th-century religious movement launched by Martin Luther that challenged Catholic Church authority and split Western Christianity.',
         },
         {
-          term: 'King Philip II',
-          definition: 'Catholic monarch who launched the Spanish Armada against England.',
+          term: 'Indulgence',
+          definition:
+            'A certificate sold by the medieval Catholic Church promising forgiveness of sins and reduced time in Purgatory, sparking Martin Luther’s protests in 1517.',
         },
         {
-          term: 'Queen Elizabeth I',
-          definition: 'Protestant Queen who authorized privateers and defeated the Spanish Armada.',
+          term: 'Treaty of Tordesillas (1494)',
+          definition:
+            'A treaty mediated by the Pope dividing the newly explored Americas between Spain and Portugal, ignoring all non-Catholic states and Indigenous peoples.',
         },
         {
-          term: 'Mary, Queen of Scots',
-          definition: 'Catholic monarch whose execution angered Philip II.',
+          term: 'Privateer',
+          definition:
+            'An armed private ship and crew licensed by a government with "letters of marque" to attack and plunder enemy merchant vessels during wartime.',
         },
         {
-          term: 'Henry VIII',
-          definition: 'Broke away from the Catholic Church in 1534.',
+          term: 'Spanish Armada (1588)',
+          definition:
+            'A massive fleet of 130 warships sent by Catholic King Philip II of Spain to invade Protestant England and overthrow Queen Elizabeth I, resulting in catastrophic defeat.',
+        },
+        {
+          term: 'Circumnavigation',
+          definition:
+            'The act of sailing completely around the globe, first achieved by Ferdinand Magellan’s expedition (1519–1522) and later by Sir Francis Drake (1577–1580).',
         },
       ],
       title: 'How did religious conflict trigger global exploration (1517–1588)?',
       vocabulary: [
-        { term: 'Reformation', definition: 'The 16th-century religious movement that split Christianity into Catholic and Protestant branches.' },
-        { term: 'Exploration', definition: 'The voyages of discovery by European nations seeking new trade routes and territories.' },
-        { term: 'Church', definition: 'The Catholic Church — the dominant religious institution in Europe until the Reformation.' },
-        { term: 'Change', definition: 'The Reformation caused profound religious, political, and social change across Europe.' },
-        { term: 'Continuity', definition: 'Despite the Reformation, some aspects of religious life stayed the same.' }
+        {
+          term: 'Reformation',
+          definition:
+            'The 16th-century religious movement that split Christianity into Catholic and Protestant branches.',
+        },
+        {
+          term: 'Exploration',
+          definition:
+            'The voyages of discovery by European nations seeking new trade routes and territories.',
+        },
+        {
+          term: 'Church',
+          definition:
+            'The Catholic Church — the dominant religious institution in Europe until the Reformation.',
+        },
+        {
+          term: 'Change',
+          definition:
+            'The Reformation caused profound religious, political, and social change across Europe.',
+        },
+        {
+          term: 'Continuity',
+          definition: 'Despite the Reformation, some aspects of religious life stayed the same.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -944,29 +1127,34 @@ const early_modern_world = {
       },
       vocab: [
         {
-          term: 'Reformation',
+          term: 'Protestant Reformation',
           definition:
-            'A 16th-century religious movement in Europe that resulted in the creation of Protestant churches and a split from the Catholic Church.',
+            'The 16th-century religious movement launched by Martin Luther that challenged Catholic Church authority and split Western Christianity.',
+        },
+        {
+          term: 'Indulgence',
+          definition:
+            'A certificate sold by the medieval Catholic Church promising forgiveness of sins and reduced time in Purgatory, sparking Martin Luther’s protests in 1517.',
+        },
+        {
+          term: 'Treaty of Tordesillas (1494)',
+          definition:
+            'A treaty mediated by the Pope dividing the newly explored Americas between Spain and Portugal, ignoring all non-Catholic states and Indigenous peoples.',
         },
         {
           term: 'Privateer',
           definition:
-            'An armed ship owned by private individuals holding a government commission (Letter of Marque) and authorized for use in war, especially in the capture of enemy merchant shipping.',
+            'An armed private ship and crew licensed by a government with "letters of marque" to attack and plunder enemy merchant vessels during wartime.',
         },
         {
-          term: 'Armada',
+          term: 'Spanish Armada (1588)',
           definition:
-            'A fleet of warships, particularly the Spanish fleet that sailed against England under the command of  in 1588.',
+            'A massive fleet of 130 warships sent by Catholic King Philip II of Spain to invade Protestant England and overthrow Queen Elizabeth I, resulting in catastrophic defeat.',
         },
         {
-          term: 'Monopoly',
+          term: 'Circumnavigation',
           definition:
-            'The exclusive possession or control of the supply or trade in a commodity or service.',
-        },
-        {
-          term: 'Indulgences',
-          definition:
-            'In the Catholic Church, a grant by the Pope of remission of the temporal punishment in purgatory still due for sins after absolution.',
+            'The act of sailing completely around the globe, first achieved by Ferdinand Magellan’s expedition (1519–1522) and later by Sir Francis Drake (1577–1580).',
         },
       ],
       narrative_blocks: [
@@ -1292,45 +1480,63 @@ const early_modern_world = {
       id: 'lesson_3',
       flashcards: [
         {
-          term: 'Francis Drake',
-          definition: 'Circumnavigated the globe and heavily raided Spanish treasure ships.',
+          term: 'Joint-Stock Company',
+          definition:
+            'A pioneering business model where multiple investors pool capital to buy shares in overseas trading ventures, spreading financial risk and sharing profits.',
         },
         {
-          term: 'John Hawkins',
-          definition: 'Cousin to Francis Drake and pioneer of the English slave trade.',
+          term: 'East India Company (EIC)',
+          definition:
+            'An English trading corporation founded in 1600 that held a royal monopoly on Asian trade and gradually expanded from trading spices to governing India.',
         },
         {
-          term: 'Sir Walter Raleigh',
-          definition: 'Organized the first failed English colonization attempt at Roanoke.',
+          term: 'Royal Charter',
+          definition:
+            'A formal decree issued by a monarch granting exclusive legal privileges, commercial monopolies, or territorial governance to an individual or company.',
         },
         {
-          term: 'Chief Powhatan',
-          definition: 'Leader of the Powhatan Confederacy who interacted with Jamestown settlers.',
+          term: 'Factory (Trading Post)',
+          definition:
+            'A fortified commercial warehouse and settlement in a foreign port where merchant agents ("factors") stored trade goods and conducted business.',
         },
         {
-          term: 'John Rolfe',
-          definition: 'Introduced a profitable tobacco strain to Jamestown.',
+          term: 'Mughal Empire',
+          definition:
+            'The wealthy and powerful Islamic empire that ruled the Indian subcontinent in the 16th and 17th centuries, possessing far greater riches than any European nation.',
         },
         {
-          term: 'King James I',
-          definition: 'Sent an ambassador to the Mughal Empire.',
-        },
-        {
-          term: 'Sir Thomas Roe',
-          definition: 'Sent to the court of the Mughal Emperor in 1615 to secure trading rights.',
-        },
-        {
-          term: 'Emperor Jahangir',
-          definition: 'Wealthy and powerful ruler who permitted early English trade in India.',
+          term: 'Jamestown (1607)',
+          definition:
+            'The first permanent English settlement in North America, established in Virginia, which survived economically through the commercial cultivation of tobacco.',
         },
       ],
       title: 'Trade or takeover: How did early encounters turn into empire?',
       vocabulary: [
-        { term: 'Colonisation', definition: 'The process of establishing control over foreign territories and their peoples.' },
-        { term: 'Trade', definition: 'Early European encounters often began as trade but evolved into full-scale imperial conquest.' },
-        { term: 'Empire', definition: 'European powers like Spain, Portugal, and England built global empires from the 1500s.' },
-        { term: 'Causation', definition: 'Understanding why European exploration led to colonisation and empire-building.' },
-        { term: 'Propaganda', definition: 'European accounts of discovery were often propaganda justifying the seizure of other peoples lands.' }
+        {
+          term: 'Colonisation',
+          definition:
+            'The process of establishing control over foreign territories and their peoples.',
+        },
+        {
+          term: 'Trade',
+          definition:
+            'Early European encounters often began as trade but evolved into full-scale imperial conquest.',
+        },
+        {
+          term: 'Empire',
+          definition:
+            'European powers like Spain, Portugal, and England built global empires from the 1500s.',
+        },
+        {
+          term: 'Causation',
+          definition:
+            'Understanding why European exploration led to colonisation and empire-building.',
+        },
+        {
+          term: 'Propaganda',
+          definition:
+            'European accounts of discovery were often propaganda justifying the seizure of other peoples lands.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -1397,25 +1603,32 @@ const early_modern_world = {
         {
           term: 'Joint-Stock Company',
           definition:
-            'A company whose stock is owned jointly by the shareholders, spreading the financial risk of overseas ventures.',
+            'A pioneering business model where multiple investors pool capital to buy shares in overseas trading ventures, spreading financial risk and sharing profits.',
         },
         {
-          term: 'Charter',
+          term: 'East India Company (EIC)',
           definition:
-            "A written grant by a country's sovereign or legislative power, by which a company is created and its rights and privileges defined.",
+            'An English trading corporation founded in 1600 that held a royal monopoly on Asian trade and gradually expanded from trading spices to governing India.',
         },
         {
-          term: 'Mercantile',
-          definition: 'Relating to trade or commerce; commercial.',
-        },
-        {
-          term: 'Subjugation',
-          definition: 'The action of bringing someone or something under domination or control.',
-        },
-        {
-          term: 'Factory',
+          term: 'Royal Charter',
           definition:
-            'In the 17th century, a fortified trading post or warehouse established by a merchant company in a foreign country.',
+            'A formal decree issued by a monarch granting exclusive legal privileges, commercial monopolies, or territorial governance to an individual or company.',
+        },
+        {
+          term: 'Factory (Trading Post)',
+          definition:
+            'A fortified commercial warehouse and settlement in a foreign port where merchant agents ("factors") stored trade goods and conducted business.',
+        },
+        {
+          term: 'Mughal Empire',
+          definition:
+            'The wealthy and powerful Islamic empire that ruled the Indian subcontinent in the 16th and 17th centuries, possessing far greater riches than any European nation.',
+        },
+        {
+          term: 'Jamestown (1607)',
+          definition:
+            'The first permanent English settlement in North America, established in Virginia, which survived economically through the commercial cultivation of tobacco.',
         },
       ],
       narrative_blocks: [
@@ -1721,11 +1934,30 @@ const early_modern_world = {
       id: 'lesson_4',
       title: 'James I and the Gunpowder Plot: Why was religious division so volatile?',
       vocabulary: [
-        { term: 'Religion', definition: 'The clash between Catholicism and Protestantism shaped English politics for over a century.' },
-        { term: 'Parliament', definition: 'The institution that made laws — James I clashed with Parliament over royal and religious power.' },
-        { term: 'Gunpowder Plot', definition: 'The 1605 Catholic conspiracy to blow up Parliament and kill King James I.' },
-        { term: 'Significance', definition: 'The plots significance lies in how it deepened anti-Catholic sentiment and strengthened Parliament.' },
-        { term: 'Treason', definition: 'The crime of betraying ones country — the plotters were convicted of high treason.' }
+        {
+          term: 'Religion',
+          definition:
+            'The clash between Catholicism and Protestantism shaped English politics for over a century.',
+        },
+        {
+          term: 'Parliament',
+          definition:
+            'The institution that made laws — James I clashed with Parliament over royal and religious power.',
+        },
+        {
+          term: 'Gunpowder Plot',
+          definition: 'The 1605 Catholic conspiracy to blow up Parliament and kill King James I.',
+        },
+        {
+          term: 'Significance',
+          definition:
+            'The plots significance lies in how it deepened anti-Catholic sentiment and strengthened Parliament.',
+        },
+        {
+          term: 'Treason',
+          definition:
+            'The crime of betraying ones country — the plotters were convicted of high treason.',
+        },
       ],
       narrative_blocks: [
         {
@@ -1864,38 +2096,132 @@ const early_modern_world = {
       },
       disciplinary_focus:
         'Significance - Evaluating the impact of the Renaissance on art and science.',
+      vocab: [
+        {
+          term: 'Recusancy Fines',
+          definition:
+            'Crippling financial penalties imposed by the English Crown on Catholics who refused to attend compulsory Church of England Sunday services.',
+        },
+        {
+          term: 'Divine Right of Kings',
+          definition:
+            'The political doctrine that a monarch’s authority comes directly from God, making the king accountable to no earthly power or Parliament.',
+        },
+        {
+          term: 'Gunpowder Plot (1605)',
+          definition:
+            'A conspiracy led by Catholic plotters including Robert Catesby and Guy Fawkes to blow up the Houses of Parliament and kill King James I.',
+        },
+        {
+          term: 'Jesuit',
+          definition:
+            'A member of the Roman Catholic Society of Jesus; in Jacobean England, Jesuit priests were outlawed and pursued as suspected foreign traitors.',
+        },
+        {
+          term: 'Treason',
+          definition:
+            'The crime of attempting to assassinate the monarch or overthrow the state, punished in early modern Britain by hanging, drawing, and quartering.',
+        },
+        {
+          term: 'Monteagle Letter',
+          definition:
+            'An anonymous warning letter delivered to Catholic Lord Monteagle in October 1605 that unmasked the Gunpowder Plot and led to Guy Fawkes’ arrest.',
+        },
+      ],
+      flashcards: [
+        {
+          term: 'Recusancy Fines',
+          definition:
+            'Crippling financial penalties imposed by the English Crown on Catholics who refused to attend compulsory Church of England Sunday services.',
+        },
+        {
+          term: 'Divine Right of Kings',
+          definition:
+            'The political doctrine that a monarch’s authority comes directly from God, making the king accountable to no earthly power or Parliament.',
+        },
+        {
+          term: 'Gunpowder Plot (1605)',
+          definition:
+            'A conspiracy led by Catholic plotters including Robert Catesby and Guy Fawkes to blow up the Houses of Parliament and kill King James I.',
+        },
+        {
+          term: 'Jesuit',
+          definition:
+            'A member of the Roman Catholic Society of Jesus; in Jacobean England, Jesuit priests were outlawed and pursued as suspected foreign traitors.',
+        },
+        {
+          term: 'Treason',
+          definition:
+            'The crime of attempting to assassinate the monarch or overthrow the state, punished in early modern Britain by hanging, drawing, and quartering.',
+        },
+        {
+          term: 'Monteagle Letter',
+          definition:
+            'An anonymous warning letter delivered to Catholic Lord Monteagle in October 1605 that unmasked the Gunpowder Plot and led to Guy Fawkes’ arrest.',
+        },
+      ],
     },
     {
       id: 'lesson_4',
       flashcards: [
         {
-          term: 'King Charles I',
-          definition: 'Believed in the Divine Right of Kings; executed by Parliament in 1649.',
+          term: 'English Civil War (1642–1651)',
+          definition:
+            'A series of military conflicts between supporters of King Charles I (Royalists or Cavaliers) and supporters of Parliament (Roundheads).',
         },
         {
-          term: 'Oliver Cromwell',
-          definition: 'Strict Puritan commander of the New Model Army.',
+          term: 'New Model Army',
+          definition:
+            'A disciplined, professional, and religiously devoted army created by Parliament in 1645, commanded by Thomas Fairfax and Oliver Cromwell, promoting on merit.',
         },
         {
-          term: 'John Bradshaw',
-          definition: 'Presided over the trial of King Charles I.',
+          term: 'Regicide',
+          definition:
+            'The deliberate trial and execution of a reigning monarch; specifically the public beheading of King Charles I outside Whitehall on 30 January 1649.',
         },
         {
-          term: 'Martin Noell',
-          definition: 'Wealthy merchant, slave trader, and pamphleteer.',
+          term: 'The Commonwealth',
+          definition:
+            'The republican government that ruled England, Wales, Scotland, and Ireland without a monarch from 1649 until the Restoration in 1660.',
         },
         {
-          term: 'King Charles II',
-          definition: 'Returned to the throne during the Restoration in 1660.',
+          term: 'Puritanism',
+          definition:
+            'A radical Protestant movement within the Church of England seeking to "purify" worship of all Catholic rituals and enforce strict, austere moral conduct.',
+        },
+        {
+          term: 'Levellers',
+          definition:
+            'A radical political faction during the English Civil War that demanded universal male suffrage, religious freedom, and legal equality for all citizens.',
         },
       ],
       title: 'Who controlled Britain? The Ideological Battle',
       vocabulary: [
-        { term: 'Power', definition: 'The central question: who should hold supreme power — the monarchy or Parliament?' },
-        { term: 'Monarchy', definition: 'Rule by a king or queen — the Stuarts believed in the Divine Right of Kings.' },
-        { term: 'Parliament', definition: 'The assembly of elected representatives that challenged the kings absolute authority.' },
-        { term: 'Civil War', definition: 'An armed conflict between opposing groups within the same country — Englands Civil War (1642-1651).' },
-        { term: 'Democracy', definition: 'Government by the people — the Civil War raised radical questions about political power.' }
+        {
+          term: 'Power',
+          definition:
+            'The central question: who should hold supreme power — the monarchy or Parliament?',
+        },
+        {
+          term: 'Monarchy',
+          definition:
+            'Rule by a king or queen — the Stuarts believed in the Divine Right of Kings.',
+        },
+        {
+          term: 'Parliament',
+          definition:
+            'The assembly of elected representatives that challenged the kings absolute authority.',
+        },
+        {
+          term: 'Civil War',
+          definition:
+            'An armed conflict between opposing groups within the same country — Englands Civil War (1642-1651).',
+        },
+        {
+          term: 'Democracy',
+          definition:
+            'Government by the people — the Civil War raised radical questions about political power.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -1959,29 +2285,34 @@ const early_modern_world = {
       },
       vocab: [
         {
-          term: 'Divine Right of Kings',
+          term: 'English Civil War (1642–1651)',
           definition:
-            "The belief that a monarch's authority comes directly from God, making them unaccountable to earthly authorities like Parliament.",
+            'A series of military conflicts between supporters of King Charles I (Royalists or Cavaliers) and supporters of Parliament (Roundheads).',
         },
         {
           term: 'New Model Army',
           definition:
-            'A revolutionary, disciplined, and religiously motivated professional army formed by Parliament during the Civil War.',
+            'A disciplined, professional, and religiously devoted army created by Parliament in 1645, commanded by Thomas Fairfax and Oliver Cromwell, promoting on merit.',
         },
         {
-          term: 'Commonwealth',
+          term: 'Regicide',
           definition:
-            'The republic that ruled England from 1649 to 1660 following the execution of Charles I.',
+            'The deliberate trial and execution of a reigning monarch; specifically the public beheading of King Charles I outside Whitehall on 30 January 1649.',
         },
         {
-          term: 'Plantation',
+          term: 'The Commonwealth',
           definition:
-            'An estate on which crops such as coffee, sugar, and tobacco are cultivated by resident labor, frequently enslaved labor.',
+            'The republican government that ruled England, Wales, Scotland, and Ireland without a monarch from 1649 until the Restoration in 1660.',
         },
         {
-          term: 'Navigation Acts',
+          term: 'Puritanism',
           definition:
-            'Laws passed in 1651 requiring all trade between England and its colonies to be carried in English ships, boosting mercantile wealth.',
+            'A radical Protestant movement within the Church of England seeking to "purify" worship of all Catholic rituals and enforce strict, austere moral conduct.',
+        },
+        {
+          term: 'Levellers',
+          definition:
+            'A radical political faction during the English Civil War that demanded universal male suffrage, religious freedom, and legal equality for all citizens.',
         },
       ],
       vocab_cloze_text:
@@ -2263,33 +2594,63 @@ const early_modern_world = {
       id: 'lesson_5',
       flashcards: [
         {
-          term: 'King Charles I',
-          definition: 'Believed in the Divine Right of Kings; executed by Parliament in 1649.',
+          term: 'Mercantilism',
+          definition:
+            'The prevailing 17th-century economic theory that national power depends on accumulating gold and silver bullion by maximizing exports and limiting imports.',
         },
         {
-          term: 'Oliver Cromwell',
-          definition: 'Strict Puritan commander of the New Model Army.',
+          term: 'Navigation Acts (1651)',
+          definition:
+            'Protectionist trade laws passed by Parliament requiring that all goods imported into Britain or its colonies be carried on English-built ships.',
         },
         {
-          term: 'John Bradshaw',
-          definition: 'Presided over the trial of King Charles I.',
+          term: 'Fiscal-Military State',
+          definition:
+            'A state that reorganizes its tax systems, central banking, and bureaucracy to successfully finance large permanent armed forces and naval power.',
         },
         {
-          term: 'Martin Noell',
-          definition: 'Wealthy merchant, slave trader, and pamphleteer.',
+          term: 'Bank of England (1694)',
+          definition:
+            'The central banking institution created to manage government borrowing and fund naval warfare, establishing Britain’s modern National Debt.',
         },
         {
-          term: 'King Charles II',
-          definition: 'Returned to the throne during the Restoration in 1660.',
+          term: 'Royal African Company (RAC)',
+          definition:
+            'An English chartered trading company led by the Stuart royal family that held a monopoly on the transatlantic trade in enslaved human beings.',
+        },
+        {
+          term: 'Consumer Revolution',
+          definition:
+            'The rapid expansion in the consumption of overseas imported commodities (sugar, tobacco, tea, coffee, and calico) across British society in the late 1600s and 1700s.',
         },
       ],
       title: 'Who controlled Britain? The Economic Shift',
       vocabulary: [
-        { term: 'Trade', definition: 'Global trade transformed Englands economy and helped shift power from the monarchy to merchants.' },
-        { term: 'Revolution', definition: 'The Glorious Revolution of 1688 permanently transferred power from the Crown to Parliament.' },
-        { term: 'Slavery', definition: 'The enslavement of millions of Africans was central to the economic transformation of the early modern world.' },
-        { term: 'Change', definition: 'The economic shift from feudal agriculture to global trade was a fundamental change.' },
-        { term: 'Continuity', definition: 'Despite political revolutions, many ordinary peoples lives showed significant continuity.' }
+        {
+          term: 'Trade',
+          definition:
+            'Global trade transformed Englands economy and helped shift power from the monarchy to merchants.',
+        },
+        {
+          term: 'Revolution',
+          definition:
+            'The Glorious Revolution of 1688 permanently transferred power from the Crown to Parliament.',
+        },
+        {
+          term: 'Slavery',
+          definition:
+            'The enslavement of millions of Africans was central to the economic transformation of the early modern world.',
+        },
+        {
+          term: 'Change',
+          definition:
+            'The economic shift from feudal agriculture to global trade was a fundamental change.',
+        },
+        {
+          term: 'Continuity',
+          definition:
+            'Despite political revolutions, many ordinary peoples lives showed significant continuity.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -2343,29 +2704,34 @@ const early_modern_world = {
       },
       vocab: [
         {
-          term: 'Divine Right of Kings',
+          term: 'Mercantilism',
           definition:
-            "The belief that a monarch's authority comes directly from God, making them unaccountable to earthly authorities like Parliament.",
+            'The prevailing 17th-century economic theory that national power depends on accumulating gold and silver bullion by maximizing exports and limiting imports.',
         },
         {
-          term: 'New Model Army',
+          term: 'Navigation Acts (1651)',
           definition:
-            'A revolutionary, disciplined, and religiously motivated professional army formed by Parliament during the Civil War.',
+            'Protectionist trade laws passed by Parliament requiring that all goods imported into Britain or its colonies be carried on English-built ships.',
         },
         {
-          term: 'Commonwealth',
+          term: 'Fiscal-Military State',
           definition:
-            'The republic that ruled England from 1649 to 1660 following the execution of Charles I.',
+            'A state that reorganizes its tax systems, central banking, and bureaucracy to successfully finance large permanent armed forces and naval power.',
         },
         {
-          term: 'Plantation',
+          term: 'Bank of England (1694)',
           definition:
-            'An estate on which crops such as coffee, sugar, and tobacco are cultivated by resident labor, frequently enslaved labor.',
+            'The central banking institution created to manage government borrowing and fund naval warfare, establishing Britain’s modern National Debt.',
         },
         {
-          term: 'Navigation Acts',
+          term: 'Royal African Company (RAC)',
           definition:
-            'Laws passed in 1651 requiring all trade between England and its colonies to be carried in English ships, boosting mercantile wealth.',
+            'An English chartered trading company led by the Stuart royal family that held a monopoly on the transatlantic trade in enslaved human beings.',
+        },
+        {
+          term: 'Consumer Revolution',
+          definition:
+            'The rapid expansion in the consumption of overseas imported commodities (sugar, tobacco, tea, coffee, and calico) across British society in the late 1600s and 1700s.',
         },
       ],
       vocab_cloze_text:
@@ -2589,11 +2955,31 @@ const early_modern_world = {
       id: 'lesson_6',
       title: 'What were the mechanics of the Transatlantic Slave Trade?',
       vocabulary: [
-        { term: 'Transatlantic Slave Trade', definition: 'The forced transportation of millions of Africans to the Americas to work as enslaved labourers.' },
-        { term: 'Slavery', definition: 'The ownership of human beings as property — a moral catastrophe at the heart of early modern trade.' },
-        { term: 'Trade', definition: 'The Triangular Trade connected Europe, Africa, and the Americas in a brutal economic system.' },
-        { term: 'Middle Passage', definition: 'The horrific sea journey across the Atlantic endured by enslaved Africans in appalling conditions.' },
-        { term: 'Profit', definition: 'The slave trade was driven by the desire for profit — human suffering was treated as a business.' }
+        {
+          term: 'Transatlantic Slave Trade',
+          definition:
+            'The forced transportation of millions of Africans to the Americas to work as enslaved labourers.',
+        },
+        {
+          term: 'Slavery',
+          definition:
+            'The ownership of human beings as property — a moral catastrophe at the heart of early modern trade.',
+        },
+        {
+          term: 'Trade',
+          definition:
+            'The Triangular Trade connected Europe, Africa, and the Americas in a brutal economic system.',
+        },
+        {
+          term: 'Middle Passage',
+          definition:
+            'The horrific sea journey across the Atlantic endured by enslaved Africans in appalling conditions.',
+        },
+        {
+          term: 'Profit',
+          definition:
+            'The slave trade was driven by the desire for profit — human suffering was treated as a business.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -2618,16 +3004,32 @@ const early_modern_world = {
         {
           term: 'Triangular Trade',
           definition:
-            'The three-legged transatlantic trade network connecting Europe, Africa, and the Americas.',
+            'The brutal transatlantic commercial system: European manufactured goods to West Africa, enslaved Africans to the Americas, and plantation crops back to Europe.',
         },
         {
           term: 'Middle Passage',
-          definition: 'The brutal forced voyage of enslaved Africans across the Atlantic Ocean.',
+          definition:
+            'The horrific forced oceanic voyage of captive Africans across the Atlantic, characterized by extreme overcrowding, chains, disease, and high mortality.',
         },
         {
-          term: 'Plantation',
+          term: 'Barracoon',
           definition:
-            'A large agricultural estate where enslaved people were forced to grow cash crops like sugar and tobacco.',
+            'A fortified enclosure, warehouse, or cage on the West African coast where captured Africans were imprisoned and branded while awaiting slave ships.',
+        },
+        {
+          term: 'Chattel Slavery',
+          definition:
+            'A dehumanizing legal system where enslaved people are classified as personal property (chattel), bought, sold, and inherited without any civil rights.',
+        },
+        {
+          term: 'Plantation Complex',
+          definition:
+            'An industrial-scale agricultural enterprise in the Americas dedicated to producing lucrative cash crops (sugar, tobacco) using forced, enslaved labor.',
+        },
+        {
+          term: 'Branding',
+          definition:
+            'The cruel practice of burning a red-hot metal iron mark into the flesh of an enslaved person to register ownership by an empire, merchant, or company.',
         },
       ],
       learning_objectives: {
@@ -2967,17 +3369,69 @@ const early_modern_world = {
         lines: 15,
       },
       disciplinary_focus: 'Significance - Understanding the consequences of the English Civil War.',
+      flashcards: [
+        {
+          term: 'Triangular Trade',
+          definition:
+            'The brutal transatlantic commercial system: European manufactured goods to West Africa, enslaved Africans to the Americas, and plantation crops back to Europe.',
+        },
+        {
+          term: 'Middle Passage',
+          definition:
+            'The horrific forced oceanic voyage of captive Africans across the Atlantic, characterized by extreme overcrowding, chains, disease, and high mortality.',
+        },
+        {
+          term: 'Barracoon',
+          definition:
+            'A fortified enclosure, warehouse, or cage on the West African coast where captured Africans were imprisoned and branded while awaiting slave ships.',
+        },
+        {
+          term: 'Chattel Slavery',
+          definition:
+            'A dehumanizing legal system where enslaved people are classified as personal property (chattel), bought, sold, and inherited without any civil rights.',
+        },
+        {
+          term: 'Plantation Complex',
+          definition:
+            'An industrial-scale agricultural enterprise in the Americas dedicated to producing lucrative cash crops (sugar, tobacco) using forced, enslaved labor.',
+        },
+        {
+          term: 'Branding',
+          definition:
+            'The cruel practice of burning a red-hot metal iron mark into the flesh of an enslaved person to register ownership by an empire, merchant, or company.',
+        },
+      ],
     },
     {
       id: 'lesson_7',
       banner: '/images/brookes_ship.jpg',
       title: 'How did enslaved Africans resist the Transatlantic Slave Trade?',
       vocabulary: [
-        { term: 'Resistance', definition: 'Enslaved Africans resisted their captivity through rebellion, escape, cultural preservation, and sabotage.' },
-        { term: 'Abolition', definition: 'The movement to end the slave trade and slavery — achieved in the British Empire in 1807/1833.' },
-        { term: 'Propaganda', definition: 'Abolitionists used powerful propaganda to turn public opinion against slavery.' },
-        { term: 'Significance', definition: 'The abolition movement is significant as one of the first successful human rights campaigns.' },
-        { term: 'Agency', definition: 'The ability to act independently — enslaved people showed agency through their resistance.' }
+        {
+          term: 'Resistance',
+          definition:
+            'Enslaved Africans resisted their captivity through rebellion, escape, cultural preservation, and sabotage.',
+        },
+        {
+          term: 'Abolition',
+          definition:
+            'The movement to end the slave trade and slavery — achieved in the British Empire in 1807/1833.',
+        },
+        {
+          term: 'Propaganda',
+          definition:
+            'Abolitionists used powerful propaganda to turn public opinion against slavery.',
+        },
+        {
+          term: 'Significance',
+          definition:
+            'The abolition movement is significant as one of the first successful human rights campaigns.',
+        },
+        {
+          term: 'Agency',
+          definition:
+            'The ability to act independently — enslaved people showed agency through their resistance.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -2999,19 +3453,34 @@ const early_modern_world = {
       },
       vocab: [
         {
-          term: 'Obeah',
+          term: 'Spectrum of Resistance',
           definition:
-            'A system of spiritual and healing practices developed by enslaved people in the Caribbean, often involving botanical knowledge.',
+            'The wide range of actions taken by enslaved people to resist oppression, from covert daily sabotage to armed rebellion and revolution.',
         },
         {
           term: 'Maroons',
           definition:
-            'Communities of formerly enslaved Africans who escaped and established free settlements in mountainous or remote areas.',
+            'Communities of self-emancipated Africans who escaped bondage and established fortified, independent societies in mountainous or forested regions like Jamaica.',
         },
         {
           term: 'Covert Resistance',
           definition:
-            'Hidden or secretive acts of rebellion, such as working slowly or breaking tools.',
+            'Subtle, everyday acts of rebellion against enslavement, including slowing down work, pretending illness, breaking tools, and sabotaging machinery.',
+        },
+        {
+          term: 'Stono Rebellion (1739)',
+          definition:
+            'The largest armed uprising by enslaved Africans in the mainland British colonies, taking place near Charleston, South Carolina.',
+        },
+        {
+          term: 'Obeah',
+          definition:
+            'An African-derived spiritual and medicinal system practiced in the Caribbean, providing enslaved communities with healing, solidarity, and spiritual resistance.',
+        },
+        {
+          term: 'Abolitionism',
+          definition:
+            'The political, social, and moral movement to outlaw the slave trade and legally emancipate all enslaved people worldwide.',
         },
       ],
       learning_objectives: {
@@ -3417,6 +3886,38 @@ const early_modern_world = {
         lines: 15,
       },
       disciplinary_focus: 'Causation - Why did the Witch Craze spread across early modern Europe?',
+      flashcards: [
+        {
+          term: 'Spectrum of Resistance',
+          definition:
+            'The wide range of actions taken by enslaved people to resist oppression, from covert daily sabotage to armed rebellion and revolution.',
+        },
+        {
+          term: 'Maroons',
+          definition:
+            'Communities of self-emancipated Africans who escaped bondage and established fortified, independent societies in mountainous or forested regions like Jamaica.',
+        },
+        {
+          term: 'Covert Resistance',
+          definition:
+            'Subtle, everyday acts of rebellion against enslavement, including slowing down work, pretending illness, breaking tools, and sabotaging machinery.',
+        },
+        {
+          term: 'Stono Rebellion (1739)',
+          definition:
+            'The largest armed uprising by enslaved Africans in the mainland British colonies, taking place near Charleston, South Carolina.',
+        },
+        {
+          term: 'Obeah',
+          definition:
+            'An African-derived spiritual and medicinal system practiced in the Caribbean, providing enslaved communities with healing, solidarity, and spiritual resistance.',
+        },
+        {
+          term: 'Abolitionism',
+          definition:
+            'The political, social, and moral movement to outlaw the slave trade and legally emancipate all enslaved people worldwide.',
+        },
+      ],
     },
     {
       id: 'lesson_8',
@@ -3519,37 +4020,70 @@ const early_modern_world = {
       ],
       flashcards: [
         {
-          term: 'King George II',
-          definition: 'Governed through a constitutional monarchy via Parliament.',
+          term: 'Constitutional Monarchy',
+          definition:
+            'A political system established after the 1688 Glorious Revolution where a monarch’s powers are strictly constrained by Parliament and the law.',
         },
         {
-          term: 'Pierre-Jean Grosley',
-          definition: 'Observed the extreme contrasts of wealth and poverty in London in 1750.',
+          term: 'Rotten Borough',
+          definition:
+            'A parliamentary constituency with a tiny voting population that could be easily bribed or controlled by a wealthy aristocrat to seat an MP.',
         },
         {
-          term: 'Henry Fielding',
-          definition: 'Author who reported on rampant crime and poverty in 1751 London.',
+          term: 'The Bloody Code',
+          definition:
+            'The harsh 18th-century English criminal code that imposed the death penalty for over 200 offenses, predominantly to safeguard private property.',
         },
         {
-          term: 'William Hogarth',
-          definition: "Famous for his 1751 engraving 'Gin Lane' depicting social decay.",
+          term: 'Gin Craze',
+          definition:
+            'An era of widespread, cheap gin consumption in early 18th-century London, creating moral panic, poverty, and social turmoil documented by William Hogarth.',
+        },
+        {
+          term: 'Urbanisation',
+          definition:
+            'The rapid demographic growth and movement of people from agricultural countryside into commercial towns and cities.',
+        },
+        {
+          term: 'Enlightenment',
+          definition:
+            'An 18th-century European intellectual movement that advocated reason, science, individual liberty, and skepticism of religious superstition and tyranny.',
         },
       ],
       title: "How 'modern' was Britain by 1750? (Synthesis & Assessment)",
-
-  lesson_reflection: {
-    prompt: "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
-    instructions: [
-      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
-      "Complete the EBI (Even Better If) section — what did you find most challenging?",
-      "Circle your effort level (1-5) and set a specific target for the next unit."
-    ]
-  },      vocabulary: [
-        { term: 'Synthesis', definition: 'Bringing together knowledge from across the entire unit to form an overall judgement.' },
-        { term: 'Power', definition: 'By 1750, power had shifted dramatically from the monarchy to Parliament.' },
-        { term: 'Empire', definition: 'Britain had become a major global empire through trade, colonisation, and the slave trade.' },
-        { term: 'Revolution', definition: 'Political, religious, and economic revolutions transformed Britain between 1450 and 1750.' },
-        { term: 'Change', definition: 'The central question: how much had Britain really changed by 1750?' }
+      lesson_reflection: {
+        prompt:
+          'You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',
+        instructions: [
+          'Complete the WWW (What Went Well) section — what did you enjoy or find easiest?',
+          'Complete the EBI (Even Better If) section — what did you find most challenging?',
+          'Circle your effort level (1-5) and set a specific target for the next unit.',
+        ],
+      },
+      vocabulary: [
+        {
+          term: 'Synthesis',
+          definition:
+            'Bringing together knowledge from across the entire unit to form an overall judgement.',
+        },
+        {
+          term: 'Power',
+          definition: 'By 1750, power had shifted dramatically from the monarchy to Parliament.',
+        },
+        {
+          term: 'Empire',
+          definition:
+            'Britain had become a major global empire through trade, colonisation, and the slave trade.',
+        },
+        {
+          term: 'Revolution',
+          definition:
+            'Political, religious, and economic revolutions transformed Britain between 1450 and 1750.',
+        },
+        {
+          term: 'Change',
+          definition: 'The central question: how much had Britain really changed by 1750?',
+        },
       ],
       teacher_notes: {
         primer:
@@ -3606,29 +4140,34 @@ const early_modern_world = {
       },
       vocab: [
         {
-          term: 'Modernity',
+          term: 'Constitutional Monarchy',
           definition:
-            'In history, the transition away from traditional, agricultural, feudal societies towards commercial, secular, and industrialized ones.',
-        },
-        {
-          term: 'Comprehensive',
-          definition:
-            'Taking a complete mental view of a wide series of events across a long period of time.',
-        },
-        {
-          term: 'National Debt',
-          definition:
-            'Money borrowed by a government (often via a central bank like the Bank of England) to fund state activities like war.',
+            'A political system established after the 1688 Glorious Revolution where a monarch’s powers are strictly constrained by Parliament and the law.',
         },
         {
           term: 'Rotten Borough',
           definition:
-            'A tiny parliamentary constituency with very few voters, easily bought or controlled by a wealthy aristocrat.',
+            'A parliamentary constituency with a tiny voting population that could be easily bribed or controlled by a wealthy aristocrat to seat an MP.',
         },
         {
           term: 'The Bloody Code',
           definition:
-            'The harsh 18th-century English legal system which mandated the death penalty for over 200 minor crimes.',
+            'The harsh 18th-century English criminal code that imposed the death penalty for over 200 offenses, predominantly to safeguard private property.',
+        },
+        {
+          term: 'Gin Craze',
+          definition:
+            'An era of widespread, cheap gin consumption in early 18th-century London, creating moral panic, poverty, and social turmoil documented by William Hogarth.',
+        },
+        {
+          term: 'Urbanisation',
+          definition:
+            'The rapid demographic growth and movement of people from agricultural countryside into commercial towns and cities.',
+        },
+        {
+          term: 'Enlightenment',
+          definition:
+            'An 18th-century European intellectual movement that advocated reason, science, individual liberty, and skepticism of religious superstition and tyranny.',
         },
       ],
       vocab_cloze_text:
@@ -4840,3 +5379,4 @@ const early_modern_world = {
 };
 
 export const unitData = early_modern_world;
+export default early_modern_world;
