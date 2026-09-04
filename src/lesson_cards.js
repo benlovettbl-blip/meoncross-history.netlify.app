@@ -253,42 +253,20 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     const preparations = [];
     const days = [];
     const heroes = [];
-    let finalChallenge = null;
     unitData.lessons.forEach((lesson, index) => {
       if (lesson.id && lesson.id.startsWith('hero_')) {
         heroes.push({ lesson, index });
       } else if (lesson.id === 'day_0') {
         preparations.push({ lesson, index });
-      } else if (lesson.id === 'final_challenge') {
-        finalChallenge = { lesson, index };
-      } else {
+      } else if (lesson.id !== 'final_challenge') {
         days.push({ lesson, index });
       }
     });
 
     if (preparations.length > 0) {
-      lessonsHTML += `
-        <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${preparations[0].index}" style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border-radius: 10px; padding: 22px 25px; margin-top: 20px; color: white; box-shadow: 0 4px 15px rgba(37,99,235,0.25); cursor: pointer; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.35)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(37,99,235,0.25)';">
-          <div>
-            <span style="background: rgba(255,255,255,0.2); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px;">
-              <i class="fa-solid fa-suitcase-rolling" style="margin-right: 6px;"></i> Essential Pre-Departure Guide
-            </span>
-            <h3 style="margin: 0 0 6px 0; color: white; font-size: 1.35rem; font-family: 'Playfair Display', serif;">
-              ${preparations[0].lesson.title}
-            </h3>
-            <p style="margin: 0; opacity: 0.92; font-size: 0.95rem;">
-              ${preparations[0].lesson.enquiry || 'What to Pack, Cemetery Etiquette & Logistics'}
-            </p>
-          </div>
-          <button class="btn-pedagogy-primary" data-action="view-lesson-detail" data-index="${preparations[0].index}" style="background: white; color: #1e3a8a; border: none; padding: 10px 22px; border-radius: 6px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-            <i class="fa-solid fa-clipboard-check"></i> Open Prep Pack
-          </button>
-        </div>
-      `;
+      // Preparations are now handled in the hero header in core_app.js
     }
 
-    lessonsHTML +=
-      '<h2 style="margin-top: 35px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;"><i class="fa-solid fa-route" style="color: #2563eb; margin-right: 8px;"></i> Tour Itinerary</h2>';
     lessonsHTML +=
       '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">';
     days.forEach((d, i) => {
@@ -299,14 +277,6 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           </div>
         `;
     });
-    if (finalChallenge) {
-      lessonsHTML += `
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${finalChallenge.index}" style="background: white; border: 1px solid #cbd5e1; border-top: 3px solid #f59e0b; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
-            <h3 style="margin-top: 0; color: #b45309; font-size: 1.1rem; margin-bottom: 10px;"><i class="fa-solid fa-award" style="margin-right: 6px;"></i> Synthesis Challenge</h3>
-            <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${finalChallenge.lesson.title}</p>
-          </div>
-        `;
-    }
     lessonsHTML += '</div>';
 
     if (heroes.length > 0) {
