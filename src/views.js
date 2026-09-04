@@ -221,6 +221,7 @@ export function renderDashboard() {
       weimar_nazi_germany: 'Weimar Germany',
       edexcel_medicine: 'Medicine Through Time',
       eee: 'Elizabethan England',
+      trip_ypres: 'Ypres Tour Guide',
     };
     const ctaLabel = unitShortNames[unit.id] || title;
 
@@ -371,6 +372,15 @@ export function renderDashboard() {
       </div>
     `;
 
+    html += `</div>`;
+  }
+
+  if (tripUnits.length > 0) {
+    html += `
+      <h3 class="section-title" id="trips-section"><i class="fa-solid fa-map-location-dot" style="margin-right: 8px; color: #f59e0b;"></i>Fieldwork &amp; Battlefield Tours</h3>
+      <div class="modules-grid" style="margin-bottom: 2rem;">
+    `;
+    tripUnits.forEach(renderUnitCard);
     html += `</div>`;
   }
   html += `</div>`;
