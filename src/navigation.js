@@ -87,6 +87,23 @@ export async function switchView(viewName, param = null, skipHistory = false) {
     window.history.pushState({ view: viewName, unit: param }, '', url);
   }
 
+  // Clean up unit-specific sidebar navigation on global views
+  if (viewName === 'dashboard' || viewName === 'profile' || viewName === 'curriculum') {
+    [
+      'nav-lessons',
+      'nav-interactive',
+      'nav-timeline',
+      'nav-booklet',
+      'nav-decisions',
+      'nav-taboo',
+      'nav-individuals',
+      'nav-reading',
+    ].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+  }
+
   // Handle view rendering
   if (viewName === 'dashboard') {
     renderDashboard();
@@ -124,85 +141,90 @@ export async function switchView(viewName, param = null, skipHistory = false) {
 // Dynamically fetch and parse the compiled JSON for a unit
 async function loadUnit(unitId) {
   const currentLessons = state.activeUnitData.lessons || state.activeUnitData.subtopics;
-  if (state.selectedUnitId === unitId && currentLessons && currentLessons.length > 0) {
-    return; // Already loaded
-  }
+  const isAlreadyLoaded =
+    state.selectedUnitId === unitId && currentLessons && currentLessons.length > 0;
 
-  state.selectedUnitId = unitId;
+  if (!isAlreadyLoaded) {
+    state.selectedUnitId = unitId;
 
-  if (state.db && state.db[unitId]) {
-    const unitPayload = state.db[unitId];
-    state.activeUnitData = unitPayload.data || {};
-    window.currentUnitData = state.activeUnitData;
-    window.currentUnitId = unitId;
-    if (appStore && appStore.state) {
-      appStore.state.activeUnitData = state.activeUnitData;
-      appStore.state.selectedUnitId = unitId;
+    if (state.db && state.db[unitId]) {
+      const unitPayload = state.db[unitId];
+      state.activeUnitData = unitPayload.data || {};
+      window.currentUnitData = state.activeUnitData;
+      window.currentUnitId = unitId;
+      if (appStore && appStore.state) {
+        appStore.state.activeUnitData = state.activeUnitData;
+        appStore.state.selectedUnitId = unitId;
+      }
+    } else {
+      console.error('Unit not found in database.json:', unitId);
+      state.activeUnitData = {};
     }
-  } else {
-    console.error('Unit not found in database.json:', unitId);
-    state.activeUnitData = {};
-  }
 
-  // Fallback: Dynamically generate quizData from lesson do_now quizzes if missing
-  if (!state.activeUnitData.quizData) {
-    const extractedQuizData = [];
-    const lessonsList = state.activeUnitData.lessons || state.activeUnitData.subtopics || [];
-    lessonsList.forEach((lesson, lIdx) => {
-      const baseId = lesson.id || `lesson_${lIdx}`;
-      if (lesson.do_now && lesson.do_now.type === 'quiz' && lesson.do_now.questions) {
-        lesson.do_now.questions.forEach((q, idx) => {
-          extractedQuizData.push({
-            id: `q_${baseId}_${idx}`,
-            question: q.question,
-            options: q.options,
-            answer: q.options[q.answer],
-            distractors: q.options.filter((opt, i) => i !== q.answer),
-            explanation: q.explanation || 'No further explanation provided.',
+    // Fallback: Dynamically generate quizData from lesson do_now quizzes if missing
+    if (!state.activeUnitData.quizData) {
+      const extractedQuizData = [];
+      const lessonsList = state.activeUnitData.lessons || state.activeUnitData.subtopics || [];
+      lessonsList.forEach((lesson, lIdx) => {
+        const baseId = lesson.id || `lesson_${lIdx}`;
+        if (lesson.do_now && lesson.do_now.type === 'quiz' && lesson.do_now.questions) {
+          lesson.do_now.questions.forEach((q, idx) => {
+            extractedQuizData.push({
+              id: `q_${baseId}_${idx}`,
+              question: q.question,
+              options: q.options,
+              answer: q.options[q.answer],
+              distractors: q.options.filter((opt, i) => i !== q.answer),
+              explanation: q.explanation || 'No further explanation provided.',
+            });
           });
-        });
-      }
-      if (lesson.part3 && Array.isArray(lesson.part3)) {
-        lesson.part3.forEach((stmt, idx) => {
-          extractedQuizData.push({
-            id: `q_${baseId}_p3_${idx}`,
-            question: `True or False: ${stmt.text}`,
-            options: ['True', 'False'],
-            answer: 'True', // Historically they are all correct core statements
-            distractors: ['False'],
-            explanation: 'This is a core historical statement from the lesson.',
+        }
+        if (lesson.part3 && Array.isArray(lesson.part3)) {
+          lesson.part3.forEach((stmt, idx) => {
+            extractedQuizData.push({
+              id: `q_${baseId}_p3_${idx}`,
+              question: `True or False: ${stmt.text}`,
+              options: ['True', 'False'],
+              answer: 'True', // Historically they are all correct core statements
+              distractors: ['False'],
+              explanation: 'This is a core historical statement from the lesson.',
+            });
           });
-        });
+        }
+      });
+      if (extractedQuizData.length > 0) {
+        state.activeUnitData.quizData = extractedQuizData;
       }
-    });
-    if (extractedQuizData.length > 0) {
-      state.activeUnitData.quizData = extractedQuizData;
+    }
+
+    // Fallback: Map 'timeline' array to 'timelineEvents' if missing but 'timeline' exists
+    if (
+      !state.activeUnitData.timelineEvents &&
+      state.activeUnitData.timeline &&
+      Array.isArray(state.activeUnitData.timeline)
+    ) {
+      state.activeUnitData.timelineEvents = state.activeUnitData.timeline.map((t) => ({
+        year: t.date || t.year,
+        text: t.description || t.text,
+        title: t.title || '',
+      }));
+    }
+
+    // Add loaded questions to general index to support Leitner status mapping
+    if (!state.allQuestions) state.allQuestions = [];
+    if (state.activeUnitData.quizData) {
+      state.activeUnitData.quizData.forEach((q) => {
+        if (!state.allQuestions.some((existing) => existing.id === q.id)) {
+          state.allQuestions.push(q);
+        }
+      });
     }
   }
 
-  // Fallback: Map 'timeline' array to 'timelineEvents' if missing but 'timeline' exists
-  if (
-    !state.activeUnitData.timelineEvents &&
-    state.activeUnitData.timeline &&
-    Array.isArray(state.activeUnitData.timeline)
-  ) {
-    state.activeUnitData.timelineEvents = state.activeUnitData.timeline.map((t) => ({
-      year: t.date || t.year,
-      text: t.description || t.text,
-      title: t.title || '',
-    }));
-  }
+  updateSidebarForUnit(unitId, state.activeUnitData);
+}
 
-  // Add loaded questions to general index to support Leitner status mapping
-  if (!state.allQuestions) state.allQuestions = [];
-  if (state.activeUnitData.quizData) {
-    state.activeUnitData.quizData.forEach((q) => {
-      if (!state.allQuestions.some((existing) => existing.id === q.id)) {
-        state.allQuestions.push(q);
-      }
-    });
-  }
-
+function updateSidebarForUnit(unitId, unitData = {}) {
   const navDecisions = document.getElementById('nav-decisions');
   const navTaboo = document.getElementById('nav-taboo');
   const navLessons = document.getElementById('nav-lessons');
@@ -212,28 +234,61 @@ async function loadUnit(unitId) {
   const navIndividuals = document.getElementById('nav-individuals');
   const navReading = document.getElementById('nav-reading');
 
+  const isTrip = unitId === 'trip_ypres' || unitData.type === 'trip';
+
+  if (isTrip) {
+    // Battlefield Tour Unit: Only show Tour Itinerary tab
+    if (navLessons) {
+      navLessons.style.display = 'flex';
+      navLessons.dataset.action = 'switch-view';
+      navLessons.dataset.view = 'lessons';
+      navLessons.dataset.unit = unitId;
+      navLessons.innerHTML =
+        '<i class="fa-solid fa-map-location-dot"></i><span>Tour Itinerary</span>';
+      navLessons.onclick = () => switchView('lessons', unitId);
+    }
+    if (navInteractive) navInteractive.style.display = 'none';
+    if (navTimeline) navTimeline.style.display = 'none';
+    if (navBooklet) navBooklet.style.display = 'none';
+    if (navDecisions) navDecisions.style.display = 'none';
+    if (navTaboo) navTaboo.style.display = 'none';
+    if (navIndividuals) navIndividuals.style.display = 'none';
+    if (navReading) navReading.style.display = 'none';
+    return;
+  }
+
+  // Standard Curriculum Unit: Configure applicable tabs
   if (navLessons) {
     navLessons.style.display = 'flex';
     navLessons.dataset.action = 'switch-view';
     navLessons.dataset.view = 'lessons';
     navLessons.dataset.unit = unitId;
+    navLessons.innerHTML = '<i class="fa-solid fa-book-open"></i><span>Study Lessons</span>';
     navLessons.onclick = () => switchView('lessons', unitId);
   }
 
-  if (navInteractive) {
+  const hasQuiz = unitData.quizData && unitData.quizData.length > 0;
+  if (navInteractive && hasQuiz) {
     navInteractive.style.display = 'flex';
     navInteractive.dataset.action = 'switch-view';
     navInteractive.dataset.view = 'interactive';
     navInteractive.dataset.unit = unitId;
     navInteractive.onclick = () => switchView('interactive', unitId);
+  } else if (navInteractive) {
+    navInteractive.style.display = 'none';
   }
 
-  if (navTimeline) {
+  const hasTimeline =
+    (unitData.timelineEvents && unitData.timelineEvents.length > 0) ||
+    (unitData.timeline && unitData.timeline.length > 0);
+  if (navTimeline && hasTimeline) {
     navTimeline.style.display = 'flex';
     navTimeline.dataset.action = 'switch-view';
     navTimeline.dataset.view = 'timeline';
     navTimeline.dataset.unit = unitId;
     navTimeline.onclick = () => switchView('timeline', unitId);
+  } else if (navTimeline) {
+    navTimeline.style.display = 'none';
   }
 
   if (navBooklet) {
@@ -244,9 +299,7 @@ async function loadUnit(unitId) {
     navBooklet.onclick = () => switchView('booklet', unitId);
   }
 
-  const keyIndividualsData =
-    (state.activeUnitData && state.activeUnitData.key_individuals) ||
-    (state.activeUnitData && state.activeUnitData.biographies);
+  const keyIndividualsData = unitData.key_individuals || unitData.biographies;
   if (navIndividuals && keyIndividualsData && keyIndividualsData.length > 0) {
     navIndividuals.style.display = 'flex';
     navIndividuals.dataset.action = 'switch-view';
@@ -257,12 +310,7 @@ async function loadUnit(unitId) {
     navIndividuals.style.display = 'none';
   }
 
-  if (
-    navReading &&
-    state.activeUnitData &&
-    state.activeUnitData.guided_reading &&
-    state.activeUnitData.guided_reading.length > 0
-  ) {
+  if (navReading && unitData.guided_reading && unitData.guided_reading.length > 0) {
     navReading.style.display = 'flex';
     navReading.dataset.action = 'switch-view';
     navReading.dataset.view = 'reading';
