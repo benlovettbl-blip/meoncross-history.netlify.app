@@ -185,12 +185,30 @@ export const unitData = {
   lessons: [
     {
       id: 'day_0',
-      title: 'Pre-Trip Information',
-      enquiry: 'What to Pack & Logistics',
+      title: 'Pre-Trip Information & Parental Briefing',
+      enquiry: 'Expedition Logistics, Kit List & Local Heritage Mission',
       banner: '/images/stubbington_names_3.jpg',
       teacher_notes: {
-        primer: 'Vital information for parents and pupils prior to departure.',
-        objectives: [],
+        primer:
+          'The Pre-Trip Parental Briefing equips parents and pupils with essential practical, logistical, and historical framing ahead of the October expedition. It details our joint leadership with Mr James Garrett (The History Boys), clarifies all kit, catering, and currency requirements (€20–€30 cash), establishes our rooming and supervision timeline, and introduces the profound local heritage mission connecting Stubbington to Flanders.',
+        objectives: [
+          {
+            objective:
+              'Understand the essential weather preparation, dietary arrangements, and currency requirements for the 3-day Flanders expedition.',
+            primer:
+              'Walk parents and pupils through the kit checklist, explaining why broken-in boots, raincoats, and warm hats/gloves are mandatory for cold evening ceremonies at the Menin Gate, and why €20–€30 in cash is required for Friday and Saturday supermarket lunches.',
+            question:
+              'Why is thorough physical preparation—such as windproof layers and sturdy boots—essential to maintaining high academic and emotional engagement on battlefield sites?',
+          },
+          {
+            objective:
+              'Frame the personal historical mission connecting Stubbington and Lee-on-the-Solent to the memorial walls of Ypres.',
+            primer:
+              'Direct parents to the Crofton Parish Memorial Tablet and Lowry brothers story, demonstrating that pupils will be active historians carrying the names of our village fallen to Tyne Cot and the Menin Gate.',
+            question:
+              'How does tracing named soldiers from our own local community transform a battlefield visit from passive tourism into an act of active historical research and remembrance?',
+          },
+        ],
       },
       do_now: {
         type: 'timeline',
@@ -200,14 +218,158 @@ export const unitData = {
             year: '10th Sep',
             title: 'Parent Briefing Meeting',
             detail:
-              "16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions. I will be requesting passports in and EHIC cards. If you can't make it, you can hand it into the office before that date or just after.",
+              '16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions. Passports and GHIC/EHIC cards will be checked.',
           },
         ],
       },
       tasks: [
-        'Field Equipment Check: Verify your passport, GHIC/EHIC medical card, sturdy walking boots, waterproof jacket, notebook, and pen are packed.',
-        'Expedition Orientation: Review the 3-day itinerary and locate the accommodation: Peace Village Hostel, Kemmelbergweg, Heuvelland.',
-        'Memorial Roll Call: Familiarise yourself with the names of the six local heroes from Stubbington, Chark, and Lee-on-the-Solent whose names we will seek on the memorial walls of Flanders.',
+        'Field Equipment Check: Verify your passport (valid > Jan 2027), GHIC medical card, sturdy walking boots, waterproof jacket, warm hat, and gloves are packed.',
+        'Catering & Currency Check: Prepare a packed lunch for Thursday journey; ensure €20 to €30 in Euros cash is ready for Friday and Saturday supermarket lunches.',
+        'Memorial Roll Call: Familiarise yourself with the names of the Lowry brothers and our six local heroes from Holy Rood Church whose names we will seek on the memorial walls of Flanders.',
+      ],
+      narrative_blocks: [
+        {
+          type: 'narrative',
+          theme_heading: 'Joint Leadership & Official Briefing Resources',
+          text: `
+            <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 5px solid #1e3a8a; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 5px rgba(0,0,0,0.04);">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <div>
+                  <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #eff6ff; color: #1e3a8a; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 6px;">Joint Educational Venture</span>
+                  <h3 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.3rem; font-family: 'Playfair Display', serif;">Meoncross School &amp; The History Boys</h3>
+                  <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.5;">
+                    Led jointly by <strong>Mr Ben Lovett</strong> (Head of History, Meoncross School) and <strong>Mr James Garrett</strong> (The History Boys Tour Company — expert battlefield historian and fellow history teacher). Together, they provide exceptional historical scholarship, pastoral care, and engaging on-site guidance.
+                  </p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+                <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" class="btn" style="background: #fefce8; color: #b45309; border: 1.5px solid #fde047; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                  <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 1.1rem;"></i> Download Parent Information Pack (PDF)
+                </a>
+                <a href="/briefings/ypres_2026_parent_briefing.pptx" download class="btn" style="background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                  <i class="fa-solid fa-file-powerpoint" style="color: #ea580c; font-size: 1.1rem;"></i> Download Briefing Slides (.pptx)
+                </a>
+                <button class="btn" data-action="open-parent-briefing-modal" style="background: #0f172a; color: #ffffff; border: 1.5px solid #0f172a; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                  <i class="fa-solid fa-chalkboard-user" style="color: #38bdf8; font-size: 1.1rem;"></i> Launch Fullscreen Presentation Mode
+                </button>
+              </div>
+            </div>
+          `,
+        },
+        {
+          type: 'narrative',
+          theme_heading: 'The Core Mission: The Lowry Family & The Stubbington Fallen',
+          text: `
+            <div style="background: #fefce8; border: 1px solid #fef08a; border-left: 5px solid #d97706; border-radius: 8px; padding: 22px; margin-bottom: 24px;">
+              <h3 style="margin: 0 0 10px 0; color: #78350f; font-family: 'Playfair Display', serif; font-size: 1.35rem;">
+                Connecting Our Village to the Memorial Walls of Flanders
+              </h3>
+              <p style="color: #451a03; font-size: 0.98rem; line-height: 1.6; margin: 0 0 14px 0;">
+                Inside <strong>Holy Rood Church in Stubbington</strong>, carved into the marble Great War Memorial Tablet, are the names of three brothers from Manor Way Grange, Lee-on-the-Solent: <strong>William, Cyril, and Auriol (Eric) Lowry</strong>. All three gave their lives across different theaters of war.
+              </p>
+              <blockquote style="background: #ffffff; border-left: 4px solid #f59e0b; padding: 12px 18px; margin: 0 0 16px 0; border-radius: 4px; font-style: italic; color: #92400e; font-size: 1.05rem; line-height: 1.5;">
+                "How did three sons from one coastal Hampshire family, and six young men from our quiet village, find their resting places on the contested ramparts and mud of Flanders?"
+              </blockquote>
+              <p style="color: #451a03; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                On this tour, pupils will not be tourists. Each pupil will be entrusted with a local mission: locating and touching the carved names of our village fallen—including <strong>Private Franklin</strong> and <strong>Private Ayling</strong> on Menin Gate Panel 35, and <strong>Private Muckett</strong>, <strong>Private Rye</strong>, <strong>Lance Corporal Ward</strong>, and <strong>Private Warland</strong> on the rear curved panels of Tyne Cot.
+              </p>
+              
+              <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px;">
+                <div style="flex: 1; min-width: 140px; text-align: center; background: white; padding: 8px; border-radius: 6px; border: 1px solid #fde047;">
+                  <img src="/images/stubbington_memorial_2.jpg" alt="Crofton Parish Memorial Tablet" style="max-width: 100%; height: 110px; object-fit: cover; border-radius: 4px; cursor: zoom-in;" data-action="open-modal" data-src="/images/stubbington_memorial_2.jpg">
+                  <small style="display: block; margin-top: 4px; font-weight: 700; color: #78350f;">Holy Rood Tablet</small>
+                </div>
+                <div style="flex: 1; min-width: 140px; text-align: center; background: white; padding: 8px; border-radius: 6px; border: 1px solid #fde047;">
+                  <img src="/images/lowry_william.png" alt="2nd Lt William Lowry" style="max-width: 100%; height: 110px; object-fit: cover; border-radius: 4px; cursor: zoom-in;" data-action="open-modal" data-src="/images/lowry_william.png">
+                  <small style="display: block; margin-top: 4px; font-weight: 700; color: #78350f;">2nd Lt William Lowry (25)</small>
+                </div>
+                <div style="flex: 1; min-width: 140px; text-align: center; background: white; padding: 8px; border-radius: 6px; border: 1px solid #fde047;">
+                  <img src="/images/lowry_auriol.png" alt="Lt Col Eric Lowry" style="max-width: 100%; height: 110px; object-fit: cover; border-radius: 4px; cursor: zoom-in;" data-action="open-modal" data-src="/images/lowry_auriol.png">
+                  <small style="display: block; margin-top: 4px; font-weight: 700; color: #78350f;">Lt Col Eric Lowry, DSO, MC (25)</small>
+                </div>
+              </div>
+            </div>
+          `,
+        },
+        {
+          type: 'narrative',
+          theme_heading: 'Essential Kit Checklist & Weather Protection',
+          text: `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px;">
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+                <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 1.05rem;"><i class="fa-solid fa-boot"></i> Footwear &amp; Outerwear</h4>
+                <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.5;">
+                  <li><strong>Sturdy Walking Boots / Waterproof Shoes:</strong> Essential and broken-in. Flanders mud and grass slopes are slippery. No thin canvas trainers.</li>
+                  <li><strong>Waterproof &amp; Windproof Raincoat:</strong> Hooded jacket. We tour regardless of light rain.</li>
+                  <li><strong>Warm Fleece / Layers:</strong> Temperatures drop quickly on exposed ridges like Passchendaele.</li>
+                  <li><strong>Warm Winter Hat &amp; Gloves:</strong> Mandatory! Standing still on stone ramparts during the 8:00 PM Menin Gate ceremony gets extremely cold in October.</li>
+                </ul>
+              </div>
+
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+                <h4 style="margin: 0 0 8px 0; color: #b45309; font-size: 1.05rem;"><i class="fa-solid fa-suitcase-rolling"></i> Luggage &amp; Daily Bag</h4>
+                <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.5;">
+                  <li><strong>1 Main Holdall / Medium Suitcase:</strong> Stored under coach during travel (max 15kg).</li>
+                  <li><strong>1 Small Daypack (Rucksack):</strong> Kept on coach seats with student. Contains rain jacket, water bottle, Day 1 packed lunch, and notebook/pen.</li>
+                  <li><strong>Evening Clothing:</strong> Smart-casual for restaurant dinners (clean trousers/jeans, collared shirts/jumpers).</li>
+                  <li><strong>Washbag:</strong> Roll-on deodorant only (strictly NO aerosol sprays permitted on coach).</li>
+                </ul>
+              </div>
+            </div>
+          `,
+        },
+        {
+          type: 'narrative',
+          theme_heading: 'Catering, Food & Spending Money (Euros)',
+          text: `
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+                <div>
+                  <h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 1.05rem;"><i class="fa-solid fa-utensils" style="color: #0284c7;"></i> Meal Arrangements</h4>
+                  <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.5;">
+                    <li><strong>Day 1 (Thursday):</strong> Pupils <strong>must bring a packed lunch and snacks from home</strong> for the coach journey. No fast food purchases at ferry/service stations.</li>
+                    <li><strong>Hot Breakfasts:</strong> Full cooked/continental breakfast provided at Peace Village Hostel on Friday and Saturday mornings.</li>
+                    <li><strong>Evening Dinners:</strong> Substantial 2-course hot group dinners provided in Ypres restaurants on Thursday and Friday evenings.</li>
+                  </ul>
+                </div>
+
+                <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 16px;">
+                  <h4 style="margin: 0 0 6px 0; color: #92400e; font-size: 1.05rem;"><i class="fa-solid fa-euro-sign" style="color: #d97706;"></i> Spending Money (€20–€30 Euros Cash)</h4>
+                  <p style="margin: 0; color: #78350f; font-size: 0.92rem; line-height: 1.5;">
+                    Pupils require <strong>€20 to €30 in cash (Euros)</strong>. On Friday and Saturday, we make supervised stops at Belgian supermarkets where pupils purchase fresh sandwiches, drinks, and fruit for lunch. Remaining change can be used for small postcards or souvenirs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          `,
+        },
+        {
+          type: 'narrative',
+          theme_heading: 'Accommodation, Safety & Rooming Allocation Timeline',
+          text: `
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+              <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 1.05rem;"><i class="fa-solid fa-hotel"></i> Peace Village Hostel &amp; Supervision</h4>
+              <p style="margin: 0 0 12px 0; color: #334155; font-size: 0.94rem; line-height: 1.6;">
+                Located at Kemmelbergweg 43, 8956 Heuvelland, Belgium. Peace Village is a purpose-built, secure educational centre set in the rural countryside with keycard access, modern en-suite studios (typically 3 to 4 pupils per room), and private recreational grounds.
+              </p>
+              
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 6px; padding: 14px; margin-bottom: 14px;">
+                <strong style="color: #166534; font-size: 0.95rem; display: block; margin-bottom: 4px;">📅 Rooming Process (Starting in Two Weeks):</strong>
+                <p style="margin: 0; color: #1e293b; font-size: 0.9rem; line-height: 1.5;">
+                  Pupils will complete rooming preference slips in school in two weeks' time. Mr Lovett and staff will review all choices to ensure every pupil is happily placed with close friends in a comfortable, supportive room. Staff sleep on the same corridors with active evening checks and a strict lights-out policy.
+                </p>
+              </div>
+
+              <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 14px;">
+                <strong style="color: #991b1b; font-size: 0.95rem; display: block; margin-bottom: 4px;">📋 Code of Conduct &amp; Forms Deadline:</strong>
+                <p style="margin: 0; color: #7f1d1d; font-size: 0.9rem; line-height: 1.5;">
+                  All pupils and parents must sign and return the <strong>Code of Conduct Agreement Form</strong> and the <strong>Medical/Dietary Confirmation Form</strong> by <strong>Friday 25th September</strong>. Passports (with >3 months validity) and valid GHIC/EHIC cards must also be verified.
+                </p>
+              </div>
+            </div>
+          `,
+        },
       ],
     },
     {

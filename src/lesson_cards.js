@@ -300,12 +300,28 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     if (prepPack) {
       lessonsHTML += `
         <div style="margin-bottom: 25px;">
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${prepPack.index}" style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #0284c7; border-radius: 8px; padding: 18px 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
-            <div>
-              <h3 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Logistics</h3>
-              <p style="margin: 4px 0 0 0; color: #475569; font-size: 0.9rem;">Parent briefing notes, luggage checklist, emergency contacts &amp; accommodation details</p>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #0284c7; border-radius: 8px; padding: 18px 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div style="flex: 1; min-width: 280px; cursor: pointer;" data-action="view-lesson-detail" data-index="${prepPack.index}">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 3px; flex-wrap: wrap;">
+                <h3 style="margin: 0; color: #0369a1; font-size: 1.18rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Parental Briefing</h3>
+                <span style="background: #eff6ff; color: #0284c7; border: 1px solid #bfdbfe; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Thu 10 Sep · 16:15 Briefing</span>
+              </div>
+              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Joint expedition led by Mr Ben Lovett &amp; Mr James Garrett (The History Boys). Packing checklist, catering &amp; €20–€30 Euros, rooming timeline, and return forms.</p>
             </div>
-            <span style="font-size: 0.8rem; font-weight: 700; background: #f0f9ff; color: #0369a1; padding: 6px 14px; border-radius: 20px; border: 1px solid #bae6fd;">View Prep Pack &rarr;</span>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+              <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #fefce8; color: #b45309; border: 1.5px solid #fde047; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#fef08a';" onmouseout="this.style.background='#fefce8';">
+                <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> Parent Pack (PDF)
+              </a>
+              <a href="/briefings/ypres_2026_parent_briefing.pptx" download style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#dcfce7';" onmouseout="this.style.background='#f0fdf4';">
+                <i class="fa-solid fa-file-powerpoint" style="color: #ea580c;"></i> Slides (.pptx)
+              </a>
+              <button class="btn" data-action="open-parent-briefing-modal" style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #0f172a; color: #ffffff; border: 1.5px solid #0f172a; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: all 0.2s;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';">
+                <i class="fa-solid fa-chalkboard-user" style="color: #38bdf8;"></i> Presentation Mode
+              </button>
+              <button class="btn" data-action="view-lesson-detail" data-index="${prepPack.index}" style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #0284c7; color: #ffffff; border: 1.5px solid #0284c7; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                View Guide &rarr;
+              </button>
+            </div>
           </div>
         </div>
       `;

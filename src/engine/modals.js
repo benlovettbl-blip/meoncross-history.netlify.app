@@ -1207,3 +1207,175 @@ window.openTeacherGuideModal = function () {
   void modal.offsetWidth;
   modal.style.opacity = '1';
 };
+
+window.openParentBriefingModal = function () {
+  if (document.getElementById('parentBriefingModal')) return;
+
+  const html = `
+    <div id="parentBriefingModal" class="modal-overlay no-print" style="display: flex; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 999999; opacity: 0; transition: opacity 0.3s ease;">
+      <div class="modal-content" style="background: #f8fafc; border-radius: 12px; width: 95vw; max-width: 1280px; max-height: 94vh; overflow-y: auto; color: #1e293b; position: relative; font-family: 'Outfit', sans-serif; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); border: 1px solid #cbd5e1; display: flex; flex-direction: column;">
+        
+        <!-- Header Banner -->
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: #ffffff; padding: 18px 24px; border-radius: 11px 11px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 3px solid #d97706;">
+          <div>
+            <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px;">
+              Parent &amp; Pupil Expedition Briefing · Thursday 10th September (16:15)
+            </div>
+            <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #ffffff; letter-spacing: 0.02em;">
+              YPRES 1914–1918: REMEMBRANCE, SACRIFICE &amp; LOCAL HERITAGE
+            </h2>
+            <div style="font-size: 0.9rem; color: #cbd5e1; margin-top: 4px;">
+              Meoncross School History Department &amp; The History Boys · Led jointly by <strong>Mr Ben Lovett</strong> &amp; <strong>Mr James Garrett</strong>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" style="background: #fefce8; color: #b45309; border: 1.5px solid #fde047; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+              <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> PDF Handout
+            </a>
+            <a href="/briefings/ypres_2026_parent_briefing.pptx" download style="background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+              <i class="fa-solid fa-file-powerpoint" style="color: #ea580c;"></i> Slides (.pptx)
+            </a>
+            <button id="closeParentBriefingBtn" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; width: 36px; height: 36px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.2s;">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3-Column Executive Presentation Slide -->
+        <div style="padding: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; flex: 1;">
+          
+          <!-- Column 1: Itinerary & Local Mission -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #1e3a8a; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="background: #eff6ff; color: #1e3a8a; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 0.85rem;">1</span>
+              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.1rem; font-family: 'Playfair Display', serif;">3-Day Itinerary &amp; Mission</h3>
+            </div>
+            
+            <div style="margin-bottom: 12px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 3px solid #1e3a8a;">
+              <strong style="color: #0f172a; font-size: 0.85rem;">Day 1 (Thu 1 Oct): North Salient &amp; Medical Care</strong>
+              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">06:15 departure from school. Essex Farm ADS (John McCrae's bunker), Yorkshire Trench, Langemarck German Cemetery. Peace Village Hostel check-in &amp; 2-course dinner.</p>
+            </div>
+
+            <div style="margin-bottom: 12px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 3px solid #b45309;">
+              <strong style="color: #0f172a; font-size: 0.85rem;">Day 2 (Fri 2 Oct): Passchendaele &amp; Menin Gate</strong>
+              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">Vancouver Corner, Hooge Crater preserved trenches, Sanctuary Wood, Tyne Cot Cemetery (finding our village fallen). Evening: <strong>8:00 PM Last Post Ceremony</strong> with school wreath laying.</p>
+            </div>
+
+            <div style="margin-bottom: 12px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 3px solid #0f766e;">
+              <strong style="color: #0f172a; font-size: 0.85rem;">Day 3 (Sat 3 Oct): Ypres Town &amp; Journey Home</strong>
+              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">In Flanders Fields Museum (Cloth Hall), Ypres Ramparts walk, Talbot House (Poperinge). Supermarket lunch &amp; return to Meoncross approx. 20:30.</p>
+            </div>
+
+            <div style="background: #fefce8; border: 1px solid #fef08a; padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #92400e; font-size: 0.82rem; display: block; margin-bottom: 2px;">🕊️ The Local Heritage Hook:</strong>
+              <span style="font-size: 0.78rem; color: #78350f; line-height: 1.35;">Pupils will locate our Stubbington village dead—including the three Lowry brothers from Manor Way Grange and the six Salient fallen on Holy Rood's parish tablet.</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Food, Money & Rooming -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #b45309; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="background: #fef3c7; color: #b45309; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 0.85rem;">2</span>
+              <h3 style="margin: 0; color: #b45309; font-size: 1.1rem; font-family: 'Playfair Display', serif;">Food, Money &amp; Accommodation</h3>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">🍽️ Catering Arrangements:</strong>
+              <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #334155; line-height: 1.4;">
+                <li><strong>Thursday Day 1:</strong> Pupils <strong>must bring a packed lunch</strong> &amp; travel snacks from home for the coach/crossing.</li>
+                <li><strong>Included Meals:</strong> Full hot breakfasts at hostel (Fri &amp; Sat mornings); 2-course evening group dinners in Ypres (Thu &amp; Fri).</li>
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 14px; background: #fffbeb; border: 1px solid #fde68a; padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #92400e; font-size: 0.88rem; display: block; margin-bottom: 4px;">💶 Spending Money (Euros in Cash):</strong>
+              <p style="margin: 0; font-size: 0.82rem; color: #78350f; line-height: 1.4;">
+                Pupils require <strong>€20 to €30 in cash (Euros)</strong>. On Friday and Saturday, we stop at Belgian supermarkets for fresh sandwiches, drinks, and fruit. Any small remaining change can be used for postcards/souvenirs.
+              </p>
+            </div>
+
+            <div>
+              <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">🏨 Peace Village Hostel &amp; Rooming:</strong>
+              <p style="margin: 0 0 6px 0; font-size: 0.82rem; color: #334155; line-height: 1.4;">
+                Purpose-built educational hostel in Heuvelland with secure keycard access and en-suite rooms (3–4 pupils per room).
+              </p>
+              <div style="background: #f1f5f9; border-left: 3px solid #0284c7; padding: 8px 10px; border-radius: 4px; font-size: 0.78rem; color: #0369a1; line-height: 1.35;">
+                <strong>Rooming Timeline:</strong> Preference slips issued in <strong>two weeks' time</strong> in school. All groupings reviewed by Mr Lovett to ensure every pupil is happily paired.
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Essential Kit & Forms -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #15803d; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="background: #dcfce7; color: #15803d; width: 28px; height: 28px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 0.85rem;">3</span>
+              <h3 style="margin: 0; color: #15803d; font-size: 1.1rem; font-family: 'Playfair Display', serif;">Essential Kit &amp; Next Steps</h3>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">🥾 Weather Kit (Autumn in Flanders):</strong>
+              <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #334155; line-height: 1.4;">
+                <li><strong>Sturdy Walking Boots:</strong> Waterproof &amp; broken-in. Ground and duckboards can be muddy and slippery.</li>
+                <li><strong>Waterproof Raincoat:</strong> Windproof with hood.</li>
+                <li><strong>Warm Winter Hat &amp; Gloves:</strong> Mandatory! Standing still at 8pm Menin Gate ceremony gets very cold.</li>
+                <li><strong>Luggage:</strong> 1 medium holdall for coach hold + 1 small daypack for coach seat.</li>
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">📄 Travel Documents &amp; Tech:</strong>
+              <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #334155; line-height: 1.4;">
+                <li><strong>Valid UK Passport:</strong> Must have at least 3 months validity beyond Oct 2026.</li>
+                <li><strong>GHIC / EHIC Card:</strong> Reciprocal healthcare in Belgium.</li>
+                <li><strong>European 2-Pin Adapter:</strong> For charging phones.</li>
+              </ul>
+            </div>
+
+            <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 10px 12px; border-radius: 6px;">
+              <strong style="color: #991b1b; font-size: 0.82rem; display: block; margin-bottom: 2px;">⚠️ Forms Return Deadline:</strong>
+              <span style="font-size: 0.78rem; color: #7f1d1d; line-height: 1.35;">Code of Conduct Agreement Form and Medical/Dietary confirmation form must be signed and returned by <strong>Friday 25th September</strong>.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bar -->
+        <div style="background: #0f172a; color: #ffffff; padding: 12px 24px; border-radius: 0 0 11px 11px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.82rem;">
+          <div>
+            <span style="color: #38bdf8; font-weight: 700;">🌐 Web App:</span> meoncross-history.netlify.app &nbsp;|&nbsp;
+            <span style="color: #fbbf24; font-weight: 700;">24/7 School Base:</span> +44 (0)1329 288339
+          </div>
+          <div style="color: #94a3b8; font-size: 0.78rem;">
+            Press <strong>Esc</strong> or click anywhere outside to close this briefing slide
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', html);
+  const modal = document.getElementById('parentBriefingModal');
+
+  const closeBtn = document.getElementById('closeParentBriefingBtn');
+  const closeModal = () => {
+    window.removeEventListener('keydown', keyHandler);
+    modal.style.opacity = '0';
+    setTimeout(() => modal.remove(), 250);
+  };
+
+  const keyHandler = (e) => {
+    if (e.key === 'Escape') closeModal();
+  };
+  window.addEventListener('keydown', keyHandler);
+
+  if (closeBtn) closeBtn.onclick = closeModal;
+  modal.onclick = (e) => {
+    if (e.target === modal) closeModal();
+  };
+
+  // Trigger reflow & fade in
+  void modal.offsetWidth;
+  modal.style.opacity = '1';
+};

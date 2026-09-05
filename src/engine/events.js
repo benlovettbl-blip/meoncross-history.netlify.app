@@ -112,6 +112,11 @@ export function initEventDelegation() {
           window.openAnthologyModal();
         }
         break;
+      case 'open-parent-briefing-modal':
+        if (window.openParentBriefingModal) {
+          window.openParentBriefingModal();
+        }
+        break;
       case 'switch-trip-hub-tab': {
         const selectedTab = target.dataset.tab;
         const container = target.closest('#trip-hub-container') || document;
