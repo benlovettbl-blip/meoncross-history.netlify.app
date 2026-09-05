@@ -182,13 +182,11 @@ export function renderSidebar() {
   if (appStore.state.activeUnitData.type === 'trip') {
     let prepPack = null;
     const days = [];
-    let finalChallenge = null;
 
     appStore.state.activeUnitData.lessons.forEach((lesson, index) => {
       if (lesson.id === 'day_0') prepPack = { lesson, index };
       else if (lesson.id === 'day_1' || lesson.id === 'day_2' || lesson.id === 'day_3')
         days.push({ lesson, index });
-      else if (lesson.id === 'final_challenge') finalChallenge = { lesson, index };
     });
 
     if (prepPack) {
@@ -221,21 +219,6 @@ export function renderSidebar() {
       };
       navContainer.appendChild(dayLink);
     });
-
-    if (finalChallenge) {
-      const challengeLink = document.createElement('a');
-      challengeLink.className = 'lesson-link';
-      challengeLink.innerHTML =
-        '<i class="fa-solid fa-award" style="margin-right: 8px; color: #f59e0b;"></i> Synthesis Challenge';
-      challengeLink.href = '#';
-      challengeLink.onclick = (e) => {
-        e.preventDefault();
-        document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
-        challengeLink.classList.add('active');
-        window.renderLessonByIndex(finalChallenge.index);
-      };
-      navContainer.appendChild(challengeLink);
-    }
   }
 
   // The Fallen / Local Heroes Sidebar Accordion (Trips only) - Removed per user request

@@ -265,7 +265,6 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     const meninGateHeroes = [];
     const tyneCotHeroes = [];
     const lowryBrothers = [];
-    let finalChallenge = null;
     let prepPack = null;
 
     (targetData.lessons || []).forEach((lesson, index) => {
@@ -279,8 +278,6 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         tyneCotHeroes.push({ lesson, index });
       } else if (lesson.id && lesson.id.startsWith('hero_lowry_')) {
         lowryBrothers.push({ lesson, index });
-      } else if (lesson.id === 'final_challenge') {
-        finalChallenge = { lesson, index };
       }
     });
 
@@ -322,18 +319,6 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           </div>
         `;
     });
-    if (finalChallenge) {
-      lessonsHTML += `
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${finalChallenge.index}" style="background: white; border: 1px solid #cbd5e1; border-top: 4px solid #f59e0b; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';" onmouseout="this.style.transform='translateY(0)';">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h3 style="margin: 0; color: #b45309; font-size: 1.15rem; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-award" style="margin-right: 6px;"></i> Synthesis Challenge</h3>
-              <span style="font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #b45309; padding: 3px 8px; border-radius: 12px; border: 1px solid #fde68a;">Reflection</span>
-            </div>
-            <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem;">${finalChallenge.lesson.title}</p>
-            <p style="margin: 8px 0 0 0; color: #64748b; font-size: 0.85rem; font-style: italic;">The Final Teacher Challenge: Reflection &amp; Historical Evaluation</p>
-          </div>
-        `;
-    }
     lessonsHTML += '</div>';
 
     // The Fallen: Physical Memorials visited on the tour
@@ -359,6 +344,67 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
               Every one of our six Salient fallen—along with the three Lowry brothers—is carved side-by-side into this marble tablet in Holy Rood Church. On this tour, our mission is to trace their names from our home village to the great memorial walls of Flanders.
             </p>
+          </div>
+        </div>
+
+        <!-- Stubbington War Memorial Lychgate - 4 Sides Showcase -->
+        <div style="margin-top: 20px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 3px 9px; border-radius: 12px;">Village Memorial Heritage</span>
+              <h4 style="margin: 6px 0 0 0; color: #0f172a; font-size: 1.15rem; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-monument" style="color: #991b1b; margin-right: 6px;"></i> The Stubbington War Memorial Lychgate (All 4 Sides)</h4>
+            </div>
+            <span style="font-size: 0.8rem; color: #64748b; font-style: italic;">Carved oak tie-beams commemorating the parish dead · Click any photo to zoom</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+              <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal">
+                <img src="/images/stubbington_names_4.jpg" alt="West Beam: Adams to Franklin" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+              </div>
+              <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 1 (West Beam)</strong>
+                  <span style="color: #475569; display: block; margin-top: 3px;">Adams · Ayling · Franklin</span>
+                </div>
+                <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #1d4ed8; background: #eff6ff; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 1 · Menin Gate</span>
+              </div>
+            </div>
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+              <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal">
+                <img src="/images/stubbington_names_1.jpg" alt="East Beam: Muckett to Smith" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+              </div>
+              <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 2 (East Beam)</strong>
+                  <span style="color: #475569; display: block; margin-top: 3px;">Muckett · Rye · Smith</span>
+                </div>
+                <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #b91c1c; background: #fef2f2; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 2 · Tyne Cot</span>
+              </div>
+            </div>
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+              <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal">
+                <img src="/images/stubbington_names_2.jpg" alt="South Beam: Warland to Wells" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+              </div>
+              <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 3 (South Beam)</strong>
+                  <span style="color: #475569; display: block; margin-top: 3px;">Warland · Ward · Wells</span>
+                </div>
+                <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #047857; background: #ecfdf5; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 3 · Salient Defences</span>
+              </div>
+            </div>
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+              <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal">
+                <img src="/images/stubbington_names_3.jpg" alt="North Beam: Lowry Brothers & Halahan" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+              </div>
+              <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 4 (North Beam)</strong>
+                  <span style="color: #475569; display: block; margin-top: 3px;">Lowry Brothers · Halahan · King</span>
+                </div>
+                <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #7c3aed; background: #f5f3ff; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Tour Hub &amp; Pre-Trip</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

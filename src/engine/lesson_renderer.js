@@ -167,10 +167,7 @@ export function renderLesson(lesson) {
     appStore.state.selectedUnitId === 'trip_ypres' ||
     lesson.cwgc_data !== undefined ||
     lesson.id === 'day_0' ||
-    (lesson.id &&
-      (lesson.id.startsWith('day_') ||
-        lesson.id.startsWith('hero_') ||
-        lesson.id === 'final_challenge'));
+    (lesson.id && (lesson.id.startsWith('day_') || lesson.id.startsWith('hero_')));
   let lessonPrefix = 'Lesson';
   let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
 
@@ -195,8 +192,6 @@ export function renderLesson(lesson) {
       lessonPrefix = 'Home Front Memorial · Manor Way Grange';
     } else if (lesson.id && lesson.id.startsWith('hero_')) {
       lessonPrefix = 'Local Hero · Fallen of the Salient';
-    } else if (lesson.id === 'final_challenge') {
-      lessonPrefix = 'Pilgrimage Reflection';
     }
   } else if (ktMatch) {
     lessonPrefix = `KT ${ktMatch[1]}`;
@@ -2201,8 +2196,6 @@ export function renderLesson(lesson) {
           prevLabel = `Previous Study: ${prevLesson.title.split('(')[0].trim()}`;
         } else if (prevLesson.id && prevLesson.id.startsWith('hero_')) {
           prevLabel = `Previous Hero: ${prevLesson.title.split('(')[0].trim()}`;
-        } else if (prevLesson.id === 'final_challenge') {
-          prevLabel = 'Synthesis Challenge';
         } else {
           prevLabel = 'Previous';
         }
@@ -2224,8 +2217,6 @@ export function renderLesson(lesson) {
           nextLabel = `Home Front: ${nextLesson.title.split('(')[0].trim()}`;
         } else if (nextLesson.id && nextLesson.id.startsWith('hero_')) {
           nextLabel = `Local Hero: ${nextLesson.title.split('(')[0].trim()}`;
-        } else if (nextLesson.id === 'final_challenge') {
-          nextLabel = 'Synthesis Challenge';
         } else {
           nextLabel = 'Next';
         }

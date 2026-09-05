@@ -184,6 +184,7 @@ export const unitData = {
       id: 'day_0',
       title: 'Pre-Trip Information',
       enquiry: 'What to Pack & Logistics',
+      banner: '/images/stubbington_names_3.jpg',
       teacher_notes: {
         primer: 'Vital information for parents and pupils prior to departure.',
         objectives: [],
@@ -212,8 +213,33 @@ export const unitData = {
       enquiry: 'Travel and Initial Explorations',
       teacher_notes: {
         primer:
-          'Travel day from school to the Ypres Salient, featuring stops at Essex Farm, Langemarck, and Hooge Crater.',
-        objectives: [],
+          'Day 1 transitions students from home into the contested landscape of the Ypres Salient, focusing on frontline medical triage at Essex Farm, the solemnity and political manipulation of memory at Langemarck German Cemetery, and the raw physical conditions of trench warfare at Hooge Crater.',
+        objectives: [
+          {
+            objective:
+              "Examine the role of Advanced Dressing Stations and analyze how John McCrae's 'In Flanders Fields' captured the immediate human cost of Second Ypres.",
+            primer:
+              "Guide pupils into the concrete dugouts at Essex Farm, highlighting triage and the writing of the poem after Alexis Helmer's funeral. Contrast McCrae's poetic grief with the physical claustrophobia of the bunker.",
+            question:
+              "Why did McCrae's poem, written beside an Advanced Dressing Station dugout, become the global symbol of remembrance rather than an anti-war protest?",
+          },
+          {
+            objective:
+              "Evaluate the contrast between Allied and German memorial architecture and unpack the weaponization of the 'Langemarck Myth'.",
+            primer:
+              'Direct pupils to the Kameradengrab and bronze panels at Langemarck. Have them examine how the German High Command and later the Nazi regime twisted a tactical failure into a myth of heroic student sacrifice.',
+            question:
+              'How does the somber, dark basalt architecture of Langemarck tell a fundamentally different political story from British Commonwealth cemeteries?',
+          },
+          {
+            objective:
+              'Understand the extreme physical reality and trauma of living in frontline craters and waterlogged trenches at Hooge.',
+            primer:
+              'Walk the preserved trench lines at Hooge Crater, discussing how underground mine detonations transformed warfare and how the high water table caused rampant trench foot.',
+            question:
+              'What does the proximity of opposing trenches at Hooge Crater reveal about the psychological toll of static warfare?',
+          },
+        ],
       },
       do_now: {
         type: 'timeline',
@@ -304,7 +330,7 @@ export const unitData = {
         {
           type: 'narrative',
           theme_heading: 'Essex Farm & The Advanced Dressing Station',
-          text: '<div class="source-box" style="text-align: center; margin-bottom: 20px;"><img src="/images/ypres_essex_farm.jpg" style="max-width: 100%; border-radius: 8px;" alt="John McCrae"/><br><small>Lt Col John McCrae, author of In Flanders Fields</small></div>Essex Farm served as an Advanced Dressing Station (ADS). Medical officers worked in cramped, concrete dugouts just hundreds of yards from the fighting to stabilize the wounded before they could be evacuated to hospitals further back.<br><br><strong>Key Facts:</strong><ul><li>Triage was practiced here: sorting casualties based on the severity of their wounds.</li><li>In May 1915, Canadian surgeon Lt Col John McCrae wrote the famous poem <em>In Flanders Fields</em> while stationed here after burying his friend Alexis Helmer.</li><li>Valentine Joe Strudwick, one of the youngest casualties of the war at just 15 years old, is buried here.</li></ul>',
+          text: '<div class="source-box" style="text-align: center; margin-bottom: 20px;"><img src="/images/ypres_essex_farm.jpg" style="max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Essex Farm Advanced Dressing Station dugouts"/><br><small style="color: #64748b;">The concrete Advanced Dressing Station bunkers at Essex Farm along the Yser Canal</small></div>Essex Farm served as an Advanced Dressing Station (ADS). Medical officers worked in cramped, concrete dugouts just hundreds of yards from the fighting to stabilize the wounded before they could be evacuated to casualty clearing stations further back.<br><br><strong>Key Medical Facts:</strong><ul><li><strong>Triage in the Mud:</strong> Doctors sorted bleeding casualties into three distinct categories: those who could return to duty, those needing urgent surgical intervention, and those mortally wounded beyond help.</li><li><strong>Cramped Survival:</strong> The damp concrete bunkers had ceilings barely six feet high and were lit only by flickering lanterns, with shellfire constantly shaking dust into open wounds.</li><li><strong>The Youngest Fallen:</strong> Valentine Joe Strudwick, one of the youngest Commonwealth soldiers killed on the Western Front at just 15 years of age (having enlisted at 14), lies buried in Plot I, Row G, Grave 12.</li></ul><br><div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 5px solid #b91c1c; border-radius: 8px; padding: 22px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);"><div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;"><div style="flex: 0 0 150px; text-align: center;"><img src="/images/john_mccrae.jpg" alt="Lieutenant Colonel John McCrae" style="width: 150px; height: auto; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 3px 8px rgba(0,0,0,0.15);" /><small style="display: block; margin-top: 6px; color: #64748b; font-size: 0.8rem; line-height: 1.3;">Lt Col John McCrae<br>(1872–1918)</small></div><div style="flex: 1; min-width: 250px;"><span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 8px;">Poet Profile &amp; Eyewitness</span><h3 style="margin: 0 0 8px 0; color: #7f1d1d; font-size: 1.25rem; font-family: \'Playfair Display\', serif;">Lieutenant Colonel John McCrae</h3><p style="margin: 0 0 10px 0; color: #334155; font-size: 0.93rem; line-height: 1.6;">Born in Guelph, Ontario, John McCrae was an accomplished Canadian physician, consulting pathologist, and veteran of the South African War. In 1914, he volunteered at age 41 and was appointed brigade surgeon to the 1st Brigade Canadian Field Artillery. Stationed here at Essex Farm during the Second Battle of Ypres (April–May 1915), McCrae endured 17 consecutive days treating hundreds of grievously wounded men under relentless German bombardment and chlorine gas attacks.<br><br>On 2nd May 1915, his former student and close friend, 22-year-old Lieutenant Alexis Helmer, was killed instantly by an 8-inch high-explosive shell. With no chaplain present, McCrae recited the burial service from memory by lantern light. The following morning, sitting on the step of an ambulance overlooking wild scarlet poppies growing amidst the wooden crosses, he composed <em>In Flanders Fields</em>. McCrae died of pneumonia and meningitis on active duty in January 1918 and is buried at Wimereux.</p></div></div><div style="margin-top: 18px; padding-top: 18px; border-top: 1px solid #e2e8f0;"><h4 style="margin: 0 0 12px 0; color: #1e293b; font-size: 1.15rem; font-family: \'Playfair Display\', serif; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-feather-pointed" style="color: #b91c1c;"></i> <em>In Flanders Fields</em> (Complete Poem · May 1915)</h4><blockquote style="background: #ffffff; border-left: 4px solid #b91c1c; padding: 18px 22px; border-radius: 4px; font-family: \'Georgia\', serif; font-size: 1.02rem; line-height: 1.8; color: #1e293b; margin: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">In Flanders fields the poppies blow<br>Between the crosses, row on row,<br>&nbsp;&nbsp;&nbsp;&nbsp;That mark our place; and in the sky<br>&nbsp;&nbsp;&nbsp;&nbsp;The larks, still bravely singing, fly<br>Scarce heard amid the guns below.<br><br>We are the Dead. Short days ago<br>We lived, felt dawn, saw sunset glow,<br>&nbsp;&nbsp;&nbsp;&nbsp;Loved and were loved, and now we lie,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Flanders fields.<br><br>Take up our quarrel with the foe:<br>To you from failing hands we throw<br>&nbsp;&nbsp;&nbsp;&nbsp;The torch; be yours to hold it high.<br>&nbsp;&nbsp;&nbsp;&nbsp;If ye break faith with us who die<br>We shall not sleep, though poppies grow<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Flanders fields.<br><div style="text-align: right; margin-top: 10px; font-family: sans-serif; font-size: 0.85rem; color: #64748b; font-weight: 600;">— <strong>Lieutenant Colonel John McCrae</strong>, Canadian Army Medical Corps (composed at Essex Farm)</div></blockquote></div></div>',
         },
         {
           type: 'narrative',
@@ -403,7 +429,7 @@ export const unitData = {
           text: '"To finish our first day, we are heading to a site that shows just how explosive this war really was. Imagine living in a crater made by a mine blast so massive the shockwave shattered windows miles away. Here at Hooge, you will walk through recreated German and British trenches. This wasn\'t just fighting; it was survival. Notice how close the frontlines were—you could hear the enemy coughing. As we go through the museum and its medicine section, think about the claustrophobia these men endured."<br><br><strong>Teacher Points:</strong><ul><li>The crater at Hooge was created in July 1915 when the British detonated a massive underground mine, blowing a hole 120 feet wide and 20 feet deep.</li><li>Trench foot was a massive problem here; soldiers stood in freezing mud for days, causing their feet to swell, blister, and turn gangrenous, often requiring amputation.</li><li>The museum houses an excellent collection of medical artifacts, which ties directly into the medicine questions you\'ll tackle in your workbooks tonight.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>"The trench was a ribbon of earth, filled with freezing water, the stench of unburied bodies, and the constant, nerve-shredding crack of sniper fire. We were not just fighting the Germans; we were fighting the mud, the rats, and our own exhausted minds."</em><br>— <strong>Private Frank Richards</strong>, Royal Welch Fusiliers, from his memoir Old Soldiers Never Die.</blockquote>',
         },
       ],
-      banner: '/images/stretcher_bearers_passchendaele.jpg',
+      banner: '/images/stubbington_names_4.jpg',
       extended: {
         question:
           '1 (a). How useful are Sources A and B for an enquiry into the difficult conditions faced by the medical services at Passchendaele and Ypres? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)',
@@ -610,7 +636,7 @@ export const unitData = {
           text: '"Tonight is about remembrance. We are heading into Ypres to the Menin Gate. Every single one of the 54,000 names carved into this gate belongs to a soldier who died defending the Salient and has no known grave. Every night since 1928, the Last Post has been played here to honor them. Tonight, our school will lay a wreath on their behalf. Listen to the bugles echoing under the arch, and remember the teenagers who walked out through this gate to the frontlines and never came back."<br><br><strong>Teacher Points:</strong><ul><li>The Menin Gate was the main road out of the town of Ypres leading directly toward the frontline; millions of soldiers marched through this very spot.</li><li>The Last Post is played by volunteers from the local Ypres fire brigade. They even hid their bugles and played it secretly during the German occupation in WWII.</li><li>There are so many missing soldiers in the Salient that the Menin Gate ran out of space; the remaining 35,000 names are on the wall at Tyne Cot, which we saw earlier.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>"He is not missing; he is here."</em><br>— <strong>Field Marshal Lord Plumer</strong>, speaking to the families of the missing at the inauguration of the Menin Gate in 1927.</blockquote>',
         },
       ],
-      banner: '/images/ypres_cloth_hall.jpg',
+      banner: '/images/stubbington_names_1.jpg',
       extended: {
         question:
           '1 (a). How useful are Sources A and B for an enquiry into the physical conditions of the landscape and trench warfare on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)',
@@ -646,9 +672,36 @@ export const unitData = {
       title: 'Day 3: Saturday 3rd October 2026',
       enquiry: 'Poperinge and the Journey Home',
       teacher_notes: {
-        primer: 'Final visits in Ypres and Poperinge before travelling back to Meoncross School.',
-        objectives: [],
+        primer:
+          'Day 3 concludes the expedition by moving from the ramparts of Ypres to the rear-echelon sanctuaries and execution sites of Poperinge, culminating in a reflection on British military justice, shell shock, and modern national remembrance at the National Memorial Arboretum in Staffordshire.',
+        objectives: [
+          {
+            objective:
+              "Analyze Siegfried Sassoon's bitter anti-monument sentiment in 'On Passing the New Menin Gate'.",
+            primer:
+              "Read Sassoon's poem atop the Ramparts. Contrast the grand neoclassical triumphalism of Sir Reginald Blomfield's Menin Gate with Sassoon's anger that the unheroic, conscripted dead were being sanitized in stone.",
+            question:
+              "Why did decorated war veteran Siegfried Sassoon condemn the Menin Gate as a 'sepulchre of crime'?",
+          },
+          {
+            objective:
+              'Contrast the psychological refuge of Talbot House with the disciplinary brutality of Poperinge Town Hall death cells.',
+            primer:
+              "Contrast the unconditional humanity of Tubby Clayton's 'Abandon Rank All Ye Who Enter Here' with the cold wooden cells and execution post where 306 men were condemned for desertion and cowardice.",
+            question:
+              "How did the British military hierarchy's misunderstanding of shell shock lead to the execution of traumatized soldiers at dawn?",
+          },
+          {
+            objective:
+              'Trace the path of national reconciliation from the Poperinge execution post to the Shot at Dawn Memorial at the National Memorial Arboretum (UK).',
+            primer:
+              'Focus on the Andy DeComyn statue of Herbert Burden and the 306 stakes at the National Memorial Arboretum, examining the 2006 statutory pardon and how society reframes past injustices.',
+            question:
+              "Why is the National Memorial Arboretum's Shot at Dawn Memorial considered a vital moment of national reckoning and healing for British society?",
+          },
+        ],
       },
+      banner: '/images/stubbington_names_2.jpg',
       do_now: {
         type: 'timeline',
         prediction_question: 'Day 3 Itinerary',
@@ -719,7 +772,7 @@ export const unitData = {
         {
           type: 'narrative',
           theme_heading: 'Ypres Ramparts',
-          text: '<div style="text-align: center; margin-bottom: 20px;"><img src="/images/St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I.png" style="max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I" /><br><small style="color: #64748b;">St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I</small></div>The medieval ramparts of Ypres provided some of the only cover in the destroyed city. Soldiers dug deep into the ancient moated defenses to hide from the shelling. The Ramparts Cemetery is one of the most picturesque on the Western Front, built directly into the town\'s defenses.<br><br><blockquote><strong>Written Source:</strong><br><em>"Who will remember, passing through this Gate,<br>The unheroic Dead who fed the guns?<br>Who shall absolve the foulness of their fate,—<br>Those doomed, conscripted, unvictorious ones?<br>Crudely renewed, the Salient holds its own.<br>Paid are its dues, and waged its warfare; nay,<br>What need to make a triumph out of bone,<br>Or keep a pile of names from passing away?<br><br>Here was the world’s worst wound. And here with pride<br>\'Their name liveth for ever\', the Gateway claims.<br>Was ever an immolation so belied<br>As these intolerably nameless names?<br>Well might the Dead who struggled in the slime<br>Rise and deride this sepulchre of crime."</em><br>— <strong>Siegfried Sassoon</strong>, <em>On Passing the New Menin Gate</em> (1927)</blockquote><br><div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);"><h4 style="color: #059669; margin: 0 0 15px 0; font-family: \'Playfair Display\', serif; font-size: 1.4rem;"><i class="fa-solid fa-clipboard-list"></i> Task: Ancient Defenses</h4><div style="background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;"><p style="margin: 0; color: #334155; font-weight: bold;"><i class="fa-solid fa-shield-halved"></i> Look at the thick brick walls of the Ramparts. Why do you think soldiers chose to dig their dugouts into medieval defenses rather than staying in the open town? How does the Ramparts Cemetery differ in atmosphere from Tyne Cot?</p><ul style="margin-top: 15px; color: #475569; font-size: 0.95rem;"> <li>The Ramparts were originally medieval fortifications, massively expanded and reinforced in the 17th century by the famous French military engineer Vauban.</li> <li>Because the brick and earth walls were incredibly thick, they survived the relentless German artillery barrages that completely leveled the rest of the town.</li> <li>British troops honeycombed these ancient walls, digging extensive subterranean dugouts to house battalion headquarters, dormitories, and advanced dressing stations safely out of the blast zones.</li> </ul></div></div>',
+          text: '<div style="text-align: center; margin-bottom: 20px;"><img src="/images/St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I.png" style="max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I" /><br><small style="color: #64748b;">St Martin\'s Church and Cloth Hall in Ypres, Belgium—after World War I</small></div>The medieval ramparts of Ypres provided some of the only cover in the destroyed city. Soldiers dug deep into the ancient moated defenses to hide from the shelling. The Ramparts Cemetery is one of the most picturesque on the Western Front, built directly into the town\'s defenses.<br><br><div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 5px solid #4338ca; border-radius: 8px; padding: 22px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);"><div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;"><div style="flex: 0 0 150px; text-align: center;"><img src="/images/siegfried_sassoon.jpg" alt="Captain Siegfried Sassoon" style="width: 150px; height: auto; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 3px 8px rgba(0,0,0,0.15);" /><small style="display: block; margin-top: 6px; color: #64748b; font-size: 0.8rem; line-height: 1.3;">Captain Siegfried Sassoon<br>(1886–1967)</small></div><div style="flex: 1; min-width: 250px;"><span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #e0e7ff; color: #3730a3; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 8px;">Poet Profile &amp; Eyewitness</span><h3 style="margin: 0 0 8px 0; color: #312e81; font-size: 1.25rem; font-family: \'Playfair Display\', serif;">Captain Siegfried Sassoon, MC</h3><p style="margin: 0 0 10px 0; color: #334155; font-size: 0.93rem; line-height: 1.6;">Commissioned into the Royal Welch Fusiliers, Siegfried Sassoon was one of the Great War\'s most decorated frontline officers and fiercest dissenting voices. Known across his battalion as "Mad Jack" for his fearless bravery in no man\'s land, he won the Military Cross in 1916 for rescuing wounded comrades under heavy fire.<br><br>However, as the slaughter continued, Sassoon grew fiercely disillusioned with military leadership. In July 1917, he issued his famous public declaration, <em>"Finished with the War: A Soldier’s Declaration"</em>, refusing to fight further in a war he believed was being deliberately prolonged. Rather than court-martialing a decorated hero, the War Office sent him to Craiglockhart War Hospital for "shell shock," where he met and mentored Wilfred Owen. When the Menin Gate was unveiled with imperial pomp in July 1927, Sassoon reacted with bitter outrage, scorning the triumphal arch as a hollow "sepulchre of crime" that sanitized the agony of the men whose broken bones still lay in the mud.</p></div></div><div style="margin-top: 18px; padding-top: 18px; border-top: 1px solid #e2e8f0;"><h4 style="margin: 0 0 12px 0; color: #1e293b; font-size: 1.15rem; font-family: \'Playfair Display\', serif; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-feather-pointed" style="color: #4338ca;"></i> <em>On Passing the New Menin Gate (1927)</em></h4><blockquote style="background: #ffffff; border-left: 4px solid #4338ca; padding: 18px 22px; border-radius: 4px; font-family: \'Georgia\', serif; font-size: 1.02rem; line-height: 1.8; color: #1e293b; margin: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">Who will remember, passing through this Gate,<br>The unheroic Dead who fed the guns?<br>Who shall absolve the foulness of their fate,—<br>Those doomed, conscripted, unvictorious ones?<br>Crudely renewed, the Salient holds its own.<br>Paid are its dues, and waged its warfare; nay,<br>What need to make a triumph out of bone,<br>Or keep a pile of names from passing away?<br><br>Here was the world’s worst wound. And here with pride<br>\'Their name liveth for ever\', the Gateway claims.<br>Was ever an immolation so belied<br>As these intolerably nameless names?<br>Well might the Dead who struggled in the slime<br>Rise and deride this sepulchre of crime.<br><div style="text-align: right; margin-top: 10px; font-family: sans-serif; font-size: 0.85rem; color: #64748b; font-weight: 600;">— <strong>Siegfried Sassoon</strong> (composed July 1927 upon the opening of the Menin Gate)</div></blockquote></div></div><br><div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);"><h4 style="color: #059669; margin: 0 0 15px 0; font-family: \'Playfair Display\', serif; font-size: 1.4rem;"><i class="fa-solid fa-clipboard-list"></i> Task: Ancient Defenses</h4><div style="background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;"><p style="margin: 0; color: #334155; font-weight: bold;"><i class="fa-solid fa-shield-halved"></i> Look at the thick brick walls of the Ramparts. Why do you think soldiers chose to dig their dugouts into medieval defenses rather than staying in the open town? How does the Ramparts Cemetery differ in atmosphere from Tyne Cot?</p><ul style="margin-top: 15px; color: #475569; font-size: 0.95rem;"> <li>The Ramparts were originally medieval fortifications, massively expanded and reinforced in the 17th century by the famous French military engineer Vauban.</li> <li>Because the brick and earth walls were incredibly thick, they survived the relentless German artillery barrages that completely leveled the rest of the town.</li> <li>British troops honeycombed these ancient walls, digging extensive subterranean dugouts to house battalion headquarters, dormitories, and advanced dressing stations safely out of the blast zones.</li> </ul></div></div>',
         },
         {
           type: 'narrative',
@@ -730,6 +783,11 @@ export const unitData = {
           type: 'narrative',
           theme_heading: 'Poperinge Death Cells & Discipline',
           text: 'A stark contrast to Talbot House, the nearby Poperinge Town Hall contains the death cells and an execution post used by the British Army. Discipline was incredibly harsh, and shell shock was poorly understood by the high command.<br><br><strong>Key Facts:</strong><ul><li>Over 300 British and Commonwealth soldiers were executed by firing squad during the war, often for \'cowardice\' or \'desertion\'.</li><li>Many of these men were actually suffering from severe psychological trauma (shell shock) caused by the relentless artillery bombardment.</li><li>In 2006, the British Government issued a mass statutory pardon for all soldiers executed for military offenses during the First World War.</li></ul><br><br><div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);"><h4 style="color: #059669; margin: 0 0 15px 0; font-family: \'Playfair Display\', serif; font-size: 1.4rem;"><i class="fa-solid fa-clipboard-list"></i> Task: Justice or Tragedy?</h4><div style="background: #f1f5f9; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0;"><p style="margin: 0; color: #334155; font-weight: bold;"><i class="fa-solid fa-scale-unbalanced"></i> Stand near the cramped death cells. Many of the men executed here were suffering from severe shell shock. Discuss with the person next to you: Why did the British High Command believe executions were necessary, and why was this practice eventually condemned?</p><ul style="margin-top: 15px; color: #475569; font-size: 0.95rem;"> <li>During the First World War, 306 British and Commonwealth soldiers were executed by firing squad.</li> <li>The most common charges were desertion, cowardice, and casting away arms.</li> <li>Medical science at the time failed to recognize that many of these condemned men were suffering from severe, undiagnosed shell shock.</li> <li>Men were held in tiny, damp cells at the Poperinge Town Hall overnight before being shot at dawn against a post in the courtyard.</li> <li>In 2006, the UK government officially granted a posthumous statutory pardon to all 306 soldiers, recognizing the tragic miscarriage of military justice.</li> </ul></div></div>',
+        },
+        {
+          type: 'narrative',
+          theme_heading: 'The Shot at Dawn Memorial: National Memorial Arboretum (UK)',
+          text: '<div class="source-box" style="text-align: center; margin-bottom: 20px;"><img src="/images/shot_at_dawn_arboretum.jpg" style="max-width: 100%; max-height: 480px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Shot at Dawn Memorial statue by Andy DeComyn at the National Memorial Arboretum"/><br><small style="color: #64748b;">The Shot at Dawn Memorial at the National Memorial Arboretum, Staffordshire (Sculpted by Andy DeComyn, modeled on 17-year-old Private Herbert Burden)</small></div><div style="margin-bottom: 20px;"><div class="source-box" style="text-align: center;"><img src="/images/gw_arboretum.jpg" style="max-width: 100%; max-height: 320px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="National Memorial Arboretum aerial view, Staffordshire"/><br><small style="color: #64748b;">Aerial view of the 150-acre National Memorial Arboretum at Alrewas, Staffordshire—the UK\'s year-round centre of Remembrance</small></div></div>As our journey through the Ypres Salient draws to a close, the story of the Poperinge execution cells does not end in Belgian soil. It leads directly back to our own nation, to the <strong>National Memorial Arboretum</strong> at Alrewas, Staffordshire—the UK’s 150-acre living woodland centre of Remembrance for all who have served, suffered, and sacrificed in conflict.<br><br><strong>Private Herbert Burden &amp; The Memorial:</strong><ul><li><strong>The Boy Soldier:</strong> The striking central statue was created in 2001 by sculptor Andy DeComyn. It is modeled on Private Herbert Burden of the 1st Battalion, East Surrey Regiment. Burden lied about his age to enlist at just 16 and was sent directly into the slaughter of the Ypres Salient. After watching his close friends butchered at Bellewaarde Ridge, traumatized and disoriented, he wandered away from his post. Condemned without legal defense, he was shot at dawn on 21st July 1915—aged just 17.</li><li><strong>Bound at the Stake:</strong> The statue portrays Burden blindfolded, hands tied behind his back to a wooden post, with a paper firing mark pinned over his heart.</li><li><strong>306 Silent Witnesses:</strong> Behind the statue fan out 306 semi-circular wooden stakes planted in the earth—one for each British and Commonwealth soldier executed for military offences such as desertion, cowardice, and sleeping on post. Each post bears the soldier’s name, age, and regiment.</li><li><strong>Facing the Dawn:</strong> The memorial is deliberately placed at the easternmost point of the Arboretum, where the first rays of the morning sun illuminate the blindfolded face of the boy soldier at dawn.</li><li><strong>Statutory Pardon (2006):</strong> Following decades of campaigning by grieving families, historians, and veterans\' groups, the British Parliament passed the <strong>Armed Forces Act 2006</strong>, officially granting a posthumous statutory pardon to all 306 executed men, formally acknowledging that they were victims of war trauma rather than criminals.</li></ul><br><div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);"><h4 style="color: #059669; margin: 0 0 15px 0; font-family: \'Playfair Display\', serif; font-size: 1.4rem;"><i class="fa-solid fa-scale-balanced"></i> Synthesis: Coming Home to Remembrance</h4><div style="background: #f1f5f9; padding: 18px; border-radius: 6px; border: 1px solid #e2e8f0;"><p style="margin: 0 0 10px 0; color: #1e293b; font-weight: bold; font-size: 1.05rem;"><i class="fa-solid fa-monument" style="color: #2563eb;"></i> Reflection: What Place Does the National Arboretum Have in Our Society?</p><p style="margin: 0 0 12px 0; color: #475569; font-size: 0.95rem; line-height: 1.6;">Why is the National Memorial Arboretum such an important ending to our battlefield study? In Flanders, we stood before graves and triumphal arches built in the 1920s in the immediate shadow of victory. But at the National Arboretum in Staffordshire, our nation created a living, evolving landscape that remembers not just military triumph, but the totality of human suffering—including the shell-shocked teenagers shot at dawn, the nurses, the ambulance drivers, and modern peacekeepers. It proves that national memory can mature: moving from harsh imperial condemnation to compassion, historical justice, and collective empathy.</p></div></div>',
         },
       ],
       tour_guide_script: [
@@ -748,11 +806,17 @@ export const unitData = {
           theme_heading: '1:30 PM – Poperinge Town Hall & Death Cells',
           text: '"We end our tour on a very sobering note. Just a short walk from the comfort of Talbot House is Poperinge Town Hall. Here, you will see the death cells and the execution post. Men suffering from what we now know as severe PTSD—shell shock—were often tried for cowardice or desertion. Some were held in these very cells before being tied to a post and shot at dawn by a firing squad of their own comrades."<br><br><strong>Teacher Points:</strong><ul><li>Over 300 British and Commonwealth soldiers were executed during the war.</li><li>Shell shock was poorly understood; many commanders believed it was a failure of moral character rather than a genuine psychological and neurological injury caused by constant bombardment.</li><li>In 2006, the British government finally issued a mass statutory pardon for all soldiers executed for military offenses during the First World War, recognizing the severe trauma they had endured.</li></ul><br><blockquote><strong>Voices from the Front:</strong><br><em>"He was just a boy, trembling so violently he could hardly stand. The doctor said he was completely broken, but the General said an example had to be made to keep the others in line. I have never felt such shame as when we were ordered to raise our rifles."</em><br>— <strong>An anonymous soldier\'s account</strong>, detailing the agonizing reality of serving on a firing squad at dawn.</blockquote>',
         },
+        {
+          type: 'narrative',
+          theme_heading: '2:30 PM – The Journey Home: Remembering at the National Arboretum',
+          text: '"As our coach departs Poperinge and heads towards Calais, take a moment to look back at the quiet Belgian fields. Over the last three days, we have traced our local boys from Stubbington and Lee-on-the-Solent across the battlefields of Flanders. But the memory of what happened here does not remain in Belgium—it returns home with us. Back in the UK, at the National Memorial Arboretum in Staffordshire, our country created a permanent national monument to the men shot at dawn: a statue of 17-year-old Private Herbert Burden facing the rising sun, surrounded by 306 wooden posts. It reminds us that true remembrance is not just celebrating military glory, but having the courage and compassion to remember every person who suffered."',
+        },
       ],
       tasks: [
         'Ypres Ramparts Walk: Trace the ancient 17th-century Vauban earthworks where British soldiers dug deep headquarters and hospital shelters safe from artillery fire. Visit Ramparts Cemetery looking out over the quiet moat.',
         "Talbot House 'Every Man's Club': Walk through the doors in Poperinge and find the famous sign: 'Abandon Rank All Ye Who Enter Here'. Climb the stairs to the hop-loft Upper Room chapel where officers and privates prayed side-by-side.",
         'Poperinge Town Hall Death Cells: Step inside the cold, cramped wooden cells where soldiers condemned for desertion and cowardice spent their final night before being shot at dawn. Discuss the posthumous 2006 statutory pardon granted to all 306 men.',
+        'Coming Home to Remembrance: Contrast the Poperinge execution courtyard with the Shot at Dawn Memorial at the National Memorial Arboretum in Staffordshire. How does the 2006 statutory pardon and the 306 wooden posts facing the dawn sun symbolize national reconciliation and empathy?',
       ],
     },
     {
@@ -1288,45 +1352,6 @@ export const unitData = {
         tablet_inscription: 'C. WARLAND',
         tablet_location: 'Crofton Parish Memorial Tablet, Holy Rood Church, Stubbington',
       },
-    },
-    {
-      id: 'final_challenge',
-      title: 'The Final Teacher Challenge',
-      enquiry: 'Reflection & Synthesis',
-      banner: '/images/menin_gate.jpg',
-      teacher_notes: {
-        primer:
-          "A concluding reflection task designed to synthesize the students' experiences across the battlefields, encouraging deep personal reflection and historical empathy.",
-        objectives: [
-          {
-            objective:
-              'Synthesize learning from various historical sites into a cohesive understanding of the Great War.',
-            primer: 'Guide students through a structured reflection of the sites visited.',
-            question: 'Which location we visited left the most profound impact on you, and why?',
-          },
-        ],
-      },
-      do_now: {
-        type: 'source_analysis',
-        source_image: '/images/stubbington_memorial.jpg',
-        source_caption: 'The Stubbington War Memorial',
-        source_details:
-          'In 1914, Stubbington was a small village. Its population was deeply affected by the loss of these young men.',
-        questions: [
-          'How has your perspective on these names changed since we left for Ypres?',
-          'Why is it important that we continue to visit these battlefields over 100 years later?',
-        ],
-      },
-      narrative_blocks: [
-        {
-          type: 'narrative',
-          theme_heading: 'Your Final Challenge',
-          text: 'As we conclude our journey through the Ypres Salient, it is time to bring the stories of the fallen back home. Your final challenge is to choose one of the local heroes we investigated and write a short memorial speech that could be read aloud at the Stubbington War Memorial on Remembrance Sunday.<br><br>**Your speech must:**<br>- State who they were and where they lived.<br>- Describe the conditions they faced on the battlefield.<br>- Explain why their sacrifice, and the sacrifice of their generation, must never be forgotten.',
-        },
-      ],
-      tasks: [
-        'Drawing Task: Create a diagram or map focusing on the spatial geography, physical structures, or key events relevant to this topic.',
-      ],
     },
     {
       id: 'hero_lowry_william',
