@@ -63,6 +63,47 @@ export function initEventDelegation() {
         if (window.openTourGuideModal)
           window.openTourGuideModal(parseInt(target.dataset.index, 10));
         break;
+      case 'open-anthology-modal':
+        if (window.openAnthologyModal) {
+          window.openAnthologyModal();
+        }
+        break;
+      case 'switch-trip-hub-tab': {
+        const selectedTab = target.dataset.tab;
+        const container = target.closest('#trip-hub-container') || document;
+        container.querySelectorAll('.trip-hub-tab-btn').forEach((btn) => {
+          const isActive = btn.dataset.tab === selectedTab;
+          btn.style.background = isActive ? '#1e3a8a' : '#f8fafc';
+          btn.style.color = isActive ? '#ffffff' : '#475569';
+          btn.style.borderColor = isActive ? '#1e3a8a' : '#cbd5e1';
+          btn.style.boxShadow = isActive ? '0 2px 6px rgba(30, 58, 138, 0.25)' : 'none';
+          btn.style.fontWeight = isActive ? '700' : '600';
+          if (isActive) btn.classList.add('active');
+          else btn.classList.remove('active');
+        });
+        const itinPanel = container.querySelector('#trip-panel-itinerary');
+        const fallenPanel = container.querySelector('#trip-panel-fallen');
+        if (itinPanel) itinPanel.style.display = selectedTab === 'itinerary' ? 'block' : 'none';
+        if (fallenPanel) fallenPanel.style.display = selectedTab === 'fallen' ? 'block' : 'none';
+        break;
+      }
+      case 'switch-poet-tab': {
+        const poetTargetId = target.dataset.targetPoet;
+        const cardContainer = target.closest('.poetry-dossier-card');
+        if (cardContainer) {
+          cardContainer.querySelectorAll('.poet-tab-btn').forEach((btn) => {
+            const isActive = btn.dataset.targetPoet === poetTargetId;
+            btn.style.background = isActive ? '#7f1d1d' : '#ffffff';
+            btn.style.color = isActive ? '#ffffff' : '#475569';
+            btn.style.borderColor = isActive ? '#7f1d1d' : '#cbd5e1';
+            btn.style.fontWeight = isActive ? '700' : '600';
+          });
+          cardContainer.querySelectorAll('.poet-view-pane').forEach((pane) => {
+            pane.style.display = pane.id === poetTargetId ? 'block' : 'none';
+          });
+        }
+        break;
+      }
       case 'open-video-modal':
         const youtubeId = target.dataset.youtube;
         if (youtubeId) {

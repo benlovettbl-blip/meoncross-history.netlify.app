@@ -237,6 +237,7 @@ export function renderLesson(lesson) {
           <div class="sticky-lesson-actions">
           ${isTrip ? '' : `<button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-debate-modal"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>`}
           ${isTrip && lesson.tour_guide_script ? `<button class="btn-pedagogy-primary" style="padding: 6px 12px; font-size: 0.9rem; background: #6366f1; border-color: #6366f1; box-shadow: 0 2px 5px rgba(99,102,241,0.3);" data-action="open-tour-guide-modal" data-index="${currentIndex}"><i class="fa-solid fa-bullhorn"></i> Tour Guide Script</button>` : ''}
+          ${isTrip && (lesson.poetry_dossiers || (window.currentUnitData && window.currentUnitData.poetry_dossiers)) ? `<button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; font-weight: 600; box-shadow: 0 2px 5px rgba(153,27,27,0.08); cursor: pointer;" data-action="open-anthology-modal"><i class="fa-solid fa-feather-pointed" style="margin-right: 5px;"></i> Voices &amp; Poetry</button>` : ''}
           <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId}"><i class="fa-solid fa-arrow-left"></i> ${isTrip ? 'Trip Menu' : 'Unit Menu'}</button>
         </div>
       </div>
@@ -1884,10 +1885,16 @@ export function renderLesson(lesson) {
     `;
   }
 
+  let htmlPoetry = '';
+  if (isTrip && lesson.poetry_dossiers && lesson.poetry_dossiers.length > 0) {
+    htmlPoetry = renderPoetryDossiersHTML(lesson.poetry_dossiers);
+  }
+
   if (isTrip) {
     html +=
       htmlCwgc +
       htmlNarrative +
+      htmlPoetry +
       htmlDoNow +
       htmlPrimary +
       htmlSources1 +
@@ -2366,4 +2373,141 @@ export function assignQuestionNumbers(lesson) {
   if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
   if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
   if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+}
+
+export function renderPoetryDossiersHTML(poetryDossiers) {
+  if (!poetryDossiers || !Array.isArray(poetryDossiers) || poetryDossiers.length === 0) {
+    return '';
+  }
+
+  let html = `
+    <div class="phase-card poetry-dossiers-section" style="margin-top: 35px; border: 1px solid #e2e8f0; border-top: 4px solid #7f1d1d; border-radius: 10px; padding: 25px; background: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #fecaca; padding-bottom: 12px; margin-bottom: 22px; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 6px;">
+            Field Poetry &amp; Eyewitness Voices
+          </span>
+          <h3 style="margin: 0; color: #7f1d1d; font-size: 1.45rem; font-family: 'Playfair Display', serif;">
+            Voices of the Salient · On-Site Readings
+          </h3>
+        </div>
+        <button class="btn btn-secondary" data-action="open-anthology-modal" style="font-size: 0.85rem; padding: 7px 14px; background: #fafafa; border: 1px solid #cbd5e1; font-weight: 600; color: #7f1d1d; display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; cursor: pointer;">
+          <i class="fa-solid fa-book-open"></i> Full 16-Poem Anthology
+        </button>
+      </div>
+      <p style="color: #475569; font-size: 0.95rem; margin-top: 0; margin-bottom: 25px; line-height: 1.5;">
+        At each battlefield stop, recite these frontline eyewitness verses. Where two poems are provided, select either voice using the tab switcher. Expand the teacher commentary for on-site speaking cues and the historical rationale for deeper class discussion.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+  `;
+
+  poetryDossiers.forEach((stop, sIdx) => {
+    const hasMultiple = stop.poems && stop.poems.length > 1;
+    html += `
+      <div class="poetry-dossier-card" id="poetry-${stop.site_id}" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <span style="font-size: 0.72rem; font-weight: 700; color: #991b1b; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Stop ${sIdx + 1} Field Reading</span>
+            <h4 style="margin: 2px 0 0 0; color: #0f172a; font-size: 1.2rem; font-family: 'Playfair Display', serif;">
+              ${stop.site_name}
+            </h4>
+          </div>
+          <span style="font-size: 0.78rem; font-weight: 700; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 14px; border: 1px solid #e2e8f0;">
+            ${stop.stop_time}
+          </span>
+        </div>
+    `;
+
+    if (hasMultiple) {
+      html += `
+        <div style="display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; align-items: center; background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
+          <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; margin-right: 4px;">Choose Voice:</span>
+          ${stop.poems
+            .map(
+              (p, pIdx) => `
+            <button class="btn poet-tab-btn" data-action="switch-poet-tab" data-target-poet="pane-${stop.site_id}-${p.id}" style="padding: 5px 12px; font-size: 0.82rem; border-radius: 16px; border: 1px solid ${pIdx === 0 ? '#7f1d1d' : '#cbd5e1'}; background: ${pIdx === 0 ? '#7f1d1d' : '#ffffff'}; color: ${pIdx === 0 ? '#ffffff' : '#475569'}; font-weight: ${pIdx === 0 ? '700' : '600'}; cursor: pointer; transition: all 0.2s;">
+              <i class="fa-solid fa-feather-pointed" style="margin-right: 4px;"></i> ${p.poet.name.split(',')[0]}: <em>"${p.title}"</em>
+            </button>
+          `,
+            )
+            .join('')}
+        </div>
+      `;
+    }
+
+    stop.poems.forEach((poem, pIdx) => {
+      const isVisible = pIdx === 0;
+      html += `
+        <div class="poet-view-pane" id="pane-${stop.site_id}-${poem.id}" style="display: ${isVisible ? 'block' : 'none'};">
+          <!-- Poet Profile Header -->
+          <div style="display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; background: #faf8f5; border: 1px solid #e7dfd5; border-radius: 8px; padding: 18px; margin-bottom: 18px;">
+            <div style="flex: 0 0 115px; text-align: center;">
+              <img src="${poem.poet.portrait}" alt="${poem.poet.name}" style="width: 115px; height: 145px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.12); cursor: zoom-in;" data-action="open-modal" data-src="${poem.poet.portrait}">
+              <small style="display: block; margin-top: 5px; font-size: 0.75rem; color: #64748b; font-weight: 600;">${poem.poet.lifespan}</small>
+            </div>
+            <div style="flex: 1; min-width: 240px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap;">
+                <div>
+                  <h4 style="margin: 0; color: #1e293b; font-size: 1.25rem; font-family: 'Playfair Display', serif;">${poem.poet.name}</h4>
+                  <div style="font-size: 0.85rem; color: #78350f; font-weight: 600; margin-top: 2px;">${poem.poet.role}</div>
+                </div>
+                <span style="font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 10px; border: 1px solid #fde68a;">${poem.year}</span>
+              </div>
+              <p style="margin: 10px 0 0 0; color: #334155; font-size: 0.92rem; line-height: 1.6;">${poem.bio}</p>
+            </div>
+          </div>
+
+          <!-- Unabridged Poem Box -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #991b1b; border-radius: 6px; padding: 22px 26px; margin-bottom: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px;">
+              <h5 style="margin: 0; font-size: 1.2rem; color: #1e3a8a; font-family: 'Playfair Display', serif; font-style: italic;">
+                "${poem.title}"
+              </h5>
+              <span style="font-size: 0.78rem; color: #64748b;"><i class="fa-regular fa-calendar" style="margin-right: 4px;"></i>${poem.year}</span>
+            </div>
+            <div style="font-family: 'Georgia', serif; font-size: 1.02rem; line-height: 1.85; color: #1e293b; white-space: pre-line; margin: 0;">
+${poem.poem_text}
+            </div>
+            <div style="text-align: right; margin-top: 14px; font-size: 0.85rem; color: #64748b; font-style: italic;">
+              — ${poem.poet.name} (${poem.poet.lifespan})
+            </div>
+          </div>
+
+          <!-- Collapsible Teacher Guide Drawer -->
+          <details style="background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #2563eb; border-radius: 6px; margin-bottom: 12px; overflow: hidden;">
+            <summary style="padding: 10px 14px; cursor: pointer; font-weight: 700; color: #1d4ed8; font-size: 0.92rem; display: flex; align-items: center; justify-content: space-between; user-select: none;">
+              <span><i class="fa-solid fa-bullhorn" style="margin-right: 8px; color: #2563eb;"></i> On-Site Teacher Guidance: What to Say Here</span>
+              <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; color: #60a5fa;"></i>
+            </summary>
+            <div style="padding: 14px 18px; border-top: 1px solid #bfdbfe; font-size: 0.93rem; line-height: 1.6; color: #1e3a8a; background: #ffffff;">
+              ${poem.teacher_commentary}
+            </div>
+          </details>
+
+          <!-- Collapsible In-Depth Historical & Pedagogical Rationale Drawer -->
+          <details style="background: #fdfaf6; border: 1px solid #fed7aa; border-left: 4px solid #ea580c; border-radius: 6px; margin-bottom: 8px; overflow: hidden;">
+            <summary style="padding: 10px 14px; cursor: pointer; font-weight: 700; color: #9a3412; font-size: 0.92rem; display: flex; align-items: center; justify-content: space-between; user-select: none;">
+              <span><i class="fa-solid fa-brain" style="margin-right: 8px; color: #ea580c;"></i> In-Depth Historical &amp; Pedagogical Rationale</span>
+              <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; color: #fb923c;"></i>
+            </summary>
+            <div style="padding: 14px 18px; border-top: 1px solid #fed7aa; font-size: 0.93rem; line-height: 1.6; color: #334155; background: #ffffff;">
+              <p style="margin: 0 0 12px 0;">${poem.pedagogical_rationale.context}</p>
+              <div style="background: #fff7ed; border-left: 3px solid #ea580c; padding: 12px 14px; border-radius: 4px;">
+                <strong style="color: #9a3412; display: block; margin-bottom: 4px; font-size: 0.88rem;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i> Hinge Question for Class Discussion:</strong>
+                <span style="color: #431407; font-weight: 600; font-size: 0.95rem;">"${poem.pedagogical_rationale.hinge_question}"</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      `;
+    });
+
+    html += `</div>`;
+  });
+
+  html += `
+      </div>
+    </div>
+  `;
+  return html;
 }

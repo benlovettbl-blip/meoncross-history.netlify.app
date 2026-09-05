@@ -371,6 +371,168 @@ window.openTourGuideModal = function (lessonIndex) {
     `;
   document.body.appendChild(overlay);
 };
+window.openAnthologyModal = async function () {
+  let dossiers =
+    window.currentUnitData?.poetry_dossiers ||
+    (window.appStore &&
+      window.appStore.state &&
+      window.appStore.state.activeUnitData?.poetry_dossiers);
+
+  if (!dossiers) {
+    try {
+      const mod = await import('../../units/trip_ypres/poetry_data.js');
+      dossiers = mod.poetryDossiers;
+    } catch (e) {
+      console.warn('Failed to load poetry dossiers dynamically:', e);
+    }
+  }
+
+  if (!dossiers) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay no-print';
+  overlay.style.cssText =
+    'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
+  overlay.onclick = function (e) {
+    if (e.target === overlay) overlay.remove();
+  };
+
+  const days = [
+    { title: 'Day 1: Thursday 1st October 2026', stops: dossiers.day_1 || [] },
+    { title: 'Day 2: Friday 2nd October 2026', stops: dossiers.day_2 || [] },
+    { title: 'Day 3: Saturday 3rd October 2026', stops: dossiers.day_3 || [] },
+  ];
+
+  let bodyHtml = '';
+  days.forEach((day, dIdx) => {
+    bodyHtml += `
+      <div style="margin-top: ${dIdx === 0 ? '0' : '40px'}; margin-bottom: 25px;">
+        <div style="background: #1e3a8a; color: white; padding: 12px 18px; border-radius: 6px; font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+          <span>${day.title}</span>
+          <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: normal; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 12px;">${day.stops.length} Stops</span>
+        </div>
+    `;
+
+    day.stops.forEach((stop, sIdx) => {
+      bodyHtml += `
+        <div id="anthology-stop-${stop.site_id}" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 22px; margin-bottom: 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <div>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #991b1b; text-transform: uppercase; letter-spacing: 0.05em;">Field Reading · Stop ${sIdx + 1}</span>
+              <h4 style="margin: 2px 0 0 0; color: #0f172a; font-size: 1.25rem; font-family: 'Playfair Display', serif;">${stop.site_name}</h4>
+            </div>
+            <span style="font-size: 0.78rem; font-weight: 700; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 14px; border: 1px solid #e2e8f0;">${stop.stop_time}</span>
+          </div>
+      `;
+
+      stop.poems.forEach((poem) => {
+        bodyHtml += `
+          <div style="margin-bottom: 25px; background: #fdfaf6; border: 1px solid #e7dfd5; border-radius: 8px; padding: 20px;">
+            <!-- Poet Profile -->
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-bottom: 16px;">
+              <div style="flex: 0 0 110px; text-align: center;">
+                <img src="${poem.poet.portrait}" alt="${poem.poet.name}" style="width: 110px; height: 140px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <small style="display: block; margin-top: 4px; font-size: 0.75rem; color: #64748b; font-weight: 600;">${poem.poet.lifespan}</small>
+              </div>
+              <div style="flex: 1; min-width: 240px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; flex-wrap: wrap;">
+                  <div>
+                    <h5 style="margin: 0; color: #1e293b; font-size: 1.2rem; font-family: 'Playfair Display', serif;">${poem.poet.name}</h5>
+                    <div style="font-size: 0.85rem; color: #78350f; font-weight: 600; margin-top: 2px;">${poem.poet.role}</div>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 10px;">${poem.year}</span>
+                </div>
+                <p style="margin: 8px 0 0 0; color: #475569; font-size: 0.9rem; line-height: 1.55;">${poem.bio}</p>
+              </div>
+            </div>
+
+            <!-- Poem Verse -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #991b1b; border-radius: 6px; padding: 18px 22px; margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 6px;">
+                <strong style="font-size: 1.15rem; color: #1e3a8a; font-family: 'Playfair Display', serif; font-style: italic;">"${poem.title}"</strong>
+                <span style="font-size: 0.78rem; color: #64748b;">${poem.year}</span>
+              </div>
+              <div style="font-family: 'Georgia', serif; font-size: 1rem; line-height: 1.8; color: #1e293b; white-space: pre-line; margin: 0;">${poem.poem_text}</div>
+            </div>
+
+            <!-- Teacher Guidance Drawer -->
+            <details style="background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #2563eb; border-radius: 6px; margin-bottom: 10px; overflow: hidden;">
+              <summary style="padding: 10px 14px; cursor: pointer; font-weight: 700; color: #1d4ed8; font-size: 0.9rem; display: flex; align-items: center; justify-content: space-between;">
+                <span><i class="fa-solid fa-bullhorn" style="margin-right: 8px; color: #2563eb;"></i> On-Site Teacher Guidance</span>
+                <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; color: #60a5fa;"></i>
+              </summary>
+              <div style="padding: 12px 16px; border-top: 1px solid #bfdbfe; font-size: 0.92rem; line-height: 1.6; color: #1e3a8a; background: #ffffff;">
+                ${poem.teacher_commentary}
+              </div>
+            </details>
+
+            <!-- Pedagogical Rationale Drawer -->
+            <details style="background: #fdfaf6; border: 1px solid #fed7aa; border-left: 4px solid #ea580c; border-radius: 6px; overflow: hidden;">
+              <summary style="padding: 10px 14px; cursor: pointer; font-weight: 700; color: #9a3412; font-size: 0.9rem; display: flex; align-items: center; justify-content: space-between;">
+                <span><i class="fa-solid fa-brain" style="margin-right: 8px; color: #ea580c;"></i> Historical Rationale &amp; Hinge Question</span>
+                <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; color: #fb923c;"></i>
+              </summary>
+              <div style="padding: 12px 16px; border-top: 1px solid #fed7aa; font-size: 0.92rem; line-height: 1.6; color: #334155; background: #ffffff;">
+                <p style="margin: 0 0 10px 0;">${poem.pedagogical_rationale.context}</p>
+                <div style="background: #fff7ed; border-left: 3px solid #ea580c; padding: 10px 14px; border-radius: 4px;">
+                  <strong style="color: #9a3412; display: block; margin-bottom: 3px; font-size: 0.85rem;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i> Class Discussion Hinge Question:</strong>
+                  <span style="color: #431407; font-weight: 600; font-size: 0.95rem;">"${poem.pedagogical_rationale.hinge_question}"</span>
+                </div>
+              </div>
+            </details>
+          </div>
+        `;
+      });
+
+      bodyHtml += `</div>`;
+    });
+
+    bodyHtml += `</div>`;
+  });
+
+  overlay.innerHTML = `
+    <div class="modal-content" style="background: #f8fafc; max-width: 950px; width: 92%; max-height: 90vh; overflow-y: auto; padding: 35px; border-radius: 12px; font-family: 'Outfit', sans-serif;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px; border-bottom: 2px solid #7f1d1d; padding-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 3px 10px; border-radius: 12px;">Complete Expedition Anthology</span>
+          <h2 style="margin: 6px 0 0 0; color: #7f1d1d; font-size: 1.8rem; font-family: 'Playfair Display', serif;">
+            Voices &amp; Poetry of the Salient
+          </h2>
+          <p style="margin: 4px 0 0 0; color: #64748b; font-size: 0.95rem;">
+            16 Unabridged First World War Poems Across 11 Stops of the Ypres Salient
+          </p>
+        </div>
+        <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()" style="padding: 8px 16px; font-size: 0.9rem; cursor: pointer;">
+          <i class="fa-solid fa-times" style="margin-right: 5px;"></i> Close
+        </button>
+      </div>
+
+      <!-- Quick Stop Navigation Bar -->
+      <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-bottom: 25px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+        <span style="font-size: 0.8rem; font-weight: 700; color: #475569; margin-right: 6px;">Jump to Stop:</span>
+        <a href="#anthology-stop-essex_farm" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">1. Essex Farm</a>
+        <a href="#anthology-stop-langemarck" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">2. Langemarck</a>
+        <a href="#anthology-stop-hooge_crater" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">3. Hooge Crater</a>
+        <a href="#anthology-stop-st_julien" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">4. St. Julien</a>
+        <a href="#anthology-stop-sanctuary_wood" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">5. Sanctuary Wood</a>
+        <a href="#anthology-stop-tyne_cot" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">6. Tyne Cot</a>
+        <a href="#anthology-stop-lijssenthoek" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">7. Lijssenthoek</a>
+        <a href="#anthology-stop-menin_gate_last_post" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">8. Menin Gate</a>
+        <a href="#anthology-stop-ypres_ramparts" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">9. Ramparts</a>
+        <a href="#anthology-stop-talbot_house" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">10. Talbot House</a>
+        <a href="#anthology-stop-poperinge_death_cells" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">11. Poperinge</a>
+      </div>
+
+      ${bodyHtml}
+
+      <div style="text-align: right; margin-top: 30px; border-top: 1px solid #cbd5e1; padding-top: 15px;">
+        <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove()">Close Anthology</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+};
 
 window.openDebateModal = function () {
   window.injectDebateModalIfNeeded();

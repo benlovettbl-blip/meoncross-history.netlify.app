@@ -281,144 +281,173 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       }
     });
 
+    lessonsHTML += `
+      <div id="trip-hub-container" style="margin-top: 25px;">
+        <!-- Two-Tab Switcher Bar -->
+        <div style="display: flex; gap: 10px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 25px; flex-wrap: wrap;">
+          <button class="btn trip-hub-tab-btn active" data-action="switch-trip-hub-tab" data-tab="itinerary" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 6px; border: 1.5px solid #1e3a8a; background: #1e3a8a; color: #ffffff; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25); transition: all 0.2s;">
+            3-Day Field Itinerary
+          </button>
+          <button class="btn trip-hub-tab-btn" data-action="switch-trip-hub-tab" data-tab="fallen" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 6px; border: 1.5px solid #cbd5e1; background: #f8fafc; color: #475569; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;">
+            Village Fallen &amp; Memorials
+          </button>
+        </div>
+
+        <!-- Tab 1: 3-Day Field Itinerary -->
+        <div id="trip-panel-itinerary" style="display: block;">
+    `;
+
     if (prepPack) {
       lessonsHTML += `
-        <div style="margin-top: 25px; margin-bottom: 25px;">
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${prepPack.index}" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 1.5px solid #cbd5e1; border-left: 5px solid #0284c7; border-radius: 8px; padding: 18px 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
-            <div style="display: flex; align-items: center; gap: 15px;">
-              <div style="background: #e0f2fe; color: #0284c7; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
-                <i class="fa-solid fa-suitcase-rolling"></i>
-              </div>
-              <div>
-                <h3 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Logistics</h3>
-                <p style="margin: 3px 0 0 0; color: #475569; font-size: 0.9rem;">Parent briefing notes, luggage checklist, emergency contacts &amp; accommodation details</p>
-              </div>
+        <div style="margin-bottom: 25px;">
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${prepPack.index}" style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #0284c7; border-radius: 8px; padding: 18px 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+            <div>
+              <h3 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Logistics</h3>
+              <p style="margin: 4px 0 0 0; color: #475569; font-size: 0.9rem;">Parent briefing notes, luggage checklist, emergency contacts &amp; accommodation details</p>
             </div>
-            <span style="font-size: 0.8rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 6px 14px; border-radius: 20px; border: 1px solid #bae6fd;"><i class="fa-solid fa-arrow-right" style="margin-left: 4px;"></i> View Prep Pack</span>
+            <span style="font-size: 0.8rem; font-weight: 700; background: #f0f9ff; color: #0369a1; padding: 6px 14px; border-radius: 20px; border: 1px solid #bae6fd;">View Prep Pack &rarr;</span>
           </div>
         </div>
       `;
     }
 
     lessonsHTML += `
-      <h2 style="margin-top: 30px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-family: 'Playfair Display', serif; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-        <span><i class="fa-solid fa-route" style="color: #2563eb;"></i> 3-Day Expedition Itinerary</span>
-        <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #dbeafe; color: #1d4ed8; padding: 4px 12px; border-radius: 20px;">3 Days · 1st–3rd October 2026</span>
-      </h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <h2 style="margin: 0; text-align: left; color: #0f172a; font-family: 'Playfair Display', serif; font-size: 1.35rem;">
+              Daily Field Itinerary
+            </h2>
+            <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #eff6ff; color: #1d4ed8; padding: 4px 12px; border-radius: 20px; border: 1px solid #bfdbfe;">3 Days · 1st–3rd October 2026</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left;">
     `;
+
     days.forEach((d, i) => {
       lessonsHTML += `
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-top: 4px solid #2563eb; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-top: 4px solid #1e3a8a; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.04)';">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.15rem; font-family: 'Playfair Display', serif;">Day ${i + 1}</h3>
+              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem; font-family: 'Playfair Display', serif;">Day ${i + 1}</h3>
               <span style="font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; padding: 3px 8px; border-radius: 12px; border: 1px solid #bfdbfe;">Field Guide</span>
             </div>
-            <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.95rem; line-height: 1.4;">${d.lesson.title.replace(/^Day \d+:\s*/, '')}</p>
+            <p style="margin: 0; color: #334155; font-weight: 600; font-size: 0.95rem; line-height: 1.4;">${d.lesson.title.replace(/^Day \d+:\s*/, '')}</p>
             <p style="margin: 8px 0 0 0; color: #64748b; font-size: 0.85rem; font-style: italic;">${d.lesson.enquiry || ''}</p>
           </div>
-        `;
+      `;
     });
-    lessonsHTML += '</div>';
 
-    // The Fallen: Physical Memorials visited on the tour
     lessonsHTML += `
-      <div style="margin-top: 45px;">
-        <h2 style="text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px; font-family: 'Playfair Display', serif; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-          <span><i class="fa-solid fa-cross" style="margin-right: 10px;"></i> The Fallen: Local Heroes of the Salient</span>
-          <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 20px;">Field Investigations · Not Extra Trip Days</span>
-        </h2>
-        <p style="color: #475569; font-size: 0.95rem; margin-top: 10px; line-height: 1.5;">
-          During our 3-day tour, pupils will locate these young men from our home villages (Stubbington, Chark, Lee-on-the-Solent) who died in the Ypres Salient. They are commemorated on the physical memorial panels visited during Days 1, 2, and 3.
-        </p>
-
-        <!-- Crofton Parish Memorial Tablet Spotlight -->
-        <div style="margin-top: 20px; background: #fdfaf6; border: 1.5px solid #dcd3c6; border-radius: 10px; padding: 20px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-          <div style="flex: 0 0 160px; text-align: center;">
-            <img src="/images/stubbington_memorial_2.jpg" alt="Crofton Parish Memorial Tablet" style="max-width: 100%; border-radius: 6px; border: 1px solid #cbd5e1; cursor: zoom-in; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" data-action="open-modal">
-            <small style="display: block; margin-top: 5px; color: #78350f; font-weight: 600; font-size: 0.78rem;"><i class="fa-solid fa-church"></i> Holy Rood Church, Stubbington</small>
           </div>
-          <div style="flex: 1; min-width: 250px;">
-            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fef3c7; color: #92400e; padding: 3px 9px; border-radius: 12px;">The Home Link</span>
-            <h4 style="margin: 6px 0 8px 0; color: #1e3a8a; font-size: 1.15rem; font-family: 'Playfair Display', serif;">The Crofton Parish Memorial Tablet</h4>
-            <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
-              Every one of our six Salient fallen—along with the three Lowry brothers—is carved side-by-side into this marble tablet in Holy Rood Church. On this tour, our mission is to trace their names from our home village to the great memorial walls of Flanders.
+
+          <!-- Voices & Poetry of the Salient Banner -->
+          <div style="margin-top: 30px; background: #faf8f5; border: 1px solid #e7dfd5; border-left: 5px solid #7f1d1d; border-radius: 8px; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 3px 10px; border-radius: 12px;">Expedition Literature</span>
+              <h3 style="margin: 6px 0 4px 0; color: #7f1d1d; font-size: 1.25rem; font-family: 'Playfair Display', serif;">Voices &amp; Poetry of the Salient</h3>
+              <p style="margin: 0; color: #475569; font-size: 0.9rem; max-width: 600px;">16 unabridged poems by 12 First World War soldier-poets across our 11 expedition stops, including McCrae, Owen, Sassoon, Rosenberg, Sorley, and Brittain.</p>
+            </div>
+            <button class="btn" data-action="open-anthology-modal" style="padding: 10px 18px; font-size: 0.9rem; font-weight: 700; background: #7f1d1d; color: white; border: none; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 5px rgba(127, 29, 29, 0.25); transition: background 0.2s;" onmouseover="this.style.background='#991b1b';" onmouseout="this.style.background='#7f1d1d';">
+              Browse 16-Poem Anthology &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 2: Village Fallen & Memorials -->
+        <div id="trip-panel-fallen" style="display: none;">
+          <div style="margin-bottom: 25px;">
+            <h2 style="margin: 0 0 6px 0; text-align: left; color: #991b1b; font-family: 'Playfair Display', serif; font-size: 1.35rem;">
+              The Fallen: Local Heroes of the Salient
+            </h2>
+            <p style="color: #475569; font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              During our 3-day tour, pupils will locate these young men from our home villages (Stubbington, Chark, Lee-on-the-Solent) who died in the Ypres Salient. They are commemorated on the physical memorial panels visited during Days 1, 2, and 3.
             </p>
           </div>
-        </div>
 
-        <!-- Stubbington War Memorial Lychgate - 4 Sides Showcase -->
-        <div style="margin-top: 20px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
-            <div>
-              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 3px 9px; border-radius: 12px;">Village Memorial Heritage</span>
-              <h4 style="margin: 6px 0 0 0; color: #0f172a; font-size: 1.15rem; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-monument" style="color: #991b1b; margin-right: 6px;"></i> The Stubbington War Memorial Lychgate (All 4 Sides)</h4>
+          <!-- Crofton Parish Memorial Tablet Spotlight -->
+          <div style="background: #fdfaf6; border: 1.5px solid #dcd3c6; border-radius: 10px; padding: 20px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-bottom: 25px;">
+            <div style="flex: 0 0 160px; text-align: center;">
+              <img src="/images/stubbington_memorial_2.jpg" alt="Crofton Parish Memorial Tablet" style="max-width: 100%; border-radius: 6px; border: 1px solid #cbd5e1; cursor: zoom-in; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" data-action="open-modal" data-src="/images/stubbington_memorial_2.jpg">
+              <small style="display: block; margin-top: 5px; color: #78350f; font-weight: 600; font-size: 0.78rem;">Holy Rood Church, Stubbington</small>
             </div>
-            <span style="font-size: 0.8rem; color: #64748b; font-style: italic;">Carved oak tie-beams commemorating the parish dead · Click any photo to zoom</span>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
-            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-              <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal">
-                <img src="/images/stubbington_names_4.jpg" alt="West Beam: Adams to Franklin" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
-              </div>
-              <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 1 (West Beam)</strong>
-                  <span style="color: #475569; display: block; margin-top: 3px;">Adams · Ayling · Franklin</span>
-                </div>
-                <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #1d4ed8; background: #eff6ff; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 1 · Menin Gate</span>
-              </div>
-            </div>
-            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-              <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal">
-                <img src="/images/stubbington_names_1.jpg" alt="East Beam: Muckett to Smith" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
-              </div>
-              <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 2 (East Beam)</strong>
-                  <span style="color: #475569; display: block; margin-top: 3px;">Muckett · Rye · Smith</span>
-                </div>
-                <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #b91c1c; background: #fef2f2; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 2 · Tyne Cot</span>
-              </div>
-            </div>
-            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-              <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal">
-                <img src="/images/stubbington_names_2.jpg" alt="South Beam: Warland to Wells" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
-              </div>
-              <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 3 (South Beam)</strong>
-                  <span style="color: #475569; display: block; margin-top: 3px;">Warland · Ward · Wells</span>
-                </div>
-                <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #047857; background: #ecfdf5; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 3 · Salient Defences</span>
-              </div>
-            </div>
-            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-              <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal">
-                <img src="/images/stubbington_names_3.jpg" alt="North Beam: Lowry Brothers & Halahan" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
-              </div>
-              <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                  <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 4 (North Beam)</strong>
-                  <span style="color: #475569; display: block; margin-top: 3px;">Lowry Brothers · Halahan · King</span>
-                </div>
-                <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #7c3aed; background: #f5f3ff; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Tour Hub &amp; Pre-Trip</span>
-              </div>
+            <div style="flex: 1; min-width: 250px;">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fef3c7; color: #92400e; padding: 3px 9px; border-radius: 12px;">The Home Link</span>
+              <h4 style="margin: 6px 0 8px 0; color: #1e3a8a; font-size: 1.15rem; font-family: 'Playfair Display', serif;">The Crofton Parish Memorial Tablet</h4>
+              <p style="margin: 0; color: #475569; font-size: 0.9rem; line-height: 1.5;">
+                Every one of our six Salient fallen—along with the three Lowry brothers—is carved side-by-side into this marble tablet in Holy Rood Church. On this tour, our mission is to trace their names from our home village to the great memorial walls of Flanders.
+              </p>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Menin Gate Group -->
-      <div style="margin-top: 25px;">
-        <div style="background: #f8fafc; border-left: 4px solid #b91c1c; padding: 10px 15px; border-radius: 4px; margin-bottom: 15px;">
-          <h4 style="margin: 0; color: #7f1d1d; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-archway" style="color: #b91c1c;"></i> Ypres (Menin Gate) Memorial · Panel 35
-          </h4>
-          <span style="font-size: 0.85rem; color: #64748b;">Visited on Day 2 during the 8:00 PM Last Post Ceremony</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; text-align: left;">
+          <!-- Stubbington War Memorial Lychgate - 4 Sides Showcase -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-bottom: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 3px 9px; border-radius: 12px;">Village Memorial Heritage</span>
+                <h4 style="margin: 6px 0 0 0; color: #0f172a; font-size: 1.15rem; font-family: 'Playfair Display', serif;">The Stubbington War Memorial Lychgate (All 4 Sides)</h4>
+              </div>
+              <span style="font-size: 0.8rem; color: #64748b; font-style: italic;">Carved oak tie-beams commemorating the parish dead · Click any photo to zoom</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+                <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal" data-src="/images/stubbington_names_4.jpg">
+                  <img src="/images/stubbington_names_4.jpg" alt="West Beam: Adams to Franklin" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+                <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 1 (West Beam)</strong>
+                    <span style="color: #475569; display: block; margin-top: 3px;">Adams · Ayling · Franklin</span>
+                  </div>
+                  <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #1d4ed8; background: #eff6ff; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 2 · Menin Gate</span>
+                </div>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+                <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal" data-src="/images/stubbington_names_1.jpg">
+                  <img src="/images/stubbington_names_1.jpg" alt="East Beam: Muckett to Smith" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+                <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 2 (East Beam)</strong>
+                    <span style="color: #475569; display: block; margin-top: 3px;">Muckett · Rye · Smith</span>
+                  </div>
+                  <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #b91c1c; background: #fef2f2; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 2 · Tyne Cot</span>
+                </div>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+                <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal" data-src="/images/stubbington_names_2.jpg">
+                  <img src="/images/stubbington_names_2.jpg" alt="South Beam: Warland to Wells" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+                <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 3 (South Beam)</strong>
+                    <span style="color: #475569; display: block; margin-top: 3px;">Warland · Ward · Wells</span>
+                  </div>
+                  <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #047857; background: #ecfdf5; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Day 2 · Tyne Cot</span>
+                </div>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+                <div style="height: 110px; overflow: hidden; background: #0f172a; cursor: zoom-in;" data-action="open-modal" data-src="/images/stubbington_names_3.jpg">
+                  <img src="/images/stubbington_names_3.jpg" alt="North Beam: Lowry Brothers & Halahan" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+                <div style="padding: 10px; font-size: 0.82rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <strong style="color: #1e3a8a; display: block; font-size: 0.88rem;">Side 4 (North Beam)</strong>
+                    <span style="color: #475569; display: block; margin-top: 3px;">Lowry Brothers · Halahan · King</span>
+                  </div>
+                  <span style="display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; color: #7c3aed; background: #f5f3ff; padding: 2px 6px; border-radius: 4px; align-self: flex-start;">Tour Hub &amp; Pre-Trip</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Menin Gate Group -->
+          <div style="margin-bottom: 30px;">
+            <div style="background: #f8fafc; border-left: 4px solid #b91c1c; padding: 12px 16px; border-radius: 4px; margin-bottom: 16px;">
+              <h4 style="margin: 0; color: #7f1d1d; font-size: 1.1rem; font-family: 'Playfair Display', serif;">
+                Ypres (Menin Gate) Memorial · Panel 35
+              </h4>
+              <span style="font-size: 0.85rem; color: #64748b;">Visited on Day 2 during the 8:00 PM Last Post Ceremony</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; text-align: left;">
     `;
+
     meninGateHeroes.forEach((h) => {
       const heroData =
         targetData.local_heroes?.find(
@@ -430,34 +459,36 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         typeof localStorage !== 'undefined' &&
         localStorage.getItem('trip_found_' + h.lesson.id) === 'true';
       lessonsHTML += `
-        <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #fed7aa; border-left: 5px solid #ea580c; border-radius: 8px; padding: 18px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+        <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #ea580c; border-radius: 8px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
             <h3 style="margin: 0; color: #7f1d1d; font-size: 1.1rem; font-family: 'Playfair Display', serif;">${h.lesson.title.split('(')[0].trim()}</h3>
-            <span style="font-size: 0.75rem; font-weight: 700; background: #ffedd5; color: #c2410c; padding: 2px 7px; border-radius: 10px; white-space: nowrap;">Panel 35</span>
+            <span style="font-size: 0.75rem; font-weight: 700; background: #ffedd5; color: #c2410c; padding: 2px 8px; border-radius: 10px; white-space: nowrap;">Panel 35</span>
           </div>
           <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">${heroData.regiment || '1st Battalion, Hampshire Regiment'}</p>
-          <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Local Hampshire connection'}</p>
+          <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;">Home: ${heroData.connection || 'Local Hampshire connection'}</p>
           <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fed7aa; padding-top: 8px; font-size: 0.78rem;">
-            <span style="color: #1e3a8a; font-weight: 600;"><i class="fa-solid fa-church" style="margin-right: 4px;"></i>Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
-            ${isFound ? '<span style="color: #16a34a; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Found</span>' : '<span style="color: #94a3b8;"><i class="fa-regular fa-circle"></i> On-site quest</span>'}
+            <span style="color: #1e3a8a; font-weight: 600;">Parish Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
+            ${isFound ? '<span style="color: #16a34a; font-weight: 700;">Located on Memorial</span>' : '<span style="color: #94a3b8;">On-site quest</span>'}
           </div>
         </div>
       `;
     });
-    lessonsHTML += `
-        </div>
-      </div>
 
-      <!-- Tyne Cot Group -->
-      <div style="margin-top: 30px;">
-        <div style="background: #f8fafc; border-left: 4px solid #b91c1c; padding: 10px 15px; border-radius: 4px; margin-bottom: 15px;">
-          <h4 style="margin: 0; color: #7f1d1d; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-monument" style="color: #b91c1c;"></i> Tyne Cot Memorial to the Missing · Passchendaele
-          </h4>
-          <span style="font-size: 0.85rem; color: #64748b;">Visited on Day 2 · Inscribed on the great rear memorial wall</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; text-align: left;">
+    lessonsHTML += `
+            </div>
+          </div>
+
+          <!-- Tyne Cot Group -->
+          <div style="margin-bottom: 30px;">
+            <div style="background: #f8fafc; border-left: 4px solid #b91c1c; padding: 12px 16px; border-radius: 4px; margin-bottom: 16px;">
+              <h4 style="margin: 0; color: #7f1d1d; font-size: 1.1rem; font-family: 'Playfair Display', serif;">
+                Tyne Cot Memorial to the Missing · Passchendaele
+              </h4>
+              <span style="font-size: 0.85rem; color: #64748b;">Visited on Day 2 · Inscribed on the rear memorial wall</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; text-align: left;">
     `;
+
     tyneCotHeroes.forEach((h) => {
       const heroData =
         targetData.local_heroes?.find(
@@ -470,32 +501,33 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         typeof localStorage !== 'undefined' &&
         localStorage.getItem('trip_found_' + h.lesson.id) === 'true';
       lessonsHTML += `
-        <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 8px; padding: 18px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+        <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #dc2626; border-radius: 8px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
             <h3 style="margin: 0; color: #7f1d1d; font-size: 1.1rem; font-family: 'Playfair Display', serif;">${h.lesson.title.split('(')[0].trim()}</h3>
-            <span style="font-size: 0.75rem; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 2px 7px; border-radius: 10px; white-space: nowrap;">${panelLabel}</span>
+            <span style="font-size: 0.75rem; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 10px; white-space: nowrap;">${panelLabel}</span>
           </div>
           <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">${heroData.regiment || ''}</p>
-          <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Local Hampshire connection'}</p>
+          <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;">Home: ${heroData.connection || 'Local Hampshire connection'}</p>
           <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fecaca; padding-top: 8px; font-size: 0.78rem;">
-            <span style="color: #1e3a8a; font-weight: 600;"><i class="fa-solid fa-church" style="margin-right: 4px;"></i>Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
-            ${isFound ? '<span style="color: #16a34a; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Found</span>' : '<span style="color: #94a3b8;"><i class="fa-regular fa-circle"></i> On-site quest</span>'}
+            <span style="color: #1e3a8a; font-weight: 600;">Parish Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
+            ${isFound ? '<span style="color: #16a34a; font-weight: 700;">Located on Memorial</span>' : '<span style="color: #94a3b8;">On-site quest</span>'}
           </div>
         </div>
       `;
     });
+
     lessonsHTML += `
-        </div>
-      </div>
+            </div>
+          </div>
     `;
 
-    // The Lowry Brothers: A Village's Sacrifice
+    // The Lowry Brothers
     if (lowryBrothers.length > 0) {
       lessonsHTML += `
-        <div style="margin-top: 45px; background: #fdfaf6; border: 1.5px solid #e7dfd5; border-radius: 10px; padding: 25px;">
+        <div style="margin-top: 35px; background: #fdfaf6; border: 1.5px solid #e7dfd5; border-radius: 10px; padding: 25px;">
           <div style="border-bottom: 1.5px solid #e7dfd5; padding-bottom: 12px; margin-bottom: 18px;">
             <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #fef3c7; color: #92400e; padding: 3px 9px; border-radius: 12px; display: inline-block; margin-bottom: 8px;">
-              <i class="fa-solid fa-house-chimney-crack" style="margin-right: 5px;"></i> Home Front Memorial Story
+              Home Front Memorial Story
             </span>
             <h3 style="margin: 0 0 6px 0; color: #1e293b; font-size: 1.35rem; font-family: 'Playfair Display', serif;">
               A Village's Sacrifice: The Lowry Brothers of Manor Way Grange
@@ -521,16 +553,16 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             ? 'Arras (1918)'
             : 'Somme (1918)';
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${b.index}" style="background: #fff; border: 1px solid #fed7aa; border-left: 5px solid #d97706; border-radius: 8px; padding: 18px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${b.index}" style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #d97706; border-radius: 8px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
               <h3 style="margin: 0; color: #92400e; font-size: 1.05rem; font-family: 'Playfair Display', serif;">${b.lesson.title.split('(')[0].trim()}</h3>
-              <span style="font-size: 0.72rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 2px 7px; border-radius: 10px; white-space: nowrap;">${theatreBadge}</span>
+              <span style="font-size: 0.72rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 10px; white-space: nowrap;">${theatreBadge}</span>
             </div>
             <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">${heroData.regiment || ''}</p>
-            <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Manor Way Grange, Lee-on-the-Solent'}</p>
+            <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;">Home: ${heroData.connection || 'Manor Way Grange, Lee-on-the-Solent'}</p>
             <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fed7aa; padding-top: 8px; font-size: 0.78rem;">
-              <span style="color: #1e3a8a; font-weight: 600;"><i class="fa-solid fa-church" style="margin-right: 4px;"></i>Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
-              <span style="color: #64748b; font-style: italic;"><i class="fa-solid fa-monument" style="margin-right: 4px;"></i>${(heroData.memorial || '').split(',')[0]}</span>
+              <span style="color: #1e3a8a; font-weight: 600;">Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
+              <span style="color: #64748b; font-style: italic;">${(heroData.memorial || '').split(',')[0]}</span>
             </div>
           </div>
         `;
@@ -541,61 +573,11 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       `;
     }
 
-    if (targetData.extended) {
-      lessonsHTML +=
-        '<h2 style="margin-top: 40px; text-align: left; color: #991b1b; border-bottom: 2px solid #fecaca; padding-bottom: 10px;"><i class="fa-solid fa-pen-nib"></i> Assessment Practice</h2>';
-      lessonsHTML += `
-        <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px; text-align: left;">
-          <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.1rem; margin-bottom: 15px;">${targetData.extended.question}</h3>
-          
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-            ${
-              targetData.extended.source_a
-                ? `
-              <div>
-                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source A:</strong> ${targetData.extended.source_a.provenance}</p>
-                ${targetData.extended.source_a.content}
-              </div>
-            `
-                : ''
-            }
-            ${
-              targetData.extended.source_b
-                ? `
-              <div>
-                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 5px;"><strong>Source B:</strong> ${targetData.extended.source_b.provenance}</p>
-                ${targetData.extended.source_b.content}
-              </div>
-            `
-                : ''
-            }
-          </div>
-
-          ${
-            targetData.extended.provenance_clue
-              ? `
-            <div style="background: #fdf2f8; border: 1px solid #fbcfe8; border-left: 4px solid #ec4899; padding: 15px; border-radius: 4px; margin-top: 20px;">
-              <p style="margin: 0; font-size: 0.95rem; color: #831843;"><i class="fa-solid fa-lightbulb" style="margin-right: 8px;"></i><strong>Provenance Clue:</strong> ${targetData.extended.provenance_clue}</p>
-            </div>
-          `
-              : ''
-          }
-          
-          ${
-            targetData.extended.scaffolding && targetData.extended.scaffolding.length > 0
-              ? `
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 4px; margin-top: 20px;">
-              <p style="margin: 0 0 10px 0; font-weight: bold; color: #1e3a8a;"><i class="fa-solid fa-hammer" style="margin-right: 8px;"></i>Scaffolding</p>
-              <ul style="margin: 0; padding-left: 20px; color: #334155;">
-                ${targetData.extended.scaffolding.map((s) => `<li style="margin-bottom: 5px;">${s}</li>`).join('')}
-              </ul>
-            </div>
-          `
-              : ''
-          }
+    lessonsHTML += `
         </div>
-      `;
-    }
+      </div>
+    `;
+
     return lessonsHTML;
   } else {
     lessonsHTML =
