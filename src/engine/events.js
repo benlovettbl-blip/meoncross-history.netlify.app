@@ -6,9 +6,39 @@ import { appStore } from './store.js';
 
 export function initEventDelegation() {
   document.body.addEventListener('click', (e) => {
-    // Find the closest element with a data-action attribute
     const target = e.target.closest('[data-action]');
-    if (!target) return;
+
+    // Auto-detect zoomable images with cursor: zoom-in across the app
+    if (!target) {
+      const zoomImg =
+        e.target.tagName === 'IMG'
+          ? e.target
+          : e.target
+              .closest('[style*="cursor: zoom-in"], [style*="cursor:zoom-in"]')
+              ?.querySelector('img') || e.target.closest('img');
+
+      if (zoomImg) {
+        const computedCursor = window.getComputedStyle(zoomImg).cursor;
+        const inlineCursor = zoomImg.style.cursor;
+        const parentCursor = zoomImg.parentElement
+          ? window.getComputedStyle(zoomImg.parentElement).cursor
+          : '';
+
+        if (
+          computedCursor === 'zoom-in' ||
+          inlineCursor === 'zoom-in' ||
+          parentCursor === 'zoom-in'
+        ) {
+          const imgSrc = zoomImg.dataset.src || zoomImg.getAttribute('src') || zoomImg.src;
+          if (imgSrc && window.openModal) {
+            e.preventDefault();
+            window.openModal(imgSrc);
+            return;
+          }
+        }
+      }
+      return;
+    }
 
     const action = target.dataset.action;
 
@@ -19,11 +49,25 @@ export function initEventDelegation() {
         }
         break;
 
-      case 'open-modal':
+      case 'open-modal': {
         if (window.openModal) {
-          window.openModal(target.dataset.src);
+          const imgSrc =
+            target.dataset.src ||
+            target.getAttribute('src') ||
+            target.src ||
+            e.target.dataset.src ||
+            e.target.getAttribute('src') ||
+            e.target.src ||
+            target.querySelector('img')?.getAttribute('data-src') ||
+            target.querySelector('img')?.getAttribute('src') ||
+            target.querySelector('img')?.src;
+
+          if (imgSrc) {
+            window.openModal(imgSrc);
+          }
         }
         break;
+      }
 
       case 'toggle-element':
         const targetId = target.dataset.targetId || target.getAttribute('data-target-id');

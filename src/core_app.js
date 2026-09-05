@@ -2,26 +2,36 @@ import { renderHomepage, renderSidebar, renderExamGuide } from './engine/home_re
 import { renderLesson } from './engine/lesson_renderer.js';
 import { renderExamPracticeZone } from './exam_practice_zone.js';
 import { appStore } from './engine/store.js';
-import { initKeyIndividualsTask, generateKeyIndividualCardHTML, generateKeyIndividualEmbedHTML } from './key_individuals.js';
+import {
+  initKeyIndividualsTask,
+  generateKeyIndividualCardHTML,
+  generateKeyIndividualEmbedHTML,
+} from './key_individuals.js';
 import { renderQuizZone } from './quiz_zone.js';
 import { sanitizeLessonData, cleanQuestionText } from './data_parser.js';
-import { sectionAGuide, sectionBGuide, middleEastGuide, weimarGuide , elizabethGuide} from './exam_guide_content.js';
+import {
+  sectionAGuide,
+  sectionBGuide,
+  middleEastGuide,
+  weimarGuide,
+  elizabethGuide,
+} from './exam_guide_content.js';
 import { renderCoverSourcesHTML } from './cover_sources.js';
 import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
 
 window.examTimers = {};
 
-window.toggleExamTimer = function(cardId, defaultMinutes) {
+window.toggleExamTimer = function (cardId, defaultMinutes) {
   const container = document.getElementById('timer-container-' + cardId);
   if (container.style.display === 'none') {
     container.style.display = 'flex';
     if (!window.examTimers[cardId]) {
       window.examTimers[cardId] = {
         totalSeconds: defaultMinutes * 60,
-        
+
         remainingSeconds: defaultMinutes * 60,
         interval: null,
-        isRunning: false
+        isRunning: false,
       };
       updateTimerDisplay(cardId);
     }
@@ -30,11 +40,11 @@ window.toggleExamTimer = function(cardId, defaultMinutes) {
   }
 };
 
-window.adjustExamTimer = function(cardId, minutesChange) {
+window.adjustExamTimer = function (cardId, minutesChange) {
   const timer = window.examTimers[cardId];
   if (!timer || timer.isRunning) return;
-  
-  const newSeconds = timer.totalSeconds + (minutesChange * 60);
+
+  const newSeconds = timer.totalSeconds + minutesChange * 60;
   if (newSeconds >= 60) {
     timer.totalSeconds = newSeconds;
     timer.remainingSeconds = newSeconds;
@@ -42,28 +52,36 @@ window.adjustExamTimer = function(cardId, minutesChange) {
   }
 };
 
-window.startExamTimer = function(cardId) {
+window.startExamTimer = function (cardId) {
   const timer = window.examTimers[cardId];
   if (!timer) return;
-  
+
   const btn = document.getElementById('timer-start-btn-' + cardId);
-  
+
   if (timer.isRunning) {
     // Pause
     clearInterval(timer.interval);
     timer.isRunning = false;
     btn.innerHTML = '<i class="fa-solid fa-play"></i> Resume';
     btn.style.background = '#f59e0b';
-    btn.onmouseout = function() { this.style.background='#f59e0b' };
-    btn.onmouseover = function() { this.style.background='#d97706' };
+    btn.onmouseout = function () {
+      this.style.background = '#f59e0b';
+    };
+    btn.onmouseover = function () {
+      this.style.background = '#d97706';
+    };
   } else {
     // Start
     timer.isRunning = true;
     btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
     btn.style.background = '#f59e0b';
-    btn.onmouseout = function() { this.style.background='#f59e0b' };
-    btn.onmouseover = function() { this.style.background='#d97706' };
-    
+    btn.onmouseout = function () {
+      this.style.background = '#f59e0b';
+    };
+    btn.onmouseover = function () {
+      this.style.background = '#d97706';
+    };
+
     timer.interval = setInterval(() => {
       if (timer.remainingSeconds > 0) {
         timer.remainingSeconds--;
@@ -73,37 +91,45 @@ window.startExamTimer = function(cardId) {
         timer.isRunning = false;
         btn.innerHTML = '<i class="fa-solid fa-check"></i> Time Up!';
         btn.style.background = '#ef4444';
-        btn.onmouseout = function() { this.style.background='#ef4444' };
-        btn.onmouseover = function() { this.style.background='#dc2626' };
+        btn.onmouseout = function () {
+          this.style.background = '#ef4444';
+        };
+        btn.onmouseover = function () {
+          this.style.background = '#dc2626';
+        };
       }
     }, 1000);
   }
 };
 
-window.resetExamTimer = function(cardId, defaultMinutes) {
+window.resetExamTimer = function (cardId, defaultMinutes) {
   const timer = window.examTimers[cardId];
   if (!timer) return;
-  
+
   clearInterval(timer.interval);
   timer.remainingSeconds = timer.totalSeconds;
   timer.isRunning = false;
-  
+
   const btn = document.getElementById('timer-start-btn-' + cardId);
   btn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
   btn.style.background = '#10b981';
-  btn.onmouseout = function() { this.style.background='#10b981' };
-  btn.onmouseover = function() { this.style.background='#059669' };
-  
+  btn.onmouseout = function () {
+    this.style.background = '#10b981';
+  };
+  btn.onmouseover = function () {
+    this.style.background = '#059669';
+  };
+
   updateTimerDisplay(cardId);
 };
 
 function updateTimerDisplay(cardId) {
   const timer = window.examTimers[cardId];
   if (!timer) return;
-  
+
   const m = Math.floor(timer.remainingSeconds / 60);
   const s = timer.remainingSeconds % 60;
-  
+
   const display = document.getElementById('timer-display-' + cardId);
   if (display) {
     display.textContent = m + ':' + (s < 10 ? '0' : '') + s;
@@ -113,7 +139,7 @@ function updateTimerDisplay(cardId) {
       display.style.color = '#1e3a8a';
     }
   }
-  
+
   const progress = document.getElementById('timer-progress-' + cardId);
   if (progress) {
     const percentage = (timer.remainingSeconds / timer.totalSeconds) * 100;
@@ -140,36 +166,39 @@ export function getAssetUrl(path) {
 export function initializeApp(unitData) {
   window.currentUnitData = unitData;
   appStore.state.activeUnitData = unitData;
-  
+
   const init = () => {
-  // Listen for custom events from dynamically loaded modules (like the Thematic Matrix)
-  window.addEventListener('renderLessonEvent', (e) => {
-    const lesson = e.detail;
-    renderLesson(lesson);
-    setTimeout(() => {
-      const ca = document.getElementById('content-area');
-      if (ca) {
-        ca.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }, 100);
-    // Try to update sidebar active state
-    document.querySelectorAll('.lesson-link').forEach(l => {
-      l.classList.remove('active');
-      if (l.textContent.includes(lesson.title)) {
-        l.classList.add('active');
-      }
+    // Listen for custom events from dynamically loaded modules (like the Thematic Matrix)
+    window.addEventListener('renderLessonEvent', (e) => {
+      const lesson = e.detail;
+      renderLesson(lesson);
+      setTimeout(() => {
+        const ca = document.getElementById('content-area');
+        if (ca) {
+          ca.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          (document.getElementById('content-area') || window).scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        }
+      }, 100);
+      // Try to update sidebar active state
+      document.querySelectorAll('.lesson-link').forEach((l) => {
+        l.classList.remove('active');
+        if (l.textContent.includes(lesson.title)) {
+          l.classList.add('active');
+        }
+      });
     });
-  });
 
-  const sidebar = document.getElementById('sidebar');
-  const contentArea = document.getElementById('content-area');
-  const btnDyslexia = document.getElementById('btn-dyslexia');
+    const sidebar = document.getElementById('sidebar');
+    const contentArea = document.getElementById('content-area');
+    const btnDyslexia = document.getElementById('btn-dyslexia');
 
-  // Inject Custom Styles for Layout & SEN (No Icons)
-  const style = document.createElement('style');
-  style.textContent = `
+    // Inject Custom Styles for Layout & SEN (No Icons)
+    const style = document.createElement('style');
+    style.textContent = `
     .phase-card {
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
@@ -529,189 +558,196 @@ export function initializeApp(unitData) {
       animation: highlightPulse 2.5s ease-out;
     }
   `;
-  document.head.appendChild(style);
+    document.head.appendChild(style);
 
-  window.scrollToPara = function(id) {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      el.classList.remove('highlight-flash');
-      // Trigger reflow to restart animation
-      void el.offsetWidth;
-      el.classList.add('highlight-flash');
-      setTimeout(() => el.classList.remove('highlight-flash'), 2600);
-    }
-  };
+    window.scrollToPara = function (id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.remove('highlight-flash');
+        // Trigger reflow to restart animation
+        void el.offsetWidth;
+        el.classList.add('highlight-flash');
+        setTimeout(() => el.classList.remove('highlight-flash'), 2600);
+      }
+    };
 
-  let unitEnquiryText = "";
-  const headerDivs = document.querySelectorAll('.header-title-container div div');
-  headerDivs.forEach(div => {
-    if (div.textContent.includes('Unit Enquiry:')) {
-      unitEnquiryText = div.textContent;
-      div.style.display = 'none';
-    }
-  });
-
-  // Set up Speech Synthesis
-  let synth = window.speechSynthesis;
-  let utterance = null;
-
-  // Copy to OneNote FAB
-  const fab = document.createElement('button');
-  fab.className = 'fab-copy';
-  fab.innerHTML = '<i class="fa-solid fa-copy"></i>';
-  fab.title = "Copy all answers to OneNote";
-  fab.onclick = () => {
-    let text = "History Lesson Answers\n\n";
-    document.querySelectorAll('.do-now-card').forEach(card => {
-      let qTextEl = card.querySelector('div[style*="font-weight: 700"]');
-      let textarea = card.querySelector('.student-answer-input');
-      if (qTextEl && textarea) {
-        let clone = qTextEl.cloneNode(true);
-        let span = clone.querySelector('span');
-        if (span) span.remove();
-        text += clone.textContent.trim() + "\n";
-        text += "Answer: " + textarea.value + "\n\n";
+    let unitEnquiryText = '';
+    const headerDivs = document.querySelectorAll('.header-title-container div div');
+    headerDivs.forEach((div) => {
+      if (div.textContent.includes('Unit Enquiry:')) {
+        unitEnquiryText = div.textContent;
+        div.style.display = 'none';
       }
     });
-    navigator.clipboard.writeText(text).then(() => {
-      alert('All answers copied to clipboard! Ready to paste into OneNote.');
-    }).catch(err => {
-      alert('Failed to copy to clipboard.');
-    });
-  };
-  document.body.appendChild(fab);
 
-  // Global Simplify logic
-  window.toggleSimplify = function(btnElement) {
-    const textContainer = btnElement.closest('.narrative-chunk').querySelector('.narrative-text');
-    if (!textContainer) return;
-    
-    if (btnElement.classList.contains('simplified-active')) {
-      textContainer.innerHTML = decodeURIComponent(btnElement.getAttribute('data-original'));
-      btnElement.classList.remove('simplified-active');
-      btnElement.style.background = '';
-      btnElement.style.color = '#047857';
-    } else {
-      textContainer.innerHTML = decodeURIComponent(btnElement.getAttribute('data-simplified'));
-      btnElement.classList.add('simplified-active');
-      btnElement.style.background = '#d1fae5';
-      btnElement.style.color = '#065f46';
-    }
-  };
+    // Set up Speech Synthesis
+    let synth = window.speechSynthesis;
+    let utterance = null;
 
-  // Global Read Aloud logic (Per Paragraph)
-  window.readAloudText = function(btnElement) {
-    if (synth.speaking && btnElement.classList.contains('reading-active')) {
-      synth.cancel();
-      btnElement.classList.remove('reading-active');
-      btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-      return;
-    }
-    
-    synth.cancel();
-    document.querySelectorAll('.narrative-chunk button').forEach(b => {
-      b.classList.remove('reading-active');
-      b.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-    });
-
-    const textToRead = btnElement.closest('.narrative-chunk').querySelector('.narrative-text').textContent;
-    if (textToRead.trim() === "") return;
-
-    btnElement.classList.add('reading-active');
-    btnElement.innerHTML = '<i class="fa-solid fa-stop"></i>';
-
-    utterance = new SpeechSynthesisUtterance(textToRead);
-    utterance.onend = () => {
-      btnElement.classList.remove('reading-active');
-      btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    // Copy to OneNote FAB
+    const fab = document.createElement('button');
+    fab.className = 'fab-copy';
+    fab.innerHTML = '<i class="fa-solid fa-copy"></i>';
+    fab.title = 'Copy all answers to OneNote';
+    fab.onclick = () => {
+      let text = 'History Lesson Answers\n\n';
+      document.querySelectorAll('.do-now-card').forEach((card) => {
+        let qTextEl = card.querySelector('div[style*="font-weight: 700"]');
+        let textarea = card.querySelector('.student-answer-input');
+        if (qTextEl && textarea) {
+          let clone = qTextEl.cloneNode(true);
+          let span = clone.querySelector('span');
+          if (span) span.remove();
+          text += clone.textContent.trim() + '\n';
+          text += 'Answer: ' + textarea.value + '\n\n';
+        }
+      });
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          alert('All answers copied to clipboard! Ready to paste into OneNote.');
+        })
+        .catch((err) => {
+          alert('Failed to copy to clipboard.');
+        });
     };
-    synth.speak(utterance);
-  };
+    document.body.appendChild(fab);
 
-  
+    // Global Simplify logic
+    window.toggleSimplify = function (btnElement) {
+      const textContainer = btnElement.closest('.narrative-chunk').querySelector('.narrative-text');
+      if (!textContainer) return;
 
-  // Toggle Dyslexia Mode (Preserve icon)
-  btnDyslexia.addEventListener('click', () => {
-    document.body.classList.toggle('sen-mode');
-    const isSen = document.body.classList.contains('sen-mode');
-    if (btnDyslexia.title === 'SEN / Dyslexia Mode' || btnDyslexia.title === 'Standard Mode') {
-      // It's an icon button with title
-      btnDyslexia.title = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
-      btnDyslexia.style.background = isSen ? '#1e293b' : '';
-      btnDyslexia.style.color = isSen ? '#ffffff' : '';
-    } else {
-      // Legacy text button
-      btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+      if (btnElement.classList.contains('simplified-active')) {
+        textContainer.innerHTML = decodeURIComponent(btnElement.getAttribute('data-original'));
+        btnElement.classList.remove('simplified-active');
+        btnElement.style.background = '';
+        btnElement.style.color = '#047857';
+      } else {
+        textContainer.innerHTML = decodeURIComponent(btnElement.getAttribute('data-simplified'));
+        btnElement.classList.add('simplified-active');
+        btnElement.style.background = '#d1fae5';
+        btnElement.style.color = '#065f46';
+      }
+    };
+
+    // Global Read Aloud logic (Per Paragraph)
+    window.readAloudText = function (btnElement) {
+      if (synth.speaking && btnElement.classList.contains('reading-active')) {
+        synth.cancel();
+        btnElement.classList.remove('reading-active');
+        btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        return;
+      }
+
+      synth.cancel();
+      document.querySelectorAll('.narrative-chunk button').forEach((b) => {
+        b.classList.remove('reading-active');
+        b.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+      });
+
+      const textToRead = btnElement
+        .closest('.narrative-chunk')
+        .querySelector('.narrative-text').textContent;
+      if (textToRead.trim() === '') return;
+
+      btnElement.classList.add('reading-active');
+      btnElement.innerHTML = '<i class="fa-solid fa-stop"></i>';
+
+      utterance = new SpeechSynthesisUtterance(textToRead);
+      utterance.onend = () => {
+        btnElement.classList.remove('reading-active');
+        btnElement.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+      };
+      synth.speak(utterance);
+    };
+
+    // Toggle Dyslexia Mode (Preserve icon)
+    btnDyslexia.addEventListener('click', () => {
+      document.body.classList.toggle('sen-mode');
+      const isSen = document.body.classList.contains('sen-mode');
+      if (btnDyslexia.title === 'SEN / Dyslexia Mode' || btnDyslexia.title === 'Standard Mode') {
+        // It's an icon button with title
+        btnDyslexia.title = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+        btnDyslexia.style.background = isSen ? '#1e293b' : '';
+        btnDyslexia.style.color = isSen ? '#ffffff' : '';
+      } else {
+        // Legacy text button
+        btnDyslexia.textContent = isSen ? 'Standard Mode' : 'SEN / Dyslexia Mode';
+      }
+    });
+
+    // Inject Laptop Mode & Teacher Mode Buttons
+    const headerActions = document.querySelector('.header-actions');
+    if (headerActions) {
+      const btnLaptop = document.createElement('button');
+      btnLaptop.className = 'btn btn-secondary';
+      btnLaptop.style.marginRight = '5px';
+      btnLaptop.style.padding = '6px 12px';
+      btnLaptop.title = 'Laptop Mode';
+      btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i>';
+
+      if (localStorage.getItem('laptopMode') === 'true') {
+        document.body.classList.add('laptop-mode-active');
+        btnLaptop.style.background = '#1e293b';
+        btnLaptop.style.color = '#ffffff';
+      }
+
+      btnLaptop.addEventListener('click', () => {
+        document.body.classList.toggle('laptop-mode-active');
+        const isActive = document.body.classList.contains('laptop-mode-active');
+        localStorage.setItem('laptopMode', isActive);
+        btnLaptop.style.background = isActive ? '#1e293b' : '';
+        btnLaptop.style.color = isActive ? '#ffffff' : '';
+      });
+      headerActions.appendChild(btnLaptop);
+
+      const btnTeacher = document.createElement('button');
+      btnTeacher.className = 'btn btn-secondary';
+      btnTeacher.innerHTML = '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
+      btnTeacher.addEventListener('click', () => {
+        document.body.classList.toggle('teacher-mode-active');
+        const isActive = document.body.classList.contains('teacher-mode-active');
+        btnTeacher.innerHTML = isActive
+          ? '<i class="fa-solid fa-user-tie"></i> Teacher Mode: ON'
+          : '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
+        btnTeacher.style.background = isActive ? '#1e293b' : '';
+        btnTeacher.style.color = isActive ? '#ffffff' : '';
+      });
+      headerActions.appendChild(btnTeacher);
+
+      const btnCurriculum = document.createElement('button');
+      btnCurriculum.className = 'btn btn-secondary';
+      btnCurriculum.innerHTML =
+        '<i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge (Teachers)';
+      btnCurriculum.addEventListener('click', () => {
+        openCurriculumModal();
+      });
+      headerActions.appendChild(btnCurriculum);
+
+      const btnWhiteboard = document.createElement('button');
+      btnWhiteboard.className = 'btn btn-secondary';
+      btnWhiteboard.innerHTML = '<i class="fa-solid fa-person-chalkboard"></i> Task Whiteboard';
+      btnWhiteboard.addEventListener('click', () => {
+        openTaskWhiteboard();
+      });
+      headerActions.appendChild(btnWhiteboard);
     }
-  });
 
-  // Inject Laptop Mode & Teacher Mode Buttons
-  const headerActions = document.querySelector('.header-actions');
-  if (headerActions) {
-    const btnLaptop = document.createElement('button');
-    btnLaptop.className = 'btn btn-secondary';
-    btnLaptop.style.marginRight = '5px';
-    btnLaptop.style.padding = '6px 12px';
-    btnLaptop.title = 'Laptop Mode';
-    btnLaptop.innerHTML = '<i class="fa-solid fa-laptop"></i>';
-    
-    if (localStorage.getItem('laptopMode') === 'true') {
-      document.body.classList.add('laptop-mode-active');
-      btnLaptop.style.background = '#1e293b';
-      btnLaptop.style.color = '#ffffff';
-    }
+    function openCurriculumModal() {
+      let modal = document.getElementById('curriculum-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'curriculum-modal';
+        modal.style.cssText =
+          'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
 
-    btnLaptop.addEventListener('click', () => {
-      document.body.classList.toggle('laptop-mode-active');
-      const isActive = document.body.classList.contains('laptop-mode-active');
-      localStorage.setItem('laptopMode', isActive);
-      btnLaptop.style.background = isActive ? '#1e293b' : '';
-      btnLaptop.style.color = isActive ? '#ffffff' : '';
-    });
-    headerActions.appendChild(btnLaptop);
+        const content = document.createElement('div');
+        content.style.cssText =
+          'background:#ffffff;padding:30px;border-radius:12px;width:90%;max-width:500px;color:#333333;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
 
-    const btnTeacher = document.createElement('button');
-    btnTeacher.className = 'btn btn-secondary';
-    btnTeacher.innerHTML = '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
-    btnTeacher.addEventListener('click', () => {
-      document.body.classList.toggle('teacher-mode-active');
-      const isActive = document.body.classList.contains('teacher-mode-active');
-      btnTeacher.innerHTML = isActive ? '<i class="fa-solid fa-user-tie"></i> Teacher Mode: ON' : '<i class="fa-solid fa-user-tie"></i> Teacher Mode';
-      btnTeacher.style.background = isActive ? '#1e293b' : '';
-      btnTeacher.style.color = isActive ? '#ffffff' : '';
-    });
-    headerActions.appendChild(btnTeacher);
-
-    const btnCurriculum = document.createElement('button');
-    btnCurriculum.className = 'btn btn-secondary';
-    btnCurriculum.innerHTML = '<i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge (Teachers)';
-    btnCurriculum.addEventListener('click', () => {
-      openCurriculumModal();
-    });
-    headerActions.appendChild(btnCurriculum);
-
-    const btnWhiteboard = document.createElement('button');
-    btnWhiteboard.className = 'btn btn-secondary';
-    btnWhiteboard.innerHTML = '<i class="fa-solid fa-person-chalkboard"></i> Task Whiteboard';
-    btnWhiteboard.addEventListener('click', () => {
-      openTaskWhiteboard();
-    });
-    headerActions.appendChild(btnWhiteboard);
-
-  }
-
-  function openCurriculumModal() {
-    let modal = document.getElementById('curriculum-modal');
-    if (!modal) {
-      modal = document.createElement('div');
-      modal.id = 'curriculum-modal';
-      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
-      
-      const content = document.createElement('div');
-      content.style.cssText = 'background:#ffffff;padding:30px;border-radius:12px;width:90%;max-width:500px;color:#333333;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
-      
-      content.innerHTML = `
+        content.innerHTML = `
         <h2 style="margin-top:0"><i class="fa-solid fa-clock-rotate-left"></i> Prior Knowledge Setup</h2>
         <p style="opacity:0.8;font-size:0.95rem;">Select the units your class has already been taught. The app will dynamically generate "PAST TOPIC" Do Now retrieval questions from these units.</p>
         <div id="unit-checkboxes" style="display:flex;flex-direction:column;gap:12px;margin:25px 0;">
@@ -720,264 +756,279 @@ export function initializeApp(unitData) {
           <button id="close-curriculum" class="btn btn-primary">Save & Close</button>
         </div>
       `;
-      modal.appendChild(content);
-      document.body.appendChild(modal);
+        modal.appendChild(content);
+        document.body.appendChild(modal);
 
-      const availableUnits = [
-        { id: 'norman_conquest', title: 'The Norman Conquest' },
-        { id: 'water_and_sanitation', title: 'Water & Health Through Time' },
-        { id: 'change_1450_1750', title: 'Change 1450-1750 (Tudors)' }
-      ];
+        const availableUnits = [
+          { id: 'norman_conquest', title: 'The Norman Conquest' },
+          { id: 'water_and_sanitation', title: 'Water & Health Through Time' },
+          { id: 'change_1450_1750', title: 'Change 1450-1750 (Tudors)' },
+        ];
 
-      const container = content.querySelector('#unit-checkboxes');
-      const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+        const container = content.querySelector('#unit-checkboxes');
+        const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
 
-      availableUnits.forEach(u => {
-        const label = document.createElement('label');
-        label.style.display = 'flex';
-        label.style.alignItems = 'center';
-        label.style.gap = '10px';
-        label.style.cursor = 'pointer';
-        label.style.fontSize = '1.1rem';
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.value = u.id;
-        checkbox.style.width = '20px';
-        checkbox.style.height = '20px';
-        checkbox.checked = taught.includes(u.id);
-        checkbox.addEventListener('change', () => {
-          let current = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
-          if (checkbox.checked) current.push(u.id);
-          else current = current.filter(id => id !== u.id);
-          localStorage.setItem('taughtUnits', JSON.stringify([...new Set(current)]));
+        availableUnits.forEach((u) => {
+          const label = document.createElement('label');
+          label.style.display = 'flex';
+          label.style.alignItems = 'center';
+          label.style.gap = '10px';
+          label.style.cursor = 'pointer';
+          label.style.fontSize = '1.1rem';
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.value = u.id;
+          checkbox.style.width = '20px';
+          checkbox.style.height = '20px';
+          checkbox.checked = taught.includes(u.id);
+          checkbox.addEventListener('change', () => {
+            let current = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
+            if (checkbox.checked) current.push(u.id);
+            else current = current.filter((id) => id !== u.id);
+            localStorage.setItem('taughtUnits', JSON.stringify([...new Set(current)]));
+          });
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(u.title));
+          container.appendChild(label);
         });
-        label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(u.title));
-        container.appendChild(label);
-      });
 
-      content.querySelector('#close-curriculum').addEventListener('click', () => {
-        document.body.removeChild(modal);
-        // Refresh page to apply new Do Nows if we are currently looking at one
-        location.reload();
-      });
-    }
-  }
-
-  window.renderDashboard = function(skipHistory = false) {
-    if (!skipHistory) {
-      try {
-        const url = new URL(window.location);
-        url.searchParams.delete('lesson');
-        history.pushState({ dashboard: true }, "", url);
-      } catch (e) {
-        console.warn('History routing disabled (e.g. file:// protocol):', e);
+        content.querySelector('#close-curriculum').addEventListener('click', () => {
+          document.body.removeChild(modal);
+          // Refresh page to apply new Do Nows if we are currently looking at one
+          location.reload();
+        });
       }
     }
-    document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
-    const homeLink = document.querySelector('.lesson-link');
-    if (homeLink) homeLink.classList.add('active');
-    renderHomepage();
-    (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
-  
+    window.renderDashboard = function (skipHistory = false) {
+      if (!skipHistory) {
+        try {
+          const url = new URL(window.location);
+          url.searchParams.delete('lesson');
+          history.pushState({ dashboard: true }, '', url);
+        } catch (e) {
+          console.warn('History routing disabled (e.g. file:// protocol):', e);
+        }
+      }
+      document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
+      const homeLink = document.querySelector('.lesson-link');
+      if (homeLink) homeLink.classList.add('active');
+      renderHomepage();
+      (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
-  
+    // Render Sidebar
 
-  // Render Sidebar
-  
-
-  
-  // Global markdown formatter for inline text and bullet points
-  window.formatBold = function(text) {
+    // Global markdown formatter for inline text and bullet points
+    window.formatBold = function (text) {
       if (!text) return '';
       let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      
+
       // Handle blockquotes
-      parsed = parsed.replace(/(^|\n)> (.*?)(?=\n|$)/g, '$1<blockquote style="border-left: 4px solid #cbd5e1; padding-left: 15px; margin-left: 0; color: #475569; font-style: italic; background: rgba(248, 250, 252, 0.5); padding-top: 5px; padding-bottom: 5px; border-radius: 0 4px 4px 0;">$2</blockquote>');
+      parsed = parsed.replace(
+        /(^|\n)> (.*?)(?=\n|$)/g,
+        '$1<blockquote style="border-left: 4px solid #cbd5e1; padding-left: 15px; margin-left: 0; color: #475569; font-style: italic; background: rgba(248, 250, 252, 0.5); padding-top: 5px; padding-bottom: 5px; border-radius: 0 4px 4px 0;">$2</blockquote>',
+      );
       // Handle headers
-      parsed = parsed.replace(/(^|\n)### (.*?)(?=\n|$)/g, '$1<h4 style="color: #1e3a8a; margin-top: 15px; margin-bottom: 5px;">$2</h4>');
-      parsed = parsed.replace(/(^|\n)## (.*?)(?=\n|$)/g, '$1<h3 style="color: #1e3a8a; margin-top: 15px; margin-bottom: 5px;">$2</h3>');
-      
+      parsed = parsed.replace(
+        /(^|\n)### (.*?)(?=\n|$)/g,
+        '$1<h4 style="color: #1e3a8a; margin-top: 15px; margin-bottom: 5px;">$2</h4>',
+      );
+      parsed = parsed.replace(
+        /(^|\n)## (.*?)(?=\n|$)/g,
+        '$1<h3 style="color: #1e3a8a; margin-top: 15px; margin-bottom: 5px;">$2</h3>',
+      );
+
       parsed = parsed.replace(/\\n/g, '\n');
-      
+
       // Handle lists
       if (parsed.match(/(^|\n)[\*\-]\s/)) {
         parsed = parsed.replace(/(^|\n)[\*\-]\s+(.*)/g, '$1<li>$2</li>');
-        parsed = parsed.replace(/(<li>.*<\/li>(?:\n<li>.*<\/li>)*)/g, '<ul style="margin-top: 5px; margin-bottom: 5px; padding-left: 20px;">\n$1\n</ul>');
+        parsed = parsed.replace(
+          /(<li>.*<\/li>(?:\n<li>.*<\/li>)*)/g,
+          '<ul style="margin-top: 5px; margin-bottom: 5px; padding-left: 20px;">\n$1\n</ul>',
+        );
       }
 
       // Handle italics (after lists so we don't conflict with bullet points)
       parsed = parsed.replace(/\*([^\*]+)\*/g, '<i>$1</i>');
-      
+
       parsed = parsed.replace(/\n/g, '<br>');
       // Clean up <br> around elements
-      parsed = parsed.replace(/<br><ul/g, '<ul').replace(/<\/ul><br>/g, '</ul>').replace(/<br><li>/g, '<li>').replace(/<\/li><br>/g, '</li>');
-      parsed = parsed.replace(/<br><blockquote/g, '<blockquote').replace(/<\/blockquote><br>/g, '</blockquote>');
-      parsed = parsed.replace(/<br><h/g, '<h').replace(/<\/h4><br>/g, '</h4>').replace(/<\/h3><br>/g, '</h3>');
-      
+      parsed = parsed
+        .replace(/<br><ul/g, '<ul')
+        .replace(/<\/ul><br>/g, '</ul>')
+        .replace(/<br><li>/g, '<li>')
+        .replace(/<\/li><br>/g, '</li>');
+      parsed = parsed
+        .replace(/<br><blockquote/g, '<blockquote')
+        .replace(/<\/blockquote><br>/g, '</blockquote>');
+      parsed = parsed
+        .replace(/<br><h/g, '<h')
+        .replace(/<\/h4><br>/g, '</h4>')
+        .replace(/<\/h3><br>/g, '</h3>');
+
       return parsed;
     };
-  
-  // Render Lesson Content
-    window.renderLessonByIndex = function(index, skipHistory = false) {
+
+    // Render Lesson Content
+    window.renderLessonByIndex = function (index, skipHistory = false) {
       if (unitData && unitData.lessons && unitData.lessons[index]) {
         if (!skipHistory) {
           try {
             const url = new URL(window.location);
             url.searchParams.set('lesson', index);
-            history.pushState({ lessonIndex: index }, "", url);
+            history.pushState({ lessonIndex: index }, '', url);
           } catch (e) {
             console.warn('History routing disabled (e.g. file:// protocol):', e);
           }
         }
-        document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active'));
+        document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
         // Try to activate the corresponding sidebar link
         const links = document.querySelectorAll('.lesson-link');
         const isKS3 = unitData.title && unitData.title.includes('KS3');
-        if (!isKS3 && links.length > index + 1) { // +1 because the first link is Unit Homepage
-            links[index + 1].classList.add('active');
+        if (!isKS3 && links.length > index + 1) {
+          // +1 because the first link is Unit Homepage
+          links[index + 1].classList.add('active');
         }
         renderLesson(unitData.lessons[index]);
-        (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
+        (document.getElementById('content-area') || window).scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
       }
     };
 
-    
-  
-  window.switchTab = (tabId) => {
-    // Hide all tab content
-    document.querySelectorAll('.tab-content').forEach(el => {
-      el.style.display = 'none';
-    });
-    // Remove active class from all buttons
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.remove('active');
-    });
-    // Show requested tab
-    const activeTab = document.getElementById(tabId);
-    if (activeTab) {
-      activeTab.style.display = 'block';
-    }
-    // Set clicked button to active (we can find it via the onclick string)
-    const btn = document.querySelector(`button[onclick*="${tabId}"]`);
-    if (btn) {
-      btn.classList.add('active');
-    }
-  };
-
-  // Toggling elements helper
-
-  window.toggleElement = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.style.display = el.style.display === 'none' ? 'block' : 'none';
-    }
-  };
-
-
-  // Matching Game Logic
-  let selectedTermIdx = null;
-  let selectedTermEl = null;
-  window.vocabMatchesFound = 0;
-
-  document.addEventListener('click', (e) => {
-    const termBtn = e.target.closest('.match-term-btn');
-    const defBtn = e.target.closest('.match-def-btn');
-
-    if (termBtn && !termBtn.disabled) {
-      document.querySelectorAll('.match-term-btn').forEach(b => {
-        if (!b.disabled) b.style.borderColor = '#cbd5e1';
+    window.switchTab = (tabId) => {
+      // Hide all tab content
+      document.querySelectorAll('.tab-content').forEach((el) => {
+        el.style.display = 'none';
       });
-      termBtn.style.borderColor = '#3b82f6';
-      selectedTermIdx = termBtn.dataset.idx;
-      selectedTermEl = termBtn;
-    }
-
-    if (defBtn && !defBtn.disabled && selectedTermIdx !== null) {
-      if (defBtn.dataset.idx === selectedTermIdx) {
-        // Match found!
-        defBtn.style.background = '#10b981';
-        defBtn.style.color = '#fff';
-        defBtn.style.borderColor = '#059669';
-        defBtn.disabled = true;
-
-        selectedTermEl.style.background = '#10b981';
-        selectedTermEl.style.color = '#fff';
-        selectedTermEl.style.borderColor = '#059669';
-        selectedTermEl.disabled = true;
-
-        selectedTermIdx = null;
-        selectedTermEl = null;
-        window.vocabMatchesFound++;
-
-        const totalTerms = document.querySelectorAll('.match-term-btn').length;
-        if (window.vocabMatchesFound >= totalTerms) {
-           const successMsg = document.getElementById('unlock-success');
-           if (successMsg) successMsg.style.display = 'block';
-           
-           const lockedSec = document.getElementById('locked-content');
-           if (lockedSec) {
-             lockedSec.style.opacity = '1';
-             lockedSec.style.pointerEvents = 'auto';
-             lockedSec.style.filter = 'none';
-           }
-        }
-      } else {
-        // Wrong match
-        defBtn.style.borderColor = '#ef4444';
-        setTimeout(() => {
-          if (!defBtn.disabled) defBtn.style.borderColor = '#cbd5e1';
-        }, 500);
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-btn').forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      // Show requested tab
+      const activeTab = document.getElementById(tabId);
+      if (activeTab) {
+        activeTab.style.display = 'block';
       }
-    }
-  });
+      // Set clicked button to active (we can find it via the onclick string)
+      const btn = document.querySelector(`button[onclick*="${tabId}"]`);
+      if (btn) {
+        btn.classList.add('active');
+      }
+    };
 
-  // Initialize
-  if (unitData.lessons.length > 0) {
-    renderSidebar();
-    
-    // Initial Render - load homepage or specific lesson based on URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const lessonIdx = urlParams.get('lesson');
-    if (lessonIdx !== null && !isNaN(lessonIdx)) {
-      window.renderLessonByIndex(parseInt(lessonIdx), true);
-    } else {
-      renderHomepage();
-    }
-    
-    window.addEventListener('popstate', (e) => {
-      if (e.state && e.state.customTab) {
-        // Trigger the corresponding custom tab
-        const links = document.querySelectorAll('.lesson-link');
-        links.forEach(l => {
-          if (l.innerText.toLowerCase().includes(e.state.customTab.replace('_', ' '))) {
-            l.click();
-          }
+    // Toggling elements helper
+
+    window.toggleElement = (id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.display = el.style.display === 'none' ? 'block' : 'none';
+      }
+    };
+
+    // Matching Game Logic
+    let selectedTermIdx = null;
+    let selectedTermEl = null;
+    window.vocabMatchesFound = 0;
+
+    document.addEventListener('click', (e) => {
+      const termBtn = e.target.closest('.match-term-btn');
+      const defBtn = e.target.closest('.match-def-btn');
+
+      if (termBtn && !termBtn.disabled) {
+        document.querySelectorAll('.match-term-btn').forEach((b) => {
+          if (!b.disabled) b.style.borderColor = '#cbd5e1';
         });
-      } else if (e.state && e.state.lessonIndex !== undefined) {
-        window.renderLessonByIndex(e.state.lessonIndex, true);
-      } else {
-        window.renderDashboard(true);
+        termBtn.style.borderColor = '#3b82f6';
+        selectedTermIdx = termBtn.dataset.idx;
+        selectedTermEl = termBtn;
+      }
+
+      if (defBtn && !defBtn.disabled && selectedTermIdx !== null) {
+        if (defBtn.dataset.idx === selectedTermIdx) {
+          // Match found!
+          defBtn.style.background = '#10b981';
+          defBtn.style.color = '#fff';
+          defBtn.style.borderColor = '#059669';
+          defBtn.disabled = true;
+
+          selectedTermEl.style.background = '#10b981';
+          selectedTermEl.style.color = '#fff';
+          selectedTermEl.style.borderColor = '#059669';
+          selectedTermEl.disabled = true;
+
+          selectedTermIdx = null;
+          selectedTermEl = null;
+          window.vocabMatchesFound++;
+
+          const totalTerms = document.querySelectorAll('.match-term-btn').length;
+          if (window.vocabMatchesFound >= totalTerms) {
+            const successMsg = document.getElementById('unlock-success');
+            if (successMsg) successMsg.style.display = 'block';
+
+            const lockedSec = document.getElementById('locked-content');
+            if (lockedSec) {
+              lockedSec.style.opacity = '1';
+              lockedSec.style.pointerEvents = 'auto';
+              lockedSec.style.filter = 'none';
+            }
+          }
+        } else {
+          // Wrong match
+          defBtn.style.borderColor = '#ef4444';
+          setTimeout(() => {
+            if (!defBtn.disabled) defBtn.style.borderColor = '#cbd5e1';
+          }, 500);
+        }
       }
     });
+
+    // Initialize
+    if (unitData.lessons.length > 0) {
+      renderSidebar();
+
+      // Initial Render - load homepage or specific lesson based on URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const lessonIdx = urlParams.get('lesson');
+      if (lessonIdx !== null && !isNaN(lessonIdx)) {
+        window.renderLessonByIndex(parseInt(lessonIdx), true);
+      } else {
+        renderHomepage();
+      }
+
+      window.addEventListener('popstate', (e) => {
+        if (e.state && e.state.customTab) {
+          // Trigger the corresponding custom tab
+          const links = document.querySelectorAll('.lesson-link');
+          links.forEach((l) => {
+            if (l.innerText.toLowerCase().includes(e.state.customTab.replace('_', ' '))) {
+              l.click();
+            }
+          });
+        } else if (e.state && e.state.lessonIndex !== undefined) {
+          window.renderLessonByIndex(e.state.lessonIndex, true);
+        } else {
+          window.renderDashboard(true);
+        }
+      });
+    } else {
+      contentArea.innerHTML = '<h2>No lessons found in data.js</h2>';
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    contentArea.innerHTML = "<h2>No lessons found in data.js</h2>";
+    init();
   }
-};
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
-} else {
-  init();
-}
-
 }
 window.updateProgress = () => {
   const inputs = document.querySelectorAll('.student-answer-input');
   let filled = 0;
-  inputs.forEach(input => {
+  inputs.forEach((input) => {
     if (input.value.trim().length > 0) filled++;
   });
   const bar = document.getElementById('progress-bar');
@@ -987,136 +1038,190 @@ window.updateProgress = () => {
   }
 };
 
-
-  function assignQuestionNumbers(lesson) {
-    let globalQNum = 1;
-    if (lesson.primary_source && lesson.primary_source.question) lesson.primary_source.qNum = globalQNum++;
-    if (lesson.sources) lesson.sources.forEach(source => { if (source.question) source.qNum = globalQNum++; });
-    if (lesson.tasks) lesson.tasks.forEach(task => task.qNum = globalQNum++);
-    if (lesson.historians_corner && lesson.historians_corner.stretch_question) lesson.historians_corner.qNum = globalQNum++;
-    if (lesson.narrative_blocks) {
-      lesson.narrative_blocks.forEach(block => {
-        if (block.source && block.source.question) block.source.qNum = globalQNum++;
-        if (block.tasks) block.tasks.forEach(task => { if (task.type !== 'vocab_match') task.qNum = globalQNum++; });
-        if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
-      });
-    }
-    if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
-    if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
-    if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+function assignQuestionNumbers(lesson) {
+  let globalQNum = 1;
+  if (lesson.primary_source && lesson.primary_source.question)
+    lesson.primary_source.qNum = globalQNum++;
+  if (lesson.sources)
+    lesson.sources.forEach((source) => {
+      if (source.question) source.qNum = globalQNum++;
+    });
+  if (lesson.tasks) lesson.tasks.forEach((task) => (task.qNum = globalQNum++));
+  if (lesson.historians_corner && lesson.historians_corner.stretch_question)
+    lesson.historians_corner.qNum = globalQNum++;
+  if (lesson.narrative_blocks) {
+    lesson.narrative_blocks.forEach((block) => {
+      if (block.source && block.source.question) block.source.qNum = globalQNum++;
+      if (block.tasks)
+        block.tasks.forEach((task) => {
+          if (task.type !== 'vocab_match') task.qNum = globalQNum++;
+        });
+      if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
+    });
   }
+  if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
+  if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
+  if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+}
 
-  function openTaskWhiteboard() {
-    const modal = document.getElementById('task-whiteboard-modal');
-    if (!modal) return;
-    
-    const container = document.getElementById('whiteboard-questions-container');
-    container.innerHTML = '';
-    
-    const activeLesson = window.currentActiveLesson || unitData.lessons[0];
-    
-    assignQuestionNumbers(activeLesson);
-    
-    let html = '';
-    
-    const addQuestionCard = (qNum, questionText, answerText) => {
-      const finalAnswer = window.formatBold(answerText) || "Model answer to be discussed in class.";
-      const prefix = qNum && qNum !== '-' && qNum !== 'Do Now' ? `Q${qNum}. ` : (qNum === 'Do Now' ? '<strong>[Do Now]</strong> ' : '');
-      html += `
+function openTaskWhiteboard() {
+  const modal = document.getElementById('task-whiteboard-modal');
+  if (!modal) return;
+
+  const container = document.getElementById('whiteboard-questions-container');
+  container.innerHTML = '';
+
+  const activeLesson = window.currentActiveLesson || unitData.lessons[0];
+
+  assignQuestionNumbers(activeLesson);
+
+  let html = '';
+
+  const addQuestionCard = (qNum, questionText, answerText) => {
+    const finalAnswer = window.formatBold(answerText) || 'Model answer to be discussed in class.';
+    const prefix =
+      qNum && qNum !== '-' && qNum !== 'Do Now'
+        ? `Q${qNum}. `
+        : qNum === 'Do Now'
+          ? '<strong>[Do Now]</strong> '
+          : '';
+    html += `
         <div class="wb-question-card" style="cursor:pointer;" onclick="this.querySelector('.wb-answer').classList.toggle('revealed')" title="Click to reveal answer">
           <div style="font-weight: bold;">${prefix}${questionText}</div>
           <div class="wb-answer">${finalAnswer}</div>
         </div>
       `;
-    };
+  };
 
-    if (activeLesson.do_now) {
-      if (activeLesson.do_now.type === "timeline" && activeLesson.do_now.prediction_question) {
-        addQuestionCard('Do Now', activeLesson.do_now.prediction_question, activeLesson.do_now.model || activeLesson.do_now.answer || '');
-      } else if (activeLesson.do_now.type === "questions") {
-        activeLesson.do_now.items.forEach(item => {
-           addQuestionCard('Do Now', item.question, item.answer || '');
+  if (activeLesson.do_now) {
+    if (activeLesson.do_now.type === 'timeline' && activeLesson.do_now.prediction_question) {
+      addQuestionCard(
+        'Do Now',
+        activeLesson.do_now.prediction_question,
+        activeLesson.do_now.model || activeLesson.do_now.answer || '',
+      );
+    } else if (activeLesson.do_now.type === 'questions') {
+      activeLesson.do_now.items.forEach((item) => {
+        addQuestionCard('Do Now', item.question, item.answer || '');
+      });
+    }
+  }
+
+  if (activeLesson.primary_source && activeLesson.primary_source.question) {
+    addQuestionCard(
+      activeLesson.primary_source.qNum,
+      activeLesson.primary_source.question,
+      activeLesson.primary_source.model_answer || '',
+    );
+  }
+
+  if (activeLesson.sources) {
+    activeLesson.sources.forEach((source) => {
+      if (source.question) addQuestionCard(source.qNum, source.question, source.model_answer || '');
+    });
+  }
+
+  if (activeLesson.tasks) {
+    activeLesson.tasks.forEach((task) => {
+      addQuestionCard(
+        task.qNum,
+        task.text || task.question || '',
+        task.model || task.model_answer || '',
+      );
+    });
+  }
+
+  if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
+    addQuestionCard(
+      activeLesson.historians_corner.qNum,
+      activeLesson.historians_corner.stretch_question,
+      activeLesson.historians_corner.model_answer || '',
+    );
+  }
+
+  if (activeLesson.narrative_blocks) {
+    activeLesson.narrative_blocks.forEach((block) => {
+      if (block.source && block.source.question) {
+        addQuestionCard(block.source.qNum, block.source.question, block.source.model_answer || '');
+      }
+      if (block.tasks) {
+        block.tasks.forEach((task) => {
+          if (task.type !== 'vocab_match') {
+            addQuestionCard(
+              task.qNum,
+              task.text || task.question || '',
+              task.model || task.model_answer || '',
+            );
+          }
         });
       }
-    }
-
-    if (activeLesson.primary_source && activeLesson.primary_source.question) {
-      addQuestionCard(activeLesson.primary_source.qNum, activeLesson.primary_source.question, activeLesson.primary_source.model_answer || '');
-    }
-    
-    if (activeLesson.sources) {
-      activeLesson.sources.forEach(source => {
-        if (source.question) addQuestionCard(source.qNum, source.question, source.model_answer || '');
-      });
-    }
-
-    if (activeLesson.tasks) {
-      activeLesson.tasks.forEach(task => {
-        addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
-      });
-    }
-
-    if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
-      addQuestionCard(activeLesson.historians_corner.qNum, activeLesson.historians_corner.stretch_question, activeLesson.historians_corner.model_answer || '');
-    }
-    
-    if (activeLesson.narrative_blocks) {
-      activeLesson.narrative_blocks.forEach(block => {
-        if (block.source && block.source.question) {
-          addQuestionCard(block.source.qNum, block.source.question, block.source.model_answer || '');
-        }
-        if (block.tasks) {
-          block.tasks.forEach(task => {
-            if (task.type !== 'vocab_match') {
-              addQuestionCard(task.qNum, task.text || task.question || '', task.model || task.model_answer || '');
-            }
-          });
-        }
-        if (block.hinge_question) {
-          addQuestionCard(block.hinge_question.qNum, block.hinge_question.question || block.hinge_question, block.hinge_question.model_answer || '');
-        }
-      });
-    }
-    
-    if (activeLesson.extended && activeLesson.extended.question) {
-      addQuestionCard(activeLesson.extended.qNum, activeLesson.extended.question, activeLesson.extended.model_answer || '');
-    }
-
-    if (activeLesson.gcse_task && (activeLesson.gcse_task.question || activeLesson.gcse_task.prompt)) {
-      addQuestionCard(activeLesson.gcse_task.qNum, activeLesson.gcse_task.question || activeLesson.gcse_task.prompt, activeLesson.gcse_task.model_answer || '');
-    }
-
-    if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
-      addQuestionCard(activeLesson.pair_share.qNum, activeLesson.pair_share.prompt, "Discuss in pairs.");
-    }
-    
-    if (activeLesson.debate_prep) {
-       addQuestionCard('-', `Debate Prep: ${activeLesson.debate_prep.question}`, `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map(a=>`<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map(a=>`<li>${a}</li>`).join('')}</ul>`);
-    }
-
-    
-    container.innerHTML = html;
-    modal.classList.add('visible');
+      if (block.hinge_question) {
+        addQuestionCard(
+          block.hinge_question.qNum,
+          block.hinge_question.question || block.hinge_question,
+          block.hinge_question.model_answer || '',
+        );
+      }
+    });
   }
-  
-window.toggleStarterById = function(id) {
+
+  if (activeLesson.extended && activeLesson.extended.question) {
+    addQuestionCard(
+      activeLesson.extended.qNum,
+      activeLesson.extended.question,
+      activeLesson.extended.model_answer || '',
+    );
+  }
+
+  if (
+    activeLesson.gcse_task &&
+    (activeLesson.gcse_task.question || activeLesson.gcse_task.prompt)
+  ) {
+    addQuestionCard(
+      activeLesson.gcse_task.qNum,
+      activeLesson.gcse_task.question || activeLesson.gcse_task.prompt,
+      activeLesson.gcse_task.model_answer || '',
+    );
+  }
+
+  if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
+    addQuestionCard(
+      activeLesson.pair_share.qNum,
+      activeLesson.pair_share.prompt,
+      'Discuss in pairs.',
+    );
+  }
+
+  if (activeLesson.debate_prep) {
+    addQuestionCard(
+      '-',
+      `Debate Prep: ${activeLesson.debate_prep.question}`,
+      `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map((a) => `<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map((a) => `<li>${a}</li>`).join('')}</ul>`,
+    );
+  }
+
+  container.innerHTML = html;
+  modal.classList.add('visible');
+}
+
+window.toggleStarterById = function (id) {
   const starter = document.getElementById(id);
   if (starter) {
     starter.style.display = starter.style.display === 'block' ? 'none' : 'block';
   }
 };
 
-window.dragDebate = function(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
+window.dragDebate = function (ev) {
+  ev.dataTransfer.setData('text', ev.target.id);
 };
 
-window.allowDrop = function(ev) {
+window.allowDrop = function (ev) {
   ev.preventDefault();
 };
 
-window.dropDebate = function(ev) {
+window.dropDebate = function (ev) {
   ev.preventDefault();
-  const data = ev.dataTransfer.getData("text");
+  const data = ev.dataTransfer.getData('text');
   const el = document.getElementById(data);
   let target = ev.target;
   // If dropped on another card, append to the dropzone
@@ -1128,16 +1233,16 @@ window.dropDebate = function(ev) {
   }
 };
 
-window.checkDebate = function(lessonId) {
+window.checkDebate = function (lessonId) {
   let correct = true;
   let allSorted = true;
-  
+
   const bank = document.getElementById(`debate-bank-${lessonId}`);
   if (bank && bank.children.length > 0) allSorted = false;
-  
+
   const forZone = document.getElementById(`debate-for-${lessonId}`);
   if (forZone) {
-    Array.from(forZone.children).forEach(child => {
+    Array.from(forZone.children).forEach((child) => {
       if (child.getAttribute('data-side') !== 'for') {
         correct = false;
         child.style.border = '2px solid #dc2626';
@@ -1149,7 +1254,7 @@ window.checkDebate = function(lessonId) {
 
   const againstZone = document.getElementById(`debate-against-${lessonId}`);
   if (againstZone) {
-    Array.from(againstZone.children).forEach(child => {
+    Array.from(againstZone.children).forEach((child) => {
       if (child.getAttribute('data-side') !== 'against') {
         correct = false;
         child.style.border = '2px solid #dc2626';
@@ -1158,20 +1263,21 @@ window.checkDebate = function(lessonId) {
       }
     });
   }
-  
+
   const feedback = document.getElementById(`debate-feedback-${lessonId}`);
   if (!allSorted) {
     feedback.style.color = '#d97706';
-    feedback.innerText = "Please sort all evidence cards first!";
+    feedback.innerText = 'Please sort all evidence cards first!';
   } else if (!correct) {
     feedback.style.color = '#dc2626';
-    feedback.innerText = "Some evidence is in the wrong column. Check the red cards and try again!";
+    feedback.innerText = 'Some evidence is in the wrong column. Check the red cards and try again!';
   } else {
     feedback.style.color = '#16a34a';
-    feedback.innerText = "Excellent! All evidence sorted correctly. You are ready to write your essay!";
+    feedback.innerText =
+      'Excellent! All evidence sorted correctly. You are ready to write your essay!';
   }
 };
-window.toggleAnswerById = function(id) {
+window.toggleAnswerById = function (id) {
   const ans = document.getElementById(id);
   if (ans) {
     if (ans.classList.contains('revealed')) {
@@ -1184,12 +1290,15 @@ window.toggleAnswerById = function(id) {
   }
 };
 
-window.toggleAllAnswers = function(btn) {
-  const container = btn.closest('.phase-card') || btn.closest('.do-now-box') || btn.closest('details');
+window.toggleAllAnswers = function (btn) {
+  const container =
+    btn.closest('.phase-card') || btn.closest('.do-now-box') || btn.closest('details');
   if (!container) return;
   const answers = container.querySelectorAll('.answer');
-  const anyHidden = Array.from(answers).some(a => a.style.display !== 'block' && !a.classList.contains('revealed'));
-  answers.forEach(a => {
+  const anyHidden = Array.from(answers).some(
+    (a) => a.style.display !== 'block' && !a.classList.contains('revealed'),
+  );
+  answers.forEach((a) => {
     if (anyHidden) {
       a.style.display = 'block';
       a.classList.add('revealed');
@@ -1200,12 +1309,14 @@ window.toggleAllAnswers = function(btn) {
   });
 };
 
-window.toggleAllWhiteboardAnswers = function() {
+window.toggleAllWhiteboardAnswers = function () {
   const container = document.getElementById('taskWhiteboardContent');
   if (!container) return;
   const answers = container.querySelectorAll('.answer');
-  const anyHidden = Array.from(answers).some(a => a.style.display !== 'block' && !a.classList.contains('revealed'));
-  answers.forEach(a => {
+  const anyHidden = Array.from(answers).some(
+    (a) => a.style.display !== 'block' && !a.classList.contains('revealed'),
+  );
+  answers.forEach((a) => {
     if (anyHidden) {
       a.style.display = 'block';
       a.classList.add('revealed');
@@ -1216,10 +1327,10 @@ window.toggleAllWhiteboardAnswers = function() {
   });
 };
 
-window.toggleMap = function(btn) {
+window.toggleMap = function (btn) {
   const container = btn.closest('.interactive-map-container');
   // Update buttons
-  container.querySelectorAll('.map-toggle-btn').forEach(b => {
+  container.querySelectorAll('.map-toggle-btn').forEach((b) => {
     b.classList.remove('active-map-btn');
     b.style.backgroundColor = '';
     b.style.color = '';
@@ -1227,59 +1338,61 @@ window.toggleMap = function(btn) {
   btn.classList.add('active-map-btn');
   btn.style.backgroundColor = '#1a237e';
   btn.style.color = 'white';
-  
+
   // Update images
   const targetId = btn.getAttribute('data-map-id');
-  container.querySelectorAll('img[id^="map-img-"]').forEach(img => {
+  container.querySelectorAll('img[id^="map-img-"]').forEach((img) => {
     img.style.opacity = '0';
   });
   container.querySelector('#map-img-' + targetId).style.opacity = '1';
-  
+
   // Update caption
   container.querySelector('#map-caption-display').innerHTML = btn.getAttribute('data-caption');
 };
 
 // --- Key Individual Link Global Functions ---
-window.jumpToKeyIndividual = function(name) {
-    let targetTab = 'historical_individuals'; // default
-    let linkSearchStr = 'Historical Individuals';
-    
-    if (window.db && window.currentUnitId && window.db[window.currentUnitId]) {
-      const unitData = window.db[window.currentUnitId].data || window.db[window.currentUnitId];
-      if (unitData && unitData.key_individuals) {
-         const person = unitData.key_individuals.find(p => p.name.toLowerCase() === name.toLowerCase());
-         if (person && person.group === 'Historians') {
-            targetTab = 'historians';
-            linkSearchStr = 'Historians';
-         }
+window.jumpToKeyIndividual = function (name) {
+  let targetTab = 'historical_individuals'; // default
+  let linkSearchStr = 'Historical Individuals';
+
+  if (window.db && window.currentUnitId && window.db[window.currentUnitId]) {
+    const unitData = window.db[window.currentUnitId].data || window.db[window.currentUnitId];
+    if (unitData && unitData.key_individuals) {
+      const person = unitData.key_individuals.find(
+        (p) => p.name.toLowerCase() === name.toLowerCase(),
+      );
+      if (person && person.group === 'Historians') {
+        targetTab = 'historians';
+        linkSearchStr = 'Historians';
       }
     }
+  }
 
-    const url = new URL(window.location);
-    url.searchParams.set('tab', targetTab);
-    history.pushState({ customTab: targetTab }, "", url);
-  
-    // 1. Find the sidebar link and click it
-    const kiLinks = document.querySelectorAll('.lesson-link');
-    let targetLink = null;
-    kiLinks.forEach(l => {
-      // Avoid partial match false positives (e.g. "Historical Individuals" contains "Historians" if not careful, though technically it doesn't)
-      if (l.innerText.includes(linkSearchStr)) {
-         if (linkSearchStr === 'Historians' && l.innerText.includes('Historical')) {
-             return; // skip
-         }
-         targetLink = l;
+  const url = new URL(window.location);
+  url.searchParams.set('tab', targetTab);
+  history.pushState({ customTab: targetTab }, '', url);
+
+  // 1. Find the sidebar link and click it
+  const kiLinks = document.querySelectorAll('.lesson-link');
+  let targetLink = null;
+  kiLinks.forEach((l) => {
+    // Avoid partial match false positives (e.g. "Historical Individuals" contains "Historians" if not careful, though technically it doesn't)
+    if (l.innerText.includes(linkSearchStr)) {
+      if (linkSearchStr === 'Historians' && l.innerText.includes('Historical')) {
+        return; // skip
       }
-    });
+      targetLink = l;
+    }
+  });
   if (targetLink) {
     targetLink.click();
   }
-  
+
   // 2. Wait for the page to render then find and scroll to the card
   setTimeout(() => {
     const cards = document.querySelectorAll('.person-card');
     let targetCard = null;
-    cards.forEach(card => {
+    cards.forEach((card) => {
       const h3 = card.querySelector('h3');
       if (h3 && h3.innerText.toLowerCase().includes(name.toLowerCase())) {
         targetCard = card;
@@ -1300,7 +1413,7 @@ window.jumpToKeyIndividual = function(name) {
 // --- Debate Modal Global Functions ---
 window.currentDebateIndex = 0;
 
-window.injectDebateModalIfNeeded = function() {
+window.injectDebateModalIfNeeded = function () {
   if (document.getElementById('debateModal')) return;
   const html = `
   <div id="debateModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeDebateModal()">
@@ -1328,7 +1441,7 @@ window.injectDebateModalIfNeeded = function() {
   document.body.insertAdjacentHTML('beforeend', html);
 };
 
-window.openKeyInfoModal = function() {
+window.openKeyInfoModal = function () {
   const info = window.currentUnitData && window.currentUnitData.key_info;
   if (!info) return;
   const overlay = document.createElement('div');
@@ -1357,25 +1470,30 @@ window.openKeyInfoModal = function() {
   document.body.appendChild(overlay);
 };
 
-  window.openTourGuideModal = function(lessonIndex) {
-    const lesson = window.currentUnitData.lessons[lessonIndex];
-    if (!lesson || !lesson.tour_guide_script) return;
-    
-    const overlay = document.createElement('div');
-    overlay.className = 'modal-overlay no-print';
-    overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
-    overlay.onclick = function(e) {
-      if (e.target === overlay) overlay.remove();
-    };
-    
-    let blocksHtml = lesson.tour_guide_script.map(block => `
+window.openTourGuideModal = function (lessonIndex) {
+  const lesson = window.currentUnitData.lessons[lessonIndex];
+  if (!lesson || !lesson.tour_guide_script) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay no-print';
+  overlay.style.cssText =
+    'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
+  overlay.onclick = function (e) {
+    if (e.target === overlay) overlay.remove();
+  };
+
+  let blocksHtml = lesson.tour_guide_script
+    .map(
+      (block) => `
       <div style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
         <h4 style="color: #1e293b; font-size: 1.25rem; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 12px;">${block.theme_heading}</h4>
         <div style="font-size: 1.1rem; line-height: 1.6; color: #334155;">${block.text}</div>
       </div>
-    `).join('');
+    `,
+    )
+    .join('');
 
-    overlay.innerHTML = `
+  overlay.innerHTML = `
       <div class="modal-content" style="background: white; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; padding: 40px; border-radius: 12px; font-family: 'Outfit', sans-serif;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #6366f1; padding-bottom: 15px;">
           <h3 style="margin: 0; color: #1e293b; font-size: 1.8rem;"><i class="fa-solid fa-bullhorn" style="color:#6366f1; margin-right:12px;"></i> Tour Guide Script</h3>
@@ -1387,11 +1505,11 @@ window.openKeyInfoModal = function() {
         </div>
       </div>
     `;
-    document.body.appendChild(overlay);
-  };
+  document.body.appendChild(overlay);
+};
 
-  window.openDebateModal = function() {
-    window.injectDebateModalIfNeeded();
+window.openDebateModal = function () {
+  window.injectDebateModalIfNeeded();
   const modal = document.getElementById('debateModal');
   modal.style.display = 'flex';
   // Trigger reflow
@@ -1401,7 +1519,7 @@ window.openKeyInfoModal = function() {
   window.renderDebatePrompt();
 };
 
-window.closeDebateModal = function() {
+window.closeDebateModal = function () {
   const modal = document.getElementById('debateModal');
   if (modal) {
     modal.style.opacity = '0';
@@ -1412,10 +1530,15 @@ window.closeDebateModal = function() {
   }
 };
 
-window.renderDebatePrompt = function() {
-  if (!window.currentUnitData || !window.currentUnitData.debatePrompts || window.currentUnitData.debatePrompts.length === 0) {
-    document.getElementById('debateTopicSubtitle').innerText = "No prompts available";
-    document.getElementById('debateModalContent').innerHTML = "No debate prompts found for this unit.";
+window.renderDebatePrompt = function () {
+  if (
+    !window.currentUnitData ||
+    !window.currentUnitData.debatePrompts ||
+    window.currentUnitData.debatePrompts.length === 0
+  ) {
+    document.getElementById('debateTopicSubtitle').innerText = 'No prompts available';
+    document.getElementById('debateModalContent').innerHTML =
+      'No debate prompts found for this unit.';
     document.getElementById('btn-show-starter').style.display = 'none';
     return;
   }
@@ -1423,13 +1546,13 @@ window.renderDebatePrompt = function() {
   const promptData = prompts[window.currentDebateIndex];
   document.getElementById('debateTopicSubtitle').innerText = promptData.title;
   document.getElementById('debateModalContent').innerHTML = promptData.prompt;
-  
+
   const starterContainer = document.getElementById('debateSentenceStarterContainer');
   const starterBtn = document.getElementById('btn-show-starter');
-  
+
   // Hide starter by default when changing prompts
   if (starterContainer) starterContainer.style.display = 'none';
-  
+
   if (promptData.sentence_starter && starterBtn) {
     starterBtn.style.display = 'inline-block';
     starterBtn.innerText = 'Show Hint';
@@ -1439,7 +1562,7 @@ window.renderDebatePrompt = function() {
   }
 };
 
-window.toggleDebateStarter = function() {
+window.toggleDebateStarter = function () {
   const container = document.getElementById('debateSentenceStarterContainer');
   const btn = document.getElementById('btn-show-starter');
   if (container.style.display === 'none') {
@@ -1451,7 +1574,7 @@ window.toggleDebateStarter = function() {
   }
 };
 
-window.cycleDebatePrompt = function(direction) {
+window.cycleDebatePrompt = function (direction) {
   if (!window.currentUnitData || !window.currentUnitData.debatePrompts) return;
   const prompts = window.currentUnitData.debatePrompts;
   window.currentDebateIndex += direction;
@@ -1461,7 +1584,7 @@ window.cycleDebatePrompt = function(direction) {
 };
 
 // --- Milestone Modal Global Functions ---
-window.injectMilestoneModalIfNeeded = function() {
+window.injectMilestoneModalIfNeeded = function () {
   if (document.getElementById('milestoneModal')) return;
   const html = `
   <div id="milestoneModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeMilestoneModal()">
@@ -1475,12 +1598,12 @@ window.injectMilestoneModalIfNeeded = function() {
   document.body.insertAdjacentHTML('beforeend', html);
 };
 
-window.showMilestoneModal = function(id) {
+window.showMilestoneModal = function (id) {
   window.injectMilestoneModalIfNeeded();
   if (!window.currentUnitData || !window.currentUnitData.milestones) return;
   const data = window.currentUnitData.milestones[id];
   if (!data) return;
-  
+
   const contentBox = document.getElementById('modalMilestoneContent');
   if (contentBox) {
     contentBox.innerHTML = `
@@ -1494,7 +1617,7 @@ window.showMilestoneModal = function(id) {
       </div>
     `;
   }
-  
+
   const modal = document.getElementById('milestoneModal');
   if (modal) {
     modal.style.display = 'flex';
@@ -1505,7 +1628,7 @@ window.showMilestoneModal = function(id) {
   }
 };
 
-window.closeMilestoneModal = function() {
+window.closeMilestoneModal = function () {
   const modal = document.getElementById('milestoneModal');
   if (modal) {
     modal.style.opacity = '0';
@@ -1521,7 +1644,7 @@ window.currentQuizData = [];
 window.currentQuizIndex = 0;
 window.currentQuizLessonId = null;
 
-window.injectQuizModalIfNeeded = function() {
+window.injectQuizModalIfNeeded = function () {
   if (document.getElementById('quizModal')) return;
   const html = `
   <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeQuizModal()">
@@ -1549,13 +1672,13 @@ window.injectQuizModalIfNeeded = function() {
   document.body.insertAdjacentHTML('beforeend', html);
 };
 
-window.startQuiz = function(lessonId) {
+window.startQuiz = function (lessonId) {
   window.injectQuizModalIfNeeded();
   if (!window.currentUnitData || !window.currentUnitData.lessons) return;
-  const lesson = window.currentUnitData.lessons.find(l => l.id === lessonId);
+  const lesson = window.currentUnitData.lessons.find((l) => l.id === lessonId);
   if (!lesson || !lesson.quiz || lesson.quiz.length === 0) return;
-  
-  window.currentQuizData = lesson.quiz.map(q => {
+
+  window.currentQuizData = lesson.quiz.map((q) => {
     if (!q.options && q.distractors && q.distractors.length > 0) {
       let opts = [q.answer || q.a, ...q.distractors];
       opts = opts.sort(() => Math.random() - 0.5);
@@ -1570,9 +1693,9 @@ window.startQuiz = function(lessonId) {
   });
   window.currentQuizIndex = 0;
   window.currentQuizLessonId = lessonId;
-  
+
   window.renderQuizQuestion();
-  
+
   const modal = document.getElementById('quizModal');
   modal.style.display = 'flex';
   void modal.offsetWidth; // Trigger reflow
@@ -1580,10 +1703,11 @@ window.startQuiz = function(lessonId) {
   modal.querySelector('.modal-content').style.transform = 'scale(1)';
 };
 
-window.renderQuizQuestion = function() {
+window.renderQuizQuestion = function () {
   const qData = window.currentQuizData[window.currentQuizIndex];
-  document.getElementById('quiz-progress').innerText = `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
-  
+  document.getElementById('quiz-progress').innerText =
+    `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
+
   let optionsHtml = '';
   if (qData.options) {
     qData.options.forEach((opt, idx) => {
@@ -1602,21 +1726,21 @@ window.renderQuizQuestion = function() {
       </div>
     `;
   }
-  
+
   document.getElementById('quiz-question-container').innerHTML = `
     <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 20px; line-height: 1.4;">${qData.question || qData.q}</h3>
     ${optionsHtml}
   `;
-  
+
   document.getElementById('quiz-feedback').innerHTML = '';
-  
+
   const nextBtn = document.getElementById('quiz-next-btn');
   if (!qData.options) {
     nextBtn.style.display = 'none'; // Will be revealed when answer is shown
   } else {
     nextBtn.style.display = 'none';
   }
-  
+
   if (window.currentQuizIndex >= window.currentQuizData.length - 1) {
     nextBtn.innerHTML = 'Finish <i class="fa-solid fa-check"></i>';
     nextBtn.onclick = window.closeQuizModal;
@@ -1626,13 +1750,15 @@ window.renderQuizQuestion = function() {
   }
 };
 
-window.checkQuizAnswer = function(btnEl, selectedIdx) {
+window.checkQuizAnswer = function (btnEl, selectedIdx) {
   const qData = window.currentQuizData[window.currentQuizIndex];
-  const isCorrect = (selectedIdx === qData.answer);
-  
+  const isCorrect = selectedIdx === qData.answer;
+
   // Disable all buttons
-  const allBtns = document.getElementById('quiz-question-container').querySelectorAll('.quiz-option-btn');
-  allBtns.forEach(btn => {
+  const allBtns = document
+    .getElementById('quiz-question-container')
+    .querySelectorAll('.quiz-option-btn');
+  allBtns.forEach((btn) => {
     btn.disabled = true;
     btn.style.cursor = 'default';
     if (parseInt(btn.dataset.idx) === qData.answer) {
@@ -1642,39 +1768,44 @@ window.checkQuizAnswer = function(btnEl, selectedIdx) {
       btn.innerHTML = '<i class="fa-solid fa-check-circle"></i> ' + btn.innerHTML;
     }
   });
-  
+
   const feedbackEl = document.getElementById('quiz-feedback');
   if (isCorrect) {
-    feedbackEl.innerHTML = '<span style="color: #22c55e;"><i class="fa-solid fa-star"></i> Correct!</span>';
+    feedbackEl.innerHTML =
+      '<span style="color: #22c55e;"><i class="fa-solid fa-star"></i> Correct!</span>';
   } else {
     btnEl.style.borderColor = '#ef4444';
     btnEl.style.background = '#fef2f2';
     btnEl.style.color = '#b91c1c';
     btnEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + btnEl.innerHTML;
-    feedbackEl.innerHTML = '<span style="color: #ef4444;">Incorrect. Review the answer above.</span>';
+    feedbackEl.innerHTML =
+      '<span style="color: #ef4444;">Incorrect. Review the answer above.</span>';
   }
-  
+
   if (window.currentQuizIndex < window.currentQuizData.length - 1) {
-    document.getElementById('quiz-next-btn').innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+    document.getElementById('quiz-next-btn').innerHTML =
+      'Next Question <i class="fa-solid fa-arrow-right"></i>';
     document.getElementById('quiz-next-btn').style.display = 'block';
     document.getElementById('quiz-next-btn').onclick = window.nextQuizQuestion;
   } else {
-    document.getElementById('quiz-next-btn').innerHTML = 'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
+    document.getElementById('quiz-next-btn').innerHTML =
+      'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
     document.getElementById('quiz-next-btn').style.display = 'block';
-    document.getElementById('quiz-next-btn').onclick = function() {
-       document.getElementById('quiz-question-container').innerHTML = '<h3 style="text-align:center; color: #15803d;"><i class="fa-solid fa-trophy"></i> Quiz Complete!</h3>';
-       document.getElementById('quiz-feedback').innerHTML = '';
-       document.getElementById('quiz-next-btn').style.display = 'none';
+    document.getElementById('quiz-next-btn').onclick = function () {
+      document.getElementById('quiz-question-container').innerHTML =
+        '<h3 style="text-align:center; color: #15803d;"><i class="fa-solid fa-trophy"></i> Quiz Complete!</h3>';
+      document.getElementById('quiz-feedback').innerHTML = '';
+      document.getElementById('quiz-next-btn').style.display = 'none';
     };
   }
 };
 
-window.nextQuizQuestion = function() {
+window.nextQuizQuestion = function () {
   window.currentQuizIndex++;
   window.renderQuizQuestion();
 };
 
-window.closeQuizModal = function() {
+window.closeQuizModal = function () {
   const modal = document.getElementById('quizModal');
   if (modal) {
     modal.style.opacity = '0';
@@ -1701,7 +1832,7 @@ function initGlossaryPopover() {
   const showPopover = (e) => {
     const target = e.target.closest('.vocab-word');
     if (!target) return;
-    
+
     const definition = target.getAttribute('data-definition');
     if (!definition) return;
 
@@ -1713,10 +1844,10 @@ function initGlossaryPopover() {
     // Calculate position
     const rect = target.getBoundingClientRect();
     const popoverRect = glossaryPopover.getBoundingClientRect();
-    
+
     let top = rect.top - popoverRect.height - 10;
-    let left = rect.left + (rect.width / 2) - (popoverRect.width / 2);
-    
+    let left = rect.left + rect.width / 2 - popoverRect.width / 2;
+
     // Boundary detection
     let arrowLeft = '50%';
     glossaryPopover.classList.remove('arrow-top');
@@ -1732,17 +1863,17 @@ function initGlossaryPopover() {
       const overflow = 10 - left;
       left = 10;
       arrowLeft = `calc(50% - ${overflow}px)`;
-    } 
+    }
     // Right boundary
     else if (left + popoverRect.width > window.innerWidth - 10) {
-      const overflow = (left + popoverRect.width) - (window.innerWidth - 10);
+      const overflow = left + popoverRect.width - (window.innerWidth - 10);
       left = window.innerWidth - 10 - popoverRect.width;
       arrowLeft = `calc(50% + ${overflow}px)`;
     }
 
     glossaryPopover.style.top = `${top}px`;
     glossaryPopover.style.left = `${left}px`;
-    
+
     let arrowStyle = document.getElementById('popover-arrow-style');
     if (!arrowStyle) {
       arrowStyle = document.createElement('style');
@@ -1766,7 +1897,7 @@ function initGlossaryPopover() {
   document.body.addEventListener('mouseout', (e) => {
     if (e.target.closest('.vocab-word')) hidePopover(e);
   });
-  
+
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.vocab-word')) {
       if (activeVocabElement === e.target.closest('.vocab-word')) {
@@ -1779,7 +1910,7 @@ function initGlossaryPopover() {
       hidePopover(e);
     }
   });
-  
+
   window.addEventListener('scroll', hidePopover, { passive: true });
   window.addEventListener('resize', hidePopover, { passive: true });
 }
@@ -1790,236 +1921,360 @@ if (document.readyState === 'loading') {
   initGlossaryPopover();
 }
 
-window.openModal = function(src) {
-      const modal = document.createElement('div');
-      modal.style.position = 'fixed';
-      modal.style.top = '0';
-      modal.style.left = '0';
-      modal.style.width = '100vw';
-      modal.style.height = '100vh';
-      modal.style.backgroundColor = 'rgba(0,0,0,0.85)';
-      modal.style.zIndex = '999999';
-      modal.style.display = 'flex';
-      modal.style.justifyContent = 'center';
-      modal.style.alignItems = 'center';
-      
-      const img = document.createElement('img');
-      img.src = src;
-      img.style.maxWidth = '90%';
-      img.style.maxHeight = '90%';
-      img.style.borderRadius = '8px';
-      img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
-      img.style.transition = 'transform 0.1s ease';
+window.openModal = function (src) {
+  if (
+    !src ||
+    typeof src !== 'string' ||
+    src.trim() === '' ||
+    src === 'undefined' ||
+    src === 'null'
+  ) {
+    console.warn('[openModal] Blocked attempt to open modal with invalid image src:', src);
+    return;
+  }
+
+  const existing = document.getElementById('global-image-modal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'global-image-modal';
+  modal.style.position = 'fixed';
+  modal.style.top = '0';
+  modal.style.left = '0';
+  modal.style.width = '100vw';
+  modal.style.height = '100vh';
+  modal.style.backgroundColor = 'rgba(0,0,0,0.88)';
+  modal.style.backdropFilter = 'blur(4px)';
+  modal.style.zIndex = '999999';
+  modal.style.display = 'flex';
+  modal.style.justifyContent = 'center';
+  modal.style.alignItems = 'center';
+  modal.style.cursor = 'default';
+
+  const cleanupAndClose = () => {
+    window.removeEventListener('keydown', onKeyDown);
+    modal.remove();
+  };
+
+  const onKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      cleanupAndClose();
+    }
+  };
+  window.addEventListener('keydown', onKeyDown);
+
+  const closeBtn = document.createElement('button');
+  closeBtn.setAttribute('aria-label', 'Close Image');
+  closeBtn.title = 'Close (Esc)';
+  closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  closeBtn.style.position = 'absolute';
+  closeBtn.style.top = '20px';
+  closeBtn.style.right = '25px';
+  closeBtn.style.background = 'rgba(255,255,255,0.2)';
+  closeBtn.style.border = '1px solid rgba(255,255,255,0.4)';
+  closeBtn.style.borderRadius = '50%';
+  closeBtn.style.width = '44px';
+  closeBtn.style.height = '44px';
+  closeBtn.style.color = '#ffffff';
+  closeBtn.style.fontSize = '1.3rem';
+  closeBtn.style.cursor = 'pointer';
+  closeBtn.style.display = 'flex';
+  closeBtn.style.justifyContent = 'center';
+  closeBtn.style.alignItems = 'center';
+  closeBtn.style.zIndex = '1000000';
+  closeBtn.style.transition = 'all 0.2s ease';
+  closeBtn.onmouseover = () => {
+    closeBtn.style.background = 'rgba(239, 68, 68, 0.85)';
+    closeBtn.style.borderColor = '#ef4444';
+  };
+  closeBtn.onmouseout = () => {
+    closeBtn.style.background = 'rgba(255,255,255,0.2)';
+    closeBtn.style.borderColor = 'rgba(255,255,255,0.4)';
+  };
+  closeBtn.onclick = (e) => {
+    e.stopPropagation();
+    cleanupAndClose();
+  };
+  modal.appendChild(closeBtn);
+
+  const hint = document.createElement('div');
+  hint.innerText = 'Click anywhere or press Esc to close · Scroll to zoom';
+  hint.style.position = 'absolute';
+  hint.style.bottom = '20px';
+  hint.style.left = '50%';
+  hint.style.transform = 'translateX(-50%)';
+  hint.style.color = 'rgba(255,255,255,0.75)';
+  hint.style.background = 'rgba(0,0,0,0.5)';
+  hint.style.padding = '6px 14px';
+  hint.style.borderRadius = '20px';
+  hint.style.fontSize = '0.82rem';
+  hint.style.letterSpacing = '0.03em';
+  hint.style.pointerEvents = 'none';
+  hint.style.zIndex = '1000000';
+  modal.appendChild(hint);
+
+  const img = document.createElement('img');
+  img.src = src;
+  img.style.maxWidth = '90%';
+  img.style.maxHeight = '88%';
+  img.style.objectFit = 'contain';
+  img.style.borderRadius = '8px';
+  img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.6)';
+  img.style.transition = 'transform 0.1s ease';
+  img.style.cursor = 'zoom-in';
+
+  img.onerror = () => {
+    img.style.display = 'none';
+    const errBox = document.createElement('div');
+    errBox.style.background = '#ffffff';
+    errBox.style.padding = '30px';
+    errBox.style.borderRadius = '12px';
+    errBox.style.textAlign = 'center';
+    errBox.style.maxWidth = '420px';
+    errBox.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+    errBox.innerHTML = `
+      <i class="fa-solid fa-triangle-exclamation" style="font-size: 2.5rem; color: #ef4444; margin-bottom: 12px; display: block;"></i>
+      <h3 style="margin: 0 0 8px 0; color: #0f172a; font-family: 'Playfair Display', serif;">Photograph Unavailable</h3>
+      <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.4;">The high-resolution photograph could not be loaded (${src}).</p>
+      <button style="background: #1e3a8a; color: white; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: 600;">Close</button>
+    `;
+    errBox.querySelector('button').onclick = (e) => {
+      e.stopPropagation();
+      cleanupAndClose();
+    };
+    modal.appendChild(errBox);
+  };
+
+  let scale = 1;
+  modal.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scale += e.deltaY * -0.005;
+    scale = Math.min(Math.max(1, scale), 5);
+    const rect = img.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    if (scale === 1) {
+      img.style.transformOrigin = 'center center';
       img.style.cursor = 'zoom-in';
+    } else if (e.deltaY < 0) {
+      img.style.transformOrigin = `${x}% ${y}%`;
+      img.style.cursor = 'zoom-out';
+    }
+    img.style.transform = `scale(${scale})`;
+  });
 
-      let scale = 1;
-      modal.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        scale += e.deltaY * -0.005;
-        scale = Math.min(Math.max(1, scale), 5); 
-        const rect = img.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        if (scale === 1) {
-            img.style.transformOrigin = 'center center';
-            img.style.cursor = 'zoom-in';
-        } else if (e.deltaY < 0) {
-            img.style.transformOrigin = `${x}% ${y}%`;
-            img.style.cursor = 'zoom-out';
-        }
-        img.style.transform = `scale(${scale})`;
-      });
-
-      modal.onclick = (e) => {
-          if (scale > 1) {
-              scale = 1;
-              img.style.transform = `scale(1)`;
-              img.style.cursor = 'zoom-in';
-          } else {
-              modal.remove();
-          }
-      };
-      
-      modal.appendChild(img);
-      document.body.appendChild(modal);
-    };
-
-window.openGallery = function(encodedData, startIndex) {
-    const images = JSON.parse(decodeURIComponent(encodedData));
-    let currentIndex = startIndex;
-
-    const modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100vw';
-    modal.style.height = '100vh';
-    modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
-    modal.style.zIndex = '999999';
-    modal.style.display = 'flex';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
-    
-    const closeBtn = document.createElement('button');
-    closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '20px';
-    closeBtn.style.right = '20px';
-    closeBtn.style.background = 'none';
-    closeBtn.style.border = 'none';
-    closeBtn.style.color = 'white';
-    closeBtn.style.fontSize = '2rem';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.onclick = () => modal.remove();
-    modal.appendChild(closeBtn);
-
-    const imgContainer = document.createElement('div');
-    imgContainer.style.position = 'relative';
-    imgContainer.style.width = '80%';
-    imgContainer.style.height = '80%';
-    imgContainer.style.display = 'flex';
-    imgContainer.style.flexDirection = 'column';
-    imgContainer.style.justifyContent = 'center';
-    imgContainer.style.alignItems = 'center';
-
-    const img = document.createElement('img');
-    img.style.maxWidth = '100%';
-    img.style.maxHeight = '90%';
-    img.style.objectFit = 'contain';
-    img.style.borderRadius = '8px';
-    img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
-    img.style.transition = 'transform 0.1s ease';
-    img.style.cursor = 'zoom-in';
-    imgContainer.appendChild(img);
-
-    const caption = document.createElement('div');
-    caption.style.color = 'white';
-    caption.style.marginTop = '15px';
-    caption.style.fontSize = '1.1rem';
-    caption.style.textAlign = 'center';
-    imgContainer.appendChild(caption);
-
-    modal.appendChild(imgContainer);
-
-    let scale = 1;
-    imgContainer.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      scale += e.deltaY * -0.005;
-      scale = Math.min(Math.max(1, scale), 5); 
-      const rect = img.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      if (scale === 1) {
-          img.style.transformOrigin = 'center center';
-          img.style.cursor = 'zoom-in';
-      } else if (e.deltaY < 0) {
-          img.style.transformOrigin = `${x}% ${y}%`;
-          img.style.cursor = 'zoom-out';
-      }
-      img.style.transform = `scale(${scale})`;
-    });
-
-    imgContainer.onclick = (e) => {
-        if (scale > 1) {
-            scale = 1;
-            img.style.transform = `scale(1)`;
-            img.style.cursor = 'zoom-in';
-        }
-    };
-
-    const prevBtn = document.createElement('button');
-    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
-    prevBtn.style.position = 'absolute';
-    prevBtn.style.left = '5%';
-    prevBtn.style.top = '50%';
-    prevBtn.style.transform = 'translateY(-50%)';
-    prevBtn.style.background = 'rgba(255,255,255,0.2)';
-    prevBtn.style.border = 'none';
-    prevBtn.style.color = 'white';
-    prevBtn.style.fontSize = '2rem';
-    prevBtn.style.width = '60px';
-    prevBtn.style.height = '60px';
-    prevBtn.style.borderRadius = '50%';
-    prevBtn.style.cursor = 'pointer';
-    prevBtn.style.display = 'flex';
-    prevBtn.style.justifyContent = 'center';
-    prevBtn.style.alignItems = 'center';
-    prevBtn.onclick = (e) => { e.stopPropagation(); scale = 1; img.style.transform = 'scale(1)'; if (currentIndex > 0) { currentIndex--; updateImage(); } };
-    modal.appendChild(prevBtn);
-
-    const nextBtn = document.createElement('button');
-    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
-    nextBtn.style.position = 'absolute';
-    nextBtn.style.right = '5%';
-    nextBtn.style.top = '50%';
-    nextBtn.style.transform = 'translateY(-50%)';
-    nextBtn.style.background = 'rgba(255,255,255,0.2)';
-    nextBtn.style.border = 'none';
-    nextBtn.style.color = 'white';
-    nextBtn.style.fontSize = '2rem';
-    nextBtn.style.width = '60px';
-    nextBtn.style.height = '60px';
-    nextBtn.style.borderRadius = '50%';
-    nextBtn.style.cursor = 'pointer';
-    nextBtn.style.display = 'flex';
-    nextBtn.style.justifyContent = 'center';
-    nextBtn.style.alignItems = 'center';
-    nextBtn.onclick = (e) => { e.stopPropagation(); scale = 1; img.style.transform = 'scale(1)'; if (currentIndex < images.length - 1) { currentIndex++; updateImage(); } };
-    modal.appendChild(nextBtn);
-
-    const updateImage = () => {
-      img.src = images[currentIndex].src;
-      caption.innerHTML = images[currentIndex].alt || '';
-      prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
-      nextBtn.style.display = currentIndex < images.length - 1 ? 'flex' : 'none';
-    };
-
-    modal.onclick = (e) => {
-      if (e.target === modal || e.target === imgContainer) modal.remove();
-    };
-    
-    const keyHandler = (e) => {
-      if (!document.body.contains(modal)) {
-        document.removeEventListener('keydown', keyHandler);
-        return;
-      }
-      if (e.key === 'Escape') modal.remove();
-      if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; updateImage(); }
-      if (e.key === 'ArrowRight' && currentIndex < images.length - 1) { currentIndex++; updateImage(); }
-    };
-    document.addEventListener('keydown', keyHandler);
-
-    updateImage();
-    document.body.appendChild(modal);
+  modal.onclick = (e) => {
+    if (e.target === closeBtn || closeBtn.contains(e.target)) return;
+    if (scale > 1) {
+      scale = 1;
+      img.style.transform = `scale(1)`;
+      img.style.cursor = 'zoom-in';
+    } else {
+      cleanupAndClose();
+    }
   };
 
-  window.startTPSTimer = function(btn, seconds) {
-    if (btn.timerInterval) return;
-    btn.originalHTML = btn.innerHTML;
-    let timeLeft = seconds;
-    btn.innerHTML = '<i class="fa-regular fa-clock"></i> ' + timeLeft + 's';
-    btn.style.background = '#ef4444';
-    
-    btn.timerInterval = setInterval(() => {
-      timeLeft--;
-      if (timeLeft <= 0) {
-        clearInterval(btn.timerInterval);
-        btn.timerInterval = null;
-        btn.innerHTML = '<i class="fa-regular fa-bell"></i> Time!';
-        setTimeout(() => {
-          btn.innerHTML = btn.originalHTML;
-          btn.style.background = '#10b981';
-        }, 4000);
-      } else {
-        btn.innerHTML = '<i class="fa-regular fa-clock"></i> ' + timeLeft + 's';
-      }
-    }, 1000);
+  modal.appendChild(img);
+  document.body.appendChild(modal);
+};
+
+window.openGallery = function (encodedData, startIndex) {
+  const images = JSON.parse(decodeURIComponent(encodedData));
+  let currentIndex = startIndex;
+
+  const modal = document.createElement('div');
+  modal.style.position = 'fixed';
+  modal.style.top = '0';
+  modal.style.left = '0';
+  modal.style.width = '100vw';
+  modal.style.height = '100vh';
+  modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+  modal.style.zIndex = '999999';
+  modal.style.display = 'flex';
+  modal.style.justifyContent = 'center';
+  modal.style.alignItems = 'center';
+
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  closeBtn.style.position = 'absolute';
+  closeBtn.style.top = '20px';
+  closeBtn.style.right = '20px';
+  closeBtn.style.background = 'none';
+  closeBtn.style.border = 'none';
+  closeBtn.style.color = 'white';
+  closeBtn.style.fontSize = '2rem';
+  closeBtn.style.cursor = 'pointer';
+  closeBtn.onclick = () => modal.remove();
+  modal.appendChild(closeBtn);
+
+  const imgContainer = document.createElement('div');
+  imgContainer.style.position = 'relative';
+  imgContainer.style.width = '80%';
+  imgContainer.style.height = '80%';
+  imgContainer.style.display = 'flex';
+  imgContainer.style.flexDirection = 'column';
+  imgContainer.style.justifyContent = 'center';
+  imgContainer.style.alignItems = 'center';
+
+  const img = document.createElement('img');
+  img.style.maxWidth = '100%';
+  img.style.maxHeight = '90%';
+  img.style.objectFit = 'contain';
+  img.style.borderRadius = '8px';
+  img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+  img.style.transition = 'transform 0.1s ease';
+  img.style.cursor = 'zoom-in';
+  imgContainer.appendChild(img);
+
+  const caption = document.createElement('div');
+  caption.style.color = 'white';
+  caption.style.marginTop = '15px';
+  caption.style.fontSize = '1.1rem';
+  caption.style.textAlign = 'center';
+  imgContainer.appendChild(caption);
+
+  modal.appendChild(imgContainer);
+
+  let scale = 1;
+  imgContainer.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scale += e.deltaY * -0.005;
+    scale = Math.min(Math.max(1, scale), 5);
+    const rect = img.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    if (scale === 1) {
+      img.style.transformOrigin = 'center center';
+      img.style.cursor = 'zoom-in';
+    } else if (e.deltaY < 0) {
+      img.style.transformOrigin = `${x}% ${y}%`;
+      img.style.cursor = 'zoom-out';
+    }
+    img.style.transform = `scale(${scale})`;
+  });
+
+  imgContainer.onclick = (e) => {
+    if (scale > 1) {
+      scale = 1;
+      img.style.transform = `scale(1)`;
+      img.style.cursor = 'zoom-in';
+    }
   };
 
-  
-  window.openTeacherGuideModal = function() {
-    if (document.getElementById('teacherGuideModal')) return;
-    const html = `
+  const prevBtn = document.createElement('button');
+  prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+  prevBtn.style.position = 'absolute';
+  prevBtn.style.left = '5%';
+  prevBtn.style.top = '50%';
+  prevBtn.style.transform = 'translateY(-50%)';
+  prevBtn.style.background = 'rgba(255,255,255,0.2)';
+  prevBtn.style.border = 'none';
+  prevBtn.style.color = 'white';
+  prevBtn.style.fontSize = '2rem';
+  prevBtn.style.width = '60px';
+  prevBtn.style.height = '60px';
+  prevBtn.style.borderRadius = '50%';
+  prevBtn.style.cursor = 'pointer';
+  prevBtn.style.display = 'flex';
+  prevBtn.style.justifyContent = 'center';
+  prevBtn.style.alignItems = 'center';
+  prevBtn.onclick = (e) => {
+    e.stopPropagation();
+    scale = 1;
+    img.style.transform = 'scale(1)';
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateImage();
+    }
+  };
+  modal.appendChild(prevBtn);
+
+  const nextBtn = document.createElement('button');
+  nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+  nextBtn.style.position = 'absolute';
+  nextBtn.style.right = '5%';
+  nextBtn.style.top = '50%';
+  nextBtn.style.transform = 'translateY(-50%)';
+  nextBtn.style.background = 'rgba(255,255,255,0.2)';
+  nextBtn.style.border = 'none';
+  nextBtn.style.color = 'white';
+  nextBtn.style.fontSize = '2rem';
+  nextBtn.style.width = '60px';
+  nextBtn.style.height = '60px';
+  nextBtn.style.borderRadius = '50%';
+  nextBtn.style.cursor = 'pointer';
+  nextBtn.style.display = 'flex';
+  nextBtn.style.justifyContent = 'center';
+  nextBtn.style.alignItems = 'center';
+  nextBtn.onclick = (e) => {
+    e.stopPropagation();
+    scale = 1;
+    img.style.transform = 'scale(1)';
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      updateImage();
+    }
+  };
+  modal.appendChild(nextBtn);
+
+  const updateImage = () => {
+    img.src = images[currentIndex].src;
+    caption.innerHTML = images[currentIndex].alt || '';
+    prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+    nextBtn.style.display = currentIndex < images.length - 1 ? 'flex' : 'none';
+  };
+
+  modal.onclick = (e) => {
+    if (e.target === modal || e.target === imgContainer) modal.remove();
+  };
+
+  const keyHandler = (e) => {
+    if (!document.body.contains(modal)) {
+      document.removeEventListener('keydown', keyHandler);
+      return;
+    }
+    if (e.key === 'Escape') modal.remove();
+    if (e.key === 'ArrowLeft' && currentIndex > 0) {
+      currentIndex--;
+      updateImage();
+    }
+    if (e.key === 'ArrowRight' && currentIndex < images.length - 1) {
+      currentIndex++;
+      updateImage();
+    }
+  };
+  document.addEventListener('keydown', keyHandler);
+
+  updateImage();
+  document.body.appendChild(modal);
+};
+
+window.startTPSTimer = function (btn, seconds) {
+  if (btn.timerInterval) return;
+  btn.originalHTML = btn.innerHTML;
+  let timeLeft = seconds;
+  btn.innerHTML = '<i class="fa-regular fa-clock"></i> ' + timeLeft + 's';
+  btn.style.background = '#ef4444';
+
+  btn.timerInterval = setInterval(() => {
+    timeLeft--;
+    if (timeLeft <= 0) {
+      clearInterval(btn.timerInterval);
+      btn.timerInterval = null;
+      btn.innerHTML = '<i class="fa-regular fa-bell"></i> Time!';
+      setTimeout(() => {
+        btn.innerHTML = btn.originalHTML;
+        btn.style.background = '#10b981';
+      }, 4000);
+    } else {
+      btn.innerHTML = '<i class="fa-regular fa-clock"></i> ' + timeLeft + 's';
+    }
+  }, 1000);
+};
+
+window.openTeacherGuideModal = function () {
+  if (document.getElementById('teacherGuideModal')) return;
+  const html = `
     <div id="teacherGuideModal" class="modal-overlay no-print" style="display: flex; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) this.remove()">
       <div class="modal-content" style="background: white; border-radius: 12px; padding: 40px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; color: #1e293b; position: relative; font-family: 'Outfit', sans-serif;">
         <button onclick="this.closest('.modal-overlay').remove()" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; color: #64748b; font-size: 18pt; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
@@ -2051,29 +2306,33 @@ window.openGallery = function(encodedData, startIndex) {
       </div>
     </div>
     `;
-    document.body.insertAdjacentHTML('beforeend', html);
-    const modal = document.getElementById('teacherGuideModal');
-    // Trigger reflow for animation
-    void modal.offsetWidth;
-    modal.style.opacity = '1';
-  };
-  window.unlockMission = function(btnElement, siteId) {
-    const container = btnElement.closest('.geo-fence-container');
-    
-    // Simulate GPS Delay
-    if (btnElement && !btnElement.classList.contains('geo-btn-loading') && !btnElement.closest('h4')) {
-      const originalText = btnElement.innerHTML;
-      btnElement.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Acquiring Signal...';
-      btnElement.classList.add('geo-btn-loading');
-      btnElement.style.pointerEvents = 'none';
-      setTimeout(() => window.unlockMission(btnElement, siteId), 1500);
-      return;
-    }
-    
-    let missionHTML = '';
-    
-    if (siteId === 'brooding_soldier') {
-      missionHTML = `
+  document.body.insertAdjacentHTML('beforeend', html);
+  const modal = document.getElementById('teacherGuideModal');
+  // Trigger reflow for animation
+  void modal.offsetWidth;
+  modal.style.opacity = '1';
+};
+window.unlockMission = function (btnElement, siteId) {
+  const container = btnElement.closest('.geo-fence-container');
+
+  // Simulate GPS Delay
+  if (
+    btnElement &&
+    !btnElement.classList.contains('geo-btn-loading') &&
+    !btnElement.closest('h4')
+  ) {
+    const originalText = btnElement.innerHTML;
+    btnElement.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Acquiring Signal...';
+    btnElement.classList.add('geo-btn-loading');
+    btnElement.style.pointerEvents = 'none';
+    setTimeout(() => window.unlockMission(btnElement, siteId), 1500);
+    return;
+  }
+
+  let missionHTML = '';
+
+  if (siteId === 'brooding_soldier') {
+    missionHTML = `
         <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
           <h4 style="color: #059669; margin: 0 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: The Direction of the Gas</h4>
           <p style="font-size: 1.05rem; color: #334155;"><strong>Task:</strong> Open your phone's compass app. Stand at the base of the Canadian memorial and turn until you are facing the exact direction the German gas attack came from (North-East).</p>
@@ -2088,11 +2347,11 @@ window.openGallery = function(encodedData, startIndex) {
           </ul>
         </div>
       `;
-    } else if (siteId === 'tyne_cot') {
-       const db = window.currentUnitData?.missions_database?.tyne_cot_soldiers;
-       if (db && db.length > 0) {
-         const soldier = db[Math.floor(Math.random() * db.length)];
-         missionHTML = `
+  } else if (siteId === 'tyne_cot') {
+    const db = window.currentUnitData?.missions_database?.tyne_cot_soldiers;
+    if (db && db.length > 0) {
+      const soldier = db[Math.floor(Math.random() * db.length)];
+      missionHTML = `
            <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
              <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: Tell Their Story</h4>
              <div style="background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #3b82f6;">
@@ -2106,14 +2365,14 @@ window.openGallery = function(encodedData, startIndex) {
              </div>
            </div>
          `;
-       } else {
-         missionHTML = "<p>Error loading soldier database.</p>";
-       }
-    } else if (siteId === 'langemarck') {
-       const db = window.currentUnitData?.missions_database?.langemarck_soldiers;
-       if (db && db.length > 0) {
-         const soldier = db[Math.floor(Math.random() * db.length)];
-         missionHTML = `
+    } else {
+      missionHTML = '<p>Error loading soldier database.</p>';
+    }
+  } else if (siteId === 'langemarck') {
+    const db = window.currentUnitData?.missions_database?.langemarck_soldiers;
+    if (db && db.length > 0) {
+      const soldier = db[Math.floor(Math.random() * db.length)];
+      missionHTML = `
            <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
              <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: The Individuals</h4>
              <div style="background: #f8fafc; padding: 20px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #1e293b;">
@@ -2127,11 +2386,11 @@ window.openGallery = function(encodedData, startIndex) {
              </div>
            </div>
          `;
-       } else {
-         missionHTML = "<p>Error loading soldier database.</p>";
-       }
-    } else if (siteId === 'menin_gate') {
-        missionHTML = `
+    } else {
+      missionHTML = '<p>Error loading soldier database.</p>';
+    }
+  } else if (siteId === 'menin_gate') {
+    missionHTML = `
           <div style="text-align: left; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
             <h4 style="color: #059669; margin: 0 0 15px 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;"><i class="fa-solid fa-unlock"></i> Mission Unlocked: Local Hero & The Empire</h4>
             
@@ -2157,34 +2416,34 @@ window.openGallery = function(encodedData, startIndex) {
             </div>
           </div>
         `;
-    }
-    
-    if (missionHTML) {
-      container.style.border = 'none';
-      container.style.background = 'transparent';
-      container.style.padding = '0';
-      container.style.boxShadow = 'none';
-      container.innerHTML = missionHTML;
-    }
-  };
+  }
 
-  window.handleSecretUnlock = function(element, siteId) {
-    const now = Date.now();
-    const lastClick = element.dataset.lastClick ? parseInt(element.dataset.lastClick) : 0;
-    let clicks = element.dataset.clicks ? parseInt(element.dataset.clicks) : 0;
-    
-    // If more than 1.5 seconds have passed since the last click, reset the counter
-    if (now - lastClick > 1500) {
-      clicks = 1;
-    } else {
-      clicks++;
-    }
-    
-    element.dataset.lastClick = now;
-    element.dataset.clicks = clicks;
-    
-    // 4 quick taps to unlock
-    if (clicks >= 4) {
-      window.unlockMission(element, siteId);
-    }
-  };
+  if (missionHTML) {
+    container.style.border = 'none';
+    container.style.background = 'transparent';
+    container.style.padding = '0';
+    container.style.boxShadow = 'none';
+    container.innerHTML = missionHTML;
+  }
+};
+
+window.handleSecretUnlock = function (element, siteId) {
+  const now = Date.now();
+  const lastClick = element.dataset.lastClick ? parseInt(element.dataset.lastClick) : 0;
+  let clicks = element.dataset.clicks ? parseInt(element.dataset.clicks) : 0;
+
+  // If more than 1.5 seconds have passed since the last click, reset the counter
+  if (now - lastClick > 1500) {
+    clicks = 1;
+  } else {
+    clicks++;
+  }
+
+  element.dataset.lastClick = now;
+  element.dataset.clicks = clicks;
+
+  // 4 quick taps to unlock
+  if (clicks >= 4) {
+    window.unlockMission(element, siteId);
+  }
+};

@@ -837,26 +837,131 @@ window.closeQuizModal = function () {
 };
 
 window.openModal = function (src) {
+  if (
+    !src ||
+    typeof src !== 'string' ||
+    src.trim() === '' ||
+    src === 'undefined' ||
+    src === 'null'
+  ) {
+    console.warn('[openModal] Blocked attempt to open modal with invalid image src:', src);
+    return;
+  }
+
+  // Remove any previously open image modal to prevent duplicates
+  const existing = document.getElementById('global-image-modal');
+  if (existing) existing.remove();
+
   const modal = document.createElement('div');
+  modal.id = 'global-image-modal';
   modal.style.position = 'fixed';
   modal.style.top = '0';
   modal.style.left = '0';
   modal.style.width = '100vw';
   modal.style.height = '100vh';
-  modal.style.backgroundColor = 'rgba(0,0,0,0.85)';
+  modal.style.backgroundColor = 'rgba(0,0,0,0.88)';
+  modal.style.backdropFilter = 'blur(4px)';
   modal.style.zIndex = '999999';
   modal.style.display = 'flex';
   modal.style.justifyContent = 'center';
   modal.style.alignItems = 'center';
+  modal.style.cursor = 'default';
+
+  const cleanupAndClose = () => {
+    window.removeEventListener('keydown', onKeyDown);
+    modal.remove();
+  };
+
+  const onKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      cleanupAndClose();
+    }
+  };
+  window.addEventListener('keydown', onKeyDown);
+
+  // Close Button
+  const closeBtn = document.createElement('button');
+  closeBtn.setAttribute('aria-label', 'Close Image');
+  closeBtn.title = 'Close (Esc)';
+  closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  closeBtn.style.position = 'absolute';
+  closeBtn.style.top = '20px';
+  closeBtn.style.right = '25px';
+  closeBtn.style.background = 'rgba(255,255,255,0.2)';
+  closeBtn.style.border = '1px solid rgba(255,255,255,0.4)';
+  closeBtn.style.borderRadius = '50%';
+  closeBtn.style.width = '44px';
+  closeBtn.style.height = '44px';
+  closeBtn.style.color = '#ffffff';
+  closeBtn.style.fontSize = '1.3rem';
+  closeBtn.style.cursor = 'pointer';
+  closeBtn.style.display = 'flex';
+  closeBtn.style.justifyContent = 'center';
+  closeBtn.style.alignItems = 'center';
+  closeBtn.style.zIndex = '1000000';
+  closeBtn.style.transition = 'all 0.2s ease';
+  closeBtn.onmouseover = () => {
+    closeBtn.style.background = 'rgba(239, 68, 68, 0.85)';
+    closeBtn.style.borderColor = '#ef4444';
+  };
+  closeBtn.onmouseout = () => {
+    closeBtn.style.background = 'rgba(255,255,255,0.2)';
+    closeBtn.style.borderColor = 'rgba(255,255,255,0.4)';
+  };
+  closeBtn.onclick = (e) => {
+    e.stopPropagation();
+    cleanupAndClose();
+  };
+  modal.appendChild(closeBtn);
+
+  // Bottom Helper Hint
+  const hint = document.createElement('div');
+  hint.innerText = 'Click anywhere or press Esc to close · Scroll to zoom';
+  hint.style.position = 'absolute';
+  hint.style.bottom = '20px';
+  hint.style.left = '50%';
+  hint.style.transform = 'translateX(-50%)';
+  hint.style.color = 'rgba(255,255,255,0.75)';
+  hint.style.background = 'rgba(0,0,0,0.5)';
+  hint.style.padding = '6px 14px';
+  hint.style.borderRadius = '20px';
+  hint.style.fontSize = '0.82rem';
+  hint.style.letterSpacing = '0.03em';
+  hint.style.pointerEvents = 'none';
+  hint.style.zIndex = '1000000';
+  modal.appendChild(hint);
 
   const img = document.createElement('img');
   img.src = src;
   img.style.maxWidth = '90%';
-  img.style.maxHeight = '90%';
+  img.style.maxHeight = '88%';
+  img.style.objectFit = 'contain';
   img.style.borderRadius = '8px';
-  img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.5)';
+  img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.6)';
   img.style.transition = 'transform 0.1s ease';
   img.style.cursor = 'zoom-in';
+
+  img.onerror = () => {
+    img.style.display = 'none';
+    const errBox = document.createElement('div');
+    errBox.style.background = '#ffffff';
+    errBox.style.padding = '30px';
+    errBox.style.borderRadius = '12px';
+    errBox.style.textAlign = 'center';
+    errBox.style.maxWidth = '420px';
+    errBox.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+    errBox.innerHTML = `
+      <i class="fa-solid fa-triangle-exclamation" style="font-size: 2.5rem; color: #ef4444; margin-bottom: 12px; display: block;"></i>
+      <h3 style="margin: 0 0 8px 0; color: #0f172a; font-family: 'Playfair Display', serif;">Photograph Unavailable</h3>
+      <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.4;">The high-resolution photograph could not be loaded (${src}).</p>
+      <button style="background: #1e3a8a; color: white; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: 600;">Close</button>
+    `;
+    errBox.querySelector('button').onclick = (e) => {
+      e.stopPropagation();
+      cleanupAndClose();
+    };
+    modal.appendChild(errBox);
+  };
 
   let scale = 1;
   modal.addEventListener('wheel', (e) => {
@@ -877,12 +982,13 @@ window.openModal = function (src) {
   });
 
   modal.onclick = (e) => {
+    if (e.target === closeBtn || closeBtn.contains(e.target)) return;
     if (scale > 1) {
       scale = 1;
       img.style.transform = `scale(1)`;
       img.style.cursor = 'zoom-in';
     } else {
-      modal.remove();
+      cleanupAndClose();
     }
   };
 

@@ -376,7 +376,7 @@ export function renderLesson(lesson) {
                   ? `
                 <div style="display: inline-flex; flex-direction: column; position: relative; max-width: 100%; text-align: left; margin: 15px 0;">
                   <div style="position: relative;">
-                    <img src="${getAssetUrl(source.src)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" data-action="open-modal">
+                    <img src="${getAssetUrl(source.src)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" data-action="open-modal" data-src="${getAssetUrl(source.src)}">
                   </div>
                   ${
                     source.caption
@@ -462,7 +462,7 @@ export function renderLesson(lesson) {
               <div style="display: flex; flex-direction: column; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px; height: 100%;">
                 <h4 style="margin: 0 0 15px 0; color: #0f172a; font-size: 1.1rem; border-bottom: 2px solid #3b82f6; padding-bottom: 5px;">Source ${String.fromCharCode(65 + index)}: ${starter.title}</h4>
                 <div style="width: 100%; height: 250px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
-                  <img src="${starter.source}" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal">
+                  <img src="${starter.source}" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${starter.source}">
                 </div>
                 <div style="font-size: 0.95rem; color: #475569; margin-bottom: 15px; font-style: italic;">
                   ${starter.caption}
@@ -500,7 +500,7 @@ export function renderLesson(lesson) {
       } else {
         sourceContentHtml = `
                 <div style="width: 100%; height: 250px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
-                  <img src="${source.source}" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal">
+                  <img src="${source.source}" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${source.source}">
                 </div>
                 ${source.caption ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 15px; font-style: italic;">${source.caption}</div>` : ''}
              `;
@@ -1120,7 +1120,7 @@ export function renderLesson(lesson) {
              </style>
              <div class="narrative-image-container" style="${containerStyle}">
                <div style="${imgWrapperStyle}">
-                 <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-modal">
+                 <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(block.image)}">
                  ${block.caption || block.image_caption || block.image_alt ? `<div class="image-hint-caption" data-action="toggle-caption-blur" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.caption || block.image_caption || block.image_alt}</div>` : ''}
                </div>
                ${contextHtml}
@@ -1141,7 +1141,7 @@ export function renderLesson(lesson) {
         } else {
           sourceContentHtml = `
                     <div style="width: 100%; max-height: 400px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
-                      <img src="${getAssetUrl(block.source.source || block.source.src)}" alt="Source" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal">
+                      <img src="${getAssetUrl(block.source.source || block.source.src)}" alt="Source" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(block.source.source || block.source.src)}">
                     </div>
                  `;
         }

@@ -1,10 +1,12 @@
 export function initInteractiveMap(container, task) {
   if (!container || !task || !task.maps || task.maps.length === 0) return;
 
-  const instructionsHtml = task.instructions ? `<p style="margin-top: 0; font-weight: 500; color: #475569; margin-bottom: 20px;">${task.instructions}</p>` : '';
+  const instructionsHtml = task.instructions
+    ? `<p style="margin-top: 0; font-weight: 500; color: #475569; margin-bottom: 20px;">${task.instructions}</p>`
+    : '';
 
   let tabsHtml = `<div class="map-tabs" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0;">`;
-  
+
   task.maps.forEach((map, index) => {
     tabsHtml += `
       <button class="map-tab-btn" data-index="${index}" style="
@@ -27,12 +29,12 @@ export function initInteractiveMap(container, task) {
   tabsHtml += `</div>`;
 
   let contentHtml = `<div class="map-content-container" style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); background: white; border: 1px solid #e2e8f0;">`;
-  
+
   task.maps.forEach((map, index) => {
     contentHtml += `
       <div class="map-pane" id="map-pane-${index}" style="display: ${index === 0 ? 'block' : 'none'}; animation: fadeIn 0.4s ease;">
         <div style="width: 100%; height: 600px; background: #e2e8f0; display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative;">
-          ${map.src ? `<img src="${map.src}" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease; cursor: zoom-in;" data-action="open-modal" alt="${map.label}">` : '<i class="fa-solid fa-map-location-dot fa-3x" style="color: #94a3b8;"></i>'}
+          ${map.src ? `<img src="${map.src}" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease; cursor: zoom-in;" data-action="open-modal" data-src="${map.src}" alt="${map.label}">` : '<i class="fa-solid fa-map-location-dot fa-3x" style="color: #94a3b8;"></i>'}
         </div>
         <div style="padding: 20px; background: white;">
           <p style="margin: 0; font-size: 1.1rem; line-height: 1.6; color: #1e293b;">${map.caption || ''}</p>
@@ -65,12 +67,12 @@ export function initInteractiveMap(container, task) {
   const tabBtns = container.querySelectorAll('.map-tab-btn');
   const panes = container.querySelectorAll('.map-pane');
 
-  tabBtns.forEach(btn => {
+  tabBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const targetIndex = btn.getAttribute('data-index');
-      
+
       // Update buttons
-      tabBtns.forEach(b => {
+      tabBtns.forEach((b) => {
         b.style.background = '#f1f5f9';
         b.style.color = '#475569';
         b.style.boxShadow = 'none';
