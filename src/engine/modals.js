@@ -1225,7 +1225,7 @@ window.openParentBriefingModal = function () {
               YPRES 1914–1918: REMEMBRANCE, SACRIFICE &amp; LOCAL HERITAGE
             </h2>
             <div style="font-size: 0.9rem; color: #cbd5e1; margin-top: 4px;">
-              Meoncross School History Department &amp; The History Boys · Led jointly by <strong>Mr Ben Lovett</strong> &amp; <strong>Mr James Garrett</strong>
+              Meoncross School History Department &amp; The History Boys · Led jointly by <strong>Mr Ben Lovett</strong> &amp; <strong>Mr James Garrett</strong> · Accomp: <strong>Dr Kirkup</strong> &amp; <strong>Mrs Lushey</strong>
             </div>
           </div>
 
@@ -1254,22 +1254,22 @@ window.openParentBriefingModal = function () {
             
             <div style="margin-bottom: 12px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 3px solid #1e3a8a;">
               <strong style="color: #0f172a; font-size: 0.85rem;">Day 1 (Thu 1 Oct): North Salient &amp; Medical Care</strong>
-              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">06:15 departure from school. Essex Farm ADS (John McCrae's bunker), Yorkshire Trench, Langemarck German Cemetery. Peace Village Hostel check-in &amp; 2-course dinner.</p>
+              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">06:15 departure from school. Essex Farm ADS (John McCrae's bunker), Yorkshire Trench, Langemarck German Cemetery. Peace Village Hostel check-in &amp; 2-course dinner on-site.</p>
             </div>
 
             <div style="margin-bottom: 12px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 3px solid #b45309;">
               <strong style="color: #0f172a; font-size: 0.85rem;">Day 2 (Fri 2 Oct): Passchendaele &amp; Menin Gate</strong>
-              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">Vancouver Corner, Hooge Crater preserved trenches, Sanctuary Wood, Tyne Cot Cemetery (finding our village fallen). Evening: <strong>8:00 PM Last Post Ceremony</strong> with school wreath laying.</p>
+              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">Vancouver Corner, Hooge Crater preserved trenches, Sanctuary Wood, supermarket lunch stop, Tyne Cot Cemetery (finding our village fallen). 2-course dinner on-site at Peace Village, followed by the solemn <strong>8:00 PM Last Post Ceremony</strong> with school wreath laying.</p>
             </div>
 
             <div style="margin-bottom: 12px; padding: 10px; background: #f8fafc; border-radius: 6px; border-left: 3px solid #0f766e;">
               <strong style="color: #0f172a; font-size: 0.85rem;">Day 3 (Sat 3 Oct): Ypres Town &amp; Journey Home</strong>
-              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">In Flanders Fields Museum (Cloth Hall), Ypres Ramparts walk, Talbot House (Poperinge). Supermarket lunch &amp; return to Meoncross approx. 20:30.</p>
+              <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #475569; line-height: 1.35;">In Flanders Fields Museum (Cloth Hall), Ypres Ramparts walk, supermarket lunch stop, Talbot House (Poperinge). Return to Meoncross approx. 20:30.</p>
             </div>
 
             <div style="background: #fefce8; border: 1px solid #fef08a; padding: 10px 12px; border-radius: 6px;">
               <strong style="color: #92400e; font-size: 0.82rem; display: block; margin-bottom: 2px;">🕊️ The Local Heritage Hook:</strong>
-              <span style="font-size: 0.78rem; color: #78350f; line-height: 1.35;">Pupils will locate our Stubbington village dead—including the three Lowry brothers from Manor Way Grange and the six Salient fallen on Holy Rood's parish tablet.</span>
+              <span style="font-size: 0.78rem; color: #78350f; line-height: 1.35;"><em>"How did three sons from one coastal Hampshire family answer the call across Gallipoli, Arras, and the Somme—and how did six young men from our quiet village come to rest upon the ramparts and mud of Flanders?"</em> Pupils will touch the carved names of our village fallen on Tyne Cot and Menin Gate.</span>
             </div>
           </div>
 
@@ -1283,25 +1283,26 @@ window.openParentBriefingModal = function () {
             <div style="margin-bottom: 14px;">
               <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">🍽️ Catering Arrangements:</strong>
               <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #334155; line-height: 1.4;">
-                <li><strong>Thursday Day 1:</strong> Pupils <strong>must bring a packed lunch</strong> &amp; travel snacks from home for the coach/crossing.</li>
-                <li><strong>Included Meals:</strong> Full hot breakfasts at hostel (Fri &amp; Sat mornings); 2-course evening group dinners in Ypres (Thu &amp; Fri).</li>
+                <li><strong>Thursday Day 1:</strong> Pupils <strong>must bring a packed lunch</strong> &amp; travel snacks from home for coach/crossing.</li>
+                <li><strong>Included Meals:</strong> Buffet breakfasts at hostel (Fri &amp; Sat mornings); 2-course evening group dinners on-site at Peace Village (Thu &amp; Fri).</li>
+                <li><strong>Days 2 &amp; 3 Lunches:</strong> Supermarket packed lunch stops in Belgium.</li>
               </ul>
             </div>
 
             <div style="margin-bottom: 14px; background: #fffbeb; border: 1px solid #fde68a; padding: 10px 12px; border-radius: 6px;">
-              <strong style="color: #92400e; font-size: 0.88rem; display: block; margin-bottom: 4px;">💶 Spending Money (Euros in Cash):</strong>
+              <strong style="color: #92400e; font-size: 0.88rem; display: block; margin-bottom: 4px;">💶 Spending Money (€30–€40 Euros Cash):</strong>
               <p style="margin: 0; font-size: 0.82rem; color: #78350f; line-height: 1.4;">
-                Pupils require <strong>€20 to €30 in cash (Euros)</strong>. On Friday and Saturday, we stop at Belgian supermarkets for fresh sandwiches, drinks, and fruit. Any small remaining change can be used for postcards/souvenirs.
+                Pupils require <strong>€30 to €40 in cash (Euros)</strong>. Covers fresh supermarket lunches on Friday and Saturday, plus Belgian chocolates or small souvenirs.
               </p>
             </div>
 
             <div>
               <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">🏨 Peace Village Hostel &amp; Rooming:</strong>
               <p style="margin: 0 0 6px 0; font-size: 0.82rem; color: #334155; line-height: 1.4;">
-                Purpose-built educational hostel in Heuvelland with secure keycard access and en-suite rooms (3–4 pupils per room).
+                Rural educational centre in Heuvelland with secure keycards and en-suite rooms (typically 4–7 pupils with bunk beds).
               </p>
               <div style="background: #f1f5f9; border-left: 3px solid #0284c7; padding: 8px 10px; border-radius: 4px; font-size: 0.78rem; color: #0369a1; line-height: 1.35;">
-                <strong>Rooming Timeline:</strong> Preference slips issued in <strong>two weeks' time</strong> in school. All groupings reviewed by Mr Lovett to ensure every pupil is happily paired.
+                <strong>Rooming Timeline:</strong> Friend preference requests assembled in school in approx. <strong>two weeks' time</strong>. Reviewed by Mr Lovett to ensure every pupil is happily paired.
               </div>
             </div>
           </div>
@@ -1314,27 +1315,27 @@ window.openParentBriefingModal = function () {
             </div>
 
             <div style="margin-bottom: 14px;">
-              <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">🥾 Weather Kit (Autumn in Flanders):</strong>
+              <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">🥾 Practical Clothing &amp; Kit:</strong>
               <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #334155; line-height: 1.4;">
-                <li><strong>Sturdy Walking Boots:</strong> Waterproof &amp; broken-in. Ground and duckboards can be muddy and slippery.</li>
+                <li><strong>Sturdy Walking Boots:</strong> Waterproof &amp; broken-in. Ground and duckboards can be slippery.</li>
                 <li><strong>Waterproof Raincoat:</strong> Windproof with hood.</li>
-                <li><strong>Warm Winter Hat &amp; Gloves:</strong> Mandatory! Standing still at 8pm Menin Gate ceremony gets very cold.</li>
-                <li><strong>Luggage:</strong> 1 medium holdall for coach hold + 1 small daypack for coach seat.</li>
+                <li><strong>Warm Hat &amp; Gloves:</strong> Mandatory for standing at 8pm Menin Gate ceremony.</li>
+                <li><strong>Casual Clothes:</strong> Comfortable clothing for hostel downtime (no formal dress needed).</li>
               </ul>
             </div>
 
             <div style="margin-bottom: 14px;">
-              <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">📄 Travel Documents &amp; Tech:</strong>
+              <strong style="color: #0f172a; font-size: 0.88rem; display: block; margin-bottom: 4px;">📄 Travel Documents &amp; Mobiles:</strong>
               <ul style="margin: 0; padding-left: 16px; font-size: 0.82rem; color: #334155; line-height: 1.4;">
-                <li><strong>Valid UK Passport:</strong> Must have at least 3 months validity beyond Oct 2026.</li>
-                <li><strong>GHIC / EHIC Card:</strong> Reciprocal healthcare in Belgium.</li>
-                <li><strong>European 2-Pin Adapter:</strong> For charging phones.</li>
+                <li><strong>Passports &amp; GHIC/EHIC:</strong> Collected in advance tonight at briefing (or this week).</li>
+                <li><strong>European 2-Pin Adapter:</strong> For charging devices.</li>
+                <li><strong>Mobile Phone Bag:</strong> Handed in each evening at curfew/bedtime for a restful night.</li>
               </ul>
             </div>
 
             <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 10px 12px; border-radius: 6px;">
-              <strong style="color: #991b1b; font-size: 0.82rem; display: block; margin-bottom: 2px;">⚠️ Forms Return Deadline:</strong>
-              <span style="font-size: 0.78rem; color: #7f1d1d; line-height: 1.35;">Code of Conduct Agreement Form and Medical/Dietary confirmation form must be signed and returned by <strong>Friday 25th September</strong>.</span>
+              <strong style="color: #991b1b; font-size: 0.82rem; display: block; margin-bottom: 2px;">⚠️ Action Checklist:</strong>
+              <span style="font-size: 0.78rem; color: #7f1d1d; line-height: 1.35;">Return signed <strong>Code of Conduct Agreement Form</strong> by <strong>Friday 25th September</strong>. Ensure passport &amp; GHIC are handed in.</span>
             </div>
           </div>
 

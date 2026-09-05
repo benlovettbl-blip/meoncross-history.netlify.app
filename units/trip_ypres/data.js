@@ -232,7 +232,7 @@ export const unitData = {
       },
       tasks: [
         'Field Equipment Check: Verify your passport (valid > Jan 2027), GHIC medical card, sturdy walking boots, waterproof jacket, warm hat, and gloves are packed.',
-        'Catering & Currency Check: Prepare a packed lunch for Thursday journey; ensure €20 to €30 in Euros cash is ready for Friday and Saturday supermarket lunches.',
+        'Catering & Currency Check: Prepare a packed lunch for Thursday journey; ensure €30 to €40 in Euros cash is ready for Friday and Saturday supermarket lunches.',
         'Memorial Roll Call: Familiarise yourself with the names of the Lowry brothers and our six local heroes from Holy Rood Church whose names we will seek on the memorial walls of Flanders.',
       ],
       narrative_blocks: [
@@ -244,9 +244,9 @@ export const unitData = {
               <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div>
                   <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #eff6ff; color: #1e3a8a; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 6px;">Joint Educational Venture</span>
-                  <h3 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.3rem; font-family: 'Playfair Display', serif;">Meoncross School &amp; The History Boys</h3>
+                  <h3 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.3rem; font-family: 'Playfair Display', serif;">Meoncross School History Department &amp; The History Boys</h3>
                   <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.5;">
-                    Led jointly by <strong>Mr Ben Lovett</strong> (Head of History, Meoncross School) and <strong>Mr James Garrett</strong> (The History Boys Tour Company — expert battlefield historian and fellow history teacher). Together, they provide exceptional historical scholarship, pastoral care, and engaging on-site guidance.
+                    Led jointly by <strong>Mr Ben Lovett</strong> (Head of History, Meoncross School) and <strong>Mr James Garrett</strong> (The History Boys Tour Company — expert battlefield historian and fellow history teacher), accompanied by <strong>Dr Kirkup</strong> and <strong>Mrs Lushey</strong>. Together, they provide exceptional historical scholarship, pastoral care, and engaging on-site guidance.
                   </p>
                 </div>
               </div>
@@ -277,7 +277,7 @@ export const unitData = {
                 Inside <strong>Holy Rood Church in Stubbington</strong>, carved into the marble Great War Memorial Tablet, are the names of three brothers from Manor Way Grange, Lee-on-the-Solent: <strong>William, Cyril, and Auriol (Eric) Lowry</strong>. All three gave their lives across different theaters of war.
               </p>
               <blockquote style="background: #ffffff; border-left: 4px solid #f59e0b; padding: 12px 18px; margin: 0 0 16px 0; border-radius: 4px; font-style: italic; color: #92400e; font-size: 1.05rem; line-height: 1.5;">
-                "How did three sons from one coastal Hampshire family, and six young men from our quiet village, find their resting places on the contested ramparts and mud of Flanders?"
+                "How did three sons from one coastal Hampshire family answer the call across Gallipoli, Arras, and the Somme—and how did six young men from our quiet village come to rest upon the ramparts and mud of Flanders?"
               </blockquote>
               <p style="color: #451a03; font-size: 0.95rem; line-height: 1.6; margin: 0;">
                 On this tour, pupils will not be tourists. Each pupil will be entrusted with a local mission: locating and touching the carved names of our village fallen—including <strong>Private Franklin</strong> and <strong>Private Ayling</strong> on Menin Gate Panel 35, and <strong>Private Muckett</strong>, <strong>Private Rye</strong>, <strong>Lance Corporal Ward</strong>, and <strong>Private Warland</strong> on the rear curved panels of Tyne Cot.
@@ -320,8 +320,9 @@ export const unitData = {
                 <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.5;">
                   <li><strong>1 Main Holdall / Medium Suitcase:</strong> Stored under coach during travel (max 15kg).</li>
                   <li><strong>1 Small Daypack (Rucksack):</strong> Kept on coach seats with student. Contains rain jacket, water bottle, Day 1 packed lunch, and notebook/pen.</li>
-                  <li><strong>Evening Clothing:</strong> Smart-casual for restaurant dinners (clean trousers/jeans, collared shirts/jumpers).</li>
+                  <li><strong>Comfortable Casual Clothing:</strong> Practical, comfortable clothing for hostel downtime (jeans, joggers, hoodies, t-shirts; no formal clothes needed).</li>
                   <li><strong>Washbag:</strong> Roll-on deodorant only (strictly NO aerosol sprays permitted on coach).</li>
+                  <li><strong>Mobile Phones:</strong> Permitted during the day; collected each evening in a dedicated staff phone bag at curfew for a restful night.</li>
                 </ul>
               </div>
             </div>
@@ -337,15 +338,16 @@ export const unitData = {
                   <h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 1.05rem;"><i class="fa-solid fa-utensils" style="color: #0284c7;"></i> Meal Arrangements</h4>
                   <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.5;">
                     <li><strong>Day 1 (Thursday):</strong> Pupils <strong>must bring a packed lunch and snacks from home</strong> for the coach journey. No fast food purchases at ferry/service stations.</li>
-                    <li><strong>Hot Breakfasts:</strong> Full cooked/continental breakfast provided at Peace Village Hostel on Friday and Saturday mornings.</li>
-                    <li><strong>Evening Dinners:</strong> Substantial 2-course hot group dinners provided in Ypres restaurants on Thursday and Friday evenings.</li>
+                    <li><strong>Buffet Breakfasts:</strong> Continental/buffet breakfast provided at Peace Village Hostel on Friday and Saturday mornings.</li>
+                    <li><strong>Evening Dinners:</strong> Substantial 2-course hot group dinners served on-site at Peace Village Hostel accommodation on Thursday and Friday evenings.</li>
+                    <li><strong>Days 2 &amp; 3 Lunches:</strong> Supermarket packed lunch stops in Belgium.</li>
                   </ul>
                 </div>
 
                 <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 16px;">
-                  <h4 style="margin: 0 0 6px 0; color: #92400e; font-size: 1.05rem;"><i class="fa-solid fa-euro-sign" style="color: #d97706;"></i> Spending Money (€20–€30 Euros Cash)</h4>
+                  <h4 style="margin: 0 0 6px 0; color: #92400e; font-size: 1.05rem;"><i class="fa-solid fa-euro-sign" style="color: #d97706;"></i> Spending Money (€30–€40 Euros Cash)</h4>
                   <p style="margin: 0; color: #78350f; font-size: 0.92rem; line-height: 1.5;">
-                    Pupils require <strong>€20 to €30 in cash (Euros)</strong>. On Friday and Saturday, we make supervised stops at Belgian supermarkets where pupils purchase fresh sandwiches, drinks, and fruit for lunch. Remaining change can be used for small postcards or souvenirs.
+                    Pupils require <strong>€30 to €40 in cash (Euros)</strong>. On Friday and Saturday, we make supervised stops at Belgian supermarkets where pupils purchase fresh sandwiches, drinks, and fruit for lunch. Remaining change can be used for small postcards, Belgian chocolates, or souvenirs.
                   </p>
                 </div>
               </div>
@@ -359,20 +361,20 @@ export const unitData = {
             <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
               <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 1.05rem;"><i class="fa-solid fa-hotel"></i> Peace Village Hostel &amp; Supervision</h4>
               <p style="margin: 0 0 12px 0; color: #334155; font-size: 0.94rem; line-height: 1.6;">
-                Located at Kemmelbergweg 43, 8956 Heuvelland, Belgium. Peace Village is a purpose-built, secure educational centre set in the rural countryside with keycard access, modern en-suite studios (typically 3 to 4 pupils per room), and private recreational grounds.
+                Located at Kemmelbergweg 43, 8956 Heuvelland, Belgium. Peace Village is a purpose-built, secure educational centre set in the rural countryside with keycard access, modern en-suite studios (typically 4 to 7 pupils per room with bunk beds), and private recreational grounds.
               </p>
               
               <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 6px; padding: 14px; margin-bottom: 14px;">
-                <strong style="color: #166534; font-size: 0.95rem; display: block; margin-bottom: 4px;">📅 Rooming Process (Starting in Two Weeks):</strong>
+                <strong style="color: #166534; font-size: 0.95rem; display: block; margin-bottom: 4px;">📅 Rooming Process (Approx. Two Weeks):</strong>
                 <p style="margin: 0; color: #1e293b; font-size: 0.9rem; line-height: 1.5;">
-                  Pupils will complete rooming preference slips in school in two weeks' time. Mr Lovett and staff will review all choices to ensure every pupil is happily placed with close friends in a comfortable, supportive room. Staff sleep on the same corridors with active evening checks and a strict lights-out policy.
+                  Pupils will complete rooming friend preference requests in school in approximately two weeks' time. Mr Lovett and staff will review all choices to ensure every pupil is happily placed with close friends in a comfortable, supportive room. Staff sleep on the same corridors with active evening checks and a strict lights-out policy.
                 </p>
               </div>
 
               <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 14px;">
-                <strong style="color: #991b1b; font-size: 0.95rem; display: block; margin-bottom: 4px;">📋 Code of Conduct &amp; Forms Deadline:</strong>
+                <strong style="color: #991b1b; font-size: 0.95rem; display: block; margin-bottom: 4px;">📋 Code of Conduct &amp; Passport Collection:</strong>
                 <p style="margin: 0; color: #7f1d1d; font-size: 0.9rem; line-height: 1.5;">
-                  All pupils and parents must sign and return the <strong>Code of Conduct Agreement Form</strong> and the <strong>Medical/Dietary Confirmation Form</strong> by <strong>Friday 25th September</strong>. Passports (with >3 months validity) and valid GHIC/EHIC cards must also be verified.
+                  All pupils and parents must sign and return the <strong>Code of Conduct Agreement Form</strong> by <strong>Friday 25th September</strong>. Passports (with >3 months validity) and valid GHIC/EHIC cards will be collected in advance tonight at the Parental Briefing meeting (or to the School Office this week).
                 </p>
               </div>
             </div>

@@ -46,13 +46,13 @@ s1.addText('YPRES 1914–1918: REMEMBRANCE, SACRIFICE & LOCAL HERITAGE', {
 });
 
 s1.addText(
-  'Meoncross School History Department & The History Boys  ·  Mr Ben Lovett & Mr James Garrett',
+  'Meoncross School History Department & The History Boys · Mr B. Lovett & Mr J. Garrett (Leaders) · Dr Kirkup & Mrs Lushey',
   {
     x: 0.5,
     y: 0.47,
     w: 9.0,
     h: 0.28,
-    fontSize: 11,
+    fontSize: 10.5,
     fontFace: 'Arial',
     color: 'F59E0B',
     bold: true,
@@ -107,7 +107,7 @@ s1.addText(
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• 06:15 departure from Meoncross School.\n• Essex Farm ADS (John McCrae dugout).\n• Yorkshire Trench & Langemarck Cemetery.\n• Evening: Check-in & 2-course group dinner.\n\n',
+      text: '• 06:15 departure from Meoncross School.\n• Essex Farm ADS (John McCrae dugout).\n• Yorkshire Trench & Langemarck Cemetery.\n• Evening: Check-in & 2-course dinner at hostel.\n\n',
       options: { color: '334155', fontSize: 8.5 },
     },
     {
@@ -115,7 +115,7 @@ s1.addText(
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• Vancouver Corner & Hooge Crater trenches.\n• Tyne Cot (finding our village fallen).\n• 20:00 Menin Gate Last Post & wreath laying.\n\n',
+      text: '• Vancouver Corner & Hooge Crater trenches.\n• Supermarket lunch stop in the Salient.\n• Tyne Cot (finding our village fallen).\n• 2-course hostel dinner before 20:00 Last Post.\n\n',
       options: { color: '334155', fontSize: 8.5 },
     },
     {
@@ -172,17 +172,17 @@ s1.addText(
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• Thursday Day 1: Pupils MUST bring a packed lunch & coach snacks from home.\n• Full hot breakfast included (Fri & Sat mornings).\n• 2-course evening group dinners (Thu & Fri).\n\n',
+      text: '• Thu Day 1: Bring packed lunch from home.\n• Buffet breakfasts at hostel (Fri & Sat mornings).\n• 2-course dinners served on-site at Peace Village.\n\n',
       options: { color: '334155', fontSize: 8.5 },
     },
     { text: 'Spending Money (Euros):\n', options: { bold: true, color: '0F172A', fontSize: 9.5 } },
     {
-      text: '• Pupils need €20 to €30 in cash.\n• Used for supermarket lunch stops on Friday and Saturday (sandwiches/drinks) and souvenirs.\n\n',
+      text: '• Pupils need €30 to €40 in cash (Euros).\n• Used for supermarket lunch stops on Friday and Saturday, chocolates & souvenirs.\n\n',
       options: { color: '334155', fontSize: 8.5 },
     },
     { text: 'Accommodation & Rooming:\n', options: { bold: true, color: '0F172A', fontSize: 9.5 } },
     {
-      text: '• Peace Village Hostel, Heuvelland.\n• En-suite rooms (3-4 pupils). Safe & secure.\n• Rooming process begins in TWO WEEKS with student preference forms. Staff room checks.',
+      text: '• Peace Village Hostel, Heuvelland.\n• Ensuite rooms (4-7 pupils, bunk beds).\n• Rooming organized in ~2 weeks with friend nominations. Staff on same corridors.',
       options: { color: '334155', fontSize: 8.5 },
     },
   ],
@@ -231,12 +231,12 @@ s1.addText(
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• Sturdy walking boots / waterproof shoes.\n• Waterproof hooded rain jacket & warm fleece.\n• Warm hat & gloves (vital for evening ceremony!).\n• Change of socks & casual clothes for dinner.\n• 1 medium holdall/case + 1 small daypack.\n\n',
+      text: '• Sturdy walking boots / waterproof shoes.\n• Waterproof hooded rain jacket & warm fleece.\n• Warm hat & gloves (vital for evening ceremony!).\n• Casual clothes for evenings (no formal wear).\n• 1 medium holdall/case + 1 small daypack.\n\n',
       options: { color: '334155', fontSize: 8.5 },
     },
     { text: 'Travel Documents & Tech:\n', options: { bold: true, color: '0F172A', fontSize: 9.5 } },
     {
-      text: '• Valid UK Passport (3+ months validity).\n• GHIC / EHIC health insurance card.\n• UK-to-EU 2-pin plug adapter for chargers.\n\n',
+      text: '• Passports & GHIC: Collected tonight!\n• Mobiles collected in staff bag each evening.\n• UK-to-EU 2-pin plug adapter for chargers.\n\n',
       options: { color: '334155', fontSize: 8.5 },
     },
     {
@@ -244,7 +244,7 @@ s1.addText(
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• Code of Conduct Agreement.\n• Medical & Dietary Needs confirmation form.',
+      text: '• Code of Conduct Agreement (by Fri 25 Sep).',
       options: { color: '334155', fontSize: 8.5 },
     },
   ],
@@ -258,7 +258,7 @@ s1.addText(
   },
 );
 
-// Bottom Bar: QR Code & Live App Access
+// Bottom Bar: QR Code & App Access
 s1.addShape(pptx.ShapeType.rect, {
   x: 0,
   y: 5.1,
@@ -271,7 +271,7 @@ if (fs.existsSync(QR_PATH)) {
   s1.addImage({ path: QR_PATH, x: 0.5, y: 5.12, w: 0.48, h: 0.48 });
 }
 
-s1.addText('LIVE INTERACTIVE FIELD GUIDE & APP:  meoncross-history.netlify.app', {
+s1.addText('INTERACTIVE DIGITAL FIELD GUIDE:  meoncross-history.netlify.app', {
   x: 1.1,
   y: 5.16,
   w: 6.0,
@@ -283,7 +283,7 @@ s1.addText('LIVE INTERACTIVE FIELD GUIDE & APP:  meoncross-history.netlify.app',
 });
 
 s1.addText(
-  'Scan QR or visit URL to view full 3-day itinerary, poetry anthology, audio guides & live family photo updates',
+  'Scan QR or visit URL to explore full 3-day itinerary, poetry anthology, historical dossiers & cemetery maps',
   {
     x: 1.1,
     y: 5.34,
@@ -419,8 +419,8 @@ s2.addText(
     {
       text: 'Stays with student on coach. Contains waterproofs, water bottle, Day 1 packed lunch & phone.\n',
     },
-    { text: '• Evening Clothes: ', options: { bold: true } },
-    { text: 'Casual, clean clothing for restaurant dinners.\n' },
+    { text: '• Casual Clothes: ', options: { bold: true } },
+    { text: 'Practical, comfortable clothing for downtime at hostel. No restaurant wear.\n' },
     { text: '• Nightwear & Washbag: ', options: { bold: true } },
     { text: 'Towel, toothbrush, roll-on deodorant (no aerosols).' },
   ],
@@ -458,14 +458,12 @@ s2.addText('📄 DOCUMENTS, HEALTH & ELECTRONICS', {
 });
 s2.addText(
   [
-    { text: '• Valid UK Passport: ', options: { bold: true } },
-    { text: 'Must have at least 3 months validity beyond 3rd Oct 2026.\n' },
-    { text: '• GHIC / Valid EHIC Card: ', options: { bold: true } },
-    { text: 'Essential for reciprocal medical coverage in Belgium.\n' },
+    { text: '• Valid UK Passport & GHIC/EHIC: ', options: { bold: true } },
+    { text: 'Collected in advance tonight at briefing by Mr Lovett!\n' },
     { text: '• Travel Adapter: ', options: { bold: true } },
     { text: 'Standard European 2-pin adapter for phone charging.\n' },
     { text: '• Mobile Phone Policy: ', options: { bold: true } },
-    { text: 'Permitted for camera, web app & parent calls. Silent at memorials.' },
+    { text: 'Permitted by day; collected in dedicated staff phone bag each evening at curfew.' },
   ],
   {
     x: 0.8,
@@ -504,11 +502,11 @@ s2.addText(
     { text: '• Thursday Packed Lunch: ', options: { bold: true } },
     { text: 'Bring from home with disposable drinks/snacks.\n' },
     { text: '• Spending Money: ', options: { bold: true } },
-    { text: '€20–€30 in cash for Friday & Saturday supermarket lunches.\n' },
-    { text: '• Rooming Preference Forms: ', options: { bold: true } },
-    { text: 'Distributed in school in 2 weeks. 3-4 pupils per en-suite room.\n' },
+    { text: '€30–€40 in cash for Friday & Saturday supermarket lunches & souvenirs.\n' },
+    { text: '• Accommodation & Rooming: ', options: { bold: true } },
+    { text: 'Peace Village Hostel (4-7 per room, bunk beds). Organized in ~2 weeks.\n' },
     { text: '• Forms Return Deadline: ', options: { bold: true } },
-    { text: 'Code of Conduct & Medical form due Friday 25th September.' },
+    { text: 'Code of Conduct Agreement due Friday 25th September.' },
   ],
   {
     x: 5.3,
@@ -524,7 +522,7 @@ s2.addText(
 
 // Slide 2 Footer
 s2.addText(
-  'Joint Expedition Leadership: Mr Ben Lovett (Meoncross School) & Mr James Garrett (The History Boys)',
+  'Expedition Staff: Mr Ben Lovett & Mr James Garrett (Tour Leaders) · Dr Kirkup & Mrs Lushey (Accompanying Staff)',
   {
     x: 0.6,
     y: 5.25,
@@ -610,7 +608,7 @@ s3.addText(
     },
     { text: 'The Key Question We Ask Our Pupils:\n', options: { bold: true, color: 'B45309' } },
     {
-      text: '"How did three young brothers from one Lee-on-the-Solent family find their resting places scattered across the battlefields of Europe and Turkey?"',
+      text: '"How did three sons from one coastal Hampshire family answer the call across Gallipoli, Arras, and the Somme—and how did six young men from our quiet village come to rest upon the ramparts and mud of Flanders?"',
       options: { italic: true },
     },
   ],

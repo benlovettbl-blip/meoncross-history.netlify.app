@@ -245,6 +245,10 @@ function getHtmlContent() {
       display: block;
     }
 
+    .heritage-thumb-card img.crop-top {
+      object-position: 50% 6%;
+    }
+
     .heritage-thumb-card span {
       font-size: 6.2pt;
       font-weight: 700;
@@ -496,12 +500,12 @@ function getHtmlContent() {
       <!-- Header -->
       <div class="header-bar">
         <div>
-          <div class="school-title">Meoncross School</div>
-          <div class="school-sub">Department of History · Parental Information Briefing</div>
+          <div class="school-title">Meoncross School History Department</div>
+          <div class="school-sub">Parental Information Briefing</div>
         </div>
         <div class="partner-pill">
           <div class="brand">The History Boys</div>
-          <div class="lead">Joint Venture · Mr B. Lovett &amp; Mr J. Garrett</div>
+          <div class="lead">Mr B. Lovett &amp; Mr J. Garrett · Accomp: Dr Kirkup &amp; Mrs Lushey</div>
         </div>
       </div>
 
@@ -527,7 +531,7 @@ function getHtmlContent() {
           <div class="heritage-text">
             On this expedition, our pupils are not passive tourists—they are field historians carrying a profound local mission. Back home inside <strong>Holy Rood Church, Stubbington</strong>, carved into the marble Great War Memorial Tablet and the oak tie-beams of the village lychgate, are the names of three brothers from Manor Way Grange, Lee-on-the-Solent: <strong>William, Cyril, and Eric Lowry</strong>. All three gave their lives across different fronts.
             <div class="heritage-quote">
-              "How did three sons from one coastal Hampshire family, and six young men from our quiet village, find their resting places on the contested ramparts and mud of Flanders?"
+              "How did three sons from one coastal Hampshire family answer the call across Gallipoli, Arras, and the Somme—and how did six young men from our quiet village come to rest upon the ramparts and mud of Flanders?"
             </div>
             During our 3 days, pupils will physically locate and touch the carved names of our local fallen—including <strong>Pte Franklin</strong> and <strong>Pte Ayling</strong> on Menin Gate Panel 35, and <strong>Pte Muckett</strong>, <strong>Pte Rye</strong>, <strong>LCpl Ward</strong>, and <strong>Pte Warland</strong> on the rear panels of Tyne Cot.
           </div>
@@ -537,7 +541,7 @@ function getHtmlContent() {
               <span>Crofton Tablet</span>
             </div>
             <div class="heritage-thumb-card">
-              <img src="${lowryWilliamBase64}" alt="William Lowry">
+              <img src="${lowryWilliamBase64}" alt="William Lowry" class="crop-top">
               <span>2nd Lt Lowry</span>
             </div>
             <div class="heritage-thumb-card">
@@ -563,7 +567,7 @@ function getHtmlContent() {
               <strong>06:15</strong> sharp departure from Meoncross School via Jet Connect executive coach to Channel crossing. Cross to France/Belgium. Visit <strong>Essex Farm Advanced Dressing Station</strong> (where Lt Col John McCrae penned <em>"In Flanders Fields"</em> in May 1915), followed by the preserved frontline earthworks at <strong>Yorkshire Trench</strong> and the dark basalt architecture of <strong>Langemarck German Military Cemetery</strong>.
             </div>
             <div class="day-highlights">
-              <strong>Evening:</strong> Check-in at Peace Village Hostel, Heuvelland. Hot 2-course group dinner in Ypres.
+              <strong>Evening:</strong> Check-in at Peace Village Hostel, Heuvelland. 2-course group dinner served on-site at our hostel accommodation.
             </div>
           </div>
         </div>
@@ -577,10 +581,10 @@ function getHtmlContent() {
           <div class="day-details">
             <div class="day-title">Passchendaele Ridge &amp; The Menin Gate Ceremony</div>
             <div class="day-summary">
-              Examine the First Gas Attack at <strong>Vancouver Corner</strong> (St Julien Memorial), followed by the mine craters and preserved frontline trenches at <strong>Hooge Crater Museum</strong> and <strong>Sanctuary Wood (Hill 62)</strong>. Afternoon pilgrimage to <strong>Tyne Cot Commonwealth Cemetery</strong> (11,000 graves and 35,000 missing), where pupils will locate our village fallen.
+              Examine the First Gas Attack at <strong>Vancouver Corner</strong> (St Julien Memorial), followed by the mine craters and preserved frontline trenches at <strong>Hooge Crater Museum</strong> and <strong>Sanctuary Wood (Hill 62)</strong>. Supermarket lunch stop in the Salient for fresh picnic supplies. Afternoon pilgrimage to <strong>Tyne Cot Commonwealth Cemetery</strong> (11,000 graves and 35,000 missing), where pupils will locate our village fallen.
             </div>
             <div class="day-highlights">
-              <strong>Evening Highlight:</strong> Group dinner in central Ypres, followed by attendance at the solemn <strong>8:00 PM Last Post Ceremony at the Menin Gate</strong>, where Meoncross School pupils will lay an official wreath.
+              <strong>Evening Highlight:</strong> 2-course group dinner on-site at our Peace Village accommodation, before traveling into Ypres for the solemn <strong>8:00 PM Last Post Ceremony at the Menin Gate</strong>, where Meoncross School pupils will lay an official wreath.
             </div>
           </div>
         </div>
@@ -594,7 +598,7 @@ function getHtmlContent() {
           <div class="day-details">
             <div class="day-title">Ypres Town, Everyman's Club &amp; Return Home</div>
             <div class="day-summary">
-              Explore the award-winning <strong>In Flanders Fields Museum</strong> inside the reconstructed medieval Cloth Hall. Walk the historic <strong>Ypres Ramparts &amp; Moat</strong>. Drive to Poperinge to experience <strong>Talbot House</strong>—the legendary British soldier refuge and teahouse. Supermarket lunch stop before our afternoon return journey via Eurotunnel/ferry.
+              Explore the award-winning <strong>In Flanders Fields Museum</strong> inside the reconstructed medieval Cloth Hall. Walk the historic <strong>Ypres Ramparts &amp; Moat</strong>. Supermarket lunch stop before driving to Poperinge to experience <strong>Talbot House</strong>—the legendary British soldier refuge and teahouse. Afternoon return journey via Eurotunnel/ferry.
             </div>
             <div class="day-highlights">
               <strong>Return:</strong> Approximate arrival back at Meoncross School at <strong>20:30</strong> (updates sent via WhatsApp).
@@ -609,9 +613,9 @@ function getHtmlContent() {
           <img src="${qrBase64}" alt="Scan QR Code">
         </div>
         <div class="app-text">
-          <div class="app-heading">Follow the Tour Live on Our Interactive App</div>
+          <div class="app-heading">Explore the Expedition on Our Digital Field Companion</div>
           <div class="app-desc">
-            We have created a bespoke digital field companion for this expedition. Parents and pupils can view daily field notes, interactive satellite maps, the complete 16-poem dual anthology, on-site teacher talking points, and live photo updates directly from any smartphone or computer.
+            We have created a bespoke digital tour companion and interactive web app for this expedition. Parents and pupils can explore the full itinerary, interactive maps, cemetery locations, local hero dossiers, and the complete 16-poem anthology from any smartphone, tablet, or home computer.
           </div>
           <div class="app-url">🌐 https://meoncross-history.netlify.app (Select 'History Battlefield Tour')</div>
         </div>
@@ -632,7 +636,7 @@ function getHtmlContent() {
       <!-- Header -->
       <div class="header-bar">
         <div>
-          <div class="school-title">Meoncross School · Ypres Battlefield Tour 2026</div>
+          <div class="school-title">Meoncross School History Department · Ypres 2026</div>
           <div class="school-sub">Essential Logistics, Kit List, Rooming &amp; Parental Checklist</div>
         </div>
         <div class="partner-pill">
@@ -667,7 +671,7 @@ function getHtmlContent() {
           <ul class="checklist">
             <li><strong>1 Main Holdall / Medium Suitcase:</strong> Placed in coach luggage hold until arrival at hostel. Please label clearly with student's full name. Maximum 15kg.</li>
             <li><strong>1 Small Daypack (Rucksack):</strong> Stays with student inside the coach. Must contain waterproof coat, water bottle, Day 1 packed lunch, and notebook/pen.</li>
-            <li><strong>Evening Clothes:</strong> Smart-casual clothes for evening group restaurant dinners (clean trousers/jeans, collared shirts/jumpers; no offensive graphics).</li>
+            <li><strong>Comfortable Casual Clothes:</strong> Practical, comfortable clothing for downtime and evening activities at the hostel (jeans, joggers, hoodies, t-shirts). No formal or restaurant clothing required.</li>
             <li><strong>Washbag &amp; Towel:</strong> Toothbrush, personal toiletries, roll-on deodorant only (strictly NO aerosol cans allowed on coach).</li>
           </ul>
         </div>
@@ -679,9 +683,10 @@ function getHtmlContent() {
             <span class="title">Catering, Food &amp; Spending Money</span>
           </div>
           <ul class="checklist">
-            <li><strong>Day 1 (Thursday):</strong> Pupils <strong>MUST bring a packed lunch</strong> and snacks for the coach journey. No fast food purchases at motorway services.</li>
-            <li><strong>Included Meals:</strong> Full hot breakfasts at hostel (Fri &amp; Sat mornings); substantial 2-course evening group dinners in Ypres (Thu &amp; Fri).</li>
-            <li><strong>Spending Money (Euros):</strong> Pupils require <strong>€20 to €30 in cash</strong>. This covers lunch purchases during supervised supermarket stops on Friday and Saturday, plus any small souvenir or postcards.</li>
+            <li><strong>Day 1 (Thursday):</strong> Pupils <strong>MUST bring a packed lunch</strong> and travel snacks from home for the coach journey. No fast food purchases at motorway services.</li>
+            <li><strong>Days 2 &amp; 3 Supermarket Lunches:</strong> On both Friday and Saturday, we make supervised stops at local Belgian supermarkets where pupils choose their own fresh packed lunch items (sandwiches/rolls, fruit, drinks, snacks).</li>
+            <li><strong>Included Meals:</strong> Buffet breakfasts at the hostel (Fri &amp; Sat mornings: breads, cereals, spreads, juice); substantial 2-course evening group dinners served on-site at Peace Village (both Thu &amp; Fri evenings).</li>
+            <li><strong>Spending Money (Euros):</strong> Pupils require <strong>€30 to €40 in cash (Euros)</strong>. This comfortably covers their Friday and Saturday supermarket lunches, plus Belgian chocolates or small souvenirs.</li>
             <li><strong>Water Bottle:</strong> Refillable water bottle for coach and field walking.</li>
           </ul>
         </div>
@@ -693,10 +698,9 @@ function getHtmlContent() {
             <span class="title">Travel Documents &amp; Devices</span>
           </div>
           <ul class="checklist">
-            <li><strong>Valid UK Passport:</strong> Must have at least 3 months validity beyond 3rd October 2026 and issued within the last 10 years. Handed to staff on departure.</li>
-            <li><strong>GHIC / Valid EHIC Card:</strong> Essential for reciprocal healthcare coverage in the EU. Must be valid.</li>
+            <li><strong>Passports &amp; GHIC/EHIC Collection:</strong> Valid UK passports and GHIC/EHIC cards will be collected in advance by Mr Lovett at tonight's Parental Briefing meeting (or immediately afterwards) for secure administrative checks and group border clearance.</li>
             <li><strong>European 2-Pin Plug Adapter:</strong> Required for charging mobile phones/devices in hostel bedrooms.</li>
-            <li><strong>Mobile Phone Policy:</strong> Permitted for photography, the web app, and evening calls home. Strictly silenced and stowed during cemetery visits.</li>
+            <li><strong>Mobile Phone Policy:</strong> Permitted during the day for photography and accessing the history web app. To ensure all pupils receive a proper night's sleep, <strong>all mobile phones will be collected each evening in a dedicated staff phone bag at curfew</strong> and securely stored overnight.</li>
           </ul>
         </div>
       </div>
@@ -705,10 +709,10 @@ function getHtmlContent() {
       <div class="notice-box">
         <h4>Accommodation, Safety &amp; Rooming Allocation Timeline</h4>
         <p>
-          <strong>Expedition Base:</strong> Peace Village Hostel, Kemmelbergweg 43, 8956 Heuvelland, Belgium. A purpose-built, secure rural educational centre set in the Flemish countryside, featuring modern en-suite studios (typically 3 to 4 pupils per room), secure access control, and dedicated dining and recreational spaces.
+          <strong>Expedition Base:</strong> Peace Village Hostel, Kemmelbergweg 43, 8956 Heuvelland, Belgium. A purpose-built, secure rural educational centre set in the Flemish countryside, featuring modern ensuite studios (typically 4 to 7 pupils per room with bunk beds), secure access control, and dedicated dining and recreational spaces.
         </p>
         <p>
-          <strong>Rooming Process:</strong> In <strong>two weeks' time</strong>, pupils will be invited to complete rooming preference slips in school. Mr Lovett and school staff will review every grouping to ensure each pupil is happily paired with close friends in a supportive room. Staff sleep on the same corridors with active evening checks and a strict lights-out policy.
+          <strong>Rooming Process:</strong> In approximately <strong>two weeks' time</strong>, Mr Lovett will assemble rooming allocations in school. Pupils will be asked to nominate friends they would like to share with, and staff will ensure that every pupil is comfortably placed with at least one chosen friend. Staff sleep on the same corridors with active evening checks and a strict curfew.
         </p>
       </div>
 
@@ -729,33 +733,28 @@ function getHtmlContent() {
             <td><span class="badge-urgent">Return by Fri 25 Sep</span></td>
           </tr>
           <tr>
-            <td><strong>Medical &amp; Dietary Form</strong></td>
-            <td>Confirm any food allergies, dietary needs, or prescription medications.</td>
-            <td><span class="badge-urgent">Return by Fri 25 Sep</span></td>
-          </tr>
-          <tr>
-            <td><strong>Passport &amp; GHIC Check</strong></td>
-            <td>Confirm validity of UK passport (expiry &gt; Jan 2027) &amp; valid GHIC/EHIC card.</td>
-            <td><span class="badge-urgent">Verify This Week</span></td>
+            <td><strong>Passport &amp; GHIC Collection</strong></td>
+            <td>Hand in valid UK passport and GHIC/EHIC card to Mr Lovett tonight (or to School Office this week).</td>
+            <td><span class="badge-urgent">Tonight / This Week</span></td>
           </tr>
           <tr>
             <td><strong>Rooming Allocations</strong></td>
-            <td>Pupil rooming preference forms issued and finalized in school.</td>
-            <td><span class="badge-info">In 2 Weeks' Time</span></td>
+            <td>Pupil rooming friend requests collated and finalized in school by Mr Lovett.</td>
+            <td><span class="badge-info">In Approx. 2 Weeks</span></td>
           </tr>
           <tr>
             <td><strong>Euros Currency (€)</strong></td>
-            <td>Provide €20–€30 in cash for pupil Friday &amp; Saturday supermarket lunches.</td>
+            <td>Provide €30–€40 in cash for pupil Friday &amp; Saturday supermarket lunches and small souvenirs.</td>
             <td><span class="badge-info">For Departure Day</span></td>
           </tr>
         </tbody>
       </table>
 
       <!-- Contacts & Joint Venture Banner -->
-      <div style="background: #0f172a; color: #ffffff; padding: 8px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 8pt;">
+      <div style="background: #0f172a; color: #ffffff; padding: 7px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.6pt;">
         <div>
-          <span style="color: #fbbf24; font-weight: 700;">Expedition Leaders:</span>
-          Mr Ben Lovett (Meoncross School) &amp; Mr James Garrett (The History Boys)
+          <span style="color: #fbbf24; font-weight: 700;">Expedition Staff:</span>
+          Mr B. Lovett &amp; Mr J. Garrett (Tour Leaders) · Dr Kirkup &amp; Mrs Lushey (Accompanying Staff)
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>
@@ -766,7 +765,7 @@ function getHtmlContent() {
 
     <!-- Footer -->
     <div class="footer-bar">
-      <span>Meoncross School · Stubbington &amp; Lee-on-the-Solent Heritage Expedition</span>
+      <span>Meoncross School History Department · Stubbington &amp; Lee-on-the-Solent Heritage Expedition</span>
       <span>Page 2 of 2 · Information Accurate for 1st–3rd October 2026 Tour</span>
     </div>
   </div>
