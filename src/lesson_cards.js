@@ -284,17 +284,21 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     lessonsHTML += `
       <div id="trip-hub-container" style="margin-top: 25px;">
         <!-- Two-Tab Switcher Bar -->
-        <div style="display: flex; gap: 10px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 25px; flex-wrap: wrap;">
-          <button class="btn trip-hub-tab-btn active" data-action="switch-trip-hub-tab" data-tab="itinerary" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 6px; border: 1.5px solid #1e3a8a; background: #1e3a8a; color: #ffffff; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25); transition: all 0.2s;">
-            3-Day Field Itinerary
+        <div style="display: flex; gap: 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 14px; margin-bottom: 25px; flex-wrap: wrap;">
+          <button class="btn trip-hub-tab-btn active" data-action="switch-trip-hub-tab" data-tab="itinerary" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; border: 1.5px solid #1e3a8a; background: #1e3a8a; color: #ffffff; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25); transition: all 0.2s;">
+            <i class="fa-solid fa-route" style="font-size: 1rem;"></i>
+            <span>3-Day Field Itinerary</span>
+            <span class="tab-badge" style="font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: rgba(255, 255, 255, 0.25); color: #ffffff; margin-left: 4px;">3 Days</span>
           </button>
-          <button class="btn trip-hub-tab-btn" data-action="switch-trip-hub-tab" data-tab="fallen" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 6px; border: 1.5px solid #cbd5e1; background: #f8fafc; color: #475569; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;">
-            Village Fallen &amp; Memorials
+          <button class="btn trip-hub-tab-btn" data-action="switch-trip-hub-tab" data-tab="fallen" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; border: 1.5px solid #cbd5e1; background: #f8fafc; color: #475569; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;">
+            <i class="fa-solid fa-monument" style="font-size: 1rem;"></i>
+            <span>Village Fallen &amp; Memorials</span>
+            <span class="tab-badge" style="font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: #e2e8f0; color: #475569; margin-left: 4px;">9 Heroes</span>
           </button>
         </div>
 
         <!-- Tab 1: 3-Day Field Itinerary -->
-        <div id="trip-panel-itinerary" style="display: block;">
+        <div id="trip-panel-itinerary" style="display: block; scroll-margin-top: 80px;">
     `;
 
     if (prepPack) {
@@ -331,9 +335,9 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     }
 
     lessonsHTML += `
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <div id="trip-daily-itinerary-section" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; scroll-margin-top: 80px;">
             <h2 style="margin: 0; text-align: left; color: #0f172a; font-family: 'Playfair Display', serif; font-size: 1.35rem;">
-              Daily Field Itinerary
+              <i class="fa-solid fa-calendar-check" style="color: #1e3a8a; margin-right: 8px;"></i>Daily Field Itinerary
             </h2>
             <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #eff6ff; color: #1d4ed8; padding: 4px 12px; border-radius: 20px; border: 1px solid #bfdbfe;">3 Days · 1st–3rd October 2026</span>
           </div>
@@ -370,7 +374,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         </div>
 
         <!-- Tab 2: Village Fallen & Memorials -->
-        <div id="trip-panel-fallen" style="display: none;">
+        <div id="trip-panel-fallen" style="display: none; scroll-margin-top: 80px;">
           <div style="margin-bottom: 25px;">
             <h2 style="margin: 0 0 6px 0; text-align: left; color: #991b1b; font-family: 'Playfair Display', serif; font-size: 1.35rem;">
               The Fallen: Local Heroes of the Salient

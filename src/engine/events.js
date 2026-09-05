@@ -121,6 +121,13 @@ export function initEventDelegation() {
       case 'switch-trip-hub-tab': {
         const selectedTab = target.dataset.tab;
         const container = target.closest('#trip-hub-container') || document;
+
+        // Tactile button click feedback animation
+        target.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+          target.style.transform = '';
+        }, 140);
+
         container.querySelectorAll('.trip-hub-tab-btn').forEach((btn) => {
           const isActive = btn.dataset.tab === selectedTab;
           btn.style.background = isActive ? '#1e3a8a' : '#f8fafc';
@@ -130,11 +137,31 @@ export function initEventDelegation() {
           btn.style.fontWeight = isActive ? '700' : '600';
           if (isActive) btn.classList.add('active');
           else btn.classList.remove('active');
+
+          const badge = btn.querySelector('.tab-badge');
+          if (badge) {
+            badge.style.background = isActive ? 'rgba(255, 255, 255, 0.25)' : '#e2e8f0';
+            badge.style.color = isActive ? '#ffffff' : '#475569';
+          }
         });
+
         const itinPanel = container.querySelector('#trip-panel-itinerary');
         const fallenPanel = container.querySelector('#trip-panel-fallen');
         if (itinPanel) itinPanel.style.display = selectedTab === 'itinerary' ? 'block' : 'none';
         if (fallenPanel) fallenPanel.style.display = selectedTab === 'fallen' ? 'block' : 'none';
+
+        // Provide immediate visual feedback: smooth scroll to the selected content
+        if (selectedTab === 'itinerary') {
+          const targetSection =
+            container.querySelector('#trip-daily-itinerary-section') || itinPanel;
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        } else if (selectedTab === 'fallen') {
+          if (fallenPanel) {
+            fallenPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
         break;
       }
       case 'switch-poet-tab': {
