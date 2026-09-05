@@ -2220,7 +2220,7 @@ allDirs.forEach((unitId) => {
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 6px; margin-bottom: 10px;">
               <h4 style="margin: 0; color: #1e3a8a; text-transform: uppercase; font-size: 10pt; letter-spacing: 0.5px; font-family: 'Inter', sans-serif;">Teacher Feedback &amp; D.I.R.T.</h4>
               <div style="font-size: 9.5pt; color: #334155;">
-                <strong>Mark:</strong> &nbsp;______ / ${marks} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Effort:</strong> &nbsp;1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+                <strong>Mark:</strong> &nbsp;______ / ${marks === 16 ? '16 (+4 SPaG)' : marks} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Effort:</strong> &nbsp;1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
               </div>
             </div>
             <div style="display: flex; gap: 15px; font-size: 9pt; margin-bottom: 8px;">
@@ -2258,8 +2258,6 @@ allDirs.forEach((unitId) => {
             if (unitId === 'weimar_nazi_germany') {
               if (isBeforeSources && itemIdx === 0) {
                 pbBefore = 'margin-top: 15px;';
-              } else if (isLong) {
-                pbBefore = 'page-break-before: always; margin-top: 25px;';
               } else {
                 pbBefore = 'margin-top: 20px;';
               }
@@ -2318,9 +2316,11 @@ allDirs.forEach((unitId) => {
             }
             html += questionHtml + renderQuestionLines(ep.question);
 
-            if (isLong && unitId === 'weimar_nazi_germany') {
-              let marksVal = rawQText.includes('16 marks') ? 16 : 12;
-              html += getDirtBoxHtml(marksVal);
+            if (unitId === 'weimar_nazi_germany') {
+              let is3d = rawQText.includes('3d') || rawQText.includes('16 marks');
+              if (is3d) {
+                html += getDirtBoxHtml(16);
+              }
             }
           };
 
@@ -2399,8 +2399,13 @@ allDirs.forEach((unitId) => {
       flatQuestions.forEach((q) => (html += q.html));
 
       // --- PUPIL VOICE (ROTATING DEBRIEF) ---
+      const firstDebriefQ =
+        unitId === 'weimar_nazi_germany'
+          ? "What was the most significant decision or event in today's lesson, and what was its major historical consequence?"
+          : "How did the events of today's lesson make you feel, and why?";
+
       const debriefQuestions = [
-        "How did the events of today's lesson make you feel, and why?",
+        firstDebriefQ,
         "Which part of today's lesson did you find the most difficult or confusing, and what did you do to overcome it?",
         'If you were teaching this lesson to Year 6, what is the ONE most important thing you would make sure they remembered?',
         "What is one question about today's topic that we didn't answer, that you'd like to research further?",
