@@ -247,15 +247,15 @@ export const unitData = {
               </div>
 
               <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+                <a href="/pdfs/ypres_1914_1918_field_guide_and_companion.pdf" target="_blank" class="btn" style="background: #eff6ff; color: #1e3a8a; border: 1.5px solid #93c5fd; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                  <i class="fa-solid fa-book-bookmark" style="color: #2563eb; font-size: 1.1rem;"></i> Download Printed Field Guide &amp; Companion (PDF)
+                </a>
                 <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" class="btn" style="background: #fefce8; color: #b45309; border: 1.5px solid #fde047; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                   <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 1.1rem;"></i> Download Parent Information Pack (PDF)
                 </a>
                 <a href="/briefings/ypres_2026_parent_briefing.pptx" download class="btn" style="background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                   <i class="fa-solid fa-file-powerpoint" style="color: #ea580c; font-size: 1.1rem;"></i> Download Briefing Slides (.pptx)
                 </a>
-                <button class="btn" data-action="open-parent-briefing-modal" style="background: #0f172a; color: #ffffff; border: 1.5px solid #0f172a; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                  <i class="fa-solid fa-chalkboard-user" style="color: #38bdf8; font-size: 1.1rem;"></i> Launch Fullscreen Presentation Mode
-                </button>
               </div>
             </div>
           `,

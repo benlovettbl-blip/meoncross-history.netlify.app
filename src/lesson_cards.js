@@ -309,15 +309,15 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
               <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Joint expedition led by Mr Ben Lovett &amp; Mr James Garrett (The History Boys) · Accomp: Dr Kirkup &amp; Mrs Lushey. Packing checklist, catering &amp; €30–€40 Euros, rooming timeline, and return forms.</p>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+              <a href="/pdfs/ypres_1914_1918_field_guide_and_companion.pdf" target="_blank" style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #eff6ff; color: #1e3a8a; border: 1.5px solid #93c5fd; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#dbeafe';" onmouseout="this.style.background='#eff6ff';">
+                <i class="fa-solid fa-book-bookmark" style="color: #2563eb;"></i> Field Guide (PDF)
+              </a>
               <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #fefce8; color: #b45309; border: 1.5px solid #fde047; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#fef08a';" onmouseout="this.style.background='#fefce8';">
                 <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> Parent Pack (PDF)
               </a>
               <a href="/briefings/ypres_2026_parent_briefing.pptx" download style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#dcfce7';" onmouseout="this.style.background='#f0fdf4';">
                 <i class="fa-solid fa-file-powerpoint" style="color: #ea580c;"></i> Slides (.pptx)
               </a>
-              <button class="btn" data-action="open-parent-briefing-modal" style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #0f172a; color: #ffffff; border: 1.5px solid #0f172a; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: all 0.2s;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';">
-                <i class="fa-solid fa-chalkboard-user" style="color: #38bdf8;"></i> Presentation Mode
-              </button>
               <button class="btn" data-action="view-lesson-detail" data-index="${prepPack.index}" style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #0284c7; color: #ffffff; border: 1.5px solid #0284c7; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
                 View Guide &rarr;
               </button>
