@@ -10,15 +10,15 @@ let code = fs.readFileSync(filePath, 'utf8');
 //
 // if (allVideos.length > 0) {
 const debriefInjection = `
-      // --- PUPIL VOICE (ROTATING DEBRIEF) ---
+      // --- PUPIL VOICE (ROTATING DISCIPLINARY DEBRIEF ACROSS ALL UNITS) ---
       const debriefQuestions = [
-        "How did the events of today's lesson make you feel, and why?",
-        "Which part of today's lesson did you find the most difficult or confusing, and what did you do to overcome it?",
-        "If you were teaching this lesson to Year 6, what is the ONE most important thing you would make sure they remembered?",
-        "What is one question about today's topic that we didn't answer, that you'd like to research further?",
-        "Summarise today's lesson in exactly three words.",
-        "If you could interview one historical person from today's lesson, who would it be and what would you ask them?",
-        "How does what we learned today connect to anything else you've learned in history before?"
+        "What was the most significant event or decision in today's lesson, and what was its major historical consequence?",
+        "What was the most important change that occurred during this period, and what remained continuous (the same)?",
+        "How did the events or developments studied today affect different groups of people in contrasting ways?",
+        "What piece of historical evidence (e.g. government record, personal diary, photograph) would be most valuable to investigate today's enquiry, and why?",
+        "Was the main outcome of today's lesson inevitable, or was there a crucial turning point where events could have taken a different path?",
+        "How might two different historians interpret the motives or actions of the key figures or governments studied today?",
+        "How does what we studied today connect to, build upon, or challenge an earlier period or theme in history?",
       ];
       
       const q = debriefQuestions[lessonIndex % debriefQuestions.length];
@@ -39,9 +39,8 @@ const debriefInjection = `
 `;
 code = code.replace(
   /flatQuestions\.forEach\(\(q\) => \(html \+= q\.html\)\);\s*if \(allVideos\.length > 0\)/,
-  `flatQuestions.forEach((q) => (html += q.html));\n${debriefInjection}      if (allVideos.length > 0)`
+  `flatQuestions.forEach((q) => (html += q.html));\n${debriefInjection}      if (allVideos.length > 0)`,
 );
-
 
 // 2. Inject the Unit Capstone (Idea 2)
 // We look for:
@@ -102,7 +101,7 @@ const capstoneInjection = `
 `;
 code = code.replace(
   /    \}\);\s*if \(unitId === 'cme_new'\) \{/,
-  `    });\n${capstoneInjection}    if (unitId === 'cme_new') {`
+  `    });\n${capstoneInjection}    if (unitId === 'cme_new') {`,
 );
 
 fs.writeFileSync(filePath, code);

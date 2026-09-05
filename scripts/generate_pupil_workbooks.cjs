@@ -2215,7 +2215,23 @@ allDirs.forEach((unitId) => {
             return lHtml;
           };
 
-          const getDirtBoxHtml = (marks) => `
+          const getDirtBoxHtml = (marks) => {
+            const isSpag = marks === 16;
+            const properNounExample =
+              unitId === 'weimar_nazi_germany' ? ' (e.g. Reichstag, Ebert)' : '';
+            const spagHtml = isSpag
+              ? `
+            <div style="margin-top: 6px; margin-bottom: 8px; padding: 6px 10px; background-color: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 8.5pt; color: #334155;">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
+                <strong style="color: #1e3a8a;">SPaG Self/Peer Checklist (4 Marks):</strong>
+                <span><input type="checkbox" style="vertical-align: middle; margin-right: 4px;"> Historical terminology spelled accurately</span>
+                <span><input type="checkbox" style="vertical-align: middle; margin-right: 4px;"> Capital letters for proper nouns${properNounExample}</span>
+                <span><input type="checkbox" style="vertical-align: middle; margin-right: 4px;"> Punctuation separates complex clauses</span>
+              </div>
+            </div>`
+              : '';
+
+            return `
           <div class="dirt-box" style="margin-top: 20px; margin-bottom: 15px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px 16px; background-color: #f8fafc; page-break-inside: avoid; break-inside: avoid;">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 6px; margin-bottom: 10px;">
               <h4 style="margin: 0; color: #1e3a8a; text-transform: uppercase; font-size: 10pt; letter-spacing: 0.5px; font-family: 'Inter', sans-serif;">Teacher Feedback &amp; D.I.R.T.</h4>
@@ -2223,6 +2239,7 @@ allDirs.forEach((unitId) => {
                 <strong>Mark:</strong> &nbsp;______ / ${marks === 16 ? '16 (+4 SPaG)' : marks} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Effort:</strong> &nbsp;1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
               </div>
             </div>
+            ${spagHtml}
             <div style="display: flex; gap: 15px; font-size: 9pt; margin-bottom: 8px;">
               <div style="flex: 1;">
                 <strong style="color: #16a34a;">What Went Well (WWW):</strong>
@@ -2241,6 +2258,7 @@ allDirs.forEach((unitId) => {
               <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
             </div>
           </div>`;
+          };
 
           const renderQuestionItem = (item, isBeforeSources = false, itemIdx = 0) => {
             let ep = item.ep;
@@ -2398,20 +2416,15 @@ allDirs.forEach((unitId) => {
       flatQuestions.sort((a, b) => a.qNum - b.qNum);
       flatQuestions.forEach((q) => (html += q.html));
 
-      // --- PUPIL VOICE (ROTATING DEBRIEF) ---
-      const firstDebriefQ =
-        unitId === 'weimar_nazi_germany'
-          ? "What was the most significant decision or event in today's lesson, and what was its major historical consequence?"
-          : "How did the events of today's lesson make you feel, and why?";
-
+      // --- PUPIL VOICE (ROTATING DISCIPLINARY DEBRIEF ACROSS ALL UNITS) ---
       const debriefQuestions = [
-        firstDebriefQ,
-        "Which part of today's lesson did you find the most difficult or confusing, and what did you do to overcome it?",
-        'If you were teaching this lesson to Year 6, what is the ONE most important thing you would make sure they remembered?',
-        "What is one question about today's topic that we didn't answer, that you'd like to research further?",
-        "Summarise today's lesson in exactly three words.",
-        "If you could interview one historical person from today's lesson, who would it be and what would you ask them?",
-        "How does what we learned today connect to anything else you've learned in history before?",
+        "What was the most significant event or decision in today's lesson, and what was its major historical consequence?",
+        'What was the most important change that occurred during this period, and what remained continuous (the same)?',
+        'How did the events or developments studied today affect different groups of people in contrasting ways?',
+        "What piece of historical evidence (e.g. government record, personal diary, photograph) would be most valuable to investigate today's enquiry, and why?",
+        "Was the main outcome of today's lesson inevitable, or was there a crucial turning point where events could have taken a different path?",
+        'How might two different historians interpret the motives or actions of the key figures or governments studied today?',
+        'How does what we studied today connect to, build upon, or challenge an earlier period or theme in history?',
       ];
 
       const q = debriefQuestions[lessonIndex % debriefQuestions.length];
