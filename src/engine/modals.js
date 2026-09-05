@@ -1302,7 +1302,7 @@ window.openParentBriefingModal = function () {
                 Rural educational centre in Heuvelland with secure keycards and en-suite rooms (typically 4–7 pupils with bunk beds).
               </p>
               <div style="background: #f1f5f9; border-left: 3px solid #0284c7; padding: 8px 10px; border-radius: 4px; font-size: 0.78rem; color: #0369a1; line-height: 1.35;">
-                <strong>Rooming Timeline:</strong> Friend preference requests assembled in school in approx. <strong>two weeks' time</strong>. Reviewed by Mr Lovett to ensure every pupil is happily paired.
+                <strong>Rooming &amp; Dietary Timeline:</strong> Friend preference requests and dietary requirements (e.g. vegetarian evening meals) gathered in school in approx. <strong>two weeks' time</strong> (medical allergies already on record).
               </div>
             </div>
           </div>

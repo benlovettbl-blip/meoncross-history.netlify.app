@@ -1477,94 +1477,66 @@ export function renderLesson(lesson) {
       htmlNarrative += extrasHtml;
     });
 
-    let hasModels = false;
-    if (lesson.tasks) {
-      hasModels = lesson.tasks.some((t) => !!t.model);
-    }
-    if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
-      hasModels = true;
-    }
+    if (!isTrip) {
+      let hasModels = false;
+      if (lesson.tasks) {
+        hasModels = lesson.tasks.some((t) => !!t.model);
+      }
+      if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
+        hasModels = true;
+      }
 
-    const revealBtn = hasModels
-      ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>`
-      : '';
+      const revealBtn = hasModels
+        ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>`
+        : '';
 
-    htmlTasks += `
-        <div class="phase-card">
-          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-            
-            ${revealBtn}
-          </div>
-      `;
-
-    if (lesson.tasks && lesson.tasks.length > 0) {
-      lesson.tasks.forEach((task, tIdx) => {
-        if (task.type === 'drag_drop_timeline') {
-          const timelineId = `dd-timeline-lesson-${tIdx}`;
-          htmlTasks += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
-          window.postRenderHooks.push(() => {
-            import('../drag_drop_timeline.js').then((mod) => {
-              mod.initDragDropTimeline(document.getElementById(timelineId), task);
-            });
-          });
-          return;
-        }
-        if (task.type === 'interactive_map') {
-          const mapId = `interactive-map-lesson-${tIdx}`;
-          htmlTasks += `<div id="${mapId}" style="margin-bottom: 20px;"></div>`;
-          window.postRenderHooks.push(() => {
-            import('../interactive_map.js').then((mod) => {
-              mod.initInteractiveMap(document.getElementById(mapId), task);
-            });
-          });
-          return;
-        }
-        let rawQText = typeof task === 'string' ? task : task.text || task.question || '';
-        let cleaned = rawQText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
-        let qText = typeof formatBold !== 'undefined' ? formatBold(cleaned) : cleaned;
-        let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
-        let clueBtn = '';
-        if (clueParaMatch) {
-          qText = qText.replace(clueParaMatch[0], '').trim();
-          clueBtn = `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-clue" title="Find Evidence" data-action="scroll-to-para" data-target="para-${clueParaMatch[2]}"><i class="fa-solid fa-magnifying-glass"></i></button>`;
-        }
-
-        let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
-        let displayHeading = '';
-        if (match) {
-          displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${match[1]}</div>`;
-          qText = match[2];
-        }
-
-        if (
-          isTrip &&
-          (appStore.state?.activeUnitId === 'trip_ypres' ||
-            (typeof unitId !== 'undefined' && unitId === 'trip_ypres'))
-        ) {
-          htmlTasks += `
-            <div class="field-investigation-card" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #1e40af; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
-                <div style="font-size: 1.15rem; color: #1e40af; font-weight: 800; font-family: 'Playfair Display', serif;">
-                  <i class="fa-solid fa-compass" style="color: #ef4444; margin-right: 8px;"></i>${displayHeading ? displayHeading.replace(/<[^>]+>/g, '') : `Field Investigation ${tIdx + 1}`}
-                </div>
-                <span style="font-size: 0.75rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 12px; white-space: nowrap;">Field Task ${tIdx + 1}</span>
-              </div>
-              <div style="font-size: 1.02rem; color: #334155; line-height: 1.6; margin-bottom: 14px;">
-                ${qText}
-              </div>
-              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                  <label style="font-weight: 600; font-size: 0.88rem; color: #475569; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                    <input type="checkbox" style="width: 17px; height: 17px; accent-color: #1e40af; cursor: pointer;" onchange="window.updateProgress && window.updateProgress()">
-                    <span><i class="fa-solid fa-clipboard-check" style="color: #059669; margin-right: 4px;"></i> Mark Field Observation Complete</span>
-                  </label>
-                  <span style="font-size: 0.78rem; color: #64748b; font-style: italic;">On-site journal</span>
-                </div>
-                <textarea class="student-answer-input" placeholder="Field notes & personal observations on site (optional)..." style="width: 100%; min-height: 55px; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 0.9rem; resize: vertical;" oninput="window.updateProgress && window.updateProgress()"></textarea>
-              </div>
+      htmlTasks += `
+          <div class="phase-card">
+            <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+              
+              ${revealBtn}
             </div>
-          `;
-        } else {
+        `;
+
+      if (lesson.tasks && lesson.tasks.length > 0) {
+        lesson.tasks.forEach((task, tIdx) => {
+          if (task.type === 'drag_drop_timeline') {
+            const timelineId = `dd-timeline-lesson-${tIdx}`;
+            htmlTasks += `<div id="${timelineId}" style="margin-bottom: 20px;"></div>`;
+            window.postRenderHooks.push(() => {
+              import('../drag_drop_timeline.js').then((mod) => {
+                mod.initDragDropTimeline(document.getElementById(timelineId), task);
+              });
+            });
+            return;
+          }
+          if (task.type === 'interactive_map') {
+            const mapId = `interactive-map-lesson-${tIdx}`;
+            htmlTasks += `<div id="${mapId}" style="margin-bottom: 20px;"></div>`;
+            window.postRenderHooks.push(() => {
+              import('../interactive_map.js').then((mod) => {
+                mod.initInteractiveMap(document.getElementById(mapId), task);
+              });
+            });
+            return;
+          }
+          let rawQText = typeof task === 'string' ? task : task.text || task.question || '';
+          let cleaned = rawQText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
+          let qText = typeof formatBold !== 'undefined' ? formatBold(cleaned) : cleaned;
+          let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
+          let clueBtn = '';
+          if (clueParaMatch) {
+            qText = qText.replace(clueParaMatch[0], '').trim();
+            clueBtn = `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-clue" title="Find Evidence" data-action="scroll-to-para" data-target="para-${clueParaMatch[2]}"><i class="fa-solid fa-magnifying-glass"></i></button>`;
+          }
+
+          let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+          let displayHeading = '';
+          if (match) {
+            displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${match[1]}</div>`;
+            qText = match[2];
+          }
+
           htmlTasks += `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
               ${displayHeading}
@@ -1584,8 +1556,9 @@ export function renderLesson(lesson) {
               ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${formatBold(task.model)}</div>` : ''}
             </div>
           `;
-        }
-      });
+        });
+      }
+      htmlTasks += `</div>`;
     }
 
     if (lesson.historians_corner) {
@@ -1896,8 +1869,7 @@ export function renderLesson(lesson) {
       htmlPrimary +
       htmlSources1 +
       htmlPairShare +
-      htmlHistorian +
-      htmlTasks;
+      htmlHistorian;
   } else if (isEarlyModern) {
     html +=
       htmlDoNow +

@@ -230,11 +230,6 @@ export const unitData = {
           },
         ],
       },
-      tasks: [
-        'Field Equipment Check: Verify your passport (valid > Jan 2027), GHIC medical card, sturdy walking boots, waterproof jacket, warm hat, and gloves are packed.',
-        'Catering & Currency Check: Prepare a packed lunch for Thursday journey; ensure €30 to €40 in Euros cash is ready for Friday and Saturday supermarket lunches.',
-        'Memorial Roll Call: Familiarise yourself with the names of the Lowry brothers and our six local heroes from Holy Rood Church whose names we will seek on the memorial walls of Flanders.',
-      ],
       narrative_blocks: [
         {
           type: 'narrative',
@@ -365,9 +360,9 @@ export const unitData = {
               </p>
               
               <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 6px; padding: 14px; margin-bottom: 14px;">
-                <strong style="color: #166534; font-size: 0.95rem; display: block; margin-bottom: 4px;">📅 Rooming Process (Approx. Two Weeks):</strong>
+                <strong style="color: #166534; font-size: 0.95rem; display: block; margin-bottom: 4px;">📅 Rooming &amp; Dietary Process (Approx. Two Weeks):</strong>
                 <p style="margin: 0; color: #1e293b; font-size: 0.9rem; line-height: 1.5;">
-                  Pupils will complete rooming friend preference requests in school in approximately two weeks' time. Mr Lovett and staff will review all choices to ensure every pupil is happily placed with close friends in a comfortable, supportive room. Staff sleep on the same corridors with active evening checks and a strict lights-out policy.
+                  Pupils will complete rooming friend preference requests and confirm dietary options (e.g. vegetarian evening meals) in school in approximately two weeks' time (all medical allergies are already logged on school records). Mr Lovett and staff will review all choices to ensure every pupil is happily placed with close friends in a comfortable, supportive room. Staff sleep on the same corridors with active evening checks and a strict lights-out policy.
                 </p>
               </div>
 
