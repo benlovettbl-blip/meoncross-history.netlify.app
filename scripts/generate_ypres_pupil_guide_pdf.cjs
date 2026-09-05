@@ -438,7 +438,7 @@ function getHtmlContent() {
     </div>
 
     <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 7px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 8.2pt; color: #1e3a8a;">
-      <div><strong>Expedition Dates:</strong> 18–20 October 2026</div>
+      <div><strong>Expedition Dates:</strong> 1st–3rd October 2026</div>
       <div><strong>Field Base:</strong> Peace Village, Mesen</div>
       <div><strong>Base Emergency:</strong> +44 (0)1329 288339</div>
     </div>
@@ -456,7 +456,7 @@ function getHtmlContent() {
       <div class="header-bar">
         <div>
           <div class="school-title">Master Expedition Itinerary &amp; Salient Map</div>
-          <div class="school-sub">October Field Study · Three-Day Operational Timetable</div>
+          <div class="school-sub">1st–3rd October 2026 · Three-Day Operational Timetable</div>
         </div>
         <div class="partner-pill">
           <div class="brand">Field Route</div>
@@ -487,8 +487,8 @@ function getHtmlContent() {
         <tbody>
           <tr>
             <td style="padding: 4.8px 8px;"><strong>Day 1 · 05:45</strong></td>
-            <td style="padding: 4.8px 8px;">Depart Meoncross School · Dover Ferry Crossing</td>
-            <td style="padding: 4.8px 8px;">Travel logistics, channel crossing orientation, arrival in Flanders.</td>
+            <td style="padding: 4.8px 8px;">Depart Meoncross School · Folkestone Eurotunnel Crossing</td>
+            <td style="padding: 4.8px 8px;">Travel logistics, Eurotunnel transit under the Channel, arrival in Flanders.</td>
           </tr>
           <tr>
             <td style="padding: 4.8px 8px;"><strong>Day 1 · 14:15</strong></td>
@@ -547,7 +547,7 @@ function getHtmlContent() {
           </tr>
           <tr>
             <td style="padding: 4.8px 8px;"><strong>Day 3 · 14:00</strong></td>
-            <td style="padding: 4.8px 8px;">Calais Eurotunnel / Ferry · Return to School</td>
+            <td style="padding: 4.8px 8px;">Calais Eurotunnel (Le Shuttle) · Return to School</td>
             <td style="padding: 4.8px 8px;">Final reflection journal completion; arrival back at Meoncross approx. 19:30.</td>
           </tr>
         </tbody>

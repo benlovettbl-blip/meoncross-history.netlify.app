@@ -564,7 +564,7 @@ function getHtmlContent() {
           <div class="day-details">
             <div class="day-title">Departure, North Salient &amp; Medical Triage</div>
             <div class="day-summary">
-              <strong>06:15</strong> sharp departure from Meoncross School via Jet Connect executive coach to Channel crossing. Cross to France/Belgium. Visit <strong>Essex Farm Advanced Dressing Station</strong> (where Lt Col John McCrae penned <em>"In Flanders Fields"</em> in May 1915), followed by the preserved frontline earthworks at <strong>Yorkshire Trench</strong> and the dark basalt architecture of <strong>Langemarck German Military Cemetery</strong>.
+              <strong>06:15</strong> sharp departure from Meoncross School via Jet Connect executive coach to Folkestone Eurotunnel crossing. Transit to France/Belgium via Le Shuttle. Visit <strong>Essex Farm Advanced Dressing Station</strong> (where Lt Col John McCrae penned <em>"In Flanders Fields"</em> in May 1915), followed by the preserved frontline earthworks at <strong>Yorkshire Trench</strong> and the dark basalt architecture of <strong>Langemarck German Military Cemetery</strong>.
             </div>
             <div class="day-highlights">
               <strong>Evening:</strong> Check-in at Peace Village Hostel, Heuvelland. 2-course group dinner served on-site at our hostel accommodation.
@@ -598,7 +598,7 @@ function getHtmlContent() {
           <div class="day-details">
             <div class="day-title">Ypres Town, Everyman's Club &amp; Return Home</div>
             <div class="day-summary">
-              Explore the award-winning <strong>In Flanders Fields Museum</strong> inside the reconstructed medieval Cloth Hall. Walk the historic <strong>Ypres Ramparts &amp; Moat</strong>. Supermarket lunch stop before driving to Poperinge to experience <strong>Talbot House</strong>—the legendary British soldier refuge and teahouse. Afternoon return journey via Eurotunnel/ferry.
+              Explore the award-winning <strong>In Flanders Fields Museum</strong> inside the reconstructed medieval Cloth Hall. Walk the historic <strong>Ypres Ramparts &amp; Moat</strong>. Supermarket lunch stop before driving to Poperinge to experience <strong>Talbot House</strong>—the legendary British soldier refuge and teahouse. Afternoon return journey via Eurotunnel Le Shuttle.
             </div>
             <div class="day-highlights">
               <strong>Return:</strong> Approximate arrival back at Meoncross School at <strong>20:30</strong> (updates sent via WhatsApp).

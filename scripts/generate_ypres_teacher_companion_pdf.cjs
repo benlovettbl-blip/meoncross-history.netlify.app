@@ -336,6 +336,7 @@ function getHtmlContent() {
         <div style="font-size: 8.2pt; line-height: 1.45; color: #1e293b;">
           <strong>Tour Leaders:</strong> Mr Ben Lovett (Head of History) &amp; Mr James Garrett (The History Boys)<br>
           <strong>Accompanying Staff:</strong> Dr Kirkup &amp; Mrs Lushey<br>
+          <strong>Expedition Dates:</strong> Thursday 1st – Saturday 3rd October 2026<br>
           <strong>Base Camp:</strong> Peace Village Hostel, Mesen, Belgium<br>
           <strong>Tour Operators:</strong> Joint Educational Partnership (Meoncross &amp; The History Boys)
         </div>
@@ -405,8 +406,8 @@ function getHtmlContent() {
           <tbody>
             <tr>
               <td><strong>Day 1 · 05:45</strong></td>
-              <td>Depart Meoncross School · Dover Ferry Crossing</td>
-              <td>Register check; collect passports; ferry meal vouchers; ETA Boezinge 14:00.</td>
+              <td>Depart Meoncross School · Folkestone Eurotunnel Crossing</td>
+              <td>Register check; collect passports; Eurotunnel transit &amp; coach meal logistics; ETA Boezinge 14:00.</td>
             </tr>
             <tr>
               <td><strong>Day 1 · 14:15</strong></td>
@@ -465,7 +466,7 @@ function getHtmlContent() {
             </tr>
             <tr>
               <td><strong>Day 3 · 14:00</strong></td>
-              <td>Calais Eurotunnel / Ferry · Return to School</td>
+              <td>Calais Eurotunnel (Le Shuttle) · Return to School</td>
               <td>Final head count; customs clearance; ETA Meoncross approx. 19:30.</td>
             </tr>
           </tbody>

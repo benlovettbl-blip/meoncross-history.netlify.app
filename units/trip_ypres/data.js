@@ -335,7 +335,7 @@ export const unitData = {
                 <div>
                   <h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 1.05rem;"><i class="fa-solid fa-utensils" style="color: #0284c7;"></i> Meal Arrangements</h4>
                   <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.5;">
-                    <li><strong>Day 1 (Thursday):</strong> Pupils <strong>must bring a packed lunch and snacks from home</strong> for the coach journey. No fast food purchases at ferry/service stations.</li>
+                    <li><strong>Day 1 (Thursday):</strong> Pupils <strong>must bring a packed lunch and snacks from home</strong> for the coach journey. No fast food purchases at Eurotunnel/service stations.</li>
                     <li><strong>Buffet Breakfasts:</strong> Continental/buffet breakfast provided at Peace Village Hostel on Friday and Saturday mornings.</li>
                     <li><strong>Evening Dinners:</strong> Substantial 2-course hot group dinners served on-site at Peace Village Hostel accommodation on Thursday and Friday evenings.</li>
                     <li><strong>Days 2 &amp; 3 Lunches:</strong> Supermarket packed lunch stops in Belgium.</li>
