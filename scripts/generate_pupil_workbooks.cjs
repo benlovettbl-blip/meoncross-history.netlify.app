@@ -2215,7 +2215,34 @@ allDirs.forEach((unitId) => {
             return lHtml;
           };
 
-          const renderQuestionItem = (item) => {
+          const getDirtBoxHtml = (marks) => `
+          <div class="dirt-box" style="margin-top: 20px; margin-bottom: 15px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px 16px; background-color: #f8fafc; page-break-inside: avoid; break-inside: avoid;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 6px; margin-bottom: 10px;">
+              <h4 style="margin: 0; color: #1e3a8a; text-transform: uppercase; font-size: 10pt; letter-spacing: 0.5px; font-family: 'Inter', sans-serif;">Teacher Feedback &amp; D.I.R.T.</h4>
+              <div style="font-size: 9.5pt; color: #334155;">
+                <strong>Mark:</strong> &nbsp;______ / ${marks} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Effort:</strong> &nbsp;1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+              </div>
+            </div>
+            <div style="display: flex; gap: 15px; font-size: 9pt; margin-bottom: 8px;">
+              <div style="flex: 1;">
+                <strong style="color: #16a34a;">What Went Well (WWW):</strong>
+                <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
+                <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
+              </div>
+              <div style="flex: 1;">
+                <strong style="color: #ea580c;">Even Better If (EBI):</strong>
+                <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
+                <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
+              </div>
+            </div>
+            <div style="font-size: 9pt; margin-top: 6px;">
+              <strong style="color: #2563eb;">Student D.I.R.T. Response / Correction:</strong>
+              <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
+              <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
+            </div>
+          </div>`;
+
+          const renderQuestionItem = (item, isBeforeSources = false, itemIdx = 0) => {
             let ep = item.ep;
             let index = item.index;
             let rawQText = ep.question || ep.text || '';
@@ -2226,9 +2253,22 @@ allDirs.forEach((unitId) => {
               rawQText.includes('16 marks') ||
               ep.marks === 12 ||
               ep.marks === 16;
-            let pbBefore = isLong
-              ? 'page-break-before: always; margin-top: 30px;'
-              : 'margin-top: 15px;';
+
+            let pbBefore;
+            if (unitId === 'weimar_nazi_germany') {
+              if (isBeforeSources && itemIdx === 0) {
+                pbBefore = 'margin-top: 15px;';
+              } else if (isLong) {
+                pbBefore = 'page-break-before: always; margin-top: 25px;';
+              } else {
+                pbBefore = 'margin-top: 20px;';
+              }
+            } else {
+              pbBefore = isLong
+                ? 'page-break-before: always; margin-top: 30px;'
+                : 'margin-top: 15px;';
+            }
+
             let _tInfo3 = processTaskTextWithTariff(rawQText, true);
             let questionHtml = `<div style="${pbBefore} margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>${'Q' + globalQNum++}. ${_tInfo3.cleanText}</strong></div>`;
             if (_tInfo3.badgeHtml) {
@@ -2239,7 +2279,7 @@ allDirs.forEach((unitId) => {
             } else if (ep.marks) {
               // ... fallback handled by existing code
             }
-            if (isLong) {
+            if (isLong && unitId !== 'weimar_nazi_germany') {
               questionHtml =
                 `<div class="dirt-box">
                     <h4 style="margin: 0 0 10px 0; color: #64748b; text-transform: uppercase; font-size: 0.85em; font-family: 'Inter', sans-serif;">Teacher Feedback / D.I.R.T.</h4>
@@ -2277,9 +2317,14 @@ allDirs.forEach((unitId) => {
               }
             }
             html += questionHtml + renderQuestionLines(ep.question);
+
+            if (isLong && unitId === 'weimar_nazi_germany') {
+              let marksVal = rawQText.includes('16 marks') ? 16 : 12;
+              html += getDirtBoxHtml(marksVal);
+            }
           };
 
-          questionsBefore.forEach(renderQuestionItem);
+          questionsBefore.forEach((item, qIdx) => renderQuestionItem(item, true, qIdx));
 
           if (epStimulus && epStimulus.length > 0) {
             html += `</div>`; // Close the initial task-box
@@ -2326,7 +2371,7 @@ allDirs.forEach((unitId) => {
             html += `<div class="task-box" style="margin-bottom: 10px;   page-break-inside: auto;">`; // Re-open task-box for the remaining questions
           }
 
-          questionsAfter.forEach(renderQuestionItem);
+          questionsAfter.forEach((item, qIdx) => renderQuestionItem(item, false, qIdx));
           html += `</div>`;
         }
         html += `</div>`;
