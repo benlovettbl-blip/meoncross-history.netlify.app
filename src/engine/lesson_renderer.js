@@ -1523,7 +1523,7 @@ export function renderLesson(lesson) {
           });
           return;
         }
-        let rawQText = task.text || task.question || '';
+        let rawQText = typeof task === 'string' ? task : task.text || task.question || '';
         let cleaned = rawQText.replace(/^(Enquiry:|Q\d+:|Task \d+:|Question \d+[a-z]?:)\s*/i, '');
         let qText = typeof formatBold !== 'undefined' ? formatBold(cleaned) : cleaned;
         let clueParaMatch = qText.match(/\((P|Para\s*)(\d+)\)$/i);
@@ -1540,7 +1540,36 @@ export function renderLesson(lesson) {
           qText = match[2];
         }
 
-        htmlTasks += `
+        if (
+          isTrip &&
+          (appStore.state?.activeUnitId === 'trip_ypres' ||
+            (typeof unitId !== 'undefined' && unitId === 'trip_ypres'))
+        ) {
+          htmlTasks += `
+            <div class="field-investigation-card" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #1e40af; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
+                <div style="font-size: 1.15rem; color: #1e40af; font-weight: 800; font-family: 'Playfair Display', serif;">
+                  <i class="fa-solid fa-compass" style="color: #ef4444; margin-right: 8px;"></i>${displayHeading ? displayHeading.replace(/<[^>]+>/g, '') : `Field Investigation ${tIdx + 1}`}
+                </div>
+                <span style="font-size: 0.75rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 12px; white-space: nowrap;">Field Task ${tIdx + 1}</span>
+              </div>
+              <div style="font-size: 1.02rem; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+                ${qText}
+              </div>
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <label style="font-weight: 600; font-size: 0.88rem; color: #475569; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                    <input type="checkbox" style="width: 17px; height: 17px; accent-color: #1e40af; cursor: pointer;" onchange="window.updateProgress && window.updateProgress()">
+                    <span><i class="fa-solid fa-clipboard-check" style="color: #059669; margin-right: 4px;"></i> Mark Field Observation Complete</span>
+                  </label>
+                  <span style="font-size: 0.78rem; color: #64748b; font-style: italic;">On-site journal</span>
+                </div>
+                <textarea class="student-answer-input" placeholder="Field notes & personal observations on site (optional)..." style="width: 100%; min-height: 55px; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 0.9rem; resize: vertical;" oninput="window.updateProgress && window.updateProgress()"></textarea>
+              </div>
+            </div>
+          `;
+        } else {
+          htmlTasks += `
             <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
               ${displayHeading}
               <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
@@ -1559,6 +1588,7 @@ export function renderLesson(lesson) {
               ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${formatBold(task.model)}</div>` : ''}
             </div>
           `;
+        }
       });
     }
 
@@ -2255,12 +2285,24 @@ export function renderLesson(lesson) {
           let popupContent = `<strong>${ev.year} - ${ev.title}</strong><br>${ev.detail}`;
 
           if (appStore.state.activeUnitData.local_heroes) {
-            const heroes = appStore.state.activeUnitData.local_heroes.filter(
-              (h) =>
-                ev.title.includes(h.cemetery) ||
-                ev.detail.includes(h.cemetery) ||
-                (h.cemetery.includes('Menin Gate') && ev.title.includes('Menin Gate')),
-            );
+            const heroes = appStore.state.activeUnitData.local_heroes.filter((h) => {
+              const loc = (h.visiting_location || h.memorial || h.cemetery || '').toLowerCase();
+              const titleLower = (ev.title || '').toLowerCase();
+              const detailLower = (ev.detail || '').toLowerCase();
+              if (!loc) return false;
+              if (titleLower.includes(loc) || detailLower.includes(loc)) return true;
+              if (
+                loc.includes('menin gate') &&
+                (titleLower.includes('menin gate') || detailLower.includes('menin gate'))
+              )
+                return true;
+              if (
+                loc.includes('tyne cot') &&
+                (titleLower.includes('tyne cot') || detailLower.includes('tyne cot'))
+              )
+                return true;
+              return false;
+            });
             if (heroes.length > 0) {
               popupContent += `<div style="margin-top: 15px; border: 2px solid #ef4444; border-radius: 8px; padding: 10px; background: #fef2f2;">
                   <h4 style="margin: 0 0 5px 0; color: #991b1b;"><i class="fa-solid fa-ribbon"></i> Local Connection</h4>`;
@@ -2294,6 +2336,12 @@ export function renderLesson(lesson) {
             }).addTo(map);
           }
         }
+
+        setTimeout(() => {
+          if (window.tripMapInstance) {
+            window.tripMapInstance.invalidateSize();
+          }
+        }, 200);
       }
     }
   }, 100);

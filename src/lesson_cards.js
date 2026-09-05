@@ -461,10 +461,31 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; text-align: left;">
       `;
       lowryBrothers.forEach((b) => {
+        const heroData =
+          targetData.local_heroes?.find(
+            (lh) =>
+              lh.name.includes('Lowry') &&
+              ((b.lesson.id.includes('william') && lh.name.includes('William')) ||
+                (b.lesson.id.includes('auriol') && lh.name.includes('Auriol')) ||
+                (b.lesson.id.includes('cyril') && lh.name.includes('Cyril'))),
+          ) || {};
+        const theatreBadge = b.lesson.id.includes('william')
+          ? 'Gallipoli (1915)'
+          : b.lesson.id.includes('auriol')
+            ? 'Arras (1918)'
+            : 'Somme (1918)';
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${b.index}" style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
-            <h4 style="margin: 0 0 6px 0; color: #1e3a8a; font-size: 1.05rem; font-family: 'Playfair Display', serif;">${b.lesson.title}</h4>
-            <p style="margin: 0; color: #64748b; font-size: 0.85rem; line-height: 1.4;">${b.lesson.enquiry || 'Manor Way Grange, Lee-on-the-Solent'}</p>
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${b.index}" style="background: #fff; border: 1px solid #fed7aa; border-left: 5px solid #d97706; border-radius: 8px; padding: 18px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <h3 style="margin: 0; color: #92400e; font-size: 1.05rem; font-family: 'Playfair Display', serif;">${b.lesson.title.split('(')[0].trim()}</h3>
+              <span style="font-size: 0.72rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 2px 7px; border-radius: 10px; white-space: nowrap;">${theatreBadge}</span>
+            </div>
+            <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">${heroData.regiment || ''}</p>
+            <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;"><i class="fa-solid fa-house-chimney" style="margin-right: 5px; color: #94a3b8;"></i>${heroData.connection || 'Manor Way Grange, Lee-on-the-Solent'}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fed7aa; padding-top: 8px; font-size: 0.78rem;">
+              <span style="color: #1e3a8a; font-weight: 600;"><i class="fa-solid fa-church" style="margin-right: 4px;"></i>Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
+              <span style="color: #64748b; font-style: italic;"><i class="fa-solid fa-monument" style="margin-right: 4px;"></i>${(heroData.memorial || '').split(',')[0]}</span>
+            </div>
           </div>
         `;
       });
