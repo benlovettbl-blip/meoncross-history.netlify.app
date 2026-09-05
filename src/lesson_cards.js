@@ -303,7 +303,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     lessonsHTML += `
       <h2 style="margin-top: 30px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-family: 'Playfair Display', serif; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
         <span><i class="fa-solid fa-route" style="color: #2563eb;"></i> 3-Day Expedition Itinerary</span>
-        <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #dbeafe; color: #1d4ed8; padding: 4px 12px; border-radius: 20px;">Strictly 3 Days · 1st–3rd October 2026</span>
+        <span style="font-size: 0.8rem; font-family: sans-serif; font-weight: 600; background: #dbeafe; color: #1d4ed8; padding: 4px 12px; border-radius: 20px;">3 Days · 1st–3rd October 2026</span>
       </h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; text-align: left;">
     `;
