@@ -148,7 +148,7 @@ export const BATTLEFIELD_DAYS = [
       },
       {
         id: 'de_grootes_chocolate',
-        headingId: 'de-groote-s-chocolatier-ypres-grote-markt',
+        headingId: 'de-groote-s-chocolatier-civilian-rebirth',
         title: 'De Groote’s Chocolatier',
         shortTitle: 'Belgian Chocolates',
         time: '10:30 AM',

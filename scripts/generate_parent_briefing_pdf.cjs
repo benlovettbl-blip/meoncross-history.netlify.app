@@ -564,10 +564,10 @@ function getHtmlContent() {
           <div class="day-details">
             <div class="day-title">Departure, North Salient &amp; Mine Warfare</div>
             <div class="day-summary">
-              <strong>06:15</strong> meet at Meoncross School (06:30 coach departure) via Jet Connect executive coach to Folkestone Eurotunnel crossing. Transit to France/Belgium via Le Shuttle. Visit <strong>Essex Farm Advanced Dressing Station</strong> (where Lt Col John McCrae penned <em>"In Flanders Fields"</em> in May 1915 and the grave of 15-year-old Valentine Strudwick), the somber <em>Studentenfriedhof</em> at <strong>Langemarck German Military Cemetery</strong>, and the preserved frontline trenches and mine craters at <strong>Hooge Crater Museum</strong>.
+              <strong>06:15</strong> meet at Meoncross School (06:30 coach departure) via Jet Connect executive coach to Folkestone Eurotunnel crossing. Transit to France/Belgium via Le Shuttle. Visit <strong>Essex Farm Advanced Dressing Station</strong> (14:30; John McCrae dugout and 15-year-old Valentine Strudwick), the somber <em>Studentenfriedhof</em> at <strong>Langemarck German Military Cemetery</strong> (15:15), and the preserved frontline trenches and mine craters at <strong>Hooge Crater Museum</strong> (16:00).
             </div>
             <div class="day-highlights">
-              <strong>Evening:</strong> Check-in at Peace Village Hostel, Heuvelland (Mesen). 2-course group dinner served on-site at our hostel accommodation.
+              <strong>Evening:</strong> 17:45 check-in at Peace Village Hostel, Mesen. 18:15 2-course dinner, followed by 19:15 classroom debrief (workbook completion and 8-mark Medicine source question).
             </div>
           </div>
         </div>
@@ -581,10 +581,10 @@ function getHtmlContent() {
           <div class="day-details">
             <div class="day-title">Passchendaele Ridge, Medical Evacuation &amp; The Menin Gate</div>
             <div class="day-summary">
-              Examine the First Gas Attack at <strong>Vancouver Corner</strong> (St Julien Memorial), followed by the frontline mud and preserved trenches at <strong>Sanctuary Wood (Hill 62)</strong>. Pilgrimage to <strong>Tyne Cot Commonwealth Cemetery</strong> (11,000 graves and 35,000 missing) to locate our village fallen. Supermarket lunch stop in the Salient, followed by <strong>Lijssenthoek Military Cemetery</strong> (major casualty clearing station &amp; Visitors Centre) and the underground dugout experience at <strong>Memorial Museum Passchendaele 1917</strong> in Zonnebeke.
+              Examine the First Gas Attack at <strong>Vancouver Corner</strong> (09:15), followed by the preserved frontline trenches at <strong>Sanctuary Wood (Hill 62)</strong> (09:45; alternative footwear advised). Supervised supermarket lunch stop at Aldi in Ypres (11:30). Afternoon pilgrimage to <strong>Tyne Cot British War Cemetery</strong> (13:00) to locate our village fallen, followed by <strong>Lijssenthoek Military Cemetery</strong> (14:15) and the 20ft underground dugout experience at <strong>Memorial Museum Passchendaele 1917</strong> in Zonnebeke (15:45).
             </div>
             <div class="day-highlights">
-              <strong>Evening Highlight:</strong> 2-course dinner at Peace Village, before traveling into Ypres for the solemn <strong>8:00 PM Last Post Ceremony at the Menin Gate</strong>, where Meoncross School pupils will lay an official wreath and locate Sgt. Frank Rogers on Panel 35.
+              <strong>Evening Highlight:</strong> 18:00 dinner at Peace Village, before departing for the solemn <strong>8:00 PM Last Post Ceremony at the Menin Gate</strong> (arrive 19:20), where Meoncross pupils lay an official wreath and locate Sgt. Frank Rogers on Panel 35.
             </div>
           </div>
         </div>
@@ -598,10 +598,10 @@ function getHtmlContent() {
           <div class="day-details">
             <div class="day-title">Menin Gate Daylight, Civilian Rebirth &amp; Poperinge Sanctuaries</div>
             <div class="day-summary">
-              Daytime study of the <strong>Menin Gate</strong> memorial panels and morning walk along the historic <strong>Ypres Ramparts &amp; Moat</strong>. Supervised visit to <strong>De Groote’s Chocolatier</strong> on the rebuilt Grote Markt (€30–€40 cash envelope budget). Drive to Poperinge to experience <strong>Talbot House</strong>—the legendary British soldiers' club where 'rank was abandoned'. Supervised lunch stop in Poperinge town centre, followed by the preserved <strong>Town Hall Death Cells &amp; Execution Post</strong>. Depart for Calais Eurotunnel crossing at 14:30.
+              Daytime study of the <strong>Menin Gate</strong> memorial panels and morning walk along the historic <strong>Ypres Ramparts &amp; Moat</strong> (09:15). Supervised visit to <strong>De Groote’s Chocolatier</strong> on the rebuilt Grote Markt (10:30; €30–€40 cash envelope). Drive to Poperinge to experience <strong>Talbot House</strong>—the legendary British soldiers' club where 'rank was abandoned' (11:20). Supervised lunch in Poperinge town centre (12:45), followed by an on-site visit to the preserved <strong>Town Hall Death Cells &amp; Execution Post</strong> (13:30). Depart for Calais at 14:30.
             </div>
             <div class="day-highlights">
-              <strong>Return:</strong> Eurotunnel Le Shuttle crossing to Folkestone; approximate arrival back at Meoncross School at <strong>20:00–20:30</strong> (live WhatsApp updates sent en route).
+              <strong>Return:</strong> 17:50 Eurotunnel Le Shuttle crossing to Folkestone (arrives 17:30 UK time); approximate arrival back at Meoncross School at <strong>20:00</strong> (live WhatsApp updates sent en route).
             </div>
           </div>
         </div>

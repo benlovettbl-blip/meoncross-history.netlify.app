@@ -103,28 +103,28 @@ s1.addText('1. 3-DAY EXPEDITION ITINERARY', {
 s1.addText(
   [
     {
-      text: 'Day 1: North Salient & Medical Triage\n',
+      text: 'Day 1: North Salient & Mine Warfare\n',
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• 06:15 departure from Meoncross School.\n• Essex Farm ADS (John McCrae dugout).\n• Yorkshire Trench & Langemarck Cemetery.\n• Evening: Check-in & 2-course dinner at hostel.\n\n',
-      options: { color: '334155', fontSize: 8.5 },
+      text: '• 06:15 departure from Meoncross School (Jet Connect).\n• 11:20 Eurotunnel; 14:30 Essex Farm ADS (Valentine Strudwick).\n• 15:15 Langemarck & 16:00 Hooge Crater Museum.\n• 17:45 Peace Village, 18:15 dinner & 19:15 classroom debrief.\n\n',
+      options: { color: '334155', fontSize: 8.2 },
     },
     {
-      text: 'Day 2: Passchendaele & Menin Gate\n',
+      text: 'Day 2: Passchendaele, Medical Sites & Last Post\n',
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• Vancouver Corner & Hooge Crater trenches.\n• Supermarket lunch stop in the Salient.\n• Tyne Cot (finding our village fallen).\n• 2-course hostel dinner before 20:00 Last Post.\n\n',
-      options: { color: '334155', fontSize: 8.5 },
+      text: '• 09:15 Brooding Soldier & 09:45 Sanctuary Wood.\n• 11:30 Aldi Ypres lunch stop; 13:00 Tyne Cot (our fallen).\n• 14:15 Lijssenthoek CCS & 15:45 Passchendaele Museum.\n• 18:00 dinner; 19:20 arrive Menin Gate for 20:00 Last Post.\n\n',
+      options: { color: '334155', fontSize: 8.2 },
     },
     {
-      text: 'Day 3: Ypres Town & Journey Home\n',
+      text: 'Day 3: Ypres Daylight, Talbot House & Return\n',
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• In Flanders Fields Museum (Cloth Hall).\n• Ramparts Walk & Talbot House (Poperinge).\n• Supermarket lunch stop & return approx 20:30.',
-      options: { color: '334155', fontSize: 8.5 },
+      text: '• 09:15 Menin Gate & Ramparts walk.\n• 10:30 De Groote’s Chocolatier (Grote Markt; €30–€40 envelope).\n• 11:20 Talbot House, 12:45 lunch, 13:30 Town Hall Death Cells.\n• 14:30 depart for Calais; arrive school approx 20:00.',
+      options: { color: '334155', fontSize: 8.2 },
     },
   ],
   {

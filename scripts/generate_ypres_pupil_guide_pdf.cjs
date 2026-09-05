@@ -486,89 +486,94 @@ function getHtmlContent() {
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 1 · 06:15</strong></td>
-            <td style="padding: 3.2px 6px;">Depart Meoncross School · Folkestone Le Shuttle</td>
-            <td style="padding: 3.2px 6px;">Meet 06:15 (06:30 coach departure). Eurotunnel transit to Calais, travel logistics.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 1 · 06:15</strong></td>
+            <td style="padding: 2.6px 6px;">Depart Meoncross School · Folkestone Le Shuttle</td>
+            <td style="padding: 2.6px 6px;">Jet Connect coach departure; 11:20 Eurotunnel crossing; arrival in France/Belgium.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 1 · 13:30</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 1:</strong> Essex Farm ADS &amp; Canal Bank</td>
-            <td style="padding: 3.2px 6px;">Triage bunkers, McCrae's <em>In Flanders Fields</em>, grave of 15-year-old Valentine Strudwick.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 1 · 14:30</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 1:</strong> Essex Farm ADS &amp; Canal Bank</td>
+            <td style="padding: 2.6px 6px;">Triage bunkers, McCrae's <em>In Flanders Fields</em>, grave of 15-year-old Valentine Strudwick.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 1 · 14:45</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 2:</strong> Langemarck German Military Cemetery</td>
-            <td style="padding: 3.2px 6px;"><em>Studentenfriedhof</em>, 24,917 fallen in the <em>Kameradengrab</em>, Krieger mourning statues.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 1 · 15:15</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 2:</strong> Langemarck German Military Cemetery</td>
+            <td style="padding: 2.6px 6px;"><em>Studentenfriedhof</em>, 24,917 fallen in the <em>Kameradengrab</em>, Krieger mourning statues.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 1 · 16:00</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 3:</strong> Hooge Crater Museum &amp; Trenches</td>
-            <td style="padding: 3.2px 6px;">Underground mine crater warfare, preserved front trenches, and early flamethrower attacks.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 1 · 16:00</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 3:</strong> Hooge Crater Museum &amp; Trenches</td>
+            <td style="padding: 2.6px 6px;">Underground mine crater warfare, preserved front trenches, and early flamethrower attacks.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 1 · 18:00</strong></td>
-            <td style="padding: 3.2px 6px;">Check-in: Peace Village Hostel, Mesen</td>
-            <td style="padding: 3.2px 6px;">Room allocation, 2-course group dinner, evening briefing &amp; equipment preparation.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 1 · 17:45</strong></td>
+            <td style="padding: 2.6px 6px;">Arrive Peace Village Hostel, Mesen</td>
+            <td style="padding: 2.6px 6px;">Safety briefing, 18:15 dinner, 19:15 classroom debrief (workbook &amp; Medicine question).</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 2 · 09:15</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 4:</strong> Vancouver Corner (Brooding Soldier)</td>
-            <td style="padding: 3.2px 6px;">First German gas attack (22 April 1915); Canadian heroic stand; gas warfare analysis.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 2 · 09:15</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 4:</strong> Vancouver Corner (Brooding Soldier)</td>
+            <td style="padding: 2.6px 6px;">First German gas attack (22 April 1915); Canadian heroic stand; gas warfare analysis.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 2 · 10:15</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 5:</strong> Sanctuary Wood (Hill 62) Trenches</td>
-            <td style="padding: 3.2px 6px;">Walk original British frontline trenches preserved in deep clay mud and artillery craters.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 2 · 09:45</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 5:</strong> Sanctuary Wood (Hill 62) Trenches</td>
+            <td style="padding: 2.6px 6px;">Walk original British frontline trenches preserved in deep clay mud (sturdy footwear).</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 2 · 11:30</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 6:</strong> Tyne Cot Commonwealth Cemetery</td>
-            <td style="padding: 3.2px 6px;">Passchendaele ridge; pillbox Cross of Sacrifice; locate Stubbington parish fallen on Memorial.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 2 · 11:30</strong></td>
+            <td style="padding: 2.6px 6px;">Lunch &amp; Snack Shopping (Aldi, Ypres)</td>
+            <td style="padding: 2.6px 6px;">Supervised supermarket stop in Ypres; pupils manage budget to buy fresh picnic supplies.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 2 · 13:00</strong></td>
-            <td style="padding: 3.2px 6px;">Salient Supermarket Lunch Break</td>
-            <td style="padding: 3.2px 6px;">Supervised picnic stop in the Salient; rest break and hydration check.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 2 · 13:00</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 6:</strong> Tyne Cot British War Cemetery</td>
+            <td style="padding: 2.6px 6px;">World's largest CWGC cemetery; Cross of Sacrifice; locate Stubbington parish fallen on Memorial.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 2 · 14:15</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 7:</strong> Lijssenthoek Military Cemetery</td>
-            <td style="padding: 3.2px 6px;">Casualty Clearing Station No. 4; casualty timeline wall; grave of Staff Nurse Nellie Spindler.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 2 · 14:15</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 7:</strong> Lijssenthoek Military Cemetery</td>
+            <td style="padding: 2.6px 6px;">Casualty Clearing Station No. 4; casualty timeline wall; grave of Staff Nurse Nellie Spindler.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 2 · 15:45</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 8:</strong> Passchendaele Museum (Zonnebeke)</td>
-            <td style="padding: 3.2px 6px;">Descend 20ft into authentic subterranean dugout system; sensory and psychological immersion.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 2 · 15:45</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 8:</strong> Passchendaele Museum (Zonnebeke)</td>
+            <td style="padding: 2.6px 6px;">Descend 20ft into authentic subterranean dugout system; sensory and psychological immersion.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 2 · 20:00</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 9:</strong> The Menin Gate Last Post Ceremony</td>
-            <td style="padding: 3.2px 6px;">54,395 names of the missing; locate Sgt. Frank Rogers (Panel 35); Meoncross wreath laying.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 2 · 19:20</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 9:</strong> The Menin Gate Last Post Ceremony</td>
+            <td style="padding: 2.6px 6px;">Arrive early for 20:00 ceremony; locate Sgt. Frank Rogers (Panel 35); Meoncross wreath laying.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 3 · 09:15</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 10:</strong> Menin Gate Daylight &amp; Ramparts Walk</td>
-            <td style="padding: 3.2px 6px;">Daylight panel study; moated Ramparts Cemetery; reading Sassoon’s <em>On Passing the New Menin Gate</em>.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 3 · 09:15</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 10:</strong> Menin Gate Daylight &amp; Ramparts Walk</td>
+            <td style="padding: 2.6px 6px;">Daylight panel study; moated Ramparts Cemetery; reading Sassoon’s <em>On Passing the New Menin Gate</em>.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 3 · 10:30</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 11:</strong> De Groote’s Chocolatier (Grote Markt)</td>
-            <td style="padding: 3.2px 6px;">Flemish confectionery craft; €30–€40 cash envelope budgeting; stone-by-stone town rebirth.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 3 · 10:30</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 11:</strong> De Groote’s Chocolatier (Grote Markt)</td>
+            <td style="padding: 2.6px 6px;">Flemish confectionery craft; €30–€40 cash envelope budgeting; stone-by-stone town rebirth.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 3 · 11:20</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 12:</strong> Talbot House (Toc H), Poperinge</td>
-            <td style="padding: 3.2px 6px;">Tubby Clayton's 'Every Man\'s Club'; 'Abandon Rank All Ye Who Enter Here'; upper room chapel.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 3 · 11:20</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 12:</strong> Talbot House (Toc H), Poperinge</td>
+            <td style="padding: 2.6px 6px;">Tubby Clayton's 'Every Man\'s Club'; 'Abandon Rank All Ye Who Enter Here'; upper room chapel.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 3 · 13:30</strong></td>
-            <td style="padding: 3.2px 6px;"><strong>Stop 13:</strong> Poperinge Town Hall Death Cells</td>
-            <td style="padding: 3.2px 6px;">Preserved death cells &amp; execution post; shell shock trauma analysis; 2006 statutory pardon.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 3 · 12:45</strong></td>
+            <td style="padding: 2.6px 6px;">Supervised Lunch in Poperinge</td>
+            <td style="padding: 2.6px 6px;">Lunch stop in Poperinge town centre before afternoon heritage visits.</td>
           </tr>
           <tr>
-            <td style="padding: 3.2px 6px;"><strong>Day 3 · 14:30</strong></td>
-            <td style="padding: 3.2px 6px;">Depart Poperinge · Calais Eurotunnel · Return</td>
-            <td style="padding: 3.2px 6px;">Coach journey to Calais Eurotunnel; Shot at Dawn synthesis; arrival at school approx. 20:00–20:30.</td>
+            <td style="padding: 2.6px 6px;"><strong>Day 3 · 13:30</strong></td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 13:</strong> Poperinge Town Hall Death Cells</td>
+            <td style="padding: 2.6px 6px;">Physical visit to preserved cells &amp; courtyard execution post; military justice &amp; 2006 statutory pardon.</td>
+          </tr>
+          <tr>
+            <td style="padding: 2.6px 6px;"><strong>Day 3 · 14:30</strong></td>
+            <td style="padding: 2.6px 6px;">Depart Poperinge · Calais Eurotunnel · Return</td>
+            <td style="padding: 2.6px 6px;">Coach departs 14:30 to Calais; 17:50 Le Shuttle crossing; arrival at school approx. 20:00.</td>
           </tr>
         </tbody>
       </table>
