@@ -71,7 +71,8 @@ export const BATTLEFIELD_DAYS = [
     id: 'day_2',
     label: 'Day 2 (Fri)',
     title: 'Day 2: Battlefields, Tyne Cot & Last Post',
-    subtitle: 'Brooding Soldier · Sanctuary Wood · Tyne Cot · Lijssenthoek · Menin Gate',
+    subtitle:
+      'Brooding Soldier · Sanctuary Wood · Tyne Cot · Lijssenthoek · Passchendaele Museum · Menin Gate',
     stops: [
       {
         id: 'brooding_soldier',
@@ -110,13 +111,22 @@ export const BATTLEFIELD_DAYS = [
         highlight: 'Casualty Clearing Station, triage railway line & Nurse Nellie Spindler',
       },
       {
+        id: 'passchendaele_museum',
+        headingId: 'passchendaele-museum-underground-dugouts',
+        title: 'Passchendaele Museum 1917',
+        shortTitle: 'Passchendaele Museum',
+        time: '3:45 PM',
+        icon: 'fa-landmark-dome',
+        highlight: 'Zonnebeke Chateau, deep 20ft dugout system & reconstructed frontline trenches',
+      },
+      {
         id: 'menin_gate_day2',
         headingId: 'the-menin-gate',
         title: 'Menin Gate Last Post Ceremony',
         shortTitle: 'Menin Gate Last Post',
         time: '7:00 PM',
         icon: 'fa-archway',
-        highlight: 'Official 8:00 PM ceremony, wreath laying & Franklin/Ayling Panel 35',
+        highlight: 'Official 8:00 PM ceremony, wreath laying & Sgt. Frank Rogers Panel 35',
       },
     ],
   },
@@ -124,7 +134,8 @@ export const BATTLEFIELD_DAYS = [
     id: 'day_3',
     label: 'Day 3 (Sat)',
     title: 'Day 3: Ramparts, Talbot House & The Journey Home',
-    subtitle: 'Ramparts Walk · Talbot House · Poperinge Death Cells · Shot at Dawn',
+    subtitle:
+      'Ramparts Walk · Chocolate Shop · Talbot House · Poperinge Death Cells · Journey Home',
     stops: [
       {
         id: 'ramparts',
@@ -136,13 +147,22 @@ export const BATTLEFIELD_DAYS = [
         highlight: 'Siegfried Sassoon "On Passing the New Menin Gate" & moat cemetery',
       },
       {
+        id: 'de_grootes_chocolate',
+        headingId: 'de-groote-s-chocolatier-ypres-grote-markt',
+        title: 'De Groote’s Chocolatier',
+        shortTitle: 'Belgian Chocolates',
+        time: '10:30 AM',
+        icon: 'fa-cookie-bite',
+        highlight: 'Artisanal Belgian chocolate gifts on Grote Markt & €30–€40 cash handling',
+      },
+      {
         id: 'talbot_house',
         headingId: 'talbot-house-every-man-s-club',
         title: 'Talbot House, Poperinge',
         shortTitle: 'Talbot House',
         time: '11:20 AM',
         icon: 'fa-mug-hot',
-        highlight: 'Tubby Clayton, "Abandon Rank All Ye Who Enter Here" & upper chapel',
+        highlight: 'Tubby Clayton, "All rank abandon ye who enter here" & upper chapel',
       },
       {
         id: 'death_cells',
@@ -154,13 +174,14 @@ export const BATTLEFIELD_DAYS = [
         highlight: 'Military executions, shell shock, and the wooden execution post',
       },
       {
-        id: 'shot_at_dawn',
+        id: 'journey_home_calais',
         headingId: 'the-shot-at-dawn-memorial-national-memorial-arboretum-uk',
-        title: 'Shot at Dawn Memorial (UK)',
-        shortTitle: 'Shot at Dawn',
+        title: 'Coach Departure to Calais & National Reflection',
+        shortTitle: 'Journey Home (Calais)',
         time: '2:30 PM',
-        icon: 'fa-ribbon',
-        highlight: 'National Memorial Arboretum, Herbert Burden & 2006 statutory pardon',
+        icon: 'fa-bus',
+        highlight:
+          'Depart Poperinge for Eurotunnel Le Shuttle & UK Shot at Dawn Memorial reflection',
       },
     ],
   },

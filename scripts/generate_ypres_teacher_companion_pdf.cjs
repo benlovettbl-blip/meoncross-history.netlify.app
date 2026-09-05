@@ -384,90 +384,110 @@ function getHtmlContent() {
         </div>
         <div class="partner-pill">
           <div class="brand">Field Route</div>
-          <div class="lead">10 Historic Stops</div>
+          <div class="lead">13 Historic Stops</div>
         </div>
       </div>
 
-      <div class="photo-card" style="margin-bottom: 10px;">
-        <img src="${salientMap}" alt="Map of Ypres Salient" style="height: 175px; object-fit: contain; background: #ffffff;">
+      <div class="photo-card" style="margin-bottom: 7px; padding: 5px;">
+        <img src="${salientMap}" alt="Map of Ypres Salient" style="height: 125px; object-fit: contain; background: #ffffff;">
         <div class="caption">Strategic Overview of the Ypres Salient (1914–1918): Showing frontlines, allied arcs, and major battlefield sites.</div>
       </div>
 
-      <div style="margin-bottom: 10px;">
-        <h3 style="font-size: 10pt; color: #1e3a8a; margin-bottom: 5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;">Tour Leader Operational Schedule</h3>
-        <table class="companion-table">
+      <div style="margin-bottom: 7px;">
+        <h3 style="font-size: 9.8pt; color: #1e3a8a; margin-bottom: 4px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;">Tour Leader Operational Schedule</h3>
+        <table class="companion-table" style="font-size: 7.8pt; margin-bottom: 7px;">
           <thead>
             <tr>
-              <th style="width: 18%;">Day / Time</th>
-              <th style="width: 32%;">Location &amp; Activity</th>
-              <th>Teacher Pacing &amp; Key Directives</th>
+              <th style="width: 17%; padding: 4px 6px;">Day / Time</th>
+              <th style="width: 33%; padding: 4px 6px;">Location &amp; Activity</th>
+              <th style="padding: 4px 6px;">Teacher Pacing &amp; Key Directives</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Day 1 · 05:45</strong></td>
-              <td>Depart Meoncross School · Folkestone Eurotunnel Crossing</td>
-              <td>Register check; collect passports; Eurotunnel transit &amp; coach meal logistics; ETA Boezinge 14:00.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 1 · 06:15</strong></td>
+              <td style="padding: 3.2px 6px;">Depart Meoncross School · Folkestone Le Shuttle</td>
+              <td style="padding: 3.2px 6px;">Register check; 06:30 coach departs; passports &amp; customs; Eurotunnel transit; ETA Boezinge 13:15 CET.</td>
             </tr>
             <tr>
-              <td><strong>Day 1 · 14:15</strong></td>
-              <td><strong>Stop 1:</strong> Essex Farm ADS &amp; Canal Bank</td>
-              <td>Gather group at Bunker 4; read McCrae; guide to Strudwick headstone (Plot I.U.8).</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 1 · 13:30</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 1:</strong> Essex Farm ADS &amp; Canal Bank</td>
+              <td style="padding: 3.2px 6px;">Gather group at Bunker 4; read McCrae; guide pupils to Valentine Strudwick headstone (Plot I.U.8).</td>
             </tr>
             <tr>
-              <td><strong>Day 1 · 15:30</strong></td>
-              <td><strong>Stop 2:</strong> Yorkshire Trench &amp; Dugout</td>
-              <td>Single-file trench walk; point out A-frames and sump pits; 35 min stop.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 1 · 14:45</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 2:</strong> Langemarck German Cemetery</td>
+              <td style="padding: 3.2px 6px;">Transition talk on German bereavement; gather at Kameradengrab; prompt Sorley poem reading.</td>
             </tr>
             <tr>
-              <td><strong>Day 1 · 16:30</strong></td>
-              <td><strong>Stop 3:</strong> Langemarck German Cemetery</td>
-              <td>Transition talk: somber tone; gather at Kameradengrab; prompt Sorley poem reading.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 1 · 16:00</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 3:</strong> Hooge Crater Museum &amp; Trenches</td>
+              <td style="padding: 3.2px 6px;">Mine crater warfare; crater rim observation; front line trench walk; inspect museum collection.</td>
             </tr>
             <tr>
-              <td><strong>Day 1 · 18:30</strong></td>
-              <td>Check-in: Peace Village Hostel, Mesen</td>
-              <td>Key cards; room inspections; dinner at 19:15; evening briefing; 22:00 curfew.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 1 · 18:00</strong></td>
+              <td style="padding: 3.2px 6px;">Check-in: Peace Village Hostel, Mesen</td>
+              <td style="padding: 3.2px 6px;">Room allocation &amp; key cards; 2-course group dinner at 18:30; evening seminar; 22:00 quiet hours.</td>
             </tr>
             <tr>
-              <td><strong>Day 2 · 09:15</strong></td>
-              <td><strong>Stop 4:</strong> Vancouver Corner (Brooding Soldier)</td>
-              <td>Canadian stand; gas warfare overview; terrain vantage looking towards Gravenstafel.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 2 · 09:15</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 4:</strong> Vancouver Corner (Brooding Soldier)</td>
+              <td style="padding: 3.2px 6px;">Canadian stand; gas warfare overview; terrain vantage looking east towards Gravenstafel.</td>
             </tr>
             <tr>
-              <td><strong>Day 2 · 10:30</strong></td>
-              <td><strong>Stop 5:</strong> Hooge Crater Museum &amp; Trenches</td>
-              <td>Crater geology; mine detonation; trench walk; pack lunches at museum picnic area.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 2 · 10:15</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 5:</strong> Sanctuary Wood (Hill 62) Trenches</td>
+              <td style="padding: 3.2px 6px;">Original preserved British frontlines; mud terrain inspection; underground sap entrances.</td>
             </tr>
             <tr>
-              <td><strong>Day 2 · 13:30</strong></td>
-              <td><strong>Stop 6:</strong> Tyne Cot Commonwealth Cemetery</td>
-              <td>Pillbox assembly; Binyon reading; direct pupils to Lowry grave &amp; Hampshire names on Wall.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 2 · 11:30</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 6:</strong> Tyne Cot Commonwealth Cemetery</td>
+              <td style="padding: 3.2px 6px;">Baker/Blomfield pillbox assembly; Binyon reading; direct pupils to Hampshire names on rear wall.</td>
             </tr>
             <tr>
-              <td><strong>Day 2 · 16:30</strong></td>
-              <td><strong>Stop 7:</strong> Ypres Ramparts Cemetery &amp; Walk</td>
-              <td>Shaded canal walk; quiet reflection; transition to central Ypres for early dinner.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 2 · 13:00</strong></td>
+              <td style="padding: 3.2px 6px;">Salient Supermarket Lunch Break</td>
+              <td style="padding: 3.2px 6px;">Supervised lunch break; purchase fresh picnic supplies; ensure all pupils stay in buddy pairs.</td>
             </tr>
             <tr>
-              <td><strong>Day 2 · 19:30</strong></td>
-              <td><strong>Stop 8:</strong> The Menin Gate Last Post Ceremony</td>
-              <td>Arrive by 19:30 for prime position; wreath party prep; silence during buglers at 20:00.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 2 · 14:15</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 7:</strong> Lijssenthoek Military Cemetery</td>
+              <td style="padding: 3.2px 6px;">Casualty clearing station evacuation chain; timeline wall; headstone of Staff Nurse Nellie Spindler.</td>
             </tr>
             <tr>
-              <td><strong>Day 3 · 09:30</strong></td>
-              <td><strong>Stop 9:</strong> Ypres Cloth Hall &amp; Grote Markt</td>
-              <td>Town rebirth; stone-by-stone reconstruction; In Flanders Fields Museum visit.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 2 · 15:45</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 8:</strong> Passchendaele Museum (Zonnebeke)</td>
+              <td style="padding: 3.2px 6px;">Underground dugout immersion (20ft subterranean bunks &amp; dressing station); Chateau park trenches.</td>
             </tr>
             <tr>
-              <td><strong>Day 3 · 11:15</strong></td>
-              <td><strong>Stop 10:</strong> Talbot House (Toc H), Poperinge</td>
-              <td>Tea in dining room; visit Tubby's Upper Room chapel; read Rupert Brooke in garden.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 2 · 20:00</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 9:</strong> The Menin Gate Last Post Ceremony</td>
+              <td style="padding: 3.2px 6px;">Arrive Ypres by 19:15 for prime position; brief Meoncross wreath bearers; Frank Rogers on Panel 35.</td>
             </tr>
             <tr>
-              <td><strong>Day 3 · 14:00</strong></td>
-              <td>Calais Eurotunnel (Le Shuttle) · Return to School</td>
-              <td>Final head count; customs clearance; ETA Meoncross approx. 19:30.</td>
+              <td style="padding: 3.2px 6px;"><strong>Day 3 · 09:15</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 10:</strong> Menin Gate Daylight &amp; Ramparts Walk</td>
+              <td style="padding: 3.2px 6px;">Daylight panel study without crowds; Ramparts Cemetery walk; read Sassoon's anti-monument poem.</td>
+            </tr>
+            <tr>
+              <td style="padding: 3.2px 6px;"><strong>Day 3 · 10:30</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 11:</strong> De Groote’s Chocolatier (Grote Markt)</td>
+              <td style="padding: 3.2px 6px;">Supervised confectionery visit; €30–€40 cash envelopes; discuss Ypres stone-by-stone rebirth.</td>
+            </tr>
+            <tr>
+              <td style="padding: 3.2px 6px;"><strong>Day 3 · 11:20</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 12:</strong> Talbot House (Toc H), Poperinge</td>
+              <td style="padding: 3.2px 6px;">Tea in soldiers' club; upper room hop-loft chapel; Tubby Clayton's radical egalitarian refuge.</td>
+            </tr>
+            <tr>
+              <td style="padding: 3.2px 6px;"><strong>Day 3 · 13:30</strong></td>
+              <td style="padding: 3.2px 6px;"><strong>Stop 13:</strong> Poperinge Town Hall Death Cells</td>
+              <td style="padding: 3.2px 6px;">Cramped cells &amp; execution post; British military discipline; shell shock &amp; 2006 statutory pardon.</td>
+            </tr>
+            <tr>
+              <td style="padding: 3.2px 6px;"><strong>Day 3 · 14:30</strong></td>
+              <td style="padding: 3.2px 6px;">Depart Poperinge · Calais Eurotunnel · Return</td>
+              <td style="padding: 3.2px 6px;">Coach departs 14:30; final head count; Eurotunnel customs; ETA Meoncross approx. 20:00–20:30.</td>
             </tr>
           </tbody>
         </table>
