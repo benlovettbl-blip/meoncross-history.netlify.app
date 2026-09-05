@@ -83,6 +83,7 @@ export async function switchView(viewName, param = null, skipHistory = false) {
     url.searchParams.set('view', viewName);
     if (param) url.searchParams.set('unit', param);
     else url.searchParams.delete('unit');
+    url.searchParams.delete('lesson');
     window.history.pushState({ view: viewName, unit: param }, '', url);
   }
 

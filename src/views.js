@@ -896,6 +896,27 @@ export async function renderLessonsView() {
     window.scrollTo(0, 0);
   };
 
+  // Check if a specific lesson was requested via URL query params (e.g. from QR code ?lesson=1)
+  const urlParams = new URLSearchParams(window.location.search);
+  const requestedLesson = urlParams.get('lesson');
+  if (requestedLesson !== null && requestedLesson !== undefined && requestedLesson !== '') {
+    let targetIndex = -1;
+    const parsed = parseInt(requestedLesson, 10);
+    if (!isNaN(parsed) && String(parsed) === requestedLesson.trim()) {
+      targetIndex = parsed;
+    } else {
+      targetIndex = lessonsList.findIndex(
+        (l) =>
+          l.id === requestedLesson ||
+          (l.title && l.title.toLowerCase().includes(requestedLesson.toLowerCase())),
+      );
+    }
+    if (targetIndex >= 0 && targetIndex < lessonsList.length) {
+      window.viewLessonDetail(targetIndex);
+      return;
+    }
+  }
+
   let heroImageUrl = '';
   if (
     data.cover_image &&

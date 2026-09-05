@@ -1662,6 +1662,14 @@ img::after {
     gap: 10px;
     height: auto !important;
     flex-wrap: nowrap;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-right,
+  .school-tag {
+    display: none !important;
   }
 
   .header-actions {
@@ -1822,6 +1830,20 @@ img::after {
 }
 
 @media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .app-layout,
+  .app-body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .hero-container {
     width: calc(100% + 2rem);
     margin-left: -1rem;
@@ -1829,6 +1851,235 @@ img::after {
     padding: 3rem 1rem 2rem 1rem;
     min-height: 400px;
   }
+
+  .lesson-hero {
+    width: calc(100% + 2rem) !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    margin-top: -1rem !important;
+    height: 220px !important;
+  }
+
+  .lesson-hero > div:last-child {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .lesson-hero h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .content-container,
+  #main-content,
+  #content-area,
+  .lesson-content {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .phase-card {
+    padding: 14px 10px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .narrative-chunk {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 12px 10px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+
+  .narrative-chunk .para-number {
+    display: inline-flex !important;
+    margin-bottom: 8px !important;
+    align-self: flex-start !important;
+  }
+
+  .narrative-chunk .narrative-text {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .narrative-chunk [data-action='read-aloud'] {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    margin-left: 0 !important;
+    padding: 4px 8px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* --- Responsive Poetry & Eyewitness Cards --- */
+  .poet-eyewitness-card {
+    padding: 14px 12px !important;
+    margin: 14px 0 !important;
+    border-left-width: 4px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .poet-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+
+  .poet-portrait {
+    flex: 0 0 auto !important;
+    margin: 0 auto !important;
+  }
+
+  .poet-portrait img {
+    width: 110px !important;
+  }
+
+  .poet-bio {
+    min-width: 0 !important;
+    text-align: left !important;
+  }
+
+  .poem-section {
+    margin-top: 14px !important;
+    padding-top: 14px !important;
+  }
+
+  .poem-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .poem-title .poem-subtitle {
+    display: block !important;
+    font-size: 0.82rem !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif !important;
+  }
+
+  .poem-blockquote {
+    padding: 14px 12px !important;
+    margin: 10px 0 !important;
+    font-size: 0.96rem !important;
+    line-height: 1.75 !important;
+    border-left-width: 3px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+  }
+
+  .flip-card-gallery-wrapper {
+    padding: 14px 10px !important;
+    margin: 20px 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .flip-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .flip-card-wrapper {
+    max-width: 100% !important;
+  }
+
+  [style*='width: 45%'] {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* --- Poetry & Eyewitness Dossier Cards (Desktop Default) --- */
+.poet-eyewitness-card {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-left: 5px solid #b91c1c;
+  border-radius: 8px;
+  padding: 22px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.poet-eyewitness-card.sassoon {
+  border-left-color: #4338ca;
+}
+
+.poet-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.poet-portrait {
+  flex: 0 0 150px;
+  text-align: center;
+}
+
+.poet-portrait img {
+  width: 150px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.poet-bio {
+  flex: 1;
+  min-width: 250px;
+}
+
+.poem-section {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.poem-title {
+  margin: 0 0 12px 0;
+  color: #1e293b;
+  font-size: 1.15rem;
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.poem-blockquote {
+  background: #ffffff;
+  border-left: 4px solid #b91c1c;
+  padding: 18px 22px;
+  border-radius: 4px;
+  font-family: 'Georgia', serif;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: #1e293b;
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.poet-eyewitness-card.sassoon .poem-blockquote {
+  border-left-color: #4338ca;
+}
+
+.poem-attribution {
+  text-align: right;
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
 }
 
 /* =========================================
