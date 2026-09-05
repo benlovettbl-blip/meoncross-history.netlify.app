@@ -3,7 +3,6 @@
  * Intercepts clicks and routes them to appropriate handlers using data attributes.
  */
 import { appStore } from './store.js';
-import { renderNavigatorStopsHTML } from './stop_navigator.js';
 
 export function initEventDelegation() {
   document.body.addEventListener('click', (e) => {
@@ -205,36 +204,6 @@ export function initEventDelegation() {
       case 'jump-to-key-individual':
         if (window.jumpToKeyIndividual) window.jumpToKeyIndividual(target.dataset.name);
         break;
-      case 'open-stop-navigator':
-        if (window.openStopNavigator) window.openStopNavigator(target.dataset.dayId);
-        break;
-      case 'jump-to-stop': {
-        const modal = document.getElementById('stop-navigator-modal-overlay');
-        if (modal) modal.remove();
-        if (window.jumpToStop) {
-          window.jumpToStop(target.dataset.targetId, target.dataset.dayId);
-        }
-        break;
-      }
-      case 'switch-navigator-tab': {
-        const selectedDay = target.dataset.dayId;
-        const container = target.closest('#stop-navigator-modal-overlay');
-        if (container) {
-          container.querySelectorAll('.nav-day-tab-btn').forEach((btn) => {
-            const isActive = btn.dataset.dayId === selectedDay;
-            btn.style.background = isActive ? '#1e3a8a' : '#ffffff';
-            btn.style.color = isActive ? '#ffffff' : '#475569';
-            btn.style.borderColor = isActive ? '#1e3a8a' : '#cbd5e1';
-            if (isActive) btn.classList.add('active');
-            else btn.classList.remove('active');
-          });
-          const content = container.querySelector('#navigator-tab-content');
-          if (content) {
-            content.innerHTML = renderNavigatorStopsHTML(selectedDay);
-          }
-        }
-        break;
-      }
       case 'toggle-map':
         if (window.toggleMap) window.toggleMap(target);
         break;

@@ -334,267 +334,48 @@ export const BATTLEFIELD_DAYS = [
  */
 export function renderStopQuickBar(currentLesson) {
   if (!currentLesson) return '';
-  const currentId = currentLesson.id || '';
-
-  // Find matching day config or default to Day 1
-  let dayConfig = BATTLEFIELD_DAYS.find((d) => d.id === currentId);
-  if (!dayConfig && currentId.startsWith('hero_')) {
-    dayConfig = BATTLEFIELD_DAYS.find((d) => d.id === 'heroes');
-  }
-
-  const stops = dayConfig ? dayConfig.stops : [];
-  if (!stops || stops.length === 0) return '';
-
-  return `
-    <div class="stop-quick-jump-bar no-print">
-      <div class="stop-quick-label">
-        <i class="fa-solid fa-location-dot"></i>
-        <span>Stops:</span>
-      </div>
-      <div class="stop-quick-chips">
-        ${stops
-          .map(
-            (stop, idx) => `
-          <button class="stop-chip" data-action="jump-to-stop" data-target-id="${stop.headingId || ''}" data-day-id="${stop.dayLessonId || dayConfig.id}" data-stop-id="${stop.id}" title="${stop.title}">
-            <span class="stop-chip-num">${idx + 1}</span>
-            <span class="stop-chip-title">${stop.shortTitle || stop.title}</span>
-            ${stop.time ? `<span class="stop-chip-time">${stop.time}</span>` : ''}
-          </button>
-        `,
-          )
-          .join('')}
-        <button class="stop-chip stop-chip-all" data-action="open-stop-navigator" title="View all stops across all 3 days">
-          <i class="fa-solid fa-compass"></i>
-          <span>All Tour Stops ▾</span>
-        </button>
-      </div>
-    </div>
-  `;
+  return '';
 }
 
 /**
- * Smoothly scrolls to a stop and applies a glowing pulse animation.
+ * Smoothly scrolls to a target stop if requested.
  */
 export function jumpToStop(targetId, dayLessonId = null) {
-  // If a day was requested and it is not currently loaded, switch day first!
-  const currentLesson = window.currentActiveLesson;
-  if (dayLessonId && currentLesson && currentLesson.id !== dayLessonId) {
-    const allLessons =
-      (window.currentUnitData && window.currentUnitData.lessons) ||
-      (window.appStore &&
-        window.appStore.state.activeUnitData &&
-        window.appStore.state.activeUnitData.lessons) ||
-      [];
-    const targetIdx = allLessons.findIndex((l) => l.id === dayLessonId);
-    if (targetIdx >= 0 && window.viewLessonDetail) {
-      window.viewLessonDetail(targetIdx, targetId);
-      return;
-    }
-  }
-
-  // Look for target element
-  let targetEl = null;
-  if (targetId) {
-    targetEl = document.getElementById(targetId);
-  }
-
-  // Fallback: search for headings or cards containing matching text or data attribute
-  if (!targetEl && targetId) {
-    targetEl =
-      document.querySelector(`[data-stop-id="${targetId}"]`) ||
-      document.querySelector(`h4#${targetId}`) ||
-      document.querySelector(`[id*="${targetId}"]`);
-  }
-
-  if (targetEl) {
-    const headerOffset = 80;
-    const elementPosition = targetEl.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({
-      top: Math.max(0, offsetPosition),
-      behavior: 'smooth',
-    });
-
-    // Pulse highlight target
-    const highlightTarget =
-      targetEl.closest('.phase-card') ||
-      targetEl.closest('.narrative-chunk') ||
-      targetEl.closest('.poetry-dossier-card') ||
-      targetEl;
-
-    highlightTarget.classList.remove('jump-highlight-pulse');
-    // Force reflow
-    void highlightTarget.offsetWidth;
-    highlightTarget.classList.add('jump-highlight-pulse');
-
-    setTimeout(() => {
-      highlightTarget.classList.remove('jump-highlight-pulse');
-    }, 2400);
-  } else {
-    // If element not found directly on page, scroll smoothly to content
-    const content =
-      document.getElementById('content-area') || document.querySelector('.lesson-content');
-    if (content) {
-      window.scrollTo({ top: content.offsetTop - 60, behavior: 'smooth' });
-    }
+  if (!targetId) return;
+  const element = document.getElementById(targetId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
 /**
- * Ensures the floating "Jump to Stop" action button exists on the screen for the trip unit.
+ * Removes the floating "Jump to Stop" action button.
  */
 export function ensureFloatingJumpButton() {
   const existing = document.getElementById('floating-stop-navigator-btn');
-  const isTrip =
-    window.currentUnitId === 'trip_ypres' ||
-    (window.currentUnitData && window.currentUnitData.type === 'trip');
-
-  if (!isTrip) {
-    if (existing) existing.remove();
-    return;
-  }
-
-  if (!existing) {
-    const btn = document.createElement('button');
-    btn.id = 'floating-stop-navigator-btn';
-    btn.className = 'floating-stop-jump-btn no-print';
-    btn.setAttribute('data-action', 'open-stop-navigator');
-    btn.setAttribute('title', 'Quick Jump to Battlefield Stop');
-    btn.innerHTML = `
-      <i class="fa-solid fa-location-crosshairs"></i>
-      <span class="btn-text">Jump to Stop</span>
-    `;
-    document.body.appendChild(btn);
-  }
+  if (existing) existing.remove();
 }
 
 /**
- * Opens the interactive Battlefield Tour Stop Navigator Modal.
+ * Deprecated / removed Stop Navigator modal.
  */
 export function openStopNavigatorModal(defaultDayId = null) {
-  // Remove existing modal if any
   const existing = document.getElementById('stop-navigator-modal-overlay');
   if (existing) existing.remove();
-
-  const currentLessonId = (window.currentActiveLesson && window.currentActiveLesson.id) || 'day_1';
-  const activeDay =
-    defaultDayId ||
-    (BATTLEFIELD_DAYS.some((d) => d.id === currentLessonId) ? currentLessonId : 'day_1');
-
-  const overlay = document.createElement('div');
-  overlay.id = 'stop-navigator-modal-overlay';
-  overlay.className = 'modal-overlay no-print';
-  overlay.style.cssText =
-    'position: fixed; inset: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 2500; display: flex; padding: 15px; box-sizing: border-box;';
-
-  overlay.onclick = function (e) {
-    if (e.target === overlay) overlay.remove();
-  };
-
-  overlay.innerHTML = `
-    <div class="stop-navigator-dialog" style="background: #ffffff; width: 100%; max-width: 820px; max-height: 88vh; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1.5px solid #cbd5e1; animation: fadeInUp 0.25s ease-out;">
-      
-      <!-- Header -->
-      <div style="background: #0f172a; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; flex-shrink: 0;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="background: #1e3a8a; width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #3b82f6; flex-shrink: 0;">
-            <i class="fa-solid fa-compass" style="color: #60a5fa; font-size: 1.2rem;"></i>
-          </div>
-          <div>
-            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #f8fafc; line-height: 1.2;">
-              Battlefield Tour Stop Navigator
-            </h3>
-            <p style="margin: 2px 0 0 0; font-size: 0.82rem; color: #94a3b8; line-height: 1.3;">
-              Tap any stop to jump directly to on-site notes, history &amp; poetry readings.
-            </p>
-          </div>
-        </div>
-        <button onclick="document.getElementById('stop-navigator-modal-overlay').remove()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1.2rem; cursor: pointer; border-radius: 6px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s;">&times;</button>
-      </div>
-
-      <!-- Navigation Tabs -->
-      <div style="display: flex; gap: 8px; padding: 10px 16px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; overflow-x: auto; -webkit-overflow-scrolling: touch; flex-shrink: 0; min-height: 52px; align-items: center; box-sizing: border-box;">
-        ${BATTLEFIELD_DAYS.map((day) => {
-          const isSelected = day.id === activeDay;
-          return `
-            <button class="nav-day-tab-btn ${isSelected ? 'active' : ''}" data-action="switch-navigator-tab" data-day-id="${day.id}" style="padding: 7px 14px; font-size: 0.85rem; font-weight: 700; border-radius: 20px; border: 1.5px solid ${isSelected ? '#1e3a8a' : '#cbd5e1'}; background: ${isSelected ? '#1e3a8a' : '#ffffff'}; color: ${isSelected ? '#ffffff' : '#475569'}; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: all 0.2s;">
-              ${day.label}
-            </button>
-          `;
-        }).join('')}
-      </div>
-
-      <!-- Stops Content Area -->
-      <div id="navigator-tab-content" style="padding: 16px 20px; overflow-y: auto; flex: 1 1 auto; -webkit-overflow-scrolling: touch; box-sizing: border-box;">
-        ${renderNavigatorStopsHTML(activeDay)}
-      </div>
-
-      <!-- Footer Quick Info -->
-      <div style="background: #f1f5f9; padding: 12px 20px; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; flex-shrink: 0;">
-        <span style="font-size: 0.82rem; color: #64748b; display: inline-flex; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-satellite-dish" style="color: #059669;"></i> Works 100% offline during coach travel in Belgium
-        </span>
-        <button onclick="document.getElementById('stop-navigator-modal-overlay').remove()" class="btn btn-secondary" style="padding: 6px 16px; font-size: 0.85rem; font-weight: 600; border-radius: 6px; cursor: pointer;">
-          Close
-        </button>
-      </div>
-
-    </div>
-  `;
-
-  document.body.appendChild(overlay);
 }
 
-/**
- * Generates the cards list for the active day inside the navigator modal.
- */
 export function renderNavigatorStopsHTML(dayId) {
-  const day = BATTLEFIELD_DAYS.find((d) => d.id === dayId) || BATTLEFIELD_DAYS[0];
-  if (!day) return '';
-
-  return `
-    <div style="margin-bottom: 16px;">
-      <h4 style="margin: 0 0 4px 0; color: #0f172a; font-family: 'Playfair Display', serif; font-size: 1.25rem;">
-        ${day.title}
-      </h4>
-      <p style="margin: 0; font-size: 0.88rem; color: #64748b;">
-        ${day.subtitle}
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 14px;">
-      ${day.stops
-        .map(
-          (stop, sIdx) => `
-        <div class="navigator-stop-card" data-action="jump-to-stop" data-target-id="${stop.headingId || ''}" data-day-id="${stop.dayLessonId || day.id}" data-stop-id="${stop.id}" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: #eff6ff; color: #1e3a8a; padding: 3px 8px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
-                <i class="fa-solid ${stop.icon || 'fa-location-dot'}"></i> Stop ${sIdx + 1}
-              </span>
-              ${stop.time ? `<span style="font-size: 0.78rem; font-weight: 700; background: #f8fafc; color: #64748b; padding: 2px 8px; border-radius: 10px; border: 1px solid #e2e8f0;">${stop.time}</span>` : ''}
-            </div>
-            <h5 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.05rem; font-family: 'Playfair Display', serif; font-weight: 700;">
-              ${stop.title}
-            </h5>
-            <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.45;">
-              ${stop.highlight}
-            </p>
-          </div>
-          <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #e2e8f0; display: flex; justify-content: flex-end; align-items: center; gap: 4px; color: #1d4ed8; font-size: 0.82rem; font-weight: 700;">
-            <span>Jump to Stop</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </div>
-        </div>
-      `,
-        )
-        .join('')}
-    </div>
-  `;
+  return '';
 }
 
-// Bind globally so events and inline handlers can invoke them
+// Clean up any lingering navigator elements immediately
+if (typeof document !== 'undefined') {
+  const existingBtn = document.getElementById('floating-stop-navigator-btn');
+  if (existingBtn) existingBtn.remove();
+  const existingModal = document.getElementById('stop-navigator-modal-overlay');
+  if (existingModal) existingModal.remove();
+}
+
 if (typeof window !== 'undefined') {
   window.jumpToStop = jumpToStop;
   window.openStopNavigator = openStopNavigatorModal;

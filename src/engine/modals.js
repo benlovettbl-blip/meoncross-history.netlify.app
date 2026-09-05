@@ -507,22 +507,6 @@ window.openAnthologyModal = async function () {
         </button>
       </div>
 
-      <!-- Quick Stop Navigation Bar -->
-      <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-bottom: 25px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
-        <span style="font-size: 0.8rem; font-weight: 700; color: #475569; margin-right: 6px;">Jump to Stop:</span>
-        <a href="#anthology-stop-essex_farm" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">1. Essex Farm</a>
-        <a href="#anthology-stop-langemarck" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">2. Langemarck</a>
-        <a href="#anthology-stop-hooge_crater" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">3. Hooge Crater</a>
-        <a href="#anthology-stop-st_julien" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">4. St. Julien</a>
-        <a href="#anthology-stop-sanctuary_wood" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">5. Sanctuary Wood</a>
-        <a href="#anthology-stop-tyne_cot" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">6. Tyne Cot</a>
-        <a href="#anthology-stop-lijssenthoek" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">7. Lijssenthoek</a>
-        <a href="#anthology-stop-menin_gate_last_post" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">8. Menin Gate</a>
-        <a href="#anthology-stop-ypres_ramparts" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">9. Ramparts</a>
-        <a href="#anthology-stop-talbot_house" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">10. Talbot House</a>
-        <a href="#anthology-stop-poperinge_death_cells" style="font-size: 0.78rem; color: #1e3a8a; text-decoration: none; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">11. Poperinge</a>
-      </div>
-
       ${bodyHtml}
 
       <div style="text-align: right; margin-top: 30px; border-top: 1px solid #cbd5e1; padding-top: 15px;">

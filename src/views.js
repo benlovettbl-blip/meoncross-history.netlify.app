@@ -13,7 +13,6 @@ import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js'; // Added for guided reading tab
 import { getAssetUrl } from './engine/assets.js';
 import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
-import { ensureFloatingJumpButton } from './engine/stop_navigator.js';
 
 export function getUnits() {
   if (!window.db) return [];
@@ -903,9 +902,8 @@ export async function renderLessonsView() {
     }
   };
 
-  if (unitId === 'trip_ypres' || (data && data.type === 'trip')) {
-    ensureFloatingJumpButton();
-  }
+  const floatingBtn = document.getElementById('floating-stop-navigator-btn');
+  if (floatingBtn) floatingBtn.remove();
 
   // Check if a specific lesson was requested via URL query params (e.g. from QR code ?lesson=1)
   const urlParams = new URLSearchParams(window.location.search);
