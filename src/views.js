@@ -13,6 +13,7 @@ import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js'; // Added for guided reading tab
 import { getAssetUrl } from './engine/assets.js';
 import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
+import { ensureFloatingJumpButton } from './engine/stop_navigator.js';
 
 export function getUnits() {
   if (!window.db) return [];
@@ -881,7 +882,7 @@ export async function renderLessonsView() {
     return;
   }
 
-  window.viewLessonDetail = function (index) {
+  window.viewLessonDetail = function (index, targetStopId = null) {
     const lessonsList = data.lessons || data.subtopics;
     const sub = lessonsList[index];
 
@@ -893,8 +894,18 @@ export async function renderLessonsView() {
 
     // Call the legacy Netlify app's beautifully formatted lesson renderer!
     renderLesson(sub);
-    window.scrollTo(0, 0);
+    if (targetStopId) {
+      setTimeout(() => {
+        if (window.jumpToStop) window.jumpToStop(targetStopId);
+      }, 180);
+    } else {
+      window.scrollTo(0, 0);
+    }
   };
+
+  if (unitId === 'trip_ypres' || (data && data.type === 'trip')) {
+    ensureFloatingJumpButton();
+  }
 
   // Check if a specific lesson was requested via URL query params (e.g. from QR code ?lesson=1)
   const urlParams = new URLSearchParams(window.location.search);

@@ -2635,3 +2635,224 @@ img::after {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   border-radius: 8px;
 }
+
+/* =========================================
+   Battlefield Stop Navigator & Offline Styles
+   ========================================= */
+
+.stop-quick-jump-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.stop-quick-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stop-quick-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+}
+
+.stop-quick-chips::-webkit-scrollbar {
+  height: 4px;
+}
+
+.stop-quick-chips::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.stop-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.stop-chip:hover {
+  background: #1e3a8a;
+  border-color: #1e3a8a;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(30, 58, 138, 0.15);
+}
+
+.stop-chip:hover .stop-chip-num {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.stop-chip:hover .stop-chip-time {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.stop-chip-num {
+  background: #e2e8f0;
+  color: #1e293b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.stop-chip-time {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.stop-chip-all {
+  background: #fefce8;
+  border-color: #fde047;
+  color: #854d0e;
+  font-weight: 700;
+}
+
+.stop-chip-all:hover {
+  background: #854d0e;
+  border-color: #854d0e;
+  color: #ffffff;
+}
+
+/* Floating Action Button */
+.floating-stop-jump-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1500;
+  background: #0f172a;
+  color: #ffffff;
+  border: 1.5px solid #3b82f6;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-stop-jump-btn i {
+  color: #60a5fa;
+  font-size: 1rem;
+}
+
+.floating-stop-jump-btn:hover {
+  background: #1e3a8a;
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.4);
+}
+
+.floating-stop-jump-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .floating-stop-jump-btn {
+    bottom: 18px;
+    right: 14px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  .stop-quick-jump-bar {
+    padding: 6px 10px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Highlighting Pulse for Jump Target */
+@keyframes stopHighlightPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.8);
+    outline: 3px solid #3b82f6;
+  }
+  50% {
+    box-shadow: 0 0 24px 8px rgba(59, 130, 246, 0.45);
+    outline: 3px solid #2563eb;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    outline: 3px solid transparent;
+  }
+}
+
+.jump-highlight-pulse {
+  animation: stopHighlightPulse 2.2s ease-out !important;
+  border-radius: 8px;
+}
+
+/* Stop Navigator Dialog Cards */
+.navigator-stop-card:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+/* Offline Status Pill */
+.offline-status-pill {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3500;
+  background: #b91c1c;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeInDown 0.3s ease-out;
+}

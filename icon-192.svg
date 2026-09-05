@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="hubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="36" fill="url(#hubGrad)"/>
+  <rect x="6" y="6" width="180" height="180" rx="30" fill="none" stroke="url(#goldGrad)" stroke-width="3" opacity="0.6"/>
+  <!-- Graduation Cap / History Hub Icon -->
+  <path d="M96 42 L162 76 L96 110 L30 76 Z" fill="url(#goldGrad)"/>
+  <path d="M52 92 L52 126 C52 142 72 152 96 152 C120 152 140 142 140 126 L140 92 L96 114 Z" fill="#ffffff" opacity="0.92"/>
+  <path d="M162 76 L162 128 C162 131 159 133 156 133 C153 133 150 131 150 128 L150 82 Z" fill="#fbbf24"/>
+  <circle cx="150" cy="134" r="5" fill="#fbbf24"/>
+</svg>

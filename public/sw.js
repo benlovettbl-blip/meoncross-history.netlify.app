@@ -1,30 +1,59 @@
-const CACHE_NAME = 'history-hub-cache-v7';
-const DYNAMIC_CACHE = 'history-hub-dynamic-v7';
+const CACHE_NAME = 'history-hub-cache-v8';
+const DYNAMIC_CACHE = 'history-hub-dynamic-v8';
 
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
+  '/icon-192.svg',
+  '/icon-512.svg',
   '/style.css',
-  '/knowledge_bank.js',
+  '/public/style.css',
   '/database.json',
+  '/knowledge_bank.js',
   '/src/main.js',
+  // Key Ypres Battlefield Tour images for offline coach use in Belgium
+  '/images/stubbington_memorial.jpg',
+  '/images/stubbington_memorial_2.jpg',
+  '/images/stubbington_names_2.jpg',
+  '/images/stubbington_names_3.jpg',
+  '/images/john_mccrae.jpg',
+  '/images/siegfried_sassoon.jpg',
+  '/images/charles_sorley.jpg',
+  '/images/isaac_rosenberg.jpg',
+  '/images/laurence_binyon.jpg',
+  '/images/rupert_brooke.jpg',
+  '/images/wilfred_owen.jpg',
+  '/images/menin_road_nash.jpg',
+  '/images/ww1_wooden_crosses.jpg',
+  '/images/fabian_ware.jpg',
+  '/images/cloth_hall_ruins_paterson.jpg',
+  '/images/talbot_house_facade.jpg',
+  '/images/cheshire_regiment_trench.png',
+  '/images/ypres_essex_farm.jpg',
+  '/images/lowry_william.png',
+  '/images/lowry_auriol.png',
+  '/images/lowry_cyril.png',
 ];
 
-// Install Event: Precache core assets
+// Install Event: Precache core assets with resilient per-item handling
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Precaching core assets');
-      return cache.addAll(CORE_ASSETS).catch((err) => {
-        console.warn('[Service Worker] Precache non-critical warning:', err);
-      });
+    caches.open(CACHE_NAME).then(async (cache) => {
+      console.log('[Service Worker] Precaching core assets and Ypres offline companion');
+      for (const asset of CORE_ASSETS) {
+        try {
+          await cache.add(asset);
+        } catch (err) {
+          console.warn('[Service Worker] Non-critical precache notice for:', asset, err.message);
+        }
+      }
     }),
   );
 });
 
-// Activate Event: Cleanup old caches
+// Activate Event: Cleanup older caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
@@ -33,7 +62,7 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
             if (cacheName !== CACHE_NAME && cacheName !== DYNAMIC_CACHE) {
-              console.log('[Service Worker] Deleting old cache:', cacheName);
+              console.log('[Service Worker] Removing outdated cache:', cacheName);
               return caches.delete(cacheName);
             }
           }),
@@ -43,7 +72,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch Event: Stale-While-Revalidate strategy with ignoreSearch support
+// Fetch Event: Stale-While-Revalidate with resilient offline navigation fallback
 self.addEventListener('fetch', (event) => {
   // Only intercept GET requests
   if (event.request.method !== 'GET') return;
@@ -60,13 +89,13 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip Chrome extension requests or non-http protocols
+  // Skip Chrome extensions and non-http schemes
   if (!url.protocol.startsWith('http')) return;
 
   event.respondWith(
     caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
       if (cachedResponse) {
-        // Serve stale response immediately; refresh cache in background
+        // Serve cached response immediately; update cache in background
         fetch(event.request)
           .then((networkResponse) => {
             if (
@@ -102,15 +131,24 @@ self.addEventListener('fetch', (event) => {
           return networkResponse;
         })
         .catch(async (error) => {
-          console.warn('[Service Worker] Offline fetch failed:', event.request.url);
-          // Special fallback for database.json cache regardless of timestamp queries
+          console.warn('[Service Worker] Offline fetch intercepted:', event.request.url);
+
+          // Fallback for database.json regardless of query timestamp
           if (event.request.url.includes('database.json')) {
             const dbMatch = await caches.match('/database.json');
             if (dbMatch) return dbMatch;
           }
-          // General ignoreSearch cache fallback
+
+          // Fallback for navigation requests (HTML SPA load)
+          if (event.request.mode === 'navigate') {
+            const indexMatch = (await caches.match('/index.html')) || (await caches.match('/'));
+            if (indexMatch) return indexMatch;
+          }
+
+          // General ignoreSearch cache match
           const fallback = await caches.match(event.request, { ignoreSearch: true });
           if (fallback) return fallback;
+
           throw error;
         });
     }),

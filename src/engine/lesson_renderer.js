@@ -2,6 +2,7 @@ import { cleanQuestionText } from '../data_parser.js';
 import { generateKeyIndividualEmbedHTML } from '../key_individuals.js';
 import { appStore } from './store.js';
 import { getAssetUrl } from './assets.js';
+import { renderStopQuickBar, ensureFloatingJumpButton } from './stop_navigator.js';
 
 // Module-level fallback to ensure isGCSE never throws ReferenceError
 var isGCSE = false;
@@ -237,7 +238,10 @@ export function renderLesson(lesson) {
           <div class="sticky-lesson-actions">
           ${
             isTrip
-              ? `<button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.88rem; background: white; color: #1e3a8a; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); cursor: pointer;" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId}"><i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Back to Trip Itinerary</button>`
+              ? `
+              <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.88rem; background: white; color: #1e3a8a; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); cursor: pointer;" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId}"><i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Itinerary</button>
+              <button class="btn btn-primary jump-to-stop-header-btn" data-action="open-stop-navigator" style="padding: 6px 14px; font-size: 0.88rem; background: #1e3a8a; color: white; border: none; font-weight: 700; border-radius: 6px; box-shadow: 0 2px 4px rgba(30,58,138,0.25); cursor: pointer; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-compass" style="color: #60a5fa;"></i> Jump to Stop</button>
+            `
               : `
               <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-debate-modal"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
               <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId}"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
@@ -247,6 +251,10 @@ export function renderLesson(lesson) {
       </div>
     `;
   let bannerPosition = lesson.banner_position || 'center';
+
+  if (isTrip) {
+    ensureFloatingJumpButton();
+  }
 
   // Full-Bleed Hero Image
   html += `
@@ -258,6 +266,10 @@ export function renderLesson(lesson) {
         </div>
       </div>
     `;
+
+  if (isTrip) {
+    html += renderStopQuickBar(lesson);
+  }
 
   html += `
       <div id="progress-container" style="background: rgba(226,232,240,0.5); height: 6px; width: 100%; margin-bottom: 20px; border-radius: 3px; overflow: hidden; backdrop-filter: blur(5px);">

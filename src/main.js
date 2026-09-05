@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   initAuth();
   initData();
-  
+
   try {
     const res = await fetch(`/database.json?v=${Date.now()}`);
     state.db = await res.json();
@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const view = urlParams.get('view') || 'dashboard';
   const unit = urlParams.get('unit');
-  
+
   switchView(view, unit, true);
 
   window.addEventListener('popstate', (e) => {
@@ -57,7 +57,33 @@ window.addEventListener('DOMContentLoaded', async () => {
       switchView('dashboard', null, true);
     }
   });
-  
+
+  // Offline / Online Connectivity Indicator for Battlefield Tour
+  const updateNetworkStatus = () => {
+    let offlinePill = document.getElementById('offline-status-pill');
+    if (!navigator.onLine) {
+      if (!offlinePill) {
+        offlinePill = document.createElement('div');
+        offlinePill.id = 'offline-status-pill';
+        offlinePill.className = 'offline-status-pill no-print';
+        offlinePill.innerHTML =
+          '<i class="fa-solid fa-plane-slash"></i> <span>Offline Mode · Field Guide Available</span>';
+        document.body.appendChild(offlinePill);
+      }
+      offlinePill.style.display = 'flex';
+    } else if (offlinePill) {
+      offlinePill.innerHTML = '<i class="fa-solid fa-check"></i> <span>Online Reconnected</span>';
+      offlinePill.style.background = '#059669';
+      setTimeout(() => {
+        if (offlinePill) offlinePill.style.display = 'none';
+      }, 2500);
+    }
+  };
+
+  window.addEventListener('online', updateNetworkStatus);
+  window.addEventListener('offline', updateNetworkStatus);
+  if (!navigator.onLine) updateNetworkStatus();
+
   // Hide the loading curtain smoothly
   setTimeout(() => {
     const curtain = document.getElementById('page-curtain');
