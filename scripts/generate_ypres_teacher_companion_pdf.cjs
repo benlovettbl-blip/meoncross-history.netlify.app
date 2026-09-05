@@ -503,9 +503,9 @@ function getHtmlContent() {
 
       <div class="talking-points-box" style="margin-bottom: 10px;">
         <div class="box-header">🎤 Tour Leader Talking Points: The Lowry Brothers</div>
-        <div style="font-size: 7.8pt; color: #334155; line-height: 1.4;">
-          <strong>Local Connection:</strong> Three sons of Arthur and Eleanor Lowry attended Stubbington House School. All three held commissions; their sacrifice spans Frezenberg, Passchendaele, and the interwar years.<br>
-          <strong>Pedagogical Goal:</strong> Connect grand tactical movements to individual boys who walked our local paths. Point out that William has no grave, Cyril lies at Tyne Cot, and Eric lived with lifelong trauma.
+        <div style="font-size: 8pt; color: #334155; line-height: 1.42;">
+          <strong>Local Connection:</strong> Three sons of William and Annie Lowry of Manor Way Grange in Lee-on-the-Solent attended Stubbington House School. All three held commissions, and all three were killed in action across different theatres: Gallipoli (William), the Somme (Cyril), and Arras (Eric).<br>
+          <strong>Pedagogical Goal:</strong> Connect grand tactical operations to individual boys who walked our local paths. Emphasise that William and Cyril have no known graves, while Eric lies in a marked grave at La Targette British Cemetery near Arras. Grieving father William Lowry built the Lowry Memorial Hall in Lee-on-the-Solent in their honour.
         </div>
       </div>
 
@@ -514,17 +514,17 @@ function getHtmlContent() {
         <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 9px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="text-align: center; margin-bottom: 6px;">
-              <img src="${lowryWilliam}" alt="Capt. William Lowry" style="width: 85px; height: 110px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
+              <img src="${lowryWilliam}" alt="Lieut. William Lowry" style="width: 85px; height: 110px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
             </div>
-            <h4 style="font-size: 9.5pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Capt. William Lowry</h4>
-            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">2nd Bn, King's Own (Royal Lancaster)</div>
+            <h4 style="font-size: 9.5pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Lieut. William Lowry</h4>
+            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">8th Gurkha Rifles (Indian Army)</div>
             <p style="font-size: 7.5pt; color: #475569; line-height: 1.35; margin: 0;">
-              Killed leading his company on Frezenberg Ridge, Second Ypres, 8 May 1915, aged 26.<br><br>
-              Body never found in the pulverised crater field. Commemorated on Menin Gate Panel 12.
+              Eldest brother (aged 25); Cambridge scholar. Killed 4 June 1915 leading charge up Gully Ravine, Gallipoli, under heavy machine-gun fire.<br><br>
+              Body never recovered. Commemorated on Helles Memorial, Turkey.
             </p>
           </div>
           <div style="background: #f1f5f9; padding: 5px; border-radius: 4px; font-size: 7pt; color: #1e293b; font-weight: 700; margin-top: 6px; text-align: center;">
-            📍 Menin Gate (Panel 12)
+            📍 Helles Memorial, Gallipoli
           </div>
         </div>
 
@@ -535,14 +535,14 @@ function getHtmlContent() {
               <img src="${lowryCyril}" alt="Capt. Cyril Lowry" style="width: 85px; height: 110px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
             </div>
             <h4 style="font-size: 9.5pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Capt. Cyril Lowry</h4>
-            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">4th Bn, North Staffordshire Regt</div>
+            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">2nd Bn, West Yorkshire Regt</div>
             <p style="font-size: 7.5pt; color: #475569; line-height: 1.35; margin: 0;">
-              Mortally wounded commanding front trenches at Zonnebeke, Passchendaele, 26 Sept 1917, aged 22.<br><br>
-              Buried in Tyne Cot Cemetery. Staff to guide pupils to Plot LXII. D. 12.
+              Youngest brother (aged 20). Served under older brother Eric. Killed 25 March 1918 defending Somme crossing at Eterpigny during German Spring Offensive.<br><br>
+              Fell in full view of Eric; body lost in withdrawal. Commemorated on Pozières Memorial.
             </p>
           </div>
           <div style="background: #fef3c7; padding: 5px; border-radius: 4px; font-size: 7pt; color: #92400e; font-weight: 700; margin-top: 6px; text-align: center;">
-            📍 Tyne Cot (Plot LXII. D. 12)
+            📍 Pozières Memorial, Somme
           </div>
         </div>
 
@@ -553,14 +553,14 @@ function getHtmlContent() {
               <img src="${lowryEric}" alt="Lt Col Eric Lowry" style="width: 85px; height: 110px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
             </div>
             <h4 style="font-size: 9.5pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Lt. Col. Eric Lowry</h4>
-            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">2nd Bn, Prince of Wales's Volunteers</div>
+            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">2nd Bn, West Yorkshire Regt (DSO, MC)</div>
             <p style="font-size: 7.5pt; color: #475569; line-height: 1.35; margin: 0;">
-              Wounded twice; awarded Distinguished Service Order (DSO). Survived the war.<br><br>
-              Continued serving in the regular army; bore the psychological burden of losing both brothers.
+              Middle brother (aged 25). Commanded 2nd West Yorkshires at Westhoek Ridge and Somme. Awarded DSO, MC &amp; Bar, French Croix de Guerre.<br><br>
+              Killed 23 September 1918 by machine gun inspecting outposts near Arleux, dying in his runner's arms. Buried at La Targette.
             </p>
           </div>
-          <div style="background: #ecfdf5; padding: 5px; border-radius: 4px; font-size: 7pt; color: #065f46; font-weight: 700; margin-top: 6px; text-align: center;">
-            🎖️ Survived: DSO &amp; MiD
+          <div style="background: #fee2e2; padding: 5px; border-radius: 4px; font-size: 7pt; color: #991b1b; font-weight: 700; margin-top: 6px; text-align: center;">
+            📍 La Targette British Cemetery (Plot I. C. 2)
           </div>
         </div>
       </div>
@@ -568,9 +568,9 @@ function getHtmlContent() {
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 10px 14px; margin-bottom: 0;">
         <h4 style="font-size: 8.8pt; color: #1e3a8a; margin-bottom: 4px;">🎯 Staff Action Points at Tyne Cot</h4>
         <div style="font-size: 7.8pt; color: #334155; line-height: 1.4;">
-          1. Lead pupils from the main entrance along the central grass avenue directly to Plot LXII.<br>
-          2. Gather students around Cyril's stone; allow a nominated cadet to read the family's memorial Latin inscription.<br>
-          3. Emphasise that Eleanor Lowry lost two sons within two years in this same Flemish mud.
+          1. Lead pupils along the central avenue directly to the Cross of Sacrifice built atop the captured German pillbox.<br>
+          2. Guide students along the rear memorial wall to locate our parish fallen (such as L/Cpl Arthur Newman, Royal Engineers).<br>
+          3. Emphasise how the tragedy of the three Lowry brothers mirrors the universal bereavement that affected families across every street in Britain.
         </div>
       </div>
     </div>
@@ -988,7 +988,7 @@ Your cosmopolitan sympathies...
           <div style="font-size: 7.6pt; color: #334155; line-height: 1.35;">
             <strong>The Scale:</strong> Largest British war cemetery in the world. 11,961 burials (8,369 unidentified). Sir Herbert Baker built the Cross of Sacrifice directly atop a captured German machine gun bunker.<br>
             <strong>The Memorial Wall:</strong> 34,984 names of soldiers missing after 16 August 1917.<br>
-            <strong>Pilgrimage:</strong> Guide pupils to Capt. Cyril Lowry (Plot LXII. D. 12) and Hampshire Regiment panels.
+            <strong>Pilgrimage:</strong> Guide pupils to Hampshire Regiment panels and our parish fallen (including L/Cpl Arthur Newman on the Memorial Wall).
           </div>
         </div>
 
@@ -1019,9 +1019,9 @@ We will remember them.
 
         <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <h4 style="font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">Staff Coordination: Lowry Memorial</h4>
+            <h4 style="font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">Staff Coordination: Parish Fallen</h4>
             <p style="font-size: 7.5pt; color: #475569; line-height: 1.35; margin: 0 0 4px 0;">
-              After Binyon recitation at the Cross of Sacrifice, lead pupils to Plot LXII. D. 12. Have student lay Meoncross wreath marker at Captain Cyril Lowry's stone.
+              After Binyon recitation at the Cross of Sacrifice, lead pupils to the Memorial Wall to locate our parish fallen (including L/Cpl Arthur Newman, Royal Engineers). Lay the Meoncross remembrance marker.
             </p>
           </div>
           <div style="background: #fef3c7; padding: 5px; border-radius: 4px; font-size: 7pt; color: #92400e; font-weight: 600;">

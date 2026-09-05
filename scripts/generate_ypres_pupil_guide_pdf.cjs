@@ -254,32 +254,34 @@ function getHtmlContent() {
       line-height: 1.4;
     }
 
-    /* Cadet Note Taking Lines */
-    .field-notes-box {
-      background: #fdfefe;
-      border: 1.5px dashed #94a3b8;
-      border-radius: 6px;
-      padding: 6px 10px 8px 10px;
-      margin-top: 5px;
+    /* Field Inquiry / Historical Reference Callout Box */
+    .field-focus-box {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-left: 5px solid #1e3a8a;
+      border-radius: 7px;
+      padding: 8px 12px;
+      margin-top: 6px;
       margin-bottom: 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
 
-    .field-notes-box .notes-header {
-      font-size: 7.4pt;
-      font-weight: 700;
-      color: #475569;
+    .field-focus-box .focus-header {
+      font-size: 8.4pt;
+      font-weight: 800;
+      color: #1e3a8a;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 6px;
     }
 
-    .field-notes-box .note-line {
-      border-bottom: 1px solid #cbd5e1;
-      height: 15px;
-      width: 100%;
+    .field-focus-box .focus-content {
+      font-size: 8pt;
+      color: #334155;
+      line-height: 1.4;
     }
 
     /* Photo Cards */
@@ -399,21 +401,9 @@ function getHtmlContent() {
         The Immortal Salient: Sacrifice, Poetry, Memory &amp; Local Heritage
       </h2>
 
-      <div style="max-width: 440px; margin: 0 auto 14px auto; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px 18px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); text-align: left;">
-        <div style="font-size: 8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px;">
-          Expedition Cadet Information
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt;">
-          <div><strong>Pupil Name:</strong> ______________________</div>
-          <div><strong>Tutor Group:</strong> _________________</div>
-          <div><strong>Field Duty Group:</strong> ______________</div>
-          <div><strong>Peace Village Room:</strong> _________</div>
-        </div>
-      </div>
-
-      <div style="max-width: 450px; margin: 0 auto;">
-        <img src="${stubbingtonMem}" alt="Holy Rood Memorial" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px; border: 2px solid #cbd5e1; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <div style="font-size: 7.5pt; color: #64748b; font-style: italic; margin-top: 5px;">
+      <div style="max-width: 500px; margin: 0 auto 12px auto;">
+        <img src="${stubbingtonMem}" alt="Holy Rood Memorial" style="width: 100%; height: 260px; object-fit: cover; border-radius: 8px; border: 2px solid #cbd5e1; box-shadow: 0 6px 16px rgba(0,0,0,0.12);">
+        <div style="font-size: 7.6pt; color: #64748b; font-style: italic; margin-top: 5px;">
           The War Memorial at Holy Rood Church, Stubbington — Commemorating our village fallen whose graves and memorial panels we visit across the Salient.
         </div>
       </div>
@@ -422,13 +412,31 @@ function getHtmlContent() {
     <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 9px 15px; margin-bottom: 8px; text-align: left;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
         <div>
-          <span style="font-size: 7.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Tour Leaders:</span>
-          <span style="font-size: 8.5pt; color: #0f172a; font-weight: 600;">Mr Ben Lovett (Head of History) &amp; Mr James Garrett (The History Boys)</span>
+          <span style="font-size: 8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Tour Leaders:</span>
+          <span style="font-size: 8.8pt; color: #0f172a; font-weight: 600;">Mr Ben Lovett (Head of History) &amp; Mr James Garrett (The History Boys)</span>
         </div>
         <div>
-          <span style="font-size: 7.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Accompanying Staff:</span>
-          <span style="font-size: 8.5pt; color: #0f172a; font-weight: 600;">Dr Kirkup &amp; Mrs Lushey</span>
+          <span style="font-size: 8pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Accompanying Staff:</span>
+          <span style="font-size: 8.8pt; color: #0f172a; font-weight: 600;">Dr Kirkup &amp; Mrs Lushey</span>
         </div>
+      </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #b45309; border-radius: 8px; padding: 10px 16px; margin-bottom: 8px; text-align: left; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+      <div style="font-size: 8.5pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px;">
+        The Purpose of Our Journey: A Pilgrimage of Remembrance
+      </div>
+      <p style="font-size: 8.2pt; color: #334155; line-height: 1.42; margin: 0 0 5px 0;">
+        This field study across the Ypres Salient is not a casual excursion—it is a solemn educational pilgrimage. We journey from our home parish of Stubbington to the ramparts, craters, and sanctuaries of Flanders to walk the ground where a generation sacrificed their youth, and to honour the local sons whose names are carved forever into Holy Rood Church.
+      </p>
+      <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-style: italic; color: #1e3a8a; line-height: 1.38; border-left: 2px solid #93c5fd; padding-left: 9px; margin-top: 4px;">
+        "They shall grow not old, as we that are left grow old:<br>
+        Age shall not weary them, nor the years condemn.<br>
+        At the going down of the sun and in the morning<br>
+        We will remember them."<br>
+        <span style="font-size: 7.4pt; font-family: 'Outfit', sans-serif; font-style: normal; color: #64748b; font-weight: 600; display: block; margin-top: 2px;">
+          — Laurence Binyon, <em>For the Fallen</em> (September 1914)
+        </span>
       </div>
     </div>
 
@@ -507,7 +515,7 @@ function getHtmlContent() {
             <tr>
               <td><strong>Day 2 · 13:30</strong></td>
               <td><strong>Stop 6:</strong> Tyne Cot Commonwealth Cemetery</td>
-              <td>Passchendaele ridge; pillbox Cross of Sacrifice; Lowry &amp; Stubbington fallen.</td>
+              <td>Passchendaele ridge; pillbox Cross of Sacrifice; Stubbington parish fallen (Newman, Ward, Muckett, Rye, Warland).</td>
             </tr>
             <tr>
               <td><strong>Day 2 · 16:30</strong></td>
@@ -559,92 +567,89 @@ function getHtmlContent() {
       <div class="header-bar">
         <div>
           <div class="school-title">Local Heritage: The Lowry Brothers of Stubbington</div>
-          <div class="school-sub">Stubbington House School Alumni · Three Brothers, Three Fronts, Immense Sacrifice</div>
+          <div class="school-sub">Manor Way Grange · Three Brothers, Three Fronts, Immense Sibling Sacrifice</div>
         </div>
         <div class="partner-pill">
           <div class="brand">Local Fallen</div>
-          <div class="lead">Tyne Cot &amp; Beyond</div>
+          <div class="lead">Gallipoli, Somme &amp; Arras</div>
         </div>
       </div>
 
-      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e3a8a; border-radius: 8px; padding: 8px 12px; margin-bottom: 10px;">
-        <h3 style="font-size: 10.5pt; color: #1e3a8a; margin-bottom: 3px;">The Lowry Family Heritage</h3>
+      <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e3a8a; border-radius: 8px; padding: 9px 13px; margin-bottom: 9px;">
+        <h3 style="font-size: 10.5pt; color: #1e3a8a; margin-bottom: 3px;">A Family's Total Sacrifice: The Lowry Brothers</h3>
         <p style="font-size: 8.2pt; color: #334155; margin: 0; line-height: 1.4;">
-          Three sons of Arthur and Eleanor Lowry of Stubbington attended Stubbington House School—the historic preparatory school whose grounds now form part of our local community. All three brothers received officer commissions; all three made extraordinary sacrifices across the major theatres of the Great War.
+          William and Annie Lowry lived in a grand twenty-room house called Manor Way Grange in Lee-on-the-Solent. All three of their sons answered the call to arms, serving as commissioned officers in the British and Indian Armies. Tragically, every single son was killed in action across three different battlefronts. Not one of them returned home.
         </p>
       </div>
 
-      <div class="grid-3col" style="margin-bottom: 10px; align-items: stretch;">
+      <div class="grid-3col" style="margin-bottom: 9px; align-items: stretch;">
         <!-- William -->
-        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 9px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="text-align: center; margin-bottom: 6px;">
-              <img src="${lowryWilliam}" alt="Captain William Lowry" style="width: 90px; height: 115px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
+            <div style="text-align: center; margin-bottom: 5px;">
+              <img src="${lowryWilliam}" alt="Lieut. William Lowry" style="width: 85px; height: 110px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
             </div>
-            <h4 style="font-size: 9.5pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Capt. William Lowry</h4>
-            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">2nd Bn, King's Own (Royal Lancaster)</div>
+            <h4 style="font-size: 9.4pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Lieut. William Lowry</h4>
+            <div style="font-size: 7pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 4px;">8th Gurkha Rifles (Indian Army)</div>
             <p style="font-size: 7.5pt; color: #475569; line-height: 1.35; margin: 0;">
-              Killed leading assault on Frezenberg Ridge, Second Ypres, 8 May 1915, aged 26.<br><br>
-              Body never recovered. Commemorated on Menin Gate Panel 12.
+              Eldest brother (aged 25); Cambridge scholar. Killed 4 June 1915 leading a desperate charge up Gully Ravine, Gallipoli, under devastating machine-gun fire.<br><br>
+              Body never recovered. Commemorated on the Helles Memorial, Turkey.
             </p>
           </div>
-          <div style="background: #f1f5f9; padding: 5px; border-radius: 4px; font-size: 7pt; color: #1e293b; font-weight: 600; margin-top: 6px; text-align: center;">
-            📍 Menin Gate (Panel 12)
+          <div style="background: #f1f5f9; padding: 4px; border-radius: 4px; font-size: 7pt; color: #1e293b; font-weight: 700; margin-top: 5px; text-align: center;">
+            📍 Helles Memorial, Gallipoli
           </div>
         </div>
 
         <!-- Cyril -->
-        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 9px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="text-align: center; margin-bottom: 6px;">
-              <img src="${lowryCyril}" alt="Captain Cyril Lowry" style="width: 90px; height: 115px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
+            <div style="text-align: center; margin-bottom: 5px;">
+              <img src="${lowryCyril}" alt="Capt. Cyril Lowry" style="width: 85px; height: 110px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
             </div>
-            <h4 style="font-size: 9.5pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Capt. Cyril Lowry</h4>
-            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">4th Bn, North Staffordshire Regt</div>
+            <h4 style="font-size: 9.4pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Capt. Cyril Lowry</h4>
+            <div style="font-size: 7pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 4px;">2nd Bn, West Yorkshire Regt</div>
             <p style="font-size: 7.5pt; color: #475569; line-height: 1.35; margin: 0;">
-              Mortally wounded commanding front trenches at Zonnebeke, Passchendaele, 26 Sept 1917, aged 22.<br><br>
-              Buried in Tyne Cot Cemetery (Plot LXII. D. 12).
+              Youngest brother (aged 20). Served in same battalion commanded by older brother Eric. Killed 25 March 1918 defending Somme crossing at Eterpigny.<br><br>
+              Fell in full view of Eric; body lost in withdrawal. Commemorated on Pozières Memorial.
             </p>
           </div>
-          <div style="background: #fef3c7; padding: 5px; border-radius: 4px; font-size: 7pt; color: #92400e; font-weight: 600; margin-top: 6px; text-align: center;">
-            📍 Tyne Cot (Plot LXII. D. 12)
+          <div style="background: #fef3c7; padding: 4px; border-radius: 4px; font-size: 7pt; color: #92400e; font-weight: 700; margin-top: 5px; text-align: center;">
+            📍 Pozières Memorial, Somme
           </div>
         </div>
 
         <!-- Eric -->
-        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 9px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="text-align: center; margin-bottom: 6px;">
-              <img src="${lowryEric}" alt="Lt Col Eric Lowry" style="width: 90px; height: 115px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
+            <div style="text-align: center; margin-bottom: 5px;">
+              <img src="${lowryEric}" alt="Lt Col Eric Lowry" style="width: 85px; height: 110px; object-fit: cover; border-radius: 4px; border: 1.5px solid #94a3b8;">
             </div>
-            <h4 style="font-size: 9.5pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Lt. Col. Eric Lowry</h4>
-            <div style="font-size: 7.2pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 5px;">2nd Bn, Prince of Wales's Volunteers</div>
+            <h4 style="font-size: 9.4pt; color: #0f172a; margin-bottom: 2px; text-align: center;">Lt. Col. Eric Lowry</h4>
+            <div style="font-size: 7pt; font-weight: 700; color: #b45309; text-align: center; margin-bottom: 4px;">2nd Bn, West Yorkshire Regt (DSO, MC)</div>
             <p style="font-size: 7.5pt; color: #475569; line-height: 1.35; margin: 0;">
-              Survived intense actions on Western Front, wounded twice, awarded DSO.<br><br>
-              Continued serving in regular army, bearing lifelong trauma of brothers' loss.
+              Middle brother (aged 25). Commanded 2nd West Yorkshires at Westhoek Ridge and Somme. Awarded DSO, MC &amp; Bar, French Croix de Guerre.<br><br>
+              Killed 23 September 1918 by machine gun inspecting frontline outposts near Arleux, dying in his runner's arms. Buried at La Targette.
             </p>
           </div>
-          <div style="background: #ecfdf5; padding: 5px; border-radius: 4px; font-size: 7pt; color: #065f46; font-weight: 600; margin-top: 6px; text-align: center;">
-            🎖️ Survived: DSO &amp; MiD
+          <div style="background: #fee2e2; padding: 4px; border-radius: 4px; font-size: 7pt; color: #991b1b; font-weight: 700; margin-top: 5px; text-align: center;">
+            📍 La Targette British Cemetery (Plot I. C. 2)
           </div>
         </div>
       </div>
 
       <div class="inquiry-box" style="margin-bottom: 6px;">
-        <div class="inquiry-header">🔍 Pupil Field Inquiry: The Lowry Memorial at Tyne Cot</div>
+        <div class="inquiry-header">🔍 Historical Inquiry: The Concentrated Grief of Sibling Enlistment</div>
         <div class="inquiry-content">
-          When we reach Plot LXII at Tyne Cot, locate Captain Cyril Lowry's headstone. Note the cross emblem, his age (just 22), and read the family inscription: <em>"In Proud and Loving Memory"</em>. How does standing at an individual grave change our comprehension of Passchendaele compared to looking across 11,000 stones?
+          The tragedy of the Lowry brothers illustrates how the Great War shattered entire households. Rather than casualties spreading evenly across populations, sibling enlistment and Pals Battalions meant that catastrophic losses were concentrated in specific families. How does investigating the Lowrys help us grasp the profound, localized grief experienced across communities like Stubbington and Lee-on-the-Solent?
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Cadet Field Notes (The Lowry Brothers &amp; Plot LXII):</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">Record observations on site</span>
+      <div class="field-focus-box">
+        <div class="focus-header">🏛️ Local Parish Connection: The Lowry Memorial Hall &amp; Crofton Tablet</div>
+        <div class="focus-content">
+          Devastated by the loss of all three sons, their father William Lowry funded and built the <strong>Lowry Memorial Hall</strong> in Lee-on-the-Solent so his boys would never be forgotten. On the marble tablet inside Holy Rood Church, the three brothers' names are inscribed together in Column 2. Note how their resting places span thousands of miles—from Turkey to the Somme and Arras—yet local parish memorials reunite them forever in their home community.
         </div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
       </div>
     </div>
 
@@ -742,14 +747,11 @@ function getHtmlContent() {
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Cadet Reflection (Boy Soldiers &amp; Underage Enlistment):</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">Reflect on Valentine Strudwick's age vs your own</span>
+      <div class="field-focus-box">
+        <div class="focus-header">🔍 Historical Analysis: Underage Enlistment &amp; The 'Boy Soldiers'</div>
+        <div class="focus-content">
+          An estimated 250,000 British boys under the legal fighting age of 19 served in the First World War. Driven by peer pressure, patriotic propaganda, and recruiting sergeants who received a cash bounty for every volunteer enrolled, teenagers like Valentine Strudwick altered their birthdates to reach the frontlines. Standing before Strudwick's headstone at Essex Farm, reflect on his age (15) compared to your own life today, and how industrial shellfire wiped out an entire generation before their adult lives could begin.
         </div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
       </div>
     </div>
 
@@ -823,17 +825,10 @@ function getHtmlContent() {
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Hampshire Regiment Headstone Discovery Log:</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">Find a Hampshire soldier &amp; record details</span>
-        </div>
-        <div class="note-line" style="display: flex; justify-content: space-between; font-size: 7pt; color: #64748b; align-items: flex-end; padding-bottom: 1px;">
-          <span>Name &amp; Rank: ___________________________________</span>
-          <span>Cemetery &amp; Plot: ______________________</span>
-        </div>
-        <div class="note-line" style="display: flex; justify-content: space-between; font-size: 7pt; color: #64748b; align-items: flex-end; padding-bottom: 1px;">
-          <span>Personal Inscription: _______________________________________________________________________________</span>
+      <div class="field-focus-box">
+        <div class="focus-header">🏷️ Field Study Focus: Royal Hampshire Regiment Badges &amp; Inscriptions</div>
+        <div class="focus-content">
+          As we examine CWGC headstones across the Salient, watch for the <strong>Royal Tiger and Hampshire Rose</strong> badge of our county regiment. Note the 66-character personal inscriptions carved at the foot of each stone—chosen and paid for by grieving parents and widows back home. Observe how some express steadfast Christian faith, others classical duty, and some poignant personal sorrow: <em>"A Day of Memory Sad to Recall, Without Goodbye He Left Us All."</em>
         </div>
       </div>
     </div>
@@ -905,13 +900,11 @@ We shall not sleep, though poppies grow
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Cadet Field Notes (Essex Farm Bunkers &amp; Yorkshire Trench Duckboards):</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">Record observations on site</span>
+      <div class="field-focus-box">
+        <div class="focus-header">🏥 Medical Triage Analysis: The Chain of Evacuation</div>
+        <div class="focus-content">
+          Essex Farm operated as an Advanced Dressing Station (ADS) cut directly into the canal bank, mere hundreds of yards behind frontline communication saps. Medical officers like John McCrae performed desperate emergency triage—arresting catastrophic hemorrhages, applying field splints, and administering morphine—before stretcher-bearers evacuated wounded men in horse-drawn or motor ambulances to Casualty Clearing Stations (CCS) at Brandhoek and Base Hospitals on the French coast.
         </div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
       </div>
     </div>
 
@@ -982,13 +975,11 @@ Great death has made all his for evermore.
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Cadet Comparative Notes (Langemarck Basalt vs CWGC Portland Stone):</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">How does architecture shape remembrance?</span>
+      <div class="field-focus-box">
+        <div class="focus-header">⚖️ Comparative Historiography: German vs Commonwealth Commemoration</div>
+        <div class="focus-content">
+          Notice the stark architectural contrast between Langemarck and Commonwealth cemeteries. Whereas British CWGC sites celebrate radical individual equality with white Portland stone and manicured English cottage borders, the German War Graves Commission utilized dark volcanic basalt, collective mass graves (the <em>Kameradengrab</em> holding 24,917 men), and sheltering oak trees to express communal tragedy, somber defeat, and the heavy weight of national grief.
         </div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
       </div>
     </div>
 
@@ -1056,13 +1047,11 @@ Just a little white with the dust.
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Cadet Field Observations (Gas Warfare &amp; Trench Mine Craters):</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">Record observations on site</span>
+      <div class="field-focus-box">
+        <div class="focus-header">⚡ Technological Revolution: Gas Warfare &amp; Underground Mining</div>
+        <div class="focus-content">
+          The Ypres Salient served as the terrifying testbed of modern industrial warfare. At Vancouver Corner on 22 April 1915, the German Army released 168 metric tons of chlorine gas, creating a deadly green cloud four miles wide that devastated Algerian and French colonial divisions before Canadian units heroically plugged the breach. At Hooge Crater, British tunneling companies dug hundreds of feet beneath German lines to detonate enormous ammonal mine charges, forever transforming the ridge.
         </div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
       </div>
     </div>
 
@@ -1130,13 +1119,11 @@ We will remember them.
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Cadet Reflection (Tyne Cot Memorial Wall &amp; 34,984 Missing):</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">Capt. Cyril Lowry (Plot LXII. D. 12)</span>
+      <div class="field-focus-box">
+        <div class="focus-header">🏛️ Architectural Symbolism: The Cross Over the Pillbox</div>
+        <div class="focus-content">
+          Sir Reginald Blomfield deliberately constructed Tyne Cot's great Portland stone Cross of Sacrifice directly atop a captured German concrete machine-gun bunker in the center of the cemetery. The bronze broadsword points downward upon the captured pillbox, symbolizing the ultimate triumph of sacrifice and peace over instruments of war. Along the sweeping curved flint memorial wall behind the cross are carved the names of 34,984 soldiers with no known grave who fell in the catastrophic mud of Passchendaele.
         </div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
       </div>
     </div>
 
@@ -1203,13 +1190,11 @@ Rise and deride this sepulchre of crime.
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Personal Reflections on the Last Post Ceremony &amp; The Missing:</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">Sounding of the bugles at 20:00</span>
+      <div class="field-focus-box">
+        <div class="focus-header">🎺 The Daily Act of Remembrance: The Menin Gate Tradition</div>
+        <div class="focus-content">
+          Every evening at exactly 20:00, traffic halts completely beneath the Menin Gate as buglers from the Ypres Volunteer Fire Brigade sound the <em>Last Post</em>. Initiated in 1928, this solemn act of gratitude has continued unbroken through the decades (interrupted only during German WWII occupation, when it was sounded in Surrey, England). As the bugle notes reverberate beneath the vaulted arch bearing 54,395 names of the missing, consider Siegfried Sassoon's bitter protest against glorification alongside Laurence Binyon's eternal pledge: <em>"We will remember them."</em>
         </div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
       </div>
     </div>
 
@@ -1288,13 +1273,11 @@ Her sights and sounds; dreams happy as her day;
         </div>
       </div>
 
-      <div class="field-notes-box">
-        <div class="notes-header">
-          <span>✍️ Cadet Notes (Talbot House 'Everyman’s Club' &amp; Rebuilt Cloth Hall):</span>
-          <span style="font-size: 6.8pt; color: #94a3b8;">"Abandon all rank that enter here"</span>
+      <div class="field-focus-box">
+        <div class="focus-header">🕊️ Social History &amp; Rebirth: The Sanctuary of Toc H</div>
+        <div class="focus-content">
+          In Poperinge, Rev. Philip 'Tubby' Clayton opened Talbot House in December 1915 with an extraordinary rule: <em>"Abandon all rank, ye who enter here."</em> Officers and privates drank tea together, played piano, and climbed to the upper hop-loft chapel for quiet communion behind the lines. Following the Armistice, Winston Churchill advocated preserving the shattered Cloth Hall of Ypres as a permanent ruins monument, but the Flemish citizens chose to painstakingly reconstruct their medieval city brick by brick, symbolising enduring resurrection.
         </div>
-        <div class="note-line"></div>
-        <div class="note-line"></div>
       </div>
     </div>
 
