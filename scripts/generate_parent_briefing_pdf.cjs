@@ -685,7 +685,7 @@ function getHtmlContent() {
           <ul class="checklist">
             <li><strong>Day 1 (Thursday):</strong> Pupils <strong>MUST bring a packed lunch</strong> and travel snacks from home for the coach journey. No fast food purchases at motorway services.</li>
             <li><strong>Days 2 &amp; 3 Supermarket Lunches:</strong> On both Friday and Saturday, we make supervised stops at local Belgian supermarkets where pupils choose their own fresh packed lunch items (sandwiches/rolls, fruit, drinks, snacks).</li>
-            <li><strong>Included Meals:</strong> Buffet breakfasts at the hostel (Fri &amp; Sat mornings: breads, cereals, spreads, juice); substantial 2-course evening group dinners served on-site at Peace Village (both Thu &amp; Fri evenings).</li>
+            <li><strong>Included Meals &amp; Dietary Options:</strong> Buffet breakfasts at the hostel (Fri &amp; Sat); 2-course evening group dinners served on-site at Peace Village (both Thu &amp; Fri). Specific dietary requirements (e.g. vegetarian options) will be gathered alongside roomings in ~2 weeks (school already holds medical allergy records).</li>
             <li><strong>Spending Money (Euros):</strong> Pupils require <strong>€30 to €40 in cash (Euros)</strong>. This comfortably covers their Friday and Saturday supermarket lunches, plus Belgian chocolates or small souvenirs.</li>
             <li><strong>Water Bottle:</strong> Refillable water bottle for coach and field walking.</li>
           </ul>
@@ -712,7 +712,7 @@ function getHtmlContent() {
           <strong>Expedition Base:</strong> Peace Village Hostel, Kemmelbergweg 43, 8956 Heuvelland, Belgium. A purpose-built, secure rural educational centre set in the Flemish countryside, featuring modern ensuite studios (typically 4 to 7 pupils per room with bunk beds), secure access control, and dedicated dining and recreational spaces.
         </p>
         <p>
-          <strong>Rooming Process:</strong> In approximately <strong>two weeks' time</strong>, Mr Lovett will assemble rooming allocations in school. Pupils will be asked to nominate friends they would like to share with, and staff will ensure that every pupil is comfortably placed with at least one chosen friend. Staff sleep on the same corridors with active evening checks and a strict curfew.
+          <strong>Rooming Process &amp; Dietary Options:</strong> In approximately <strong>two weeks' time</strong>, Mr Lovett will assemble rooming allocations in school. Pupils will be asked to nominate friends they would like to share with (ensuring every pupil is happily paired). <strong>When this rooming information is sent out, Mr Lovett will also ask parents to confirm any specific dietary requirements (e.g. vegetarian options; note that the school already holds existing medical allergy records).</strong> Staff sleep on the same corridors with active evening checks and a strict curfew.
         </p>
       </div>
 
@@ -738,8 +738,8 @@ function getHtmlContent() {
             <td><span class="badge-urgent">Tonight / This Week</span></td>
           </tr>
           <tr>
-            <td><strong>Rooming Allocations</strong></td>
-            <td>Pupil rooming friend requests collated and finalized in school by Mr Lovett.</td>
+            <td><strong>Rooming &amp; Dietary Choices</strong></td>
+            <td>Pupils nominate friend rooming requests; parents confirm dietary options (e.g. vegetarian meals).</td>
             <td><span class="badge-info">In Approx. 2 Weeks</span></td>
           </tr>
           <tr>

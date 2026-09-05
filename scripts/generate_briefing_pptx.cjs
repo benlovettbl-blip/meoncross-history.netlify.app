@@ -182,7 +182,7 @@ s1.addText(
     },
     { text: 'Accommodation & Rooming:\n', options: { bold: true, color: '0F172A', fontSize: 9.5 } },
     {
-      text: '• Peace Village Hostel, Heuvelland.\n• Ensuite rooms (4-7 pupils, bunk beds).\n• Rooming organized in ~2 weeks with friend nominations. Staff on same corridors.',
+      text: '• Peace Village Hostel, Heuvelland (4-7 bunks).\n• Rooming sent in ~2 weeks (friend requests).\n• Dietary options (e.g. vegetarian) gathered alongside rooming info.',
       options: { color: '334155', fontSize: 8.5 },
     },
   ],
@@ -504,7 +504,9 @@ s2.addText(
     { text: '• Spending Money: ', options: { bold: true } },
     { text: '€30–€40 in cash for Friday & Saturday supermarket lunches & souvenirs.\n' },
     { text: '• Accommodation & Rooming: ', options: { bold: true } },
-    { text: 'Peace Village Hostel (4-7 per room, bunk beds). Organized in ~2 weeks.\n' },
+    {
+      text: 'Peace Village Hostel (4-7 bunks). Rooming & dietary preferences (e.g. vegetarian) gathered in ~2 weeks.\n',
+    },
     { text: '• Forms Return Deadline: ', options: { bold: true } },
     { text: 'Code of Conduct Agreement due Friday 25th September.' },
   ],
@@ -660,9 +662,9 @@ s3.addText(
     },
     { text: '• Tyne Cot Panels 14-17: ', options: { bold: true, color: '0F172A' } },
     { text: 'Pte Charles Warland (son of Lee-on-the-Solent Golf Club secretary).\n\n' },
-    { text: 'Follow the Expedition Online:\n', options: { bold: true, color: '1E3A8A' } },
+    { text: 'Interactive Digital Tour Companion:\n', options: { bold: true, color: '1E3A8A' } },
     {
-      text: 'meoncross-history.netlify.app\nFeaturing 16 battlefield poems, teacher guides, interactive maps & live parent photo stream.',
+      text: 'meoncross-history.netlify.app\nFeaturing 16 battlefield poems, soldier dossiers, historical context & cemetery maps.',
     },
   ],
   {
