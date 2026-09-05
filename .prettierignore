@@ -1,0 +1,8 @@
+# Generated files and build artifacts
+node_modules
+dist
+.netlify
+temp_backups
+public/database.json
+public/units/**/*.html
+public/pdfs

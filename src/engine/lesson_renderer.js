@@ -1546,11 +1546,14 @@ export function renderLesson(lesson) {
             clueBtn = `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-clue" title="Find Evidence" data-action="scroll-to-para" data-target="para-${clueParaMatch[2]}"><i class="fa-solid fa-magnifying-glass"></i></button>`;
           }
 
-          let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+          let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*([\s\S]*)/);
           let displayHeading = '';
           if (match) {
             displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${match[1]}</div>`;
             qText = match[2];
+          }
+          if (qText && qText.includes('\n')) {
+            qText = qText.replace(/\n/g, '<br>');
           }
 
           htmlTasks += `

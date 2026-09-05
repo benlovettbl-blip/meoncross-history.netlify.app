@@ -181,7 +181,10 @@ if (targetUnit && allDirs.includes(targetUnit)) {
 
 allDirs.forEach((unitId) => {
   console.log(`Processing workbooks for unit: ${unitId}`);
-  const dataPath = path.join(publicUnitsDir, unitId, 'data.js');
+  let dataPath = path.join(publicUnitsDir, unitId, 'data.js');
+  if (!fs.existsSync(dataPath) && unitId === 'weimar_nazi_germany') {
+    dataPath = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
+  }
   if (!fs.existsSync(dataPath)) return;
 
   let dataContent;
@@ -1261,7 +1264,9 @@ allDirs.forEach((unitId) => {
             t.type !== 'draw',
         );
         if (lesson.tasks.length > 0) {
-          html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
+          if (currentUnitId !== 'weimar_nazi_germany') {
+            html += `<h3 style="margin-top: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; page-break-after: avoid; break-after: avoid;">Active Tasks</h3>`;
+          }
           lesson.tasks.forEach((task, tIdx) => {
             if (task.type === 'spectrum_mapper') {
               // html += `<div style="page-break-before: always;"></div>`;
@@ -1471,14 +1476,19 @@ allDirs.forEach((unitId) => {
             qText = qText.replace(/\(Weighing the Evidence toggle tabs\)/gi, '');
             html += `<div class="task-box" style="page-break-inside: auto;">`;
 
-            let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+            let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*([\s\S]*)/);
             if (match) {
               let subhead = match[1];
               let rest = match[2];
+              if (currentUnitId === 'weimar_nazi_germany') {
+                rest = rest.replace(/\n/g, '<br>');
+              }
               html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
               html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${rest}</div>`;
             } else {
-              html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${qText}</div>`;
+              let formattedQ =
+                currentUnitId === 'weimar_nazi_germany' ? qText.replace(/\n/g, '<br>') : qText;
+              html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${formattedQ}</div>`;
             }
             let hasExamTaskLater =
               lesson.gcse_task ||
@@ -1724,14 +1734,19 @@ allDirs.forEach((unitId) => {
             qText = qText.replace(/\(Weighing the Evidence toggle tabs\)/gi, '');
             html += `<div class="task-box" style="page-break-inside: auto;">`;
 
-            let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*(.*)/);
+            let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*([\s\S]*)/);
             if (match) {
               let subhead = match[1];
               let rest = match[2];
+              if (currentUnitId === 'weimar_nazi_germany') {
+                rest = rest.replace(/\n/g, '<br>');
+              }
               html += `<h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">${subhead}</h4>`;
               html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${rest}</div>`;
             } else {
-              html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${qText}</div>`;
+              let formattedQ =
+                currentUnitId === 'weimar_nazi_germany' ? qText.replace(/\n/g, '<br>') : qText;
+              html += `<div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q${globalQNum++}. ${formattedQ}</div>`;
             }
             let hasExamTaskLater =
               lesson.gcse_task ||
