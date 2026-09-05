@@ -533,7 +533,7 @@ function getHtmlContent() {
             <div class="heritage-quote">
               "How did three sons from one coastal Hampshire family answer the call across Gallipoli, Arras, and the Somme—and how did six young men from our quiet village come to rest upon the ramparts and mud of Flanders?"
             </div>
-            During our 3 days, pupils will physically locate and touch the carved names of our local fallen—including <strong>Pte Franklin</strong> and <strong>Pte Ayling</strong> on Menin Gate Panel 35, and <strong>Pte Muckett</strong>, <strong>Pte Rye</strong>, <strong>LCpl Ward</strong>, and <strong>Pte Warland</strong> on the rear panels of Tyne Cot.
+            During our 3 days, pupils will physically locate and touch the carved names of our local fallen—including <strong>Sgt. Frank Rogers</strong> on Menin Gate Panel 35, and <strong>Pte Muckett</strong>, <strong>Pte Rye</strong>, <strong>LCpl Ward</strong>, and <strong>Pte Warland</strong> on the rear panels of Tyne Cot.
           </div>
           <div class="heritage-thumbs">
             <div class="heritage-thumb-card">

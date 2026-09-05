@@ -1087,7 +1087,7 @@ We will remember them.
             <img src="${sassoonImg}" alt="Siegfried Sassoon" style="width: 32px; height: 42px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
           </div>
           <div class="poem-lines" style="font-size: 8.2pt; line-height: 1.4;">
-Who will remember, passing through this Gate,
+Who will remember, passing through this Gate?
 The unheroic Dead who fed the guns?
 Who shall absolve the foulness of their fate,—
 Those doomed, conscripted, unvictorious ones?...
@@ -1173,7 +1173,7 @@ Rise and deride this sepulchre of crime.
           <div class="box-header">🎤 Stop 10 Tour Script: Talbot House (Toc H)</div>
           <div style="font-size: 7.6pt; color: #334155; line-height: 1.35;">
             <strong>The Haven Behind the Lines:</strong> In Dec 1915, Army Chaplain Rev. Philip 'Tubby' Clayton opened this house in Poperinge as an alternative to pubs and brothels.<br>
-            <strong>"Abandon all rank that enter here":</strong> Officers and privates drank tea from the same mugs and played the same piano.<br>
+            <strong>"All rank abandon ye who enter here":</strong> Officers and privates drank tea from the same mugs and played the same piano.<br>
             <strong>The Upper Room:</strong> Climb the creaking stairs to the hop-loft chapel. A carpenter's bench served as the altar.
           </div>
         </div>
@@ -1284,7 +1284,7 @@ A body of England's, breathing English air,
       </div>
 
       <div class="talking-points-box" style="margin-bottom: 9px;">
-        <div class="box-header">🇧🇪 Useful Flemish &amp; French Toponyms in the Salient</div>
+        <div class="box-header">Useful Flemish &amp; French Toponyms in the Salient</div>
         <div style="font-size: 7.8pt; color: #334155; line-height: 1.4;">
           <strong>Ieper:</strong> Flemish name for Ypres.<br>
           <strong>Poperinge:</strong> Town behind lines known affectionately to British troops as <em>"Pop"</em>.<br>

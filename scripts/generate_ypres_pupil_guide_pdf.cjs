@@ -518,7 +518,7 @@ function getHtmlContent() {
           <tr>
             <td style="padding: 4.8px 8px;"><strong>Day 2 · 10:30</strong></td>
             <td style="padding: 4.8px 8px;"><strong>Stop 5:</strong> Hooge Crater Museum &amp; Trenches</td>
-            <td style="padding: 4.8px 8px;">Mine crater warfare, preserved trench systems, flamethrower attacks.</td>
+            <td style="padding: 4.8px 8px;">Mine crater warfare, preserved trench systems and early flamethrower attacks.</td>
           </tr>
           <tr>
             <td style="padding: 4.8px 8px;"><strong>Day 2 · 13:30</strong></td>
@@ -1196,7 +1196,7 @@ We will remember them.
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 10px;">
         <div class="focus-header">🏛️ Architectural Symbolism: The Cross Over the Pillbox</div>
         <div class="focus-content">
-          Sir Reginald Blomfield deliberately constructed Tyne Cot's great Portland stone Cross of Sacrifice directly atop a captured German concrete machine-gun bunker in the center of the cemetery. The bronze broadsword points downward upon the captured pillbox, symbolizing the ultimate triumph of sacrifice and peace over instruments of war. Along the sweeping curved flint memorial wall behind the cross are carved the names of 34,984 soldiers with no known grave who fell in the catastrophic mud of Passchendaele.
+          While <strong>Sir Reginald Blomfield</strong> designed the universal CWGC Cross of Sacrifice pattern, cemetery architect <strong>Sir Herbert Baker</strong> made the inspired decision to site Tyne Cot's great Portland stone Cross directly atop a captured German concrete machine-gun bunker in the centre of the cemetery. The bronze broadsword points downward upon the captured pillbox, symbolizing the ultimate triumph of sacrifice and peace over instruments of war. Along the sweeping curved flint memorial wall behind the cross, Baker had carved the names of 34,984 soldiers with no known grave who fell in the catastrophic mud of Passchendaele.
         </div>
       </div>
 
@@ -1368,7 +1368,7 @@ Her sights and sounds; dreams happy as her day;
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 10px;">
         <div class="focus-header">🕊️ Social History &amp; Rebirth: The Sanctuary of Toc H</div>
         <div class="focus-content">
-          In Poperinge, Rev. Philip 'Tubby' Clayton opened Talbot House in December 1915 with an extraordinary rule: <em>"Abandon all rank, ye who enter here."</em> Officers and privates drank tea together, played piano, and climbed to the upper hop-loft chapel for quiet communion behind the lines. Following the Armistice, Winston Churchill advocated preserving the shattered Cloth Hall of Ypres as a permanent ruins monument, but the Flemish citizens chose to painstakingly reconstruct their medieval city brick by brick, symbolising enduring resurrection.
+          In Poperinge, Rev. Philip 'Tubby' Clayton opened Talbot House in December 1915 with an extraordinary rule: <em>"All rank abandon, ye who enter here."</em> Officers and privates drank tea together, played piano, and climbed to the upper hop-loft chapel for quiet communion behind the lines. Following the Armistice, Winston Churchill advocated preserving the shattered Cloth Hall of Ypres as a permanent ruins monument, but the Flemish citizens chose to painstakingly reconstruct their medieval city brick by brick, symbolising enduring resurrection.
         </div>
       </div>
 
@@ -1509,7 +1509,7 @@ Her sights and sounds; dreams happy as her day;
       </div>
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 8px 12px; margin-bottom: 10px;">
-        <h4 style="font-size: 9pt; color: #0f172a; margin-bottom: 3px;">🇧🇪 Flemish &amp; French Toponyms in the Salient</h4>
+        <h4 style="font-size: 9pt; color: #0f172a; margin-bottom: 3px;">Useful Flemish &amp; French Toponyms in the Salient</h4>
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-size: 8pt; color: #334155;">
           <div><strong>Ieper:</strong> Ypres</div>
           <div><strong>Poperinge:</strong> "Pop" (rear town)</div>
