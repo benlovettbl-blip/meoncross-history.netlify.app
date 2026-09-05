@@ -1,6 +1,9 @@
+import { poetryDossiers } from './poetry_data.js';
+
 export const unitData = {
   type: 'trip',
   title: 'History Battlefield Tour',
+  poetry_dossiers: poetryDossiers,
   enquiry_question: 'Ypres & The Salient',
   enquiry: 'Thursday 1st October – Saturday 3rd October 2026',
   cover_image: '/images/stubbington_memorial.jpg',
@@ -211,6 +214,7 @@ export const unitData = {
       id: 'day_1',
       title: 'Day 1: Thursday 1st October 2026',
       enquiry: 'Travel and Initial Explorations',
+      poetry_dossiers: poetryDossiers.day_1,
       teacher_notes: {
         primer:
           'Day 1 transitions students from home into the contested landscape of the Ypres Salient, focusing on frontline medical triage at Essex Farm, the solemnity and political manipulation of memory at Langemarck German Cemetery, and the raw physical conditions of trench warfare at Hooge Crater.',
@@ -463,6 +467,7 @@ export const unitData = {
       id: 'day_2',
       title: 'Day 2: Friday 2nd October 2026',
       enquiry: 'Immersive Battlefield Study',
+      poetry_dossiers: poetryDossiers.day_2,
       teacher_notes: {
         primer: 'A full day of guided study including the Menin Gate Last Post Ceremony.',
         objectives: [],
@@ -671,6 +676,7 @@ export const unitData = {
       id: 'day_3',
       title: 'Day 3: Saturday 3rd October 2026',
       enquiry: 'Poperinge and the Journey Home',
+      poetry_dossiers: poetryDossiers.day_3,
       teacher_notes: {
         primer:
           'Day 3 concludes the expedition by moving from the ramparts of Ypres to the rear-echelon sanctuaries and execution sites of Poperinge, culminating in a reflection on British military justice, shell shock, and modern national remembrance at the National Memorial Arboretum in Staffordshire.',
