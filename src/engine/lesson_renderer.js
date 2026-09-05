@@ -1825,9 +1825,6 @@ export function renderLesson(lesson) {
   let htmlCwgc = '';
   if (isTrip && lesson.cwgc_data) {
     const cd = lesson.cwgc_data;
-    const isFound =
-      typeof localStorage !== 'undefined' &&
-      localStorage.getItem('trip_found_' + lesson.id) === 'true';
     htmlCwgc = `
       <div class="cwgc-plaque-container" style="margin-bottom: 25px; background: #fff; border: 2px solid #b45309; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(180, 83, 9, 0.12);">
         <div style="background: linear-gradient(135deg, #78350f, #92400e); color: white; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
@@ -1838,9 +1835,9 @@ export function renderLesson(lesson) {
               <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Playfair Display', serif;">Official Record of the Fallen · Ypres Salient</div>
             </div>
           </div>
-          <button id="btn-toggle-found-${lesson.id}" class="btn" data-action="toggle-trip-found" data-id="${lesson.id}" style="${isFound ? 'background: #10b981; color: white;' : 'background: #fef3c7; color: #92400e;'} font-weight: 700; font-size: 0.85rem; border: none; padding: 8px 14px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); transition: all 0.2s;">
-            ${isFound ? '<i class="fa-solid fa-circle-check"></i> <span>Located on Memorial!</span>' : '<i class="fa-regular fa-circle-check"></i> <span>Field Check: Mark as Found</span>'}
-          </button>
+          <div style="background: rgba(254, 243, 199, 0.15); border: 1px solid rgba(253, 230, 138, 0.4); color: #fde68a; font-weight: 600; font-size: 0.82rem; padding: 6px 14px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-cross"></i> <span>CWGC Memorial Record</span>
+          </div>
         </div>
         <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; background: #fff;">
           <div style="border-left: 3px solid #b45309; padding-left: 12px;">

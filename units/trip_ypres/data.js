@@ -190,7 +190,7 @@ export const unitData = {
       banner: '/images/stubbington_names_3.jpg',
       teacher_notes: {
         primer:
-          'The Pre-Trip Parental Briefing equips parents and pupils with essential practical, logistical, and historical framing ahead of the October expedition. It details our joint leadership with Mr James Garrett (The History Boys), clarifies all kit, catering, and currency requirements (€20–€30 cash), establishes our rooming and supervision timeline, and introduces the profound local heritage mission connecting Stubbington to Flanders.',
+          'The Pre-Trip Parental Briefing equips parents and pupils with essential practical, logistical, and historical framing ahead of the October expedition. It details our joint leadership with Mr James Garrett (The History Boys) alongside Dr Kirkup and Mrs Lushey, clarifies all kit, catering, and currency requirements (€30–€40 cash), establishes our rooming and supervision timeline, and introduces the profound local heritage mission connecting Stubbington to Flanders.',
         objectives: [
           {
             objective:
@@ -204,7 +204,7 @@ export const unitData = {
             objective:
               'Understand the essential weather preparation, dietary arrangements, and currency requirements for the 3-day Flanders expedition.',
             primer:
-              'Walk parents and pupils through the kit checklist, explaining why broken-in boots, raincoats, and warm hats/gloves are mandatory for cold evening ceremonies at the Menin Gate, and why €20–€30 in cash is required for Friday and Saturday supermarket lunches.',
+              'Walk parents and pupils through the kit checklist, explaining why broken-in boots, raincoats, and warm hats/gloves are mandatory for cold evening ceremonies at the Menin Gate, and why €30–€40 in cash is required for Friday and Saturday supermarket lunches.',
             question:
               'Why is thorough physical preparation—such as windproof layers and sturdy boots—essential to maintaining high academic and emotional engagement on battlefield sites?',
           },

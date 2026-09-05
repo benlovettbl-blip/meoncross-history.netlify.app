@@ -306,7 +306,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                 <h3 style="margin: 0; color: #0369a1; font-size: 1.18rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Parental Briefing</h3>
                 <span style="background: #eff6ff; color: #0284c7; border: 1px solid #bfdbfe; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Thu 10 Sep · 16:15 Briefing</span>
               </div>
-              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Joint expedition led by Mr Ben Lovett &amp; Mr James Garrett (The History Boys). Packing checklist, catering &amp; €20–€30 Euros, rooming timeline, and return forms.</p>
+              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Joint expedition led by Mr Ben Lovett &amp; Mr James Garrett (The History Boys) · Accomp: Dr Kirkup &amp; Mrs Lushey. Packing checklist, catering &amp; €30–€40 Euros, rooming timeline, and return forms.</p>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
               <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" style="padding: 7px 13px; font-size: 0.8rem; font-weight: 700; background: #fefce8; color: #b45309; border: 1.5px solid #fde047; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#fef08a';" onmouseout="this.style.background='#fefce8';">
@@ -471,9 +471,6 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             lh.name.includes(h.lesson.title.split(' ')[1]) ||
             h.lesson.title.includes(lh.name.split(' ')[lh.name.split(' ').length - 1]),
         ) || {};
-      const isFound =
-        typeof localStorage !== 'undefined' &&
-        localStorage.getItem('trip_found_' + h.lesson.id) === 'true';
       lessonsHTML += `
         <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #ea580c; border-radius: 8px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
@@ -484,7 +481,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;">Home: ${heroData.connection || 'Local Hampshire connection'}</p>
           <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fed7aa; padding-top: 8px; font-size: 0.78rem;">
             <span style="color: #1e3a8a; font-weight: 600;">Parish Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
-            ${isFound ? '<span style="color: #16a34a; font-weight: 700;">Located on Memorial</span>' : '<span style="color: #94a3b8;">On-site quest</span>'}
+            <span style="color: #c2410c; font-weight: 600;"><i class="fa-solid fa-monument"></i> Menin Gate</span>
           </div>
         </div>
       `;
@@ -513,9 +510,6 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             h.lesson.title.includes(lh.name.split(' ')[lh.name.split(' ').length - 1]),
         ) || {};
       const panelLabel = h.lesson.id === 'hero_5' ? 'Panels 14–17' : 'Panels 88–90';
-      const isFound =
-        typeof localStorage !== 'undefined' &&
-        localStorage.getItem('trip_found_' + h.lesson.id) === 'true';
       lessonsHTML += `
         <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${h.index}" style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #dc2626; border-radius: 8px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
@@ -526,7 +520,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.83rem; line-height: 1.4;">Home: ${heroData.connection || 'Local Hampshire connection'}</p>
           <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fecaca; padding-top: 8px; font-size: 0.78rem;">
             <span style="color: #1e3a8a; font-weight: 600;">Parish Tablet: <code>${heroData.tablet_inscription || ''}</code></span>
-            ${isFound ? '<span style="color: #16a34a; font-weight: 700;">Located on Memorial</span>' : '<span style="color: #94a3b8;">On-site quest</span>'}
+            <span style="color: #991b1b; font-weight: 600;"><i class="fa-solid fa-monument"></i> Tyne Cot Memorial</span>
           </div>
         </div>
       `;

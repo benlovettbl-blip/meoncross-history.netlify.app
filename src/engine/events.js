@@ -349,27 +349,6 @@ export function initEventDelegation() {
         if (window.viewLessonDetail) window.viewLessonDetail(parseInt(target.dataset.index, 10));
         break;
 
-      case 'toggle-trip-found':
-        const heroId = target.dataset.id;
-        if (heroId) {
-          const key = 'trip_found_' + heroId;
-          const current = localStorage.getItem(key) === 'true';
-          const next = !current;
-          localStorage.setItem(key, next ? 'true' : 'false');
-          if (next) {
-            target.style.background = '#10b981';
-            target.style.color = '#ffffff';
-            target.innerHTML =
-              '<i class="fa-solid fa-circle-check"></i> <span>Located on Memorial!</span>';
-          } else {
-            target.style.background = '#fef3c7';
-            target.style.color = '#92400e';
-            target.innerHTML =
-              '<i class="fa-regular fa-circle-check"></i> <span>Field Check: Mark as Found</span>';
-          }
-        }
-        break;
-
       case 'reveal-taboo-hint':
         const hintBox = document.getElementById('taboo-hint-box');
         if (hintBox) hintBox.style.display = 'block';
