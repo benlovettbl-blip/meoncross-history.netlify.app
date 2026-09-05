@@ -475,29 +475,29 @@ export function openStopNavigatorModal(defaultDayId = null) {
     <div class="stop-navigator-dialog" style="background: #ffffff; width: 100%; max-width: 820px; max-height: 88vh; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1.5px solid #cbd5e1; animation: fadeInUp 0.25s ease-out;">
       
       <!-- Header -->
-      <div style="background: #0f172a; color: white; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a;">
+      <div style="background: #0f172a; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; flex-shrink: 0;">
         <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="background: #1e3a8a; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #3b82f6;">
-            <i class="fa-solid fa-compass" style="color: #60a5fa; font-size: 1.3rem;"></i>
+          <div style="background: #1e3a8a; width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #3b82f6; flex-shrink: 0;">
+            <i class="fa-solid fa-compass" style="color: #60a5fa; font-size: 1.2rem;"></i>
           </div>
           <div>
-            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #f8fafc;">
+            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #f8fafc; line-height: 1.2;">
               Battlefield Tour Stop Navigator
             </h3>
-            <p style="margin: 2px 0 0 0; font-size: 0.85rem; color: #94a3b8;">
+            <p style="margin: 2px 0 0 0; font-size: 0.82rem; color: #94a3b8; line-height: 1.3;">
               Tap any stop to jump directly to on-site notes, history &amp; poetry readings.
             </p>
           </div>
         </div>
-        <button onclick="document.getElementById('stop-navigator-modal-overlay').remove()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1.2rem; cursor: pointer; border-radius: 6px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">&times;</button>
+        <button onclick="document.getElementById('stop-navigator-modal-overlay').remove()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1.2rem; cursor: pointer; border-radius: 6px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s;">&times;</button>
       </div>
 
       <!-- Navigation Tabs -->
-      <div style="display: flex; gap: 6px; padding: 12px 18px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <div style="display: flex; gap: 8px; padding: 10px 16px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; overflow-x: auto; -webkit-overflow-scrolling: touch; flex-shrink: 0; min-height: 52px; align-items: center; box-sizing: border-box;">
         ${BATTLEFIELD_DAYS.map((day) => {
           const isSelected = day.id === activeDay;
           return `
-            <button class="nav-day-tab-btn ${isSelected ? 'active' : ''}" data-action="switch-navigator-tab" data-day-id="${day.id}" style="padding: 7px 14px; font-size: 0.85rem; font-weight: 700; border-radius: 20px; border: 1.5px solid ${isSelected ? '#1e3a8a' : '#cbd5e1'}; background: ${isSelected ? '#1e3a8a' : '#ffffff'}; color: ${isSelected ? '#ffffff' : '#475569'}; cursor: pointer; white-space: nowrap; transition: all 0.2s;">
+            <button class="nav-day-tab-btn ${isSelected ? 'active' : ''}" data-action="switch-navigator-tab" data-day-id="${day.id}" style="padding: 7px 14px; font-size: 0.85rem; font-weight: 700; border-radius: 20px; border: 1.5px solid ${isSelected ? '#1e3a8a' : '#cbd5e1'}; background: ${isSelected ? '#1e3a8a' : '#ffffff'}; color: ${isSelected ? '#ffffff' : '#475569'}; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: all 0.2s;">
               ${day.label}
             </button>
           `;
@@ -505,12 +505,12 @@ export function openStopNavigatorModal(defaultDayId = null) {
       </div>
 
       <!-- Stops Content Area -->
-      <div id="navigator-tab-content" style="padding: 20px 24px; overflow-y: auto; flex: 1; -webkit-overflow-scrolling: touch;">
+      <div id="navigator-tab-content" style="padding: 16px 20px; overflow-y: auto; flex: 1 1 auto; -webkit-overflow-scrolling: touch; box-sizing: border-box;">
         ${renderNavigatorStopsHTML(activeDay)}
       </div>
 
       <!-- Footer Quick Info -->
-      <div style="background: #f1f5f9; padding: 12px 24px; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div style="background: #f1f5f9; padding: 12px 20px; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; flex-shrink: 0;">
         <span style="font-size: 0.82rem; color: #64748b; display: inline-flex; align-items: center; gap: 6px;">
           <i class="fa-solid fa-satellite-dish" style="color: #059669;"></i> Works 100% offline during coach travel in Belgium
         </span>
@@ -542,7 +542,7 @@ export function renderNavigatorStopsHTML(dayId) {
       </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 14px;">
       ${day.stops
         .map(
           (stop, sIdx) => `

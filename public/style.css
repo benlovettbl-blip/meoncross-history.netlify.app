@@ -1003,7 +1003,7 @@ body {
 }
 
 /* --- Mobile view responsiveness --- */
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   .app-sidebar {
     position: fixed;
     z-index: 100;
@@ -1117,7 +1117,7 @@ pre.ascii-diagram {
 }
 
 /* Make the diagrams scale down further on very small screens */
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   pre.ascii-diagram {
     font-size: 0.6rem !important;
     padding: 10px !important;
@@ -1589,7 +1589,7 @@ img::after {
 }
 
 /* --- Mobile Responsive Layout --- */
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   .app-sidebar,
   .sidebar {
     position: fixed !important;
@@ -1655,7 +1655,7 @@ img::after {
 }
 
 /* --- Mobile Header Fixes --- */
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   .app-header,
   .main-header {
     padding: 1rem !important;
@@ -1685,7 +1685,7 @@ img::after {
 }
 
 /* --- Mobile Header Fixes Phase 2 --- */
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   .app-header,
   .main-header,
   header {
@@ -1711,7 +1711,7 @@ img::after {
   z-index: 90;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   .timeline-group-title {
     position: static !important;
     margin-left: 0 !important;
@@ -1762,7 +1762,7 @@ img::after {
   flex-wrap: wrap; /* allow buttons to wrap if needed */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   .sticky-lesson-header {
     margin-top: -1.5rem; /* negate mobile padding-top */
     margin-left: -1rem; /* negate mobile padding-left */
@@ -1829,16 +1829,16 @@ img::after {
   z-index: 2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   html,
   body {
-    max-width: 100vw !important;
+    max-width: 100% !important;
     overflow-x: hidden !important;
   }
 
   .app-layout,
   .app-body {
-    max-width: 100vw !important;
+    max-width: 100% !important;
     overflow-x: hidden !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -1876,9 +1876,152 @@ img::after {
     box-sizing: border-box !important;
   }
 
+  /* Universal text wrapping and anti-clipping safeguards */
+  .lesson-content p,
+  .lesson-content li,
+  .lesson-content h1,
+  .lesson-content h2,
+  .lesson-content h3,
+  .lesson-content h4,
+  .lesson-content h5,
+  .lesson-content h6,
+  .lesson-content span,
+  .lesson-content blockquote,
+  .phase-card p,
+  .phase-card li,
+  .phase-card span,
+  .phase-card blockquote {
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Safe bulleted list padding so text never touches or spills over right edge */
+  .lesson-content ul,
+  .lesson-content ol,
+  .phase-card ul,
+  .phase-card ol {
+    padding-left: 18px !important;
+    padding-right: 6px !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+
+  /* Compact nested phase cards on mobile */
   .phase-card {
     padding: 14px 10px !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 16px !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+
+  /* Override inline padding on nested white & cream cards in data.js */
+  .lesson-content div[style*='padding: 22px'],
+  .lesson-content div[style*='padding: 24px'],
+  .lesson-content div[style*='padding: 25px'],
+  .lesson-content div[style*='padding: 26px'],
+  .lesson-content div[style*='padding: 30px'],
+  .phase-card div[style*='padding: 22px'],
+  .phase-card div[style*='padding: 24px'],
+  .phase-card div[style*='padding: 25px'],
+  .phase-card div[style*='padding: 26px'],
+  .phase-card div[style*='padding: 30px'] {
+    padding: 14px 10px !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+
+  /* Reset hardcoded flex min-widths so items stack cleanly on mobile */
+  .lesson-content div[style*='min-width'],
+  .phase-card div[style*='min-width'] {
+    min-width: 0 !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .lesson-content div[style*='flex: 0 0 320px'],
+  .lesson-content div[style*='flex: 0 0 300px'],
+  .lesson-content div[style*='flex: 0 0 280px'] {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* --- Poetry Dossiers & Eyewitness Reading Cards Mobile Polish --- */
+  .poetry-dossiers-section {
+    padding: 14px 10px !important;
+    margin-top: 20px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .poetry-dossier-card {
+    padding: 12px 10px !important;
+    margin-bottom: 16px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .poet-profile-header,
+  .poetry-dossier-card div[style*='background: #faf8f5'] {
+    padding: 12px 10px !important;
+    gap: 12px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .poet-portrait-col,
+  .poetry-dossier-card div[style*='flex: 0 0 115px'] {
+    flex: 0 0 auto !important;
+    margin: 0 auto 8px auto !important;
+    text-align: center !important;
+  }
+
+  .poet-bio-col,
+  .poetry-dossier-card div[style*='flex: 1; min-width: 240px'],
+  .poetry-dossier-card div[style*='flex: 1; min-width: 250px'],
+  .poetry-dossier-card div[style*='flex: 1; min-width: 200px'] {
+    min-width: 0 !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    text-align: left !important;
+  }
+
+  .poem-blockquote-box,
+  .poetry-dossier-card div[style*='border-left: 4px solid #991b1b'] {
+    padding: 14px 12px !important;
+    margin: 12px 0 !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+
+  .poem-text-content {
+    font-size: 0.98rem !important;
+    line-height: 1.75 !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .poetry-dossier-card details {
+    margin-bottom: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .poetry-dossier-card details > div {
+    padding: 12px 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Stop Navigator Dialog Mobile */
+  .stop-navigator-dialog {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    max-height: 92vh !important;
+    margin: auto !important;
   }
 
   .narrative-chunk {
@@ -2795,7 +2938,7 @@ img::after {
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: landscape) and (max-height: 600px) {
   .floating-stop-jump-btn {
     bottom: 18px;
     right: 14px;
