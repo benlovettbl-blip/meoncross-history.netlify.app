@@ -212,12 +212,14 @@
                 {
                   "type": "comprehension",
                   "question": "Why was Captain Cook completely dependent on Tupaia to navigate the dangerous Pacific waters?",
-                  "text": ""
+                  "model": "Captain Cook lacked navigational charts, local knowledge of Pacific reefs, and understanding of complex ocean currents across thousands of miles of ocean. Tupaia possessed an extraordinary mental map spanning over 3,000 miles and used ancient Polynesian star navigation—reading star courses, swell vibrations, bird migrations, and cloud formations—to guide the Endeavour safely through treacherous archipelagos without wrecking the ship.",
+                  "model_answer": "Captain Cook lacked navigational charts, local knowledge of Pacific reefs, and understanding of complex ocean currents across thousands of miles of ocean. Tupaia possessed an extraordinary mental map spanning over 3,000 miles and used ancient Polynesian star navigation—reading star courses, swell vibrations, bird migrations, and cloud formations—to guide the Endeavour safely through treacherous archipelagos without wrecking the ship."
                 },
                 {
                   "type": "comprehension",
                   "question": "How did Tupaia prevent a violent massacre when the Endeavour arrived in New Zealand?",
-                  "text": ""
+                  "model": "Because Tupaia spoke a Tahitian dialect closely related to the Māori language, he was able to communicate directly with Māori warriors when frightened British crew members were prepared to open fire with muskets. By translating, explaining British intentions, and observing customary diplomatic protocols, Tupaia defused explosive misunderstandings and prevented what would have been catastrophic colonial bloodshed.",
+                  "model_answer": "Because Tupaia spoke a Tahitian dialect closely related to the Māori language, he was able to communicate directly with Māori warriors when frightened British crew members were prepared to open fire with muskets. By translating, explaining British intentions, and observing customary diplomatic protocols, Tupaia defused explosive misunderstandings and prevented what would have been catastrophic colonial bloodshed."
                 }
               ],
               "source": {
@@ -240,7 +242,8 @@
                 {
                   "type": "comprehension",
                   "question": "Why did the Gweagal Aboriginal men try to block the British from landing at Botany Bay?",
-                  "text": ""
+                  "model": "Under the spiritual, legal, and ancestral traditions of the Dharawal nation, the Gweagal had a sacred duty to protect their country from uninvited strangers who lacked permission to enter. When Cook's armed landing party approached their shores without ceremonial greeting or invitation, the warriors stood their ground, shouting warnings and throwing spears to defend their ancestral lands in accordance with their customary law.",
+                  "model_answer": "Under the spiritual, legal, and ancestral traditions of the Dharawal nation, the Gweagal had a sacred duty to protect their country from uninvited strangers who lacked permission to enter. When Cook's armed landing party approached their shores without ceremonial greeting or invitation, the warriors stood their ground, shouting warnings and throwing spears to defend their ancestral lands in accordance with their customary law."
                 }
               ],
               "source": {
@@ -290,7 +293,8 @@
                 {
                   "type": "comprehension",
                   "question": "How did Captain Cook use the myth of 'Terra Nullius' to justify claiming the entire eastern coast for Britain?",
-                  "text": ""
+                  "model": "Cook and British legal authorities applied the legal fiction of 'Terra Nullius' ('land belonging to no one') by claiming that because Aboriginal Australians did not construct European-style towns, establish permanent fences, or practice European agriculture, they had no lawful ownership of the soil. This convenient myth allowed Cook to raise the Union Jack on Possession Island and claim the entire eastern seaboard for King George III without negotiating treaties, seeking native consent, or paying compensation.",
+                  "model_answer": "Cook and British legal authorities applied the legal fiction of 'Terra Nullius' ('land belonging to no one') by claiming that because Aboriginal Australians did not construct European-style towns, establish permanent fences, or practice European agriculture, they had no lawful ownership of the soil. This convenient myth allowed Cook to raise the Union Jack on Possession Island and claim the entire eastern seaboard for King George III without negotiating treaties, seeking native consent, or paying compensation."
                 }
               ]
             }
@@ -625,7 +629,8 @@
                 {
                   "type": "comprehension",
                   "question": "Look at the database profile of John Hudson. How does his story challenge the idea that the First Fleet was filled with hardened, dangerous adult criminals?",
-                  "text": ""
+                  "model": "John Hudson was only nine years old when arrested for petty theft, working as an impoverished child chimney sweep in London. Transported for seven years aboard the Friendship and brutally flogged with 50 lashes at age eleven, Hudson's profile proves that the First Fleet was not comprised solely of violent, career criminals, but included vulnerable, desperate children and impoverished working-class Britons punished disproportionately under harsh British penal laws.",
+                  "model_answer": "John Hudson was only nine years old when arrested for petty theft, working as an impoverished child chimney sweep in London. Transported for seven years aboard the Friendship and brutally flogged with 50 lashes at age eleven, Hudson's profile proves that the First Fleet was not comprised solely of violent, career criminals, but included vulnerable, desperate children and impoverished working-class Britons punished disproportionately under harsh British penal laws."
                 }
               ]
             }
@@ -840,7 +845,8 @@
                 {
                   "type": "comprehension",
                   "question": "Contrast King George III's official policy of 'amity and kindness' with the violent reality of British settlement.",
-                  "text": ""
+                  "model": "While King George III officially instructed Governor Arthur Phillip to 'live in amity and kindness' with Indigenous peoples and punish any British subjects who harmed them, the reality on the ground was immediate dispossession and violence. As British colonists cleared sacred woodlands, monopolised scarce fishing bays, and enclosed land under the myth of Terra Nullius, tensions inevitably erupted into frontier warfare, punitive military reprisal raids, and widespread slaughter that mocked the Crown's benevolent rhetoric.",
+                  "model_answer": "While King George III officially instructed Governor Arthur Phillip to 'live in amity and kindness' with Indigenous peoples and punish any British subjects who harmed them, the reality on the ground was immediate dispossession and violence. As British colonists cleared sacred woodlands, monopolised scarce fishing bays, and enclosed land under the myth of Terra Nullius, tensions inevitably erupted into frontier warfare, punitive military reprisal raids, and widespread slaughter that mocked the Crown's benevolent rhetoric."
                 }
               ],
               "source": {
@@ -863,7 +869,8 @@
                 {
                   "type": "comprehension",
                   "question": "How did the outbreak of smallpox in 1789 completely devastate the Eora nation?",
-                  "text": ""
+                  "model": "The 1789 smallpox epidemic was catastrophic because Indigenous Australians had had zero prior exposure or biological immunity to European pathogens. Within months, an estimated 50% to 70% of the local Eora population perished in agonizing agony, leaving beaches and inlets strewn with corpses. Crucially, the sudden death of clan elders and healers shattered oral lineages, destroyed sacred kinship structures, and crippled early organized tribal resistance against British expansion.",
+                  "model_answer": "The 1789 smallpox epidemic was catastrophic because Indigenous Australians had had zero prior exposure or biological immunity to European pathogens. Within months, an estimated 50% to 70% of the local Eora population perished in agonizing agony, leaving beaches and inlets strewn with corpses. Crucially, the sudden death of clan elders and healers shattered oral lineages, destroyed sacred kinship structures, and crippled early organized tribal resistance against British expansion."
                 }
               ],
               "source": {
@@ -886,7 +893,8 @@
                 {
                   "type": "comprehension",
                   "question": "Who was Pemulwuy, and why was his resistance campaign so successful against the British military?",
-                  "text": ""
+                  "model": "Pemulwuy was a revered Bidjigal warrior who commanded a twelve-year guerrilla resistance campaign (1790–1802) against British colonization across the Sydney basin and Hawkesbury River. His campaign succeeded because he masterfully exploited the rugged bush terrain, targeted settler food supplies, burned standing crops, and ambushed isolated military patrols before disappearing into the bush, neutralizing the superior firepower of British infantry musket lines.",
+                  "model_answer": "Pemulwuy was a revered Bidjigal warrior who commanded a twelve-year guerrilla resistance campaign (1790–1802) against British colonization across the Sydney basin and Hawkesbury River. His campaign succeeded because he masterfully exploited the rugged bush terrain, targeted settler food supplies, burned standing crops, and ambushed isolated military patrols before disappearing into the bush, neutralizing the superior firepower of British infantry musket lines."
                 }
               ]
             },
@@ -898,7 +906,8 @@
                 {
                   "type": "comprehension",
                   "question": "Why was the Myall Creek massacre of 1838 historically significant?",
-                  "text": ""
+                  "model": "The Myall Creek massacre of 1838 is historically significant because it was the only recorded instance in Australian colonial history where white settlers were arrested, formally tried, convicted, and hanged for the murder of Aboriginal people. Eleven stockmen had brutally slaughtered 28 unarmed Wirrayaraay women, children, and elders. Despite furious racist backlash and protests from wealthy pastoralists, Governor Gipps ordered a retrial that led to seven perpetrators being executed, establishing a landmark legal precedent that British law theoretically applied to protect Indigenous subjects.",
+                  "model_answer": "The Myall Creek massacre of 1838 is historically significant because it was the only recorded instance in Australian colonial history where white settlers were arrested, formally tried, convicted, and hanged for the murder of Aboriginal people. Eleven stockmen had brutally slaughtered 28 unarmed Wirrayaraay women, children, and elders. Despite furious racist backlash and protests from wealthy pastoralists, Governor Gipps ordered a retrial that led to seven perpetrators being executed, establishing a landmark legal precedent that British law theoretically applied to protect Indigenous subjects."
                 }
               ]
             },
@@ -909,7 +918,9 @@
               "tasks": [
                 {
                   "type": "convict_game",
-                  "question": "Play the Old Bailey Convict Game"
+                  "question": "Play the Old Bailey Convict Game",
+                  "model": "The Old Bailey proceedings highlight the extreme severity of 18th-century English criminal law ('the Bloody Code'), showing how impoverished workers, maidservants, and children were handed life-altering sentences of transportation across the globe for minor property thefts driven by hunger.",
+                  "model_answer": "The Old Bailey proceedings highlight the extreme severity of 18th-century English criminal law ('the Bloody Code'), showing how impoverished workers, maidservants, and children were handed life-altering sentences of transportation across the globe for minor property thefts driven by hunger."
                 }
               ]
             }
@@ -1085,7 +1096,8 @@
                 {
                   "type": "comprehension",
                   "question": "How did the introduction of Spanish Merino sheep and the wool industry devastate the Aboriginal way of life?",
-                  "text": ""
+                  "model": "The booming wool industry led wealthy squatters to illegally seize millions of acres of inland grazing pastures, driving Aboriginal clans from their ancestral lands. Millions of cloven-hoofed sheep trampled fragile soils, destroyed native yam-daisy root crops, and polluted scarce watering holes, while pastoralists aggressively shot native kangaroos and emus. Deprived of their traditional food resources, Aboriginal people faced starvation, and when they speared sheep for sustenance, squatters launched ruthless, violent reprisal raids.",
+                  "model_answer": "The booming wool industry led wealthy squatters to illegally seize millions of acres of inland grazing pastures, driving Aboriginal clans from their ancestral lands. Millions of cloven-hoofed sheep trampled fragile soils, destroyed native yam-daisy root crops, and polluted scarce watering holes, while pastoralists aggressively shot native kangaroos and emus. Deprived of their traditional food resources, Aboriginal people faced starvation, and when they speared sheep for sustenance, squatters launched ruthless, violent reprisal raids."
                 }
               ]
             },
@@ -1097,7 +1109,8 @@
                 {
                   "type": "comprehension",
                   "question": "How did the discovery of gold by Edward Hargreaves in 1851 permanently change the population of Australia?",
-                  "text": ""
+                  "model": "Edward Hargreaves's 1851 discovery sparked a worldwide gold rush that radically transformed Australia's demography. Within a single decade (1851–1861), the colony's population nearly tripled from 430,000 to over 1.1 million people. Hundreds of thousands of free, ambitious prospectors poured in from Britain, Ireland, North America, continental Europe, and China, shifting Australia's identity from a despised penal colony into a wealthy, self-confident, and rapidly growing society.",
+                  "model_answer": "Edward Hargreaves's 1851 discovery sparked a worldwide gold rush that radically transformed Australia's demography. Within a single decade (1851–1861), the colony's population nearly tripled from 430,000 to over 1.1 million people. Hundreds of thousands of free, ambitious prospectors poured in from Britain, Ireland, North America, continental Europe, and China, shifting Australia's identity from a despised penal colony into a wealthy, self-confident, and rapidly growing society."
                 }
               ],
               "source": {
@@ -1120,7 +1133,8 @@
                 {
                   "type": "comprehension",
                   "question": "Why did the success of Chinese miners lead to violent events like the Lambing Flat riots?",
-                  "text": ""
+                  "model": "Chinese miners were highly organised, sober, and collective in their mining techniques, often working abandoned European claims thoroughly and striking rich deposits of gold. Driven by intense economic envy, water disputes, and deep-seated xenophobia regarding Chinese language, religion, and appearance, European miners formed vigilante anti-Chinese leagues. In 1861 at Lambing Flat, armed white mobs attacked Chinese miners, burning hundreds of tents, plundering possessions, and inflicting savage assaults.",
+                  "model_answer": "Chinese miners were highly organised, sober, and collective in their mining techniques, often working abandoned European claims thoroughly and striking rich deposits of gold. Driven by intense economic envy, water disputes, and deep-seated xenophobia regarding Chinese language, religion, and appearance, European miners formed vigilante anti-Chinese leagues. In 1861 at Lambing Flat, armed white mobs attacked Chinese miners, burning hundreds of tents, plundering possessions, and inflicting savage assaults."
                 }
               ]
             },
@@ -1132,7 +1146,8 @@
                 {
                   "type": "comprehension",
                   "question": "How did the colonial governments respond to the anti-Chinese riots on the goldfields?",
-                  "text": ""
+                  "model": "Rather than defending Chinese miners against European racial violence, colonial governments appeased the rioters by enacting harsh discriminatory legislation. Victoria and New South Wales passed Chinese Immigrants Restriction Acts, imposing an exorbitant £10 entry poll tax on Chinese arrivals and severely capping the number of Chinese passengers per ship. These discriminatory gold-rush policies formed the direct legal and ideological foundation for the 1901 Immigration Restriction Act ('White Australia Policy').",
+                  "model_answer": "Rather than defending Chinese miners against European racial violence, colonial governments appeased the rioters by enacting harsh discriminatory legislation. Victoria and New South Wales passed Chinese Immigrants Restriction Acts, imposing an exorbitant £10 entry poll tax on Chinese arrivals and severely capping the number of Chinese passengers per ship. These discriminatory gold-rush policies formed the direct legal and ideological foundation for the 1901 Immigration Restriction Act ('White Australia Policy')."
                 }
               ]
             }
@@ -1204,7 +1219,9 @@
                   "type": "extended_writing",
                   "question": "Write a narrative account analyzing the development of Australia between the years 1788 and 1855.",
                   "marks": "8",
-                  "instructions": "Use these sentence starters to build your narrative in chronological order:\n\n1. The development of Australia began in 1788 when...\n2. This was a very difficult period because...\n3. However, the situation changed dramatically when John Macarthur...\n4. This led to New South Wales becoming a profitable colony because...\n5. Finally, the development of Australia accelerated in the 1850s due to..."
+                  "instructions": "Use these sentence starters to build your narrative in chronological order:\n\n1. The development of Australia began in 1788 when...\n2. This was a very difficult period because...\n3. However, the situation changed dramatically when John Macarthur...\n4. This led to New South Wales becoming a profitable colony because...\n5. Finally, the development of Australia accelerated in the 1850s due to...",
+                  "model": "The development of Australia began in 1788 when the First Fleet, carrying over 700 convicts and commanded by Governor Arthur Phillip, landed at Sydney Cove to establish a penal colony. This was a very difficult period because the settlers faced immediate near-starvation due to poor, sandy soil, a lack of farming tools and agricultural knowledge among urban convicts, and the delay of supply ships from Britain; only Governor Phillip's strict policy of equal food rationing for officers and convicts ensured the colony's fragile survival.\n\nHowever, the situation changed dramatically when pioneering farmers proved the colony could feed itself and entrepreneurs like John Macarthur introduced Spanish Merino sheep, which flourished in the dry Australian climate. In 1813, explorers crossed the rugged Blue Mountains, unlocking immense, fertile plains inland that allowed wealthy 'squatters' to expand their grazing runs.\n\nThis led to New South Wales becoming a highly profitable colony because millions of pounds of premium Merino wool were exported to feed the hungry textile mills of the British Industrial Revolution, creating substantial private fortunes and turning an expensive penal outpost into a thriving agricultural export economy (albeit through the catastrophic dispossession of First Nations peoples).\n\nFinally, the development of Australia accelerated rapidly in the 1850s due to the discovery of payable gold by Edward Hargreaves in 1851 near Bathurst and Victoria. The resulting gold rush triggered an international migration wave that nearly tripled Australia's population from 430,000 to over 1.1 million within ten years, bringing diverse free immigrants, ending convict transportation to eastern Australia, and permanently securing self-governing colonial prosperity.",
+                  "model_answer": "The development of Australia began in 1788 when the First Fleet, carrying over 700 convicts and commanded by Governor Arthur Phillip, landed at Sydney Cove to establish a penal colony. This was a very difficult period because the settlers faced immediate near-starvation due to poor, sandy soil, a lack of farming tools and agricultural knowledge among urban convicts, and the delay of supply ships from Britain; only Governor Phillip's strict policy of equal food rationing for officers and convicts ensured the colony's fragile survival.\n\nHowever, the situation changed dramatically when pioneering farmers proved the colony could feed itself and entrepreneurs like John Macarthur introduced Spanish Merino sheep, which flourished in the dry Australian climate. In 1813, explorers crossed the rugged Blue Mountains, unlocking immense, fertile plains inland that allowed wealthy 'squatters' to expand their grazing runs.\n\nThis led to New South Wales becoming a highly profitable colony because millions of pounds of premium Merino wool were exported to feed the hungry textile mills of the British Industrial Revolution, creating substantial private fortunes and turning an expensive penal outpost into a thriving agricultural export economy (albeit through the catastrophic dispossession of First Nations peoples).\n\nFinally, the development of Australia accelerated rapidly in the 1850s due to the discovery of payable gold by Edward Hargreaves in 1851 near Bathurst and Victoria. The resulting gold rush triggered an international migration wave that nearly tripled Australia's population from 430,000 to over 1.1 million within ten years, bringing diverse free immigrants, ending convict transportation to eastern Australia, and permanently securing self-governing colonial prosperity."
                 }
               ]
             },
@@ -1216,645 +1233,382 @@
                 {
                   "type": "source_analysis",
                   "question": "How useful are Sources A and B for an enquiry into the impact of British colonization on Aboriginal Australians?",
-                  "marks": "8"
+                  "marks": "8",
+                  "model": "Source A is highly useful for an enquiry into the impact of British colonization because it reveals the aggressive ideological mindset and economic greed that drove the dispossession of Aboriginal Australians. In its content, the author describes the land as 'unimproved' wasteland and refers to Aboriginal people as merely 'wandering', claiming they are 'melting away' as a 'natural outcome' of European superiority. This is useful because it directly reflects the doctrine of Terra Nullius and 19th-century racial Darwinism used by squatters to rationalize pastoral theft. In terms of provenance, as a letter by a wealthy squatter published in a London newspaper in 1840, its purpose was to attract British capital and settlers; while it completely distorts Aboriginal culture and whitewashes frontier violence, it is immensely useful for showing how colonizers justified ethnic cleansing to the British public.\n\nSource B is equally useful because it exposes the brutal, violent reality of British colonization from an empathetic eyewitness perspective. The content explicitly details how white settlers 'stolen their hunting grounds' and how starving natives were 'hunted down and shot like dogs by the squatters' with zero government protection. This aligns with our historical knowledge of the frontier wars, the depletion of native food sources by Merino sheep, and atrocities like the 1838 Myall Creek Massacre. As an 1838 report by Lancelot Threlkeld, a Christian missionary living directly among the Awabakal people, its purpose was to document settler atrocities and lobby the imperial government for legal intervention and native protection. Although Threlkeld's Christian evangelical perspective might lead him to focus on native victimhood, his firsthand observations provide authentic, corroborated evidence of frontier brutality.\n\nTaken together, Sources A and B are exceptionally useful: Source A exposes the racist justifications and economic expansion of the pastoral squatters, while Source B exposes the lethal human cost and violent dispossession inflicted upon Aboriginal peoples.",
+                  "model_answer": "Source A is highly useful for an enquiry into the impact of British colonization because it reveals the aggressive ideological mindset and economic greed that drove the dispossession of Aboriginal Australians. In its content, the author describes the land as 'unimproved' wasteland and refers to Aboriginal people as merely 'wandering', claiming they are 'melting away' as a 'natural outcome' of European superiority. This is useful because it directly reflects the doctrine of Terra Nullius and 19th-century racial Darwinism used by squatters to rationalize pastoral theft. In terms of provenance, as a letter by a wealthy squatter published in a London newspaper in 1840, its purpose was to attract British capital and settlers; while it completely distorts Aboriginal culture and whitewashes frontier violence, it is immensely useful for showing how colonizers justified ethnic cleansing to the British public.\n\nSource B is equally useful because it exposes the brutal, violent reality of British colonization from an empathetic eyewitness perspective. The content explicitly details how white settlers 'stolen their hunting grounds' and how starving natives were 'hunted down and shot like dogs by the squatters' with zero government protection. This aligns with our historical knowledge of the frontier wars, the depletion of native food sources by Merino sheep, and atrocities like the 1838 Myall Creek Massacre. As an 1838 report by Lancelot Threlkeld, a Christian missionary living directly among the Awabakal people, its purpose was to document settler atrocities and lobby the imperial government for legal intervention and native protection. Although Threlkeld's Christian evangelical perspective might lead him to focus on native victimhood, his firsthand observations provide authentic, corroborated evidence of frontier brutality.\n\nTaken together, Sources A and B are exceptionally useful: Source A exposes the racist justifications and economic expansion of the pastoral squatters, while Source B exposes the lethal human cost and violent dispossession inflicted upon Aboriginal peoples."
                 }
               ]
             }
-          ]
+          ],
+          "do_now": {
+            "type": "questions",
+            "items": [
+              {
+                "question": "What Latin legal term did the British Crown use to claim Australia was 'nobody's land'?",
+                "answer": "Terra Nullius"
+              },
+              {
+                "question": "Who was the master Polynesian star navigator who guided Captain Cook's Endeavour across the Pacific?",
+                "answer": "Tupaia"
+              },
+              {
+                "question": "Which global event in 1776 stopped Britain from transporting convicts to North America?",
+                "answer": "The American War of Independence"
+              },
+              {
+                "question": "What were the decaying, overcrowded decommissioned warships used as temporary prisons in Britain called?",
+                "answer": "Prison hulks"
+              },
+              {
+                "question": "Which naval officer was the first Governor of New South Wales and instituted equal food rationing?",
+                "answer": "Governor Arthur Phillip"
+              },
+              {
+                "question": "What catastrophic disease broke out in 1789, killing an estimated 50% to 70% of the Sydney Eora population?",
+                "answer": "Smallpox"
+              },
+              {
+                "question": "Which Bidjigal warrior led a twelve-year guerrilla resistance campaign against British settlement until 1802?",
+                "answer": "Pemulwuy"
+              },
+              {
+                "question": "At which 1838 massacre were seven white stockmen convicted and hanged for murdering 28 unarmed Aboriginal people?",
+                "answer": "The Myall Creek Massacre"
+              },
+              {
+                "question": "Which breed of Spanish sheep, championed by John Macarthur, created a booming export industry for New South Wales?",
+                "answer": "Merino sheep"
+              },
+              {
+                "question": "What major mineral discovery by Edward Hargreaves in 1851 caused Australia's population to nearly triple within a decade?",
+                "answer": "Gold (the 1851 Gold Rush)"
+              }
+            ]
+          }
         }
       ],
       "quizPack": [
         {
-          "q": "In what year did the Franco-Prussian War end?",
-          "a": "1871",
+          "id": "aus_q1",
+          "q": "What was the public scientific purpose of Captain Cook's 1768 voyage on the Endeavour?",
+          "a": "To observe the transit of Venus across the Sun in Tahiti",
           "options": [
-            "1871",
-            "1882",
-            "1914",
-            "1890"
-          ],
-          "id": "gw_q1"
+            "To observe the transit of Venus across the Sun in Tahiti",
+            "To establish a penal colony for British convicts",
+            "To map the spice routes of the East Indies",
+            "To wage a naval war against Spanish settlements"
+          ]
         },
         {
-          "q": "Which wealthy region did Germany take from France in 1871?",
-          "a": "Alsace-Lorraine",
+          "id": "aus_q2",
+          "q": "What secret orders did the British Admiralty give Captain Cook?",
+          "a": "To search for and claim the Great Southern Land for King George III",
           "options": [
-            "Alsace-Lorraine",
-            "The Rhineland",
-            "The Sudetenland",
-            "The Ruhr Valley"
-          ],
-          "id": "gw_q2"
+            "To search for and claim the Great Southern Land for King George III",
+            "To capture French trading vessels in the Pacific",
+            "To purchase land from Indigenous leaders",
+            "To build a naval fortress in Tahiti"
+          ]
         },
         {
-          "q": "What was the French desire for revenge called?",
-          "a": "Revanche",
+          "id": "aus_q3",
+          "q": "Who was Tupaia?",
+          "a": "A master Polynesian star navigator and high priest from Ra'iatea",
           "options": [
-            "Revanche",
-            "Weltpolitik",
-            "Encirclement",
-            "Pan-Slavism"
-          ],
-          "id": "gw_q3"
+            "A master Polynesian star navigator and high priest from Ra'iatea",
+            "The senior Eora warrior who opposed the landing at Botany Bay",
+            "A British botanist who assisted Sir Joseph Banks",
+            "The first convict to receive a land grant in Sydney"
+          ]
         },
         {
-          "q": "Who was the German Chancellor that unified Germany?",
-          "a": "Otto von Bismarck",
+          "id": "aus_q4",
+          "q": "How did Tupaia navigate across thousands of miles of open Pacific Ocean?",
+          "a": "By reading stars, ocean currents, bird flights, and cloud formations",
           "options": [
-            "Otto von Bismarck",
-            "Kaiser Wilhelm II",
-            "Count Leo von Caprivi",
-            "Theobald von Bethmann-Hollweg"
-          ],
-          "id": "gw_q4"
+            "By reading stars, ocean currents, bird flights, and cloud formations",
+            "By using European brass sextants and marine chronometers",
+            "By following compass bearings drawn by Captain Cook",
+            "By copying secret Spanish nautical charts"
+          ]
         },
         {
-          "q": "What was Bismarck's greatest strategic fear?",
-          "a": "A war on two fronts (Encirclement)",
+          "id": "aus_q5",
+          "q": "Which Aboriginal clan met Captain Cook's landing party at Botany Bay in 1770?",
+          "a": "The Gweagal clan of the Dharawal nation",
           "options": [
-            "A war on two fronts (Encirclement)",
-            "A British naval blockade",
-            "An uprising by the working class",
-            "The collapse of Austria-Hungary"
-          ],
-          "id": "gw_q5"
+            "The Gweagal clan of the Dharawal nation",
+            "The Wirrayaraay people of New South Wales",
+            "The Wurundjeri clan of Victoria",
+            "The Awabakal people of Lake Macquarie"
+          ]
         },
         {
-          "q": "Which two countries did Bismarck fear would ally against Germany?",
-          "a": "France and Russia",
+          "id": "aus_q6",
+          "q": "What legal fiction did Britain use to declare Australia 'belonging to no one'?",
+          "a": "Terra Nullius",
           "options": [
-            "France and Russia",
-            "Britain and France",
-            "Russia and Austria-Hungary",
-            "Britain and Russia"
-          ],
-          "id": "gw_q6"
+            "Terra Nullius",
+            "Habeas Corpus",
+            "Pax Britannica",
+            "Manifest Destiny"
+          ]
         },
         {
-          "q": "What was the secret 1887 agreement between Germany and Russia?",
-          "a": "The Reinsurance Treaty",
+          "id": "aus_q7",
+          "q": "Why did Britain face a severe prison crisis starting in 1776?",
+          "a": "The American War of Independence ended convict transportation to America",
           "options": [
-            "The Reinsurance Treaty",
-            "The Entente Cordiale",
-            "The Dual Alliance",
-            "The Treaty of London"
-          ],
-          "id": "gw_q7"
+            "The American War of Independence ended convict transportation to America",
+            "A Great Fire destroyed the main prisons in London",
+            "The King abolished capital punishment and replaced it with prison terms",
+            "Crime rates tripled following the end of the Napoleonic Wars"
+          ]
         },
         {
-          "q": "Which ambitious German Emperor dismissed Bismarck in 1890?",
-          "a": "Kaiser Wilhelm II",
+          "id": "aus_q8",
+          "q": "What were 'prison hulks'?",
+          "a": "Old, rotting decommissioned warships used as temporary floating prisons",
           "options": [
-            "Kaiser Wilhelm II",
-            "Kaiser Wilhelm I",
-            "Archduke Franz Ferdinand",
-            "Tsar Nicholas II"
-          ],
-          "id": "gw_q8"
+            "Old, rotting decommissioned warships used as temporary floating prisons",
+            "Special underground dungeons beneath Newgate Prison",
+            "Heavily armoured wagons used to transport prisoners between cities",
+            "Remote island fortresses built off the Scottish coast"
+          ]
         },
         {
-          "q": "What was Wilhelm II's aggressive global policy called?",
-          "a": "Weltpolitik (World Policy)",
+          "id": "aus_q9",
+          "q": "In what month and year did the First Fleet arrive at Sydney Cove?",
+          "a": "January 1788",
           "options": [
-            "Weltpolitik (World Policy)",
-            "Realpolitik",
-            "Lebensraum",
-            "Splendid Isolation"
-          ],
-          "id": "gw_q9"
+            "January 1788",
+            "April 1770",
+            "May 1813",
+            "August 1851"
+          ]
         },
         {
-          "q": "What previous policy of Bismarck's focused on European peace?",
-          "a": "Realpolitik",
+          "id": "aus_q10",
+          "q": "How did Governor Arthur Phillip prevent mass starvation during the early years at Sydney Cove?",
+          "a": "By enforcing equal food rationing for officers and convicts alike",
           "options": [
-            "Realpolitik",
-            "Weltpolitik (World Policy)",
-            "Mitteleuropa",
-            "Pan-Slavism"
-          ],
-          "id": "gw_q10"
+            "By enforcing equal food rationing for officers and convicts alike",
+            "By trading manufactured tools with local Eora hunters",
+            "By sending half the convicts back to Britain immediately",
+            "By forcing convicts to survive solely on native berries and kangaroo meat"
+          ]
         },
         {
-          "q": "What agreement did Britain and France sign in 1904?",
-          "a": "The Entente Cordiale",
+          "id": "aus_q11",
+          "q": "Who was John Hudson on the First Fleet?",
+          "a": "A nine-year-old chimney sweep transported for seven years for petty theft",
           "options": [
-            "The Entente Cordiale",
-            "The Triple Entente",
-            "The Treaty of Versailles",
-            "The Reinsurance Treaty"
-          ],
-          "id": "gw_q11"
+            "A nine-year-old chimney sweep transported for seven years for petty theft",
+            "The naval doctor who kept detailed journals on the voyage",
+            "A violent highway robber sentenced to life imprisonment",
+            "The first free settler to establish a commercial sheep flock"
+          ]
         },
         {
-          "q": "In which African country did Wilhelm provoke crises in 1905 and 1911?",
-          "a": "Morocco",
+          "id": "aus_q12",
+          "q": "What was King George III's official instruction to Governor Phillip regarding Indigenous Australians?",
+          "a": "To live in 'amity and kindness' and punish anyone who harmed them",
           "options": [
-            "Morocco",
-            "Egypt",
-            "South Africa",
-            "Sudan"
-          ],
-          "id": "gw_q12"
+            "To live in 'amity and kindness' and punish anyone who harmed them",
+            "To conquer the interior and force Indigenous people into slavery",
+            "To purchase land strictly via signed treaties and cash payments",
+            "To avoid all contact and build high defensive stockades"
+          ]
         },
         {
-          "q": "What was the result of the First Moroccan (Tangier) Crisis?",
-          "a": "Britain and France grew closer, isolating Germany",
+          "id": "aus_q13",
+          "q": "What catastrophic epidemic struck the Eora people around Sydney in 1789?",
+          "a": "Smallpox",
           "options": [
-            "Britain and France grew closer, isolating Germany",
-            "Germany gained control of Morocco",
-            "The Entente Cordiale was dissolved",
-            "Russia declared war on Germany"
-          ],
-          "id": "gw_q13"
+            "Smallpox",
+            "Cholera",
+            "Bubonic Plague",
+            "Typhus"
+          ]
         },
         {
-          "q": "What name was given to Germany's aggressive threat of military force?",
-          "a": "Gunboat Diplomacy",
+          "id": "aus_q14",
+          "q": "Who was Bennelong?",
+          "a": "A senior Eora man who acted as an intermediary and visited King George III in London",
           "options": [
-            "Gunboat Diplomacy",
-            "Dollar Diplomacy",
-            "Appeasement",
-            "Risk Theory"
-          ],
-          "id": "gw_q14"
+            "A senior Eora man who acted as an intermediary and visited King George III in London",
+            "A Bidjigal guerrilla warrior who waged war on British farms for twelve years",
+            "A Christian missionary who documented atrocities against Aboriginal people",
+            "The leader of the Coranderrk Aboriginal farming community"
+          ]
         },
         {
-          "q": "What was the name of the German gunboat sent to Agadir in 1911?",
-          "a": "SMS Panther",
+          "id": "aus_q15",
+          "q": "Which Indigenous resistance leader waged a twelve-year guerrilla war against British settlers until 1802?",
+          "a": "Pemulwuy",
           "options": [
-            "SMS Panther",
-            "HMS Dreadnought",
-            "SMS Emden",
-            "SMS Bismarck"
-          ],
-          "id": "gw_q15"
+            "Pemulwuy",
+            "Bennelong",
+            "William Barak",
+            "Tupaia"
+          ]
         },
         {
-          "q": "What was the British policy requiring their navy to be larger than the next two combined?",
-          "a": "The Two-Power Standard",
+          "id": "aus_q16",
+          "q": "Why was the Myall Creek trial of 1838 a landmark legal event?",
+          "a": "It was the only time white settlers were convicted and hanged for murdering Aboriginal people",
           "options": [
-            "The Two-Power Standard",
-            "The Risk Theory",
-            "The Imperial Defense Act",
-            "The Continental Commitment"
-          ],
-          "id": "gw_q16"
+            "It was the only time white settlers were convicted and hanged for murdering Aboriginal people",
+            "It led directly to the official abolition of convict transportation",
+            "It granted full voting rights to Indigenous Australians",
+            "It recognized native land title for the first time in imperial courts"
+          ]
         },
         {
-          "q": "What revolutionary British battleship was launched in 1906?",
-          "a": "HMS Dreadnought",
+          "id": "aus_q17",
+          "q": "Who was the ex-convict who proved New South Wales could feed itself at Experiment Farm?",
+          "a": "James Ruse",
           "options": [
-            "HMS Dreadnought",
-            "HMS Victory",
-            "HMS Invincible",
-            "HMS Iron Duke"
-          ],
-          "id": "gw_q17"
+            "James Ruse",
+            "John Macarthur",
+            "Edward Hargreaves",
+            "Gregory Blaxland"
+          ]
         },
         {
-          "q": "Why did the Dreadnought ironically threaten British supremacy?",
-          "a": "It made all older ships obsolete, resetting the naval race",
+          "id": "aus_q18",
+          "q": "Which animal breed transformed the economy of New South Wales into a lucrative exporter?",
+          "a": "Spanish Merino sheep",
           "options": [
-            "It made all older ships obsolete, resetting the naval race",
-            "It was too expensive to build more than one",
-            "It was easily destroyed by German U-Boats",
-            "Its guns could not hit moving targets"
-          ],
-          "id": "gw_q18"
+            "Spanish Merino sheep",
+            "Hereford beef cattle",
+            "Arabian thoroughbred horses",
+            "Angora dairy goats"
+          ]
         },
         {
-          "q": "What was Britain's traditional foreign policy of avoiding European alliances called?",
-          "a": "Splendid Isolation",
+          "id": "aus_q19",
+          "q": "What discovery by Edward Hargreaves in 1851 transformed Australia from a penal colony to a booming migrant destination?",
+          "a": "Gold near Bathurst, New South Wales",
           "options": [
-            "Splendid Isolation",
-            "The Two-Power Standard",
-            "Balance of Power",
-            "Appeasement"
-          ],
-          "id": "gw_q19"
+            "Gold near Bathurst, New South Wales",
+            "Vast silver reserves in Broken Hill",
+            "Iron ore deposits in Western Australia",
+            "Underground oil wells in Queensland"
+          ]
         },
         {
-          "q": "What was German Admiral Tirpitz's naval strategy called?",
-          "a": "Risk Theory",
+          "id": "aus_q20",
+          "q": "What racist legislative policy had its direct roots in anti-Chinese goldfield riots like Lambing Flat?",
+          "a": "The White Australia Policy",
           "options": [
-            "Risk Theory",
-            "The Schlieffen Plan",
-            "Weltpolitik",
-            "Unrestricted Submarine Warfare"
-          ],
-          "id": "gw_q20"
-        },
-        {
-          "q": "What volatile region was known as the 'Powder Keg of Europe'?",
-          "a": "The Balkans",
-          "options": [
-            "The Balkans",
-            "The Rhineland",
-            "The Middle East",
-            "The Caucasus"
-          ],
-          "id": "gw_q21"
-        },
-        {
-          "q": "What declining multi-ethnic empire dominated the northern Balkans?",
-          "a": "The Austro-Hungarian Empire",
-          "options": [
-            "The Austro-Hungarian Empire",
-            "The Ottoman Empire",
-            "The Russian Empire",
-            "The British Empire"
-          ],
-          "id": "gw_q22"
-        },
-        {
-          "q": "Which empire was retreating from the Balkans, leaving a power vacuum?",
-          "a": "The Ottoman Empire",
-          "options": [
-            "The Ottoman Empire",
-            "The Austro-Hungarian Empire",
-            "The Russian Empire",
-            "The German Empire"
-          ],
-          "id": "gw_q23"
-        },
-        {
-          "q": "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
-          "a": "Serbia",
-          "options": [
-            "Serbia",
-            "Bosnia",
-            "Croatia",
-            "Bulgaria"
-          ],
-          "id": "gw_q24"
-        },
-        {
-          "q": "Which region did Austria-Hungary formally annex in 1908?",
-          "a": "Bosnia",
-          "options": [
-            "Bosnia",
-            "Serbia",
-            "Romania",
-            "Albania"
-          ],
-          "id": "gw_q25"
-        },
-        {
-          "q": "Which major power considered itself the protector of the Slavic people?",
-          "a": "Russia",
-          "options": [
-            "Russia",
-            "Germany",
-            "France",
-            "Britain"
-          ],
-          "id": "gw_q26"
-        },
-        {
-          "q": "Who was the heir to the Austro-Hungarian throne?",
-          "a": "Archduke Franz Ferdinand",
-          "options": [
-            "Archduke Franz Ferdinand",
-            "Emperor Franz Joseph",
-            "Kaiser Wilhelm II",
-            "Tsar Nicholas II"
-          ],
-          "id": "gw_q27"
-        },
-        {
-          "q": "In which city was the Archduke assassinated?",
-          "a": "Sarajevo",
-          "options": [
-            "Sarajevo",
-            "Belgrade",
-            "Vienna",
-            "Berlin"
-          ],
-          "id": "gw_q28"
-        },
-        {
-          "q": "On what date was the Archduke assassinated?",
-          "a": "June 28, 1914",
-          "options": [
-            "June 28, 1914",
-            "July 23, 1914",
-            "August 4, 1914",
-            "November 11, 1918"
-          ],
-          "id": "gw_q29"
-        },
-        {
-          "q": "Who assassinated the Archduke?",
-          "a": "Gavrilo Princip",
-          "options": [
-            "Gavrilo Princip",
-            "Nedeljko Čabrinović",
-            "Dragutin Dimitrijević",
-            "Leon Trotsky"
-          ],
-          "id": "gw_q30"
-        },
-        {
-          "q": "What secret Serbian society did the assassin belong to?",
-          "a": "The Black Hand",
-          "options": [
-            "The Black Hand",
-            "The White Rose",
-            "The Young Turks",
-            "The Bolsheviks"
-          ],
-          "id": "gw_q31"
-        },
-        {
-          "q": "What unconditional promise did Germany give Austria-Hungary in July 1914?",
-          "a": "The 'Blank Check'",
-          "options": [
-            "The 'Blank Check'",
-            "The Reinsurance Treaty",
-            "The Entente Cordiale",
-            "The Ultimatum"
-          ],
-          "id": "gw_q32"
-        },
-        {
-          "q": "What is the month of diplomatic failures after the assassination called?",
-          "a": "The July Crisis",
-          "options": [
-            "The July Crisis",
-            "The Sarajevo Crisis",
-            "The Balkan Wars",
-            "The Blank Check Incident"
-          ],
-          "id": "gw_q33"
-        },
-        {
-          "q": "What did Austria-Hungary issue to Serbia on July 23?",
-          "a": "An ultimatum",
-          "options": [
-            "An ultimatum",
-            "A declaration of war",
-            "A peace treaty",
-            "A demand for reparations"
-          ],
-          "id": "gw_q34"
-        },
-        {
-          "q": "Which country began mobilizing its army to protect Serbia?",
-          "a": "Russia",
-          "options": [
-            "Russia",
-            "France",
-            "Britain",
-            "Germany"
-          ],
-          "id": "gw_q35"
-        },
-        {
-          "q": "What was the name of Germany's military strategy for a two-front war?",
-          "a": "The Schlieffen Plan",
-          "options": [
-            "The Schlieffen Plan",
-            "The Risk Theory",
-            "Plan XVII",
-            "The Bismarck Strategy"
-          ],
-          "id": "gw_q36"
-        },
-        {
-          "q": "Which neutral country did Germany invade to attack France?",
-          "a": "Belgium",
-          "options": [
-            "Belgium",
-            "Switzerland",
-            "The Netherlands",
-            "Luxembourg"
-          ],
-          "id": "gw_q37"
-        },
-        {
-          "q": "Which country declared war on Germany due to the invasion of Belgium?",
-          "a": "Britain",
-          "options": [
-            "Britain",
-            "Russia",
-            "Italy",
-            "The United States"
-          ],
-          "id": "gw_q38"
-        },
-        {
-          "q": "What was the alliance of Germany, Austria-Hungary, and Italy called?",
-          "a": "The Triple Alliance",
-          "options": [
-            "The Triple Alliance",
-            "The Triple Entente",
-            "The Central Powers",
-            "The League of Three Emperors"
-          ],
-          "id": "gw_q39"
-        },
-        {
-          "q": "What was the alliance of Britain, France, and Russia called?",
-          "a": "The Triple Entente",
-          "options": [
-            "The Triple Entente",
-            "The Triple Alliance",
-            "The Allied Powers",
-            "The Grand Alliance"
-          ],
-          "id": "gw_q40"
-        },
-        {
-          "q": "What treaty ended the First World War in 1919?",
-          "a": "The Treaty of Versailles",
-          "options": [
-            "The Treaty of Versailles",
-            "The Treaty of Brest-Litovsk",
-            "The Treaty of Trianon",
-            "The Congress of Vienna"
-          ],
-          "id": "gw_q41"
-        },
-        {
-          "q": "Which clause forced Germany to accept full responsibility for the war?",
-          "a": "Article 231 (War Guilt Clause)",
-          "options": [
-            "Article 231 (War Guilt Clause)",
-            "Article 48",
-            "The Blank Check",
-            "The Reparations Clause"
-          ],
-          "id": "gw_q42"
-        },
-        {
-          "q": "What is the term for a war launched to destroy a rising threat before it gets too strong?",
-          "a": "Preventative War",
-          "options": [
-            "Preventative War",
-            "Total War",
-            "War of Attrition",
-            "Proxy War"
-          ],
-          "id": "gw_q43"
-        },
-        {
-          "q": "Which historian famously argued Germany planned a war of aggression?",
-          "a": "Fritz Fischer",
-          "options": [
-            "Fritz Fischer",
-            "Margaret MacMillan",
-            "A.J.P. Taylor",
-            "Christopher Clark"
-          ],
-          "id": "gw_q44"
-        },
-        {
-          "q": "Which historian argued the nations blundered into war due to rigid alliances?",
-          "a": "Margaret MacMillan",
-          "options": [
-            "Margaret MacMillan",
-            "Fritz Fischer",
-            "Ian Kershaw",
-            "Richard Evans"
-          ],
-          "id": "gw_q45"
-        },
-        {
-          "q": "What was the 'quarantine line' of new states created after WWI called?",
-          "a": "Cordon Sanitaire",
-          "options": [
-            "Cordon Sanitaire",
-            "The Iron Curtain",
-            "The Maginot Line",
-            "Mitteleuropa"
-          ],
-          "id": "gw_q46"
-        },
-        {
-          "q": "Name one new state created by the Treaty of Versailles.",
-          "a": "Poland",
-          "options": [
-            "Poland",
-            "Serbia",
-            "Bulgaria",
-            "Romania"
-          ],
-          "id": "gw_q47"
-        },
-        {
-          "q": "What European power was completely dismantled by the peace treaties?",
-          "a": "The Austro-Hungarian Empire",
-          "options": [
-            "The Austro-Hungarian Empire",
-            "The German Empire",
-            "The British Empire",
-            "The Russian Empire"
-          ],
-          "id": "gw_q48"
-        },
-        {
-          "q": "What ideological threat did the Allies want to separate from Germany after the war?",
-          "a": "Soviet Communism",
-          "options": [
-            "Soviet Communism",
-            "Fascism",
-            "Anarchism",
-            "Imperialism"
-          ],
-          "id": "gw_q49"
-        },
-        {
-          "q": "Which country did Germany invade on 3 August 1914?",
-          "a": "Belgium",
-          "options": [
-            "Belgium",
-            "France",
-            "Russia",
-            "Serbia"
-          ],
-          "id": "gw_q50"
+            "The White Australia Policy",
+            "The Treaty of Waitangi",
+            "The Native Title Act",
+            "The Australian Federation Act"
+          ]
         }
       ],
       "glossary": [
         {
-          "term": "Alsace-Lorraine",
-          "definition": "A resource-rich border region taken by Germany from France in 1871."
+          "term": "Ancestors",
+          "definition": "The people that we are descended from, who lived in a territory before us."
         },
         {
-          "term": "Ems Telegram",
-          "definition": "A diplomatic message altered by Bismarck to provoke France into declaring war."
-        },
-        {
-          "term": "Reparations",
-          "definition": "Massive financial fines forced upon a defeated nation to pay for war damages."
-        },
-        {
-          "term": "Siege",
-          "definition": "A military operation where enemy forces surround a town or building, cutting off essential supplies."
-        },
-        {
-          "term": "Imperialism",
-          "definition": "A policy of extending a country's power and influence through diplomacy or military force."
-        },
-        {
-          "term": "Scramble for Africa",
-          "definition": "The rapid invasion, annexation, and division of African territory by European powers."
-        },
-        {
-          "term": "Empire",
-          "definition": "An extensive group of states or countries ruled over by a single supreme authority."
+          "term": "Botany Bay",
+          "definition": "An area on the east coast of Australia where Captain Cook landed in 1770, named after the immense number of plant specimens found there."
         },
         {
           "term": "Colony",
-          "definition": "A country or area under the full or partial political control of another country."
+          "definition": "A country or area under the political control of another country and occupied by settlers from that country."
         },
         {
-          "term": "Dreadnought",
-          "definition": "A revolutionary type of heavily-armoured battleship introduced by Britain in 1906."
+          "term": "Gweagal",
+          "definition": "The specific Aboriginal Australian clan of the Dharawal nation who first encountered Captain Cook at Botany Bay in 1770."
         },
         {
-          "term": "Arms Race",
-          "definition": "A competition between nations to achieve superiority in the quantity and quality of military weapons."
+          "term": "Navigator",
+          "definition": "A person who directs the course of a ship using maps, stars, and specialised celestial knowledge."
         },
         {
-          "term": "Two-Power Standard",
-          "definition": "A British policy stating their navy must be as large as the next two largest navies combined."
+          "term": "Royal Society",
+          "definition": "A prestigious British scientific academy established in 1660 that co-funded Captain Cook's 1768 expedition."
         },
         {
-          "term": "Naval Supremacy",
-          "definition": "Having the most powerful and dominant navy in the world."
+          "term": "Terra Nullius",
+          "definition": "A Latin legal term meaning 'land belonging to no one' — used falsely by Britain to justify claiming Australia without native consent."
         },
         {
-          "term": "Triple Entente",
-          "definition": "The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom."
+          "term": "First Fleet",
+          "definition": "The convoy of 11 British ships commanded by Arthur Phillip that carried over 1,400 people, including 700+ convicts, to Australia in 1788."
         },
         {
-          "term": "Triple Alliance",
-          "definition": "A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882."
+          "term": "Convict",
+          "definition": "A person found guilty of a criminal offence and sentenced to transportation or penal servitude."
         },
         {
-          "term": "Reinsurance Treaty",
-          "definition": "A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war."
+          "term": "Governor",
+          "definition": "The supreme official appointed to govern a colony on behalf of the British Crown, such as Captain Arthur Phillip."
         },
         {
-          "term": "Encirclement",
-          "definition": "A military term for the situation when a force or target is isolated and surrounded by enemy forces."
+          "term": "Hard labour",
+          "definition": "Heavy, grueling physical punishment, such as quarrying stone or road-building in iron chains."
         },
         {
-          "term": "Assassination",
-          "definition": "The murder of a prominent person, often a political leader or ruler."
+          "term": "Hulk",
+          "definition": "A decommissioned, decaying warship moored in British harbours and used as an overcrowded temporary floating prison."
         },
         {
-          "term": "Black Hand",
-          "definition": "A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia."
+          "term": "Transportation",
+          "definition": "The legal punishment of banishing convicted criminals to a distant overseas penal colony for a term of years or life."
         },
         {
-          "term": "Ultimatum",
-          "definition": "A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations."
+          "term": "Sydney Cove",
+          "definition": "The deep, natural harbor in Port Jackson where Governor Phillip established the permanent settlement in January 1788."
         },
         {
-          "term": "Mobilisation",
-          "definition": "The action of a country or its government preparing and organizing troops for active service."
+          "term": "Eora",
+          "definition": "The Indigenous nation of people native to the coastal Sydney basin prior to British colonisation."
+        },
+        {
+          "term": "Frontier",
+          "definition": "The expanding and contested boundary between British pastoral settlement and unconquered Indigenous lands."
+        },
+        {
+          "term": "Guerrilla Warfare",
+          "definition": "Irregular military tactics, including surprise raids, burning supplies, and ambushes, famously used by Pemulwuy."
+        },
+        {
+          "term": "Dispossession",
+          "definition": "The systematic removal of Aboriginal peoples from their ancestral lands, waters, and sacred heritage."
+        },
+        {
+          "term": "Massacre",
+          "definition": "The indiscriminate, brutal slaughter of defenseless people, such as the 1838 Myall Creek massacre."
+        },
+        {
+          "term": "Squatter",
+          "definition": "A wealthy pastoralist who occupied vast tracts of Crown or Aboriginal land to graze millions of sheep without legal title initially."
+        },
+        {
+          "term": "Merino",
+          "definition": "A hardy breed of Spanish sheep yielding premium fine wool that formed the foundation of Australia's 19th-century economy."
+        },
+        {
+          "term": "Gold Rush",
+          "definition": "The rapid migration of hundreds of thousands of prospectors following the 1851 discovery of payable gold in New South Wales and Victoria."
+        },
+        {
+          "term": "Immigrant",
+          "definition": "A person who moves permanently to settle in a foreign country or colony."
+        },
+        {
+          "term": "Xenophobia",
+          "definition": "Fear, hatred, or prejudice against people from other cultures, which drove anti-Chinese goldfield riots like Lambing Flat."
+        },
+        {
+          "term": "White Australia Policy",
+          "definition": "A series of discriminatory colonial and federal laws starting in the 1850s designed to restrict non-European immigration."
         }
       ],
       "key_individuals": [

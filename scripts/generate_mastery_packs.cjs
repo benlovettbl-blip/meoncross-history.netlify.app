@@ -17,7 +17,7 @@ const units = fs
 for (const unitId of units) {
   const unitDir = path.join(publicUnitsDir, unitId);
   let dataJsPath = path.join(unitDir, 'data.js');
-  if (unitId === 'medieval_england' && !fs.existsSync(dataJsPath)) {
+  if ((unitId === 'medieval_england' || unitId === 'australia') && !fs.existsSync(dataJsPath)) {
     dataJsPath = path.join(rootDir, 'units', unitId, 'data.js');
   }
 
@@ -32,6 +32,10 @@ for (const unitId of units) {
       /if\s*\(\s*typeof\s*module\s*!==\s*['"]undefined['"]\s*\)\s*\{[\s\S]*?;\s*\n?\}/g,
       '',
     );
+    if (unitId === 'australia') {
+      jsonStr = jsonStr.replace(/\/\/\s*Support both[\s\S]*$/, '');
+      jsonStr = jsonStr.replace(/if\s*\(\s*typeof\s*module[\s\S]*$/, '');
+    }
     jsonStr = jsonStr
       .replace(
         /export const unitData = |export default |export const gwData = |const unitData = |module\.exports = /g,
@@ -64,7 +68,7 @@ for (const unitId of units) {
       let questions = [];
       let prefix = wb.prefix || wb.id;
       let matchingLessons;
-      if (unitId === 'medieval_england') {
+      if (unitId === 'medieval_england' || unitId === 'australia') {
         matchingLessons = unit.lessons;
       } else {
         matchingLessons = unit.lessons.filter(
