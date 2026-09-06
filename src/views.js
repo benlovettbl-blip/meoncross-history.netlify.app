@@ -977,12 +977,18 @@ export async function renderLessonsView() {
     `;
   }
 
+  const isTrip = unitId === 'trip_ypres' || (data && data.type === 'trip');
+
   container.innerHTML = `
     <div class="card" style="animation: fadeInUp 0.3s ease-out; padding: 0; overflow: hidden; background: white;">
       ${headerHtml}
       
       <div style="padding: 30px; border-top: 1px solid #e2e8f0;">
-        <p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and historian's tips for each lesson before testing yourself.</p>
+        ${
+          isTrip
+            ? ''
+            : `<p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and historian's tips for each lesson before testing yourself.</p>`
+        }
         
         ${renderKeyTopicLessonsHTML(data, unitId, data)}
       </div>
