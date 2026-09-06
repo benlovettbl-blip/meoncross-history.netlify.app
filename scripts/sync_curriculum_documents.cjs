@@ -368,7 +368,11 @@ console.log('   ✅ public/curriculum_overview_tabular.html generated successful
       stdio: 'inherit',
       cwd: path.join(__dirname, '..'),
     });
-    console.log('   ✅ Asset and Image checks passed cleanly.');
+    execSync('node scripts/verify_vault_answers.cjs', {
+      stdio: 'inherit',
+      cwd: path.join(__dirname, '..'),
+    });
+    console.log('   ✅ Asset, Image, and Vault Answer checks passed cleanly.');
   } catch (err) {
     console.error('❌ Error in asset/image verification:', err);
     process.exit(1);

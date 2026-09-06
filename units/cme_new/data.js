@@ -3947,7 +3947,7 @@ export default {
         },
         {
           question: 'Which US President brokered the Camp David Accords?',
-          options: ['Richard Nixon', 'Gerald Ford', '', 'Ronald Reagan'],
+          options: ['Richard Nixon', 'Gerald Ford', 'Jimmy Carter', 'Ronald Reagan'],
           answer: 2,
         },
         {
@@ -3972,7 +3972,7 @@ export default {
         },
         {
           question: 'Which US President was the primary mediator of the Camp David Accords?',
-          options: ['Richard Nixon', 'Gerald Ford', '', 'Ronald Reagan'],
+          options: ['Richard Nixon', 'Gerald Ford', 'Jimmy Carter', 'Ronald Reagan'],
           answer: 2,
         },
         {

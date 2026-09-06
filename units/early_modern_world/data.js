@@ -1358,7 +1358,7 @@ const early_modern_world = {
         {
           question:
             'Which English monarch broke away from the Catholic Church in 1534 to establish the Church of England?',
-          options: ['Elizabeth I', 'Mary I', 'Edward VI', ''],
+          options: ['Elizabeth I', 'Mary I', 'Edward VI', 'Henry VIII'],
           answer: 3,
           explanation: 'Henry VIII',
         },
