@@ -276,11 +276,75 @@
             color: white;
             font-family: 'Outfit', sans-serif;
         }
-        .col-attempt { width: 10%; }
-        .col-date { width: 15%; }
-        .col-score { width: 15%; }
-        .col-sig { width: 30%; }
-        .col-target { width: 30%; }
+        .col-attempt { width: 8%; }
+        .col-date { width: 13%; }
+        .col-score { width: 14%; }
+        .col-sig { width: 37%; }
+        .col-target { width: 28%; }
+        .tracker-table td {
+            vertical-align: middle;
+        }
+        .col-sig-cell {
+            padding: 8px 10px !important;
+        }
+        .parent-stamp-box {
+            border: 2px dashed #1e3a8a;
+            border-radius: 6px;
+            background: #f8fafc;
+            padding: 8px 10px;
+            text-align: left;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .stamp-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .stamp-effort {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        .stamp-stars {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+        .stamp-hint {
+            font-size: 0.7rem;
+            font-weight: normal;
+            color: #64748b;
+        }
+        .stamp-field {
+            display: flex;
+            align-items: flex-end;
+            margin-top: 4px;
+            font-size: 0.8rem;
+            color: #334155;
+            font-weight: 600;
+        }
+        .stamp-label {
+            white-space: nowrap;
+        }
+        .stamp-line {
+            flex-grow: 1;
+            border-bottom: 1px solid #94a3b8;
+            margin-left: 6px;
+            height: 12px;
+        }
         .reflection-box {
             border: 2px solid var(--brand-dark);
             padding: 20px;
@@ -2343,14 +2407,41 @@
                     <th class="col-attempt">Attempt</th>
                     <th class="col-date">Date</th>
                     <th class="col-score">Score (/128)</th>
-                    <th class="col-sig">Parent/Guardian Signature</th>
+                    <th class="col-sig">Parent Validation Stamp</th>
                     <th class="col-target">Target for Next Time</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td><strong>1</strong></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td><strong>2</strong></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td><strong>3</strong></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
+                        <div class="parent-stamp-box">
+                            <div class="stamp-badge">PARENT VALIDATION STAMP</div>
+                            <div class="stamp-effort">
+                                <span>Effort: ⭐ ⭐ ⭐</span>
+                                <span class="stamp-hint">(Circle 1–3)</span>
+                            </div>
+                            <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
+                            <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
+                        </div></td><td></td></tr>
+                <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
+                        <div class="parent-stamp-box">
+                            <div class="stamp-badge">PARENT VALIDATION STAMP</div>
+                            <div class="stamp-effort">
+                                <span>Effort: ⭐ ⭐ ⭐</span>
+                                <span class="stamp-hint">(Circle 1–3)</span>
+                            </div>
+                            <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
+                            <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
+                        </div></td><td></td></tr>
+                <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
+                        <div class="parent-stamp-box">
+                            <div class="stamp-badge">PARENT VALIDATION STAMP</div>
+                            <div class="stamp-effort">
+                                <span>Effort: ⭐ ⭐ ⭐</span>
+                                <span class="stamp-hint">(Circle 1–3)</span>
+                            </div>
+                            <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
+                            <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
+                        </div></td><td></td></tr>
             </tbody>
         </table>
 
