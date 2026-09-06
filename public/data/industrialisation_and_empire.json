@@ -60,6 +60,28 @@
       {
         "id": "lesson_1",
         "title": "What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?",
+        "vocabulary": [
+          {
+            "term": "Industrial Revolution",
+            "definition": "The rapid development of industry through the introduction of machinery and factory production, beginning in Britain around 1750."
+          },
+          {
+            "term": "Empire",
+            "definition": "A group of countries or territories controlled by one powerful nation, such as the British Empire."
+          },
+          {
+            "term": "Trade",
+            "definition": "The buying and selling of goods — Britain's global trade powered its industrial growth."
+          },
+          {
+            "term": "Significance",
+            "definition": "The importance of an event or development — why the Industrial Revolution matters."
+          },
+          {
+            "term": "Innovation",
+            "definition": "A new invention or method that changes how things are done."
+          }
+        ],
         "teacher_notes": {
           "primer": "This lesson introduces the shift from the domestic system to mass factory production during the Industrial Revolution, focusing on a local history case study of Henry Cort at the Funtley Ironworks. The goal is to connect major national/global shifts (steam, mass production, empire) to local geography and innovation.",
           "objectives": [
@@ -78,7 +100,8 @@
               "primer": "Guide students through the Paragraph Scaffold, helping them weigh the proximity of Portsmouth dockyards against his technological genius.",
               "question": "Would Henry Cort's inventions have been as successful if he hadn't been located near Portsmouth?"
             }
-          ]
+          ],
+          "source_context": "The visual diagram illustrates Henry Cort's revolutionary puddling furnace and grooved rolling process at Funtley Ironworks in Hampshire. By stirring molten pig iron to burn away carbon impurities and rolling it into standardised bars, Cort transformed brittle cast iron into tough malleable wrought iron at industrial scale, powering naval shipbuilding. **Hinge Question:** How does this diagram show that Britain's industrial power was built on transforming raw scientific and chemical processes into mechanical mass production?"
         },
         "learning_objectives": {
           "overarching": "To explore: What powered the Industrial Revolution, and how did a Fareham ironmaster change the world",
@@ -93,24 +116,24 @@
           "type": "questions",
           "items": [
             {
-              "question": "What is meant by the term 'Divine Right of Kings'?",
-              "answer": "The belief that a monarch receives their right to rule directly from God."
+              "question": "Who won the Battle of Hastings in 1066 and became King of England?",
+              "answer": "William the Conqueror (or the Normans)."
             },
             {
-              "question": "Who became King after the English Civil War ended and Oliver Cromwell died?",
-              "answer": "Charles II (The Restoration)."
+              "question": "What was the Black Death?",
+              "answer": "A deadly plague that spread across Europe and England during the Middle Ages."
             },
             {
-              "question": "Why did the Gunpowder Plot of 1605 fail?",
-              "answer": "Guy Fawkes was discovered in the cellars with the gunpowder before it could be lit."
+              "question": "Who was the famous Tudor King known for having six wives?",
+              "answer": "Henry VIII."
             },
             {
-              "question": "What was the significance of the Magna Carta signed in 1215?",
-              "answer": "It limited the power of the king and established that everyone is subject to the law."
+              "question": "In history, what is the difference between a primary and a secondary source?",
+              "answer": "A primary source was created at the time of the event, while a secondary source was created later."
             },
             {
-              "question": "Why did Henry VIII break away from the Catholic Church?",
-              "answer": "To divorce Catherine of Aragon and marry Anne Boleyn, leading to the creation of the Church of England."
+              "question": "What is a monarch?",
+              "answer": "A King or Queen who rules a country."
             }
           ]
         },
@@ -333,6 +356,28 @@
       {
         "id": "lesson_2",
         "title": "Was industrial work progress or punishment?",
+        "vocabulary": [
+          {
+            "term": "Urbanisation",
+            "definition": "The growth of towns and cities as people moved from rural areas to work in factories."
+          },
+          {
+            "term": "Revolution",
+            "definition": "A dramatic and fundamental change — the Industrial Revolution transformed British society."
+          },
+          {
+            "term": "Causation",
+            "definition": "Understanding the reasons behind events — why did factory conditions cause so much suffering?"
+          },
+          {
+            "term": "Child labour",
+            "definition": "The exploitation of children as workers in factories and mines during the Industrial Revolution."
+          },
+          {
+            "term": "Parliament",
+            "definition": "The law-making body of Britain, which gradually passed Factory Acts to improve conditions."
+          }
+        ],
         "teacher_notes": {
           "primer": "This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.",
           "objectives": [
@@ -554,6 +599,28 @@
       {
         "id": "lesson_3",
         "title": "Did industrialisation make British towns unlivable?",
+        "vocabulary": [
+          {
+            "term": "Industrialisation",
+            "definition": "The transformation from an agricultural economy to one based on factory manufacturing."
+          },
+          {
+            "term": "Public health",
+            "definition": "The health of the population — industrialisation created enormous public health crises in cities."
+          },
+          {
+            "term": "Cholera",
+            "definition": "A deadly waterborne disease that devastated industrial towns due to contaminated water supplies."
+          },
+          {
+            "term": "Change",
+            "definition": "How things become different over time — industrial towns changed rapidly and dramatically."
+          },
+          {
+            "term": "Slum",
+            "definition": "An overcrowded, unsanitary area of housing where the urban poor lived during industrialisation."
+          }
+        ],
         "teacher_notes": {
           "primer": "This lesson explores the public health crisis triggered by rapid urbanisation. It challenges high-ability pupils by juxtaposing the grand architecture of the British Empire (built with local Fareham bricks) against the squalid reality of the slums. It introduces complex source evaluation using three contrasting, authentic written sources, and frames the topic within the 'Optimist vs. Pessimist' historiographical debate.",
           "objectives": [
@@ -572,7 +639,8 @@
               "primer": "Ensure students grasp how 'Miasma Theory' delayed progress, and how the physical reality of the 'Great Stink' finally forced the government to abandon 'laissez-faire' policies.",
               "question": "Was it scientific discovery or political discomfort that finally triggered the building of London's sewers?"
             }
-          ]
+          ],
+          "source_context": "Gustave Doré's iconic 1872 engraving 'Over London by Rail' depicts the suffocating reality of Victorian urbanisation, with back-to-back terraced housing crowded beneath elevated railway viaducts under an omnipresent smog of industrial smoke. The image captures the human cost of rapid, unregulated slum expansion and the total absence of sanitation. **Hinge Question:** Does Doré's engraving portray the railway as a symbol of technological progress, or as an intrusive industrial monster dominating the lives of the working poor?"
         },
         "do_now": {
           "title": "Do Now: Recall",
@@ -732,6 +800,33 @@
       {
         "id": "lesson_4",
         "title": "How was the British Empire built and sustained?",
+        "learning_objectives": [
+          "Describe how the British Empire expanded through trade, military conquest, and colonisation across Asia and Africa",
+          "Explain how religious missions, economic exploitation, and resistance shaped the experience of empire for colonised peoples",
+          "Evaluate the significance of the British Empire in transforming global trade networks"
+        ],
+        "vocabulary": [
+          {
+            "term": "Empire",
+            "definition": "The British Empire — the largest in history, spanning a quarter of the world's surface by 1900."
+          },
+          {
+            "term": "Colonisation",
+            "definition": "The process of establishing control over a foreign territory and its people."
+          },
+          {
+            "term": "Trade",
+            "definition": "The exchange of goods — the empire was built on global trade networks exploiting colonial resources."
+          },
+          {
+            "term": "Resistance",
+            "definition": "Actions taken by colonised peoples to oppose British rule and exploitation."
+          },
+          {
+            "term": "Missionary",
+            "definition": "A person sent to promote Christianity in foreign lands — often used to justify imperial expansion."
+          }
+        ],
         "teacher_notes": {
           "primer": "This lesson investigates the core mechanisms of British imperial power in the 19th century, focusing on the interplay between trade, military execution, and industrial support. It introduces cognitive categorisation, significance mapping, and provenance analysis, anchoring global naval supremacy directly to the domestic workforce at Portsmouth Dockyard.",
           "objectives": [
@@ -750,7 +845,8 @@
               "primer": "Train pupils to identify the hidden motives, institutional biases, and reliable insights within official military declarations and corporate petitions.",
               "question": "Why does an author's target audience completely alter the usefulness of their written testimony?"
             }
-          ]
+          ],
+          "source_context": "The photograph of HMS Warrior at Portsmouth features the world's first iron-hulled, armour-plated warship launched in 1860, demonstrating how Britain's domestic heavy iron metallurgy directly underpinned global imperial naval dominance. Alongside Walter Crane's Imperial Federation Map, it visualises the mechanical foundation of the Pax Britannica. **Hinge Question:** Why was an ironclad warship built in a home dockyard just as vital for sustaining an overseas empire as soldiers stationed on the ground?"
         },
         "do_now": {
           "title": "Do Now: Recall",
@@ -1115,6 +1211,33 @@
       {
         "id": "lesson_5",
         "title": "How did the Empire strike back? The 1857 Indian Rebellion",
+        "learning_objectives": [
+          "Describe the causes and events of the Indian Rebellion of 1857 and the forms of resistance used by Indian soldiers",
+          "Explain how the rebellion challenged British imperial power and led to direct Crown rule over India",
+          "Evaluate the significance of the Indian Rebellion as an example of colonial resistance to empire"
+        ],
+        "vocabulary": [
+          {
+            "term": "Rebellion",
+            "definition": "An armed uprising against authority — the Indian Rebellion of 1857 challenged British imperial power."
+          },
+          {
+            "term": "Resistance",
+            "definition": "Actions taken to oppose those in power — Indian soldiers (sepoys) resisted British rule."
+          },
+          {
+            "term": "Crown rule",
+            "definition": "Direct governance of India by the British monarchy, replacing the East India Company after 1858."
+          },
+          {
+            "term": "Sepoy",
+            "definition": "An Indian soldier serving in the British East India Company's army."
+          },
+          {
+            "term": "Power",
+            "definition": "The ability to control others — the rebellion exposed the limits of British imperial power."
+          }
+        ],
         "teacher_notes": {
           "primer": "This lesson contrasts domestic working-class resistance (Swing Riots/Chartism) with violent colonial resistance, shattering the myth of a passive Empire. It explores the causes of the 1857 Rebellion, the brutal suppression, and the monumental shift to the British Raj.",
           "objectives": [
@@ -1479,6 +1602,33 @@
       {
         "id": "lesson_6",
         "title": "How did ordinary people fight for a voice?",
+        "learning_objectives": [
+          "Describe the key protest movements of the 19th century, including Chartism and trade unionism",
+          "Explain how industrialisation created new forms of resistance and demands for democracy and parliamentary reform",
+          "Evaluate the significance of working-class protest in expanding the power of Parliament and moving towards democracy"
+        ],
+        "vocabulary": [
+          {
+            "term": "Chartism",
+            "definition": "A working-class movement for political reform in the 1830s-40s, demanding universal male suffrage."
+          },
+          {
+            "term": "Democracy",
+            "definition": "Government by the people — the 19th century saw a gradual expansion of who could vote."
+          },
+          {
+            "term": "Protest",
+            "definition": "Public expression of dissent — workers protested terrible conditions and lack of political representation."
+          },
+          {
+            "term": "Trade union",
+            "definition": "An organisation of workers formed to protect their rights and negotiate better pay and conditions."
+          },
+          {
+            "term": "Reform",
+            "definition": "A change made to improve something — the Reform Acts gradually expanded the right to vote."
+          }
+        ],
         "teacher_notes": {
           "primer": "This lesson evaluates how working-class resistance transformed from violent, uncoordinated machine-breaking into organized, mass political movements. It tests students' historical reasoning by contrasting the rural Hampshire Swing Riots with the urban constitutional challenge of Chartism, assessing how different social classes reacted to the pressures of an industrial economy.",
           "objectives": [
@@ -1497,7 +1647,8 @@
               "primer": "Contrast an official, top-down judicial warning with a bottom-up, pseudonymous threatening letter to discover how state authorities and laborers contested power.",
               "question": "How does the tone of an anonymous threat compare to the language of a royal court decree when assessing historical utility?"
             }
-          ]
+          ],
+          "source_context": "This historic 1848 daguerreotype photograph documents tens of thousands of working-class Chartists gathering at Kennington Common in London to present their third mass petition for democratic franchise. The peaceful crowd, contrasted with thousands of special constables and troops mobilised by Wellington, highlights the intense state panic surrounding working-class political agency. **Hinge Question:** Why did the British ruling classes view a peaceful mass assembly demanding the right to vote as a terrifying revolutionary threat?"
         },
         "do_now": {
           "title": "Do Now: Recall",
@@ -1851,6 +2002,33 @@
       {
         "id": "lesson_7",
         "title": "How did the road to democracy expand?",
+        "learning_objectives": [
+          "Describe the key reforms that expanded democracy in 19th-century Britain, including the Reform Acts",
+          "Explain how protest, resistance, and propaganda drove the gradual extension of the right to vote",
+          "Evaluate the significance of the suffrage movement in transforming British democracy by 1900"
+        ],
+        "vocabulary": [
+          {
+            "term": "Suffrage",
+            "definition": "The right to vote in political elections — expanded gradually through the Reform Acts."
+          },
+          {
+            "term": "Parliament",
+            "definition": "The institution that makes laws — 19th-century reform expanded who Parliament represented."
+          },
+          {
+            "term": "Monarchy",
+            "definition": "Rule by a king or queen — the monarchy's power declined as Parliament gained more authority."
+          },
+          {
+            "term": "Propaganda",
+            "definition": "Material designed to influence opinion — used by both reformers and opponents of democratic change."
+          },
+          {
+            "term": "Franchise",
+            "definition": "The right to vote — each Reform Act extended the franchise to more people."
+          }
+        ],
         "teacher_notes": {
           "primer": "This final lesson of the unit traces the slow, hard-fought transition of Britain from an aristocratic oligarchy to a burgeoning democracy. It emphasizes that political rights were not freely given but conceded gradually due to popular pressure, utilizing the local Hampshire context of 'rotten boroughs' to highlight the absurdity of the pre-reform system.",
           "objectives": [
@@ -1869,7 +2047,8 @@
               "primer": "Guide students to analyze a satirical cartoon and a political speech to understand the deep fear the ruling classes held regarding working-class power.",
               "question": "Why did the wealthy elite view expanding democracy as a dangerous threat rather than a matter of fairness?"
             }
-          ]
+          ],
+          "source_context": "The satirical cartoon 'The Old Rotten Tree' attacks the corrupt unreformed electoral system before 1832, showing Members of Parliament perched like vultures in dead branches representing depopulated 'rotten boroughs' like Old Sarum while reformers chop at the trunk with axes. Contrastingly, the 1872 secret ballot illustration shows the triumph of private voting booths ending landlord intimidation. **Hinge Question:** How does the metaphorical depiction of the 'rotten tree' justify political reform by framing the existing electoral system as unnatural decay rather than legitimate tradition?"
         },
         "do_now": {
           "title": "Do Now: Recall",
@@ -2229,6 +2408,41 @@
       {
         "id": "lesson_8",
         "title": "Who truly benefited from 19th-century transformation?",
+        "lesson_reflection": {
+          "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+          "instructions": [
+            "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+            "Complete the EBI (Even Better If) section — what did you find most challenging?",
+            "Circle your effort level (1-5) and set a specific target for the next unit."
+          ]
+        },
+        "vocabulary": [
+          {
+            "term": "Synthesis",
+            "definition": "Bringing together knowledge from across a whole unit to form an overall judgement."
+          },
+          {
+            "term": "Colonialism",
+            "definition": "The policy and practice of acquiring control over other countries, exploiting them economically."
+          },
+          {
+            "term": "Imperialism",
+            "definition": "The broader ideology of expanding a nations influence through empire, trade, and military power."
+          },
+          {
+            "term": "Power",
+            "definition": "The central question: who held power in 19th-century Britain, and who was denied it?"
+          },
+          {
+            "term": "Urbanisation",
+            "definition": "The growth of cities — by 1900, most Britons lived in urban rather than rural areas."
+          }
+        ],
+        "learning_objectives": [
+          "Synthesise knowledge of industrialisation, empire, trade, democracy, and resistance across the 19th century",
+          "Construct a sustained argument evaluating who truly benefited from Britains transformation",
+          "Deploy specific evidence about power, colonialism, and urbanisation to support a historical judgement"
+        ],
         "teacher_notes": {
           "primer": "This capstone lesson serves as the synthesis module for the entire 'Industrialisation and Empire' unit. Its pedagogical purpose is to guide high-ability pupils through the process of constructing a complex, balanced historical argument that weighs the structural advancements of technology and empire against the human cost of exploitation and political suppression.",
           "objectives": [
@@ -2247,7 +2461,8 @@
               "primer": "Scaffold the construction of an analytical essay, ensuring pupils lead with a clear thesis statement, deploy precise evidence, and maintain a sustained line of judgment through to the conclusion.",
               "question": "What distinguishes an informative essay that merely describes facts from an analytical essay that sustains an historical argument?"
             }
-          ]
+          ],
+          "source_context": "John Leech's celebrated 1843 Punch cartoon 'Capital and Labour' starkly juxtaposes the dual faces of Victorian industrial capitalism: an opulent upper-class drawing room filled with chandeliers and luxury positioned directly above a miserable subterranean cellar of exhausted, soot-blackened men, women, and child labourers. The vertical split forces viewers to evaluate the ethical distribution of wealth. **Hinge Question:** Does this cartoon imply that extreme poverty was merely an accidental byproduct of industrial progress, or that upper-class luxury was directly extracted from working-class misery?"
         },
         "do_now": {
           "title": "Do Now: Recall",
@@ -2593,6 +2808,168 @@
           "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
           "share": "Share your pair's combined conclusion with the class."
         }
+      }
+    ],
+    "glossary": [
+      {
+        "term": "Industrial Revolution",
+        "definition": "The rapid transition from hand production and agrarian economies to powered machinery and factory manufacturing, beginning in Britain around 1750."
+      },
+      {
+        "term": "Industrialisation",
+        "definition": "The process by which an economy is transformed from primarily agricultural to one based on the manufacturing of goods."
+      },
+      {
+        "term": "Domestic System",
+        "definition": "The traditional pre-industrial method of manufacturing goods by hand in workers' own homes or small cottages."
+      },
+      {
+        "term": "Factory System",
+        "definition": "The method of manufacturing using centralized power-driven machinery, division of labour, and disciplined working shifts under one roof."
+      },
+      {
+        "term": "Puddling Process",
+        "definition": "Henry Cort's 1784 invention of stirring molten pig iron in a reverberatory furnace to burn off carbon impurities, producing mass wrought iron."
+      },
+      {
+        "term": "Wrought Iron",
+        "definition": "Tough, malleable iron with low carbon content, essential for railway tracks, bridges, and naval warships."
+      },
+      {
+        "term": "Steam Power",
+        "definition": "Energy produced by boiling water to create pressurised steam, pioneered by Thomas Newcomen and vastly improved by James Watt."
+      },
+      {
+        "term": "Urbanisation",
+        "definition": "The rapid demographic shift of population from rural agricultural villages to densely populated manufacturing towns and cities."
+      },
+      {
+        "term": "Slum",
+        "definition": "Heavily overcrowded, unsanitary urban housing areas lacking drainage, clean water, or ventilation, where industrial workers lived."
+      },
+      {
+        "term": "Back-to-Back Housing",
+        "definition": "Cheap, poorly built terraced houses sharing party walls on three sides, leaving only one side for light and ventilation."
+      },
+      {
+        "term": "Public Health",
+        "definition": "The health and sanitary conditions of the population as a whole, which suffered catastrophically in early industrial cities."
+      },
+      {
+        "term": "Cholera",
+        "definition": "A lethal waterborne bacterial disease causing acute dehydration and death, causing terrifying epidemics in British industrial towns from 1831."
+      },
+      {
+        "term": "Miasma Theory",
+        "definition": "The mistaken medical belief that diseases like cholera and typhus were caused and spread by noxious bad air rising from decaying matter."
+      },
+      {
+        "term": "Laissez-faire",
+        "definition": "The economic doctrine that government should not interfere in the free market, wages, working hours, or public health regulations."
+      },
+      {
+        "term": "Child Labour",
+        "definition": "The widespread employment of young children in textile factories, coal mines, and brickfields under grueling, hazardous conditions."
+      },
+      {
+        "term": "Factory Acts",
+        "definition": "A series of parliamentary laws passed from 1833 onwards that gradually limited working hours and prohibited young children from hazardous mill work."
+      },
+      {
+        "term": "Trade Union",
+        "definition": "An organised association of workers formed to protect their rights, bargain collectively, and demand safer conditions and fair wages."
+      },
+      {
+        "term": "Captain Swing",
+        "definition": "A mythical figurehead name signed to threatening letters sent by agricultural labourers during the rural machine-breaking riots of 1830."
+      },
+      {
+        "term": "Swing Riots",
+        "definition": "A widespread 1830 uprising across southern England (including Hampshire) where farm labourers smashed mechanical threshing machines that caused winter starvation."
+      },
+      {
+        "term": "Chartism",
+        "definition": "A massive British working-class political movement (1838–1848) campaigning for the People's Charter to win full democratic rights."
+      },
+      {
+        "term": "People's Charter",
+        "definition": "The 1838 petition demanding six democratic reforms: universal male suffrage, secret ballots, equal constituencies, no property qualifications for MPs, salaries for MPs, and annual parliaments."
+      },
+      {
+        "term": "Universal Suffrage",
+        "definition": "The constitutional right of all adult citizens to vote in political elections without property, gender, or wealth restrictions."
+      },
+      {
+        "term": "Franchise",
+        "definition": "The legal right to vote in parliamentary or public elections."
+      },
+      {
+        "term": "Rotten Borough",
+        "definition": "A depopulated rural constituency (like Old Sarum or Newtown on the Isle of Wight) that retained the right to return two MPs, easily bought by wealthy aristocrats."
+      },
+      {
+        "term": "Pocket Borough",
+        "definition": "A parliamentary constituency entirely controlled by a single wealthy landlord or patron whose tenants were forced to vote for his chosen candidate."
+      },
+      {
+        "term": "Great Reform Act (1832)",
+        "definition": "Legislation that abolished 56 rotten boroughs, granted MPs to industrial cities like Manchester and Birmingham, and broadened the middle-class franchise."
+      },
+      {
+        "term": "Secret Ballot Act (1872)",
+        "definition": "Law establishing private voting booths, ending open hustings and protecting working-class voters from landlord and employer bribery and intimidation."
+      },
+      {
+        "term": "Empire",
+        "definition": "A vast political entity comprising multiple countries, territories, and peoples ruled over by a single dominant imperial power, such as the British Empire."
+      },
+      {
+        "term": "Colonialism",
+        "definition": "The policy and practice of acquiring full or partial political control over another country, occupying it with settlers, and exploiting it economically."
+      },
+      {
+        "term": "Imperialism",
+        "definition": "The ideology and state practice of extending national power, influence, and territory through military conquest, diplomacy, and commercial dominance."
+      },
+      {
+        "term": "East India Company",
+        "definition": "A British royal-chartered joint-stock corporation that commanded private armies and commercially ruled large parts of India until the 1857 Rebellion."
+      },
+      {
+        "term": "Sepoy",
+        "definition": "An Indian soldier recruited and trained by the British East India Company to serve in its private military forces."
+      },
+      {
+        "term": "Indian Rebellion (1857)",
+        "definition": "A major, widespread armed uprising across northern India against East India Company rule, triggered by cultural grievances and political dispossession."
+      },
+      {
+        "term": "British Raj",
+        "definition": "The period of direct British Crown governance over the Indian subcontinent from 1858 until independence in 1947, replacing company rule."
+      },
+      {
+        "term": "Ironclad",
+        "definition": "A steam-propelled 19th-century warship protected by heavy iron or steel armour plating, epitomised by HMS Warrior (1860) at Portsmouth."
+      },
+      {
+        "term": "Two-Power Standard",
+        "definition": "Britain's official naval defence policy that the Royal Navy must maintain a fleet of capital battleships equal to or greater than the combined navies of the next two largest world powers."
+      },
+      {
+        "term": "Historiography",
+        "definition": "The study of historical writing and the evolving methods and interpretations used by historians over time."
+      },
+      {
+        "term": "Optimist View",
+        "definition": "The historical interpretation arguing that the Industrial Revolution ultimately raised living standards, wages, life expectancy, and consumer opportunities for the working class."
+      },
+      {
+        "term": "Pessimist View",
+        "definition": "The historical interpretation emphasizing the catastrophic human misery, slum squalor, brutal factory discipline, and health crises suffered by industrial generations."
+      },
+      {
+        "term": "Synthesis",
+        "definition": "The historical skill of combining diverse pieces of evidence, concepts, and perspectives to construct a cohesive, balanced, and nuanced historical argument."
       }
     ]
   }
