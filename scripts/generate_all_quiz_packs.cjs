@@ -10,24 +10,25 @@ if (!fs.existsSync(publicUnitsDir)) {
   process.exit(0);
 }
 
-const units = fs.readdirSync(publicUnitsDir, { withFileTypes: true })
-  .filter(d => d.isDirectory() && !d.name.startsWith('.'))
-  .map(d => d.name);
+const units = fs
+  .readdirSync(publicUnitsDir, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && !d.name.startsWith('.'))
+  .map((d) => d.name);
 
 for (const unitId of units) {
   const unitDir = path.join(publicUnitsDir, unitId);
   const dataJsPath = path.join(unitDir, 'data.js');
-  
+
   if (!fs.existsSync(dataJsPath)) continue;
 
   try {
     let rawData = fs.readFileSync(dataJsPath, 'utf8');
-    
+
     // Naive parsing: strip imports and exports
     let jsonStr = rawData.replace(/import .*?;\n/g, '');
     jsonStr = jsonStr.replace(/export const unitData = |export default /g, '').trim();
     if (jsonStr.endsWith(';')) jsonStr = jsonStr.slice(0, -1);
-    
+
     let unit;
     try {
       // Define dummy variables for any imports used in the data object
@@ -44,46 +45,61 @@ for (const unitId of units) {
 
     // Dynamically build one from lesson quizzes or Do Now questions if missing
     if (quizPack.length === 0 && unit.lessons) {
-        unit.lessons.forEach(l => {
-            if (l.quiz && Array.isArray(l.quiz)) {
-                l.quiz.forEach(q => {
-                    quizPack.push({
-                        q: q.question || q.q,
-                        a: q.options ? q.options[q.answer] : q.a,
-                        options: q.options
-                    });
-                });
+      unit.lessons.forEach((l) => {
+        if (l.quiz && Array.isArray(l.quiz)) {
+          l.quiz.forEach((q) => {
+            let ansText = '';
+            if (typeof q.a === 'string' && q.a) {
+              ansText = q.a;
+            } else if (typeof q.answer === 'number' && q.options && q.options[q.answer]) {
+              ansText = q.options[q.answer];
+            } else if (typeof q.answer === 'string') {
+              ansText = q.answer;
+            } else if (q.options && typeof q.answer !== 'undefined' && q.options[q.answer]) {
+              ansText = q.options[q.answer];
             }
-            if (l.do_now && l.do_now.items) {
-                l.do_now.items.forEach(item => {
-                    if (item.question && item.answer) {
-                        quizPack.push({
-                            q: item.question,
-                            a: item.answer,
-                            options: item.options || [item.answer, "Option B", "Option C", "Option D"]
-                        });
-                    }
-                });
+            quizPack.push({
+              q: q.question || q.q,
+              a: ansText,
+              options: q.options,
+            });
+          });
+        }
+        if (l.do_now && l.do_now.items) {
+          l.do_now.items.forEach((item) => {
+            if (item.question && item.answer) {
+              quizPack.push({
+                q: item.question,
+                a: item.answer,
+                options: item.options || [item.answer, 'Option B', 'Option C', 'Option D'],
+              });
             }
-            if (l.flashcards && Array.isArray(l.flashcards)) {
-                l.flashcards.forEach(fc => {
-                    quizPack.push({
-                        q: "Define: " + fc.term,
-                        a: fc.definition,
-                        options: [fc.definition, "A different historical term", "An incorrect definition", "None of the above"]
-                    });
-                });
-            }
-            if (l.fun_facts && Array.isArray(l.fun_facts)) {
-                l.fun_facts.forEach(ff => {
-                    quizPack.push({
-                        q: "True or False: " + ff,
-                        a: "True",
-                        options: ["True", "False"]
-                    });
-                });
-            }
-        });
+          });
+        }
+        if (l.flashcards && Array.isArray(l.flashcards)) {
+          l.flashcards.forEach((fc) => {
+            quizPack.push({
+              q: 'Define: ' + fc.term,
+              a: fc.definition,
+              options: [
+                fc.definition,
+                'A different historical term',
+                'An incorrect definition',
+                'None of the above',
+              ],
+            });
+          });
+        }
+        if (l.fun_facts && Array.isArray(l.fun_facts)) {
+          l.fun_facts.forEach((ff) => {
+            quizPack.push({
+              q: 'True or False: ' + ff,
+              a: 'True',
+              options: ['True', 'False'],
+            });
+          });
+        }
+      });
     }
 
     let html = `<!DOCTYPE html>
@@ -210,19 +226,19 @@ for (const unitId of units) {
 `;
 
     if (quizPack && quizPack.length > 0) {
-        const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
-        quizPack.forEach((q, index) => {
-            html += `
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+      quizPack.forEach((q, index) => {
+        html += `
             <div class="question-block">
                 <div class="question">${index + 1}. ${q.q}</div>
                 <ul class="options">
-                    ${(q.options || [q.a, "Option B", "Option C", "Option D"]).map((opt, i) => `<li><span class="option-bubble">${letters[i] || '-'}</span> ${opt}</li>`).join('')}
+                    ${(q.options || [q.a, 'Option B', 'Option C', 'Option D']).map((opt, i) => `<li><span class="option-bubble">${letters[i] || '-'}</span> ${opt}</li>`).join('')}
                 </ul>
             </div>
             `;
-        });
+      });
     } else {
-        html += `<div style="grid-column: 1 / -1; text-align: center; color: #64748b;">No quiz data available for this unit.</div>`;
+      html += `<div style="grid-column: 1 / -1; text-align: center; color: #64748b;">No quiz data available for this unit.</div>`;
     }
 
     html += `
@@ -233,7 +249,6 @@ for (const unitId of units) {
 
     fs.writeFileSync(path.join(unitDir, 'quiz_pack.html'), html);
     console.log(`Successfully generated quiz pack for ${unitId}`);
-
   } catch (err) {
     console.error(`Error generating quiz pack for ${unitId}:`, err);
   }

@@ -1,4 +1,4 @@
-export const unitData = {
+const medieval_england = {
   glossary: [
     {
       term: 'Power',
@@ -191,7 +191,6 @@ export const unitData = {
       definition: 'A considered conclusion reached after weighing up different pieces of evidence.',
     },
   ],
-
   lesson_reflection: {
     prompt:
       'You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',
@@ -472,7 +471,9 @@ export const unitData = {
       },
       quiz: [
         {
+          question: 'What century are we currently studying?',
           q: 'What century are we currently studying?',
+          answer: 'The 11th century (1000s).',
           a: 'The 11th century (1000s).',
           options: [
             'The 11th century (1000s).',
@@ -482,17 +483,23 @@ export const unitData = {
           ],
         },
         {
+          question: 'Who were the native people living in England before 1066?',
           q: 'Who were the native people living in England before 1066?',
+          answer: 'The Anglo-Saxons.',
           a: 'The Anglo-Saxons.',
           options: ['The Anglo-Saxons.', 'The Normans.', 'The Vikings.', 'The Romans.'],
         },
         {
+          question: 'What was the most important building in a medieval village?',
           q: 'What was the most important building in a medieval village?',
+          answer: 'The church.',
           a: 'The church.',
           options: ['The church.', 'The castle.', 'The market.', 'The blacksmith.'],
         },
         {
+          question: 'What is an heir to the throne?',
           q: 'What is an heir to the throne?',
+          answer: 'The person legally next in line to become king or queen.',
           a: 'The person legally next in line to become king or queen.',
           options: [
             'The person legally next in line to become king or queen.',
@@ -502,7 +509,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'Who was the English King that died in January 1066 without a clear heir?',
           q: 'Who was the English King that died in January 1066 without a clear heir?',
+          answer: 'Edward the Confessor.',
           a: 'Edward the Confessor.',
           options: [
             'Edward the Confessor.',
@@ -512,7 +521,9 @@ export const unitData = {
           ],
         },
         {
+          question: "What was the 'Witan' in Anglo-Saxon England?",
           q: "What was the 'Witan' in Anglo-Saxon England?",
+          answer: 'The council of powerful English lords and bishops.',
           a: 'The council of powerful English lords and bishops.',
           options: [
             'The council of powerful English lords and bishops.',
@@ -522,12 +533,16 @@ export const unitData = {
           ],
         },
         {
+          question: 'Which group of people were famous for raiding England in longships?',
           q: 'Which group of people were famous for raiding England in longships?',
+          answer: 'The Vikings.',
           a: 'The Vikings.',
           options: ['The Vikings.', 'The Normans.', 'The Romans.', 'The Franks.'],
         },
         {
+          question: 'Where is Normandy located?',
           q: 'Where is Normandy located?',
+          answer: 'In northern France.',
           a: 'In northern France.',
           options: [
             'In northern France.',
@@ -537,7 +552,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What does it mean to claim the throne?',
           q: 'What does it mean to claim the throne?',
+          answer: 'To assert that you have the right to be the next monarch.',
           a: 'To assert that you have the right to be the next monarch.',
           options: [
             'To assert that you have the right to be the next monarch.',
@@ -547,7 +564,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What is a power vacuum?',
           q: 'What is a power vacuum?',
+          answer: 'A situation where a government has no identifiable central authority or leader.',
           a: 'A situation where a government has no identifiable central authority or leader.',
           options: [
             'A situation where a government has no identifiable central authority or leader.',
@@ -558,100 +577,120 @@ export const unitData = {
         },
         {
           question: 'Which claimant to the throne was an Anglo-Saxon Earl?',
+          q: 'Which claimant to the throne was an Anglo-Saxon Earl?',
+          answer: 'Harold Godwinson',
+          a: 'Harold Godwinson',
           options: [
             'Harold Godwinson',
             'William of Normandy',
             'Harald Hardrada',
             'Edward the Confessor',
           ],
-          answer: 'Harold Godwinson',
         },
         {
           question: 'Which claimant to the throne was a feared Viking warrior?',
+          q: 'Which claimant to the throne was a feared Viking warrior?',
+          answer: 'Harald Hardrada',
+          a: 'Harald Hardrada',
           options: [
             'Harald Hardrada',
             'Harold Godwinson',
             'William of Normandy',
             'Tostig Godwinson',
           ],
-          answer: 'Harald Hardrada',
         },
         {
           question:
             'What promise did William of Normandy claim Edward the Confessor had made to him?',
+          q: 'What promise did William of Normandy claim Edward the Confessor had made to him?',
+          answer: 'That William would be the next king',
+          a: 'That William would be the next king',
           options: [
             'That William would be the next king',
             'That William would receive large amounts of gold',
             'That William would command the English army',
             'That William would be given land in Scotland',
           ],
-          answer: 'That William would be the next king',
         },
         {
           question: 'Why was the English army exhausted before the Battle of Hastings?',
+          q: 'Why was the English army exhausted before the Battle of Hastings?',
+          answer: 'They had just marched rapidly from a battle in the north',
+          a: 'They had just marched rapidly from a battle in the north',
           options: [
             'They had just marched rapidly from a battle in the north',
             'They had been starving for weeks',
             'They had fought a long battle against the French',
             'They were sick with the plague',
           ],
-          answer: 'They had just marched rapidly from a battle in the north',
         },
         {
           question: 'What defensive tactic did the English use at the top of Senlac Hill?',
-          options: ['A shield wall', 'A cavalry charge', 'A trench system', 'A ring of fire'],
+          q: 'What defensive tactic did the English use at the top of Senlac Hill?',
           answer: 'A shield wall',
+          a: 'A shield wall',
+          options: ['A shield wall', 'A cavalry charge', 'A trench system', 'A ring of fire'],
         },
         {
           question: 'How did William the Conqueror manage to break the English defense?',
+          q: 'How did William the Conqueror manage to break the English defense?',
+          answer: 'By faking a retreat to lure them down the hill',
+          a: 'By faking a retreat to lure them down the hill',
           options: [
             'By faking a retreat to lure them down the hill',
             'By using gunpowder cannons',
             'By bribing the English lords',
             'By attacking them at night',
           ],
-          answer: 'By faking a retreat to lure them down the hill',
         },
         {
           question: 'According to legend, how was Harold Godwinson killed at Hastings?',
+          q: 'According to legend, how was Harold Godwinson killed at Hastings?',
+          answer: 'He was shot in the eye by an arrow',
+          a: 'He was shot in the eye by an arrow',
           options: [
             'He was shot in the eye by an arrow',
             'He was trampled by a horse',
             'He drowned in a river',
             'He was poisoned by a spy',
           ],
-          answer: 'He was shot in the eye by an arrow',
         },
         {
           question: 'What famous piece of embroidery tells the story of the Norman Conquest?',
+          q: 'What famous piece of embroidery tells the story of the Norman Conquest?',
+          answer: 'The Bayeux Tapestry',
+          a: 'The Bayeux Tapestry',
           options: [
             'The Bayeux Tapestry',
             'The Magna Carta',
             'The Domesday Book',
             'The Westminster Scroll',
           ],
-          answer: 'The Bayeux Tapestry',
         },
         {
           question:
             'Which event is often seen as the beginning of the end for Anglo-Saxon England?',
+          q: 'Which event is often seen as the beginning of the end for Anglo-Saxon England?',
+          answer: 'The death of Edward the Confessor without a clear heir',
+          a: 'The death of Edward the Confessor without a clear heir',
           options: [
             'The death of Edward the Confessor without a clear heir',
             'The signing of Magna Carta',
             'The murder of Thomas Becket',
             'The outbreak of the Black Death',
           ],
-          answer: 'The death of Edward the Confessor without a clear heir',
         },
         {
           question: 'What advantage did the Norman army have over the Anglo-Saxons at Hastings?',
+          q: 'What advantage did the Norman army have over the Anglo-Saxons at Hastings?',
+          answer: 'They had archers and cavalry on horseback',
+          a: 'They had archers and cavalry on horseback',
           options: [
             'They had archers and cavalry on horseback',
             'They had more men',
             'They were fighting on their home territory',
             'They were immune to English diseases',
           ],
-          answer: 'They had archers and cavalry on horseback',
         },
       ],
       pair_share: {
@@ -965,7 +1004,9 @@ export const unitData = {
       },
       quiz: [
         {
+          question: 'Which powerful English Earl claimed the throne because of a deathbed promise?',
           q: 'Which powerful English Earl claimed the throne because of a deathbed promise?',
+          answer: 'Harold Godwinson.',
           a: 'Harold Godwinson.',
           options: [
             'Harold Godwinson.',
@@ -975,12 +1016,16 @@ export const unitData = {
           ],
         },
         {
+          question: 'Which Viking warrior claimed the throne based on an old treaty?',
           q: 'Which Viking warrior claimed the throne based on an old treaty?',
+          answer: 'Harald Hardrada.',
           a: 'Harald Hardrada.',
           options: ['Harald Hardrada.', 'Sweyn Forkbeard.', 'Cnut the Great.', 'Ragnar Lothbrok.'],
         },
         {
+          question: 'Who claimed the throne because of a broken oath sworn on holy relics?',
           q: 'Who claimed the throne because of a broken oath sworn on holy relics?',
+          answer: 'William, Duke of Normandy.',
           a: 'William, Duke of Normandy.',
           options: [
             'William, Duke of Normandy.',
@@ -990,7 +1035,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'Where did King Harold march his army to fight the Vikings?',
           q: 'Where did King Harold march his army to fight the Vikings?',
+          answer: 'Stamford Bridge (in the north).',
           a: 'Stamford Bridge (in the north).',
           options: [
             'Stamford Bridge (in the north).',
@@ -1000,7 +1047,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'Who won the Battle of Stamford Bridge?',
           q: 'Who won the Battle of Stamford Bridge?',
+          answer: 'King Harold Godwinson.',
           a: 'King Harold Godwinson.',
           options: [
             'King Harold Godwinson.',
@@ -1010,7 +1059,9 @@ export const unitData = {
           ],
         },
         {
+          question: "Why was Harold's army exhausted before fighting William?",
           q: "Why was Harold's army exhausted before fighting William?",
+          answer: 'They had just marched 300 miles south after fighting a brutal battle.',
           a: 'They had just marched 300 miles south after fighting a brutal battle.',
           options: [
             'They had just marched 300 miles south after fighting a brutal battle.',
@@ -1020,7 +1071,9 @@ export const unitData = {
           ],
         },
         {
+          question: "Where did William the Conqueror's army land in England?",
           q: "Where did William the Conqueror's army land in England?",
+          answer: 'Pevensey, on the south coast.',
           a: 'Pevensey, on the south coast.',
           options: [
             'Pevensey, on the south coast.',
@@ -1030,7 +1083,9 @@ export const unitData = {
           ],
         },
         {
+          question: "Who supported William's invasion, making it a religious crusade?",
           q: "Who supported William's invasion, making it a religious crusade?",
+          answer: 'The Pope.',
           a: 'The Pope.',
           options: [
             'The Pope.',
@@ -1040,7 +1095,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What was the name of the battle between Harold and William?',
           q: 'What was the name of the battle between Harold and William?',
+          answer: 'The Battle of Hastings.',
           a: 'The Battle of Hastings.',
           options: [
             'The Battle of Hastings.',
@@ -1050,95 +1107,117 @@ export const unitData = {
           ],
         },
         {
+          question: 'In what year did all these three battles take place?',
           q: 'In what year did all these three battles take place?',
+          answer: '1066.',
           a: '1066.',
           options: ['1066.', '1086.', '1215.', '1348.'],
         },
         {
           question: "What was a 'motte' in an early Norman castle?",
+          q: "What was a 'motte' in an early Norman castle?",
+          answer: 'A large mound of earth with a wooden tower on top',
+          a: 'A large mound of earth with a wooden tower on top',
           options: [
             'A large mound of earth with a wooden tower on top',
             'An enclosed courtyard at the base',
             'A deep ditch filled with water',
             'A strong stone wall',
           ],
-          answer: 'A large mound of earth with a wooden tower on top',
         },
         {
           question: "What was the 'bailey' in an early Norman castle?",
+          q: "What was the 'bailey' in an early Norman castle?",
+          answer: 'The enclosed courtyard where soldiers lived',
+          a: 'The enclosed courtyard where soldiers lived',
           options: [
             'The enclosed courtyard where soldiers lived',
             'The wooden bridge connecting the castle',
             'The highest point of the tower',
             'The underground dungeon',
           ],
-          answer: 'The enclosed courtyard where soldiers lived',
         },
         {
           question: 'Why did William choose to build motte and bailey castles?',
+          q: 'Why did William choose to build motte and bailey castles?',
+          answer: 'They were quick to build and visually intimidating',
+          a: 'They were quick to build and visually intimidating',
           options: [
             'They were quick to build and visually intimidating',
             'They were completely fireproof',
             'They were cheap because stone was unavailable',
             'The Anglo-Saxons had taught them the design',
           ],
-          answer: 'They were quick to build and visually intimidating',
         },
         {
           question: "In what year did the 'Harrying of the North' take place?",
-          options: ['1069', '1066', '1086', '1215'],
+          q: "In what year did the 'Harrying of the North' take place?",
           answer: '1069',
+          a: '1069',
+          options: ['1069', '1066', '1086', '1215'],
         },
         {
           question: 'What was the long-term consequence of the Harrying of the North?',
+          q: 'What was the long-term consequence of the Harrying of the North?',
+          answer: 'Mass starvation and widespread deaths among the northern population',
+          a: 'Mass starvation and widespread deaths among the northern population',
           options: [
             'Mass starvation and widespread deaths among the northern population',
             'The North became the richest part of England',
             'The Vikings were invited back to rule',
             'William granted northern lands to English lords',
           ],
-          answer: 'Mass starvation and widespread deaths among the northern population',
         },
         {
           question: 'What language did the new Norman aristocracy speak?',
-          options: ['French', 'Old English', 'Latin', 'Viking Norse'],
+          q: 'What language did the new Norman aristocracy speak?',
           answer: 'French',
+          a: 'French',
+          options: ['French', 'Old English', 'Latin', 'Viking Norse'],
         },
         {
           question: 'What did the Domesday Book record?',
+          q: 'What did the Domesday Book record?',
+          answer: 'Everything that everyone owned across England',
+          a: 'Everything that everyone owned across England',
           options: [
             'Everything that everyone owned across England',
             'The names of all Norman soldiers who died at Hastings',
             'The laws of the new Norman government',
             'A religious text used in churches',
           ],
-          answer: 'Everything that everyone owned across England',
         },
         {
           question: "Why was the survey known as the 'Domesday' Book by the English people?",
+          q: "Why was the survey known as the 'Domesday' Book by the English people?",
+          answer: 'Because its decisions were as final as the Day of Judgement (Doomsday)',
+          a: 'Because its decisions were as final as the Day of Judgement (Doomsday)',
           options: [
             'Because its decisions were as final as the Day of Judgement (Doomsday)',
             'Because it doomed all English lords to death',
             'Because William named it after his favorite castle',
             'Because it was bound in black leather',
           ],
-          answer: 'Because its decisions were as final as the Day of Judgement (Doomsday)',
         },
         {
           question:
             'Under the feudal system, what did a knight provide to a baron in exchange for land?',
-          options: ['Military service', 'Gold coins', 'Farm labor', 'Religious prayers'],
+          q: 'Under the feudal system, what did a knight provide to a baron in exchange for land?',
           answer: 'Military service',
+          a: 'Military service',
+          options: ['Military service', 'Gold coins', 'Farm labor', 'Religious prayers'],
         },
         {
           question: 'What did the feudal system ensure for William the Conqueror?',
+          q: 'What did the feudal system ensure for William the Conqueror?',
+          answer: 'That he retained ultimate ownership and control over all land in England',
+          a: 'That he retained ultimate ownership and control over all land in England',
           options: [
             'That he retained ultimate ownership and control over all land in England',
             'That peasants could eventually buy their freedom',
             'That the Church had no power',
             'That all people were treated equally under the law',
           ],
-          answer: 'That he retained ultimate ownership and control over all land in England',
         },
       ],
       comprehension: [
@@ -1375,12 +1454,16 @@ export const unitData = {
       },
       quiz: [
         {
+          question: 'Who won the Battle of Hastings to become King of England?',
           q: 'Who won the Battle of Hastings to become King of England?',
+          answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
           options: ['William the Conqueror.', 'Harold Godwinson.', 'Harald Hardrada.', 'Henry II.'],
         },
         {
+          question: 'What type of castles did the Normans first build to control England rapidly?',
           q: 'What type of castles did the Normans first build to control England rapidly?',
+          answer: 'Motte and bailey castles.',
           a: 'Motte and bailey castles.',
           options: [
             'Motte and bailey castles.',
@@ -1390,7 +1473,9 @@ export const unitData = {
           ],
         },
         {
+          question: "What was the 'motte'?",
           q: "What was the 'motte'?",
+          answer: 'A large, hand-dug mound of earth.',
           a: 'A large, hand-dug mound of earth.',
           options: [
             'A large, hand-dug mound of earth.',
@@ -1400,7 +1485,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What brutal tactic did William use to destroy northern rebellions?',
           q: 'What brutal tactic did William use to destroy northern rebellions?',
+          answer: 'The Harrying of the North.',
           a: 'The Harrying of the North.',
           options: [
             'The Harrying of the North.',
@@ -1410,7 +1497,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What was the purpose of the Domesday Book (1086)?',
           q: 'What was the purpose of the Domesday Book (1086)?',
+          answer: 'To survey the wealth of the country for taxation.',
           a: 'To survey the wealth of the country for taxation.',
           options: [
             'To survey the wealth of the country for taxation.',
@@ -1420,7 +1509,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'Who was the Viking claimant killed at Stamford Bridge?',
           q: 'Who was the Viking claimant killed at Stamford Bridge?',
+          answer: 'Harald Hardrada.',
           a: 'Harald Hardrada.',
           options: [
             'Harald Hardrada.',
@@ -1430,12 +1521,16 @@ export const unitData = {
           ],
         },
         {
+          question: 'What material were the first Norman castles made from?',
           q: 'What material were the first Norman castles made from?',
+          answer: 'Wood.',
           a: 'Wood.',
           options: ['Wood.', 'Stone.', 'Brick.', 'Iron.'],
         },
         {
+          question: "What was the 'bailey' in a castle?",
           q: "What was the 'bailey' in a castle?",
+          answer: 'The fenced compound where soldiers lived and horses were stabled.',
           a: 'The fenced compound where soldiers lived and horses were stabled.',
           options: [
             'The fenced compound where soldiers lived and horses were stabled.',
@@ -1445,7 +1540,9 @@ export const unitData = {
           ],
         },
         {
+          question: "What does 'feudalism' mean?",
           q: "What does 'feudalism' mean?",
+          answer: 'A system where land is given in exchange for military service or labour.',
           a: 'A system where land is given in exchange for military service or labour.',
           options: [
             'A system where land is given in exchange for military service or labour.',
@@ -1455,108 +1552,130 @@ export const unitData = {
           ],
         },
         {
+          question: 'How many people died of starvation due to the Harrying of the North?',
           q: 'How many people died of starvation due to the Harrying of the North?',
+          answer: 'Over 100,000.',
           a: 'Over 100,000.',
           options: ['Over 100,000.', 'Around 10,000.', 'Nearly 500,000.', 'About 1,000.'],
         },
         {
           question: 'Why did Henry II dislike the separate Church courts?',
+          q: 'Why did Henry II dislike the separate Church courts?',
+          answer: 'They gave much lighter punishments to priests who committed crimes',
+          a: 'They gave much lighter punishments to priests who committed crimes',
           options: [
             'They gave much lighter punishments to priests who committed crimes',
             'They executed too many innocent people',
             'They forced the King to pay taxes to them',
             'They were held entirely in Latin',
           ],
-          answer: 'They gave much lighter punishments to priests who committed crimes',
         },
         {
           question:
             'What was the relationship between Henry II and Thomas Becket before Becket became Archbishop?',
+          q: 'What was the relationship between Henry II and Thomas Becket before Becket became Archbishop?',
+          answer: 'They were close friends and drinking companions',
+          a: 'They were close friends and drinking companions',
           options: [
             'They were close friends and drinking companions',
             'They were bitter enemies',
             'They were brothers',
             'They did not know each other',
           ],
-          answer: 'They were close friends and drinking companions',
         },
         {
           question:
             'What did Becket start wearing under his luxurious clothes after becoming Archbishop?',
+          q: 'What did Becket start wearing under his luxurious clothes after becoming Archbishop?',
+          answer: 'A scratchy hair shirt to show religious devotion',
+          a: 'A scratchy hair shirt to show religious devotion',
           options: [
             'A scratchy hair shirt to show religious devotion',
             'A chainmail shirt for protection',
             'A secret royal seal',
             'A golden cross given by the Pope',
           ],
-          answer: 'A scratchy hair shirt to show religious devotion',
         },
         {
           question:
             'What controversial document did Henry II issue to try to limit Church power in 1164?',
+          q: 'What controversial document did Henry II issue to try to limit Church power in 1164?',
+          answer: 'The Constitutions of Clarendon',
+          a: 'The Constitutions of Clarendon',
           options: [
             'The Constitutions of Clarendon',
             'The Magna Carta',
             'The Provisions of Oxford',
             'The Domesday Book',
           ],
-          answer: 'The Constitutions of Clarendon',
         },
         {
           question: 'How long was Thomas Becket in exile in France?',
-          options: ['Six years', 'Six months', 'Ten years', 'One year'],
+          q: 'How long was Thomas Becket in exile in France?',
           answer: 'Six years',
+          a: 'Six years',
+          options: ['Six years', 'Six months', 'Ten years', 'One year'],
         },
         {
           question: "What action by Becket enraged Henry II upon Becket's return to England?",
+          q: "What action by Becket enraged Henry II upon Becket's return to England?",
+          answer: 'He excommunicated the bishops who had supported the King',
+          a: 'He excommunicated the bishops who had supported the King',
           options: [
             'He excommunicated the bishops who had supported the King',
             'He crowned a rival king',
             'He ordered an attack on a royal castle',
             "He burned the King's new laws",
           ],
-          answer: 'He excommunicated the bishops who had supported the King',
         },
         {
           question:
             'What angry phrase is Henry II famously (though perhaps mythically) said to have shouted?',
+          q: 'What angry phrase is Henry II famously (though perhaps mythically) said to have shouted?',
+          answer: "'Will no one rid me of this turbulent priest?'",
+          a: "'Will no one rid me of this turbulent priest?'",
           options: [
             "'Will no one rid me of this turbulent priest?'",
             "'Off with his head!'",
             "'Arrest him immediately!'",
             "'Burn him at the stake!'",
           ],
-          answer: "'Will no one rid me of this turbulent priest?'",
         },
         {
           question: 'Where exactly was Thomas Becket murdered?',
+          q: 'Where exactly was Thomas Becket murdered?',
+          answer: 'Inside Canterbury Cathedral near the altar',
+          a: 'Inside Canterbury Cathedral near the altar',
           options: [
             'Inside Canterbury Cathedral near the altar',
             'In his bedchamber at the palace',
             'In the Tower of London',
             'On the battlefield',
           ],
-          answer: 'Inside Canterbury Cathedral near the altar',
         },
         {
           question: "What happened to Canterbury after Becket's murder?",
+          q: "What happened to Canterbury after Becket's murder?",
+          answer: 'It became one of the most important pilgrimage sites in Europe',
+          a: 'It became one of the most important pilgrimage sites in Europe',
           options: [
             'It became one of the most important pilgrimage sites in Europe',
             "It was burned down by the King's men",
             'The Pope closed the cathedral permanently',
             'It was abandoned by the monks',
           ],
-          answer: 'It became one of the most important pilgrimage sites in Europe',
         },
         {
           question: "How did Henry II show penance for Becket's death?",
+          q: "How did Henry II show penance for Becket's death?",
+          answer: 'He walked barefoot to the cathedral and allowed monks to whip him',
+          a: 'He walked barefoot to the cathedral and allowed monks to whip him',
           options: [
             'He walked barefoot to the cathedral and allowed monks to whip him',
             'He resigned as King of England',
             'He gave all his wealth to the poor',
             'He built ten new cathedrals',
           ],
-          answer: 'He walked barefoot to the cathedral and allowed monks to whip him',
         },
       ],
       comprehension: [
@@ -1800,17 +1919,23 @@ export const unitData = {
       },
       quiz: [
         {
+          question: 'Which king introduced common law and royal courts in 1154?',
           q: 'Which king introduced common law and royal courts in 1154?',
+          answer: 'King Henry II.',
           a: 'King Henry II.',
           options: ['King Henry II.', 'King John.', 'King Richard I.', 'King Edward I.'],
         },
         {
+          question: 'Who did Henry II appoint as Archbishop of Canterbury?',
           q: 'Who did Henry II appoint as Archbishop of Canterbury?',
+          answer: 'Thomas Becket.',
           a: 'Thomas Becket.',
           options: ['Thomas Becket.', 'Stephen Langton.', 'Thomas Cranmer.', 'Lanfranc.'],
         },
         {
+          question: 'Why did Henry and Becket clash?',
           q: 'Why did Henry and Becket clash?',
+          answer: "Over the power of Church courts and 'criminous clerks'.",
           a: "Over the power of Church courts and 'criminous clerks'.",
           options: [
             "Over the power of Church courts and 'criminous clerks'.",
@@ -1820,7 +1945,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What happened to Thomas Becket in 1170?',
           q: 'What happened to Thomas Becket in 1170?',
+          answer: "He was murdered by four of the King's knights in Canterbury Cathedral.",
           a: "He was murdered by four of the King's knights in Canterbury Cathedral.",
           options: [
             "He was murdered by four of the King's knights in Canterbury Cathedral.",
@@ -1830,7 +1957,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What did the Pope do to Henry II as punishment?',
           q: 'What did the Pope do to Henry II as punishment?',
+          answer: 'He threatened him with excommunication, forcing Henry to do penance.',
           a: 'He threatened him with excommunication, forcing Henry to do penance.',
           options: [
             'He threatened him with excommunication, forcing Henry to do penance.',
@@ -1840,12 +1969,16 @@ export const unitData = {
           ],
         },
         {
+          question: 'Who won the Battle of Hastings?',
           q: 'Who won the Battle of Hastings?',
+          answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
           options: ['William the Conqueror.', 'Harold Godwinson.', 'Harald Hardrada.', 'Henry II.'],
         },
         {
+          question: 'What was the Domesday Book?',
           q: 'What was the Domesday Book?',
+          answer: 'A massive survey used to maximize taxation in 1086.',
           a: 'A massive survey used to maximize taxation in 1086.',
           options: [
             'A massive survey used to maximize taxation in 1086.',
@@ -1855,7 +1988,9 @@ export const unitData = {
           ],
         },
         {
+          question: "What is a 'criminous clerk'?",
           q: "What is a 'criminous clerk'?",
+          answer: 'A member of the clergy accused of a serious crime like murder.',
           a: 'A member of the clergy accused of a serious crime like murder.',
           options: [
             'A member of the clergy accused of a serious crime like murder.',
@@ -1865,7 +2000,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'Why did Henry II walk barefoot through Canterbury being whipped?',
           q: 'Why did Henry II walk barefoot through Canterbury being whipped?',
+          answer: "As public penance for his role in Becket's murder.",
           a: "As public penance for his role in Becket's murder.",
           options: [
             "As public penance for his role in Becket's murder.",
@@ -1875,7 +2012,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What is a motte and bailey?',
           q: 'What is a motte and bailey?',
+          answer: 'An early wooden castle built by the Normans.',
           a: 'An early wooden castle built by the Normans.',
           options: [
             'An early wooden castle built by the Normans.',
@@ -1886,99 +2025,119 @@ export const unitData = {
         },
         {
           question: 'What territories did King John famously lose early in his reign?',
+          q: 'What territories did King John famously lose early in his reign?',
+          answer: "Most of England's lands in France, including Normandy",
+          a: "Most of England's lands in France, including Normandy",
           options: [
             "Most of England's lands in France, including Normandy",
             'Scotland and Wales',
             'Ireland and Cornwall',
             'London and York',
           ],
-          answer: "Most of England's lands in France, including Normandy",
         },
         {
           question: "What does the nickname 'Lackland' refer to?",
+          q: "What does the nickname 'Lackland' refer to?",
+          answer: "John's failure to inherit significant lands compared to his older brothers",
+          a: "John's failure to inherit significant lands compared to his older brothers",
           options: [
             "John's failure to inherit significant lands compared to his older brothers",
             "John's hatred of farming",
             "John's policy of giving away royal forests",
             "John's inability to buy land in London",
           ],
-          answer: "John's failure to inherit significant lands compared to his older brothers",
         },
         {
           question: 'How did King John try to fund his wars in France?',
+          q: 'How did King John try to fund his wars in France?',
+          answer: 'By imposing massive, arbitrary taxes on the barons',
+          a: 'By imposing massive, arbitrary taxes on the barons',
           options: [
             'By imposing massive, arbitrary taxes on the barons',
             'By borrowing money from the peasants',
             'By selling royal castles',
             'By digging for gold in Wales',
           ],
-          answer: 'By imposing massive, arbitrary taxes on the barons',
         },
         {
           question: 'What did the Pope do to King John during their dispute?',
+          q: 'What did the Pope do to King John during their dispute?',
+          answer: 'He excommunicated John and banned church services in England',
+          a: 'He excommunicated John and banned church services in England',
           options: [
             'He excommunicated John and banned church services in England',
             'He sent a crusader army to attack him',
             'He crowned a new king in his place',
             'He forced John to go on a Crusade',
           ],
-          answer: 'He excommunicated John and banned church services in England',
         },
         {
           question: 'Where did the barons confront King John to force him to seal Magna Carta?',
-          options: ['Runnymede', 'Hastings', 'Bosworth Field', 'Canterbury'],
+          q: 'Where did the barons confront King John to force him to seal Magna Carta?',
           answer: 'Runnymede',
+          a: 'Runnymede',
+          options: ['Runnymede', 'Hastings', 'Bosworth Field', 'Canterbury'],
         },
         {
           question: "What does 'Magna Carta' translate to in English?",
+          q: "What does 'Magna Carta' translate to in English?",
+          answer: 'The Great Charter',
+          a: 'The Great Charter',
           options: [
             'The Great Charter',
             "The King's Law",
             'The Royal Promise',
             'The Book of Rights',
           ],
-          answer: 'The Great Charter',
         },
         {
           question: 'Which of the following was a key clause in Magna Carta?',
+          q: 'Which of the following was a key clause in Magna Carta?',
+          answer: 'No free man shall be imprisoned without a fair trial',
+          a: 'No free man shall be imprisoned without a fair trial',
           options: [
             'No free man shall be imprisoned without a fair trial',
             'All peasants must be freed immediately',
             'The King cannot have an army',
             'The Church must pay taxes to the King',
           ],
-          answer: 'No free man shall be imprisoned without a fair trial',
         },
         {
           question: 'Who was largely excluded from the protections of Magna Carta in 1215?',
+          q: 'Who was largely excluded from the protections of Magna Carta in 1215?',
+          answer: 'The unfree peasants (villeins) who made up the majority of the population',
+          a: 'The unfree peasants (villeins) who made up the majority of the population',
           options: [
             'The unfree peasants (villeins) who made up the majority of the population',
             'The barons',
             'The wealthy merchants',
             'The Church bishops',
           ],
-          answer: 'The unfree peasants (villeins) who made up the majority of the population',
         },
         {
           question: 'What did King John do almost immediately after sealing Magna Carta?',
+          q: 'What did King John do almost immediately after sealing Magna Carta?',
+          answer: 'He complained to the Pope and had the document declared void',
+          a: 'He complained to the Pope and had the document declared void',
           options: [
             'He complained to the Pope and had the document declared void',
             'He arrested all the barons who forced him to seal it',
             'He freed all the villeins in England',
             'He abdicated the throne',
           ],
-          answer: 'He complained to the Pope and had the document declared void',
         },
         {
           question:
             'What war broke out as a direct result of King John breaking his promises in Magna Carta?',
+          q: 'What war broke out as a direct result of King John breaking his promises in Magna Carta?',
+          answer: "The First Barons' War",
+          a: "The First Barons' War",
           options: [
             "The First Barons' War",
             'The Wars of the Roses',
             "The Hundred Years' War",
             'The English Civil War',
           ],
-          answer: "The First Barons' War",
         },
       ],
       comprehension: [
@@ -1988,7 +2147,6 @@ export const unitData = {
         'What was the most important principle established by Magna Carta?',
         'Did King John keep his promises in the Magna Carta?',
       ],
-
       historical_interpretations: {
         title: 'Historical Interpretations: The Magna Carta',
         interpretation_a: {
@@ -2209,184 +2367,224 @@ export const unitData = {
         {
           question:
             'What percentage of the population in medieval England lived in rural farming communities?',
-          options: ['Over 90%', 'Around 50%', 'Exactly 10%', 'Less than 20%'],
+          q: 'What percentage of the population in medieval England lived in rural farming communities?',
           answer: 'Over 90%',
+          a: 'Over 90%',
+          options: ['Over 90%', 'Around 50%', 'Exactly 10%', 'Less than 20%'],
         },
         {
           question: "What was a 'villein' in the feudal system?",
+          q: "What was a 'villein' in the feudal system?",
+          answer: 'An unfree peasant tied to the land',
+          a: 'An unfree peasant tied to the land',
           options: [
             'An unfree peasant tied to the land',
             'A wealthy landowner',
             'A knight who fought for the king',
             'A priest in a parish church',
           ],
-          answer: 'An unfree peasant tied to the land',
         },
         {
           question:
             "Which of the following could a villein NOT do without their lord's permission?",
+          q: "Which of the following could a villein NOT do without their lord's permission?",
+          answer: 'Leave the village or marry',
+          a: 'Leave the village or marry',
           options: [
             'Leave the village or marry',
             'Go to church on Sunday',
             'Speak to other peasants',
             "Breathe the lord's air",
           ],
-          answer: 'Leave the village or marry',
         },
         {
           question: 'What kind of houses did villeins typically live in?',
+          q: 'What kind of houses did villeins typically live in?',
+          answer: 'Single-room wattle-and-daub huts',
+          a: 'Single-room wattle-and-daub huts',
           options: [
             'Single-room wattle-and-daub huts',
             'Large stone manor houses',
             'Brick terraced houses',
             'Wooden castles',
           ],
-          answer: 'Single-room wattle-and-daub huts',
         },
         {
           question: 'Why did peasants often share their huts with animals in the winter?',
+          q: 'Why did peasants often share their huts with animals in the winter?',
+          answer: 'To keep warm',
+          a: 'To keep warm',
           options: [
             'To keep warm',
             'Because they loved animals',
             'To protect them from wolves',
             'Because the lord commanded it',
           ],
-          answer: 'To keep warm',
         },
         {
           question: 'What dictated the daily lives and labor of medieval peasants?',
+          q: 'What dictated the daily lives and labor of medieval peasants?',
+          answer: 'The seasons',
+          a: 'The seasons',
           options: [
             'The seasons',
             "The King's daily orders",
             'The phases of the moon',
             "The local merchant's demands",
           ],
-          answer: 'The seasons',
         },
         {
           question: 'What was the most crucial task for a peasant in late summer?',
+          q: 'What was the most crucial task for a peasant in late summer?',
+          answer: 'Harvesting crops',
+          a: 'Harvesting crops',
           options: [
             'Harvesting crops',
             'Ploughing fields',
             'Slaughtering animals',
             'Building new huts',
           ],
-          answer: 'Harvesting crops',
         },
         {
           question: "What was the 'tithe'?",
+          q: "What was the 'tithe'?",
+          answer: "A tax requiring 1/10th of a peasant's produce to go to the Church",
+          a: "A tax requiring 1/10th of a peasant's produce to go to the Church",
           options: [
             "A tax requiring 1/10th of a peasant's produce to go to the Church",
             'A tax paid directly to the King',
             'A fine for leaving the village',
             'A fee paid to the lord to grind wheat',
           ],
-          answer: "A tax requiring 1/10th of a peasant's produce to go to the Church",
         },
         {
           question: 'Who controlled the minds and spiritual lives of the peasants?',
-          options: ['The Catholic Church', 'The local lord', 'The King', 'The village elders'],
+          q: 'Who controlled the minds and spiritual lives of the peasants?',
           answer: 'The Catholic Church',
+          a: 'The Catholic Church',
+          options: ['The Catholic Church', 'The local lord', 'The King', 'The village elders'],
         },
         {
           question: 'Why did almost no peasant refuse to pay the tithe, even during famines?',
+          q: 'Why did almost no peasant refuse to pay the tithe, even during famines?',
+          answer: 'They feared eternal damnation in Hell',
+          a: 'They feared eternal damnation in Hell',
           options: [
             'They feared eternal damnation in Hell',
             'The lord would execute them',
             'They had plenty of extra food',
             'The King’s army would attack them',
           ],
-          answer: 'They feared eternal damnation in Hell',
         },
         {
           question: 'What was a Doom Painting?',
+          q: 'What was a Doom Painting?',
+          answer: 'A giant mural painted in churches depicting the Day of Judgement',
+          a: 'A giant mural painted in churches depicting the Day of Judgement',
           options: [
             'A giant mural painted in churches depicting the Day of Judgement',
             'A painting of a battle in the local manor house',
             'A portrait of the local priest',
             'A painting showing how to harvest crops',
           ],
-          answer: 'A giant mural painted in churches depicting the Day of Judgement',
         },
         {
           question: 'Why did the Church rely on visual art like Doom Paintings?',
+          q: 'Why did the Church rely on visual art like Doom Paintings?',
+          answer: 'Because the vast majority of peasants were illiterate',
+          a: 'Because the vast majority of peasants were illiterate',
           options: [
             'Because the vast majority of peasants were illiterate',
             'Because paint was very cheap',
             'To make the churches look colorful',
             'Because the Pope banned written books',
           ],
-          answer: 'Because the vast majority of peasants were illiterate',
         },
         {
           question: 'According to Doom Paintings, what happened to obedient Christians?',
+          q: 'According to Doom Paintings, what happened to obedient Christians?',
+          answer: 'They were welcomed into Heaven by angels',
+          a: 'They were welcomed into Heaven by angels',
           options: [
             'They were welcomed into Heaven by angels',
             'They were reborn as nobles',
             'They were given gold by the priest',
             'They were sent to Purgatory forever',
           ],
-          answer: 'They were welcomed into Heaven by angels',
         },
         {
           question: 'How were sinners depicted in Doom Paintings?',
+          q: 'How were sinners depicted in Doom Paintings?',
+          answer: 'Naked and being dragged by demons into Hell',
+          a: 'Naked and being dragged by demons into Hell',
           options: [
             'Naked and being dragged by demons into Hell',
             'Sleeping peacefully',
             'Working in fields for eternity',
             'Sitting on clouds',
           ],
-          answer: 'Naked and being dragged by demons into Hell',
         },
         {
           question: 'What was Purgatory in medieval Catholic belief?',
+          q: 'What was Purgatory in medieval Catholic belief?',
+          answer: 'A place of suffering before Heaven',
+          a: 'A place of suffering before Heaven',
           options: [
             'A place of suffering before Heaven',
             'A garden in the monastery',
             'The lowest level of Hell',
             "The local lord's dungeon",
           ],
-          answer: 'A place of suffering before Heaven',
         },
         {
           question: 'How could a peasant theoretically shorten their time in Purgatory?',
+          q: 'How could a peasant theoretically shorten their time in Purgatory?',
+          answer: 'By obeying the priest and paying tithes',
+          a: 'By obeying the priest and paying tithes',
           options: [
             'By obeying the priest and paying tithes',
             'By learning how to read',
             'By fighting in a war',
             'By refusing to work for the lord',
           ],
-          answer: 'By obeying the priest and paying tithes',
         },
         {
           question: "What building was the 'stone heart' of every medieval village?",
-          options: ['The parish church', 'The manor house', 'The local pub', "The lord's castle"],
+          q: "What building was the 'stone heart' of every medieval village?",
           answer: 'The parish church',
+          a: 'The parish church',
+          options: ['The parish church', 'The manor house', 'The local pub', "The lord's castle"],
         },
         {
           question: 'When did peasants typically slaughter their animals?',
+          q: 'When did peasants typically slaughter their animals?',
+          answer: 'In the autumn',
+          a: 'In the autumn',
           options: [
             'In the autumn',
             'In the spring',
             'During the summer harvest',
             'On Christmas Day',
           ],
-          answer: 'In the autumn',
         },
         {
           question: 'What would happen if the late summer harvest failed?',
+          q: 'What would happen if the late summer harvest failed?',
+          answer: 'The village would face starvation',
+          a: 'The village would face starvation',
           options: [
             'The village would face starvation',
             'The king would send free grain',
             "They would hunt deer in the lord's forest",
             'They would buy food from other countries',
           ],
-          answer: 'The village would face starvation',
         },
         {
           question: "What material was typically used to build a peasant's hut?",
-          options: ['Wattle-and-daub', 'Cut stone blocks', 'Red bricks', 'Imported oak timber'],
+          q: "What material was typically used to build a peasant's hut?",
           answer: 'Wattle-and-daub',
+          a: 'Wattle-and-daub',
+          options: ['Wattle-and-daub', 'Cut stone blocks', 'Red bricks', 'Imported oak timber'],
         },
       ],
       pair_share: {
@@ -2606,17 +2804,23 @@ export const unitData = {
       },
       quiz: [
         {
+          question: 'Which king lost Normandy and Aquitaine to the French?',
           q: 'Which king lost Normandy and Aquitaine to the French?',
+          answer: 'King John.',
           a: 'King John.',
           options: ['King John.', 'King Richard I.', 'King Henry II.', 'King Edward I.'],
         },
         {
+          question: 'What mocking nickname was given to King John?',
           q: 'What mocking nickname was given to King John?',
+          answer: 'Softsword.',
           a: 'Softsword.',
           options: ['Softsword.', 'Lackland.', 'Lionheart.', 'Longshanks.'],
         },
         {
+          question: 'Why were the barons angry with King John?',
           q: 'Why were the barons angry with King John?',
+          answer: 'He imposed heavy taxes (scutage) and lost wars.',
           a: 'He imposed heavy taxes (scutage) and lost wars.',
           options: [
             'He imposed heavy taxes (scutage) and lost wars.',
@@ -2626,7 +2830,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What document was King John forced to seal in 1215?',
           q: 'What document was King John forced to seal in 1215?',
+          answer: 'Magna Carta.',
           a: 'Magna Carta.',
           options: [
             'Magna Carta.',
@@ -2636,7 +2842,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What was the most important principle of Magna Carta?',
           q: 'What was the most important principle of Magna Carta?',
+          answer: 'That no one, not even the King, is above the law.',
           a: 'That no one, not even the King, is above the law.',
           options: [
             'That no one, not even the King, is above the law.',
@@ -2646,7 +2854,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'Where was Thomas Becket murdered?',
           q: 'Where was Thomas Becket murdered?',
+          answer: 'Canterbury Cathedral.',
           a: 'Canterbury Cathedral.',
           options: [
             'Canterbury Cathedral.',
@@ -2656,7 +2866,9 @@ export const unitData = {
           ],
         },
         {
+          question: "What does 'excommunication' mean?",
           q: "What does 'excommunication' mean?",
+          answer: 'Being officially thrown out of the Catholic Church.',
           a: 'Being officially thrown out of the Catholic Church.',
           options: [
             'Being officially thrown out of the Catholic Church.',
@@ -2666,12 +2878,16 @@ export const unitData = {
           ],
         },
         {
+          question: 'Who built the first motte and bailey castles in England?',
           q: 'Who built the first motte and bailey castles in England?',
+          answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
           options: ['William the Conqueror.', 'Henry II.', 'King John.', 'Edward I.'],
         },
         {
+          question: 'What was the Harrying of the North?',
           q: 'What was the Harrying of the North?',
+          answer: "William's brutal destruction of crops to stop northern rebellions.",
           a: "William's brutal destruction of crops to stop northern rebellions.",
           options: [
             "William's brutal destruction of crops to stop northern rebellions.",
@@ -2681,7 +2897,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What did Henry II want to stop Church courts from doing?',
           q: 'What did Henry II want to stop Church courts from doing?',
+          answer: 'Giving lenient punishments to criminous clerks.',
           a: 'Giving lenient punishments to criminous clerks.',
           options: [
             'Giving lenient punishments to criminous clerks.',
@@ -2692,108 +2910,128 @@ export const unitData = {
         },
         {
           question: 'How did the Black Death originally reach England?',
+          q: 'How did the Black Death originally reach England?',
+          answer: 'On trading ships arriving at southern ports like Melcombe Regis',
+          a: 'On trading ships arriving at southern ports like Melcombe Regis',
           options: [
             'On trading ships arriving at southern ports like Melcombe Regis',
             'Carried by the invading French army',
             'Through contaminated water from Scotland',
             'Brought back by crusaders from Jerusalem',
           ],
-          answer: 'On trading ships arriving at southern ports like Melcombe Regis',
         },
         {
           question: "What is a 'bubo'?",
+          q: "What is a 'bubo'?",
+          answer: 'A painfully swollen lymph node, usually in the armpit or groin',
+          a: 'A painfully swollen lymph node, usually in the armpit or groin',
           options: [
             'A painfully swollen lymph node, usually in the armpit or groin',
             "A type of plague doctor's mask",
             'A medieval medicine made of herbs',
             'A type of flea that carried the disease',
           ],
-          answer: 'A painfully swollen lymph node, usually in the armpit or groin',
         },
         {
           question:
             'Which of these was a strange cure medieval people attempted to use for the plague?',
+          q: 'Which of these was a strange cure medieval people attempted to use for the plague?',
+          answer: 'Strapping a live toad or chicken to the buboes',
+          a: 'Strapping a live toad or chicken to the buboes',
           options: [
             'Strapping a live toad or chicken to the buboes',
             'Drinking boiled ocean water',
             'Eating only raw meat',
             'Bathing in milk every day',
           ],
-          answer: 'Strapping a live toad or chicken to the buboes',
         },
         {
           question: "What is 'miasma'?",
+          q: "What is 'miasma'?",
+          answer: 'The medieval belief that bad smells and corrupt air caused disease',
+          a: 'The medieval belief that bad smells and corrupt air caused disease',
           options: [
             'The medieval belief that bad smells and corrupt air caused disease',
             'A type of rat that carried the plague',
             'A religious prayer to stop the sickness',
             'The Latin word for death',
           ],
-          answer: 'The medieval belief that bad smells and corrupt air caused disease',
         },
         {
           question: 'Who were the flagellants?',
+          q: 'Who were the flagellants?',
+          answer:
+            "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
+          a: "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
           options: [
             "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
             'Doctors who specialized in cutting open buboes',
             'Gravediggers who buried the plague victims',
             'Lords who fled the cities to hide in the countryside',
           ],
-          answer:
-            "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
         },
         {
           question: 'What economic situation did the massive death toll create in England?',
+          q: 'What economic situation did the massive death toll create in England?',
+          answer: 'A severe labour shortage',
+          a: 'A severe labour shortage',
           options: [
             'A severe labour shortage',
             'Massive inflation of housing prices',
             'A complete collapse of all trade',
             'The invention of paper money',
           ],
-          answer: 'A severe labour shortage',
         },
         {
           question:
             'Because there were fewer workers after the Black Death, what did the surviving peasants do?',
+          q: 'Because there were fewer workers after the Black Death, what did the surviving peasants do?',
+          answer: 'They demanded higher wages and better working conditions',
+          a: 'They demanded higher wages and better working conditions',
           options: [
             'They demanded higher wages and better working conditions',
             'They voluntarily worked twice as hard for the same pay',
             'They refused to farm and all became merchants',
             'They willingly gave their lands to the Church',
           ],
-          answer: 'They demanded higher wages and better working conditions',
         },
         {
           question: 'What was the Statute of Labourers (1351)?',
+          q: 'What was the Statute of Labourers (1351)?',
+          answer: 'A law passed by the government to freeze peasant wages at pre-plague levels',
+          a: 'A law passed by the government to freeze peasant wages at pre-plague levels',
           options: [
             'A law passed by the government to freeze peasant wages at pre-plague levels',
             'A law guaranteeing peasants the right to strike',
             'A royal decree granting freedom to all villeins',
             'A new tax placed only on wealthy merchants',
           ],
-          answer: 'A law passed by the government to freeze peasant wages at pre-plague levels',
         },
         {
           question: 'How did the Black Death fundamentally weaken the feudal system?',
+          q: 'How did the Black Death fundamentally weaken the feudal system?',
+          answer: 'Lords had to start paying villeins or risk them running away to rival lords',
+          a: 'Lords had to start paying villeins or risk them running away to rival lords',
           options: [
             'Lords had to start paying villeins or risk them running away to rival lords',
             'The King lost all his castles to the peasants',
             'The Church took over all farming operations',
             'Knights refused to fight in wars anymore',
           ],
-          answer: 'Lords had to start paying villeins or risk them running away to rival lords',
         },
         {
           question:
             'Why did many peasants lose faith in the Catholic Church during the Black Death?',
+          q: 'Why did many peasants lose faith in the Catholic Church during the Black Death?',
+          answer:
+            "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
+          a: "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
           options: [
             "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
             'Because the Pope ordered them to stop going to church',
             'Because the Church claimed the plague was a blessing',
             'Because the priests ran away to France',
           ],
-          answer:
-            "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
         },
       ],
       comprehension: [
@@ -3020,17 +3258,23 @@ export const unitData = {
       },
       quiz: [
         {
+          question: 'In what year did the Black Death arrive in England?',
           q: 'In what year did the Black Death arrive in England?',
+          answer: '1348.',
           a: '1348.',
           options: ['1348.', '1066.', '1215.', '1381.'],
         },
         {
+          question: 'What fraction of the English population was killed by the plague?',
           q: 'What fraction of the English population was killed by the plague?',
+          answer: 'Roughly one third.',
           a: 'Roughly one third.',
           options: ['Roughly one third.', 'Around one tenth.', 'Nearly half.', 'About two thirds.'],
         },
         {
+          question: "What were 'buboes'?",
           q: "What were 'buboes'?",
+          answer: 'Agonizing, pus-filled swellings caused by the bubonic plague.',
           a: 'Agonizing, pus-filled swellings caused by the bubonic plague.',
           options: [
             'Agonizing, pus-filled swellings caused by the bubonic plague.',
@@ -3040,7 +3284,9 @@ export const unitData = {
           ],
         },
         {
+          question: "Why couldn't medieval doctors cure the plague?",
           q: "Why couldn't medieval doctors cure the plague?",
+          answer: 'Because germ theory did not exist yet.',
           a: 'Because germ theory did not exist yet.',
           options: [
             'Because germ theory did not exist yet.',
@@ -3050,7 +3296,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What supernatural reason did people blame for the plague?',
           q: 'What supernatural reason did people blame for the plague?',
+          answer: 'They believed it was a divine punishment sent by God.',
           a: 'They believed it was a divine punishment sent by God.',
           options: [
             'They believed it was a divine punishment sent by God.',
@@ -3060,7 +3308,9 @@ export const unitData = {
           ],
         },
         {
+          question: "What document limited King John's power in 1215?",
           q: "What document limited King John's power in 1215?",
+          answer: 'Magna Carta.',
           a: 'Magna Carta.',
           options: [
             'Magna Carta.',
@@ -3070,12 +3320,16 @@ export const unitData = {
           ],
         },
         {
+          question: 'Who was murdered by four knights in 1170?',
           q: 'Who was murdered by four knights in 1170?',
+          answer: 'Thomas Becket.',
           a: 'Thomas Becket.',
           options: ['Thomas Becket.', 'King John.', 'Harold Godwinson.', 'Wat Tyler.'],
         },
         {
+          question: "Why did King John charge heavy 'scutage' taxes?",
           q: "Why did King John charge heavy 'scutage' taxes?",
+          answer: 'To fund his failed wars to recapture Normandy.',
           a: 'To fund his failed wars to recapture Normandy.',
           options: [
             'To fund his failed wars to recapture Normandy.',
@@ -3085,7 +3339,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'What was the Domesday Book used for?',
           q: 'What was the Domesday Book used for?',
+          answer: 'To record wealth and property for taxation.',
           a: 'To record wealth and property for taxation.',
           options: [
             'To record wealth and property for taxation.',
@@ -3095,7 +3351,9 @@ export const unitData = {
           ],
         },
         {
+          question: 'Who won the Battle of Stamford Bridge in 1066?',
           q: 'Who won the Battle of Stamford Bridge in 1066?',
+          answer: 'Harold Godwinson.',
           a: 'Harold Godwinson.',
           options: [
             'Harold Godwinson.',
@@ -3106,90 +3364,110 @@ export const unitData = {
         },
         {
           question: 'Why was the Poll Tax of 1380 seen as particularly unfair?',
+          q: 'Why was the Poll Tax of 1380 seen as particularly unfair?',
+          answer:
+            'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
+          a: 'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
           options: [
             'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
             'It was only charged on food and clothing',
             'It only applied to peasants who lived in the north',
             'It required peasants to give up their best farm animals',
           ],
-          answer:
-            'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
         },
         {
           question: 'Who was John Ball?',
+          q: 'Who was John Ball?',
+          answer: 'A radical priest who preached that all men were created equal by God',
+          a: 'A radical priest who preached that all men were created equal by God',
           options: [
             'A radical priest who preached that all men were created equal by God',
             "The King's main tax collector",
             'A wealthy baron who funded the rebels',
             'The Archbishop of Canterbury',
           ],
-          answer: 'A radical priest who preached that all men were created equal by God',
         },
         {
           question: 'What famous rhyme did John Ball use to question the feudal system?',
+          q: 'What famous rhyme did John Ball use to question the feudal system?',
+          answer: "'When Adam delved and Eve span, who was then the gentleman?'",
+          a: "'When Adam delved and Eve span, who was then the gentleman?'",
           options: [
             "'When Adam delved and Eve span, who was then the gentleman?'",
             "'Remember, remember the fifth of November'",
             "'Ring a ring o' roses, a pocket full of posies'",
             "'The King is in his counting house, counting out his money'",
           ],
-          answer: "'When Adam delved and Eve span, who was then the gentleman?'",
         },
         {
           question: 'What did the rebel army do when they entered London?',
+          q: 'What did the rebel army do when they entered London?',
+          answer: 'They burned down the Savoy Palace and opened the prisons',
+          a: 'They burned down the Savoy Palace and opened the prisons',
           options: [
             'They burned down the Savoy Palace and opened the prisons',
             'They built a new motte and bailey castle',
             'They peacefully protested outside Parliament',
             "They immediately surrendered to the King's guards",
           ],
-          answer: 'They burned down the Savoy Palace and opened the prisons',
         },
         {
           question:
             'Which two high-ranking officials were dragged from the Tower of London and beheaded by the rebels?',
+          q: 'Which two high-ranking officials were dragged from the Tower of London and beheaded by the rebels?',
+          answer: 'The Archbishop of Canterbury and the Lord Treasurer',
+          a: 'The Archbishop of Canterbury and the Lord Treasurer',
           options: [
             'The Archbishop of Canterbury and the Lord Treasurer',
             'The King and the Queen',
             'The Mayor of London and the Chief Judge',
             'The Duke of Lancaster and the French Ambassador',
           ],
-          answer: 'The Archbishop of Canterbury and the Lord Treasurer',
         },
         {
           question: "How old was King Richard II during the Peasants' Revolt in 1381?",
-          options: ['14 years old', '8 years old', '25 years old', '40 years old'],
+          q: "How old was King Richard II during the Peasants' Revolt in 1381?",
           answer: '14 years old',
+          a: '14 years old',
+          options: ['14 years old', '8 years old', '25 years old', '40 years old'],
         },
         {
           question: 'Where did King Richard II ride out to meet Wat Tyler?',
-          options: ['Smithfield', 'Runnymede', 'Bosworth', 'Hastings'],
+          q: 'Where did King Richard II ride out to meet Wat Tyler?',
           answer: 'Smithfield',
+          a: 'Smithfield',
+          options: ['Smithfield', 'Runnymede', 'Bosworth', 'Hastings'],
         },
         {
           question: 'What was one of the radical demands Wat Tyler made to the King?',
+          q: 'What was one of the radical demands Wat Tyler made to the King?',
+          answer: 'The total abolition of serfdom and the feudal system',
+          a: 'The total abolition of serfdom and the feudal system',
           options: [
             'The total abolition of serfdom and the feudal system',
             'The right for peasants to vote in Parliament',
             'The execution of all Norman lords',
             'For England to surrender to France',
           ],
-          answer: 'The total abolition of serfdom and the feudal system',
         },
         {
           question: 'Who stabbed Wat Tyler during the meeting with the King?',
-          options: ['The Mayor of London', 'King Richard II himself', 'A French spy', 'John Ball'],
+          q: 'Who stabbed Wat Tyler during the meeting with the King?',
           answer: 'The Mayor of London',
+          a: 'The Mayor of London',
+          options: ['The Mayor of London', 'King Richard II himself', 'A French spy', 'John Ball'],
         },
         {
           question: 'What did King Richard II do immediately after Wat Tyler was killed?',
+          q: 'What did King Richard II do immediately after Wat Tyler was killed?',
+          answer: 'He rode toward the angry mob and convinced them he would be their leader',
+          a: 'He rode toward the angry mob and convinced them he would be their leader',
           options: [
             'He rode toward the angry mob and convinced them he would be their leader',
             'He fled back to the Tower of London in terror',
             'He ordered his archers to massacre the crowd',
             'He was captured and held hostage by the peasants',
           ],
-          answer: 'He rode toward the angry mob and convinced them he would be their leader',
         },
       ],
       comprehension: [
@@ -3378,176 +3656,216 @@ export const unitData = {
       quiz: [
         {
           question: 'What was the name of the brutal 30-year civil war that began in 1455?',
+          q: 'What was the name of the brutal 30-year civil war that began in 1455?',
+          answer: 'The Wars of the Roses',
+          a: 'The Wars of the Roses',
           options: [
             'The Wars of the Roses',
             "The Hundred Years' War",
             'The English Civil War',
             "The Barons' War",
           ],
-          answer: 'The Wars of the Roses',
         },
         {
           question: 'Which two rival branches of the royal family fought in the Wars of the Roses?',
+          q: 'Which two rival branches of the royal family fought in the Wars of the Roses?',
+          answer: 'The House of Lancaster and the House of York',
+          a: 'The House of Lancaster and the House of York',
           options: [
             'The House of Lancaster and the House of York',
             'The House of Tudor and the House of Stuart',
             'The House of Wessex and the House of Mercia',
             'The House of Plantagenet and the House of Valois',
           ],
-          answer: 'The House of Lancaster and the House of York',
         },
         {
           question: 'What flower symbolized the House of Lancaster?',
-          options: ['A red rose', 'A white rose', 'A purple thistle', 'A yellow daffodil'],
+          q: 'What flower symbolized the House of Lancaster?',
           answer: 'A red rose',
+          a: 'A red rose',
+          options: ['A red rose', 'A white rose', 'A purple thistle', 'A yellow daffodil'],
         },
         {
           question: 'What flower symbolized the House of York?',
-          options: ['A white rose', 'A red rose', 'A blue lily', 'A white boar'],
+          q: 'What flower symbolized the House of York?',
           answer: 'A white rose',
+          a: 'A white rose',
+          options: ['A white rose', 'A red rose', 'A blue lily', 'A white boar'],
         },
         {
           question: 'Why did the Wars of the Roses initially break out?',
+          q: 'Why did the Wars of the Roses initially break out?',
+          answer: 'King Henry VI was a weak, mentally unstable ruler',
+          a: 'King Henry VI was a weak, mentally unstable ruler',
           options: [
             'King Henry VI was a weak, mentally unstable ruler',
             'The King refused to sign the Magna Carta',
             'The peasants revolted against the poll tax',
             'The Pope excommunicated the King',
           ],
-          answer: 'King Henry VI was a weak, mentally unstable ruler',
         },
         {
           question: 'What territory had King Henry VI lost before the Wars of the Roses began?',
-          options: ["England's lands in France", 'Wales', 'Scotland', 'Ireland'],
+          q: 'What territory had King Henry VI lost before the Wars of the Roses began?',
           answer: "England's lands in France",
+          a: "England's lands in France",
+          options: ["England's lands in France", 'Wales', 'Scotland', 'Ireland'],
         },
         {
           question: 'Who died in 1483, leaving a 12-year-old son to inherit the throne?',
+          q: 'Who died in 1483, leaving a 12-year-old son to inherit the throne?',
+          answer: 'The Yorkist King Edward IV',
+          a: 'The Yorkist King Edward IV',
           options: [
             'The Yorkist King Edward IV',
             'The Lancastrian King Henry VI',
             'Richard of Gloucester',
             'Henry Tudor',
           ],
-          answer: 'The Yorkist King Edward IV',
         },
         {
           question: 'Who was the ambitious uncle of the 12-year-old King Edward V?',
+          q: 'Who was the ambitious uncle of the 12-year-old King Edward V?',
+          answer: 'Richard of Gloucester (later Richard III)',
+          a: 'Richard of Gloucester (later Richard III)',
           options: [
             'Richard of Gloucester (later Richard III)',
             'Henry Tudor',
             'Thomas Becket',
             'King John',
           ],
-          answer: 'Richard of Gloucester (later Richard III)',
         },
         {
           question:
             'Where did Richard of Gloucester place his two nephews, supposedly for their own protection?',
+          q: 'Where did Richard of Gloucester place his two nephews, supposedly for their own protection?',
+          answer: 'The Tower of London',
+          a: 'The Tower of London',
           options: [
             'The Tower of London',
             'Windsor Castle',
             'Canterbury Cathedral',
             'Westminster Abbey',
           ],
-          answer: 'The Tower of London',
         },
         {
           question: 'What happened to the two young princes after they were placed in the Tower?',
+          q: 'What happened to the two young princes after they were placed in the Tower?',
+          answer: 'They were never seen in public again',
+          a: 'They were never seen in public again',
           options: [
             'They were never seen in public again',
             'They were crowned as joint kings',
             'They escaped to France',
             'They defeated their uncle in battle',
           ],
-          answer: 'They were never seen in public again',
         },
         {
           question: 'What did Richard III do after declaring his nephews illegitimate?',
+          q: 'What did Richard III do after declaring his nephews illegitimate?',
+          answer: 'He crowned himself King of England',
+          a: 'He crowned himself King of England',
           options: [
             'He crowned himself King of England',
             'He gave the throne to Henry Tudor',
             'He fled to France',
             'He became Archbishop of Canterbury',
           ],
-          answer: 'He crowned himself King of England',
         },
         {
           question: 'How did the disappearance of the Princes in the Tower affect Richard III?',
+          q: 'How did the disappearance of the Princes in the Tower affect Richard III?',
+          answer: 'It shocked the country and turned many nobles against him',
+          a: 'It shocked the country and turned many nobles against him',
           options: [
             'It shocked the country and turned many nobles against him',
             'It made him incredibly popular with the peasants',
             'It convinced the Pope to make him a saint',
             'It stopped the Wars of the Roses immediately',
           ],
-          answer: 'It shocked the country and turned many nobles against him',
         },
         {
           question: 'What was the final, decisive battle of the Wars of the Roses?',
+          q: 'What was the final, decisive battle of the Wars of the Roses?',
+          answer: 'The Battle of Bosworth Field',
+          a: 'The Battle of Bosworth Field',
           options: [
             'The Battle of Bosworth Field',
             'The Battle of Hastings',
             'The Battle of Agincourt',
             'The Battle of Towton',
           ],
-          answer: 'The Battle of Bosworth Field',
         },
         {
           question: 'In what year did the Battle of Bosworth take place?',
-          options: ['1485', '1066', '1381', '1215'],
+          q: 'In what year did the Battle of Bosworth take place?',
           answer: '1485',
+          a: '1485',
+          options: ['1485', '1066', '1381', '1215'],
         },
         {
           question: 'Who invaded England to challenge Richard III for the throne at Bosworth?',
-          options: ['Henry Tudor', 'William the Conqueror', 'King Philip of France', 'Wat Tyler'],
+          q: 'Who invaded England to challenge Richard III for the throne at Bosworth?',
           answer: 'Henry Tudor',
+          a: 'Henry Tudor',
+          options: ['Henry Tudor', 'William the Conqueror', 'King Philip of France', 'Wat Tyler'],
         },
         {
           question:
             'What crucial event happened during the Battle of Bosworth that doomed Richard III?',
+          q: 'What crucial event happened during the Battle of Bosworth that doomed Richard III?',
+          answer: 'Several of his key allies betrayed him and refused to fight',
+          a: 'Several of his key allies betrayed him and refused to fight',
           options: [
             'Several of his key allies betrayed him and refused to fight',
             'His army was hit by the Black Death',
             'He fell off his horse before the battle began',
             'Henry Tudor used gunpowder cannons to destroy his army',
           ],
-          answer: 'Several of his key allies betrayed him and refused to fight',
         },
         {
           question: 'What unique distinction does Richard III hold among English monarchs?',
+          q: 'What unique distinction does Richard III hold among English monarchs?',
+          answer: 'He was the last English king to die in battle',
+          a: 'He was the last English king to die in battle',
           options: [
             'He was the last English king to die in battle',
             'He was the first Tudor king',
             'He ruled the longest',
             'He was the only king to never wear a crown',
           ],
-          answer: 'He was the last English king to die in battle',
         },
         {
           question: "Who was crowned King of England after Richard III's death?",
-          options: ['Henry VII', 'Edward V', 'Henry VIII', 'Edward VI'],
+          q: "Who was crowned King of England after Richard III's death?",
           answer: 'Henry VII',
+          a: 'Henry VII',
+          options: ['Henry VII', 'Edward V', 'Henry VIII', 'Edward VI'],
         },
         {
           question: 'How did Henry VII attempt to heal the division between the rival houses?',
+          q: 'How did Henry VII attempt to heal the division between the rival houses?',
+          answer: 'He married a princess from the House of York',
+          a: 'He married a princess from the House of York',
           options: [
             'He married a princess from the House of York',
             'He executed all remaining nobles',
             'He banned the use of rose symbols',
             'He moved the capital to York',
           ],
-          answer: 'He married a princess from the House of York',
         },
         {
           question:
             'What historical period is generally considered to have ended with the Battle of Bosworth?',
+          q: 'What historical period is generally considered to have ended with the Battle of Bosworth?',
+          answer: 'The Middle Ages',
+          a: 'The Middle Ages',
           options: [
             'The Middle Ages',
             'The Victorian Era',
             'The Industrial Revolution',
             'The Roman Empire',
           ],
-          answer: 'The Middle Ages',
         },
       ],
       pair_share: {
@@ -3959,3 +4277,10 @@ export const unitData = {
     },
   ],
 };
+
+export const unitData = medieval_england;
+export default medieval_england;
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = medieval_england;
+}

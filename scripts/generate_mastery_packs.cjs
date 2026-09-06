@@ -36,6 +36,14 @@ for (const unitId of units) {
       jsonStr = jsonStr.replace(/\/\/\s*Support both[\s\S]*$/, '');
       jsonStr = jsonStr.replace(/if\s*\(\s*typeof\s*module[\s\S]*$/, '');
     }
+    if (unitId === 'medieval_england') {
+      jsonStr = jsonStr.replace(/^const medieval_england\s*=\s*/, '');
+      jsonStr = jsonStr.replace(/export\s+const\s+unitData\s*=\s*medieval_england;[\s\S]*$/, '');
+    }
+    if (unitId === 'weimar_nazi_germany') {
+      jsonStr = jsonStr.replace(/^const weimar_nazi_germany\s*=\s*/, '');
+      jsonStr = jsonStr.replace(/export\s+const\s+unitData\s*=\s*weimar_nazi_germany;[\s\S]*$/, '');
+    }
     jsonStr = jsonStr
       .replace(
         /export const unitData = |export default |export const gwData = |const unitData = |module\.exports = /g,
@@ -76,34 +84,71 @@ for (const unitId of units) {
         );
       }
 
-      for (const lesson of matchingLessons) {
-        if (lesson.quiz && Array.isArray(lesson.quiz)) {
-          lesson.quiz.forEach((q) => {
-            let ansStr = '';
-            if (q.options && typeof q.answer !== 'undefined') {
-              ansStr = q.options[q.answer];
-            } else if (q.a) {
-              ansStr = q.a;
-            }
-            questions.push({
-              lessonTitle: lesson.title,
-              q: q.question || q.q,
-              a: ansStr,
-            });
-          });
+      function resolveAns(q) {
+        if (typeof q.a === 'string' && q.a.trim()) return q.a.trim();
+        if (typeof q.answer === 'number' && q.options && q.options[q.answer])
+          return q.options[q.answer];
+        if (typeof q.answer === 'string') {
+          const num = parseInt(q.answer, 10);
+          if (!isNaN(num) && String(num) === q.answer.trim() && q.options && q.options[num]) {
+            return q.options[num];
+          }
+          return q.answer.trim();
         }
-        if (lesson.do_now && Array.isArray(lesson.do_now.items)) {
-          lesson.do_now.items.forEach((q) => {
-            let ansStr = q.answer || q.a || '';
-            if (!ansStr && q.options && typeof q.answer !== 'undefined') {
-              ansStr = q.options[q.answer];
-            }
-            questions.push({
-              lessonTitle: lesson.title,
-              q: q.question || q.q,
-              a: ansStr,
+        if (q.options && typeof q.answer !== 'undefined' && q.options[q.answer])
+          return q.options[q.answer];
+        return (q.answer || q.a || '').toString().trim();
+      }
+
+      for (const lesson of matchingLessons) {
+        if (unitId === 'medieval_england') {
+          // In medieval_england, every lesson has exactly 20 comprehensive quiz questions (10 spaced retrieval + 10 current content).
+          // Only quiz questions are used so that each 20-question mastery page perfectly maps 1-to-1 with its lesson.
+          if (lesson.quiz && Array.isArray(lesson.quiz)) {
+            lesson.quiz.forEach((q) => {
+              questions.push({
+                lessonTitle: lesson.title,
+                q: q.question || q.q,
+                a: resolveAns(q),
+              });
             });
-          });
+          }
+        } else {
+          if (lesson.quiz && Array.isArray(lesson.quiz)) {
+            lesson.quiz.forEach((q) => {
+              let ansStr = '';
+              if (unitId === 'australia') {
+                ansStr = resolveAns(q);
+              } else if (q.options && typeof q.answer !== 'undefined') {
+                ansStr = q.options[q.answer];
+              } else if (q.a) {
+                ansStr = q.a;
+              }
+              questions.push({
+                lessonTitle: lesson.title,
+                q: q.question || q.q,
+                a: ansStr,
+              });
+            });
+          }
+          if (lesson.do_now && Array.isArray(lesson.do_now.items)) {
+            lesson.do_now.items.forEach((q) => {
+              let ansStr = '';
+              if (unitId === 'australia') {
+                ansStr = resolveAns(q);
+              } else {
+                ansStr = q.answer || q.a || '';
+                if (!ansStr && q.options && typeof q.answer !== 'undefined') {
+                  ansStr = q.options[q.answer];
+                }
+              }
+              questions.push({
+                lessonTitle: lesson.title,
+                q: q.question || q.q,
+                a: ansStr,
+              });
+            });
+          }
         }
       }
 
