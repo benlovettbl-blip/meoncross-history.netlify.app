@@ -109,6 +109,7 @@ const units = fs
                   lessonTitle: lesson.title,
                   q: q.question || q.q,
                   a: resolveAns(q),
+                  explanation: q.explanation || '',
                 });
               });
             }
@@ -119,6 +120,7 @@ const units = fs
                   lessonTitle: lesson.title,
                   q: q.question || q.q,
                   a: resolveAns(q),
+                  explanation: q.explanation || '',
                 });
               });
             }
@@ -128,6 +130,7 @@ const units = fs
                   lessonTitle: lesson.title,
                   q: q.question || q.q,
                   a: resolveAns(q),
+                  explanation: q.explanation || '',
                 });
               });
             }
@@ -2163,6 +2166,9 @@ const units = fs
         id: idx + 1,
         q: q.q,
         a: q.a,
+        explanation: ['cme_new', 'great_war', 'medieval_england'].includes(unitId)
+          ? q.explanation || ''
+          : undefined,
         topic: q.lessonTitle,
       })),
     )};
@@ -2333,7 +2339,13 @@ const units = fs
       if (qText) qText.textContent = card.q;
 
       const aText = document.getElementById('card-answer-text');
-      if (aText) aText.textContent = card.a;
+      if (aText) {
+        if (card.explanation) {
+          aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
+        } else {
+          aText.textContent = card.a;
+        }
+      }
 
       updateStats();
     }

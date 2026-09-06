@@ -579,7 +579,8 @@ export function renderQuizZone(container, unitData) {
 
                             <!-- Back of card -->
                             <div style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: #eff6ff; border: 2px solid #3b82f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 20px; transform: rotateY(180deg); flex-direction: column;">
-                                <h2 style="font-size: 1.5rem; color: #1e3a8a; margin: 0;">${q.a}</h2>
+                                <h2 style="font-size: 1.4rem; color: #1e3a8a; margin: 0 0 10px 0;">${q.a}</h2>
+                                ${q.explanation ? `<p style="font-size: 0.92rem; color: #334155; line-height: 1.45; margin: 0; font-style: italic; max-width: 90%; background: rgba(255,255,255,0.7); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ${q.explanation}</p>` : ''}
                             </div>
 
                         </div>
