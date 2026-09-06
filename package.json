@@ -16,6 +16,7 @@
     "export:pdf": "node scripts/export_pdfs.cjs && node scripts/generate_scheme_of_work.cjs",
     "sync:curriculum": "node scripts/sync_curriculum_documents.cjs",
     "check:randomization": "node scripts/check_vault_randomization.cjs",
+    "clean:temp": "node scripts/clean_cache.cjs",
     "prepare": "husky"
   },
   "keywords": [

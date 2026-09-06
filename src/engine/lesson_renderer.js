@@ -584,6 +584,29 @@ export function renderLesson(lesson) {
                 <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
               </summary>
               <div style="padding: 20px;">
+                ${
+                  !isTrip &&
+                  ((appStore && appStore.state && appStore.state.selectedUnitId) ||
+                    window.currentUnitId)
+                    ? `
+                  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 12px 18px; margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; flex-shrink: 0; box-shadow: 0 2px 4px rgba(59,130,246,0.25);">
+                        <i class="fa-solid fa-bolt"></i>
+                      </div>
+                      <div>
+                        <div style="font-weight: 700; color: #1e3a8a; font-size: 0.95rem;">Retrieval Starter Drill</div>
+                        <div style="font-size: 0.83rem; color: #64748b;">Consolidate prior learning with 3-Box Leitner spaced flashcards or a 10-min readiness check.</div>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${(appStore && appStore.state && appStore.state.selectedUnitId) || window.currentUnitId || ''}" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; padding: 8px 16px; background: #2563eb; color: #ffffff; border: none; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 5px rgba(37,99,235,0.25); transition: all 0.2s ease;">
+                      <i class="fa-solid fa-circle-question" style="color: #fde047;"></i>
+                      Jump to Unit Quizzing
+                    </button>
+                  </div>
+                `
+                    : ''
+                }
                 <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
                 <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
         `;
@@ -619,6 +642,10 @@ export function renderLesson(lesson) {
       console.error(e);
     }
 
+    const currentUnitId =
+      (appStore && appStore.state && appStore.state.selectedUnitId) || window.currentUnitId || '';
+    const showQuizzing = !isTrip && currentUnitId;
+
     htmlDoNow += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
             <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
@@ -629,6 +656,27 @@ export function renderLesson(lesson) {
               </div>
             </summary>
             <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+              ${
+                showQuizzing
+                  ? `
+                <div style="grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 12px 18px; margin-bottom: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; flex-shrink: 0; box-shadow: 0 2px 4px rgba(59,130,246,0.25);">
+                      <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                      <div style="font-weight: 700; color: #1e3a8a; font-size: 0.95rem;">Retrieval Starter Drill</div>
+                      <div style="font-size: 0.83rem; color: #64748b;">Consolidate prior learning with 3-Box Leitner spaced flashcards or a 10-min readiness check.</div>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${currentUnitId}" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; padding: 8px 16px; background: #2563eb; color: #ffffff; border: none; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 5px rgba(37,99,235,0.25); transition: all 0.2s ease;">
+                    <i class="fa-solid fa-circle-question" style="color: #fde047;"></i>
+                    Jump to Unit Quizzing
+                  </button>
+                </div>
+              `
+                  : ''
+              }
       `;
     const doNowItems = lesson.do_now.items || lesson.do_now.tasks || [];
     doNowItems.forEach((item, index) => {
