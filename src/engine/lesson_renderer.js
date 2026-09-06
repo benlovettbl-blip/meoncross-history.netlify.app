@@ -84,7 +84,9 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
       links[index + 1].classList.add('active');
     }
     renderLesson(appStore.state.activeUnitData.lessons[index]);
-    (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.scrollToTop) window.scrollToTop(true);
+    else
+      (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
   }
 };
 

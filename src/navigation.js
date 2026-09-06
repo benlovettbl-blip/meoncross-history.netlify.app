@@ -101,7 +101,41 @@ export function initNavigationUI() {
   });
 }
 
+export function scrollToTop(instant = true) {
+  const behavior = instant ? 'instant' : 'smooth';
+  try {
+    window.scrollTo({ top: 0, left: 0, behavior });
+  } catch (e) {
+    window.scrollTo(0, 0);
+  }
+  if (document.documentElement) document.documentElement.scrollTop = 0;
+  if (document.body) document.body.scrollTop = 0;
+
+  const selectors = [
+    '#main-content',
+    '.content-container',
+    '#content-area',
+    '.content-area',
+    '.app-body',
+    'main',
+  ];
+  selectors.forEach((sel) => {
+    const el = document.querySelector(sel);
+    if (el && el.scrollTop !== 0) {
+      try {
+        el.scrollTo({ top: 0, left: 0, behavior });
+      } catch (e) {
+        el.scrollTop = 0;
+      }
+    }
+  });
+}
+window.scrollToTop = scrollToTop;
+
 export async function switchView(viewName, param = null, skipHistory = false) {
+  // Always immediately reset scroll position to top
+  scrollToTop(true);
+
   // Update state; the subscriber will handle UI changes
   appStore.state.currentView = viewName;
 
@@ -163,6 +197,9 @@ export async function switchView(viewName, param = null, skipHistory = false) {
   } else if (viewName === 'curriculum') {
     await renderCurriculumMap();
   }
+
+  // Secondary tick to ensure newly injected DOM content stays at top
+  requestAnimationFrame(() => scrollToTop(true));
 }
 
 // Dynamically fetch and parse the compiled JSON for a unit

@@ -699,6 +699,29 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.45);
         }
+        .leitner-tools-toggle-btn {
+            display: none;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            color: #ffffff;
+            padding: 6px 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-tools-toggle-btn:hover,
+        .leitner-tools-toggle-btn.active {
+            background: rgba(255, 255, 255, 0.28);
+            border-color: #93c5fd;
+        }
+        .leitner-tools-drawer {
+            display: block;
+        }
         /* Rapid-Fire Classroom Retrieval Timer Bar */
         .rapid-fire-timer-bar {
             background: #f1f5f9;
@@ -835,8 +858,9 @@
             padding: 8px 16px;
         }
         .leitner-modal-overlay.teacher-mode .leitner-streak-bar,
-        .leitner-modal-overlay.teacher-mode .leitner-box-stats {
-            display: none;
+        .leitner-modal-overlay.teacher-mode .leitner-box-stats,
+        .leitner-modal-overlay.teacher-mode .leitner-tools-toggle-btn {
+            display: none !important;
         }
         .leitner-modal-overlay.teacher-mode .leitner-filter-row {
             padding: 12px 32px 6px 32px;
@@ -969,26 +993,259 @@
             font-size: 1.05rem;
             padding: 10px 22px;
         }
-        @media (max-width: 600px) {
+        /* Mobile Portrait & Responsive Spaced Retrieval Layout */
+        @media (max-width: 768px) {
+            .leitner-modal-overlay {
+                padding: 0 !important;
+                align-items: stretch !important;
+                justify-content: stretch !important;
+            }
             .leitner-modal-card {
-                max-height: 96vh;
-                border-radius: 10px;
+                width: 100vw !important;
+                height: 100vh !important;
+                max-width: 100vw !important;
+                max-height: 100vh !important;
+                border-radius: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden !important;
+            }
+            .leitner-modal-header {
+                padding: 10px 14px !important;
+                min-height: 48px !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-header-title h3 {
+                font-size: 1.05rem !important;
+            }
+            .leitner-unit-subtitle {
+                font-size: 0.72rem !important;
+                max-width: 170px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .leitner-teacher-btn {
+                padding: 5px 9px !important;
+                font-size: 0.74rem !important;
+            }
+            .leitner-tools-toggle-btn {
+                display: inline-flex !important;
+            }
+            .leitner-tools-drawer {
+                display: none;
+                background: #0f172a;
+                border-bottom: 2px solid #2563eb;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+                max-height: 55vh;
+                overflow-y: auto;
+                flex-shrink: 0;
+                animation: drawerSlideDown 0.2s ease-out;
+            }
+            .leitner-tools-drawer.expanded {
+                display: block !important;
+            }
+            @keyframes drawerSlideDown {
+                from { opacity: 0; transform: translateY(-8px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .leitner-card-container {
+                flex: 1 1 auto !important;
+                min-height: 0 !important;
+                padding: 12px 14px 6px 14px !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .leitner-card {
+                flex: 1 1 auto !important;
+                min-height: 190px !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                touch-action: pan-y;
+            }
+            .leitner-card-inner {
+                height: 100% !important;
+            }
+            .leitner-card-face {
+                padding: 18px 16px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
             }
             .card-question-text {
-                font-size: 1rem;
+                font-size: 1.2rem !important;
+                font-weight: 700 !important;
+                line-height: 1.45 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
             }
             .card-answer-text {
-                font-size: 1.1rem;
+                font-size: 1.28rem !important;
+                font-weight: 800 !important;
+                line-height: 1.4 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+                color: #1e3a8a !important;
+            }
+            .leitner-action-bar {
+                flex-shrink: 0 !important;
+                padding: 8px 14px 10px 14px !important;
+                gap: 8px !important;
+            }
+            .leitner-rate-btn {
+                padding: 12px 6px !important;
+                border-radius: 12px !important;
+                min-height: 50px !important;
+            }
+            .btn-title {
+                font-size: 0.9rem !important;
+                font-weight: 800 !important;
             }
             .btn-sub {
+                display: block !important;
+                font-size: 0.68rem !important;
+            }
+            .leitner-modal-footer {
+                flex-shrink: 0 !important;
+                padding: 8px 14px !important;
+            }
+            .leitner-nav-btn {
+                padding: 8px 12px !important;
+                font-size: 0.82rem !important;
+            }
+        }
+
+        /* Mobile Landscape Compact Studio Layout (Max Height 550px) */
+        @media (max-height: 550px) and (orientation: landscape) {
+            .leitner-modal-overlay {
+                padding: 0 !important;
+                align-items: stretch !important;
+                justify-content: stretch !important;
+            }
+            .leitner-modal-card {
+                width: 100vw !important;
+                height: 100vh !important;
+                max-width: 100vw !important;
+                max-height: 100vh !important;
+                border-radius: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden !important;
+            }
+            .leitner-modal-header {
+                padding: 3px 12px !important;
+                height: 32px !important;
+                min-height: 32px !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-header-title h3 {
+                font-size: 0.88rem !important;
+            }
+            .leitner-unit-subtitle {
+                display: none !important;
+            }
+            .leitner-teacher-btn {
+                padding: 2px 8px !important;
+                font-size: 0.72rem !important;
+            }
+            .leitner-tools-toggle-btn {
+                display: inline-flex !important;
+                padding: 2px 8px !important;
+                font-size: 0.72rem !important;
+            }
+            .leitner-close-btn {
+                width: 24px !important;
+                height: 24px !important;
+                font-size: 1.1rem !important;
+            }
+            .leitner-tools-drawer {
                 display: none;
+                max-height: 65vh !important;
+                overflow-y: auto !important;
+                flex-shrink: 0 !important;
             }
-            .leitner-stat-pill {
-                padding: 6px 4px;
-                font-size: 0.74rem;
+            .leitner-tools-drawer.expanded {
+                display: block !important;
             }
-            .leitner-stat-pill strong {
-                font-size: 0.88rem;
+            .leitner-card-container {
+                flex: 1 1 auto !important;
+                padding: 4px 12px 2px 12px !important;
+                min-height: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden !important;
+            }
+            .leitner-card {
+                flex: 1 1 auto !important;
+                height: 100% !important;
+                min-height: 0 !important;
+            }
+            .leitner-card-inner {
+                height: 100% !important;
+            }
+            .leitner-card-face {
+                padding: 6px 14px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                height: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .card-meta {
+                margin-bottom: 2px !important;
+            }
+            .qnum-badge, .box-badge {
+                font-size: 0.65rem !important;
+                padding: 2px 6px !important;
+            }
+            .card-question-text {
+                font-size: 0.95rem !important;
+                line-height: 1.25 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+            }
+            .card-answer-text {
+                font-size: 1.02rem !important;
+                line-height: 1.25 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+            }
+            .card-prompt-hint {
+                display: none !important;
+            }
+            .leitner-action-bar {
+                flex-shrink: 0 !important;
+                padding: 3px 12px !important;
+                gap: 6px !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr !important;
+                margin: 0 !important;
+            }
+            .leitner-rate-btn {
+                padding: 3px 6px !important;
+                border-radius: 6px !important;
+                min-height: 32px !important;
+                height: 32px !important;
+                box-sizing: border-box !important;
+            }
+            .btn-title {
+                font-size: 0.78rem !important;
+                font-weight: 800 !important;
+            }
+            .btn-sub {
+                display: none !important;
+            }
+            .leitner-modal-footer {
+                flex-shrink: 0 !important;
+                padding: 2px 12px 3px 12px !important;
+                height: 28px !important;
+                min-height: 28px !important;
+                box-sizing: border-box !important;
+            }
+            .leitner-nav-btn {
+                padding: 2px 8px !important;
+                font-size: 0.7rem !important;
             }
         }
 
@@ -3329,76 +3586,80 @@
                     <p class="leitner-unit-subtitle">Paper 3: Weimar and Nazi Germany, 1918-39 · Key Topic 1: The Weimar Republic</p>
                 </div>
                 <div class="leitner-header-actions">
+                    <button class="leitner-tools-toggle-btn" onclick="toggleLeitnerTools()" id="leitner-tools-btn" title="Toggle Spaced Retrieval Tools &amp; Stats">⚙️ Tools</button>
                     <button class="leitner-teacher-btn" onclick="toggleTeacherMode()" id="teacher-mode-btn" title="Toggle Classroom Projector Display (Shortcut: T)">📽️ Teacher Mode</button>
                     <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
                 </div>
             </div>
 
-            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
-            <div class="leitner-streak-bar">
-                <div class="streak-badge-wrap">
-                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
-                    <div class="streak-text-group">
-                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
-                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+            <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
+            <div id="leitner-tools-drawer" class="leitner-tools-drawer">
+                <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+                <div class="leitner-streak-bar">
+                    <div class="streak-badge-wrap">
+                        <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                        <div class="streak-text-group">
+                            <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                            <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                        </div>
+                    </div>
+                    <div class="streak-heatmap-container">
+                        <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                        <div class="streak-heatmap-days" id="streak-heatmap-days">
+                            <!-- Rendered dynamically by JS -->
+                        </div>
                     </div>
                 </div>
-                <div class="streak-heatmap-container">
-                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
-                    <div class="streak-heatmap-days" id="streak-heatmap-days">
-                        <!-- Rendered dynamically by JS -->
-                    </div>
+
+                <div class="leitner-box-stats">
+                    <button class="leitner-stat-pill box-1" id="stat-box-1" onclick="filterByLeitnerBox(1)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 1 (Needs Work / Daily)">
+                        <span>🔴</span>
+                        <span>Box 1 (Learning):</span>
+                        <strong id="count-box-1">0</strong>
+                    </button>
+                    <button class="leitner-stat-pill box-2" id="stat-box-2" onclick="filterByLeitnerBox(2)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 2 (Review Every 3 Days)">
+                        <span>🟡</span>
+                        <span>Box 2 (Consolidating):</span>
+                        <strong id="count-box-2">0</strong>
+                    </button>
+                    <button class="leitner-stat-pill box-3" id="stat-box-3" onclick="filterByLeitnerBox(3)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 3 (Mastered)">
+                        <span>🟢</span>
+                        <span>Box 3 (Mastered):</span>
+                        <strong id="count-box-3">0</strong>
+                    </button>
+                    <button class="leitner-stat-pill" id="stat-box-all" onclick="filterByLeitnerBox('all')" style="cursor: pointer; border: 1px solid #cbd5e1; background: #f1f5f9; color: #475569;" title="Show all cards in deck">
+                        <span>📚</span>
+                        <span>All Cards</span>
+                    </button>
                 </div>
-            </div>
 
-            <div class="leitner-box-stats">
-                <button class="leitner-stat-pill box-1" id="stat-box-1" onclick="filterByLeitnerBox(1)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 1 (Needs Work / Daily)">
-                    <span>🔴</span>
-                    <span>Box 1 (Learning):</span>
-                    <strong id="count-box-1">0</strong>
-                </button>
-                <button class="leitner-stat-pill box-2" id="stat-box-2" onclick="filterByLeitnerBox(2)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 2 (Review Every 3 Days)">
-                    <span>🟡</span>
-                    <span>Box 2 (Consolidating):</span>
-                    <strong id="count-box-2">0</strong>
-                </button>
-                <button class="leitner-stat-pill box-3" id="stat-box-3" onclick="filterByLeitnerBox(3)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 3 (Mastered)">
-                    <span>🟢</span>
-                    <span>Box 3 (Mastered):</span>
-                    <strong id="count-box-3">0</strong>
-                </button>
-                <button class="leitner-stat-pill" id="stat-box-all" onclick="filterByLeitnerBox('all')" style="cursor: pointer; border: 1px solid #cbd5e1; background: #f1f5f9; color: #475569;" title="Show all cards in deck">
-                    <span>📚</span>
-                    <span>All Cards</span>
-                </button>
-            </div>
-
-            <div class="leitner-filter-row">
-                <label for="leitner-topic-select">Filter Topic:</label>
-                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
-                    <option value="all">All Topics (120 Questions)</option>
-                    <option value="0">Part 1: KT1.1: The Origins of the Republic, 1918–1919</option>
+                <div class="leitner-filter-row">
+                    <label for="leitner-topic-select">Filter Topic:</label>
+                    <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                        <option value="all">All Topics (120 Questions)</option>
+                        <option value="0">Part 1: KT1.1: The Origins of the Republic, 1918–1919</option>
 <option value="1">Part 2: KT1.1: The Origins of the Republic, 1918–1919</option>
 <option value="2">Part 3: KT1.2: Early Challenges to the Republic, 1919–1923</option>
 <option value="3">Part 4: KT1.3: The Recovery of the Republic, 1924–1929</option>
 <option value="4">Part 5: KT1.3: The Recovery of the Republic, 1924–1929</option>
 <option value="5">Part 6: KT1.4: Changes in Society, 1924–1929</option>
-                </select>
-            </div>
+                    </select>
+                </div>
 
-            <!-- Rapid-Fire Classroom Retrieval Timer (Whiteboard / Projector Drill) -->
-            <div class="rapid-fire-timer-bar" id="rapid-fire-bar">
-                <div class="timer-badge-group">
-                    <span class="timer-flame">⏱️</span>
-                    <span class="timer-title">Rapid-Fire Recall:</span>
-                    <span class="timer-countdown" id="timer-countdown-text">15s</span>
-                </div>
-                <div class="timer-progress-track">
-                    <div class="timer-progress-fill" id="timer-progress-fill"></div>
-                </div>
-                <div class="timer-btn-group">
-                    <button class="timer-ctrl-btn" id="timer-toggle-btn" onclick="toggleRapidFireTimer()" title="Start / Pause 15s Timer (Enter)">▶️ Start</button>
-                    <button class="timer-ctrl-btn reset" onclick="resetRapidFireTimer(true)" title="Reset &amp; Start 15s Countdown (Shortcut: R)">🔄 15s (R)</button>
+                <!-- Rapid-Fire Classroom Retrieval Timer (Whiteboard / Projector Drill) -->
+                <div class="rapid-fire-timer-bar" id="rapid-fire-bar">
+                    <div class="timer-badge-group">
+                        <span class="timer-flame">⏱️</span>
+                        <span class="timer-title">Rapid-Fire Recall:</span>
+                        <span class="timer-countdown" id="timer-countdown-text">15s</span>
+                    </div>
+                    <div class="timer-progress-track">
+                        <div class="timer-progress-fill" id="timer-progress-fill"></div>
+                    </div>
+                    <div class="timer-btn-group">
+                        <button class="timer-ctrl-btn" id="timer-toggle-btn" onclick="toggleRapidFireTimer()" title="Start / Pause 15s Timer (Enter)">▶️ Start</button>
+                        <button class="timer-ctrl-btn reset" onclick="resetRapidFireTimer(true)" title="Reset &amp; Start 15s Countdown (Shortcut: R)">🔄 15s (R)</button>
+                    </div>
                 </div>
             </div>
 
@@ -3845,11 +4106,33 @@
       if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
     };
 
+    window.toggleLeitnerTools = function() {
+      const drawer = document.getElementById('leitner-tools-drawer');
+      const btn = document.getElementById('leitner-tools-btn');
+      if (drawer) {
+        drawer.classList.toggle('expanded');
+        const isExp = drawer.classList.contains('expanded');
+        if (btn) {
+          btn.classList.toggle('active', isExp);
+          btn.innerHTML = isExp ? '✖ Tools' : '⚙️ Tools';
+        }
+      }
+    };
+
     window.openLeitnerModal = function() {
       const modal = document.getElementById('leitner-modal');
       if (modal) {
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        const drawer = document.getElementById('leitner-tools-drawer');
+        const btn = document.getElementById('leitner-tools-btn');
+        if (drawer && window.innerWidth <= 768) {
+          drawer.classList.remove('expanded');
+          if (btn) {
+            btn.classList.remove('active');
+            btn.innerHTML = '⚙️ Tools';
+          }
+        }
         loadLeitnerProgress();
         updateStreakAndHeatmap();
         if (window.location.hash.includes('box=1')) {
@@ -3872,6 +4155,50 @@
         }
       }
     };
+
+    // Touch Swipe Gestures for Mobile Practice (Left: Box 1, Up: Box 2, Right: Box 3)
+    (function initTouchGestures() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (!cardEl) return;
+
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+
+      cardEl.addEventListener('touchstart', function(e) {
+        if (e.touches && e.touches.length > 0) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+        }
+      }, { passive: true });
+
+      cardEl.addEventListener('touchend', function(e) {
+        if (e.changedTouches && e.changedTouches.length > 0) {
+          const deltaX = e.changedTouches[0].clientX - touchStartX;
+          const deltaY = e.changedTouches[0].clientY - touchStartY;
+          const elapsedTime = Date.now() - touchStartTime;
+
+          if (elapsedTime < 550) {
+            const absX = Math.abs(deltaX);
+            const absY = Math.abs(deltaY);
+
+            if (absX > 50 && absX > absY * 1.3) {
+              if (deltaX > 0) {
+                // Swiped Right -> Mastered (Box 3)
+                rateCurrentCard(3);
+              } else {
+                // Swiped Left -> Needs Work (Box 1)
+                rateCurrentCard(1);
+              }
+            } else if (deltaY < -45 && absY > absX * 1.3) {
+              // Swiped Upwards -> Got It (Box 2)
+              rateCurrentCard(2);
+            }
+          }
+        }
+      }, { passive: true });
+    })();
 
     window.toggleAllAnswers = function(reveal) {
       const answerEls = document.querySelectorAll('.answer-text');

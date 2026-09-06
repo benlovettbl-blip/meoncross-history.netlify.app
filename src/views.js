@@ -1144,7 +1144,8 @@ export async function renderLessonsView() {
         if (window.jumpToStop) window.jumpToStop(targetStopId);
       }, 180);
     } else {
-      window.scrollTo(0, 0);
+      if (window.scrollToTop) window.scrollToTop(true);
+      else window.scrollTo(0, 0);
     }
   };
 
@@ -1299,7 +1300,8 @@ export function renderIndividualsView() {
     );
   }
 
-  contentArea.scrollTo({ top: 0, behavior: 'smooth' });
+  if (window.scrollToTop) window.scrollToTop(true);
+  else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 export function renderReadingView() {
@@ -1317,7 +1319,8 @@ export function renderReadingView() {
 
   initGuidedReadingTask(contentArea, readingData, state);
 
-  contentArea.scrollTo({ top: 0, behavior: 'smooth' });
+  if (window.scrollToTop) window.scrollToTop(true);
+  else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 export async function renderBookletView() {
@@ -1328,5 +1331,6 @@ export async function renderBookletView() {
   const { renderWorkbooksZone } = await import('./workbooks_zone.js');
   renderWorkbooksZone(contentArea, state.activeUnitData);
 
-  contentArea.scrollTo({ top: 0, behavior: 'smooth' });
+  if (window.scrollToTop) window.scrollToTop(true);
+  else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }
