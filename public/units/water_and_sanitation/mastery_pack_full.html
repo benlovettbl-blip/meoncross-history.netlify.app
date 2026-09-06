@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -3041,6 +3150,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -3134,11 +3260,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_water_and_sanitation_full';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"Why was digging cesspits in the Iron Age a hygienic way to manage waste?","a":"Roundhouse settlements were spread out and temporary pits kept waste away from springs","topic":"How much progress did the Romans make in public health?"},{"id":2,"q":"What technology did Roman engineers use to bring fresh water over miles into British towns?","a":"Stone channels called conduits that utilized the natural pull of gravity","topic":"How much progress did the Romans make in public health?"},{"id":3,"q":"Where did Roman soldiers sit side-by-side over water-flushed latrine channels?","a":"Housesteads Fort on Hadrian's Wall","topic":"How much progress did the Romans make in public health?"},{"id":4,"q":"What did Roman soldiers use to wipe themselves in communal latrines?","a":"A wet sponge attached to the end of a shared wooden stick","topic":"How much progress did the Romans make in public health?"},{"id":5,"q":"Which Emperor ordered the construction of a famous 73-mile defensive wall with fort bathhouses across northern Britain?","a":"Emperor Hadrian","topic":"How much progress did the Romans make in public health?"},{"id":6,"q":"What was the primary purpose of Roman public aqueducts?","a":"To transport clean spring water continuously into towns using gravity","topic":"How much progress did the Romans make in public health?"},{"id":7,"q":"In a Roman town, where did wastewater from public baths and latrines drain?","a":"Into underground stone sewers like the Cloaca Maxima that discharged into local rivers","topic":"How much progress did the Romans make in public health?"},{"id":8,"q":"What did wealthy Romans use to heat their private villas and bathhouses?","a":"A hypocaust system circulating hot furnace air beneath raised floors","topic":"How much progress did the Romans make in public health?"},{"id":9,"q":"Why did the Romans build public bathhouses in almost every military fort and town?","a":"Because bathing, exercise, and socialising were central to Roman civic culture and soldier fitness","topic":"How much progress did the Romans make in public health?"},{"id":10,"q":"What instrument did Romans use to clean their skin in the bathhouse instead of soap?","a":"A metal scraper called a strigil used with olive oil","topic":"How much progress did the Romans make in public health?"},{"id":11,"q":"What happened to Roman water and sanitation infrastructure after the legions left Britain in 410 AD?","a":"Town populations collapsed and stone aqueducts fell into decay and disrepair","topic":"How much progress did the Romans make in public health?"},{"id":12,"q":"Why did Iron Age Britons have fewer sanitation crises before the Roman invasion?","a":"Their dispersed, small population meant waste did not build up enough to contaminate water supplies","topic":"How much progress did the Romans make in public health?"},{"id":13,"q":"What material was commonly used by Roman engineers to line water conduits and cisterns to make them watertight?","a":"Waterproof hydraulic mortar (opus signinum)","topic":"How much progress did the Romans make in public health?"},{"id":14,"q":"What was the caldarium inside a Roman public bathhouse?","a":"The hot, steamy bathing room","topic":"How much progress did the Romans make in public health?"},{"id":15,"q":"Who paid for the construction of most public bathhouses and fountains in Roman Britain?","a":"Wealthy local magistrates and benefactors seeking political status","topic":"How much progress did the Romans make in public health?"},{"id":16,"q":"What health hazard was unwittingly introduced by Roman plumbing in Britain?","a":"Lead poisoning from lead water pipes and cooking vessels","topic":"How much progress did the Romans make in public health?"},{"id":17,"q":"What does AD stand for in historical dates?","a":"Anno Domini (the year of our Lord).","topic":"How much progress did the Romans make in public health?"},{"id":18,"q":"What century is the year 1066 in?","a":"The 11th Century.","topic":"How much progress did the Romans make in public health?"},{"id":19,"q":"Which ancient empire conquered Britain and built Hadrian's Wall?","a":"The Romans.","topic":"How much progress did the Romans make in public health?"},{"id":20,"q":"What does the word 'Sanitation' mean?","a":"Conditions relating to public health, especially clean drinking water and sewage disposal.","topic":"How much progress did the Romans make in public health?"},{"id":21,"q":"What is a primary source?","a":"Evidence that was created at the time of the event.","topic":"How much progress did the Romans make in public health?"},{"id":22,"q":"What did Roman bathers experience inside a bathhouse like Bearsden?","a":"Washing in sequence through cold, warm, and hot rooms","topic":"Why did public health decline during the Middle Ages?"},{"id":23,"q":"Why did medieval villages like Wharram Percy avoid major public health crises despite using simple cesspits?","a":"The low population density meant waste did not build up enough to contaminate water supplies","topic":"Why did public health decline during the Middle Ages?"},{"id":24,"q":"On the twelfth-century plans of Canterbury Priory, what did the red lines represent?","a":"Pipes carrying dirty waste water away to flush the toilets","topic":"Why did public health decline during the Middle Ages?"},{"id":25,"q":"How did poorer townspeople get their fresh water if they did not own a private well?","a":"They bought it from water sellers who hauled river water in barrels","topic":"Why did public health decline during the Middle Ages?"},{"id":26,"q":"Why were medieval Christian monasteries cleaner and healthier than towns?","a":"Monasteries were carefully sited near fresh rivers with dedicated leats, fresh-water lavatoria, and isolated infirmaries","topic":"Why did public health decline during the Middle Ages?"},{"id":27,"q":"What was the primary medieval theory used to explain why diseases like the Black Death spread?","a":"Miasma Theory (bad air and poisonous stenches)","topic":"Why did public health decline during the Middle Ages?"},{"id":28,"q":"What medieval occupation involved emptying city cesspits and privy vaults?","a":"Gongfermer (or Nightman)","topic":"Why did public health decline during the Middle Ages?"},{"id":29,"q":"In what year did the catastrophic Black Death first arrive in Britain through the Dorset port of Melcombe Regis?","a":"1348","topic":"Why did public health decline during the Middle Ages?"},{"id":30,"q":"How did medieval town councils like London attempt to combat street filth?","a":"By passing municipal laws fining residents who threw waste into the street and appointing rakers","topic":"Why did public health decline during the Middle Ages?"},{"id":31,"q":"Where did most ordinary medieval townspeople obtain their drinking water?","a":"From communal public conduits, town wells, or local water carriers called cobs","topic":"Why did public health decline during the Middle Ages?"},{"id":32,"q":"What did medieval people believe caused the Black Death besides miasma?","a":"God’s wrath punishing humanity for sin, and planetary alignments","topic":"Why did public health decline during the Middle Ages?"},{"id":33,"q":"Why did medieval butchers create a major public health nuisance in towns?","a":"They dumped animal blood, entrails, and offal into public streets and rivers like the Fleet","topic":"Why did public health decline during the Middle Ages?"},{"id":34,"q":"What was a medieval \"privy\"?","a":"A basic outhouse toilet built over a cesspit or watercourse","topic":"Why did public health decline during the Middle Ages?"},{"id":35,"q":"What proportion of the British population is estimated to have died during the 1348–1349 Black Death?","a":"Between 30% and 50%","topic":"Why did public health decline during the Middle Ages?"},{"id":36,"q":"What did the 1388 Parliament of Cambridge attempt to do regarding public health?","a":"It passed an Act forbidding the dumping of dung, offal, and animal entrails into ditches and rivers","topic":"Why did public health decline during the Middle Ages?"},{"id":37,"q":"Why did the Great Conduit in London (built in 1245) become famous?","a":"It carried clean spring water from Tyburn into Cheapside through lead pipes","topic":"Why did public health decline during the Middle Ages?"},{"id":38,"q":"How did the Romans transport massive amounts of fresh water?","a":"Aqueducts.","topic":"Why did public health decline during the Middle Ages?"},{"id":39,"q":"What did the Romans use to flush their public toilets?","a":"Running water from the aqueducts and bathhouses.","topic":"Why did public health decline during the Middle Ages?"},{"id":40,"q":"Why did the Roman army need to stay healthy?","a":"To march and fight efficiently across the Empire.","topic":"Why did public health decline during the Middle Ages?"},{"id":41,"q":"What did the Romans build in their forts to treat sick soldiers?","a":"Hospitals (Valetudinariums).","topic":"Why did public health decline during the Middle Ages?"},{"id":42,"q":"Did the Romans understand bacteria?","a":"No, they just knew bad smells or swamps were linked to illness.","topic":"Why did public health decline during the Middle Ages?"},{"id":43,"q":"What material did archaeologists discover in medieval cesspits that shows how villagers wiped themselves?","a":"Wild moss","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":44,"q":"Why did medieval 'gongfermers' perform their job exclusively under the cover of darkness?","a":"To avoid disrupting the busy town streets with terrible smells and waste carts","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":45,"q":"Why did London's sanitation problems get worse during the Early Modern period?","a":"The population grew rapidly, putting too much pressure on crowded town systems","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":46,"q":"Which famous seventeenth-century Londoner wrote about his cellar being flooded by his neighbor's toilet waste?","a":"Samuel Pepys","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":47,"q":"What devastating disease struck London in 1665, killing an estimated 100,000 people?","a":"The Great Plague","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":48,"q":"What preventative measure did London authorities take during the 1665 Great Plague when someone fell ill?","a":"They quarantined the entire household inside, painting a red cross on the door with \"Lord have mercy upon us\"","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":49,"q":"What was Sir John Harington’s 1596 invention called in his satirical book?","a":"The Metamorphosis of Ajax (a pun on \"a jakes\", meaning a privy)","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":50,"q":"Why did London’s rapid population growth between 1500 and 1700 make public health worse?","a":"The city expanded into swampy marshes with no building regulations, overcrowding timber houses and overflowing cesspits","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":51,"q":"What did early modern Londoners believe smoking tobacco would do during the 1665 plague?","a":"Ward off poisonous miasmas and prevent plague infection","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":52,"q":"Who were \"searchers of the dead\" during early modern plague outbreaks?","a":"Elderly parish women appointed to inspect corpses and report the official cause of death","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":53,"q":"What happened to London’s hygiene and disease levels after the Great Fire of 1666?","a":"The fire destroyed thousands of rat-infested wooden tenements, and rebuilt streets were wider and brick-built","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":54,"q":"What were early modern \"Bills of Mortality\"?","a":"Weekly published parish statistics listing total deaths and their recorded causes","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":55,"q":"What was the Great Conduit water system supplemented by in London in 1613?","a":"Sir Hugh Myddelton’s New River project, bringing fresh Hertfordshire spring water along a 40-mile canal","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":56,"q":"Why were early modern London cesspits often built directly underneath house floorboards?","a":"Because urban land was extremely scarce and houses had no gardens or backyards","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":57,"q":"What did early modern physicians wear to protect themselves when examining plague victims?","a":"Beaked leather masks filled with fragrant dried herbs, long waxed coats, and wide-brimmed hats","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":58,"q":"How did wealthy early modern citizens protect their drinking water compared to the poor?","a":"They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":59,"q":"Why were medieval towns dangerous for public health?","a":"They were overcrowded, with cesspits leaking into drinking wells.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":60,"q":"What was a Gongfermer?","a":"A medieval worker who cleared human waste from cesspits at night.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":61,"q":"Why did medieval monks build clean water systems?","a":"They believed cleanliness brought them closer to God.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":62,"q":"What is a cesspit?","a":"A pit for the disposal of liquid waste and sewage.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":63,"q":"What did King Edward III order in 1357?","a":"The removal of filth from London's streets to prevent sickness.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":64,"q":"Who invented the first water closet (flushing toilet) in Britain in 1596?","a":"Sir John Harington","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":65,"q":"Why was the 1596 flushing toilet not used by ordinary citizens?","a":"Houses lacked running piped water and connections to street sewers","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":66,"q":"What was a 'water seller's' job in an Early Modern town?","a":"Transporting river water in large barrels on horseback to sell to homes","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":67,"q":"By how much did Britain's population grow during the century of industrialisation (1750–1850)?","a":"It skyrocketed from 6 million to 21 million.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":68,"q":"In what year did Asiatic Cholera first arrive on British shores in the port of Sunderland?","a":"1831","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":69,"q":"What nickname did the terrified Victorian public give to cholera because of its horrifying physical symptoms?","a":"King Cholera (or the Blue Death)","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":70,"q":"What was the central argument of Edwin Chadwick’s landmark 1842 Sanitary Report?","a":"That filthy living conditions caused disease, which created poverty, burdening taxpayers with higher poor rates","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":71,"q":"Why were Victorian \"back-to-back\" houses so hazardous to public health?","a":"They shared common side and rear walls with no through-ventilation, and multiple families shared a single privy in an unpaved court","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":72,"q":"What does the economic and political philosophy of \"laissez-faire\" mean?","a":"A policy of non-intervention where government leaves trade and public life to private individuals","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":73,"q":"Why did ratepayers (local taxpayers and landlords) vigorously oppose Chadwick’s sanitation proposals in the 1840s?","a":"They did not want their local taxes increased to pay for expensive sewer pipes and drainage","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":74,"q":"What was the fatal flaw of the Public Health Act of 1848?","a":"It was completely voluntary: councils were only forced to act if the death rate exceeded 23 per 1,000","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":75,"q":"How quickly could cholera kill a previously healthy Victorian adult?","a":"Within 12 to 24 hours of violent diarrhoea, vomiting, and extreme dehydration","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":76,"q":"What was the average life expectancy for a working-class labourer in industrial Manchester in the 1840s?","a":"Under 20 years (approx. 17–19 years)","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":77,"q":"Where did human waste go when private flush water closets were installed in wealthy Victorian homes before 1855?","a":"Directly into existing cesspools underneath houses or into street gutters flowing into the Thames","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":78,"q":"Why was the 1848 General Board of Health disbanded in 1854?","a":"Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":79,"q":"What was a \"court\" or \"yard\" in an early 19th-century industrial town?","a":"A narrow, enclosed dead-end alley packed with back-to-back dwellings and shared privies","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":80,"q":"Why did rivers in early modern towns become open sewers?","a":"Population growth outpaced the ability to dispose of waste.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":81,"q":"Who invented a working flushing toilet in 1596?","a":"John Harington.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":82,"q":"Why did Harington's flushing toilet fail to catch on for 250 years?","a":"There were no underground sewers to connect it to.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":83,"q":"What does 'urbanisation' mean?","a":"The increase in the proportion of people living in towns and cities.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":84,"q":"How did early modern townspeople get their drinking water?","a":"Buying it from water sellers or sharing local pumps.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":85,"q":"How did working-class families living in terraced yards usually obtain their water?","a":"From a shared pump in the street or yard that only ran for a few hours.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":86,"q":"What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?","a":"Cholera","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":87,"q":"What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?","a":"Miasma Theory (the belief that disease is spread by bad smells)","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":88,"q":"Why did cesspits under shared yard privies frequently overflow in industrial cities?","a":"Landlords refused to pay for them to be emptied, and they were not connected to sewers.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":89,"q":"What famous environmental crisis in London during the blazing summer of 1858 forced politicians to act?","a":"The Great Stink of the River Thames","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":90,"q":"How did politicians in the Houses of Parliament try to cope with the foul fumes of the Great Stink in 1858?","a":"They soaked parliamentary window curtains in chloride of lime to neutralize the stench","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":91,"q":"Who was appointed chief engineer of the Metropolitan Board of Works to design London’s new sewer system?","a":"Sir Joseph Bazalgette","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":92,"q":"How did Bazalgette’s intercepting sewer system solve London’s sewage crisis?","a":"By building 82 miles of underground brick tunnels parallel to the Thames to carry sewage east of London","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":93,"q":"What remarkable design decision did Bazalgette make when sizing his underground sewer tunnels?","a":"He calculated the maximum flow needed, and then doubled the diameter to handle future population growth","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":94,"q":"What type of mortar did Bazalgette use to ensure the brick sewers would not decay from water and waste acids?","a":"Portland cement, tested rigorously for strength and waterproof durability","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":95,"q":"What major medical breakthrough in 1861 by Louis Pasteur finally discredited the Miasma Theory?","a":"The publication of Germ Theory, proving microbes cause disease and fermentation","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":96,"q":"Why is the Public Health Act of 1875 considered a massive turning point in British history?","a":"It ended laissez-faire by making it compulsory for local councils to provide clean water, pave streets, and inspect drains","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":97,"q":"What grand public embankments were built in London on top of Bazalgette’s low-level intercepting sewers?","a":"The Victoria, Albert, and Chelsea Embankments along the Thames","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":98,"q":"When cholera struck London for the final time in 1866, what did the health statistics reveal about Bazalgette’s sewers?","a":"Areas connected to Bazalgette’s new sewers suffered virtually no cholera deaths, proving clean drainage saved lives","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":99,"q":"What Victorian engineering landmarks were constructed by Bazalgette to pump sewage up to river discharge levels?","a":"The Abbey Mills and Crossness Pumping Stations, nicknamed \"Cathedrals of Sewage\"","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":100,"q":"What political change in 1867 helped encourage Parliament to pass stronger public health laws like the 1875 Act?","a":"The Second Reform Act, which gave the vote to urban working-class men","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":101,"q":"What was the 'laissez-faire' attitude?","a":"The government's belief that it shouldn't interfere in people's daily lives or public health.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":102,"q":"What terrifying waterborne disease first struck Britain in 1831?","a":"Cholera.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":103,"q":"What scientific theory did doctors wrongly believe caused disease?","a":"Miasma Theory (bad smells).","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":104,"q":"How did Dr. John Snow prove cholera was waterborne?","a":"By mapping the deaths around the Broad Street water pump.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":105,"q":"Who published a damning report on sanitary conditions in 1842?","a":"Edwin Chadwick.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":106,"q":"What was Dr John Snow’s revolutionary hypothesis regarding how cholera was transmitted in 1849?","a":"It was a waterborne disease transmitted by swallowing invisible contaminated water or food","topic":"End of Unit Assessment: Cholera Investigation"},{"id":107,"q":"During the September 1854 cholera outbreak in Soho, what specific piece of evidence did John Snow create to prove his theory?","a":"A street map plotting each cholera death as a black bar outside houses near the Broad Street pump","topic":"End of Unit Assessment: Cholera Investigation"},{"id":108,"q":"What did John Snow convince the parish Board of Guardians to do on 8 September 1854 to halt the Soho epidemic?","a":"Remove the handle from the Broad Street water pump so residents could not drink the water","topic":"End of Unit Assessment: Cholera Investigation"},{"id":109,"q":"What was discovered when inspectors later excavated the Broad Street pump well?","a":"A cracked brick cesspool from house number 40 was leaking baby cholera waste directly into the well water","topic":"End of Unit Assessment: Cholera Investigation"},{"id":110,"q":"Why were workers at the nearby Broad Street brewery completely unaffected by the 1854 cholera epidemic?","a":"They were allowed free beer and had their own private deep well on site, so they never drank from the Broad Street pump","topic":"End of Unit Assessment: Cholera Investigation"},{"id":111,"q":"Why did the British medical establishment and General Board of Health initially reject John Snow’s discovery?","a":"Because powerful authorities like Edwin Chadwick and Florence Nightingale were deeply committed to Miasma Theory","topic":"End of Unit Assessment: Cholera Investigation"},{"id":112,"q":"What German bacteriologist finally isolated and proved the cholera bacterium (Vibrio cholerae) under a microscope in 1883?","a":"Robert Koch","topic":"End of Unit Assessment: Cholera Investigation"},{"id":113,"q":"How did John Snow use the Lambeth Water Company versus Southwark & Vauxhall Water Company data to prove his waterborne theory?","a":"He compared customers on the same streets: those drinking from Lambeth (intake moved upriver) had vastly lower deaths than those drinking Southwark sewage","topic":"End of Unit Assessment: Cholera Investigation"},{"id":114,"q":"Which historical period made the LEAST progress in public health engineering in Britain?","a":"The Early Middle Ages (500–1000 AD)","topic":"End of Unit Assessment: Cholera Investigation"},{"id":115,"q":"What was the primary obstacle preventing earlier public health reform throughout British history?","a":"Laissez-faire government attitudes, high costs for ratepayers, and stubborn adherence to Miasma Theory","topic":"End of Unit Assessment: Cholera Investigation"},{"id":116,"q":"Which of the following was a key feature of the compulsory Public Health Act of 1875?","a":"Every local council was legally required to appoint a Medical Officer of Health and a Sanitary Inspector","topic":"End of Unit Assessment: Cholera Investigation"},{"id":117,"q":"How did Roman public health differ fundamentally from Victorian public health?","a":"Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws","topic":"End of Unit Assessment: Cholera Investigation"},{"id":118,"q":"What role did Edwin Chadwick play in the story of British public health?","a":"He demonstrated statistically that poor sanitation caused illness and poverty, campaigning for the 1848 Public Health Act","topic":"End of Unit Assessment: Cholera Investigation"},{"id":119,"q":"What was the significance of Joseph Bazalgette’s intercepting sewer system for the city of London?","a":"It eradicated waterborne cholera from London and created a clean urban drainage infrastructure that still operates today","topic":"End of Unit Assessment: Cholera Investigation"},{"id":120,"q":"Why did John Snow’s investigation become famous as a founding moment of modern medical science?","a":"It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics","topic":"End of Unit Assessment: Cholera Investigation"},{"id":121,"q":"Looking back across all six lessons, why was progress in British public health NOT a simple straight line of improvement?","a":"Because Roman sanitary engineering collapsed in the Middle Ages, urbanisation overwhelmed early modern towns, and scientific understanding was delayed by false theories like miasma","topic":"End of Unit Assessment: Cholera Investigation"},{"id":122,"q":"What Roman engineering structure carried fresh water across valleys into towns?","a":"An aqueduct, using the pull of gravity.","topic":"End of Unit Assessment: Cholera Investigation"},{"id":123,"q":"What was a medieval worker who cleared cesspits at night called?","a":"A gongfermer (or nightman).","topic":"End of Unit Assessment: Cholera Investigation"},{"id":124,"q":"What incorrect theory claimed that foul smells and poisonous air caused disease?","a":"The Miasma Theory.","topic":"End of Unit Assessment: Cholera Investigation"},{"id":125,"q":"In what year did Asiatic cholera first strike Britain?","a":"1831 (in Sunderland).","topic":"End of Unit Assessment: Cholera Investigation"},{"id":126,"q":"What 1858 environmental crisis forced Parliament to fund London’s new sewer system?","a":"The Great Stink of the River Thames.","topic":"End of Unit Assessment: Cholera Investigation"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -3215,6 +3432,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -3222,6 +3440,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -3288,6 +3507,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -3325,6 +3545,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -2785,6 +2894,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -2877,11 +3003,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_medieval';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"Who was the Ancient Greek physician credited with creating the Theory of the Four Humours?","a":"Hippocrates","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":2,"q":"In the Theory of the Four Humours, which humour was associated with the season of Autumn, the element of Earth, and the qualities of cold and dry?","a":"Black bile","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":3,"q":"Which humour was linked to the temperament 'sanguine' and had the qualities of being hot and wet?","a":"Blood","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":4,"q":"How did the 2nd-century Roman physician Galen develop Hippocrates' original ideas on the humours?","a":"By creating the Theory of Opposites to treat humoural imbalances with their opposite qualities","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":5,"q":"Why did the medieval Christian Church so strongly support and promote Galen's medical ideas?","a":"Because his writings argued the body was perfectly designed by a single 'Creator', fitting Christian theology","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":6,"q":"What was the name of the mid-13th-century medical textbook collection used by students in European universities?","a":"The Articella","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":7,"q":"According to the medieval Church's teachings, why did God send diseases like leprosy to humans?","a":"As a punishment for sins or as a test of an individual's religious faith","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":8,"q":"During the medieval period, what did physicians use to determine the best time for treatment based on the positions of the planets?","a":"An Almanac (astrology chart)","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":9,"q":"In medieval England, an unusual planetary alignment of Mars, Jupiter, and Saturn in the year 1345 was widely blamed for causing which disaster?","a":"The arrival of the Black Death","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":10,"q":"Which theory suggested that breathing in 'bad air' filled with harmful fumes from swamps, corpses, or rotting matter corrupted the humours?","a":"The Miasma theory","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":11,"q":"Why did the Church strictly discourage and prevent medical students and physicians from performing human dissections?","a":"Because Church doctrine taught that the physical body needed to be buried whole to go to heaven","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":12,"q":"In the Theory of the Four Humours, which element and qualities were associated with Phlegm?","a":"Water; cold and wet","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":13,"q":"What was the primary purpose of a medieval physician examining a patient's urine?","a":"To check the internal balance of the patient's four humours","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":14,"q":"Which three characteristics of a urine sample did medieval physicians check on a urine chart wheel?","a":"Color, thickness, and smell","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":15,"q":"Which ancient Greek philosopher's work on logic and observation was studied by medieval medical students alongside the works of Galen?","a":"Aristotle","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":16,"q":"In the context of the Theory of Opposites, how would a medieval physician treat a patient who had a cold, wet fever (excess phlegm)?","a":"By giving them hot, dry foods or spices like hot peppers","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":17,"q":"How did the Church's total control over education and book production affect medical progress in the Middle Ages?","a":"It hindered progress by preserving and copying only classical texts, preventing challenge to Galen","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":18,"q":"What was the 'Vademecum' carried by medieval physicians?","a":"A handbook of medical diagrams and charts used during diagnosis","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":19,"q":"In the Theory of the Four Humours, the liver was associated with which humour?","a":"Yellow bile (choler)","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":20,"q":"How was leprosy viewed by the medieval Church and population?","a":"As a terrifying skin disease sent as a direct punishment from God for sins","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":21,"q":"What does the term 'public health' refer to?","a":"The health of the population as a whole, especially as monitored and regulated by the state.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":22,"q":"Name one ancient civilization that heavily influenced medieval medicine.","a":"The Ancient Greeks.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":23,"q":"Which Greek physician originally created the Theory of the Four Humours?","a":"Hippocrates.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":24,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":25,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":26,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":27,"q":"How did the medieval Church explain the cause of disease?","a":"God sent disease as a punishment for sin or to test faith.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":28,"q":"Why did the medieval Church promote the ideas of Galen?","a":"Galen's ideas fit Christian beliefs because he argued the body was created by a single Creator.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":29,"q":"Explain how astrology was used in medieval medicine.","a":"Physicians used star charts and planetary alignments to diagnose illness and plan treatments.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":30,"q":"What was the 'urine chart' used for in medieval diagnosis?","a":"To check the colour, taste, and smell of urine to identify humour imbalances.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":31,"q":"What was the most common medical method used to balance an excess of the blood humour in medieval England?","a":"Bloodletting (phlebotomy)","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":32,"q":"Which of the following was a standard method of bloodletting where a vein was opened, usually in the arm, using a sharp tool called a fleam?","a":"Venesection","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":33,"q":"In what medical scenario would a medieval physician choose leeching (using leeches) over venesection?","a":"For patients who were too young, elderly, or physically weak to withstand a vein being opened","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":34,"q":"During the cupping method of bloodletting, what was the purpose of heating the glass or metal cup before placing it on the patient's skin?","a":"To create a vacuum that would pull blood to the surface of the skin","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":35,"q":"What was the medical purpose of 'purging' a patient in medieval medicine?","a":"To expel excess or corrupt humours from the digestive tract using emetics or laxatives","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":36,"q":"What was a 'clyster' in medieval medicine?","a":"An enema used to clear the bowels, often containing honey, water, and herbal mixtures","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":37,"q":"What was the 'Regimen Sanitatis'?","a":"A personalized set of rules regarding diet, exercise, sleep, and hygiene written by a physician to help a patient prevent illness","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":38,"q":"Which of the following was a highly popular, complex medieval remedy containing up to 70 herbs, spices, and ingredients like opium and snake flesh, used as a universal antidote?","a":"Theriaca","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":39,"q":"How did medieval people attempt to prevent miasma from entering their bodies or homes?","a":"By carrying sweet-smelling herbs, burning incense, or carrying a pomander","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":40,"q":"Why did medieval physicians often recommend bathing in warm water as a treatment?","a":"To help sweat out excess humours, open the pores, and dissolve impurities in the body","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":41,"q":"If a patient was suffering from a hot and dry illness, such as a fever, how would a physician apply the Theory of Opposites to treat them?","a":"By prescribing cool, wet remedies, such as giving them cucumbers or cold baths","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":42,"q":"What religious act was commonly undertaken by sick medieval people to show repentance for their sins and beg God for a miraculous physical cure?","a":"Going on a pilgrimage to a holy shrine containing saintly relics","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":43,"q":"What did the medieval Church teach was the spiritual value of enduring physical pain and illness?","a":"It was a way to cleanse the soul of sin and shorten a person's time in Purgatory","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":44,"q":"Which herbal preparation involved crushing medicinal plants and applying them directly to the skin to draw out poisons or ease pain?","a":"A poultice","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":45,"q":"Why did public baths ('stewes') in England begin to close down toward the end of the medieval period?","a":"Because they became associated with moral corruption, prostitution, and the spread of diseases like leprosy","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":46,"q":"In the context of humoural medicine, why did physicians pay close attention to what patients ate and drank?","a":"Because different foods had specific qualities (hot, cold, wet, dry) that directly influenced and balanced the humours","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":47,"q":"What was the primary method of purging a patient if the physician believed the excess humour was located in the upper stomach?","a":"Administering an emetic to induce vomiting","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":48,"q":"What spiritual practice did extreme religious groups perform publicly during crises to appease God's anger and prevent disease?","a":"Flagellation (whipping themselves to show repentance for sin)","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":49,"q":"Which of these was a common laxative plant used in medieval England to purge the bowels?","a":"Senna","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":50,"q":"What was the purpose of keeping a piece of amber or gold near a patient suffering from certain illnesses?","a":"To protect the patient through sympathetic magic or transference, believing the gold would draw out the disease","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":51,"q":"Which medical practitioner in medieval England attended university for up to ten years, was licensed to diagnose illness, but rarely carried out physical treatment himself?","a":"A university-trained physician","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":52,"q":"Which group of medieval medical practitioners mixed herbal remedies, sold spices, and were often viewed as a cheaper alternative to expensive physicians?","a":"Apothecaries","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":53,"q":"What training route did medieval barber-surgeons take to learn their craft, such as performing amputations or pulling teeth?","a":"Serving a practical apprenticeship under an experienced master in a guild","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":54,"q":"Why did the medieval Catholic Church strictly ban monks and priests from performing surgeries that involved shedding blood?","a":"Because spilling blood was seen as incompatible with a holy, spiritual office","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":55,"q":"In a typical medieval hospital run by the Church, what was the primary focus of the monastic staff?","a":"Providing basic physical care, warmth, food, and spiritual preparation for the soul","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":56,"q":"Which of the following groups of patients would be systematically turned away and rejected from entering a medieval charity hospital?","a":"Infectious people, pregnant women, and the mentally ill","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":57,"q":"Why did many medieval hospitals have their chapel positioned at the very center of the ward, visible from all patient beds?","a":"To ensure patients could observe and participate in daily holy Mass from their beds, prioritizing spiritual healing","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":58,"q":"In medieval England, who was responsible for providing the vast majority of daily medical care and herbal treatments to the sick?","a":"Women in the home, such as mothers, wives, and local wise women","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":59,"q":"Which of the following was a manual surgical task that a medieval barber-surgeon would regularly perform?","a":"Trepanning the skull or setting fractured limbs","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":60,"q":"Why were university-trained physicians so rarely employed or seen in medieval England?","a":"Because they were extremely expensive and their services were limited to the wealthy and royalty","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":61,"q":"What was the main diagnostic tool a medieval physician used at a patient's bedside before consulting their books?","a":"An inspection of the patient's pulse and urine sample","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":62,"q":"How did apothecaries typically acquire their knowledge of herbs, spices, and drug preparation?","a":"Through hands-on experience, trade networks, and passing down secrets from father to son","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":63,"q":"Why did medieval physicians rarely touch or physically examine their patients during a consultation?","a":"Because they believed medical knowledge was a purely intellectual, book-based science of logical observation","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":64,"q":"Which of these ingredients was commonly grown in a medieval home garden and used by women to treat basic coughs and chest ailments?","a":"Mint and chamomile","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":65,"q":"How did the Guild of Barber-Surgeons regulate the standard of surgery in medieval towns?","a":"By monitoring apprenticeships, inspecting workshops, and punishing unlicensed or dangerous practitioners","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":66,"q":"What was a major limitation of a medieval apothecary's remedies?","a":"They often mixed ingredients based on astrological alignments or supernatural properties rather than proven clinical trial","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":67,"q":"Approximately how many charity hospitals existed in medieval England by the year 1400?","a":"Over 1,100","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":68,"q":"In what way did medieval charity hospitals contribute to public health?","a":"By providing a clean, warm environment and nutritious food to help vulnerable people recover naturally","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":69,"q":"What did medieval surgeons use to try and dull the pain of an amputation, despite the extreme risk of killing the patient?","a":"Herbal mixtures containing highly toxic hemlock, opium, or mandrake","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":70,"q":"Why did the medieval medical community believe that academic physicians were of a higher social and intellectual standing than barber-surgeons?","a":"Because physicians were university-educated and understood the logical theories of Galen, whereas surgeons were considered manual craftsmen who worked with their hands","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":71,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":72,"q":"How did the medieval Church explain the cause of disease?","a":"God sent disease as a punishment for sin or to test faith.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":73,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":74,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":75,"q":"Explain how astrology was used in medieval medicine.","a":"Physicians used star charts and planetary alignments to diagnose illness and plan treatments.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":76,"q":"What was the 'urine chart' used for in medieval diagnosis?","a":"To check the colour, taste, and smell of urine to identify humour imbalances.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":77,"q":"What does the term 'public health' refer to?","a":"The health of the population as a whole, especially as monitored and regulated by the state.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":78,"q":"Name one ancient civilization that heavily influenced medieval medicine.","a":"The Ancient Greeks.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":79,"q":"Under the Theory of Opposites, how would a fever (hot/dry) be treated?","a":"With cold treatments like cucumber or cool baths.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":80,"q":"Which Greek physician originally created the Theory of the Four Humours?","a":"Hippocrates.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":81,"q":"In which year did the Black Death first arrive on the shores of England?","a":"1348","topic":"KT1.3: How did people respond to the Black Death?"},{"id":82,"q":"What is the actual scientific cause of the Black Death, and how was it primarily spread during the Middle Ages?","a":"Yersinia pestis bacteria, carried in the digestive systems of fleas on black rats","topic":"KT1.3: How did people respond to the Black Death?"},{"id":83,"q":"Which astrological event in the year 1345 was widely blamed by medieval scholars for causing the Black Death?","a":"An unusual alignment of the planets Mars, Jupiter, and Saturn","topic":"KT1.3: How did people respond to the Black Death?"},{"id":84,"q":"What was the name of the hard, painful, pus-filled swellings that appeared in the armpits and groin of Black Death victims?","a":"Buboes","topic":"KT1.3: How did people respond to the Black Death?"},{"id":85,"q":"Which lung-based variant of the plague was spread directly through coughing and sneezing, was 100% fatal, and killed victims much faster?","a":"Pneumonic plague","topic":"KT1.3: How did people respond to the Black Death?"},{"id":86,"q":"Why did the religious groups known as 'flagellants' whip themselves publicly in the streets of London?","a":"To show God they were sorry for their sins and beg Him to stop the plague","topic":"KT1.3: How did people respond to the Black Death?"},{"id":87,"q":"What natural disaster did medieval people believe had cracked open the earth, releasing the poisonous fumes (miasma) that caused the plague?","a":"A volcanic eruption or earthquake","topic":"KT1.3: How did people respond to the Black Death?"},{"id":88,"q":"Which French physician to the Pope famously advised people to 'Go quickly, go far, and return slowly' to survive the Black Death?","a":"Guy de Chauliac","topic":"KT1.3: How did people respond to the Black Death?"},{"id":89,"q":"Under the local quarantine rules introduced during the Black Death, how long were travelers new to an area forced to stay away from others?","a":"40 days","topic":"KT1.3: How did people respond to the Black Death?"},{"id":90,"q":"Why did local authorities in some medieval towns deliberately stop sweeping and cleaning the streets during the Black Death?","a":"Because they believed the foul stench of rotting waste would drive away the plague miasma","topic":"KT1.3: How did people respond to the Black Death?"},{"id":91,"q":"Why were medieval local governments largely unsuccessful in fully enforcing quarantine laws during the 1348 epidemic?","a":"Because they lacked power, meaning the rich moved freely and the Church ran services as normal","topic":"KT1.3: How did people respond to the Black Death?"},{"id":92,"q":"Which traditional treatment did medieval physicians try on Black Death patients that actually made them die more quickly?","a":"Bleeding and purging","topic":"KT1.3: How did people respond to the Black Death?"},{"id":93,"q":"Which treatment occasionally allowed a Black Death patient to survive if it was done successfully by a barber-surgeon?","a":"Cutting open (lancing) the buboes to drain the pus","topic":"KT1.3: How did people respond to the Black Death?"},{"id":94,"q":"Approximately what percentage of the English population is estimated to have died during the Black Death epidemic of 1348-49?","a":"Between 30% and 50% (nearly one-third to one-half)","topic":"KT1.3: How did people respond to the Black Death?"},{"id":95,"q":"In which year did King Edward III write his famous letter to the Mayor of London complaining about the filthy, death-carrying air of the city?","a":"1349","topic":"KT1.3: How did people respond to the Black Death?"},{"id":96,"q":"Which popular, spice-based medieval medicine containing up to 70 ingredients (including opium) was prescribed as an antidote during the Black Death?","a":"Theriaca","topic":"KT1.3: How did people respond to the Black Death?"},{"id":97,"q":"Which of the following was a common way people tried to prevent 'bad air' (miasma) from entering their bodies during the Black Death?","a":"Carrying sweet-smelling herbs, flowers, or spices","topic":"KT1.3: How did people respond to the Black Death?"},{"id":98,"q":"Why is it historically incorrect to write about 'searchers', 'red crosses on doors', or 'killing 40,000 dogs' in a GCSE answer about the 1348 Black Death?","a":"Because those specific administrative preventions occurred only during the 1665 Great Plague","topic":"KT1.3: How did people respond to the Black Death?"},{"id":99,"q":"Why did the plague return to England periodically every 10 to 20 years after the first 1348 outbreak?","a":"Because unhygienic, crowded, and rat-infested living conditions remained completely unchanged","topic":"KT1.3: How did people respond to the Black Death?"},{"id":100,"q":"Where do historians believe the Black Death first broke out before traveling along trade routes to Sicily, Europe, and finally England?","a":"The Far East (such as China)","topic":"KT1.3: How did people respond to the Black Death?"},{"id":101,"q":"What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?","a":"To restore balance to the four humours by releasing excess blood.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":102,"q":"What was the role of a medieval apothecary?","a":"Preparing and selling herbal remedies and potions.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":103,"q":"How did medieval hospitals differ from modern ones?","a":"They provided shelter and care, not medical treatment.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":104,"q":"What was 'purging'?","a":"Using laxatives or emetics to clear the digestive system.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":105,"q":"What was the role of a medieval barber surgeon?","a":"Performing minor surgery, pulling teeth, and bloodletting.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":106,"q":"What was the 'Regimen Sanitatis'?","a":"A set of instructions on diet, exercise, and hygiene to help prevent illness.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":107,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":108,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":109,"q":"How did the medieval Church explain the cause of disease?","a":"God sent disease as a punishment for sin or to test faith.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":110,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT1.3: How did people respond to the Black Death?"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -2958,6 +3175,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -2965,6 +3183,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -3031,6 +3250,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -3068,6 +3288,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

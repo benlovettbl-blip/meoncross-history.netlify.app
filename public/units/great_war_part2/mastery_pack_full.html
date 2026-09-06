@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -2001,6 +2110,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -2090,11 +2216,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_great_war_part2_full';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"What was the name of the revolutionary British battleship launched in 1906 that sparked a naval arms race?","a":"HMS Dreadnought","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":2,"q":"Which Serbian nationalist group assassinated Archduke Franz Ferdinand in Sarajevo?","a":"The Black Hand","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":3,"q":"Which European empire declared war on Serbia first during the July Days?","a":"Austria-Hungary","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":4,"q":"Who was the British Secretary of State for War who launched a massive recruitment campaign in 1914?","a":"Lord Horatio Kitchener","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":5,"q":"What was the nickname given to battalions made up of friends, colleagues, and neighbors who enlisted together?","a":"Pals Battalions","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":6,"q":"What was the main cause of the medical condition known as \"trench foot\" during WWI?","a":"Prolonged exposure to freezing, wet, and unsanitary mud inside boots.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":7,"q":"Why did the British artillery bombardment fail to destroy German defenses before the Somme offensive?","a":"German soldiers survived safely inside deep, concrete-reinforced underground bunkers.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":8,"q":"On which date did the infamous first day of the Battle of the Somme occur?","a":"July 1, 1916","topic":"Did British generals make the horror of trench warfare worse?"},{"id":9,"q":"What name is given to the popular historical viewpoint that brave British troops were commanded by foolish, incompetent generals?","a":"Lions led by Donkeys","topic":"Did British generals make the horror of trench warfare worse?"},{"id":10,"q":"How did modern \"revisionist\" historians change the historical debate surrounding General Douglas Haig?","a":"They argued he was a determined leader who successfully learned how to win an unprecedented modern war.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":11,"q":"What name was given to WWI units made up of local friends, neighbors, and colleagues who enlisted together?","a":"Pals Battalions.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":12,"q":"Why did Britain have to rely entirely on voluntary enlistment when war was declared in August 1914?","a":"Because Britain did not have a conscription law to force men to join, and its regular professional army was very small.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":13,"q":"What medieval sanitation workers were hired to clear overflowing town cesspits exclusively at night?","a":"Gongfermers.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":14,"q":"What scientific theory did Victorian doctors believe in before Louis Pasteur proved Germ Theory in 1860?","a":"Miasma Theory (the belief that diseases were spread by inhaling bad air or foul smells from decaying matter).","topic":"Did British generals make the horror of trench warfare worse?"},{"id":15,"q":"What is the difference between a primary source and a secondary source?","a":"A primary source is an eyewitness account or physical object created during the time period being studied, whereas a secondary source is created after the event by someone who was not there.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":16,"q":"Why must historians avoid the concept of \"presentism\" when studying past historical periods?","a":"Presentism is judging past societies by modern standards and values. Historians must avoid it to understand why people in the past acted rationally based on their own contemporary knowledge.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":17,"q":"Approximately how many men from the British Empire and its dominions served in the First World War?","a":"3 million","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":18,"q":"Which imperial army sent over 1.5 million men to fight in the war?","a":"The British Indian Army","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":19,"q":"Which battle featured troops from Australia and New Zealand (ANZACs) fighting a devastating campaign against the Ottoman Empire?","a":"Gallipoli","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":20,"q":"In December 1918, where did members of the British West Indies Regiment mutiny due to severe racial discrimination?","a":"Taranto, Italy","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":21,"q":"Despite their massive sacrifices, how were imperial troops often treated in the official post-war victory celebrations?","a":"They were largely forgotten and excluded from events like the London Victory Parade.","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":22,"q":"What was the main tactical problem at the Battle of the Somme? (A) The artillery barrage failed to destroy the barbed wire., B) The soldiers ran away., C) The tanks broke down completely., D) The French refused to fight.)","a":"The artillery barrage failed to destroy the barbed wire.. Explanation: The failure of the artillery barrage left troops exposed to machine gun fire.","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":23,"q":"What term describes a conflict where the boundary between soldiers and civilians vanishes?","a":"Total War","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":24,"q":"What law gave the British government sweeping emergency powers in August 1914?","a":"The Defense of the Realm Act (DORA)","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":25,"q":"What nickname was given to women who worked in munitions factories and suffered from yellow skin due to toxic TNT?","a":"Canary Girls","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":26,"q":"What term describes men who refused to fight in the war on moral, political, or religious grounds?","a":"Conscientious Objectors","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":27,"q":"How did the British government respond to the severe food shortages caused by German U-boat attacks in 1918?","a":"They introduced rationing to ensure fair distribution of food.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":28,"q":"How many Indian soldiers volunteered to serve the British Empire during the First World War?","a":"Over 1.5 million Indian soldiers volunteered.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":29,"q":"What was the cause and outcome of the Taranto Mutiny in December 1918?","a":"It was caused by the racist treatment, poor conditions, and forced manual labor of the British West Indies Regiment. It fueled early movements for Caribbean independence.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":30,"q":"Why did the rapid population growth of industrial towns like Leeds and Manchester cause a severe sanitation crisis in the 19th century?","a":"Because towns grew too quickly without building regulations, leading to overcrowded back-to-back houses and overflowing shared cesspits.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":31,"q":"What landmark British law in 1875 finally forced local councils to take legal responsibility for providing clean water and sewer systems?","a":"The Public Health Act of 1875.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":32,"q":"Why should a historian be cautious when using a politician's post-war memoirs to judge a general's military competence?","a":"Because politicians often write memoirs to defend their own decisions, protect their historical reputation, and shift blame for costly military failures onto others.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":33,"q":"Explain the difference between \"Causation\" and \"Consequence\" in history.","a":"Causation refers to the factors or reasons that make an event happen, while Consequence refers to the effects, outcomes, or impacts that result from that event.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":34,"q":"What date was the Treaty of Versailles officially signed by Allied and German leaders?","a":"June 28, 1919","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":35,"q":"Which US President proposed the 'Fourteen Points' and wanted to create a League of Nations?","a":"Woodrow Wilson","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":36,"q":"What was the name of Article 231 of the Treaty of Versailles?","a":"The War Guilt Clause","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":37,"q":"Why do modern revisionist historians like Margaret MacMillan argue Versailles was NOT excessively harsh?","a":"Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":38,"q":"Why did the German people call the Treaty of Versailles a 'Diktat'?","a":"They were completely excluded from the peace talks and forced to sign it.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":39,"q":"What was the name of the 1914 British law that gave the government sweeping emergency powers to censor newspapers and ration food?","a":"The Defense of the Realm Act (DORA).","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":40,"q":"What nickname was given to the female British munitions workers whose skin turned yellow due to toxic chemical exposure?","a":"\"Canary Girls\" (or Munitionettes).","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":41,"q":"Why did over 130,000 members of the British West Indies Regiment suffer a major mutiny in Taranto, Italy, in December 1918?","a":"Because they were subjected to severe racial discrimination, poor conditions, and forced into humiliating manual labor instead of combat roles.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":42,"q":"Why did General Douglas Haig's week-long artillery bombardment fail to destroy the German defenders before the Battle of the Somme?","a":"Because German soldiers survived safely in deep, concrete-reinforced underground bunkers.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":43,"q":"Place these three WWI milestones in chronological order: The Battle of the Somme, The assassination of Archduke Franz Ferdinand, The Treaty of Versailles.","a":"1. Assassination of Franz Ferdinand (June 1914), 2. Battle of the Somme (July 1916), 3. Treaty of Versailles (June 1919).","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":44,"q":"Explain the difference between \"change\" and \"continuity\" when studying the roles of women on the British Home Front.","a":"Change refers to the new temporary opportunities in factories, while continuity refers to how most women were pushed back into traditional domestic roles once the war ended.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":45,"q":"In what year was the Stubbington War Memorial erected?","a":"1922","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":46,"q":"What physical structure does the Stubbington War Memorial cover?","a":"The local village pump.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":47,"q":"Who proposed and designed the memorial in Stubbington?","a":"The mother of the only woman commemorated among the fallen.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":48,"q":"How many names of the fallen are recorded on the Stubbington memorial?","a":"67","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":49,"q":"What historical term describes the study of a specific family, like the Lowry brothers, to understand a larger global event?","a":"Micro-history","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":50,"q":"What nickname was given to women working with toxic TNT in munitions factories?","a":"\"Canary Girls\" (or Munitionettes).","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":51,"q":"Under the Treaty of Versailles, what was the maximum number of men allowed in the German army?","a":"100,000 men.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":52,"q":"What did Article 231 of the Treaty of Versailles force Germany to accept?","a":"Full responsibility for causing the war (the War Guilt Clause).","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":53,"q":"What was the name of the revolutionary battleship launched by Britain in 1906?","a":"HMS Dreadnought.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":54,"q":"Explain the difference between a 'traditional' and 'revisionist' historical interpretation using General Douglas Haig as an example.","a":"The traditional view sees Haig as a foolish 'donkey' sending men to their deaths, while the revisionist view argues he faced unprecedented technological challenges and eventually learned to adapt.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":55,"q":"What does the term 'Diktat' mean and why did Germans use it to describe the Treaty of Versailles?","a":"It means 'dictated peace'. They used it because Germany was banned from negotiating and forced to sign the treaty under threat of invasion.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":56,"q":"In what year did the First World War begin?","a":"1914","topic":"Assessment: The Great War"},{"id":57,"q":"Which country was NOT part of the Triple Entente?","a":"Germany","topic":"Assessment: The Great War"},{"id":58,"q":"What condition was caused by standing in cold, flooded trenches?","a":"Trench Foot","topic":"Assessment: The Great War"},{"id":59,"q":"How many men from the British Empire and Dominions served in the war?","a":"Nearly 3 million","topic":"Assessment: The Great War"},{"id":60,"q":"What was the nickname given to women working with TNT in factories?","a":"Canary Girls","topic":"Assessment: The Great War"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -2171,6 +2388,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -2178,6 +2396,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -2244,6 +2463,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -2281,6 +2501,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

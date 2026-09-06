@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -2001,6 +2110,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -2090,11 +2216,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_weimar_nazi_germany_KT2';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"Who was the original founder of the German Workers' Party (DAP) in 1919?","a":"Anton Drexler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":2,"q":"Why did Adolf Hitler originally attend a DAP meeting in September 1919?","a":"He was sent by the army as an intelligence officer to spy on them","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":3,"q":"What unique talent did Hitler use to captivate audiences and rise to leadership?","a":"His powerful, rehearsed, and theatrical public speaking / oratory skills","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":4,"q":"In what year did Hitler and Drexler write the 25-Point Programme?","a":"1920","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":5,"q":"Name one 'Nationalist' policy from the 25-Point Programme.","a":"Scrap the Treaty of Versailles / Expand Germany's borders / Demand Lebensraum","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":6,"q":"Name one 'Socialist' policy from the 25-Point Programme.","a":"Nationalise large industries / Share corporate profits with workers / Expand pensions","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":7,"q":"According to the anti-Semitic points in the Programme, who were the only people allowed to be German citizens?","a":"Those of 'German blood' / Jews were to be stripped of citizenship","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":8,"q":"What did Hitler officially rename the DAP to?","a":"The NSDAP / National Socialist German Workers' Party","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":9,"q":"In what year did Hitler force Drexler out and become the absolute leader of the Nazi Party?","a":"1921","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":10,"q":"Who was appointed as the Nazi Party's first full-time administrator to organise their new Munich headquarters?","a":"Rudolf Schüssler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":11,"q":"What was the name of the official Nazi newspaper purchased in December 1920?","a":"Völkischer Beobachter / People's Observer","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":12,"q":"Name the famous First World War fighter pilot who joined the early Nazi Party, giving it credibility.","a":"Hermann Göring","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":13,"q":"What ancient symbol did Hitler adopt and redesign to act as the party's logo?","a":"The Swastika","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":14,"q":"What does the abbreviation 'SA' stand for?","a":"Sturmabteilung / Storm Detachment","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":15,"q":"What was the common nickname for the SA, based on their uniforms?","a":"The Brownshirts","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":16,"q":"Who was the ex-army captain placed in command of the SA?","a":"Ernst Röhm","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":17,"q":"What were the two main roles of the SA?","a":"To protect Nazi speakers and to violently disrupt the meetings of political opponents","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":18,"q":"Why did Hitler form his own personal bodyguard, the Stosstrupp (Shock Troop), out of the SA?","a":"Because the regular SA were rowdy and more loyal to Ernst Röhm than they were to Hitler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":19,"q":"By the end of 1922, roughly how many members did the Nazi Party have?","a":"20,000","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":20,"q":"Which specific German region and city was the early Nazi Party entirely based in?","a":"Bavaria / Munich","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":21,"q":"What was the Spartacist Uprising (1919)?","a":"A communist attempt to overthrow the Weimar government in Berlin.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":22,"q":"Who led the Spartacist Uprising?","a":"Rosa Luxemburg and Karl Liebknecht.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":23,"q":"Who were the Freikorps?","a":"Right-wing ex-soldiers who hated communists and helped crush the Spartacist Uprising.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":24,"q":"What was the Kapp Putsch (1920)?","a":"A right-wing attempt by Wolfgang Kapp and the Freikorps to overthrow the government.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":25,"q":"How did the government defeat the Kapp Putsch?","a":"They asked the workers of Berlin to go on a general strike.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":26,"q":"How much were the reparations set at?","a":"£6.6 billion.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":27,"q":"What was the War Guilt Clause?","a":"Article 231 of the Treaty of Versailles.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":28,"q":"What was Article 48?","a":"The President's emergency power.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":29,"q":"What was the 'stab in the back' myth?","a":"The belief that Germany was betrayed by politicians.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":30,"q":"What is a 'republic'?","a":"A country without a monarch.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":31,"q":"Why did France and Belgium invade the Ruhr in 1923?","a":"Because Germany had failed to pay its reparation instalment.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":32,"q":"How did German workers react to the Ruhr invasion?","a":"They used 'passive resistance' (going on strike).","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":33,"q":"What caused Hyperinflation in 1923?","a":"The government printed massive amounts of money to pay the striking Ruhr workers.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":34,"q":"Who suffered most from Hyperinflation?","a":"People with fixed savings and pensions, as their money became worthless.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":35,"q":"Who benefitted from Hyperinflation?","a":"People with debts or loans, as they could pay them off easily.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":36,"q":"Who were the Freikorps?","a":"Right-wing ex-soldiers.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":37,"q":"Who led the Spartacist Uprising?","a":"Rosa Luxemburg and Karl Liebknecht.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":38,"q":"How was the Kapp Putsch defeated?","a":"By a workers' general strike.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":39,"q":"What was Proportional Representation?","a":"An electoral system causing weak coalitions.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":40,"q":"What were the military restrictions of the Treaty of Versailles?","a":"100k men, no air force, 6 battleships.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":41,"q":"Who became Chancellor in 1923 and helped end hyperinflation?","a":"Gustav Stresemann.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":42,"q":"What new currency did Stresemann introduce in 1923?","a":"The Rentenmark.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":43,"q":"What was the Dawes Plan (1924)?","a":"A plan to reduce annual reparation payments and secure 800 million marks in US loans.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":44,"q":"What was the Young Plan (1929)?","a":"It reduced the total reparations bill from £6.6 billion to £2 billion and gave Germany longer to pay.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":45,"q":"What was the Locarno Pact (1925)?","a":"An agreement where Germany accepted its western borders with France.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":46,"q":"Why did France invade the Ruhr in 1923?","a":"Germany defaulted on reparations.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":47,"q":"What was passive resistance?","a":"Workers striking against the French in the Ruhr.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":48,"q":"Who suffered most from hyperinflation?","a":"People with fixed savings.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":49,"q":"What was the Kapp Putsch?","a":"A right-wing rebellion by the Freikorps.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":50,"q":"What was Article 231?","a":"The War Guilt clause.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":51,"q":"When did Germany join the League of Nations?","a":"1926.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":52,"q":"What was the Kellogg-Briand Pact (1928)?","a":"An international agreement where 62 countries promised not to use war to resolve disputes.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":53,"q":"Why did the 'Golden Age' (1924-29) rely on 'dancing on a volcano'?","a":"The economic recovery was heavily dependent on short-term American loans.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":54,"q":"How did culture change during the Golden Age?","a":"There was a boom in avant-garde art, cinema (e.g. Metropolis), and cabaret.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":55,"q":"What did Stresemann introduce to fix hyperinflation?","a":"The Rentenmark.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":56,"q":"What was the Dawes Plan?","a":"US loans to Germany to help pay reparations.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":57,"q":"What was the Young Plan?","a":"A reduction of the total reparation amount.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":58,"q":"What was the Locarno Pact?","a":"An agreement accepting western borders.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":59,"q":"Why did the French invade the Ruhr?","a":"Missed reparation payments.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":60,"q":"Who were the November Criminals?","a":"Politicians who signed the Armistice.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -2171,6 +2388,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -2178,6 +2396,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -2244,6 +2463,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -2281,6 +2501,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

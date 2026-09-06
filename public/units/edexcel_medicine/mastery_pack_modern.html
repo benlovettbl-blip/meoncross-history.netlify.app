@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -2925,6 +3034,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -3017,11 +3143,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_modern';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"How did the 20th-century understanding of what causes illness fundamentally differ from the 19th-century focus on Germ Theory?","a":"It moved to a multi-causal approach, recognizing that while microbes cause infectious diseases, genetics and lifestyle choices cause chronic illnesses.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":2,"q":"Which 19th-century scientist first demonstrated that physical characteristics could be passed down between generations of living things?","a":"Gregor Mendel","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":3,"q":"What crucial scientific technique did Rosalind Franklin and Maurice Wilkins use at King's College London to help identify the structure of DNA?","a":"X-ray crystallography to take photographs of human cells","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":4,"q":"In which year did James Watson and Francis Crick successfully work out and model the double-helix structure of DNA?","a":"1953","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":5,"q":"What major international scientific project was launched in 1990 to identify and map every single gene in human DNA?","a":"The Human Genome Project","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":6,"q":"What is a major modern limitation of the genetic breakthroughs achieved by mapping the human genome?","a":"There is still no cure or highly effective treatment for the majority of genetic conditions.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":7,"q":"How do modern doctors use DNA discoveries to prevent or catch illnesses early through genetic screening?","a":"By checking an individual's genetic code to see if they carry genes that put them at higher risk of developing certain cancers or conditions.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":8,"q":"According to modern scientific research, what specific medical condition can be triggered by eating a diet that is too high in sugar?","a":"Type 2 diabetes","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":9,"q":"What chronic modern disease is directly linked to eating a diet too high in fat and experiencing obesity?","a":"Heart disease","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":10,"q":"Apart from lung cancer, what other debilitating respiratory disease has modern research linked directly to tobacco smoking?","a":"Emphysema","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":11,"q":"Which chronic, organ-based illnesses has modern science linked directly to the excessive drinking of alcohol?","a":"Liver disease, kidney disease, and several cancers","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":12,"q":"Which major piece of technology, invented in the 1930s, was 1,000 times more powerful than standard light microscopes, allowing scientists to see viruses for the first time?","a":"The Electron microscope","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":13,"q":"How did diagnosis in the modern era fundamentally change compared to previous historical periods?","a":"It shifted from a doctor's clinical observation of physical symptoms to precise, high-tech laboratory tests and scans.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":14,"q":"When were blood tests first introduced into modern medicine, and what was their diagnostic significance?","a":"The 1930s; they allowed doctors to test for a vast number of conditions without invasive surgery.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":15,"q":"What is the key diagnostic advantage of a modern CT scan compared to a traditional X-ray?","a":"A CT scan is a 3D scan that creates detailed images of the inside of the body, allowing doctors to spot tiny tumors when they are the size of a pea.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":16,"q":"When were ultrasound scans first developed, and how do they help doctors diagnose internal conditions like gallstones or kidney stones?","a":"The 1940s; they use high-frequency sound waves to build up a picture of the inside of the body.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":17,"q":"What are ECGs (electrocardiograms), which were developed in the 1900s, used for in modern diagnosis?","a":"They use electrical impulses to track and monitor heart activity.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":18,"q":"What is an endoscope (such as a bronchoscope used in lung investigations), and how does it assist in modern diagnosis?","a":"A flexible tube with a camera that allows doctors to see inside the body and collect cell samples without major surgery.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":19,"q":"What is a biopsy, and what role does it play in the modern diagnosis of chronic illnesses like cancer?","a":"Taking a tiny sample of tissue from a lump to test it and see if it is cancerous.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":20,"q":"When was blood sugar monitoring introduced, and how did it change the daily management of diabetes?","a":"The 1960s; it allowed patients to regularly check their own blood sugar at home to manage their condition.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":21,"q":"What disease did Edward Jenner vaccinate against in 1796?","a":"Smallpox.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":22,"q":"What did Edward Jenner observe that led to his vaccine?","a":"Milkmaids who caught cowpox never caught the deadly smallpox.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":23,"q":"Who discovered the cause of cholera in 1854?","a":"John Snow.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":24,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":25,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":26,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":27,"q":"What did Harvey prove wrong about Galen's theories of blood?","a":"Galen believed the liver constantly manufactured new blood which was consumed by the body.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":28,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":29,"q":"What invention helped spread new medical ideas during the Renaissance?","a":"The printing press.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":30,"q":"What was 'transference'?","a":"A Renaissance belief that a disease could be passed on or transferred to an object or animal.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":31,"q":"In 1909, Paul Ehrlich and his research team developed Salvarsan 606 to treat syphilis. Why was Salvarsan 606 clinically known as the first 'magic bullet'?","a":"Because it was a synthetic chemical compound designed to target and destroy a specific disease-causing microbe inside the body without harming the rest of the patient's cells.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":32,"q":"During his research, how did Paul Ehrlich discover Salvarsan 606?","a":"By methodically testing over 600 arsenic chemical compounds until finding one (the 606th) that specifically destroyed syphilis bacteria.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":33,"q":"In 1932, Gerhard Domagk discovered Prontosil, the second 'magic bullet'. What type of infection did Prontosil cure?","a":"Puerperal (childbed) fever and blood poisoning caused by streptococcus bacteria.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":34,"q":"How did 20th-century 'magic bullets' fundamentally differ in their clinical application from 19th-century antiseptics like Joseph Lister's carbolic acid?","a":"Antiseptics killed microbes on external surfaces or open wound tissue, whereas magic bullets were taken internally to target and destroy specific pathogens inside the body without poisoning the patient.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":35,"q":"What is the biological difference between early chemical 'magic bullets' like Salvarsan 606 and the first true antibiotic, penicillin?","a":"Magic bullets were synthetic chemical compounds created in laboratories, whereas antibiotics like penicillin were created using living microorganisms to kill bacteria.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":36,"q":"After Gerhard Domagk published his findings on Prontosil, what active ingredient did French scientists isolate, leading to the creation of cheap sulphonamide drugs?","a":"Sulphanilamide, which allowed pharmaceutical companies to mass-produce cheap, effective drugs for pneumonia, meningitis, and scarlet fever.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":37,"q":"Before the creation of the NHS, the Liberal Government introduced the 1911 National Insurance Act. What was a major limitation of this Act's medical coverage?","a":"It only provided free GP care to sick workers who paid weekly contributions, completely excluding their wives, children, and those who were unemployed or retired.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":38,"q":"Which landmark 1942 government report recommended that the British state should provide comprehensive social security and healthcare 'from the cradle to the grave'?","a":"The Beveridge Report","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":39,"q":"In which year did the National Health Service (NHS) begin operating, and who was the government minister responsible for its launch?","a":"1948; under Aneurin Bevan","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":40,"q":"What was the revolutionary founding principle of the National Health Service (NHS) in 1948?","a":"That comprehensive healthcare should be free at the point of delivery for everyone in Britain, paid for through national taxation.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":41,"q":"When the NHS was launched in 1948, its services were organized into a 'tripartite' (three-part) system. What were these three parts?","a":"Primary care (GPs, dentists, opticians), hospital services (managed by regional boards), and local authority health services (such as ambulances and health visitors).","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":42,"q":"Why did the British Medical Association (BMA)-representing the country's doctors-initially strongly oppose the creation of the NHS?","a":"They feared they would lose their independent status, lose their private patient income, and become state-controlled civil servants.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":43,"q":"How did Aneurin Bevan famously win over the doctors who opposed the NHS?","a":"By 'stuffing their mouths with gold'-allowing hospital consultants to continue treating lucrative private patients alongside their NHS work.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":44,"q":"How did the launch of the NHS in 1948 transform access to high-tech medical treatments for the working class?","a":"It made advanced diagnostic tests and specialized surgical treatments free for everyone, removing the fear of bankruptcy from getting ill.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":45,"q":"Following the introduction of sulphonamide magic bullets in the 1930s and the NHS in 1948, what dramatic trend occurred in maternal mortality (mothers dying during or after childbirth)?","a":"It fell rapidly, dropping from high rates in the early 20th century to less than 1% by the late 20th century.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":46,"q":"As part of its modern focus on preventing disease, what type of campaigns does the government run through the NHS?","a":"Public education and lifestyle campaigns encouraging healthy eating, physical exercise, and reducing tobacco or alcohol consumption.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":47,"q":"Why does the 1935 illustration 'Medical moments in time' in the textbook emphasize that the pace of medical change in the first half of the 20th century was steady rather than rapid?","a":"Because while breakthroughs like X-rays and aseptic surgery existed, many traditional home remedies (like wrapping brown paper and vinegar for headaches) remained highly common.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":48,"q":"Which of the following is a successful example of a modern, government-funded NHS preventative immunization campaign that wiped out a major paralyzing disease in Britain?","a":"The introduction of the polio vaccine in the 1950s.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":49,"q":"Which of the following represents a modern, high-tech surgical treatment developed in the late 20th century that is provided free of charge under the NHS?","a":"Organ transplants, prosthetic joint replacements, and keyhole surgery.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":50,"q":"What is a major modern challenge facing the long-term effectiveness of antibiotic treatments like penicillin?","a":"The evolution of drug-resistant strains of bacteria (superbugs like MRSA) due to the over-prescription and overuse of antibiotics.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":51,"q":"What structure did Watson and Crick discover in 1953?","a":"The double helix structure of DNA.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":52,"q":"What is the function of DNA in relation to disease?","a":"It contains genetic instructions that can cause hereditary diseases or influence susceptibility.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":53,"q":"Name one modern lifestyle factor that causes disease.","a":"Smoking, poor diet, or lack of exercise.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":54,"q":"Which female scientist's X-ray crystallography photo was vital to Watson and Crick's DNA discovery?","a":"Rosalind Franklin.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":55,"q":"Why did the mapping of the human genome not lead to immediate cures?","a":"Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":56,"q":"What did Harvey prove wrong about Galen's theories of blood?","a":"Galen believed the liver constantly manufactured new blood which was consumed by the body.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":57,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":58,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":59,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":60,"q":"What was the significance of the Public Health Act of 1875?","a":"It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":61,"q":"In which year did Alexander Fleming make his accidental observation of Penicillium mould on a staphylococci culture plate, and where did this take place?","a":"1928; at St Mary's Hospital in London","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":62,"q":"What did Alexander Fleming actually observe in his forgotten petri dish in 1928 that led to the discovery of penicillin?","a":"A contaminating mould had grown on the dish and killed off the surrounding staphylococci bacteria.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":63,"q":"Why did Alexander Fleming abandon his research into penicillin as a systemic medical treatment by 1931?","a":"He lacked the specialized chemical team and funding needed to isolate, concentrate, and stabilize the active compound.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":64,"q":"Which of the following is a widespread historical 'myth' regarding the development of penicillin that examiners warn students to avoid in their essays?","a":"That Alexander Fleming single-handedly developed penicillin into a mass-produced, usable medicine.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":65,"q":"How did Alexander Fleming's early laboratory experiments in 1928-1929 mislead him about penicillin's potential as an internal medicine?","a":"He found that penicillin became completely ineffective when mixed with blood in test tubes, causing him to doubt its value in living people.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":66,"q":"Which two scientists revived Alexander Fleming's neglected 1929 paper on penicillin in 1938, and where were they based?","a":"Howard Florey and Ernst Chain; at Oxford University","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":67,"q":"How did Ernst Chain contribute to the team's early breakthroughs in purifying penicillin?","a":"As a skilled biochemist, he successfully grew the mould in his laboratory and extracted the active chemical compound.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":68,"q":"What was the result of Florey and Chain's landmark scientific experiment on mice in the year 1940?","a":"It proved that penicillin was a highly effective antibiotic capable of killing deadly infections inside living bodies.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":69,"q":"Why did Florey and Chain's Oxford research team have to use household objects like milk churns, bed pans, and even a bath tub in their laboratory?","a":"Penicillin was incredibly difficult to produce in large quantities, requiring massive volumes of grown mould to extract tiny amounts of active liquid.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":70,"q":"Who was the first human patient to be treated with Florey and Chain's purified penicillin in 1941, and how did he contract his infection?","a":"Albert Alexander, a local policeman who developed septicaemia after being scratched by a rose bush.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":71,"q":"What tragic clinical outcome occurred during the first human trial of penicillin in 1941, and why?","a":"The patient initially showed dramatic recovery, but died after the tiny supply of penicillin ran out, despite the doctors trying to recycle the drug from his urine.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":72,"q":"When Florey and Chain first approached British pharmaceutical companies in 1939-1940 to mass-produce penicillin, why were they turned down?","a":"British firms were fully occupied with the war effort, manufacturing essential military supplies and ammunition for World War II.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":73,"q":"To which country did Howard Florey travel in July 1941 to seek the industrial help and investment needed to mass-produce penicillin?","a":"The United States","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":74,"q":"What major historical event in December 1941 served as a catalyst, prompting the US government to heavily fund the mass production of penicillin?","a":"The entry of the United States into World War II, making the treatment of wounded soldiers a matter of urgent national priority.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":75,"q":"Which industrial manufacturing method allowed US pharmaceutical companies to scale up penicillin production from small laboratory bottles to millions of doses?","a":"Growing the mould in giant beer vats and deep-fermentation tanks.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":76,"q":"How many doses of penicillin did Allied medical services have available by the D-Day landings in June 1944, demonstrating the success of wartime mass-production?","a":"Over 2.3 million doses, enough to treat all Allied casualties","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":77,"q":"How did Howard Florey's attitude toward patenting penicillin accelerate its worldwide availability and keep manufacturing costs down?","a":"He refused to patent the drug, declaring that it should be a free, lifesaving resource available to everyone in the world.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":78,"q":"Which female scientist at Oxford University identified the exact chemical structure of penicillin in 1945, allowing chemists to create semi-synthetic variations?","a":"Dorothy Crowfoot Hodgkin","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":79,"q":"In which year did Fleming, Florey, and Chain jointly receive the Nobel Prize in Medicine to recognize their collective roles in the penicillin breakthrough?","a":"1945","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":80,"q":"Looking at the penicillin story through Edexcel GCSE 'factors', which combination of factors was most crucial in turning a minor 1928 laboratory discovery into a global medical revolution by 1944?","a":"Individual brilliance (Fleming/Florey/Chain), institutions (the US Government), science/technology (deep fermentation), and the catalyst of war (WWII).","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":81,"q":"What is a 'magic bullet'?","a":"A chemical compound that targets and kills specific microbes without harming the rest of the body.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":82,"q":"Name the first magic bullet, discovered by Paul Ehrlich in 1909.","a":"Salvarsan 606.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":83,"q":"What was established in Britain in 1948 to provide free medical care?","a":"The National Health Service (NHS).","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":84,"q":"Who was the Minister of Health responsible for establishing the NHS in 1948?","a":"Aneurin Bevan.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":85,"q":"Name the second magic bullet, discovered by Gerhard Domagk in 1932 to treat strep infections.","a":"Prontosil.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":86,"q":"What structure did Watson and Crick discover in 1953?","a":"The double helix structure of DNA.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":87,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":88,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":89,"q":"Name one modern lifestyle factor that causes disease.","a":"Smoking, poor diet, or lack of exercise.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":90,"q":"Which female scientist's X-ray crystallography photo was vital to Watson and Crick's DNA discovery?","a":"Rosalind Franklin.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":91,"q":"In which year did the British Medical Research Council publish the landmark study by Doll and Hill that conclusively proved the link between smoking and lung cancer?","a":"1950","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":92,"q":"Why was the British government initially very slow to take legislative action against smoking after the scientific link to lung cancer was proven in 1950?","a":"Because the government earned around £4 billion from tobacco tax, thousands of jobs depended on the industry, and there were ethical debates about limiting personal freedoms.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":93,"q":"What was a major limitation of using traditional chest X-rays to diagnose lung cancer before advanced scanning technology was developed?","a":"They were not clear enough, meaning tumors were often missed entirely or mistaken for other things like lung abscesses.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":94,"q":"What key technological advantage does a modern CT (computerised tomography) scan have over a traditional chest X-ray in diagnosing lung cancer?","a":"A CT scan uses dye and takes detailed 3D images, allowing doctors to spot tiny tumors when they are the size of a pea.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":95,"q":"How does a high-tech PET (positron emission tomography) scan assist modern doctors in managing a lung cancer patient's treatment?","a":"It shows how active the cancer cells are by tracking how much energy the tumor is using, helping doctors see if a treatment is working.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":96,"q":"What is bronchoscopy (a type of endoscope) and how is it used to diagnose lung cancer?","a":"A flexible tube with a camera passed down the patient's airway, allowing doctors to see inside the lungs and collect cell samples.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":97,"q":"What is a biopsy, and why is it a crucial step in the modern diagnosis of lung cancer?","a":"It is the extraction and scientific analysis of a tiny sample of lung tissue to confirm if a tumor is indeed cancerous.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":98,"q":"How does modern chemotherapy treat lung cancer, and what is its main clinical drawback?","a":"It uses powerful drugs (chemicals) to attack and kill cancer cells throughout the body, but it also damages healthy cells, causing severe side effects.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":99,"q":"What does modern radiotherapy treatment for lung cancer involve?","a":"Using targeted, high-energy radiation beams to shrink and destroy localized cancer tumors.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":100,"q":"What is immunotherapy, one of the most advanced treatments for lung cancer in the twenty-first century?","a":"Using specialized drugs to 'wake up' and boost the patient's own immune system so it can identify and destroy cancer cells.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":101,"q":"What was the very first major advertising restriction the British government placed on tobacco, introduced in 1965?","a":"Banning cigarette advertisements on television.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":102,"q":"Following gradual extensions of advertising rules, in which year did the government finally implement a complete ban on all tobacco advertising and sports sponsorship in the UK?","a":"2005","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":103,"q":"In 2007, what legislative measure did the government take to restrict teenagers' access to tobacco products?","a":"They raised the legal age for buying tobacco from 16 to 18.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":104,"q":"Under the Health Act of 2006, what major legislative ban came into force on 1 July 2007 to protect the public from passive smoking?","a":"A ban on smoking in all enclosed workplaces, including pubs, cafés, restaurants, and offices.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":105,"q":"What retail display regulation was introduced in 2012 to discourage young people from taking up smoking?","a":"A requirement that all tobacco products in shops must be removed from open display and kept hidden from sight.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":106,"q":"In 2015, how did the government extend the smoking ban to protect children from the dangers of second-hand smoke?","a":"By banning smoking in all cars carrying children under the age of 18.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":107,"q":"Which of the following was a 'nudge' tactic introduced in 2015 that standardizes cigarette boxes to make them unappealing to young people?","a":"Compulsory plain, olive-green packaging featuring prominent graphic health warnings and no brand logos.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":108,"q":"Why is there currently no national routine screening program for lung cancer in the UK, unlike other chronic conditions?","a":"Because the available tests are not accurate enough to outweigh the negative effects of screening, such as exposing healthy people to radiation.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":109,"q":"When comparing government action against 19th-century cholera with 20th-century lung cancer, what major similarity do historians identify?","a":"In both cases, the initial response was slow, with the government only directly intervening with compulsory laws after the death toll became too high to ignore.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":110,"q":"The government's modern campaigns (like the Sugar Tax and Change4Life) and legislative bans represent a transition away from which historical political philosophy?","a":"The laissez-faire (leave it alone) approach of the 19th century","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":111,"q":"Who discovered Penicillin by accident in 1928?","a":"Alexander Fleming.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":112,"q":"Which two scientists at Oxford developed Penicillin into a usable drug?","a":"Howard Florey and Ernst Chain.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":113,"q":"What major global event drove the mass production of Penicillin?","a":"The Second World War.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":114,"q":"What is a 'magic bullet'?","a":"A chemical compound that targets and kills specific microbes without harming the rest of the body.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":115,"q":"What was established in Britain in 1948 to provide free medical care?","a":"The National Health Service (NHS).","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":116,"q":"Who was the Minister of Health responsible for establishing the NHS in 1948?","a":"Aneurin Bevan.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":117,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":118,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":119,"q":"Why is lung cancer so difficult to treat effectively compared to other diseases?","a":"Symptoms often do not appear until the cancer is advanced and has spread to other organs.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":120,"q":"Which landmark 1950 epidemiological study proved the link between smoking and lung cancer?","a":"The British Doctors Study by Richard Doll and Bradford Hill.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -3098,6 +3315,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -3105,6 +3323,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -3171,6 +3390,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -3208,6 +3428,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

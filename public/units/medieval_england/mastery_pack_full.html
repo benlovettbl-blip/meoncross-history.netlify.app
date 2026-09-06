@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -3543,6 +3652,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -3637,11 +3763,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_medieval_england_full';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"What century are we currently studying?","a":"The 11th century (1000s).","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":2,"q":"Who were the native people living in England before 1066?","a":"The Anglo-Saxons.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":3,"q":"What was the most important building in a medieval village?","a":"The church.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":4,"q":"What is an heir to the throne?","a":"The person legally next in line to become king or queen.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":5,"q":"Who was the English King that died in January 1066 without a clear heir?","a":"Edward the Confessor.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":6,"q":"What was the 'Witan' in Anglo-Saxon England?","a":"The council of powerful English lords and bishops.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":7,"q":"Which group of people were famous for raiding England in longships?","a":"The Vikings.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":8,"q":"Where is Normandy located?","a":"In northern France.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":9,"q":"What does it mean to claim the throne?","a":"To assert that you have the right to be the next monarch.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":10,"q":"What is a power vacuum?","a":"A situation where a government has no identifiable central authority or leader.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":11,"q":"Which claimant to the throne was an Anglo-Saxon Earl?","a":"Harold Godwinson","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":12,"q":"Which claimant to the throne was a feared Viking warrior?","a":"Harald Hardrada","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":13,"q":"What promise did William of Normandy claim Edward the Confessor had made to him?","a":"That William would be the next king","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":14,"q":"Why was the English army exhausted before the Battle of Hastings?","a":"They had just marched rapidly from a battle in the north","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":15,"q":"What defensive tactic did the English use at the top of Senlac Hill?","a":"A shield wall","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":16,"q":"How did William the Conqueror manage to break the English defense?","a":"By faking a retreat to lure them down the hill","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":17,"q":"According to legend, how was Harold Godwinson killed at Hastings?","a":"He was shot in the eye by an arrow","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":18,"q":"What famous piece of embroidery tells the story of the Norman Conquest?","a":"The Bayeux Tapestry","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":19,"q":"Which event is often seen as the beginning of the end for Anglo-Saxon England?","a":"The death of Edward the Confessor without a clear heir","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":20,"q":"What advantage did the Norman army have over the Anglo-Saxons at Hastings?","a":"They had archers and cavalry on horseback","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":21,"q":"Which powerful English Earl claimed the throne because of a deathbed promise?","a":"Harold Godwinson.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":22,"q":"Which Viking warrior claimed the throne based on an old treaty?","a":"Harald Hardrada.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":23,"q":"Who claimed the throne because of a broken oath sworn on holy relics?","a":"William, Duke of Normandy.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":24,"q":"Where did King Harold march his army to fight the Vikings?","a":"Stamford Bridge (in the north).","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":25,"q":"Who won the Battle of Stamford Bridge?","a":"King Harold Godwinson.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":26,"q":"Why was Harold's army exhausted before fighting William?","a":"They had just marched 300 miles south after fighting a brutal battle.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":27,"q":"Where did William the Conqueror's army land in England?","a":"Pevensey, on the south coast.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":28,"q":"Who supported William's invasion, making it a religious crusade?","a":"The Pope.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":29,"q":"What was the name of the battle between Harold and William?","a":"The Battle of Hastings.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":30,"q":"In what year did all these three battles take place?","a":"1066.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":31,"q":"What was a 'motte' in an early Norman castle?","a":"A large mound of earth with a wooden tower on top","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":32,"q":"What was the 'bailey' in an early Norman castle?","a":"The enclosed courtyard where soldiers lived","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":33,"q":"Why did William choose to build motte and bailey castles?","a":"They were quick to build and visually intimidating","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":34,"q":"In what year did the 'Harrying of the North' take place?","a":"1069","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":35,"q":"What was the long-term consequence of the Harrying of the North?","a":"Mass starvation and widespread deaths among the northern population","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":36,"q":"What language did the new Norman aristocracy speak?","a":"French","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":37,"q":"What did the Domesday Book record?","a":"Everything that everyone owned across England","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":38,"q":"Why was the survey known as the 'Domesday' Book by the English people?","a":"Because its decisions were as final as the Day of Judgement (Doomsday)","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":39,"q":"Under the feudal system, what did a knight provide to a baron in exchange for land?","a":"Military service","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":40,"q":"What did the feudal system ensure for William the Conqueror?","a":"That he retained ultimate ownership and control over all land in England","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":41,"q":"Who won the Battle of Hastings to become King of England?","a":"William the Conqueror.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":42,"q":"What type of castles did the Normans first build to control England rapidly?","a":"Motte and bailey castles.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":43,"q":"What was the 'motte'?","a":"A large, hand-dug mound of earth.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":44,"q":"What brutal tactic did William use to destroy northern rebellions?","a":"The Harrying of the North.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":45,"q":"What was the purpose of the Domesday Book (1086)?","a":"To survey the wealth of the country for taxation.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":46,"q":"Who was the Viking claimant killed at Stamford Bridge?","a":"Harald Hardrada.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":47,"q":"What material were the first Norman castles made from?","a":"Wood.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":48,"q":"What was the 'bailey' in a castle?","a":"The fenced compound where soldiers lived and horses were stabled.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":49,"q":"What does 'feudalism' mean?","a":"A system where land is given in exchange for military service or labour.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":50,"q":"How many people died of starvation due to the Harrying of the North?","a":"Over 100,000.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":51,"q":"Why did Henry II dislike the separate Church courts?","a":"They gave much lighter punishments to priests who committed crimes","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":52,"q":"What was the relationship between Henry II and Thomas Becket before Becket became Archbishop?","a":"They were close friends and drinking companions","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":53,"q":"What did Becket start wearing under his luxurious clothes after becoming Archbishop?","a":"A scratchy hair shirt to show religious devotion","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":54,"q":"What controversial document did Henry II issue to try to limit Church power in 1164?","a":"The Constitutions of Clarendon","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":55,"q":"How long was Thomas Becket in exile in France?","a":"Six years","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":56,"q":"What action by Becket enraged Henry II upon Becket's return to England?","a":"He excommunicated the bishops who had supported the King","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":57,"q":"What angry phrase is Henry II famously (though perhaps mythically) said to have shouted?","a":"'Will no one rid me of this turbulent priest?'","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":58,"q":"Where exactly was Thomas Becket murdered?","a":"Inside Canterbury Cathedral near the altar","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":59,"q":"What happened to Canterbury after Becket's murder?","a":"It became one of the most important pilgrimage sites in Europe","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":60,"q":"How did Henry II show penance for Becket's death?","a":"He walked barefoot to the cathedral and allowed monks to whip him","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":61,"q":"Which king introduced common law and royal courts in 1154?","a":"King Henry II.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":62,"q":"Who did Henry II appoint as Archbishop of Canterbury?","a":"Thomas Becket.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":63,"q":"Why did Henry and Becket clash?","a":"Over the power of Church courts and 'criminous clerks'.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":64,"q":"What happened to Thomas Becket in 1170?","a":"He was murdered by four of the King's knights in Canterbury Cathedral.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":65,"q":"What did the Pope do to Henry II as punishment?","a":"He threatened him with excommunication, forcing Henry to do penance.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":66,"q":"Who won the Battle of Hastings?","a":"William the Conqueror.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":67,"q":"What was the Domesday Book?","a":"A massive survey used to maximize taxation in 1086.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":68,"q":"What is a 'criminous clerk'?","a":"A member of the clergy accused of a serious crime like murder.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":69,"q":"Why did Henry II walk barefoot through Canterbury being whipped?","a":"As public penance for his role in Becket's murder.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":70,"q":"What is a motte and bailey?","a":"An early wooden castle built by the Normans.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":71,"q":"What territories did King John famously lose early in his reign?","a":"Most of England's lands in France, including Normandy","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":72,"q":"What does the nickname 'Lackland' refer to?","a":"John's failure to inherit significant lands compared to his older brothers","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":73,"q":"How did King John try to fund his wars in France?","a":"By imposing massive, arbitrary taxes on the barons","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":74,"q":"What did the Pope do to King John during their dispute?","a":"He excommunicated John and banned church services in England","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":75,"q":"Where did the barons confront King John to force him to seal Magna Carta?","a":"Runnymede","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":76,"q":"What does 'Magna Carta' translate to in English?","a":"The Great Charter","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":77,"q":"Which of the following was a key clause in Magna Carta?","a":"No free man shall be imprisoned without a fair trial","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":78,"q":"Who was largely excluded from the protections of Magna Carta in 1215?","a":"The unfree peasants (villeins) who made up the majority of the population","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":79,"q":"What did King John do almost immediately after sealing Magna Carta?","a":"He complained to the Pope and had the document declared void","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":80,"q":"What war broke out as a direct result of King John breaking his promises in Magna Carta?","a":"The First Barons' War","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":81,"q":"What percentage of the population in medieval England lived in rural farming communities?","a":"Over 90%","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":82,"q":"What was a 'villein' in the feudal system?","a":"An unfree peasant tied to the land","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":83,"q":"Which of the following could a villein NOT do without their lord's permission?","a":"Leave the village or marry","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":84,"q":"What kind of houses did villeins typically live in?","a":"Single-room wattle-and-daub huts","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":85,"q":"Why did peasants often share their huts with animals in the winter?","a":"To keep warm","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":86,"q":"What dictated the daily lives and labor of medieval peasants?","a":"The seasons","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":87,"q":"What was the most crucial task for a peasant in late summer?","a":"Harvesting crops","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":88,"q":"What was the 'tithe'?","a":"A tax requiring 1/10th of a peasant's produce to go to the Church","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":89,"q":"Who controlled the minds and spiritual lives of the peasants?","a":"The Catholic Church","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":90,"q":"Why did almost no peasant refuse to pay the tithe, even during famines?","a":"They feared eternal damnation in Hell","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":91,"q":"What was a Doom Painting?","a":"A giant mural painted in churches depicting the Day of Judgement","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":92,"q":"Why did the Church rely on visual art like Doom Paintings?","a":"Because the vast majority of peasants were illiterate","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":93,"q":"According to Doom Paintings, what happened to obedient Christians?","a":"They were welcomed into Heaven by angels","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":94,"q":"How were sinners depicted in Doom Paintings?","a":"Naked and being dragged by demons into Hell","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":95,"q":"What was Purgatory in medieval Catholic belief?","a":"A place of suffering before Heaven","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":96,"q":"How could a peasant theoretically shorten their time in Purgatory?","a":"By obeying the priest and paying tithes","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":97,"q":"What building was the 'stone heart' of every medieval village?","a":"The parish church","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":98,"q":"When did peasants typically slaughter their animals?","a":"In the autumn","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":99,"q":"What would happen if the late summer harvest failed?","a":"The village would face starvation","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":100,"q":"What material was typically used to build a peasant's hut?","a":"Wattle-and-daub","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":101,"q":"Which king lost Normandy and Aquitaine to the French?","a":"King John.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":102,"q":"What mocking nickname was given to King John?","a":"Softsword.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":103,"q":"Why were the barons angry with King John?","a":"He imposed heavy taxes (scutage) and lost wars.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":104,"q":"What document was King John forced to seal in 1215?","a":"Magna Carta.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":105,"q":"What was the most important principle of Magna Carta?","a":"That no one, not even the King, is above the law.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":106,"q":"Where was Thomas Becket murdered?","a":"Canterbury Cathedral.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":107,"q":"What does 'excommunication' mean?","a":"Being officially thrown out of the Catholic Church.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":108,"q":"Who built the first motte and bailey castles in England?","a":"William the Conqueror.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":109,"q":"What was the Harrying of the North?","a":"William's brutal destruction of crops to stop northern rebellions.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":110,"q":"What did Henry II want to stop Church courts from doing?","a":"Giving lenient punishments to criminous clerks.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":111,"q":"How did the Black Death originally reach England?","a":"On trading ships arriving at southern ports like Melcombe Regis","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":112,"q":"What is a 'bubo'?","a":"A painfully swollen lymph node, usually in the armpit or groin","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":113,"q":"Which of these was a strange cure medieval people attempted to use for the plague?","a":"Strapping a live toad or chicken to the buboes","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":114,"q":"What is 'miasma'?","a":"The medieval belief that bad smells and corrupt air caused disease","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":115,"q":"Who were the flagellants?","a":"Religious zealots who whipped themselves to earn God's forgiveness and stop the plague","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":116,"q":"What economic situation did the massive death toll create in England?","a":"A severe labour shortage","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":117,"q":"Because there were fewer workers after the Black Death, what did the surviving peasants do?","a":"They demanded higher wages and better working conditions","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":118,"q":"What was the Statute of Labourers (1351)?","a":"A law passed by the government to freeze peasant wages at pre-plague levels","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":119,"q":"How did the Black Death fundamentally weaken the feudal system?","a":"Lords had to start paying villeins or risk them running away to rival lords","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":120,"q":"Why did many peasants lose faith in the Catholic Church during the Black Death?","a":"Because priests were dying just like everyone else, and their prayers hadn't stopped the disease","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":121,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":122,"q":"What fraction of the English population was killed by the plague?","a":"Roughly one third.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":123,"q":"What were 'buboes'?","a":"Agonizing, pus-filled swellings caused by the bubonic plague.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":124,"q":"Why couldn't medieval doctors cure the plague?","a":"Because germ theory did not exist yet.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":125,"q":"What supernatural reason did people blame for the plague?","a":"They believed it was a divine punishment sent by God.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":126,"q":"What document limited King John's power in 1215?","a":"Magna Carta.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":127,"q":"Who was murdered by four knights in 1170?","a":"Thomas Becket.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":128,"q":"Why did King John charge heavy 'scutage' taxes?","a":"To fund his failed wars to recapture Normandy.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":129,"q":"What was the Domesday Book used for?","a":"To record wealth and property for taxation.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":130,"q":"Who won the Battle of Stamford Bridge in 1066?","a":"Harold Godwinson.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":131,"q":"Why was the Poll Tax of 1380 seen as particularly unfair?","a":"It charged every person the exact same amount, meaning it hit the poor much harder than the rich","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":132,"q":"Who was John Ball?","a":"A radical priest who preached that all men were created equal by God","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":133,"q":"What famous rhyme did John Ball use to question the feudal system?","a":"'When Adam delved and Eve span, who was then the gentleman?'","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":134,"q":"What did the rebel army do when they entered London?","a":"They burned down the Savoy Palace and opened the prisons","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":135,"q":"Which two high-ranking officials were dragged from the Tower of London and beheaded by the rebels?","a":"The Archbishop of Canterbury and the Lord Treasurer","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":136,"q":"How old was King Richard II during the Peasants' Revolt in 1381?","a":"14 years old","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":137,"q":"Where did King Richard II ride out to meet Wat Tyler?","a":"Smithfield","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":138,"q":"What was one of the radical demands Wat Tyler made to the King?","a":"The total abolition of serfdom and the feudal system","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":139,"q":"Who stabbed Wat Tyler during the meeting with the King?","a":"The Mayor of London","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":140,"q":"What did King Richard II do immediately after Wat Tyler was killed?","a":"He rode toward the angry mob and convinced them he would be their leader","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":141,"q":"What was the name of the brutal 30-year civil war that began in 1455?","a":"The Wars of the Roses","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":142,"q":"Which two rival branches of the royal family fought in the Wars of the Roses?","a":"The House of Lancaster and the House of York","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":143,"q":"What flower symbolized the House of Lancaster?","a":"A red rose","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":144,"q":"What flower symbolized the House of York?","a":"A white rose","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":145,"q":"Why did the Wars of the Roses initially break out?","a":"King Henry VI was a weak, mentally unstable ruler","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":146,"q":"What territory had King Henry VI lost before the Wars of the Roses began?","a":"England's lands in France","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":147,"q":"Who died in 1483, leaving a 12-year-old son to inherit the throne?","a":"The Yorkist King Edward IV","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":148,"q":"Who was the ambitious uncle of the 12-year-old King Edward V?","a":"Richard of Gloucester (later Richard III)","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":149,"q":"Where did Richard of Gloucester place his two nephews, supposedly for their own protection?","a":"The Tower of London","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":150,"q":"What happened to the two young princes after they were placed in the Tower?","a":"They were never seen in public again","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":151,"q":"What did Richard III do after declaring his nephews illegitimate?","a":"He crowned himself King of England","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":152,"q":"How did the disappearance of the Princes in the Tower affect Richard III?","a":"It shocked the country and turned many nobles against him","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":153,"q":"What was the final, decisive battle of the Wars of the Roses?","a":"The Battle of Bosworth Field","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":154,"q":"In what year did the Battle of Bosworth take place?","a":"1485","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":155,"q":"Who invaded England to challenge Richard III for the throne at Bosworth?","a":"Henry Tudor","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":156,"q":"What crucial event happened during the Battle of Bosworth that doomed Richard III?","a":"Several of his key allies betrayed him and refused to fight","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":157,"q":"What unique distinction does Richard III hold among English monarchs?","a":"He was the last English king to die in battle","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":158,"q":"Who was crowned King of England after Richard III's death?","a":"Henry VII","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":159,"q":"How did Henry VII attempt to heal the division between the rival houses?","a":"He married a princess from the House of York","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":160,"q":"What historical period is generally considered to have ended with the Battle of Bosworth?","a":"The Middle Ages","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -3718,6 +3935,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -3725,6 +3943,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -3791,6 +4010,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -3828,6 +4048,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

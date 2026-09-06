@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -2619,6 +2728,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -2710,11 +2836,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_early_modern_world_full';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"In what year did Martin Luther post his 95 Theses, starting the Protestant Reformation?","a":"1517","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":2,"q":"Which English monarch broke away from the Catholic Church in 1534 to establish the Church of England?","a":"Henry VIII","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":3,"q":"What was the name of the 1494 papal agreement that divided the Americas between Spain and Portugal?","a":"The Treaty of Tordesillas","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":4,"q":"What official document gave privateers legal permission from a monarch to attack foreign ships?","a":"A Letter of Marque","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":5,"q":"What nickname did the Spanish give to ?","a":"El Draque (\"The Dragon\")","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":6,"q":"Name the flagship on which  circumnavigated the globe between 1577 and 1580.","a":"The Golden Hind","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":7,"q":"Which English naval tactic shattered the Spanish fleet formation while anchored off Calais in 1588?","a":"Fire ships","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":8,"q":"Who was the Catholic King of Spain who launched the Armada against England in 1588?","a":"King Philip II","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":9,"q":"What term was used to describe the storms that wrecked the fleeing Spanish ships off Scotland and Ireland?","a":"The Protestant Wind","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":10,"q":"What continent does Queen Elizabeth's hand rest upon in the famous 1588 Armada Portrait?","a":"North America","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":11,"q":"What was the overarching name for the ancient trade network connecting Asia to Europe?","a":"The Silk Road","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":12,"q":"Which major empire expanded to block overland European trade routes in 1453?","a":"The Ottoman Empire","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":13,"q":"What city was captured by Sultan Mehmed II in 1453?","a":"Constantinople","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":14,"q":"What West African kingdom was known for its detailed bronze plaques in the 15th century?","a":"The Kingdom of Benin","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":15,"q":"Why did the capture of Constantinople force European nations to look for new trade routes?","a":"Because the Ottoman Empire now controlled the main overland routes to Asia, taxing or blocking trade.","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":16,"q":"What type of business model allowed multiple investors to pool their money to fund risky overseas colonial ventures?","a":"Joint-Stock Companies","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":17,"q":"On which island was the famous \"Lost Colony\" of 1585 founded by Sir Walter Raleigh?","a":"Roanoke Island","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":18,"q":"What single word was found carved into a wooden post when supply ships returned to Roanoke in 1590?","a":"CROATOAN","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":19,"q":"What was the name of the first permanent English settlement established in North America in 1607?","a":"Jamestown","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":20,"q":"Which cash crop introduced by  saved the Jamestown colony from economic ruin?","a":"Tobacco","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":21,"q":"What was the title of the native ruler who led the Powhatan Confederacy when the English arrived in Virginia?","a":"Chief Powhatan (Wahunsenacawh)","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":22,"q":"In what year was the English East India Company (EIC) granted its royal charter by Queen Elizabeth I?","a":"1600","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":23,"q":"Which powerful Muslim empire ruled India during the 17th century when the English first arrived?","a":"The Mughal Empire","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":24,"q":"Name the English ambassador sent by King James I to bow before Emperor Jahangir in 1615.","a":"Sir Thomas Roe","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":25,"q":"What term was used to describe the fortified warehouse trading posts established by the EIC along the Indian coast?","a":"Factories","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":26,"q":"In what year did Martin Luther post his 95 Theses?","a":"1517","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":27,"q":"What name was given to English sailors, like Francis Drake, who were given legal permission to attack Spanish ships?","a":"Privateers","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":28,"q":"What was the name of the Spanish King who launched the Armada against England in 1588?","a":"King Philip II","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":29,"q":"What weather event destroyed much of the fleeing Spanish Armada off the coast of Scotland?","a":"The Protestant Wind","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":30,"q":"Why did Queen Elizabeth I use privateers instead of the Royal Navy to challenge Spain in the Americas?","a":"England was financially weak and lacked a large navy, so privateers were a cheap way to challenge Spain without a direct war.","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":31,"q":"What political belief held that kings were chosen directly by God and possessed absolute power?","a":"The Divine Right of Kings","topic":"Who controlled Britain? The Ideological Battle"},{"id":32,"q":"What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?","a":"Ship Money","topic":"Who controlled Britain? The Ideological Battle"},{"id":33,"q":"On what date was King Charles I executed outside the Banqueting House in London?","a":"30 January 1649","topic":"Who controlled Britain? The Ideological Battle"},{"id":34,"q":"What was the name of Parliament’s disciplined, professional military force created during the Civil War?","a":"The New Model Army","topic":"Who controlled Britain? The Ideological Battle"},{"id":35,"q":"Who served as the commander of the New Model Army and later became 'Lord Protector' of England?","a":"Oliver Cromwell","topic":"Who controlled Britain? The Ideological Battle"},{"id":36,"q":"What formal title was given to the English republic that ruled between 1649 and 1660?","a":"The Commonwealth of England","topic":"Who controlled Britain? The Ideological Battle"},{"id":37,"q":"Which Caribbean island became the wealthy engine of the English empire in the 1640s due to mass sugar production?","a":"Barbados","topic":"Who controlled Britain? The Ideological Battle"},{"id":38,"q":"What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?","a":"The Navigation Acts","topic":"Who controlled Britain? The Ideological Battle"},{"id":39,"q":"Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?","a":"The Puritans","topic":"Who controlled Britain? The Ideological Battle"},{"id":40,"q":"What event in 1660 brought  back to the throne, ending the Commonwealth era?","a":"The Restoration","topic":"Who controlled Britain? The Ideological Battle"},{"id":41,"q":"What was the name of the first permanent English settlement in North America (1607)?","a":"Jamestown","topic":"Who controlled Britain? The Ideological Battle"},{"id":42,"q":"Which cash crop saved the Jamestown colony from economic ruin?","a":"Tobacco","topic":"Who controlled Britain? The Ideological Battle"},{"id":43,"q":"What type of business model was the East India Company (EIC), where multiple investors pooled money?","a":"A Joint-Stock Company","topic":"Who controlled Britain? The Ideological Battle"},{"id":44,"q":"Which powerful Asian empire did Sir Thomas Roe visit in 1615?","a":"The Mughal Empire","topic":"Who controlled Britain? The Ideological Battle"},{"id":45,"q":"Why were the English submissive traders in India, but aggressive conquerors in North America?","a":"Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics.","topic":"Who controlled Britain? The Ideological Battle"},{"id":46,"q":"What political belief held that kings were chosen directly by God and possessed absolute power?","a":"The Divine Right of Kings","topic":"Who controlled Britain? The Economic Shift"},{"id":47,"q":"What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?","a":"Ship Money","topic":"Who controlled Britain? The Economic Shift"},{"id":48,"q":"On what date was King Charles I executed outside the Banqueting House in London?","a":"30 January 1649","topic":"Who controlled Britain? The Economic Shift"},{"id":49,"q":"What was the name of Parliament’s disciplined, professional military force created during the Civil War?","a":"The New Model Army","topic":"Who controlled Britain? The Economic Shift"},{"id":50,"q":"Who served as the commander of the New Model Army and later became 'Lord Protector' of England?","a":"Oliver Cromwell","topic":"Who controlled Britain? The Economic Shift"},{"id":51,"q":"What formal title was given to the English republic that ruled between 1649 and 1660?","a":"The Commonwealth of England","topic":"Who controlled Britain? The Economic Shift"},{"id":52,"q":"Which Caribbean island became the wealthy engine of the English empire in the 1640s due to mass sugar production?","a":"Barbados","topic":"Who controlled Britain? The Economic Shift"},{"id":53,"q":"What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?","a":"The Navigation Acts","topic":"Who controlled Britain? The Economic Shift"},{"id":54,"q":"Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?","a":"The Puritans","topic":"Who controlled Britain? The Economic Shift"},{"id":55,"q":"What event in 1660 brought  back to the throne, ending the Commonwealth era?","a":"The Restoration","topic":"Who controlled Britain? The Economic Shift"},{"id":56,"q":"What political belief held that kings were chosen directly by God and possessed absolute power?","a":"The Divine Right of Kings","topic":"Who controlled Britain? The Economic Shift"},{"id":57,"q":"What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?","a":"Ship Money","topic":"Who controlled Britain? The Economic Shift"},{"id":58,"q":"What was the name of Parliament's disciplined, professional military force created during the Civil War?","a":"The New Model Army","topic":"Who controlled Britain? The Economic Shift"},{"id":59,"q":"Who served as the commander of the New Model Army and later became 'Lord Protector' of England?","a":"Oliver Cromwell","topic":"Who controlled Britain? The Economic Shift"},{"id":60,"q":"On what date was King Charles I executed outside the Banqueting House in London?","a":"27 January 1649","topic":"Who controlled Britain? The Economic Shift"},{"id":61,"q":"What were the three main stages of the Triangular Trade?","a":"Europe to Africa, Africa to the Americas, the Americas to Europe.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":62,"q":"Which of the following was NOT a typical good traded by Europeans in West Africa?","a":"Sugar","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":63,"q":"What was the 'Middle Passage'?","a":"The brutal forced voyage of enslaved Africans across the Atlantic.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":64,"q":"What was the primary crop grown on Caribbean plantations such as in Jamaica and Barbados?","a":"Sugar","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":65,"q":"How did the experience of enslaved people in Virginia generally compare to those in the Caribbean by the 1700s?","a":"The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":66,"q":"What is an 'absentee landlord' in the context of Caribbean sugar plantations?","a":"A wealthy owner who lived in Britain and left the plantation to be run by brutal overseers.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":67,"q":"Why was the Caribbean sugar system often described as a 'death camp' model?","a":"Overseers calculated it was cheaper to work enslaved people to death and simply buy replacements.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":68,"q":"How did the Triangular Trade fuel the Industrial Revolution in Britain?","a":"Profits from slave-produced goods were invested in British banks, infrastructure, and factories.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":69,"q":"According to the UCL Legacies of British Slavery Database, what happened in 1833?","a":"The British government paid massive compensation to former slave owners.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":70,"q":"How does the reality of the Transatlantic Slave Trade challenge the idea of 18th-century Britain as a purely 'modern' and enlightened society?","a":"It demonstrates that Britain's wealth and modern financial systems were built on horrific brutality and chattel slavery.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":71,"q":"What is a 'joint-stock company'?","a":"A company where wealthy investors pool their money to share the risks and profits of overseas trade.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":72,"q":"What cash crop saved the Jamestown colony from economic failure?","a":"Tobacco","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":73,"q":"Who won the English Civil War (1642-1651)?","a":"Parliament (led by Oliver Cromwell's New Model Army)","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":74,"q":"What were the 'Maroons' in Jamaica?","a":"Communities of escaped enslaved people who fought guerrilla wars against the British.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":75,"q":"What was the significance of the Haitian Revolution (1791-1804)?","a":"It was the only successful large-scale slave revolt in history, resulting in an independent nation.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":76,"q":"Who was Harriet Tubman?","a":"A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":77,"q":"What was the 'Underground Railroad'?","a":"A secret network of safe houses and routes that helped enslaved people escape.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":78,"q":"What was 'Obeah' in the context of the Caribbean?","a":"A spiritual belief system utilizing botanical knowledge, sometimes used for silent resistance.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":79,"q":"Why did enslavers live in constant terror of Obeah?","a":"Because practitioners could use their botanical knowledge to slowly and undetectably poison them.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":80,"q":"What is the 'White Savior Narrative' regarding the abolition of slavery?","a":"The idea that slavery was ended almost entirely by moral, upper-class white politicians like William Wilberforce.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":81,"q":"According to historians like Eric Williams, what were the two TRUE main reasons for the abolition of slavery?","a":"Declining economic profitability of sugar and massive, terrifying armed rebellions by enslaved people.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":82,"q":"How does the story of the Underground Railroad challenge traditional historical narratives?","a":"It shows enslaved people actively dismantling the system themselves, rather than waiting passively for white politicians.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":83,"q":"Based on Source A (Olaudah Equiano), what was a primary cause of death during the Middle Passage?","a":"Suffocation and sickness caused by severe overcrowding and lack of ventilation.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":84,"q":"What were the three legs of the Triangular Trade?","a":"1. Manufactured goods to Africa. 2. Enslaved people to the Americas (Middle Passage). 3. Cash crops to Europe.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":85,"q":"What was a 'barracoon'?","a":"A fortified enclosure or 'slave dungeon' on the African coast where enslaved people were held before boarding ships.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":86,"q":"Why was sugar known as a 'killer crop'?","a":"Because the intense, grueling labor required to harvest and process it resulted in extremely high death rates for enslaved people.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":87,"q":"In what year was the Bank of England established, revolutionizing British national debt and finance?","a":"1694","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":88,"q":"What famous 1751 William Hogarth engraving depicted the social decay and poverty caused by alcohol addiction in London slums?","a":"Gin Lane","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":89,"q":"Roughly what percentage of the male population had the right to vote in British parliamentary elections in 1750?","a":"Less than 5% (approx. 3-5%)","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":90,"q":"What term was used to describe private toll roads constructed in the 18th century to speed up travel and trade?","a":"Turnpike Roads","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":91,"q":"Which two European revolutions (1642-1651 & 1688) permanently reduced the absolute power of the British monarchy?","a":"The English Civil War and the Glorious Revolution","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":92,"q":"What informal term was given to the 18th-century English criminal code that carried over 200 capital offenses?","a":"The 'Bloody Code'","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":93,"q":"Which institution, founded in London in 1600, was by 1750 establishing territorial footholds in Mughal India?","a":"The East India Company (EIC)","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":94,"q":"What was the name given to corrupt parliamentary constituencies with very few voters that were easily bought by aristocrats?","a":"Rotten Boroughs","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":95,"q":"Name two major consumer goods imported into Britain in 1750 that relied directly on Caribbean plantation slave labor.","a":"Sugar and Tobacco","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":96,"q":"Which major historical transformation, beginning around 1750, would turn Britain into the 'Workshop of the World'?","a":"The Industrial Revolution","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":97,"q":"What was the primary function of the 1607 Jamestown Fort design?","a":"Defense against both Spanish attacks and the local Powhatan confederacy.","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":98,"q":"Why did Oliver Cromwell execute King Charles I in 1649?","a":"For committing high treason against Parliament and the English people.","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":99,"q":"What was the strategic advantage of the Jamaican Maroons' location?","a":"The rugged, mountainous terrain allowed them to launch devastating guerrilla attacks on British plantations while remaining virtually impossible for the British army to conquer.","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":100,"q":"What motivated the creation of the Royal African Company?","a":"To monopolize the highly profitable Transatlantic Slave Trade for the British Crown and its merchants.","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -2791,6 +3008,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -2798,6 +3016,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -2864,6 +3083,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -2901,6 +3121,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -2479,6 +2588,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -2570,11 +2696,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_renaissance';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"What does the French word 'Renaissance' translate to, and what did it represent in medical history?","a":"Rebirth; a period of reborn interest in classical worlds combined with a love of enquiry and a willingness to challenge old ideas","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":2,"q":"How did the rise of Protestantism during the Reformation affect the Church's influence over scientific and medical learning in the Renaissance?","a":"It made the Catholic Church much less able to promote and enforce its preferred beliefs about science and nature","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":3,"q":"How did Johannes Gutenberg's printing press (developed in around 1440) directly support progress in medical knowledge during the Renaissance?","a":"It allowed new, controversial discoveries to be printed rapidly and shared cheaply, making it harder for the Church to censor or block them","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":4,"q":"Why was the 17th-century English physician Thomas Sydenham known as the 'English Hippocrates'?","a":"Because he urged doctors to stop relying blindly on classical books and instead closely observe their patients' symptoms to diagnose them","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":5,"q":"How did Thomas Sydenham's view of disease fundamentally challenge the traditional Theory of the Four Humours?","a":"He argued that diseases were separate, independent 'species' that could be grouped and classified like plants, rather than being unique to each individual's humoural balance","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":6,"q":"Which two diseases did Thomas Sydenham successfully distinguish and classify as separate illnesses in his clinical observation work?","a":"Measles and Scarlet Fever","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":7,"q":"What was the primary objective of the Royal Society, which was founded in London in the year 1660?","a":"To encourage scientific enquiry, promote empirical experimentation, and provide a hub for scientists to share their research","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":8,"q":"What was the official Latin motto of the Royal Society, and what did it encourage scientists to do?","a":"'Nullius in verba' (Take nobody's word for it); it encouraged scientists to do experiments to prove things rather than just trusting classical authorities","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":9,"q":"What was the name of the Royal Society's scientific journal, first published in 1665, which allowed scientists to share and peer-review research globally?","a":"Philosophical Transactions","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":10,"q":"In 1683, Antony van Leeuwenhoek used an improved microscope to observe 'animalcules' (bacteria) for the first time. What was the major limitation of this breakthrough in the Renaissance?","a":"He did not realise that these 'animalcules' actually caused illnesses, meaning spontaneous generation and miasma remained the dominant beliefs","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":11,"q":"Why did Renaissance physicians continue to use the Theory of the Four Humours when diagnosing patients, despite many doctors beginning to doubt its scientific accuracy by the late 17th century?","a":"Because patients fully understood the humoural system, and physicians had to respect their clients' expectations to earn a living","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":12,"q":"How did beliefs about 'miasma' change during the Medical Renaissance?","a":"The belief in miasma remained highly popular and became even more widespread during devastating epidemics like the Great Plague of 1665","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":13,"q":"Andreas Vesalius's anatomical dissections proved that Galen had made over 300 mistakes. Why did this breakthrough have almost no immediate impact on everyday medical treatments?","a":"Because knowing the correct structure of the bones and organs did not give doctors new cures, so they continued to use traditional bleeding and herbal remedies","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":14,"q":"Which of the following was a revolutionary treatment for smallpox developed by Thomas Sydenham that directly challenged traditional medieval practices?","a":"Prescribing airy bedrooms, light blankets, and cold drinks instead of the traditional 'sweating' method","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":15,"q":"What was the 'Royal Touch' and what did its popularity during the Renaissance demonstrate about society's beliefs?","a":"The belief that the monarch could cure skin diseases like scrofula simply by touching the patient, demonstrating how slowly traditional and supernatural beliefs changed","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":16,"q":"What intellectual movement in the Renaissance period encouraged people to think for themselves, ask questions, and use observation to find the truth?","a":"Humanism","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":17,"q":"How did the training of physicians in universities begin to improve during the Renaissance?","a":"Students began to observe real human dissections alongside classical texts, using highly accurate printed anatomical illustrations","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":18,"q":"In what way did the printing press improve scientific accuracy in medical research compared to manual copying by medieval monks?","a":"It guaranteed that every copy of a medical book contained identical, error-free text and precise anatomical drawings","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":19,"q":"What popular New World herbal remedy, imported from Peru, did Thomas Sydenham popularise to treat malaria (ague)?","a":"Cinchona bark (quinine)","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":20,"q":"Which of the following statements best summarises the progress made in ideas about the causes of disease between 1500 and 1700?","a":"New anatomical knowledge and clinical observations laid vital foundations for the future, but everyday medical beliefs and treatments for the general public changed very little","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":21,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":22,"q":"Who were the 'flagellants'?","a":"People who whipped themselves to show penance to God.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":23,"q":"State one common medieval preventative measure for the Black Death.","a":"Carrying sweet-smelling herbs or lighting fires.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":24,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":25,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":26,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":27,"q":"How did medieval hospitals differ from modern ones?","a":"They provided shelter and care, not medical treatment.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":28,"q":"What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?","a":"To restore balance to the four humours by releasing excess blood.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":29,"q":"What was the role of a medieval apothecary?","a":"Preparing and selling herbal remedies and potions.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":30,"q":"How did the medieval Church explain the cause of disease?","a":"God sent disease as a punishment for sin or to test faith.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":31,"q":"What is the primary reason why Andreas Vesalius's major Renaissance breakthroughs in anatomy did not immediately improve everyday medical treatments for patients?","a":"Knowing the correct structure of bones and organs did not give doctors new chemical cures or treatments, so they continued to use traditional bleeding and purging","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":32,"q":"Which of the following treatments represents a major CONTINUITY in everyday medical practice between the Medieval period and the Medical Renaissance (c1500-c1700)?","a":"The continued reliance on bloodletting and purging to balance the Four Humours","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":33,"q":"What was the new Renaissance medical theory of 'transference', and how was it practically applied by patients?","a":"The belief that an illness could be transferred to another object or animal, such as rubbing an onion on warts","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":34,"q":"How did exploration of the 'New World' (the Americas) change herbal medicine in Renaissance England?","a":"It introduced new, effective herbal ingredients like cinchona bark (quinine) to treat malaria","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":35,"q":"What was the medical term 'iatrochemistry' (or alchemy), which became increasingly popular during the Renaissance?","a":"The search for chemical and mineral-based cures (using metals like antimony) rather than plant-based remedies","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":36,"q":"Why did the chemical element antimony become a controversial treatment during the Renaissance?","a":"Because in large doses it promoted sweating and vomiting to clear the body, but in small doses it was used as a daily general tonic","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":37,"q":"Which major political event in 1536 had a devastating immediate impact on hospital care and charity beds across England?","a":"Henry VIII's Dissolution of the Monasteries","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":38,"q":"Following the Dissolution of the Monasteries in 1536, what major change occurred in how surviving hospitals were funded and run?","a":"They transitioned from monastic control to being run and funded by secular town councils and charities","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":39,"q":"How did the primary focus of hospitals shift during the Renaissance compared to their medieval predecessors?","a":"They shifted from providing general hospitality and spiritual 'care' to actively treating wounds and curable physical illnesses","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":40,"q":"How did the London city council and local charity manage to keep St Bartholomew's Hospital open after 1536?","a":"By petitioning Henry VIII, who re-founded the hospital himself under municipal control in 1546","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":41,"q":"What were 'Pest Houses' and why were they introduced during the Renaissance period?","a":"Specialized, secular isolation hospitals opened by town councils specifically to quarantine people suffering from highly contagious diseases like the plague","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":42,"q":"If a Renaissance patient suffered from a disease that produced a red skin rash, such as smallpox, what traditional herbal-associative treatment would they most likely receive?","a":"The 'red cure,' which involved drinking red wine, eating red foods, and wearing red clothing","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":43,"q":"What was a major change in the medical staff employed by municipal hospitals like St Bartholomew's during the late Renaissance?","a":"They began employing university-trained physicians to actively treat and cure patients' physical conditions","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":44,"q":"Why did everyday people in Renaissance England continue to rely on traditional family treatments in the home rather than municipal hospitals or professional physicians?","a":"Because physicians were extremely expensive, and mothers, wives, or local wise women provided familiar, free, and accessible herbal care","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":45,"q":"Which of the following is a classic example of iatrochemistry/alchemy used as an everyday treatment in the late 1600s, showing the dangerous nature of some Renaissance medical experiments?","a":"Prescribing ingredients derived from metals and minerals, such as mercury to treat syphilis, or using 'cold deadman's skull' in remedies","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":46,"q":"How did the role of professional guilds, such as the Company of Barber-Surgeons, affect medical training during the Renaissance?","a":"They helped to professionalize surgeons by regulating training through apprenticeships, separating their work from simple hair cutting","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":47,"q":"How did the treatment of plague victims in the 1665 Great Plague demonstrate continuity with the 1348 Black Death?","a":"Both outbreaks were treated with humoural remedies (bleeding and purging), herbal mixtures, and prayers, because the cause (germs) was still unknown","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":48,"q":"Why did people in the 1500s and 1600s begin to take fewer warm baths, representing a decline in hygiene compared to the medieval period?","a":"Because public bath houses became associated with the rapid spread of the 'Great Pox' (syphilis), making people terrified of catching it","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":49,"q":"What did King Charles II's final medical treatment in 1685 (such as opening veins for bleeding and purging his bowels) demonstrate about the state of royal medicine at the end of the Renaissance?","a":"That despite monumental scientific discoveries, clinical medicine at the bedside remained heavily based on traditional, medieval humoural treatments","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":50,"q":"Which statement best describes the overall pace of change in medical TREATMENTS during the Medical Renaissance (c1500-c1700)?","a":"Treatments remained highly traditional with immense continuity, as the new scientific discoveries in anatomy and physiology did not yet translate into practical bedside cures","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":51,"q":"What was the Renaissance?","a":"A period of 'rebirth' in learning, art, and science from the 14th to 17th century.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":52,"q":"What invention helped spread new medical ideas during the Renaissance?","a":"The printing press.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":53,"q":"Who was Thomas Sydenham?","a":"An English physician who advocated observing patients' symptoms rather than relying on books.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":54,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":55,"q":"What did Vesalius prove about Galen's anatomical ideas?","a":"Galen had made over 300 mistakes because he dissected animals, not humans.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":56,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":57,"q":"Explain the role of the apothecary in medieval medicine.","a":"Preparing and selling herbal remedies and potions.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":58,"q":"Why did the influence of the Church begin to decline in the Renaissance?","a":"The scientific method promoted questioning old authorities, and the Reformation weakened Church power.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":59,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":60,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":61,"q":"In his landmark 1628 publication, An Anatomical Account of the Motion of the Heart and Blood, what did William Harvey empirically prove about the human body?","a":"That the heart acts as a muscular pump circulating blood continuously around the body in a one-way system","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":62,"q":"What experiment did William Harvey use on a patient's arm to prove that blood flows in one direction through the veins?","a":"He tied a tight bandage (ligature) around the arm and showed blood could only be pushed past the valves in one direction","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":63,"q":"Which ancient authority's medical teachings did William Harvey's work on the circulatory system directly contradict and disprove?","a":"Galen's theory that the liver constantly manufactures new blood","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":64,"q":"Why did William Harvey's discovery of blood circulation have almost no immediate impact on everyday medical treatments in the short term?","a":"Knowing that blood circulated did not cure diseases, so physicians continued to use traditional bleeding and purging","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":65,"q":"How did the English medical establishment initially react to William Harvey's publication in 1628?","a":"Many doctors openly criticized or ignored him because his theory had no practical application at the bedside","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":66,"q":"How long did it take for William Harvey's discoveries about blood circulation to be officially adopted into the medical curriculum at English universities?","a":"It took nearly 50 years, with his ideas only regularly appearing in university medical lectures from around 1673","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":67,"q":"What vital scientific limitation prevented William Harvey from fully explaining how blood traveled from the arteries back into the veins?","a":"Microscopes of the era were not powerful enough to see the tiny capillaries linking arteries and veins","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":68,"q":"In the long term, why was William Harvey's breakthrough in physiology so significant for modern medicine?","a":"It served as the essential foundation for subsequent surgical developments, blood transfusions, and cardiology","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":69,"q":"How did the mortality rate of the 1665 Great Plague in London compare to the 1348 Black Death in England?","a":"The Great Plague killed roughly one-fifth of London's population (about 100,000 people), whereas the 1348 Black Death killed nearly 30-50% of the entire country","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":70,"q":"What was the most significant difference in the government and municipal response to the 1665 Great Plague compared to the 1348 Black Death?","a":"In 1665, local authorities implemented highly organized, centralized regulations enforced by watchmen and searchers","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":71,"q":"If a London household had a member diagnosed with the Great Plague in 1665, what quarantine measure was legally enforced by watchmen?","a":"The house was boarded up with the entire family locked inside for 28 days, marked with a red cross on the door","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":72,"q":"What was the specific, dangerous duty of the municipal officials known as 'searchers' during the Great Plague of 1665?","a":"To inspect homes, identify plague victims, confirm the cause of death, and monitor the spread","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":73,"q":"Why did London authorities order the mass slaughter of roughly 40,000 dogs and cats in 1665, and what was the unintended consequence?","a":"They believed the animals spread the plague through their breath, but killing them allowed the rat population (which carried the plague-carrying fleas) to explode","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":74,"q":"Which of the following was a preventative measure enforced by municipal authorities in London in 1665 to limit the spread of the plague?","a":"Banning large public gatherings, closing theatres, and locking down taverns","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":75,"q":"How did municipal authorities organize the burial of plague victims in 1665 to minimize the risk of miasma?","a":"Bodies were collected in carts only at night and buried in deep, mass graves (plague pits) outside the city walls","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":76,"q":"Why did both medieval mayors in 1348 and Renaissance mayors in 1665 order giant barrels of tar and bonfires to be burned in the streets?","a":"To purify the air and drive away the disease-carrying 'bad air' (miasma)","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":77,"q":"What was the believed physical purpose of the bird-shaped beak mask worn by Renaissance 'plague doctors'?","a":"They believed birds attracted the plague, so the mask would draw the disease away from the patient and into the herb-filled beak","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":78,"q":"Which bizarre, superstitious treatment recorded during the 1665 Great Plague demonstrates the complete lack of improvement in medical cures since 1348?","a":"Strapping a live, plucked chicken to a swollen plague bubo to draw out the poison","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":79,"q":"Why were schoolboys at Eton College severely punished or beaten if they refused to smoke tobacco during the Great Plague of 1665?","a":"Tobacco smoke was believed to act as a powerful chemical shield to ward off the deadly plague miasma","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":80,"q":"What does the continued use of amulets, carrying pomanders, and humoural bleeding during the Great Plague of 1665 demonstrate about Renaissance medicine?","a":"That without an understanding of germs, people's fundamental beliefs about what caused the plague had not changed since 1348","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":81,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":82,"q":"What did Vesalius prove about Galen's anatomical ideas?","a":"Galen had made over 300 mistakes because he dissected animals, not humans.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":83,"q":"What was 'transference'?","a":"A Renaissance belief that a disease could be passed on or transferred to an object or animal.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":84,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":85,"q":"Why did the influence of the Church begin to decline in the Renaissance?","a":"The scientific method promoted questioning old authorities, and the Reformation weakened Church power.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":86,"q":"In what year did the Great Plague hit London?","a":"1665.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":87,"q":"How did local mayors try to prevent the spread of the Black Death in 1348?","a":"Cleaning streets and stopping visitor trade.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":88,"q":"What was the Theory of the Four Humours?","a":"The belief that health was governed by the balance of blood, phlegm, black bile, and yellow bile.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":89,"q":"What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?","a":"To restore balance to the four humours by releasing excess blood.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":90,"q":"What was the role of a medieval apothecary?","a":"Preparing and selling herbal remedies and potions.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -2651,6 +2868,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -2658,6 +2876,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -2724,6 +2943,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -2761,6 +2981,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

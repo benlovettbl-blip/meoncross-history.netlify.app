@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -2897,6 +3006,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -2989,11 +3115,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_eee_KT2';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"Which Protestant Bishop of Durham did the Northern Earls strongly resent?","a":"James Pilkington","topic":"KT2.1: Plots and revolts at home"},{"id":2,"q":"Which two Catholic nobles led the Revolt of the Northern Earls in 1569?","a":"The Earl of Northumberland and the Earl of Westmorland","topic":"KT2.1: Plots and revolts at home"},{"id":3,"q":"What major religious building did the Northern Earls capture to celebrate a Catholic Mass?","a":"Durham Cathedral","topic":"KT2.1: Plots and revolts at home"},{"id":4,"q":"Roughly how many rebels did Elizabeth execute after the Northern Earls' revolt?","a":"450","topic":"KT2.1: Plots and revolts at home"},{"id":5,"q":"What was the theological meaning of the 1570 Papal excommunication?","a":"Being formally excluded from the Catholic Church and unable to receive sacraments","topic":"KT2.1: Plots and revolts at home"},{"id":6,"q":"What strict law was passed in 1581 regarding Catholic conversions?","a":"It became high treason to convert anyone to Catholicism","topic":"KT2.1: Plots and revolts at home"},{"id":7,"q":"Who was the Italian banker that orchestrated a plot in 1571?","a":"Roberto Ridolfi","topic":"KT2.1: Plots and revolts at home"},{"id":8,"q":"Which foreign commander was supposed to lead 10,000 Spanish troops during the Ridolfi Plot?","a":"The Duke of Alba","topic":"KT2.1: Plots and revolts at home"},{"id":9,"q":"Which high-ranking English nobleman was executed in 1572 for his involvement in the Ridolfi Plot?","a":"The Duke of Norfolk","topic":"KT2.1: Plots and revolts at home"},{"id":10,"q":"Which plot in 1583 involved the French Duke of Guise invading England with Spanish money?","a":"The Throckmorton Plot","topic":"KT2.1: Plots and revolts at home"},{"id":11,"q":"What document was created after the Throckmorton Plot stating Mary would be killed if Elizabeth was assassinated?","a":"The Bond of Association","topic":"KT2.1: Plots and revolts at home"},{"id":12,"q":"Who was Elizabeth's Secretary of State and Spymaster?","a":"Sir Francis Walsingham","topic":"KT2.1: Plots and revolts at home"},{"id":13,"q":"What term is used for spies, like Gilbert Gifford, who secretly encourage others to commit treason?","a":"Agents provocateurs","topic":"KT2.1: Plots and revolts at home"},{"id":14,"q":"Who was the expert cryptographer that deciphered Mary's letters for Walsingham?","a":"Thomas Phelippes","topic":"KT2.1: Plots and revolts at home"},{"id":15,"q":"Which 1586 plot provided the final, irrefutable written proof of Mary's guilt?","a":"The Babington Plot","topic":"KT2.1: Plots and revolts at home"},{"id":16,"q":"What specific Act of Parliament was used to try and convict Mary, Queen of Scots?","a":"The Act for the Preservation of the Queen’s Safety","topic":"KT2.1: Plots and revolts at home"},{"id":17,"q":"In what year was Mary, Queen of Scots executed?","a":"1587","topic":"KT2.1: Plots and revolts at home"},{"id":18,"q":"Name two \"new men\" at court whose rise to power angered the old northern nobility.","a":"William Cecil, Robert Dudley, or John Forster","topic":"KT2.1: Plots and revolts at home"},{"id":19,"q":"What did Walsingham find in Francis Throckmorton's house that caused immense panic?","a":"A list of Catholic sympathisers / proof of the \"enemy within\"","topic":"KT2.1: Plots and revolts at home"},{"id":20,"q":"Which Spanish Ambassador was expelled following the discovery of the Throckmorton Plot?","a":"Mendoza","topic":"KT2.1: Plots and revolts at home"},{"id":21,"q":"Why did Mary, Queen of Scots flee to England in 1568?","a":"Following a rebellion by Scottish nobles who forced her to abdicate.","topic":"KT2.1: Plots and revolts at home"},{"id":22,"q":"What was Elizabeth's immediate reaction to Mary's arrival?","a":"She imprisoned her in the north to prevent her from rallying English Catholics.","topic":"KT2.1: Plots and revolts at home"},{"id":23,"q":"Why was Mary, Queen of Scots a massive threat to Elizabeth?","a":"She had a strong, legitimate claim to the English throne and was Catholic.","topic":"KT2.1: Plots and revolts at home"},{"id":24,"q":"What was the Casket Letters affair?","a":"Letters allegedly proving Mary was involved in the murder of her husband, Lord Darnley.","topic":"KT2.1: Plots and revolts at home"},{"id":25,"q":"What was the Papal Bull of 1570?","a":"The Pope's decree excommunicating Elizabeth.","topic":"KT2.1: Plots and revolts at home"},{"id":26,"q":"What was the 'Crucifix Controversy'?","a":"A Puritan protest against Elizabeth's demand for crucifixes in churches.","topic":"KT2.1: Plots and revolts at home"},{"id":27,"q":"What were the Royal Injunctions?","a":"Rules enforcing the Religious Settlement on the clergy.","topic":"KT2.1: Plots and revolts at home"},{"id":28,"q":"How much debt did Elizabeth inherit?","a":"£300,000.","topic":"KT2.1: Plots and revolts at home"},{"id":29,"q":"What was the 'Auld Alliance'?","a":"The Catholic alliance between France and Scotland.","topic":"KT2.1: Plots and revolts at home"},{"id":30,"q":"What did William Harvey discover?","a":"The circulation of blood.","topic":"KT2.1: Plots and revolts at home"},{"id":31,"q":"Who was the devout Catholic King of Spain during Elizabeth's reign?","a":"King Philip II","topic":"KT2.2: Relations with Spain"},{"id":32,"q":"What term describes sailors officially licensed by the government to rob enemy ships?","a":"Privateers","topic":"KT2.2: Relations with Spain"},{"id":33,"q":"Which famous English privateer stole roughly £400,000 of Spanish treasure during his circumnavigation?","a":"Sir Francis Drake","topic":"KT2.2: Relations with Spain"},{"id":34,"q":"What region did Spain control that Elizabeth sent troops to support in 1585?","a":"The Netherlands","topic":"KT2.2: Relations with Spain"},{"id":35,"q":"What was the name of the 1585 treaty where Elizabeth officially supported the Dutch rebels?","a":"The Treaty of Nonsuch","topic":"KT2.2: Relations with Spain"},{"id":36,"q":"Which English commander was sent to the Netherlands with 7,400 troops?","a":"The Earl of Leicester / Robert Dudley","topic":"KT2.2: Relations with Spain"},{"id":37,"q":"What 1587 event removed the Catholic alternative to the English throne, prompting Philip to invade?","a":"The execution of Mary, Queen of Scots","topic":"KT2.2: Relations with Spain"},{"id":38,"q":"In what year did Francis Drake raid Cadiz to delay the Armada?","a":"1587","topic":"KT2.2: Relations with Spain"},{"id":39,"q":"What famous phrase was used to describe Drake's raid on Cadiz?","a":"\"Singeing the King of Spain's beard\"","topic":"KT2.2: Relations with Spain"},{"id":40,"q":"In what year did the Spanish Armada set sail?","a":"1588","topic":"KT2.2: Relations with Spain"},{"id":41,"q":"Who was the inexperienced Spanish commander of the Armada?","a":"The Duke of Medina Sidonia","topic":"KT2.2: Relations with Spain"},{"id":42,"q":"Whose army was the Armada supposed to pick up from the Netherlands?","a":"The Duke of Parma's army","topic":"KT2.2: Relations with Spain"},{"id":43,"q":"What defensive shape did the Spanish fleet sail in as they travelled up the English Channel?","a":"A crescent formation","topic":"KT2.2: Relations with Spain"},{"id":44,"q":"What type of new, fast, and highly manoeuvrable warships did the English use?","a":"Galleons","topic":"KT2.2: Relations with Spain"},{"id":45,"q":"Where did the Spanish mistakenly drop their anchors, making them vulnerable?","a":"Calais","topic":"KT2.2: Relations with Spain"},{"id":46,"q":"What devastating tactic did the English use at midnight to break the Spanish formation at Calais?","a":"Fireships","topic":"KT2.2: Relations with Spain"},{"id":47,"q":"What major naval battle took place immediately after the fireships scattered the Spanish fleet?","a":"The Battle of Gravelines","topic":"KT2.2: Relations with Spain"},{"id":48,"q":"Why couldn't the Armada pick up the Spanish army in the Netherlands?","a":"Poor communication / Parma's army was not ready in time","topic":"KT2.2: Relations with Spain"},{"id":49,"q":"Which way was the Armada forced to sail to get home?","a":"North, around the coasts of Scotland and Ireland","topic":"KT2.2: Relations with Spain"},{"id":50,"q":"What destroyed the majority of the Spanish ships as they tried to return home?","a":"Fierce storms / The weather / The \"Protestant Wind\"","topic":"KT2.2: Relations with Spain"},{"id":51,"q":"What was the Revolt of the Northern Earls (1569)?","a":"A Catholic rebellion led by the Earls of Northumberland and Westmorland to depose Elizabeth.","topic":"KT2.2: Relations with Spain"},{"id":52,"q":"What was the Ridolfi Plot (1571)?","a":"A plot to assassinate Elizabeth and replace her with Mary, backed by Spanish troops.","topic":"KT2.2: Relations with Spain"},{"id":53,"q":"What was the Throckmorton Plot (1583)?","a":"A French Catholic plot backed by Spain to invade England and free Mary.","topic":"KT2.2: Relations with Spain"},{"id":54,"q":"What was the Babington Plot (1586)?","a":"A plot to assassinate Elizabeth; Mary's coded letters approving the plot were intercepted.","topic":"KT2.2: Relations with Spain"},{"id":55,"q":"Who was Francis Walsingham?","a":"Elizabeth's spymaster who uncovered the plots against her using ciphers and spies.","topic":"KT2.2: Relations with Spain"},{"id":56,"q":"Why did Mary, Queen of Scots flee to England in 1568?","a":"She was overthrown by Scottish nobles.","topic":"KT2.2: Relations with Spain"},{"id":57,"q":"What was the Casket Letters affair?","a":"Letters claiming Mary killed her husband.","topic":"KT2.2: Relations with Spain"},{"id":58,"q":"Who was the Pope that excommunicated Elizabeth in 1570?","a":"Pope Pius V.","topic":"KT2.2: Relations with Spain"},{"id":59,"q":"What was the Act of Uniformity?","a":"The 1559 law setting out how church services must look and sound.","topic":"KT2.2: Relations with Spain"},{"id":60,"q":"Who published the Germ Theory?","a":"Louis Pasteur.","topic":"KT2.2: Relations with Spain"},{"id":61,"q":"Under which previous monarch were England and Spain actually allies?","a":"Mary Tudor","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":62,"q":"What did Elizabeth seize from Italian ships sheltering in English ports in 1568?","a":"The Genoese Loan","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":63,"q":"How much Spanish gold and silver did Francis Drake capture between 1577 and 1580?","a":"£400,000","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":64,"q":"Which Dutch Protestant rebel leader was assassinated in 1584?","a":"William of Orange","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":65,"q":"Which 1584 treaty allied Catholic France and Spain together?","a":"The Treaty of Joinville","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":66,"q":"What 1585 agreement saw Elizabeth officially pledge military support to the Dutch rebels?","a":"The Treaty of Nonsuch","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":67,"q":"How many soldiers did Elizabeth agree to send to the Netherlands in 1585?","a":"7,400 troops","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":68,"q":"Which English commander was sent to lead the troops in the Netherlands?","a":"Robert Dudley, Earl of Leicester","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":69,"q":"What title did Robert Dudley accept in the Netherlands that infuriated Elizabeth?","a":"Governor General","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":70,"q":"Name one of the English officers who defected to the Spanish side, damaging Dutch trust.","a":"William Stanley or Rowland York","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":71,"q":"What deep-water port did Dudley successfully prevent the Spanish from capturing?","a":"Ostend","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":72,"q":"Why was the defense of Ostend so important for England's future?","a":"It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":73,"q":"In what month and year did Francis Drake launch his preemptive raid on Cadiz?","a":"April 1587","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":74,"q":"What famous phrase was used to describe Drake's raid on Cadiz?","a":"\"Singeing the King of Spain's beard\"","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":75,"q":"Roughly how many Spanish ships did Drake destroy in Cadiz harbour?","a":"30 ships","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":76,"q":"What crucial supply item did Drake destroy at Cadiz that later caused Spanish food to rot?","a":"Seasoned wooden barrel staves","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":77,"q":"How long did Drake's raid on Cadiz delay the launch of the Spanish Armada?","a":"By roughly one year","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":78,"q":"Why was this delay so significant for Elizabeth's government?","a":"It bought England vital time to prepare their navy and coastal defences","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":79,"q":"Why was Philip II of Spain angry with Elizabeth?","a":"She rejected his marriage proposal, turned England Protestant, and supported Dutch rebels.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":80,"q":"What was a 'privateer'?","a":"An armed private ship licensed by the government to attack and rob enemy ships.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":81,"q":"Which famous English privateer constantly raided Spanish treasure ships?","a":"Sir Francis Drake.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":82,"q":"What was the Treaty of Nonsuch (1585)?","a":"Elizabeth officially agreed to send an English army to help the Dutch rebels fight Spain.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":83,"q":"How much gold did Drake capture from the Spanish ship Cacafuego?","a":"£140,000.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":84,"q":"Who was Francis Walsingham?","a":"Elizabeth's Secretary of State and spymaster.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":85,"q":"What was the Babington Plot (1586)?","a":"The final plot that led to Mary, Queen of Scots' execution.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":86,"q":"What was the Revolt of the Northern Earls (1569)?","a":"The only major rebellion on English soil against Elizabeth, led by Catholic nobles.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":87,"q":"Why was Mary, Queen of Scots a threat?","a":"She was a Catholic figurehead with a strong claim to the throne.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":88,"q":"What was the 'Vestment Controversy'?","a":"Puritan priests refusing to wear Catholic-style robes.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":89,"q":"Who had Elizabeth rejected a marriage proposal from in 1559?","a":"King Philip II of Spain","topic":"KT2.4: The Armada"},{"id":90,"q":"Which Pope gave his blessing to the Armada, turning it into a Catholic crusade?","a":"Pope Sixtus V","topic":"KT2.4: The Armada"},{"id":91,"q":"How much money did the Pope promise Philip if the Armada was successful?","a":"One million gold ducats","topic":"KT2.4: The Armada"},{"id":92,"q":"What 1584 treaty between France and Spain isolated England and pushed Philip closer to war?","a":"The Treaty of Joinville","topic":"KT2.4: The Armada"},{"id":93,"q":"The execution of which monarch in 1587 gave Philip II his final political motivation to invade?","a":"Mary, Queen of Scots","topic":"KT2.4: The Armada"},{"id":94,"q":"What was the name of the inexperienced commander chosen by Philip to lead the Armada?","a":"The Duke of Medina Sidonia","topic":"KT2.4: The Armada"},{"id":95,"q":"How many ships made up the Spanish Armada?","a":"130","topic":"KT2.4: The Armada"},{"id":96,"q":"What highly effective, defensive shape did the Spanish fleet sail in?","a":"A crescent formation","topic":"KT2.4: The Armada"},{"id":97,"q":"Who commanded the Spanish land army waiting in the Netherlands?","a":"The Duke of Parma","topic":"KT2.4: The Armada"},{"id":98,"q":"What type of small rebel ships blockaded the Spanish army in the shallow coastal waters?","a":"Dutch flyboats","topic":"KT2.4: The Armada"},{"id":99,"q":"At which port did the Armada mistakenly drop anchor to wait for the land army?","a":"Calais","topic":"KT2.4: The Armada"},{"id":100,"q":"What devastating tactic did the English use at midnight to break the Spanish formation?","a":"Fireships","topic":"KT2.4: The Armada"},{"id":101,"q":"How many fireships did the English send into the Spanish fleet?","a":"Eight","topic":"KT2.4: The Armada"},{"id":102,"q":"What was the name of the major naval battle that took place the day after the fireships were used?","a":"The Battle of Gravelines","topic":"KT2.4: The Armada"},{"id":103,"q":"Why were English cannons able to fire more quickly than the Spanish during this battle?","a":"They were mounted on smaller gun carriages, allowing them space to recoil and reload","topic":"KT2.4: The Armada"},{"id":104,"q":"Which way was the Armada forced to sail to escape the English fleet?","a":"Northwards, around Scotland and Ireland","topic":"KT2.4: The Armada"},{"id":105,"q":"What nickname did the English give to the storms that destroyed the fleeing Spanish ships?","a":"The \"Protestant Wind\"","topic":"KT2.4: The Armada"},{"id":106,"q":"Where did Elizabeth deliver her famous speech to her troops (\"I have the heart and stomach of a king\")?","a":"Tilbury","topic":"KT2.4: The Armada"},{"id":107,"q":"What famous piece of propaganda was painted to celebrate the victory?","a":"The Armada Portrait","topic":"KT2.4: The Armada"},{"id":108,"q":"Did the defeat of the Armada in 1588 mean the end of the war with Spain?","a":"No, the war continued for another 15 years and Philip built more armadas","topic":"KT2.4: The Armada"},{"id":109,"q":"What did Drake do in Cadiz in 1587?","a":"He launched a surprise attack on the Spanish fleet, destroying 30 ships and delaying the Armada.","topic":"KT2.4: The Armada"},{"id":110,"q":"What phrase did Drake use to describe his attack on Cadiz?","a":"'Singeing the King of Spain's beard.'","topic":"KT2.4: The Armada"},{"id":111,"q":"When was Mary, Queen of Scots executed?","a":"February 1587.","topic":"KT2.4: The Armada"},{"id":112,"q":"How did Mary's execution affect relations with Spain?","a":"It gave Philip II the final moral justification he needed to launch the Armada.","topic":"KT2.4: The Armada"},{"id":113,"q":"What was the Treaty of Nonsuch (1585)?","a":"Elizabeth's agreement to send troops to support the Dutch Protestant rebels.","topic":"KT2.4: The Armada"},{"id":114,"q":"Which English privateer constantly raided Spanish ships?","a":"Sir Francis Drake.","topic":"KT2.4: The Armada"},{"id":115,"q":"What was the Throckmorton Plot (1583)?","a":"A plot for a French invasion backed by Spanish money.","topic":"KT2.4: The Armada"},{"id":116,"q":"Why did Mary, Queen of Scots flee to England?","a":"She was forced to abdicate by Scottish lords.","topic":"KT2.4: The Armada"},{"id":117,"q":"What title did Elizabeth take in the Act of Supremacy?","a":"Supreme Governor.","topic":"KT2.4: The Armada"},{"id":118,"q":"How much debt did Elizabeth inherit in 1558?","a":"£300,000.","topic":"KT2.4: The Armada"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -3070,6 +3287,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -3077,6 +3295,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -3143,6 +3362,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -3180,6 +3400,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

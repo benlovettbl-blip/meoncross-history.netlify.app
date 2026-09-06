@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -3069,6 +3178,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -3162,11 +3288,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_great_war_full';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"How many independent states existed in Central Europe before 1871?","a":"39","topic":"How was the German Empire created in 1871?"},{"id":2,"q":"Which state was the most powerful among the German states before 1871?","a":"Prussia","topic":"How was the German Empire created in 1871?"},{"id":3,"q":"Who became the Prime Minister of Prussia in 1862?","a":"Otto von Bismarck","topic":"How was the German Empire created in 1871?"},{"id":4,"q":"What was Bismarck's famous phrase for how Germany would be unified?","a":"Blood and iron","topic":"How was the German Empire created in 1871?"},{"id":5,"q":"What did 'blood and iron' mean in Bismarck's approach?","a":"Warfare and military strength","topic":"How was the German Empire created in 1871?"},{"id":6,"q":"Which three countries did Prussia defeat to unify Germany?","a":"Denmark, Austria, France","topic":"How was the German Empire created in 1871?"},{"id":7,"q":"In what year did the Franco-Prussian War begin?","a":"1870","topic":"How was the German Empire created in 1871?"},{"id":8,"q":"Where was the King of Prussia proclaimed the first German Emperor?","a":"Palace of Versailles","topic":"How was the German Empire created in 1871?"},{"id":9,"q":"When was the German Empire officially created?","a":"18 January 1871","topic":"How was the German Empire created in 1871?"},{"id":10,"q":"Which valuable French territory did Germany seize in 1871?","a":"Alsace-Lorraine","topic":"How was the German Empire created in 1871?"},{"id":11,"q":"What was the economic union created by Prussia in 1834 called?","a":"Zollverein","topic":"How was the German Empire created in 1871?"},{"id":12,"q":"Which major German-speaking power was deliberately excluded from the Zollverein?","a":"Austria","topic":"How was the German Empire created in 1871?"},{"id":13,"q":"What was the German term for the new German Empire?","a":"Kaiserreich","topic":"How was the German Empire created in 1871?"},{"id":14,"q":"How long did it take the Prussian army to crush Austria in 1866?","a":"Seven weeks","topic":"How was the German Empire created in 1871?"},{"id":15,"q":"Who was the first Emperor (Kaiser) of the newly unified Germany?","a":"Wilhelm I","topic":"How was the German Empire created in 1871?"},{"id":16,"q":"Why did Bismarck provoke a war with France in 1870?","a":"To unite the southern German states with the north","topic":"How was the German Empire created in 1871?"},{"id":17,"q":"Which French Emperor was captured by the Prussian military?","a":"Napoleon III","topic":"How was the German Empire created in 1871?"},{"id":18,"q":"What natural resources was Alsace-Lorraine rich in?","a":"Coal and iron","topic":"How was the German Empire created in 1871?"},{"id":19,"q":"What long-term effect did the taking of Alsace-Lorraine have?","a":"It created long-term rivalry and hatred between France and Germany","topic":"How was the German Empire created in 1871?"},{"id":20,"q":"Why was the unification of Germany a shock to the balance of power in Europe?","a":"A massive, powerful, militaristic state suddenly appeared in the center of Europe","topic":"How was the German Empire created in 1871?"},{"id":21,"q":"Name two major powers in Europe in 1870.","a":"France and Russia","topic":"How was the German Empire created in 1871?"},{"id":22,"q":"What is an empire?","a":"A large group of states or countries ruled by a single monarch (emperor).","topic":"How was the German Empire created in 1871?"},{"id":23,"q":"Why is having a strong army important for a country surrounded by others?","a":"To defend against attacks from multiple sides (a two-front war).","topic":"How was the German Empire created in 1871?"},{"id":24,"q":"Define the term 'Balance of Power'.","a":"A situation in which nations of the world have roughly equal power, preventing any one nation from dominating.","topic":"How was the German Empire created in 1871?"},{"id":25,"q":"Who was the Chancellor of Prussia that orchestrated the Franco-Prussian War?","a":"Otto von Bismarck","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":26,"q":"Which telegram did Bismarck edit to provoke France into war?","a":"Ems Telegram","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":27,"q":"In what year did the Franco-Prussian War break out?","a":"1870","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":28,"q":"Which two provinces were taken from France in the peace settlement?","a":"Alsace and Lorraine","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":29,"q":"Where was the German Empire proclaimed in 1871, humiliating the French?","a":"Palace of Versailles","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":30,"q":"What was the size of the war indemnity France was forced to pay?","a":"5 billion francs","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":31,"q":"Who became the new German Emperor in 1888 and dismissed Bismarck?","a":"Kaiser Wilhelm II","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":32,"q":"What secret treaty did Bismarck sign with Russia that Wilhelm II allowed to expire?","a":"Reinsurance Treaty","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":33,"q":"Which country allied with Russia in 1894 after Bismarck's dismissal?","a":"France","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":34,"q":"What was Germany's greatest fear that drove its military planning?","a":"A two-front war","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":35,"q":"What was the name of the German military plan created to defeat France quickly?","a":"Schlieffen Plan","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":36,"q":"Which French leader was captured at the Battle of Sedan?","a":"Napoleon III","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":37,"q":"What was the primary goal of Bismarck in defeating France?","a":"To unify the southern German states with the north","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":38,"q":"Which French territory was annexed by Germany, creating lasting resentment?","a":"Alsace-Lorraine","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":39,"q":"Who was the Prussian King that was crowned German Emperor?","a":"Wilhelm I","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":40,"q":"What event did Bismarck use to trick France into declaring war?","a":"Editing the Ems Telegram","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":41,"q":"What happened to Napoleon III at the Battle of Sedan?","a":"He was captured along with his army","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":42,"q":"What treaty formally ended the Franco-Prussian War?","a":"Treaty of Frankfurt","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":43,"q":"Why did Bismarck fear a French alliance with Russia?","a":"It would force Germany into a two-front war","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":44,"q":"Where exactly was the new German Empire proclaimed?","a":"The Hall of Mirrors at Versailles","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":45,"q":"What term describes the rapid colonization of Africa by European powers in the late 19th century?","a":"The Scramble for Africa","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":46,"q":"Which German leader famously stated that Germany wanted its 'place in the sun'?","a":"Kaiser Wilhelm II","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":47,"q":"In which year did the First Moroccan Crisis occur?","a":"1905","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":48,"q":"What was the purpose of the 1884 Berlin Conference?","a":"To regulate European colonization and trade in Africa","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":49,"q":"Which European power controlled the largest empire in Africa by 1914?","a":"Britain","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":50,"q":"Why did Kaiser Wilhelm II demand a 'place in the sun'?","a":"He wanted Germany to have a global empire like Britain and France","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":51,"q":"What happened during the First Moroccan Crisis (1905)?","a":"The Kaiser visited Tangier and declared support for Moroccan independence","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":52,"q":"What was the main result of the Algeciras Conference (1906)?","a":"Germany was humiliated and France was given control of Moroccan police","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":53,"q":"What sparked the Second Moroccan Crisis (Agadir Crisis) in 1911?","a":"Germany sent the gunboat Panther to the port of Agadir","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":54,"q":"How did the Agadir Crisis end?","a":"Germany backed down after being given a small strip of the Congo","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":55,"q":"What effect did the Moroccan Crises have on Anglo-French relations?","a":"It pushed Britain and France closer together in a strong alliance","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":56,"q":"1. Who was the first Emperor of the newly unified Germany in 1871?","a":"Kaiser Wilhelm I","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":57,"q":"2. Which brilliant Chancellor united the German states?","a":"Otto von Bismarck","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":58,"q":"3. Which country was humiliatingly defeated in the Franco-Prussian War?","a":"France","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":59,"q":"4. What strategic border territory did Germany take in 1871?","a":"Alsace-Lorraine","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":60,"q":"5. What is the French word for their desire for revenge?","a":"Revanche","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":61,"q":"6. Explain how Bismarck used the Ems Telegram to trap France into a war.","a":"He edited the King's telegram to make it look like an insult to the French ambassador, forcing France to declare war out of pride.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":62,"q":"7. Detail the two military advantages the Prussian army possessed.","a":"Advanced railway networks for rapid mobilization and superior Krupp steel artillery.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":63,"q":"8. Why was the location of the German Empire's proclamation so humiliating for France?","a":"It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":64,"q":"9. Why did Bismarck weave a complex web of secret alliances after 1871?","a":"To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":65,"q":"10. What was Bismarck's ultimate nightmare scenario?","a":"A two-front war against both France and Russia simultaneously.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":66,"q":"What revolutionary British battleship was launched in 1906?","a":"HMS Dreadnought","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":67,"q":"Which German Admiral was in charge of expanding the German Navy?","a":"Admiral von Tirpitz","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":68,"q":"What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?","a":"Two-Power Standard","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":69,"q":"Why was the HMS Dreadnought completely revolutionary?","a":"It was faster, heavier armored, and had all 'big-guns'","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":70,"q":"What was the consequence of the Dreadnought's launch?","a":"It made all older battleships instantly obsolete, resetting the naval race","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":71,"q":"What was the German 'Risk Theory' proposed by Admiral Tirpitz?","a":"Building a navy large enough that Britain wouldn't risk fighting it","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":72,"q":"What slogan did the British public chant in 1909 to demand more ships?","a":"'We want eight and we won't wait!'","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":73,"q":"Why did Britain feel so threatened by the German naval expansion?","a":"Britain is an island and relied entirely on its navy for survival and trade","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":74,"q":"What laws were passed in Germany to fund their massive naval buildup?","a":"The Naval Laws of 1898 and 1900","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":75,"q":"By 1914, who had won the naval race?","a":"Britain, with 29 dreadnoughts to Germany's 17","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":76,"q":"How did the naval race affect British foreign policy?","a":"It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":77,"q":"1. What was the name of Kaiser Wilhelm II's aggressive foreign policy?","a":"Weltpolitik (World Policy)","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":78,"q":"2. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.","a":"By aggressively interfering, he terrified Britain into forming a closer military alliance with France.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":79,"q":"3. Why was the Franco-Russian Alliance a strategic disaster for Germany?","a":"It destroyed Bismarck's diplomatic safety net and threatened Germany with a two-front war.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":80,"q":"4. Evaluate how the 'Scramble for Africa' increased tensions in Europe.","a":"It turned European empires into global rivals, causing constant friction and border disputes.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":81,"q":"5. Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.","a":"Britain realized it could no longer defend its empire alone and sought European allies.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":82,"q":"6. Evaluate the role of Wilhelm II's personality in destabilizing Europe.","a":"His impulsive, aggressive nature alienated allies and destroyed Bismarck's careful diplomatic balance.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":83,"q":"7. Who dismissed Otto von Bismarck in 1890?","a":"Kaiser Wilhelm II","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":84,"q":"8. What strategic territory did Germany take from France in 1871?","a":"Alsace-Lorraine","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":85,"q":"9. Why did Bismarck weave a complex web of secret alliances after 1871?","a":"To keep France diplomatically isolated so they could never start a revenge war.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":86,"q":"10. What was Bismarck's ultimate nightmare scenario?","a":"A two-front war against both France and Russia simultaneously.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":87,"q":"Which three countries formed the Triple Entente in 1907?","a":"Britain, France, Russia","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":88,"q":"Which country left the Triple Alliance and joined the Entente in 1915?","a":"Italy","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":89,"q":"What was Britain's traditional foreign policy before forming alliances?","a":"Splendid Isolation","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":90,"q":"Which three countries made up the Triple Alliance of 1882?","a":"Germany, Austria-Hungary, Italy","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":91,"q":"Which three countries formed the Triple Entente by 1907?","a":"Britain, France, Russia","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":92,"q":"What was a major flaw of the alliance system?","a":"A small dispute between two nations could drag all major powers into war","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":93,"q":"Why did Russia ally with France in 1894?","a":"Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":94,"q":"What was the 'Entente Cordiale' signed in 1904?","a":"A friendly agreement between Britain and France, settling colonial disputes","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":95,"q":"Why did Britain finally decide to form alliances?","a":"They felt threatened by Germany's growing navy and aggressive Weltpolitik","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":96,"q":"What does 'Weltpolitik' mean?","a":"World policy (Germany's desire for a global empire)","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":97,"q":"Which nation in the Triple Alliance was seen as the 'weak link'?","a":"Italy","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":98,"q":"1. What revolutionary British battleship was launched in 1906?","a":"HMS Dreadnought","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":99,"q":"2. What was the 'Two-Power Standard'?","a":"A British policy stating their navy must be as large as the next two rival navies combined.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":100,"q":"3. Why did Germany feel it needed a massive high seas fleet?","a":"To protect their growing global trade and forcefully assert their status as a top-tier world power.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":101,"q":"4. Explain how the invention of the Dreadnought ironically hurt British supremacy.","a":"It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":102,"q":"5. What was the popular British slogan chanted by the public in 1909?","a":"We want eight, and we won't wait!","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":103,"q":"6. Why did Britain feel their survival depended on massive naval supremacy?","a":"As an island nation, Britain relied on the sea to import food and defend its global empire.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":104,"q":"7. How did the Anglo-German naval race make war more likely?","a":"It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":105,"q":"8. What was the name of Kaiser Wilhelm II's aggressive foreign policy?","a":"Weltpolitik (World Policy)","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":106,"q":"9. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.","a":"By aggressively interfering, he terrified Britain into forming a closer military alliance with France.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":107,"q":"10. Evaluate how the 'Scramble for Africa' increased tensions in Europe.","a":"It turned European empires into global rivals, causing constant friction and border disputes.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":108,"q":"Who assassinated Archduke Franz Ferdinand?","a":"Gavrilo Princip","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":109,"q":"What was the name of the Serbian nationalist group responsible for the assassination?","a":"The Black Hand","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":110,"q":"On what exact date was the Archduke assassinated?","a":"28 June 1914","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":111,"q":"Which empire had annexed Bosnia in 1908, angering Serbian nationalists?","a":"Austria-Hungary","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":112,"q":"Who was the heir to the Austro-Hungarian throne that visited Sarajevo?","a":"Archduke Franz Ferdinand","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":113,"q":"What terrorist group supplied the assassins with weapons?","a":"The Black Hand","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":114,"q":"What was the first, failed assassination attempt on the Archduke that morning?","a":"A bomb was thrown at his car but bounced off","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":115,"q":"Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?","a":"By total coincidence, the driver took a wrong turn and stalled the car right in front of him","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":116,"q":"What was the 'Blank Cheque'?","a":"Germany's promise of unconditional support to Austria-Hungary against Serbia","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":117,"q":"What happened on July 23, 1914?","a":"Austria-Hungary sent an impossibly harsh ultimatum to Serbia","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":118,"q":"Why did Britain declare war on Germany on August 4, 1914?","a":"Germany invaded neutral Belgium, violating the 1839 Treaty of London","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":119,"q":"1. Which three countries made up the Triple Entente?","a":"Great Britain, France, and Russia","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":120,"q":"2. Which three countries made up the Triple Alliance?","a":"Germany, Austria-Hungary, and Italy","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":121,"q":"3. Explain the theoretical logic of how the alliance system was supposed to keep peace.","a":"It was believed that the blocs were so heavily armed that attacking one would trigger an unwinnable global war, deterring aggression.","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":122,"q":"4. Why did the alliance system actually increase paranoia instead of security?","a":"Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a sudden attack.","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":123,"q":"5. What military plan did Germany create to avoid a long two-front war?","a":"The Schlieffen Plan","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":124,"q":"6. Which neutral country did the Schlieffen Plan require invading?","a":"Belgium","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":125,"q":"7. What feeling of being surrounded by enemies haunted German planners?","a":"Encirclement","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":126,"q":"8. What revolutionary British battleship was launched in 1906?","a":"HMS Dreadnought","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":127,"q":"9. Explain how the invention of the Dreadnought ironically hurt British supremacy.","a":"It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch.","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":128,"q":"10. How did the Anglo-German naval race make war more likely?","a":"It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente.","topic":"Why did a single assassination in Sarajevo ignite a World War?"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -3243,6 +3460,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -3250,6 +3468,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -3316,6 +3535,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -3353,6 +3573,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

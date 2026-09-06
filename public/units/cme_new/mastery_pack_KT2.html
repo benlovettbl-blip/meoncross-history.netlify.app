@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -1987,6 +2096,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -2076,11 +2202,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_cme_new_KT2';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"What false intelligence did the Soviet Union give to Arab states in 1967?","a":"That Israel was massing troops to invade Syria","topic":"KT2.1: The Six Day War, 1967"},{"id":2,"q":"How did Israel begin the Six Day War on June 5, 1967?","a":"With a pre-emptive airstrike that destroyed the Egyptian air force","topic":"KT2.1: The Six Day War, 1967"},{"id":3,"q":"What happened to Jerusalem during the Six Day War?","a":"Israel captured the Old City from Jordan, uniting Jerusalem","topic":"KT2.1: The Six Day War, 1967"},{"id":4,"q":"What action did Nasser take in May 1967 that directly escalated tensions before the war?","a":"He closed the Straits of Tiran to Israeli shipping","topic":"KT2.1: The Six Day War, 1967"},{"id":5,"q":"What false information did the Soviet Union give to Egypt in 1967?","a":"That Israel was massing troops on the Syrian border","topic":"KT2.1: The Six Day War, 1967"},{"id":6,"q":"How did the Six Day War begin on 5 June 1967?","a":"Israel launched a devastating pre-emptive airstrike, destroying the Egyptian air force on the ground","topic":"KT2.1: The Six Day War, 1967"},{"id":7,"q":"Which of these territories was captured by Israel from Syria during the Six Day War?","a":"The Golan Heights","topic":"KT2.1: The Six Day War, 1967"},{"id":8,"q":"What was the significance of Israel capturing East Jerusalem in 1967?","a":"It allowed them to gain access to the Western Wall for the first time since 1948","topic":"KT2.1: The Six Day War, 1967"},{"id":9,"q":"How long did it take for Israel to effectively win the Six Day War?","a":"Six days","topic":"KT2.1: The Six Day War, 1967"},{"id":10,"q":"Which Arab nations fought against Israel in the Six Day War?","a":"Egypt, Syria, and Jordan","topic":"KT2.1: The Six Day War, 1967"},{"id":11,"q":"What was the Law of Return (1950)?","a":"An Israeli law granting every Jew in the world the right to immigrate to Israel.","topic":"KT2.1: The Six Day War, 1967"},{"id":12,"q":"Which Arab nation took control of the West Bank after 1949?","a":"Transjordan (Jordan).","topic":"KT2.1: The Six Day War, 1967"},{"id":13,"q":"Which Arab nation took control of the Gaza Strip after 1949?","a":"Egypt.","topic":"KT2.1: The Six Day War, 1967"},{"id":14,"q":"How did Arab states treat the Palestinian refugees?","a":"They largely kept them in squalid refugee camps and refused to integrate them.","topic":"KT2.1: The Six Day War, 1967"},{"id":15,"q":"What were the 'fedayeen'?","a":"Palestinian guerrilla fighters who launched raids into Israel from neighboring Arab states.","topic":"KT2.1: The Six Day War, 1967"},{"id":16,"q":"What was the 1948-49 Arab-Israeli War?","a":"The first major conflict following Israel's creation.","topic":"KT2.1: The Six Day War, 1967"},{"id":17,"q":"Why did Israel win in 1949?","a":"Better organization, motivation, and weapons.","topic":"KT2.1: The Six Day War, 1967"},{"id":18,"q":"What was the Nakba?","a":"The Palestinian refugee crisis (approx. 700,000 people).","topic":"KT2.1: The Six Day War, 1967"},{"id":19,"q":"What did UNSCOP recommend in 1947?","a":"Partition into a Jewish and Arab state.","topic":"KT2.1: The Six Day War, 1967"},{"id":20,"q":"When was the State of Israel created?","a":"14 May 1948.","topic":"KT2.1: The Six Day War, 1967"},{"id":21,"q":"What was the significance of UN Resolution 242?","a":"It established the principle of land for peace","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":22,"q":"What were the \"Three Noes\" declared by the Arab League at Khartoum in 1967?","a":"No peace, no recognition, no negotiation with Israel","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":23,"q":"Which territory did Israel NOT capture during the Six Day War?","a":"Amman","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":24,"q":"What was the main principle of UN Resolution 242?","a":"'Land for Peace'—Israel should withdraw from territories in exchange for recognized boundaries","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":25,"q":"What was the 'Khartoum Resolution' declared by the Arab League in 1967?","a":"No peace with Israel, no recognition of Israel, no negotiations with Israel","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":26,"q":"How did the PLO's strategy change after the Arab defeat in the Six Day War?","a":"They realized Arab armies couldn't defeat Israel and turned to guerrilla warfare and terrorism","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":27,"q":"What was the War of Attrition (1967-1970)?","a":"A low-intensity conflict of artillery duels and commando raids along the Suez Canal","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":28,"q":"What happened during 'Black September' in 1970?","a":"King Hussein of Jordan crushed the PLO and expelled them from his country","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":29,"q":"Where did the PLO relocate their primary base of operations after being expelled from Jordan?","a":"Lebanon","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":30,"q":"How did the Israeli government justify keeping the occupied territories immediately after 1967?","a":"They used them as a strategic military buffer zone and bargaining chips for peace","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":31,"q":"Who became President of Egypt in 1954?","a":"Gamal Abdel Nasser.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":32,"q":"Why did Nasser nationalize the Suez Canal in 1956?","a":"To pay for the Aswan High Dam after the US and UK withdrew their funding.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":33,"q":"Which three countries secretly conspired to attack Egypt during the Suez Crisis?","a":"Israel, Britain, and France (The Sèvres Protocol).","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":34,"q":"What was Israel's role in the Suez plan?","a":"To invade the Sinai Peninsula, giving Britain and France an excuse to 'intervene'.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":35,"q":"Why did Britain and France humiliate themselves in the Suez Crisis?","a":"The USA forced them to withdraw by threatening economic ruin.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":36,"q":"What was the Law of Return (1950)?","a":"A law allowing any Jew to immigrate to Israel.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":37,"q":"Who controlled the West Bank between 1949 and 1967?","a":"Jordan.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":38,"q":"What were the 'fedayeen'?","a":"Palestinian guerrilla fighters.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":39,"q":"What was the Nakba?","a":"The mass displacement of Palestinians in 1948.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":40,"q":"Why did Israel win the 1948-49 war?","a":"Arab disunity and superior Israeli organization/arms.","topic":"KT2.2: The Aftermath of the 1967 War"},{"id":41,"q":"Why did Anwar Sadat launch the Yom Kippur War in 1973?","a":"To break the diplomatic stalemate and force Israel to negotiate returning the Sinai","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":42,"q":"Why was the 1973 Yom Kippur attack so successful initially?","a":"It was a total surprise attack on the holiest day of the Jewish calendar","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":43,"q":"How did the Arab oil-producing nations respond to US support for Israel during the 1973 war?","a":"They launched an oil embargo, causing a global economic crisis","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":44,"q":"Who succeeded Gamal Abdel Nasser as President of Egypt in 1970?","a":"Anwar Sadat","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":45,"q":"Why was the initial Arab attack on 6 October 1973 so successful?","a":"It was the holiest day of the Jewish calendar (Yom Kippur) and Israel was caught by surprise","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":46,"q":"How did the Yom Kippur War ultimately end militarily?","a":"Israel recovered, crossed the Suez Canal, and encircled the Egyptian Third Army","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":47,"q":"What powerful economic weapon did Arab nations use during the 1973 war?","a":"They placed an oil embargo on countries that supported Israel, causing a global energy crisis","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":48,"q":"What was the 'Bar Lev Line'?","a":"A chain of massive Israeli sand fortifications along the Suez Canal","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":49,"q":"How did the Yom Kippur War change the psychological dynamic between Israel and Egypt?","a":"It shattered Israel's myth of invincibility and restored Arab pride, making negotiations possible","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":50,"q":"What was the PLO (Palestine Liberation Organization) created in 1964?","a":"An umbrella organization aiming to destroy Israel and create a Palestinian state.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":51,"q":"Who became the chairman of the PLO in 1969?","a":"Yasser Arafat.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":52,"q":"What triggered the Six Day War in 1967?","a":"Nasser expelled UN peacekeepers from Sinai and blockaded the Straits of Tiran.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":53,"q":"How did Israel win the Six Day War so quickly?","a":"They launched a devastating pre-emptive air strike, destroying the Egyptian air force on the ground.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":54,"q":"What territories did Israel capture in the Six Day War?","a":"The Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":55,"q":"Why did Nasser nationalize the Suez Canal?","a":"To fund the Aswan High Dam.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":56,"q":"Which three nations attacked Egypt in 1956?","a":"Israel, Britain, and France.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":57,"q":"Why did Britain and France withdraw from Suez?","a":"Massive financial pressure from the USA.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":58,"q":"What was the Law of Return?","a":"Israel's law allowing Jewish immigration.","topic":"KT2.3: Israel and Egypt, 1967–1973"},{"id":59,"q":"Who controlled the Gaza Strip between 1949 and 1967?","a":"Egypt.","topic":"KT2.3: Israel and Egypt, 1967–1973"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -2157,6 +2374,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -2164,6 +2382,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -2230,6 +2449,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -2267,6 +2487,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

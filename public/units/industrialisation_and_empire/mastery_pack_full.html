@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -3153,6 +3262,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -3246,11 +3372,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_industrialisation_and_empire_full';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"Who won the Battle of Hastings in 1066 and became King of England?","a":"William the Conqueror (or the Normans).","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":2,"q":"What was the Black Death?","a":"A deadly plague that spread across Europe and England during the Middle Ages.","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":3,"q":"Who was the famous Tudor King known for having six wives?","a":"Henry VIII.","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":4,"q":"In history, what is the difference between a primary and a secondary source?","a":"A primary source was created at the time of the event, while a secondary source was created later.","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":5,"q":"What is a monarch?","a":"A King or Queen who rules a country.","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":6,"q":"What two major iron-making processes did Henry Cort patent at the Funtley Ironworks in the 1780s?","a":"The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron).","topic":"Was industrial work progress or punishment?"},{"id":7,"q":"Why did Henry Cort specifically choose to locate his ironworks near Fareham?","a":"Because it was perfectly located to supply high-quality iron to the massive Royal Navy dockyards in nearby Portsmouth.","topic":"Was industrial work progress or punishment?"},{"id":8,"q":"What tragic event caused Henry Cort to lose his patents and die in poverty?","a":"His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds.","topic":"Was industrial work progress or punishment?"},{"id":9,"q":"What was the primary cause of the English Civil War?","a":"A power struggle between King Charles I and Parliament over how the country should be ruled.","topic":"Was industrial work progress or punishment?"},{"id":10,"q":"What was the result of the Spanish Armada in 1588?","a":"The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne.","topic":"Was industrial work progress or punishment?"},{"id":11,"q":"What are 'Fareham Reds'?","a":"Famous, high-quality red bricks manufactured from clay in Fareham, Hampshire, highly sought after by Victorian architects.","topic":"Did industrialisation make British towns unlivable?"},{"id":12,"q":"Name one highly dangerous or physically demanding job a child might perform in a 19th-century textile mill or brickfield.","a":"Scavenging for loose cotton under moving machinery, sitting in the dark as a 'trapper' in a mine, or acting as a 'pug boy' or brick turner in the freezing mud of a brickyard.","topic":"Did industrialisation make British towns unlivable?"},{"id":13,"q":"Why did factory owners actively prefer to hire children rather than adults?","a":"Children could be paid a fraction of an adult's wage, were easier to discipline, and their small size allowed them to fit under machines or into narrow mine shafts.","topic":"Did industrialisation make British towns unlivable?"},{"id":14,"q":"Explain how Henry Cort's inventions at the Funtley Ironworks helped power the Industrial Revolution globally.","a":"Cort's 'puddling' and 'rolling' processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron built the steam engines, railways, and naval ships that powered Britain's global dominance.","topic":"Did industrialisation make British towns unlivable?"},{"id":15,"q":"Why do 'Optimist' and 'Pessimist' historians disagree about the impact of the Industrial Revolution on working-class families?","a":"Pessimists focus on the catastrophic initial cost, arguing the working class was punished with unlivable slums and horrific child exploitation. Optimists argue that despite initial hardships, the wealth and technology generated eventually led to massive progress, higher wages, and improved life expectancy.","topic":"Did industrialisation make British towns unlivable?"},{"id":16,"q":"Why did Victorian builders heavily rely on 'Fareham Red' bricks during 19th-century urbanisation?","a":"They were highly durable under intense structural pressure for massive infrastructure.","topic":"How was the British Empire built and sustained?"},{"id":17,"q":"How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?","a":"It showed deaths from filth and overcrowding were higher than modern war casualties.","topic":"How was the British Empire built and sustained?"},{"id":18,"q":"What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak?","a":"He proved cholera was a waterborne disease by mapping local fatalities.","topic":"How was the British Empire built and sustained?"},{"id":19,"q":"What was the original purpose of the East India Company when it was founded in 1600?","a":"To control trade in precious spices, silks, indigo, and tea.","topic":"How was the British Empire built and sustained?"},{"id":20,"q":"How did the East India Company secure its commercial monopolies in India?","a":"By recruiting its own private mercenary army and exploiting local political divisions.","topic":"How was the British Empire built and sustained?"},{"id":21,"q":"What does it mean that the East India Company turned India into a 'captive market'?","a":"India was forced to trade exclusively with Britain, preventing local industries from competing.","topic":"How was the British Empire built and sustained?"},{"id":22,"q":"How did British textile mills affect India's domestic handloom weavers?","a":"They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.","topic":"How was the British Empire built and sustained?"},{"id":23,"q":"What event was triggered in May 1857 by the East India Company's systemic oppression?","a":"The Indian Rebellion (Sepoy Mutiny)","topic":"How was the British Empire built and sustained?"},{"id":24,"q":"According to the April 1857 EIC corporate directive, what was the primary purpose of the British presence in India?","a":"To secure the maintenance of trade and protect shareholder profits.","topic":"How was the British Empire built and sustained?"},{"id":25,"q":"What was the consequence of the 1857 Rebellion for the East India Company?","a":"It was formally abolished, and control transferred directly to the British Crown.","topic":"How was the British Empire built and sustained?"},{"id":26,"q":"What was the 'Two-Power Standard'?","a":"A rule that the Royal Navy must be stronger than the next two most powerful navies combined.","topic":"How was the British Empire built and sustained?"},{"id":27,"q":"Which Hampshire town became the largest steam-powered industrial complex on earth to support the navy?","a":"Portsmouth","topic":"How was the British Empire built and sustained?"},{"id":28,"q":"What major technological transition did the Royal Navy undergo at Portsmouth Dockyard during the 19th century?","a":"Moving from wooden sailing ships to steam-driven 'Ironclads'.","topic":"How was the British Empire built and sustained?"},{"id":29,"q":"Launched in 1860, which ship was the world's first iron-hulled, steam-powered ironclad warship?","a":"HMS Warrior","topic":"How was the British Empire built and sustained?"},{"id":30,"q":"Whose advanced metallurgy pioneered at Funtley (from Lesson 1) was vital for creating the armor plating of the Ironclads?","a":"Henry Cort","topic":"How was the British Empire built and sustained?"},{"id":31,"q":"According to the letter from Arthur Vance (November 1861), what was the reality for the dockyard riveters?","a":"They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.","topic":"How was the British Empire built and sustained?"},{"id":32,"q":"Why is Arthur Vance's private letter considered highly reliable by historians studying the human cost of empire?","a":"Because it was a private letter to family with no motive to hide the grueling reality.","topic":"How was the British Empire built and sustained?"},{"id":33,"q":"What does 'Mercantilism' mean in the context of the British Empire?","a":"A system maximizing national wealth through strictly controlled colonial trade and monopolies.","topic":"How was the British Empire built and sustained?"},{"id":34,"q":"What did the Dacca weavers' petition in 1830 beg the British government to do?","a":"To place a duty (tax) on the cheap clothing coming from England to save their trade.","topic":"How was the British Empire built and sustained?"},{"id":35,"q":"What do 'Optimist' historians typically argue about the British Empire's use of technology?","a":"That innovations like ironclads and railways created a massive, interconnected network of global trade and progress.","topic":"How was the British Empire built and sustained?"},{"id":36,"q":"Why did Victorian builders heavily rely on 'Fareham Red' bricks during the rapid urbanisation of the 19th century?","a":"Fareham Reds were highly durable under intense structural pressure, making them ideal for the massive infrastructure projects of expanding cities like London and Portsmouth.","topic":"How was the British Empire built and sustained?"},{"id":37,"q":"How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?","a":"It provided statistical proof that working-class deaths from filth and overcrowding were higher than casualties caused by modern wars, forcing the state to acknowledge that public health required regulation.","topic":"How was the British Empire built and sustained?"},{"id":38,"q":"What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak in Soho?","a":"He mapped local fatalities to prove cholera was a waterborne disease spread via contaminated water pumps, completely disproving the popular Miasma Theory that blamed bad smells.","topic":"How was the British Empire built and sustained?"},{"id":39,"q":"In what year did the massive Indian Rebellion against the British Empire begin?","a":"1857","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":40,"q":"What military innovation served as the immediate catalyst for the 1857 rebellion?","a":"The Enfield rifle","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":41,"q":"Why did the new Enfield rifle cartridges cause such outrage among the sepoys?","a":"They were rumored to be greased with beef and pork fat","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":42,"q":"What percentage of the East India Company's military forces were native Indian soldiers (sepoys)?","a":"Over 80%","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":43,"q":"What was the East India Company's 'Doctrine of Lapse'?","a":"A policy to annex independent Indian kingdoms if a ruler died without a direct male heir","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":44,"q":"Besides the cartridges, what deeper issues caused systemic resentment among the Indian population?","a":"Heavy taxation, land grabs, and destruction of the textile industry","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":45,"q":"Where did the outbreak of violence begin in earnest on May 10, 1857?","a":"Meerut","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":46,"q":"Who did the mutinying sepoys declare as the true leader of India?","a":"The elderly Mughal Emperor, Bahadur Shah Zafar","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":47,"q":"Who was Rani Lakshmibai?","a":"The Queen of Jhansi who famously fought on horseback against the British","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":48,"q":"How did the British forces respond to the rebellion?","a":"With uncompromising, industrialized brutality and a campaign of mass terror","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":49,"q":"What horrific method of execution did the British use as a form of psychological warfare against rebel leaders?","a":"Binding them to the mouths of cannons and blowing them apart","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":50,"q":"Why were rebels blown from cannons instead of hanged?","a":"To deliberately deny the victims traditional religious funerals","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":51,"q":"What was the most significant political consequence of the 1857 Rebellion?","a":"The East India Company was abolished and the British Crown took direct control of India","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":52,"q":"Which 1858 law formalized the British government's direct rule over India?","a":"The Government of India Act","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":53,"q":"The era of direct British Crown rule in India is known as what?","a":"The British Raj","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":54,"q":"Who was declared Empress of India after the rebellion was crushed?","a":"Queen Victoria","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":55,"q":"How did the 1857 Indian Rebellion contrast with domestic resistance like the Swing Riots?","a":"It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":56,"q":"Why did Christian missionary activity in India contribute to the rebellion?","a":"It convinced many Indians that the British were determined to systematically dismantle their ancient religions","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":57,"q":"What did the rebellion shatter regarding the British public's view of their empire?","a":"The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":58,"q":"Which animal's fat was forbidden to Muslim soldiers, making the rumor about the cartridges so explosive?","a":"Pig","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":59,"q":"What was the East India Company?","a":"A massive British trading corporation that essentially ruled India.","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":60,"q":"How did the EIC destroy the Indian textile industry?","a":"By flooding the 'captive market' with cheap British machine-made cloth.","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":61,"q":"What was the East India Company?","a":"A massive British trading corporation that essentially ruled India.","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":62,"q":"How did the EIC destroy the Indian textile industry?","a":"By flooding the 'captive market' with cheap British machine-made cloth.","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":63,"q":"What private corporate entity controlled British commercial and military interests in India until 1858?","a":"The East India Company (EIC)","topic":"How did ordinary people fight for a voice?"},{"id":64,"q":"What was the 'Two-Power Standard' followed by the British government in the 19th century?","a":"A naval policy declaring the Royal Navy must be stronger than the next two largest fleets combined.","topic":"How did ordinary people fight for a voice?"},{"id":65,"q":"How did the industrial workforce at Portsmouth Dockyard directly support British naval supremacy?","a":"By manufacturing advanced, iron-hulled 'Ironclad' warships.","topic":"How did ordinary people fight for a voice?"},{"id":66,"q":"In the early 19th century, who completely controlled the British Parliament?","a":"Wealthy landowners","topic":"How did ordinary people fight for a voice?"},{"id":67,"q":"What did the 60,000 peaceful protestors at St Peter's Field in Manchester demand in August 1819?","a":"Parliamentary reform and affordable food.","topic":"How did ordinary people fight for a voice?"},{"id":68,"q":"How did the state respond to the peaceful gathering at St Peter's Field in 1819?","a":"Local magistrates panicked and ordered cavalry to charge into the crowd with sabers.","topic":"How did ordinary people fight for a voice?"},{"id":69,"q":"Why did radicals ironically name the tragic 1819 event the 'Peterloo Massacre'?","a":"To compare the violent slaughter of citizens to the famous military victory at Waterloo.","topic":"How did ordinary people fight for a voice?"},{"id":70,"q":"What technological change caused winter unemployment and starvation for agricultural laborers in 1830?","a":"The introduction of mechanical threshing machines.","topic":"How did ordinary people fight for a voice?"},{"id":71,"q":"What was the name of the violent agrarian uprising in southern England in 1830?","a":"The Swing Riots","topic":"How did ordinary people fight for a voice?"},{"id":72,"q":"Who was 'Captain Swing'?","a":"A mythical, pseudonymous leader used by rioters to send anonymous threats.","topic":"How did ordinary people fight for a voice?"},{"id":73,"q":"How did the government punish the Hampshire workers involved in the 1830 riots?","a":"Over 100 were tried at Winchester, 6 were executed, and hundreds were transported to Australia.","topic":"How did ordinary people fight for a voice?"},{"id":74,"q":"What strategy did working-class men explore after realizing violent property destruction resulted in execution or exile?","a":"They began exploring collective bargaining through Trade Unions.","topic":"How did ordinary people fight for a voice?"},{"id":75,"q":"Why did the six agricultural laborers in Tolpuddle form a friendly society in 1834?","a":"To protest a wage cut and force employers to pay fair wages.","topic":"How did ordinary people fight for a voice?"},{"id":76,"q":"What obscure 1797 law did the government use to arrest the Tolpuddle Martyrs?","a":"A law banning unlawful secret oaths.","topic":"How did ordinary people fight for a voice?"},{"id":77,"q":"What was the initial sentence given to the Tolpuddle Martyrs?","a":"Seven years' transportation to Australia.","topic":"How did ordinary people fight for a voice?"},{"id":78,"q":"By 1838, what did working-class leaders realize was the only way to permanently change factory conditions and low wages?","a":"Achieving structural constitutional reform so working-class men could sit in Parliament.","topic":"How did ordinary people fight for a voice?"},{"id":79,"q":"What was the name of the first mass working-class democratic movement in British history launched in 1838?","a":"Chartism","topic":"How did ordinary people fight for a voice?"},{"id":80,"q":"Which of the following was NOT one of the six core demands of the People's Charter?","a":"Equal pay for men and women.","topic":"How did ordinary people fight for a voice?"},{"id":81,"q":"What action did the Chartists take to pressure Parliament into accepting their demands?","a":"They gathered millions of signatures on three mammoth petitions in 1839, 1842, and 1848.","topic":"How did ordinary people fight for a voice?"},{"id":82,"q":"Although Parliament rejected all the Chartist petitions at the time, what was the movement's long-term legacy?","a":"By 1928, five of its six democratic demands had slowly become the law of the land.","topic":"How did ordinary people fight for a voice?"},{"id":83,"q":"What private corporate entity controlled British commercial and military interests in India until its formal abolition in 1858?","a":"The East India Company (EIC).","topic":"How did ordinary people fight for a voice?"},{"id":84,"q":"What was the 'Two-Power Standard' followed by the British government in the 19th century?","a":"A naval policy declaring that the Royal Navy must always remain larger and stronger than the combined fleets of the next two most powerful nations in the world.","topic":"How did ordinary people fight for a voice?"},{"id":85,"q":"How did the industrial workforce at Portsmouth Dockyard directly support British naval supremacy?","a":"The dockyard functioned as a massive steam-powered industrial complex where thousands of workers manufactured advanced, iron-hulled 'Ironclad' warships.","topic":"How did ordinary people fight for a voice?"},{"id":86,"q":"What was the 1819 Peterloo Massacre?","a":"An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.","topic":"How did the road to democracy expand?"},{"id":87,"q":"Which of the following was one of the core demands made by the Chartists in the 'People's Charter'?","a":"Universal male suffrage and secret ballots.","topic":"How did the road to democracy expand?"},{"id":88,"q":"Why did agricultural laborers in Hampshire launch the violent 'Swing Riots' in 1830?","a":"They were facing starvation wages and winter unemployment caused by threshing machines.","topic":"How did the road to democracy expand?"},{"id":89,"q":"Before 1832, who was allowed to vote in British elections?","a":"Only a tiny minority of wealthy male property owners.","topic":"How did the road to democracy expand?"},{"id":90,"q":"What was a 'Rotten Borough' before 1832?","a":"An abandoned medieval village that had almost no people but still sent two MPs to Parliament.","topic":"How did the road to democracy expand?"},{"id":91,"q":"What was Newtown on the Isle of Wight a famous example of before 1832?","a":"A Rotten Borough with only 14 houses that still sent two MPs to London.","topic":"How did the road to democracy expand?"},{"id":92,"q":"What was a 'Pocket Borough'?","a":"A seat in Parliament completely controlled by a wealthy local landowner.","topic":"How did the road to democracy expand?"},{"id":93,"q":"Why did the government finally pass the Great Reform Act in 1832?","a":"Because they feared a violent revolution similar to the Swing Riots and the French Revolution.","topic":"How did the road to democracy expand?"},{"id":94,"q":"Which of the following was a key change made by the 1832 Great Reform Act?","a":"It abolished 56 Rotten Boroughs and created new constituencies for industrial cities.","topic":"How did the road to democracy expand?"},{"id":95,"q":"Who was granted the right to vote by the 1832 Great Reform Act?","a":"Middle-class men who owned property worth £10 a year.","topic":"How did the road to democracy expand?"},{"id":96,"q":"How did the working classes react to the 1832 Great Reform Act?","a":"They felt bitterly betrayed because they were deliberately excluded from voting.","topic":"How did the road to democracy expand?"},{"id":97,"q":"Before 1872, how did a man cast his vote in an election?","a":"By standing on a public platform (the 'hustings') and shouting out the name of the candidate.","topic":"How did the road to democracy expand?"},{"id":98,"q":"Why was the system of public voting before 1872 so unfair to working-class men?","a":"Because landlords and factory owners could intimidate them into voting a certain way under threat of being fired or evicted.","topic":"How did the road to democracy expand?"},{"id":99,"q":"What did the 1872 Secret Ballot Act require voters to do?","a":"Vote in a private wooden booth using a printed paper dropped into a locked box.","topic":"How did the road to democracy expand?"},{"id":100,"q":"What was the immediate consequence of the 1872 Secret Ballot Act?","a":"The power of elite bribery and intimidation collapsed almost overnight.","topic":"How did the road to democracy expand?"},{"id":101,"q":"Which group of people was given the vote by the 1867 Second Reform Act?","a":"Skilled working-class men in urban towns and cities.","topic":"How did the road to democracy expand?"},{"id":102,"q":"What did the 1884 Third Reform Act achieve?","a":"It extended the vote to agricultural laborers and miners in the countryside.","topic":"How did the road to democracy expand?"},{"id":103,"q":"Why did Conservative politicians like Benjamin Disraeli eventually expand the vote to the working classes in 1867?","a":"Because they hoped the newly enfranchised workers would be grateful and vote for the Conservative party.","topic":"How did the road to democracy expand?"},{"id":104,"q":"Based on MP Robert Lowe's 1866 speech, what was the underlying fear that wealthy elites had about expanding democracy?","a":"They feared the 'ignorant and violent' working classes would vote to tax the wealthy and destroy their privileged institutions.","topic":"How did the road to democracy expand?"},{"id":105,"q":"By 1884, approximately what percentage of adult men in Britain had a secure, private vote?","a":"60%","topic":"How did the road to democracy expand?"},{"id":106,"q":"What was the 1819 Peterloo Massacre?","a":"An event in Manchester where local magistrates sent armed cavalry to charge into a crowd of 60,000 peaceful working-class protesters demanding parliamentary reform, resulting in 18 deaths.","topic":"How did the road to democracy expand?"},{"id":107,"q":"Name two of the six core demands made by the Chartists in the 'People's Charter'.","a":"Universal male suffrage (all men get the vote), secret ballots, no property qualifications for MPs, salaries for MPs, equal electoral districts, and annual Parliaments.","topic":"How did the road to democracy expand?"},{"id":108,"q":"Why did agricultural laborers in Hampshire launch the violent 'Swing Riots' in 1830?","a":"They were facing starvation wages and winter unemployment caused by the introduction of mechanical threshing machines, leading them to break machines and burn hayricks in protest.","topic":"How did the road to democracy expand?"},{"id":109,"q":"Which historical perspective argues that 19th-century Britain experienced unmatched national progress?","a":"The Optimist View","topic":"Who truly benefited from 19th-century transformation?"},{"id":110,"q":"What local Hampshire industrialist revolutionized iron production with the puddling process?","a":"Henry Cort","topic":"Who truly benefited from 19th-century transformation?"},{"id":111,"q":"How much did Henry Cort's puddling process increase iron production?","a":"400%","topic":"Who truly benefited from 19th-century transformation?"},{"id":112,"q":"What famous London monument was built using 'Fareham Red' bricks?","a":"The Royal Albert Hall","topic":"Who truly benefited from 19th-century transformation?"},{"id":113,"q":"What ship, built with advanced iron processes, helped enforce the global 'Two-Power Standard'?","a":"HMS Warrior","topic":"Who truly benefited from 19th-century transformation?"},{"id":114,"q":"Which historical perspective argues that Britain's wealth masked horrific human misery and exploitation?","a":"The Pessimist View","topic":"Who truly benefited from 19th-century transformation?"},{"id":115,"q":"According to the 1881 Census, what job did 10-year-old boys perform barefoot in the Funtley clay pits?","a":"Pug boys","topic":"Who truly benefited from 19th-century transformation?"},{"id":116,"q":"How long were the typical working shifts for child laborers in the Funtley brickfields?","a":"14 hours","topic":"Who truly benefited from 19th-century transformation?"},{"id":117,"q":"What deadly waterborne disease repeatedly broke out in unventilated 'back-to-back' slums?","a":"Cholera","topic":"Who truly benefited from 19th-century transformation?"},{"id":118,"q":"Who published an 1842 report proving that slums were deadlier than modern wars?","a":"Edwin Chadwick","topic":"Who truly benefited from 19th-century transformation?"},{"id":119,"q":"How did the East India Company violently destroy the local Indian textile economy?","a":"By establishing a 'captive market' that flooded India with cheap British goods","topic":"Who truly benefited from 19th-century transformation?"},{"id":120,"q":"What Hampshire-based event in 1830 saw agricultural workers violently break threshing machines?","a":"The Swing Riots","topic":"Who truly benefited from 19th-century transformation?"},{"id":121,"q":"Why do critical historians argue the 1832 Great Reform Act was passed?","a":"Out of elite fear of violent revolution","topic":"Who truly benefited from 19th-century transformation?"},{"id":122,"q":"Who was deliberately excluded from voting by the £10 property qualification in the 1832 Great Reform Act?","a":"The working class","topic":"Who truly benefited from 19th-century transformation?"},{"id":123,"q":"What was the name of the first mass working-class political movement that rose in response to the 1832 betrayal?","a":"Chartism","topic":"Who truly benefited from 19th-century transformation?"},{"id":124,"q":"Which 1872 Act collapsed the elite's mechanism of landlord bribery and voter intimidation?","a":"The Secret Ballot Act","topic":"Who truly benefited from 19th-century transformation?"},{"id":125,"q":"In historical writing, what does 'synthesis' mean?","a":"Combining different data points and interpretations into a balanced argument","topic":"Who truly benefited from 19th-century transformation?"},{"id":126,"q":"What was a 'Rotten Borough' in the pre-reform British electoral system?","a":"A voting district with virtually no population that still sent two MPs to Parliament","topic":"Who truly benefited from 19th-century transformation?"},{"id":127,"q":"Which local Hampshire town is a famous example of a 'Rotten Borough' with only 14 houses?","a":"Newtown on the Isle of Wight","topic":"Who truly benefited from 19th-century transformation?"},{"id":128,"q":"What best summarizes the overarching conclusion of the 'Industrialisation and Empire' unit?","a":"19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects","topic":"Who truly benefited from 19th-century transformation?"},{"id":129,"q":"What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?","a":"A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.","topic":"Who truly benefited from 19th-century transformation?"},{"id":130,"q":"How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?","a":"The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.","topic":"Who truly benefited from 19th-century transformation?"},{"id":131,"q":"Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?","a":"Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.","topic":"Who truly benefited from 19th-century transformation?"},{"id":132,"q":"What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?","a":"A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.","topic":"Who truly benefited from 19th-century transformation?"},{"id":133,"q":"How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?","a":"The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.","topic":"Who truly benefited from 19th-century transformation?"},{"id":134,"q":"Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?","a":"Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.","topic":"Who truly benefited from 19th-century transformation?"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -3327,6 +3544,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -3334,6 +3552,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -3400,6 +3619,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -3437,6 +3657,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

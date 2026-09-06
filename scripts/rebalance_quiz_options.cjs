@@ -132,11 +132,8 @@ function rebalanceUnit(unitId) {
   walk(ast, null);
   console.log(`🔍 Found ${targets.length} multiple-choice question(s) in ${unitId}.`);
 
-  // 4. Perform replacements from highest offset to lowest offset
-  // Sort descending by optionsArray.start
-  targets.sort((a, b) => b.optionsArray.start - a.optionsArray.start);
-
-  let modifiedCode = originalCode;
+  // 4. Collect non-overlapping replacement chunks
+  const chunks = [];
   let rebalancedCount = 0;
 
   for (const item of targets) {
@@ -154,12 +151,17 @@ function rebalanceUnit(unitId) {
 
     // Determine correct answer text
     let correctText = null;
+    let isNumeric = false;
+    let isStringNumeric = false;
+
     if (typeof aVal === 'number') {
       correctText = originalOptions[aVal];
+      isNumeric = true;
     } else if (typeof aVal === 'string') {
       const num = parseInt(aVal, 10);
       if (!isNaN(num) && String(num) === aVal.trim() && originalOptions[num]) {
         correctText = originalOptions[num];
+        isStringNumeric = true;
       } else {
         correctText = aVal.trim();
       }
@@ -175,8 +177,8 @@ function rebalanceUnit(unitId) {
     const shuffled = deterministicShuffle(originalOptions, seed);
 
     // Find original indentation from source code
-    const lineStart = modifiedCode.lastIndexOf('\n', item.optionsArray.start) + 1;
-    const linePrefix = modifiedCode.slice(lineStart, item.optionsArray.start);
+    const lineStart = originalCode.lastIndexOf('\n', item.optionsArray.start) + 1;
+    const linePrefix = originalCode.slice(lineStart, item.optionsArray.start);
     const indentMatch = linePrefix.match(/^\s*/);
     const baseIndent = indentMatch ? indentMatch[0] : '            ';
     const itemIndent = baseIndent + '  ';
@@ -187,20 +189,40 @@ function rebalanceUnit(unitId) {
       shuffled.map((opt) => `${itemIndent}${JSON.stringify(opt)}`).join(',\n') +
       `\n${baseIndent}]`;
 
-    // Replace the options array slice
-    modifiedCode =
-      modifiedCode.slice(0, item.optionsArray.start) +
-      formattedOptions +
-      modifiedCode.slice(item.optionsArray.end);
+    // Add options array chunk
+    chunks.push({
+      start: item.optionsArray.start,
+      end: item.optionsArray.end,
+      replacement: formattedOptions,
+    });
 
-    // If answer was numeric, update the answer property too
-    if (typeof aVal === 'number' && item.aProp.value.type === 'Literal') {
-      const newAnswerIdx = shuffled.findIndex((opt) => opt.trim() === correctText);
-      // Because we sort descending, item.aProp offsets in modifiedCode must be re-located or handled
-      // Fortunately in our targets, medieval_england, great_war, and great_war_part2 use string answers!
+    const newAnswerIdx = shuffled.findIndex((opt) => opt.trim() === correctText);
+
+    // If answer was numeric or string-numeric, add answer value chunk
+    if (isNumeric && item.aProp.value.type === 'Literal') {
+      chunks.push({
+        start: item.aProp.value.start,
+        end: item.aProp.value.end,
+        replacement: String(newAnswerIdx),
+      });
+    } else if (isStringNumeric && item.aProp.value.type === 'Literal') {
+      chunks.push({
+        start: item.aProp.value.start,
+        end: item.aProp.value.end,
+        replacement: JSON.stringify(String(newAnswerIdx)),
+      });
     }
 
     rebalancedCount++;
+  }
+
+  // Sort descending by start offset to prevent offset drift
+  chunks.sort((a, b) => b.start - a.start);
+
+  let modifiedCode = originalCode;
+  for (const chunk of chunks) {
+    modifiedCode =
+      modifiedCode.slice(0, chunk.start) + chunk.replacement + modifiedCode.slice(chunk.end);
   }
 
   // 5. Syntax validation before saving
@@ -230,7 +252,14 @@ console.log('====================================================\n');
 const targetUnits =
   process.argv.slice(2).length > 0
     ? process.argv.slice(2)
-    : ['medieval_england', 'great_war', 'great_war_part2'];
+    : [
+        'medieval_england',
+        'great_war',
+        'great_war_part2',
+        'edexcel_medicine',
+        'eee',
+        'weimar_nazi_germany',
+      ];
 
 for (const unit of targetUnits) {
   rebalanceUnit(unit);

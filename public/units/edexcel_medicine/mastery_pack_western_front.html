@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -3403,6 +3512,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -3497,11 +3623,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_western_front';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"By 1900, how had surgical practice in civilian hospitals evolved from Joseph Lister's earlier methods?","a":"Surgeons moved from 'antiseptic' surgery (killing germs already in the wound) to 'aseptic' surgery (preventing germs from entering the operating theatre in the first place).","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":2,"q":"Which of the following was a key piece of technology used in aseptic surgery by the outbreak of the First World War?","a":"The steam autoclave (invented in 1881) used to sterilise surgical instruments.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":3,"q":"In what year did the German physicist Wilhelm Roentgen accidentally discover X-rays?","a":"1895","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":4,"q":"Which of the following was a major limitation of using early X-ray machines in 1914?","a":"The radiation doses were 1,500 times stronger than today, causing severe burns and hair loss.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":5,"q":"Why were early X-ray machines highly unsuitable for the fast-paced, mobile environment of a battlefield in 1914?","a":"The glass tubes were incredibly fragile, the machines were too heavy to move easily, and taking a single image could take up to 90 minutes.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":6,"q":"In 1901, the Austrian doctor Karl Landsteiner made a breakthrough that revolutionized blood transfusions. What did he discover?","a":"He discovered three blood groups (A, B, and O), meaning doctors could finally match donor and patient blood types to prevent fatal rejection.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":7,"q":"Before the discovery of sodium citrate in 1915, what was the massive problem with performing blood transfusions on the battlefield?","a":"Blood coagulated (clotted) as soon as it left the body, meaning it could not be stored in a bank. Transfusions had to be done with the donor and patient connected directly by a tube.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":8,"q":"When the British Expeditionary Force (BEF) arrived on the Western Front in 1914, what geographical feature made the medical situation catastrophic?","a":"The flat agricultural land had its drainage systems destroyed by constant artillery, turning the battlefield into a horrific, waterlogged, muddy swamp.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":9,"q":"What is the military definition of a 'salient', such as the famous one at Ypres?","a":"A piece of land that juts out into enemy territory, making it highly dangerous because it is vulnerable to attack from three sides.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":10,"q":"Which major British offensive, launched in 1916, became a medical disaster with over 57,000 casualties on the very first day?","a":"The Battle of the Somme","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":11,"q":"What unique medical facility was established during the Battle of Arras in 1917?","a":"An extensive underground hospital built into the chalk tunnel network underneath the city, sheltering the wounded from artillery fire.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":12,"q":"During the Battle of Cambrai in 1917, what groundbreaking medical logistical system was used for the first time by Oswald Robertson?","a":"The first ever blood bank, using stored blood to treat soldiers suffering from severe shock.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":13,"q":"Why did aseptic surgery (sterile operating theatres) prove to be nearly useless in frontline dressing stations in 1914?","a":"The soldiers' wounds were already deeply infected with anaerobic bacteria from the heavily manured, muddy soil the moment they were injured in the trenches.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":14,"q":"What made transporting wounded soldiers away from the frontline so incredibly difficult?","a":"The deep mud, craters, and destroyed roads made motorized transport impossible near the front, forcing stretcher-bearers to manually carry the wounded for miles.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":15,"q":"To what extent was the Royal Army Medical Corps (RAMC) prepared for the medical challenges of the Western Front in 1914?","a":"They were completely unprepared for the unique environmental illnesses, the massive casualty numbers, and the horrific shrapnel wounds caused by high-explosive artillery.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":16,"q":"What did the term 'war of attrition' mean for the soldiers living in the trench system?","a":"A static, defensive conflict where millions of men lived for months in unhygienic dugouts, exposed to weather, rats, and human waste while trying to wear down the enemy.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":17,"q":"Why were horse-drawn ambulances often ineffective in the worst conditions of the Western Front?","a":"The deep mud was so thick that wagons had to be pulled by six horses instead of two, and the severe shaking often worsened the patients' injuries.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":18,"q":"Which of the following best describes the layout of the trench system on the Western Front?","a":"A complex network of zigzag dugouts consisting of a front line, support trench, reserve trench, and communication trenches linking them.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":19,"q":"In what year did Karl Landsteiner discover that blood group O was the universal donor group?","a":"1907","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":20,"q":"Which statement accurately summarises the 'historical context' of medicine at the outbreak of war in 1914?","a":"High-tech medicine (aseptic surgery, x-rays, blood typing) had emerged, but key limitations in mobility and blood storage meant it was not yet adapted for a muddy, static battlefield.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":21,"q":"What lifestyle choice was definitively linked to lung cancer in the 1950s?","a":"Smoking tobacco.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":22,"q":"Name one modern technology used to diagnose lung cancer.","a":"CT scans or Bronchoscopy.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":23,"q":"State one way the modern government tries to prevent people from smoking.","a":"Banning cigarette advertising, raising taxes, and packaging warning labels.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":24,"q":"When did the First World War begin and end?","a":"1914 to 1918.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":25,"q":"What was the 'Western Front'?","a":"A 400-mile line of trenches stretching through Belgium and France.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":26,"q":"What is a 'magic bullet'?","a":"A chemical compound that targets and kills specific microbes without harming the rest of the body.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":27,"q":"What disease did Edward Jenner vaccinate against in 1796?","a":"Smallpox.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":28,"q":"What was established in Britain in 1948 to provide free medical care?","a":"The National Health Service (NHS).","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":29,"q":"Who was the Minister of Health responsible for establishing the NHS in 1948?","a":"Aneurin Bevan.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":30,"q":"Which anesthetic was discovered by James Simpson in 1847?","a":"Chloroform.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":31,"q":"What was the direct environmental cause of 'Trench Foot' on the Western Front?","a":"Standing for days in cold, waterlogged mud without changing socks.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":32,"q":"What were the symptoms of severe, untreated Trench Foot?","a":"The feet would swell, blister, turn gangrenous, and often require surgical amputation to save the soldier's life.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":33,"q":"How did the British Army attempt to clinically prevent the spread of Trench Foot in permanently flooded trenches?","a":"By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":34,"q":"What was 'Trench Fever', and what were its primary symptoms?","a":"A flu-like illness characterized by severe joint pain, shivering, and high fevers.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":35,"q":"It took years for medical officers to discover the cause of Trench Fever. What was eventually found to be the transmitter?","a":"The millions of body lice living in the seams of the soldiers' unwashed uniforms.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":36,"q":"How did the British Army strategically adapt to combat the epidemic of Trench Fever once its cause was discovered?","a":"They set up massive delousing stations and bathhouses to disinfect clothing with hot steam.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":37,"q":"What was the 'Ypres Salient'?","a":"A vulnerable 'bulge' in the Allied line surrounded by the enemy on three sides, allowing the Germans to fire down from higher ground.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":38,"q":"Why was the First Battle of Ypres (Autumn 1914) strategically critical for the British?","a":"They held onto the salient to stop the Germans advancing to the sea, successfully retaining control of the vital English Channel ports.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":39,"q":"What terrifying new weapon was first used by the German Army at the Second Battle of Ypres in 1915?","a":"Chlorine gas","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":40,"q":"During the fight for Hill 60 in April 1915, what tactic did the British successfully use to defeat the German positions?","a":"Offensive mining to tunnel under and blow up the German positions from below.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":41,"q":"Why did the British launch the massive Battle of the Somme in 1916?","a":"To relieve extreme military pressure on the French army fighting at Verdun.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":42,"q":"What made the Battle of the Somme a 'medical nightmare' on its very first day?","a":"The British suffered nearly 60,000 casualties in a single day, completely overwhelming the medical services.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":43,"q":"Because the ground at Arras was chalky and easy to tunnel through, what incredible feat did British and New Zealand miners achieve in 1917?","a":"They dug a 2.5-mile network of tunnels sheltering 25,000 troops, which included a fully functioning underground hospital.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":44,"q":"In the organisation of the trench system, what was the primary purpose of the 'support trench', located roughly 80 metres behind the frontline?","a":"It was where troops would retreat to if the frontline came under heavy attack or was overrun.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":45,"q":"Why were trenches deliberately dug in a zig-zag pattern instead of a straight line?","a":"To prevent enemy fire or the blast wave from an exploding artillery shell from travelling straight down the line.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":46,"q":"How did the complex, zig-zag design of the trenches unintentionally create severe problems for the medical services?","a":"It made it incredibly difficult and physically exhausting for stretcher-bearers to safely manoeuvre seriously wounded men around the tight corners while under fire.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":47,"q":"Why did the army have to rely heavily on horse-drawn ambulance wagons instead of modern motor ambulances near the frontline?","a":"The heavy motor ambulances frequently got permanently stuck in the deep, waterlogged mud.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":48,"q":"What was the main medical danger caused by delays in evacuating wounded soldiers across the devastated, muddy terrain?","a":"The delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach a Casualty Clearing Station.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":49,"q":"What was 'Dysentery' and how was it spread on the Western Front?","a":"A stomach infection causing severe diarrhea and dehydration, spread by drinking contaminated water from shell holes.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":50,"q":"What does the medical condition 'Shell Shock' (now understood as PTSD) reveal about the environment of the Western Front?","a":"That the relentless psychological trauma, noise, and sheer terror of the artillery war caused severe mental breakdowns, resulting in tiredness, nightmares, and uncontrollable shaking.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":51,"q":"When did the First World War begin and end?","a":"1914 to 1918.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":52,"q":"What was the 'Western Front'?","a":"A 400-mile line of trenches stretching through Belgium and France.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":53,"q":"Name the three major battles fought by the British on the Western Front.","a":"Ypres, Somme, Cambrai.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":54,"q":"What was 'No Man's Land'?","a":"The dangerous, open ground between the Allied and German front-line trenches.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":55,"q":"Name the pattern in which trenches were dug.","a":"A zig-zag pattern.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":56,"q":"What was the purpose of the 'duckboards' in the trenches?","a":"To keep soldiers' feet out of the mud and standing water at the bottom of the trench.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":57,"q":"Who discovered the cause of cholera in 1854?","a":"John Snow.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":58,"q":"Which anesthetic was discovered by James Simpson in 1847?","a":"Chloroform.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":59,"q":"Explain why the zig-zag pattern of trenches was crucial for survival.","a":"It contained the blast of any shell and prevented enemies from shooting straight down the trench.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":60,"q":"What were the three main parallel lines of trenches?","a":"Front-line, Support, and Communication trenches.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":61,"q":"Which type of weapon was responsible for the highest percentage of wounds (roughly 58%) on the Western Front?","a":"High-explosive artillery shells and shrapnel.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":62,"q":"Why were deep shrapnel wounds almost guaranteed to become severely infected within hours?","a":"The jagged shrapnel tore through flesh, physically dragging pieces of muddy, bacteria-soaked uniform deep into the wound.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":63,"q":"What was biologically unique about the mud in Flanders and France that made it so deadly when dragged into a wound?","a":"It was agricultural farmland that had been heavily fertilized with animal manure, packing the soil with the anaerobic bacteria that caused tetanus and gas gangrene.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":64,"q":"What is the defining, fatal characteristic of the 'Gas Gangrene' infection?","a":"It was a rapid infection that produced a foul-smelling gas inside dying muscle tissue, turning the flesh black and potentially killing a man within a single day.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":65,"q":"Why did traditional 19th-century surgical antiseptics (like carbolic acid spray) fail to cure Gas Gangrene on the Western Front?","a":"Antiseptics only cleaned the surface of a wound; they could not reach the lethal bacteria that had been driven deep into the muscle by the force of an explosion.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":66,"q":"How did the British Army successfully reduce the threat of Tetanus infections on the Western Front?","a":"By administering routine anti-tetanus injections to wounded soldiers from late 1914 onwards.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":67,"q":"At the start of the war in 1914, why were head injuries disproportionately high (accounting for roughly 20% of wounds)?","a":"Soldiers were fighting in trenches; their bodies were protected by earth, but their heads were exposed while wearing only soft cloth caps.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":68,"q":"What crucial piece of protective equipment was introduced in 1915, drastically reducing fatal head injuries by 80%?","a":"The steel Brodie helmet","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":69,"q":"What terrifying new weapon did the German army introduce at the Second Battle of Ypres in April 1915?","a":"Chlorine Gas","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":70,"q":"What was the physical effect of a Chlorine Gas attack on a soldier?","a":"It destroyed the respiratory system, causing victims to slowly suffocate as their lungs filled with fluid.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":71,"q":"Before official gas masks were widely issued in July 1915, how did soldiers desperately attempt to survive gas attacks?","a":"They urinated on cotton pads or handkerchiefs and pressed them to their faces to chemically neutralize the chlorine.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":72,"q":"Which poisonous gas, introduced later in 1915, was significantly faster-acting than chlorine and capable of killing an exposed person within two days?","a":"Phosgene Gas","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":73,"q":"What made Mustard Gas (introduced in 1917) such a horrific and distinct weapon?","a":"It was completely odourless and worked slowly, causing severe internal and external blisters that could burn skin straight through uniforms.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":74,"q":"Despite the immense psychological terror it caused, why did poison gas actually account for under 5% of all British deaths (around 6,000 soldiers)?","a":"The rapid development and distribution of highly effective gas masks successfully protected the vast majority of troops.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":75,"q":"Which debilitating environmental illness was spread by the millions of body lice living in the seams of the soldiers' unwashed uniforms?","a":"Trench Fever","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":76,"q":"How did the British Army attempt to medically prevent the spread of Trench Foot in the flooded trenches?","a":"By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":77,"q":"What was 'Shellshock'?","a":"A poorly understood psychological trauma (PTSD) caused by the constant bombardment of war, resulting in nightmares, loss of speech, and uncontrollable shaking.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":78,"q":"Which specialist medical facility in Edinburgh was set up specifically to treat British officers suffering from severe Shellshock?","a":"Craiglockhart Hospital","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":79,"q":"What exact acronym did the British Army officially use in medical records to categorise cases of Shellshock?","a":"NYD.N (Not Yet Diagnosed, Nervous)","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":80,"q":"Why did the brutal environment of the trenches force the Royal Army Medical Corps (RAMC) to dedicate huge resources to 'preventative measures'?","a":"Because the harsh conditions caused so many massive casualties from illnesses (like trench foot and fever) that they had to actively prevent disease just to keep the army fit enough to fight.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":81,"q":"What was 'No Man's Land'?","a":"The dangerous, open ground between the Allied and German front-line trenches.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":82,"q":"Name the pattern in which trenches were dug.","a":"A zig-zag pattern.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":83,"q":"What was the purpose of the 'duckboards' in the trenches?","a":"To keep soldiers' feet out of the mud and standing water at the bottom of the trench.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":84,"q":"What is 'Trench Foot'?","a":"A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":85,"q":"Which weapon caused the most casualties on the Western Front?","a":"Artillery shells and shrapnel.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":86,"q":"Why were wounds on the Western Front highly prone to severe infection?","a":"The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":87,"q":"Who discovered Penicillin by accident in 1928?","a":"Alexander Fleming.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":88,"q":"What structure did Watson and Crick discover in 1953?","a":"The double helix structure of DNA.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":89,"q":"What preventative measure was introduced to stop Trench Foot?","a":"Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":90,"q":"What was 'Shell Shock'?","a":"A psychological condition caused by the trauma of constant shelling, now known as PTSD.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":91,"q":"What was the fundamental purpose of the 'Chain of Evacuation' on the Western Front?","a":"To provide a highly organised, multi-stage system of medical triage to rescue, transport, and treat massive numbers of casualties without overwhelming frontline units.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":92,"q":"Who had the dangerous task of initially rescuing wounded men directly from No Man's Land under enemy fire?","a":"Teams of four to six stretcher-bearers, who carried the casualties by hand through the mud.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":93,"q":"Where was the Regimental Aid Post (RAP) physically located?","a":"Within 200m of the frontline, often in a communication trench or dugout.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":94,"q":"What was the medical capability of the Regimental Medical Officer stationed at the RAP?","a":"They could only provide immediate first aid (like bandages and tourniquets) to get the walking wounded back to the fight or prepare serious cases for transport; they could not perform surgery.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":95,"q":"Who staffed the Advanced Dressing Stations (ADS) and Main Dressing Stations (MDS)?","a":"Units of the Field Ambulance, consisting of medical officers, orderlies, and eventually nurses.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":96,"q":"How did the British military respond to the violent, injury-worsening journeys caused by horse-drawn ambulance wagons?","a":"The Times newspaper launched a public appeal in 1914, raising money to purchase 512 new motor ambulances.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":97,"q":"Why did the RAMC still have to rely heavily on horse-drawn wagons (sometimes needing six horses) even after acquiring motor ambulances?","a":"Because heavy motor vehicles frequently got bogged down and entirely stuck in the deep, waterlogged mud of the battlefield.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":98,"q":"How were massive numbers of stabilized casualties (up to 800 at a time) transported from the CCS to the Base Hospitals?","a":"On specially designed ambulance trains and canal barges.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":99,"q":"Where were the Casualty Clearing Stations (CCS) strategically located?","a":"7 to 12 miles back from the frontline, safely out of artillery range but positioned near railway lines for rapid transport.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":100,"q":"What vital medical sorting process took place at the Casualty Clearing Station (CCS)?","a":"Triage, where patients were sorted into three groups: the walking wounded, those needing hospital treatment, and those with no chance of recovery.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":101,"q":"Because deadly gas gangrene developed so rapidly, how did the role of the Casualty Clearing Station (CCS) critically change during the war?","a":"It took over the role of performing critical, life-saving surgery (like amputations) from the Base Hospitals to stop the infection before transport.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":102,"q":"Where were Base Hospitals located on the Western Front?","a":"Near the French and Belgian coastal ports, ready to ship patients back to 'Blighty' (Britain).","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":103,"q":"As the war progressed and the CCS took over emergency amputations, what did Base Hospitals begin to specialize in?","a":"The longer-term recovery of patients and the development of specialist wards for complex issues like head wounds or gas poisoning.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":104,"q":"To cope with the unprecedented scale of casualties, how drastically did the RAMC (Royal Army Medical Corps) expand between 1914 and 1918?","a":"From 9,000 men to 113,000 men.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":105,"q":"Who were the QAIMNS, whose numbers grew from 300 to 10,000 during the war?","a":"Queen Alexandra's Imperial Military Nursing Service, a corps of highly trained professional military nurses.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":106,"q":"What does the acronym FANY stand for?","a":"First Aid Nursing Yeomanry.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":107,"q":"What was the most famous and physically demanding frontline role undertaken by the female volunteers of the FANY?","a":"They drove the motor ambulances, navigating terrible roads and deep mud under active shellfire to transport the wounded.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":108,"q":"Aside from driving ambulances, what other vital morale and hygiene services did the FANY provide?","a":"They transported supplies, set up cinemas, and operated mobile bath units that could bathe up to 40 men an hour.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":109,"q":"What was incredibly unique about 'Thompson's Cave', built by British and Commonwealth troops in 1916?","a":"It was a massive, fully functioning underground hospital built into existing chalk tunnels beneath the town of Arras.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":110,"q":"Why was the underground hospital at Arras highly significant for treating casualties?","a":"Because it functioned as a fully equipped facility incredibly close to the frontline (with 700 stretcher beds, electricity, and water), while remaining completely safe from enemy artillery.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":111,"q":"What is 'Trench Foot'?","a":"A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":112,"q":"Which weapon caused the most casualties on the Western Front?","a":"Artillery shells and shrapnel.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":113,"q":"Why were wounds on the Western Front highly prone to severe infection?","a":"The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":114,"q":"What does RAMC stand for?","a":"Royal Army Medical Corps.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":115,"q":"What was the role of the FANY?","a":"Driving ambulances, moving supplies, and running soup kitchens.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":116,"q":"Describe the 'Chain of Evacuation' on the Western Front.","a":"A series of medical posts starting at the front line and ending at base hospitals.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":117,"q":"What lifestyle choice was definitively linked to lung cancer in the 1950s?","a":"Smoking tobacco.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":118,"q":"What was established in Britain in 1948 to provide free medical care?","a":"The National Health Service (NHS).","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":119,"q":"What was the primary role of the Casualty Clearing Station (CCS)?","a":"To perform urgent surgery to save life or limbs close to the front line.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":120,"q":"Where were the Base Hospitals located and what did they do?","a":"On the French coast, treating long-term casualties or sending them to Britain.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":121,"q":"Why was traditional 19th-century aseptic surgery effectively impossible to maintain on the Western Front?","a":"Because the chaotic, muddy casualty stations were impossible to keep perfectly sterile, and traditional carbolic acid did not kill gas gangrene bacteria effectively.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":122,"q":"Faced with rampant gas gangrene, surgeons began using a technique called 'Debridement' (Wound Excision). What did this involve?","a":"Aggressively and rapidly cutting away all dead, damaged, and infected tissue from around a wound to physically remove the gangrene before stitching it up.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":123,"q":"What was the 'Carrel-Dakin method' used to treat deep infections?","a":"A system where tubes pumped a chemical sterilized salt solution directly into deep wounds to continually wash out and kill the infection-causing bacteria.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":124,"q":"What was the main logistical difficulty with the highly effective Carrel-Dakin solution?","a":"The solution only stayed fresh for six hours and had to be constantly made as it was needed.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":125,"q":"If antiseptics, debridement, and the Carrel-Dakin method all failed to stop the rapid spread of gas gangrene, what was a surgeon's only remaining option to save the patient's life?","a":"Immediate amputation of the infected limb (resulting in over 240,000 lost limbs by 1918).","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":126,"q":"Before 1915, what was the estimated mortality (death) rate for a soldier who suffered a fractured femur (thigh bone) from a gunshot or shrapnel wound?","a":"80%","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":127,"q":"Why did a fractured femur cause such a high death rate during early transport?","a":"Because traditional splints did not keep the leg straight, meaning the jagged broken bones ground together, severing major arteries and causing fatal internal bleeding and shock.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":128,"q":"Who originally designed the Thomas Splint before the outbreak of the First World War?","a":"Hugh Owen Thomas","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":129,"q":"How did the Thomas Splint (introduced to the Western Front by Robert Jones in December 1915) miraculously increase the survival rate for thigh fractures from 20% to 82%?","a":"It rigidly pulled the leg lengthways (traction), completely stopping the broken bones from grinding on each other and preventing fatal blood loss and shock during transport.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":130,"q":"What diagnostic technology was absolutely essential for accurately locating deeply embedded shrapnel so surgeons could remove it before infection set in?","a":"X-Rays","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":131,"q":"How was X-Ray technology adapted to deal with the vast number of casualties closer to the frontline?","a":"Six mobile X-ray units (vans) were developed to operate in the British sector, allowing them to be driven directly to Casualty Clearing Stations.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":132,"q":"What was a major technical limitation of the early mobile X-ray units used on the Western Front?","a":"The delicate glass tubes overheated very quickly, meaning the machines could only be used for an hour before needing to cool down.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":133,"q":"Early blood transfusions (such as those pioneered by Dr Lawrence Bruce Robertson) were heavily limited because blood could not be stored. How did this force doctors to perform transfusions?","a":"Transfusions had to be done 'arm-to-arm', directly transferring blood from a live donor to the patient before it clotted.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":134,"q":"In 1915, what chemical did Richard Lewisohn discover could be added to blood to successfully stop it from clotting?","a":"Sodium Citrate","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":135,"q":"Following Lewisohn's discovery, Richard Weil discovered that blood mixed with sodium citrate could be refrigerated for up to two days. What monumentally significant breakthrough did Francis Rous and James Turner make in 1916?","a":"They added citrate glucose to the blood, which allowed it to be safely stored for up to four weeks.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":136,"q":"Which American doctor utilized these chemical discoveries to establish the world's first 'blood depot' (blood bank) before the Battle of Cambrai in 1917?","a":"Oswald Hope Robertson","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":137,"q":"How did Oswald Hope Robertson successfully store the 22 units of pre-donated universal Type O blood for his pioneering blood bank at Cambrai?","a":"He stored the blood in glass bottles packed with ice and sawdust.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":138,"q":"Which pioneering surgeon developed early plastic surgery techniques to rebuild the severe, disfiguring facial injuries caused by shrapnel?","a":"Harold Gillies","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":139,"q":"Why did the brutal environment and massive casualty numbers of the Western Front force rapid medical advancements?","a":"Because traditional peacetime surgical methods completely failed to treat the complex, infected shrapnel wounds, forcing doctors to innovate radical new techniques out of sheer desperation.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":140,"q":"Which of the following represents a major diagnostic limitation of the mobile X-ray units?","a":"They could not detect pieces of dirty clothing that had been driven into wounds by shrapnel, which often caused lethal infections.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":141,"q":"What does RAMC stand for?","a":"Royal Army Medical Corps.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":142,"q":"What was the role of the FANY?","a":"Driving ambulances, moving supplies, and running soup kitchens.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":143,"q":"Describe the 'Chain of Evacuation' on the Western Front.","a":"A series of medical posts starting at the front line and ending at base hospitals.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":144,"q":"What was the Thomas Splint?","a":"A leg splint that kept the broken femur rigid, reducing blood loss and saving lives.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":145,"q":"What chemical was discovered in 1915 to prevent blood from clotting?","a":"Sodium citrate.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":146,"q":"What did the discovery of blood storage allow surgeons to do?","a":"Perform blood transfusions at Casualty Clearing Stations (CCS) using blood banks.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":147,"q":"Who discovered the structure of DNA in 1953?","a":"James Watson and Francis Crick.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":148,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":149,"q":"How did WWI affect the use of X-rays in medicine?","a":"Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":150,"q":"What was the 'Carrel-Dakin' method?","a":"Sterilizing deep wounds by constantly flushing them with an antiseptic solution.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -3578,6 +3795,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -3585,6 +3803,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -3651,6 +3870,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -3688,6 +3908,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }

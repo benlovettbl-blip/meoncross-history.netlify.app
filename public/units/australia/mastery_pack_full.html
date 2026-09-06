@@ -337,6 +337,115 @@
             background: rgba(255,255,255,0.3);
             transform: scale(1.05);
         }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
         .leitner-box-stats {
             background: #f8fafc;
             padding: 10px 16px;
@@ -1945,6 +2054,23 @@
                 <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
             </div>
 
+            <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
+            <div class="leitner-streak-bar">
+                <div class="streak-badge-wrap">
+                    <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
+                    <div class="streak-text-group">
+                        <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
+                        <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
+                    </div>
+                </div>
+                <div class="streak-heatmap-container">
+                    <div class="streak-heatmap-title">7-Day Spaced Activity</div>
+                    <div class="streak-heatmap-days" id="streak-heatmap-days">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+
             <div class="leitner-box-stats">
                 <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
                     <span>🔴</span>
@@ -2034,11 +2160,102 @@
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
     const LEITNER_STORAGE_KEY = 'leitner_v1_australia_full';
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
     const ALL_DECK = [{"id":1,"q":"What was the secret reason the British government sent Captain Cook to the South Pacific in 1768?","a":"To locate and claim the 'Great Southern Land' for the British Empire","topic":"Claiming Australia"},{"id":2,"q":"Which of the following describes a skill Tupaia used to navigate the Endeavour across 3,000 miles of ocean?","a":"He read the stars, bird flight patterns, and ocean currents","topic":"Claiming Australia"},{"id":3,"q":"Why did the Gweagal warriors oppose Captain Cook's landing at Botany Bay in 1770?","a":"They believed it was their spiritual and legal duty to protect their ancestral lands from uninvited strangers","topic":"Claiming Australia"},{"id":4,"q":"Who was the young botanist that led the Royal Society's scientific team on the Endeavour?","a":"Sir Joseph Banks","topic":"Claiming Australia"},{"id":5,"q":"What public scientific event was the Endeavour sent to Tahiti to observe?","a":"The transit of Venus across the Sun","topic":"Claiming Australia"},{"id":6,"q":"Which prestigious British scientific academy funded Captain Cook's 1768 expedition?","a":"The Royal Society","topic":"Claiming Australia"},{"id":7,"q":"What secret instructions was Captain Cook given by the British Admiralty?","a":"To sail south, locate the 'Great Southern Land', and claim it for Britain before rival nations could.","topic":"Claiming Australia"},{"id":8,"q":"Who was the master Polynesian navigator who guided the Endeavour across the Pacific?","a":"Tupaia","topic":"Claiming Australia"},{"id":9,"q":"How did Tupaia navigate the Pacific without European instruments?","a":"By reading the stars, bird flight patterns, cloud formations, and ocean currents.","topic":"Claiming Australia"},{"id":10,"q":"Which Aboriginal Australian nation did Cook's crew encounter at Botany Bay?","a":"The Dharawal nation (specifically the Gweagal people)","topic":"Claiming Australia"},{"id":11,"q":"Why did the Gweagal warriors oppose Cook's landing in 1770?","a":"It was their sacred, spiritual, and legal duty to protect their ancestral lands from uninvited strangers.","topic":"Claiming Australia"},{"id":12,"q":"What Latin legal term did the British use to falsely claim Australia was 'nobody's land'?","a":"Terra Nullius","topic":"Claiming Australia"},{"id":13,"q":"On which island did Captain Cook raise the Union Jack to claim the eastern coast for Britain?","a":"Possession Island","topic":"Claiming Australia"},{"id":14,"q":"Why was the British government forced to stop transporting convicts to North America in 1776?","a":"The American colonies declared their independence from Britain","topic":"Creating a Convict Colony"},{"id":15,"q":"Who was the naval surgeon aboard the Lady Penrhyn who wrote a famous eyewitness journal about the landing of female convicts in 1788?","a":"Arthur Bowes Smyth","topic":"Creating a Convict Colony"},{"id":16,"q":"What punishment was given to difficult convicts who committed further crimes in the Sydney colony?","a":"They were forced to join road gangs and break stones in leg chains","topic":"Creating a Convict Colony"},{"id":17,"q":"Which global event in 1776 caused Britain to lose its primary location for transporting convicts?","a":"The American War of Independence","topic":"Creating a Convict Colony"},{"id":18,"q":"Where were British convicts temporarily held when prisons overflowed before Botany Bay was established?","a":"In 'hulks' (rotting decommissioned warships moored in the River Thames)","topic":"Creating a Convict Colony"},{"id":19,"q":"Who was appointed as the first Governor of the New South Wales colony?","a":"Captain Arthur Phillip","topic":"Creating a Convict Colony"},{"id":20,"q":"What were the most common crimes committed by the convicts of the First Fleet?","a":"Petty theft (e.g. stealing clothing, food, or small sums of money)","topic":"Creating a Convict Colony"},{"id":21,"q":"How many ships made up the First Fleet that sailed to Australia in 1787?","a":"11 ships","topic":"Creating a Convict Colony"},{"id":22,"q":"Why did Governor Phillip decide to abandon Botany Bay and move the settlement?","a":"Botany Bay lacked fresh water, had poor soil for farming, and offered no safe anchorage for the ships.","topic":"Creating a Convict Colony"},{"id":23,"q":"What name did Governor Phillip give to the new, more suitable harbor where the fleet finally settled?","a":"Sydney Cove (Port Jackson)","topic":"Creating a Convict Colony"},{"id":24,"q":"On what exact date did the British raise the flag at Sydney Cove?","a":"26 January 1788","topic":"Creating a Convict Colony"},{"id":25,"q":"What system did Governor Phillip implement to ensure the colony's survival during the first year?","a":"Strict rationing and forced manual labor for all convicts.","topic":"Creating a Convict Colony"},{"id":26,"q":"What skills did the early colony critically lack among its convict population?","a":"Skilled farmers, carpenters, and builders.","topic":"Creating a Convict Colony"},{"id":27,"q":"Who was the senior Eora man kidnapped by Governor Phillip to act as an intermediary?","a":"Bennelong","topic":"Encounters with the Indigenous Peoples"},{"id":28,"q":"What devastating disease swept through the Aboriginal population around Sydney in 1789?","a":"Smallpox","topic":"Encounters with the Indigenous Peoples"},{"id":29,"q":"Who was Pemulwuy?","a":"A Bidjigal resistance leader who waged a 12-year guerrilla war against British settlers.","topic":"Encounters with the Indigenous Peoples"},{"id":30,"q":"What was the 'Frontier War'?","a":"The prolonged, violent conflict over land and resources between British colonizers and Aboriginal resistance fighters.","topic":"Encounters with the Indigenous Peoples"},{"id":31,"q":"How did the British expansion into the Hawkesbury River impact the Dharug people?","a":"It destroyed their hunting grounds and food sources, leading to starvation and violent conflict.","topic":"Encounters with the Indigenous Peoples"},{"id":32,"q":"What was the Myall Creek Massacre of 1838?","a":"The unprovoked murder of 28 unarmed Aboriginal people by British stockmen, resulting in the rare execution of the white perpetrators.","topic":"Encounters with the Indigenous Peoples"},{"id":33,"q":"What horrific practice was conducted by scientists like Sir Joseph Banks regarding Aboriginal remains?","a":"The stealing and exporting of Aboriginal skulls to British museums for racist 'scientific' study.","topic":"Encounters with the Indigenous Peoples"},{"id":34,"q":"Why did the British concept of land ownership conflict with Aboriginal views?","a":"The British viewed land as property to be owned and fenced, while Aboriginal people saw it as a sacred, shared spiritual responsibility.","topic":"Encounters with the Indigenous Peoples"},{"id":35,"q":"What weapon gave the British a massive technological advantage during the Frontier Wars?","a":"Muskets (firearms)","topic":"Encounters with the Indigenous Peoples"},{"id":36,"q":"How did Governor Macquarie's policies toward Aboriginal people change over time?","a":"He initially tried to 'civilize' them through assimilation schools, but later authorized violent military campaigns against them.","topic":"Encounters with the Indigenous Peoples"},{"id":37,"q":"What highly profitable industry transformed Australia's economy in the 1820s?","a":"The wool industry (sheep farming)","topic":"From Penal Colony to Settlement"},{"id":38,"q":"Who were 'squatters' in colonial Australia?","a":"Wealthy settlers who illegally occupied massive tracts of Aboriginal land to graze their sheep.","topic":"From Penal Colony to Settlement"},{"id":39,"q":"What major discovery in 1851 completely changed the demographics and wealth of Australia?","a":"The discovery of Gold in New South Wales and Victoria","topic":"From Penal Colony to Settlement"},{"id":40,"q":"What was the Eureka Rebellion of 1854?","a":"A violent uprising by gold miners in Ballarat protesting against unfair mining licenses and police corruption.","topic":"From Penal Colony to Settlement"},{"id":41,"q":"Which immigrant group faced severe racism, violence, and discriminatory taxes on the goldfields?","a":"Chinese immigrants","topic":"From Penal Colony to Settlement"},{"id":42,"q":"What was a 'Ticket of Leave'?","a":"A document granting a well-behaved convict freedom to work for themselves before their sentence fully expired.","topic":"From Penal Colony to Settlement"},{"id":43,"q":"Who was Lachlan Macquarie?","a":"An influential Governor who transformed Sydney from a prison camp into a functioning city with roads, banks, and hospitals.","topic":"From Penal Colony to Settlement"},{"id":44,"q":"How were female convicts typically treated in the early colony?","a":"They faced extreme vulnerability, exploitation, and were often forced into domestic servitude or the 'Female Factories'.","topic":"From Penal Colony to Settlement"},{"id":45,"q":"What transportation system linked the Australian colonies by the late 19th century?","a":"The railway network","topic":"From Penal Colony to Settlement"},{"id":46,"q":"In what year did the separate Australian colonies federate to become the Commonwealth of Australia?","a":"1901","topic":"From Penal Colony to Settlement"},{"id":47,"q":"What Latin legal term did the British Crown use to claim Australia was 'nobody's land'?","a":"Terra Nullius","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":48,"q":"Who was the master Polynesian star navigator who guided Captain Cook's Endeavour across the Pacific?","a":"Tupaia","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":49,"q":"Which global event in 1776 stopped Britain from transporting convicts to North America?","a":"The American War of Independence","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":50,"q":"What were the decaying, overcrowded decommissioned warships used as temporary prisons in Britain called?","a":"Prison hulks","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":51,"q":"Which naval officer was the first Governor of New South Wales and instituted equal food rationing?","a":"Governor Arthur Phillip","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":52,"q":"What catastrophic disease broke out in 1789, killing an estimated 50% to 70% of the Sydney Eora population?","a":"Smallpox","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":53,"q":"Which Bidjigal warrior led a twelve-year guerrilla resistance campaign against British settlement until 1802?","a":"Pemulwuy","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":54,"q":"At which 1838 massacre were seven white stockmen convicted and hanged for murdering 28 unarmed Aboriginal people?","a":"The Myall Creek Massacre","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":55,"q":"Which breed of Spanish sheep, championed by John Macarthur, created a booming export industry for New South Wales?","a":"Merino sheep","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":56,"q":"What major mineral discovery by Edward Hargreaves in 1851 caused Australia's population to nearly triple within a decade?","a":"Gold (the 1851 Gold Rush)","topic":"Lesson 5: Assessment - What's the story of Australia?"}];
 
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
 
     function loadLeitnerProgress() {
       try {
@@ -2115,6 +2332,7 @@
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
     };
 
     window.rateCurrentCard = function(targetBox) {
@@ -2122,6 +2340,7 @@
       const card = currentDeck[currentIndex];
       userBoxes[card.id] = targetBox;
       saveLeitnerProgress();
+      recordLeitnerActivity();
 
       const cardEl = document.getElementById('leitner-flashcard');
       if (cardEl) cardEl.classList.remove('flipped');
@@ -2188,6 +2407,7 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
+        updateStreakAndHeatmap();
         renderCurrentCard();
       }
     };
@@ -2225,6 +2445,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
+      updateStreakAndHeatmap();
       if (window.location.hash === '#practice-mode') {
         openLeitnerModal();
       }
