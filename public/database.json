@@ -38568,6 +38568,164 @@
   },
   "medieval_england": {
     "data": {
+      "glossary": [
+        {
+          "term": "Power",
+          "definition": "The ability to control people, events, or resources — a central theme of medieval history."
+        },
+        {
+          "term": "Claim",
+          "definition": "A demand for the right to rule, based on blood ties, promises, or military strength."
+        },
+        {
+          "term": "Conquest",
+          "definition": "The act of taking control of a country or territory by military force."
+        },
+        {
+          "term": "Anglo-Saxon",
+          "definition": "The Germanic peoples who settled in England from the 5th century and ruled until the Norman Conquest of 1066."
+        },
+        {
+          "term": "Significance",
+          "definition": "The importance of a historical event — why it mattered at the time and why it still matters today."
+        },
+        {
+          "term": "Feudal system",
+          "definition": "The medieval social hierarchy where the king granted land to lords in exchange for military service, who in turn controlled peasants."
+        },
+        {
+          "term": "Resistance",
+          "definition": "Actions taken to oppose or fight against those in power."
+        },
+        {
+          "term": "Propaganda",
+          "definition": "Information (often biased or misleading) used to promote a political cause or point of view."
+        },
+        {
+          "term": "Domesday Book",
+          "definition": "A comprehensive survey of England ordered by William I in 1086 to record who owned what land and its value."
+        },
+        {
+          "term": "Motte-and-bailey",
+          "definition": "An early type of Norman castle with a raised mound (motte) topped by a wooden tower and an enclosed courtyard (bailey)."
+        },
+        {
+          "term": "Church",
+          "definition": "The Catholic Church — the most powerful religious institution in medieval Europe, led by the Pope in Rome."
+        },
+        {
+          "term": "Monarchy",
+          "definition": "Rule by a king or queen. In medieval England, the monarch claimed authority from God (Divine Right)."
+        },
+        {
+          "term": "Martyr",
+          "definition": "A person who is killed because of their religious beliefs, often becoming a powerful symbol."
+        },
+        {
+          "term": "Excommunication",
+          "definition": "Being expelled from the Catholic Church — the most severe spiritual punishment in the medieval world."
+        },
+        {
+          "term": "Canon law",
+          "definition": "The system of laws and regulations made by the Church, which often clashed with the king's secular laws."
+        },
+        {
+          "term": "Magna Carta",
+          "definition": "The 'Great Charter' of 1215, forced upon King John by his barons, limiting royal power and establishing legal rights."
+        },
+        {
+          "term": "Democracy",
+          "definition": "A system of government where power is held by the people, usually through elected representatives."
+        },
+        {
+          "term": "Parliament",
+          "definition": "An assembly of representatives that gradually gained the power to make laws and hold the monarch to account."
+        },
+        {
+          "term": "Interpretation",
+          "definition": "A particular way of explaining or understanding a historical event — historians often disagree in their interpretations."
+        },
+        {
+          "term": "Baron",
+          "definition": "A powerful nobleman who held land from the king under the feudal system and owed military service in return."
+        },
+        {
+          "term": "Peasantry",
+          "definition": "The class of poor agricultural labourers who worked the land under the feudal system."
+        },
+        {
+          "term": "Tithe",
+          "definition": "A tax of one-tenth of a person's produce or income, paid to the Church."
+        },
+        {
+          "term": "Feudalism",
+          "definition": "The dominant social system in medieval Europe, based on land ownership, loyalty, and obligation."
+        },
+        {
+          "term": "Serf",
+          "definition": "A peasant who was legally tied to the land they worked and could not leave without their lord's permission."
+        },
+        {
+          "term": "Strip farming",
+          "definition": "The medieval agricultural system where peasants farmed narrow strips of land scattered across open fields."
+        },
+        {
+          "term": "Black Death",
+          "definition": "The devastating plague pandemic of 1348-1350 that killed approximately one-third of England's population."
+        },
+        {
+          "term": "Change",
+          "definition": "A fundamental shift in how things work — the Black Death caused dramatic change to medieval society."
+        },
+        {
+          "term": "Labour shortage",
+          "definition": "A situation where there are not enough workers available, which gives remaining workers bargaining power."
+        },
+        {
+          "term": "Statute of Labourers",
+          "definition": "A law passed in 1351 attempting to fix wages at pre-plague levels and prevent peasants from demanding higher pay."
+        },
+        {
+          "term": "Social order",
+          "definition": "The hierarchical structure of society — in medieval England, this was the feudal pyramid of King, Lords, and Peasants."
+        },
+        {
+          "term": "Revolt",
+          "definition": "An organised uprising against those in power, driven by grievance and a desire for change."
+        },
+        {
+          "term": "Poll tax",
+          "definition": "A flat-rate tax charged on every adult, regardless of wealth — widely seen as deeply unfair to the peasantry."
+        },
+        {
+          "term": "Wat Tyler",
+          "definition": "The leader of the Peasants' Revolt of 1381, killed during negotiations with King Richard II."
+        },
+        {
+          "term": "Villeinage",
+          "definition": "The condition of being a villein (serf) — tied to the land with obligations to a feudal lord."
+        },
+        {
+          "term": "Dynasty",
+          "definition": "A series of rulers from the same family, such as the Plantagenets, Yorkists, and Tudors."
+        },
+        {
+          "term": "Usurper",
+          "definition": "A person who seizes power illegally or by force, without a legitimate claim."
+        },
+        {
+          "term": "Synthesis",
+          "definition": "Bringing together knowledge from across a whole unit to form an overall judgement."
+        },
+        {
+          "term": "Evidence",
+          "definition": "Historical facts, sources, or examples used to support an argument or judgement."
+        },
+        {
+          "term": "Judgement",
+          "definition": "A considered conclusion reached after weighing up different pieces of evidence."
+        }
+      ],
       "lesson_reflection": {
         "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
         "instructions": [

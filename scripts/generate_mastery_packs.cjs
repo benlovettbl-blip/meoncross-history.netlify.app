@@ -9,31 +9,45 @@ if (!fs.existsSync(publicUnitsDir)) {
   process.exit(0);
 }
 
-const units = fs.readdirSync(publicUnitsDir, { withFileTypes: true })
-  .filter(d => d.isDirectory() && !d.name.startsWith('.'))
-  .map(d => d.name);
+const units = fs
+  .readdirSync(publicUnitsDir, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && !d.name.startsWith('.'))
+  .map((d) => d.name);
 
 for (const unitId of units) {
   const unitDir = path.join(publicUnitsDir, unitId);
-  const dataJsPath = path.join(unitDir, 'data.js');
-  
+  let dataJsPath = path.join(unitDir, 'data.js');
+  if (unitId === 'medieval_england' && !fs.existsSync(dataJsPath)) {
+    dataJsPath = path.join(rootDir, 'units', unitId, 'data.js');
+  }
+
   if (!fs.existsSync(dataJsPath)) continue;
 
   try {
     let rawData = fs.readFileSync(dataJsPath, 'utf8');
-    
+
     // Naive parsing: strip imports and exports
     let jsonStr = rawData.replace(/import .*?;\n/g, '');
-    jsonStr = jsonStr.replace(/if\s*\(\s*typeof\s*module\s*!==\s*['"]undefined['"]\s*\)\s*\{[\s\S]*?;\s*\n?\}/g, '');
-    jsonStr = jsonStr.replace(/export const unitData = |export default |export const gwData = |const unitData = |module\.exports = /g, '').trim();
+    jsonStr = jsonStr.replace(
+      /if\s*\(\s*typeof\s*module\s*!==\s*['"]undefined['"]\s*\)\s*\{[\s\S]*?;\s*\n?\}/g,
+      '',
+    );
+    jsonStr = jsonStr
+      .replace(
+        /export const unitData = |export default |export const gwData = |const unitData = |module\.exports = /g,
+        '',
+      )
+      .trim();
     if (jsonStr.endsWith(';')) jsonStr = jsonStr.slice(0, -1);
-    
+
     let unit;
     try {
       let mock_exams = {};
       unit = eval('(' + jsonStr + ')');
     } catch (e) {
-      console.warn(`Could not parse data for unit ${unitId}: ${e.message}. Skipping mastery pack generation.`);
+      console.warn(
+        `Could not parse data for unit ${unitId}: ${e.message}. Skipping mastery pack generation.`,
+      );
       continue;
     }
 
@@ -42,103 +56,114 @@ for (const unitId of units) {
 
     // If unit has no workbooks (KS3), create a default one
     if (!unit.workbooks) {
-        unit.workbooks = [{ id: 'full', title: 'Complete Unit Mastery', prefix: 'lesson' }];
+      unit.workbooks = [{ id: 'full', title: 'Complete Unit Mastery', prefix: 'lesson' }];
     }
 
     for (const wb of unit.workbooks) {
-        // Collect 80 questions (or as many as available) from the lessons for this Key Topic
-        let questions = [];
-        let prefix = wb.prefix || wb.id;
-        let matchingLessons = unit.lessons.filter(l => l.id.startsWith(prefix) || l.title.startsWith(prefix));
-        
-        for (const lesson of matchingLessons) {
-            if (lesson.quiz && Array.isArray(lesson.quiz)) {
-                lesson.quiz.forEach(q => {
-                    let ansStr = '';
-                    if (q.options && typeof q.answer !== 'undefined') {
-                        ansStr = q.options[q.answer];
-                    } else if (q.a) {
-                        ansStr = q.a;
-                    }
-                    questions.push({
-                        lessonTitle: lesson.title,
-                        q: q.question || q.q,
-                        a: ansStr
-                    });
-                });
+      // Collect 80 questions (or as many as available) from the lessons for this Key Topic
+      let questions = [];
+      let prefix = wb.prefix || wb.id;
+      let matchingLessons;
+      if (unitId === 'medieval_england') {
+        matchingLessons = unit.lessons;
+      } else {
+        matchingLessons = unit.lessons.filter(
+          (l) => (l.id && l.id.startsWith(prefix)) || (l.title && l.title.startsWith(prefix)),
+        );
+      }
+
+      for (const lesson of matchingLessons) {
+        if (lesson.quiz && Array.isArray(lesson.quiz)) {
+          lesson.quiz.forEach((q) => {
+            let ansStr = '';
+            if (q.options && typeof q.answer !== 'undefined') {
+              ansStr = q.options[q.answer];
+            } else if (q.a) {
+              ansStr = q.a;
             }
-            if (lesson.do_now && Array.isArray(lesson.do_now.items)) {
-                lesson.do_now.items.forEach(q => {
-                    let ansStr = q.answer || q.a || '';
-                    if (!ansStr && q.options && typeof q.answer !== 'undefined') {
-                        ansStr = q.options[q.answer];
-                    }
-                    questions.push({
-                        lessonTitle: lesson.title,
-                        q: q.question || q.q,
-                        a: ansStr
-                    });
-                });
+            questions.push({
+              lessonTitle: lesson.title,
+              q: q.question || q.q,
+              a: ansStr,
+            });
+          });
+        }
+        if (lesson.do_now && Array.isArray(lesson.do_now.items)) {
+          lesson.do_now.items.forEach((q) => {
+            let ansStr = q.answer || q.a || '';
+            if (!ansStr && q.options && typeof q.answer !== 'undefined') {
+              ansStr = q.options[q.answer];
             }
+            questions.push({
+              lessonTitle: lesson.title,
+              q: q.question || q.q,
+              a: ansStr,
+            });
+          });
         }
+      }
 
-        if (questions.length === 0) continue;
+      if (questions.length === 0) continue;
 
-        // Ensure we group exactly by 20 questions per page
-        const pages = [];
-        let currentPage = [];
-        let currentLessonTitle = questions[0].lessonTitle;
+      // Ensure we group exactly by 20 questions per page
+      const pages = [];
+      let currentPage = [];
+      let currentLessonTitle = questions[0].lessonTitle;
 
-        for (let i = 0; i < questions.length; i++) {
-            if (currentPage.length === 20) {
-                pages.push({ title: currentLessonTitle, questions: currentPage });
-                currentPage = [];
-                currentLessonTitle = questions[i].lessonTitle;
-            } else if (questions[i].lessonTitle !== currentLessonTitle && currentPage.length > 0 && false) {
-                // We could split rigidly by lesson, but the blueprint asks for 20 per page.
-                // Assuming exactly 20 questions per lesson.
-            }
-            if (currentPage.length === 0) {
-                currentLessonTitle = questions[i].lessonTitle;
-            }
-            currentPage.push(questions[i]);
+      for (let i = 0; i < questions.length; i++) {
+        if (currentPage.length === 20) {
+          pages.push({ title: currentLessonTitle, questions: currentPage });
+          currentPage = [];
+          currentLessonTitle = questions[i].lessonTitle;
+        } else if (
+          questions[i].lessonTitle !== currentLessonTitle &&
+          currentPage.length > 0 &&
+          false
+        ) {
+          // We could split rigidly by lesson, but the blueprint asks for 20 per page.
+          // Assuming exactly 20 questions per lesson.
         }
-        if (currentPage.length > 0) {
-            pages.push({ title: currentLessonTitle, questions: currentPage });
+        if (currentPage.length === 0) {
+          currentLessonTitle = questions[i].lessonTitle;
         }
+        currentPage.push(questions[i]);
+      }
+      if (currentPage.length > 0) {
+        pages.push({ title: currentLessonTitle, questions: currentPage });
+      }
 
-        // Handle background image for cover
-        let bgImage = '';
-        if (wb.image) {
-            bgImage = wb.image;
-        } else if (unit.homepage_background) {
-            bgImage = unit.homepage_background;
-        } else if (unit.cover_image) {
-            bgImage = unit.cover_image;
-        }
-        
-        // Convert absolute web paths to relative paths for Puppeteer local file loading
-        if (bgImage && bgImage.startsWith('/units/')) {
-            const parts = bgImage.split('/');
-            // /units/water_and_sanitation/assets/foo.png -> ./assets/foo.png
-            bgImage = './' + parts.slice(3).join('/');
-        } else if (bgImage && bgImage.startsWith('/data/')) {
-             bgImage = '../..' + bgImage;
-        } else if (bgImage && bgImage.startsWith('images/')) {
-             bgImage = '../../' + bgImage;
-        } else if (bgImage && bgImage.startsWith('assets/')) {
-             bgImage = '../../' + bgImage;
-        }
+      // Handle background image for cover
+      let bgImage = '';
+      if (wb.image) {
+        bgImage = wb.image;
+      } else if (unit.homepage_background) {
+        bgImage = unit.homepage_background;
+      } else if (unit.cover_image) {
+        bgImage = unit.cover_image;
+      }
 
-        let enquiryText = '';
-        if (wb.enquiry) {
-            enquiryText = wb.enquiry;
-        } else if (unit.enquiry) {
-            enquiryText = unit.enquiry;
-        }
+      // Convert absolute web paths to relative paths for Puppeteer local file loading
+      if (bgImage && bgImage.startsWith('/units/')) {
+        const parts = bgImage.split('/');
+        // /units/water_and_sanitation/assets/foo.png -> ./assets/foo.png
+        bgImage = './' + parts.slice(3).join('/');
+      } else if (bgImage && bgImage.startsWith('/data/')) {
+        bgImage = '../..' + bgImage;
+      } else if (bgImage && bgImage.startsWith('images/')) {
+        bgImage = '../../' + bgImage;
+      } else if (bgImage && bgImage.startsWith('assets/')) {
+        bgImage = '../../' + bgImage;
+      }
 
-        // Build the HTML
-        let html = `<!DOCTYPE html>
+      let enquiryText = '';
+      if (wb.enquiry) {
+        enquiryText = wb.enquiry;
+      } else if (unit.enquiry) {
+        enquiryText = unit.enquiry;
+      }
+
+      // Build the HTML
+      let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -471,9 +496,9 @@ for (const unitId of units) {
     <!-- Question Grids -->
     `;
 
-        let globalQNum = 1;
-        pages.forEach((pageObj, pageIndex) => {
-            html += `
+      let globalQNum = 1;
+      pages.forEach((pageObj, pageIndex) => {
+        html += `
     <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
         <h2>${pageObj.title}</h2>
         <table>
@@ -489,8 +514,8 @@ for (const unitId of units) {
             </thead>
             <tbody>
             `;
-            pageObj.questions.forEach(q => {
-                html += `
+        pageObj.questions.forEach((q) => {
+          html += `
                 <tr>
                     <td class="col-qnum">${globalQNum}</td>
                     <td class="col-question">${q.q}</td>
@@ -500,9 +525,9 @@ for (const unitId of units) {
                     <td class="col-notes"></td>
                 </tr>
                 `;
-                globalQNum++;
-            });
-            html += `
+          globalQNum++;
+        });
+        html += `
             </tbody>
         </table>
         
@@ -514,10 +539,10 @@ for (const unitId of units) {
         </div>
     </div>
             `;
-        });
+      });
 
-        // The Vault (Answers)
-        html += `
+      // The Vault (Answers)
+      html += `
     <!-- The Vault -->
     <div class="page vault-page page-break vault-bg">
         <div class="vault-watermark">🔒</div>
@@ -526,56 +551,56 @@ for (const unitId of units) {
             <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
         `;
 
-        globalQNum = 1;
-        // Group answers by page/lesson for The Vault
-        // 40 answers per page fits nicely
-        let vaultPages = [];
-        let currentVaultPage = [];
-        pages.forEach(p => {
-            p.questions.forEach(q => {
-                if (currentVaultPage.length === 40) {
-                    vaultPages.push(currentVaultPage);
-                    currentVaultPage = [];
-                }
-                currentVaultPage.push({num: globalQNum++, a: q.a, title: p.title});
-            });
+      globalQNum = 1;
+      // Group answers by page/lesson for The Vault
+      // 40 answers per page fits nicely
+      let vaultPages = [];
+      let currentVaultPage = [];
+      pages.forEach((p) => {
+        p.questions.forEach((q) => {
+          if (currentVaultPage.length === 40) {
+            vaultPages.push(currentVaultPage);
+            currentVaultPage = [];
+          }
+          currentVaultPage.push({ num: globalQNum++, a: q.a, title: p.title });
         });
-        if (currentVaultPage.length > 0) vaultPages.push(currentVaultPage);
+      });
+      if (currentVaultPage.length > 0) vaultPages.push(currentVaultPage);
 
-        vaultPages.forEach((vp, vIndex) => {
-            if (vIndex > 0) {
-                html += `
+      vaultPages.forEach((vp, vIndex) => {
+        if (vIndex > 0) {
+          html += `
         </div>
     </div>
     <div class="page vault-page page-break vault-bg">
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
                 `;
-            }
-            let currentTitle = "";
-            vp.forEach(ans => {
-                if (ans.title !== currentTitle) {
-                    if (currentTitle !== "") html += `</div>`;
-                    currentTitle = ans.title;
-                    html += `<div class="answer-list"><h3>${currentTitle}</h3>`;
-                }
-                html += `
+        }
+        let currentTitle = '';
+        vp.forEach((ans) => {
+          if (ans.title !== currentTitle) {
+            if (currentTitle !== '') html += `</div>`;
+            currentTitle = ans.title;
+            html += `<div class="answer-list"><h3>${currentTitle}</h3>`;
+          }
+          html += `
                 <div class="answer-item">
                     <div class="answer-num">${ans.num}.</div>
                     <div class="answer-text">${ans.a}</div>
                 </div>
                 `;
-            });
-            if (currentTitle !== "") html += `</div>`;
         });
+        if (currentTitle !== '') html += `</div>`;
+      });
 
-        html += `
+      html += `
         </div>
     </div>
     `;
 
-        // Tracker Page
-        html += `
+      // Tracker Page
+      html += `
     <!-- Tracker Page -->
     <div class="page tracker-page">
         <h1>Mastery Tracker</h1>
@@ -648,9 +673,9 @@ ${`
 `}
         `;
 
-        const outPath = path.join(unitDir, `mastery_pack_${wb.id}.html`);
-        fs.writeFileSync(outPath, html);
-        console.log(`Successfully generated Mastery Pack for ${unitId}: ${wb.id}`);
+      const outPath = path.join(unitDir, `mastery_pack_${wb.id}.html`);
+      fs.writeFileSync(outPath, html);
+      console.log(`Successfully generated Mastery Pack for ${unitId}: ${wb.id}`);
     }
   } catch (err) {
     console.error(`Error processing unit ${unitId}:`, err);
