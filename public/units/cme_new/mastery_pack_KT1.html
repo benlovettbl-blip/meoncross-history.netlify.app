@@ -2594,21 +2594,25 @@
             </div>
 
             <div class="leitner-box-stats">
-                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                <button class="leitner-stat-pill box-1" id="stat-box-1" onclick="filterByLeitnerBox(1)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 1 (Needs Work / Daily)">
                     <span>🔴</span>
                     <span>Box 1 (Learning):</span>
                     <strong id="count-box-1">0</strong>
-                </div>
-                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                </button>
+                <button class="leitner-stat-pill box-2" id="stat-box-2" onclick="filterByLeitnerBox(2)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 2 (Review Every 3 Days)">
                     <span>🟡</span>
                     <span>Box 2 (Consolidating):</span>
                     <strong id="count-box-2">0</strong>
-                </div>
-                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                </button>
+                <button class="leitner-stat-pill box-3" id="stat-box-3" onclick="filterByLeitnerBox(3)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 3 (Mastered)">
                     <span>🟢</span>
                     <span>Box 3 (Mastered):</span>
                     <strong id="count-box-3">0</strong>
-                </div>
+                </button>
+                <button class="leitner-stat-pill" id="stat-box-all" onclick="filterByLeitnerBox('all')" style="cursor: pointer; border: 1px solid #cbd5e1; background: #f1f5f9; color: #475569;" title="Show all cards in deck">
+                    <span>📚</span>
+                    <span>All Cards</span>
+                </button>
             </div>
 
             <div class="leitner-filter-row">
@@ -3064,6 +3068,23 @@
       if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
     };
 
+    window.filterByLeitnerBox = function(boxVal) {
+      loadLeitnerProgress();
+      if (boxVal === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const targetBox = parseInt(boxVal, 10);
+        currentDeck = ALL_DECK.filter(c => getCardBox(c.id) === targetBox);
+        if (currentDeck.length === 0) {
+          alert('No cards currently in Box ' + targetBox + '. Showing all cards.');
+          currentDeck = [...ALL_DECK];
+        }
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
+    };
+
     window.openLeitnerModal = function() {
       const modal = document.getElementById('leitner-modal');
       if (modal) {
@@ -3071,7 +3092,11 @@
         document.body.style.overflow = 'hidden';
         loadLeitnerProgress();
         updateStreakAndHeatmap();
-        renderCurrentCard();
+        if (window.location.hash.includes('box=1')) {
+          filterByLeitnerBox(1);
+        } else {
+          renderCurrentCard();
+        }
       }
     };
 
@@ -3082,7 +3107,7 @@
         if (isTeacherMode) toggleTeacherMode();
         modal.style.display = 'none';
         document.body.style.overflow = '';
-        if (window.location.hash === '#practice-mode') {
+        if (window.location.hash.startsWith('#practice-mode')) {
           history.replaceState(null, null, ' ');
         }
       }
@@ -3116,11 +3141,11 @@
     document.addEventListener("DOMContentLoaded", function() {
       loadLeitnerProgress();
       updateStreakAndHeatmap();
-      if (window.location.hash === '#practice-mode') {
+      if (window.location.hash.startsWith('#practice-mode')) {
         openLeitnerModal();
       }
       window.addEventListener('hashchange', () => {
-        if (window.location.hash === '#practice-mode') {
+        if (window.location.hash.startsWith('#practice-mode')) {
           openLeitnerModal();
         }
       });

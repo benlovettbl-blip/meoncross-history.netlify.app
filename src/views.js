@@ -13,6 +13,7 @@ import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js'; // Added for guided reading tab
 import { getAssetUrl } from './engine/assets.js';
 import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
+import { renderDiagnosticLauncherHTML } from './diagnostic_benchmark.js';
 
 export function getUnits() {
   if (!window.db) return [];
@@ -582,6 +583,9 @@ export function renderInteractiveQuiz() {
           </div>
         </div>
       </div>
+
+      <!-- Pre-Exam Diagnostic Benchmark Banner -->
+      ${renderDiagnosticLauncherHTML(unitId, data)}
 
       <!-- Revision Modules / Key Topic Packs Grid -->
       <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: #0f172a; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
