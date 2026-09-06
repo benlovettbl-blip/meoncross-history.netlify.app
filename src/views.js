@@ -127,7 +127,7 @@ export function renderDashboard() {
   const units = getUnits();
 
   // Year 7 Grouping
-  const year7Order = ['water_and_sanitation', 'medieval_england', 'early_modern_world'];
+  const year7Order = ['water_and_sanitation', 'medieval_england'];
   const year7Units = units
     .filter((u) => year7Order.includes(u.id))
     .sort((a, b) => year7Order.indexOf(a.id) - year7Order.indexOf(b.id));

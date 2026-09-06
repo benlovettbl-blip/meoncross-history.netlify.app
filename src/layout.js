@@ -123,11 +123,7 @@ export function bindEvents() {
     };
 
     const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
-    const year7Units = getOrderedUnits([
-      'water_and_sanitation',
-      'medieval_england',
-      'early_modern_world',
-    ]);
+    const year7Units = getOrderedUnits(['water_and_sanitation', 'medieval_england']);
     const year8Units = getOrderedUnits([
       'early_modern_world',
       'industrialisation_and_empire',

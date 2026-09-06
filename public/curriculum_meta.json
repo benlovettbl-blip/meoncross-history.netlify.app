@@ -17,25 +17,14 @@
         },
         {
           "uid": "medieval_england",
-          "terms": ["Spring 1", "Spring 2"],
+          "terms": ["Spring 1", "Spring 2", "Summer 1", "Summer 2"],
           "shortTitle": "Medieval England (1066\u20131485)",
-          "summary": "Pupils explore the power struggles that defined England from the Norman Conquest to the Wars of the Roses, examining how monarchs, the Church, and ordinary people competed for authority and power.",
+          "summary": "Pupils explore the power struggles that defined England from the Norman Conquest to the Wars of the Roses, examining how monarchs, the Church, and ordinary people competed for authority and power across the High and Late Middle Ages.",
           "vocab": "Feudalism, Domesday Book, Magna Carta, Crusade, Black Death, Peasants' Revolt",
           "skills": ["Causation", "Significance", "Source Utility", "Historical Argumentation (PEEL)"],
-          "assessment": "Formative PEEL paragraphs throughout. Final assessment: 12-mark extended essay \u2014 \"Explain why the peasants revolted in 1381.\"",
+          "assessment": "Formative PEEL paragraphs throughout. Mid-unit assessment: Magna Carta baronial enquiry. Final assessment: 12-mark extended essay \u2014 \"Explain why the peasants revolted in 1381.\"",
           "smsc": "<strong>Spiritual:</strong> Power and influence of the medieval Church. <strong>Social:</strong> Feudal hierarchy and peasant resistance. <strong>Moral:</strong> Is rebellion ever justified?",
           "careers": "Archivist, Heritage Site Manager, Historian, Lawyer"
-        },
-        {
-          "uid": "early_modern_world",
-          "terms": ["Summer 1", "Summer 2"],
-          "shortTitle": "Early Modern World (1450\u20131750)",
-          "summary": "Pupils examine why Europe was not the centre of global power in 1450, how religious conflict triggered exploration, and how early trading encounters escalated into empire and the Transatlantic Slave Trade.",
-          "vocab": "Reformation, Conquistador, Transatlantic Slave Trade, East India Company, Colonisation, Triangular Trade",
-          "skills": ["Significance", "Historical Interpretations", "Comparative Analysis", "Extended Writing (PEEL)"],
-          "assessment": "Formative PEEL paragraphs and source work throughout. Final assessment: \"To what extent was greed the main cause of European exploration?\"",
-          "smsc": "<strong>Moral:</strong> Ethics of colonisation, slavery, and cultural destruction. <strong>Social:</strong> Impact of global trade on indigenous societies. <strong>Cultural:</strong> Encountering and evaluating diverse civilisations.",
-          "careers": "Museum Curator, International Relations Analyst, Human Rights Lawyer"
         }
       ]
     },
