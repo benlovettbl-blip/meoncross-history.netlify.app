@@ -526,154 +526,223 @@ export function renderInteractiveQuiz() {
   });
   if (totalQuestions === 0 && data.quizData) totalQuestions = data.quizData.length;
 
+  const defaultWb = workbooks[0];
+  const defaultWbId = defaultWb.name || defaultWb.id;
+  const initialFlashcardUrl = `/units/${unitId}/mastery_pack_${defaultWbId}.html#practice-mode`;
+  const initialWhiteboardUrl = `/units/${unitId}/mastery_pack_${defaultWbId}.html#practice-mode&teacher=true`;
+  const initialVaultUrl = `/units/${unitId}/mastery_pack_${defaultWbId}.html`;
+
   let html = `
-    <div style="max-width: 1100px; margin: 0 auto; padding-bottom: 40px; animation: fadeInUp 0.3s ease-out;">
-      <!-- Hero Banner -->
-      <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #1e3a8a 100%); color: white; padding: 36px 32px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 24px; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -30px; right: -30px; font-size: 14rem; opacity: 0.05; pointer-events: none;"><i class="fa-solid fa-bolt-lightning"></i></div>
-        <div style="position: relative; z-index: 2;">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;">
-            <span style="background: rgba(245, 158, 11, 0.25); color: #fef08a; border: 1px solid rgba(245, 158, 11, 0.4); padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-              ⚡ Cognitive Retrieval Suite
-            </span>
-            <span style="background: rgba(255, 255, 255, 0.15); color: #e0e7ff; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;">
-              ${totalQuestions > 0 ? `${totalQuestions} Core Questions` : 'Full Unit Bank'}
-            </span>
-            <span style="background: rgba(16, 185, 129, 0.2); color: #a7f3d0; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;">
-              ✓ 100% Curriculum Coverage
-            </span>
-          </div>
-          <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.1rem; margin: 0 0 10px 0; color: #ffffff; font-weight: 800; letter-spacing: -0.5px;">
-            Spaced Recall &amp; Mastery Arena
-          </h1>
-          <p style="color: #cbd5e1; font-size: 1.05rem; margin: 0; max-width: 780px; line-height: 1.5;">
-            Master long-term historical recall through effortful retrieval practice. Test your memory with the interactive 3-Box Leitner system, project 15-second choral recall drills in class, or verify your written homework pack.
-          </p>
+    <div style="max-width: 980px; margin: 0 auto; padding-bottom: 50px; animation: fadeInUp 0.3s ease-out;">
+      
+      <!-- Streamlined Header -->
+      <div style="margin-bottom: 28px; text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(99, 102, 241, 0.25); color: #c7d2fe; border: 1px solid rgba(99, 102, 241, 0.4); padding: 5px 16px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; backdrop-filter: blur(4px);">
+          <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i> Spaced Retrieval Suite
         </div>
+        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.3rem; font-weight: 800; color: #ffffff; margin: 0 0 10px 0; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.4);">
+          Spaced Recall &amp; Exam Mastery
+        </h1>
+        <p style="color: #cbd5e1; font-size: 1.05rem; margin: 0 auto; max-width: 620px; line-height: 1.5; font-weight: 400;">
+          Strengthen long-term factual memory through daily 5-minute retrieval drills, or benchmark your exam readiness with a 10-minute diagnostic check.
+        </p>
       </div>
 
-      <!-- Feature Pill Badges -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 30px;">
-        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-          <div style="background: #fef3c7; color: #b45309; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">🧠</div>
+      <!-- Primary Two-Choice Layout -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 22px; margin-bottom: 24px;">
+        
+        <!-- Choice 1: Daily Recall Practice -->
+        <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.2s ease;" onmouseover="this.style.borderColor='#6366f1'; this.style.boxShadow='0 8px 30px rgba(99,102,241,0.08)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)';">
           <div>
-            <h4 style="margin: 0; font-size: 0.92rem; color: #0f172a;">3-Box Leitner Engine</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #64748b;">Daily, 3-day &amp; weekly intervals</p>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+              <span style="background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+                ⭐ Daily Practice • 5 Mins
+              </span>
+              <span style="color: #64748b; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa-solid fa-layer-group" style="color: #6366f1;"></i> 3-Box Leitner
+              </span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25); flex-shrink: 0;">
+                <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i>
+              </div>
+              <div>
+                <h2 style="margin: 0; font-size: 1.3rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #1e293b;">
+                  Daily Recall Flashcards
+                </h2>
+                <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.82rem;">
+                  Effortful retrieval with adaptive intervals
+                </p>
+              </div>
+            </div>
+
+            <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin: 0 0 18px 0;">
+              Flip through core retrieval cards. Mastered facts move to weekly review; facts you struggle with return daily for immediate consolidation.
+            </p>
+
+            ${
+              workbooks.length > 1
+                ? `
+              <div style="margin-bottom: 18px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px;">
+                <label for="select-recall-deck" style="display: block; font-size: 0.76rem; font-weight: 700; color: #475569; margin-bottom: 6px; text-transform: uppercase;">
+                  Select Deck / Topic:
+                </label>
+                <select id="select-recall-deck" class="form-select" style="width: 100%; padding: 7px 10px; font-size: 0.86rem; border: 1px solid #cbd5e1; border-radius: 6px; background: white; color: #0f172a; font-weight: 600; cursor: pointer;" onchange="window.handleRecallDeckChange('${unitId}', this.value)">
+                  ${workbooks
+                    .map((wb, i) => {
+                      const id = wb.name || wb.id;
+                      const isFull = id === 'full';
+                      return `<option value="${id}">${isFull ? 'Comprehensive Unit Deck (All Lessons)' : `Key Topic ${i + 1}: ${wb.title || wb.name}`}</option>`;
+                    })
+                    .join('')}
+                </select>
+              </div>
+            `
+                : ''
+            }
           </div>
-        </div>
-        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-          <div style="background: #fee2e2; color: #b91c1c; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">🔥</div>
+
           <div>
-            <h4 style="margin: 0; font-size: 0.92rem; color: #0f172a;">7-Day Retrieval Streak</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #64748b;">Visual heatmap &amp; habit tracker</p>
-          </div>
-        </div>
-        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-          <div style="background: #dbeafe; color: #1d4ed8; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">📽️</div>
-          <div>
-            <h4 style="margin: 0; font-size: 0.92rem; color: #0f172a;">Whiteboard Ready</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #64748b;">48pt font &amp; 15s rapid-fire timer</p>
-          </div>
-        </div>
-        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-          <div style="background: #ecfdf5; color: #047857; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">🔒</div>
-          <div>
-            <h4 style="margin: 0; font-size: 0.92rem; color: #0f172a;">The Vault Self-Marking</h4>
-            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #64748b;">Tap-to-reveal scratch-off keys</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pre-Exam Diagnostic Benchmark Banner -->
-      ${renderDiagnosticLauncherHTML(unitId, data)}
-
-      <!-- Revision Modules / Key Topic Packs Grid -->
-      <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: #0f172a; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-        <i class="fa-solid fa-layer-group" style="color: #4f46e5;"></i>
-        <span>Available Revision Decks &amp; Mastery Packs</span>
-      </h2>
-
-      <div style="display: grid; grid-template-columns: ${workbooks.length > 1 ? 'repeat(auto-fill, minmax(320px, 1fr))' : '1fr'}; gap: 20px; margin-bottom: 35px;">
-  `;
-
-  workbooks.forEach((wb, idx) => {
-    const wbId = wb.name || wb.id;
-    const isFull = wbId === 'full';
-    const htmlUrl = `/units/${unitId}/mastery_pack_${wbId}.html`;
-    const flashcardUrl = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode`;
-    const pdfUrl = `/pdfs/${unitId}_mastery_pack_${wbId}_FINAL_V17.pdf`;
-
-    html += `
-      <div style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#6366f1'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)';">
-        <div>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-            <span style="background: #e0e7ff; color: #4338ca; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; text-transform: uppercase;">
-              ${isFull ? 'Comprehensive Unit Deck' : `Key Topic ${idx + 1}`}
-            </span>
-            <span style="color: #94a3b8; font-size: 0.8rem; font-weight: 600;">
-              ${isFull ? 'All Lessons' : wb.title || wb.name}
-            </span>
-          </div>
-
-          <h3 style="margin: 0 0 10px 0; font-size: 1.2rem; color: #1e293b; font-family: 'Montserrat', sans-serif;">
-            ${wb.title || wb.name}
-          </h3>
-
-          <p style="color: #64748b; font-size: 0.88rem; line-height: 1.4; margin: 0 0 20px 0;">
-            Includes complete question bank with 3-box Leitner progression, scratch-off answer key, and classroom whiteboard mode.
-          </p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <a href="${flashcardUrl}" target="_blank" style="text-decoration: none; background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); color: white; padding: 12px 18px; border-radius: 8px; font-weight: 700; font-size: 0.92rem; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
-            <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i>
-            <span>Launch Leitner Flashcards (Interactive)</span>
-          </a>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <a href="${htmlUrl}" target="_blank" style="text-decoration: none; background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; padding: 9px 12px; border-radius: 6px; font-weight: 600; font-size: 0.82rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#e2e8f0';" onmouseout="this.style.background='#f8fafc';">
-              <i class="fa-solid fa-lock" style="color: #d97706;"></i>
-              <span>The Vault Key</span>
+            <a id="btn-start-flashcards" href="${initialFlashcardUrl}" target="_blank" style="text-decoration: none; background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); color: white; padding: 13px 20px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 9px; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.filter='brightness(1)'; this.style.transform='translateY(0)';">
+              <i class="fa-solid fa-play" style="font-size: 0.9rem;"></i>
+              <span>Launch Flashcards</span>
             </a>
-            <a href="${pdfUrl}" target="_blank" style="text-decoration: none; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 9px 12px; border-radius: 6px; font-weight: 600; font-size: 0.82rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#fee2e2';" onmouseout="this.style.background='#fef2f2';">
-              <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i>
-              <span>Print A4 PDF</span>
-            </a>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 12px; border-top: 1px solid #f1f5f9; font-size: 0.8rem;">
+              <a id="btn-wb-mode" href="${initialWhiteboardUrl}" target="_blank" style="color: #4f46e5; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: color 0.15s ease;" onmouseover="this.style.color='#312e81';" onmouseout="this.style.color='#4f46e5';">
+                <i class="fa-solid fa-chalkboard-user"></i> Whiteboard Mode
+              </a>
+              <a id="btn-key-mode" href="${initialVaultUrl}" target="_blank" style="color: #64748b; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: color 0.15s ease;" onmouseover="this.style.color='#0f172a';" onmouseout="this.style.color='#64748b';">
+                <i class="fa-solid fa-key"></i> Question Vault
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    `;
-  });
 
-  html += `
-      </div>
+        <!-- Choice 2: Timed Readiness Benchmark -->
+        <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.2s ease;" onmouseover="this.style.borderColor='#f59e0b'; this.style.boxShadow='0 8px 30px rgba(245,158,11,0.08)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)';">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+              <span style="background: #fef3c7; color: #b45309; border: 1px solid #fde68a; font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+                🎯 Exam Check • 10 Mins
+              </span>
+              <span style="color: #64748b; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa-solid fa-chart-pie" style="color: #d97706;"></i> Diagnostic
+              </span>
+            </div>
 
-      <!-- Pedagogical Leitner Spaced Routine Box -->
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px 26px;">
-        <h3 style="margin-top: 0; font-size: 1.05rem; color: #1e293b; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-graduation-cap" style="color: #4f46e5;"></i>
-          <span>How to Revise with the Leitner 3-Box Routine</span>
-        </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px;">
-          <div style="background: white; border-left: 4px solid #ef4444; border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
-            <strong style="color: #b91c1c; font-size: 0.88rem;">🔴 Box 1: Daily Practice</strong>
-            <p style="margin: 4px 0 0 0; font-size: 0.8rem; color: #64748b;">Questions you struggled with or got blank on. Practice every evening until recall is effortless.</p>
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25); flex-shrink: 0;">
+                <i class="fa-solid fa-bullseye" style="color: #fef08a;"></i>
+              </div>
+              <div>
+                <h2 style="margin: 0; font-size: 1.3rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #1e293b;">
+                  10-Min Readiness Check
+                </h2>
+                <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.82rem;">
+                  Targeted knowledge diagnosis &amp; Box 1 sync
+                </p>
+              </div>
+            </div>
+
+            <p style="color: #475569; font-size: 0.9rem; line-height: 1.5; margin: 0 0 18px 0;">
+              Answer 20 questions sampled evenly across all historical eras. Pinpoints your weakest period and automatically queues missed facts into your Daily Box 1 deck.
+            </p>
+
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; margin-bottom: 18px; display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+              <div>
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a;">20</div>
+                <div style="font-size: 0.7rem; color: #64748b; text-transform: uppercase; font-weight: 600;">Sampled MCQs</div>
+              </div>
+              <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a;">10:00</div>
+                <div style="font-size: 0.7rem; color: #64748b; text-transform: uppercase; font-weight: 600;">Timer</div>
+              </div>
+              <div>
+                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a;">Box 1</div>
+                <div style="font-size: 0.7rem; color: #64748b; text-transform: uppercase; font-weight: 600;">Auto-Sync</div>
+              </div>
+            </div>
           </div>
-          <div style="background: white; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
-            <strong style="color: #b45309; font-size: 0.88rem;">🟡 Box 2: Review Every 3 Days</strong>
-            <p style="margin: 4px 0 0 0; font-size: 0.8rem; color: #64748b;">Effortful recall. Re-test after a 3-day gap to consolidate into long-term memory.</p>
-          </div>
-          <div style="background: white; border-left: 4px solid #10b981; border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
-            <strong style="color: #047857; font-size: 0.88rem;">🟢 Box 3: Weekly Review</strong>
-            <p style="margin: 4px 0 0 0; font-size: 0.8rem; color: #64748b;">Mastered knowledge. Review once a week before exam assessments to prevent decay.</p>
+
+          <div>
+            <button id="btn-start-diagnostic" class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.95rem; padding: 13px 20px; border-radius: 10px; border: none; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 9px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35); transition: all 0.15s ease;" onclick="window.startDiagnosticBenchmark('${unitId}')" onmouseover="this.style.filter='brightness(1.08)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.filter='brightness(1)'; this.style.transform='translateY(0)';">
+              <i class="fa-solid fa-bullseye"></i>
+              <span>Start 10-Min Benchmark</span>
+            </button>
+
+            <div style="display: flex; align-items: center; justify-content: center; margin-top: 14px; padding-top: 12px; border-top: 1px solid #f1f5f9; font-size: 0.8rem; color: #64748b;">
+              <span><i class="fa-solid fa-check-circle" style="color: #10b981; margin-right: 4px;"></i> Instant feedback &amp; era breakdown</span>
+            </div>
           </div>
         </div>
+
       </div>
+
+      <!-- Quiet Secondary Drawer: Printable Materials & The Vault -->
+      <details style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+        <summary style="font-weight: 700; color: #1e293b; font-size: 0.92rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; outline: none; user-select: none;">
+          <span style="display: inline-flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-folder-open" style="color: #6366f1;"></i>
+            <span>Printable A4 Workbooks &amp; Mastery Key Vault</span>
+          </span>
+          <span style="font-size: 0.76rem; color: #64748b; font-weight: 600; background: #f1f5f9; padding: 2px 10px; border-radius: 999px;">
+            ${workbooks.length} ${workbooks.length === 1 ? 'Deck' : 'Decks'} Available ▾
+          </span>
+        </summary>
+
+        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid #f1f5f9;">
+          <p style="margin: 0 0 14px 0; font-size: 0.85rem; color: #64748b; line-height: 1.4;">
+            Physical booklets and scratch-off answer keys for homework assignments or structured intervention sessions:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            ${workbooks
+              .map((wb, idx) => {
+                const wbId = wb.name || wb.id;
+                const isFull = wbId === 'full';
+                const htmlUrl = `/units/${unitId}/mastery_pack_${wbId}.html`;
+                const pdfUrl = `/pdfs/${unitId}_mastery_pack_${wbId}_FINAL_V17.pdf`;
+                return `
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="background: ${isFull ? '#e0e7ff' : '#f1f5f9'}; color: ${isFull ? '#4338ca' : '#475569'}; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px;">
+                      ${isFull ? 'All Lessons' : `Topic ${idx + 1}`}
+                    </span>
+                    <strong style="color: #1e293b; font-size: 0.88rem;">${wb.title || wb.name}</strong>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <a href="${htmlUrl}" target="_blank" style="text-decoration: none; background: white; border: 1px solid #cbd5e1; color: #334155; padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.background='#f1f5f9';" onmouseout="this.style.background='white';">
+                      <i class="fa-solid fa-lock" style="color: #d97706;"></i> The Vault Key
+                    </a>
+                    <a href="${pdfUrl}" target="_blank" style="text-decoration: none; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.background='#fee2e2';" onmouseout="this.style.background='#fef2f2';">
+                      <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> Print A4 PDF
+                    </a>
+                  </div>
+                </div>
+              `;
+              })
+              .join('')}
+          </div>
+        </div>
+      </details>
+
     </div>
   `;
 
   container.innerHTML = html;
 }
+
+window.handleRecallDeckChange = function (unitId, wbId) {
+  const flashcardBtn = document.getElementById('btn-start-flashcards');
+  const wbBtn = document.getElementById('btn-wb-mode');
+  const keyBtn = document.getElementById('btn-key-mode');
+
+  if (flashcardBtn) flashcardBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode`;
+  if (wbBtn) wbBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode&teacher=true`;
+  if (keyBtn) keyBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html`;
+};
 
 window.toggleBookmarkQuestion = function (qid) {
   toggleBookmark(qid);
