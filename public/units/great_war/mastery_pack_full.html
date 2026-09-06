@@ -672,6 +672,303 @@
         .leitner-nav-btn:hover {
             background: #e2e8f0;
         }
+        .leitner-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .leitner-teacher-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+            transition: all 0.15s ease;
+        }
+        .leitner-teacher-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.45);
+        }
+        /* Rapid-Fire Classroom Retrieval Timer Bar */
+        .rapid-fire-timer-bar {
+            background: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 8px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            transition: all 0.3s ease;
+        }
+        .rapid-fire-timer-bar.timer-expired {
+            background: #fee2e2;
+            border-color: #f87171;
+            animation: timerPulseRed 0.8s infinite alternate ease-in-out;
+        }
+        @keyframes timerPulseRed {
+            from { box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.3); }
+            to { box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.7); }
+        }
+        .timer-badge-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        .timer-flame {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        .timer-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #334155;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .timer-countdown {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0284c7;
+            min-width: 44px;
+            text-align: right;
+            transition: color 0.2s ease;
+        }
+        .timer-countdown.warning {
+            color: #d97706;
+        }
+        .timer-countdown.critical {
+            color: #dc2626;
+            animation: pulseCritical 0.4s infinite alternate;
+        }
+        @keyframes pulseCritical {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+        .timer-progress-track {
+            flex: 1;
+            height: 8px;
+            background: #cbd5e1;
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+        }
+        .timer-progress-fill {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            border-radius: 999px;
+            transition: width 0.1s linear, background 0.3s ease;
+        }
+        .timer-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .timer-ctrl-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .timer-ctrl-btn:hover {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+        .timer-ctrl-btn.reset {
+            color: #2563eb;
+        }
+
+        /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
+        .leitner-modal-overlay.teacher-mode {
+            padding: 0;
+            background: #020617;
+            align-items: stretch;
+            justify-content: stretch;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-modal-card {
+            max-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+            border-radius: 0;
+            box-shadow: none;
+            background: #090e1f;
+            border: none;
+            animation: none;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-modal-header {
+            background: #020617;
+            border-bottom: 2px solid #3b82f6;
+            padding: 14px 32px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-header-title h3 {
+            font-size: 1.65rem;
+            color: #60a5fa;
+            letter-spacing: 0.8px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-unit-subtitle {
+            font-size: 0.95rem;
+            color: #93c5fd;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-teacher-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+            font-size: 0.9rem;
+            padding: 8px 16px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-streak-bar,
+        .leitner-modal-overlay.teacher-mode .leitner-box-stats {
+            display: none;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-filter-row {
+            padding: 12px 32px 6px 32px;
+            background: #090e1f;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-filter-row label {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-topic-select {
+            background: #1e293b;
+            color: #f8fafc;
+            border: 1px solid #475569;
+            font-size: 1rem;
+            padding: 8px 14px;
+        }
+        .leitner-modal-overlay.teacher-mode .rapid-fire-timer-bar {
+            background: #111827;
+            border: 2px solid #3b82f6;
+            margin: 10px 32px;
+            padding: 12px 24px;
+            border-radius: 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-title {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-countdown {
+            font-size: 2rem;
+            color: #38bdf8;
+            min-width: 65px;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-progress-track {
+            height: 12px;
+            background: #1e293b;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-ctrl-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            background: #1e293b;
+            color: #ffffff;
+            border-color: #475569;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-ctrl-btn:hover {
+            background: #334155;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 14px 32px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card {
+            min-height: 420px;
+            max-height: 52vh;
+            max-width: 1250px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-inner {
+            min-height: 420px;
+            height: 100%;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-face {
+            min-height: 420px;
+            border-radius: 18px;
+            padding: 36px 50px;
+            box-shadow: 0 16px 50px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-front {
+            background: #0f172a;
+            border: 4px solid #38bdf8;
+            color: #f8fafc;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-back {
+            background: #1e1b4b;
+            border: 4px solid #facc15;
+            color: #fef08a;
+        }
+        .leitner-modal-overlay.teacher-mode .card-meta {
+            font-size: 1.1rem;
+        }
+        .leitner-modal-overlay.teacher-mode .qnum-badge {
+            font-size: 1rem;
+            padding: 5px 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .box-badge {
+            font-size: 1rem;
+            padding: 5px 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .card-question-text {
+            font-size: 3rem !important; /* ~48pt typography */
+            line-height: 1.25 !important;
+            font-weight: 700;
+            color: #ffffff;
+            margin: auto 0;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+        }
+        .leitner-modal-overlay.teacher-mode .card-answer-text {
+            font-size: 3.15rem !important; /* ~48pt+ typography */
+            line-height: 1.25 !important;
+            font-weight: 800;
+            color: #fef08a;
+            margin: auto 0;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+        }
+        .leitner-modal-overlay.teacher-mode .card-prompt-hint {
+            font-size: 1.05rem;
+            color: #94a3b8;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-action-bar {
+            padding: 10px 32px 14px 32px;
+            background: #090e1f;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-rate-btn {
+            padding: 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-rate-btn .btn-title {
+            font-size: 1.1rem;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-modal-footer {
+            background: #020617;
+            border-top: 1px solid #1e293b;
+            padding: 14px 32px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-nav-btn {
+            font-size: 1.05rem;
+            padding: 10px 22px;
+        }
         @media (max-width: 600px) {
             .leitner-modal-card {
                 max-height: 96vh;
@@ -3175,7 +3472,10 @@
                     <h3>⚡ Leitner Spaced Practice</h3>
                     <p class="leitner-unit-subtitle">KS3: Causes of the Great War · Complete Unit</p>
                 </div>
-                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+                <div class="leitner-header-actions">
+                    <button class="leitner-teacher-btn" onclick="toggleTeacherMode()" id="teacher-mode-btn" title="Toggle Classroom Projector Display (Shortcut: T)">📽️ Teacher Mode</button>
+                    <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+                </div>
             </div>
 
             <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
@@ -3225,6 +3525,22 @@
 <option value="5">Part 6: Did the Alliance System protect Europe or guarantee a global war?</option>
 <option value="6">Part 7: Why did a single assassination in Sarajevo ignite a World War?</option>
                 </select>
+            </div>
+
+            <!-- Rapid-Fire Classroom Retrieval Timer (Whiteboard / Projector Drill) -->
+            <div class="rapid-fire-timer-bar" id="rapid-fire-bar">
+                <div class="timer-badge-group">
+                    <span class="timer-flame">⏱️</span>
+                    <span class="timer-title">Rapid-Fire Recall:</span>
+                    <span class="timer-countdown" id="timer-countdown-text">15s</span>
+                </div>
+                <div class="timer-progress-track">
+                    <div class="timer-progress-fill" id="timer-progress-fill"></div>
+                </div>
+                <div class="timer-btn-group">
+                    <button class="timer-ctrl-btn" id="timer-toggle-btn" onclick="toggleRapidFireTimer()" title="Start / Pause 15s Timer (Enter)">▶️ Start</button>
+                    <button class="timer-ctrl-btn reset" onclick="resetRapidFireTimer(true)" title="Reset &amp; Start 15s Countdown (Shortcut: R)">🔄 15s (R)</button>
+                </div>
             </div>
 
             <!-- Flashcard Area -->
@@ -3294,6 +3610,11 @@
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
+    let isTeacherMode = false;
+    let timerInterval = null;
+    let timerRemainingMs = 15000;
+    let timerEndTime = 0;
+    let isTimerRunning = false;
 
     function getLocalDateString(d) {
       const year = d.getFullYear();
@@ -3479,6 +3800,121 @@
       }, 120);
     };
 
+    window.toggleTeacherMode = function() {
+      isTeacherMode = !isTeacherMode;
+      const modal = document.getElementById('leitner-modal');
+      const btn = document.getElementById('teacher-mode-btn');
+      if (modal) {
+        if (isTeacherMode) {
+          modal.classList.add('teacher-mode');
+          if (btn) btn.textContent = '✖️ Exit Presentation (T)';
+          if (modal.requestFullscreen) {
+            modal.requestFullscreen().catch(() => {});
+          } else if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen().catch(() => {});
+          }
+          resetRapidFireTimer(true);
+        } else {
+          modal.classList.remove('teacher-mode');
+          if (btn) btn.textContent = '📽️ Teacher Mode';
+          if (document.fullscreenElement) {
+            document.exitFullscreen().catch(() => {});
+          }
+          stopRapidFireTimer();
+        }
+      }
+    };
+
+    window.startRapidFireTimer = function() {
+      stopRapidFireTimer();
+      isTimerRunning = true;
+      timerEndTime = Date.now() + timerRemainingMs;
+      const toggleBtn = document.getElementById('timer-toggle-btn');
+      if (toggleBtn) toggleBtn.textContent = '⏸️ Pause';
+      const bar = document.getElementById('rapid-fire-bar');
+      if (bar) bar.classList.remove('timer-expired');
+
+      timerInterval = setInterval(() => {
+        const now = Date.now();
+        const diff = Math.max(0, timerEndTime - now);
+        timerRemainingMs = diff;
+        updateTimerDisplay(diff);
+
+        if (diff <= 0) {
+          stopRapidFireTimer();
+          handleTimerExpired();
+        }
+      }, 50);
+    };
+
+    window.stopRapidFireTimer = function() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      isTimerRunning = false;
+      const toggleBtn = document.getElementById('timer-toggle-btn');
+      if (toggleBtn) toggleBtn.textContent = '▶️ Start';
+    };
+
+    window.toggleRapidFireTimer = function() {
+      if (isTimerRunning) {
+        stopRapidFireTimer();
+      } else {
+        if (timerRemainingMs <= 0) timerRemainingMs = 15000;
+        startRapidFireTimer();
+      }
+    };
+
+    window.resetRapidFireTimer = function(autoStart = true) {
+      stopRapidFireTimer();
+      timerRemainingMs = 15000;
+      updateTimerDisplay(15000);
+      const bar = document.getElementById('rapid-fire-bar');
+      if (bar) bar.classList.remove('timer-expired');
+      if (autoStart) {
+        startRapidFireTimer();
+      }
+    };
+
+    function updateTimerDisplay(ms) {
+      const countdownEl = document.getElementById('timer-countdown-text');
+      const fillEl = document.getElementById('timer-progress-fill');
+      const seconds = Math.ceil(ms / 1000);
+
+      if (countdownEl) {
+        countdownEl.textContent = seconds + 's';
+        countdownEl.classList.remove('warning', 'critical');
+        if (seconds <= 3) countdownEl.classList.add('critical');
+        else if (seconds <= 5) countdownEl.classList.add('warning');
+      }
+
+      if (fillEl) {
+        const pct = Math.max(0, Math.min(100, (ms / 15000) * 100));
+        fillEl.style.width = pct + '%';
+        if (seconds <= 3) {
+          fillEl.style.background = 'linear-gradient(90deg, #ef4444 0%, #dc2626 100%)';
+        } else if (seconds <= 5) {
+          fillEl.style.background = 'linear-gradient(90deg, #f59e0b 0%, #d97706 100%)';
+        } else {
+          fillEl.style.background = 'linear-gradient(90deg, #10b981 0%, #059669 100%)';
+        }
+      }
+    }
+
+    function handleTimerExpired() {
+      const countdownEl = document.getElementById('timer-countdown-text');
+      if (countdownEl) countdownEl.textContent = '0s';
+      const bar = document.getElementById('rapid-fire-bar');
+      if (bar) bar.classList.add('timer-expired');
+      if (isTeacherMode) {
+        const cardEl = document.getElementById('leitner-flashcard');
+        if (cardEl && !cardEl.classList.contains('flipped')) {
+          cardEl.classList.add('flipped');
+        }
+      }
+    }
+
     window.nextCard = function() {
       if (currentDeck.length === 0) return;
       const cardEl = document.getElementById('leitner-flashcard');
@@ -3486,6 +3922,7 @@
       setTimeout(() => {
         currentIndex = (currentIndex + 1) % currentDeck.length;
         renderCurrentCard();
+        if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
       }, 100);
     };
 
@@ -3496,6 +3933,7 @@
       setTimeout(() => {
         currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
         renderCurrentCard();
+        if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
       }, 100);
     };
 
@@ -3506,6 +3944,7 @@
       }
       currentIndex = 0;
       renderCurrentCard();
+      if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
     };
 
     window.resetCurrentDeck = function() {
@@ -3527,6 +3966,7 @@
       }
       currentIndex = 0;
       renderCurrentCard();
+      if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
     };
 
     window.openLeitnerModal = function() {
@@ -3543,6 +3983,8 @@
     window.closeLeitnerModal = function() {
       const modal = document.getElementById('leitner-modal');
       if (modal) {
+        stopRapidFireTimer();
+        if (isTeacherMode) toggleTeacherMode();
         modal.style.display = 'none';
         document.body.style.overflow = '';
         if (window.location.hash === '#practice-mode') {
@@ -3562,8 +4004,13 @@
     window.addEventListener('keydown', (e) => {
       const modal = document.getElementById('leitner-modal');
       if (!modal || modal.style.display === 'none') return;
-      if (e.key === 'Escape') closeLeitnerModal();
+      if (e.key === 'Escape') {
+        if (isTeacherMode) toggleTeacherMode();
+        else closeLeitnerModal();
+      }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') rateCurrentCard(1);
       else if (e.key === '2') rateCurrentCard(2);
       else if (e.key === '3') rateCurrentCard(3);

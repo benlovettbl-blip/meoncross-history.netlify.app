@@ -1,2 +1,2 @@
-node scripts/verify_vault_answers.cjs
+npm run test:qa
 npx lint-staged

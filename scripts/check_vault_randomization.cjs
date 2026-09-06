@@ -188,21 +188,25 @@ console.log('====================================================\n');
 
   // Print Clustered Pages
   if (clusteredPages.length > 0) {
-    console.log(`⚠️  CLUSTERED MASTERY PAGES DETECTED (${clusteredPages.length} pages):`);
-    console.log(
-      'The following 20-question pages have an unhealthy concentration on a single letter:',
+    console.error(
+      `\n❌ BLOCKED: CLUSTERED MASTERY PAGES DETECTED (${clusteredPages.length} pages):`,
+    );
+    console.error(
+      'The following 20-question pages have an unhealthy concentration on a single letter (>35%):',
     );
     clusteredPages.forEach((p) => {
-      console.log(
+      console.error(
         `  • [${p.unitId}] ${p.wbId} > Page ${p.page}: ${p.count}/${p.totalMC} on Option ${p.dominant} (A:${p.counts.A}, B:${p.counts.B}, C:${p.counts.C}, D:${p.counts.D})`,
       );
     });
-    console.log(
-      '\n💡 Recommendation: Run option rebalancing to disperse answers across positions.',
+    console.error(
+      '\n💡 Fix: Run node scripts/rebalance_quiz_options.cjs to disperse answers evenly before committing.',
     );
+    console.log('====================================================\n');
+    process.exit(1);
   } else {
     console.log('✅ No clustered mastery pages detected! Answers are evenly dispersed.');
+    console.log('====================================================\n');
+    process.exit(0);
   }
-
-  console.log('====================================================\n');
 })();
