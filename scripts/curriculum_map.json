@@ -1,11 +1,30 @@
 {
   "KS3": {
-    "Year 7": ["water_and_sanitation", "medieval_england"],
-    "Year 8": ["early_modern_world", "industrialisation_and_empire", "australia"],
-    "Year 9": ["great_war", "great_war_part2", "the_shoah", "cold_war", "post_war_britain"]
+    "Year 7": [
+      "water_and_sanitation",
+      "medieval_england"
+    ],
+    "Year 8": [
+      "early_modern_world",
+      "industrialisation_and_empire",
+      "australia"
+    ],
+    "Year 9": [
+      "great_war",
+      "great_war_part2",
+      "the_shoah",
+      "cold_war",
+      "post_war_britain"
+    ]
   },
   "KS4": {
-    "Year 10": ["cme_new", "weimar_nazi_germany"],
-    "Year 11": ["edexcel_medicine", "eee"]
+    "Year 10": [
+      "cme_new",
+      "weimar_nazi_germany"
+    ],
+    "Year 11": [
+      "edexcel_medicine",
+      "eee"
+    ]
   }
 }
