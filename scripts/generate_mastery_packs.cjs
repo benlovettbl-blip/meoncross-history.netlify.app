@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const QRCode = require('qrcode');
 
 const rootDir = path.join(__dirname, '..');
 const publicUnitsDir = path.join(rootDir, 'public', 'units');
@@ -192,6 +193,16 @@ const units = fs
           enquiryText = unit.enquiry;
         }
 
+        const vaultUrl = `https://meoncross-history.netlify.app/units/${unitId}/mastery_pack_${wb.id}.html`;
+        const qrDataUrl = await QRCode.toDataURL(vaultUrl, {
+          margin: 1,
+          width: 280,
+          color: {
+            dark: '#1e3a8a',
+            light: '#ffffff',
+          },
+        });
+
         // Build the HTML
         let html = `<!DOCTYPE html>
 <html lang="en">
@@ -317,27 +328,112 @@ const units = fs
             margin: 5px 0;
         }
 
+        /* Cover QR Card */
+        .cover-qr-card {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #f8fafc;
+            border: 2px dashed #1e3a8a;
+            border-radius: 8px;
+            padding: 10px 14px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .cover-qr-img {
+            width: 78px;
+            height: 78px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 2px;
+            display: block;
+        }
+        .cover-qr-info {
+            flex: 1;
+            text-align: left;
+        }
+        .cover-qr-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 2px;
+        }
+        .cover-qr-desc {
+            font-size: 0.8rem;
+            color: #334155;
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+        .cover-qr-url {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #2563eb;
+            word-break: break-all;
+        }
+
+        /* Screen-Only Mobile Toolbar */
+        .screen-vault-toolbar {
+            position: sticky;
+            top: 0;
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 9999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            font-family: 'Outfit', sans-serif;
+        }
+        .screen-vault-toolbar a {
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+        @media print {
+            .screen-vault-toolbar {
+                display: none !important;
+            }
+        }
+
         /* Strategy Page */
         .strategy h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.1rem;
             color: var(--brand-dark);
-            border-bottom: 4px solid var(--brand-red);
-            padding-bottom: 10px;
+            border-bottom: 3px solid var(--brand-red);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
         }
         .strategy h2 {
             font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
             color: var(--brand-red);
-            margin-top: 30px;
+            margin-top: 14px;
+            margin-bottom: 4px;
         }
         .strategy p, .strategy li {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+        .strategy ul {
+            margin-top: 4px;
+            margin-bottom: 8px;
+            padding-left: 20px;
         }
         .rag-box {
             display: inline-block;
-            width: 15px; height: 15px;
+            width: 14px; height: 14px;
             border: 1px solid #000;
             margin-right: 5px;
             vertical-align: middle;
@@ -550,6 +646,14 @@ const units = fs
 </head>
 <body>
 
+    <!-- Mobile Screen-Only Toolbar -->
+    <div class="screen-vault-toolbar">
+        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
+        <div>
+            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        </div>
+    </div>
+
     <!-- Cover Page -->
     <div class="page cover page-break">
         <div class="cover-content">
@@ -560,7 +664,15 @@ const units = fs
             <div class="cover-bottom">
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of ${questions.length} Crucial Questions</p>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+                <div class="cover-qr-card">
+                    <img src="${qrDataUrl}" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <div class="cover-qr-info">
+                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
+                        <div class="cover-qr-url">${vaultUrl.replace('https://', '')}</div>
+                    </div>
+                </div>
+                <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
             </div>
         </div>
     </div>
@@ -585,6 +697,14 @@ const units = fs
 
         <h2>4. The Interrogation (Homework Protocol)</h2>
         <p>True mastery requires testing under pressure. Hand 'The Vault' (answers) to your parent or guardian. They will test you on 20 random questions. They hold the score; they hold the signature.</p>
+
+        <h2>5. The 3-Star Parent Effort Rubric</h2>
+        <p>When authenticating your spaced retrieval practice on the final Mastery Tracker, your parent or guardian will evaluate your effort using the following criteria:</p>
+        <ul>
+            <li><strong>⭐⭐⭐ 3 Stars (Full Mastery):</strong> Completed under strict exam conditions without glancing at notes or the Knowledge Vault. Total independent recall.</li>
+            <li><strong>⭐⭐ 2 Stars (Consolidating):</strong> Required 1–2 hints from the Knowledge Vault, but demonstrated sound foundational understanding.</li>
+            <li><strong>⭐ 1 Star (Needs Intervention):</strong> Rushed, mind went blank, or completed with notes open. Target facts must be hunted down and re-tested tomorrow.</li>
+        </ul>
     </div>
 
     <!-- Question Grids -->
@@ -638,7 +758,7 @@ const units = fs
         // The Vault (Answers)
         html += `
     <!-- The Vault -->
-    <div class="page vault-page page-break vault-bg">
+    <div class="page vault-page page-break vault-bg" id="the-vault">
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>

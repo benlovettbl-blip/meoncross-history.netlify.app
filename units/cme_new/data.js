@@ -1596,7 +1596,7 @@ export default {
         {
           question:
             'Which Israeli Prime Minister warned against the buildup of Egyptian military forces?',
-          options: ['', 'David Ben-Gurion', '', ''],
+          options: ['Moshe Sharett', 'David Ben-Gurion', 'Levi Eshkol', 'Golda Meir'],
           answer: 1,
         },
         {
@@ -3987,7 +3987,7 @@ export default {
         },
         {
           question: 'Who was the Israeli Prime Minister who signed the Camp David Accords?',
-          options: ['David Ben-Gurion', 'Golda Meir', 'Menachem Begin', ''],
+          options: ['David Ben-Gurion', 'Golda Meir', 'Menachem Begin', 'Yitzhak Rabin'],
           answer: 2,
         },
         {
@@ -5575,7 +5575,7 @@ export default {
         {
           question:
             'Which Israeli Prime Minister shook hands with Yasser Arafat on the White House lawn in 1993?',
-          options: ['', 'Ariel Sharon', 'Yitzhak Rabin', 'Menachem Begin'],
+          options: ['Shimon Peres', 'Ariel Sharon', 'Yitzhak Rabin', 'Menachem Begin'],
           answer: 2,
         },
         {

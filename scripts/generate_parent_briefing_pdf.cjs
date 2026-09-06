@@ -229,17 +229,17 @@ function getHtmlContent() {
 
     .heritage-thumb-card {
       background: #ffffff;
-      padding: 4px;
+      padding: 3px;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
       text-align: center;
-      width: 68px;
+      width: 62px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
 
     .heritage-thumb-card img {
       width: 100%;
-      height: 56px;
+      height: 46px;
       object-fit: cover;
       border-radius: 3px;
       display: block;
@@ -250,20 +250,20 @@ function getHtmlContent() {
     }
 
     .heritage-thumb-card span {
-      font-size: 6.2pt;
+      font-size: 6pt;
       font-weight: 700;
       color: #334155;
       display: block;
-      margin-top: 3px;
+      margin-top: 2px;
       line-height: 1.1;
     }
 
     /* Itinerary Cards */
     .section-title {
-      font-size: 11pt;
+      font-size: 10pt;
       color: #1e3a8a;
       font-weight: 800;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -274,26 +274,26 @@ function getHtmlContent() {
     .itinerary-grid {
       display: flex;
       flex-direction: column;
-      gap: 7px;
-      margin-bottom: 9px;
+      gap: 5px;
+      margin-bottom: 6px;
     }
 
     .day-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
-      padding: 8px 11px;
+      padding: 5px 9px;
       display: flex;
-      gap: 12px;
+      gap: 10px;
     }
 
     .day-pill {
       flex-shrink: 0;
-      width: 68px;
+      width: 62px;
       background: #1e3a8a;
       color: #ffffff;
       border-radius: 5px;
-      padding: 6px 4px;
+      padding: 4px 3px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -303,13 +303,13 @@ function getHtmlContent() {
     .day-pill.day2 { background: #b45309; }
     .day-pill.day3 { background: #0f766e; }
 
-    .day-pill .d-num { font-size: 11pt; font-weight: 800; line-height: 1; }
-    .day-pill .d-date { font-size: 6.5pt; font-weight: 600; text-transform: uppercase; margin-top: 2px; }
+    .day-pill .d-num { font-size: 10pt; font-weight: 800; line-height: 1; }
+    .day-pill .d-date { font-size: 6.2pt; font-weight: 600; text-transform: uppercase; margin-top: 2px; }
 
     .day-details { flex: 1; }
-    .day-title { font-size: 9.5pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
-    .day-summary { font-size: 8.2pt; color: #334155; line-height: 1.35; }
-    .day-highlights { font-size: 7.8pt; color: #64748b; margin-top: 3px; }
+    .day-title { font-size: 9pt; font-weight: 700; color: #0f172a; margin-bottom: 1px; }
+    .day-summary { font-size: 7.8pt; color: #334155; line-height: 1.3; }
+    .day-highlights { font-size: 7.4pt; color: #64748b; margin-top: 2px; }
     .day-highlights strong { color: #1e293b; }
 
     /* App Callout Banner */
@@ -317,17 +317,17 @@ function getHtmlContent() {
       background: #eff6ff;
       border: 1.5px solid #bfdbfe;
       border-radius: 7px;
-      padding: 8px 12px;
+      padding: 6px 10px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .app-qr {
-      width: 68px;
-      height: 68px;
+      width: 56px;
+      height: 56px;
       background: #ffffff;
-      padding: 3px;
+      padding: 2px;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
       flex-shrink: 0;
@@ -340,9 +340,82 @@ function getHtmlContent() {
     }
 
     .app-text { flex: 1; }
-    .app-heading { font-size: 10pt; font-weight: 800; color: #1e3a8a; margin-bottom: 2px; font-family: 'Playfair Display', serif; }
-    .app-desc { font-size: 8pt; color: #334155; line-height: 1.35; }
-    .app-url { font-size: 8pt; font-weight: 700; color: #2563eb; margin-top: 3px; }
+    .app-heading { font-size: 9.2pt; font-weight: 800; color: #1e3a8a; margin-bottom: 1px; font-family: 'Playfair Display', serif; }
+    .app-desc { font-size: 7.5pt; color: #334155; line-height: 1.25; }
+    .app-url { font-size: 7.6pt; font-weight: 700; color: #2563eb; margin-top: 2px; }
+
+    /* 3-Star Effort Rubric Callout */
+    .rubric-callout {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-left: 4px solid #1e3a8a;
+      border-radius: 6px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .rubric-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+
+    .rubric-badge {
+      background: #1e3a8a;
+      color: #ffffff;
+      font-size: 6.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .rubric-title {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+
+    .rubric-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 5px 7px;
+    }
+
+    .rubric-item.star3 { border-top: 2.5px solid #16a34a; }
+    .rubric-item.star2 { border-top: 2.5px solid #d97706; }
+    .rubric-item.star1 { border-top: 2.5px solid #dc2626; }
+
+    .star-rating {
+      font-size: 7.8pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 1px;
+    }
+
+    .star-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #475569;
+      margin-bottom: 2px;
+    }
+
+    .star-desc {
+      font-size: 6.8pt;
+      color: #334155;
+      line-height: 1.25;
+    }
 
     /* Footer Strip */
     .footer-bar {
@@ -603,6 +676,31 @@ function getHtmlContent() {
             <div class="day-highlights">
               <strong>Return:</strong> 17:50 Eurotunnel Le Shuttle crossing to Folkestone (arrives 17:30 UK time); approximate arrival back at Meoncross School at <strong>20:00</strong> (live WhatsApp updates sent en route).
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mastery & Spaced Retrieval 3-Star Rubric Callout -->
+      <div class="rubric-callout">
+        <div class="rubric-header">
+          <span class="rubric-badge">Spaced Retrieval Practice</span>
+          <span class="rubric-title">Parent Validation Stamp: The 3-Star Effort Guide</span>
+        </div>
+        <div class="rubric-grid">
+          <div class="rubric-item star3">
+            <div class="star-rating">⭐⭐⭐ 3 Stars</div>
+            <div class="star-label">Full Mastery</div>
+            <div class="star-desc">Completed under exam conditions without glancing at notes or Knowledge Vault. Total independent recall.</div>
+          </div>
+          <div class="rubric-item star2">
+            <div class="star-rating">⭐⭐ 2 Stars</div>
+            <div class="star-label">Consolidating</div>
+            <div class="star-desc">Required 1–2 hints from the Knowledge Vault, but demonstrated sound foundational understanding.</div>
+          </div>
+          <div class="rubric-item star1">
+            <div class="star-rating">⭐ 1 Star</div>
+            <div class="star-label">Needs Intervention</div>
+            <div class="star-desc">Rushed, mind went blank, or completed with notes open. Target facts must be hunted down and re-tested.</div>
           </div>
         </div>
       </div>

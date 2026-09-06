@@ -3177,10 +3177,10 @@
             {
               "question": "Which Israeli Prime Minister warned against the buildup of Egyptian military forces?",
               "options": [
-                "",
+                "Moshe Sharett",
                 "David Ben-Gurion",
-                "",
-                ""
+                "Levi Eshkol",
+                "Golda Meir"
               ],
               "answer": 1
             },
@@ -5225,7 +5225,7 @@
               "options": [
                 "Richard Nixon",
                 "Gerald Ford",
-                "",
+                "Jimmy Carter",
                 "Ronald Reagan"
               ],
               "answer": 2
@@ -5255,7 +5255,7 @@
               "options": [
                 "Richard Nixon",
                 "Gerald Ford",
-                "",
+                "Jimmy Carter",
                 "Ronald Reagan"
               ],
               "answer": 2
@@ -5276,7 +5276,7 @@
                 "David Ben-Gurion",
                 "Golda Meir",
                 "Menachem Begin",
-                ""
+                "Yitzhak Rabin"
               ],
               "answer": 2
             },
@@ -6629,7 +6629,7 @@
             {
               "question": "Which Israeli Prime Minister shook hands with Yasser Arafat on the White House lawn in 1993?",
               "options": [
-                "",
+                "Shimon Peres",
                 "Ariel Sharon",
                 "Yitzhak Rabin",
                 "Menachem Begin"
@@ -10571,7 +10571,7 @@
                 "Elizabeth I",
                 "Mary I",
                 "Edward VI",
-                ""
+                "Henry VIII"
               ],
               "answer": 3,
               "explanation": "Henry VIII"

@@ -122,27 +122,112 @@
             margin: 5px 0;
         }
 
+        /* Cover QR Card */
+        .cover-qr-card {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #f8fafc;
+            border: 2px dashed #1e3a8a;
+            border-radius: 8px;
+            padding: 10px 14px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .cover-qr-img {
+            width: 78px;
+            height: 78px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 2px;
+            display: block;
+        }
+        .cover-qr-info {
+            flex: 1;
+            text-align: left;
+        }
+        .cover-qr-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 2px;
+        }
+        .cover-qr-desc {
+            font-size: 0.8rem;
+            color: #334155;
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+        .cover-qr-url {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #2563eb;
+            word-break: break-all;
+        }
+
+        /* Screen-Only Mobile Toolbar */
+        .screen-vault-toolbar {
+            position: sticky;
+            top: 0;
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 9999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            font-family: 'Outfit', sans-serif;
+        }
+        .screen-vault-toolbar a {
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+        @media print {
+            .screen-vault-toolbar {
+                display: none !important;
+            }
+        }
+
         /* Strategy Page */
         .strategy h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.1rem;
             color: var(--brand-dark);
-            border-bottom: 4px solid var(--brand-red);
-            padding-bottom: 10px;
+            border-bottom: 3px solid var(--brand-red);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
         }
         .strategy h2 {
             font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
             color: var(--brand-red);
-            margin-top: 30px;
+            margin-top: 14px;
+            margin-bottom: 4px;
         }
         .strategy p, .strategy li {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+        .strategy ul {
+            margin-top: 4px;
+            margin-bottom: 8px;
+            padding-left: 20px;
         }
         .rag-box {
             display: inline-block;
-            width: 15px; height: 15px;
+            width: 14px; height: 14px;
             border: 1px solid #000;
             margin-right: 5px;
             vertical-align: middle;
@@ -355,6 +440,14 @@
 </head>
 <body>
 
+    <!-- Mobile Screen-Only Toolbar -->
+    <div class="screen-vault-toolbar">
+        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
+        <div>
+            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        </div>
+    </div>
+
     <!-- Cover Page -->
     <div class="page cover page-break">
         <div class="cover-content">
@@ -365,7 +458,15 @@
             <div class="cover-bottom">
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 100 Crucial Questions</p>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+                <div class="cover-qr-card">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <div class="cover-qr-info">
+                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/weimar_nazi_germany/mastery_pack_KT3.html</div>
+                    </div>
+                </div>
+                <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
             </div>
         </div>
     </div>
@@ -390,6 +491,14 @@
 
         <h2>4. The Interrogation (Homework Protocol)</h2>
         <p>True mastery requires testing under pressure. Hand 'The Vault' (answers) to your parent or guardian. They will test you on 20 random questions. They hold the score; they hold the signature.</p>
+
+        <h2>5. The 3-Star Parent Effort Rubric</h2>
+        <p>When authenticating your spaced retrieval practice on the final Mastery Tracker, your parent or guardian will evaluate your effort using the following criteria:</p>
+        <ul>
+            <li><strong>⭐⭐⭐ 3 Stars (Full Mastery):</strong> Completed under strict exam conditions without glancing at notes or the Knowledge Vault. Total independent recall.</li>
+            <li><strong>⭐⭐ 2 Stars (Consolidating):</strong> Required 1–2 hints from the Knowledge Vault, but demonstrated sound foundational understanding.</li>
+            <li><strong>⭐ 1 Star (Needs Intervention):</strong> Rushed, mind went blank, or completed with notes open. Target facts must be hunted down and re-tested tomorrow.</li>
+        </ul>
     </div>
 
     <!-- Question Grids -->
@@ -1425,7 +1534,7 @@
     </div>
             
     <!-- The Vault -->
-    <div class="page vault-page page-break vault-bg">
+    <div class="page vault-page page-break vault-bg" id="the-vault">
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>

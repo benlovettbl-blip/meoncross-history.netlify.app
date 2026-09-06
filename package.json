@@ -14,6 +14,7 @@
     "verify:vault": "node scripts/verify_vault_answers.cjs",
     "export:pdf": "node scripts/export_pdfs.cjs && node scripts/generate_scheme_of_work.cjs",
     "sync:curriculum": "node scripts/sync_curriculum_documents.cjs",
+    "check:randomization": "node scripts/check_vault_randomization.cjs",
     "prepare": "husky"
   },
   "keywords": [
