@@ -460,8 +460,49 @@ export function renderProfileView() {
         </div>
       </div>
     </div>
+
+    <!-- Mobile Version & Cache Control Card -->
+    <div class="card max-w-md mx-auto" style="margin-top: 1.5rem;">
+      <h3><i class="fa-solid fa-arrows-rotate"></i> App Version &amp; Mobile Updates</h3>
+      <p class="text-muted" style="font-size: 0.86rem; line-height: 1.5; margin-bottom: 14px;">
+        If you are on a mobile phone, iPad, or tablet and want to ensure you are seeing the very latest curriculum features and quizzes:
+      </p>
+      <button class="btn btn-outline w-full" id="btn-force-update" onclick="window.forceAppUpdate(event)" style="display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700;">
+        <i class="fa-solid fa-cloud-arrow-down"></i>
+        <span>Check for Updates &amp; Refresh Cache</span>
+      </button>
+      <p style="font-size: 0.75rem; color: #94a3b8; text-align: center; margin-top: 10px; margin-bottom: 0;">
+        Clears local service worker cache and pulls fresh build from Netlify.
+      </p>
+    </div>
   `;
 }
+
+// Global force update function for mobile devices
+window.forceAppUpdate = async function (e) {
+  const btn = document.getElementById('btn-force-update');
+  if (btn) btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Checking for updates...';
+  try {
+    if ('serviceWorker' in navigator) {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (const r of registrations) {
+        await r.unregister();
+      }
+    }
+    if ('caches' in window) {
+      const names = await caches.keys();
+      for (const name of names) {
+        await caches.delete(name);
+      }
+    }
+  } catch (err) {
+    console.warn('Error purging caches:', err);
+  }
+  // Force reload with cache buster
+  const url = new URL(window.location.href);
+  url.searchParams.set('_v', Date.now());
+  window.location.href = url.toString();
+};
 
 // Global update function bound to window
 window.updateProfileYearGroup = function (val) {

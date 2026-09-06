@@ -233,11 +233,22 @@
                   'ServiceWorker registration successful with scope: ',
                   registration.scope,
                 );
+                // Proactively check for updates on page load
+                registration.update();
               },
               (err) => {
                 console.log('ServiceWorker registration failed: ', err);
               },
             );
+
+            // Auto-reload on controller change (smooth update across tabs/mobile)
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+              if (!refreshing) {
+                refreshing = true;
+                window.location.reload();
+              }
+            });
           });
         } else {
           navigator.serviceWorker.getRegistrations().then((registrations) => {
