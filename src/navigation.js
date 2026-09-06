@@ -348,11 +348,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navLessons.onclick = () => switchView('lessons', unitId);
   }
 
-  const hasMasteryRecall =
-    !isTrip &&
-    ((unitData.lessons && unitData.lessons.length > 0) ||
-      (unitData.workbooks && unitData.workbooks.length > 0) ||
-      (unitData.quizData && unitData.quizData.length > 0));
+  const hasMasteryRecall = !isTrip;
   if (navInteractive && hasMasteryRecall) {
     navInteractive.style.display = 'flex';
     navInteractive.dataset.action = 'switch-view';
