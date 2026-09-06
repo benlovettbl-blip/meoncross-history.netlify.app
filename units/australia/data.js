@@ -387,6 +387,8 @@ export const unitData = {
             'To find a shorter trade route to India through the Arctic',
           ],
           answer: 0,
+          explanation:
+            'While publicly sent to observe Venus, Cook carried secret Admiralty instructions to find and claim the Great Southern Continent.',
         },
         {
           question:
@@ -398,6 +400,8 @@ export const unitData = {
             "He used a Spanish sextant to calculate the sun's angle",
           ],
           answer: 1,
+          explanation:
+            'Tupaia was a Polynesian high priest and master navigator who used traditional celestial navigation, wave swells, and bird flight paths.',
         },
         {
           question:
@@ -409,8 +413,81 @@ export const unitData = {
             'They believed the British were gods who needed to be sacrificed',
           ],
           answer: 1,
+          explanation:
+            'Under Aboriginal customary law, entering tribal country without ceremony or permission was a trespass that warriors were obligated to resist.',
+        },
+        {
+          question:
+            'What public scientific event was the Endeavour voyage ostensibly sent to Tahiti to observe?',
+          options: [
+            "Halley's Comet passing Earth",
+            'A total lunar eclipse in the Southern Hemisphere',
+            'The transit of Venus across the Sun',
+            'The migration of southern right whales',
+          ],
+          answer: 2,
+          explanation:
+            'The Royal Society funded the voyage to measure the transit of Venus in June 1769 to calculate the distance between Earth and the Sun.',
+        },
+        {
+          question:
+            'Which Latin legal concept was used by Britain to declare Australia uninhabited territory?',
+          options: ['Habeas Corpus', 'Pax Britannica', 'Magna Carta', 'Terra Nullius'],
+          answer: 3,
+          explanation:
+            "Terra Nullius ('nobody's land') was the legal doctrine Britain used to claim sovereignty, ignoring 65,000 years of Indigenous ownership.",
+        },
+        {
+          question:
+            "Who was the wealthy young botanist who led the Royal Society's scientific team aboard the Endeavour?",
+          options: ['Sir Joseph Banks', 'Arthur Phillip', 'Charles Darwin', 'William Bligh'],
+          answer: 0,
+          explanation:
+            'Sir Joseph Banks collected thousands of plant specimens and later strongly advocated for establishing a penal colony at Botany Bay.',
+        },
+        {
+          question: 'From which Pacific island did the master navigator Tupaia originate?',
+          options: ['Fiji', "Ra'iatea", 'Hawaii', 'Samoa'],
+          answer: 1,
+          explanation:
+            "Tupaia was a high priest and master navigator from Ra'iatea in the Society Islands (French Polynesia).",
+        },
+        {
+          question:
+            'What occurred when Captain Cook first attempted to land at Botany Bay in April 1770?',
+          options: [
+            'The Gweagal people welcomed the British with food and gifts',
+            'The British were invited to join an Indigenous religious corroboree',
+            'Two Gweagal warriors shouted warnings and threw spears, and Cook fired musket shots',
+            'The Endeavour struck a coral reef and sank immediately',
+          ],
+          answer: 2,
+          explanation:
+            'Two Gweagal men stood on the rocks brandishing spears to warn Cook off; British sailors fired muskets, wounding one warrior.',
+        },
+        {
+          question:
+            'Approximately how long had Indigenous Australians inhabited the continent before European arrival?',
+          options: [
+            'Around 500 years',
+            'Around 2,000 years',
+            'Around 10,000 years',
+            'Over 65,000 years',
+          ],
+          answer: 3,
+          explanation:
+            'Archaeological evidence proves Aboriginal and Torres Strait Islander peoples have cared for Country for over 65,000 years.',
+        },
+        {
+          question:
+            'What name did Captain Cook give to the eastern coastline of Australia after raising the British flag?',
+          options: ['New South Wales', 'Victoria', 'New Britannia', "Van Diemen's Land"],
+          answer: 0,
+          explanation:
+            "Cook named the entire eastern coastline 'New South Wales' at Possession Island in August 1770.",
         },
       ],
+
       tasks: [],
       video: {
         type: 'youtube',
@@ -788,6 +865,8 @@ export const unitData = {
             "The French navy destroyed all of Britain's transport ships",
           ],
           answer: 0,
+          explanation:
+            'The outbreak of the American War of Independence in 1776 prevented Britain from shipping convicts to Virginia and Maryland.',
         },
         {
           question:
@@ -799,6 +878,8 @@ export const unitData = {
             'Edward Hargreaves',
           ],
           answer: 1,
+          explanation:
+            'Arthur Bowes Smyth was the surgeon on the Lady Penrhyn whose detailed diary recorded the landing of the female convicts in February 1788.',
         },
         {
           question:
@@ -810,8 +891,77 @@ export const unitData = {
             'They were forced to work as wig makers for the Governor',
           ],
           answer: 1,
+          explanation:
+            'Convicts who committed secondary offences were punished with brutal floggings and hard labour on chain gangs.',
+        },
+        {
+          question:
+            'What were the overcrowded, rotting wooden ships anchored in the Thames used as temporary prisons called?',
+          options: ['Galleons', 'Privateers', 'Frigates', 'Prison Hulks'],
+          answer: 3,
+          explanation:
+            "Disused naval vessels known as 'hulks' were moored in the Thames and Portsmouth harbour to hold thousands of convicts in squalid conditions.",
+        },
+        {
+          question:
+            'Who was appointed the first Governor of the British penal colony of New South Wales?',
+          options: ['Arthur Phillip', 'Lachlan Macquarie', 'William Bligh', 'James Cook'],
+          answer: 0,
+          explanation:
+            'Captain Arthur Phillip commanded the First Fleet and governed New South Wales from 1788 to 1792.',
+        },
+        {
+          question:
+            'Why did Governor Phillip abandon Botany Bay and move the settlement to Sydney Cove (Port Jackson)?',
+          options: [
+            'Botany Bay was occupied by a French naval garrison',
+            'Sydney Cove provided deep water anchorage and fresh water from the Tank Stream',
+            'Botany Bay had no trees or soil of any kind',
+            'The British government sent urgent orders to relocate',
+          ],
+          answer: 1,
+          explanation:
+            'Botany Bay was too exposed and lacked fresh water; Phillip discovered Port Jackson, describing it as the finest harbour in the world.',
+        },
+        {
+          question:
+            'How many ships comprised the First Fleet that sailed from Portsmouth in May 1787?',
+          options: ['3 ships', '7 ships', '11 ships', '25 ships'],
+          answer: 2,
+          explanation:
+            'The First Fleet consisted of 11 ships carrying approximately 1,400 convicts, marines, officials, and crew.',
+        },
+        {
+          question:
+            'What kind of crimes had the vast majority of convicts transported on the First Fleet committed?',
+          options: [
+            'Murder and treason against the Crown',
+            'Religious heresy and witchcraft',
+            'Mutiny on high-seas merchant vessels',
+            'Petty theft of food, clothing, or household goods',
+          ],
+          answer: 3,
+          explanation:
+            "Most convicts were impoverished Britons sentenced for petty property theft under the extremely harsh 'Bloody Code'.",
+        },
+        {
+          question:
+            'What was the name of the nine-year-old London chimney sweep transported on the First Fleet for stealing clothes?',
+          options: ['John Hudson', 'Thomas Barrett', 'James Ruse', 'Ned Kelly'],
+          answer: 0,
+          explanation:
+            'John Hudson, aged just nine, was one of the youngest convicts transported, highlighting the severity of the 18th-century British justice system.',
+        },
+        {
+          question:
+            'What was a convict called who had served their sentence or received a pardon and chose to remain in Australia as a free citizen?',
+          options: ['Squatter', 'Emancipist', 'Selector', 'Bushranger'],
+          answer: 1,
+          explanation:
+            "An 'Emancipist' was a former convict who had regained their freedom and often acquired land, trade businesses, or civic roles.",
         },
       ],
+
       tasks: [],
       video: {
         type: 'youtube',
@@ -1132,6 +1282,125 @@ export const unitData = {
           ],
         },
       ],
+      quiz: [
+        {
+          question:
+            'What devastating epidemic swept through the Indigenous Eora nation around Sydney in 1789?',
+          options: ['Smallpox', 'Cholera', 'The Bubonic Plague', 'Typhoid fever'],
+          answer: 0,
+          explanation:
+            'In 1789, an outbreak of smallpox killed an estimated 50% to 70% of the Indigenous population around Sydney, shattering clan structures.',
+        },
+        {
+          question:
+            'Who was the Dharug / Bidjigal warrior who led a twelve-year armed resistance against British settlement in the Sydney region?',
+          options: ['Bennelong', 'Pemulwuy', 'Yagan', 'Windradyne'],
+          answer: 1,
+          explanation:
+            'Pemulwuy waged guerrilla warfare against British farms and soldiers from 1790 until he was killed in 1802.',
+        },
+        {
+          question: 'Why did Governor Arthur Phillip kidnap the Wangal man Bennelong in late 1789?',
+          options: [
+            'To execute him as an example to other warriors',
+            'To force him to reveal where gold was buried',
+            'To learn his language and use him as a cultural and diplomatic intermediary',
+            'To sell him to Spanish merchants in the Philippines',
+          ],
+          answer: 2,
+          explanation:
+            'Phillip ordered Bennelong captured so the British could learn Indigenous language, customs, and establish communication.',
+        },
+        {
+          question:
+            'What instruction did King George III give to Governor Phillip regarding relations with Indigenous Australians?',
+          options: [
+            'To drive all Indigenous clans into the interior mountains',
+            'To wage unrestricted war until all tribes surrendered',
+            'To treat all Indigenous inhabitants as enemy combatants',
+            "To live in 'amity and kindness' and conciliate their affections",
+          ],
+          answer: 3,
+          explanation:
+            "Official instructions urged Phillip to open friendly relations with 'amity and kindness', though violent land dispossession quickly followed.",
+        },
+        {
+          question:
+            'What was the primary root cause of the violent frontier conflicts between British settlers and Aboriginal peoples?',
+          options: [
+            'Dispossession of traditional hunting lands, water sources, and sacred sites',
+            'A disagreement over the price of British wool blankets',
+            'Refusal by Aboriginal clans to convert to Protestant Christianity',
+            'French agitators encouraging Aboriginal tribes to attack Sydney',
+          ],
+          answer: 0,
+          explanation:
+            'Frontier conflict arose directly because British pastoral expansion seized vital river hunting grounds, destroying Indigenous food supplies.',
+        },
+        {
+          question: 'What happened to Bennelong in 1792?',
+          options: [
+            'He escaped into the Blue Mountains to lead resistance',
+            'He sailed to England with Governor Phillip and was presented to King George III',
+            'He was made Chief Justice of New South Wales',
+            'He established a successful sheep farming station',
+          ],
+          answer: 1,
+          explanation:
+            'Bennelong travelled to London with Phillip in 1792, spending nearly three years in Britain before returning home in 1795.',
+        },
+        {
+          question:
+            'Which geographic barrier delayed British inland expansion west of Sydney until it was crossed in 1813?',
+          options: [
+            'The Snowy Mountains',
+            'The Great Sandy Desert',
+            'The Blue Mountains',
+            'The Flinders Ranges',
+          ],
+          answer: 2,
+          explanation:
+            'Blaxland, Wentworth, and Lawson crossed the rugged Blue Mountains in 1813, unlocking the vast fertile western plains for grazing.',
+        },
+        {
+          question:
+            'What military tactic did Indigenous resistance leaders like Pemulwuy use to fight British soldiers?',
+          options: [
+            'Trench warfare with heavy artillery',
+            'Naval blockades of Sydney harbour',
+            'Pitched battles in open formation',
+            'Guerrilla hit-and-run raids on isolated farms and supply convoys',
+          ],
+          answer: 3,
+          explanation:
+            'Aboriginal warriors utilised their superior knowledge of the bush to mount rapid ambushes, burning crops and seizing cattle.',
+        },
+        {
+          question:
+            'What proclamation did Governor Lachlan Macquarie issue in 1816 during the Hawkesbury-Nepean frontier conflicts?',
+          options: [
+            'He banned Aboriginal people from carrying weapons near settlements and authorised military patrols',
+            'He granted full British voting rights to all Indigenous clans',
+            'He ordered all British settlers to return their land to Aboriginal elders',
+            'He made Aboriginal customary law the supreme law of New South Wales',
+          ],
+          answer: 0,
+          explanation:
+            "Macquarie's 1816 proclamation placed Aboriginal people under martial restrictions and dispatched soldiers to shoot armed groups.",
+        },
+        {
+          question: 'Why was Bennelong often caught between two worlds upon his return to Sydney?',
+          options: [
+            'He forgot how to speak English entirely',
+            'He was rejected by both British colonial society and alienated from his traditional community',
+            'The British government declared him an outlaw',
+            'He refused to wear European clothes or visit Sydney',
+          ],
+          answer: 1,
+          explanation:
+            'Bennelong faced deep psychological isolation, finding himself no longer fully accepted by traditional society nor respected by colonial settlers.',
+        },
+      ],
       tasks: [],
       banner: '/images/sydney_cove_1792.jpg',
       pair_share: {
@@ -1410,6 +1679,113 @@ export const unitData = {
           ],
         },
       ],
+      quiz: [
+        {
+          question:
+            'In what year did the Australian Gold Rush begin, triggered by discoveries in New South Wales and Victoria?',
+          options: ['1851', '1788', '1815', '1901'],
+          answer: 0,
+          explanation:
+            'The Gold Rush erupted in 1851 after Edward Hargraves found payable gold near Bathurst, followed quickly by massive Victorian finds.',
+        },
+        {
+          question:
+            'What was the name of the 1854 armed rebellion in Ballarat where gold miners fought British soldiers over unjust licence fees?',
+          options: [
+            'The Castle Hill Uprising',
+            'The Eureka Stockade',
+            'The Rum Rebellion',
+            'The Kelly Siege',
+          ],
+          answer: 1,
+          explanation:
+            'The Eureka Stockade (December 1854) was a key democratic uprising where miners fought against oppressive monthly gold licences.',
+        },
+        {
+          question:
+            'What flag was flown by the rebellious diggers at the Eureka Stockade as a symbol of unity and independence?',
+          options: ['The Union Jack', 'The Red Ensign', 'The Southern Cross', 'The Golden Fleece'],
+          answer: 2,
+          explanation:
+            'The Eureka Flag featured the Southern Cross constellation on a deep blue field, representing democratic solidarity.',
+        },
+        {
+          question:
+            'Which immigrant group faced severe racial prejudice, special entry taxes, and violent riots (such as Lambing Flat) on the goldfields?',
+          options: ['Irish miners', 'American prospectors', 'German craftsmen', 'Chinese miners'],
+          answer: 3,
+          explanation:
+            'Over 40,000 Chinese miners arrived in the 1850s, facing heavy discriminatory taxes and violent racist riots from European diggers.',
+        },
+        {
+          question:
+            'How did the Gold Rush fundamentally alter the demographics and economy of Australia?',
+          options: [
+            'The population nearly tripled in a decade, transforming penal colonies into wealthy, self-governing democracies',
+            'It caused all British convicts to be returned to England immediately',
+            'It bankrupted the colonies and forced Britain to abandon Australia',
+            'It led to Australia being annexed by the United States',
+          ],
+          answer: 0,
+          explanation:
+            "Between 1851 and 1861, Australia's population surged from 400,000 to over 1.1 million, accelerating democratic constitutional reform.",
+        },
+        {
+          question:
+            'Who was elected leader of the Eureka miners who later became a prominent member of the Victorian Parliament?',
+          options: ['Peter Lalor', 'William Wentworth', "Robert O'Hara Burke", 'Henry Parkes'],
+          answer: 0,
+          explanation:
+            'Irish immigrant Peter Lalor led the Eureka diggers, lost an arm in the battle, and was later elected Speaker of the Victorian Legislative Assembly.',
+        },
+        {
+          question:
+            'What system did colonial governments use to tax miners, regardless of whether they found any gold?',
+          options: [
+            'Income tax',
+            'Monthly mining licences',
+            'Import tariffs on boots',
+            'Stamp duty on pickaxes',
+          ],
+          answer: 1,
+          explanation:
+            'Miners were forced to pay 30 shillings a month for a mining licence even if their claim yielded zero gold, sparking fierce resentment.',
+        },
+        {
+          question:
+            'How did the Gold Rush impact Indigenous Australians living on the Victorian and NSW goldfields?',
+          options: [
+            'It granted Aboriginal people full ownership of all gold mines',
+            'It had zero impact because miners never left coastal cities',
+            'Intense environmental destruction and water pollution caused severe ecological displacement',
+            'Aboriginal elders were appointed as the chief gold commissioners',
+          ],
+          answer: 2,
+          explanation:
+            'Thousands of miners tore up riverbeds and poisoned waterways, further destroying traditional food sources and displacing local clans.',
+        },
+        {
+          question:
+            'What key political reform was granted in Victoria shortly after the Eureka Stockade rebellion?',
+          options: [
+            'Abolition of the expensive mining licence and the introduction of male suffrage (voting rights)',
+            'Re-imposition of British direct military rule for 50 years',
+            'Complete separation from the British Commonwealth',
+            'The banning of all private gold prospecting',
+          ],
+          answer: 0,
+          explanation:
+            "In 1855, the colonial government replaced the licence with a cheap £1 'Miner's Right', granting miners the right to vote.",
+        },
+        {
+          question:
+            "Which Australian city grew from a modest provincial town into 'Marvellous Melbourne', one of the richest cities in the world, during the 1880s?",
+          options: ['Adelaide', 'Melbourne', 'Hobart', 'Perth'],
+          answer: 1,
+          explanation:
+            "Gold wealth transformed Melbourne into 'Marvellous Melbourne', featuring grand Victorian architecture and rapid infrastructure growth.",
+        },
+      ],
       tasks: [],
       banner: '/images/ballarat_gold.jpg',
       pair_share: {
@@ -1493,6 +1869,123 @@ export const unitData = {
                 "The development of Australia began in 1788 when the First Fleet, carrying over 700 convicts and commanded by Governor Arthur Phillip, landed at Sydney Cove to establish a penal colony. This was a very difficult period because the settlers faced immediate near-starvation due to poor, sandy soil, a lack of farming tools and agricultural knowledge among urban convicts, and the delay of supply ships from Britain; only Governor Phillip's strict policy of equal food rationing for officers and convicts ensured the colony's fragile survival.\n\nHowever, the situation changed dramatically when pioneering farmers proved the colony could feed itself and entrepreneurs like John Macarthur introduced Spanish Merino sheep, which flourished in the dry Australian climate. In 1813, explorers crossed the rugged Blue Mountains, unlocking immense, fertile plains inland that allowed wealthy 'squatters' to expand their grazing runs.\n\nThis led to New South Wales becoming a highly profitable colony because millions of pounds of premium Merino wool were exported to feed the hungry textile mills of the British Industrial Revolution, creating substantial private fortunes and turning an expensive penal outpost into a thriving agricultural export economy (albeit through the catastrophic dispossession of First Nations peoples).\n\nFinally, the development of Australia accelerated rapidly in the 1850s due to the discovery of payable gold by Edward Hargreaves in 1851 near Bathurst and Victoria. The resulting gold rush triggered an international migration wave that nearly tripled Australia's population from 430,000 to over 1.1 million within ten years, bringing diverse free immigrants, ending convict transportation to eastern Australia, and permanently securing self-governing colonial prosperity.",
             },
           ],
+          quiz: [
+            {
+              question:
+                'In what year did the six separate British colonies federate to form the Commonwealth of Australia?',
+              options: ['1851', '1888', '1901', '1914'],
+              answer: 2,
+              explanation:
+                'On 1 January 1901, the six colonies united into the Commonwealth of Australia under a federal constitution.',
+            },
+            {
+              question:
+                'What was the colloquial name given to the restrictive immigration legislation passed by the new federal parliament in 1901?',
+              options: [
+                'The British Empire Pact',
+                'The White Australia Policy',
+                'The Pacific Exclusion Treaty',
+                'The Commonwealth Settlement Act',
+              ],
+              answer: 1,
+              explanation:
+                "The Immigration Restriction Act 1901 formed the basis of the 'White Australia Policy', designed to prevent non-European migration.",
+            },
+            {
+              question:
+                'What arbitrary tool was used by immigration officials under the Immigration Restriction Act to block non-white immigrants?',
+              options: [
+                'A 50-word dictation test in any European language chosen by the official',
+                'A high-value gold entry deposit of 5,000 pounds',
+                'A physical combat test against colonial police',
+                'A mandatory requirement to trace ancestry back to England',
+              ],
+              answer: 0,
+              explanation:
+                'Immigration officers could administer a dictation test in any European language (e.g. Scottish Gaelic or Italian) to ensure targeted candidates failed.',
+            },
+            {
+              question:
+                'What historical term refers to the Aboriginal children forcibly removed from their families under state assimilation policies from the 1900s to 1970s?',
+              options: [
+                'The First Generation',
+                'The Displaced Children',
+                'The Stolen Generations',
+                'The Forgotten Wards',
+              ],
+              answer: 2,
+              explanation:
+                "The 'Stolen Generations' refers to thousands of Indigenous children removed by police and welfare boards to be assimilated into white institutions.",
+            },
+            {
+              question:
+                "What landmark 1992 High Court legal ruling legally overturned the doctrine of 'Terra Nullius' in Australia?",
+              options: [
+                'The Mabo Decision',
+                'The Eureka Charter',
+                'The Macquarie Decree',
+                'The Phillip Ruling',
+              ],
+              answer: 0,
+              explanation:
+                'The Mabo v Queensland (No 2) decision in 1992 recognized Native Title, proving that Indigenous peoples owned the land prior to 1788.',
+            },
+            {
+              question:
+                'What significant constitutional reform was overwhelmingly approved by 90.77% of Australian voters in the 1967 Referendum?',
+              options: [
+                'Allowing Indigenous Australians to be counted in the national census and enabling federal laws for them',
+                'Declaring Australia an independent republic from the British monarchy',
+                'Banning all further British migration to the continent',
+                'Creating six new states for Indigenous tribal nations',
+              ],
+              answer: 0,
+              explanation:
+                'The 1967 Referendum was the most decisive in Australian history, removing discriminatory clauses that excluded Indigenous people from the census.',
+            },
+            {
+              question:
+                "Why do many Indigenous Australians refer to 26 January (Australia Day) as 'Invasion Day' or 'Survival Day'?",
+              options: [
+                "It marks the date Captain Cook's ship was wrecked on the Great Barrier Reef",
+                'It marks the 1788 landing of the First Fleet and the beginning of dispossession and violence',
+                'It marks the date gold was first discovered at Ballarat',
+                'It marks the end of the Second World War in the Pacific',
+              ],
+              answer: 1,
+              explanation:
+                '26 January marks Arthur Phillip raising the British flag in 1788, representing the loss of sovereignty, land, and lives for Indigenous peoples.',
+            },
+            {
+              question:
+                'Who was the Meriam Indigenous leader from the Torres Strait who spent a decade fighting in court to prove native land ownership?',
+              options: ['Eddie Mabo', 'Vincent Lingiari', 'Albert Namatjira', 'Neville Bonner'],
+              answer: 0,
+              explanation:
+                'Eddie Koiki Mabo led the legal campaign that ultimately dismantled Terra Nullius in the historic 1992 High Court decision.',
+            },
+            {
+              question:
+                "In what year did Prime Minister Kevin Rudd deliver the official National Apology to Australia's Indigenous Peoples, specifically the Stolen Generations?",
+              options: ['1988', '1992', '2001', '2008'],
+              answer: 3,
+              explanation:
+                'On 13 February 2008, Prime Minister Kevin Rudd offered a formal national apology in Parliament for the laws and policies of successive parliaments.',
+            },
+            {
+              question:
+                'Which of the following best summarises modern historical debate over the colonisation of Australia?',
+              options: [
+                'Historians unanimously agree that British colonisation was entirely peaceful and without conflict',
+                'Debates center on whether early British arrival should be evaluated as peaceful settlement, illegal invasion, or heroic Indigenous survival',
+                'Historians agree that Australia was truly Terra Nullius and had no original inhabitants',
+                'Debates center only on whether gold was more important than sheep farming',
+              ],
+              answer: 1,
+              explanation:
+                "Australian history is characterized by the 'History Wars' debating whether British colonization should be viewed as settlement, invasion, or survival.",
+            },
+          ],
         },
         {
           type: 'narrative',
@@ -1567,6 +2060,123 @@ export const unitData = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'In what year did the six separate British colonies federate to form the Commonwealth of Australia?',
+          options: ['1851', '1888', '1901', '1914'],
+          answer: 2,
+          explanation:
+            'On 1 January 1901, the six colonies united into the Commonwealth of Australia under a federal constitution.',
+        },
+        {
+          question:
+            'What was the colloquial name given to the restrictive immigration legislation passed by the new federal parliament in 1901?',
+          options: [
+            'The British Empire Pact',
+            'The White Australia Policy',
+            'The Pacific Exclusion Treaty',
+            'The Commonwealth Settlement Act',
+          ],
+          answer: 1,
+          explanation:
+            "The Immigration Restriction Act 1901 formed the basis of the 'White Australia Policy', designed to prevent non-European migration.",
+        },
+        {
+          question:
+            'What arbitrary tool was used by immigration officials under the Immigration Restriction Act to block non-white immigrants?',
+          options: [
+            'A 50-word dictation test in any European language chosen by the official',
+            'A high-value gold entry deposit of 5,000 pounds',
+            'A physical combat test against colonial police',
+            'A mandatory requirement to trace ancestry back to England',
+          ],
+          answer: 0,
+          explanation:
+            'Immigration officers could administer a dictation test in any European language (e.g. Scottish Gaelic or Italian) to ensure targeted candidates failed.',
+        },
+        {
+          question:
+            'What historical term refers to the Aboriginal children forcibly removed from their families under state assimilation policies from the 1900s to 1970s?',
+          options: [
+            'The First Generation',
+            'The Displaced Children',
+            'The Stolen Generations',
+            'The Forgotten Wards',
+          ],
+          answer: 2,
+          explanation:
+            "The 'Stolen Generations' refers to thousands of Indigenous children removed by police and welfare boards to be assimilated into white institutions.",
+        },
+        {
+          question:
+            "What landmark 1992 High Court legal ruling legally overturned the doctrine of 'Terra Nullius' in Australia?",
+          options: [
+            'The Mabo Decision',
+            'The Eureka Charter',
+            'The Macquarie Decree',
+            'The Phillip Ruling',
+          ],
+          answer: 0,
+          explanation:
+            'The Mabo v Queensland (No 2) decision in 1992 recognized Native Title, proving that Indigenous peoples owned the land prior to 1788.',
+        },
+        {
+          question:
+            'What significant constitutional reform was overwhelmingly approved by 90.77% of Australian voters in the 1967 Referendum?',
+          options: [
+            'Allowing Indigenous Australians to be counted in the national census and enabling federal laws for them',
+            'Declaring Australia an independent republic from the British monarchy',
+            'Banning all further British migration to the continent',
+            'Creating six new states for Indigenous tribal nations',
+          ],
+          answer: 0,
+          explanation:
+            'The 1967 Referendum was the most decisive in Australian history, removing discriminatory clauses that excluded Indigenous people from the census.',
+        },
+        {
+          question:
+            "Why do many Indigenous Australians refer to 26 January (Australia Day) as 'Invasion Day' or 'Survival Day'?",
+          options: [
+            "It marks the date Captain Cook's ship was wrecked on the Great Barrier Reef",
+            'It marks the 1788 landing of the First Fleet and the beginning of dispossession and violence',
+            'It marks the date gold was first discovered at Ballarat',
+            'It marks the end of the Second World War in the Pacific',
+          ],
+          answer: 1,
+          explanation:
+            '26 January marks Arthur Phillip raising the British flag in 1788, representing the loss of sovereignty, land, and lives for Indigenous peoples.',
+        },
+        {
+          question:
+            'Who was the Meriam Indigenous leader from the Torres Strait who spent a decade fighting in court to prove native land ownership?',
+          options: ['Eddie Mabo', 'Vincent Lingiari', 'Albert Namatjira', 'Neville Bonner'],
+          answer: 0,
+          explanation:
+            'Eddie Koiki Mabo led the legal campaign that ultimately dismantled Terra Nullius in the historic 1992 High Court decision.',
+        },
+        {
+          question:
+            "In what year did Prime Minister Kevin Rudd deliver the official National Apology to Australia's Indigenous Peoples, specifically the Stolen Generations?",
+          options: ['1988', '1992', '2001', '2008'],
+          answer: 3,
+          explanation:
+            'On 13 February 2008, Prime Minister Kevin Rudd offered a formal national apology in Parliament for the laws and policies of successive parliaments.',
+        },
+        {
+          question:
+            'Which of the following best summarises modern historical debate over the colonisation of Australia?',
+          options: [
+            'Historians unanimously agree that British colonisation was entirely peaceful and without conflict',
+            'Debates center on whether early British arrival should be evaluated as peaceful settlement, illegal invasion, or heroic Indigenous survival',
+            'Historians agree that Australia was truly Terra Nullius and had no original inhabitants',
+            'Debates center only on whether gold was more important than sheep farming',
+          ],
+          answer: 1,
+          explanation:
+            "Australian history is characterized by the 'History Wars' debating whether British colonization should be viewed as settlement, invasion, or survival.",
+        },
+      ],
     },
   ],
   quizPack: [

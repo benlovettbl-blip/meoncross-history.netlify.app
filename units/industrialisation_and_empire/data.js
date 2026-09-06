@@ -338,55 +338,185 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      quiz_questions: [
+      quiz: [
         {
           question:
-            'Before the Industrial Revolution, how were most goods manufactured in Britain?',
-          answer: "By hand in people's homes, known as the domestic system.",
+            "Who was the Fareham ironmaster who patented the 'puddling and rolling' process in 1783-1784?",
+          options: ['Isambard Kingdom Brunel', 'Henry Cort', 'James Watt', 'Abraham Darby'],
+          answer: 'Henry Cort',
+        },
+        {
+          question: 'Where did Henry Cort establish his revolutionary iron mill in Hampshire?',
           options: [
-            "By hand in people's homes, known as the domestic system.",
-            'They were imported entirely from factories in America.',
-            'By massive steam-powered machines in city factories.',
+            'Fontley (near Fareham)',
+            'Southampton Common',
+            'Winchester High Street',
+            'Portsmouth Dockyard',
           ],
+          answer: 'Fontley (near Fareham)',
         },
         {
           question:
-            'Why was British "pig iron" practically useless for building ships and bridges in the early 1700s?',
-          answer: 'It was full of carbon impurities, making it brittle and easy to snap.',
-          options: [
-            'It was too soft and melted easily in the sun.',
-            'It was full of carbon impurities, making it brittle and easy to snap.',
-            'It was far too heavy to be transported by water.',
-          ],
+            'What major fuel replaced wood and charcoal to power blast furnaces during the Industrial Revolution?',
+          options: ['Petroleum', 'Natural gas', 'Coal (coke)', 'Peat'],
+          answer: 'Coal (coke)',
         },
         {
-          question: 'What did Henry Cort\'s "Puddling Process" involve?',
-          answer: 'Stirring molten iron with long rods in a furnace to burn off impurities.',
+          question:
+            "How did Henry Cort's 'puddling' process revolutionize British iron production?",
           options: [
-            'Pouring liquid iron into molds to make cannonballs.',
-            'Hammering cold iron by hand until it flattened out.',
-            'Stirring molten iron with long rods in a furnace to burn off impurities.',
+            'It imported all iron ore directly from Swedish mines',
+            'It replaced human ironworkers entirely with steam-powered robots',
+            'It completely eliminated the need for coal in smelting iron',
+            'It allowed pig iron to be converted into high-grade wrought iron rapidly and cheaply using grooved rollers',
           ],
-        },
-        {
-          question: 'Why did Henry Cort choose to locate his ironworks at Funtley, near Fareham?',
           answer:
-            'Because it was perfectly located to supply the massive Royal Navy dockyards at Portsmouth.',
-          options: [
-            'Because it was perfectly located to supply the massive Royal Navy dockyards at Portsmouth.',
-            'Because the King ordered all factories to be built in Hampshire.',
-            'Because Fareham had the largest coal mines in the south of England.',
-          ],
+            'It allowed pig iron to be converted into high-grade wrought iron rapidly and cheaply using grooved rollers',
         },
         {
-          question: "What was the tragic outcome of Henry Cort's life?",
-          answer:
-            "He was ruined by his partner's financial scandal and died in poverty, despite his inventions changing the world.",
+          question:
+            'Which Scottish engineer dramatically improved the efficiency of the Newcomen steam engine by adding a separate condenser?',
+          options: ['James Watt', 'Thomas Newcomen', 'George Stephenson', 'Richard Trevithick'],
+          answer: 'James Watt',
+        },
+        {
+          question:
+            'Who was the Birmingham entrepreneur who partnered with James Watt to manufacture commercial steam engines?',
+          options: ['Josiah Wedgwood', 'John Wilkinson', 'Matthew Boulton', 'Robert Owen'],
+          answer: 'Matthew Boulton',
+        },
+        {
+          question:
+            'Before the widespread adoption of steam power, what was the primary natural power source used to drive early textile factories?',
           options: [
-            "He was ruined by his partner's financial scandal and died in poverty, despite his inventions changing the world.",
-            'He became the richest man in Britain and bought the entire town of Fareham.',
-            'He was arrested for selling his iron secrets to the French Navy.',
+            'Windmills',
+            'Solar reflectors',
+            'Horse-drawn capstans',
+            'Waterwheels placed on fast-flowing rivers',
           ],
+          answer: 'Waterwheels placed on fast-flowing rivers',
+        },
+        {
+          question:
+            'Why was iron production so vital to the growth of the British Empire and navy?',
+          options: [
+            'It was used exclusively for decorative coins and royal statues',
+            'It was required to build cannons, anchors, steam boilers, and later ironclad naval warships',
+            'It was used to pave all major roads across Britain',
+            'It was exported exclusively to rival nations like France and Spain',
+          ],
+          answer:
+            'It was required to build cannons, anchors, steam boilers, and later ironclad naval warships',
+        },
+        {
+          question:
+            "What happened to Britain's iron industry by 1800 as a direct result of Henry Cort's innovations?",
+          options: [
+            "Britain transformed from an iron importer into the world's leading exporter of wrought iron",
+            'Iron was completely replaced by aluminium in all construction',
+            'The British iron industry collapsed due to foreign competition',
+            'The British government banned all private manufacture of iron',
+          ],
+          answer:
+            "Britain transformed from an iron importer into the world's leading exporter of wrought iron",
+        },
+        {
+          question:
+            'Which transport innovation allowed heavy raw materials like coal and iron ore to be moved cheaply before railways?',
+          options: ['Horse-drawn carriages', 'Toll highways', 'Steam tractors', 'Canal networks'],
+          answer: 'Canal networks',
+        },
+        {
+          question:
+            'What tragic scandal ruined Henry Cort financially despite the immense national success of his iron patents?',
+          options: [
+            'He was accused of high treason by King George III',
+            'The French navy captured him during a trade voyage to Paris',
+            "His partner Adam Jellicoe embezzled Royal Navy funds, causing the government to confiscate Cort's patents",
+            'His Fontley iron mill was destroyed by a volcanic eruption',
+          ],
+          answer:
+            "His partner Adam Jellicoe embezzled Royal Navy funds, causing the government to confiscate Cort's patents",
+        },
+        {
+          question:
+            "What phrase was commonly used to describe Britain's dominant global manufacturing status in the 19th century?",
+          options: [
+            'The Island of Inventors',
+            'The Workshop of the World',
+            'The Breadbasket of Europe',
+            'The Golden Empire',
+          ],
+          answer: 'The Workshop of the World',
+        },
+        {
+          question:
+            'What was the name of the famous locomotive built by George and Robert Stephenson that won the 1829 Rainhill Trials?',
+          options: ['The Flying Scotsman', 'The Rocket', 'The Puffing Billy', 'The Iron Duke'],
+          answer: 'The Rocket',
+        },
+        {
+          question:
+            "Which British city was dubbed 'Cottonopolis' due to its vast concentration of steam-powered cotton textile mills?",
+          options: ['Birmingham', 'Newcastle', 'Bristol', 'Manchester'],
+          answer: 'Manchester',
+        },
+        {
+          question: 'Why was steam power superior to water power for factory owners?',
+          options: [
+            'Factories could be built anywhere near coal fields and transport links, not just next to swift rivers',
+            'Steam engines did not require coal or water to operate',
+            'Steam engines were completely silent and produced zero smoke',
+            'Steam power was legally mandated by Parliament for all industries',
+          ],
+          answer:
+            'Factories could be built anywhere near coal fields and transport links, not just next to swift rivers',
+        },
+        {
+          question:
+            'Which safety lamp, invented in 1815, reduced fatal explosions caused by firedamp gas in coal mines?',
+          options: ['The Faraday Lantern', 'The Edison Bulb', 'The Davy Lamp', 'The Cort Burner'],
+          answer: 'The Davy Lamp',
+        },
+        {
+          question: 'What was the initial source of iron ore used in early British blast furnaces?',
+          options: [
+            'Melted Roman coins found in ruins',
+            'Locally mined ironstone found near coal seams',
+            'Deep-sea mineral nodules',
+            'Imported Australian red clay',
+          ],
+          answer: 'Locally mined ironstone found near coal seams',
+        },
+        {
+          question:
+            "What did Henry Cort's grooved rolling process achieve compared to traditional blacksmith hammering?",
+          options: [
+            'It painted the iron red to protect it from rust',
+            'It made the iron brittle so it could be easily shattered',
+            'It rolled malleable iron into standard bars and plates fifteen times faster than manual hammers',
+            'It reduced the weight of iron by over 90%',
+          ],
+          answer:
+            'It rolled malleable iron into standard bars and plates fifteen times faster than manual hammers',
+        },
+        {
+          question:
+            "Which Shropshire town is home to the world's first cast-iron bridge, built by Abraham Darby III in 1779?",
+          options: ['Ironbridge (Coalbrookdale)', 'Wolverhampton', 'Telford', 'Shrewsbury'],
+          answer: 'Ironbridge (Coalbrookdale)',
+        },
+        {
+          question:
+            'How did the expansion of British coal mining and iron manufacturing directly drive 19th-century railway construction?',
+          options: [
+            'The government banned horse transport entirely across the country',
+            'Iron production declined so heavily that railways were used to store surplus tracks',
+            'Railways were built purely for royal pleasure journeys',
+            'Railways were needed to move massive tonnages of coal and iron, while tracks and locomotives themselves required thousands of tons of iron',
+          ],
+          answer:
+            'Railways were needed to move massive tonnages of coal and iron, while tracks and locomotives themselves required thousands of tons of iron',
         },
       ],
       pair_share: {
@@ -620,51 +750,213 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      quiz_questions: [
+      quiz: [
         {
           question:
-            'Why did factory owners prefer to hire children during the early Industrial Revolution?',
-          answer: 'They were cheap, easy to discipline, and small enough to fit under machines.',
+            'Who invented the water frame in 1769, establishing the modern factory system at Cromford Mill?',
           options: [
-            'They were stronger and could work longer hours than adults.',
-            'They were cheap, easy to discipline, and small enough to fit under machines.',
-            'It was illegal to employ adults in factories before 1850.',
+            'Richard Arkwright',
+            'Edmund Cartwright',
+            'James Hargreaves',
+            'Samuel Crompton',
           ],
-        },
-        {
-          question: 'What did the 1832 Sadler Report investigate?',
-          answer: 'The working conditions and hours of children in factories.',
-          options: [
-            'The amount of coal being produced in northern mines.',
-            'The quality of Fareham Red bricks being sent to London.',
-            'The working conditions and hours of children in factories.',
-          ],
+          answer: 'Richard Arkwright',
         },
         {
           question:
-            'What were young boys known as when they led horses that crushed clay in the Fareham brickfields?',
-          answer: 'Pug boys',
-          options: ['Pug boys', 'Clay carriers', 'Brick turners'],
+            'What hazardous job in textile mills required young children to crawl under operating machinery to sweep up loose cotton fibres?',
+          options: ['Hurrier', 'Piecer', 'Trapper', 'Scavenger'],
+          answer: 'Scavenger',
         },
         {
-          question: 'What type of historical source is the 1881 Fareham Census?',
-          answer: 'A quantitative primary source showing the factual reality of child labour.',
+          question: "What was the task of a 'piecer' in a 19th-century cotton spinning factory?",
           options: [
-            'A quantitative primary source showing the factual reality of child labour.',
-            'A secondary source written by a modern historian.',
-            'A qualitative interview describing feelings and emotions.',
+            'To shovel coal into the furnace boilers',
+            'To lean over moving spinning frames and tie together broken threads without stopping the machines',
+            'To sew finished clothing for export',
+            'To lubricate the main steam engine flywheel',
           ],
-        },
-        {
-          question:
-            "What is the key difference between 'Optimist' and 'Pessimist' historians regarding the Industrial Revolution?",
           answer:
-            'Optimists believe it ultimately led to progress and wealth, while Pessimists believe it was a catastrophe that exploited the working class.',
+            'To lean over moving spinning frames and tie together broken threads without stopping the machines',
+        },
+        {
+          question:
+            'Why did factory owners prefer to employ children and women over adult men in early textile mills?',
           options: [
-            'Optimists believe all factory owners were kind, while Pessimists believe they were all evil.',
-            'Optimists believe it ultimately led to progress and wealth, while Pessimists believe it was a catastrophe that exploited the working class.',
-            'Optimists think the domestic system was better, while Pessimists prefer the factory system.',
+            'Adult men were legally forbidden from entering factory buildings',
+            'Children were legally required to work by the British Monarchy',
+            'They could pay them significantly lower wages and they were perceived as easier to discipline',
+            'Women and children possessed supernatural weaving abilities',
           ],
+          answer:
+            'They could pay them significantly lower wages and they were perceived as easier to discipline',
+        },
+        {
+          question:
+            'What was the standard working day for most factory workers and child apprentices during the early Industrial Revolution?',
+          options: [
+            '12 to 16 hours per day, six days a week',
+            '4 hours in the morning only',
+            '6 hours per day with paid holidays',
+            '8 hours per day, Monday to Friday',
+          ],
+          answer: '12 to 16 hours per day, six days a week',
+        },
+        {
+          question:
+            'What common physical deformity frequently afflicted young children who stood on hard factory floors for up to 14 hours a day?',
+          options: [
+            'Permanent blindness from sunlight',
+            'Rickets and bent/bowed legs from bone softening and constant pressure',
+            'Loss of hearing from loud church bells',
+            'Scurvy from lack of fruit',
+          ],
+          answer: 'Rickets and bent/bowed legs from bone softening and constant pressure',
+        },
+        {
+          question:
+            'How did factory overseers enforce strict discipline and punctuality among workers?',
+          options: [
+            'By sending workers on university training courses',
+            'By offering generous bonuses and extra days off',
+            'By reducing the working hours of tired employees',
+            "Through harsh financial fines, beatings ('strapping'), and locking factory gates",
+          ],
+          answer:
+            "Through harsh financial fines, beatings ('strapping'), and locking factory gates",
+        },
+        {
+          question:
+            'What key restriction did the landmark 1833 Factory Act introduce regarding child labour in textile mills?',
+          options: [
+            'It doubled the wages of all child workers',
+            'It completely abolished child labour across all British industries',
+            'It banned all work for children under nine years old and limited 9-13 year-olds to eight hours per day',
+            'It forced all children to work until age twenty-one',
+          ],
+          answer:
+            'It banned all work for children under nine years old and limited 9-13 year-olds to eight hours per day',
+        },
+        {
+          question:
+            'Why was the 1833 Factory Act significantly more effective than earlier factory legislation?',
+          options: [
+            'It created the first independent government factory inspectors to inspect mills and enforce the law',
+            'All mill owners voluntarily agreed to close their factories on weekends',
+            'It offered free housing to all factory apprentices',
+            'It was drafted and signed by the factory workers themselves',
+          ],
+          answer:
+            'It created the first independent government factory inspectors to inspect mills and enforce the law',
+        },
+        {
+          question:
+            'Who was the evangelical social reformer in Parliament who championed the Ten Hours Act and fought tirelessly against child exploitation?',
+          options: [
+            'Robert Peel',
+            'Arthur Wellesley (Duke of Wellington)',
+            'Lord Shaftesbury (Lord Ashley)',
+            'William Pitt',
+          ],
+          answer: 'Lord Shaftesbury (Lord Ashley)',
+        },
+        {
+          question:
+            'What term was used to describe weavers and textile artisans who smashed power looms in protest against wage cuts and automation in the 1810s?',
+          options: ['Levellers', 'Suffragettes', 'Chartists', 'Luddites'],
+          answer: 'Luddites',
+        },
+        {
+          question:
+            'What was a major respiratory health hazard faced by cotton mill workers due to inhaling airborne fibres in unventilated rooms?',
+          options: ['Malaria', 'Byssinosis (brown lung disease)', 'Smallpox', 'Scurvy'],
+          answer: 'Byssinosis (brown lung disease)',
+        },
+        {
+          question:
+            'What system did parish workhouses use to send orphaned or destitute children to work in distant northern cotton mills?',
+          options: [
+            'University scholarship scheme',
+            'Parish apprentice system',
+            'Trade guild election',
+            'Royal navy press gang',
+          ],
+          answer: 'Parish apprentice system',
+        },
+        {
+          question: "In coal mines, what was the job of a young 'trapper' child?",
+          options: [
+            'To blast rocks using gunpowder',
+            'To survey the underground seams using maps',
+            "To catch wild rabbits for the miners' lunch",
+            'To sit alone in the dark for 12 hours opening and shutting air ventilation doors as coal carts passed',
+          ],
+          answer:
+            'To sit alone in the dark for 12 hours opening and shutting air ventilation doors as coal carts passed',
+        },
+        {
+          question:
+            'What prompted Parliament to pass the Mines Act of 1842, which banned all women and boys under ten from underground coal mining?',
+          options: [
+            "The shocking evidence and graphic illustrations of the 1842 Royal Commission on Children's Employment in Mines",
+            'A sudden decline in the demand for coal across Europe',
+            'A total collapse of all British coal seams',
+            'A mass strike by wealthy mine owners',
+          ],
+          answer:
+            "The shocking evidence and graphic illustrations of the 1842 Royal Commission on Children's Employment in Mines",
+        },
+        {
+          question:
+            'Which Welsh textile manufacturer established a model village at New Lanark with an 8-hour workday, free schooling, and no children under ten working?',
+          options: ['George Cadbury', 'Titus Salt', 'Robert Owen', 'William Lever'],
+          answer: 'Robert Owen',
+        },
+        {
+          question:
+            "What was the purpose of 'clocking in' and the factory bell during the Industrial Revolution?",
+          options: [
+            'To signal the arrival of fresh fruit at the factory canteen',
+            "To impose strict artificial 'clock-time' discipline on workers, replacing natural agrarian daylight rhythms",
+            'To remind workers to attend daily church services',
+            'To warn workers of incoming pirate attacks',
+          ],
+          answer:
+            "To impose strict artificial 'clock-time' discipline on workers, replacing natural agrarian daylight rhythms",
+        },
+        {
+          question: 'What did the Ten Hours Act of 1847 legally establish?',
+          options: [
+            'It forced all factories to operate for ten hours every night',
+            'It banned all employment of women in Britain',
+            'It required workers to sleep for ten hours every Sunday',
+            'It restricted the working day for women and teenagers under 18 in textile factories to a maximum of 10 hours',
+          ],
+          answer:
+            'It restricted the working day for women and teenagers under 18 in textile factories to a maximum of 10 hours',
+        },
+        {
+          question:
+            'Why were unguarded gears, leather transmission belts, and flying shuttles so catastrophic for mill children?',
+          options: [
+            "They produced sparks that ruined the children's clothes",
+            'They made too much noise, distracting the children from reading',
+            'Loose clothing and hair were frequently caught, leading to gruesome scalpings, crushed limbs, and death',
+            'They caused the temperature in the mill to drop below freezing',
+          ],
+          answer:
+            'Loose clothing and hair were frequently caught, leading to gruesome scalpings, crushed limbs, and death',
+        },
+        {
+          question:
+            'How did early trade unionists attempt to organize despite the restrictive Combination Acts of 1799-1800?',
+          options: [
+            'Through secret oaths, friendly societies, and underground strike funds',
+            'By forming officially recognized political parties in Parliament',
+            'By advertising their meetings in national newspapers',
+            'By appealing directly to the French Emperor Napoleon',
+          ],
+          answer: 'Through secret oaths, friendly societies, and underground strike funds',
         },
       ],
       learning_objectives: {
@@ -924,6 +1216,205 @@ const industrialisation_and_empire = {
           'Understand the catalysts for public health reform.',
         ],
       },
+      quiz: [
+        {
+          question:
+            'What term describes the massive migration of millions of people from rural villages to industrial cities during the 19th century?',
+          options: ['Urbanisation', 'Emancipation', 'Enclosure', 'Colonisation'],
+          answer: 'Urbanisation',
+        },
+        {
+          question:
+            'What cheaply constructed, overcrowded housing style was built in industrial cities to pack the maximum number of families into minimal land?',
+          options: [
+            'Country cottages',
+            'Detached Victorian villas',
+            'Back-to-back terraced houses',
+            'Baroque garden estates',
+          ],
+          answer: 'Back-to-back terraced houses',
+        },
+        {
+          question:
+            'Why were cellar dwellings in 19th-century industrial slums particularly dangerous for human health?',
+          options: [
+            'They had excessively high heating bills',
+            'They were located too far away from the factory gates',
+            'They were built entirely out of inflammable timber',
+            'They were damp, unventilated, perpetually dark, and frequently flooded with raw sewage from nearby cesspools',
+          ],
+          answer:
+            'They were damp, unventilated, perpetually dark, and frequently flooded with raw sewage from nearby cesspools',
+        },
+        {
+          question:
+            'In what year did Asiatic cholera first strike Great Britain, causing widespread terror due to its rapid and gruesome mortality?',
+          options: ['1914', '1831', '1805', '1789'],
+          answer: '1831',
+        },
+        {
+          question:
+            'What waterborne bacterial disease caused victims to dehydrate rapidly through violent diarrhea and vomiting, turning their skin blue?',
+          options: ['Influenza', 'Cholera', 'Scurvy', 'Tuberculosis'],
+          answer: 'Cholera',
+        },
+        {
+          question:
+            'What dominant medical theory before the 1860s falsely claimed that epidemic diseases were spread by foul-smelling airborne vapours?',
+          options: [
+            'The Miasma theory',
+            'The Spontaneous Generation theory',
+            'The Four Humours theory',
+            'The Germ theory',
+          ],
+          answer: 'The Miasma theory',
+        },
+        {
+          question:
+            "Who was the social reformer whose 1842 'Report on the Sanitary Conditions of the Labouring Population' proved that disease was caused by filth and poverty?",
+          options: ['Robert Peel', 'Charles Dickens', 'Edwin Chadwick', 'Lord Shaftesbury'],
+          answer: 'Edwin Chadwick',
+        },
+        {
+          question:
+            "What landmark legislation was passed in 1848 establishing Britain's first General Board of Health?",
+          options: [
+            'The Factory Act 1848',
+            'The Reform Act 1848',
+            'The Poor Law Amendment Act 1848',
+            'The Public Health Act 1848',
+          ],
+          answer: 'The Public Health Act 1848',
+        },
+        {
+          question:
+            "What political philosophy held by wealthy taxpayers and town councils ('laissez-faire') delayed public health improvements in the early 19th century?",
+          options: [
+            'The demand that all private property should be taken over by the State',
+            "The belief that government should not interfere in the economy or spend taxpayers' money on clean water and sewers",
+            'The policy of forcing all citizens to move into rural farm communes',
+            'The belief that disease could only be cured by royal prayer',
+          ],
+          answer:
+            "The belief that government should not interfere in the economy or spend taxpayers' money on clean water and sewers",
+        },
+        {
+          question:
+            'Which doctor investigated the 1854 cholera outbreak in Soho, London, proving the disease was spread through contaminated water?',
+          options: ['Dr William Harvey', 'Dr Edward Jenner', 'Dr John Snow', 'Dr Joseph Lister'],
+          answer: 'Dr John Snow',
+        },
+        {
+          question:
+            'What physical action did Dr John Snow take in September 1854 to halt the Soho cholera epidemic?',
+          options: [
+            'He burned down the entire Soho neighbourhood',
+            'He sprayed carbolic acid into the Soho drinking water',
+            'He vaccinated every citizen in London against smallpox',
+            'He removed the handle of the Broad Street water pump, forcing residents to fetch clean water elsewhere',
+          ],
+          answer:
+            'He removed the handle of the Broad Street water pump, forcing residents to fetch clean water elsewhere',
+        },
+        {
+          question:
+            'What environmental crisis in the hot summer of 1858 finally forced Parliament to fund a comprehensive sewer system for London?',
+          options: [
+            'The Great Stink (the overwhelming stench from the polluted River Thames outside the Houses of Parliament)',
+            'A massive frost fair on the frozen Thames',
+            'A tidal wave hitting the Tower of London',
+            'The Great Fire of London',
+          ],
+          answer:
+            'The Great Stink (the overwhelming stench from the polluted River Thames outside the Houses of Parliament)',
+        },
+        {
+          question:
+            "Who was the chief civil engineer of the Metropolitan Board of Works who designed London's vast underground intercepting sewer network?",
+          options: [
+            'Joseph Bazalgette',
+            'Isambard Kingdom Brunel',
+            'George Stephenson',
+            'Thomas Telford',
+          ],
+          answer: 'Joseph Bazalgette',
+        },
+        {
+          question: "How did Joseph Bazalgette's sewer system solve London's contamination crisis?",
+          options: [
+            'It stored all sewage in massive open vats in central London parks',
+            'It boiled all Thames river water before pumping it to homes',
+            'It intercepted raw sewage before it could flow into the Thames and transported it downstream to the Thames estuary',
+            'It dumped all sewage into the London Underground tunnels',
+          ],
+          answer:
+            'It intercepted raw sewage before it could flow into the Thames and transported it downstream to the Thames estuary',
+        },
+        {
+          question:
+            'What was the average life expectancy of a working-class labourer in industrial cities like Manchester and Liverpool during the 1840s?',
+          options: [
+            'Around 65 years old',
+            'Over 75 years old',
+            'Around 45 years old',
+            'Under 20 years old',
+          ],
+          answer: 'Under 20 years old',
+        },
+        {
+          question:
+            'Why was clean drinking water so scarce for working-class families in 1840s industrial slums?',
+          options: [
+            'Water was banned by local magistrates to stop drunken riots',
+            'Water was supplied by private commercial companies through street standpipes for only a few hours a week, often drawn directly from contaminated rivers',
+            'Families only drank beer and refused to consume water under any circumstances',
+            'All rainfall in Britain ceased completely between 1840 and 1850',
+          ],
+          answer:
+            'Water was supplied by private commercial companies through street standpipes for only a few hours a week, often drawn directly from contaminated rivers',
+        },
+        {
+          question: "What was a 'cesspool' in an early 19th-century town?",
+          options: [
+            'A storage reservoir for clean distilled water',
+            'An underground pit or chamber for collecting household waste and sewage, which frequently seeped into nearby groundwater and drinking wells',
+            'A public swimming bath for factory workers',
+            'A holding pen for farm animals before market',
+          ],
+          answer:
+            'An underground pit or chamber for collecting household waste and sewage, which frequently seeped into nearby groundwater and drinking wells',
+        },
+        {
+          question:
+            'What compulsory requirement was introduced in the Public Health Act of 1875 under Prime Minister Benjamin Disraeli?',
+          options: [
+            'Local town councils were legally required to provide clean water, build proper sewers, collect rubbish, and appoint medical officers of health',
+            'All citizens were forced to bathe twice daily in public rivers',
+            'All industrial factories had to be demolished and moved to Scotland',
+            'Doctors were banned from charging fees to wealthy patients',
+          ],
+          answer:
+            'Local town councils were legally required to provide clean water, build proper sewers, collect rubbish, and appoint medical officers of health',
+        },
+        {
+          question:
+            "What devastating chronic pulmonary disease, nicknamed 'the White Plague', was the single biggest killer in 19th-century British slums?",
+          options: ['Polio', 'Yellow fever', 'Measles', 'Tuberculosis (consumption)'],
+          answer: 'Tuberculosis (consumption)',
+        },
+        {
+          question:
+            'How did the 1854 Broad Street investigation challenge traditional medical understanding of disease transmission?',
+          options: [
+            'It proved that diseases were caused by planetary alignments',
+            'It showed that boiling water made it poisonous',
+            'It provided empirical, mapped epidemiological evidence that disease spread via contaminated water ingested into the digestive tract, not through airborne miasma',
+            'It proved that poor people were biologically immune to cholera',
+          ],
+          answer:
+            'It provided empirical, mapped epidemiological evidence that disease spread via contaminated water ingested into the digestive tract, not through airborne miasma',
+        },
+      ],
       pair_share: {
         prompt: 'Discuss with your partner: Did industrialisation make British towns unlivable?',
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
@@ -1192,8 +1683,8 @@ const industrialisation_and_empire = {
             "Why did Victorian builders heavily rely on 'Fareham Red' bricks during 19th-century urbanisation?",
           options: [
             'They were the cheapest bricks available in northern England.',
-            'They were the only bricks the government legally allowed to be used in London.',
             'They were highly durable under intense structural pressure for massive infrastructure.',
+            'They were the only bricks the government legally allowed to be used in London.',
             'They were primarily used for decorative facades rather than structural strength.',
           ],
           answer:
@@ -1204,9 +1695,9 @@ const industrialisation_and_empire = {
             "How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?",
           options: [
             'It proved that building more back-to-back housing would increase profits.',
-            'It showed deaths from filth and overcrowding were higher than modern war casualties.',
             'It argued that poor people should be responsible for their own healthcare.',
             'It recommended that the government stop funding public hospitals.',
+            'It showed deaths from filth and overcrowding were higher than modern war casualties.',
           ],
           answer:
             'It showed deaths from filth and overcrowding were higher than modern war casualties.',
@@ -1215,9 +1706,9 @@ const industrialisation_and_empire = {
           question:
             'What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak?',
           options: [
-            'He proved the Miasma Theory by measuring bad smells in Soho.',
             'He proved cholera was a waterborne disease by mapping local fatalities.',
             'He invented the first vaccine for cholera.',
+            'He proved the Miasma Theory by measuring bad smells in Soho.',
             'He built the first underground sewer system in London.',
           ],
           answer: 'He proved cholera was a waterborne disease by mapping local fatalities.',
@@ -1226,10 +1717,10 @@ const industrialisation_and_empire = {
           question:
             'What was the original purpose of the East India Company when it was founded in 1600?',
           options: [
-            'To fight the French army in North America.',
-            'To establish direct British government rule in India.',
             'To build ironclad warships for the Royal Navy.',
+            'To fight the French army in North America.',
             'To control trade in precious spices, silks, indigo, and tea.',
+            'To establish direct British government rule in India.',
           ],
           answer: 'To control trade in precious spices, silks, indigo, and tea.',
         },
@@ -1248,10 +1739,10 @@ const industrialisation_and_empire = {
           question:
             "What does it mean that the East India Company turned India into a 'captive market'?",
           options: [
-            'Britain sent captive prisoners from London to work in Indian factories.',
-            'The EIC built large prisons in India to hold their commercial rivals.',
-            'India was forced to trade exclusively with Britain, preventing local industries from competing.',
             'Indian merchants were given exclusive rights to sell their goods in London.',
+            'Britain sent captive prisoners from London to work in Indian factories.',
+            'India was forced to trade exclusively with Britain, preventing local industries from competing.',
+            'The EIC built large prisons in India to hold their commercial rivals.',
           ],
           answer:
             'India was forced to trade exclusively with Britain, preventing local industries from competing.',
@@ -1259,10 +1750,10 @@ const industrialisation_and_empire = {
         {
           question: "How did British textile mills affect India's domestic handloom weavers?",
           options: [
-            "They bought all of the Indian weavers' cloth, making them wealthy.",
-            'They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.',
             'They taught Indian weavers how to build their own steam-powered factories.',
+            'They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.',
             'They provided Indian weavers with better, cheaper yarn to make cloth.',
+            "They bought all of the Indian weavers' cloth, making them wealthy.",
           ],
           answer:
             'They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.',
@@ -1272,9 +1763,9 @@ const industrialisation_and_empire = {
             "What event was triggered in May 1857 by the East India Company's systemic oppression?",
           options: [
             'The Great Stink',
+            'The Battle of Trafalgar',
             'The signing of the Government of India Act',
             'The Indian Rebellion (Sepoy Mutiny)',
-            'The Battle of Trafalgar',
           ],
           answer: 'The Indian Rebellion (Sepoy Mutiny)',
         },
@@ -1283,8 +1774,8 @@ const industrialisation_and_empire = {
             'According to the April 1857 EIC corporate directive, what was the primary purpose of the British presence in India?',
           options: [
             'To secure the maintenance of trade and protect shareholder profits.',
-            'To spread British culture and religion.',
             'To bring modern technology and railways to the Indian people.',
+            'To spread British culture and religion.',
             'To establish a democratic government in Asia.',
           ],
           answer: 'To secure the maintenance of trade and protect shareholder profits.',
@@ -1294,8 +1785,8 @@ const industrialisation_and_empire = {
           options: [
             'It was given even more power by the British Parliament.',
             'It agreed to share power with the local Indian rulers.',
-            'It moved all of its operations to China.',
             'It was formally abolished, and control transferred directly to the British Crown.',
+            'It moved all of its operations to China.',
           ],
           answer:
             'It was formally abolished, and control transferred directly to the British Crown.',
@@ -1303,10 +1794,10 @@ const industrialisation_and_empire = {
         {
           question: "What was the 'Two-Power Standard'?",
           options: [
-            'A rule that the Royal Navy must be stronger than the next two most powerful navies combined.',
             'A trade agreement between Britain and two other European nations.',
-            'A policy ensuring India was ruled by both a British Governor and an Indian Prince.',
             'A law requiring two steam engines on every British warship.',
+            'A policy ensuring India was ruled by both a British Governor and an Indian Prince.',
+            'A rule that the Royal Navy must be stronger than the next two most powerful navies combined.',
           ],
           answer:
             'A rule that the Royal Navy must be stronger than the next two most powerful navies combined.',
@@ -1314,40 +1805,40 @@ const industrialisation_and_empire = {
         {
           question:
             'Which Hampshire town became the largest steam-powered industrial complex on earth to support the navy?',
-          options: ['Fareham', 'Winchester', 'Southampton', 'Portsmouth'],
+          options: ['Winchester', 'Portsmouth', 'Southampton', 'Fareham'],
           answer: 'Portsmouth',
         },
         {
           question:
             'What major technological transition did the Royal Navy undergo at Portsmouth Dockyard during the 19th century?',
           options: [
-            'Moving from iron hulls back to lighter, faster wooden ships.',
-            "Moving from wooden sailing ships to steam-driven 'Ironclads'.",
             'Moving from merchant vessels to passenger liners.',
+            "Moving from wooden sailing ships to steam-driven 'Ironclads'.",
             'Moving from coal-powered ships to oil-powered ships.',
+            'Moving from iron hulls back to lighter, faster wooden ships.',
           ],
           answer: "Moving from wooden sailing ships to steam-driven 'Ironclads'.",
         },
         {
           question:
             "Launched in 1860, which ship was the world's first iron-hulled, steam-powered ironclad warship?",
-          options: ['HMS Dreadnought', 'HMS Victory', 'HMS Warrior', 'HMS Beagle'],
+          options: ['HMS Warrior', 'HMS Victory', 'HMS Dreadnought', 'HMS Beagle'],
           answer: 'HMS Warrior',
         },
         {
           question:
             'Whose advanced metallurgy pioneered at Funtley (from Lesson 1) was vital for creating the armor plating of the Ironclads?',
-          options: ['Henry Cort', 'Edwin Chadwick', 'John Snow', 'Joseph Bazalgette'],
+          options: ['Edwin Chadwick', 'Joseph Bazalgette', 'John Snow', 'Henry Cort'],
           answer: 'Henry Cort',
         },
         {
           question:
             'According to the letter from Arthur Vance (November 1861), what was the reality for the dockyard riveters?',
           options: [
-            'They were replaced by machines and struggled to find work in Hampshire.',
-            'They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.',
             "They mainly did highly skilled wood-carving for the officers' cabins.",
             'They worked comfortable shifts and were proud of the glory they brought the fleet.',
+            'They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.',
+            'They were replaced by machines and struggled to find work in Hampshire.',
           ],
           answer:
             'They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.',
@@ -1356,10 +1847,10 @@ const industrialisation_and_empire = {
           question:
             "Why is Arthur Vance's private letter considered highly reliable by historians studying the human cost of empire?",
           options: [
-            'Because it was written for a political campaign to improve wages.',
-            'Because it was an official dockyard log checked by the government.',
             'Because it was published in The Times newspaper.',
+            'Because it was an official dockyard log checked by the government.',
             'Because it was a private letter to family with no motive to hide the grueling reality.',
+            'Because it was written for a political campaign to improve wages.',
           ],
           answer:
             'Because it was a private letter to family with no motive to hide the grueling reality.',
@@ -1368,9 +1859,9 @@ const industrialisation_and_empire = {
           question: "What does 'Mercantilism' mean in the context of the British Empire?",
           options: [
             'A policy of free trade where all nations compete equally without tariffs.',
+            'The belief that all men should have the right to vote regardless of wealth.',
             'The transition from rural farming communities to large industrial cities.',
             'A system maximizing national wealth through strictly controlled colonial trade and monopolies.',
-            'The belief that all men should have the right to vote regardless of wealth.',
           ],
           answer:
             'A system maximizing national wealth through strictly controlled colonial trade and monopolies.',
@@ -1381,8 +1872,8 @@ const industrialisation_and_empire = {
           options: [
             'To place a duty (tax) on the cheap clothing coming from England to save their trade.',
             'To send them modern British steam engines for their looms.',
-            'To force the East India Company to buy their hand-woven cloth at a higher price.',
             'To allow them to move to London to work in the factories.',
+            'To force the East India Company to buy their hand-woven cloth at a higher price.',
           ],
           answer:
             'To place a duty (tax) on the cheap clothing coming from England to save their trade.',
@@ -1392,8 +1883,8 @@ const industrialisation_and_empire = {
             "What do 'Optimist' historians typically argue about the British Empire's use of technology?",
           options: [
             'That technology was only used to hurt people and had no positive benefits.',
-            'That the British completely failed to modernize and relied too much on old wooden ships.',
             'That innovations like ironclads and railways created a massive, interconnected network of global trade and progress.',
+            'That the British completely failed to modernize and relied too much on old wooden ships.',
             'That technological progress was less important than the skill of the handloom weavers.',
           ],
           answer:
@@ -1563,20 +2054,20 @@ const industrialisation_and_empire = {
         {
           question:
             'In what year did the massive Indian Rebellion against the British Empire begin?',
-          options: ['1886', '1807', '1832', '1857'],
+          options: ['1832', '1807', '1857', '1886'],
           answer: '1857',
         },
         {
           question:
             'What military innovation served as the immediate catalyst for the 1857 rebellion?',
-          options: ['The ironclad ship', 'The Enfield rifle', 'The Gatling gun', 'The Maxim gun'],
+          options: ['The Maxim gun', 'The Gatling gun', 'The ironclad ship', 'The Enfield rifle'],
           answer: 'The Enfield rifle',
         },
         {
           question: 'Why did the new Enfield rifle cartridges cause such outrage among the sepoys?',
           options: [
-            'They were too heavy to carry',
             'They were rumored to be greased with beef and pork fat',
+            'They were too heavy to carry',
             'They misfired frequently',
             'They were made in Britain instead of India',
           ],
@@ -1585,16 +2076,16 @@ const industrialisation_and_empire = {
         {
           question:
             "What percentage of the East India Company's military forces were native Indian soldiers (sepoys)?",
-          options: ['Less than 20%', 'Around 50%', 'Almost 100%', 'Over 80%'],
+          options: ['Around 50%', 'Over 80%', 'Less than 20%', 'Almost 100%'],
           answer: 'Over 80%',
         },
         {
           question: "What was the East India Company's 'Doctrine of Lapse'?",
           options: [
             'A policy to annex independent Indian kingdoms if a ruler died without a direct male heir',
-            'A rule forcing sepoys to serve overseas',
             'A trade agreement with the Mughal Emperor',
             'A law banning Indian textiles from being sold',
+            'A rule forcing sepoys to serve overseas',
           ],
           answer:
             'A policy to annex independent Indian kingdoms if a ruler died without a direct male heir',
@@ -1603,34 +2094,34 @@ const industrialisation_and_empire = {
           question:
             'Besides the cartridges, what deeper issues caused systemic resentment among the Indian population?',
           options: [
-            'The British refusal to trade with India',
-            'The building of too many railways',
-            'Heavy taxation, land grabs, and destruction of the textile industry',
             'Lack of British funding for Indian schools',
+            'Heavy taxation, land grabs, and destruction of the textile industry',
+            'The building of too many railways',
+            'The British refusal to trade with India',
           ],
           answer: 'Heavy taxation, land grabs, and destruction of the textile industry',
         },
         {
           question: 'Where did the outbreak of violence begin in earnest on May 10, 1857?',
-          options: ['Lucknow', 'Meerut', 'Calcutta', 'Delhi'],
+          options: ['Calcutta', 'Delhi', 'Lucknow', 'Meerut'],
           answer: 'Meerut',
         },
         {
           question: 'Who did the mutinying sepoys declare as the true leader of India?',
           options: [
-            'The Governor-General of the EIC',
-            'Queen Victoria',
             'The Queen of Jhansi',
+            'Queen Victoria',
             'The elderly Mughal Emperor, Bahadur Shah Zafar',
+            'The Governor-General of the EIC',
           ],
           answer: 'The elderly Mughal Emperor, Bahadur Shah Zafar',
         },
         {
           question: 'Who was Rani Lakshmibai?',
           options: [
-            'A leader of the East India Company',
             'The first Empress of India',
             'The Queen of Jhansi who famously fought on horseback against the British',
+            'A leader of the East India Company',
             'A British missionary',
           ],
           answer: 'The Queen of Jhansi who famously fought on horseback against the British',
@@ -1639,9 +2130,9 @@ const industrialisation_and_empire = {
           question: 'How did the British forces respond to the rebellion?',
           options: [
             'With uncompromising, industrialized brutality and a campaign of mass terror',
+            'By immediately abandoning India',
             'By paying the sepoys higher wages',
             'With peaceful negotiations and political reform',
-            'By immediately abandoning India',
           ],
           answer: 'With uncompromising, industrialized brutality and a campaign of mass terror',
         },
@@ -1649,10 +2140,10 @@ const industrialisation_and_empire = {
           question:
             'What horrific method of execution did the British use as a form of psychological warfare against rebel leaders?',
           options: [
-            'Binding them to the mouths of cannons and blowing them apart',
-            'Public hanging in London',
             'Imprisonment in the Tower of London',
             'Exiling them to Australia',
+            'Binding them to the mouths of cannons and blowing them apart',
+            'Public hanging in London',
           ],
           answer: 'Binding them to the mouths of cannons and blowing them apart',
         },
@@ -1661,8 +2152,8 @@ const industrialisation_and_empire = {
           options: [
             'Because the British ran out of rope',
             'To save time',
-            'To deliberately deny the victims traditional religious funerals',
             'Because it was considered more humane',
+            'To deliberately deny the victims traditional religious funerals',
           ],
           answer: 'To deliberately deny the victims traditional religious funerals',
         },
@@ -1680,30 +2171,30 @@ const industrialisation_and_empire = {
         {
           question: "Which 1858 law formalized the British government's direct rule over India?",
           options: [
-            'The Doctrine of Lapse',
-            'The Government of India Act',
-            'The Secret Ballot Act',
             'The Great Reform Act',
+            'The Secret Ballot Act',
+            'The Government of India Act',
+            'The Doctrine of Lapse',
           ],
           answer: 'The Government of India Act',
         },
         {
           question: 'The era of direct British Crown rule in India is known as what?',
           options: [
-            'The Mughal Empire',
             'The British Raj',
-            'The EIC Era',
             'The Imperial Federation',
+            'The Mughal Empire',
+            'The EIC Era',
           ],
           answer: 'The British Raj',
         },
         {
           question: 'Who was declared Empress of India after the rebellion was crushed?',
           options: [
-            'Queen Victoria',
-            'Mary Queen of Scots',
-            'Rani Lakshmibai',
             'Queen Elizabeth I',
+            'Queen Victoria',
+            'Rani Lakshmibai',
+            'Mary Queen of Scots',
           ],
           answer: 'Queen Victoria',
         },
@@ -1711,10 +2202,10 @@ const industrialisation_and_empire = {
           question:
             'How did the 1857 Indian Rebellion contrast with domestic resistance like the Swing Riots?',
           options: [
-            'It aimed to lower the price of bread',
-            'It was supported by the aristocratic elite',
-            'It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking',
             'It was completely peaceful',
+            'It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking',
+            'It was supported by the aristocratic elite',
+            'It aimed to lower the price of bread',
           ],
           answer:
             'It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking',
@@ -1722,10 +2213,10 @@ const industrialisation_and_empire = {
         {
           question: 'Why did Christian missionary activity in India contribute to the rebellion?',
           options: [
-            'The missionaries stole all the agricultural land',
-            'The missionaries forced Indians to work in factories',
             'The missionaries were heavily armed',
+            'The missionaries forced Indians to work in factories',
             'It convinced many Indians that the British were determined to systematically dismantle their ancient religions',
+            'The missionaries stole all the agricultural land',
           ],
           answer:
             'It convinced many Indians that the British were determined to systematically dismantle their ancient religions',
@@ -1734,10 +2225,10 @@ const industrialisation_and_empire = {
           question:
             "What did the rebellion shatter regarding the British public's view of their empire?",
           options: [
-            'The concept of parliamentary democracy',
             "The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects",
-            'The belief that the Navy was invincible',
             'The idea that trade was profitable',
+            'The concept of parliamentary democracy',
+            'The belief that the Navy was invincible',
           ],
           answer:
             "The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects",
@@ -1745,26 +2236,26 @@ const industrialisation_and_empire = {
         {
           question:
             "Which animal's fat was forbidden to Muslim soldiers, making the rumor about the cartridges so explosive?",
-          options: ['Cow', 'Horse', 'Pig', 'Sheep'],
+          options: ['Cow', 'Horse', 'Sheep', 'Pig'],
           answer: 'Pig',
         },
         {
           question: 'What was the East India Company?',
           options: [
-            'Incorrect Option B',
             'Incorrect Option A',
-            'Incorrect Option C',
+            'Incorrect Option B',
             'A massive British trading corporation that essentially ruled India.',
+            'Incorrect Option C',
           ],
           answer: 'A massive British trading corporation that essentially ruled India.',
         },
         {
           question: 'How did the EIC destroy the Indian textile industry?',
           options: [
-            "By flooding the 'captive market' with cheap British machine-made cloth.",
             'Incorrect Option A',
-            'Incorrect Option C',
             'Incorrect Option B',
+            'Incorrect Option C',
+            "By flooding the 'captive market' with cheap British machine-made cloth.",
           ],
           answer: "By flooding the 'captive market' with cheap British machine-made cloth.",
         },
@@ -2061,9 +2552,9 @@ const industrialisation_and_empire = {
             'What private corporate entity controlled British commercial and military interests in India until 1858?',
           options: [
             'The East India Company (EIC)',
+            'The Bank of England',
             'The British Parliament',
             'The Royal Navy',
-            'The Bank of England',
           ],
           answer: 'The East India Company (EIC)',
         },
@@ -2072,9 +2563,9 @@ const industrialisation_and_empire = {
             "What was the 'Two-Power Standard' followed by the British government in the 19th century?",
           options: [
             'A rule that Britain must always have exactly two allies in Europe.',
-            'An economic rule that Britain must export twice as much as it imports.',
             'A naval policy declaring the Royal Navy must be stronger than the next two largest fleets combined.',
             'A law stating that Parliament must have two equal political parties.',
+            'An economic rule that Britain must export twice as much as it imports.',
           ],
           answer:
             'A naval policy declaring the Royal Navy must be stronger than the next two largest fleets combined.',
@@ -2084,17 +2575,17 @@ const industrialisation_and_empire = {
             'How did the industrial workforce at Portsmouth Dockyard directly support British naval supremacy?',
           options: [
             'By protesting against the harsh factory conditions.',
-            'By building wooden sailing ships exclusively for merchants.',
-            'By recruiting sailors from the local agricultural farms.',
             "By manufacturing advanced, iron-hulled 'Ironclad' warships.",
+            'By recruiting sailors from the local agricultural farms.',
+            'By building wooden sailing ships exclusively for merchants.',
           ],
           answer: "By manufacturing advanced, iron-hulled 'Ironclad' warships.",
         },
         {
           question: 'In the early 19th century, who completely controlled the British Parliament?',
           options: [
-            'The working class',
             'Wealthy landowners',
+            'The working class',
             'Trade Union leaders',
             'The middle-class factory workers',
           ],
@@ -2104,10 +2595,10 @@ const industrialisation_and_empire = {
           question:
             "What did the 60,000 peaceful protestors at St Peter's Field in Manchester demand in August 1819?",
           options: [
-            'The abolition of the East India Company.',
-            'Parliamentary reform and affordable food.',
-            'Higher wages and shorter working hours.',
             'The destruction of all mechanical threshing machines.',
+            'The abolition of the East India Company.',
+            'Higher wages and shorter working hours.',
+            'Parliamentary reform and affordable food.',
           ],
           answer: 'Parliamentary reform and affordable food.',
         },
@@ -2115,10 +2606,10 @@ const industrialisation_and_empire = {
           question:
             "How did the state respond to the peaceful gathering at St Peter's Field in 1819?",
           options: [
-            'Local magistrates panicked and ordered cavalry to charge into the crowd with sabers.',
             'They agreed to pass a new Reform Act immediately.',
-            'They arrested the leaders but allowed the crowd to continue protesting.',
             'They ignored the protestors until they went home.',
+            'Local magistrates panicked and ordered cavalry to charge into the crowd with sabers.',
+            'They arrested the leaders but allowed the crowd to continue protesting.',
           ],
           answer:
             'Local magistrates panicked and ordered cavalry to charge into the crowd with sabers.',
@@ -2127,10 +2618,10 @@ const industrialisation_and_empire = {
           question:
             "Why did radicals ironically name the tragic 1819 event the 'Peterloo Massacre'?",
           options: [
-            'Because the leader of the protest was named Peter.',
             "Because it occurred on St Peter's Day during a heavy rainstorm.",
             'Because it took place near a famous waterloo station in Manchester.',
             'To compare the violent slaughter of citizens to the famous military victory at Waterloo.',
+            'Because the leader of the protest was named Peter.',
           ],
           answer:
             'To compare the violent slaughter of citizens to the famous military victory at Waterloo.',
@@ -2139,9 +2630,9 @@ const industrialisation_and_empire = {
           question:
             'What technological change caused winter unemployment and starvation for agricultural laborers in 1830?',
           options: [
-            'The widespread use of chemical fertilizers.',
             'The invention of the steam train.',
             'The introduction of mechanical threshing machines.',
+            'The widespread use of chemical fertilizers.',
             'The shift from farming to factory work in the cities.',
           ],
           answer: 'The introduction of mechanical threshing machines.',
@@ -2150,20 +2641,20 @@ const industrialisation_and_empire = {
           question:
             'What was the name of the violent agrarian uprising in southern England in 1830?',
           options: [
-            'The Peterloo Riots',
-            'The Swing Riots',
             'The Luddite Rebellion',
+            'The Peterloo Riots',
             'The Tolpuddle Uprising',
+            'The Swing Riots',
           ],
           answer: 'The Swing Riots',
         },
         {
           question: "Who was 'Captain Swing'?",
           options: [
+            'A mythical, pseudonymous leader used by rioters to send anonymous threats.',
             'A real military officer who led the agricultural rebellion.',
             'The wealthy landowner who invented the threshing machine.',
             'The judge who sentenced the rioters at Winchester Castle.',
-            'A mythical, pseudonymous leader used by rioters to send anonymous threats.',
           ],
           answer: 'A mythical, pseudonymous leader used by rioters to send anonymous threats.',
         },
@@ -2171,10 +2662,10 @@ const industrialisation_and_empire = {
           question:
             'How did the government punish the Hampshire workers involved in the 1830 riots?',
           options: [
-            'Over 100 were tried at Winchester, 6 were executed, and hundreds were transported to Australia.',
             'They were all given a small fine and warned not to do it again.',
-            'They were sent to work in the factories of northern England.',
+            'Over 100 were tried at Winchester, 6 were executed, and hundreds were transported to Australia.',
             'They were forced to rebuild the threshing machines.',
+            'They were sent to work in the factories of northern England.',
           ],
           answer:
             'Over 100 were tried at Winchester, 6 were executed, and hundreds were transported to Australia.',
@@ -2185,8 +2676,8 @@ const industrialisation_and_empire = {
           options: [
             'They decided to stop protesting entirely and accept low wages.',
             'They started breaking machines exclusively during the daytime.',
-            'They began exploring collective bargaining through Trade Unions.',
             'They all moved to America to find better farming jobs.',
+            'They began exploring collective bargaining through Trade Unions.',
           ],
           answer: 'They began exploring collective bargaining through Trade Unions.',
         },
@@ -2194,30 +2685,30 @@ const industrialisation_and_empire = {
           question:
             'Why did the six agricultural laborers in Tolpuddle form a friendly society in 1834?',
           options: [
-            'To protest a wage cut and force employers to pay fair wages.',
-            'To build their own threshing machines.',
             'To raise money to travel to London.',
             'To overthrow the King.',
+            'To protest a wage cut and force employers to pay fair wages.',
+            'To build their own threshing machines.',
           ],
           answer: 'To protest a wage cut and force employers to pay fair wages.',
         },
         {
           question: 'What obscure 1797 law did the government use to arrest the Tolpuddle Martyrs?',
           options: [
-            'A law banning workers from leaving their village without permission.',
-            'A law banning all forms of public gatherings.',
             'A law banning unlawful secret oaths.',
             'A law banning the destruction of farm equipment.',
+            'A law banning all forms of public gatherings.',
+            'A law banning workers from leaving their village without permission.',
           ],
           answer: 'A law banning unlawful secret oaths.',
         },
         {
           question: 'What was the initial sentence given to the Tolpuddle Martyrs?',
           options: [
+            'Execution by hanging.',
+            'Life in a British prison.',
             'A large financial fine.',
             "Seven years' transportation to Australia.",
-            'Life in a British prison.',
-            'Execution by hanging.',
           ],
           answer: "Seven years' transportation to Australia.",
         },
@@ -2225,10 +2716,10 @@ const industrialisation_and_empire = {
           question:
             'By 1838, what did working-class leaders realize was the only way to permanently change factory conditions and low wages?',
           options: [
-            'Moving out of the cities and back to the countryside.',
-            'Asking the King to personally intervene on their behalf.',
             'Continuing to burn down hayricks and break machines.',
+            'Asking the King to personally intervene on their behalf.',
             'Achieving structural constitutional reform so working-class men could sit in Parliament.',
+            'Moving out of the cities and back to the countryside.',
           ],
           answer:
             'Achieving structural constitutional reform so working-class men could sit in Parliament.',
@@ -2236,17 +2727,17 @@ const industrialisation_and_empire = {
         {
           question:
             'What was the name of the first mass working-class democratic movement in British history launched in 1838?',
-          options: ['Chartism', 'The Suffragettes', 'The Luddites', 'The Trade Union Congress'],
+          options: ['The Suffragettes', 'Chartism', 'The Luddites', 'The Trade Union Congress'],
           answer: 'Chartism',
         },
         {
           question:
             "Which of the following was NOT one of the six core demands of the People's Charter?",
           options: [
-            'Universal male suffrage (the right to vote).',
-            'Salaries for MPs so poor men could run for office.',
             'Equal pay for men and women.',
+            'Universal male suffrage (the right to vote).',
             'Secret ballots to stop voter intimidation.',
+            'Salaries for MPs so poor men could run for office.',
           ],
           answer: 'Equal pay for men and women.',
         },
@@ -2254,10 +2745,10 @@ const industrialisation_and_empire = {
           question:
             'What action did the Chartists take to pressure Parliament into accepting their demands?',
           options: [
-            'They bought all the threshing machines in England and destroyed them.',
-            'They set fire to the Houses of Parliament.',
             'They kidnapped several wealthy Members of Parliament.',
+            'They set fire to the Houses of Parliament.',
             'They gathered millions of signatures on three mammoth petitions in 1839, 1842, and 1848.',
+            'They bought all the threshing machines in England and destroyed them.',
           ],
           answer:
             'They gathered millions of signatures on three mammoth petitions in 1839, 1842, and 1848.',
@@ -2266,10 +2757,10 @@ const industrialisation_and_empire = {
           question:
             "Although Parliament rejected all the Chartist petitions at the time, what was the movement's long-term legacy?",
           options: [
-            'It caused the government to ban all political parties permanently.',
-            'By 1928, five of its six democratic demands had slowly become the law of the land.',
             'It forced the British establishment to immediately hand over power in 1848.',
+            'By 1928, five of its six democratic demands had slowly become the law of the land.',
             'It proved that working-class people could never organize effectively.',
+            'It caused the government to ban all political parties permanently.',
           ],
           answer:
             'By 1928, five of its six democratic demands had slowly become the law of the land.',
@@ -2530,10 +3021,10 @@ const industrialisation_and_empire = {
         {
           question: 'What was the 1819 Peterloo Massacre?',
           options: [
-            'A violent riot in London where Chartists attacked Parliament.',
-            'An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.',
             'A battle between the British and the French near Manchester.',
             'A peaceful protest where agricultural workers burned threshing machines.',
+            'A violent riot in London where Chartists attacked Parliament.',
+            'An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.',
           ],
           answer:
             'An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.',
@@ -2543,9 +3034,9 @@ const industrialisation_and_empire = {
             "Which of the following was one of the core demands made by the Chartists in the 'People's Charter'?",
           options: [
             'Universal male suffrage and secret ballots.',
-            'The abolition of the monarchy.',
             'A guarantee of minimum wage for all factory workers.',
             'The right for women to vote.',
+            'The abolition of the monarchy.',
           ],
           answer: 'Universal male suffrage and secret ballots.',
         },
@@ -2553,8 +3044,8 @@ const industrialisation_and_empire = {
           question:
             "Why did agricultural laborers in Hampshire launch the violent 'Swing Riots' in 1830?",
           options: [
-            'They were angry about the high cost of bread imported from France.',
             'They wanted the right to vote in the next election.',
+            'They were angry about the high cost of bread imported from France.',
             'They were protesting against the harsh conditions of the new workhouses.',
             'They were facing starvation wages and winter unemployment caused by threshing machines.',
           ],
@@ -2564,9 +3055,9 @@ const industrialisation_and_empire = {
         {
           question: 'Before 1832, who was allowed to vote in British elections?',
           options: [
-            'Both men and women over the age of 21.',
             'All adult men.',
             'Only a tiny minority of wealthy male property owners.',
+            'Both men and women over the age of 21.',
             'Anyone who could prove they could read and write.',
           ],
           answer: 'Only a tiny minority of wealthy male property owners.',
@@ -2574,8 +3065,8 @@ const industrialisation_and_empire = {
         {
           question: "What was a 'Rotten Borough' before 1832?",
           options: [
-            'A district where all the voters were secretly corrupt and took bribes from the King.',
             'A massive industrial city like Manchester with no MPs.',
+            'A district where all the voters were secretly corrupt and took bribes from the King.',
             'An abandoned medieval village that had almost no people but still sent two MPs to Parliament.',
             'A poor slum area in a major city that was not allowed to vote.',
           ],
@@ -2585,19 +3076,19 @@ const industrialisation_and_empire = {
         {
           question: 'What was Newtown on the Isle of Wight a famous example of before 1832?',
           options: [
+            'A Rotten Borough with only 14 houses that still sent two MPs to London.',
+            'The first town in Britain to give working-class men the vote.',
             'The site of a violent Chartist uprising.',
             'A massive industrial city.',
-            'The first town in Britain to give working-class men the vote.',
-            'A Rotten Borough with only 14 houses that still sent two MPs to London.',
           ],
           answer: 'A Rotten Borough with only 14 houses that still sent two MPs to London.',
         },
         {
           question: "What was a 'Pocket Borough'?",
           options: [
-            'A seat in Parliament completely controlled by a wealthy local landowner.',
-            'A borough small enough to fit inside a single town hall.',
             "A voting district where people could vote secretly in a small box or 'pocket'.",
+            'A borough small enough to fit inside a single town hall.',
+            'A seat in Parliament completely controlled by a wealthy local landowner.',
             'A constituency set up especially for poor working men.',
           ],
           answer: 'A seat in Parliament completely controlled by a wealthy local landowner.',
@@ -2605,10 +3096,10 @@ const industrialisation_and_empire = {
         {
           question: 'Why did the government finally pass the Great Reform Act in 1832?',
           options: [
-            "Because the working classes had peacefully asked for it in the People's Charter.",
             'Because they feared a violent revolution similar to the Swing Riots and the French Revolution.',
-            'Because they believed that democracy was the only fair system of government.',
             'Because Queen Victoria ordered them to change the law.',
+            "Because the working classes had peacefully asked for it in the People's Charter.",
+            'Because they believed that democracy was the only fair system of government.',
           ],
           answer:
             'Because they feared a violent revolution similar to the Swing Riots and the French Revolution.',
@@ -2616,10 +3107,10 @@ const industrialisation_and_empire = {
         {
           question: 'Which of the following was a key change made by the 1832 Great Reform Act?',
           options: [
-            'It introduced the secret ballot.',
             'It gave the vote to all working-class men.',
-            'It abolished 56 Rotten Boroughs and created new constituencies for industrial cities.',
+            'It introduced the secret ballot.',
             'It gave women the right to vote for the first time.',
+            'It abolished 56 Rotten Boroughs and created new constituencies for industrial cities.',
           ],
           answer:
             'It abolished 56 Rotten Boroughs and created new constituencies for industrial cities.',
@@ -2627,19 +3118,19 @@ const industrialisation_and_empire = {
         {
           question: 'Who was granted the right to vote by the 1832 Great Reform Act?',
           options: [
-            'Everyone who worked in an industrial factory.',
-            'Only the nobility and the wealthiest landowners.',
             'All men over the age of 21.',
             'Middle-class men who owned property worth £10 a year.',
+            'Only the nobility and the wealthiest landowners.',
+            'Everyone who worked in an industrial factory.',
           ],
           answer: 'Middle-class men who owned property worth £10 a year.',
         },
         {
           question: 'How did the working classes react to the 1832 Great Reform Act?',
           options: [
-            'They felt bitterly betrayed because they were deliberately excluded from voting.',
             'They celebrated because they finally had a voice in Parliament.',
             'They ignored it because they did not care about politics.',
+            'They felt bitterly betrayed because they were deliberately excluded from voting.',
             'They started a war with France to unite the country.',
           ],
           answer:
@@ -2648,10 +3139,10 @@ const industrialisation_and_empire = {
         {
           question: 'Before 1872, how did a man cast his vote in an election?',
           options: [
-            'By sending a letter through the Royal Mail.',
-            "By standing on a public platform (the 'hustings') and shouting out the name of the candidate.",
             'By raising his hand in a silent, private room.',
+            "By standing on a public platform (the 'hustings') and shouting out the name of the candidate.",
             'By placing a piece of paper in a locked ballot box.',
+            'By sending a letter through the Royal Mail.',
           ],
           answer:
             "By standing on a public platform (the 'hustings') and shouting out the name of the candidate.",
@@ -2661,9 +3152,9 @@ const industrialisation_and_empire = {
             'Why was the system of public voting before 1872 so unfair to working-class men?',
           options: [
             'Because landlords and factory owners could intimidate them into voting a certain way under threat of being fired or evicted.',
-            'Because they had to pay a large fee every time they shouted their vote.',
             "Because only the rich were allowed to stand on the 'hustings'.",
             'Because they were often too shy to speak in public.',
+            'Because they had to pay a large fee every time they shouted their vote.',
           ],
           answer:
             'Because landlords and factory owners could intimidate them into voting a certain way under threat of being fired or evicted.',
@@ -2671,40 +3162,40 @@ const industrialisation_and_empire = {
         {
           question: 'What did the 1872 Secret Ballot Act require voters to do?',
           options: [
-            'Hide their faces with masks while standing on the public platform.',
-            'Vote in a private wooden booth using a printed paper dropped into a locked box.',
             'Vote for only one candidate in complete silence.',
             'Swear a secret oath to the King before voting.',
+            'Hide their faces with masks while standing on the public platform.',
+            'Vote in a private wooden booth using a printed paper dropped into a locked box.',
           ],
           answer: 'Vote in a private wooden booth using a printed paper dropped into a locked box.',
         },
         {
           question: 'What was the immediate consequence of the 1872 Secret Ballot Act?',
           options: [
-            'Voter turnout dropped dramatically because people found the paper confusing.',
-            'The King cancelled all future elections.',
-            'The working classes rioted because they wanted to vote in public.',
             'The power of elite bribery and intimidation collapsed almost overnight.',
+            'Voter turnout dropped dramatically because people found the paper confusing.',
+            'The working classes rioted because they wanted to vote in public.',
+            'The King cancelled all future elections.',
           ],
           answer: 'The power of elite bribery and intimidation collapsed almost overnight.',
         },
         {
           question: 'Which group of people was given the vote by the 1867 Second Reform Act?',
           options: [
-            'Only the wealthiest merchants in London.',
+            'All women over the age of 30.',
             'Agricultural laborers and miners in the countryside.',
             'Skilled working-class men in urban towns and cities.',
-            'All women over the age of 30.',
+            'Only the wealthiest merchants in London.',
           ],
           answer: 'Skilled working-class men in urban towns and cities.',
         },
         {
           question: 'What did the 1884 Third Reform Act achieve?',
           options: [
-            'It introduced the secret ballot across the entire British Empire.',
-            'It extended the vote to agricultural laborers and miners in the countryside.',
-            'It gave the vote to women for the first time.',
             'It took the vote away from the working classes.',
+            'It introduced the secret ballot across the entire British Empire.',
+            'It gave the vote to women for the first time.',
+            'It extended the vote to agricultural laborers and miners in the countryside.',
           ],
           answer: 'It extended the vote to agricultural laborers and miners in the countryside.',
         },
@@ -2712,10 +3203,10 @@ const industrialisation_and_empire = {
           question:
             'Why did Conservative politicians like Benjamin Disraeli eventually expand the vote to the working classes in 1867?',
           options: [
-            'Because they hoped the newly enfranchised workers would be grateful and vote for the Conservative party.',
-            'Because they had run out of wealthy landowners to vote for them.',
-            'Because they were forced to by the French government.',
             'Because they genuinely believed every man deserved an equal voice.',
+            'Because they hoped the newly enfranchised workers would be grateful and vote for the Conservative party.',
+            'Because they were forced to by the French government.',
+            'Because they had run out of wealthy landowners to vote for them.',
           ],
           answer:
             'Because they hoped the newly enfranchised workers would be grateful and vote for the Conservative party.',
@@ -2724,10 +3215,10 @@ const industrialisation_and_empire = {
           question:
             "Based on MP Robert Lowe's 1866 speech, what was the underlying fear that wealthy elites had about expanding democracy?",
           options: [
-            'They feared that foreign spies would infiltrate the voting booths.',
             'They feared that giving men the vote would lead to women demanding the vote too.',
-            "They feared the 'ignorant and violent' working classes would vote to tax the wealthy and destroy their privileged institutions.",
             'They feared that elections would become too expensive to run.',
+            'They feared that foreign spies would infiltrate the voting booths.',
+            "They feared the 'ignorant and violent' working classes would vote to tax the wealthy and destroy their privileged institutions.",
           ],
           answer:
             "They feared the 'ignorant and violent' working classes would vote to tax the wealthy and destroy their privileged institutions.",
@@ -2735,7 +3226,7 @@ const industrialisation_and_empire = {
         {
           question:
             'By 1884, approximately what percentage of adult men in Britain had a secure, private vote?',
-          options: ['100%', '10%', '30%', '60%'],
+          options: ['30%', '100%', '60%', '10%'],
           answer: '60%',
         },
       ],
@@ -2959,29 +3450,29 @@ const industrialisation_and_empire = {
           question:
             'Which historical perspective argues that 19th-century Britain experienced unmatched national progress?',
           options: [
-            'The Traditional View',
-            'The Marxist View',
             'The Pessimist View',
             'The Optimist View',
+            'The Marxist View',
+            'The Traditional View',
           ],
           answer: 'The Optimist View',
         },
         {
           question:
             'What local Hampshire industrialist revolutionized iron production with the puddling process?',
-          options: ['Edwin Chadwick', 'George Stephenson', 'Henry Cort', 'Isambard Kingdom Brunel'],
+          options: ['Henry Cort', 'Isambard Kingdom Brunel', 'George Stephenson', 'Edwin Chadwick'],
           answer: 'Henry Cort',
         },
         {
           question: "How much did Henry Cort's puddling process increase iron production?",
-          options: ['400%', '1000%', '100%', '50%'],
+          options: ['50%', '1000%', '100%', '400%'],
           answer: '400%',
         },
         {
           question: "What famous London monument was built using 'Fareham Red' bricks?",
           options: [
-            'The Tower of London',
             'The Royal Albert Hall',
+            'The Tower of London',
             'Buckingham Palace',
             "St. Paul's Cathedral",
           ],
@@ -2990,42 +3481,42 @@ const industrialisation_and_empire = {
         {
           question:
             "What ship, built with advanced iron processes, helped enforce the global 'Two-Power Standard'?",
-          options: ['HMS Victory', 'HMS Warrior', 'HMS Beagle', 'HMS Dreadnought'],
+          options: ['HMS Victory', 'HMS Warrior', 'HMS Dreadnought', 'HMS Beagle'],
           answer: 'HMS Warrior',
         },
         {
           question:
             "Which historical perspective argues that Britain's wealth masked horrific human misery and exploitation?",
           options: [
-            'The Capitalist View',
             'The Whig View',
-            'The Pessimist View',
             'The Optimist View',
+            'The Pessimist View',
+            'The Capitalist View',
           ],
           answer: 'The Pessimist View',
         },
         {
           question:
             'According to the 1881 Census, what job did 10-year-old boys perform barefoot in the Funtley clay pits?',
-          options: ['Pug boys', 'Trappers', 'Chimney sweeps', 'Piecers'],
+          options: ['Piecers', 'Pug boys', 'Trappers', 'Chimney sweeps'],
           answer: 'Pug boys',
         },
         {
           question:
             'How long were the typical working shifts for child laborers in the Funtley brickfields?',
-          options: ['18 hours', '10 hours', '8 hours', '14 hours'],
+          options: ['8 hours', '10 hours', '18 hours', '14 hours'],
           answer: '14 hours',
         },
         {
           question:
             "What deadly waterborne disease repeatedly broke out in unventilated 'back-to-back' slums?",
-          options: ['Typhoid', 'Tuberculosis', 'Cholera', 'Smallpox'],
+          options: ['Smallpox', 'Tuberculosis', 'Cholera', 'Typhoid'],
           answer: 'Cholera',
         },
         {
           question:
             'Who published an 1842 report proving that slums were deadlier than modern wars?',
-          options: ['Lord Shaftesbury', 'Charles Dickens', 'Henry Cort', 'Edwin Chadwick'],
+          options: ['Edwin Chadwick', 'Lord Shaftesbury', 'Charles Dickens', 'Henry Cort'],
           answer: 'Edwin Chadwick',
         },
         {
@@ -3034,8 +3525,8 @@ const industrialisation_and_empire = {
           options: [
             "By establishing a 'captive market' that flooded India with cheap British goods",
             'By burning down all Indian textile mills',
-            'By paying Indian weavers double their standard wages',
             'By blocking all global trade routes to India',
+            'By paying Indian weavers double their standard wages',
           ],
           answer: "By establishing a 'captive market' that flooded India with cheap British goods",
         },
@@ -3045,18 +3536,18 @@ const industrialisation_and_empire = {
           options: [
             'The Luddite Rebellions',
             'The Swing Riots',
-            'The Funtley Strike',
             'The Chartism Rallies',
+            'The Funtley Strike',
           ],
           answer: 'The Swing Riots',
         },
         {
           question: 'Why do critical historians argue the 1832 Great Reform Act was passed?',
           options: [
-            'To abolish the monarchy',
-            'Out of elite fear of violent revolution',
-            'To give the working class political power',
             'Because the elite believed in equality',
+            'To give the working class political power',
+            'Out of elite fear of violent revolution',
+            'To abolish the monarchy',
           ],
           answer: 'Out of elite fear of violent revolution',
         },
@@ -3064,35 +3555,35 @@ const industrialisation_and_empire = {
           question:
             'Who was deliberately excluded from voting by the £10 property qualification in the 1832 Great Reform Act?',
           options: [
-            'The working class',
             'The middle class',
             'The aristocracy',
             'Industrial factory owners',
+            'The working class',
           ],
           answer: 'The working class',
         },
         {
           question:
             'What was the name of the first mass working-class political movement that rose in response to the 1832 betrayal?',
-          options: ['The Swing Rioters', 'Trade Unionism', 'Suffragettes', 'Chartism'],
+          options: ['Suffragettes', 'Chartism', 'Trade Unionism', 'The Swing Rioters'],
           answer: 'Chartism',
         },
         {
           question:
             "Which 1872 Act collapsed the elite's mechanism of landlord bribery and voter intimidation?",
           options: [
-            'The Factory Act',
-            'The Representation of the People Act',
             'The Secret Ballot Act',
+            'The Representation of the People Act',
             'The Great Reform Act',
+            'The Factory Act',
           ],
           answer: 'The Secret Ballot Act',
         },
         {
           question: "In historical writing, what does 'synthesis' mean?",
           options: [
-            'Writing from a purely biased perspective',
             'Listing historical facts in chronological order',
+            'Writing from a purely biased perspective',
             'Combining different data points and interpretations into a balanced argument',
             'Ignoring evidence that contradicts your main point',
           ],
@@ -3101,10 +3592,10 @@ const industrialisation_and_empire = {
         {
           question: "What was a 'Rotten Borough' in the pre-reform British electoral system?",
           options: [
+            'A corrupt town council that stole tax money',
+            'An industrial city with massive populations but zero MPs',
             'A district that only allowed the working class to vote',
             'A voting district with virtually no population that still sent two MPs to Parliament',
-            'An industrial city with massive populations but zero MPs',
-            'A corrupt town council that stole tax money',
           ],
           answer:
             'A voting district with virtually no population that still sent two MPs to Parliament',
@@ -3112,7 +3603,7 @@ const industrialisation_and_empire = {
         {
           question:
             "Which local Hampshire town is a famous example of a 'Rotten Borough' with only 14 houses?",
-          options: ['Winchester', 'Portsmouth', 'Fareham', 'Newtown on the Isle of Wight'],
+          options: ['Fareham', 'Portsmouth', 'Winchester', 'Newtown on the Isle of Wight'],
           answer: 'Newtown on the Isle of Wight',
         },
         {
@@ -3132,9 +3623,9 @@ const industrialisation_and_empire = {
             "What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?",
           options: [
             'Incorrect Option A',
+            'Incorrect Option B',
             'A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.',
             'Incorrect Option C',
-            'Incorrect Option B',
           ],
           answer:
             'A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.',
@@ -3144,9 +3635,9 @@ const industrialisation_and_empire = {
             'How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?',
           options: [
             'Incorrect Option A',
+            'The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.',
             'Incorrect Option B',
             'Incorrect Option C',
-            'The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.',
           ],
           answer:
             'The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.',
@@ -3155,10 +3646,10 @@ const industrialisation_and_empire = {
           question:
             'Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?',
           options: [
-            'Incorrect Option C',
+            'Incorrect Option A',
             'Incorrect Option B',
             "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.",
-            'Incorrect Option A',
+            'Incorrect Option C',
           ],
           answer:
             "Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.",
