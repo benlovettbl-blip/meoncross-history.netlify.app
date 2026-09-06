@@ -50,8 +50,9 @@ function mulberry32(seed) {
   };
 }
 
-function deterministicShuffle(array, seedStr) {
-  const rng = mulberry32(getDeterministicHash(seedStr));
+function deterministicShuffle(array, rngOrSeed) {
+  const rng =
+    typeof rngOrSeed === 'function' ? rngOrSeed : mulberry32(getDeterministicHash(rngOrSeed));
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
@@ -132,11 +133,12 @@ function rebalanceUnit(unitId) {
   walk(ast, null);
   console.log(`🔍 Found ${targets.length} multiple-choice question(s) in ${unitId}.`);
 
-  // 4. Collect non-overlapping replacement chunks
+  // 4. Collect non-overlapping replacement chunks using Balanced Block Randomization
   const chunks = [];
   let rebalancedCount = 0;
 
-  for (const item of targets) {
+  for (let qIdx = 0; qIdx < targets.length; qIdx++) {
+    const item = targets[qIdx];
     const qText = String(getValue(item.qProp) || '');
     const aVal = getValue(item.aProp);
 
@@ -172,9 +174,29 @@ function rebalanceUnit(unitId) {
     const correctIndex = originalOptions.findIndex((opt) => opt.trim() === correctText);
     if (correctIndex === -1) continue;
 
-    // Shuffle options deterministically
-    const seed = qText + '::' + unitId;
-    const shuffled = deterministicShuffle(originalOptions, seed);
+    // Distractors
+    const distractors = originalOptions.filter((opt) => opt.trim() !== correctText);
+    const distractorRng = mulberry32(getDeterministicHash(qText + '::distractors::' + unitId));
+    const shuffledDistractors = deterministicShuffle(distractors, distractorRng);
+
+    // Balanced block target position (ensures exactly 25% A, B, C, D across every 4-question block)
+    const blockIdx = Math.floor(qIdx / 4);
+    const posInBlock = qIdx % 4;
+    const blockRng = mulberry32(getDeterministicHash(unitId + '::blk::' + blockIdx));
+    const blockPerm = deterministicShuffle([0, 1, 2, 3], blockRng);
+    const targetPos =
+      originalOptions.length === 4 ? blockPerm[posInBlock] : posInBlock % originalOptions.length;
+
+    // Construct balanced options array
+    const shuffled = [];
+    let dIdx = 0;
+    for (let i = 0; i < originalOptions.length; i++) {
+      if (i === targetPos) {
+        shuffled.push(correctText);
+      } else {
+        shuffled.push(shuffledDistractors[dIdx++]);
+      }
+    }
 
     // Find original indentation from source code
     const lineStart = originalCode.lastIndexOf('\n', item.optionsArray.start) + 1;
@@ -196,20 +218,18 @@ function rebalanceUnit(unitId) {
       replacement: formattedOptions,
     });
 
-    const newAnswerIdx = shuffled.findIndex((opt) => opt.trim() === correctText);
-
     // If answer was numeric or string-numeric, add answer value chunk
     if (isNumeric && item.aProp.value.type === 'Literal') {
       chunks.push({
         start: item.aProp.value.start,
         end: item.aProp.value.end,
-        replacement: String(newAnswerIdx),
+        replacement: String(targetPos),
       });
     } else if (isStringNumeric && item.aProp.value.type === 'Literal') {
       chunks.push({
         start: item.aProp.value.start,
         end: item.aProp.value.end,
-        replacement: JSON.stringify(String(newAnswerIdx)),
+        replacement: JSON.stringify(String(targetPos)),
       });
     }
 
@@ -253,11 +273,14 @@ const targetUnits =
   process.argv.slice(2).length > 0
     ? process.argv.slice(2)
     : [
-        'medieval_england',
-        'great_war',
-        'great_war_part2',
+        'early_modern_world',
         'edexcel_medicine',
         'eee',
+        'great_war',
+        'great_war_part2',
+        'industrialisation_and_empire',
+        'medieval_england',
+        'water_and_sanitation',
         'weimar_nazi_germany',
       ];
 

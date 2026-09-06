@@ -107,10 +107,10 @@ export default {
           {
             question: 'Which of these was a long-term cause of WWI?',
             options: [
-              'The Treaty of Versailles',
               'The Schlieffen Plan failing',
-              'The assassination of Archduke Franz Ferdinand',
               'The Alliance System',
+              'The assassination of Archduke Franz Ferdinand',
+              'The Treaty of Versailles',
             ],
             answer: 2,
             explanation:
@@ -161,19 +161,19 @@ export default {
           question:
             'Which local Hampshire regiment battalions were heavily recruited from the Stubbington and Portsmouth areas in 1914?',
           options: [
+            'The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).',
             'The Stubbington Guards.',
             "Kitchener's Fareham Conscripts.",
-            'The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             'Which statement best explains why white feathers were such a powerful recruitment tool?',
           options: [
             'They weaponized social shame and humiliation within close-knit local communities.',
-            'They carried legal force and resulted in a heavy fine.',
             'They were official government warnings that a man was about to be arrested.',
+            'They carried legal force and resulted in a heavy fine.',
           ],
           answer: 0,
         },
@@ -181,19 +181,19 @@ export default {
           question:
             "Why do modern historians like Gary Sheffield argue that many working-class men joined the army for 'pragmatic' reasons?",
           options: [
-            'The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.',
-            'They were tricked by romanticized stories of quick, glorious victories.',
             'They were promised free houses in London after the war ended.',
+            'They were tricked by romanticized stories of quick, glorious victories.',
+            'The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.',
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question:
             "According to historian Catriona Pennell, what was a key 'moral' reason for British enlistment in 1914?",
           options: [
-            'The need to escape the boring, repetitive work of the textile mills.',
-            'The fear of being fired by an employer who demanded they join.',
             'The desire to protect international law and civilization after Germany invaded neutral Belgium.',
+            'The fear of being fired by an employer who demanded they join.',
+            'The need to escape the boring, repetitive work of the textile mills.',
           ],
           answer: 1,
         },
@@ -357,27 +357,27 @@ export default {
         {
           q: 'Which Serbian nationalist group assassinated Archduke Franz Ferdinand in Sarajevo?',
           a: 'The Black Hand',
-          options: ['The Red Baron', 'The White Rose', 'The Balkan Brotherhood', 'The Black Hand'],
+          options: ['The Balkan Brotherhood', 'The Black Hand', 'The White Rose', 'The Red Baron'],
         },
         {
           q: 'Which European empire declared war on Serbia first during the July Days?',
           a: 'Austria-Hungary',
-          options: ['Austria-Hungary', 'Germany', 'Russia', 'Great Britain'],
+          options: ['Great Britain', 'Russia', 'Germany', 'Austria-Hungary'],
         },
         {
           q: 'Who was the British Secretary of State for War who launched a massive recruitment campaign in 1914?',
           a: 'Lord Horatio Kitchener',
           options: [
-            'David Lloyd George',
             'Douglas Haig',
-            'Winston Churchill',
+            'David Lloyd George',
             'Lord Horatio Kitchener',
+            'Winston Churchill',
           ],
         },
         {
           q: 'What was the nickname given to battalions made up of friends, colleagues, and neighbors who enlisted together?',
           a: 'Pals Battalions',
-          options: ['Buddy Brigades', 'Comrade Companies', 'Mates Regiments', 'Pals Battalions'],
+          options: ['Pals Battalions', 'Buddy Brigades', 'Comrade Companies', 'Mates Regiments'],
         },
       ],
       video: [
@@ -684,8 +684,8 @@ export default {
           q: 'What was the main cause of the medical condition known as "trench foot" during WWI?',
           a: 'Prolonged exposure to freezing, wet, and unsanitary mud inside boots.',
           options: [
-            'Prolonged exposure to freezing, wet, and unsanitary mud inside boots.',
             'Being shot in the foot by an enemy sniper.',
+            'Prolonged exposure to freezing, wet, and unsanitary mud inside boots.',
             'Inhaling poisonous gas clouds without wearing a mask.',
             'Bites from disease-carrying black rats and lice.',
           ],
@@ -695,34 +695,34 @@ export default {
           a: 'German soldiers survived safely inside deep, concrete-reinforced underground bunkers.',
           options: [
             'The British artillery fired in the wrong direction due to poor maps.',
+            'The British simply ran out of ammunition.',
             'The German army used giant electric magnets to deflect the shells.',
             'German soldiers survived safely inside deep, concrete-reinforced underground bunkers.',
-            'The British simply ran out of ammunition.',
           ],
         },
         {
           q: 'On which date did the infamous first day of the Battle of the Somme occur?',
           a: 'July 1, 1916',
-          options: ['July 1, 1916', 'August 4, 1914', 'November 11, 1918', 'June 28, 1914'],
+          options: ['July 1, 1916', 'November 11, 1918', 'June 28, 1914', 'August 4, 1914'],
         },
         {
           q: 'What name is given to the popular historical viewpoint that brave British troops were commanded by foolish, incompetent generals?',
           a: 'Lions led by Donkeys',
           options: [
-            'The Silent Front',
+            'The Kitchener Stampede',
             'The Grand Illusion',
             'Lions led by Donkeys',
-            'The Kitchener Stampede',
+            'The Silent Front',
           ],
         },
         {
           q: 'How did modern "revisionist" historians change the historical debate surrounding General Douglas Haig?',
           a: 'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
           options: [
-            'They claimed he deliberately tried to lose the war to help France.',
-            'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
-            'They discovered that he was secretly a double agent working for the German Empire.',
             'They proved that he never actually visited the Western Front during the war.',
+            'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
+            'They claimed he deliberately tried to lose the war to help France.',
+            'They discovered that he was secretly a double agent working for the German Empire.',
           ],
         },
       ],
@@ -874,11 +874,11 @@ export default {
           question:
             'Which imperial force contributed over 1.5 million men to the British war effort, fighting in places like Ypres and Mesopotamia?',
           options: [
+            'The British West Indies Regiment',
             'The Australian and New Zealand Army Corps (ANZAC)',
             'The British Indian Army',
-            'The British West Indies Regiment',
           ],
-          answer: 2,
+          answer: 0,
         },
         {
           question:
@@ -894,26 +894,26 @@ export default {
           question: 'What happened in Taranto, Italy, in 1918?',
           options: [
             'The British Army officially apologized for its racist policies.',
-            'Indian troops broke through the German lines and ended the war.',
             'Soldiers of the BWIR mutinied in protest against systemic racism and degrading conditions.',
+            'Indian troops broke through the German lines and ended the war.',
           ],
-          answer: 1,
+          answer: 2,
         },
         {
           question:
             "What does historian David Olusoga mean when he discusses 'historical amnesia' regarding WWI?",
           options: [
-            'The way the massive contributions of non-white imperial troops were deliberately left out of popular history to maintain a myth of white imperial superiority.',
             'The fact that soldiers who suffered from shell shock lost their memories.',
+            'The way the massive contributions of non-white imperial troops were deliberately left out of popular history to maintain a myth of white imperial superiority.',
             'The failure of the British government to keep accurate records of casualties.',
           ],
-          answer: 1,
+          answer: 0,
         },
         {
           question:
             'Which term best describes a historical narrative (like Interpretation 1) that focuses almost exclusively on white, European experiences while ignoring the rest of the world?',
-          options: ['Eurocentric', 'Pragmatic', 'Revisionist'],
-          answer: 1,
+          options: ['Pragmatic', 'Eurocentric', 'Revisionist'],
+          answer: 0,
         },
       ],
       narrative_blocks: [
@@ -1051,16 +1051,16 @@ export default {
         {
           q: 'Approximately how many men from the British Empire and its dominions served in the First World War?',
           a: '3 million',
-          options: ['3 million', '500,000', '10 million', '100,000'],
+          options: ['3 million', '100,000', '500,000', '10 million'],
         },
         {
           q: 'Which imperial army sent over 1.5 million men to fight in the war?',
           a: 'The British Indian Army',
           options: [
-            'The South African Defence Force',
-            'The Australian Imperial Force',
             'The Canadian Army',
+            'The South African Defence Force',
             'The British Indian Army',
+            'The Australian Imperial Force',
           ],
         },
         {
@@ -1071,16 +1071,16 @@ export default {
         {
           q: 'In December 1918, where did members of the British West Indies Regiment mutiny due to severe racial discrimination?',
           a: 'Taranto, Italy',
-          options: ['Taranto, Italy', 'London, England', 'Ypres, Belgium', 'Cairo, Egypt'],
+          options: ['London, England', 'Ypres, Belgium', 'Cairo, Egypt', 'Taranto, Italy'],
         },
         {
           q: 'Despite their massive sacrifices, how were imperial troops often treated in the official post-war victory celebrations?',
           a: 'They were largely forgotten and excluded from events like the London Victory Parade.',
           options: [
+            'They were granted immediate independence for their home countries.',
             'They were given the highest honors and led the parades.',
             'They were largely forgotten and excluded from events like the London Victory Parade.',
             'They were all given British citizenship and land.',
-            'They were granted immediate independence for their home countries.',
           ],
         },
       ],
@@ -1357,41 +1357,41 @@ export default {
         {
           q: 'What term describes a conflict where the boundary between soldiers and civilians vanishes?',
           a: 'Total War',
-          options: ['Unlimited War', 'Civilian Warfare', 'Total War', 'Absolute War'],
+          options: ['Total War', 'Absolute War', 'Unlimited War', 'Civilian Warfare'],
         },
         {
           q: 'What law gave the British government sweeping emergency powers in August 1914?',
           a: 'The Defense of the Realm Act (DORA)',
           options: [
             'The Conscription Act',
-            'The Emergency Powers Act',
-            'The Civilian Control Order',
             'The Defense of the Realm Act (DORA)',
+            'The Civilian Control Order',
+            'The Emergency Powers Act',
           ],
         },
         {
           q: 'What nickname was given to women who worked in munitions factories and suffered from yellow skin due to toxic TNT?',
           a: 'Canary Girls',
-          options: ['Yellow Women', 'TNT Ladies', 'Canary Girls', 'Explosive Girls'],
+          options: ['TNT Ladies', 'Canary Girls', 'Explosive Girls', 'Yellow Women'],
         },
         {
           q: 'What term describes men who refused to fight in the war on moral, political, or religious grounds?',
           a: 'Conscientious Objectors',
           options: [
-            'Pacifist Resisters',
             'Conscientious Objectors',
-            'Anti-War Rebels',
+            'Pacifist Resisters',
             'Cowardly Dodgers',
+            'Anti-War Rebels',
           ],
         },
         {
           q: 'How did the British government respond to the severe food shortages caused by German U-boat attacks in 1918?',
           a: 'They introduced rationing to ensure fair distribution of food.',
           options: [
-            'They imported all their food from America.',
-            'They forced citizens to grow their own food or face prison.',
-            'They introduced rationing to ensure fair distribution of food.',
             'They surrendered to Germany.',
+            'They forced citizens to grow their own food or face prison.',
+            'They imported all their food from America.',
+            'They introduced rationing to ensure fair distribution of food.',
           ],
         },
       ],
@@ -1631,46 +1631,46 @@ export default {
         {
           q: 'What date was the Treaty of Versailles officially signed by Allied and German leaders?',
           a: 'June 28, 1919',
-          options: ['September 1, 1939', 'November 11, 1918', 'June 28, 1919', 'January 1, 1914'],
+          options: ['January 1, 1914', 'September 1, 1939', 'June 28, 1919', 'November 11, 1918'],
         },
         {
           q: "Which US President proposed the 'Fourteen Points' and wanted to create a League of Nations?",
           a: 'Woodrow Wilson',
           options: [
             'Franklin D. Roosevelt',
+            'Woodrow Wilson',
             'David Lloyd George',
             'Georges Clemenceau',
-            'Woodrow Wilson',
           ],
         },
         {
           q: 'What was the name of Article 231 of the Treaty of Versailles?',
           a: 'The War Guilt Clause',
           options: [
-            'The War Guilt Clause',
-            'The Demilitarization Act',
             'The Reparation Standard',
             'The Armistice Agreement',
+            'The Demilitarization Act',
+            'The War Guilt Clause',
           ],
         },
         {
           q: 'Why do modern revisionist historians like Margaret MacMillan argue Versailles was NOT excessively harsh?',
           a: 'Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.',
           options: [
-            'Because Britain and France gave Germany new colonies in Africa to help them recover.',
-            'Because Germany was allowed to keep a massive 1 million man army.',
             'Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.',
+            'Because Germany was allowed to keep a massive 1 million man army.',
             "Because the Allies forgave Germany's debt in 1920.",
+            'Because Britain and France gave Germany new colonies in Africa to help them recover.',
           ],
         },
         {
           q: "Why did the German people call the Treaty of Versailles a 'Diktat'?",
           a: 'They were completely excluded from the peace talks and forced to sign it.',
           options: [
-            'It was dictated directly by Adolf Hitler.',
-            'It was signed in a railway carriage in the middle of a German forest.',
             "The entire treaty was written in a secret code they couldn't read.",
+            'It was signed in a railway carriage in the middle of a German forest.',
             'They were completely excluded from the peace talks and forced to sign it.',
+            'It was dictated directly by Adolf Hitler.',
           ],
         },
       ],
@@ -1937,37 +1937,37 @@ export default {
         {
           q: 'In what year was the Stubbington War Memorial erected?',
           a: '1922',
-          options: ['1918', '1922', '1914', '1939'],
+          options: ['1939', '1922', '1918', '1914'],
         },
         {
           q: 'What physical structure does the Stubbington War Memorial cover?',
           a: 'The local village pump.',
           options: [
             'The local village pump.',
-            'The entrance to the local church.',
             'An old artillery gun brought back from France.',
             'The village post office.',
+            'The entrance to the local church.',
           ],
         },
         {
           q: 'Who proposed and designed the memorial in Stubbington?',
           a: 'The mother of the only woman commemorated among the fallen.',
           options: [
-            'Lord Kitchener.',
             'A famous London architect.',
-            'The mother of the only woman commemorated among the fallen.',
             'The Mayor of Fareham.',
+            'The mother of the only woman commemorated among the fallen.',
+            'Lord Kitchener.',
           ],
         },
         {
           q: 'How many names of the fallen are recorded on the Stubbington memorial?',
           a: '67',
-          options: ['67', '12', '300', '45'],
+          options: ['12', '300', '45', '67'],
         },
         {
           q: 'What historical term describes the study of a specific family, like the Lowry brothers, to understand a larger global event?',
           a: 'Micro-history',
-          options: ['Micro-history', 'Historiography', 'Macro-economics', 'Demographics'],
+          options: ['Macro-economics', 'Historiography', 'Micro-history', 'Demographics'],
         },
       ],
       video: [
@@ -2107,17 +2107,17 @@ export default {
         {
           q: 'In what year did the First World War begin?',
           a: '1914',
-          options: ['1918', '1939', '1914', '1911'],
+          options: ['1914', '1918', '1939', '1911'],
         },
         {
           q: 'Which country was NOT part of the Triple Entente?',
           a: 'Germany',
-          options: ['Germany', 'Britain', 'France', 'Russia'],
+          options: ['Russia', 'France', 'Britain', 'Germany'],
         },
         {
           q: 'What condition was caused by standing in cold, flooded trenches?',
           a: 'Trench Foot',
-          options: ['Trench Foot', 'Shell Shock', 'Spanish Flu', 'Cholera'],
+          options: ['Shell Shock', 'Trench Foot', 'Cholera', 'Spanish Flu'],
         },
         {
           q: 'How many men from the British Empire and Dominions served in the war?',
@@ -2127,7 +2127,7 @@ export default {
         {
           q: 'What was the nickname given to women working with TNT in factories?',
           a: 'Canary Girls',
-          options: ['Canary Girls', 'Tommies', 'Doughboys', 'Land Girls'],
+          options: ['Doughboys', 'Canary Girls', 'Tommies', 'Land Girls'],
         },
       ],
       teacher_notes: {
@@ -2174,9 +2174,9 @@ export default {
         q: 'Where did many local women from the Fareham and Gosport area go to work handling high explosives for the war effort?',
         a: "The Priddy's Hard armaments depot",
         options: [
-          "The Priddy's Hard armaments depot",
           'The Netley Military Hospital',
           'The Stubbington Textile Mill',
+          "The Priddy's Hard armaments depot",
           'The Portsmouth Naval Dockyard',
         ],
       },
@@ -2184,30 +2184,30 @@ export default {
         q: 'Why do revisionist historians like Gail Braybon argue that the war did NOT truly liberate women?',
         a: 'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
         options: [
-          'Because women were not allowed to join the military.',
-          'Because women refused to leave their homes and do any industrial work.',
           'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
           'Because the government made it illegal for women to earn their own money.',
+          'Because women were not allowed to join the military.',
+          'Because women refused to leave their homes and do any industrial work.',
         ],
       },
       {
         q: 'What was the primary trigger that forced the British government to introduce compulsory food rationing in 1918?',
         a: 'German U-boats sank merchant ships bringing food, causing severe shortages.',
         options: [
-          'German U-boats sank merchant ships bringing food, causing severe shortages.',
           'A national drought ruined all the grain crops in Hampshire.',
           'Factory workers went on strike and refused to bake bread.',
           'The British government sent all the food to France.',
+          'German U-boats sank merchant ships bringing food, causing severe shortages.',
         ],
       },
       {
         q: 'How did the government treat Conscientious Objectors who refused to do any form of military work?',
         a: 'They were sent to harsh labor prisons and stripped of their voting rights.',
         options: [
-          'They were forced to join the royal court as political advisors.',
           'They were exempted from all taxes and given free houses.',
-          'They were exiled to Australia.',
           'They were sent to harsh labor prisons and stripped of their voting rights.',
+          'They were forced to join the royal court as political advisors.',
+          'They were exiled to Australia.',
         ],
       },
     ],
