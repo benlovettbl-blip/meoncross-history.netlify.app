@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 90 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/edexcel_medicine/mastery_pack_renaissance.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/edexcel_medicine/mastery_pack_renaissance.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1448,206 +1937,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>KT2.1: Did the Renaissance change beliefs about the causes of illness?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">Rebirth; a period of reborn interest in classical worlds combined with a love of enquiry and a willingness to challenge old ideas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rebirth; a period of reborn interest in classical worlds combined with a love of enquiry and a willingness to challenge old ideas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">It made the Catholic Church much less able to promote and enforce its preferred beliefs about science and nature</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It made the Catholic Church much less able to promote and enforce its preferred beliefs about science and nature</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">It allowed new, controversial discoveries to be printed rapidly and shared cheaply, making it harder for the Church to censor or block them</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It allowed new, controversial discoveries to be printed rapidly and shared cheaply, making it harder for the Church to censor or block them</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">Because he urged doctors to stop relying blindly on classical books and instead closely observe their patients' symptoms to diagnose them</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because he urged doctors to stop relying blindly on classical books and instead closely observe their patients' symptoms to diagnose them</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">He argued that diseases were separate, independent 'species' that could be grouped and classified like plants, rather than being unique to each individual's humoural balance</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He argued that diseases were separate, independent 'species' that could be grouped and classified like plants, rather than being unique to each individual's humoural balance</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">Measles and Scarlet Fever</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Measles and Scarlet Fever</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">To encourage scientific enquiry, promote empirical experimentation, and provide a hub for scientists to share their research</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To encourage scientific enquiry, promote empirical experimentation, and provide a hub for scientists to share their research</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">'Nullius in verba' (Take nobody's word for it); it encouraged scientists to do experiments to prove things rather than just trusting classical authorities</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'Nullius in verba' (Take nobody's word for it); it encouraged scientists to do experiments to prove things rather than just trusting classical authorities</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">Philosophical Transactions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Philosophical Transactions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">He did not realise that these 'animalcules' actually caused illnesses, meaning spontaneous generation and miasma remained the dominant beliefs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He did not realise that these 'animalcules' actually caused illnesses, meaning spontaneous generation and miasma remained the dominant beliefs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Because patients fully understood the humoural system, and physicians had to respect their clients' expectations to earn a living</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because patients fully understood the humoural system, and physicians had to respect their clients' expectations to earn a living</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">The belief in miasma remained highly popular and became even more widespread during devastating epidemics like the Great Plague of 1665</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The belief in miasma remained highly popular and became even more widespread during devastating epidemics like the Great Plague of 1665</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Because knowing the correct structure of the bones and organs did not give doctors new cures, so they continued to use traditional bleeding and herbal remedies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because knowing the correct structure of the bones and organs did not give doctors new cures, so they continued to use traditional bleeding and herbal remedies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Prescribing airy bedrooms, light blankets, and cold drinks instead of the traditional 'sweating' method</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Prescribing airy bedrooms, light blankets, and cold drinks instead of the traditional 'sweating' method</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">The belief that the monarch could cure skin diseases like scrofula simply by touching the patient, demonstrating how slowly traditional and supernatural beliefs changed</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The belief that the monarch could cure skin diseases like scrofula simply by touching the patient, demonstrating how slowly traditional and supernatural beliefs changed</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">Humanism</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Humanism</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">Students began to observe real human dissections alongside classical texts, using highly accurate printed anatomical illustrations</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Students began to observe real human dissections alongside classical texts, using highly accurate printed anatomical illustrations</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">It guaranteed that every copy of a medical book contained identical, error-free text and precise anatomical drawings</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It guaranteed that every copy of a medical book contained identical, error-free text and precise anatomical drawings</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">Cinchona bark (quinine)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cinchona bark (quinine)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">New anatomical knowledge and clinical observations laid vital foundations for the future, but everyday medical beliefs and treatments for the general public changed very little</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">New anatomical knowledge and clinical observations laid vital foundations for the future, but everyday medical beliefs and treatments for the general public changed very little</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">1348.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1348.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">People who whipped themselves to show penance to God.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">People who whipped themselves to show penance to God.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Carrying sweet-smelling herbs or lighting fires.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Carrying sweet-smelling herbs or lighting fires.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Blood, phlegm, yellow bile, black bile.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Blood, phlegm, yellow bile, black bile.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">Bad air or noxious smells believed to cause disease.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bad air or noxious smells believed to cause disease.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">Galen.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">They provided shelter and care, not medical treatment.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They provided shelter and care, not medical treatment.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">To restore balance to the four humours by releasing excess blood.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To restore balance to the four humours by releasing excess blood.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">Preparing and selling herbal remedies and potions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Preparing and selling herbal remedies and potions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">God sent disease as a punishment for sin or to test faith.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">God sent disease as a punishment for sin or to test faith.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">Knowing the correct structure of bones and organs did not give doctors new chemical cures or treatments, so they continued to use traditional bleeding and purging</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Knowing the correct structure of bones and organs did not give doctors new chemical cures or treatments, so they continued to use traditional bleeding and purging</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">The continued reliance on bloodletting and purging to balance the Four Humours</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The continued reliance on bloodletting and purging to balance the Four Humours</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">The belief that an illness could be transferred to another object or animal, such as rubbing an onion on warts</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The belief that an illness could be transferred to another object or animal, such as rubbing an onion on warts</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">It introduced new, effective herbal ingredients like cinchona bark (quinine) to treat malaria</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It introduced new, effective herbal ingredients like cinchona bark (quinine) to treat malaria</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">The search for chemical and mineral-based cures (using metals like antimony) rather than plant-based remedies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The search for chemical and mineral-based cures (using metals like antimony) rather than plant-based remedies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">Because in large doses it promoted sweating and vomiting to clear the body, but in small doses it was used as a daily general tonic</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because in large doses it promoted sweating and vomiting to clear the body, but in small doses it was used as a daily general tonic</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Henry VIII's Dissolution of the Monasteries</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Henry VIII's Dissolution of the Monasteries</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">They transitioned from monastic control to being run and funded by secular town councils and charities</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They transitioned from monastic control to being run and funded by secular town councils and charities</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">They shifted from providing general hospitality and spiritual 'care' to actively treating wounds and curable physical illnesses</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They shifted from providing general hospitality and spiritual 'care' to actively treating wounds and curable physical illnesses</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">By petitioning Henry VIII, who re-founded the hospital himself under municipal control in 1546</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By petitioning Henry VIII, who re-founded the hospital himself under municipal control in 1546</div>
                 </div>
                 </div>
         </div>
@@ -1658,202 +2155,202 @@
                 <div class="answer-list"><h3>KT2.2: Did treatments improve during the Renaissance?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Specialized, secular isolation hospitals opened by town councils specifically to quarantine people suffering from highly contagious diseases like the plague</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Specialized, secular isolation hospitals opened by town councils specifically to quarantine people suffering from highly contagious diseases like the plague</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">The 'red cure,' which involved drinking red wine, eating red foods, and wearing red clothing</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 'red cure,' which involved drinking red wine, eating red foods, and wearing red clothing</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">They began employing university-trained physicians to actively treat and cure patients' physical conditions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They began employing university-trained physicians to actively treat and cure patients' physical conditions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">Because physicians were extremely expensive, and mothers, wives, or local wise women provided familiar, free, and accessible herbal care</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because physicians were extremely expensive, and mothers, wives, or local wise women provided familiar, free, and accessible herbal care</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">Prescribing ingredients derived from metals and minerals, such as mercury to treat syphilis, or using 'cold deadman's skull' in remedies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Prescribing ingredients derived from metals and minerals, such as mercury to treat syphilis, or using 'cold deadman's skull' in remedies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">They helped to professionalize surgeons by regulating training through apprenticeships, separating their work from simple hair cutting</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They helped to professionalize surgeons by regulating training through apprenticeships, separating their work from simple hair cutting</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">Both outbreaks were treated with humoural remedies (bleeding and purging), herbal mixtures, and prayers, because the cause (germs) was still unknown</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Both outbreaks were treated with humoural remedies (bleeding and purging), herbal mixtures, and prayers, because the cause (germs) was still unknown</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">Because public bath houses became associated with the rapid spread of the 'Great Pox' (syphilis), making people terrified of catching it</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because public bath houses became associated with the rapid spread of the 'Great Pox' (syphilis), making people terrified of catching it</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">That despite monumental scientific discoveries, clinical medicine at the bedside remained heavily based on traditional, medieval humoural treatments</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That despite monumental scientific discoveries, clinical medicine at the bedside remained heavily based on traditional, medieval humoural treatments</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">Treatments remained highly traditional with immense continuity, as the new scientific discoveries in anatomy and physiology did not yet translate into practical bedside cures</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Treatments remained highly traditional with immense continuity, as the new scientific discoveries in anatomy and physiology did not yet translate into practical bedside cures</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">A period of 'rebirth' in learning, art, and science from the 14th to 17th century.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A period of 'rebirth' in learning, art, and science from the 14th to 17th century.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">The printing press.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The printing press.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">An English physician who advocated observing patients' symptoms rather than relying on books.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An English physician who advocated observing patients' symptoms rather than relying on books.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">Andreas Vesalius.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Andreas Vesalius.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Galen had made over 300 mistakes because he dissected animals, not humans.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen had made over 300 mistakes because he dissected animals, not humans.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">1348.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1348.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">Preparing and selling herbal remedies and potions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Preparing and selling herbal remedies and potions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">The scientific method promoted questioning old authorities, and the Reformation weakened Church power.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The scientific method promoted questioning old authorities, and the Reformation weakened Church power.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">Bad air or noxious smells believed to cause disease.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bad air or noxious smells believed to cause disease.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT2.3: How significant were William Harvey and the Great Plague?</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">That the heart acts as a muscular pump circulating blood continuously around the body in a one-way system</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That the heart acts as a muscular pump circulating blood continuously around the body in a one-way system</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">He tied a tight bandage (ligature) around the arm and showed blood could only be pushed past the valves in one direction</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He tied a tight bandage (ligature) around the arm and showed blood could only be pushed past the valves in one direction</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">Galen's theory that the liver constantly manufactures new blood</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen's theory that the liver constantly manufactures new blood</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">Knowing that blood circulated did not cure diseases, so physicians continued to use traditional bleeding and purging</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Knowing that blood circulated did not cure diseases, so physicians continued to use traditional bleeding and purging</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">Many doctors openly criticized or ignored him because his theory had no practical application at the bedside</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Many doctors openly criticized or ignored him because his theory had no practical application at the bedside</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">It took nearly 50 years, with his ideas only regularly appearing in university medical lectures from around 1673</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It took nearly 50 years, with his ideas only regularly appearing in university medical lectures from around 1673</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">Microscopes of the era were not powerful enough to see the tiny capillaries linking arteries and veins</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Microscopes of the era were not powerful enough to see the tiny capillaries linking arteries and veins</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">It served as the essential foundation for subsequent surgical developments, blood transfusions, and cardiology</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It served as the essential foundation for subsequent surgical developments, blood transfusions, and cardiology</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">The Great Plague killed roughly one-fifth of London's population (about 100,000 people), whereas the 1348 Black Death killed nearly 30-50% of the entire country</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Plague killed roughly one-fifth of London's population (about 100,000 people), whereas the 1348 Black Death killed nearly 30-50% of the entire country</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">In 1665, local authorities implemented highly organized, centralized regulations enforced by watchmen and searchers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">In 1665, local authorities implemented highly organized, centralized regulations enforced by watchmen and searchers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">The house was boarded up with the entire family locked inside for 28 days, marked with a red cross on the door</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The house was boarded up with the entire family locked inside for 28 days, marked with a red cross on the door</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">To inspect homes, identify plague victims, confirm the cause of death, and monitor the spread</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To inspect homes, identify plague victims, confirm the cause of death, and monitor the spread</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">They believed the animals spread the plague through their breath, but killing them allowed the rat population (which carried the plague-carrying fleas) to explode</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They believed the animals spread the plague through their breath, but killing them allowed the rat population (which carried the plague-carrying fleas) to explode</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">Banning large public gatherings, closing theatres, and locking down taverns</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Banning large public gatherings, closing theatres, and locking down taverns</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Bodies were collected in carts only at night and buried in deep, mass graves (plague pits) outside the city walls</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bodies were collected in carts only at night and buried in deep, mass graves (plague pits) outside the city walls</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">To purify the air and drive away the disease-carrying 'bad air' (miasma)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To purify the air and drive away the disease-carrying 'bad air' (miasma)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">They believed birds attracted the plague, so the mask would draw the disease away from the patient and into the herb-filled beak</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They believed birds attracted the plague, so the mask would draw the disease away from the patient and into the herb-filled beak</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Strapping a live, plucked chicken to a swollen plague bubo to draw out the poison</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Strapping a live, plucked chicken to a swollen plague bubo to draw out the poison</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">Tobacco smoke was believed to act as a powerful chemical shield to ward off the deadly plague miasma</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Tobacco smoke was believed to act as a powerful chemical shield to ward off the deadly plague miasma</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">That without an understanding of germs, people's fundamental beliefs about what caused the plague had not changed since 1348</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That without an understanding of germs, people's fundamental beliefs about what caused the plague had not changed since 1348</div>
                 </div>
                 </div>
         </div>
@@ -1864,52 +2361,52 @@
                 <div class="answer-list"><h3>KT2.3: How significant were William Harvey and the Great Plague?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">Andreas Vesalius.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Andreas Vesalius.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">Galen had made over 300 mistakes because he dissected animals, not humans.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen had made over 300 mistakes because he dissected animals, not humans.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">A Renaissance belief that a disease could be passed on or transferred to an object or animal.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Renaissance belief that a disease could be passed on or transferred to an object or animal.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">The scientific method promoted questioning old authorities, and the Reformation weakened Church power.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The scientific method promoted questioning old authorities, and the Reformation weakened Church power.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">1665.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1665.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">Cleaning streets and stopping visitor trade.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cleaning streets and stopping visitor trade.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">The belief that health was governed by the balance of blood, phlegm, black bile, and yellow bile.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The belief that health was governed by the balance of blood, phlegm, black bile, and yellow bile.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">To restore balance to the four humours by releasing excess blood.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To restore balance to the four humours by releasing excess blood.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">Preparing and selling herbal remedies and potions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Preparing and selling herbal remedies and potions.</div>
                 </div>
                 </div>
         </div>
@@ -1971,45 +2468,308 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 1: Medicine Through Time with the Western Front · Renaissance</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (90 Questions)</option>
+                    <option value="0">Part 1: KT2.1: Did the Renaissance change beliefs about the causes of illness?</option>
+<option value="1">Part 2: KT2.1: Did the Renaissance change beliefs about the causes of illness?</option>
+<option value="2">Part 3: KT2.2: Did treatments improve during the Renaissance?</option>
+<option value="3">Part 4: KT2.3: How significant were William Harvey and the Great Plague?</option>
+<option value="4">Part 5: KT2.3: How significant were William Harvey and the Great Plague?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_renaissance';
+    const ALL_DECK = [{"id":1,"q":"What does the French word 'Renaissance' translate to, and what did it represent in medical history?","a":"Rebirth; a period of reborn interest in classical worlds combined with a love of enquiry and a willingness to challenge old ideas","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":2,"q":"How did the rise of Protestantism during the Reformation affect the Church's influence over scientific and medical learning in the Renaissance?","a":"It made the Catholic Church much less able to promote and enforce its preferred beliefs about science and nature","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":3,"q":"How did Johannes Gutenberg's printing press (developed in around 1440) directly support progress in medical knowledge during the Renaissance?","a":"It allowed new, controversial discoveries to be printed rapidly and shared cheaply, making it harder for the Church to censor or block them","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":4,"q":"Why was the 17th-century English physician Thomas Sydenham known as the 'English Hippocrates'?","a":"Because he urged doctors to stop relying blindly on classical books and instead closely observe their patients' symptoms to diagnose them","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":5,"q":"How did Thomas Sydenham's view of disease fundamentally challenge the traditional Theory of the Four Humours?","a":"He argued that diseases were separate, independent 'species' that could be grouped and classified like plants, rather than being unique to each individual's humoural balance","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":6,"q":"Which two diseases did Thomas Sydenham successfully distinguish and classify as separate illnesses in his clinical observation work?","a":"Measles and Scarlet Fever","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":7,"q":"What was the primary objective of the Royal Society, which was founded in London in the year 1660?","a":"To encourage scientific enquiry, promote empirical experimentation, and provide a hub for scientists to share their research","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":8,"q":"What was the official Latin motto of the Royal Society, and what did it encourage scientists to do?","a":"'Nullius in verba' (Take nobody's word for it); it encouraged scientists to do experiments to prove things rather than just trusting classical authorities","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":9,"q":"What was the name of the Royal Society's scientific journal, first published in 1665, which allowed scientists to share and peer-review research globally?","a":"Philosophical Transactions","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":10,"q":"In 1683, Antony van Leeuwenhoek used an improved microscope to observe 'animalcules' (bacteria) for the first time. What was the major limitation of this breakthrough in the Renaissance?","a":"He did not realise that these 'animalcules' actually caused illnesses, meaning spontaneous generation and miasma remained the dominant beliefs","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":11,"q":"Why did Renaissance physicians continue to use the Theory of the Four Humours when diagnosing patients, despite many doctors beginning to doubt its scientific accuracy by the late 17th century?","a":"Because patients fully understood the humoural system, and physicians had to respect their clients' expectations to earn a living","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":12,"q":"How did beliefs about 'miasma' change during the Medical Renaissance?","a":"The belief in miasma remained highly popular and became even more widespread during devastating epidemics like the Great Plague of 1665","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":13,"q":"Andreas Vesalius's anatomical dissections proved that Galen had made over 300 mistakes. Why did this breakthrough have almost no immediate impact on everyday medical treatments?","a":"Because knowing the correct structure of the bones and organs did not give doctors new cures, so they continued to use traditional bleeding and herbal remedies","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":14,"q":"Which of the following was a revolutionary treatment for smallpox developed by Thomas Sydenham that directly challenged traditional medieval practices?","a":"Prescribing airy bedrooms, light blankets, and cold drinks instead of the traditional 'sweating' method","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":15,"q":"What was the 'Royal Touch' and what did its popularity during the Renaissance demonstrate about society's beliefs?","a":"The belief that the monarch could cure skin diseases like scrofula simply by touching the patient, demonstrating how slowly traditional and supernatural beliefs changed","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":16,"q":"What intellectual movement in the Renaissance period encouraged people to think for themselves, ask questions, and use observation to find the truth?","a":"Humanism","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":17,"q":"How did the training of physicians in universities begin to improve during the Renaissance?","a":"Students began to observe real human dissections alongside classical texts, using highly accurate printed anatomical illustrations","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":18,"q":"In what way did the printing press improve scientific accuracy in medical research compared to manual copying by medieval monks?","a":"It guaranteed that every copy of a medical book contained identical, error-free text and precise anatomical drawings","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":19,"q":"What popular New World herbal remedy, imported from Peru, did Thomas Sydenham popularise to treat malaria (ague)?","a":"Cinchona bark (quinine)","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":20,"q":"Which of the following statements best summarises the progress made in ideas about the causes of disease between 1500 and 1700?","a":"New anatomical knowledge and clinical observations laid vital foundations for the future, but everyday medical beliefs and treatments for the general public changed very little","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":21,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":22,"q":"Who were the 'flagellants'?","a":"People who whipped themselves to show penance to God.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":23,"q":"State one common medieval preventative measure for the Black Death.","a":"Carrying sweet-smelling herbs or lighting fires.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":24,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":25,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":26,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":27,"q":"How did medieval hospitals differ from modern ones?","a":"They provided shelter and care, not medical treatment.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":28,"q":"What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?","a":"To restore balance to the four humours by releasing excess blood.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":29,"q":"What was the role of a medieval apothecary?","a":"Preparing and selling herbal remedies and potions.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":30,"q":"How did the medieval Church explain the cause of disease?","a":"God sent disease as a punishment for sin or to test faith.","topic":"KT2.1: Did the Renaissance change beliefs about the causes of illness?"},{"id":31,"q":"What is the primary reason why Andreas Vesalius's major Renaissance breakthroughs in anatomy did not immediately improve everyday medical treatments for patients?","a":"Knowing the correct structure of bones and organs did not give doctors new chemical cures or treatments, so they continued to use traditional bleeding and purging","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":32,"q":"Which of the following treatments represents a major CONTINUITY in everyday medical practice between the Medieval period and the Medical Renaissance (c1500-c1700)?","a":"The continued reliance on bloodletting and purging to balance the Four Humours","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":33,"q":"What was the new Renaissance medical theory of 'transference', and how was it practically applied by patients?","a":"The belief that an illness could be transferred to another object or animal, such as rubbing an onion on warts","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":34,"q":"How did exploration of the 'New World' (the Americas) change herbal medicine in Renaissance England?","a":"It introduced new, effective herbal ingredients like cinchona bark (quinine) to treat malaria","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":35,"q":"What was the medical term 'iatrochemistry' (or alchemy), which became increasingly popular during the Renaissance?","a":"The search for chemical and mineral-based cures (using metals like antimony) rather than plant-based remedies","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":36,"q":"Why did the chemical element antimony become a controversial treatment during the Renaissance?","a":"Because in large doses it promoted sweating and vomiting to clear the body, but in small doses it was used as a daily general tonic","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":37,"q":"Which major political event in 1536 had a devastating immediate impact on hospital care and charity beds across England?","a":"Henry VIII's Dissolution of the Monasteries","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":38,"q":"Following the Dissolution of the Monasteries in 1536, what major change occurred in how surviving hospitals were funded and run?","a":"They transitioned from monastic control to being run and funded by secular town councils and charities","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":39,"q":"How did the primary focus of hospitals shift during the Renaissance compared to their medieval predecessors?","a":"They shifted from providing general hospitality and spiritual 'care' to actively treating wounds and curable physical illnesses","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":40,"q":"How did the London city council and local charity manage to keep St Bartholomew's Hospital open after 1536?","a":"By petitioning Henry VIII, who re-founded the hospital himself under municipal control in 1546","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":41,"q":"What were 'Pest Houses' and why were they introduced during the Renaissance period?","a":"Specialized, secular isolation hospitals opened by town councils specifically to quarantine people suffering from highly contagious diseases like the plague","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":42,"q":"If a Renaissance patient suffered from a disease that produced a red skin rash, such as smallpox, what traditional herbal-associative treatment would they most likely receive?","a":"The 'red cure,' which involved drinking red wine, eating red foods, and wearing red clothing","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":43,"q":"What was a major change in the medical staff employed by municipal hospitals like St Bartholomew's during the late Renaissance?","a":"They began employing university-trained physicians to actively treat and cure patients' physical conditions","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":44,"q":"Why did everyday people in Renaissance England continue to rely on traditional family treatments in the home rather than municipal hospitals or professional physicians?","a":"Because physicians were extremely expensive, and mothers, wives, or local wise women provided familiar, free, and accessible herbal care","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":45,"q":"Which of the following is a classic example of iatrochemistry/alchemy used as an everyday treatment in the late 1600s, showing the dangerous nature of some Renaissance medical experiments?","a":"Prescribing ingredients derived from metals and minerals, such as mercury to treat syphilis, or using 'cold deadman's skull' in remedies","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":46,"q":"How did the role of professional guilds, such as the Company of Barber-Surgeons, affect medical training during the Renaissance?","a":"They helped to professionalize surgeons by regulating training through apprenticeships, separating their work from simple hair cutting","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":47,"q":"How did the treatment of plague victims in the 1665 Great Plague demonstrate continuity with the 1348 Black Death?","a":"Both outbreaks were treated with humoural remedies (bleeding and purging), herbal mixtures, and prayers, because the cause (germs) was still unknown","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":48,"q":"Why did people in the 1500s and 1600s begin to take fewer warm baths, representing a decline in hygiene compared to the medieval period?","a":"Because public bath houses became associated with the rapid spread of the 'Great Pox' (syphilis), making people terrified of catching it","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":49,"q":"What did King Charles II's final medical treatment in 1685 (such as opening veins for bleeding and purging his bowels) demonstrate about the state of royal medicine at the end of the Renaissance?","a":"That despite monumental scientific discoveries, clinical medicine at the bedside remained heavily based on traditional, medieval humoural treatments","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":50,"q":"Which statement best describes the overall pace of change in medical TREATMENTS during the Medical Renaissance (c1500-c1700)?","a":"Treatments remained highly traditional with immense continuity, as the new scientific discoveries in anatomy and physiology did not yet translate into practical bedside cures","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":51,"q":"What was the Renaissance?","a":"A period of 'rebirth' in learning, art, and science from the 14th to 17th century.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":52,"q":"What invention helped spread new medical ideas during the Renaissance?","a":"The printing press.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":53,"q":"Who was Thomas Sydenham?","a":"An English physician who advocated observing patients' symptoms rather than relying on books.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":54,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":55,"q":"What did Vesalius prove about Galen's anatomical ideas?","a":"Galen had made over 300 mistakes because he dissected animals, not humans.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":56,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":57,"q":"Explain the role of the apothecary in medieval medicine.","a":"Preparing and selling herbal remedies and potions.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":58,"q":"Why did the influence of the Church begin to decline in the Renaissance?","a":"The scientific method promoted questioning old authorities, and the Reformation weakened Church power.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":59,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":60,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT2.2: Did treatments improve during the Renaissance?"},{"id":61,"q":"In his landmark 1628 publication, An Anatomical Account of the Motion of the Heart and Blood, what did William Harvey empirically prove about the human body?","a":"That the heart acts as a muscular pump circulating blood continuously around the body in a one-way system","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":62,"q":"What experiment did William Harvey use on a patient's arm to prove that blood flows in one direction through the veins?","a":"He tied a tight bandage (ligature) around the arm and showed blood could only be pushed past the valves in one direction","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":63,"q":"Which ancient authority's medical teachings did William Harvey's work on the circulatory system directly contradict and disprove?","a":"Galen's theory that the liver constantly manufactures new blood","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":64,"q":"Why did William Harvey's discovery of blood circulation have almost no immediate impact on everyday medical treatments in the short term?","a":"Knowing that blood circulated did not cure diseases, so physicians continued to use traditional bleeding and purging","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":65,"q":"How did the English medical establishment initially react to William Harvey's publication in 1628?","a":"Many doctors openly criticized or ignored him because his theory had no practical application at the bedside","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":66,"q":"How long did it take for William Harvey's discoveries about blood circulation to be officially adopted into the medical curriculum at English universities?","a":"It took nearly 50 years, with his ideas only regularly appearing in university medical lectures from around 1673","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":67,"q":"What vital scientific limitation prevented William Harvey from fully explaining how blood traveled from the arteries back into the veins?","a":"Microscopes of the era were not powerful enough to see the tiny capillaries linking arteries and veins","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":68,"q":"In the long term, why was William Harvey's breakthrough in physiology so significant for modern medicine?","a":"It served as the essential foundation for subsequent surgical developments, blood transfusions, and cardiology","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":69,"q":"How did the mortality rate of the 1665 Great Plague in London compare to the 1348 Black Death in England?","a":"The Great Plague killed roughly one-fifth of London's population (about 100,000 people), whereas the 1348 Black Death killed nearly 30-50% of the entire country","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":70,"q":"What was the most significant difference in the government and municipal response to the 1665 Great Plague compared to the 1348 Black Death?","a":"In 1665, local authorities implemented highly organized, centralized regulations enforced by watchmen and searchers","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":71,"q":"If a London household had a member diagnosed with the Great Plague in 1665, what quarantine measure was legally enforced by watchmen?","a":"The house was boarded up with the entire family locked inside for 28 days, marked with a red cross on the door","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":72,"q":"What was the specific, dangerous duty of the municipal officials known as 'searchers' during the Great Plague of 1665?","a":"To inspect homes, identify plague victims, confirm the cause of death, and monitor the spread","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":73,"q":"Why did London authorities order the mass slaughter of roughly 40,000 dogs and cats in 1665, and what was the unintended consequence?","a":"They believed the animals spread the plague through their breath, but killing them allowed the rat population (which carried the plague-carrying fleas) to explode","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":74,"q":"Which of the following was a preventative measure enforced by municipal authorities in London in 1665 to limit the spread of the plague?","a":"Banning large public gatherings, closing theatres, and locking down taverns","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":75,"q":"How did municipal authorities organize the burial of plague victims in 1665 to minimize the risk of miasma?","a":"Bodies were collected in carts only at night and buried in deep, mass graves (plague pits) outside the city walls","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":76,"q":"Why did both medieval mayors in 1348 and Renaissance mayors in 1665 order giant barrels of tar and bonfires to be burned in the streets?","a":"To purify the air and drive away the disease-carrying 'bad air' (miasma)","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":77,"q":"What was the believed physical purpose of the bird-shaped beak mask worn by Renaissance 'plague doctors'?","a":"They believed birds attracted the plague, so the mask would draw the disease away from the patient and into the herb-filled beak","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":78,"q":"Which bizarre, superstitious treatment recorded during the 1665 Great Plague demonstrates the complete lack of improvement in medical cures since 1348?","a":"Strapping a live, plucked chicken to a swollen plague bubo to draw out the poison","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":79,"q":"Why were schoolboys at Eton College severely punished or beaten if they refused to smoke tobacco during the Great Plague of 1665?","a":"Tobacco smoke was believed to act as a powerful chemical shield to ward off the deadly plague miasma","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":80,"q":"What does the continued use of amulets, carrying pomanders, and humoural bleeding during the Great Plague of 1665 demonstrate about Renaissance medicine?","a":"That without an understanding of germs, people's fundamental beliefs about what caused the plague had not changed since 1348","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":81,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":82,"q":"What did Vesalius prove about Galen's anatomical ideas?","a":"Galen had made over 300 mistakes because he dissected animals, not humans.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":83,"q":"What was 'transference'?","a":"A Renaissance belief that a disease could be passed on or transferred to an object or animal.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":84,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":85,"q":"Why did the influence of the Church begin to decline in the Renaissance?","a":"The scientific method promoted questioning old authorities, and the Reformation weakened Church power.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":86,"q":"In what year did the Great Plague hit London?","a":"1665.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":87,"q":"How did local mayors try to prevent the spread of the Black Death in 1348?","a":"Cleaning streets and stopping visitor trade.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":88,"q":"What was the Theory of the Four Humours?","a":"The belief that health was governed by the balance of blood, phlegm, black bile, and yellow bile.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":89,"q":"What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?","a":"To restore balance to the four humours by releasing excess blood.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"},{"id":90,"q":"What was the role of a medieval apothecary?","a":"Preparing and selling herbal remedies and potions.","topic":"KT2.3: How significant were William Harvey and the Great Plague?"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

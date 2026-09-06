@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 128 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/great_war/mastery_pack_full.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/great_war/mastery_pack_full.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1842,206 +2331,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>How was the German Empire created in 1871?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">39</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">39</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">Prussia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Prussia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">Otto von Bismarck</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Otto von Bismarck</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">Blood and iron</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Blood and iron</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">Warfare and military strength</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Warfare and military strength</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">Denmark, Austria, France</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Denmark, Austria, France</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">1870</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1870</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">Palace of Versailles</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Palace of Versailles</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">18 January 1871</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">18 January 1871</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">Alsace-Lorraine</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Alsace-Lorraine</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Zollverein</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Zollverein</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Austria</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Austria</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Kaiserreich</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Kaiserreich</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Seven weeks</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Seven weeks</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Wilhelm I</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wilhelm I</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">To unite the southern German states with the north</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To unite the southern German states with the north</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">Napoleon III</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Napoleon III</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">Coal and iron</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Coal and iron</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">It created long-term rivalry and hatred between France and Germany</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It created long-term rivalry and hatred between France and Germany</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">A massive, powerful, militaristic state suddenly appeared in the center of Europe</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A massive, powerful, militaristic state suddenly appeared in the center of Europe</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">France and Russia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">France and Russia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">A large group of states or countries ruled by a single monarch (emperor).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A large group of states or countries ruled by a single monarch (emperor).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">To defend against attacks from multiple sides (a two-front war).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To defend against attacks from multiple sides (a two-front war).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">A situation in which nations of the world have roughly equal power, preventing any one nation from dominating.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A situation in which nations of the world have roughly equal power, preventing any one nation from dominating.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">Otto von Bismarck</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Otto von Bismarck</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">Ems Telegram</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ems Telegram</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">1870</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1870</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Alsace and Lorraine</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Alsace and Lorraine</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">Palace of Versailles</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Palace of Versailles</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">5 billion francs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">5 billion francs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">Kaiser Wilhelm II</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Kaiser Wilhelm II</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">Reinsurance Treaty</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Reinsurance Treaty</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">France</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">France</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">A two-front war</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A two-front war</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Schlieffen Plan</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Schlieffen Plan</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">Napoleon III</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Napoleon III</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">To unify the southern German states with the north</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To unify the southern German states with the north</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">Alsace-Lorraine</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Alsace-Lorraine</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">Wilhelm I</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wilhelm I</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">Editing the Ems Telegram</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Editing the Ems Telegram</div>
                 </div>
                 </div>
         </div>
@@ -2052,202 +2549,202 @@
                 <div class="answer-list"><h3>How did the Franco-Prussian War create a lasting legacy of hatred?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">He was captured along with his army</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He was captured along with his army</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">Treaty of Frankfurt</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Treaty of Frankfurt</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">It would force Germany into a two-front war</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It would force Germany into a two-front war</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">The Hall of Mirrors at Versailles</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Hall of Mirrors at Versailles</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">The Scramble for Africa</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Scramble for Africa</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">Kaiser Wilhelm II</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Kaiser Wilhelm II</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">1905</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1905</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">To regulate European colonization and trade in Africa</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To regulate European colonization and trade in Africa</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Britain</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Britain</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">He wanted Germany to have a global empire like Britain and France</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He wanted Germany to have a global empire like Britain and France</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">The Kaiser visited Tangier and declared support for Moroccan independence</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Kaiser visited Tangier and declared support for Moroccan independence</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Germany was humiliated and France was given control of Moroccan police</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Germany was humiliated and France was given control of Moroccan police</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">Germany sent the gunboat Panther to the port of Agadir</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Germany sent the gunboat Panther to the port of Agadir</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">Germany backed down after being given a small strip of the Congo</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Germany backed down after being given a small strip of the Congo</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">It pushed Britain and France closer together in a strong alliance</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It pushed Britain and France closer together in a strong alliance</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">Kaiser Wilhelm I</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Kaiser Wilhelm I</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">Otto von Bismarck</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Otto von Bismarck</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">France</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">France</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">Alsace-Lorraine</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Alsace-Lorraine</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">Revanche</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Revanche</div>
                 </div>
                 </div><div class="answer-list"><h3>To what extent did the 'Scramble for Africa' increase tension in Europe?</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">He edited the King's telegram to make it look like an insult to the French ambassador, forcing France to declare war out of pride.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He edited the King's telegram to make it look like an insult to the French ambassador, forcing France to declare war out of pride.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">Advanced railway networks for rapid mobilization and superior Krupp steel artillery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Advanced railway networks for rapid mobilization and superior Krupp steel artillery.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">A two-front war against both France and Russia simultaneously.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A two-front war against both France and Russia simultaneously.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">HMS Dreadnought</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">HMS Dreadnought</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">Admiral von Tirpitz</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Admiral von Tirpitz</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">Two-Power Standard</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Two-Power Standard</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">It was faster, heavier armored, and had all 'big-guns'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was faster, heavier armored, and had all 'big-guns'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">It made all older battleships instantly obsolete, resetting the naval race</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It made all older battleships instantly obsolete, resetting the naval race</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">Building a navy large enough that Britain wouldn't risk fighting it</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Building a navy large enough that Britain wouldn't risk fighting it</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">'We want eight and we won't wait!'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'We want eight and we won't wait!'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">Britain is an island and relied entirely on its navy for survival and trade</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Britain is an island and relied entirely on its navy for survival and trade</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">The Naval Laws of 1898 and 1900</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Naval Laws of 1898 and 1900</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Britain, with 29 dreadnoughts to Germany's 17</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Britain, with 29 dreadnoughts to Germany's 17</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">Weltpolitik (World Policy)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Weltpolitik (World Policy)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">By aggressively interfering, he terrified Britain into forming a closer military alliance with France.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By aggressively interfering, he terrified Britain into forming a closer military alliance with France.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">It destroyed Bismarck's diplomatic safety net and threatened Germany with a two-front war.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It destroyed Bismarck's diplomatic safety net and threatened Germany with a two-front war.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">It turned European empires into global rivals, causing constant friction and border disputes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It turned European empires into global rivals, causing constant friction and border disputes.</div>
                 </div>
                 </div>
         </div>
@@ -2258,202 +2755,202 @@
                 <div class="answer-list"><h3>Why did a battleship building contest destroy Anglo-German relations?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">Britain realized it could no longer defend its empire alone and sought European allies.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Britain realized it could no longer defend its empire alone and sought European allies.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">His impulsive, aggressive nature alienated allies and destroyed Bismarck's careful diplomatic balance.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">His impulsive, aggressive nature alienated allies and destroyed Bismarck's careful diplomatic balance.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">Kaiser Wilhelm II</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Kaiser Wilhelm II</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">Alsace-Lorraine</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Alsace-Lorraine</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">To keep France diplomatically isolated so they could never start a revenge war.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To keep France diplomatically isolated so they could never start a revenge war.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">A two-front war against both France and Russia simultaneously.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A two-front war against both France and Russia simultaneously.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">Britain, France, Russia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Britain, France, Russia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Italy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Italy</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">Splendid Isolation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Splendid Isolation</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">Germany, Austria-Hungary, Italy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Germany, Austria-Hungary, Italy</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">Britain, France, Russia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Britain, France, Russia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">A small dispute between two nations could drag all major powers into war</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A small dispute between two nations could drag all major powers into war</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">A friendly agreement between Britain and France, settling colonial disputes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A friendly agreement between Britain and France, settling colonial disputes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">They felt threatened by Germany's growing navy and aggressive Weltpolitik</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They felt threatened by Germany's growing navy and aggressive Weltpolitik</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">World policy (Germany's desire for a global empire)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">World policy (Germany's desire for a global empire)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">Italy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Italy</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">HMS Dreadnought</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">HMS Dreadnought</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">A British policy stating their navy must be as large as the next two rival navies combined.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A British policy stating their navy must be as large as the next two rival navies combined.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">To protect their growing global trade and forcefully assert their status as a top-tier world power.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To protect their growing global trade and forcefully assert their status as a top-tier world power.</div>
                 </div>
                 </div><div class="answer-list"><h3>Did the Alliance System protect Europe or guarantee a global war?</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">We want eight, and we won't wait!</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">We want eight, and we won't wait!</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">As an island nation, Britain relied on the sea to import food and defend its global empire.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">As an island nation, Britain relied on the sea to import food and defend its global empire.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">Weltpolitik (World Policy)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Weltpolitik (World Policy)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">By aggressively interfering, he terrified Britain into forming a closer military alliance with France.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By aggressively interfering, he terrified Britain into forming a closer military alliance with France.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">It turned European empires into global rivals, causing constant friction and border disputes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It turned European empires into global rivals, causing constant friction and border disputes.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">Gavrilo Princip</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gavrilo Princip</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">The Black Hand</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Black Hand</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">28 June 1914</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">28 June 1914</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">Austria-Hungary</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Austria-Hungary</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">Archduke Franz Ferdinand</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Archduke Franz Ferdinand</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">The Black Hand</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Black Hand</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">A bomb was thrown at his car but bounced off</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A bomb was thrown at his car but bounced off</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">By total coincidence, the driver took a wrong turn and stalled the car right in front of him</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By total coincidence, the driver took a wrong turn and stalled the car right in front of him</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">Germany's promise of unconditional support to Austria-Hungary against Serbia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Germany's promise of unconditional support to Austria-Hungary against Serbia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">Austria-Hungary sent an impossibly harsh ultimatum to Serbia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Austria-Hungary sent an impossibly harsh ultimatum to Serbia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">Germany invaded neutral Belgium, violating the 1839 Treaty of London</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Germany invaded neutral Belgium, violating the 1839 Treaty of London</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">Great Britain, France, and Russia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Great Britain, France, and Russia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">Germany, Austria-Hungary, and Italy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Germany, Austria-Hungary, and Italy</div>
                 </div>
                 </div>
         </div>
@@ -2464,42 +2961,42 @@
                 <div class="answer-list"><h3>Why did a single assassination in Sarajevo ignite a World War?</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
-                    <div class="answer-text">It was believed that the blocs were so heavily armed that attacking one would trigger an unwinnable global war, deterring aggression.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was believed that the blocs were so heavily armed that attacking one would trigger an unwinnable global war, deterring aggression.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">122.</div>
-                    <div class="answer-text">Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a sudden attack.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a sudden attack.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">123.</div>
-                    <div class="answer-text">The Schlieffen Plan</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Schlieffen Plan</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">124.</div>
-                    <div class="answer-text">Belgium</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Belgium</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">125.</div>
-                    <div class="answer-text">Encirclement</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Encirclement</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">126.</div>
-                    <div class="answer-text">HMS Dreadnought</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">HMS Dreadnought</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">127.</div>
-                    <div class="answer-text">It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">128.</div>
-                    <div class="answer-text">It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente.</div>
                 </div>
                 </div>
         </div>
@@ -2561,45 +3058,310 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">KS3: Causes of the Great War · Complete Unit</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (128 Questions)</option>
+                    <option value="0">Part 1: How was the German Empire created in 1871?</option>
+<option value="1">Part 2: How was the German Empire created in 1871?</option>
+<option value="2">Part 3: How did the Franco-Prussian War create a lasting legacy of hatred?</option>
+<option value="3">Part 4: To what extent did the 'Scramble for Africa' increase tension in Europe?</option>
+<option value="4">Part 5: Why did a battleship building contest destroy Anglo-German relations?</option>
+<option value="5">Part 6: Did the Alliance System protect Europe or guarantee a global war?</option>
+<option value="6">Part 7: Why did a single assassination in Sarajevo ignite a World War?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_great_war_full';
+    const ALL_DECK = [{"id":1,"q":"How many independent states existed in Central Europe before 1871?","a":"39","topic":"How was the German Empire created in 1871?"},{"id":2,"q":"Which state was the most powerful among the German states before 1871?","a":"Prussia","topic":"How was the German Empire created in 1871?"},{"id":3,"q":"Who became the Prime Minister of Prussia in 1862?","a":"Otto von Bismarck","topic":"How was the German Empire created in 1871?"},{"id":4,"q":"What was Bismarck's famous phrase for how Germany would be unified?","a":"Blood and iron","topic":"How was the German Empire created in 1871?"},{"id":5,"q":"What did 'blood and iron' mean in Bismarck's approach?","a":"Warfare and military strength","topic":"How was the German Empire created in 1871?"},{"id":6,"q":"Which three countries did Prussia defeat to unify Germany?","a":"Denmark, Austria, France","topic":"How was the German Empire created in 1871?"},{"id":7,"q":"In what year did the Franco-Prussian War begin?","a":"1870","topic":"How was the German Empire created in 1871?"},{"id":8,"q":"Where was the King of Prussia proclaimed the first German Emperor?","a":"Palace of Versailles","topic":"How was the German Empire created in 1871?"},{"id":9,"q":"When was the German Empire officially created?","a":"18 January 1871","topic":"How was the German Empire created in 1871?"},{"id":10,"q":"Which valuable French territory did Germany seize in 1871?","a":"Alsace-Lorraine","topic":"How was the German Empire created in 1871?"},{"id":11,"q":"What was the economic union created by Prussia in 1834 called?","a":"Zollverein","topic":"How was the German Empire created in 1871?"},{"id":12,"q":"Which major German-speaking power was deliberately excluded from the Zollverein?","a":"Austria","topic":"How was the German Empire created in 1871?"},{"id":13,"q":"What was the German term for the new German Empire?","a":"Kaiserreich","topic":"How was the German Empire created in 1871?"},{"id":14,"q":"How long did it take the Prussian army to crush Austria in 1866?","a":"Seven weeks","topic":"How was the German Empire created in 1871?"},{"id":15,"q":"Who was the first Emperor (Kaiser) of the newly unified Germany?","a":"Wilhelm I","topic":"How was the German Empire created in 1871?"},{"id":16,"q":"Why did Bismarck provoke a war with France in 1870?","a":"To unite the southern German states with the north","topic":"How was the German Empire created in 1871?"},{"id":17,"q":"Which French Emperor was captured by the Prussian military?","a":"Napoleon III","topic":"How was the German Empire created in 1871?"},{"id":18,"q":"What natural resources was Alsace-Lorraine rich in?","a":"Coal and iron","topic":"How was the German Empire created in 1871?"},{"id":19,"q":"What long-term effect did the taking of Alsace-Lorraine have?","a":"It created long-term rivalry and hatred between France and Germany","topic":"How was the German Empire created in 1871?"},{"id":20,"q":"Why was the unification of Germany a shock to the balance of power in Europe?","a":"A massive, powerful, militaristic state suddenly appeared in the center of Europe","topic":"How was the German Empire created in 1871?"},{"id":21,"q":"Name two major powers in Europe in 1870.","a":"France and Russia","topic":"How was the German Empire created in 1871?"},{"id":22,"q":"What is an empire?","a":"A large group of states or countries ruled by a single monarch (emperor).","topic":"How was the German Empire created in 1871?"},{"id":23,"q":"Why is having a strong army important for a country surrounded by others?","a":"To defend against attacks from multiple sides (a two-front war).","topic":"How was the German Empire created in 1871?"},{"id":24,"q":"Define the term 'Balance of Power'.","a":"A situation in which nations of the world have roughly equal power, preventing any one nation from dominating.","topic":"How was the German Empire created in 1871?"},{"id":25,"q":"Who was the Chancellor of Prussia that orchestrated the Franco-Prussian War?","a":"Otto von Bismarck","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":26,"q":"Which telegram did Bismarck edit to provoke France into war?","a":"Ems Telegram","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":27,"q":"In what year did the Franco-Prussian War break out?","a":"1870","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":28,"q":"Which two provinces were taken from France in the peace settlement?","a":"Alsace and Lorraine","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":29,"q":"Where was the German Empire proclaimed in 1871, humiliating the French?","a":"Palace of Versailles","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":30,"q":"What was the size of the war indemnity France was forced to pay?","a":"5 billion francs","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":31,"q":"Who became the new German Emperor in 1888 and dismissed Bismarck?","a":"Kaiser Wilhelm II","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":32,"q":"What secret treaty did Bismarck sign with Russia that Wilhelm II allowed to expire?","a":"Reinsurance Treaty","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":33,"q":"Which country allied with Russia in 1894 after Bismarck's dismissal?","a":"France","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":34,"q":"What was Germany's greatest fear that drove its military planning?","a":"A two-front war","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":35,"q":"What was the name of the German military plan created to defeat France quickly?","a":"Schlieffen Plan","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":36,"q":"Which French leader was captured at the Battle of Sedan?","a":"Napoleon III","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":37,"q":"What was the primary goal of Bismarck in defeating France?","a":"To unify the southern German states with the north","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":38,"q":"Which French territory was annexed by Germany, creating lasting resentment?","a":"Alsace-Lorraine","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":39,"q":"Who was the Prussian King that was crowned German Emperor?","a":"Wilhelm I","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":40,"q":"What event did Bismarck use to trick France into declaring war?","a":"Editing the Ems Telegram","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":41,"q":"What happened to Napoleon III at the Battle of Sedan?","a":"He was captured along with his army","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":42,"q":"What treaty formally ended the Franco-Prussian War?","a":"Treaty of Frankfurt","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":43,"q":"Why did Bismarck fear a French alliance with Russia?","a":"It would force Germany into a two-front war","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":44,"q":"Where exactly was the new German Empire proclaimed?","a":"The Hall of Mirrors at Versailles","topic":"How did the Franco-Prussian War create a lasting legacy of hatred?"},{"id":45,"q":"What term describes the rapid colonization of Africa by European powers in the late 19th century?","a":"The Scramble for Africa","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":46,"q":"Which German leader famously stated that Germany wanted its 'place in the sun'?","a":"Kaiser Wilhelm II","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":47,"q":"In which year did the First Moroccan Crisis occur?","a":"1905","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":48,"q":"What was the purpose of the 1884 Berlin Conference?","a":"To regulate European colonization and trade in Africa","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":49,"q":"Which European power controlled the largest empire in Africa by 1914?","a":"Britain","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":50,"q":"Why did Kaiser Wilhelm II demand a 'place in the sun'?","a":"He wanted Germany to have a global empire like Britain and France","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":51,"q":"What happened during the First Moroccan Crisis (1905)?","a":"The Kaiser visited Tangier and declared support for Moroccan independence","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":52,"q":"What was the main result of the Algeciras Conference (1906)?","a":"Germany was humiliated and France was given control of Moroccan police","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":53,"q":"What sparked the Second Moroccan Crisis (Agadir Crisis) in 1911?","a":"Germany sent the gunboat Panther to the port of Agadir","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":54,"q":"How did the Agadir Crisis end?","a":"Germany backed down after being given a small strip of the Congo","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":55,"q":"What effect did the Moroccan Crises have on Anglo-French relations?","a":"It pushed Britain and France closer together in a strong alliance","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":56,"q":"1. Who was the first Emperor of the newly unified Germany in 1871?","a":"Kaiser Wilhelm I","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":57,"q":"2. Which brilliant Chancellor united the German states?","a":"Otto von Bismarck","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":58,"q":"3. Which country was humiliatingly defeated in the Franco-Prussian War?","a":"France","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":59,"q":"4. What strategic border territory did Germany take in 1871?","a":"Alsace-Lorraine","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":60,"q":"5. What is the French word for their desire for revenge?","a":"Revanche","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":61,"q":"6. Explain how Bismarck used the Ems Telegram to trap France into a war.","a":"He edited the King's telegram to make it look like an insult to the French ambassador, forcing France to declare war out of pride.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":62,"q":"7. Detail the two military advantages the Prussian army possessed.","a":"Advanced railway networks for rapid mobilization and superior Krupp steel artillery.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":63,"q":"8. Why was the location of the German Empire's proclamation so humiliating for France?","a":"It took place in the Hall of Mirrors at the Palace of Versailles, the historic heart of French royalty.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":64,"q":"9. Why did Bismarck weave a complex web of secret alliances after 1871?","a":"To keep France diplomatically isolated so they could never find an ally to help them fight a revenge war.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":65,"q":"10. What was Bismarck's ultimate nightmare scenario?","a":"A two-front war against both France and Russia simultaneously.","topic":"To what extent did the 'Scramble for Africa' increase tension in Europe?"},{"id":66,"q":"What revolutionary British battleship was launched in 1906?","a":"HMS Dreadnought","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":67,"q":"Which German Admiral was in charge of expanding the German Navy?","a":"Admiral von Tirpitz","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":68,"q":"What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?","a":"Two-Power Standard","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":69,"q":"Why was the HMS Dreadnought completely revolutionary?","a":"It was faster, heavier armored, and had all 'big-guns'","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":70,"q":"What was the consequence of the Dreadnought's launch?","a":"It made all older battleships instantly obsolete, resetting the naval race","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":71,"q":"What was the German 'Risk Theory' proposed by Admiral Tirpitz?","a":"Building a navy large enough that Britain wouldn't risk fighting it","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":72,"q":"What slogan did the British public chant in 1909 to demand more ships?","a":"'We want eight and we won't wait!'","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":73,"q":"Why did Britain feel so threatened by the German naval expansion?","a":"Britain is an island and relied entirely on its navy for survival and trade","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":74,"q":"What laws were passed in Germany to fund their massive naval buildup?","a":"The Naval Laws of 1898 and 1900","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":75,"q":"By 1914, who had won the naval race?","a":"Britain, with 29 dreadnoughts to Germany's 17","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":76,"q":"How did the naval race affect British foreign policy?","a":"It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":77,"q":"1. What was the name of Kaiser Wilhelm II's aggressive foreign policy?","a":"Weltpolitik (World Policy)","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":78,"q":"2. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.","a":"By aggressively interfering, he terrified Britain into forming a closer military alliance with France.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":79,"q":"3. Why was the Franco-Russian Alliance a strategic disaster for Germany?","a":"It destroyed Bismarck's diplomatic safety net and threatened Germany with a two-front war.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":80,"q":"4. Evaluate how the 'Scramble for Africa' increased tensions in Europe.","a":"It turned European empires into global rivals, causing constant friction and border disputes.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":81,"q":"5. Describe the impact of Britain abandoning its policy of 'Splendid Isolation'.","a":"Britain realized it could no longer defend its empire alone and sought European allies.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":82,"q":"6. Evaluate the role of Wilhelm II's personality in destabilizing Europe.","a":"His impulsive, aggressive nature alienated allies and destroyed Bismarck's careful diplomatic balance.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":83,"q":"7. Who dismissed Otto von Bismarck in 1890?","a":"Kaiser Wilhelm II","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":84,"q":"8. What strategic territory did Germany take from France in 1871?","a":"Alsace-Lorraine","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":85,"q":"9. Why did Bismarck weave a complex web of secret alliances after 1871?","a":"To keep France diplomatically isolated so they could never start a revenge war.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":86,"q":"10. What was Bismarck's ultimate nightmare scenario?","a":"A two-front war against both France and Russia simultaneously.","topic":"Why did a battleship building contest destroy Anglo-German relations?"},{"id":87,"q":"Which three countries formed the Triple Entente in 1907?","a":"Britain, France, Russia","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":88,"q":"Which country left the Triple Alliance and joined the Entente in 1915?","a":"Italy","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":89,"q":"What was Britain's traditional foreign policy before forming alliances?","a":"Splendid Isolation","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":90,"q":"Which three countries made up the Triple Alliance of 1882?","a":"Germany, Austria-Hungary, Italy","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":91,"q":"Which three countries formed the Triple Entente by 1907?","a":"Britain, France, Russia","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":92,"q":"What was a major flaw of the alliance system?","a":"A small dispute between two nations could drag all major powers into war","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":93,"q":"Why did Russia ally with France in 1894?","a":"Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":94,"q":"What was the 'Entente Cordiale' signed in 1904?","a":"A friendly agreement between Britain and France, settling colonial disputes","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":95,"q":"Why did Britain finally decide to form alliances?","a":"They felt threatened by Germany's growing navy and aggressive Weltpolitik","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":96,"q":"What does 'Weltpolitik' mean?","a":"World policy (Germany's desire for a global empire)","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":97,"q":"Which nation in the Triple Alliance was seen as the 'weak link'?","a":"Italy","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":98,"q":"1. What revolutionary British battleship was launched in 1906?","a":"HMS Dreadnought","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":99,"q":"2. What was the 'Two-Power Standard'?","a":"A British policy stating their navy must be as large as the next two rival navies combined.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":100,"q":"3. Why did Germany feel it needed a massive high seas fleet?","a":"To protect their growing global trade and forcefully assert their status as a top-tier world power.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":101,"q":"4. Explain how the invention of the Dreadnought ironically hurt British supremacy.","a":"It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":102,"q":"5. What was the popular British slogan chanted by the public in 1909?","a":"We want eight, and we won't wait!","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":103,"q":"6. Why did Britain feel their survival depended on massive naval supremacy?","a":"As an island nation, Britain relied on the sea to import food and defend its global empire.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":104,"q":"7. How did the Anglo-German naval race make war more likely?","a":"It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":105,"q":"8. What was the name of Kaiser Wilhelm II's aggressive foreign policy?","a":"Weltpolitik (World Policy)","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":106,"q":"9. Explain how Wilhelm II's actions during the Moroccan Crises backfired on Germany.","a":"By aggressively interfering, he terrified Britain into forming a closer military alliance with France.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":107,"q":"10. Evaluate how the 'Scramble for Africa' increased tensions in Europe.","a":"It turned European empires into global rivals, causing constant friction and border disputes.","topic":"Did the Alliance System protect Europe or guarantee a global war?"},{"id":108,"q":"Who assassinated Archduke Franz Ferdinand?","a":"Gavrilo Princip","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":109,"q":"What was the name of the Serbian nationalist group responsible for the assassination?","a":"The Black Hand","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":110,"q":"On what exact date was the Archduke assassinated?","a":"28 June 1914","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":111,"q":"Which empire had annexed Bosnia in 1908, angering Serbian nationalists?","a":"Austria-Hungary","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":112,"q":"Who was the heir to the Austro-Hungarian throne that visited Sarajevo?","a":"Archduke Franz Ferdinand","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":113,"q":"What terrorist group supplied the assassins with weapons?","a":"The Black Hand","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":114,"q":"What was the first, failed assassination attempt on the Archduke that morning?","a":"A bomb was thrown at his car but bounced off","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":115,"q":"Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?","a":"By total coincidence, the driver took a wrong turn and stalled the car right in front of him","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":116,"q":"What was the 'Blank Cheque'?","a":"Germany's promise of unconditional support to Austria-Hungary against Serbia","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":117,"q":"What happened on July 23, 1914?","a":"Austria-Hungary sent an impossibly harsh ultimatum to Serbia","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":118,"q":"Why did Britain declare war on Germany on August 4, 1914?","a":"Germany invaded neutral Belgium, violating the 1839 Treaty of London","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":119,"q":"1. Which three countries made up the Triple Entente?","a":"Great Britain, France, and Russia","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":120,"q":"2. Which three countries made up the Triple Alliance?","a":"Germany, Austria-Hungary, and Italy","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":121,"q":"3. Explain the theoretical logic of how the alliance system was supposed to keep peace.","a":"It was believed that the blocs were so heavily armed that attacking one would trigger an unwinnable global war, deterring aggression.","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":122,"q":"4. Why did the alliance system actually increase paranoia instead of security?","a":"Nations felt trapped by their defensive commitments and constantly feared their rivals were plotting a sudden attack.","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":123,"q":"5. What military plan did Germany create to avoid a long two-front war?","a":"The Schlieffen Plan","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":124,"q":"6. Which neutral country did the Schlieffen Plan require invading?","a":"Belgium","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":125,"q":"7. What feeling of being surrounded by enemies haunted German planners?","a":"Encirclement","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":126,"q":"8. What revolutionary British battleship was launched in 1906?","a":"HMS Dreadnought","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":127,"q":"9. Explain how the invention of the Dreadnought ironically hurt British supremacy.","a":"It rendered older ships obsolete, wiping out Britain's numerical lead and allowing Germany to compete from scratch.","topic":"Why did a single assassination in Sarajevo ignite a World War?"},{"id":128,"q":"10. How did the Anglo-German naval race make war more likely?","a":"It convinced Britain that Germany was an existential threat, cementing Britain's commitment to the Triple Entente.","topic":"Why did a single assassination in Sarajevo ignite a World War?"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

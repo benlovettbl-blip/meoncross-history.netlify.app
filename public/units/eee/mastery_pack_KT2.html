@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 118 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/eee/mastery_pack_KT2.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/eee/mastery_pack_KT2.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1726,206 +2215,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>KT2.1: Plots and revolts at home</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">James Pilkington</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">James Pilkington</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">The Earl of Northumberland and the Earl of Westmorland</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Earl of Northumberland and the Earl of Westmorland</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">Durham Cathedral</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Durham Cathedral</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">450</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">450</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">Being formally excluded from the Catholic Church and unable to receive sacraments</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Being formally excluded from the Catholic Church and unable to receive sacraments</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">It became high treason to convert anyone to Catholicism</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It became high treason to convert anyone to Catholicism</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Roberto Ridolfi</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Roberto Ridolfi</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">The Duke of Alba</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Alba</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">The Duke of Norfolk</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Norfolk</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">The Throckmorton Plot</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Throckmorton Plot</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">The Bond of Association</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Bond of Association</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Sir Francis Walsingham</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Francis Walsingham</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Agents provocateurs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Agents provocateurs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Thomas Phelippes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Thomas Phelippes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">The Babington Plot</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Babington Plot</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">The Act for the Preservation of the Queen’s Safety</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Act for the Preservation of the Queen’s Safety</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">1587</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1587</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">William Cecil, Robert Dudley, or John Forster</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William Cecil, Robert Dudley, or John Forster</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">A list of Catholic sympathisers / proof of the "enemy within"</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A list of Catholic sympathisers / proof of the "enemy within"</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">Mendoza</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mendoza</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">Following a rebellion by Scottish nobles who forced her to abdicate.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Following a rebellion by Scottish nobles who forced her to abdicate.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">She imprisoned her in the north to prevent her from rallying English Catholics.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She imprisoned her in the north to prevent her from rallying English Catholics.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">She had a strong, legitimate claim to the English throne and was Catholic.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She had a strong, legitimate claim to the English throne and was Catholic.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Letters allegedly proving Mary was involved in the murder of her husband, Lord Darnley.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Letters allegedly proving Mary was involved in the murder of her husband, Lord Darnley.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">The Pope's decree excommunicating Elizabeth.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Pope's decree excommunicating Elizabeth.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">A Puritan protest against Elizabeth's demand for crucifixes in churches.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Puritan protest against Elizabeth's demand for crucifixes in churches.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Rules enforcing the Religious Settlement on the clergy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rules enforcing the Religious Settlement on the clergy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">£300,000.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£300,000.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">The Catholic alliance between France and Scotland.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Catholic alliance between France and Scotland.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">The circulation of blood.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The circulation of blood.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">King Philip II</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Philip II</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">Privateers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Privateers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">Sir Francis Drake</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Francis Drake</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">The Netherlands</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Netherlands</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">The Treaty of Nonsuch</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Treaty of Nonsuch</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">The Earl of Leicester / Robert Dudley</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Earl of Leicester / Robert Dudley</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">The execution of Mary, Queen of Scots</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The execution of Mary, Queen of Scots</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">1587</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1587</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">"Singeing the King of Spain's beard"</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">"Singeing the King of Spain's beard"</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">1588</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1588</div>
                 </div>
                 </div>
         </div>
@@ -1936,202 +2433,202 @@
                 <div class="answer-list"><h3>KT2.2: Relations with Spain</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">The Duke of Medina Sidonia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Medina Sidonia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">The Duke of Parma's army</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Parma's army</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">A crescent formation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A crescent formation</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">Galleons</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galleons</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">Calais</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Calais</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">Fireships</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Fireships</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">The Battle of Gravelines</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Battle of Gravelines</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">Poor communication / Parma's army was not ready in time</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Poor communication / Parma's army was not ready in time</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">North, around the coasts of Scotland and Ireland</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">North, around the coasts of Scotland and Ireland</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">Fierce storms / The weather / The "Protestant Wind"</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Fierce storms / The weather / The "Protestant Wind"</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">A Catholic rebellion led by the Earls of Northumberland and Westmorland to depose Elizabeth.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Catholic rebellion led by the Earls of Northumberland and Westmorland to depose Elizabeth.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">A plot to assassinate Elizabeth and replace her with Mary, backed by Spanish troops.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A plot to assassinate Elizabeth and replace her with Mary, backed by Spanish troops.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">A French Catholic plot backed by Spain to invade England and free Mary.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A French Catholic plot backed by Spain to invade England and free Mary.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">A plot to assassinate Elizabeth; Mary's coded letters approving the plot were intercepted.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A plot to assassinate Elizabeth; Mary's coded letters approving the plot were intercepted.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Elizabeth's spymaster who uncovered the plots against her using ciphers and spies.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Elizabeth's spymaster who uncovered the plots against her using ciphers and spies.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">She was overthrown by Scottish nobles.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She was overthrown by Scottish nobles.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">Letters claiming Mary killed her husband.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Letters claiming Mary killed her husband.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Pope Pius V.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pope Pius V.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">The 1559 law setting out how church services must look and sound.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 1559 law setting out how church services must look and sound.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">Louis Pasteur.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Louis Pasteur.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT2.3: Outbreak of war with Spain, 1585–88</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">Mary Tudor</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mary Tudor</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">The Genoese Loan</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Genoese Loan</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">£400,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£400,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">William of Orange</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William of Orange</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">The Treaty of Joinville</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Treaty of Joinville</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">The Treaty of Nonsuch</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Treaty of Nonsuch</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">7,400 troops</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">7,400 troops</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">Robert Dudley, Earl of Leicester</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Robert Dudley, Earl of Leicester</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">Governor General</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Governor General</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">William Stanley or Rowland York</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William Stanley or Rowland York</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">Ostend</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ostend</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">April 1587</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">April 1587</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">"Singeing the King of Spain's beard"</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">"Singeing the King of Spain's beard"</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">30 ships</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">30 ships</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">Seasoned wooden barrel staves</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Seasoned wooden barrel staves</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">By roughly one year</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By roughly one year</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">It bought England vital time to prepare their navy and coastal defences</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It bought England vital time to prepare their navy and coastal defences</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">She rejected his marriage proposal, turned England Protestant, and supported Dutch rebels.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She rejected his marriage proposal, turned England Protestant, and supported Dutch rebels.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">An armed private ship licensed by the government to attack and rob enemy ships.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An armed private ship licensed by the government to attack and rob enemy ships.</div>
                 </div>
                 </div>
         </div>
@@ -2142,192 +2639,192 @@
                 <div class="answer-list"><h3>KT2.3: Outbreak of war with Spain, 1585–88</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">Sir Francis Drake.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Francis Drake.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">Elizabeth officially agreed to send an English army to help the Dutch rebels fight Spain.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Elizabeth officially agreed to send an English army to help the Dutch rebels fight Spain.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">£140,000.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£140,000.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">Elizabeth's Secretary of State and spymaster.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Elizabeth's Secretary of State and spymaster.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">The final plot that led to Mary, Queen of Scots' execution.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The final plot that led to Mary, Queen of Scots' execution.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">The only major rebellion on English soil against Elizabeth, led by Catholic nobles.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The only major rebellion on English soil against Elizabeth, led by Catholic nobles.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">She was a Catholic figurehead with a strong claim to the throne.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She was a Catholic figurehead with a strong claim to the throne.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Puritan priests refusing to wear Catholic-style robes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Puritan priests refusing to wear Catholic-style robes.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">King Philip II of Spain</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Philip II of Spain</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">Pope Sixtus V</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pope Sixtus V</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">One million gold ducats</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">One million gold ducats</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">The Treaty of Joinville</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Treaty of Joinville</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">Mary, Queen of Scots</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mary, Queen of Scots</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">The Duke of Medina Sidonia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Medina Sidonia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">130</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">130</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">A crescent formation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A crescent formation</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">The Duke of Parma</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Parma</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">Dutch flyboats</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Dutch flyboats</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">Calais</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Calais</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">Fireships</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Fireships</div>
                 </div>
                 </div><div class="answer-list"><h3>KT2.4: The Armada</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">Eight</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Eight</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">The Battle of Gravelines</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Battle of Gravelines</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">They were mounted on smaller gun carriages, allowing them space to recoil and reload</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were mounted on smaller gun carriages, allowing them space to recoil and reload</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">Northwards, around Scotland and Ireland</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Northwards, around Scotland and Ireland</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">The "Protestant Wind"</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The "Protestant Wind"</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">Tilbury</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Tilbury</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">The Armada Portrait</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Armada Portrait</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">No, the war continued for another 15 years and Philip built more armadas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">No, the war continued for another 15 years and Philip built more armadas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">He launched a surprise attack on the Spanish fleet, destroying 30 ships and delaying the Armada.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He launched a surprise attack on the Spanish fleet, destroying 30 ships and delaying the Armada.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">'Singeing the King of Spain's beard.'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'Singeing the King of Spain's beard.'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">February 1587.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">February 1587.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">It gave Philip II the final moral justification he needed to launch the Armada.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It gave Philip II the final moral justification he needed to launch the Armada.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">Elizabeth's agreement to send troops to support the Dutch Protestant rebels.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Elizabeth's agreement to send troops to support the Dutch Protestant rebels.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">Sir Francis Drake.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Francis Drake.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">A plot for a French invasion backed by Spanish money.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A plot for a French invasion backed by Spanish money.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">She was forced to abdicate by Scottish lords.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She was forced to abdicate by Scottish lords.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">Supreme Governor.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Supreme Governor.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">£300,000.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£300,000.</div>
                 </div>
                 </div>
         </div>
@@ -2389,45 +2886,309 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 2: Early Elizabethan England, 1558-88 · Key Topic 2: Challenges to Elizabeth at home and abroad, 1569-88</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (118 Questions)</option>
+                    <option value="0">Part 1: KT2.1: Plots and revolts at home</option>
+<option value="1">Part 2: KT2.1: Plots and revolts at home</option>
+<option value="2">Part 3: KT2.2: Relations with Spain</option>
+<option value="3">Part 4: KT2.3: Outbreak of war with Spain, 1585–88</option>
+<option value="4">Part 5: KT2.3: Outbreak of war with Spain, 1585–88</option>
+<option value="5">Part 6: KT2.4: The Armada</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_eee_KT2';
+    const ALL_DECK = [{"id":1,"q":"Which Protestant Bishop of Durham did the Northern Earls strongly resent?","a":"James Pilkington","topic":"KT2.1: Plots and revolts at home"},{"id":2,"q":"Which two Catholic nobles led the Revolt of the Northern Earls in 1569?","a":"The Earl of Northumberland and the Earl of Westmorland","topic":"KT2.1: Plots and revolts at home"},{"id":3,"q":"What major religious building did the Northern Earls capture to celebrate a Catholic Mass?","a":"Durham Cathedral","topic":"KT2.1: Plots and revolts at home"},{"id":4,"q":"Roughly how many rebels did Elizabeth execute after the Northern Earls' revolt?","a":"450","topic":"KT2.1: Plots and revolts at home"},{"id":5,"q":"What was the theological meaning of the 1570 Papal excommunication?","a":"Being formally excluded from the Catholic Church and unable to receive sacraments","topic":"KT2.1: Plots and revolts at home"},{"id":6,"q":"What strict law was passed in 1581 regarding Catholic conversions?","a":"It became high treason to convert anyone to Catholicism","topic":"KT2.1: Plots and revolts at home"},{"id":7,"q":"Who was the Italian banker that orchestrated a plot in 1571?","a":"Roberto Ridolfi","topic":"KT2.1: Plots and revolts at home"},{"id":8,"q":"Which foreign commander was supposed to lead 10,000 Spanish troops during the Ridolfi Plot?","a":"The Duke of Alba","topic":"KT2.1: Plots and revolts at home"},{"id":9,"q":"Which high-ranking English nobleman was executed in 1572 for his involvement in the Ridolfi Plot?","a":"The Duke of Norfolk","topic":"KT2.1: Plots and revolts at home"},{"id":10,"q":"Which plot in 1583 involved the French Duke of Guise invading England with Spanish money?","a":"The Throckmorton Plot","topic":"KT2.1: Plots and revolts at home"},{"id":11,"q":"What document was created after the Throckmorton Plot stating Mary would be killed if Elizabeth was assassinated?","a":"The Bond of Association","topic":"KT2.1: Plots and revolts at home"},{"id":12,"q":"Who was Elizabeth's Secretary of State and Spymaster?","a":"Sir Francis Walsingham","topic":"KT2.1: Plots and revolts at home"},{"id":13,"q":"What term is used for spies, like Gilbert Gifford, who secretly encourage others to commit treason?","a":"Agents provocateurs","topic":"KT2.1: Plots and revolts at home"},{"id":14,"q":"Who was the expert cryptographer that deciphered Mary's letters for Walsingham?","a":"Thomas Phelippes","topic":"KT2.1: Plots and revolts at home"},{"id":15,"q":"Which 1586 plot provided the final, irrefutable written proof of Mary's guilt?","a":"The Babington Plot","topic":"KT2.1: Plots and revolts at home"},{"id":16,"q":"What specific Act of Parliament was used to try and convict Mary, Queen of Scots?","a":"The Act for the Preservation of the Queen’s Safety","topic":"KT2.1: Plots and revolts at home"},{"id":17,"q":"In what year was Mary, Queen of Scots executed?","a":"1587","topic":"KT2.1: Plots and revolts at home"},{"id":18,"q":"Name two \"new men\" at court whose rise to power angered the old northern nobility.","a":"William Cecil, Robert Dudley, or John Forster","topic":"KT2.1: Plots and revolts at home"},{"id":19,"q":"What did Walsingham find in Francis Throckmorton's house that caused immense panic?","a":"A list of Catholic sympathisers / proof of the \"enemy within\"","topic":"KT2.1: Plots and revolts at home"},{"id":20,"q":"Which Spanish Ambassador was expelled following the discovery of the Throckmorton Plot?","a":"Mendoza","topic":"KT2.1: Plots and revolts at home"},{"id":21,"q":"Why did Mary, Queen of Scots flee to England in 1568?","a":"Following a rebellion by Scottish nobles who forced her to abdicate.","topic":"KT2.1: Plots and revolts at home"},{"id":22,"q":"What was Elizabeth's immediate reaction to Mary's arrival?","a":"She imprisoned her in the north to prevent her from rallying English Catholics.","topic":"KT2.1: Plots and revolts at home"},{"id":23,"q":"Why was Mary, Queen of Scots a massive threat to Elizabeth?","a":"She had a strong, legitimate claim to the English throne and was Catholic.","topic":"KT2.1: Plots and revolts at home"},{"id":24,"q":"What was the Casket Letters affair?","a":"Letters allegedly proving Mary was involved in the murder of her husband, Lord Darnley.","topic":"KT2.1: Plots and revolts at home"},{"id":25,"q":"What was the Papal Bull of 1570?","a":"The Pope's decree excommunicating Elizabeth.","topic":"KT2.1: Plots and revolts at home"},{"id":26,"q":"What was the 'Crucifix Controversy'?","a":"A Puritan protest against Elizabeth's demand for crucifixes in churches.","topic":"KT2.1: Plots and revolts at home"},{"id":27,"q":"What were the Royal Injunctions?","a":"Rules enforcing the Religious Settlement on the clergy.","topic":"KT2.1: Plots and revolts at home"},{"id":28,"q":"How much debt did Elizabeth inherit?","a":"£300,000.","topic":"KT2.1: Plots and revolts at home"},{"id":29,"q":"What was the 'Auld Alliance'?","a":"The Catholic alliance between France and Scotland.","topic":"KT2.1: Plots and revolts at home"},{"id":30,"q":"What did William Harvey discover?","a":"The circulation of blood.","topic":"KT2.1: Plots and revolts at home"},{"id":31,"q":"Who was the devout Catholic King of Spain during Elizabeth's reign?","a":"King Philip II","topic":"KT2.2: Relations with Spain"},{"id":32,"q":"What term describes sailors officially licensed by the government to rob enemy ships?","a":"Privateers","topic":"KT2.2: Relations with Spain"},{"id":33,"q":"Which famous English privateer stole roughly £400,000 of Spanish treasure during his circumnavigation?","a":"Sir Francis Drake","topic":"KT2.2: Relations with Spain"},{"id":34,"q":"What region did Spain control that Elizabeth sent troops to support in 1585?","a":"The Netherlands","topic":"KT2.2: Relations with Spain"},{"id":35,"q":"What was the name of the 1585 treaty where Elizabeth officially supported the Dutch rebels?","a":"The Treaty of Nonsuch","topic":"KT2.2: Relations with Spain"},{"id":36,"q":"Which English commander was sent to the Netherlands with 7,400 troops?","a":"The Earl of Leicester / Robert Dudley","topic":"KT2.2: Relations with Spain"},{"id":37,"q":"What 1587 event removed the Catholic alternative to the English throne, prompting Philip to invade?","a":"The execution of Mary, Queen of Scots","topic":"KT2.2: Relations with Spain"},{"id":38,"q":"In what year did Francis Drake raid Cadiz to delay the Armada?","a":"1587","topic":"KT2.2: Relations with Spain"},{"id":39,"q":"What famous phrase was used to describe Drake's raid on Cadiz?","a":"\"Singeing the King of Spain's beard\"","topic":"KT2.2: Relations with Spain"},{"id":40,"q":"In what year did the Spanish Armada set sail?","a":"1588","topic":"KT2.2: Relations with Spain"},{"id":41,"q":"Who was the inexperienced Spanish commander of the Armada?","a":"The Duke of Medina Sidonia","topic":"KT2.2: Relations with Spain"},{"id":42,"q":"Whose army was the Armada supposed to pick up from the Netherlands?","a":"The Duke of Parma's army","topic":"KT2.2: Relations with Spain"},{"id":43,"q":"What defensive shape did the Spanish fleet sail in as they travelled up the English Channel?","a":"A crescent formation","topic":"KT2.2: Relations with Spain"},{"id":44,"q":"What type of new, fast, and highly manoeuvrable warships did the English use?","a":"Galleons","topic":"KT2.2: Relations with Spain"},{"id":45,"q":"Where did the Spanish mistakenly drop their anchors, making them vulnerable?","a":"Calais","topic":"KT2.2: Relations with Spain"},{"id":46,"q":"What devastating tactic did the English use at midnight to break the Spanish formation at Calais?","a":"Fireships","topic":"KT2.2: Relations with Spain"},{"id":47,"q":"What major naval battle took place immediately after the fireships scattered the Spanish fleet?","a":"The Battle of Gravelines","topic":"KT2.2: Relations with Spain"},{"id":48,"q":"Why couldn't the Armada pick up the Spanish army in the Netherlands?","a":"Poor communication / Parma's army was not ready in time","topic":"KT2.2: Relations with Spain"},{"id":49,"q":"Which way was the Armada forced to sail to get home?","a":"North, around the coasts of Scotland and Ireland","topic":"KT2.2: Relations with Spain"},{"id":50,"q":"What destroyed the majority of the Spanish ships as they tried to return home?","a":"Fierce storms / The weather / The \"Protestant Wind\"","topic":"KT2.2: Relations with Spain"},{"id":51,"q":"What was the Revolt of the Northern Earls (1569)?","a":"A Catholic rebellion led by the Earls of Northumberland and Westmorland to depose Elizabeth.","topic":"KT2.2: Relations with Spain"},{"id":52,"q":"What was the Ridolfi Plot (1571)?","a":"A plot to assassinate Elizabeth and replace her with Mary, backed by Spanish troops.","topic":"KT2.2: Relations with Spain"},{"id":53,"q":"What was the Throckmorton Plot (1583)?","a":"A French Catholic plot backed by Spain to invade England and free Mary.","topic":"KT2.2: Relations with Spain"},{"id":54,"q":"What was the Babington Plot (1586)?","a":"A plot to assassinate Elizabeth; Mary's coded letters approving the plot were intercepted.","topic":"KT2.2: Relations with Spain"},{"id":55,"q":"Who was Francis Walsingham?","a":"Elizabeth's spymaster who uncovered the plots against her using ciphers and spies.","topic":"KT2.2: Relations with Spain"},{"id":56,"q":"Why did Mary, Queen of Scots flee to England in 1568?","a":"She was overthrown by Scottish nobles.","topic":"KT2.2: Relations with Spain"},{"id":57,"q":"What was the Casket Letters affair?","a":"Letters claiming Mary killed her husband.","topic":"KT2.2: Relations with Spain"},{"id":58,"q":"Who was the Pope that excommunicated Elizabeth in 1570?","a":"Pope Pius V.","topic":"KT2.2: Relations with Spain"},{"id":59,"q":"What was the Act of Uniformity?","a":"The 1559 law setting out how church services must look and sound.","topic":"KT2.2: Relations with Spain"},{"id":60,"q":"Who published the Germ Theory?","a":"Louis Pasteur.","topic":"KT2.2: Relations with Spain"},{"id":61,"q":"Under which previous monarch were England and Spain actually allies?","a":"Mary Tudor","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":62,"q":"What did Elizabeth seize from Italian ships sheltering in English ports in 1568?","a":"The Genoese Loan","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":63,"q":"How much Spanish gold and silver did Francis Drake capture between 1577 and 1580?","a":"£400,000","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":64,"q":"Which Dutch Protestant rebel leader was assassinated in 1584?","a":"William of Orange","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":65,"q":"Which 1584 treaty allied Catholic France and Spain together?","a":"The Treaty of Joinville","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":66,"q":"What 1585 agreement saw Elizabeth officially pledge military support to the Dutch rebels?","a":"The Treaty of Nonsuch","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":67,"q":"How many soldiers did Elizabeth agree to send to the Netherlands in 1585?","a":"7,400 troops","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":68,"q":"Which English commander was sent to lead the troops in the Netherlands?","a":"Robert Dudley, Earl of Leicester","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":69,"q":"What title did Robert Dudley accept in the Netherlands that infuriated Elizabeth?","a":"Governor General","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":70,"q":"Name one of the English officers who defected to the Spanish side, damaging Dutch trust.","a":"William Stanley or Rowland York","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":71,"q":"What deep-water port did Dudley successfully prevent the Spanish from capturing?","a":"Ostend","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":72,"q":"Why was the defense of Ostend so important for England's future?","a":"It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":73,"q":"In what month and year did Francis Drake launch his preemptive raid on Cadiz?","a":"April 1587","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":74,"q":"What famous phrase was used to describe Drake's raid on Cadiz?","a":"\"Singeing the King of Spain's beard\"","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":75,"q":"Roughly how many Spanish ships did Drake destroy in Cadiz harbour?","a":"30 ships","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":76,"q":"What crucial supply item did Drake destroy at Cadiz that later caused Spanish food to rot?","a":"Seasoned wooden barrel staves","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":77,"q":"How long did Drake's raid on Cadiz delay the launch of the Spanish Armada?","a":"By roughly one year","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":78,"q":"Why was this delay so significant for Elizabeth's government?","a":"It bought England vital time to prepare their navy and coastal defences","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":79,"q":"Why was Philip II of Spain angry with Elizabeth?","a":"She rejected his marriage proposal, turned England Protestant, and supported Dutch rebels.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":80,"q":"What was a 'privateer'?","a":"An armed private ship licensed by the government to attack and rob enemy ships.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":81,"q":"Which famous English privateer constantly raided Spanish treasure ships?","a":"Sir Francis Drake.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":82,"q":"What was the Treaty of Nonsuch (1585)?","a":"Elizabeth officially agreed to send an English army to help the Dutch rebels fight Spain.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":83,"q":"How much gold did Drake capture from the Spanish ship Cacafuego?","a":"£140,000.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":84,"q":"Who was Francis Walsingham?","a":"Elizabeth's Secretary of State and spymaster.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":85,"q":"What was the Babington Plot (1586)?","a":"The final plot that led to Mary, Queen of Scots' execution.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":86,"q":"What was the Revolt of the Northern Earls (1569)?","a":"The only major rebellion on English soil against Elizabeth, led by Catholic nobles.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":87,"q":"Why was Mary, Queen of Scots a threat?","a":"She was a Catholic figurehead with a strong claim to the throne.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":88,"q":"What was the 'Vestment Controversy'?","a":"Puritan priests refusing to wear Catholic-style robes.","topic":"KT2.3: Outbreak of war with Spain, 1585–88"},{"id":89,"q":"Who had Elizabeth rejected a marriage proposal from in 1559?","a":"King Philip II of Spain","topic":"KT2.4: The Armada"},{"id":90,"q":"Which Pope gave his blessing to the Armada, turning it into a Catholic crusade?","a":"Pope Sixtus V","topic":"KT2.4: The Armada"},{"id":91,"q":"How much money did the Pope promise Philip if the Armada was successful?","a":"One million gold ducats","topic":"KT2.4: The Armada"},{"id":92,"q":"What 1584 treaty between France and Spain isolated England and pushed Philip closer to war?","a":"The Treaty of Joinville","topic":"KT2.4: The Armada"},{"id":93,"q":"The execution of which monarch in 1587 gave Philip II his final political motivation to invade?","a":"Mary, Queen of Scots","topic":"KT2.4: The Armada"},{"id":94,"q":"What was the name of the inexperienced commander chosen by Philip to lead the Armada?","a":"The Duke of Medina Sidonia","topic":"KT2.4: The Armada"},{"id":95,"q":"How many ships made up the Spanish Armada?","a":"130","topic":"KT2.4: The Armada"},{"id":96,"q":"What highly effective, defensive shape did the Spanish fleet sail in?","a":"A crescent formation","topic":"KT2.4: The Armada"},{"id":97,"q":"Who commanded the Spanish land army waiting in the Netherlands?","a":"The Duke of Parma","topic":"KT2.4: The Armada"},{"id":98,"q":"What type of small rebel ships blockaded the Spanish army in the shallow coastal waters?","a":"Dutch flyboats","topic":"KT2.4: The Armada"},{"id":99,"q":"At which port did the Armada mistakenly drop anchor to wait for the land army?","a":"Calais","topic":"KT2.4: The Armada"},{"id":100,"q":"What devastating tactic did the English use at midnight to break the Spanish formation?","a":"Fireships","topic":"KT2.4: The Armada"},{"id":101,"q":"How many fireships did the English send into the Spanish fleet?","a":"Eight","topic":"KT2.4: The Armada"},{"id":102,"q":"What was the name of the major naval battle that took place the day after the fireships were used?","a":"The Battle of Gravelines","topic":"KT2.4: The Armada"},{"id":103,"q":"Why were English cannons able to fire more quickly than the Spanish during this battle?","a":"They were mounted on smaller gun carriages, allowing them space to recoil and reload","topic":"KT2.4: The Armada"},{"id":104,"q":"Which way was the Armada forced to sail to escape the English fleet?","a":"Northwards, around Scotland and Ireland","topic":"KT2.4: The Armada"},{"id":105,"q":"What nickname did the English give to the storms that destroyed the fleeing Spanish ships?","a":"The \"Protestant Wind\"","topic":"KT2.4: The Armada"},{"id":106,"q":"Where did Elizabeth deliver her famous speech to her troops (\"I have the heart and stomach of a king\")?","a":"Tilbury","topic":"KT2.4: The Armada"},{"id":107,"q":"What famous piece of propaganda was painted to celebrate the victory?","a":"The Armada Portrait","topic":"KT2.4: The Armada"},{"id":108,"q":"Did the defeat of the Armada in 1588 mean the end of the war with Spain?","a":"No, the war continued for another 15 years and Philip built more armadas","topic":"KT2.4: The Armada"},{"id":109,"q":"What did Drake do in Cadiz in 1587?","a":"He launched a surprise attack on the Spanish fleet, destroying 30 ships and delaying the Armada.","topic":"KT2.4: The Armada"},{"id":110,"q":"What phrase did Drake use to describe his attack on Cadiz?","a":"'Singeing the King of Spain's beard.'","topic":"KT2.4: The Armada"},{"id":111,"q":"When was Mary, Queen of Scots executed?","a":"February 1587.","topic":"KT2.4: The Armada"},{"id":112,"q":"How did Mary's execution affect relations with Spain?","a":"It gave Philip II the final moral justification he needed to launch the Armada.","topic":"KT2.4: The Armada"},{"id":113,"q":"What was the Treaty of Nonsuch (1585)?","a":"Elizabeth's agreement to send troops to support the Dutch Protestant rebels.","topic":"KT2.4: The Armada"},{"id":114,"q":"Which English privateer constantly raided Spanish ships?","a":"Sir Francis Drake.","topic":"KT2.4: The Armada"},{"id":115,"q":"What was the Throckmorton Plot (1583)?","a":"A plot for a French invasion backed by Spanish money.","topic":"KT2.4: The Armada"},{"id":116,"q":"Why did Mary, Queen of Scots flee to England?","a":"She was forced to abdicate by Scottish lords.","topic":"KT2.4: The Armada"},{"id":117,"q":"What title did Elizabeth take in the Act of Supremacy?","a":"Supreme Governor.","topic":"KT2.4: The Armada"},{"id":118,"q":"How much debt did Elizabeth inherit in 1558?","a":"£300,000.","topic":"KT2.4: The Armada"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

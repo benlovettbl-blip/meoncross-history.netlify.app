@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 130 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/weimar_nazi_germany/mastery_pack_KT4.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/weimar_nazi_germany/mastery_pack_KT4.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1860,206 +2349,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>Key Topic 4.1: Nazi Policies Towards Women, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">Kinder, Küche, Kirche</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Kinder, Küche, Kirche</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">Children, Kitchen, Church</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Children, Kitchen, Church</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">The Law for the Encouragement of Marriage</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Law for the Encouragement of Marriage</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">She had to quit her job</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She had to quit her job</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">25% / one quarter</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">25% / one quarter</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">8 or more</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">8 or more</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Salute her</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Salute her</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">Lebensborn</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Lebensborn</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">Forcefully sterilise women deemed disabled, 'feeble-minded', or unfit to be mothers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Forcefully sterilise women deemed disabled, 'feeble-minded', or unfit to be mothers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">Tied back in a bun or in traditional plaits/braids</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Tied back in a bun or in traditional plaits/braids</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">The Nazis believed heavier women had easier childbirths/produced healthier babies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Nazis believed heavier women had easier childbirths/produced healthier babies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Gertrud Scholtz-Klink</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gertrud Scholtz-Klink</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">The NSF was the elite Nazi Women's League; the DFW was the mass organisation for ordinary women to learn domestic skills</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The NSF was the elite Nazi Women's League; the DFW was the mass organisation for ordinary women to learn domestic skills</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Maximum 10%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Maximum 10%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Female teachers, doctors, and civil servants</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Female teachers, doctors, and civil servants</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">The legal profession / becoming judges or lawyers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The legal profession / becoming judges or lawyers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">The Four Year Plan for rearmament</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Four Year Plan for rearmament</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">Men were joining the army, creating a massive labor shortage in factories</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Men were joining the army, creating a massive labor shortage in factories</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">A policy forcing young women to work on farms or in factories</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A policy forcing young women to work on farms or in factories</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">It went up, rising from 11.6 million to 14.6 million</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It went up, rising from 11.6 million to 14.6 million</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">The Minister of People's Enlightenment and Propaganda.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Minister of People's Enlightenment and Propaganda.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">Censorship, mass rallies, cheap radios, and controlling the press.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Censorship, mass rallies, cheap radios, and controlling the press.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Hitler's elite black-shirted personal bodyguard, led by Heinrich Himmler.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler's elite black-shirted personal bodyguard, led by Heinrich Himmler.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">The secret state police who spied on citizens using a network of informers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The secret state police who spied on citizens using a network of informers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">To imprison political opponents, such as communists and vocal critics.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To imprison political opponents, such as communists and vocal critics.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">A law giving Hitler dictatorial powers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A law giving Hitler dictatorial powers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Hitler's purge of the SA leadership.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler's purge of the SA leadership.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">The leader of the SA who was murdered.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The leader of the SA who was murdered.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">It burned down.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It burned down.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">Führer.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Führer.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">Bernhard Rust</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bernhard Rust</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">The National Socialist Teachers' League / NSLB</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The National Socialist Teachers' League / NSLB</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">They were sacked or reported to the Gestapo</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were sacked or reported to the Gestapo</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">Race Studies / Eugenics</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Race Studies / Eugenics</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">15%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">15%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Hitler's autobiography, Mein Kampf</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler's autobiography, Mein Kampf</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">1938</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1938</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">Napolas or Adolf Hitler Schools</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Napolas or Adolf Hitler Schools</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">Baldur von Schirach</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Baldur von Schirach</div>
                 </div>
                 </div>
         </div>
@@ -2070,202 +2567,202 @@
                 <div class="answer-list"><h3>Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Hitlerjugend / HJ / Hitler Youth</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitlerjugend / HJ / Hitler Youth</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">Rifle shooting, map reading, hiking, military drill</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rifle shooting, map reading, hiking, military drill</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">To become soldiers for the army</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To become soldiers for the army</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">Bund Deutscher Mädel / BDM / League of German Maidens</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bund Deutscher Mädel / BDM / League of German Maidens</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">To become healthy, racially pure mothers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To become healthy, racially pure mothers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">The Faith and Beauty Society</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Faith and Beauty Society</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">1936</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1936</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">8 million</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">8 million</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">It became compulsory, too strict, and focused on boring military drill instead of fun</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It became compulsory, too strict, and focused on boring military drill instead of fun</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">Kinder, Küche, Kirche (Children, Kitchen, Church).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Kinder, Küche, Kirche (Children, Kitchen, Church).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Loans given to young couples, which they could keep a portion of for every child they had.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Loans given to young couples, which they could keep a portion of for every child they had.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">A medal awarded to women who had large numbers of children (e.g. Gold for 8+).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A medal awarded to women who had large numbers of children (e.g. Gold for 8+).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">The mandatory youth organization that indoctrinated boys and prepared them for the military.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The mandatory youth organization that indoctrinated boys and prepared them for the military.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Textbooks were rewritten, Jewish teachers fired, and subjects like 'Race Studies' were introduced.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Textbooks were rewritten, Jewish teachers fired, and subjects like 'Race Studies' were introduced.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">The Minister of Propaganda.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Minister of Propaganda.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">The secret state police.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The secret state police.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Heinrich Himmler.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Heinrich Himmler.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">The law that allowed Hitler to bypass the Reichstag.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The law that allowed Hitler to bypass the Reichstag.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">The politicians who signed the Armistice.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The politicians who signed the Armistice.</div>
                 </div>
                 </div><div class="answer-list"><h3>Key Topic 4.3: Employment and Living Standards, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">Nearly 6 million</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Nearly 6 million</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">Approximately 300,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Approximately 300,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">National Labour Service</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">National Labour Service</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">1935</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1935</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">6 months</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">6 months</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">Over 100,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 100,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">Invisible Unemployment</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Invisible Unemployment</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">Jews and Women</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Jews and Women</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">From 100,000 to 1.4 million men</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">From 100,000 to 1.4 million men</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">Hjalmar Schacht</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hjalmar Schacht</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">Hermann Goering</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hermann Goering</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">To prepare the German economy for war within four years</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To prepare the German economy for war within four years</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">Autarky</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Autarky</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">Ersatz</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ersatz</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Making rubber or oil from coal</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Making rubber or oil from coal</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">Trade Unions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Trade Unions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">The German Labour Front / DAF</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The German Labour Front / DAF</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Robert Ley</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Robert Ley</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">Cheap, subsidised leisure activities like theatre tickets and cruises</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cheap, subsidised leisure activities like theatre tickets and cruises</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">5 marks</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">5 marks</div>
                 </div>
                 </div>
         </div>
@@ -2276,202 +2773,202 @@
                 <div class="answer-list"><h3>Key Topic 4.3: Employment and Living Standards, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">Production shifted to military vehicles in 1939; no one got a car and no money was refunded</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Production shifted to military vehicles in 1939; no one got a car and no money was refunded</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">Workers had to build the new facilities themselves during their unpaid free time</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Workers had to build the new facilities themselves during their unpaid free time</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">From 43 hours to 49 hours</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">From 43 hours to 49 hours</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">'Guns versus Butter'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'Guns versus Butter'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">No, because food prices rose faster than their wages</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">No, because food prices rose faster than their wages</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">A compulsory scheme where young men did six months of manual public works (like building autobahns).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A compulsory scheme where young men did six months of manual public works (like building autobahns).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">By creating public works, rearming, and removing women and Jews from the register.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By creating public works, rearming, and removing women and Jews from the register.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">An organization providing cheap holidays and leisure activities for loyal workers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An organization providing cheap holidays and leisure activities for loyal workers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">A scheme designed to improve working conditions in factories.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A scheme designed to improve working conditions in factories.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">Trade unions (which Hitler had banned).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Trade unions (which Hitler had banned).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">Children, Kitchen, Church.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Children, Kitchen, Church.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">The Nazi organization for indoctrinating boys.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Nazi organization for indoctrinating boys.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">A medal for having many children.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A medal for having many children.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">Joseph Goebbels.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joseph Goebbels.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">The purge of the SA.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The purge of the SA.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">Social Darwinism</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Social Darwinism</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">Sub-humans</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sub-humans</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">Homosexuals, vagrants, alcoholics</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Homosexuals, vagrants, alcoholics</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">The Law for the Prevention of Hereditarily Diseased Offspring</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Law for the Prevention of Hereditarily Diseased Offspring</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">400,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">400,000</div>
                 </div>
                 </div><div class="answer-list"><h3>Key Topic 4.4: The Persecution of Minorities, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">A secret state euthanasia programme killing disabled babies and children</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A secret state euthanasia programme killing disabled babies and children</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">The Marzahn internment camp</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Marzahn internment camp</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">They did not fit the traditional family ideal and did not produce children for the Reich</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They did not fit the traditional family ideal and did not produce children for the Reich</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">Pink</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pink</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">April 1933</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">April 1933</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">The Civil Service Act</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Civil Service Act</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">1935</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1935</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">Stripped Jewish people of their German citizenship and the right to vote</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Stripped Jewish people of their German citizenship and the right to vote</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">Marriage and sexual relations between Jews and Aryans</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Marriage and sexual relations between Jews and Aryans</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">A large red letter 'J'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A large red letter 'J'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">Israel for men, Sarah for women</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Israel for men, Sarah for women</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">9-10 November 1938</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">9-10 November 1938</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">Joseph Goebbels</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joseph Goebbels</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">30,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">30,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">They hated the public disorder and the wasteful destruction of property</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They hated the public disorder and the wasteful destruction of property</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">The Jewish community</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Jewish community</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">1 billion marks</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1 billion marks</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">The forced transfer of Jewish businesses and property to Aryans</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The forced transfer of Jewish businesses and property to Aryans</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">The Reich Office for Jewish Emigration</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Reich Office for Jewish Emigration</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas</div>
                 </div>
                 </div>
         </div>
@@ -2482,52 +2979,52 @@
                 <div class="answer-list"><h3>Key Topic 4.4: The Persecution of Minorities, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
-                    <div class="answer-text">Sub-humans (the racist term applied to Jews, Slavs, and Roma).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sub-humans (the racist term applied to Jews, Slavs, and Roma).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">122.</div>
-                    <div class="answer-text">Laws that stripped Jews of German citizenship and banned marriage between Jews and non-Jews.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Laws that stripped Jews of German citizenship and banned marriage between Jews and non-Jews.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">123.</div>
-                    <div class="answer-text">The 'Night of Broken Glass': a violent nationwide pogrom against Jewish shops, homes, and synagogues.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 'Night of Broken Glass': a violent nationwide pogrom against Jewish shops, homes, and synagogues.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">124.</div>
-                    <div class="answer-text">Hundreds of thousands were forcibly sterilized, and later murdered in the T4 euthanasia programme.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hundreds of thousands were forcibly sterilized, and later murdered in the T4 euthanasia programme.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">125.</div>
-                    <div class="answer-text">They were persecuted and sent to concentration camps.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were persecuted and sent to concentration camps.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">126.</div>
-                    <div class="answer-text">A compulsory manual labor scheme for young men.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A compulsory manual labor scheme for young men.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">127.</div>
-                    <div class="answer-text">Cheap holidays for workers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cheap holidays for workers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">128.</div>
-                    <div class="answer-text">Rearmament and public works (like autobahns).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rearmament and public works (like autobahns).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">129.</div>
-                    <div class="answer-text">Children, Kitchen, Church.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Children, Kitchen, Church.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">130.</div>
-                    <div class="answer-text">The secret state police.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The secret state police.</div>
                 </div>
                 </div>
         </div>
@@ -2589,45 +3086,310 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 3: Weimar and Nazi Germany, 1918-39 · Key Topic 4: Life in Nazi Germany, 1933–39</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (130 Questions)</option>
+                    <option value="0">Part 1: Key Topic 4.1: Nazi Policies Towards Women, 1933–1939</option>
+<option value="1">Part 2: Key Topic 4.1: Nazi Policies Towards Women, 1933–1939</option>
+<option value="2">Part 3: Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939</option>
+<option value="3">Part 4: Key Topic 4.3: Employment and Living Standards, 1933–1939</option>
+<option value="4">Part 5: Key Topic 4.3: Employment and Living Standards, 1933–1939</option>
+<option value="5">Part 6: Key Topic 4.4: The Persecution of Minorities, 1933–1939</option>
+<option value="6">Part 7: Key Topic 4.4: The Persecution of Minorities, 1933–1939</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_weimar_nazi_germany_KT4';
+    const ALL_DECK = [{"id":1,"q":"What three German words (starting with K) summarised the traditional Nazi ideal for women?","a":"Kinder, Küche, Kirche","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":2,"q":"Translate those three words into English.","a":"Children, Kitchen, Church","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":3,"q":"What was the name of the 1933 law that gave couples 1,000 marks to marry?","a":"The Law for the Encouragement of Marriage","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":4,"q":"What was the condition placed on the wife for the couple to receive this loan?","a":"She had to quit her job","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":5,"q":"How much of the marriage loan was forgiven for each child born?","a":"25% / one quarter","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":6,"q":"How many children did a woman have to give birth to in order to win the Gold Mother's Cross?","a":"8 or more","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":7,"q":"What did Hitler Youth members have to do if they saw a woman wearing a Gold Mother's Cross?","a":"Salute her","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":8,"q":"What was the name of the SS 'Spring of Life' breeding programme started by Heinrich Himmler in 1935?","a":"Lebensborn","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":9,"q":"What did the 1933 Sterilisation Law allow the government to do?","a":"Forcefully sterilise women deemed disabled, 'feeble-minded', or unfit to be mothers","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":10,"q":"Give two ways the Nazis wanted the ideal Aryan woman to style her hair.","a":"Tied back in a bun or in traditional plaits/braids","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":11,"q":"Why were women heavily discouraged from slimming/dieting?","a":"The Nazis believed heavier women had easier childbirths/produced healthier babies","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":12,"q":"Who was the 'Reich Women's Leader' in charge of all female organisations?","a":"Gertrud Scholtz-Klink","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":13,"q":"What was the difference between the NSF and the DFW?","a":"The NSF was the elite Nazi Women's League; the DFW was the mass organisation for ordinary women to learn domestic skills","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":14,"q":"What was the legal quota cap placed on female university enrolment?","a":"Maximum 10%","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":15,"q":"Which female professionals were immediately forced to give up their jobs in 1933?","a":"Female teachers, doctors, and civil servants","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":16,"q":"What profession were women completely banned from entering in 1936?","a":"The legal profession / becoming judges or lawyers","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":17,"q":"What economic plan, introduced by Göring in 1936, forced the Nazis to change their minds about women working?","a":"The Four Year Plan for rearmament","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":18,"q":"Why did the Four Year Plan mean women had to go back to work?","a":"Men were joining the army, creating a massive labor shortage in factories","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":19,"q":"What was the 'Compulsory Duty Year' introduced in 1937?","a":"A policy forcing young women to work on farms or in factories","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":20,"q":"Did female employment go up or down between 1933 and 1939? (Give the statistics if you can).","a":"It went up, rising from 11.6 million to 14.6 million","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":21,"q":"Who was Joseph Goebbels?","a":"The Minister of People's Enlightenment and Propaganda.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":22,"q":"Name two methods of Nazi propaganda.","a":"Censorship, mass rallies, cheap radios, and controlling the press.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":23,"q":"Who were the SS (Schutzstaffel)?","a":"Hitler's elite black-shirted personal bodyguard, led by Heinrich Himmler.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":24,"q":"What was the Gestapo?","a":"The secret state police who spied on citizens using a network of informers.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":25,"q":"What was the role of concentration camps in the 1930s?","a":"To imprison political opponents, such as communists and vocal critics.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":26,"q":"What was the Enabling Act?","a":"A law giving Hitler dictatorial powers.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":27,"q":"What was the Night of the Long Knives?","a":"Hitler's purge of the SA leadership.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":28,"q":"Who was Ernst Röhm?","a":"The leader of the SA who was murdered.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":29,"q":"What happened to the Reichstag in 1933?","a":"It burned down.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":30,"q":"What title did Hitler take in 1934?","a":"Führer.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":31,"q":"Who was the Nazi Minister of Education?","a":"Bernhard Rust","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":32,"q":"What was the name of the compulsory union that 97% of teachers had joined by 1939?","a":"The National Socialist Teachers' League / NSLB","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":33,"q":"What happened to teachers who refused to teach Nazi ideas?","a":"They were sacked or reported to the Gestapo","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":34,"q":"What new compulsory subject taught students to classify races and measure skulls?","a":"Race Studies / Eugenics","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":35,"q":"What percentage of the school timetable was eventually taken up by Physical Education (PE)?","a":"15%","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":36,"q":"Give an example of how mathematics was used for propaganda.","a":"Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":37,"q":"From 1935 onwards, what book became a compulsory textbook in all schools?","a":"Hitler's autobiography, Mein Kampf","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":38,"q":"In what year were Jewish children banned from attending German state schools entirely?","a":"1938","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":39,"q":"Name one of the two types of elite boarding schools set up for the most promising Aryan boys.","a":"Napolas or Adolf Hitler Schools","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":40,"q":"Who was appointed by Hitler in 1933 as the Reich Youth Leader?","a":"Baldur von Schirach","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":41,"q":"What was the name of the youth group for boys aged 14-18?","a":"Hitlerjugend / HJ / Hitler Youth","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":42,"q":"Give two examples of typical Hitler Youth activities for boys.","a":"Rifle shooting, map reading, hiking, military drill","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":43,"q":"What was the ultimate goal for boys in the Hitler Youth?","a":"To become soldiers for the army","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":44,"q":"What was the name of the youth group for girls aged 14-18?","a":"Bund Deutscher Mädel / BDM / League of German Maidens","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":45,"q":"What was the ultimate goal for girls in the BDM?","a":"To become healthy, racially pure mothers","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":46,"q":"What was the name of the society created in 1938 for young women aged 17-21 to stop them forgetting their domestic training?","a":"The Faith and Beauty Society","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":47,"q":"How did the Nazis use the youth movements to undermine families?","a":"They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":48,"q":"In what year did the Hitler Youth Law make the youth movements effectively mandatory?","a":"1936","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":49,"q":"Roughly how many members were in the Nazi youth movements by 1939?","a":"8 million","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":50,"q":"Why did some young people start to hate the Hitler Youth by the late 1930s?","a":"It became compulsory, too strict, and focused on boring military drill instead of fun","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":51,"q":"What were the 'Three Ks' for women in Nazi Germany?","a":"Kinder, Küche, Kirche (Children, Kitchen, Church).","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":52,"q":"What was the Law for the Encouragement of Marriage?","a":"Loans given to young couples, which they could keep a portion of for every child they had.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":53,"q":"What was the Mother's Cross?","a":"A medal awarded to women who had large numbers of children (e.g. Gold for 8+).","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":54,"q":"What was the Hitler Youth?","a":"The mandatory youth organization that indoctrinated boys and prepared them for the military.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":55,"q":"How did schools change under the Nazis?","a":"Textbooks were rewritten, Jewish teachers fired, and subjects like 'Race Studies' were introduced.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":56,"q":"Who was Joseph Goebbels?","a":"The Minister of Propaganda.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":57,"q":"What was the Gestapo?","a":"The secret state police.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":58,"q":"Who led the SS?","a":"Heinrich Himmler.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":59,"q":"What was the Enabling Act?","a":"The law that allowed Hitler to bypass the Reichstag.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":60,"q":"Who were the 'November Criminals'?","a":"The politicians who signed the Armistice.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":61,"q":"How many Germans were officially unemployed when Hitler became Chancellor in 1933?","a":"Nearly 6 million","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":62,"q":"What was the official unemployment figure reported by the Nazis in 1939?","a":"Approximately 300,000","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":63,"q":"What do the initials RAD stand for in English?","a":"National Labour Service","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":64,"q":"In what year did the RAD become compulsory for all young men aged 18–25?","a":"1935","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":65,"q":"How long did young men have to serve in the RAD?","a":"6 months","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":66,"q":"By 1938, how many men were employed building the Autobahns?","a":"Over 100,000","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":67,"q":"What term is used to describe the Nazi manipulation of unemployment statistics?","a":"Invisible Unemployment","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":68,"q":"Name two groups of people who were removed from the workforce but not counted in the unemployment figures.","a":"Jews and Women","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":69,"q":"How large did the German army grow between 1933 and 1939 after conscription was reintroduced?","a":"From 100,000 to 1.4 million men","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":70,"q":"Who was the Minister of Economics responsible for the 'New Plan' (1934-1937)?","a":"Hjalmar Schacht","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":71,"q":"Who was put in charge of the 'Four Year Plan' in 1936?","a":"Hermann Goering","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":72,"q":"What was the ultimate goal of the Four Year Plan?","a":"To prepare the German economy for war within four years","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":73,"q":"What is the term for the economic policy of self-sufficiency?","a":"Autarky","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":74,"q":"What is the German word for the artificial substitute goods developed to achieve self-sufficiency?","a":"Ersatz","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":75,"q":"Give an example of an Ersatz good.","a":"Making rubber or oil from coal","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":76,"q":"In May 1933, what did Hitler ban to gain control over the workers?","a":"Trade Unions","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":77,"q":"What Nazi organisation replaced trade unions?","a":"The German Labour Front / DAF","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":78,"q":"Who was the leader of the DAF?","a":"Robert Ley","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":79,"q":"What did Strength Through Joy (KdF) provide for workers?","a":"Cheap, subsidised leisure activities like theatre tickets and cruises","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":80,"q":"How much did workers pay per week into the Volkswagen savings scheme?","a":"5 marks","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":81,"q":"Why was the Volkswagen scheme a massive scam?","a":"Production shifted to military vehicles in 1939; no one got a car and no money was refunded","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":82,"q":"What was the catch with the 'Beauty of Labour' (SdA) improvements?","a":"Workers had to build the new facilities themselves during their unpaid free time","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":83,"q":"How much did the average working week increase between 1933 and 1939?","a":"From 43 hours to 49 hours","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":84,"q":"Which phrase describes the tension between military spending and consumer goods?","a":"'Guns versus Butter'","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":85,"q":"Did 'real wages' (purchasing power) for the average worker improve by 1939?","a":"No, because food prices rose faster than their wages","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":86,"q":"What was the National Labour Service (RAD)?","a":"A compulsory scheme where young men did six months of manual public works (like building autobahns).","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":87,"q":"How did Hitler reduce the official unemployment figures?","a":"By creating public works, rearming, and removing women and Jews from the register.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":88,"q":"What was 'Strength Through Joy' (KdF)?","a":"An organization providing cheap holidays and leisure activities for loyal workers.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":89,"q":"What was the 'Beauty of Labour' (SdA)?","a":"A scheme designed to improve working conditions in factories.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":90,"q":"What did the German Labour Front (DAF) replace?","a":"Trade unions (which Hitler had banned).","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":91,"q":"What were the 'Three Ks'?","a":"Children, Kitchen, Church.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":92,"q":"What was the Hitler Youth?","a":"The Nazi organization for indoctrinating boys.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":93,"q":"What was the Mother's Cross?","a":"A medal for having many children.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":94,"q":"Who was the Minister of Propaganda?","a":"Joseph Goebbels.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":95,"q":"What was the Night of the Long Knives?","a":"The purge of the SA.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":96,"q":"What twisted biological theory underpinned Hitler's racial ideology?","a":"Social Darwinism","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":97,"q":"What did the term 'Untermenschen' mean?","a":"Sub-humans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":98,"q":"Give two examples of groups the Nazis considered 'Asocials'.","a":"Homosexuals, vagrants, alcoholics","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":99,"q":"What was the name of the 1933 law that allowed the government to surgically prevent disabled people from having children?","a":"The Law for the Prevention of Hereditarily Diseased Offspring","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":100,"q":"Roughly how many people were forcibly sterilised under this law?","a":"400,000","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":101,"q":"What was the T4 programme introduced in 1939?","a":"A secret state euthanasia programme killing disabled babies and children","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":102,"q":"Where were hundreds of Roma and Sinti forced to live ahead of the 1936 Berlin Olympics?","a":"The Marzahn internment camp","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":103,"q":"Why were homosexual men targeted by the Nazis?","a":"They did not fit the traditional family ideal and did not produce children for the Reich","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":104,"q":"What colour triangle were homosexual prisoners forced to wear in concentration camps?","a":"Pink","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":105,"q":"In what month and year did the SA lead a one-day boycott of Jewish shops and businesses?","a":"April 1933","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":106,"q":"What 1933 law resulted in Jewish teachers, judges, and government workers losing their jobs?","a":"The Civil Service Act","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":107,"q":"In what year were the Nuremberg Laws passed?","a":"1935","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":108,"q":"What did the 'Reich Citizenship Law' do?","a":"Stripped Jewish people of their German citizenship and the right to vote","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":109,"q":"What did the 'Law for the Protection of German Blood and Honour' forbid?","a":"Marriage and sexual relations between Jews and Aryans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":110,"q":"In October 1938, what was stamped on the passports of all Jewish people?","a":"A large red letter 'J'","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":111,"q":"What middle names were Jewish men and women forced to adopt in 1938?","a":"Israel for men, Sarah for women","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":112,"q":"What is the exact date of Kristallnacht?","a":"9-10 November 1938","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":113,"q":"Who orchestrated Kristallnacht to win Hitler's favour?","a":"Joseph Goebbels","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":114,"q":"How many Jewish men were arrested and sent to concentration camps following Kristallnacht?","a":"30,000","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":115,"q":"According to Gestapo and Sopade reports, why were many ordinary Germans disgusted by Kristallnacht?","a":"They hated the public disorder and the wasteful destruction of property","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":116,"q":"Who did the Nazi government blame for the destruction of Kristallnacht?","a":"The Jewish community","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":117,"q":"What was the exact fine placed on the Jewish community to pay for the damage?","a":"1 billion marks","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":118,"q":"What does the term 'Aryanisation' mean in the context of 1938-1939?","a":"The forced transfer of Jewish businesses and property to Aryans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":119,"q":"In January 1939, what organisation did Reinhard Heydrich set up?","a":"The Reich Office for Jewish Emigration","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":120,"q":"What was the purpose of this new office?","a":"To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":121,"q":"What did the Nazis mean by 'Untermenschen'?","a":"Sub-humans (the racist term applied to Jews, Slavs, and Roma).","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":122,"q":"What were the Nuremberg Laws (1935)?","a":"Laws that stripped Jews of German citizenship and banned marriage between Jews and non-Jews.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":123,"q":"What happened during Kristallnacht (1938)?","a":"The 'Night of Broken Glass': a violent nationwide pogrom against Jewish shops, homes, and synagogues.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":124,"q":"What happened to the disabled under Nazi rule?","a":"Hundreds of thousands were forcibly sterilized, and later murdered in the T4 euthanasia programme.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":125,"q":"How did the Nazis treat minority groups like homosexuals and Jehovah's Witnesses?","a":"They were persecuted and sent to concentration camps.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":126,"q":"What was the National Labour Service (RAD)?","a":"A compulsory manual labor scheme for young men.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":127,"q":"What was 'Strength Through Joy' (KdF)?","a":"Cheap holidays for workers.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":128,"q":"How did Hitler reduce unemployment?","a":"Rearmament and public works (like autobahns).","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":129,"q":"What were the 'Three Ks'?","a":"Children, Kitchen, Church.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":130,"q":"What was the Gestapo?","a":"The secret state police.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

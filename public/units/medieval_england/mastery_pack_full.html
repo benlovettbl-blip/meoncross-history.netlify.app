@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 160 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAAAAklEQVR4AewaftIAAAt8SURBVO3BAXFkS4xFweuK5iEgwiUUwiUgQuIdAKs3EfVbvfbsyfz6/kMAsOAIAJYcAcCSIwBYcgQAS44AYMkRACw5AoAlL/2Feepf0BX6NPPUpCv0buap36Ir9MQ8daMr9GnmqUlXaGKe+hd0hSZHALDkCACWHAHAkiMAWHIEAEuOAGDJS/9BV+gnMU+9m3lqg3nq3bpCt8xTk67QDfPUxDz1pCt0wzx1oyv0xDz1SV2hn8Q8deMIAJYcAcCSIwBYcgQAS44AYMkRACx5aYl5akNX6N3MUze6Qk/MUze6Qp/WFZqYpyZdoQ3mqXfrCk3MU7e6Qp9kntrQFXq3IwBYcgQAS44AYMkRACw5AoAlRwCw5CX8n+gK3TBPfVpX6EZX6CcxT20wT026Qv+fHQHAkiMAWHIEAEuOAGDJEQAsOQKAJS/hUVdoYp560hWamKdudIU2mKcm5qkbXaEN5qlJV2hDV2hinsL/7ggAlhwBwJIjAFhyBABLjgBgyREALDkCgCUvLekK/QvMU5/WFbphnnrSFZp0hd7NPHWrKzTpCk3MUxvMUz9FV+i3OAKAJUcAsOQIAJYcAcCSIwBYcgQAS176D8xT/7qu0MQ89WnmqUlX6Il5atIVmpinJl2hG12hJ+apSVfoRldoYp560hWamKfezTz1LzgCgCVHALDkCACWHAHAkiMAWHIEAEte+ouu0P9n5qlJV+iJeWrSFZqYpyZdoYl56klX6JO6QhPz1C3z1Lt1hT6tK/SvOwKAJUcAsOQIAJYcAcCSIwBYcgQAS76+/9AD89SkKzQxT/0kXaHfwjy1oSs0MU9NukIT89SndYVumKdudYXezTz1k3SF3u0IAJYcAcCSIwBYcgQAS44AYMkRACz5+v5Dl8xTk67QxDw16Qo9MU9NukIT89SkK3TDPPWkK/RJ5qlbXaGJeerdukJPzFM3ukKfZp6adIVumKcmXaFb5qkbXaEbRwCw5AgAlhwBwJIjAFhyBABLjgBgyUv/QVdoYp6adIVudYUm5qlJV2hinpp0hTaYp96tK/RpXaFP6wrdME9NukJPzFOTrtDEPDXpCn1aV2hinpqYpyZdockRACw5AoAlRwCw5AgAlhwBwJIjAFhyBABLvr7/0APz1KQr9GnmqUlX6IZ5atIV+jTz1KQrdMs8NekK3TBPbegKfZJ56ifpCv0k5qlJV2hyBABLjgBgyREALDkCgCVHALDkCACWvPQfmKcmXaGJeWqDeWrSFbphntrQFfpJzFOTrtCkKzQxT026Qk/MU5Ou0A3z1KQrtME89W7mqd/iCACWHAHAkiMAWHIEAEuOAGDJEQAseekvukI3zFM3ukKf1hXaYJ660RWamKcmXaFPM09t6ApNzFOTrtCkK7TBPDXpCt0wT026Qr/FEQAsOQKAJUcAsOQIAJYcAcCSIwBY8tIvY576pK7Qra7QJ5mnbnWFbnSFNpinJl2hdzNP3eoKTcxTk67QDfPUra7QxDx1oys0OQKAJUcAsOQIAJYcAcCSIwBYcgQAS76+/9AD89SNrtAG89SkKzQxT026QhPz1K2u0CeZp550hW6Yp36LrtBvYZ7a0BW6YZ6adIVuHAHAkiMAWHIEAEuOAGDJEQAsOQKAJUcAsOSlv+gKTcxTN8xTG8xTk67Qp5mnJl2hiXnqRlfolnnqRldog3nqhnnqRlfoiXlq0hWamKdudIUm5qlb5qlPOgKAJUcAsOQIAJYcAcCSIwBYcgQAS76+/9Al89SkK/STmKc+rSv0buapW12hG+apd+sKPTFP3egKTcxTk67QLfPUJ3WFNpinJl2hG0cAsOQIAJYcAcCSIwBYcgQAS44AYMlLf2GeumGemnSFJuapDV2hiXnqRlfolnnqRldoYp76tK7QxDy1oSs0MU9NukIT89RP0hWamKeedIXezTw16QpNjgBgyREALDkCgCVHALDkCACWHAHAkq/vP/TAPPVbdIUm5qkbXaGJeWpDV+iGeepWV2hinvq0rtAnmaeedIUm5qlP6gp9mnlq0hWaHAHAkiMAWHIEAEuOAGDJEQAsOQKAJV/ff2iBeWrSFZqYp550hSbmqXfrCt0yT026QhPz1KQrtME8NekKTcxTk67QLfPUpCs0MU/9C7pCE/PUhq7Qux0BwJIjAFhyBABLjgBgyREALDkCgCUv/YV56kZXaGKe2tAVmpinJl2hiXnqVlfo3cxTk67QE/PUJ5mnbnWFJuapSVdoYp6adIVumacmXaF36wo9MU9NukKfdAQAS44AYMkRACw5AoAlRwCw5AgAlhwBwJKXlpinPs08dcM8NekK3TJPTbpC72aeetIVmpinbnSFJuapDV2hiXnqhnlqg3lq0hWamKd+EvPUpCs0OQKAJUcAsOQIAJYcAcCSIwBYcgQAS176P9AVumWemnSFJuapdzNP3TJPTbpCG8xTk67QxDw16QpNukIT89SGrtAN89STrtAN89SndYVumKcmXaEbRwCw5AgAlhwBwJIjAFhyBABLjgBgydf3H1pgnpp0hTaYp96tK/STmKcmXaFb5qlJV2hinrrRFXpinpp0hW6YpzZ0hSbmqU/rCk3MU5Ou0MQ8NekKTY4AYMkRACw5AoAlRwCw5AgAlhwBwJKv7z/0wDw16QpNzFM3ukKfZp6adIVumaferSt0yzw16QpNzFOTrtDEPHWrKzQxT026QhPz1KQrdMs8NekK3TBPTbpCv8URACw5AoAlRwCw5AgAlhwBwJIjAFjy0pKu0MQ8tcE8daMrtKErNDFPvZt56l9hnpp0hW50hW6ZpyZdoYl5atIV2mCemnSFJuapG12hyREALDkCgCVHALDkCACWHAHAkiMAWHIEAEteWmKemnSFJuapJ12hSVfok8xTt7pCE/PUb2GemnSFJuapW+apG12hW12hiXnqJ+kKvVtX6MYRACw5AoAlRwCw5AgAlhwBwJIjAFjy0pKu0MQ8tcE89W5doVtdoXczT026QrfMU5/UFXpinpp0hW6Yp251hd7NPHXDPLWhKzQxT026QpMjAFhyBABLjgBgyREALDkCgCVHALDkpb/oCr1bV2hDV+iGeerTzFOTrtAG89Qnmac2mKcmXaEbXaEn5qkbXaF3M0/d6gpNzFOTrtCNIwBYcgQAS44AYMkRACw5AoAlRwCw5Ov7Dz0wT/0LukI3zFOTrtAT89S7dYUm5qlbXaGJeWrSFbphnnrSFfok89STrtDEPDXpCk3MU5Ou0MQ89aQrNDFPvVtXaHIEAEuOAGDJEQAsOQKAJUcAsOQIAJa89B90hX4S89QN89SkKzQxT2Fmnrplnnq3rtBP0hXaYJ6adIVumKduHAHAkiMAWHIEAEuOAGDJEQAsOQKAJS8tMU9t6Ar9FF2hJ+apSVdoYp7a0BWamKcmXaGJeWrSFbplnpp0hW6Yp26Zp26Ypz6tKzQxT33SEQAsOQKAJUcAsOQIAJYcAcCSIwBYcgQAS17CI/PUra7QxDw16QpNzFOTrtAT89QnmadudYUm5qlJV+hGV+iJeeqTukIT89QT89RPcQQAS44AYMkRACw5AoAlRwCw5AgAlryER12hiXnqVlfo3cxTT7pCE/PUja7QxDx1yzw16Qrd6Ard6gpNzFOTrtC7dYU2mKfe7QgAlhwBwJIjAFhyBABLjgBgyREALHlpSVfot+gKTcxTk67QBvPUpCs0MU89MU9NukI3zFOTrtDEPPWkK3TDPDXpCk3MUxvMUze6QhPz1JOu0I2u0MQ8deMIAJYcAcCSIwBYcgQAS44AYMkRACz5+v5DD8xT/4Ku0MQ8taErNDFP/RZdoU8zT026QjfMU7e6QjfMUze6QhPz1E/SFZocAcCSIwBYcgQAS44AYMkRACw5AoAlX99/CAAWHAHAkiMAWHIEAEuOAGDJEQAsOQKAJf8DwevnAB/sZGgAAAAASUVORK5CYII=" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/medieval_england/mastery_pack_full.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/medieval_england/mastery_pack_full.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -2156,206 +2645,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>Lesson 1: 1066 - Why did three men claim one throne, and how did William win?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">The 11th century (1000s).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 11th century (1000s).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">The Anglo-Saxons.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Anglo-Saxons.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">The church.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The church.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">The person legally next in line to become king or queen.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The person legally next in line to become king or queen.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">Edward the Confessor.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Edward the Confessor.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">The council of powerful English lords and bishops.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The council of powerful English lords and bishops.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">The Vikings.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Vikings.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">In northern France.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">In northern France.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">To assert that you have the right to be the next monarch.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To assert that you have the right to be the next monarch.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">A situation where a government has no identifiable central authority or leader.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A situation where a government has no identifiable central authority or leader.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Harold Godwinson</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Harold Godwinson</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Harald Hardrada</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Harald Hardrada</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">That William would be the next king</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That William would be the next king</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">They had just marched rapidly from a battle in the north</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They had just marched rapidly from a battle in the north</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">A shield wall</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A shield wall</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">By faking a retreat to lure them down the hill</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By faking a retreat to lure them down the hill</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">He was shot in the eye by an arrow</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He was shot in the eye by an arrow</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">The Bayeux Tapestry</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Bayeux Tapestry</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">The death of Edward the Confessor without a clear heir</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The death of Edward the Confessor without a clear heir</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">They had archers and cavalry on horseback</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They had archers and cavalry on horseback</div>
                 </div>
                 </div><div class="answer-list"><h3>Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?</h3>
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">Harold Godwinson.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Harold Godwinson.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">Harald Hardrada.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Harald Hardrada.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">William, Duke of Normandy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William, Duke of Normandy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Stamford Bridge (in the north).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Stamford Bridge (in the north).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">King Harold Godwinson.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Harold Godwinson.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">They had just marched 300 miles south after fighting a brutal battle.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They had just marched 300 miles south after fighting a brutal battle.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Pevensey, on the south coast.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pevensey, on the south coast.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">The Pope.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Pope.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">The Battle of Hastings.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Battle of Hastings.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">1066.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1066.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">A large mound of earth with a wooden tower on top</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A large mound of earth with a wooden tower on top</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">The enclosed courtyard where soldiers lived</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The enclosed courtyard where soldiers lived</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">They were quick to build and visually intimidating</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were quick to build and visually intimidating</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">1069</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1069</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Mass starvation and widespread deaths among the northern population</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mass starvation and widespread deaths among the northern population</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">French</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">French</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Everything that everyone owned across England</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Everything that everyone owned across England</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">Because its decisions were as final as the Day of Judgement (Doomsday)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because its decisions were as final as the Day of Judgement (Doomsday)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">Military service</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Military service</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">That he retained ultimate ownership and control over all land in England</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That he retained ultimate ownership and control over all land in England</div>
                 </div>
                 </div>
         </div>
@@ -2366,202 +2863,202 @@
                 <div class="answer-list"><h3>Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">William the Conqueror.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William the Conqueror.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">Motte and bailey castles.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Motte and bailey castles.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">A large, hand-dug mound of earth.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A large, hand-dug mound of earth.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">The Harrying of the North.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Harrying of the North.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">To survey the wealth of the country for taxation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To survey the wealth of the country for taxation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">Harald Hardrada.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Harald Hardrada.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">Wood.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wood.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">The fenced compound where soldiers lived and horses were stabled.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The fenced compound where soldiers lived and horses were stabled.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">A system where land is given in exchange for military service or labour.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A system where land is given in exchange for military service or labour.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">Over 100,000.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 100,000.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">They gave much lighter punishments to priests who committed crimes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They gave much lighter punishments to priests who committed crimes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">They were close friends and drinking companions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were close friends and drinking companions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">A scratchy hair shirt to show religious devotion</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A scratchy hair shirt to show religious devotion</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">The Constitutions of Clarendon</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Constitutions of Clarendon</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Six years</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Six years</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">He excommunicated the bishops who had supported the King</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He excommunicated the bishops who had supported the King</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">'Will no one rid me of this turbulent priest?'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'Will no one rid me of this turbulent priest?'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Inside Canterbury Cathedral near the altar</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Inside Canterbury Cathedral near the altar</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">It became one of the most important pilgrimage sites in Europe</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It became one of the most important pilgrimage sites in Europe</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">He walked barefoot to the cathedral and allowed monks to whip him</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He walked barefoot to the cathedral and allowed monks to whip him</div>
                 </div>
                 </div><div class="answer-list"><h3>Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">King Henry II.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Henry II.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">Thomas Becket.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Thomas Becket.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">Over the power of Church courts and 'criminous clerks'.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over the power of Church courts and 'criminous clerks'.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">He was murdered by four of the King's knights in Canterbury Cathedral.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He was murdered by four of the King's knights in Canterbury Cathedral.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">He threatened him with excommunication, forcing Henry to do penance.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He threatened him with excommunication, forcing Henry to do penance.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">William the Conqueror.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William the Conqueror.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">A massive survey used to maximize taxation in 1086.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A massive survey used to maximize taxation in 1086.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">A member of the clergy accused of a serious crime like murder.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A member of the clergy accused of a serious crime like murder.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">As public penance for his role in Becket's murder.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">As public penance for his role in Becket's murder.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">An early wooden castle built by the Normans.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An early wooden castle built by the Normans.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">Most of England's lands in France, including Normandy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Most of England's lands in France, including Normandy</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">John's failure to inherit significant lands compared to his older brothers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">John's failure to inherit significant lands compared to his older brothers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">By imposing massive, arbitrary taxes on the barons</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By imposing massive, arbitrary taxes on the barons</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">He excommunicated John and banned church services in England</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He excommunicated John and banned church services in England</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Runnymede</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Runnymede</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">The Great Charter</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Charter</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">No free man shall be imprisoned without a fair trial</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">No free man shall be imprisoned without a fair trial</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">The unfree peasants (villeins) who made up the majority of the population</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The unfree peasants (villeins) who made up the majority of the population</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">He complained to the Pope and had the document declared void</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He complained to the Pope and had the document declared void</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">The First Barons' War</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The First Barons' War</div>
                 </div>
                 </div>
         </div>
@@ -2572,202 +3069,202 @@
                 <div class="answer-list"><h3>Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">Over 90%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 90%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">An unfree peasant tied to the land</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An unfree peasant tied to the land</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">Leave the village or marry</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Leave the village or marry</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">Single-room wattle-and-daub huts</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Single-room wattle-and-daub huts</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">To keep warm</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To keep warm</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">The seasons</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The seasons</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">Harvesting crops</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Harvesting crops</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">A tax requiring 1/10th of a peasant's produce to go to the Church</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A tax requiring 1/10th of a peasant's produce to go to the Church</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">The Catholic Church</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Catholic Church</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">They feared eternal damnation in Hell</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They feared eternal damnation in Hell</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">A giant mural painted in churches depicting the Day of Judgement</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A giant mural painted in churches depicting the Day of Judgement</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">Because the vast majority of peasants were illiterate</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because the vast majority of peasants were illiterate</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">They were welcomed into Heaven by angels</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were welcomed into Heaven by angels</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">Naked and being dragged by demons into Hell</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Naked and being dragged by demons into Hell</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">A place of suffering before Heaven</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A place of suffering before Heaven</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">By obeying the priest and paying tithes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By obeying the priest and paying tithes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">The parish church</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The parish church</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">In the autumn</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">In the autumn</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">The village would face starvation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The village would face starvation</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">Wattle-and-daub</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wattle-and-daub</div>
                 </div>
                 </div><div class="answer-list"><h3>Lesson 6: 1348: How did the Black Death shatter medieval social order?</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">King John.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King John.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">Softsword.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Softsword.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">He imposed heavy taxes (scutage) and lost wars.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He imposed heavy taxes (scutage) and lost wars.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">Magna Carta.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Magna Carta.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">That no one, not even the King, is above the law.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That no one, not even the King, is above the law.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">Canterbury Cathedral.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Canterbury Cathedral.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">Being officially thrown out of the Catholic Church.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Being officially thrown out of the Catholic Church.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">William the Conqueror.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William the Conqueror.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">William's brutal destruction of crops to stop northern rebellions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William's brutal destruction of crops to stop northern rebellions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">Giving lenient punishments to criminous clerks.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Giving lenient punishments to criminous clerks.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">On trading ships arriving at southern ports like Melcombe Regis</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">On trading ships arriving at southern ports like Melcombe Regis</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">A painfully swollen lymph node, usually in the armpit or groin</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A painfully swollen lymph node, usually in the armpit or groin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">Strapping a live toad or chicken to the buboes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Strapping a live toad or chicken to the buboes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">The medieval belief that bad smells and corrupt air caused disease</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The medieval belief that bad smells and corrupt air caused disease</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">Religious zealots who whipped themselves to earn God's forgiveness and stop the plague</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Religious zealots who whipped themselves to earn God's forgiveness and stop the plague</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">A severe labour shortage</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A severe labour shortage</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">They demanded higher wages and better working conditions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They demanded higher wages and better working conditions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">A law passed by the government to freeze peasant wages at pre-plague levels</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A law passed by the government to freeze peasant wages at pre-plague levels</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">Lords had to start paying villeins or risk them running away to rival lords</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Lords had to start paying villeins or risk them running away to rival lords</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">Because priests were dying just like everyone else, and their prayers hadn't stopped the disease</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because priests were dying just like everyone else, and their prayers hadn't stopped the disease</div>
                 </div>
                 </div>
         </div>
@@ -2778,202 +3275,202 @@
                 <div class="answer-list"><h3>Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
-                    <div class="answer-text">1348.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1348.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">122.</div>
-                    <div class="answer-text">Roughly one third.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Roughly one third.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">123.</div>
-                    <div class="answer-text">Agonizing, pus-filled swellings caused by the bubonic plague.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Agonizing, pus-filled swellings caused by the bubonic plague.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">124.</div>
-                    <div class="answer-text">Because germ theory did not exist yet.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because germ theory did not exist yet.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">125.</div>
-                    <div class="answer-text">They believed it was a divine punishment sent by God.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They believed it was a divine punishment sent by God.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">126.</div>
-                    <div class="answer-text">Magna Carta.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Magna Carta.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">127.</div>
-                    <div class="answer-text">Thomas Becket.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Thomas Becket.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">128.</div>
-                    <div class="answer-text">To fund his failed wars to recapture Normandy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To fund his failed wars to recapture Normandy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">129.</div>
-                    <div class="answer-text">To record wealth and property for taxation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To record wealth and property for taxation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">130.</div>
-                    <div class="answer-text">Harold Godwinson.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Harold Godwinson.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">131.</div>
-                    <div class="answer-text">It charged every person the exact same amount, meaning it hit the poor much harder than the rich</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It charged every person the exact same amount, meaning it hit the poor much harder than the rich</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">132.</div>
-                    <div class="answer-text">A radical priest who preached that all men were created equal by God</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A radical priest who preached that all men were created equal by God</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">133.</div>
-                    <div class="answer-text">'When Adam delved and Eve span, who was then the gentleman?'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'When Adam delved and Eve span, who was then the gentleman?'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">134.</div>
-                    <div class="answer-text">They burned down the Savoy Palace and opened the prisons</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They burned down the Savoy Palace and opened the prisons</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">135.</div>
-                    <div class="answer-text">The Archbishop of Canterbury and the Lord Treasurer</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Archbishop of Canterbury and the Lord Treasurer</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">136.</div>
-                    <div class="answer-text">14 years old</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">14 years old</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">137.</div>
-                    <div class="answer-text">Smithfield</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smithfield</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">138.</div>
-                    <div class="answer-text">The total abolition of serfdom and the feudal system</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The total abolition of serfdom and the feudal system</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">139.</div>
-                    <div class="answer-text">The Mayor of London</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Mayor of London</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">140.</div>
-                    <div class="answer-text">He rode toward the angry mob and convinced them he would be their leader</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He rode toward the angry mob and convinced them he would be their leader</div>
                 </div>
                 </div><div class="answer-list"><h3>Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?</h3>
                 <div class="answer-item">
                     <div class="answer-num">141.</div>
-                    <div class="answer-text">The Wars of the Roses</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Wars of the Roses</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">142.</div>
-                    <div class="answer-text">The House of Lancaster and the House of York</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The House of Lancaster and the House of York</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">143.</div>
-                    <div class="answer-text">A red rose</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A red rose</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">144.</div>
-                    <div class="answer-text">A white rose</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A white rose</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">145.</div>
-                    <div class="answer-text">King Henry VI was a weak, mentally unstable ruler</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Henry VI was a weak, mentally unstable ruler</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">146.</div>
-                    <div class="answer-text">England's lands in France</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">England's lands in France</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">147.</div>
-                    <div class="answer-text">The Yorkist King Edward IV</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Yorkist King Edward IV</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">148.</div>
-                    <div class="answer-text">Richard of Gloucester (later Richard III)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Richard of Gloucester (later Richard III)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">149.</div>
-                    <div class="answer-text">The Tower of London</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Tower of London</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">150.</div>
-                    <div class="answer-text">They were never seen in public again</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were never seen in public again</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">151.</div>
-                    <div class="answer-text">He crowned himself King of England</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He crowned himself King of England</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">152.</div>
-                    <div class="answer-text">It shocked the country and turned many nobles against him</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It shocked the country and turned many nobles against him</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">153.</div>
-                    <div class="answer-text">The Battle of Bosworth Field</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Battle of Bosworth Field</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">154.</div>
-                    <div class="answer-text">1485</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1485</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">155.</div>
-                    <div class="answer-text">Henry Tudor</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Henry Tudor</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">156.</div>
-                    <div class="answer-text">Several of his key allies betrayed him and refused to fight</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Several of his key allies betrayed him and refused to fight</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">157.</div>
-                    <div class="answer-text">He was the last English king to die in battle</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He was the last English king to die in battle</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">158.</div>
-                    <div class="answer-text">Henry VII</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Henry VII</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">159.</div>
-                    <div class="answer-text">He married a princess from the House of York</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He married a princess from the House of York</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">160.</div>
-                    <div class="answer-text">The Middle Ages</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Middle Ages</div>
                 </div>
                 </div>
         </div>
@@ -3035,45 +3532,311 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">KS3: Medieval England & The Struggle for Power (1066–1485) · Complete Unit</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (160 Questions)</option>
+                    <option value="0">Part 1: Lesson 1: 1066 - Why did three men claim one throne, and how did William win?</option>
+<option value="1">Part 2: Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?</option>
+<option value="2">Part 3: Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?</option>
+<option value="3">Part 4: Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?</option>
+<option value="4">Part 5: Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?</option>
+<option value="5">Part 6: Lesson 6: 1348: How did the Black Death shatter medieval social order?</option>
+<option value="6">Part 7: Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?</option>
+<option value="7">Part 8: Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_medieval_england_full';
+    const ALL_DECK = [{"id":1,"q":"What century are we currently studying?","a":"The 11th century (1000s).","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":2,"q":"Who were the native people living in England before 1066?","a":"The Anglo-Saxons.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":3,"q":"What was the most important building in a medieval village?","a":"The church.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":4,"q":"What is an heir to the throne?","a":"The person legally next in line to become king or queen.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":5,"q":"Who was the English King that died in January 1066 without a clear heir?","a":"Edward the Confessor.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":6,"q":"What was the 'Witan' in Anglo-Saxon England?","a":"The council of powerful English lords and bishops.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":7,"q":"Which group of people were famous for raiding England in longships?","a":"The Vikings.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":8,"q":"Where is Normandy located?","a":"In northern France.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":9,"q":"What does it mean to claim the throne?","a":"To assert that you have the right to be the next monarch.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":10,"q":"What is a power vacuum?","a":"A situation where a government has no identifiable central authority or leader.","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":11,"q":"Which claimant to the throne was an Anglo-Saxon Earl?","a":"Harold Godwinson","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":12,"q":"Which claimant to the throne was a feared Viking warrior?","a":"Harald Hardrada","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":13,"q":"What promise did William of Normandy claim Edward the Confessor had made to him?","a":"That William would be the next king","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":14,"q":"Why was the English army exhausted before the Battle of Hastings?","a":"They had just marched rapidly from a battle in the north","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":15,"q":"What defensive tactic did the English use at the top of Senlac Hill?","a":"A shield wall","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":16,"q":"How did William the Conqueror manage to break the English defense?","a":"By faking a retreat to lure them down the hill","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":17,"q":"According to legend, how was Harold Godwinson killed at Hastings?","a":"He was shot in the eye by an arrow","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":18,"q":"What famous piece of embroidery tells the story of the Norman Conquest?","a":"The Bayeux Tapestry","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":19,"q":"Which event is often seen as the beginning of the end for Anglo-Saxon England?","a":"The death of Edward the Confessor without a clear heir","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":20,"q":"What advantage did the Norman army have over the Anglo-Saxons at Hastings?","a":"They had archers and cavalry on horseback","topic":"Lesson 1: 1066 - Why did three men claim one throne, and how did William win?"},{"id":21,"q":"Which powerful English Earl claimed the throne because of a deathbed promise?","a":"Harold Godwinson.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":22,"q":"Which Viking warrior claimed the throne based on an old treaty?","a":"Harald Hardrada.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":23,"q":"Who claimed the throne because of a broken oath sworn on holy relics?","a":"William, Duke of Normandy.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":24,"q":"Where did King Harold march his army to fight the Vikings?","a":"Stamford Bridge (in the north).","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":25,"q":"Who won the Battle of Stamford Bridge?","a":"King Harold Godwinson.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":26,"q":"Why was Harold's army exhausted before fighting William?","a":"They had just marched 300 miles south after fighting a brutal battle.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":27,"q":"Where did William the Conqueror's army land in England?","a":"Pevensey, on the south coast.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":28,"q":"Who supported William's invasion, making it a religious crusade?","a":"The Pope.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":29,"q":"What was the name of the battle between Harold and William?","a":"The Battle of Hastings.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":30,"q":"In what year did all these three battles take place?","a":"1066.","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":31,"q":"What was a 'motte' in an early Norman castle?","a":"A large mound of earth with a wooden tower on top","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":32,"q":"What was the 'bailey' in an early Norman castle?","a":"The enclosed courtyard where soldiers lived","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":33,"q":"Why did William choose to build motte and bailey castles?","a":"They were quick to build and visually intimidating","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":34,"q":"In what year did the 'Harrying of the North' take place?","a":"1069","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":35,"q":"What was the long-term consequence of the Harrying of the North?","a":"Mass starvation and widespread deaths among the northern population","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":36,"q":"What language did the new Norman aristocracy speak?","a":"French","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":37,"q":"What did the Domesday Book record?","a":"Everything that everyone owned across England","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":38,"q":"Why was the survey known as the 'Domesday' Book by the English people?","a":"Because its decisions were as final as the Day of Judgement (Doomsday)","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":39,"q":"Under the feudal system, what did a knight provide to a baron in exchange for land?","a":"Military service","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":40,"q":"What did the feudal system ensure for William the Conqueror?","a":"That he retained ultimate ownership and control over all land in England","topic":"Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?"},{"id":41,"q":"Who won the Battle of Hastings to become King of England?","a":"William the Conqueror.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":42,"q":"What type of castles did the Normans first build to control England rapidly?","a":"Motte and bailey castles.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":43,"q":"What was the 'motte'?","a":"A large, hand-dug mound of earth.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":44,"q":"What brutal tactic did William use to destroy northern rebellions?","a":"The Harrying of the North.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":45,"q":"What was the purpose of the Domesday Book (1086)?","a":"To survey the wealth of the country for taxation.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":46,"q":"Who was the Viking claimant killed at Stamford Bridge?","a":"Harald Hardrada.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":47,"q":"What material were the first Norman castles made from?","a":"Wood.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":48,"q":"What was the 'bailey' in a castle?","a":"The fenced compound where soldiers lived and horses were stabled.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":49,"q":"What does 'feudalism' mean?","a":"A system where land is given in exchange for military service or labour.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":50,"q":"How many people died of starvation due to the Harrying of the North?","a":"Over 100,000.","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":51,"q":"Why did Henry II dislike the separate Church courts?","a":"They gave much lighter punishments to priests who committed crimes","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":52,"q":"What was the relationship between Henry II and Thomas Becket before Becket became Archbishop?","a":"They were close friends and drinking companions","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":53,"q":"What did Becket start wearing under his luxurious clothes after becoming Archbishop?","a":"A scratchy hair shirt to show religious devotion","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":54,"q":"What controversial document did Henry II issue to try to limit Church power in 1164?","a":"The Constitutions of Clarendon","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":55,"q":"How long was Thomas Becket in exile in France?","a":"Six years","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":56,"q":"What action by Becket enraged Henry II upon Becket's return to England?","a":"He excommunicated the bishops who had supported the King","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":57,"q":"What angry phrase is Henry II famously (though perhaps mythically) said to have shouted?","a":"'Will no one rid me of this turbulent priest?'","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":58,"q":"Where exactly was Thomas Becket murdered?","a":"Inside Canterbury Cathedral near the altar","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":59,"q":"What happened to Canterbury after Becket's murder?","a":"It became one of the most important pilgrimage sites in Europe","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":60,"q":"How did Henry II show penance for Becket's death?","a":"He walked barefoot to the cathedral and allowed monks to whip him","topic":"Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?"},{"id":61,"q":"Which king introduced common law and royal courts in 1154?","a":"King Henry II.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":62,"q":"Who did Henry II appoint as Archbishop of Canterbury?","a":"Thomas Becket.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":63,"q":"Why did Henry and Becket clash?","a":"Over the power of Church courts and 'criminous clerks'.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":64,"q":"What happened to Thomas Becket in 1170?","a":"He was murdered by four of the King's knights in Canterbury Cathedral.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":65,"q":"What did the Pope do to Henry II as punishment?","a":"He threatened him with excommunication, forcing Henry to do penance.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":66,"q":"Who won the Battle of Hastings?","a":"William the Conqueror.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":67,"q":"What was the Domesday Book?","a":"A massive survey used to maximize taxation in 1086.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":68,"q":"What is a 'criminous clerk'?","a":"A member of the clergy accused of a serious crime like murder.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":69,"q":"Why did Henry II walk barefoot through Canterbury being whipped?","a":"As public penance for his role in Becket's murder.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":70,"q":"What is a motte and bailey?","a":"An early wooden castle built by the Normans.","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":71,"q":"What territories did King John famously lose early in his reign?","a":"Most of England's lands in France, including Normandy","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":72,"q":"What does the nickname 'Lackland' refer to?","a":"John's failure to inherit significant lands compared to his older brothers","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":73,"q":"How did King John try to fund his wars in France?","a":"By imposing massive, arbitrary taxes on the barons","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":74,"q":"What did the Pope do to King John during their dispute?","a":"He excommunicated John and banned church services in England","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":75,"q":"Where did the barons confront King John to force him to seal Magna Carta?","a":"Runnymede","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":76,"q":"What does 'Magna Carta' translate to in English?","a":"The Great Charter","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":77,"q":"Which of the following was a key clause in Magna Carta?","a":"No free man shall be imprisoned without a fair trial","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":78,"q":"Who was largely excluded from the protections of Magna Carta in 1215?","a":"The unfree peasants (villeins) who made up the majority of the population","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":79,"q":"What did King John do almost immediately after sealing Magna Carta?","a":"He complained to the Pope and had the document declared void","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":80,"q":"What war broke out as a direct result of King John breaking his promises in Magna Carta?","a":"The First Barons' War","topic":"Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?"},{"id":81,"q":"What percentage of the population in medieval England lived in rural farming communities?","a":"Over 90%","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":82,"q":"What was a 'villein' in the feudal system?","a":"An unfree peasant tied to the land","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":83,"q":"Which of the following could a villein NOT do without their lord's permission?","a":"Leave the village or marry","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":84,"q":"What kind of houses did villeins typically live in?","a":"Single-room wattle-and-daub huts","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":85,"q":"Why did peasants often share their huts with animals in the winter?","a":"To keep warm","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":86,"q":"What dictated the daily lives and labor of medieval peasants?","a":"The seasons","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":87,"q":"What was the most crucial task for a peasant in late summer?","a":"Harvesting crops","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":88,"q":"What was the 'tithe'?","a":"A tax requiring 1/10th of a peasant's produce to go to the Church","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":89,"q":"Who controlled the minds and spiritual lives of the peasants?","a":"The Catholic Church","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":90,"q":"Why did almost no peasant refuse to pay the tithe, even during famines?","a":"They feared eternal damnation in Hell","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":91,"q":"What was a Doom Painting?","a":"A giant mural painted in churches depicting the Day of Judgement","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":92,"q":"Why did the Church rely on visual art like Doom Paintings?","a":"Because the vast majority of peasants were illiterate","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":93,"q":"According to Doom Paintings, what happened to obedient Christians?","a":"They were welcomed into Heaven by angels","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":94,"q":"How were sinners depicted in Doom Paintings?","a":"Naked and being dragged by demons into Hell","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":95,"q":"What was Purgatory in medieval Catholic belief?","a":"A place of suffering before Heaven","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":96,"q":"How could a peasant theoretically shorten their time in Purgatory?","a":"By obeying the priest and paying tithes","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":97,"q":"What building was the 'stone heart' of every medieval village?","a":"The parish church","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":98,"q":"When did peasants typically slaughter their animals?","a":"In the autumn","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":99,"q":"What would happen if the late summer harvest failed?","a":"The village would face starvation","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":100,"q":"What material was typically used to build a peasant's hut?","a":"Wattle-and-daub","topic":"Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?"},{"id":101,"q":"Which king lost Normandy and Aquitaine to the French?","a":"King John.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":102,"q":"What mocking nickname was given to King John?","a":"Softsword.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":103,"q":"Why were the barons angry with King John?","a":"He imposed heavy taxes (scutage) and lost wars.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":104,"q":"What document was King John forced to seal in 1215?","a":"Magna Carta.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":105,"q":"What was the most important principle of Magna Carta?","a":"That no one, not even the King, is above the law.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":106,"q":"Where was Thomas Becket murdered?","a":"Canterbury Cathedral.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":107,"q":"What does 'excommunication' mean?","a":"Being officially thrown out of the Catholic Church.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":108,"q":"Who built the first motte and bailey castles in England?","a":"William the Conqueror.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":109,"q":"What was the Harrying of the North?","a":"William's brutal destruction of crops to stop northern rebellions.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":110,"q":"What did Henry II want to stop Church courts from doing?","a":"Giving lenient punishments to criminous clerks.","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":111,"q":"How did the Black Death originally reach England?","a":"On trading ships arriving at southern ports like Melcombe Regis","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":112,"q":"What is a 'bubo'?","a":"A painfully swollen lymph node, usually in the armpit or groin","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":113,"q":"Which of these was a strange cure medieval people attempted to use for the plague?","a":"Strapping a live toad or chicken to the buboes","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":114,"q":"What is 'miasma'?","a":"The medieval belief that bad smells and corrupt air caused disease","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":115,"q":"Who were the flagellants?","a":"Religious zealots who whipped themselves to earn God's forgiveness and stop the plague","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":116,"q":"What economic situation did the massive death toll create in England?","a":"A severe labour shortage","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":117,"q":"Because there were fewer workers after the Black Death, what did the surviving peasants do?","a":"They demanded higher wages and better working conditions","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":118,"q":"What was the Statute of Labourers (1351)?","a":"A law passed by the government to freeze peasant wages at pre-plague levels","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":119,"q":"How did the Black Death fundamentally weaken the feudal system?","a":"Lords had to start paying villeins or risk them running away to rival lords","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":120,"q":"Why did many peasants lose faith in the Catholic Church during the Black Death?","a":"Because priests were dying just like everyone else, and their prayers hadn't stopped the disease","topic":"Lesson 6: 1348: How did the Black Death shatter medieval social order?"},{"id":121,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":122,"q":"What fraction of the English population was killed by the plague?","a":"Roughly one third.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":123,"q":"What were 'buboes'?","a":"Agonizing, pus-filled swellings caused by the bubonic plague.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":124,"q":"Why couldn't medieval doctors cure the plague?","a":"Because germ theory did not exist yet.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":125,"q":"What supernatural reason did people blame for the plague?","a":"They believed it was a divine punishment sent by God.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":126,"q":"What document limited King John's power in 1215?","a":"Magna Carta.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":127,"q":"Who was murdered by four knights in 1170?","a":"Thomas Becket.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":128,"q":"Why did King John charge heavy 'scutage' taxes?","a":"To fund his failed wars to recapture Normandy.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":129,"q":"What was the Domesday Book used for?","a":"To record wealth and property for taxation.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":130,"q":"Who won the Battle of Stamford Bridge in 1066?","a":"Harold Godwinson.","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":131,"q":"Why was the Poll Tax of 1380 seen as particularly unfair?","a":"It charged every person the exact same amount, meaning it hit the poor much harder than the rich","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":132,"q":"Who was John Ball?","a":"A radical priest who preached that all men were created equal by God","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":133,"q":"What famous rhyme did John Ball use to question the feudal system?","a":"'When Adam delved and Eve span, who was then the gentleman?'","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":134,"q":"What did the rebel army do when they entered London?","a":"They burned down the Savoy Palace and opened the prisons","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":135,"q":"Which two high-ranking officials were dragged from the Tower of London and beheaded by the rebels?","a":"The Archbishop of Canterbury and the Lord Treasurer","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":136,"q":"How old was King Richard II during the Peasants' Revolt in 1381?","a":"14 years old","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":137,"q":"Where did King Richard II ride out to meet Wat Tyler?","a":"Smithfield","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":138,"q":"What was one of the radical demands Wat Tyler made to the King?","a":"The total abolition of serfdom and the feudal system","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":139,"q":"Who stabbed Wat Tyler during the meeting with the King?","a":"The Mayor of London","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":140,"q":"What did King Richard II do immediately after Wat Tyler was killed?","a":"He rode toward the angry mob and convinced them he would be their leader","topic":"Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?"},{"id":141,"q":"What was the name of the brutal 30-year civil war that began in 1455?","a":"The Wars of the Roses","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":142,"q":"Which two rival branches of the royal family fought in the Wars of the Roses?","a":"The House of Lancaster and the House of York","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":143,"q":"What flower symbolized the House of Lancaster?","a":"A red rose","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":144,"q":"What flower symbolized the House of York?","a":"A white rose","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":145,"q":"Why did the Wars of the Roses initially break out?","a":"King Henry VI was a weak, mentally unstable ruler","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":146,"q":"What territory had King Henry VI lost before the Wars of the Roses began?","a":"England's lands in France","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":147,"q":"Who died in 1483, leaving a 12-year-old son to inherit the throne?","a":"The Yorkist King Edward IV","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":148,"q":"Who was the ambitious uncle of the 12-year-old King Edward V?","a":"Richard of Gloucester (later Richard III)","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":149,"q":"Where did Richard of Gloucester place his two nephews, supposedly for their own protection?","a":"The Tower of London","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":150,"q":"What happened to the two young princes after they were placed in the Tower?","a":"They were never seen in public again","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":151,"q":"What did Richard III do after declaring his nephews illegitimate?","a":"He crowned himself King of England","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":152,"q":"How did the disappearance of the Princes in the Tower affect Richard III?","a":"It shocked the country and turned many nobles against him","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":153,"q":"What was the final, decisive battle of the Wars of the Roses?","a":"The Battle of Bosworth Field","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":154,"q":"In what year did the Battle of Bosworth take place?","a":"1485","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":155,"q":"Who invaded England to challenge Richard III for the throne at Bosworth?","a":"Henry Tudor","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":156,"q":"What crucial event happened during the Battle of Bosworth that doomed Richard III?","a":"Several of his key allies betrayed him and refused to fight","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":157,"q":"What unique distinction does Richard III hold among English monarchs?","a":"He was the last English king to die in battle","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":158,"q":"Who was crowned King of England after Richard III's death?","a":"Henry VII","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":159,"q":"How did Henry VII attempt to heal the division between the rival houses?","a":"He married a princess from the House of York","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"},{"id":160,"q":"What historical period is generally considered to have ended with the Battle of Bosworth?","a":"The Middle Ages","topic":"Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

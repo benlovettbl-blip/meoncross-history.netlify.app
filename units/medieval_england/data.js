@@ -476,10 +476,10 @@ const medieval_england = {
           answer: 'The 11th century (1000s).',
           a: 'The 11th century (1000s).',
           options: [
-            'The 11th century (1000s).',
-            'The 10th century (900s).',
             'The 12th century (1100s).',
             'The 9th century (800s).',
+            'The 10th century (900s).',
+            'The 11th century (1000s).',
           ],
         },
         {
@@ -487,14 +487,14 @@ const medieval_england = {
           q: 'Who were the native people living in England before 1066?',
           answer: 'The Anglo-Saxons.',
           a: 'The Anglo-Saxons.',
-          options: ['The Anglo-Saxons.', 'The Normans.', 'The Vikings.', 'The Romans.'],
+          options: ['The Anglo-Saxons.', 'The Normans.', 'The Romans.', 'The Vikings.'],
         },
         {
           question: 'What was the most important building in a medieval village?',
           q: 'What was the most important building in a medieval village?',
           answer: 'The church.',
           a: 'The church.',
-          options: ['The church.', 'The castle.', 'The market.', 'The blacksmith.'],
+          options: ['The church.', 'The market.', 'The blacksmith.', 'The castle.'],
         },
         {
           question: 'What is an heir to the throne?',
@@ -503,9 +503,9 @@ const medieval_england = {
           a: 'The person legally next in line to become king or queen.',
           options: [
             'The person legally next in line to become king or queen.',
+            'A military commander of the royal army.',
             'A powerful lord who advises the king.',
             'The leader of the church in a country.',
-            'A military commander of the royal army.',
           ],
         },
         {
@@ -514,10 +514,10 @@ const medieval_england = {
           answer: 'Edward the Confessor.',
           a: 'Edward the Confessor.',
           options: [
-            'Edward the Confessor.',
-            'Harold Godwinson.',
             'William the Conqueror.',
+            'Edward the Confessor.',
             'Harald Hardrada.',
+            'Harold Godwinson.',
           ],
         },
         {
@@ -526,10 +526,10 @@ const medieval_england = {
           answer: 'The council of powerful English lords and bishops.',
           a: 'The council of powerful English lords and bishops.',
           options: [
-            'The council of powerful English lords and bishops.',
-            "The king's personal bodyguards.",
             'A tax collected to pay off the Vikings.',
+            'The council of powerful English lords and bishops.',
             'A religious book used by the church.',
+            "The king's personal bodyguards.",
           ],
         },
         {
@@ -537,7 +537,7 @@ const medieval_england = {
           q: 'Which group of people were famous for raiding England in longships?',
           answer: 'The Vikings.',
           a: 'The Vikings.',
-          options: ['The Vikings.', 'The Normans.', 'The Romans.', 'The Franks.'],
+          options: ['The Normans.', 'The Vikings.', 'The Romans.', 'The Franks.'],
         },
         {
           question: 'Where is Normandy located?',
@@ -545,8 +545,8 @@ const medieval_england = {
           answer: 'In northern France.',
           a: 'In northern France.',
           options: [
-            'In northern France.',
             'In southern England.',
+            'In northern France.',
             'In western Germany.',
             'In eastern Spain.',
           ],
@@ -557,9 +557,9 @@ const medieval_england = {
           answer: 'To assert that you have the right to be the next monarch.',
           a: 'To assert that you have the right to be the next monarch.',
           options: [
-            'To assert that you have the right to be the next monarch.',
             "To physically sit on the king's chair.",
             'To steal the crown jewels.',
+            'To assert that you have the right to be the next monarch.',
             'To lead an army against the king.',
           ],
         },
@@ -569,9 +569,9 @@ const medieval_england = {
           answer: 'A situation where a government has no identifiable central authority or leader.',
           a: 'A situation where a government has no identifiable central authority or leader.',
           options: [
-            'A situation where a government has no identifiable central authority or leader.',
-            'A powerful weapon used in medieval warfare.',
             'A disease that wiped out the population.',
+            'A powerful weapon used in medieval warfare.',
+            'A situation where a government has no identifiable central authority or leader.',
             'A room in a castle where the king ruled.',
           ],
         },
@@ -581,10 +581,10 @@ const medieval_england = {
           answer: 'Harold Godwinson',
           a: 'Harold Godwinson',
           options: [
-            'Harold Godwinson',
-            'William of Normandy',
-            'Harald Hardrada',
             'Edward the Confessor',
+            'Harold Godwinson',
+            'Harald Hardrada',
+            'William of Normandy',
           ],
         },
         {
@@ -593,10 +593,10 @@ const medieval_england = {
           answer: 'Harald Hardrada',
           a: 'Harald Hardrada',
           options: [
-            'Harald Hardrada',
-            'Harold Godwinson',
             'William of Normandy',
             'Tostig Godwinson',
+            'Harald Hardrada',
+            'Harold Godwinson',
           ],
         },
         {
@@ -606,10 +606,10 @@ const medieval_england = {
           answer: 'That William would be the next king',
           a: 'That William would be the next king',
           options: [
-            'That William would be the next king',
-            'That William would receive large amounts of gold',
             'That William would command the English army',
+            'That William would be the next king',
             'That William would be given land in Scotland',
+            'That William would receive large amounts of gold',
           ],
         },
         {
@@ -619,9 +619,9 @@ const medieval_england = {
           a: 'They had just marched rapidly from a battle in the north',
           options: [
             'They had just marched rapidly from a battle in the north',
+            'They were sick with the plague',
             'They had been starving for weeks',
             'They had fought a long battle against the French',
-            'They were sick with the plague',
           ],
         },
         {
@@ -629,7 +629,7 @@ const medieval_england = {
           q: 'What defensive tactic did the English use at the top of Senlac Hill?',
           answer: 'A shield wall',
           a: 'A shield wall',
-          options: ['A shield wall', 'A cavalry charge', 'A trench system', 'A ring of fire'],
+          options: ['A cavalry charge', 'A trench system', 'A shield wall', 'A ring of fire'],
         },
         {
           question: 'How did William the Conqueror manage to break the English defense?',
@@ -638,9 +638,9 @@ const medieval_england = {
           a: 'By faking a retreat to lure them down the hill',
           options: [
             'By faking a retreat to lure them down the hill',
-            'By using gunpowder cannons',
             'By bribing the English lords',
             'By attacking them at night',
+            'By using gunpowder cannons',
           ],
         },
         {
@@ -649,9 +649,9 @@ const medieval_england = {
           answer: 'He was shot in the eye by an arrow',
           a: 'He was shot in the eye by an arrow',
           options: [
-            'He was shot in the eye by an arrow',
             'He was trampled by a horse',
             'He drowned in a river',
+            'He was shot in the eye by an arrow',
             'He was poisoned by a spy',
           ],
         },
@@ -661,10 +661,10 @@ const medieval_england = {
           answer: 'The Bayeux Tapestry',
           a: 'The Bayeux Tapestry',
           options: [
-            'The Bayeux Tapestry',
-            'The Magna Carta',
-            'The Domesday Book',
             'The Westminster Scroll',
+            'The Bayeux Tapestry',
+            'The Domesday Book',
+            'The Magna Carta',
           ],
         },
         {
@@ -686,10 +686,10 @@ const medieval_england = {
           answer: 'They had archers and cavalry on horseback',
           a: 'They had archers and cavalry on horseback',
           options: [
+            'They were immune to English diseases',
+            'They were fighting on their home territory',
             'They had archers and cavalry on horseback',
             'They had more men',
-            'They were fighting on their home territory',
-            'They were immune to English diseases',
           ],
         },
       ],
@@ -1010,9 +1010,9 @@ const medieval_england = {
           a: 'Harold Godwinson.',
           options: [
             'Harold Godwinson.',
-            'Tostig Godwinson.',
             'Leofric of Mercia.',
             'Edgar the Aetheling.',
+            'Tostig Godwinson.',
           ],
         },
         {
@@ -1020,7 +1020,7 @@ const medieval_england = {
           q: 'Which Viking warrior claimed the throne based on an old treaty?',
           answer: 'Harald Hardrada.',
           a: 'Harald Hardrada.',
-          options: ['Harald Hardrada.', 'Sweyn Forkbeard.', 'Cnut the Great.', 'Ragnar Lothbrok.'],
+          options: ['Cnut the Great.', 'Ragnar Lothbrok.', 'Harald Hardrada.', 'Sweyn Forkbeard.'],
         },
         {
           question: 'Who claimed the throne because of a broken oath sworn on holy relics?',
@@ -1028,10 +1028,10 @@ const medieval_england = {
           answer: 'William, Duke of Normandy.',
           a: 'William, Duke of Normandy.',
           options: [
-            'William, Duke of Normandy.',
-            'Robert Curthose.',
             'Henry Plantagenet.',
             'Philip II of France.',
+            'William, Duke of Normandy.',
+            'Robert Curthose.',
           ],
         },
         {
@@ -1040,10 +1040,10 @@ const medieval_england = {
           answer: 'Stamford Bridge (in the north).',
           a: 'Stamford Bridge (in the north).',
           options: [
+            'London (in the center).',
             'Stamford Bridge (in the north).',
             'Hastings (in the south).',
             'Pevensey (on the coast).',
-            'London (in the center).',
           ],
         },
         {
@@ -1052,10 +1052,10 @@ const medieval_england = {
           answer: 'King Harold Godwinson.',
           a: 'King Harold Godwinson.',
           options: [
-            'King Harold Godwinson.',
-            'Harald Hardrada.',
             'William the Conqueror.',
             'Edward the Confessor.',
+            'King Harold Godwinson.',
+            'Harald Hardrada.',
           ],
         },
         {
@@ -1064,10 +1064,10 @@ const medieval_england = {
           answer: 'They had just marched 300 miles south after fighting a brutal battle.',
           a: 'They had just marched 300 miles south after fighting a brutal battle.',
           options: [
-            'They had just marched 300 miles south after fighting a brutal battle.',
-            'They had been starving during a long siege.',
             'They caught a disease while camping.',
+            'They had just marched 300 miles south after fighting a brutal battle.',
             'They had been celebrating their victory for weeks.',
+            'They had been starving during a long siege.',
           ],
         },
         {
@@ -1076,10 +1076,10 @@ const medieval_england = {
           answer: 'Pevensey, on the south coast.',
           a: 'Pevensey, on the south coast.',
           options: [
+            'Bristol, in the west.',
             'Pevensey, on the south coast.',
             'Dover, on the east coast.',
             'York, in the north.',
-            'Bristol, in the west.',
           ],
         },
         {
@@ -1088,10 +1088,10 @@ const medieval_england = {
           answer: 'The Pope.',
           a: 'The Pope.',
           options: [
-            'The Pope.',
             'The Archbishop of Canterbury.',
             'The French King.',
             'The Holy Roman Emperor.',
+            'The Pope.',
           ],
         },
         {
@@ -1100,9 +1100,9 @@ const medieval_england = {
           answer: 'The Battle of Hastings.',
           a: 'The Battle of Hastings.',
           options: [
-            'The Battle of Hastings.',
             'The Battle of Stamford Bridge.',
             'The Battle of Agincourt.',
+            'The Battle of Hastings.',
             'The Battle of Fulford.',
           ],
         },
@@ -1111,7 +1111,7 @@ const medieval_england = {
           q: 'In what year did all these three battles take place?',
           answer: '1066.',
           a: '1066.',
-          options: ['1066.', '1086.', '1215.', '1348.'],
+          options: ['1348.', '1066.', '1215.', '1086.'],
         },
         {
           question: "What was a 'motte' in an early Norman castle?",
@@ -1119,10 +1119,10 @@ const medieval_england = {
           answer: 'A large mound of earth with a wooden tower on top',
           a: 'A large mound of earth with a wooden tower on top',
           options: [
-            'A large mound of earth with a wooden tower on top',
             'An enclosed courtyard at the base',
-            'A deep ditch filled with water',
             'A strong stone wall',
+            'A large mound of earth with a wooden tower on top',
+            'A deep ditch filled with water',
           ],
         },
         {
@@ -1133,8 +1133,8 @@ const medieval_england = {
           options: [
             'The enclosed courtyard where soldiers lived',
             'The wooden bridge connecting the castle',
-            'The highest point of the tower',
             'The underground dungeon',
+            'The highest point of the tower',
           ],
         },
         {
@@ -1143,10 +1143,10 @@ const medieval_england = {
           answer: 'They were quick to build and visually intimidating',
           a: 'They were quick to build and visually intimidating',
           options: [
-            'They were quick to build and visually intimidating',
-            'They were completely fireproof',
             'They were cheap because stone was unavailable',
+            'They were quick to build and visually intimidating',
             'The Anglo-Saxons had taught them the design',
+            'They were completely fireproof',
           ],
         },
         {
@@ -1154,7 +1154,7 @@ const medieval_england = {
           q: "In what year did the 'Harrying of the North' take place?",
           answer: '1069',
           a: '1069',
-          options: ['1069', '1066', '1086', '1215'],
+          options: ['1215', '1069', '1086', '1066'],
         },
         {
           question: 'What was the long-term consequence of the Harrying of the North?',
@@ -1162,10 +1162,10 @@ const medieval_england = {
           answer: 'Mass starvation and widespread deaths among the northern population',
           a: 'Mass starvation and widespread deaths among the northern population',
           options: [
-            'Mass starvation and widespread deaths among the northern population',
             'The North became the richest part of England',
             'The Vikings were invited back to rule',
             'William granted northern lands to English lords',
+            'Mass starvation and widespread deaths among the northern population',
           ],
         },
         {
@@ -1173,7 +1173,7 @@ const medieval_england = {
           q: 'What language did the new Norman aristocracy speak?',
           answer: 'French',
           a: 'French',
-          options: ['French', 'Old English', 'Latin', 'Viking Norse'],
+          options: ['Latin', 'Viking Norse', 'French', 'Old English'],
         },
         {
           question: 'What did the Domesday Book record?',
@@ -1183,8 +1183,8 @@ const medieval_england = {
           options: [
             'Everything that everyone owned across England',
             'The names of all Norman soldiers who died at Hastings',
-            'The laws of the new Norman government',
             'A religious text used in churches',
+            'The laws of the new Norman government',
           ],
         },
         {
@@ -1195,8 +1195,8 @@ const medieval_england = {
           options: [
             'Because its decisions were as final as the Day of Judgement (Doomsday)',
             'Because it doomed all English lords to death',
-            'Because William named it after his favorite castle',
             'Because it was bound in black leather',
+            'Because William named it after his favorite castle',
           ],
         },
         {
@@ -1205,7 +1205,7 @@ const medieval_england = {
           q: 'Under the feudal system, what did a knight provide to a baron in exchange for land?',
           answer: 'Military service',
           a: 'Military service',
-          options: ['Military service', 'Gold coins', 'Farm labor', 'Religious prayers'],
+          options: ['Gold coins', 'Religious prayers', 'Military service', 'Farm labor'],
         },
         {
           question: 'What did the feudal system ensure for William the Conqueror?',
@@ -1213,10 +1213,10 @@ const medieval_england = {
           answer: 'That he retained ultimate ownership and control over all land in England',
           a: 'That he retained ultimate ownership and control over all land in England',
           options: [
-            'That he retained ultimate ownership and control over all land in England',
-            'That peasants could eventually buy their freedom',
             'That the Church had no power',
+            'That peasants could eventually buy their freedom',
             'That all people were treated equally under the law',
+            'That he retained ultimate ownership and control over all land in England',
           ],
         },
       ],
@@ -1458,7 +1458,7 @@ const medieval_england = {
           q: 'Who won the Battle of Hastings to become King of England?',
           answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
-          options: ['William the Conqueror.', 'Harold Godwinson.', 'Harald Hardrada.', 'Henry II.'],
+          options: ['Henry II.', 'Harold Godwinson.', 'William the Conqueror.', 'Harald Hardrada.'],
         },
         {
           question: 'What type of castles did the Normans first build to control England rapidly?',
@@ -1466,8 +1466,8 @@ const medieval_england = {
           answer: 'Motte and bailey castles.',
           a: 'Motte and bailey castles.',
           options: [
-            'Motte and bailey castles.',
             'Concentric stone castles.',
+            'Motte and bailey castles.',
             'Square keeps.',
             'Star forts.',
           ],
@@ -1479,9 +1479,9 @@ const medieval_england = {
           a: 'A large, hand-dug mound of earth.',
           options: [
             'A large, hand-dug mound of earth.',
-            'The wooden tower on top.',
-            'The defensive ditch filled with water.',
             'The fenced compound for soldiers.',
+            'The defensive ditch filled with water.',
+            'The wooden tower on top.',
           ],
         },
         {
@@ -1490,10 +1490,10 @@ const medieval_england = {
           answer: 'The Harrying of the North.',
           a: 'The Harrying of the North.',
           options: [
-            'The Harrying of the North.',
-            'The Domesday Survey.',
             'The Feudal System.',
             "The Peasant's Revolt.",
+            'The Harrying of the North.',
+            'The Domesday Survey.',
           ],
         },
         {
@@ -1502,8 +1502,8 @@ const medieval_england = {
           answer: 'To survey the wealth of the country for taxation.',
           a: 'To survey the wealth of the country for taxation.',
           options: [
-            'To survey the wealth of the country for taxation.',
             'To record the laws of the land.',
+            'To survey the wealth of the country for taxation.',
             'To list all the knights in the army.',
             'To write the history of the Norman Conquest.',
           ],
@@ -1514,10 +1514,10 @@ const medieval_england = {
           answer: 'Harald Hardrada.',
           a: 'Harald Hardrada.',
           options: [
-            'Harald Hardrada.',
             'Harold Godwinson.',
-            'William the Conqueror.',
             'Sweyn Forkbeard.',
+            'William the Conqueror.',
+            'Harald Hardrada.',
           ],
         },
         {
@@ -1525,7 +1525,7 @@ const medieval_england = {
           q: 'What material were the first Norman castles made from?',
           answer: 'Wood.',
           a: 'Wood.',
-          options: ['Wood.', 'Stone.', 'Brick.', 'Iron.'],
+          options: ['Brick.', 'Iron.', 'Wood.', 'Stone.'],
         },
         {
           question: "What was the 'bailey' in a castle?",
@@ -1533,10 +1533,10 @@ const medieval_england = {
           answer: 'The fenced compound where soldiers lived and horses were stabled.',
           a: 'The fenced compound where soldiers lived and horses were stabled.',
           options: [
-            'The fenced compound where soldiers lived and horses were stabled.',
-            'The tall wooden tower.',
             'The bridge over the moat.',
+            'The fenced compound where soldiers lived and horses were stabled.',
             'The large mound of earth.',
+            'The tall wooden tower.',
           ],
         },
         {
@@ -1545,10 +1545,10 @@ const medieval_england = {
           answer: 'A system where land is given in exchange for military service or labour.',
           a: 'A system where land is given in exchange for military service or labour.',
           options: [
-            'A system where land is given in exchange for military service or labour.',
-            'A system where the king owns nothing.',
-            'A system where peasants vote for their lords.',
             'A system where the church controls all wealth.',
+            'A system where the king owns nothing.',
+            'A system where land is given in exchange for military service or labour.',
+            'A system where peasants vote for their lords.',
           ],
         },
         {
@@ -1556,7 +1556,7 @@ const medieval_england = {
           q: 'How many people died of starvation due to the Harrying of the North?',
           answer: 'Over 100,000.',
           a: 'Over 100,000.',
-          options: ['Over 100,000.', 'Around 10,000.', 'Nearly 500,000.', 'About 1,000.'],
+          options: ['Over 100,000.', 'Nearly 500,000.', 'Around 10,000.', 'About 1,000.'],
         },
         {
           question: 'Why did Henry II dislike the separate Church courts?',
@@ -1564,10 +1564,10 @@ const medieval_england = {
           answer: 'They gave much lighter punishments to priests who committed crimes',
           a: 'They gave much lighter punishments to priests who committed crimes',
           options: [
-            'They gave much lighter punishments to priests who committed crimes',
-            'They executed too many innocent people',
-            'They forced the King to pay taxes to them',
             'They were held entirely in Latin',
+            'They executed too many innocent people',
+            'They gave much lighter punishments to priests who committed crimes',
+            'They forced the King to pay taxes to them',
           ],
         },
         {
@@ -1579,8 +1579,8 @@ const medieval_england = {
           options: [
             'They were close friends and drinking companions',
             'They were bitter enemies',
-            'They were brothers',
             'They did not know each other',
+            'They were brothers',
           ],
         },
         {
@@ -1590,10 +1590,10 @@ const medieval_england = {
           answer: 'A scratchy hair shirt to show religious devotion',
           a: 'A scratchy hair shirt to show religious devotion',
           options: [
-            'A scratchy hair shirt to show religious devotion',
             'A chainmail shirt for protection',
             'A secret royal seal',
             'A golden cross given by the Pope',
+            'A scratchy hair shirt to show religious devotion',
           ],
         },
         {
@@ -1604,9 +1604,9 @@ const medieval_england = {
           a: 'The Constitutions of Clarendon',
           options: [
             'The Constitutions of Clarendon',
-            'The Magna Carta',
-            'The Provisions of Oxford',
             'The Domesday Book',
+            'The Provisions of Oxford',
+            'The Magna Carta',
           ],
         },
         {
@@ -1614,7 +1614,7 @@ const medieval_england = {
           q: 'How long was Thomas Becket in exile in France?',
           answer: 'Six years',
           a: 'Six years',
-          options: ['Six years', 'Six months', 'Ten years', 'One year'],
+          options: ['Six months', 'One year', 'Six years', 'Ten years'],
         },
         {
           question: "What action by Becket enraged Henry II upon Becket's return to England?",
@@ -1622,10 +1622,10 @@ const medieval_england = {
           answer: 'He excommunicated the bishops who had supported the King',
           a: 'He excommunicated the bishops who had supported the King',
           options: [
-            'He excommunicated the bishops who had supported the King',
-            'He crowned a rival king',
-            'He ordered an attack on a royal castle',
             "He burned the King's new laws",
+            'He crowned a rival king',
+            'He excommunicated the bishops who had supported the King',
+            'He ordered an attack on a royal castle',
           ],
         },
         {
@@ -1636,9 +1636,9 @@ const medieval_england = {
           a: "'Will no one rid me of this turbulent priest?'",
           options: [
             "'Will no one rid me of this turbulent priest?'",
-            "'Off with his head!'",
             "'Arrest him immediately!'",
             "'Burn him at the stake!'",
+            "'Off with his head!'",
           ],
         },
         {
@@ -1647,10 +1647,10 @@ const medieval_england = {
           answer: 'Inside Canterbury Cathedral near the altar',
           a: 'Inside Canterbury Cathedral near the altar',
           options: [
-            'Inside Canterbury Cathedral near the altar',
             'In his bedchamber at the palace',
             'In the Tower of London',
             'On the battlefield',
+            'Inside Canterbury Cathedral near the altar',
           ],
         },
         {
@@ -1659,10 +1659,10 @@ const medieval_england = {
           answer: 'It became one of the most important pilgrimage sites in Europe',
           a: 'It became one of the most important pilgrimage sites in Europe',
           options: [
-            'It became one of the most important pilgrimage sites in Europe',
             "It was burned down by the King's men",
-            'The Pope closed the cathedral permanently',
             'It was abandoned by the monks',
+            'The Pope closed the cathedral permanently',
+            'It became one of the most important pilgrimage sites in Europe',
           ],
         },
         {
@@ -1923,14 +1923,14 @@ const medieval_england = {
           q: 'Which king introduced common law and royal courts in 1154?',
           answer: 'King Henry II.',
           a: 'King Henry II.',
-          options: ['King Henry II.', 'King John.', 'King Richard I.', 'King Edward I.'],
+          options: ['King Henry II.', 'King Edward I.', 'King John.', 'King Richard I.'],
         },
         {
           question: 'Who did Henry II appoint as Archbishop of Canterbury?',
           q: 'Who did Henry II appoint as Archbishop of Canterbury?',
           answer: 'Thomas Becket.',
           a: 'Thomas Becket.',
-          options: ['Thomas Becket.', 'Stephen Langton.', 'Thomas Cranmer.', 'Lanfranc.'],
+          options: ['Thomas Cranmer.', 'Thomas Becket.', 'Stephen Langton.', 'Lanfranc.'],
         },
         {
           question: 'Why did Henry and Becket clash?',
@@ -1938,10 +1938,10 @@ const medieval_england = {
           answer: "Over the power of Church courts and 'criminous clerks'.",
           a: "Over the power of Church courts and 'criminous clerks'.",
           options: [
-            "Over the power of Church courts and 'criminous clerks'.",
-            'Over the amount of taxes the Church paid.',
             'Over who should be the next Pope.',
+            'Over the amount of taxes the Church paid.',
             "Over the king's marriage.",
+            "Over the power of Church courts and 'criminous clerks'.",
           ],
         },
         {
@@ -1950,10 +1950,10 @@ const medieval_england = {
           answer: "He was murdered by four of the King's knights in Canterbury Cathedral.",
           a: "He was murdered by four of the King's knights in Canterbury Cathedral.",
           options: [
-            "He was murdered by four of the King's knights in Canterbury Cathedral.",
             'He was executed by the king in London.',
-            'He died of the plague.',
             'He fled to France and never returned.',
+            "He was murdered by four of the King's knights in Canterbury Cathedral.",
+            'He died of the plague.',
           ],
         },
         {
@@ -1963,9 +1963,9 @@ const medieval_england = {
           a: 'He threatened him with excommunication, forcing Henry to do penance.',
           options: [
             'He threatened him with excommunication, forcing Henry to do penance.',
-            'He forced him to abdicate the throne.',
-            'He launched a crusade against England.',
             'He made him pay a massive fine.',
+            'He launched a crusade against England.',
+            'He forced him to abdicate the throne.',
           ],
         },
         {
@@ -1973,7 +1973,7 @@ const medieval_england = {
           q: 'Who won the Battle of Hastings?',
           answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
-          options: ['William the Conqueror.', 'Harold Godwinson.', 'Harald Hardrada.', 'Henry II.'],
+          options: ['Henry II.', 'William the Conqueror.', 'Harald Hardrada.', 'Harold Godwinson.'],
         },
         {
           question: 'What was the Domesday Book?',
@@ -1981,10 +1981,10 @@ const medieval_england = {
           answer: 'A massive survey used to maximize taxation in 1086.',
           a: 'A massive survey used to maximize taxation in 1086.',
           options: [
-            'A massive survey used to maximize taxation in 1086.',
-            'A book of religious prayers.',
             'A collection of medieval laws.',
             'A record of the Norman Conquest.',
+            'A massive survey used to maximize taxation in 1086.',
+            'A book of religious prayers.',
           ],
         },
         {
@@ -1994,8 +1994,8 @@ const medieval_england = {
           a: 'A member of the clergy accused of a serious crime like murder.',
           options: [
             'A member of the clergy accused of a serious crime like murder.',
-            'A scribe who stole from the king.',
             'A peasant who broke the law.',
+            'A scribe who stole from the king.',
             'A knight who refused to fight.',
           ],
         },
@@ -2005,10 +2005,10 @@ const medieval_england = {
           answer: "As public penance for his role in Becket's murder.",
           a: "As public penance for his role in Becket's murder.",
           options: [
-            "As public penance for his role in Becket's murder.",
-            'To show his humility before God.',
-            'Because he had lost a war.',
             'To celebrate his coronation.',
+            'To show his humility before God.',
+            "As public penance for his role in Becket's murder.",
+            'Because he had lost a war.',
           ],
         },
         {
@@ -2017,10 +2017,10 @@ const medieval_england = {
           answer: 'An early wooden castle built by the Normans.',
           a: 'An early wooden castle built by the Normans.',
           options: [
+            'A legal document.',
+            'A farming technique.',
             'An early wooden castle built by the Normans.',
             'A type of medieval weapon.',
-            'A farming technique.',
-            'A legal document.',
           ],
         },
         {
@@ -2029,10 +2029,10 @@ const medieval_england = {
           answer: "Most of England's lands in France, including Normandy",
           a: "Most of England's lands in France, including Normandy",
           options: [
-            "Most of England's lands in France, including Normandy",
+            'London and York',
             'Scotland and Wales',
             'Ireland and Cornwall',
-            'London and York',
+            "Most of England's lands in France, including Normandy",
           ],
         },
         {
@@ -2041,9 +2041,9 @@ const medieval_england = {
           answer: "John's failure to inherit significant lands compared to his older brothers",
           a: "John's failure to inherit significant lands compared to his older brothers",
           options: [
+            "John's policy of giving away royal forests",
             "John's failure to inherit significant lands compared to his older brothers",
             "John's hatred of farming",
-            "John's policy of giving away royal forests",
             "John's inability to buy land in London",
           ],
         },
@@ -2053,10 +2053,10 @@ const medieval_england = {
           answer: 'By imposing massive, arbitrary taxes on the barons',
           a: 'By imposing massive, arbitrary taxes on the barons',
           options: [
+            'By digging for gold in Wales',
+            'By selling royal castles',
             'By imposing massive, arbitrary taxes on the barons',
             'By borrowing money from the peasants',
-            'By selling royal castles',
-            'By digging for gold in Wales',
           ],
         },
         {
@@ -2066,9 +2066,9 @@ const medieval_england = {
           a: 'He excommunicated John and banned church services in England',
           options: [
             'He excommunicated John and banned church services in England',
+            'He forced John to go on a Crusade',
             'He sent a crusader army to attack him',
             'He crowned a new king in his place',
-            'He forced John to go on a Crusade',
           ],
         },
         {
@@ -2076,7 +2076,7 @@ const medieval_england = {
           q: 'Where did the barons confront King John to force him to seal Magna Carta?',
           answer: 'Runnymede',
           a: 'Runnymede',
-          options: ['Runnymede', 'Hastings', 'Bosworth Field', 'Canterbury'],
+          options: ['Runnymede', 'Hastings', 'Canterbury', 'Bosworth Field'],
         },
         {
           question: "What does 'Magna Carta' translate to in English?",
@@ -2084,10 +2084,10 @@ const medieval_england = {
           answer: 'The Great Charter',
           a: 'The Great Charter',
           options: [
+            'The Book of Rights',
+            'The Royal Promise',
             'The Great Charter',
             "The King's Law",
-            'The Royal Promise',
-            'The Book of Rights',
           ],
         },
         {
@@ -2096,10 +2096,10 @@ const medieval_england = {
           answer: 'No free man shall be imprisoned without a fair trial',
           a: 'No free man shall be imprisoned without a fair trial',
           options: [
-            'No free man shall be imprisoned without a fair trial',
             'All peasants must be freed immediately',
-            'The King cannot have an army',
             'The Church must pay taxes to the King',
+            'No free man shall be imprisoned without a fair trial',
+            'The King cannot have an army',
           ],
         },
         {
@@ -2108,9 +2108,9 @@ const medieval_england = {
           answer: 'The unfree peasants (villeins) who made up the majority of the population',
           a: 'The unfree peasants (villeins) who made up the majority of the population',
           options: [
-            'The unfree peasants (villeins) who made up the majority of the population',
-            'The barons',
             'The wealthy merchants',
+            'The barons',
+            'The unfree peasants (villeins) who made up the majority of the population',
             'The Church bishops',
           ],
         },
@@ -2121,9 +2121,9 @@ const medieval_england = {
           a: 'He complained to the Pope and had the document declared void',
           options: [
             'He complained to the Pope and had the document declared void',
-            'He arrested all the barons who forced him to seal it',
-            'He freed all the villeins in England',
             'He abdicated the throne',
+            'He freed all the villeins in England',
+            'He arrested all the barons who forced him to seal it',
           ],
         },
         {
@@ -2133,9 +2133,9 @@ const medieval_england = {
           answer: "The First Barons' War",
           a: "The First Barons' War",
           options: [
-            "The First Barons' War",
-            'The Wars of the Roses',
             "The Hundred Years' War",
+            'The Wars of the Roses',
+            "The First Barons' War",
             'The English Civil War',
           ],
         },
@@ -2370,7 +2370,7 @@ const medieval_england = {
           q: 'What percentage of the population in medieval England lived in rural farming communities?',
           answer: 'Over 90%',
           a: 'Over 90%',
-          options: ['Over 90%', 'Around 50%', 'Exactly 10%', 'Less than 20%'],
+          options: ['Less than 20%', 'Around 50%', 'Over 90%', 'Exactly 10%'],
         },
         {
           question: "What was a 'villein' in the feudal system?",
@@ -2378,10 +2378,10 @@ const medieval_england = {
           answer: 'An unfree peasant tied to the land',
           a: 'An unfree peasant tied to the land',
           options: [
-            'An unfree peasant tied to the land',
-            'A wealthy landowner',
-            'A knight who fought for the king',
             'A priest in a parish church',
+            'An unfree peasant tied to the land',
+            'A knight who fought for the king',
+            'A wealthy landowner',
           ],
         },
         {
@@ -2391,10 +2391,10 @@ const medieval_england = {
           answer: 'Leave the village or marry',
           a: 'Leave the village or marry',
           options: [
-            'Leave the village or marry',
-            'Go to church on Sunday',
             'Speak to other peasants',
+            'Go to church on Sunday',
             "Breathe the lord's air",
+            'Leave the village or marry',
           ],
         },
         {
@@ -2403,10 +2403,10 @@ const medieval_england = {
           answer: 'Single-room wattle-and-daub huts',
           a: 'Single-room wattle-and-daub huts',
           options: [
-            'Single-room wattle-and-daub huts',
-            'Large stone manor houses',
             'Brick terraced houses',
+            'Large stone manor houses',
             'Wooden castles',
+            'Single-room wattle-and-daub huts',
           ],
         },
         {
@@ -2415,10 +2415,10 @@ const medieval_england = {
           answer: 'To keep warm',
           a: 'To keep warm',
           options: [
-            'To keep warm',
-            'Because they loved animals',
-            'To protect them from wolves',
             'Because the lord commanded it',
+            'To keep warm',
+            'To protect them from wolves',
+            'Because they loved animals',
           ],
         },
         {
@@ -2427,10 +2427,10 @@ const medieval_england = {
           answer: 'The seasons',
           a: 'The seasons',
           options: [
-            'The seasons',
             "The King's daily orders",
-            'The phases of the moon',
             "The local merchant's demands",
+            'The phases of the moon',
+            'The seasons',
           ],
         },
         {
@@ -2439,10 +2439,10 @@ const medieval_england = {
           answer: 'Harvesting crops',
           a: 'Harvesting crops',
           options: [
-            'Harvesting crops',
             'Ploughing fields',
-            'Slaughtering animals',
+            'Harvesting crops',
             'Building new huts',
+            'Slaughtering animals',
           ],
         },
         {
@@ -2451,9 +2451,9 @@ const medieval_england = {
           answer: "A tax requiring 1/10th of a peasant's produce to go to the Church",
           a: "A tax requiring 1/10th of a peasant's produce to go to the Church",
           options: [
-            "A tax requiring 1/10th of a peasant's produce to go to the Church",
-            'A tax paid directly to the King',
             'A fine for leaving the village',
+            'A tax paid directly to the King',
+            "A tax requiring 1/10th of a peasant's produce to go to the Church",
             'A fee paid to the lord to grind wheat',
           ],
         },
@@ -2462,7 +2462,7 @@ const medieval_england = {
           q: 'Who controlled the minds and spiritual lives of the peasants?',
           answer: 'The Catholic Church',
           a: 'The Catholic Church',
-          options: ['The Catholic Church', 'The local lord', 'The King', 'The village elders'],
+          options: ['The Catholic Church', 'The village elders', 'The local lord', 'The King'],
         },
         {
           question: 'Why did almost no peasant refuse to pay the tithe, even during famines?',
@@ -2470,8 +2470,8 @@ const medieval_england = {
           answer: 'They feared eternal damnation in Hell',
           a: 'They feared eternal damnation in Hell',
           options: [
-            'They feared eternal damnation in Hell',
             'The lord would execute them',
+            'They feared eternal damnation in Hell',
             'They had plenty of extra food',
             'The King’s army would attack them',
           ],
@@ -2482,10 +2482,10 @@ const medieval_england = {
           answer: 'A giant mural painted in churches depicting the Day of Judgement',
           a: 'A giant mural painted in churches depicting the Day of Judgement',
           options: [
-            'A giant mural painted in churches depicting the Day of Judgement',
             'A painting of a battle in the local manor house',
-            'A portrait of the local priest',
             'A painting showing how to harvest crops',
+            'A portrait of the local priest',
+            'A giant mural painted in churches depicting the Day of Judgement',
           ],
         },
         {
@@ -2494,10 +2494,10 @@ const medieval_england = {
           answer: 'Because the vast majority of peasants were illiterate',
           a: 'Because the vast majority of peasants were illiterate',
           options: [
+            'Because the Pope banned written books',
             'Because the vast majority of peasants were illiterate',
             'Because paint was very cheap',
             'To make the churches look colorful',
-            'Because the Pope banned written books',
           ],
         },
         {
@@ -2507,9 +2507,9 @@ const medieval_england = {
           a: 'They were welcomed into Heaven by angels',
           options: [
             'They were welcomed into Heaven by angels',
+            'They were sent to Purgatory forever',
             'They were reborn as nobles',
             'They were given gold by the priest',
-            'They were sent to Purgatory forever',
           ],
         },
         {
@@ -2519,9 +2519,9 @@ const medieval_england = {
           a: 'Naked and being dragged by demons into Hell',
           options: [
             'Naked and being dragged by demons into Hell',
-            'Sleeping peacefully',
-            'Working in fields for eternity',
             'Sitting on clouds',
+            'Working in fields for eternity',
+            'Sleeping peacefully',
           ],
         },
         {
@@ -2530,10 +2530,10 @@ const medieval_england = {
           answer: 'A place of suffering before Heaven',
           a: 'A place of suffering before Heaven',
           options: [
-            'A place of suffering before Heaven',
+            "The local lord's dungeon",
             'A garden in the monastery',
             'The lowest level of Hell',
-            "The local lord's dungeon",
+            'A place of suffering before Heaven',
           ],
         },
         {
@@ -2542,8 +2542,8 @@ const medieval_england = {
           answer: 'By obeying the priest and paying tithes',
           a: 'By obeying the priest and paying tithes',
           options: [
-            'By obeying the priest and paying tithes',
             'By learning how to read',
+            'By obeying the priest and paying tithes',
             'By fighting in a war',
             'By refusing to work for the lord',
           ],
@@ -2553,7 +2553,7 @@ const medieval_england = {
           q: "What building was the 'stone heart' of every medieval village?",
           answer: 'The parish church',
           a: 'The parish church',
-          options: ['The parish church', 'The manor house', 'The local pub', "The lord's castle"],
+          options: ['The manor house', 'The local pub', "The lord's castle", 'The parish church'],
         },
         {
           question: 'When did peasants typically slaughter their animals?',
@@ -2561,10 +2561,10 @@ const medieval_england = {
           answer: 'In the autumn',
           a: 'In the autumn',
           options: [
-            'In the autumn',
-            'In the spring',
             'During the summer harvest',
             'On Christmas Day',
+            'In the spring',
+            'In the autumn',
           ],
         },
         {
@@ -2575,8 +2575,8 @@ const medieval_england = {
           options: [
             'The village would face starvation',
             'The king would send free grain',
-            "They would hunt deer in the lord's forest",
             'They would buy food from other countries',
+            "They would hunt deer in the lord's forest",
           ],
         },
         {
@@ -2584,7 +2584,7 @@ const medieval_england = {
           q: "What material was typically used to build a peasant's hut?",
           answer: 'Wattle-and-daub',
           a: 'Wattle-and-daub',
-          options: ['Wattle-and-daub', 'Cut stone blocks', 'Red bricks', 'Imported oak timber'],
+          options: ['Cut stone blocks', 'Red bricks', 'Imported oak timber', 'Wattle-and-daub'],
         },
       ],
       pair_share: {
@@ -2808,14 +2808,14 @@ const medieval_england = {
           q: 'Which king lost Normandy and Aquitaine to the French?',
           answer: 'King John.',
           a: 'King John.',
-          options: ['King John.', 'King Richard I.', 'King Henry II.', 'King Edward I.'],
+          options: ['King Edward I.', 'King Henry II.', 'King John.', 'King Richard I.'],
         },
         {
           question: 'What mocking nickname was given to King John?',
           q: 'What mocking nickname was given to King John?',
           answer: 'Softsword.',
           a: 'Softsword.',
-          options: ['Softsword.', 'Lackland.', 'Lionheart.', 'Longshanks.'],
+          options: ['Softsword.', 'Lackland.', 'Longshanks.', 'Lionheart.'],
         },
         {
           question: 'Why were the barons angry with King John?',
@@ -2824,9 +2824,9 @@ const medieval_england = {
           a: 'He imposed heavy taxes (scutage) and lost wars.',
           options: [
             'He imposed heavy taxes (scutage) and lost wars.',
-            'He gave too much power to the Church.',
             'He refused to go on crusade.',
             'He married a French princess.',
+            'He gave too much power to the Church.',
           ],
         },
         {
@@ -2835,10 +2835,10 @@ const medieval_england = {
           answer: 'Magna Carta.',
           a: 'Magna Carta.',
           options: [
-            'Magna Carta.',
             'The Domesday Book.',
             'The Provisions of Oxford.',
             'The Bill of Rights.',
+            'Magna Carta.',
           ],
         },
         {
@@ -2847,10 +2847,10 @@ const medieval_england = {
           answer: 'That no one, not even the King, is above the law.',
           a: 'That no one, not even the King, is above the law.',
           options: [
+            'That the barons can choose the next king.',
             'That no one, not even the King, is above the law.',
             'That the King must obey the Pope.',
             'That all peasants are free.',
-            'That the barons can choose the next king.',
           ],
         },
         {
@@ -2861,8 +2861,8 @@ const medieval_england = {
           options: [
             'Canterbury Cathedral.',
             'Westminster Abbey.',
-            'The Tower of London.',
             'Winchester Cathedral.',
+            'The Tower of London.',
           ],
         },
         {
@@ -2872,9 +2872,9 @@ const medieval_england = {
           a: 'Being officially thrown out of the Catholic Church.',
           options: [
             'Being officially thrown out of the Catholic Church.',
+            'Being sent to prison.',
             'Being executed by the King.',
             'Being forced to pay a massive fine.',
-            'Being sent to prison.',
           ],
         },
         {
@@ -2882,7 +2882,7 @@ const medieval_england = {
           q: 'Who built the first motte and bailey castles in England?',
           answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
-          options: ['William the Conqueror.', 'Henry II.', 'King John.', 'Edward I.'],
+          options: ['Edward I.', 'William the Conqueror.', 'King John.', 'Henry II.'],
         },
         {
           question: 'What was the Harrying of the North?',
@@ -2890,10 +2890,10 @@ const medieval_england = {
           answer: "William's brutal destruction of crops to stop northern rebellions.",
           a: "William's brutal destruction of crops to stop northern rebellions.",
           options: [
-            "William's brutal destruction of crops to stop northern rebellions.",
-            'The invasion of England by the Vikings.',
-            'A plague that wiped out the north.',
             'A rebellion by the peasants.',
+            'A plague that wiped out the north.',
+            'The invasion of England by the Vikings.',
+            "William's brutal destruction of crops to stop northern rebellions.",
           ],
         },
         {
@@ -2902,10 +2902,10 @@ const medieval_england = {
           answer: 'Giving lenient punishments to criminous clerks.',
           a: 'Giving lenient punishments to criminous clerks.',
           options: [
-            'Giving lenient punishments to criminous clerks.',
             'Collecting taxes from the peasants.',
-            'Appointing their own bishops.',
             'Owning land in England.',
+            'Giving lenient punishments to criminous clerks.',
+            'Appointing their own bishops.',
           ],
         },
         {
@@ -2914,9 +2914,9 @@ const medieval_england = {
           answer: 'On trading ships arriving at southern ports like Melcombe Regis',
           a: 'On trading ships arriving at southern ports like Melcombe Regis',
           options: [
-            'On trading ships arriving at southern ports like Melcombe Regis',
-            'Carried by the invading French army',
             'Through contaminated water from Scotland',
+            'Carried by the invading French army',
+            'On trading ships arriving at southern ports like Melcombe Regis',
             'Brought back by crusaders from Jerusalem',
           ],
         },
@@ -2926,9 +2926,9 @@ const medieval_england = {
           answer: 'A painfully swollen lymph node, usually in the armpit or groin',
           a: 'A painfully swollen lymph node, usually in the armpit or groin',
           options: [
-            'A painfully swollen lymph node, usually in the armpit or groin',
-            "A type of plague doctor's mask",
             'A medieval medicine made of herbs',
+            "A type of plague doctor's mask",
+            'A painfully swollen lymph node, usually in the armpit or groin',
             'A type of flea that carried the disease',
           ],
         },
@@ -2939,10 +2939,10 @@ const medieval_england = {
           answer: 'Strapping a live toad or chicken to the buboes',
           a: 'Strapping a live toad or chicken to the buboes',
           options: [
-            'Strapping a live toad or chicken to the buboes',
             'Drinking boiled ocean water',
-            'Eating only raw meat',
             'Bathing in milk every day',
+            'Strapping a live toad or chicken to the buboes',
+            'Eating only raw meat',
           ],
         },
         {
@@ -2951,8 +2951,8 @@ const medieval_england = {
           answer: 'The medieval belief that bad smells and corrupt air caused disease',
           a: 'The medieval belief that bad smells and corrupt air caused disease',
           options: [
-            'The medieval belief that bad smells and corrupt air caused disease',
             'A type of rat that carried the plague',
+            'The medieval belief that bad smells and corrupt air caused disease',
             'A religious prayer to stop the sickness',
             'The Latin word for death',
           ],
@@ -2964,10 +2964,10 @@ const medieval_england = {
             "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
           a: "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
           options: [
+            'Lords who fled the cities to hide in the countryside',
+            'Gravediggers who buried the plague victims',
             "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
             'Doctors who specialized in cutting open buboes',
-            'Gravediggers who buried the plague victims',
-            'Lords who fled the cities to hide in the countryside',
           ],
         },
         {
@@ -2976,10 +2976,10 @@ const medieval_england = {
           answer: 'A severe labour shortage',
           a: 'A severe labour shortage',
           options: [
-            'A severe labour shortage',
-            'Massive inflation of housing prices',
             'A complete collapse of all trade',
+            'Massive inflation of housing prices',
             'The invention of paper money',
+            'A severe labour shortage',
           ],
         },
         {
@@ -2989,10 +2989,10 @@ const medieval_england = {
           answer: 'They demanded higher wages and better working conditions',
           a: 'They demanded higher wages and better working conditions',
           options: [
-            'They demanded higher wages and better working conditions',
-            'They voluntarily worked twice as hard for the same pay',
             'They refused to farm and all became merchants',
+            'They demanded higher wages and better working conditions',
             'They willingly gave their lands to the Church',
+            'They voluntarily worked twice as hard for the same pay',
           ],
         },
         {
@@ -3001,10 +3001,10 @@ const medieval_england = {
           answer: 'A law passed by the government to freeze peasant wages at pre-plague levels',
           a: 'A law passed by the government to freeze peasant wages at pre-plague levels',
           options: [
-            'A law passed by the government to freeze peasant wages at pre-plague levels',
-            'A law guaranteeing peasants the right to strike',
-            'A royal decree granting freedom to all villeins',
             'A new tax placed only on wealthy merchants',
+            'A law passed by the government to freeze peasant wages at pre-plague levels',
+            'A royal decree granting freedom to all villeins',
+            'A law guaranteeing peasants the right to strike',
           ],
         },
         {
@@ -3013,10 +3013,10 @@ const medieval_england = {
           answer: 'Lords had to start paying villeins or risk them running away to rival lords',
           a: 'Lords had to start paying villeins or risk them running away to rival lords',
           options: [
-            'Lords had to start paying villeins or risk them running away to rival lords',
             'The King lost all his castles to the peasants',
             'The Church took over all farming operations',
             'Knights refused to fight in wars anymore',
+            'Lords had to start paying villeins or risk them running away to rival lords',
           ],
         },
         {
@@ -3027,10 +3027,10 @@ const medieval_england = {
             "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
           a: "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
           options: [
-            "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
+            'Because the priests ran away to France',
             'Because the Pope ordered them to stop going to church',
             'Because the Church claimed the plague was a blessing',
-            'Because the priests ran away to France',
+            "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
           ],
         },
       ],
@@ -3262,14 +3262,14 @@ const medieval_england = {
           q: 'In what year did the Black Death arrive in England?',
           answer: '1348.',
           a: '1348.',
-          options: ['1348.', '1066.', '1215.', '1381.'],
+          options: ['1066.', '1215.', '1381.', '1348.'],
         },
         {
           question: 'What fraction of the English population was killed by the plague?',
           q: 'What fraction of the English population was killed by the plague?',
           answer: 'Roughly one third.',
           a: 'Roughly one third.',
-          options: ['Roughly one third.', 'Around one tenth.', 'Nearly half.', 'About two thirds.'],
+          options: ['About two thirds.', 'Nearly half.', 'Roughly one third.', 'Around one tenth.'],
         },
         {
           question: "What were 'buboes'?",
@@ -3278,9 +3278,9 @@ const medieval_england = {
           a: 'Agonizing, pus-filled swellings caused by the bubonic plague.',
           options: [
             'Agonizing, pus-filled swellings caused by the bubonic plague.',
-            'The fleas that carried the disease.',
             'The doctors who treated the sick.',
             'The masks worn to prevent infection.',
+            'The fleas that carried the disease.',
           ],
         },
         {
@@ -3289,10 +3289,10 @@ const medieval_england = {
           answer: 'Because germ theory did not exist yet.',
           a: 'Because germ theory did not exist yet.',
           options: [
-            'Because germ theory did not exist yet.',
-            "Because they didn't have enough money.",
             'Because the King banned all medicine.',
             'Because they refused to treat the poor.',
+            "Because they didn't have enough money.",
+            'Because germ theory did not exist yet.',
           ],
         },
         {
@@ -3301,8 +3301,8 @@ const medieval_england = {
           answer: 'They believed it was a divine punishment sent by God.',
           a: 'They believed it was a divine punishment sent by God.',
           options: [
-            'They believed it was a divine punishment sent by God.',
             'They blamed it on witchcraft.',
+            'They believed it was a divine punishment sent by God.',
             'They thought it was a curse from the Vikings.',
             'They believed it was caused by comets.',
           ],
@@ -3314,9 +3314,9 @@ const medieval_england = {
           a: 'Magna Carta.',
           options: [
             'Magna Carta.',
+            'The Bill of Rights.',
             'The Domesday Book.',
             'The Statute of Labourers.',
-            'The Bill of Rights.',
           ],
         },
         {
@@ -3324,7 +3324,7 @@ const medieval_england = {
           q: 'Who was murdered by four knights in 1170?',
           answer: 'Thomas Becket.',
           a: 'Thomas Becket.',
-          options: ['Thomas Becket.', 'King John.', 'Harold Godwinson.', 'Wat Tyler.'],
+          options: ['Wat Tyler.', 'Harold Godwinson.', 'Thomas Becket.', 'King John.'],
         },
         {
           question: "Why did King John charge heavy 'scutage' taxes?",
@@ -3332,10 +3332,10 @@ const medieval_england = {
           answer: 'To fund his failed wars to recapture Normandy.',
           a: 'To fund his failed wars to recapture Normandy.',
           options: [
-            'To fund his failed wars to recapture Normandy.',
             'To build more castles.',
-            'To pay for a crusade.',
             'To bribe the Pope.',
+            'To fund his failed wars to recapture Normandy.',
+            'To pay for a crusade.',
           ],
         },
         {
@@ -3344,10 +3344,10 @@ const medieval_england = {
           answer: 'To record wealth and property for taxation.',
           a: 'To record wealth and property for taxation.',
           options: [
-            'To record wealth and property for taxation.',
-            'To record the laws of the land.',
             'To write the history of the Norman Conquest.',
             'To list all the knights in the army.',
+            'To record wealth and property for taxation.',
+            'To record the laws of the land.',
           ],
         },
         {
@@ -3356,10 +3356,10 @@ const medieval_england = {
           answer: 'Harold Godwinson.',
           a: 'Harold Godwinson.',
           options: [
-            'Harold Godwinson.',
             'Harald Hardrada.',
-            'William the Conqueror.',
             'Edward the Confessor.',
+            'Harold Godwinson.',
+            'William the Conqueror.',
           ],
         },
         {
@@ -3369,10 +3369,10 @@ const medieval_england = {
             'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
           a: 'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
           options: [
-            'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
             'It was only charged on food and clothing',
-            'It only applied to peasants who lived in the north',
             'It required peasants to give up their best farm animals',
+            'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
+            'It only applied to peasants who lived in the north',
           ],
         },
         {
@@ -3381,9 +3381,9 @@ const medieval_england = {
           answer: 'A radical priest who preached that all men were created equal by God',
           a: 'A radical priest who preached that all men were created equal by God',
           options: [
-            'A radical priest who preached that all men were created equal by God',
             "The King's main tax collector",
             'A wealthy baron who funded the rebels',
+            'A radical priest who preached that all men were created equal by God',
             'The Archbishop of Canterbury',
           ],
         },
@@ -3393,10 +3393,10 @@ const medieval_england = {
           answer: "'When Adam delved and Eve span, who was then the gentleman?'",
           a: "'When Adam delved and Eve span, who was then the gentleman?'",
           options: [
-            "'When Adam delved and Eve span, who was then the gentleman?'",
             "'Remember, remember the fifth of November'",
-            "'Ring a ring o' roses, a pocket full of posies'",
             "'The King is in his counting house, counting out his money'",
+            "'When Adam delved and Eve span, who was then the gentleman?'",
+            "'Ring a ring o' roses, a pocket full of posies'",
           ],
         },
         {
@@ -3405,10 +3405,10 @@ const medieval_england = {
           answer: 'They burned down the Savoy Palace and opened the prisons',
           a: 'They burned down the Savoy Palace and opened the prisons',
           options: [
-            'They burned down the Savoy Palace and opened the prisons',
-            'They built a new motte and bailey castle',
-            'They peacefully protested outside Parliament',
             "They immediately surrendered to the King's guards",
+            'They burned down the Savoy Palace and opened the prisons',
+            'They peacefully protested outside Parliament',
+            'They built a new motte and bailey castle',
           ],
         },
         {
@@ -3418,10 +3418,10 @@ const medieval_england = {
           answer: 'The Archbishop of Canterbury and the Lord Treasurer',
           a: 'The Archbishop of Canterbury and the Lord Treasurer',
           options: [
-            'The Archbishop of Canterbury and the Lord Treasurer',
             'The King and the Queen',
-            'The Mayor of London and the Chief Judge',
             'The Duke of Lancaster and the French Ambassador',
+            'The Archbishop of Canterbury and the Lord Treasurer',
+            'The Mayor of London and the Chief Judge',
           ],
         },
         {
@@ -3429,14 +3429,14 @@ const medieval_england = {
           q: "How old was King Richard II during the Peasants' Revolt in 1381?",
           answer: '14 years old',
           a: '14 years old',
-          options: ['14 years old', '8 years old', '25 years old', '40 years old'],
+          options: ['8 years old', '40 years old', '14 years old', '25 years old'],
         },
         {
           question: 'Where did King Richard II ride out to meet Wat Tyler?',
           q: 'Where did King Richard II ride out to meet Wat Tyler?',
           answer: 'Smithfield',
           a: 'Smithfield',
-          options: ['Smithfield', 'Runnymede', 'Bosworth', 'Hastings'],
+          options: ['Bosworth', 'Hastings', 'Smithfield', 'Runnymede'],
         },
         {
           question: 'What was one of the radical demands Wat Tyler made to the King?',
@@ -3444,10 +3444,10 @@ const medieval_england = {
           answer: 'The total abolition of serfdom and the feudal system',
           a: 'The total abolition of serfdom and the feudal system',
           options: [
-            'The total abolition of serfdom and the feudal system',
-            'The right for peasants to vote in Parliament',
             'The execution of all Norman lords',
+            'The right for peasants to vote in Parliament',
             'For England to surrender to France',
+            'The total abolition of serfdom and the feudal system',
           ],
         },
         {
@@ -3455,7 +3455,7 @@ const medieval_england = {
           q: 'Who stabbed Wat Tyler during the meeting with the King?',
           answer: 'The Mayor of London',
           a: 'The Mayor of London',
-          options: ['The Mayor of London', 'King Richard II himself', 'A French spy', 'John Ball'],
+          options: ['A French spy', 'John Ball', 'King Richard II himself', 'The Mayor of London'],
         },
         {
           question: 'What did King Richard II do immediately after Wat Tyler was killed?',
@@ -3463,10 +3463,10 @@ const medieval_england = {
           answer: 'He rode toward the angry mob and convinced them he would be their leader',
           a: 'He rode toward the angry mob and convinced them he would be their leader',
           options: [
-            'He rode toward the angry mob and convinced them he would be their leader',
-            'He fled back to the Tower of London in terror',
             'He ordered his archers to massacre the crowd',
+            'He fled back to the Tower of London in terror',
             'He was captured and held hostage by the peasants',
+            'He rode toward the angry mob and convinced them he would be their leader',
           ],
         },
       ],
@@ -3660,10 +3660,10 @@ const medieval_england = {
           answer: 'The Wars of the Roses',
           a: 'The Wars of the Roses',
           options: [
-            'The Wars of the Roses',
-            "The Hundred Years' War",
             'The English Civil War',
+            'The Wars of the Roses',
             "The Barons' War",
+            "The Hundred Years' War",
           ],
         },
         {
@@ -3672,10 +3672,10 @@ const medieval_england = {
           answer: 'The House of Lancaster and the House of York',
           a: 'The House of Lancaster and the House of York',
           options: [
-            'The House of Lancaster and the House of York',
+            'The House of Plantagenet and the House of Valois',
             'The House of Tudor and the House of Stuart',
             'The House of Wessex and the House of Mercia',
-            'The House of Plantagenet and the House of Valois',
+            'The House of Lancaster and the House of York',
           ],
         },
         {
@@ -3683,14 +3683,14 @@ const medieval_england = {
           q: 'What flower symbolized the House of Lancaster?',
           answer: 'A red rose',
           a: 'A red rose',
-          options: ['A red rose', 'A white rose', 'A purple thistle', 'A yellow daffodil'],
+          options: ['A purple thistle', 'A yellow daffodil', 'A red rose', 'A white rose'],
         },
         {
           question: 'What flower symbolized the House of York?',
           q: 'What flower symbolized the House of York?',
           answer: 'A white rose',
           a: 'A white rose',
-          options: ['A white rose', 'A red rose', 'A blue lily', 'A white boar'],
+          options: ['A red rose', 'A white boar', 'A blue lily', 'A white rose'],
         },
         {
           question: 'Why did the Wars of the Roses initially break out?',
@@ -3699,8 +3699,8 @@ const medieval_england = {
           a: 'King Henry VI was a weak, mentally unstable ruler',
           options: [
             'King Henry VI was a weak, mentally unstable ruler',
-            'The King refused to sign the Magna Carta',
             'The peasants revolted against the poll tax',
+            'The King refused to sign the Magna Carta',
             'The Pope excommunicated the King',
           ],
         },
@@ -3709,7 +3709,7 @@ const medieval_england = {
           q: 'What territory had King Henry VI lost before the Wars of the Roses began?',
           answer: "England's lands in France",
           a: "England's lands in France",
-          options: ["England's lands in France", 'Wales', 'Scotland', 'Ireland'],
+          options: ['Ireland', "England's lands in France", 'Scotland', 'Wales'],
         },
         {
           question: 'Who died in 1483, leaving a 12-year-old son to inherit the throne?',
@@ -3718,9 +3718,9 @@ const medieval_england = {
           a: 'The Yorkist King Edward IV',
           options: [
             'The Yorkist King Edward IV',
-            'The Lancastrian King Henry VI',
             'Richard of Gloucester',
             'Henry Tudor',
+            'The Lancastrian King Henry VI',
           ],
         },
         {
@@ -3729,9 +3729,9 @@ const medieval_england = {
           answer: 'Richard of Gloucester (later Richard III)',
           a: 'Richard of Gloucester (later Richard III)',
           options: [
-            'Richard of Gloucester (later Richard III)',
-            'Henry Tudor',
             'Thomas Becket',
+            'Henry Tudor',
+            'Richard of Gloucester (later Richard III)',
             'King John',
           ],
         },
@@ -3742,9 +3742,9 @@ const medieval_england = {
           answer: 'The Tower of London',
           a: 'The Tower of London',
           options: [
-            'The Tower of London',
-            'Windsor Castle',
             'Canterbury Cathedral',
+            'Windsor Castle',
+            'The Tower of London',
             'Westminster Abbey',
           ],
         },
@@ -3754,10 +3754,10 @@ const medieval_england = {
           answer: 'They were never seen in public again',
           a: 'They were never seen in public again',
           options: [
+            'They defeated their uncle in battle',
+            'They escaped to France',
             'They were never seen in public again',
             'They were crowned as joint kings',
-            'They escaped to France',
-            'They defeated their uncle in battle',
           ],
         },
         {
@@ -3766,8 +3766,8 @@ const medieval_england = {
           answer: 'He crowned himself King of England',
           a: 'He crowned himself King of England',
           options: [
-            'He crowned himself King of England',
             'He gave the throne to Henry Tudor',
+            'He crowned himself King of England',
             'He fled to France',
             'He became Archbishop of Canterbury',
           ],
@@ -3778,9 +3778,9 @@ const medieval_england = {
           answer: 'It shocked the country and turned many nobles against him',
           a: 'It shocked the country and turned many nobles against him',
           options: [
-            'It shocked the country and turned many nobles against him',
             'It made him incredibly popular with the peasants',
             'It convinced the Pope to make him a saint',
+            'It shocked the country and turned many nobles against him',
             'It stopped the Wars of the Roses immediately',
           ],
         },
@@ -3791,9 +3791,9 @@ const medieval_england = {
           a: 'The Battle of Bosworth Field',
           options: [
             'The Battle of Bosworth Field',
-            'The Battle of Hastings',
-            'The Battle of Agincourt',
             'The Battle of Towton',
+            'The Battle of Agincourt',
+            'The Battle of Hastings',
           ],
         },
         {
@@ -3801,14 +3801,14 @@ const medieval_england = {
           q: 'In what year did the Battle of Bosworth take place?',
           answer: '1485',
           a: '1485',
-          options: ['1485', '1066', '1381', '1215'],
+          options: ['1066', '1215', '1381', '1485'],
         },
         {
           question: 'Who invaded England to challenge Richard III for the throne at Bosworth?',
           q: 'Who invaded England to challenge Richard III for the throne at Bosworth?',
           answer: 'Henry Tudor',
           a: 'Henry Tudor',
-          options: ['Henry Tudor', 'William the Conqueror', 'King Philip of France', 'Wat Tyler'],
+          options: ['Henry Tudor', 'William the Conqueror', 'Wat Tyler', 'King Philip of France'],
         },
         {
           question:
@@ -3818,8 +3818,8 @@ const medieval_england = {
           a: 'Several of his key allies betrayed him and refused to fight',
           options: [
             'Several of his key allies betrayed him and refused to fight',
-            'His army was hit by the Black Death',
             'He fell off his horse before the battle began',
+            'His army was hit by the Black Death',
             'Henry Tudor used gunpowder cannons to destroy his army',
           ],
         },
@@ -3829,10 +3829,10 @@ const medieval_england = {
           answer: 'He was the last English king to die in battle',
           a: 'He was the last English king to die in battle',
           options: [
-            'He was the last English king to die in battle',
             'He was the first Tudor king',
             'He ruled the longest',
             'He was the only king to never wear a crown',
+            'He was the last English king to die in battle',
           ],
         },
         {
@@ -3840,7 +3840,7 @@ const medieval_england = {
           q: "Who was crowned King of England after Richard III's death?",
           answer: 'Henry VII',
           a: 'Henry VII',
-          options: ['Henry VII', 'Edward V', 'Henry VIII', 'Edward VI'],
+          options: ['Henry VII', 'Edward VI', 'Henry VIII', 'Edward V'],
         },
         {
           question: 'How did Henry VII attempt to heal the division between the rival houses?',
@@ -3848,10 +3848,10 @@ const medieval_england = {
           answer: 'He married a princess from the House of York',
           a: 'He married a princess from the House of York',
           options: [
-            'He married a princess from the House of York',
             'He executed all remaining nobles',
-            'He banned the use of rose symbols',
             'He moved the capital to York',
+            'He married a princess from the House of York',
+            'He banned the use of rose symbols',
           ],
         },
         {
@@ -3861,8 +3861,8 @@ const medieval_england = {
           answer: 'The Middle Ages',
           a: 'The Middle Ages',
           options: [
-            'The Middle Ages',
             'The Victorian Era',
+            'The Middle Ages',
             'The Industrial Revolution',
             'The Roman Empire',
           ],

@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 110 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/edexcel_medicine/mastery_pack_medieval.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/edexcel_medicine/mastery_pack_medieval.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1654,206 +2143,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>KT1.1: What did Medieval people believe caused illness?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">Hippocrates</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hippocrates</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">Black bile</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Black bile</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">Blood</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Blood</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">By creating the Theory of Opposites to treat humoural imbalances with their opposite qualities</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By creating the Theory of Opposites to treat humoural imbalances with their opposite qualities</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">Because his writings argued the body was perfectly designed by a single 'Creator', fitting Christian theology</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because his writings argued the body was perfectly designed by a single 'Creator', fitting Christian theology</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">The Articella</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Articella</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">As a punishment for sins or as a test of an individual's religious faith</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">As a punishment for sins or as a test of an individual's religious faith</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">An Almanac (astrology chart)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An Almanac (astrology chart)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">The arrival of the Black Death</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The arrival of the Black Death</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">The Miasma theory</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Miasma theory</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Because Church doctrine taught that the physical body needed to be buried whole to go to heaven</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Church doctrine taught that the physical body needed to be buried whole to go to heaven</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Water; cold and wet</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Water; cold and wet</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">To check the internal balance of the patient's four humours</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To check the internal balance of the patient's four humours</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Color, thickness, and smell</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Color, thickness, and smell</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Aristotle</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Aristotle</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">By giving them hot, dry foods or spices like hot peppers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By giving them hot, dry foods or spices like hot peppers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">It hindered progress by preserving and copying only classical texts, preventing challenge to Galen</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It hindered progress by preserving and copying only classical texts, preventing challenge to Galen</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">A handbook of medical diagrams and charts used during diagnosis</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A handbook of medical diagrams and charts used during diagnosis</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">Yellow bile (choler)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Yellow bile (choler)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">As a terrifying skin disease sent as a direct punishment from God for sins</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">As a terrifying skin disease sent as a direct punishment from God for sins</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">The health of the population as a whole, especially as monitored and regulated by the state.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The health of the population as a whole, especially as monitored and regulated by the state.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">The Ancient Greeks.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Ancient Greeks.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Hippocrates.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hippocrates.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Galen.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">Blood, phlegm, yellow bile, black bile.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Blood, phlegm, yellow bile, black bile.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">Bad air or noxious smells believed to cause disease.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bad air or noxious smells believed to cause disease.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">God sent disease as a punishment for sin or to test faith.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">God sent disease as a punishment for sin or to test faith.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Galen's ideas fit Christian beliefs because he argued the body was created by a single Creator.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen's ideas fit Christian beliefs because he argued the body was created by a single Creator.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">Physicians used star charts and planetary alignments to diagnose illness and plan treatments.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Physicians used star charts and planetary alignments to diagnose illness and plan treatments.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">To check the colour, taste, and smell of urine to identify humour imbalances.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To check the colour, taste, and smell of urine to identify humour imbalances.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">Bloodletting (phlebotomy)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bloodletting (phlebotomy)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">Venesection</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Venesection</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">For patients who were too young, elderly, or physically weak to withstand a vein being opened</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">For patients who were too young, elderly, or physically weak to withstand a vein being opened</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">To create a vacuum that would pull blood to the surface of the skin</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To create a vacuum that would pull blood to the surface of the skin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">To expel excess or corrupt humours from the digestive tract using emetics or laxatives</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To expel excess or corrupt humours from the digestive tract using emetics or laxatives</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">An enema used to clear the bowels, often containing honey, water, and herbal mixtures</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An enema used to clear the bowels, often containing honey, water, and herbal mixtures</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">A personalized set of rules regarding diet, exercise, sleep, and hygiene written by a physician to help a patient prevent illness</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A personalized set of rules regarding diet, exercise, sleep, and hygiene written by a physician to help a patient prevent illness</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">Theriaca</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Theriaca</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">By carrying sweet-smelling herbs, burning incense, or carrying a pomander</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By carrying sweet-smelling herbs, burning incense, or carrying a pomander</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">To help sweat out excess humours, open the pores, and dissolve impurities in the body</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To help sweat out excess humours, open the pores, and dissolve impurities in the body</div>
                 </div>
                 </div>
         </div>
@@ -1864,202 +2361,202 @@
                 <div class="answer-list"><h3>KT1.2: How did Medieval people try to prevent and treat disease?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">By prescribing cool, wet remedies, such as giving them cucumbers or cold baths</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By prescribing cool, wet remedies, such as giving them cucumbers or cold baths</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">Going on a pilgrimage to a holy shrine containing saintly relics</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Going on a pilgrimage to a holy shrine containing saintly relics</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">It was a way to cleanse the soul of sin and shorten a person's time in Purgatory</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was a way to cleanse the soul of sin and shorten a person's time in Purgatory</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">A poultice</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A poultice</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">Because they became associated with moral corruption, prostitution, and the spread of diseases like leprosy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because they became associated with moral corruption, prostitution, and the spread of diseases like leprosy</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">Because different foods had specific qualities (hot, cold, wet, dry) that directly influenced and balanced the humours</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because different foods had specific qualities (hot, cold, wet, dry) that directly influenced and balanced the humours</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">Administering an emetic to induce vomiting</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Administering an emetic to induce vomiting</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">Flagellation (whipping themselves to show repentance for sin)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Flagellation (whipping themselves to show repentance for sin)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Senna</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Senna</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">To protect the patient through sympathetic magic or transference, believing the gold would draw out the disease</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To protect the patient through sympathetic magic or transference, believing the gold would draw out the disease</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">A university-trained physician</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A university-trained physician</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Apothecaries</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Apothecaries</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">Serving a practical apprenticeship under an experienced master in a guild</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Serving a practical apprenticeship under an experienced master in a guild</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">Because spilling blood was seen as incompatible with a holy, spiritual office</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because spilling blood was seen as incompatible with a holy, spiritual office</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Providing basic physical care, warmth, food, and spiritual preparation for the soul</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Providing basic physical care, warmth, food, and spiritual preparation for the soul</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">Infectious people, pregnant women, and the mentally ill</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Infectious people, pregnant women, and the mentally ill</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">To ensure patients could observe and participate in daily holy Mass from their beds, prioritizing spiritual healing</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To ensure patients could observe and participate in daily holy Mass from their beds, prioritizing spiritual healing</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Women in the home, such as mothers, wives, and local wise women</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Women in the home, such as mothers, wives, and local wise women</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">Trepanning the skull or setting fractured limbs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Trepanning the skull or setting fractured limbs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">Because they were extremely expensive and their services were limited to the wealthy and royalty</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because they were extremely expensive and their services were limited to the wealthy and royalty</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">An inspection of the patient's pulse and urine sample</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An inspection of the patient's pulse and urine sample</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">Through hands-on experience, trade networks, and passing down secrets from father to son</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Through hands-on experience, trade networks, and passing down secrets from father to son</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">Because they believed medical knowledge was a purely intellectual, book-based science of logical observation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because they believed medical knowledge was a purely intellectual, book-based science of logical observation</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">Mint and chamomile</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mint and chamomile</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">By monitoring apprenticeships, inspecting workshops, and punishing unlicensed or dangerous practitioners</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By monitoring apprenticeships, inspecting workshops, and punishing unlicensed or dangerous practitioners</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">They often mixed ingredients based on astrological alignments or supernatural properties rather than proven clinical trial</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They often mixed ingredients based on astrological alignments or supernatural properties rather than proven clinical trial</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">Over 1,100</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 1,100</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">By providing a clean, warm environment and nutritious food to help vulnerable people recover naturally</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By providing a clean, warm environment and nutritious food to help vulnerable people recover naturally</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">Herbal mixtures containing highly toxic hemlock, opium, or mandrake</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Herbal mixtures containing highly toxic hemlock, opium, or mandrake</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">Because physicians were university-educated and understood the logical theories of Galen, whereas surgeons were considered manual craftsmen who worked with their hands</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because physicians were university-educated and understood the logical theories of Galen, whereas surgeons were considered manual craftsmen who worked with their hands</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">Galen.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">God sent disease as a punishment for sin or to test faith.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">God sent disease as a punishment for sin or to test faith.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">Bad air or noxious smells believed to cause disease.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bad air or noxious smells believed to cause disease.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">Blood, phlegm, yellow bile, black bile.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Blood, phlegm, yellow bile, black bile.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Physicians used star charts and planetary alignments to diagnose illness and plan treatments.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Physicians used star charts and planetary alignments to diagnose illness and plan treatments.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">To check the colour, taste, and smell of urine to identify humour imbalances.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To check the colour, taste, and smell of urine to identify humour imbalances.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">The health of the population as a whole, especially as monitored and regulated by the state.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The health of the population as a whole, especially as monitored and regulated by the state.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">The Ancient Greeks.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Ancient Greeks.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">With cold treatments like cucumber or cool baths.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">With cold treatments like cucumber or cool baths.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">Hippocrates.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hippocrates.</div>
                 </div>
                 </div>
         </div>
@@ -2070,152 +2567,152 @@
                 <div class="answer-list"><h3>KT1.3: How did people respond to the Black Death?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">1348</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1348</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">Yersinia pestis bacteria, carried in the digestive systems of fleas on black rats</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Yersinia pestis bacteria, carried in the digestive systems of fleas on black rats</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">An unusual alignment of the planets Mars, Jupiter, and Saturn</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An unusual alignment of the planets Mars, Jupiter, and Saturn</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">Buboes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Buboes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">Pneumonic plague</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pneumonic plague</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">To show God they were sorry for their sins and beg Him to stop the plague</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To show God they were sorry for their sins and beg Him to stop the plague</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">A volcanic eruption or earthquake</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A volcanic eruption or earthquake</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Guy de Chauliac</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Guy de Chauliac</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">40 days</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">40 days</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">Because they believed the foul stench of rotting waste would drive away the plague miasma</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because they believed the foul stench of rotting waste would drive away the plague miasma</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">Because they lacked power, meaning the rich moved freely and the Church ran services as normal</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because they lacked power, meaning the rich moved freely and the Church ran services as normal</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">Bleeding and purging</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bleeding and purging</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">Cutting open (lancing) the buboes to drain the pus</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cutting open (lancing) the buboes to drain the pus</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">Between 30% and 50% (nearly one-third to one-half)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Between 30% and 50% (nearly one-third to one-half)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">1349</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1349</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">Theriaca</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Theriaca</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">Carrying sweet-smelling herbs, flowers, or spices</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Carrying sweet-smelling herbs, flowers, or spices</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">Because those specific administrative preventions occurred only during the 1665 Great Plague</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because those specific administrative preventions occurred only during the 1665 Great Plague</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">Because unhygienic, crowded, and rat-infested living conditions remained completely unchanged</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because unhygienic, crowded, and rat-infested living conditions remained completely unchanged</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">The Far East (such as China)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Far East (such as China)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">To restore balance to the four humours by releasing excess blood.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To restore balance to the four humours by releasing excess blood.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">Preparing and selling herbal remedies and potions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Preparing and selling herbal remedies and potions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">They provided shelter and care, not medical treatment.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They provided shelter and care, not medical treatment.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">Using laxatives or emetics to clear the digestive system.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Using laxatives or emetics to clear the digestive system.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">Performing minor surgery, pulling teeth, and bloodletting.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Performing minor surgery, pulling teeth, and bloodletting.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">A set of instructions on diet, exercise, and hygiene to help prevent illness.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A set of instructions on diet, exercise, and hygiene to help prevent illness.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">Galen.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">Bad air or noxious smells believed to cause disease.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bad air or noxious smells believed to cause disease.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">God sent disease as a punishment for sin or to test faith.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">God sent disease as a punishment for sin or to test faith.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">Blood, phlegm, yellow bile, black bile.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Blood, phlegm, yellow bile, black bile.</div>
                 </div>
                 </div>
         </div>
@@ -2277,45 +2774,309 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 1: Medicine Through Time with the Western Front · Medieval</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (110 Questions)</option>
+                    <option value="0">Part 1: KT1.1: What did Medieval people believe caused illness?</option>
+<option value="1">Part 2: KT1.1: What did Medieval people believe caused illness?</option>
+<option value="2">Part 3: KT1.2: How did Medieval people try to prevent and treat disease?</option>
+<option value="3">Part 4: KT1.2: How did Medieval people try to prevent and treat disease?</option>
+<option value="4">Part 5: KT1.3: How did people respond to the Black Death?</option>
+<option value="5">Part 6: KT1.3: How did people respond to the Black Death?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_medieval';
+    const ALL_DECK = [{"id":1,"q":"Who was the Ancient Greek physician credited with creating the Theory of the Four Humours?","a":"Hippocrates","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":2,"q":"In the Theory of the Four Humours, which humour was associated with the season of Autumn, the element of Earth, and the qualities of cold and dry?","a":"Black bile","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":3,"q":"Which humour was linked to the temperament 'sanguine' and had the qualities of being hot and wet?","a":"Blood","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":4,"q":"How did the 2nd-century Roman physician Galen develop Hippocrates' original ideas on the humours?","a":"By creating the Theory of Opposites to treat humoural imbalances with their opposite qualities","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":5,"q":"Why did the medieval Christian Church so strongly support and promote Galen's medical ideas?","a":"Because his writings argued the body was perfectly designed by a single 'Creator', fitting Christian theology","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":6,"q":"What was the name of the mid-13th-century medical textbook collection used by students in European universities?","a":"The Articella","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":7,"q":"According to the medieval Church's teachings, why did God send diseases like leprosy to humans?","a":"As a punishment for sins or as a test of an individual's religious faith","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":8,"q":"During the medieval period, what did physicians use to determine the best time for treatment based on the positions of the planets?","a":"An Almanac (astrology chart)","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":9,"q":"In medieval England, an unusual planetary alignment of Mars, Jupiter, and Saturn in the year 1345 was widely blamed for causing which disaster?","a":"The arrival of the Black Death","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":10,"q":"Which theory suggested that breathing in 'bad air' filled with harmful fumes from swamps, corpses, or rotting matter corrupted the humours?","a":"The Miasma theory","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":11,"q":"Why did the Church strictly discourage and prevent medical students and physicians from performing human dissections?","a":"Because Church doctrine taught that the physical body needed to be buried whole to go to heaven","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":12,"q":"In the Theory of the Four Humours, which element and qualities were associated with Phlegm?","a":"Water; cold and wet","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":13,"q":"What was the primary purpose of a medieval physician examining a patient's urine?","a":"To check the internal balance of the patient's four humours","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":14,"q":"Which three characteristics of a urine sample did medieval physicians check on a urine chart wheel?","a":"Color, thickness, and smell","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":15,"q":"Which ancient Greek philosopher's work on logic and observation was studied by medieval medical students alongside the works of Galen?","a":"Aristotle","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":16,"q":"In the context of the Theory of Opposites, how would a medieval physician treat a patient who had a cold, wet fever (excess phlegm)?","a":"By giving them hot, dry foods or spices like hot peppers","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":17,"q":"How did the Church's total control over education and book production affect medical progress in the Middle Ages?","a":"It hindered progress by preserving and copying only classical texts, preventing challenge to Galen","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":18,"q":"What was the 'Vademecum' carried by medieval physicians?","a":"A handbook of medical diagrams and charts used during diagnosis","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":19,"q":"In the Theory of the Four Humours, the liver was associated with which humour?","a":"Yellow bile (choler)","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":20,"q":"How was leprosy viewed by the medieval Church and population?","a":"As a terrifying skin disease sent as a direct punishment from God for sins","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":21,"q":"What does the term 'public health' refer to?","a":"The health of the population as a whole, especially as monitored and regulated by the state.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":22,"q":"Name one ancient civilization that heavily influenced medieval medicine.","a":"The Ancient Greeks.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":23,"q":"Which Greek physician originally created the Theory of the Four Humours?","a":"Hippocrates.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":24,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":25,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":26,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":27,"q":"How did the medieval Church explain the cause of disease?","a":"God sent disease as a punishment for sin or to test faith.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":28,"q":"Why did the medieval Church promote the ideas of Galen?","a":"Galen's ideas fit Christian beliefs because he argued the body was created by a single Creator.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":29,"q":"Explain how astrology was used in medieval medicine.","a":"Physicians used star charts and planetary alignments to diagnose illness and plan treatments.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":30,"q":"What was the 'urine chart' used for in medieval diagnosis?","a":"To check the colour, taste, and smell of urine to identify humour imbalances.","topic":"KT1.1: What did Medieval people believe caused illness?"},{"id":31,"q":"What was the most common medical method used to balance an excess of the blood humour in medieval England?","a":"Bloodletting (phlebotomy)","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":32,"q":"Which of the following was a standard method of bloodletting where a vein was opened, usually in the arm, using a sharp tool called a fleam?","a":"Venesection","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":33,"q":"In what medical scenario would a medieval physician choose leeching (using leeches) over venesection?","a":"For patients who were too young, elderly, or physically weak to withstand a vein being opened","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":34,"q":"During the cupping method of bloodletting, what was the purpose of heating the glass or metal cup before placing it on the patient's skin?","a":"To create a vacuum that would pull blood to the surface of the skin","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":35,"q":"What was the medical purpose of 'purging' a patient in medieval medicine?","a":"To expel excess or corrupt humours from the digestive tract using emetics or laxatives","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":36,"q":"What was a 'clyster' in medieval medicine?","a":"An enema used to clear the bowels, often containing honey, water, and herbal mixtures","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":37,"q":"What was the 'Regimen Sanitatis'?","a":"A personalized set of rules regarding diet, exercise, sleep, and hygiene written by a physician to help a patient prevent illness","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":38,"q":"Which of the following was a highly popular, complex medieval remedy containing up to 70 herbs, spices, and ingredients like opium and snake flesh, used as a universal antidote?","a":"Theriaca","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":39,"q":"How did medieval people attempt to prevent miasma from entering their bodies or homes?","a":"By carrying sweet-smelling herbs, burning incense, or carrying a pomander","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":40,"q":"Why did medieval physicians often recommend bathing in warm water as a treatment?","a":"To help sweat out excess humours, open the pores, and dissolve impurities in the body","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":41,"q":"If a patient was suffering from a hot and dry illness, such as a fever, how would a physician apply the Theory of Opposites to treat them?","a":"By prescribing cool, wet remedies, such as giving them cucumbers or cold baths","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":42,"q":"What religious act was commonly undertaken by sick medieval people to show repentance for their sins and beg God for a miraculous physical cure?","a":"Going on a pilgrimage to a holy shrine containing saintly relics","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":43,"q":"What did the medieval Church teach was the spiritual value of enduring physical pain and illness?","a":"It was a way to cleanse the soul of sin and shorten a person's time in Purgatory","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":44,"q":"Which herbal preparation involved crushing medicinal plants and applying them directly to the skin to draw out poisons or ease pain?","a":"A poultice","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":45,"q":"Why did public baths ('stewes') in England begin to close down toward the end of the medieval period?","a":"Because they became associated with moral corruption, prostitution, and the spread of diseases like leprosy","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":46,"q":"In the context of humoural medicine, why did physicians pay close attention to what patients ate and drank?","a":"Because different foods had specific qualities (hot, cold, wet, dry) that directly influenced and balanced the humours","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":47,"q":"What was the primary method of purging a patient if the physician believed the excess humour was located in the upper stomach?","a":"Administering an emetic to induce vomiting","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":48,"q":"What spiritual practice did extreme religious groups perform publicly during crises to appease God's anger and prevent disease?","a":"Flagellation (whipping themselves to show repentance for sin)","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":49,"q":"Which of these was a common laxative plant used in medieval England to purge the bowels?","a":"Senna","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":50,"q":"What was the purpose of keeping a piece of amber or gold near a patient suffering from certain illnesses?","a":"To protect the patient through sympathetic magic or transference, believing the gold would draw out the disease","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":51,"q":"Which medical practitioner in medieval England attended university for up to ten years, was licensed to diagnose illness, but rarely carried out physical treatment himself?","a":"A university-trained physician","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":52,"q":"Which group of medieval medical practitioners mixed herbal remedies, sold spices, and were often viewed as a cheaper alternative to expensive physicians?","a":"Apothecaries","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":53,"q":"What training route did medieval barber-surgeons take to learn their craft, such as performing amputations or pulling teeth?","a":"Serving a practical apprenticeship under an experienced master in a guild","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":54,"q":"Why did the medieval Catholic Church strictly ban monks and priests from performing surgeries that involved shedding blood?","a":"Because spilling blood was seen as incompatible with a holy, spiritual office","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":55,"q":"In a typical medieval hospital run by the Church, what was the primary focus of the monastic staff?","a":"Providing basic physical care, warmth, food, and spiritual preparation for the soul","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":56,"q":"Which of the following groups of patients would be systematically turned away and rejected from entering a medieval charity hospital?","a":"Infectious people, pregnant women, and the mentally ill","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":57,"q":"Why did many medieval hospitals have their chapel positioned at the very center of the ward, visible from all patient beds?","a":"To ensure patients could observe and participate in daily holy Mass from their beds, prioritizing spiritual healing","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":58,"q":"In medieval England, who was responsible for providing the vast majority of daily medical care and herbal treatments to the sick?","a":"Women in the home, such as mothers, wives, and local wise women","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":59,"q":"Which of the following was a manual surgical task that a medieval barber-surgeon would regularly perform?","a":"Trepanning the skull or setting fractured limbs","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":60,"q":"Why were university-trained physicians so rarely employed or seen in medieval England?","a":"Because they were extremely expensive and their services were limited to the wealthy and royalty","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":61,"q":"What was the main diagnostic tool a medieval physician used at a patient's bedside before consulting their books?","a":"An inspection of the patient's pulse and urine sample","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":62,"q":"How did apothecaries typically acquire their knowledge of herbs, spices, and drug preparation?","a":"Through hands-on experience, trade networks, and passing down secrets from father to son","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":63,"q":"Why did medieval physicians rarely touch or physically examine their patients during a consultation?","a":"Because they believed medical knowledge was a purely intellectual, book-based science of logical observation","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":64,"q":"Which of these ingredients was commonly grown in a medieval home garden and used by women to treat basic coughs and chest ailments?","a":"Mint and chamomile","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":65,"q":"How did the Guild of Barber-Surgeons regulate the standard of surgery in medieval towns?","a":"By monitoring apprenticeships, inspecting workshops, and punishing unlicensed or dangerous practitioners","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":66,"q":"What was a major limitation of a medieval apothecary's remedies?","a":"They often mixed ingredients based on astrological alignments or supernatural properties rather than proven clinical trial","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":67,"q":"Approximately how many charity hospitals existed in medieval England by the year 1400?","a":"Over 1,100","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":68,"q":"In what way did medieval charity hospitals contribute to public health?","a":"By providing a clean, warm environment and nutritious food to help vulnerable people recover naturally","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":69,"q":"What did medieval surgeons use to try and dull the pain of an amputation, despite the extreme risk of killing the patient?","a":"Herbal mixtures containing highly toxic hemlock, opium, or mandrake","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":70,"q":"Why did the medieval medical community believe that academic physicians were of a higher social and intellectual standing than barber-surgeons?","a":"Because physicians were university-educated and understood the logical theories of Galen, whereas surgeons were considered manual craftsmen who worked with their hands","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":71,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":72,"q":"How did the medieval Church explain the cause of disease?","a":"God sent disease as a punishment for sin or to test faith.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":73,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":74,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":75,"q":"Explain how astrology was used in medieval medicine.","a":"Physicians used star charts and planetary alignments to diagnose illness and plan treatments.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":76,"q":"What was the 'urine chart' used for in medieval diagnosis?","a":"To check the colour, taste, and smell of urine to identify humour imbalances.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":77,"q":"What does the term 'public health' refer to?","a":"The health of the population as a whole, especially as monitored and regulated by the state.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":78,"q":"Name one ancient civilization that heavily influenced medieval medicine.","a":"The Ancient Greeks.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":79,"q":"Under the Theory of Opposites, how would a fever (hot/dry) be treated?","a":"With cold treatments like cucumber or cool baths.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":80,"q":"Which Greek physician originally created the Theory of the Four Humours?","a":"Hippocrates.","topic":"KT1.2: How did Medieval people try to prevent and treat disease?"},{"id":81,"q":"In which year did the Black Death first arrive on the shores of England?","a":"1348","topic":"KT1.3: How did people respond to the Black Death?"},{"id":82,"q":"What is the actual scientific cause of the Black Death, and how was it primarily spread during the Middle Ages?","a":"Yersinia pestis bacteria, carried in the digestive systems of fleas on black rats","topic":"KT1.3: How did people respond to the Black Death?"},{"id":83,"q":"Which astrological event in the year 1345 was widely blamed by medieval scholars for causing the Black Death?","a":"An unusual alignment of the planets Mars, Jupiter, and Saturn","topic":"KT1.3: How did people respond to the Black Death?"},{"id":84,"q":"What was the name of the hard, painful, pus-filled swellings that appeared in the armpits and groin of Black Death victims?","a":"Buboes","topic":"KT1.3: How did people respond to the Black Death?"},{"id":85,"q":"Which lung-based variant of the plague was spread directly through coughing and sneezing, was 100% fatal, and killed victims much faster?","a":"Pneumonic plague","topic":"KT1.3: How did people respond to the Black Death?"},{"id":86,"q":"Why did the religious groups known as 'flagellants' whip themselves publicly in the streets of London?","a":"To show God they were sorry for their sins and beg Him to stop the plague","topic":"KT1.3: How did people respond to the Black Death?"},{"id":87,"q":"What natural disaster did medieval people believe had cracked open the earth, releasing the poisonous fumes (miasma) that caused the plague?","a":"A volcanic eruption or earthquake","topic":"KT1.3: How did people respond to the Black Death?"},{"id":88,"q":"Which French physician to the Pope famously advised people to 'Go quickly, go far, and return slowly' to survive the Black Death?","a":"Guy de Chauliac","topic":"KT1.3: How did people respond to the Black Death?"},{"id":89,"q":"Under the local quarantine rules introduced during the Black Death, how long were travelers new to an area forced to stay away from others?","a":"40 days","topic":"KT1.3: How did people respond to the Black Death?"},{"id":90,"q":"Why did local authorities in some medieval towns deliberately stop sweeping and cleaning the streets during the Black Death?","a":"Because they believed the foul stench of rotting waste would drive away the plague miasma","topic":"KT1.3: How did people respond to the Black Death?"},{"id":91,"q":"Why were medieval local governments largely unsuccessful in fully enforcing quarantine laws during the 1348 epidemic?","a":"Because they lacked power, meaning the rich moved freely and the Church ran services as normal","topic":"KT1.3: How did people respond to the Black Death?"},{"id":92,"q":"Which traditional treatment did medieval physicians try on Black Death patients that actually made them die more quickly?","a":"Bleeding and purging","topic":"KT1.3: How did people respond to the Black Death?"},{"id":93,"q":"Which treatment occasionally allowed a Black Death patient to survive if it was done successfully by a barber-surgeon?","a":"Cutting open (lancing) the buboes to drain the pus","topic":"KT1.3: How did people respond to the Black Death?"},{"id":94,"q":"Approximately what percentage of the English population is estimated to have died during the Black Death epidemic of 1348-49?","a":"Between 30% and 50% (nearly one-third to one-half)","topic":"KT1.3: How did people respond to the Black Death?"},{"id":95,"q":"In which year did King Edward III write his famous letter to the Mayor of London complaining about the filthy, death-carrying air of the city?","a":"1349","topic":"KT1.3: How did people respond to the Black Death?"},{"id":96,"q":"Which popular, spice-based medieval medicine containing up to 70 ingredients (including opium) was prescribed as an antidote during the Black Death?","a":"Theriaca","topic":"KT1.3: How did people respond to the Black Death?"},{"id":97,"q":"Which of the following was a common way people tried to prevent 'bad air' (miasma) from entering their bodies during the Black Death?","a":"Carrying sweet-smelling herbs, flowers, or spices","topic":"KT1.3: How did people respond to the Black Death?"},{"id":98,"q":"Why is it historically incorrect to write about 'searchers', 'red crosses on doors', or 'killing 40,000 dogs' in a GCSE answer about the 1348 Black Death?","a":"Because those specific administrative preventions occurred only during the 1665 Great Plague","topic":"KT1.3: How did people respond to the Black Death?"},{"id":99,"q":"Why did the plague return to England periodically every 10 to 20 years after the first 1348 outbreak?","a":"Because unhygienic, crowded, and rat-infested living conditions remained completely unchanged","topic":"KT1.3: How did people respond to the Black Death?"},{"id":100,"q":"Where do historians believe the Black Death first broke out before traveling along trade routes to Sicily, Europe, and finally England?","a":"The Far East (such as China)","topic":"KT1.3: How did people respond to the Black Death?"},{"id":101,"q":"What was the purpose of 'bleeding' (phlebotomy) in medieval medicine?","a":"To restore balance to the four humours by releasing excess blood.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":102,"q":"What was the role of a medieval apothecary?","a":"Preparing and selling herbal remedies and potions.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":103,"q":"How did medieval hospitals differ from modern ones?","a":"They provided shelter and care, not medical treatment.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":104,"q":"What was 'purging'?","a":"Using laxatives or emetics to clear the digestive system.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":105,"q":"What was the role of a medieval barber surgeon?","a":"Performing minor surgery, pulling teeth, and bloodletting.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":106,"q":"What was the 'Regimen Sanitatis'?","a":"A set of instructions on diet, exercise, and hygiene to help prevent illness.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":107,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":108,"q":"What was 'miasma'?","a":"Bad air or noxious smells believed to cause disease.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":109,"q":"How did the medieval Church explain the cause of disease?","a":"God sent disease as a punishment for sin or to test faith.","topic":"KT1.3: How did people respond to the Black Death?"},{"id":110,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT1.3: How did people respond to the Black Death?"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

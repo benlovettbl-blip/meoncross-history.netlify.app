@@ -38,36 +38,64 @@ export default {
       id: 'lesson_1',
       title: 'Why were young men so desperate to join the slaughter of 1914?',
       learning_objectives: [
-        "Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire",
-        "Explain why trench warfare on the Western Front created a devastating stalemate",
-        "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict"
+        'Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire',
+        'Explain why trench warfare on the Western Front created a devastating stalemate',
+        "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict",
       ],
       vocabulary: [
-        { term: "Propaganda", definition: "Government-produced material designed to shape public opinion, recruit soldiers, and maintain morale." },
-        { term: "Empire", definition: "The British Empire — soldiers from across its colonies fought on the Western Front." },
-        { term: "Alliance", definition: "A formal agreement between nations to support each other in war." },
-        { term: "Stalemate", definition: "A situation where neither side can win or make progress — the defining feature of trench warfare." },
-        { term: "Trench warfare", definition: "A type of fighting from fortified ditches (trenches) that dominated the Western Front from 1914 to 1918." }
+        {
+          term: 'Propaganda',
+          definition:
+            'Government-produced material designed to shape public opinion, recruit soldiers, and maintain morale.',
+        },
+        {
+          term: 'Empire',
+          definition:
+            'The British Empire — soldiers from across its colonies fought on the Western Front.',
+        },
+        {
+          term: 'Alliance',
+          definition: 'A formal agreement between nations to support each other in war.',
+        },
+        {
+          term: 'Stalemate',
+          definition:
+            'A situation where neither side can win or make progress — the defining feature of trench warfare.',
+        },
+        {
+          term: 'Trench warfare',
+          definition:
+            'A type of fighting from fortified ditches (trenches) that dominated the Western Front from 1914 to 1918.',
+        },
       ],
       teacher_notes: {
         primer:
           "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
         objectives: [
           {
-            objective: "Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire",
-            primer: "Focus on the role of Lord Kitchener's campaign and how peer pressure and patriotism forced many young men to sign up.",
-            question: "What were the main social and political pressures that led young men to enlist in 1914?"
+            objective:
+              'Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire',
+            primer:
+              "Focus on the role of Lord Kitchener's campaign and how peer pressure and patriotism forced many young men to sign up.",
+            question:
+              'What were the main social and political pressures that led young men to enlist in 1914?',
           },
           {
-            objective: "Explain why trench warfare on the Western Front created a devastating stalemate",
-            primer: "Highlight the failure of the Schlieffen Plan and how the introduction of machine guns and artillery made defensive positions impenetrable.",
-            question: "How did modern industrial weaponry create the stalemate of the trench system?"
+            objective:
+              'Explain why trench warfare on the Western Front created a devastating stalemate',
+            primer:
+              'Highlight the failure of the Schlieffen Plan and how the introduction of machine guns and artillery made defensive positions impenetrable.',
+            question:
+              'How did modern industrial weaponry create the stalemate of the trench system?',
           },
           {
-            objective: "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict",
-            primer: "Contrast the romantic ideas of a short 'over by Christmas' adventure with the miserable realities of trench foot, shell shock, and mass casualties.",
-            question: "In what ways did the reality of fighting on the Western Front differ from what volunteers expected in 1914?"
-          }
+            objective:
+              "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict",
+            primer:
+              "Contrast the romantic ideas of a short 'over by Christmas' adventure with the miserable realities of trench foot, shell shock, and mass casualties.",
+            question:
+              'In what ways did the reality of fighting on the Western Front differ from what volunteers expected in 1914?',
+          },
         ],
         source_context:
           "The visual sources in this lesson (such as the map of alliances and the recruitment posters) highlight the two phases of the outbreak: the geopolitical trap of the alliance system, and the psychological manipulation of the British public. The propaganda posters in particular reveal how the government ruthlessly leveraged gender roles and peer pressure to feed the war machine. **Hinge Question:** Look closely at the 'Women of Britain Say GO!' poster; why was emotional blackmail considered more effective than simply ordering men to fight in 1914?",
@@ -79,10 +107,10 @@ export default {
           {
             question: 'Which of these was a long-term cause of WWI?',
             options: [
-              'The Alliance System',
               'The assassination of Archduke Franz Ferdinand',
-              'The Schlieffen Plan failing',
               'The Treaty of Versailles',
+              'The Alliance System',
+              'The Schlieffen Plan failing',
             ],
             answer: 0,
             explanation:
@@ -123,8 +151,8 @@ export default {
           question:
             'What was the main reason the British military had to rely on volunteers in August 1914?',
           options: [
-            'Britain had no conscription law and possessed a small professional army.',
             'Parliament ran out of money to pay soldiers.',
+            'Britain had no conscription law and possessed a small professional army.',
             'The King banned the use of regular soldiers.',
           ],
           answer: 0,
@@ -133,9 +161,9 @@ export default {
           question:
             'Which local Hampshire regiment battalions were heavily recruited from the Stubbington and Portsmouth areas in 1914?',
           options: [
+            "Kitchener's Fareham Conscripts.",
             'The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).',
             'The Stubbington Guards.',
-            "Kitchener's Fareham Conscripts.",
           ],
           answer: 0,
         },
@@ -144,8 +172,8 @@ export default {
             'Which statement best explains why white feathers were such a powerful recruitment tool?',
           options: [
             'They weaponized social shame and humiliation within close-knit local communities.',
-            'They carried legal force and resulted in a heavy fine.',
             'They were official government warnings that a man was about to be arrested.',
+            'They carried legal force and resulted in a heavy fine.',
           ],
           answer: 0,
         },
@@ -153,9 +181,9 @@ export default {
           question:
             "Why do modern historians like Gary Sheffield argue that many working-class men joined the army for 'pragmatic' reasons?",
           options: [
-            'The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.',
-            'They were tricked by romanticized stories of quick, glorious victories.',
             'They were promised free houses in London after the war ended.',
+            'They were tricked by romanticized stories of quick, glorious victories.',
+            'The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.',
           ],
           answer: 0,
         },
@@ -163,9 +191,9 @@ export default {
           question:
             "According to historian Catriona Pennell, what was a key 'moral' reason for British enlistment in 1914?",
           options: [
+            'The fear of being fired by an employer who demanded they join.',
             'The desire to protect international law and civilization after Germany invaded neutral Belgium.',
             'The need to escape the boring, repetitive work of the textile mills.',
-            'The fear of being fired by an employer who demanded they join.',
           ],
           answer: 0,
         },
@@ -324,32 +352,32 @@ export default {
         {
           q: 'What was the name of the revolutionary British battleship launched in 1906 that sparked a naval arms race?',
           a: 'HMS Dreadnought',
-          options: ['HMS Dreadnought', 'SMS Panther', 'RMS Lusitania', 'HMS Victory'],
+          options: ['HMS Victory', 'HMS Dreadnought', 'SMS Panther', 'RMS Lusitania'],
         },
         {
           q: 'Which Serbian nationalist group assassinated Archduke Franz Ferdinand in Sarajevo?',
           a: 'The Black Hand',
-          options: ['The Black Hand', 'The White Rose', 'The Red Baron', 'The Balkan Brotherhood'],
+          options: ['The Balkan Brotherhood', 'The White Rose', 'The Black Hand', 'The Red Baron'],
         },
         {
           q: 'Which European empire declared war on Serbia first during the July Days?',
           a: 'Austria-Hungary',
-          options: ['Austria-Hungary', 'Germany', 'Russia', 'Great Britain'],
+          options: ['Austria-Hungary', 'Great Britain', 'Russia', 'Germany'],
         },
         {
           q: 'Who was the British Secretary of State for War who launched a massive recruitment campaign in 1914?',
           a: 'Lord Horatio Kitchener',
           options: [
-            'Lord Horatio Kitchener',
-            'Winston Churchill',
             'Douglas Haig',
+            'Lord Horatio Kitchener',
             'David Lloyd George',
+            'Winston Churchill',
           ],
         },
         {
           q: 'What was the nickname given to battalions made up of friends, colleagues, and neighbors who enlisted together?',
           a: 'Pals Battalions',
-          options: ['Pals Battalions', 'Buddy Brigades', 'Mates Regiments', 'Comrade Companies'],
+          options: ['Comrade Companies', 'Pals Battalions', 'Mates Regiments', 'Buddy Brigades'],
         },
       ],
       video: [
@@ -389,16 +417,36 @@ export default {
       id: 'lesson_2',
       title: 'Did British generals make the horror of trench warfare worse?',
       vocabulary: [
-        { term: 'Trench', definition: 'A long, narrow ditch dug by soldiers for protection from enemy fire on the Western Front.' },
-        { term: 'No Mans Land', definition: 'The deadly strip of land between opposing trenches, swept by machine gun fire and barbed wire.' },
-        { term: 'Attrition', definition: 'A strategy of wearing down the enemy through continuous losses of personnel and material.' },
-        { term: 'Causation', definition: 'Understanding the reasons behind events — why did trench warfare cause such devastating casualties?' },
-        { term: 'Interpretation', definition: 'A historians explanation of events — the debate over whether generals were lions led by donkeys.' }
+        {
+          term: 'Trench',
+          definition:
+            'A long, narrow ditch dug by soldiers for protection from enemy fire on the Western Front.',
+        },
+        {
+          term: 'No Mans Land',
+          definition:
+            'The deadly strip of land between opposing trenches, swept by machine gun fire and barbed wire.',
+        },
+        {
+          term: 'Attrition',
+          definition:
+            'A strategy of wearing down the enemy through continuous losses of personnel and material.',
+        },
+        {
+          term: 'Causation',
+          definition:
+            'Understanding the reasons behind events — why did trench warfare cause such devastating casualties?',
+        },
+        {
+          term: 'Interpretation',
+          definition:
+            'A historians explanation of events — the debate over whether generals were lions led by donkeys.',
+        },
       ],
       learning_objectives: [
-        "Describe the key features of trench warfare and explain why it caused such devastating casualties",
-        "Explain the debate around British military leadership: were generals incompetent or facing impossible circumstances?",
-        "Evaluate the significance of propaganda in shaping public perception of the war effort"
+        'Describe the key features of trench warfare and explain why it caused such devastating casualties',
+        'Explain the debate around British military leadership: were generals incompetent or facing impossible circumstances?',
+        'Evaluate the significance of propaganda in shaping public perception of the war effort',
       ],
       teacher_notes: {
         primer:
@@ -637,44 +685,44 @@ export default {
           a: 'Prolonged exposure to freezing, wet, and unsanitary mud inside boots.',
           options: [
             'Prolonged exposure to freezing, wet, and unsanitary mud inside boots.',
-            'Inhaling poisonous gas clouds without wearing a mask.',
             'Bites from disease-carrying black rats and lice.',
             'Being shot in the foot by an enemy sniper.',
+            'Inhaling poisonous gas clouds without wearing a mask.',
           ],
         },
         {
           q: 'Why did the British artillery bombardment fail to destroy German defenses before the Somme offensive?',
           a: 'German soldiers survived safely inside deep, concrete-reinforced underground bunkers.',
           options: [
+            'The German army used giant electric magnets to deflect the shells.',
             'German soldiers survived safely inside deep, concrete-reinforced underground bunkers.',
             'The British artillery fired in the wrong direction due to poor maps.',
-            'The German army used giant electric magnets to deflect the shells.',
             'The British simply ran out of ammunition.',
           ],
         },
         {
           q: 'On which date did the infamous first day of the Battle of the Somme occur?',
           a: 'July 1, 1916',
-          options: ['July 1, 1916', 'August 4, 1914', 'November 11, 1918', 'June 28, 1914'],
+          options: ['June 28, 1914', 'November 11, 1918', 'August 4, 1914', 'July 1, 1916'],
         },
         {
           q: 'What name is given to the popular historical viewpoint that brave British troops were commanded by foolish, incompetent generals?',
           a: 'Lions led by Donkeys',
           options: [
+            'The Grand Illusion',
             'Lions led by Donkeys',
             'The Kitchener Stampede',
             'The Silent Front',
-            'The Grand Illusion',
           ],
         },
         {
           q: 'How did modern "revisionist" historians change the historical debate surrounding General Douglas Haig?',
           a: 'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
           options: [
-            'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
             'They proved that he never actually visited the Western Front during the war.',
-            'They discovered that he was secretly a double agent working for the German Empire.',
             'They claimed he deliberately tried to lose the war to help France.',
+            'They discovered that he was secretly a double agent working for the German Empire.',
+            'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
           ],
         },
       ],
@@ -732,16 +780,36 @@ export default {
       id: 'lesson_3',
       title: "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
       learning_objectives: [
-        "Describe the contribution of soldiers from across the British Empire, including troops from India, Africa, and the Caribbean",
-        "Explain why the contributions of imperial and colonial troops were marginalised in traditional British narratives of the war",
-        "Evaluate the significance of protest and resistance movements that emerged from colonial soldiers' wartime experiences"
+        'Describe the contribution of soldiers from across the British Empire, including troops from India, Africa, and the Caribbean',
+        'Explain why the contributions of imperial and colonial troops were marginalised in traditional British narratives of the war',
+        "Evaluate the significance of protest and resistance movements that emerged from colonial soldiers' wartime experiences",
       ],
       vocabulary: [
-        { term: "Empire", definition: "Soldiers from India, Africa, the Caribbean, and other colonies fought for Britain — their sacrifice was often forgotten." },
-        { term: "Protest", definition: "Actions taken to object to unfair treatment — colonial soldiers protested discrimination during and after the war." },
-        { term: "Resistance", definition: "Opposing unjust treatment — many colonial soldiers resisted the erasure of their wartime contributions." },
-        { term: "Marginalisation", definition: "The process of treating a group as insignificant or secondary — imperial troops were marginalised in war narratives." },
-        { term: "Commemoration", definition: "The act of remembering and honouring those who served — war memorials often excluded non-white soldiers." }
+        {
+          term: 'Empire',
+          definition:
+            'Soldiers from India, Africa, the Caribbean, and other colonies fought for Britain — their sacrifice was often forgotten.',
+        },
+        {
+          term: 'Protest',
+          definition:
+            'Actions taken to object to unfair treatment — colonial soldiers protested discrimination during and after the war.',
+        },
+        {
+          term: 'Resistance',
+          definition:
+            'Opposing unjust treatment — many colonial soldiers resisted the erasure of their wartime contributions.',
+        },
+        {
+          term: 'Marginalisation',
+          definition:
+            'The process of treating a group as insignificant or secondary — imperial troops were marginalised in war narratives.',
+        },
+        {
+          term: 'Commemoration',
+          definition:
+            'The act of remembering and honouring those who served — war memorials often excluded non-white soldiers.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -806,9 +874,9 @@ export default {
           question:
             'Which imperial force contributed over 1.5 million men to the British war effort, fighting in places like Ypres and Mesopotamia?',
           options: [
-            'The British Indian Army',
             'The British West Indies Regiment',
             'The Australian and New Zealand Army Corps (ANZAC)',
+            'The British Indian Army',
           ],
           answer: 0,
         },
@@ -816,18 +884,18 @@ export default {
           question:
             'Why were many black soldiers in the British West Indies Regiment (BWIR) angry about their treatment?',
           options: [
+            'They were forced to return to the Caribbean before the war ended.',
             'They were stripped of combat roles, paid less, and forced into dangerous manual labor.',
             'They were forced to fight on the front lines without any weapons.',
-            'They were forced to return to the Caribbean before the war ended.',
           ],
           answer: 0,
         },
         {
           question: 'What happened in Taranto, Italy, in 1918?',
           options: [
+            'Indian troops broke through the German lines and ended the war.',
             'Soldiers of the BWIR mutinied in protest against systemic racism and degrading conditions.',
             'The British Army officially apologized for its racist policies.',
-            'Indian troops broke through the German lines and ended the war.',
           ],
           answer: 0,
         },
@@ -835,8 +903,8 @@ export default {
           question:
             "What does historian David Olusoga mean when he discusses 'historical amnesia' regarding WWI?",
           options: [
-            'The way the massive contributions of non-white imperial troops were deliberately left out of popular history to maintain a myth of white imperial superiority.',
             'The fact that soldiers who suffered from shell shock lost their memories.',
+            'The way the massive contributions of non-white imperial troops were deliberately left out of popular history to maintain a myth of white imperial superiority.',
             'The failure of the British government to keep accurate records of casualties.',
           ],
           answer: 0,
@@ -844,7 +912,7 @@ export default {
         {
           question:
             'Which term best describes a historical narrative (like Interpretation 1) that focuses almost exclusively on white, European experiences while ignoring the rest of the world?',
-          options: ['Eurocentric', 'Pragmatic', 'Revisionist'],
+          options: ['Pragmatic', 'Eurocentric', 'Revisionist'],
           answer: 0,
         },
       ],
@@ -983,36 +1051,36 @@ export default {
         {
           q: 'Approximately how many men from the British Empire and its dominions served in the First World War?',
           a: '3 million',
-          options: ['3 million', '500,000', '10 million', '100,000'],
+          options: ['3 million', '500,000', '100,000', '10 million'],
         },
         {
           q: 'Which imperial army sent over 1.5 million men to fight in the war?',
           a: 'The British Indian Army',
           options: [
-            'The British Indian Army',
             'The Canadian Army',
-            'The Australian Imperial Force',
             'The South African Defence Force',
+            'The British Indian Army',
+            'The Australian Imperial Force',
           ],
         },
         {
           q: 'Which battle featured troops from Australia and New Zealand (ANZACs) fighting a devastating campaign against the Ottoman Empire?',
           a: 'Gallipoli',
-          options: ['Gallipoli', 'The Somme', 'Passchendaele', 'Verdun'],
+          options: ['Passchendaele', 'Verdun', 'The Somme', 'Gallipoli'],
         },
         {
           q: 'In December 1918, where did members of the British West Indies Regiment mutiny due to severe racial discrimination?',
           a: 'Taranto, Italy',
-          options: ['Taranto, Italy', 'Ypres, Belgium', 'Cairo, Egypt', 'London, England'],
+          options: ['Taranto, Italy', 'Cairo, Egypt', 'London, England', 'Ypres, Belgium'],
         },
         {
           q: 'Despite their massive sacrifices, how were imperial troops often treated in the official post-war victory celebrations?',
           a: 'They were largely forgotten and excluded from events like the London Victory Parade.',
           options: [
-            'They were largely forgotten and excluded from events like the London Victory Parade.',
-            'They were given the highest honors and led the parades.',
             'They were granted immediate independence for their home countries.',
             'They were all given British citizenship and land.',
+            'They were given the highest honors and led the parades.',
+            'They were largely forgotten and excluded from events like the London Victory Parade.',
           ],
         },
       ],
@@ -1042,17 +1110,41 @@ export default {
       id: 'lesson_4',
       title: 'How did a war fought miles away completely control daily life in Britain?',
       learning_objectives: [
-        "Describe the key features of the Home Front, including rationing, propaganda, and the role of women in industry",
-        "Explain how the war expanded the power of Parliament and challenged traditional ideas about democracy and gender",
-        "Evaluate the significance of the war as a catalyst for social and political change in Britain"
+        'Describe the key features of the Home Front, including rationing, propaganda, and the role of women in industry',
+        'Explain how the war expanded the power of Parliament and challenged traditional ideas about democracy and gender',
+        'Evaluate the significance of the war as a catalyst for social and political change in Britain',
       ],
       vocabulary: [
-        { term: "Home Front", definition: "The civilian population and activities within a country at war, as opposed to the military front." },
-        { term: "Democracy", definition: "Government by the people — the war accelerated the expansion of voting rights, including for women." },
-        { term: "Parliament", definition: "The law-making body that passed wartime legislation like DORA (Defence of the Realm Act)." },
-        { term: "Propaganda", definition: "Material used to maintain civilian morale, encourage rationing, and recruit workers." },
-        { term: "Suffrage", definition: "The right to vote — women's war work helped secure partial female suffrage in 1918." },
-        { term: "Change", definition: "The war caused fundamental social and political change in Britain, challenging old class and gender structures." }
+        {
+          term: 'Home Front',
+          definition:
+            'The civilian population and activities within a country at war, as opposed to the military front.',
+        },
+        {
+          term: 'Democracy',
+          definition:
+            'Government by the people — the war accelerated the expansion of voting rights, including for women.',
+        },
+        {
+          term: 'Parliament',
+          definition:
+            'The law-making body that passed wartime legislation like DORA (Defence of the Realm Act).',
+        },
+        {
+          term: 'Propaganda',
+          definition:
+            'Material used to maintain civilian morale, encourage rationing, and recruit workers.',
+        },
+        {
+          term: 'Suffrage',
+          definition:
+            "The right to vote — women's war work helped secure partial female suffrage in 1918.",
+        },
+        {
+          term: 'Change',
+          definition:
+            'The war caused fundamental social and political change in Britain, challenging old class and gender structures.',
+        },
       ],
       teacher_notes: {
         primer:
@@ -1265,41 +1357,41 @@ export default {
         {
           q: 'What term describes a conflict where the boundary between soldiers and civilians vanishes?',
           a: 'Total War',
-          options: ['Total War', 'Absolute War', 'Unlimited War', 'Civilian Warfare'],
+          options: ['Absolute War', 'Unlimited War', 'Civilian Warfare', 'Total War'],
         },
         {
           q: 'What law gave the British government sweeping emergency powers in August 1914?',
           a: 'The Defense of the Realm Act (DORA)',
           options: [
-            'The Defense of the Realm Act (DORA)',
-            'The Emergency Powers Act',
-            'The Conscription Act',
             'The Civilian Control Order',
+            'The Emergency Powers Act',
+            'The Defense of the Realm Act (DORA)',
+            'The Conscription Act',
           ],
         },
         {
           q: 'What nickname was given to women who worked in munitions factories and suffered from yellow skin due to toxic TNT?',
           a: 'Canary Girls',
-          options: ['Canary Girls', 'Yellow Women', 'TNT Ladies', 'Explosive Girls'],
+          options: ['TNT Ladies', 'Canary Girls', 'Yellow Women', 'Explosive Girls'],
         },
         {
           q: 'What term describes men who refused to fight in the war on moral, political, or religious grounds?',
           a: 'Conscientious Objectors',
           options: [
+            'Anti-War Rebels',
+            'Cowardly Dodgers',
             'Conscientious Objectors',
             'Pacifist Resisters',
-            'Cowardly Dodgers',
-            'Anti-War Rebels',
           ],
         },
         {
           q: 'How did the British government respond to the severe food shortages caused by German U-boat attacks in 1918?',
           a: 'They introduced rationing to ensure fair distribution of food.',
           options: [
+            'They forced citizens to grow their own food or face prison.',
             'They introduced rationing to ensure fair distribution of food.',
             'They surrendered to Germany.',
             'They imported all their food from America.',
-            'They forced citizens to grow their own food or face prison.',
           ],
         },
       ],
@@ -1331,16 +1423,36 @@ export default {
       enquiry:
         'Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?',
       learning_objectives: [
-        "Describe the key terms of the Treaty of Versailles and the competing aims of the Allied powers",
-        "Explain why the treaty created new tensions through trade restrictions, territorial changes, and the War Guilt Clause",
-        "Evaluate whether the Treaty of Versailles represented genuine change or simply planted the seeds for future conflict"
+        'Describe the key terms of the Treaty of Versailles and the competing aims of the Allied powers',
+        'Explain why the treaty created new tensions through trade restrictions, territorial changes, and the War Guilt Clause',
+        'Evaluate whether the Treaty of Versailles represented genuine change or simply planted the seeds for future conflict',
       ],
       vocabulary: [
-        { term: "Treaty of Versailles", definition: "The peace treaty signed in 1919 that officially ended the Great War and imposed harsh terms on Germany." },
-        { term: "Reparations", definition: "Financial compensation demanded from Germany for the damage caused during the war." },
-        { term: "War Guilt Clause", definition: "Article 231 of the Treaty, which forced Germany to accept full responsibility for causing the war." },
-        { term: "Continuity", definition: "When aspects of a situation remain the same — did the treaty solve the problems of 1914 or preserve them?" },
-        { term: "Revolution", definition: "Dramatic political upheaval — the war triggered revolutions in Russia (1917) and Germany (1918)." }
+        {
+          term: 'Treaty of Versailles',
+          definition:
+            'The peace treaty signed in 1919 that officially ended the Great War and imposed harsh terms on Germany.',
+        },
+        {
+          term: 'Reparations',
+          definition:
+            'Financial compensation demanded from Germany for the damage caused during the war.',
+        },
+        {
+          term: 'War Guilt Clause',
+          definition:
+            'Article 231 of the Treaty, which forced Germany to accept full responsibility for causing the war.',
+        },
+        {
+          term: 'Continuity',
+          definition:
+            'When aspects of a situation remain the same — did the treaty solve the problems of 1914 or preserve them?',
+        },
+        {
+          term: 'Revolution',
+          definition:
+            'Dramatic political upheaval — the war triggered revolutions in Russia (1917) and Germany (1918).',
+        },
       ],
       teacher_notes: {
         primer:
@@ -1519,46 +1631,46 @@ export default {
         {
           q: 'What date was the Treaty of Versailles officially signed by Allied and German leaders?',
           a: 'June 28, 1919',
-          options: ['June 28, 1919', 'November 11, 1918', 'January 1, 1914', 'September 1, 1939'],
+          options: ['January 1, 1914', 'November 11, 1918', 'September 1, 1939', 'June 28, 1919'],
         },
         {
           q: "Which US President proposed the 'Fourteen Points' and wanted to create a League of Nations?",
           a: 'Woodrow Wilson',
           options: [
-            'Woodrow Wilson',
             'Georges Clemenceau',
-            'David Lloyd George',
             'Franklin D. Roosevelt',
+            'Woodrow Wilson',
+            'David Lloyd George',
           ],
         },
         {
           q: 'What was the name of Article 231 of the Treaty of Versailles?',
           a: 'The War Guilt Clause',
           options: [
-            'The War Guilt Clause',
-            'The Demilitarization Act',
-            'The Reparation Standard',
             'The Armistice Agreement',
+            'The Reparation Standard',
+            'The Demilitarization Act',
+            'The War Guilt Clause',
           ],
         },
         {
           q: 'Why do modern revisionist historians like Margaret MacMillan argue Versailles was NOT excessively harsh?',
           a: 'Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.',
           options: [
-            'Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.',
             "Because the Allies forgave Germany's debt in 1920.",
             'Because Britain and France gave Germany new colonies in Africa to help them recover.',
             'Because Germany was allowed to keep a massive 1 million man army.',
+            'Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.',
           ],
         },
         {
           q: "Why did the German people call the Treaty of Versailles a 'Diktat'?",
           a: 'They were completely excluded from the peace talks and forced to sign it.',
           options: [
-            'They were completely excluded from the peace talks and forced to sign it.',
             "The entire treaty was written in a secret code they couldn't read.",
-            'It was signed in a railway carriage in the middle of a German forest.',
             'It was dictated directly by Adolf Hitler.',
+            'They were completely excluded from the peace talks and forced to sign it.',
+            'It was signed in a railway carriage in the middle of a German forest.',
           ],
         },
       ],
@@ -1589,16 +1701,36 @@ export default {
       title: 'How did the "Lost Generation" impact the village of Stubbington?',
       enquiry: 'How did the "Lost Generation" impact the village of Stubbington?',
       learning_objectives: [
-        "Describe the local impact of the Great War on communities like Stubbington, using evidence from war memorials and Church records",
+        'Describe the local impact of the Great War on communities like Stubbington, using evidence from war memorials and Church records',
         "Explain the significance of the concept of the 'Lost Generation' for understanding the war's long-term social consequences",
-        "Evaluate primary sources (war memorials, photographs, local records) to construct a historically grounded account of local impact"
+        'Evaluate primary sources (war memorials, photographs, local records) to construct a historically grounded account of local impact',
       ],
       vocabulary: [
-        { term: "Significance", definition: "The importance of an event — understanding why the 'Lost Generation' matters for local and national history." },
-        { term: "Commemoration", definition: "How we remember and honour those who died — through war memorials, Remembrance Day, and local records." },
-        { term: "Primary source", definition: "A document, photograph, or object created at the time of the event being studied." },
-        { term: "Lost Generation", definition: "The millions of young men killed in the Great War, leaving a devastating gap in communities across Britain." },
-        { term: "War memorial", definition: "A monument dedicated to the memory of those who died in war — Stubbington's memorial lists local men who were killed." }
+        {
+          term: 'Significance',
+          definition:
+            "The importance of an event — understanding why the 'Lost Generation' matters for local and national history.",
+        },
+        {
+          term: 'Commemoration',
+          definition:
+            'How we remember and honour those who died — through war memorials, Remembrance Day, and local records.',
+        },
+        {
+          term: 'Primary source',
+          definition:
+            'A document, photograph, or object created at the time of the event being studied.',
+        },
+        {
+          term: 'Lost Generation',
+          definition:
+            'The millions of young men killed in the Great War, leaving a devastating gap in communities across Britain.',
+        },
+        {
+          term: 'War memorial',
+          definition:
+            "A monument dedicated to the memory of those who died in war — Stubbington's memorial lists local men who were killed.",
+        },
       ],
       teacher_notes: {
         primer:
@@ -1805,37 +1937,37 @@ export default {
         {
           q: 'In what year was the Stubbington War Memorial erected?',
           a: '1922',
-          options: ['1922', '1918', '1939', '1914'],
+          options: ['1914', '1939', '1922', '1918'],
         },
         {
           q: 'What physical structure does the Stubbington War Memorial cover?',
           a: 'The local village pump.',
           options: [
             'The local village pump.',
-            'The entrance to the local church.',
-            'An old artillery gun brought back from France.',
             'The village post office.',
+            'An old artillery gun brought back from France.',
+            'The entrance to the local church.',
           ],
         },
         {
           q: 'Who proposed and designed the memorial in Stubbington?',
           a: 'The mother of the only woman commemorated among the fallen.',
           options: [
-            'The mother of the only woman commemorated among the fallen.',
             'The Mayor of Fareham.',
             'Lord Kitchener.',
             'A famous London architect.',
+            'The mother of the only woman commemorated among the fallen.',
           ],
         },
         {
           q: 'How many names of the fallen are recorded on the Stubbington memorial?',
           a: '67',
-          options: ['67', '12', '300', '45'],
+          options: ['45', '12', '300', '67'],
         },
         {
           q: 'What historical term describes the study of a specific family, like the Lowry brothers, to understand a larger global event?',
           a: 'Micro-history',
-          options: ['Micro-history', 'Historiography', 'Macro-economics', 'Demographics'],
+          options: ['Macro-economics', 'Historiography', 'Micro-history', 'Demographics'],
         },
       ],
       video: [
@@ -1863,27 +1995,48 @@ export default {
       id: 'lesson_7',
       title: 'Assessment: The Great War',
 
-  lesson_reflection: {
-    prompt: "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
-    instructions: [
-      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
-      "Complete the EBI (Even Better If) section — what did you find most challenging?",
-      "Circle your effort level (1-5) and set a specific target for the next unit."
-    ]
-  },      primer:
+      lesson_reflection: {
+        prompt:
+          'You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',
+        instructions: [
+          'Complete the WWW (What Went Well) section — what did you enjoy or find easiest?',
+          'Complete the EBI (Even Better If) section — what did you find most challenging?',
+          'Circle your effort level (1-5) and set a specific target for the next unit.',
+        ],
+      },
+      primer:
         'This formal assessment bridges Key Stage 3 historical skills with early GCSE demands, testing chronological recall, source utility evaluation, and historical judgement.',
       vocab: [],
       learning_objectives: [
-        "Synthesise knowledge of trench warfare, the Home Front, imperial contributions, propaganda, and the Treaty of Versailles",
-        "Construct a sustained argument using specific evidence about the causes, course, and consequences of the Great War",
-        "Evaluate historical interpretations of the war, including the 'Lions led by Donkeys' debate"
+        'Synthesise knowledge of trench warfare, the Home Front, imperial contributions, propaganda, and the Treaty of Versailles',
+        'Construct a sustained argument using specific evidence about the causes, course, and consequences of the Great War',
+        "Evaluate historical interpretations of the war, including the 'Lions led by Donkeys' debate",
       ],
       vocabulary: [
-        { term: "Synthesis", definition: "Combining knowledge from across the whole unit to construct a complete argument." },
-        { term: "Interpretation", definition: "How historians explain events differently — e.g., the 'Lions led by Donkeys' debate about General Haig." },
-        { term: "Evidence", definition: "Specific historical facts and examples used to support an argument." },
-        { term: "Evaluation", definition: "Making a judgement about the value, importance, or accuracy of historical evidence or interpretations." },
-        { term: "Propaganda", definition: "Biased information used to promote a cause — a key concept running through the entire Great War unit." }
+        {
+          term: 'Synthesis',
+          definition:
+            'Combining knowledge from across the whole unit to construct a complete argument.',
+        },
+        {
+          term: 'Interpretation',
+          definition:
+            "How historians explain events differently — e.g., the 'Lions led by Donkeys' debate about General Haig.",
+        },
+        {
+          term: 'Evidence',
+          definition: 'Specific historical facts and examples used to support an argument.',
+        },
+        {
+          term: 'Evaluation',
+          definition:
+            'Making a judgement about the value, importance, or accuracy of historical evidence or interpretations.',
+        },
+        {
+          term: 'Propaganda',
+          definition:
+            'Biased information used to promote a cause — a key concept running through the entire Great War unit.',
+        },
       ],
       do_now: {
         type: 'grid',
@@ -1954,46 +2107,47 @@ export default {
         {
           q: 'In what year did the First World War begin?',
           a: '1914',
-          options: ['1914', '1918', '1939', '1911'],
+          options: ['1939', '1914', '1918', '1911'],
         },
         {
           q: 'Which country was NOT part of the Triple Entente?',
           a: 'Germany',
-          options: ['Germany', 'Britain', 'France', 'Russia'],
+          options: ['Britain', 'Germany', 'Russia', 'France'],
         },
         {
           q: 'What condition was caused by standing in cold, flooded trenches?',
           a: 'Trench Foot',
-          options: ['Trench Foot', 'Shell Shock', 'Spanish Flu', 'Cholera'],
+          options: ['Shell Shock', 'Trench Foot', 'Spanish Flu', 'Cholera'],
         },
         {
           q: 'How many men from the British Empire and Dominions served in the war?',
           a: 'Nearly 3 million',
-          options: ['Nearly 3 million', '100,000', '500,000', '5 million'],
+          options: ['5 million', '100,000', 'Nearly 3 million', '500,000'],
         },
         {
           q: 'What was the nickname given to women working with TNT in factories?',
           a: 'Canary Girls',
-          options: ['Canary Girls', 'Tommies', 'Doughboys', 'Land Girls'],
+          options: ['Tommies', 'Canary Girls', 'Doughboys', 'Land Girls'],
         },
       ],
       teacher_notes: {
         source_context:
           'The visual sources in this assessment review the core themes of the unit, from the empowerment and exploitation of women in munitions factories to the enduring legacy of the conflict. **Hinge Question:** How does the image of women in munitions factories summarize the dramatic societal shifts caused by Total War?',
       },
-      
+
       historical_interpretations: {
-        title: "Historical Interpretations: General Haig",
+        title: 'Historical Interpretations: General Haig',
         interpretation_a: {
           historian: "John Laffin (1988) - 'British Butchers and Bunglers'",
-          text: "General Haig was an incompetent butcher who callously sent millions of young men to their deaths. He was a 'donkey' completely out of touch with the realities of modern trench warfare, ordering the same failed charges over and over again."
+          text: "General Haig was an incompetent butcher who callously sent millions of young men to their deaths. He was a 'donkey' completely out of touch with the realities of modern trench warfare, ordering the same failed charges over and over again.",
         },
         interpretation_b: {
           historian: "Gary Sheffield (2001) - 'Forgotten Victory'",
-          text: "General Haig was the 'Architect of Victory'. He faced an impossible task in a new type of industrial war that no one knew how to fight. Despite the tragic casualties, he learned from his mistakes and eventually led the British army to its greatest ever victory in 1918."
+          text: "General Haig was the 'Architect of Victory'. He faced an impossible task in a new type of industrial war that no one knew how to fight. Despite the tragic casualties, he learned from his mistakes and eventually led the British army to its greatest ever victory in 1918.",
         },
-        question: "Which interpretation of General Haig do you find more convincing? Use your knowledge of the Battle of the Somme to support your answer.",
-        scaffold: "I find Interpretation [A/B] more convincing because..."
+        question:
+          'Which interpretation of General Haig do you find more convincing? Use your knowledge of the Battle of the Somme to support your answer.',
+        scaffold: 'I find Interpretation [A/B] more convincing because...',
       },
       pair_share: {
         prompt:
@@ -2021,19 +2175,19 @@ export default {
         a: "The Priddy's Hard armaments depot",
         options: [
           "The Priddy's Hard armaments depot",
-          'The Netley Military Hospital',
-          'The Stubbington Textile Mill',
           'The Portsmouth Naval Dockyard',
+          'The Stubbington Textile Mill',
+          'The Netley Military Hospital',
         ],
       },
       {
         q: 'Why do revisionist historians like Gail Braybon argue that the war did NOT truly liberate women?',
         a: 'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
         options: [
-          'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
-          'Because women refused to leave their homes and do any industrial work.',
           'Because the government made it illegal for women to earn their own money.',
+          'Because women refused to leave their homes and do any industrial work.',
           'Because women were not allowed to join the military.',
+          'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
         ],
       },
       {
@@ -2041,8 +2195,8 @@ export default {
         a: 'German U-boats sank merchant ships bringing food, causing severe shortages.',
         options: [
           'German U-boats sank merchant ships bringing food, causing severe shortages.',
-          'A national drought ruined all the grain crops in Hampshire.',
           'Factory workers went on strike and refused to bake bread.',
+          'A national drought ruined all the grain crops in Hampshire.',
           'The British government sent all the food to France.',
         ],
       },
@@ -2050,10 +2204,10 @@ export default {
         q: 'How did the government treat Conscientious Objectors who refused to do any form of military work?',
         a: 'They were sent to harsh labor prisons and stripped of their voting rights.',
         options: [
-          'They were sent to harsh labor prisons and stripped of their voting rights.',
-          'They were exempted from all taxes and given free houses.',
-          'They were forced to join the royal court as political advisors.',
           'They were exiled to Australia.',
+          'They were exempted from all taxes and given free houses.',
+          'They were sent to harsh labor prisons and stripped of their voting rights.',
+          'They were forced to join the royal court as political advisors.',
         ],
       },
     ],

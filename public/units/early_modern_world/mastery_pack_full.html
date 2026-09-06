@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 100 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/early_modern_world/mastery_pack_full.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/early_modern_world/mastery_pack_full.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1538,206 +2027,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>How did religious conflict trigger global exploration (1517–1588)?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">1517</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1517</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">Henry VIII</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Henry VIII</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">The Treaty of Tordesillas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Treaty of Tordesillas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">A Letter of Marque</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Letter of Marque</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">El Draque ("The Dragon")</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">El Draque ("The Dragon")</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">The Golden Hind</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Golden Hind</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Fire ships</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Fire ships</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">King Philip II</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Philip II</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">The Protestant Wind</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Protestant Wind</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">North America</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">North America</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">The Silk Road</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Silk Road</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">The Ottoman Empire</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Ottoman Empire</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Constantinople</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Constantinople</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">The Kingdom of Benin</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Kingdom of Benin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Because the Ottoman Empire now controlled the main overland routes to Asia, taxing or blocking trade.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because the Ottoman Empire now controlled the main overland routes to Asia, taxing or blocking trade.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">Joint-Stock Companies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joint-Stock Companies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">Roanoke Island</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Roanoke Island</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">CROATOAN</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">CROATOAN</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">Jamestown</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Jamestown</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">Tobacco</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Tobacco</div>
                 </div>
                 </div><div class="answer-list"><h3>Trade or takeover: How did early encounters turn into empire?</h3>
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">Chief Powhatan (Wahunsenacawh)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chief Powhatan (Wahunsenacawh)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">1600</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1600</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">The Mughal Empire</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Mughal Empire</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Sir Thomas Roe</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Thomas Roe</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">Factories</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Factories</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">1517</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1517</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Privateers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Privateers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">King Philip II</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Philip II</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">The Protestant Wind</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Protestant Wind</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">England was financially weak and lacked a large navy, so privateers were a cheap way to challenge Spain without a direct war.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">England was financially weak and lacked a large navy, so privateers were a cheap way to challenge Spain without a direct war.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">The Divine Right of Kings</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Divine Right of Kings</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">Ship Money</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ship Money</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">30 January 1649</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">30 January 1649</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">The New Model Army</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The New Model Army</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Oliver Cromwell</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Oliver Cromwell</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">The Commonwealth of England</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Commonwealth of England</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Barbados</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Barbados</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">The Navigation Acts</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Navigation Acts</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">The Puritans</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Puritans</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">The Restoration</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Restoration</div>
                 </div>
                 </div>
         </div>
@@ -1748,202 +2245,202 @@
                 <div class="answer-list"><h3>Who controlled Britain? The Ideological Battle</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Jamestown</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Jamestown</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">Tobacco</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Tobacco</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">A Joint-Stock Company</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Joint-Stock Company</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">The Mughal Empire</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Mughal Empire</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">The Divine Right of Kings</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Divine Right of Kings</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">Ship Money</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ship Money</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">30 January 1649</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">30 January 1649</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">The New Model Army</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The New Model Army</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">Oliver Cromwell</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Oliver Cromwell</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">The Commonwealth of England</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Commonwealth of England</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Barbados</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Barbados</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">The Navigation Acts</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Navigation Acts</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">The Puritans</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Puritans</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">The Restoration</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Restoration</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">The Divine Right of Kings</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Divine Right of Kings</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">Ship Money</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ship Money</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">The New Model Army</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The New Model Army</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">Oliver Cromwell</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Oliver Cromwell</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">27 January 1649</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">27 January 1649</div>
                 </div>
                 </div><div class="answer-list"><h3>What were the mechanics of the Transatlantic Slave Trade?</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">Europe to Africa, Africa to the Americas, the Americas to Europe.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Europe to Africa, Africa to the Americas, the Americas to Europe.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">Sugar</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sugar</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">The brutal forced voyage of enslaved Africans across the Atlantic.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The brutal forced voyage of enslaved Africans across the Atlantic.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">Sugar</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sugar</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">A wealthy owner who lived in Britain and left the plantation to be run by brutal overseers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A wealthy owner who lived in Britain and left the plantation to be run by brutal overseers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">Overseers calculated it was cheaper to work enslaved people to death and simply buy replacements.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Overseers calculated it was cheaper to work enslaved people to death and simply buy replacements.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">Profits from slave-produced goods were invested in British banks, infrastructure, and factories.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Profits from slave-produced goods were invested in British banks, infrastructure, and factories.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">The British government paid massive compensation to former slave owners.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The British government paid massive compensation to former slave owners.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">It demonstrates that Britain's wealth and modern financial systems were built on horrific brutality and chattel slavery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It demonstrates that Britain's wealth and modern financial systems were built on horrific brutality and chattel slavery.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">A company where wealthy investors pool their money to share the risks and profits of overseas trade.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A company where wealthy investors pool their money to share the risks and profits of overseas trade.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">Tobacco</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Tobacco</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">Parliament (led by Oliver Cromwell's New Model Army)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Parliament (led by Oliver Cromwell's New Model Army)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">Communities of escaped enslaved people who fought guerrilla wars against the British.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Communities of escaped enslaved people who fought guerrilla wars against the British.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">It was the only successful large-scale slave revolt in history, resulting in an independent nation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was the only successful large-scale slave revolt in history, resulting in an independent nation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">A secret network of safe houses and routes that helped enslaved people escape.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A secret network of safe houses and routes that helped enslaved people escape.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">A spiritual belief system utilizing botanical knowledge, sometimes used for silent resistance.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A spiritual belief system utilizing botanical knowledge, sometimes used for silent resistance.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">Because practitioners could use their botanical knowledge to slowly and undetectably poison them.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because practitioners could use their botanical knowledge to slowly and undetectably poison them.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">The idea that slavery was ended almost entirely by moral, upper-class white politicians like William Wilberforce.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The idea that slavery was ended almost entirely by moral, upper-class white politicians like William Wilberforce.</div>
                 </div>
                 </div>
         </div>
@@ -1954,102 +2451,102 @@
                 <div class="answer-list"><h3>How did enslaved Africans resist the Transatlantic Slave Trade?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">Declining economic profitability of sugar and massive, terrifying armed rebellions by enslaved people.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Declining economic profitability of sugar and massive, terrifying armed rebellions by enslaved people.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">It shows enslaved people actively dismantling the system themselves, rather than waiting passively for white politicians.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It shows enslaved people actively dismantling the system themselves, rather than waiting passively for white politicians.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">Suffocation and sickness caused by severe overcrowding and lack of ventilation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Suffocation and sickness caused by severe overcrowding and lack of ventilation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">1. Manufactured goods to Africa. 2. Enslaved people to the Americas (Middle Passage). 3. Cash crops to Europe.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1. Manufactured goods to Africa. 2. Enslaved people to the Americas (Middle Passage). 3. Cash crops to Europe.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">A fortified enclosure or 'slave dungeon' on the African coast where enslaved people were held before boarding ships.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A fortified enclosure or 'slave dungeon' on the African coast where enslaved people were held before boarding ships.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">Because the intense, grueling labor required to harvest and process it resulted in extremely high death rates for enslaved people.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because the intense, grueling labor required to harvest and process it resulted in extremely high death rates for enslaved people.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">1694</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1694</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Gin Lane</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gin Lane</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">Less than 5% (approx. 3-5%)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Less than 5% (approx. 3-5%)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">Turnpike Roads</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Turnpike Roads</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">The English Civil War and the Glorious Revolution</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The English Civil War and the Glorious Revolution</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">The 'Bloody Code'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 'Bloody Code'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">The East India Company (EIC)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The East India Company (EIC)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">Rotten Boroughs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rotten Boroughs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">Sugar and Tobacco</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sugar and Tobacco</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">The Industrial Revolution</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Industrial Revolution</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">Defense against both Spanish attacks and the local Powhatan confederacy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Defense against both Spanish attacks and the local Powhatan confederacy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">For committing high treason against Parliament and the English people.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">For committing high treason against Parliament and the English people.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">The rugged, mountainous terrain allowed them to launch devastating guerrilla attacks on British plantations while remaining virtually impossible for the British army to conquer.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The rugged, mountainous terrain allowed them to launch devastating guerrilla attacks on British plantations while remaining virtually impossible for the British army to conquer.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">To monopolize the highly profitable Transatlantic Slave Trade for the British Crown and its merchants.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To monopolize the highly profitable Transatlantic Slave Trade for the British Crown and its merchants.</div>
                 </div>
                 </div>
         </div>
@@ -2111,45 +2608,308 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">KS3: Early Modern World & Global Encounters (1450–1750) · Complete Unit</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (100 Questions)</option>
+                    <option value="0">Part 1: How did religious conflict trigger global exploration (1517–1588)?</option>
+<option value="1">Part 2: Trade or takeover: How did early encounters turn into empire?</option>
+<option value="2">Part 3: Who controlled Britain? The Ideological Battle</option>
+<option value="3">Part 4: What were the mechanics of the Transatlantic Slave Trade?</option>
+<option value="4">Part 5: How did enslaved Africans resist the Transatlantic Slave Trade?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_early_modern_world_full';
+    const ALL_DECK = [{"id":1,"q":"In what year did Martin Luther post his 95 Theses, starting the Protestant Reformation?","a":"1517","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":2,"q":"Which English monarch broke away from the Catholic Church in 1534 to establish the Church of England?","a":"Henry VIII","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":3,"q":"What was the name of the 1494 papal agreement that divided the Americas between Spain and Portugal?","a":"The Treaty of Tordesillas","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":4,"q":"What official document gave privateers legal permission from a monarch to attack foreign ships?","a":"A Letter of Marque","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":5,"q":"What nickname did the Spanish give to ?","a":"El Draque (\"The Dragon\")","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":6,"q":"Name the flagship on which  circumnavigated the globe between 1577 and 1580.","a":"The Golden Hind","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":7,"q":"Which English naval tactic shattered the Spanish fleet formation while anchored off Calais in 1588?","a":"Fire ships","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":8,"q":"Who was the Catholic King of Spain who launched the Armada against England in 1588?","a":"King Philip II","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":9,"q":"What term was used to describe the storms that wrecked the fleeing Spanish ships off Scotland and Ireland?","a":"The Protestant Wind","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":10,"q":"What continent does Queen Elizabeth's hand rest upon in the famous 1588 Armada Portrait?","a":"North America","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":11,"q":"What was the overarching name for the ancient trade network connecting Asia to Europe?","a":"The Silk Road","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":12,"q":"Which major empire expanded to block overland European trade routes in 1453?","a":"The Ottoman Empire","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":13,"q":"What city was captured by Sultan Mehmed II in 1453?","a":"Constantinople","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":14,"q":"What West African kingdom was known for its detailed bronze plaques in the 15th century?","a":"The Kingdom of Benin","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":15,"q":"Why did the capture of Constantinople force European nations to look for new trade routes?","a":"Because the Ottoman Empire now controlled the main overland routes to Asia, taxing or blocking trade.","topic":"How did religious conflict trigger global exploration (1517–1588)?"},{"id":16,"q":"What type of business model allowed multiple investors to pool their money to fund risky overseas colonial ventures?","a":"Joint-Stock Companies","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":17,"q":"On which island was the famous \"Lost Colony\" of 1585 founded by Sir Walter Raleigh?","a":"Roanoke Island","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":18,"q":"What single word was found carved into a wooden post when supply ships returned to Roanoke in 1590?","a":"CROATOAN","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":19,"q":"What was the name of the first permanent English settlement established in North America in 1607?","a":"Jamestown","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":20,"q":"Which cash crop introduced by  saved the Jamestown colony from economic ruin?","a":"Tobacco","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":21,"q":"What was the title of the native ruler who led the Powhatan Confederacy when the English arrived in Virginia?","a":"Chief Powhatan (Wahunsenacawh)","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":22,"q":"In what year was the English East India Company (EIC) granted its royal charter by Queen Elizabeth I?","a":"1600","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":23,"q":"Which powerful Muslim empire ruled India during the 17th century when the English first arrived?","a":"The Mughal Empire","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":24,"q":"Name the English ambassador sent by King James I to bow before Emperor Jahangir in 1615.","a":"Sir Thomas Roe","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":25,"q":"What term was used to describe the fortified warehouse trading posts established by the EIC along the Indian coast?","a":"Factories","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":26,"q":"In what year did Martin Luther post his 95 Theses?","a":"1517","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":27,"q":"What name was given to English sailors, like Francis Drake, who were given legal permission to attack Spanish ships?","a":"Privateers","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":28,"q":"What was the name of the Spanish King who launched the Armada against England in 1588?","a":"King Philip II","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":29,"q":"What weather event destroyed much of the fleeing Spanish Armada off the coast of Scotland?","a":"The Protestant Wind","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":30,"q":"Why did Queen Elizabeth I use privateers instead of the Royal Navy to challenge Spain in the Americas?","a":"England was financially weak and lacked a large navy, so privateers were a cheap way to challenge Spain without a direct war.","topic":"Trade or takeover: How did early encounters turn into empire?"},{"id":31,"q":"What political belief held that kings were chosen directly by God and possessed absolute power?","a":"The Divine Right of Kings","topic":"Who controlled Britain? The Ideological Battle"},{"id":32,"q":"What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?","a":"Ship Money","topic":"Who controlled Britain? The Ideological Battle"},{"id":33,"q":"On what date was King Charles I executed outside the Banqueting House in London?","a":"30 January 1649","topic":"Who controlled Britain? The Ideological Battle"},{"id":34,"q":"What was the name of Parliament’s disciplined, professional military force created during the Civil War?","a":"The New Model Army","topic":"Who controlled Britain? The Ideological Battle"},{"id":35,"q":"Who served as the commander of the New Model Army and later became 'Lord Protector' of England?","a":"Oliver Cromwell","topic":"Who controlled Britain? The Ideological Battle"},{"id":36,"q":"What formal title was given to the English republic that ruled between 1649 and 1660?","a":"The Commonwealth of England","topic":"Who controlled Britain? The Ideological Battle"},{"id":37,"q":"Which Caribbean island became the wealthy engine of the English empire in the 1640s due to mass sugar production?","a":"Barbados","topic":"Who controlled Britain? The Ideological Battle"},{"id":38,"q":"What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?","a":"The Navigation Acts","topic":"Who controlled Britain? The Ideological Battle"},{"id":39,"q":"Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?","a":"The Puritans","topic":"Who controlled Britain? The Ideological Battle"},{"id":40,"q":"What event in 1660 brought  back to the throne, ending the Commonwealth era?","a":"The Restoration","topic":"Who controlled Britain? The Ideological Battle"},{"id":41,"q":"What was the name of the first permanent English settlement in North America (1607)?","a":"Jamestown","topic":"Who controlled Britain? The Ideological Battle"},{"id":42,"q":"Which cash crop saved the Jamestown colony from economic ruin?","a":"Tobacco","topic":"Who controlled Britain? The Ideological Battle"},{"id":43,"q":"What type of business model was the East India Company (EIC), where multiple investors pooled money?","a":"A Joint-Stock Company","topic":"Who controlled Britain? The Ideological Battle"},{"id":44,"q":"Which powerful Asian empire did Sir Thomas Roe visit in 1615?","a":"The Mughal Empire","topic":"Who controlled Britain? The Ideological Battle"},{"id":45,"q":"Why were the English submissive traders in India, but aggressive conquerors in North America?","a":"Because the Mughal Empire was vastly wealthier and militarily superior, whereas the Native Americans were initially vulnerable to English military tactics.","topic":"Who controlled Britain? The Ideological Battle"},{"id":46,"q":"What political belief held that kings were chosen directly by God and possessed absolute power?","a":"The Divine Right of Kings","topic":"Who controlled Britain? The Economic Shift"},{"id":47,"q":"What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?","a":"Ship Money","topic":"Who controlled Britain? The Economic Shift"},{"id":48,"q":"On what date was King Charles I executed outside the Banqueting House in London?","a":"30 January 1649","topic":"Who controlled Britain? The Economic Shift"},{"id":49,"q":"What was the name of Parliament’s disciplined, professional military force created during the Civil War?","a":"The New Model Army","topic":"Who controlled Britain? The Economic Shift"},{"id":50,"q":"Who served as the commander of the New Model Army and later became 'Lord Protector' of England?","a":"Oliver Cromwell","topic":"Who controlled Britain? The Economic Shift"},{"id":51,"q":"What formal title was given to the English republic that ruled between 1649 and 1660?","a":"The Commonwealth of England","topic":"Who controlled Britain? The Economic Shift"},{"id":52,"q":"Which Caribbean island became the wealthy engine of the English empire in the 1640s due to mass sugar production?","a":"Barbados","topic":"Who controlled Britain? The Economic Shift"},{"id":53,"q":"What set of maritime trade laws passed in 1651 required all colonial imports to be carried on English ships?","a":"The Navigation Acts","topic":"Who controlled Britain? The Economic Shift"},{"id":54,"q":"Which religious group, led by Cromwell, sought to 'purify' the Church of England and banned traditional pastimes like Christmas?","a":"The Puritans","topic":"Who controlled Britain? The Economic Shift"},{"id":55,"q":"What event in 1660 brought  back to the throne, ending the Commonwealth era?","a":"The Restoration","topic":"Who controlled Britain? The Economic Shift"},{"id":56,"q":"What political belief held that kings were chosen directly by God and possessed absolute power?","a":"The Divine Right of Kings","topic":"Who controlled Britain? The Economic Shift"},{"id":57,"q":"What was the name of the illegal tax on coastal (and later inland) towns revived by Charles I during his Eleven Years' Tyranny?","a":"Ship Money","topic":"Who controlled Britain? The Economic Shift"},{"id":58,"q":"What was the name of Parliament's disciplined, professional military force created during the Civil War?","a":"The New Model Army","topic":"Who controlled Britain? The Economic Shift"},{"id":59,"q":"Who served as the commander of the New Model Army and later became 'Lord Protector' of England?","a":"Oliver Cromwell","topic":"Who controlled Britain? The Economic Shift"},{"id":60,"q":"On what date was King Charles I executed outside the Banqueting House in London?","a":"27 January 1649","topic":"Who controlled Britain? The Economic Shift"},{"id":61,"q":"What were the three main stages of the Triangular Trade?","a":"Europe to Africa, Africa to the Americas, the Americas to Europe.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":62,"q":"Which of the following was NOT a typical good traded by Europeans in West Africa?","a":"Sugar","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":63,"q":"What was the 'Middle Passage'?","a":"The brutal forced voyage of enslaved Africans across the Atlantic.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":64,"q":"What was the primary crop grown on Caribbean plantations such as in Jamaica and Barbados?","a":"Sugar","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":65,"q":"How did the experience of enslaved people in Virginia generally compare to those in the Caribbean by the 1700s?","a":"The enslaved population in Virginia became 'self-sustaining' due to a different climate and slightly better diet.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":66,"q":"What is an 'absentee landlord' in the context of Caribbean sugar plantations?","a":"A wealthy owner who lived in Britain and left the plantation to be run by brutal overseers.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":67,"q":"Why was the Caribbean sugar system often described as a 'death camp' model?","a":"Overseers calculated it was cheaper to work enslaved people to death and simply buy replacements.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":68,"q":"How did the Triangular Trade fuel the Industrial Revolution in Britain?","a":"Profits from slave-produced goods were invested in British banks, infrastructure, and factories.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":69,"q":"According to the UCL Legacies of British Slavery Database, what happened in 1833?","a":"The British government paid massive compensation to former slave owners.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":70,"q":"How does the reality of the Transatlantic Slave Trade challenge the idea of 18th-century Britain as a purely 'modern' and enlightened society?","a":"It demonstrates that Britain's wealth and modern financial systems were built on horrific brutality and chattel slavery.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":71,"q":"What is a 'joint-stock company'?","a":"A company where wealthy investors pool their money to share the risks and profits of overseas trade.","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":72,"q":"What cash crop saved the Jamestown colony from economic failure?","a":"Tobacco","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":73,"q":"Who won the English Civil War (1642-1651)?","a":"Parliament (led by Oliver Cromwell's New Model Army)","topic":"What were the mechanics of the Transatlantic Slave Trade?"},{"id":74,"q":"What were the 'Maroons' in Jamaica?","a":"Communities of escaped enslaved people who fought guerrilla wars against the British.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":75,"q":"What was the significance of the Haitian Revolution (1791-1804)?","a":"It was the only successful large-scale slave revolt in history, resulting in an independent nation.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":76,"q":"Who was Harriet Tubman?","a":"A famous 'Conductor' on the Underground Railroad who rescued dozens of enslaved people.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":77,"q":"What was the 'Underground Railroad'?","a":"A secret network of safe houses and routes that helped enslaved people escape.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":78,"q":"What was 'Obeah' in the context of the Caribbean?","a":"A spiritual belief system utilizing botanical knowledge, sometimes used for silent resistance.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":79,"q":"Why did enslavers live in constant terror of Obeah?","a":"Because practitioners could use their botanical knowledge to slowly and undetectably poison them.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":80,"q":"What is the 'White Savior Narrative' regarding the abolition of slavery?","a":"The idea that slavery was ended almost entirely by moral, upper-class white politicians like William Wilberforce.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":81,"q":"According to historians like Eric Williams, what were the two TRUE main reasons for the abolition of slavery?","a":"Declining economic profitability of sugar and massive, terrifying armed rebellions by enslaved people.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":82,"q":"How does the story of the Underground Railroad challenge traditional historical narratives?","a":"It shows enslaved people actively dismantling the system themselves, rather than waiting passively for white politicians.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":83,"q":"Based on Source A (Olaudah Equiano), what was a primary cause of death during the Middle Passage?","a":"Suffocation and sickness caused by severe overcrowding and lack of ventilation.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":84,"q":"What were the three legs of the Triangular Trade?","a":"1. Manufactured goods to Africa. 2. Enslaved people to the Americas (Middle Passage). 3. Cash crops to Europe.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":85,"q":"What was a 'barracoon'?","a":"A fortified enclosure or 'slave dungeon' on the African coast where enslaved people were held before boarding ships.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":86,"q":"Why was sugar known as a 'killer crop'?","a":"Because the intense, grueling labor required to harvest and process it resulted in extremely high death rates for enslaved people.","topic":"How did enslaved Africans resist the Transatlantic Slave Trade?"},{"id":87,"q":"In what year was the Bank of England established, revolutionizing British national debt and finance?","a":"1694","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":88,"q":"What famous 1751 William Hogarth engraving depicted the social decay and poverty caused by alcohol addiction in London slums?","a":"Gin Lane","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":89,"q":"Roughly what percentage of the male population had the right to vote in British parliamentary elections in 1750?","a":"Less than 5% (approx. 3-5%)","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":90,"q":"What term was used to describe private toll roads constructed in the 18th century to speed up travel and trade?","a":"Turnpike Roads","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":91,"q":"Which two European revolutions (1642-1651 & 1688) permanently reduced the absolute power of the British monarchy?","a":"The English Civil War and the Glorious Revolution","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":92,"q":"What informal term was given to the 18th-century English criminal code that carried over 200 capital offenses?","a":"The 'Bloody Code'","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":93,"q":"Which institution, founded in London in 1600, was by 1750 establishing territorial footholds in Mughal India?","a":"The East India Company (EIC)","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":94,"q":"What was the name given to corrupt parliamentary constituencies with very few voters that were easily bought by aristocrats?","a":"Rotten Boroughs","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":95,"q":"Name two major consumer goods imported into Britain in 1750 that relied directly on Caribbean plantation slave labor.","a":"Sugar and Tobacco","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":96,"q":"Which major historical transformation, beginning around 1750, would turn Britain into the 'Workshop of the World'?","a":"The Industrial Revolution","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":97,"q":"What was the primary function of the 1607 Jamestown Fort design?","a":"Defense against both Spanish attacks and the local Powhatan confederacy.","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":98,"q":"Why did Oliver Cromwell execute King Charles I in 1649?","a":"For committing high treason against Parliament and the English people.","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":99,"q":"What was the strategic advantage of the Jamaican Maroons' location?","a":"The rugged, mountainous terrain allowed them to launch devastating guerrilla attacks on British plantations while remaining virtually impossible for the British army to conquer.","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"},{"id":100,"q":"What motivated the creation of the Royal African Company?","a":"To monopolize the highly profitable Transatlantic Slave Trade for the British Crown and its merchants.","topic":"How 'modern' was Britain by 1750? (Synthesis & Assessment)"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

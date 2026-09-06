@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 60 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAAAAklEQVR4AewaftIAAAzbSURBVO3B0Y1cuw5FwWWh82AgjItRMC4Gwkj8jPctDSDjsHvmelf9+v0HIiIDFiIiQxYiIkMWIiJDFiIiQxYiIkMWIiJDXnzBPPmJuoId8+SkK9gxT066gqeYJyddwVPMk5Ou4JZ5cqsr+CTz5EldwVPMk5+oK9hZiIgMWYiIDFmIiAxZiIgMWYiIDFmIiAx58Ze6gk8yT96hKzgxT251BTtdwS3z5FZXcGKe7HQFJ13BT9MV3DJPTsyTna7gSV3BJ5kntxYiIkMWIiJDFiIiQxYiIkMWIiJDXjzMPHlSV/BddQW3zJNbXcFOV3BinuyYJ08yT3a6gk8zT3a6gltdwYl58knmyZO6gqcsRESGLEREhixERIYsRESGLEREhixERIa8+Id0BSfmyX9JV/AOXcGOefKkruBWV7Bjnpx0BTvmyUlXIHsLEZEhCxGRIQsRkSELEZEhCxGRIS/+IebJra7gxDzZ6QpOzJOnmCfv0BU8qSt4inly0hU8pSs4MU92uoJ/3UJEZMhCRGTIQkRkyEJEZMhCRGTIQkRkyIuHdQXfVVfwpK7gu+oKdsyTk65gxzw56QpumSc7XcGJebLTFTzJPNnpCk66gh3z5KQreEpX8F0tRESGLEREhixERIYsRESGLEREhrz4S+bJT2OenHQFO+bJSVewY56cdAU75sm/oivYMU9OuoId8+SkK7jVFeyYJyddwTuYJz/NQkRkyEJEZMhCRGTIQkRkyEJEZMhCRGTIr99/II8yT251Be9gntzqCp5knnxXXcEt8+RWV/AvWIiIDFmIiAxZiIgMWYiIDFmIiAx58QXz5KQruGWe/DRdwZO6glvmyVO6ghPzZMc8OekKbnUFO+bJSVewY56cdAW3zJOdruBWV3Binux0BbfMk5OuYMc8eVJXsLMQERmyEBEZshARGbIQERmyEBEZshARGfLiC13BLfPkVlfwJPPkk7qCJ3UFO+bJSVfwlK7gxDx5SldwYp7cMk92uoKTrmDHPPk08+QpXcE7LEREhixERIYsRESGLEREhixERIa8+IJ5ctIV7HQF72CenHQFTzFPbnUFP1FX8F11BTvmyS3z5Eldwa2uYMc8udUV3DJPTrqCpyxERIYsRESGLEREhixERIYsRESGLEREhrz4QlfwJPNkpys4MU92uoIT82SnKzgxT251BTvmya2u4MQ82ekKTsyTna7gxDy51RXcMk/+S8yTp3QFJ+bJjnlyqys4MU92uoJbCxGRIQsRkSELEZEhCxGRIQsRkSG/fv/BXzBPbnUFO+bJSVewY558WlewY57c6grewTw56Qo+yTw56QpumSc7XcE7mCcnXcGOeXKrK3iSeXKrK9hZiIgMWYiIDFmIiAxZiIgMWYiIDFmIiAz59fsP/oJ5cqsreAfzZKcrODFPdrqCJ5knT+kKbpkn79AVPMk82ekKPs082ekKbpknT+oKdsyTJ3UFOwsRkSELEZEhCxGRIQsRkSELEZEhLx7WFZyYJ7e6gh3z5KQr2DFPbpknJ13BU7qCJ5kn35V5cqsruGWe7HQFJ+bJra7glnnySV3BLfPk1kJEZMhCRGTIQkRkyEJEZMhCRGTIQkRkyIsvmCdP6gp2zJMT82SnKzgxT251BbfMk1tdwY55ctIV7JgnJ13BU8yTk65gxzy51RU8qSvYMU9OuoJb5slOV3CrK3iSefJJCxGRIQsRkSELEZEhCxGRIQsRkSEvfijz5KQruGWe7HQFJ13BLfNkpys4MU92uoLvqiu4ZZ78l5gn31VXcGKe7HQFtxYiIkMWIiJDFiIiQxYiIkMWIiJDFiIiQ158oSs4MU8+qSv4LzFPbpknt7qCE/PklnlyqyvY6Qq+K/PkuzJPTrqCW13BUxYiIkMWIiJDFiIiQxYiIkMWIiJDXnzBPLllntzqCm6ZJ9+VeXLSFdwyT3a6ghPzZMc8eVJXcMs8+aSu4FZXcGKe3OoKdsyT78o8OekKdhYiIkMWIiJDFiIiQxYiIkMWIiJDFiIiQ158oSs4MU9udQW3zJOdruCWeXLSFeyYJ08yT3a6glvmyUlX8BTz5MQ82ekKTrqCW+bJTldwYp7cMk++q65gxzy5ZZ6cdAVPWYiIDFmIiAxZiIgMWYiIDFmIiAx58Ze6gh3z5JZ5css8OekKdrqCE/PkHbqCHfPkpCt4inlyqys4MU+eYp48qSvYMU9OuoJb5slOV/AOXcE7dAW3FiIiQxYiIkMWIiJDFiIiQxYiIkMWIiJDXnzBPLnVFZyYJztdwTuYJ0/qCj7JPLnVFZyYJ08xT251BSfmyS3zZKcruGWePMk82ekKTsyTn2YhIjJkISIyZCEiMmQhIjJkISIy5MUXuoIT82THPHkH8+SkK9jpCk7Mk52u4MQ8eUpXcGKe7HQFJ+bJjnly0hXsmCe3uoIT8+STzJNbXcEt8+SWeXLSFeyYJ9/VQkRkyEJEZMhCRGTIQkRkyEJEZMhCRGTIr99/8CbmyVO6ghPz5FZXsGOenHQFTzFPTrqCHfPkVldwYp7c6go+yTw56QpumSc7XcGJefIOXcE7mCc7XcGthYjIkIWIyJCFiMiQhYjIkIWIyJAXXzBPntQV3DJPdsyTk67glnmy0xWcmCc7XcGndQU75slJV7BjnryDeXLSFex0BSfmya2u4FZXsGOenHQFO+bJk8yTna7gpCvYMU9OuoKdhYjIkIWIyJCFiMiQhYjIkIWIyJCFiMiQF1/oCk7Mk52u4B26gid1Bbe6glvmyU5XcGKe7HQFJ+bJU7qCW+bJk8yTna7gHcyTk67glnmy0xWcmCe3uoId8+SkK3jKQkRkyEJEZMhCRGTIQkRkyEJEZMiLL5gnJ13BjnnyDubJO3QFT+oKbnUFT+kKTsyTna7gxDzZ6QqeZJ7smCefZp7c6gp2zJMnmSc7XcE7LEREhixERIYsRESGLEREhixERIYsRESGvPhCV/AOXcE7mCdPMk9udQW3zJNbXcGtruBWV3DLPLnVFeyYJ7e6gnfoCr4r8+QdFiIiQxYiIkMWIiJDFiIiQxYiIkNe/CXzZKcruGWenHQFO+bJra7glnlyqys4MU9udQWfZJ68Q1dwYp7sdAXflXly0hXsdAUn5slOV3Binux0BSfmyVMWIiJDFiIiQxYiIkMWIiJDFiIiQxYiIkN+/f6DA/PkSV3Bd2We3OoKdsyTk65gxzz5tK5gxzw56QpumSfv0BU8xTw56Qo+yTy51RW8w0JEZMhCRGTIQkRkyEJEZMhCRGTIi4d1BSfmyU5XcGKe3OoKdsyTJ5knO13BiXnySV3BO5gnt7qCdzBPTrqCW+bJTldwYp7sdAUn5slTzJOTrmDHPDnpCnYWIiJDFiIiQxYiIkMWIiJDFiIiQxYiIkN+/f6DA/PkSV3BJ5kn31VXcMs8OekKdsyTk67gKebJSVewY558WldwyzzZ6QpumSe3uoJb5smtruDWQkRkyEJEZMhCRGTIQkRkyEJEZMiLb8A8+a66glvmyZPMk52u4MQ82ekKbpknJ13BTldwqyu4ZZ6cdAU75sk7mCfvYJ48qSt4ykJEZMhCRGTIQkRkyEJEZMhCRGTIQkRkyIsvdAXv0BW8g3lyyzx5UlewY568g3lyqyt4knmy0xWcmCdP6Qo+rSt4innyXS1ERIYsRESGLEREhixERIYsRESGvPiCefITdQW3uoJb5slTuoIT8+RWV/AU8+RWV3DLPLnVFZyYJz+NeXLSFdzqCnbMk3dYiIgMWYiIDFmIiAxZiIgMWYiIDFmIiAx58Ze6gk8yT97BPPmuzJOTrmDHPDnpCna6gv+SruDEPNnpCk7Mk6d0BU8yT3a6gndYiIgMWYiIDFmIiAxZiIgMWYiIDHnxMPPkSV3BO5gnO13BiXnyXZknO13BiXnyDl3BjnnypK7gKebJk8yTf8FCRGTIQkRkyEJEZMhCRGTIQkRkyEJEZMgL+b+u4FZXsGOe3DJP3sE8OekKnmKenJgnTzFP3qEr+DTzZKcreJJ5stMV3FqIiAxZiIgMWYiIDFmIiAxZiIgMefEP6QqeZJ7sdAUn5slOV3DLPLnVFZyYJ7e6gltdwTuYJztdwYl58hTz5FZXcMs8OekKbnUFO+bJSVewsxARGbIQERmyEBEZshARGbIQERmyEBEZ8uJhXcFPZJ7c6gp2zJOTruCn6QpudQUn5smtruAduoKndAVP6gp2zJMT8+RWV/CUhYjIkIWIyJCFiMiQhYjIkIWIyJAXf8k8+WnMk5OuYMc8eZJ58pSu4MQ8+STz5FZXcGKe7HQFJ13BJ5knJ13BO3QFT+kKbi1ERIYsRESGLEREhixERIYsRESGLEREhvz6/QciIgMWIiJDFiIiQxYiIkMWIiJDFiIiQ/4HpEV+6mgvqFcAAAAASUVORK5CYII=" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/cme_new/mastery_pack_KT3.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/cme_new/mastery_pack_KT3.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1126,206 +1615,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>KT3.1: Diplomatic negotiations, 1974–1979</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">Achieving peace between Israel and Egypt</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Achieving peace between Israel and Egypt</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">Jimmy Carter</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Jimmy Carter</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">The Egypt-Israel Peace Treaty</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Egypt-Israel Peace Treaty</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">He became the first Arab leader to visit Israel and speak to the Knesset</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He became the first Arab leader to visit Israel and speak to the Knesset</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">Jimmy Carter</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Jimmy Carter</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">Israel returned the Sinai Peninsula to Egypt in exchange for full peace and recognition</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Israel returned the Sinai Peninsula to Egypt in exchange for full peace and recognition</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Menachem Begin</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Menachem Begin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">They were furious, expelled Egypt from the Arab League, and cut diplomatic ties</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were furious, expelled Egypt from the Arab League, and cut diplomatic ties</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">He was assassinated by Islamic extremists within the Egyptian army in 1981</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He was assassinated by Islamic extremists within the Egyptian army in 1981</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">The creation of an independent Palestinian state and the status of Jerusalem</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The creation of an independent Palestinian state and the status of Jerusalem</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">A resolution calling for 'Land for Peace'—Israel returns land in exchange for recognition.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A resolution calling for 'Land for Peace'—Israel returns land in exchange for recognition.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Egypt and Syria launched a surprise attack to regain the Sinai and Golan Heights lost in 1967.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Egypt and Syria launched a surprise attack to regain the Sinai and Golan Heights lost in 1967.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">It was the holiest day in Judaism (Yom Kippur), and they underestimated Arab military improvements.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was the holiest day in Judaism (Yom Kippur), and they underestimated Arab military improvements.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Arab states (OPEC) reduced oil production to punish countries supporting Israel, causing a global energy crisis.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Arab states (OPEC) reduced oil production to punish countries supporting Israel, causing a global energy crisis.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Israel eventually repelled the attacks, but suffered heavy casualties.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Israel eventually repelled the attacks, but suffered heavy casualties.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">Yasser Arafat.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Yasser Arafat.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">Sinai, Gaza, West Bank, Golan Heights.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sinai, Gaza, West Bank, Golan Heights.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">A massive pre-emptive air strike.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A massive pre-emptive air strike.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">To choke off Israel's southern trade route.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To choke off Israel's southern trade route.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">The USA.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The USA.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT3.2: The Palestinian Issue, 1974–1993</h3>
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">To establish an independent Palestinian state</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To establish an independent Palestinian state</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">The First Intifada</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The First Intifada</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Yasser Arafat</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Yasser Arafat</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">To destroy the PLO bases that were launching attacks into northern Israel</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To destroy the PLO bases that were launching attacks into northern Israel</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">Christian Phalangist militias massacred Palestinian refugees while Israeli troops stood by</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Christian Phalangist militias massacred Palestinian refugees while Israeli troops stood by</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">A spontaneous, grassroots uprising by Palestinians in the West Bank and Gaza against Israeli occupation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A spontaneous, grassroots uprising by Palestinians in the West Bank and Gaza against Israeli occupation</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Stone-throwing, strikes, boycotts, and barricades</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Stone-throwing, strikes, boycotts, and barricades</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Hamas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hamas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">He publicly renounced terrorism and accepted Israel's right to exist</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He publicly renounced terrorism and accepted Israel's right to exist</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">By using harsh military crackdowns, curfews, and mass arrests</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By using harsh military crackdowns, curfews, and mass arrests</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">He was the first Arab leader to officially visit Israel, opening the door for peace.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He was the first Arab leader to officially visit Israel, opening the door for peace.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">A peace framework brokered by US President Jimmy Carter between Egypt and Israel.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A peace framework brokered by US President Jimmy Carter between Egypt and Israel.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">Egypt officially recognized Israel, and Israel agreed to return the Sinai Peninsula.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Egypt officially recognized Israel, and Israel agreed to return the Sinai Peninsula.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">They were furious; Egypt was expelled from the Arab League, and Sadat was later assassinated.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were furious; Egypt was expelled from the Arab League, and Sadat was later assassinated.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">They used international terrorism, such as the 1972 Munich Olympics massacre, to gain attention.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They used international terrorism, such as the 1972 Munich Olympics massacre, to gain attention.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">To reclaim land lost in 1967.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To reclaim land lost in 1967.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Arab nations cutting oil supplies to punish Israel's allies.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Arab nations cutting oil supplies to punish Israel's allies.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">The 'Land for Peace' formula.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 'Land for Peace' formula.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">The Golan Heights.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Golan Heights.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">Yasser Arafat.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Yasser Arafat.</div>
                 </div>
                 </div>
         </div>
@@ -1336,102 +1833,102 @@
                 <div class="answer-list"><h3>KT3.3: Attempts at a solution, 1988–1995</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">He renounced terrorism and accepted a two-state solution</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He renounced terrorism and accepted a two-state solution</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">It caused the PLO to lose its primary funding and diplomatic backing</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It caused the PLO to lose its primary funding and diplomatic backing</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">The division of the West Bank into Areas A, B, and C</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The division of the West Bank into Areas A, B, and C</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">It intentionally delayed the resolution of 'permanent status' issues</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It intentionally delayed the resolution of 'permanent status' issues</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">It was the first face-to-face agreement between Israel and the PLO, establishing limited Palestinian self-rule</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was the first face-to-face agreement between Israel and the PLO, establishing limited Palestinian self-rule</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">The Palestinian Authority (PA)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Palestinian Authority (PA)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">Yitzhak Rabin</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Yitzhak Rabin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">Extremists on both sides used violence (such as Hamas suicide bombings) to derail the process</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Extremists on both sides used violence (such as Hamas suicide bombings) to derail the process</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Israeli Prime Minister Yitzhak Rabin was assassinated by a right-wing Jewish extremist</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Israeli Prime Minister Yitzhak Rabin was assassinated by a right-wing Jewish extremist</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">The status of Jerusalem and the Right of Return for refugees</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The status of Jerusalem and the Right of Return for refugees</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">To destroy PLO bases in southern Lebanon that were attacking northern Israel.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To destroy PLO bases in southern Lebanon that were attacking northern Israel.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Christian militias massacred Palestinian refugees while the Israeli army stood by.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Christian militias massacred Palestinian refugees while the Israeli army stood by.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">A spontaneous, grassroots Palestinian uprising against the Israeli occupation in the West Bank and Gaza.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A spontaneous, grassroots Palestinian uprising against the Israeli occupation in the West Bank and Gaza.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">Strikes, boycotts, and most famously, youths throwing stones at heavily armed Israeli soldiers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Strikes, boycotts, and most famously, youths throwing stones at heavily armed Israeli soldiers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">It severely damaged Israel's international reputation and pressured them into negotiations.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It severely damaged Israel's international reputation and pressured them into negotiations.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">Israel returned the Sinai in exchange for peace.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Israel returned the Sinai in exchange for peace.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">US President Jimmy Carter.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">US President Jimmy Carter.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">For making peace with Israel.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">For making peace with Israel.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">Palestinian terrorists took Israeli athletes hostage and murdered them.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Palestinian terrorists took Israeli athletes hostage and murdered them.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">To regain territories lost in 1967.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To regain territories lost in 1967.</div>
                 </div>
                 </div>
         </div>
@@ -1493,45 +1990,306 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 2: Conflict in the Middle East, 1945-1995 · Key Topic 3: Attempts at a solution, 1974–95</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (60 Questions)</option>
+                    <option value="0">Part 1: KT3.1: Diplomatic negotiations, 1974–1979</option>
+<option value="1">Part 2: KT3.2: The Palestinian Issue, 1974–1993</option>
+<option value="2">Part 3: KT3.3: Attempts at a solution, 1988–1995</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_cme_new_KT3';
+    const ALL_DECK = [{"id":1,"q":"What was the primary focus of diplomatic negotiations between 1974 and 1979?","a":"Achieving peace between Israel and Egypt","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":2,"q":"Which US President brokered the Camp David Accords?","a":"Jimmy Carter","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":3,"q":"What historic agreement was signed in 1979 as a result of these negotiations?","a":"The Egypt-Israel Peace Treaty","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":4,"q":"What dramatic gesture did Anwar Sadat make in November 1977?","a":"He became the first Arab leader to visit Israel and speak to the Knesset","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":5,"q":"Which US President was the primary mediator of the Camp David Accords?","a":"Jimmy Carter","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":6,"q":"What was the main outcome of the 1979 Egypt-Israel Peace Treaty?","a":"Israel returned the Sinai Peninsula to Egypt in exchange for full peace and recognition","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":7,"q":"Who was the Israeli Prime Minister who signed the Camp David Accords?","a":"Menachem Begin","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":8,"q":"How did the rest of the Arab world react to Egypt signing a peace treaty with Israel?","a":"They were furious, expelled Egypt from the Arab League, and cut diplomatic ties","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":9,"q":"What eventually happened to Anwar Sadat as a result of making peace with Israel?","a":"He was assassinated by Islamic extremists within the Egyptian army in 1981","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":10,"q":"What did the Camp David Accords fail to fully resolve?","a":"The creation of an independent Palestinian state and the status of Jerusalem","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":11,"q":"What was UN Resolution 242 (1967)?","a":"A resolution calling for 'Land for Peace'—Israel returns land in exchange for recognition.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":12,"q":"Why was the Yom Kippur War (1973) launched?","a":"Egypt and Syria launched a surprise attack to regain the Sinai and Golan Heights lost in 1967.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":13,"q":"Why was Israel caught off guard in 1973?","a":"It was the holiest day in Judaism (Yom Kippur), and they underestimated Arab military improvements.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":14,"q":"What was the oil weapon used during the Yom Kippur War?","a":"Arab states (OPEC) reduced oil production to punish countries supporting Israel, causing a global energy crisis.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":15,"q":"Who won the Yom Kippur War militarily?","a":"Israel eventually repelled the attacks, but suffered heavy casualties.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":16,"q":"Who became chairman of the PLO in 1969?","a":"Yasser Arafat.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":17,"q":"What territories did Israel capture in 1967?","a":"Sinai, Gaza, West Bank, Golan Heights.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":18,"q":"How did Israel win the Six Day War?","a":"A massive pre-emptive air strike.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":19,"q":"Why did Nasser blockade the Straits of Tiran in 1967?","a":"To choke off Israel's southern trade route.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":20,"q":"Who forced Britain and France out of Suez in 1956?","a":"The USA.","topic":"KT3.1: Diplomatic negotiations, 1974–1979"},{"id":21,"q":"What was the main goal of the PLO during the 1970s and 1980s?","a":"To establish an independent Palestinian state","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":22,"q":"Which event in 1987 marked a major uprising by Palestinians in the West Bank and Gaza?","a":"The First Intifada","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":23,"q":"Who was the leader of the PLO during this period?","a":"Yasser Arafat","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":24,"q":"Why did Israel invade Lebanon in 1982?","a":"To destroy the PLO bases that were launching attacks into northern Israel","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":25,"q":"What tragic event occurred at the Sabra and Shatila refugee camps in 1982?","a":"Christian Phalangist militias massacred Palestinian refugees while Israeli troops stood by","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":26,"q":"What was the First Intifada which began in 1987?","a":"A spontaneous, grassroots uprising by Palestinians in the West Bank and Gaza against Israeli occupation","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":27,"q":"What characterized the tactics of the Palestinians during the First Intifada?","a":"Stone-throwing, strikes, boycotts, and barricades","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":28,"q":"Which new Palestinian militant group emerged during the First Intifada in 1987?","a":"Hamas","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":29,"q":"How did Yasser Arafat change the PLO's stance in 1988?","a":"He publicly renounced terrorism and accepted Israel's right to exist","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":30,"q":"How did the Israeli 'Iron Fist' policy attempt to deal with the Intifada?","a":"By using harsh military crackdowns, curfews, and mass arrests","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":31,"q":"What was the significance of Anwar Sadat visiting Jerusalem in 1977?","a":"He was the first Arab leader to officially visit Israel, opening the door for peace.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":32,"q":"What were the Camp David Accords (1978)?","a":"A peace framework brokered by US President Jimmy Carter between Egypt and Israel.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":33,"q":"What was the 1979 Egypt-Israel Peace Treaty?","a":"Egypt officially recognized Israel, and Israel agreed to return the Sinai Peninsula.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":34,"q":"How did the Arab world react to Sadat's peace treaty?","a":"They were furious; Egypt was expelled from the Arab League, and Sadat was later assassinated.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":35,"q":"What was the PLO's strategy in the 1970s?","a":"They used international terrorism, such as the 1972 Munich Olympics massacre, to gain attention.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":36,"q":"Why did Egypt and Syria attack in 1973?","a":"To reclaim land lost in 1967.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":37,"q":"What was the 'oil weapon' (OPEC embargo)?","a":"Arab nations cutting oil supplies to punish Israel's allies.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":38,"q":"What was UN Resolution 242?","a":"The 'Land for Peace' formula.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":39,"q":"What territory did Israel capture from Syria in 1967?","a":"The Golan Heights.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":40,"q":"Who was the leader of the PLO?","a":"Yasser Arafat.","topic":"KT3.2: The Palestinian Issue, 1974–1993"},{"id":41,"q":"What historic shift in PLO strategy did Yasser Arafat announce in his 1988 UN speech?","a":"He renounced terrorism and accepted a two-state solution","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":42,"q":"How did the collapse of the Soviet Union in 1991 impact the PLO?","a":"It caused the PLO to lose its primary funding and diplomatic backing","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":43,"q":"What was the result of the 1995 Oslo II Accords?","a":"The division of the West Bank into Areas A, B, and C","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":44,"q":"Which of the following was a key structural flaw of the Oslo Accords?","a":"It intentionally delayed the resolution of 'permanent status' issues","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":45,"q":"What was the significance of the 1993 Oslo Accords?","a":"It was the first face-to-face agreement between Israel and the PLO, establishing limited Palestinian self-rule","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":46,"q":"What new governing body was created by the Oslo Accords?","a":"The Palestinian Authority (PA)","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":47,"q":"Which Israeli Prime Minister shook hands with Yasser Arafat on the White House lawn in 1993?","a":"Yitzhak Rabin","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":48,"q":"Why did the Oslo peace process begin to break down in the mid-1990s?","a":"Extremists on both sides used violence (such as Hamas suicide bombings) to derail the process","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":49,"q":"What tragic event happened on 4 November 1995 that dealt a massive blow to the peace process?","a":"Israeli Prime Minister Yitzhak Rabin was assassinated by a right-wing Jewish extremist","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":50,"q":"What controversial issue was deliberately left out of the Oslo I agreement to be solved later?","a":"The status of Jerusalem and the Right of Return for refugees","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":51,"q":"Why did Israel invade Lebanon in 1982?","a":"To destroy PLO bases in southern Lebanon that were attacking northern Israel.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":52,"q":"What were the Sabra and Shatila massacres?","a":"Christian militias massacred Palestinian refugees while the Israeli army stood by.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":53,"q":"What was the First Intifada (1987)?","a":"A spontaneous, grassroots Palestinian uprising against the Israeli occupation in the West Bank and Gaza.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":54,"q":"What methods were used during the First Intifada?","a":"Strikes, boycotts, and most famously, youths throwing stones at heavily armed Israeli soldiers.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":55,"q":"What was the political impact of the First Intifada?","a":"It severely damaged Israel's international reputation and pressured them into negotiations.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":56,"q":"What was the 1979 Egypt-Israel Peace Treaty?","a":"Israel returned the Sinai in exchange for peace.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":57,"q":"Who brokered the Camp David Accords?","a":"US President Jimmy Carter.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":58,"q":"Why was Anwar Sadat assassinated?","a":"For making peace with Israel.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":59,"q":"What happened at the 1972 Munich Olympics?","a":"Palestinian terrorists took Israeli athletes hostage and murdered them.","topic":"KT3.3: Attempts at a solution, 1988–1995"},{"id":60,"q":"Why was the Yom Kippur War launched?","a":"To regain territories lost in 1967.","topic":"KT3.3: Attempts at a solution, 1988–1995"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

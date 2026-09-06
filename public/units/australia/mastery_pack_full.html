@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 56 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/australia/mastery_pack_full.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/australia/mastery_pack_full.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1090,206 +1579,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>Claiming Australia</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">To locate and claim the 'Great Southern Land' for the British Empire</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To locate and claim the 'Great Southern Land' for the British Empire</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">He read the stars, bird flight patterns, and ocean currents</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He read the stars, bird flight patterns, and ocean currents</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">They believed it was their spiritual and legal duty to protect their ancestral lands from uninvited strangers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They believed it was their spiritual and legal duty to protect their ancestral lands from uninvited strangers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">Sir Joseph Banks</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Joseph Banks</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">The transit of Venus across the Sun</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The transit of Venus across the Sun</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">The Royal Society</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Royal Society</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">To sail south, locate the 'Great Southern Land', and claim it for Britain before rival nations could.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To sail south, locate the 'Great Southern Land', and claim it for Britain before rival nations could.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">Tupaia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Tupaia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">By reading the stars, bird flight patterns, cloud formations, and ocean currents.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By reading the stars, bird flight patterns, cloud formations, and ocean currents.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">The Dharawal nation (specifically the Gweagal people)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Dharawal nation (specifically the Gweagal people)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">It was their sacred, spiritual, and legal duty to protect their ancestral lands from uninvited strangers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was their sacred, spiritual, and legal duty to protect their ancestral lands from uninvited strangers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Terra Nullius</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Terra Nullius</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Possession Island</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Possession Island</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">The American colonies declared their independence from Britain</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The American colonies declared their independence from Britain</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Arthur Bowes Smyth</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Arthur Bowes Smyth</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">They were forced to join road gangs and break stones in leg chains</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were forced to join road gangs and break stones in leg chains</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">The American War of Independence</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The American War of Independence</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">In 'hulks' (rotting decommissioned warships moored in the River Thames)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">In 'hulks' (rotting decommissioned warships moored in the River Thames)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">Captain Arthur Phillip</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Captain Arthur Phillip</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">Petty theft (e.g. stealing clothing, food, or small sums of money)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Petty theft (e.g. stealing clothing, food, or small sums of money)</div>
                 </div>
                 </div><div class="answer-list"><h3>Creating a Convict Colony</h3>
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">11 ships</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">11 ships</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">Botany Bay lacked fresh water, had poor soil for farming, and offered no safe anchorage for the ships.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Botany Bay lacked fresh water, had poor soil for farming, and offered no safe anchorage for the ships.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Sydney Cove (Port Jackson)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sydney Cove (Port Jackson)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">26 January 1788</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">26 January 1788</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">Strict rationing and forced manual labor for all convicts.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Strict rationing and forced manual labor for all convicts.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">Skilled farmers, carpenters, and builders.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Skilled farmers, carpenters, and builders.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Bennelong</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bennelong</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Smallpox</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smallpox</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">A Bidjigal resistance leader who waged a 12-year guerrilla war against British settlers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Bidjigal resistance leader who waged a 12-year guerrilla war against British settlers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">The prolonged, violent conflict over land and resources between British colonizers and Aboriginal resistance fighters.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The prolonged, violent conflict over land and resources between British colonizers and Aboriginal resistance fighters.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">It destroyed their hunting grounds and food sources, leading to starvation and violent conflict.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It destroyed their hunting grounds and food sources, leading to starvation and violent conflict.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">The unprovoked murder of 28 unarmed Aboriginal people by British stockmen, resulting in the rare execution of the white perpetrators.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The unprovoked murder of 28 unarmed Aboriginal people by British stockmen, resulting in the rare execution of the white perpetrators.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">The stealing and exporting of Aboriginal skulls to British museums for racist 'scientific' study.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The stealing and exporting of Aboriginal skulls to British museums for racist 'scientific' study.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">The British viewed land as property to be owned and fenced, while Aboriginal people saw it as a sacred, shared spiritual responsibility.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The British viewed land as property to be owned and fenced, while Aboriginal people saw it as a sacred, shared spiritual responsibility.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Muskets (firearms)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Muskets (firearms)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">He initially tried to 'civilize' them through assimilation schools, but later authorized violent military campaigns against them.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He initially tried to 'civilize' them through assimilation schools, but later authorized violent military campaigns against them.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">The wool industry (sheep farming)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The wool industry (sheep farming)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">Wealthy settlers who illegally occupied massive tracts of Aboriginal land to graze their sheep.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wealthy settlers who illegally occupied massive tracts of Aboriginal land to graze their sheep.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">The discovery of Gold in New South Wales and Victoria</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The discovery of Gold in New South Wales and Victoria</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">A violent uprising by gold miners in Ballarat protesting against unfair mining licenses and police corruption.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A violent uprising by gold miners in Ballarat protesting against unfair mining licenses and police corruption.</div>
                 </div>
                 </div>
         </div>
@@ -1300,82 +1797,82 @@
                 <div class="answer-list"><h3>From Penal Colony to Settlement</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Chinese immigrants</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chinese immigrants</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">A document granting a well-behaved convict freedom to work for themselves before their sentence fully expired.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A document granting a well-behaved convict freedom to work for themselves before their sentence fully expired.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">An influential Governor who transformed Sydney from a prison camp into a functioning city with roads, banks, and hospitals.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An influential Governor who transformed Sydney from a prison camp into a functioning city with roads, banks, and hospitals.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">They faced extreme vulnerability, exploitation, and were often forced into domestic servitude or the 'Female Factories'.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They faced extreme vulnerability, exploitation, and were often forced into domestic servitude or the 'Female Factories'.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">The railway network</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The railway network</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">1901</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1901</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">Terra Nullius</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Terra Nullius</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">Tupaia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Tupaia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">The American War of Independence</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The American War of Independence</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">Prison hulks</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Prison hulks</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">Governor Arthur Phillip</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Governor Arthur Phillip</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Smallpox</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smallpox</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">Pemulwuy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pemulwuy</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">The Myall Creek Massacre</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Myall Creek Massacre</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Merino sheep</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Merino sheep</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">Gold (the 1851 Gold Rush)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gold (the 1851 Gold Rush)</div>
                 </div>
                 </div>
         </div>
@@ -1437,45 +1934,306 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">KS3: History of Australia · Complete Unit</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (56 Questions)</option>
+                    <option value="0">Part 1: Claiming Australia</option>
+<option value="1">Part 2: Creating a Convict Colony</option>
+<option value="2">Part 3: From Penal Colony to Settlement</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_australia_full';
+    const ALL_DECK = [{"id":1,"q":"What was the secret reason the British government sent Captain Cook to the South Pacific in 1768?","a":"To locate and claim the 'Great Southern Land' for the British Empire","topic":"Claiming Australia"},{"id":2,"q":"Which of the following describes a skill Tupaia used to navigate the Endeavour across 3,000 miles of ocean?","a":"He read the stars, bird flight patterns, and ocean currents","topic":"Claiming Australia"},{"id":3,"q":"Why did the Gweagal warriors oppose Captain Cook's landing at Botany Bay in 1770?","a":"They believed it was their spiritual and legal duty to protect their ancestral lands from uninvited strangers","topic":"Claiming Australia"},{"id":4,"q":"Who was the young botanist that led the Royal Society's scientific team on the Endeavour?","a":"Sir Joseph Banks","topic":"Claiming Australia"},{"id":5,"q":"What public scientific event was the Endeavour sent to Tahiti to observe?","a":"The transit of Venus across the Sun","topic":"Claiming Australia"},{"id":6,"q":"Which prestigious British scientific academy funded Captain Cook's 1768 expedition?","a":"The Royal Society","topic":"Claiming Australia"},{"id":7,"q":"What secret instructions was Captain Cook given by the British Admiralty?","a":"To sail south, locate the 'Great Southern Land', and claim it for Britain before rival nations could.","topic":"Claiming Australia"},{"id":8,"q":"Who was the master Polynesian navigator who guided the Endeavour across the Pacific?","a":"Tupaia","topic":"Claiming Australia"},{"id":9,"q":"How did Tupaia navigate the Pacific without European instruments?","a":"By reading the stars, bird flight patterns, cloud formations, and ocean currents.","topic":"Claiming Australia"},{"id":10,"q":"Which Aboriginal Australian nation did Cook's crew encounter at Botany Bay?","a":"The Dharawal nation (specifically the Gweagal people)","topic":"Claiming Australia"},{"id":11,"q":"Why did the Gweagal warriors oppose Cook's landing in 1770?","a":"It was their sacred, spiritual, and legal duty to protect their ancestral lands from uninvited strangers.","topic":"Claiming Australia"},{"id":12,"q":"What Latin legal term did the British use to falsely claim Australia was 'nobody's land'?","a":"Terra Nullius","topic":"Claiming Australia"},{"id":13,"q":"On which island did Captain Cook raise the Union Jack to claim the eastern coast for Britain?","a":"Possession Island","topic":"Claiming Australia"},{"id":14,"q":"Why was the British government forced to stop transporting convicts to North America in 1776?","a":"The American colonies declared their independence from Britain","topic":"Creating a Convict Colony"},{"id":15,"q":"Who was the naval surgeon aboard the Lady Penrhyn who wrote a famous eyewitness journal about the landing of female convicts in 1788?","a":"Arthur Bowes Smyth","topic":"Creating a Convict Colony"},{"id":16,"q":"What punishment was given to difficult convicts who committed further crimes in the Sydney colony?","a":"They were forced to join road gangs and break stones in leg chains","topic":"Creating a Convict Colony"},{"id":17,"q":"Which global event in 1776 caused Britain to lose its primary location for transporting convicts?","a":"The American War of Independence","topic":"Creating a Convict Colony"},{"id":18,"q":"Where were British convicts temporarily held when prisons overflowed before Botany Bay was established?","a":"In 'hulks' (rotting decommissioned warships moored in the River Thames)","topic":"Creating a Convict Colony"},{"id":19,"q":"Who was appointed as the first Governor of the New South Wales colony?","a":"Captain Arthur Phillip","topic":"Creating a Convict Colony"},{"id":20,"q":"What were the most common crimes committed by the convicts of the First Fleet?","a":"Petty theft (e.g. stealing clothing, food, or small sums of money)","topic":"Creating a Convict Colony"},{"id":21,"q":"How many ships made up the First Fleet that sailed to Australia in 1787?","a":"11 ships","topic":"Creating a Convict Colony"},{"id":22,"q":"Why did Governor Phillip decide to abandon Botany Bay and move the settlement?","a":"Botany Bay lacked fresh water, had poor soil for farming, and offered no safe anchorage for the ships.","topic":"Creating a Convict Colony"},{"id":23,"q":"What name did Governor Phillip give to the new, more suitable harbor where the fleet finally settled?","a":"Sydney Cove (Port Jackson)","topic":"Creating a Convict Colony"},{"id":24,"q":"On what exact date did the British raise the flag at Sydney Cove?","a":"26 January 1788","topic":"Creating a Convict Colony"},{"id":25,"q":"What system did Governor Phillip implement to ensure the colony's survival during the first year?","a":"Strict rationing and forced manual labor for all convicts.","topic":"Creating a Convict Colony"},{"id":26,"q":"What skills did the early colony critically lack among its convict population?","a":"Skilled farmers, carpenters, and builders.","topic":"Creating a Convict Colony"},{"id":27,"q":"Who was the senior Eora man kidnapped by Governor Phillip to act as an intermediary?","a":"Bennelong","topic":"Encounters with the Indigenous Peoples"},{"id":28,"q":"What devastating disease swept through the Aboriginal population around Sydney in 1789?","a":"Smallpox","topic":"Encounters with the Indigenous Peoples"},{"id":29,"q":"Who was Pemulwuy?","a":"A Bidjigal resistance leader who waged a 12-year guerrilla war against British settlers.","topic":"Encounters with the Indigenous Peoples"},{"id":30,"q":"What was the 'Frontier War'?","a":"The prolonged, violent conflict over land and resources between British colonizers and Aboriginal resistance fighters.","topic":"Encounters with the Indigenous Peoples"},{"id":31,"q":"How did the British expansion into the Hawkesbury River impact the Dharug people?","a":"It destroyed their hunting grounds and food sources, leading to starvation and violent conflict.","topic":"Encounters with the Indigenous Peoples"},{"id":32,"q":"What was the Myall Creek Massacre of 1838?","a":"The unprovoked murder of 28 unarmed Aboriginal people by British stockmen, resulting in the rare execution of the white perpetrators.","topic":"Encounters with the Indigenous Peoples"},{"id":33,"q":"What horrific practice was conducted by scientists like Sir Joseph Banks regarding Aboriginal remains?","a":"The stealing and exporting of Aboriginal skulls to British museums for racist 'scientific' study.","topic":"Encounters with the Indigenous Peoples"},{"id":34,"q":"Why did the British concept of land ownership conflict with Aboriginal views?","a":"The British viewed land as property to be owned and fenced, while Aboriginal people saw it as a sacred, shared spiritual responsibility.","topic":"Encounters with the Indigenous Peoples"},{"id":35,"q":"What weapon gave the British a massive technological advantage during the Frontier Wars?","a":"Muskets (firearms)","topic":"Encounters with the Indigenous Peoples"},{"id":36,"q":"How did Governor Macquarie's policies toward Aboriginal people change over time?","a":"He initially tried to 'civilize' them through assimilation schools, but later authorized violent military campaigns against them.","topic":"Encounters with the Indigenous Peoples"},{"id":37,"q":"What highly profitable industry transformed Australia's economy in the 1820s?","a":"The wool industry (sheep farming)","topic":"From Penal Colony to Settlement"},{"id":38,"q":"Who were 'squatters' in colonial Australia?","a":"Wealthy settlers who illegally occupied massive tracts of Aboriginal land to graze their sheep.","topic":"From Penal Colony to Settlement"},{"id":39,"q":"What major discovery in 1851 completely changed the demographics and wealth of Australia?","a":"The discovery of Gold in New South Wales and Victoria","topic":"From Penal Colony to Settlement"},{"id":40,"q":"What was the Eureka Rebellion of 1854?","a":"A violent uprising by gold miners in Ballarat protesting against unfair mining licenses and police corruption.","topic":"From Penal Colony to Settlement"},{"id":41,"q":"Which immigrant group faced severe racism, violence, and discriminatory taxes on the goldfields?","a":"Chinese immigrants","topic":"From Penal Colony to Settlement"},{"id":42,"q":"What was a 'Ticket of Leave'?","a":"A document granting a well-behaved convict freedom to work for themselves before their sentence fully expired.","topic":"From Penal Colony to Settlement"},{"id":43,"q":"Who was Lachlan Macquarie?","a":"An influential Governor who transformed Sydney from a prison camp into a functioning city with roads, banks, and hospitals.","topic":"From Penal Colony to Settlement"},{"id":44,"q":"How were female convicts typically treated in the early colony?","a":"They faced extreme vulnerability, exploitation, and were often forced into domestic servitude or the 'Female Factories'.","topic":"From Penal Colony to Settlement"},{"id":45,"q":"What transportation system linked the Australian colonies by the late 19th century?","a":"The railway network","topic":"From Penal Colony to Settlement"},{"id":46,"q":"In what year did the separate Australian colonies federate to become the Commonwealth of Australia?","a":"1901","topic":"From Penal Colony to Settlement"},{"id":47,"q":"What Latin legal term did the British Crown use to claim Australia was 'nobody's land'?","a":"Terra Nullius","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":48,"q":"Who was the master Polynesian star navigator who guided Captain Cook's Endeavour across the Pacific?","a":"Tupaia","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":49,"q":"Which global event in 1776 stopped Britain from transporting convicts to North America?","a":"The American War of Independence","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":50,"q":"What were the decaying, overcrowded decommissioned warships used as temporary prisons in Britain called?","a":"Prison hulks","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":51,"q":"Which naval officer was the first Governor of New South Wales and instituted equal food rationing?","a":"Governor Arthur Phillip","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":52,"q":"What catastrophic disease broke out in 1789, killing an estimated 50% to 70% of the Sydney Eora population?","a":"Smallpox","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":53,"q":"Which Bidjigal warrior led a twelve-year guerrilla resistance campaign against British settlement until 1802?","a":"Pemulwuy","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":54,"q":"At which 1838 massacre were seven white stockmen convicted and hanged for murdering 28 unarmed Aboriginal people?","a":"The Myall Creek Massacre","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":55,"q":"Which breed of Spanish sheep, championed by John Macarthur, created a booming export industry for New South Wales?","a":"Merino sheep","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":56,"q":"What major mineral discovery by Edward Hargreaves in 1851 caused Australia's population to nearly triple within a decade?","a":"Gold (the 1851 Gold Rush)","topic":"Lesson 5: Assessment - What's the story of Australia?"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

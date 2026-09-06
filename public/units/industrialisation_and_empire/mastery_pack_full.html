@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 134 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/industrialisation_and_empire/mastery_pack_full.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/industrialisation_and_empire/mastery_pack_full.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1896,206 +2385,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">William the Conqueror (or the Normans).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William the Conqueror (or the Normans).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">A deadly plague that spread across Europe and England during the Middle Ages.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A deadly plague that spread across Europe and England during the Middle Ages.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">Henry VIII.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Henry VIII.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">A primary source was created at the time of the event, while a secondary source was created later.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A primary source was created at the time of the event, while a secondary source was created later.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">A King or Queen who rules a country.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A King or Queen who rules a country.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Because it was perfectly located to supply high-quality iron to the massive Royal Navy dockyards in nearby Portsmouth.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because it was perfectly located to supply high-quality iron to the massive Royal Navy dockyards in nearby Portsmouth.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">A power struggle between King Charles I and Parliament over how the country should be ruled.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A power struggle between King Charles I and Parliament over how the country should be ruled.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Famous, high-quality red bricks manufactured from clay in Fareham, Hampshire, highly sought after by Victorian architects.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Famous, high-quality red bricks manufactured from clay in Fareham, Hampshire, highly sought after by Victorian architects.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Scavenging for loose cotton under moving machinery, sitting in the dark as a 'trapper' in a mine, or acting as a 'pug boy' or brick turner in the freezing mud of a brickyard.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Scavenging for loose cotton under moving machinery, sitting in the dark as a 'trapper' in a mine, or acting as a 'pug boy' or brick turner in the freezing mud of a brickyard.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Children could be paid a fraction of an adult's wage, were easier to discipline, and their small size allowed them to fit under machines or into narrow mine shafts.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Children could be paid a fraction of an adult's wage, were easier to discipline, and their small size allowed them to fit under machines or into narrow mine shafts.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Cort's 'puddling' and 'rolling' processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron built the steam engines, railways, and naval ships that powered Britain's global dominance.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cort's 'puddling' and 'rolling' processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron built the steam engines, railways, and naval ships that powered Britain's global dominance.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Pessimists focus on the catastrophic initial cost, arguing the working class was punished with unlivable slums and horrific child exploitation. Optimists argue that despite initial hardships, the wealth and technology generated eventually led to massive progress, higher wages, and improved life expectancy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pessimists focus on the catastrophic initial cost, arguing the working class was punished with unlivable slums and horrific child exploitation. Optimists argue that despite initial hardships, the wealth and technology generated eventually led to massive progress, higher wages, and improved life expectancy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">They were highly durable under intense structural pressure for massive infrastructure.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were highly durable under intense structural pressure for massive infrastructure.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">It showed deaths from filth and overcrowding were higher than modern war casualties.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It showed deaths from filth and overcrowding were higher than modern war casualties.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">He proved cholera was a waterborne disease by mapping local fatalities.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He proved cholera was a waterborne disease by mapping local fatalities.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">To control trade in precious spices, silks, indigo, and tea.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To control trade in precious spices, silks, indigo, and tea.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">By recruiting its own private mercenary army and exploiting local political divisions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By recruiting its own private mercenary army and exploiting local political divisions.</div>
                 </div>
                 </div><div class="answer-list"><h3>How was the British Empire built and sustained?</h3>
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">India was forced to trade exclusively with Britain, preventing local industries from competing.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">India was forced to trade exclusively with Britain, preventing local industries from competing.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">The Indian Rebellion (Sepoy Mutiny)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Indian Rebellion (Sepoy Mutiny)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">To secure the maintenance of trade and protect shareholder profits.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To secure the maintenance of trade and protect shareholder profits.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">It was formally abolished, and control transferred directly to the British Crown.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was formally abolished, and control transferred directly to the British Crown.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">A rule that the Royal Navy must be stronger than the next two most powerful navies combined.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A rule that the Royal Navy must be stronger than the next two most powerful navies combined.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Portsmouth</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Portsmouth</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Moving from wooden sailing ships to steam-driven 'Ironclads'.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Moving from wooden sailing ships to steam-driven 'Ironclads'.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">HMS Warrior</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">HMS Warrior</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">Henry Cort</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Henry Cort</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">Because it was a private letter to family with no motive to hide the grueling reality.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because it was a private letter to family with no motive to hide the grueling reality.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">A system maximizing national wealth through strictly controlled colonial trade and monopolies.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A system maximizing national wealth through strictly controlled colonial trade and monopolies.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">To place a duty (tax) on the cheap clothing coming from England to save their trade.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To place a duty (tax) on the cheap clothing coming from England to save their trade.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">That innovations like ironclads and railways created a massive, interconnected network of global trade and progress.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That innovations like ironclads and railways created a massive, interconnected network of global trade and progress.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">Fareham Reds were highly durable under intense structural pressure, making them ideal for the massive infrastructure projects of expanding cities like London and Portsmouth.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Fareham Reds were highly durable under intense structural pressure, making them ideal for the massive infrastructure projects of expanding cities like London and Portsmouth.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">It provided statistical proof that working-class deaths from filth and overcrowding were higher than casualties caused by modern wars, forcing the state to acknowledge that public health required regulation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It provided statistical proof that working-class deaths from filth and overcrowding were higher than casualties caused by modern wars, forcing the state to acknowledge that public health required regulation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">He mapped local fatalities to prove cholera was a waterborne disease spread via contaminated water pumps, completely disproving the popular Miasma Theory that blamed bad smells.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He mapped local fatalities to prove cholera was a waterborne disease spread via contaminated water pumps, completely disproving the popular Miasma Theory that blamed bad smells.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">1857</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1857</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">The Enfield rifle</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Enfield rifle</div>
                 </div>
                 </div>
         </div>
@@ -2106,202 +2603,202 @@
                 <div class="answer-list"><h3>How did the Empire strike back? The 1857 Indian Rebellion</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">They were rumored to be greased with beef and pork fat</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were rumored to be greased with beef and pork fat</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">Over 80%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 80%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">A policy to annex independent Indian kingdoms if a ruler died without a direct male heir</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A policy to annex independent Indian kingdoms if a ruler died without a direct male heir</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">Heavy taxation, land grabs, and destruction of the textile industry</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Heavy taxation, land grabs, and destruction of the textile industry</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">Meerut</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Meerut</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">The elderly Mughal Emperor, Bahadur Shah Zafar</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The elderly Mughal Emperor, Bahadur Shah Zafar</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">The Queen of Jhansi who famously fought on horseback against the British</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Queen of Jhansi who famously fought on horseback against the British</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">With uncompromising, industrialized brutality and a campaign of mass terror</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">With uncompromising, industrialized brutality and a campaign of mass terror</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Binding them to the mouths of cannons and blowing them apart</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Binding them to the mouths of cannons and blowing them apart</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">To deliberately deny the victims traditional religious funerals</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To deliberately deny the victims traditional religious funerals</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">The East India Company was abolished and the British Crown took direct control of India</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The East India Company was abolished and the British Crown took direct control of India</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">The Government of India Act</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Government of India Act</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">The British Raj</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The British Raj</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">Queen Victoria</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Queen Victoria</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">It convinced many Indians that the British were determined to systematically dismantle their ancient religions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It convinced many Indians that the British were determined to systematically dismantle their ancient religions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Pig</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pig</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">A massive British trading corporation that essentially ruled India.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A massive British trading corporation that essentially ruled India.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">By flooding the 'captive market' with cheap British machine-made cloth.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By flooding the 'captive market' with cheap British machine-made cloth.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">A massive British trading corporation that essentially ruled India.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A massive British trading corporation that essentially ruled India.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">By flooding the 'captive market' with cheap British machine-made cloth.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By flooding the 'captive market' with cheap British machine-made cloth.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">The East India Company (EIC)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The East India Company (EIC)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">A naval policy declaring the Royal Navy must be stronger than the next two largest fleets combined.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A naval policy declaring the Royal Navy must be stronger than the next two largest fleets combined.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">By manufacturing advanced, iron-hulled 'Ironclad' warships.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By manufacturing advanced, iron-hulled 'Ironclad' warships.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">Wealthy landowners</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wealthy landowners</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">Parliamentary reform and affordable food.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Parliamentary reform and affordable food.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">Local magistrates panicked and ordered cavalry to charge into the crowd with sabers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Local magistrates panicked and ordered cavalry to charge into the crowd with sabers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">To compare the violent slaughter of citizens to the famous military victory at Waterloo.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To compare the violent slaughter of citizens to the famous military victory at Waterloo.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">The introduction of mechanical threshing machines.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The introduction of mechanical threshing machines.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">The Swing Riots</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Swing Riots</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">A mythical, pseudonymous leader used by rioters to send anonymous threats.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A mythical, pseudonymous leader used by rioters to send anonymous threats.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">Over 100 were tried at Winchester, 6 were executed, and hundreds were transported to Australia.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 100 were tried at Winchester, 6 were executed, and hundreds were transported to Australia.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">They began exploring collective bargaining through Trade Unions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They began exploring collective bargaining through Trade Unions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">To protest a wage cut and force employers to pay fair wages.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To protest a wage cut and force employers to pay fair wages.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">A law banning unlawful secret oaths.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A law banning unlawful secret oaths.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">Seven years' transportation to Australia.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Seven years' transportation to Australia.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Achieving structural constitutional reform so working-class men could sit in Parliament.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Achieving structural constitutional reform so working-class men could sit in Parliament.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">Chartism</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chartism</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">Equal pay for men and women.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Equal pay for men and women.</div>
                 </div>
                 </div>
         </div>
@@ -2312,202 +2809,202 @@
                 <div class="answer-list"><h3>How did ordinary people fight for a voice?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">They gathered millions of signatures on three mammoth petitions in 1839, 1842, and 1848.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They gathered millions of signatures on three mammoth petitions in 1839, 1842, and 1848.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">By 1928, five of its six democratic demands had slowly become the law of the land.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By 1928, five of its six democratic demands had slowly become the law of the land.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">The East India Company (EIC).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The East India Company (EIC).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">A naval policy declaring that the Royal Navy must always remain larger and stronger than the combined fleets of the next two most powerful nations in the world.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A naval policy declaring that the Royal Navy must always remain larger and stronger than the combined fleets of the next two most powerful nations in the world.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">The dockyard functioned as a massive steam-powered industrial complex where thousands of workers manufactured advanced, iron-hulled 'Ironclad' warships.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The dockyard functioned as a massive steam-powered industrial complex where thousands of workers manufactured advanced, iron-hulled 'Ironclad' warships.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">Universal male suffrage and secret ballots.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Universal male suffrage and secret ballots.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">They were facing starvation wages and winter unemployment caused by threshing machines.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were facing starvation wages and winter unemployment caused by threshing machines.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">Only a tiny minority of wealthy male property owners.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Only a tiny minority of wealthy male property owners.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">An abandoned medieval village that had almost no people but still sent two MPs to Parliament.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An abandoned medieval village that had almost no people but still sent two MPs to Parliament.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">A Rotten Borough with only 14 houses that still sent two MPs to London.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Rotten Borough with only 14 houses that still sent two MPs to London.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">A seat in Parliament completely controlled by a wealthy local landowner.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A seat in Parliament completely controlled by a wealthy local landowner.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">Because they feared a violent revolution similar to the Swing Riots and the French Revolution.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because they feared a violent revolution similar to the Swing Riots and the French Revolution.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">It abolished 56 Rotten Boroughs and created new constituencies for industrial cities.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It abolished 56 Rotten Boroughs and created new constituencies for industrial cities.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">Middle-class men who owned property worth £10 a year.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Middle-class men who owned property worth £10 a year.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">They felt bitterly betrayed because they were deliberately excluded from voting.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They felt bitterly betrayed because they were deliberately excluded from voting.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">By standing on a public platform (the 'hustings') and shouting out the name of the candidate.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By standing on a public platform (the 'hustings') and shouting out the name of the candidate.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">Because landlords and factory owners could intimidate them into voting a certain way under threat of being fired or evicted.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because landlords and factory owners could intimidate them into voting a certain way under threat of being fired or evicted.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">Vote in a private wooden booth using a printed paper dropped into a locked box.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Vote in a private wooden booth using a printed paper dropped into a locked box.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">The power of elite bribery and intimidation collapsed almost overnight.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The power of elite bribery and intimidation collapsed almost overnight.</div>
                 </div>
                 </div><div class="answer-list"><h3>How did the road to democracy expand?</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">Skilled working-class men in urban towns and cities.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Skilled working-class men in urban towns and cities.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">It extended the vote to agricultural laborers and miners in the countryside.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It extended the vote to agricultural laborers and miners in the countryside.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">Because they hoped the newly enfranchised workers would be grateful and vote for the Conservative party.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because they hoped the newly enfranchised workers would be grateful and vote for the Conservative party.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">They feared the 'ignorant and violent' working classes would vote to tax the wealthy and destroy their privileged institutions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They feared the 'ignorant and violent' working classes would vote to tax the wealthy and destroy their privileged institutions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">60%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">60%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">An event in Manchester where local magistrates sent armed cavalry to charge into a crowd of 60,000 peaceful working-class protesters demanding parliamentary reform, resulting in 18 deaths.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An event in Manchester where local magistrates sent armed cavalry to charge into a crowd of 60,000 peaceful working-class protesters demanding parliamentary reform, resulting in 18 deaths.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">Universal male suffrage (all men get the vote), secret ballots, no property qualifications for MPs, salaries for MPs, equal electoral districts, and annual Parliaments.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Universal male suffrage (all men get the vote), secret ballots, no property qualifications for MPs, salaries for MPs, equal electoral districts, and annual Parliaments.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">They were facing starvation wages and winter unemployment caused by the introduction of mechanical threshing machines, leading them to break machines and burn hayricks in protest.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were facing starvation wages and winter unemployment caused by the introduction of mechanical threshing machines, leading them to break machines and burn hayricks in protest.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">The Optimist View</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Optimist View</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">Henry Cort</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Henry Cort</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">400%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">400%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">The Royal Albert Hall</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Royal Albert Hall</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">HMS Warrior</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">HMS Warrior</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">The Pessimist View</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Pessimist View</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">Pug boys</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pug boys</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">14 hours</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">14 hours</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">Cholera</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cholera</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">Edwin Chadwick</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Edwin Chadwick</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">By establishing a 'captive market' that flooded India with cheap British goods</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By establishing a 'captive market' that flooded India with cheap British goods</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">The Swing Riots</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Swing Riots</div>
                 </div>
                 </div>
         </div>
@@ -2518,72 +3015,72 @@
                 <div class="answer-list"><h3>Who truly benefited from 19th-century transformation?</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
-                    <div class="answer-text">Out of elite fear of violent revolution</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Out of elite fear of violent revolution</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">122.</div>
-                    <div class="answer-text">The working class</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The working class</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">123.</div>
-                    <div class="answer-text">Chartism</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chartism</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">124.</div>
-                    <div class="answer-text">The Secret Ballot Act</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Secret Ballot Act</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">125.</div>
-                    <div class="answer-text">Combining different data points and interpretations into a balanced argument</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Combining different data points and interpretations into a balanced argument</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">126.</div>
-                    <div class="answer-text">A voting district with virtually no population that still sent two MPs to Parliament</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A voting district with virtually no population that still sent two MPs to Parliament</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">127.</div>
-                    <div class="answer-text">Newtown on the Isle of Wight</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Newtown on the Isle of Wight</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">128.</div>
-                    <div class="answer-text">19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">129.</div>
-                    <div class="answer-text">A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">130.</div>
-                    <div class="answer-text">The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">131.</div>
-                    <div class="answer-text">Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">132.</div>
-                    <div class="answer-text">A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">133.</div>
-                    <div class="answer-text">The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">134.</div>
-                    <div class="answer-text">Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.</div>
                 </div>
                 </div>
         </div>
@@ -2645,45 +3142,310 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">KS3: Industrialisation, Empire, and Power (1750–1900) · Complete Unit</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (134 Questions)</option>
+                    <option value="0">Part 1: What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?</option>
+<option value="1">Part 2: How was the British Empire built and sustained?</option>
+<option value="2">Part 3: How did the Empire strike back? The 1857 Indian Rebellion</option>
+<option value="3">Part 4: How did the Empire strike back? The 1857 Indian Rebellion</option>
+<option value="4">Part 5: How did ordinary people fight for a voice?</option>
+<option value="5">Part 6: How did the road to democracy expand?</option>
+<option value="6">Part 7: Who truly benefited from 19th-century transformation?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_industrialisation_and_empire_full';
+    const ALL_DECK = [{"id":1,"q":"Who won the Battle of Hastings in 1066 and became King of England?","a":"William the Conqueror (or the Normans).","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":2,"q":"What was the Black Death?","a":"A deadly plague that spread across Europe and England during the Middle Ages.","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":3,"q":"Who was the famous Tudor King known for having six wives?","a":"Henry VIII.","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":4,"q":"In history, what is the difference between a primary and a secondary source?","a":"A primary source was created at the time of the event, while a secondary source was created later.","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":5,"q":"What is a monarch?","a":"A King or Queen who rules a country.","topic":"What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?"},{"id":6,"q":"What two major iron-making processes did Henry Cort patent at the Funtley Ironworks in the 1780s?","a":"The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron).","topic":"Was industrial work progress or punishment?"},{"id":7,"q":"Why did Henry Cort specifically choose to locate his ironworks near Fareham?","a":"Because it was perfectly located to supply high-quality iron to the massive Royal Navy dockyards in nearby Portsmouth.","topic":"Was industrial work progress or punishment?"},{"id":8,"q":"What tragic event caused Henry Cort to lose his patents and die in poverty?","a":"His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds.","topic":"Was industrial work progress or punishment?"},{"id":9,"q":"What was the primary cause of the English Civil War?","a":"A power struggle between King Charles I and Parliament over how the country should be ruled.","topic":"Was industrial work progress or punishment?"},{"id":10,"q":"What was the result of the Spanish Armada in 1588?","a":"The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne.","topic":"Was industrial work progress or punishment?"},{"id":11,"q":"What are 'Fareham Reds'?","a":"Famous, high-quality red bricks manufactured from clay in Fareham, Hampshire, highly sought after by Victorian architects.","topic":"Did industrialisation make British towns unlivable?"},{"id":12,"q":"Name one highly dangerous or physically demanding job a child might perform in a 19th-century textile mill or brickfield.","a":"Scavenging for loose cotton under moving machinery, sitting in the dark as a 'trapper' in a mine, or acting as a 'pug boy' or brick turner in the freezing mud of a brickyard.","topic":"Did industrialisation make British towns unlivable?"},{"id":13,"q":"Why did factory owners actively prefer to hire children rather than adults?","a":"Children could be paid a fraction of an adult's wage, were easier to discipline, and their small size allowed them to fit under machines or into narrow mine shafts.","topic":"Did industrialisation make British towns unlivable?"},{"id":14,"q":"Explain how Henry Cort's inventions at the Funtley Ironworks helped power the Industrial Revolution globally.","a":"Cort's 'puddling' and 'rolling' processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron built the steam engines, railways, and naval ships that powered Britain's global dominance.","topic":"Did industrialisation make British towns unlivable?"},{"id":15,"q":"Why do 'Optimist' and 'Pessimist' historians disagree about the impact of the Industrial Revolution on working-class families?","a":"Pessimists focus on the catastrophic initial cost, arguing the working class was punished with unlivable slums and horrific child exploitation. Optimists argue that despite initial hardships, the wealth and technology generated eventually led to massive progress, higher wages, and improved life expectancy.","topic":"Did industrialisation make British towns unlivable?"},{"id":16,"q":"Why did Victorian builders heavily rely on 'Fareham Red' bricks during 19th-century urbanisation?","a":"They were highly durable under intense structural pressure for massive infrastructure.","topic":"How was the British Empire built and sustained?"},{"id":17,"q":"How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?","a":"It showed deaths from filth and overcrowding were higher than modern war casualties.","topic":"How was the British Empire built and sustained?"},{"id":18,"q":"What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak?","a":"He proved cholera was a waterborne disease by mapping local fatalities.","topic":"How was the British Empire built and sustained?"},{"id":19,"q":"What was the original purpose of the East India Company when it was founded in 1600?","a":"To control trade in precious spices, silks, indigo, and tea.","topic":"How was the British Empire built and sustained?"},{"id":20,"q":"How did the East India Company secure its commercial monopolies in India?","a":"By recruiting its own private mercenary army and exploiting local political divisions.","topic":"How was the British Empire built and sustained?"},{"id":21,"q":"What does it mean that the East India Company turned India into a 'captive market'?","a":"India was forced to trade exclusively with Britain, preventing local industries from competing.","topic":"How was the British Empire built and sustained?"},{"id":22,"q":"How did British textile mills affect India's domestic handloom weavers?","a":"They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.","topic":"How was the British Empire built and sustained?"},{"id":23,"q":"What event was triggered in May 1857 by the East India Company's systemic oppression?","a":"The Indian Rebellion (Sepoy Mutiny)","topic":"How was the British Empire built and sustained?"},{"id":24,"q":"According to the April 1857 EIC corporate directive, what was the primary purpose of the British presence in India?","a":"To secure the maintenance of trade and protect shareholder profits.","topic":"How was the British Empire built and sustained?"},{"id":25,"q":"What was the consequence of the 1857 Rebellion for the East India Company?","a":"It was formally abolished, and control transferred directly to the British Crown.","topic":"How was the British Empire built and sustained?"},{"id":26,"q":"What was the 'Two-Power Standard'?","a":"A rule that the Royal Navy must be stronger than the next two most powerful navies combined.","topic":"How was the British Empire built and sustained?"},{"id":27,"q":"Which Hampshire town became the largest steam-powered industrial complex on earth to support the navy?","a":"Portsmouth","topic":"How was the British Empire built and sustained?"},{"id":28,"q":"What major technological transition did the Royal Navy undergo at Portsmouth Dockyard during the 19th century?","a":"Moving from wooden sailing ships to steam-driven 'Ironclads'.","topic":"How was the British Empire built and sustained?"},{"id":29,"q":"Launched in 1860, which ship was the world's first iron-hulled, steam-powered ironclad warship?","a":"HMS Warrior","topic":"How was the British Empire built and sustained?"},{"id":30,"q":"Whose advanced metallurgy pioneered at Funtley (from Lesson 1) was vital for creating the armor plating of the Ironclads?","a":"Henry Cort","topic":"How was the British Empire built and sustained?"},{"id":31,"q":"According to the letter from Arthur Vance (November 1861), what was the reality for the dockyard riveters?","a":"They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.","topic":"How was the British Empire built and sustained?"},{"id":32,"q":"Why is Arthur Vance's private letter considered highly reliable by historians studying the human cost of empire?","a":"Because it was a private letter to family with no motive to hide the grueling reality.","topic":"How was the British Empire built and sustained?"},{"id":33,"q":"What does 'Mercantilism' mean in the context of the British Empire?","a":"A system maximizing national wealth through strictly controlled colonial trade and monopolies.","topic":"How was the British Empire built and sustained?"},{"id":34,"q":"What did the Dacca weavers' petition in 1830 beg the British government to do?","a":"To place a duty (tax) on the cheap clothing coming from England to save their trade.","topic":"How was the British Empire built and sustained?"},{"id":35,"q":"What do 'Optimist' historians typically argue about the British Empire's use of technology?","a":"That innovations like ironclads and railways created a massive, interconnected network of global trade and progress.","topic":"How was the British Empire built and sustained?"},{"id":36,"q":"Why did Victorian builders heavily rely on 'Fareham Red' bricks during the rapid urbanisation of the 19th century?","a":"Fareham Reds were highly durable under intense structural pressure, making them ideal for the massive infrastructure projects of expanding cities like London and Portsmouth.","topic":"How was the British Empire built and sustained?"},{"id":37,"q":"How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?","a":"It provided statistical proof that working-class deaths from filth and overcrowding were higher than casualties caused by modern wars, forcing the state to acknowledge that public health required regulation.","topic":"How was the British Empire built and sustained?"},{"id":38,"q":"What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak in Soho?","a":"He mapped local fatalities to prove cholera was a waterborne disease spread via contaminated water pumps, completely disproving the popular Miasma Theory that blamed bad smells.","topic":"How was the British Empire built and sustained?"},{"id":39,"q":"In what year did the massive Indian Rebellion against the British Empire begin?","a":"1857","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":40,"q":"What military innovation served as the immediate catalyst for the 1857 rebellion?","a":"The Enfield rifle","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":41,"q":"Why did the new Enfield rifle cartridges cause such outrage among the sepoys?","a":"They were rumored to be greased with beef and pork fat","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":42,"q":"What percentage of the East India Company's military forces were native Indian soldiers (sepoys)?","a":"Over 80%","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":43,"q":"What was the East India Company's 'Doctrine of Lapse'?","a":"A policy to annex independent Indian kingdoms if a ruler died without a direct male heir","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":44,"q":"Besides the cartridges, what deeper issues caused systemic resentment among the Indian population?","a":"Heavy taxation, land grabs, and destruction of the textile industry","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":45,"q":"Where did the outbreak of violence begin in earnest on May 10, 1857?","a":"Meerut","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":46,"q":"Who did the mutinying sepoys declare as the true leader of India?","a":"The elderly Mughal Emperor, Bahadur Shah Zafar","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":47,"q":"Who was Rani Lakshmibai?","a":"The Queen of Jhansi who famously fought on horseback against the British","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":48,"q":"How did the British forces respond to the rebellion?","a":"With uncompromising, industrialized brutality and a campaign of mass terror","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":49,"q":"What horrific method of execution did the British use as a form of psychological warfare against rebel leaders?","a":"Binding them to the mouths of cannons and blowing them apart","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":50,"q":"Why were rebels blown from cannons instead of hanged?","a":"To deliberately deny the victims traditional religious funerals","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":51,"q":"What was the most significant political consequence of the 1857 Rebellion?","a":"The East India Company was abolished and the British Crown took direct control of India","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":52,"q":"Which 1858 law formalized the British government's direct rule over India?","a":"The Government of India Act","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":53,"q":"The era of direct British Crown rule in India is known as what?","a":"The British Raj","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":54,"q":"Who was declared Empress of India after the rebellion was crushed?","a":"Queen Victoria","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":55,"q":"How did the 1857 Indian Rebellion contrast with domestic resistance like the Swing Riots?","a":"It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":56,"q":"Why did Christian missionary activity in India contribute to the rebellion?","a":"It convinced many Indians that the British were determined to systematically dismantle their ancient religions","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":57,"q":"What did the rebellion shatter regarding the British public's view of their empire?","a":"The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":58,"q":"Which animal's fat was forbidden to Muslim soldiers, making the rumor about the cartridges so explosive?","a":"Pig","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":59,"q":"What was the East India Company?","a":"A massive British trading corporation that essentially ruled India.","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":60,"q":"How did the EIC destroy the Indian textile industry?","a":"By flooding the 'captive market' with cheap British machine-made cloth.","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":61,"q":"What was the East India Company?","a":"A massive British trading corporation that essentially ruled India.","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":62,"q":"How did the EIC destroy the Indian textile industry?","a":"By flooding the 'captive market' with cheap British machine-made cloth.","topic":"How did the Empire strike back? The 1857 Indian Rebellion"},{"id":63,"q":"What private corporate entity controlled British commercial and military interests in India until 1858?","a":"The East India Company (EIC)","topic":"How did ordinary people fight for a voice?"},{"id":64,"q":"What was the 'Two-Power Standard' followed by the British government in the 19th century?","a":"A naval policy declaring the Royal Navy must be stronger than the next two largest fleets combined.","topic":"How did ordinary people fight for a voice?"},{"id":65,"q":"How did the industrial workforce at Portsmouth Dockyard directly support British naval supremacy?","a":"By manufacturing advanced, iron-hulled 'Ironclad' warships.","topic":"How did ordinary people fight for a voice?"},{"id":66,"q":"In the early 19th century, who completely controlled the British Parliament?","a":"Wealthy landowners","topic":"How did ordinary people fight for a voice?"},{"id":67,"q":"What did the 60,000 peaceful protestors at St Peter's Field in Manchester demand in August 1819?","a":"Parliamentary reform and affordable food.","topic":"How did ordinary people fight for a voice?"},{"id":68,"q":"How did the state respond to the peaceful gathering at St Peter's Field in 1819?","a":"Local magistrates panicked and ordered cavalry to charge into the crowd with sabers.","topic":"How did ordinary people fight for a voice?"},{"id":69,"q":"Why did radicals ironically name the tragic 1819 event the 'Peterloo Massacre'?","a":"To compare the violent slaughter of citizens to the famous military victory at Waterloo.","topic":"How did ordinary people fight for a voice?"},{"id":70,"q":"What technological change caused winter unemployment and starvation for agricultural laborers in 1830?","a":"The introduction of mechanical threshing machines.","topic":"How did ordinary people fight for a voice?"},{"id":71,"q":"What was the name of the violent agrarian uprising in southern England in 1830?","a":"The Swing Riots","topic":"How did ordinary people fight for a voice?"},{"id":72,"q":"Who was 'Captain Swing'?","a":"A mythical, pseudonymous leader used by rioters to send anonymous threats.","topic":"How did ordinary people fight for a voice?"},{"id":73,"q":"How did the government punish the Hampshire workers involved in the 1830 riots?","a":"Over 100 were tried at Winchester, 6 were executed, and hundreds were transported to Australia.","topic":"How did ordinary people fight for a voice?"},{"id":74,"q":"What strategy did working-class men explore after realizing violent property destruction resulted in execution or exile?","a":"They began exploring collective bargaining through Trade Unions.","topic":"How did ordinary people fight for a voice?"},{"id":75,"q":"Why did the six agricultural laborers in Tolpuddle form a friendly society in 1834?","a":"To protest a wage cut and force employers to pay fair wages.","topic":"How did ordinary people fight for a voice?"},{"id":76,"q":"What obscure 1797 law did the government use to arrest the Tolpuddle Martyrs?","a":"A law banning unlawful secret oaths.","topic":"How did ordinary people fight for a voice?"},{"id":77,"q":"What was the initial sentence given to the Tolpuddle Martyrs?","a":"Seven years' transportation to Australia.","topic":"How did ordinary people fight for a voice?"},{"id":78,"q":"By 1838, what did working-class leaders realize was the only way to permanently change factory conditions and low wages?","a":"Achieving structural constitutional reform so working-class men could sit in Parliament.","topic":"How did ordinary people fight for a voice?"},{"id":79,"q":"What was the name of the first mass working-class democratic movement in British history launched in 1838?","a":"Chartism","topic":"How did ordinary people fight for a voice?"},{"id":80,"q":"Which of the following was NOT one of the six core demands of the People's Charter?","a":"Equal pay for men and women.","topic":"How did ordinary people fight for a voice?"},{"id":81,"q":"What action did the Chartists take to pressure Parliament into accepting their demands?","a":"They gathered millions of signatures on three mammoth petitions in 1839, 1842, and 1848.","topic":"How did ordinary people fight for a voice?"},{"id":82,"q":"Although Parliament rejected all the Chartist petitions at the time, what was the movement's long-term legacy?","a":"By 1928, five of its six democratic demands had slowly become the law of the land.","topic":"How did ordinary people fight for a voice?"},{"id":83,"q":"What private corporate entity controlled British commercial and military interests in India until its formal abolition in 1858?","a":"The East India Company (EIC).","topic":"How did ordinary people fight for a voice?"},{"id":84,"q":"What was the 'Two-Power Standard' followed by the British government in the 19th century?","a":"A naval policy declaring that the Royal Navy must always remain larger and stronger than the combined fleets of the next two most powerful nations in the world.","topic":"How did ordinary people fight for a voice?"},{"id":85,"q":"How did the industrial workforce at Portsmouth Dockyard directly support British naval supremacy?","a":"The dockyard functioned as a massive steam-powered industrial complex where thousands of workers manufactured advanced, iron-hulled 'Ironclad' warships.","topic":"How did ordinary people fight for a voice?"},{"id":86,"q":"What was the 1819 Peterloo Massacre?","a":"An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.","topic":"How did the road to democracy expand?"},{"id":87,"q":"Which of the following was one of the core demands made by the Chartists in the 'People's Charter'?","a":"Universal male suffrage and secret ballots.","topic":"How did the road to democracy expand?"},{"id":88,"q":"Why did agricultural laborers in Hampshire launch the violent 'Swing Riots' in 1830?","a":"They were facing starvation wages and winter unemployment caused by threshing machines.","topic":"How did the road to democracy expand?"},{"id":89,"q":"Before 1832, who was allowed to vote in British elections?","a":"Only a tiny minority of wealthy male property owners.","topic":"How did the road to democracy expand?"},{"id":90,"q":"What was a 'Rotten Borough' before 1832?","a":"An abandoned medieval village that had almost no people but still sent two MPs to Parliament.","topic":"How did the road to democracy expand?"},{"id":91,"q":"What was Newtown on the Isle of Wight a famous example of before 1832?","a":"A Rotten Borough with only 14 houses that still sent two MPs to London.","topic":"How did the road to democracy expand?"},{"id":92,"q":"What was a 'Pocket Borough'?","a":"A seat in Parliament completely controlled by a wealthy local landowner.","topic":"How did the road to democracy expand?"},{"id":93,"q":"Why did the government finally pass the Great Reform Act in 1832?","a":"Because they feared a violent revolution similar to the Swing Riots and the French Revolution.","topic":"How did the road to democracy expand?"},{"id":94,"q":"Which of the following was a key change made by the 1832 Great Reform Act?","a":"It abolished 56 Rotten Boroughs and created new constituencies for industrial cities.","topic":"How did the road to democracy expand?"},{"id":95,"q":"Who was granted the right to vote by the 1832 Great Reform Act?","a":"Middle-class men who owned property worth £10 a year.","topic":"How did the road to democracy expand?"},{"id":96,"q":"How did the working classes react to the 1832 Great Reform Act?","a":"They felt bitterly betrayed because they were deliberately excluded from voting.","topic":"How did the road to democracy expand?"},{"id":97,"q":"Before 1872, how did a man cast his vote in an election?","a":"By standing on a public platform (the 'hustings') and shouting out the name of the candidate.","topic":"How did the road to democracy expand?"},{"id":98,"q":"Why was the system of public voting before 1872 so unfair to working-class men?","a":"Because landlords and factory owners could intimidate them into voting a certain way under threat of being fired or evicted.","topic":"How did the road to democracy expand?"},{"id":99,"q":"What did the 1872 Secret Ballot Act require voters to do?","a":"Vote in a private wooden booth using a printed paper dropped into a locked box.","topic":"How did the road to democracy expand?"},{"id":100,"q":"What was the immediate consequence of the 1872 Secret Ballot Act?","a":"The power of elite bribery and intimidation collapsed almost overnight.","topic":"How did the road to democracy expand?"},{"id":101,"q":"Which group of people was given the vote by the 1867 Second Reform Act?","a":"Skilled working-class men in urban towns and cities.","topic":"How did the road to democracy expand?"},{"id":102,"q":"What did the 1884 Third Reform Act achieve?","a":"It extended the vote to agricultural laborers and miners in the countryside.","topic":"How did the road to democracy expand?"},{"id":103,"q":"Why did Conservative politicians like Benjamin Disraeli eventually expand the vote to the working classes in 1867?","a":"Because they hoped the newly enfranchised workers would be grateful and vote for the Conservative party.","topic":"How did the road to democracy expand?"},{"id":104,"q":"Based on MP Robert Lowe's 1866 speech, what was the underlying fear that wealthy elites had about expanding democracy?","a":"They feared the 'ignorant and violent' working classes would vote to tax the wealthy and destroy their privileged institutions.","topic":"How did the road to democracy expand?"},{"id":105,"q":"By 1884, approximately what percentage of adult men in Britain had a secure, private vote?","a":"60%","topic":"How did the road to democracy expand?"},{"id":106,"q":"What was the 1819 Peterloo Massacre?","a":"An event in Manchester where local magistrates sent armed cavalry to charge into a crowd of 60,000 peaceful working-class protesters demanding parliamentary reform, resulting in 18 deaths.","topic":"How did the road to democracy expand?"},{"id":107,"q":"Name two of the six core demands made by the Chartists in the 'People's Charter'.","a":"Universal male suffrage (all men get the vote), secret ballots, no property qualifications for MPs, salaries for MPs, equal electoral districts, and annual Parliaments.","topic":"How did the road to democracy expand?"},{"id":108,"q":"Why did agricultural laborers in Hampshire launch the violent 'Swing Riots' in 1830?","a":"They were facing starvation wages and winter unemployment caused by the introduction of mechanical threshing machines, leading them to break machines and burn hayricks in protest.","topic":"How did the road to democracy expand?"},{"id":109,"q":"Which historical perspective argues that 19th-century Britain experienced unmatched national progress?","a":"The Optimist View","topic":"Who truly benefited from 19th-century transformation?"},{"id":110,"q":"What local Hampshire industrialist revolutionized iron production with the puddling process?","a":"Henry Cort","topic":"Who truly benefited from 19th-century transformation?"},{"id":111,"q":"How much did Henry Cort's puddling process increase iron production?","a":"400%","topic":"Who truly benefited from 19th-century transformation?"},{"id":112,"q":"What famous London monument was built using 'Fareham Red' bricks?","a":"The Royal Albert Hall","topic":"Who truly benefited from 19th-century transformation?"},{"id":113,"q":"What ship, built with advanced iron processes, helped enforce the global 'Two-Power Standard'?","a":"HMS Warrior","topic":"Who truly benefited from 19th-century transformation?"},{"id":114,"q":"Which historical perspective argues that Britain's wealth masked horrific human misery and exploitation?","a":"The Pessimist View","topic":"Who truly benefited from 19th-century transformation?"},{"id":115,"q":"According to the 1881 Census, what job did 10-year-old boys perform barefoot in the Funtley clay pits?","a":"Pug boys","topic":"Who truly benefited from 19th-century transformation?"},{"id":116,"q":"How long were the typical working shifts for child laborers in the Funtley brickfields?","a":"14 hours","topic":"Who truly benefited from 19th-century transformation?"},{"id":117,"q":"What deadly waterborne disease repeatedly broke out in unventilated 'back-to-back' slums?","a":"Cholera","topic":"Who truly benefited from 19th-century transformation?"},{"id":118,"q":"Who published an 1842 report proving that slums were deadlier than modern wars?","a":"Edwin Chadwick","topic":"Who truly benefited from 19th-century transformation?"},{"id":119,"q":"How did the East India Company violently destroy the local Indian textile economy?","a":"By establishing a 'captive market' that flooded India with cheap British goods","topic":"Who truly benefited from 19th-century transformation?"},{"id":120,"q":"What Hampshire-based event in 1830 saw agricultural workers violently break threshing machines?","a":"The Swing Riots","topic":"Who truly benefited from 19th-century transformation?"},{"id":121,"q":"Why do critical historians argue the 1832 Great Reform Act was passed?","a":"Out of elite fear of violent revolution","topic":"Who truly benefited from 19th-century transformation?"},{"id":122,"q":"Who was deliberately excluded from voting by the £10 property qualification in the 1832 Great Reform Act?","a":"The working class","topic":"Who truly benefited from 19th-century transformation?"},{"id":123,"q":"What was the name of the first mass working-class political movement that rose in response to the 1832 betrayal?","a":"Chartism","topic":"Who truly benefited from 19th-century transformation?"},{"id":124,"q":"Which 1872 Act collapsed the elite's mechanism of landlord bribery and voter intimidation?","a":"The Secret Ballot Act","topic":"Who truly benefited from 19th-century transformation?"},{"id":125,"q":"In historical writing, what does 'synthesis' mean?","a":"Combining different data points and interpretations into a balanced argument","topic":"Who truly benefited from 19th-century transformation?"},{"id":126,"q":"What was a 'Rotten Borough' in the pre-reform British electoral system?","a":"A voting district with virtually no population that still sent two MPs to Parliament","topic":"Who truly benefited from 19th-century transformation?"},{"id":127,"q":"Which local Hampshire town is a famous example of a 'Rotten Borough' with only 14 houses?","a":"Newtown on the Isle of Wight","topic":"Who truly benefited from 19th-century transformation?"},{"id":128,"q":"What best summarizes the overarching conclusion of the 'Industrialisation and Empire' unit?","a":"19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects","topic":"Who truly benefited from 19th-century transformation?"},{"id":129,"q":"What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?","a":"A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.","topic":"Who truly benefited from 19th-century transformation?"},{"id":130,"q":"How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?","a":"The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.","topic":"Who truly benefited from 19th-century transformation?"},{"id":131,"q":"Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?","a":"Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.","topic":"Who truly benefited from 19th-century transformation?"},{"id":132,"q":"What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?","a":"A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.","topic":"Who truly benefited from 19th-century transformation?"},{"id":133,"q":"How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?","a":"The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.","topic":"Who truly benefited from 19th-century transformation?"},{"id":134,"q":"Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?","a":"Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.","topic":"Who truly benefited from 19th-century transformation?"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

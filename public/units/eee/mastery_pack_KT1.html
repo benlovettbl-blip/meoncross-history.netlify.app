@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 120 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/eee/mastery_pack_KT1.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/eee/mastery_pack_KT1.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1744,206 +2233,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>KT1.1: The situation on Elizabeth’s accession, 1558</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">21</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">21</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">The Great Chain of Being</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Chain of Being</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">90%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">90%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">Patronage</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Patronage</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">19</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">19</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">William Cecil</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">William Cecil</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Nine times</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Nine times</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">He refused to recognise Henry VIII's marriage to Anne Boleyn</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He refused to recognise Henry VIII's marriage to Anne Boleyn</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">Queen Regnant</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Queen Regnant</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">Her husband would be expected to govern the country, reducing her power</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Her husband would be expected to govern the country, reducing her power</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">£300,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£300,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">£286,667</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£286,667</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">£100,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£100,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">14%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">14%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Debasement of the coinage</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Debasement of the coinage</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">She cut household expenses by half and sold Crown lands</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She cut household expenses by half and sold Crown lands</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">Treaty of Cateau-Cambrésis</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Treaty of Cateau-Cambrésis</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">The Auld Alliance</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Auld Alliance</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">Mary, Queen of Scots</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mary, Queen of Scots</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">Peace of Troyes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Peace of Troyes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">The circulation of blood.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The circulation of blood.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">1348.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1348.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">The smallpox vaccine (1796).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The smallpox vaccine (1796).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Louis Pasteur.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Louis Pasteur.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">The medieval belief that bad air or smells caused disease.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The medieval belief that bad air or smells caused disease.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">King Henry VIII.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Henry VIII.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">A 16th-century movement challenging the Catholic Church, leading to the creation of Protestantism.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A 16th-century movement challenging the Catholic Church, leading to the creation of Protestantism.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Her half-sister, Mary I.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Her half-sister, Mary I.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">Strictly Catholic.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Strictly Catholic.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">A strict hierarchical structure of all matter and life, decreed by God, with the monarch near the top.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A strict hierarchical structure of all matter and life, decreed by God, with the monarch near the top.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">1559</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1559</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">The 'Middle Way'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 'Middle Way'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">The Act of Supremacy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Act of Supremacy</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">The Act of Uniformity</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Act of Uniformity</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">The Royal Injunctions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Royal Injunctions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">Providing charity for the poor / enforcing social control</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Providing charity for the poor / enforcing social control</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Church courts</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Church courts</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">Visitations</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Visitations</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">Puritans</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Puritans</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">Crucifixes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Crucifixes</div>
                 </div>
                 </div>
         </div>
@@ -1954,202 +2451,202 @@
                 <div class="answer-list"><h3>KT1.2: The 'settlement' of religion, 1559</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">The Book of Advertisements</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Book of Advertisements</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">37</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">37</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">Recusants</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Recusants</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">1566</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1566</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">She actively avoided creating Catholic martyrs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She actively avoided creating Catholic martyrs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">Mary, Queen of Scots</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mary, Queen of Scots</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">He excommunicated her</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He excommunicated her</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">It absolved them of their loyalty to the Queen / weaponised them into treason</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It absolved them of their loyalty to the Queen / weaponised them into treason</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Spain and France</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Spain and France</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">Catholics had the backing of foreign militaries, the Papacy, and a rival queen to replace Elizabeth</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Catholics had the backing of foreign militaries, the Papacy, and a rival queen to replace Elizabeth</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">1558.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1558.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">£300,000.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£300,000.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">Calais.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Calais.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">A queen who ruled in her own right with actual power, not just the wife of a king.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A queen who ruled in her own right with actual power, not just the wife of a king.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Anne Boleyn.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Anne Boleyn.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">The Catholic Church didn't recognize Henry VIII's divorce from his first wife, making Elizabeth illegitimate in their eyes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Catholic Church didn't recognize Henry VIII's divorce from his first wife, making Elizabeth illegitimate in their eyes.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">An alliance between Catholic France and Scotland.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An alliance between Catholic France and Scotland.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Hospital hygiene and nursing standards (during the Crimean War).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hospital hygiene and nursing standards (during the Crimean War).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">Alexander Fleming.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Alexander Fleming.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">A chemical that targets and kills specific germs without harming the body.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A chemical that targets and kills specific germs without harming the body.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT1.3: Challenge to the religious settlement</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">They believed it kept too many Catholic elements and wanted to 'purify' the Church</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They believed it kept too many Catholic elements and wanted to 'purify' the Church</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">Crucifixes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Crucifixes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">Several powerful Puritan bishops threatened to resign</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Several powerful Puritan bishops threatened to resign</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">The Vestment Controversy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Vestment Controversy</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">The Book of Advertisements</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Book of Advertisements</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">37</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">37</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">The Pope</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Pope</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">Recusants</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Recusants</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">The North / North-West</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The North / North-West</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">She did not want to create Catholic martyrs or provoke a rebellion</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She did not want to create Catholic martyrs or provoke a rebellion</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">The Revolt of the Northern Earls</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Revolt of the Northern Earls</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">The Counter-Reformation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Counter-Reformation</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">Not to attend Church of England services</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Not to attend Church of England services</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">He excommunicated her / issued a Papal Bull</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He excommunicated her / issued a Papal Bull</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">That it was no longer a sin to rebel against her and they were absolved of their loyalty</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That it was no longer a sin to rebel against her and they were absolved of their loyalty</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">Mary, Queen of Scots</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mary, Queen of Scots</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">Spain and France</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Spain and France</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Douai, in the Netherlands</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Douai, in the Netherlands</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">John Foxe / Thomas Cartwright</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">John Foxe / Thomas Cartwright</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">Catholics had the backing of foreign military powers, the Papacy, and had Mary, Queen of Scots as an alternative monarch</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Catholics had the backing of foreign military powers, the Papacy, and had Mary, Queen of Scots as an alternative monarch</div>
                 </div>
                 </div>
         </div>
@@ -2160,202 +2657,202 @@
                 <div class="answer-list"><h3>KT1.3: Challenge to the religious settlement</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">The Act of Supremacy and the Act of Uniformity.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Act of Supremacy and the Act of Uniformity.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">Supreme Governor of the Church of England.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Supreme Governor of the Church of England.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">It established the appearance of churches and the form of services they had to hold.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It established the appearance of churches and the form of services they had to hold.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">A set prayer book in English that had to be used in all churches.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A set prayer book in English that had to be used in all churches.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">Extreme Protestants who wanted to 'purify' the church of all Catholic traces.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Extreme Protestants who wanted to 'purify' the church of all Catholic traces.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">Instructions to the clergy to reinforce the Settlement (e.g., all clergy must teach the Royal Supremacy).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Instructions to the clergy to reinforce the Settlement (e.g., all clergy must teach the Royal Supremacy).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">£300,000.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£300,000.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Calais.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Calais.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">1348.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1348.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">Louis Pasteur.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Louis Pasteur.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">She was her second cousin</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She was her second cousin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">King Henry VII</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Henry VII</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">They did not recognise Henry VIII's divorce, meaning his marriage to Anne Boleyn was invalid</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They did not recognise Henry VIII's divorce, meaning his marriage to Anne Boleyn was invalid</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">France</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">France</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">Lord Darnley</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Lord Darnley</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">The Earl of Bothwell</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Earl of Bothwell</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">Abdicate the throne</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Abdicate the throne</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">Her infant son, James VI</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Her infant son, James VI</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">1568</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1568</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">It would anger the friendly Protestant Scottish lords and ruin relations with Scotland</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It would anger the friendly Protestant Scottish lords and ruin relations with Scotland</div>
                 </div>
                 </div><div class="answer-list"><h3>KT1.4: The problem of Mary, Queen of Scots</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">She believed in the Divine Right of Kings and did not want to support subjects overthrowing an anointed monarch</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She believed in the Divine Right of Kings and did not want to support subjects overthrowing an anointed monarch</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">She feared Mary would raise a foreign Catholic army to invade England</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She feared Mary would raise a foreign Catholic army to invade England</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">The Conference of York / Westminster</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Conference of York / Westminster</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">The 'Casket Letters'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 'Casket Letters'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">Letters and poems plotting Darnley's murder</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Letters and poems plotting Darnley's murder</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">She claimed they were forged and that a court couldn't try an anointed queen</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She claimed they were forged and that a court couldn't try an anointed queen</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">She stated that her guilt was "not proven" / neither guilty nor innocent</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She stated that her guilt was "not proven" / neither guilty nor innocent</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">She was kept in strict captivity in England</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She was kept in strict captivity in England</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">It made Mary a focal point for English Catholics and plotters to rally around</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It made Mary a focal point for English Catholics and plotters to rally around</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">The Revolt of the Northern Earls in 1569</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Revolt of the Northern Earls in 1569</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">Puritans demanded all crucifixes be removed from churches; Elizabeth eventually backed down to avoid losing Puritan bishops.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Puritans demanded all crucifixes be removed from churches; Elizabeth eventually backed down to avoid losing Puritan bishops.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">Puritans refused to wear the elaborate Catholic-style vestments ordered by Elizabeth.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Puritans refused to wear the elaborate Catholic-style vestments ordered by Elizabeth.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">Pope Pius V.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pope Pius V.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">A decree by the Pope excommunicating Elizabeth and ordering Catholics not to obey her.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A decree by the Pope excommunicating Elizabeth and ordering Catholics not to obey her.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">She feared a massive Spanish army directly across the Channel in the Netherlands.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She feared a massive Spanish army directly across the Channel in the Netherlands.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">Supreme Governor.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Supreme Governor.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">The mandatory English prayer book for all church services.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The mandatory English prayer book for all church services.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">Extreme Protestants who hated all Catholic decoration and ritual.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Extreme Protestants who hated all Catholic decoration and ritual.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">A ruling queen with actual power.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A ruling queen with actual power.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">The smallpox vaccine.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The smallpox vaccine.</div>
                 </div>
                 </div>
         </div>
@@ -2417,45 +2914,309 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 2: Early Elizabethan England, 1558-88 · Key Topic 1: Queen, government and religion, 1558-69</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (120 Questions)</option>
+                    <option value="0">Part 1: KT1.1: The situation on Elizabeth’s accession, 1558</option>
+<option value="1">Part 2: KT1.1: The situation on Elizabeth’s accession, 1558</option>
+<option value="2">Part 3: KT1.2: The 'settlement' of religion, 1559</option>
+<option value="3">Part 4: KT1.3: Challenge to the religious settlement</option>
+<option value="4">Part 5: KT1.3: Challenge to the religious settlement</option>
+<option value="5">Part 6: KT1.4: The problem of Mary, Queen of Scots</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_eee_KT1';
+    const ALL_DECK = [{"id":1,"q":"How old was Elizabeth when she ascended to the throne in 1558?","a":"21","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":2,"q":"What phrase describes the rigid social hierarchy of Elizabethan England where everyone 'knew their place'?","a":"The Great Chain of Being","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":3,"q":"What percentage of the Elizabethan population lived in the countryside?","a":"90%","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":4,"q":"What system did the monarch use to maintain control by rewarding loyalty with land, titles, and monopolies?","a":"Patronage","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":5,"q":"Roughly how many trusted nobles and advisers made up the Privy Council?","a":"19","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":6,"q":"Who was Elizabeth's most important minister and Secretary of State?","a":"William Cecil","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":7,"q":"How many times was Parliament called during Elizabeth's entire reign?","a":"Nine times","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":8,"q":"Why did the Pope view Elizabeth as illegitimate?","a":"He refused to recognise Henry VIII's marriage to Anne Boleyn","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":9,"q":"What term was used to describe a female ruler with actual power, rather than just a figurehead?","a":"Queen Regnant","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":10,"q":"Why was Elizabeth reluctant to marry?","a":"Her husband would be expected to govern the country, reducing her power","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":11,"q":"How much debt did Elizabeth inherit in 1558?","a":"£300,000","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":12,"q":"What was the Crown's annual revenue when Elizabeth became queen?","a":"£286,667","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":13,"q":"How much money was owed to the Antwerp Exchange?","a":"£100,000","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":14,"q":"What interest rate did the foreign moneylenders at the Antwerp Exchange charge?","a":"14%","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":15,"q":"What economic process implemented by previous monarchs caused massive inflation?","a":"Debasement of the coinage","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":16,"q":"How did Elizabeth remarkably clear the Crown's debt by 1574?","a":"She cut household expenses by half and sold Crown lands","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":17,"q":"What 1559 treaty ended the war with France and surrendered Calais?","a":"Treaty of Cateau-Cambrésis","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":18,"q":"What was the name of the traditional alliance between France and Scotland?","a":"The Auld Alliance","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":19,"q":"Which Catholic monarch had a strong claim to the English throne and was married to the French heir?","a":"Mary, Queen of Scots","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":20,"q":"What 1564 treaty did Elizabeth sign to avoid further war with France by permanently recognising their claim to Calais?","a":"Peace of Troyes","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":21,"q":"What did William Harvey discover?","a":"The circulation of blood.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":22,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":23,"q":"What did Edward Jenner discover?","a":"The smallpox vaccine (1796).","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":24,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":25,"q":"What was 'miasma'?","a":"The medieval belief that bad air or smells caused disease.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":26,"q":"Who was Elizabeth I's father?","a":"King Henry VIII.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":27,"q":"What was the Reformation?","a":"A 16th-century movement challenging the Catholic Church, leading to the creation of Protestantism.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":28,"q":"Who was the monarch immediately before Elizabeth?","a":"Her half-sister, Mary I.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":29,"q":"What religion was Mary I?","a":"Strictly Catholic.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":30,"q":"What was the 'Great Chain of Being'?","a":"A strict hierarchical structure of all matter and life, decreed by God, with the monarch near the top.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":31,"q":"What year did Elizabeth introduce her Religious Settlement?","a":"1559","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":32,"q":"What term is used to describe Elizabeth's political compromise to satisfy both Protestants and Catholics?","a":"The 'Middle Way'","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":33,"q":"Which specific Act made Elizabeth the 'Supreme Governor' rather than the 'Supreme Head' of the Church?","a":"The Act of Supremacy","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":34,"q":"Which Act dictated that the English Book of Common Prayer must be used in all churches?","a":"The Act of Uniformity","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":35,"q":"What were the strict instructions issued by William Cecil detailing exactly how to worship and govern the Church called?","a":"The Royal Injunctions","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":36,"q":"Aside from religious services, name one crucial social function of the parish church.","a":"Providing charity for the poor / enforcing social control","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":37,"q":"What specific legal system did the Church run to handle moral crimes, marriage, slander, and wills?","a":"Church courts","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":38,"q":"What term describes the official inspections carried out by bishops every three to four years to check on the clergy?","a":"Visitations","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":39,"q":"Who were the radical Protestants that wanted to eradicate all Catholic \"superstitions\" from the Church?","a":"Puritans","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":40,"q":"Which Catholic item did Puritans demand be removed from churches, leading to a major controversy where Elizabeth backed down?","a":"Crucifixes","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":41,"q":"What was the name of the document issued by the Archbishop of Canterbury in 1566 to enforce traditional clerical robes?","a":"The Book of Advertisements","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":42,"q":"How many Puritan priests in London were dismissed for refusing to wear the mandated vestments?","a":"37","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":43,"q":"What term describes Catholics who actively refused to attend the new Protestant Church services?","a":"Recusants","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":44,"q":"In what year did the Pope explicitly order English Catholics not to attend the new Church of England services?","a":"1566","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":45,"q":"Why did Elizabeth initially instruct authorities to turn a blind eye to minor Catholic disobedience?","a":"She actively avoided creating Catholic martyrs","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":46,"q":"Which Catholic figurehead arrived in England in 1568, giving disgruntled Catholics a legitimate rival to rally around?","a":"Mary, Queen of Scots","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":47,"q":"What severe action did the Pope take against Elizabeth in 1570?","a":"He excommunicated her","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":48,"q":"How did the 1570 excommunication change the behaviour of English Catholics?","a":"It absolved them of their loyalty to the Queen / weaponised them into treason","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":49,"q":"Which two Catholic superpowers were officially encouraged by the Pope to sponsor plots against Elizabeth?","a":"Spain and France","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":50,"q":"Why was the Catholic challenge ultimately more dangerous to Elizabeth than the Puritan challenge?","a":"Catholics had the backing of foreign militaries, the Papacy, and a rival queen to replace Elizabeth","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":51,"q":"What year did Elizabeth I become Queen?","a":"1558.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":52,"q":"How much debt did Mary I leave to Elizabeth?","a":"£300,000.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":53,"q":"Which French city did England lose in 1559 under the Treaty of Cateau-Cambrésis?","a":"Calais.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":54,"q":"What was a 'Queen Regnant'?","a":"A queen who ruled in her own right with actual power, not just the wife of a king.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":55,"q":"Who was Elizabeth's mother?","a":"Anne Boleyn.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":56,"q":"Why was Elizabeth's legitimacy questioned by Catholics?","a":"The Catholic Church didn't recognize Henry VIII's divorce from his first wife, making Elizabeth illegitimate in their eyes.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":57,"q":"What was the 'Auld Alliance'?","a":"An alliance between Catholic France and Scotland.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":58,"q":"What did Florence Nightingale improve?","a":"Hospital hygiene and nursing standards (during the Crimean War).","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":59,"q":"Who discovered Penicillin by accident?","a":"Alexander Fleming.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":60,"q":"What is a 'magic bullet'?","a":"A chemical that targets and kills specific germs without harming the body.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":61,"q":"What was the main objection of the Puritans regarding the 1559 Religious Settlement?","a":"They believed it kept too many Catholic elements and wanted to 'purify' the Church","topic":"KT1.3: Challenge to the religious settlement"},{"id":62,"q":"What objects did Puritans demand be removed from churches because they viewed them as superstitious idols?","a":"Crucifixes","topic":"KT1.3: Challenge to the religious settlement"},{"id":63,"q":"Why did Elizabeth back down during the Crucifix Controversy?","a":"Several powerful Puritan bishops threatened to resign","topic":"KT1.3: Challenge to the religious settlement"},{"id":64,"q":"What controversy in 1566 involved Puritans refusing to wear special clerical robes (surplices)?","a":"The Vestment Controversy","topic":"KT1.3: Challenge to the religious settlement"},{"id":65,"q":"What was the name of the guidelines issued by the Archbishop of Canterbury in 1566 to enforce priestly clothing?","a":"The Book of Advertisements","topic":"KT1.3: Challenge to the religious settlement"},{"id":66,"q":"How many London priests were dismissed for refusing to wear the mandated vestments?","a":"37","topic":"KT1.3: Challenge to the religious settlement"},{"id":67,"q":"Who was the ultimate authority for Catholics, making their loyalty to Elizabeth suspect?","a":"The Pope","topic":"KT1.3: Challenge to the religious settlement"},{"id":68,"q":"What term describes Catholics who actively refused to attend the new Protestant Church of England services?","a":"Recusants","topic":"KT1.3: Challenge to the religious settlement"},{"id":69,"q":"In which region of England was traditional Catholic support and noble resistance the strongest?","a":"The North / North-West","topic":"KT1.3: Challenge to the religious settlement"},{"id":70,"q":"Why did Elizabeth initially avoid strictly enforcing recusancy fines against Catholics?","a":"She did not want to create Catholic martyrs or provoke a rebellion","topic":"KT1.3: Challenge to the religious settlement"},{"id":71,"q":"What major domestic Catholic rebellion occurred in 1569?","a":"The Revolt of the Northern Earls","topic":"KT1.3: Challenge to the religious settlement"},{"id":72,"q":"What was the Catholic Church's Europe-wide campaign to reverse the Protestant Reformation called?","a":"The Counter-Reformation","topic":"KT1.3: Challenge to the religious settlement"},{"id":73,"q":"What instruction did the Pope give to English Catholics in 1566?","a":"Not to attend Church of England services","topic":"KT1.3: Challenge to the religious settlement"},{"id":74,"q":"What catastrophic action did Pope Pius V take against Elizabeth in 1570?","a":"He excommunicated her / issued a Papal Bull","topic":"KT1.3: Challenge to the religious settlement"},{"id":75,"q":"What did the 1570 Papal Bull explicitly tell English Catholics?","a":"That it was no longer a sin to rebel against her and they were absolved of their loyalty","topic":"KT1.3: Challenge to the religious settlement"},{"id":76,"q":"Which Catholic figurehead fled to England in 1568, becoming the focus of plots against Elizabeth?","a":"Mary, Queen of Scots","topic":"KT1.3: Challenge to the religious settlement"},{"id":77,"q":"Which two major European superpowers posed a direct military threat to Protestant England?","a":"Spain and France","topic":"KT1.3: Challenge to the religious settlement"},{"id":78,"q":"Where was the Catholic seminary located that trained priests to be secretly sent into England?","a":"Douai, in the Netherlands","topic":"KT1.3: Challenge to the religious settlement"},{"id":79,"q":"Name one prominent Puritan leader who actively opposed the Elizabethan settlement.","a":"John Foxe / Thomas Cartwright","topic":"KT1.3: Challenge to the religious settlement"},{"id":80,"q":"Why was the Catholic challenge considered vastly more dangerous than the Puritan challenge?","a":"Catholics had the backing of foreign military powers, the Papacy, and had Mary, Queen of Scots as an alternative monarch","topic":"KT1.3: Challenge to the religious settlement"},{"id":81,"q":"What two Acts made up Elizabeth's Religious Settlement of 1559?","a":"The Act of Supremacy and the Act of Uniformity.","topic":"KT1.3: Challenge to the religious settlement"},{"id":82,"q":"What title did Elizabeth take in the Act of Supremacy?","a":"Supreme Governor of the Church of England.","topic":"KT1.3: Challenge to the religious settlement"},{"id":83,"q":"What was the Act of Uniformity?","a":"It established the appearance of churches and the form of services they had to hold.","topic":"KT1.3: Challenge to the religious settlement"},{"id":84,"q":"What was the Book of Common Prayer?","a":"A set prayer book in English that had to be used in all churches.","topic":"KT1.3: Challenge to the religious settlement"},{"id":85,"q":"Who were the Puritans?","a":"Extreme Protestants who wanted to 'purify' the church of all Catholic traces.","topic":"KT1.3: Challenge to the religious settlement"},{"id":86,"q":"What were the Royal Injunctions?","a":"Instructions to the clergy to reinforce the Settlement (e.g., all clergy must teach the Royal Supremacy).","topic":"KT1.3: Challenge to the religious settlement"},{"id":87,"q":"How much debt did Mary I leave to Elizabeth?","a":"£300,000.","topic":"KT1.3: Challenge to the religious settlement"},{"id":88,"q":"Which French city did England lose in 1559?","a":"Calais.","topic":"KT1.3: Challenge to the religious settlement"},{"id":89,"q":"What year did the Black Death arrive in England?","a":"1348.","topic":"KT1.3: Challenge to the religious settlement"},{"id":90,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT1.3: Challenge to the religious settlement"},{"id":91,"q":"How was Mary, Queen of Scots related to Elizabeth I?","a":"She was her second cousin","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":92,"q":"From which English King did Mary derive her claim to the throne?","a":"King Henry VII","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":93,"q":"Why did many Catholics believe Elizabeth was illegitimate?","a":"They did not recognise Henry VIII's divorce, meaning his marriage to Anne Boleyn was invalid","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":94,"q":"Which country was Mary briefly the Queen of before returning to Scotland?","a":"France","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":95,"q":"What was the name of Mary's second husband, who was murdered in 1567?","a":"Lord Darnley","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":96,"q":"Who was the prime suspect in the murder, whom Mary subsequently married?","a":"The Earl of Bothwell","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":97,"q":"What did the Scottish Protestant lords force Mary to do after capturing her in 1567?","a":"Abdicate the throne","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":98,"q":"In whose favour was Mary forced to abdicate?","a":"Her infant son, James VI","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":99,"q":"In what year did Mary flee Scotland and arrive in England?","a":"1568","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":100,"q":"Why did Elizabeth refuse to help Mary regain her throne by force?","a":"It would anger the friendly Protestant Scottish lords and ruin relations with Scotland","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":101,"q":"Why was Elizabeth reluctant to hand Mary over to the Scottish lords for punishment?","a":"She believed in the Divine Right of Kings and did not want to support subjects overthrowing an anointed monarch","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":102,"q":"Why couldn't Elizabeth simply allow Mary to travel to France or Spain?","a":"She feared Mary would raise a foreign Catholic army to invade England","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":103,"q":"What was the name of the legal inquiry set up by Elizabeth to investigate Mary?","a":"The Conference of York / Westminster","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":104,"q":"What evidence was produced by the Scottish lords to try and prove Mary's guilt?","a":"The 'Casket Letters'","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":105,"q":"What did the Casket Letters allegedly contain?","a":"Letters and poems plotting Darnley's murder","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":106,"q":"What was Mary's defence against the letters?","a":"She claimed they were forged and that a court couldn't try an anointed queen","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":107,"q":"What was Elizabeth's final verdict regarding Mary's guilt?","a":"She stated that her guilt was \"not proven\" / neither guilty nor innocent","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":108,"q":"What was the immediate outcome for Mary following the inquiry?","a":"She was kept in strict captivity in England","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":109,"q":"Why was keeping Mary in England a massive risk for Elizabeth?","a":"It made Mary a focal point for English Catholics and plotters to rally around","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":110,"q":"What major uprising occurred in England just one year after Mary's arrival?","a":"The Revolt of the Northern Earls in 1569","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":111,"q":"What was the 'Crucifix Controversy'?","a":"Puritans demanded all crucifixes be removed from churches; Elizabeth eventually backed down to avoid losing Puritan bishops.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":112,"q":"What was the 'Vestment Controversy'?","a":"Puritans refused to wear the elaborate Catholic-style vestments ordered by Elizabeth.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":113,"q":"Who was the Pope that excommunicated Elizabeth in 1570?","a":"Pope Pius V.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":114,"q":"What was the Papal Bull of 1570?","a":"A decree by the Pope excommunicating Elizabeth and ordering Catholics not to obey her.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":115,"q":"Why did the Dutch Revolt matter to Elizabeth?","a":"She feared a massive Spanish army directly across the Channel in the Netherlands.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":116,"q":"What title did Elizabeth take in the Act of Supremacy?","a":"Supreme Governor.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":117,"q":"What was the Book of Common Prayer?","a":"The mandatory English prayer book for all church services.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":118,"q":"Who were the Puritans?","a":"Extreme Protestants who hated all Catholic decoration and ritual.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":119,"q":"What was a 'Queen Regnant'?","a":"A ruling queen with actual power.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":120,"q":"What did Edward Jenner discover?","a":"The smallpox vaccine.","topic":"KT1.4: The problem of Mary, Queen of Scots"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

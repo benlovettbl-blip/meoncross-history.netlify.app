@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 60 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAAAAklEQVR4AewaftIAAA2ASURBVO3BAZFcOwxFwRPX8BAQ4RIK4RIQIckPAHurnHqa2f253b9+/4GIyICFiMiQhYjIkIWIyJCFiMiQhYjIkIWIyJAXXzBPfqKuYMc8eYeu4JZ5cqsruGWe3OoKbpknJ13BLfPkk7qCE/PkVlewY578RF3BzkJEZMhCRGTIQkRkyEJEZMhCRGTIQkRkyIu/1BV8knnypK7gu+oKdsyTW13BLfPkSebJU7qCW+bJk7qCd+gKPsk8ubUQERmyEBEZshARGbIQERmyEBEZ8uJh5smTuoKndAUn5slOV3Binux0BSfmyS3z5FZXsGOefFddwYl5smOenHQFt7qCHfPkVlfwDubJk7qCpyxERIYsRESGLEREhixERIYsRESGLEREhrz4h5gnJ13BU8yTk67glnmy0xXIva7gxDzZ6QpumScnXcG/YCEiMmQhIjJkISIyZCEiMmQhIjLkxT+kK/g08+Qp5sk7dAUn5slOV3DLPDnpCnbMkxPz5FZXcMs82ekK/nULEZEhCxGRIQsRkSELEZEhCxGRIQsRkSEvHtYV/ETmyU5X8KSu4JZ5stMVnJgnO13BiXmyY56cdAU75slJV/CUruCWeXLLPLllnpx0BU/pCr6rhYjIkIWIyJCFiMiQhYjIkIWIyJAXf8k8+WnMk5OuYMc8OekKdsyTW+bJSVewY56cdAU75slJV7BjnnxX5slJV/AOXcGOefIk8+SnWYiIDFmIiAxZiIgMWYiIDFmIiAxZiIgMefGFruBfYZ7cMk92uoInmSe3zJOdruDEPNnpCm51BZ9mntwyTz6pK/g/WYiIDFmIiAxZiIgMWYiIDFmIiAz59fsPDsyTk65gxzy51RWcmCdP6QpOzJOdruDEPLnVFeyYJyddwS3z5FZXsGOe3OoK3sE8udUVnJgnT+kKbpknJ13BLfNkpys4MU9udQU7CxGRIQsRkSELEZEhCxGRIQsRkSELEZEhv37/wf+MeXKrK9gxT96hKzgxT3a6gieZJ0/pCk7Mk52u4MQ82ekKbpknJ13BjnnypK5gxzw56Qp2zJOTrmDHPHlSV7CzEBEZshARGbIQERmyEBEZshARGfLiL5knt7qCW+bJT9MVnJgnt7qCHfPkpCvYMU9OuoJb5slTzJOTrmDHPDnpCm6ZJztdwTt0BSfmyU5X8A5dwa2FiMiQhYjIkIWIyJCFiMiQhYjIkIWIyJAXf6kruGWePKUreJJ5stMVvIN5ctIVfJJ5ctIV7JgnJ13BjnlyYp7cMk9udQVPMU9OuoJP6gpOzJMd8+SkK9hZiIgMWYiIDFmIiAxZiIgMWYiIDHnxMPPkpCvYMU9OuoId8+RWV/AO5slJV/AO5slOV3Binux0BU8yT3a6ghPz5CldwYl5stMVnJgnO13Bk7qCW+bJra5gxzy5tRARGbIQERmyEBEZshARGbIQERmyEBEZ8uIL5slJV/BJXcGTuoJ3ME92uoJbXcGTuoJb5slOV3BinjylKzgxT3bMk1vmyTuYJyddwTuYJ09ZiIgMWYiIDFmIiAxZiIgMWYiIDHnxha7gVldwYp7sdAW3zJNbXcGJebLTFZyYJ7e6glvmyTt0Be/QFeyYJyddwY55ctIV3DJPdrqCE/PkHcyTna7gpCu4ZZ48ZSEiMmQhIjJkISIyZCEiMmQhIjJkISIy5MUXzJOTruBWV7BjntzqCr6rruBJXcGOeXLSFeyYJyfmyVPMk5Ou4B3Mk1tdwa2uYMc8OekKbnUFt8yTna7gpCvYMU9uLUREhixERIYsRESGLEREhixERIa8eCPz5CnmyUlXsGOenHQFt7qCHfPkVlfwrzBPdrqCE/Nkpys4MU+eYp6cdAVP6QpumSdPMk+eshARGbIQERmyEBEZshARGbIQERmyEBEZ8uv3HzzIPDnpCt7BPNnpCk7Mk52u4MQ8eYeuYMc8udUV3DJPTrqCHfPku+oKbpknJ13Bjnlyqys4MU92uoIT82SnK3iHhYjIkIWIyJCFiMiQhYjIkIWIyJAXf8k82ekKTsyTW13Bjnly0hXsmCcnXcGOeXLSFeyYJyddwY55cmKefFJXcGKe7HQF72CePMk8eYeu4FZXsGOenHQFn7QQERmyEBEZshARGbIQERmyEBEZshARGfLr9x/8BfPkKV3Bp5knn9QVnJgnt7qCTzJPTrqCp5gnt7qCE/PkVlfwFPPkVldwYp7c6gp2zJOTrmBnISIyZCEiMmQhIjJkISIyZCEiMuTFF8yTW13BiXmyY56cdAU75slJV7BjntzqCk7Mk3foCnbMk1vmyUlXsGOenHQF31VXsGOefJp58hTz5EnmyU5XcGshIjJkISIyZCEiMmQhIjJkISIyZCEiMuTX7z/4C+bJra5gxzw56QpumSc7XcGJefJddQW3zJNbXcGOeXLSFeyYJ7e6ghPzZKcruGWenHQFO+bJk7qCHfPkJ+oKdhYiIkMWIiJDFiIiQxYiIkMWIiJDXnzBPLnVFZyYJ7fMk++qK9gxT251BSfmyU5XcKsreIeu4MQ82TFPPs08udUV7Jgnt7qCE/Nkpyu4ZZ7c6gpuLUREhixERIYsRESGLEREhixERIYsRESGvPihuoIT8+RWV7BjnpyYJ7e6gh3z5EldwY558n9inpx0BTtdwS3z5NO6glvmyU5XcMs8OekKdhYiIkMWIiJDFiIiQxYiIkMWIiJDfv3+gwPz5EldwVPMkyd1BU8xT251BSfmyTt0BU8xT76rruDEPNnpCk7Mk52u4MQ82ekKTsyTna7glnlyqyu4tRARGbIQERmyEBEZshARGbIQERmyEBEZ8uIvdQW3zJOdruDEPNnpCm6ZJyfmyU5XcKsr+K66ghPzZKcreFJX8A7myY558g7myUlXsGOenHQFt8yTW13Bjnly0hXsLEREhixERIYsRESGLEREhixERIa8+EJXcGKe7HQFt8yTW+bJra7gxDzZMU+e1BXsmCe3uoLvqiu4ZZ48qSvYMU9OuoKfxjy51RWcmCdPWYiIDFmIiAxZiIgMWYiIDFmIiAxZiIgMefEF8+SWefIOXcEt8+TTzJOnmCcnXcGtrmDHPPm0ruCTzJN36Aq+q67g1kJEZMhCRGTIQkRkyEJEZMhCRGTIiy90BSfmyU5XcMs8OekKdsyTk67gKV3BiXlyqyvYMU9OuoKnmCcnXcFOV3BinjylKzgxT3a6ghPzZKcruNUVnJgnO13BiXmy0xWcmCc/zUJEZMhCRGTIQkRkyEJEZMhCRGTIQkRkyK/ff/AXzJNbXcEt82SnKzgxT251BU8xT066glvmySd1BbfMk5OuYMc8eYeu4B3Mk5Ou4JZ5stMVPMk8udUV7CxERIYsRESGLEREhixERIYsRESGvPiCeXLSFeyYJ7fMk5OuYMc8udUVnJgnO13BiXnyFPPkpCt4inly0hXsmCcnXcEt8+RWV3DLPNkxT066gncwT251BTvmyUlXcKsreMpCRGTIQkRkyEJEZMhCRGTIQkRkyEJEZMiLL3QFTzJPdrqCE/Nkpyu4ZZ6cdAW3uoId8+RJ5slOV3Binux0Be/QFdwyT26ZJyddwY55cmKe7HQFJ+bJra5gxzx5knlyqyvYMU9OuoKdhYjIkIWIyJCFiMiQhYjIkIWIyJAXf8k82ekK3sE8OekKnmKenHQFt8yTna7gHcyTW13BiXmy0xWcmCc7XcGTzJOdruDEPNkxT55kntwyT36ahYjIkIWIyJCFiMiQhYjIkIWIyJCFiMiQX7//4B9hnrxDV3BinjylK3iSeXKrK9gxT251Be9gnpx0BTvmyUlXsGOenHQFTzFPTrqCW+bJra5gZyEiMmQhIjJkISIyZCEiMmQhIjLk1+8/ODBPfqKuYMc8OekKbpknT+kKTsyTp3QFTzJP3qEreIp58mldwY55ctIV7Jgn79AV3FqIiAxZiIgMWYiIDFmIiAxZiIgMWYiIDHnxl7qCTzJPnmSe7HQFJ13BjnnypK7gKebJp3UFt8yTW13BTldwyzw56Qp2zJNbXcGTuoJPWoiIDFmIiAxZiIgMWYiIDFmIiAx58TDz5EldwVO6ghPzZMc8OekKdrqCE/Pklnmy0xU8qSvYMU/ewTw56QpumSfflXnyDubJra5gxzw56Qp2FiIiQxYiIkMWIiJDFiIiQxYiIkMWIiJDXvxDzJOTrmDHPDkxT3a6gid1Be9gnux0Be/QFdwyT57UFdwyT3a6gncwT066gh3z5B0WIiJDFiIiQxYiIkMWIiJDFiIiQ17I48yTJ5knO13BiXmy0xWcmCc75smTuoId8+SkK9jpCp5kntzqCnbMk5Ou4JZ5stMVPMk8ecpCRGTIQkRkyEJEZMhCRGTIQkRkyEJEZMiLh3UF31VX8KSu4JZ58hTz5EldwS3z5JZ58hTz5KQr2DFPTrqCdzBPbnUFO+bJra7gxDzZ6QpuLUREhixERIYsRESGLEREhixERIa8+EvmyU9jnpx0BbfMk1tdwa2uYMc8+VeYJztdwYl5stMV3DJPTrqCp3QFt7qCE/PkkxYiIkMWIiJDFiIiQxYiIkMWIiJDFiIiQ379/gMRkQELEZEhCxGRIQsRkSELEZEhCxGRIf8BorbXMlQoRxIAAAAASUVORK5CYII=" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/great_war_part2/mastery_pack_full.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/great_war_part2/mastery_pack_full.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1126,206 +1615,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>Why were young men so desperate to join the slaughter of 1914?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">HMS Dreadnought</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">HMS Dreadnought</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">The Black Hand</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Black Hand</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">Austria-Hungary</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Austria-Hungary</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">Lord Horatio Kitchener</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Lord Horatio Kitchener</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">Pals Battalions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pals Battalions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">Prolonged exposure to freezing, wet, and unsanitary mud inside boots.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Prolonged exposure to freezing, wet, and unsanitary mud inside boots.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">German soldiers survived safely inside deep, concrete-reinforced underground bunkers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">German soldiers survived safely inside deep, concrete-reinforced underground bunkers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">July 1, 1916</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">July 1, 1916</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">Lions led by Donkeys</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Lions led by Donkeys</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">They argued he was a determined leader who successfully learned how to win an unprecedented modern war.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They argued he was a determined leader who successfully learned how to win an unprecedented modern war.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Pals Battalions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pals Battalions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Because Britain did not have a conscription law to force men to join, and its regular professional army was very small.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Britain did not have a conscription law to force men to join, and its regular professional army was very small.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Gongfermers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gongfermers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Miasma Theory (the belief that diseases were spread by inhaling bad air or foul smells from decaying matter).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Miasma Theory (the belief that diseases were spread by inhaling bad air or foul smells from decaying matter).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">A primary source is an eyewitness account or physical object created during the time period being studied, whereas a secondary source is created after the event by someone who was not there.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A primary source is an eyewitness account or physical object created during the time period being studied, whereas a secondary source is created after the event by someone who was not there.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">Presentism is judging past societies by modern standards and values. Historians must avoid it to understand why people in the past acted rationally based on their own contemporary knowledge.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Presentism is judging past societies by modern standards and values. Historians must avoid it to understand why people in the past acted rationally based on their own contemporary knowledge.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">3 million</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">3 million</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">The British Indian Army</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The British Indian Army</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">Gallipoli</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gallipoli</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">Taranto, Italy</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Taranto, Italy</div>
                 </div>
                 </div><div class="answer-list"><h3>How much of a 'World' War was it, and why were the Empire's troops forgotten?</h3>
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">They were largely forgotten and excluded from events like the London Victory Parade.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were largely forgotten and excluded from events like the London Victory Parade.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">The artillery barrage failed to destroy the barbed wire.. Explanation: The failure of the artillery barrage left troops exposed to machine gun fire.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The artillery barrage failed to destroy the barbed wire.. Explanation: The failure of the artillery barrage left troops exposed to machine gun fire.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Total War</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Total War</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">The Defense of the Realm Act (DORA)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Defense of the Realm Act (DORA)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">Canary Girls</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Canary Girls</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">Conscientious Objectors</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Conscientious Objectors</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">They introduced rationing to ensure fair distribution of food.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They introduced rationing to ensure fair distribution of food.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Over 1.5 million Indian soldiers volunteered.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 1.5 million Indian soldiers volunteered.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">It was caused by the racist treatment, poor conditions, and forced manual labor of the British West Indies Regiment. It fueled early movements for Caribbean independence.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was caused by the racist treatment, poor conditions, and forced manual labor of the British West Indies Regiment. It fueled early movements for Caribbean independence.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">Because towns grew too quickly without building regulations, leading to overcrowded back-to-back houses and overflowing shared cesspits.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because towns grew too quickly without building regulations, leading to overcrowded back-to-back houses and overflowing shared cesspits.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">The Public Health Act of 1875.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Public Health Act of 1875.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">Because politicians often write memoirs to defend their own decisions, protect their historical reputation, and shift blame for costly military failures onto others.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because politicians often write memoirs to defend their own decisions, protect their historical reputation, and shift blame for costly military failures onto others.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">Causation refers to the factors or reasons that make an event happen, while Consequence refers to the effects, outcomes, or impacts that result from that event.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Causation refers to the factors or reasons that make an event happen, while Consequence refers to the effects, outcomes, or impacts that result from that event.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">June 28, 1919</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">June 28, 1919</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Woodrow Wilson</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Woodrow Wilson</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">The War Guilt Clause</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The War Guilt Clause</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">They were completely excluded from the peace talks and forced to sign it.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were completely excluded from the peace talks and forced to sign it.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">The Defense of the Realm Act (DORA).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Defense of the Realm Act (DORA).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">"Canary Girls" (or Munitionettes).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">"Canary Girls" (or Munitionettes).</div>
                 </div>
                 </div>
         </div>
@@ -1336,102 +1833,102 @@
                 <div class="answer-list"><h3>Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Because they were subjected to severe racial discrimination, poor conditions, and forced into humiliating manual labor instead of combat roles.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because they were subjected to severe racial discrimination, poor conditions, and forced into humiliating manual labor instead of combat roles.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">Because German soldiers survived safely in deep, concrete-reinforced underground bunkers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because German soldiers survived safely in deep, concrete-reinforced underground bunkers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">1. Assassination of Franz Ferdinand (June 1914), 2. Battle of the Somme (July 1916), 3. Treaty of Versailles (June 1919).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1. Assassination of Franz Ferdinand (June 1914), 2. Battle of the Somme (July 1916), 3. Treaty of Versailles (June 1919).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">Change refers to the new temporary opportunities in factories, while continuity refers to how most women were pushed back into traditional domestic roles once the war ended.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Change refers to the new temporary opportunities in factories, while continuity refers to how most women were pushed back into traditional domestic roles once the war ended.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">1922</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1922</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">The local village pump.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The local village pump.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">The mother of the only woman commemorated among the fallen.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The mother of the only woman commemorated among the fallen.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">67</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">67</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Micro-history</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Micro-history</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">"Canary Girls" (or Munitionettes).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">"Canary Girls" (or Munitionettes).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">100,000 men.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">100,000 men.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Full responsibility for causing the war (the War Guilt Clause).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Full responsibility for causing the war (the War Guilt Clause).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">HMS Dreadnought.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">HMS Dreadnought.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">The traditional view sees Haig as a foolish 'donkey' sending men to their deaths, while the revisionist view argues he faced unprecedented technological challenges and eventually learned to adapt.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The traditional view sees Haig as a foolish 'donkey' sending men to their deaths, while the revisionist view argues he faced unprecedented technological challenges and eventually learned to adapt.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">It means 'dictated peace'. They used it because Germany was banned from negotiating and forced to sign the treaty under threat of invasion.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It means 'dictated peace'. They used it because Germany was banned from negotiating and forced to sign the treaty under threat of invasion.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">1914</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1914</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">Germany</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Germany</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Trench Foot</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Trench Foot</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">Nearly 3 million</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Nearly 3 million</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">Canary Girls</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Canary Girls</div>
                 </div>
                 </div>
         </div>
@@ -1493,45 +1990,306 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">KS3: The Great War (1914-1919) · Complete Unit</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (60 Questions)</option>
+                    <option value="0">Part 1: Why were young men so desperate to join the slaughter of 1914?</option>
+<option value="1">Part 2: How much of a 'World' War was it, and why were the Empire's troops forgotten?</option>
+<option value="2">Part 3: Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_great_war_part2_full';
+    const ALL_DECK = [{"id":1,"q":"What was the name of the revolutionary British battleship launched in 1906 that sparked a naval arms race?","a":"HMS Dreadnought","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":2,"q":"Which Serbian nationalist group assassinated Archduke Franz Ferdinand in Sarajevo?","a":"The Black Hand","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":3,"q":"Which European empire declared war on Serbia first during the July Days?","a":"Austria-Hungary","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":4,"q":"Who was the British Secretary of State for War who launched a massive recruitment campaign in 1914?","a":"Lord Horatio Kitchener","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":5,"q":"What was the nickname given to battalions made up of friends, colleagues, and neighbors who enlisted together?","a":"Pals Battalions","topic":"Why were young men so desperate to join the slaughter of 1914?"},{"id":6,"q":"What was the main cause of the medical condition known as \"trench foot\" during WWI?","a":"Prolonged exposure to freezing, wet, and unsanitary mud inside boots.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":7,"q":"Why did the British artillery bombardment fail to destroy German defenses before the Somme offensive?","a":"German soldiers survived safely inside deep, concrete-reinforced underground bunkers.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":8,"q":"On which date did the infamous first day of the Battle of the Somme occur?","a":"July 1, 1916","topic":"Did British generals make the horror of trench warfare worse?"},{"id":9,"q":"What name is given to the popular historical viewpoint that brave British troops were commanded by foolish, incompetent generals?","a":"Lions led by Donkeys","topic":"Did British generals make the horror of trench warfare worse?"},{"id":10,"q":"How did modern \"revisionist\" historians change the historical debate surrounding General Douglas Haig?","a":"They argued he was a determined leader who successfully learned how to win an unprecedented modern war.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":11,"q":"What name was given to WWI units made up of local friends, neighbors, and colleagues who enlisted together?","a":"Pals Battalions.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":12,"q":"Why did Britain have to rely entirely on voluntary enlistment when war was declared in August 1914?","a":"Because Britain did not have a conscription law to force men to join, and its regular professional army was very small.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":13,"q":"What medieval sanitation workers were hired to clear overflowing town cesspits exclusively at night?","a":"Gongfermers.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":14,"q":"What scientific theory did Victorian doctors believe in before Louis Pasteur proved Germ Theory in 1860?","a":"Miasma Theory (the belief that diseases were spread by inhaling bad air or foul smells from decaying matter).","topic":"Did British generals make the horror of trench warfare worse?"},{"id":15,"q":"What is the difference between a primary source and a secondary source?","a":"A primary source is an eyewitness account or physical object created during the time period being studied, whereas a secondary source is created after the event by someone who was not there.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":16,"q":"Why must historians avoid the concept of \"presentism\" when studying past historical periods?","a":"Presentism is judging past societies by modern standards and values. Historians must avoid it to understand why people in the past acted rationally based on their own contemporary knowledge.","topic":"Did British generals make the horror of trench warfare worse?"},{"id":17,"q":"Approximately how many men from the British Empire and its dominions served in the First World War?","a":"3 million","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":18,"q":"Which imperial army sent over 1.5 million men to fight in the war?","a":"The British Indian Army","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":19,"q":"Which battle featured troops from Australia and New Zealand (ANZACs) fighting a devastating campaign against the Ottoman Empire?","a":"Gallipoli","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":20,"q":"In December 1918, where did members of the British West Indies Regiment mutiny due to severe racial discrimination?","a":"Taranto, Italy","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":21,"q":"Despite their massive sacrifices, how were imperial troops often treated in the official post-war victory celebrations?","a":"They were largely forgotten and excluded from events like the London Victory Parade.","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":22,"q":"What was the main tactical problem at the Battle of the Somme? (A) The artillery barrage failed to destroy the barbed wire., B) The soldiers ran away., C) The tanks broke down completely., D) The French refused to fight.)","a":"The artillery barrage failed to destroy the barbed wire.. Explanation: The failure of the artillery barrage left troops exposed to machine gun fire.","topic":"How much of a 'World' War was it, and why were the Empire's troops forgotten?"},{"id":23,"q":"What term describes a conflict where the boundary between soldiers and civilians vanishes?","a":"Total War","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":24,"q":"What law gave the British government sweeping emergency powers in August 1914?","a":"The Defense of the Realm Act (DORA)","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":25,"q":"What nickname was given to women who worked in munitions factories and suffered from yellow skin due to toxic TNT?","a":"Canary Girls","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":26,"q":"What term describes men who refused to fight in the war on moral, political, or religious grounds?","a":"Conscientious Objectors","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":27,"q":"How did the British government respond to the severe food shortages caused by German U-boat attacks in 1918?","a":"They introduced rationing to ensure fair distribution of food.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":28,"q":"How many Indian soldiers volunteered to serve the British Empire during the First World War?","a":"Over 1.5 million Indian soldiers volunteered.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":29,"q":"What was the cause and outcome of the Taranto Mutiny in December 1918?","a":"It was caused by the racist treatment, poor conditions, and forced manual labor of the British West Indies Regiment. It fueled early movements for Caribbean independence.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":30,"q":"Why did the rapid population growth of industrial towns like Leeds and Manchester cause a severe sanitation crisis in the 19th century?","a":"Because towns grew too quickly without building regulations, leading to overcrowded back-to-back houses and overflowing shared cesspits.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":31,"q":"What landmark British law in 1875 finally forced local councils to take legal responsibility for providing clean water and sewer systems?","a":"The Public Health Act of 1875.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":32,"q":"Why should a historian be cautious when using a politician's post-war memoirs to judge a general's military competence?","a":"Because politicians often write memoirs to defend their own decisions, protect their historical reputation, and shift blame for costly military failures onto others.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":33,"q":"Explain the difference between \"Causation\" and \"Consequence\" in history.","a":"Causation refers to the factors or reasons that make an event happen, while Consequence refers to the effects, outcomes, or impacts that result from that event.","topic":"How did a war fought miles away completely control daily life in Britain?"},{"id":34,"q":"What date was the Treaty of Versailles officially signed by Allied and German leaders?","a":"June 28, 1919","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":35,"q":"Which US President proposed the 'Fourteen Points' and wanted to create a League of Nations?","a":"Woodrow Wilson","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":36,"q":"What was the name of Article 231 of the Treaty of Versailles?","a":"The War Guilt Clause","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":37,"q":"Why do modern revisionist historians like Margaret MacMillan argue Versailles was NOT excessively harsh?","a":"Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":38,"q":"Why did the German people call the Treaty of Versailles a 'Diktat'?","a":"They were completely excluded from the peace talks and forced to sign it.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":39,"q":"What was the name of the 1914 British law that gave the government sweeping emergency powers to censor newspapers and ration food?","a":"The Defense of the Realm Act (DORA).","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":40,"q":"What nickname was given to the female British munitions workers whose skin turned yellow due to toxic chemical exposure?","a":"\"Canary Girls\" (or Munitionettes).","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":41,"q":"Why did over 130,000 members of the British West Indies Regiment suffer a major mutiny in Taranto, Italy, in December 1918?","a":"Because they were subjected to severe racial discrimination, poor conditions, and forced into humiliating manual labor instead of combat roles.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":42,"q":"Why did General Douglas Haig's week-long artillery bombardment fail to destroy the German defenders before the Battle of the Somme?","a":"Because German soldiers survived safely in deep, concrete-reinforced underground bunkers.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":43,"q":"Place these three WWI milestones in chronological order: The Battle of the Somme, The assassination of Archduke Franz Ferdinand, The Treaty of Versailles.","a":"1. Assassination of Franz Ferdinand (June 1914), 2. Battle of the Somme (July 1916), 3. Treaty of Versailles (June 1919).","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":44,"q":"Explain the difference between \"change\" and \"continuity\" when studying the roles of women on the British Home Front.","a":"Change refers to the new temporary opportunities in factories, while continuity refers to how most women were pushed back into traditional domestic roles once the war ended.","topic":"Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?"},{"id":45,"q":"In what year was the Stubbington War Memorial erected?","a":"1922","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":46,"q":"What physical structure does the Stubbington War Memorial cover?","a":"The local village pump.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":47,"q":"Who proposed and designed the memorial in Stubbington?","a":"The mother of the only woman commemorated among the fallen.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":48,"q":"How many names of the fallen are recorded on the Stubbington memorial?","a":"67","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":49,"q":"What historical term describes the study of a specific family, like the Lowry brothers, to understand a larger global event?","a":"Micro-history","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":50,"q":"What nickname was given to women working with toxic TNT in munitions factories?","a":"\"Canary Girls\" (or Munitionettes).","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":51,"q":"Under the Treaty of Versailles, what was the maximum number of men allowed in the German army?","a":"100,000 men.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":52,"q":"What did Article 231 of the Treaty of Versailles force Germany to accept?","a":"Full responsibility for causing the war (the War Guilt Clause).","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":53,"q":"What was the name of the revolutionary battleship launched by Britain in 1906?","a":"HMS Dreadnought.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":54,"q":"Explain the difference between a 'traditional' and 'revisionist' historical interpretation using General Douglas Haig as an example.","a":"The traditional view sees Haig as a foolish 'donkey' sending men to their deaths, while the revisionist view argues he faced unprecedented technological challenges and eventually learned to adapt.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":55,"q":"What does the term 'Diktat' mean and why did Germans use it to describe the Treaty of Versailles?","a":"It means 'dictated peace'. They used it because Germany was banned from negotiating and forced to sign the treaty under threat of invasion.","topic":"How did the \"Lost Generation\" impact the village of Stubbington?"},{"id":56,"q":"In what year did the First World War begin?","a":"1914","topic":"Assessment: The Great War"},{"id":57,"q":"Which country was NOT part of the Triple Entente?","a":"Germany","topic":"Assessment: The Great War"},{"id":58,"q":"What condition was caused by standing in cold, flooded trenches?","a":"Trench Foot","topic":"Assessment: The Great War"},{"id":59,"q":"How many men from the British Empire and Dominions served in the war?","a":"Nearly 3 million","topic":"Assessment: The Great War"},{"id":60,"q":"What was the nickname given to women working with TNT in factories?","a":"Canary Girls","topic":"Assessment: The Great War"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

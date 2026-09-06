@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 126 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/water_and_sanitation/mastery_pack_full.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/water_and_sanitation/mastery_pack_full.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1824,206 +2313,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>How much progress did the Romans make in public health?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">Roundhouse settlements were spread out and temporary pits kept waste away from springs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Roundhouse settlements were spread out and temporary pits kept waste away from springs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">Stone channels called conduits that utilized the natural pull of gravity</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Stone channels called conduits that utilized the natural pull of gravity</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">Housesteads Fort on Hadrian's Wall</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Housesteads Fort on Hadrian's Wall</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">A wet sponge attached to the end of a shared wooden stick</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A wet sponge attached to the end of a shared wooden stick</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">Emperor Hadrian</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Emperor Hadrian</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">To transport clean spring water continuously into towns using gravity</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To transport clean spring water continuously into towns using gravity</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Into underground stone sewers like the Cloaca Maxima that discharged into local rivers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Into underground stone sewers like the Cloaca Maxima that discharged into local rivers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">A hypocaust system circulating hot furnace air beneath raised floors</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A hypocaust system circulating hot furnace air beneath raised floors</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">Because bathing, exercise, and socialising were central to Roman civic culture and soldier fitness</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because bathing, exercise, and socialising were central to Roman civic culture and soldier fitness</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">A metal scraper called a strigil used with olive oil</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A metal scraper called a strigil used with olive oil</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Town populations collapsed and stone aqueducts fell into decay and disrepair</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Town populations collapsed and stone aqueducts fell into decay and disrepair</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Their dispersed, small population meant waste did not build up enough to contaminate water supplies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Their dispersed, small population meant waste did not build up enough to contaminate water supplies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Waterproof hydraulic mortar (opus signinum)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Waterproof hydraulic mortar (opus signinum)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">The hot, steamy bathing room</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The hot, steamy bathing room</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Wealthy local magistrates and benefactors seeking political status</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wealthy local magistrates and benefactors seeking political status</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">Lead poisoning from lead water pipes and cooking vessels</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Lead poisoning from lead water pipes and cooking vessels</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">Anno Domini (the year of our Lord).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Anno Domini (the year of our Lord).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">The 11th Century.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 11th Century.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">The Romans.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Romans.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">Conditions relating to public health, especially clean drinking water and sewage disposal.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Conditions relating to public health, especially clean drinking water and sewage disposal.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">Evidence that was created at the time of the event.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Evidence that was created at the time of the event.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">Washing in sequence through cold, warm, and hot rooms</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Washing in sequence through cold, warm, and hot rooms</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">The low population density meant waste did not build up enough to contaminate water supplies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The low population density meant waste did not build up enough to contaminate water supplies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Pipes carrying dirty waste water away to flush the toilets</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pipes carrying dirty waste water away to flush the toilets</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">They bought it from water sellers who hauled river water in barrels</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They bought it from water sellers who hauled river water in barrels</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">Monasteries were carefully sited near fresh rivers with dedicated leats, fresh-water lavatoria, and isolated infirmaries</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Monasteries were carefully sited near fresh rivers with dedicated leats, fresh-water lavatoria, and isolated infirmaries</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Miasma Theory (bad air and poisonous stenches)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Miasma Theory (bad air and poisonous stenches)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Gongfermer (or Nightman)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gongfermer (or Nightman)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">1348</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1348</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">By passing municipal laws fining residents who threw waste into the street and appointing rakers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By passing municipal laws fining residents who threw waste into the street and appointing rakers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">From communal public conduits, town wells, or local water carriers called cobs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">From communal public conduits, town wells, or local water carriers called cobs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">God’s wrath punishing humanity for sin, and planetary alignments</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">God’s wrath punishing humanity for sin, and planetary alignments</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">They dumped animal blood, entrails, and offal into public streets and rivers like the Fleet</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They dumped animal blood, entrails, and offal into public streets and rivers like the Fleet</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">A basic outhouse toilet built over a cesspit or watercourse</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A basic outhouse toilet built over a cesspit or watercourse</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Between 30% and 50%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Between 30% and 50%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">It passed an Act forbidding the dumping of dung, offal, and animal entrails into ditches and rivers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It passed an Act forbidding the dumping of dung, offal, and animal entrails into ditches and rivers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">It carried clean spring water from Tyburn into Cheapside through lead pipes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It carried clean spring water from Tyburn into Cheapside through lead pipes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">Aqueducts.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Aqueducts.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">Running water from the aqueducts and bathhouses.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Running water from the aqueducts and bathhouses.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">To march and fight efficiently across the Empire.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To march and fight efficiently across the Empire.</div>
                 </div>
                 </div>
         </div>
@@ -2034,202 +2531,202 @@
                 <div class="answer-list"><h3>Why did public health decline during the Middle Ages?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Hospitals (Valetudinariums).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hospitals (Valetudinariums).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">No, they just knew bad smells or swamps were linked to illness.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">No, they just knew bad smells or swamps were linked to illness.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">Wild moss</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Wild moss</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">To avoid disrupting the busy town streets with terrible smells and waste carts</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To avoid disrupting the busy town streets with terrible smells and waste carts</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">The population grew rapidly, putting too much pressure on crowded town systems</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The population grew rapidly, putting too much pressure on crowded town systems</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">Samuel Pepys</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Samuel Pepys</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">The Great Plague</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Plague</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">They quarantined the entire household inside, painting a red cross on the door with "Lord have mercy upon us"</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They quarantined the entire household inside, painting a red cross on the door with "Lord have mercy upon us"</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">The Metamorphosis of Ajax (a pun on "a jakes", meaning a privy)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Metamorphosis of Ajax (a pun on "a jakes", meaning a privy)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">The city expanded into swampy marshes with no building regulations, overcrowding timber houses and overflowing cesspits</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The city expanded into swampy marshes with no building regulations, overcrowding timber houses and overflowing cesspits</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">Ward off poisonous miasmas and prevent plague infection</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ward off poisonous miasmas and prevent plague infection</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Elderly parish women appointed to inspect corpses and report the official cause of death</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Elderly parish women appointed to inspect corpses and report the official cause of death</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">The fire destroyed thousands of rat-infested wooden tenements, and rebuilt streets were wider and brick-built</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The fire destroyed thousands of rat-infested wooden tenements, and rebuilt streets were wider and brick-built</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">Weekly published parish statistics listing total deaths and their recorded causes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Weekly published parish statistics listing total deaths and their recorded causes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Sir Hugh Myddelton’s New River project, bringing fresh Hertfordshire spring water along a 40-mile canal</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Hugh Myddelton’s New River project, bringing fresh Hertfordshire spring water along a 40-mile canal</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">Because urban land was extremely scarce and houses had no gardens or backyards</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because urban land was extremely scarce and houses had no gardens or backyards</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">Beaked leather masks filled with fragrant dried herbs, long waxed coats, and wide-brimmed hats</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Beaked leather masks filled with fragrant dried herbs, long waxed coats, and wide-brimmed hats</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">They were overcrowded, with cesspits leaking into drinking wells.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were overcrowded, with cesspits leaking into drinking wells.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">A medieval worker who cleared human waste from cesspits at night.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A medieval worker who cleared human waste from cesspits at night.</div>
                 </div>
                 </div><div class="answer-list"><h3>To what extent did towns become filthier during the Early Modern period?</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">They believed cleanliness brought them closer to God.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They believed cleanliness brought them closer to God.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">A pit for the disposal of liquid waste and sewage.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A pit for the disposal of liquid waste and sewage.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">The removal of filth from London's streets to prevent sickness.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The removal of filth from London's streets to prevent sickness.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">Sir John Harington</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir John Harington</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">Houses lacked running piped water and connections to street sewers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Houses lacked running piped water and connections to street sewers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">Transporting river water in large barrels on horseback to sell to homes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Transporting river water in large barrels on horseback to sell to homes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">It skyrocketed from 6 million to 21 million.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It skyrocketed from 6 million to 21 million.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">1831</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1831</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">King Cholera (or the Blue Death)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">King Cholera (or the Blue Death)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">That filthy living conditions caused disease, which created poverty, burdening taxpayers with higher poor rates</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That filthy living conditions caused disease, which created poverty, burdening taxpayers with higher poor rates</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">They shared common side and rear walls with no through-ventilation, and multiple families shared a single privy in an unpaved court</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They shared common side and rear walls with no through-ventilation, and multiple families shared a single privy in an unpaved court</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">A policy of non-intervention where government leaves trade and public life to private individuals</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A policy of non-intervention where government leaves trade and public life to private individuals</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">They did not want their local taxes increased to pay for expensive sewer pipes and drainage</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They did not want their local taxes increased to pay for expensive sewer pipes and drainage</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">It was completely voluntary: councils were only forced to act if the death rate exceeded 23 per 1,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was completely voluntary: councils were only forced to act if the death rate exceeded 23 per 1,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Within 12 to 24 hours of violent diarrhoea, vomiting, and extreme dehydration</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Within 12 to 24 hours of violent diarrhoea, vomiting, and extreme dehydration</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">Under 20 years (approx. 17–19 years)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Under 20 years (approx. 17–19 years)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">Directly into existing cesspools underneath houses or into street gutters flowing into the Thames</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Directly into existing cesspools underneath houses or into street gutters flowing into the Thames</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">A narrow, enclosed dead-end alley packed with back-to-back dwellings and shared privies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A narrow, enclosed dead-end alley packed with back-to-back dwellings and shared privies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">Population growth outpaced the ability to dispose of waste.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Population growth outpaced the ability to dispose of waste.</div>
                 </div>
                 </div>
         </div>
@@ -2240,202 +2737,202 @@
                 <div class="answer-list"><h3>How did the Industrial Revolution lead to a public health crisis?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">John Harington.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">John Harington.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">There were no underground sewers to connect it to.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">There were no underground sewers to connect it to.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">The increase in the proportion of people living in towns and cities.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The increase in the proportion of people living in towns and cities.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">Buying it from water sellers or sharing local pumps.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Buying it from water sellers or sharing local pumps.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">From a shared pump in the street or yard that only ran for a few hours.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">From a shared pump in the street or yard that only ran for a few hours.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">Cholera</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cholera</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">Miasma Theory (the belief that disease is spread by bad smells)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Miasma Theory (the belief that disease is spread by bad smells)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Landlords refused to pay for them to be emptied, and they were not connected to sewers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Landlords refused to pay for them to be emptied, and they were not connected to sewers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">The Great Stink of the River Thames</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Stink of the River Thames</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">They soaked parliamentary window curtains in chloride of lime to neutralize the stench</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They soaked parliamentary window curtains in chloride of lime to neutralize the stench</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">Sir Joseph Bazalgette</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Joseph Bazalgette</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">By building 82 miles of underground brick tunnels parallel to the Thames to carry sewage east of London</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By building 82 miles of underground brick tunnels parallel to the Thames to carry sewage east of London</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">He calculated the maximum flow needed, and then doubled the diameter to handle future population growth</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He calculated the maximum flow needed, and then doubled the diameter to handle future population growth</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">Portland cement, tested rigorously for strength and waterproof durability</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Portland cement, tested rigorously for strength and waterproof durability</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">The publication of Germ Theory, proving microbes cause disease and fermentation</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The publication of Germ Theory, proving microbes cause disease and fermentation</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">It ended laissez-faire by making it compulsory for local councils to provide clean water, pave streets, and inspect drains</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It ended laissez-faire by making it compulsory for local councils to provide clean water, pave streets, and inspect drains</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">The Victoria, Albert, and Chelsea Embankments along the Thames</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Victoria, Albert, and Chelsea Embankments along the Thames</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">Areas connected to Bazalgette’s new sewers suffered virtually no cholera deaths, proving clean drainage saved lives</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Areas connected to Bazalgette’s new sewers suffered virtually no cholera deaths, proving clean drainage saved lives</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">The Abbey Mills and Crossness Pumping Stations, nicknamed "Cathedrals of Sewage"</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Abbey Mills and Crossness Pumping Stations, nicknamed "Cathedrals of Sewage"</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">The Second Reform Act, which gave the vote to urban working-class men</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Second Reform Act, which gave the vote to urban working-class men</div>
                 </div>
                 </div><div class="answer-list"><h3>Why did it take the 'Great Stink' to finally clean up Britain's streets?</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">The government's belief that it shouldn't interfere in people's daily lives or public health.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The government's belief that it shouldn't interfere in people's daily lives or public health.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">Cholera.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Cholera.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">Miasma Theory (bad smells).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Miasma Theory (bad smells).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">By mapping the deaths around the Broad Street water pump.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By mapping the deaths around the Broad Street water pump.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">Edwin Chadwick.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Edwin Chadwick.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">It was a waterborne disease transmitted by swallowing invisible contaminated water or food</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was a waterborne disease transmitted by swallowing invisible contaminated water or food</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">A street map plotting each cholera death as a black bar outside houses near the Broad Street pump</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A street map plotting each cholera death as a black bar outside houses near the Broad Street pump</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">Remove the handle from the Broad Street water pump so residents could not drink the water</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Remove the handle from the Broad Street water pump so residents could not drink the water</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">A cracked brick cesspool from house number 40 was leaking baby cholera waste directly into the well water</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A cracked brick cesspool from house number 40 was leaking baby cholera waste directly into the well water</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">They were allowed free beer and had their own private deep well on site, so they never drank from the Broad Street pump</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were allowed free beer and had their own private deep well on site, so they never drank from the Broad Street pump</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">Because powerful authorities like Edwin Chadwick and Florence Nightingale were deeply committed to Miasma Theory</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because powerful authorities like Edwin Chadwick and Florence Nightingale were deeply committed to Miasma Theory</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">Robert Koch</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Robert Koch</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">He compared customers on the same streets: those drinking from Lambeth (intake moved upriver) had vastly lower deaths than those drinking Southwark sewage</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He compared customers on the same streets: those drinking from Lambeth (intake moved upriver) had vastly lower deaths than those drinking Southwark sewage</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">The Early Middle Ages (500–1000 AD)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Early Middle Ages (500–1000 AD)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">Laissez-faire government attitudes, high costs for ratepayers, and stubborn adherence to Miasma Theory</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Laissez-faire government attitudes, high costs for ratepayers, and stubborn adherence to Miasma Theory</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">Every local council was legally required to appoint a Medical Officer of Health and a Sanitary Inspector</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Every local council was legally required to appoint a Medical Officer of Health and a Sanitary Inspector</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">He demonstrated statistically that poor sanitation caused illness and poverty, campaigning for the 1848 Public Health Act</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He demonstrated statistically that poor sanitation caused illness and poverty, campaigning for the 1848 Public Health Act</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">It eradicated waterborne cholera from London and created a clean urban drainage infrastructure that still operates today</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It eradicated waterborne cholera from London and created a clean urban drainage infrastructure that still operates today</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics</div>
                 </div>
                 </div>
         </div>
@@ -2446,32 +2943,32 @@
                 <div class="answer-list"><h3>End of Unit Assessment: Cholera Investigation</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
-                    <div class="answer-text">Because Roman sanitary engineering collapsed in the Middle Ages, urbanisation overwhelmed early modern towns, and scientific understanding was delayed by false theories like miasma</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because Roman sanitary engineering collapsed in the Middle Ages, urbanisation overwhelmed early modern towns, and scientific understanding was delayed by false theories like miasma</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">122.</div>
-                    <div class="answer-text">An aqueduct, using the pull of gravity.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An aqueduct, using the pull of gravity.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">123.</div>
-                    <div class="answer-text">A gongfermer (or nightman).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A gongfermer (or nightman).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">124.</div>
-                    <div class="answer-text">The Miasma Theory.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Miasma Theory.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">125.</div>
-                    <div class="answer-text">1831 (in Sunderland).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1831 (in Sunderland).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">126.</div>
-                    <div class="answer-text">The Great Stink of the River Thames.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Great Stink of the River Thames.</div>
                 </div>
                 </div>
         </div>
@@ -2533,45 +3030,310 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">KS3: Water and Sanitation Through Time · Complete Unit</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (126 Questions)</option>
+                    <option value="0">Part 1: How much progress did the Romans make in public health?</option>
+<option value="1">Part 2: How much progress did the Romans make in public health?</option>
+<option value="2">Part 3: Why did public health decline during the Middle Ages?</option>
+<option value="3">Part 4: To what extent did towns become filthier during the Early Modern period?</option>
+<option value="4">Part 5: How did the Industrial Revolution lead to a public health crisis?</option>
+<option value="5">Part 6: Why did it take the 'Great Stink' to finally clean up Britain's streets?</option>
+<option value="6">Part 7: End of Unit Assessment: Cholera Investigation</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_water_and_sanitation_full';
+    const ALL_DECK = [{"id":1,"q":"Why was digging cesspits in the Iron Age a hygienic way to manage waste?","a":"Roundhouse settlements were spread out and temporary pits kept waste away from springs","topic":"How much progress did the Romans make in public health?"},{"id":2,"q":"What technology did Roman engineers use to bring fresh water over miles into British towns?","a":"Stone channels called conduits that utilized the natural pull of gravity","topic":"How much progress did the Romans make in public health?"},{"id":3,"q":"Where did Roman soldiers sit side-by-side over water-flushed latrine channels?","a":"Housesteads Fort on Hadrian's Wall","topic":"How much progress did the Romans make in public health?"},{"id":4,"q":"What did Roman soldiers use to wipe themselves in communal latrines?","a":"A wet sponge attached to the end of a shared wooden stick","topic":"How much progress did the Romans make in public health?"},{"id":5,"q":"Which Emperor ordered the construction of a famous 73-mile defensive wall with fort bathhouses across northern Britain?","a":"Emperor Hadrian","topic":"How much progress did the Romans make in public health?"},{"id":6,"q":"What was the primary purpose of Roman public aqueducts?","a":"To transport clean spring water continuously into towns using gravity","topic":"How much progress did the Romans make in public health?"},{"id":7,"q":"In a Roman town, where did wastewater from public baths and latrines drain?","a":"Into underground stone sewers like the Cloaca Maxima that discharged into local rivers","topic":"How much progress did the Romans make in public health?"},{"id":8,"q":"What did wealthy Romans use to heat their private villas and bathhouses?","a":"A hypocaust system circulating hot furnace air beneath raised floors","topic":"How much progress did the Romans make in public health?"},{"id":9,"q":"Why did the Romans build public bathhouses in almost every military fort and town?","a":"Because bathing, exercise, and socialising were central to Roman civic culture and soldier fitness","topic":"How much progress did the Romans make in public health?"},{"id":10,"q":"What instrument did Romans use to clean their skin in the bathhouse instead of soap?","a":"A metal scraper called a strigil used with olive oil","topic":"How much progress did the Romans make in public health?"},{"id":11,"q":"What happened to Roman water and sanitation infrastructure after the legions left Britain in 410 AD?","a":"Town populations collapsed and stone aqueducts fell into decay and disrepair","topic":"How much progress did the Romans make in public health?"},{"id":12,"q":"Why did Iron Age Britons have fewer sanitation crises before the Roman invasion?","a":"Their dispersed, small population meant waste did not build up enough to contaminate water supplies","topic":"How much progress did the Romans make in public health?"},{"id":13,"q":"What material was commonly used by Roman engineers to line water conduits and cisterns to make them watertight?","a":"Waterproof hydraulic mortar (opus signinum)","topic":"How much progress did the Romans make in public health?"},{"id":14,"q":"What was the caldarium inside a Roman public bathhouse?","a":"The hot, steamy bathing room","topic":"How much progress did the Romans make in public health?"},{"id":15,"q":"Who paid for the construction of most public bathhouses and fountains in Roman Britain?","a":"Wealthy local magistrates and benefactors seeking political status","topic":"How much progress did the Romans make in public health?"},{"id":16,"q":"What health hazard was unwittingly introduced by Roman plumbing in Britain?","a":"Lead poisoning from lead water pipes and cooking vessels","topic":"How much progress did the Romans make in public health?"},{"id":17,"q":"What does AD stand for in historical dates?","a":"Anno Domini (the year of our Lord).","topic":"How much progress did the Romans make in public health?"},{"id":18,"q":"What century is the year 1066 in?","a":"The 11th Century.","topic":"How much progress did the Romans make in public health?"},{"id":19,"q":"Which ancient empire conquered Britain and built Hadrian's Wall?","a":"The Romans.","topic":"How much progress did the Romans make in public health?"},{"id":20,"q":"What does the word 'Sanitation' mean?","a":"Conditions relating to public health, especially clean drinking water and sewage disposal.","topic":"How much progress did the Romans make in public health?"},{"id":21,"q":"What is a primary source?","a":"Evidence that was created at the time of the event.","topic":"How much progress did the Romans make in public health?"},{"id":22,"q":"What did Roman bathers experience inside a bathhouse like Bearsden?","a":"Washing in sequence through cold, warm, and hot rooms","topic":"Why did public health decline during the Middle Ages?"},{"id":23,"q":"Why did medieval villages like Wharram Percy avoid major public health crises despite using simple cesspits?","a":"The low population density meant waste did not build up enough to contaminate water supplies","topic":"Why did public health decline during the Middle Ages?"},{"id":24,"q":"On the twelfth-century plans of Canterbury Priory, what did the red lines represent?","a":"Pipes carrying dirty waste water away to flush the toilets","topic":"Why did public health decline during the Middle Ages?"},{"id":25,"q":"How did poorer townspeople get their fresh water if they did not own a private well?","a":"They bought it from water sellers who hauled river water in barrels","topic":"Why did public health decline during the Middle Ages?"},{"id":26,"q":"Why were medieval Christian monasteries cleaner and healthier than towns?","a":"Monasteries were carefully sited near fresh rivers with dedicated leats, fresh-water lavatoria, and isolated infirmaries","topic":"Why did public health decline during the Middle Ages?"},{"id":27,"q":"What was the primary medieval theory used to explain why diseases like the Black Death spread?","a":"Miasma Theory (bad air and poisonous stenches)","topic":"Why did public health decline during the Middle Ages?"},{"id":28,"q":"What medieval occupation involved emptying city cesspits and privy vaults?","a":"Gongfermer (or Nightman)","topic":"Why did public health decline during the Middle Ages?"},{"id":29,"q":"In what year did the catastrophic Black Death first arrive in Britain through the Dorset port of Melcombe Regis?","a":"1348","topic":"Why did public health decline during the Middle Ages?"},{"id":30,"q":"How did medieval town councils like London attempt to combat street filth?","a":"By passing municipal laws fining residents who threw waste into the street and appointing rakers","topic":"Why did public health decline during the Middle Ages?"},{"id":31,"q":"Where did most ordinary medieval townspeople obtain their drinking water?","a":"From communal public conduits, town wells, or local water carriers called cobs","topic":"Why did public health decline during the Middle Ages?"},{"id":32,"q":"What did medieval people believe caused the Black Death besides miasma?","a":"God’s wrath punishing humanity for sin, and planetary alignments","topic":"Why did public health decline during the Middle Ages?"},{"id":33,"q":"Why did medieval butchers create a major public health nuisance in towns?","a":"They dumped animal blood, entrails, and offal into public streets and rivers like the Fleet","topic":"Why did public health decline during the Middle Ages?"},{"id":34,"q":"What was a medieval \"privy\"?","a":"A basic outhouse toilet built over a cesspit or watercourse","topic":"Why did public health decline during the Middle Ages?"},{"id":35,"q":"What proportion of the British population is estimated to have died during the 1348–1349 Black Death?","a":"Between 30% and 50%","topic":"Why did public health decline during the Middle Ages?"},{"id":36,"q":"What did the 1388 Parliament of Cambridge attempt to do regarding public health?","a":"It passed an Act forbidding the dumping of dung, offal, and animal entrails into ditches and rivers","topic":"Why did public health decline during the Middle Ages?"},{"id":37,"q":"Why did the Great Conduit in London (built in 1245) become famous?","a":"It carried clean spring water from Tyburn into Cheapside through lead pipes","topic":"Why did public health decline during the Middle Ages?"},{"id":38,"q":"How did the Romans transport massive amounts of fresh water?","a":"Aqueducts.","topic":"Why did public health decline during the Middle Ages?"},{"id":39,"q":"What did the Romans use to flush their public toilets?","a":"Running water from the aqueducts and bathhouses.","topic":"Why did public health decline during the Middle Ages?"},{"id":40,"q":"Why did the Roman army need to stay healthy?","a":"To march and fight efficiently across the Empire.","topic":"Why did public health decline during the Middle Ages?"},{"id":41,"q":"What did the Romans build in their forts to treat sick soldiers?","a":"Hospitals (Valetudinariums).","topic":"Why did public health decline during the Middle Ages?"},{"id":42,"q":"Did the Romans understand bacteria?","a":"No, they just knew bad smells or swamps were linked to illness.","topic":"Why did public health decline during the Middle Ages?"},{"id":43,"q":"What material did archaeologists discover in medieval cesspits that shows how villagers wiped themselves?","a":"Wild moss","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":44,"q":"Why did medieval 'gongfermers' perform their job exclusively under the cover of darkness?","a":"To avoid disrupting the busy town streets with terrible smells and waste carts","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":45,"q":"Why did London's sanitation problems get worse during the Early Modern period?","a":"The population grew rapidly, putting too much pressure on crowded town systems","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":46,"q":"Which famous seventeenth-century Londoner wrote about his cellar being flooded by his neighbor's toilet waste?","a":"Samuel Pepys","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":47,"q":"What devastating disease struck London in 1665, killing an estimated 100,000 people?","a":"The Great Plague","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":48,"q":"What preventative measure did London authorities take during the 1665 Great Plague when someone fell ill?","a":"They quarantined the entire household inside, painting a red cross on the door with \"Lord have mercy upon us\"","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":49,"q":"What was Sir John Harington’s 1596 invention called in his satirical book?","a":"The Metamorphosis of Ajax (a pun on \"a jakes\", meaning a privy)","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":50,"q":"Why did London’s rapid population growth between 1500 and 1700 make public health worse?","a":"The city expanded into swampy marshes with no building regulations, overcrowding timber houses and overflowing cesspits","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":51,"q":"What did early modern Londoners believe smoking tobacco would do during the 1665 plague?","a":"Ward off poisonous miasmas and prevent plague infection","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":52,"q":"Who were \"searchers of the dead\" during early modern plague outbreaks?","a":"Elderly parish women appointed to inspect corpses and report the official cause of death","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":53,"q":"What happened to London’s hygiene and disease levels after the Great Fire of 1666?","a":"The fire destroyed thousands of rat-infested wooden tenements, and rebuilt streets were wider and brick-built","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":54,"q":"What were early modern \"Bills of Mortality\"?","a":"Weekly published parish statistics listing total deaths and their recorded causes","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":55,"q":"What was the Great Conduit water system supplemented by in London in 1613?","a":"Sir Hugh Myddelton’s New River project, bringing fresh Hertfordshire spring water along a 40-mile canal","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":56,"q":"Why were early modern London cesspits often built directly underneath house floorboards?","a":"Because urban land was extremely scarce and houses had no gardens or backyards","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":57,"q":"What did early modern physicians wear to protect themselves when examining plague victims?","a":"Beaked leather masks filled with fragrant dried herbs, long waxed coats, and wide-brimmed hats","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":58,"q":"How did wealthy early modern citizens protect their drinking water compared to the poor?","a":"They bought piped water delivered through private elm-wood pipes directly to their basements a few days a week","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":59,"q":"Why were medieval towns dangerous for public health?","a":"They were overcrowded, with cesspits leaking into drinking wells.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":60,"q":"What was a Gongfermer?","a":"A medieval worker who cleared human waste from cesspits at night.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":61,"q":"Why did medieval monks build clean water systems?","a":"They believed cleanliness brought them closer to God.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":62,"q":"What is a cesspit?","a":"A pit for the disposal of liquid waste and sewage.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":63,"q":"What did King Edward III order in 1357?","a":"The removal of filth from London's streets to prevent sickness.","topic":"To what extent did towns become filthier during the Early Modern period?"},{"id":64,"q":"Who invented the first water closet (flushing toilet) in Britain in 1596?","a":"Sir John Harington","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":65,"q":"Why was the 1596 flushing toilet not used by ordinary citizens?","a":"Houses lacked running piped water and connections to street sewers","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":66,"q":"What was a 'water seller's' job in an Early Modern town?","a":"Transporting river water in large barrels on horseback to sell to homes","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":67,"q":"By how much did Britain's population grow during the century of industrialisation (1750–1850)?","a":"It skyrocketed from 6 million to 21 million.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":68,"q":"In what year did Asiatic Cholera first arrive on British shores in the port of Sunderland?","a":"1831","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":69,"q":"What nickname did the terrified Victorian public give to cholera because of its horrifying physical symptoms?","a":"King Cholera (or the Blue Death)","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":70,"q":"What was the central argument of Edwin Chadwick’s landmark 1842 Sanitary Report?","a":"That filthy living conditions caused disease, which created poverty, burdening taxpayers with higher poor rates","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":71,"q":"Why were Victorian \"back-to-back\" houses so hazardous to public health?","a":"They shared common side and rear walls with no through-ventilation, and multiple families shared a single privy in an unpaved court","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":72,"q":"What does the economic and political philosophy of \"laissez-faire\" mean?","a":"A policy of non-intervention where government leaves trade and public life to private individuals","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":73,"q":"Why did ratepayers (local taxpayers and landlords) vigorously oppose Chadwick’s sanitation proposals in the 1840s?","a":"They did not want their local taxes increased to pay for expensive sewer pipes and drainage","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":74,"q":"What was the fatal flaw of the Public Health Act of 1848?","a":"It was completely voluntary: councils were only forced to act if the death rate exceeded 23 per 1,000","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":75,"q":"How quickly could cholera kill a previously healthy Victorian adult?","a":"Within 12 to 24 hours of violent diarrhoea, vomiting, and extreme dehydration","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":76,"q":"What was the average life expectancy for a working-class labourer in industrial Manchester in the 1840s?","a":"Under 20 years (approx. 17–19 years)","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":77,"q":"Where did human waste go when private flush water closets were installed in wealthy Victorian homes before 1855?","a":"Directly into existing cesspools underneath houses or into street gutters flowing into the Thames","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":78,"q":"Why was the 1848 General Board of Health disbanded in 1854?","a":"Because Edwin Chadwick’s arrogant, domineering style alienated politicians and angered ratepayers","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":79,"q":"What was a \"court\" or \"yard\" in an early 19th-century industrial town?","a":"A narrow, enclosed dead-end alley packed with back-to-back dwellings and shared privies","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":80,"q":"Why did rivers in early modern towns become open sewers?","a":"Population growth outpaced the ability to dispose of waste.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":81,"q":"Who invented a working flushing toilet in 1596?","a":"John Harington.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":82,"q":"Why did Harington's flushing toilet fail to catch on for 250 years?","a":"There were no underground sewers to connect it to.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":83,"q":"What does 'urbanisation' mean?","a":"The increase in the proportion of people living in towns and cities.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":84,"q":"How did early modern townspeople get their drinking water?","a":"Buying it from water sellers or sharing local pumps.","topic":"How did the Industrial Revolution lead to a public health crisis?"},{"id":85,"q":"How did working-class families living in terraced yards usually obtain their water?","a":"From a shared pump in the street or yard that only ran for a few hours.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":86,"q":"What was the terrifying waterborne disease that first struck Britain in 1831, killing 31,000 people?","a":"Cholera","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":87,"q":"What scientific theory did Victorian doctors believe in before they understood that cholera was spread by dirty water?","a":"Miasma Theory (the belief that disease is spread by bad smells)","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":88,"q":"Why did cesspits under shared yard privies frequently overflow in industrial cities?","a":"Landlords refused to pay for them to be emptied, and they were not connected to sewers.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":89,"q":"What famous environmental crisis in London during the blazing summer of 1858 forced politicians to act?","a":"The Great Stink of the River Thames","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":90,"q":"How did politicians in the Houses of Parliament try to cope with the foul fumes of the Great Stink in 1858?","a":"They soaked parliamentary window curtains in chloride of lime to neutralize the stench","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":91,"q":"Who was appointed chief engineer of the Metropolitan Board of Works to design London’s new sewer system?","a":"Sir Joseph Bazalgette","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":92,"q":"How did Bazalgette’s intercepting sewer system solve London’s sewage crisis?","a":"By building 82 miles of underground brick tunnels parallel to the Thames to carry sewage east of London","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":93,"q":"What remarkable design decision did Bazalgette make when sizing his underground sewer tunnels?","a":"He calculated the maximum flow needed, and then doubled the diameter to handle future population growth","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":94,"q":"What type of mortar did Bazalgette use to ensure the brick sewers would not decay from water and waste acids?","a":"Portland cement, tested rigorously for strength and waterproof durability","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":95,"q":"What major medical breakthrough in 1861 by Louis Pasteur finally discredited the Miasma Theory?","a":"The publication of Germ Theory, proving microbes cause disease and fermentation","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":96,"q":"Why is the Public Health Act of 1875 considered a massive turning point in British history?","a":"It ended laissez-faire by making it compulsory for local councils to provide clean water, pave streets, and inspect drains","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":97,"q":"What grand public embankments were built in London on top of Bazalgette’s low-level intercepting sewers?","a":"The Victoria, Albert, and Chelsea Embankments along the Thames","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":98,"q":"When cholera struck London for the final time in 1866, what did the health statistics reveal about Bazalgette’s sewers?","a":"Areas connected to Bazalgette’s new sewers suffered virtually no cholera deaths, proving clean drainage saved lives","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":99,"q":"What Victorian engineering landmarks were constructed by Bazalgette to pump sewage up to river discharge levels?","a":"The Abbey Mills and Crossness Pumping Stations, nicknamed \"Cathedrals of Sewage\"","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":100,"q":"What political change in 1867 helped encourage Parliament to pass stronger public health laws like the 1875 Act?","a":"The Second Reform Act, which gave the vote to urban working-class men","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":101,"q":"What was the 'laissez-faire' attitude?","a":"The government's belief that it shouldn't interfere in people's daily lives or public health.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":102,"q":"What terrifying waterborne disease first struck Britain in 1831?","a":"Cholera.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":103,"q":"What scientific theory did doctors wrongly believe caused disease?","a":"Miasma Theory (bad smells).","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":104,"q":"How did Dr. John Snow prove cholera was waterborne?","a":"By mapping the deaths around the Broad Street water pump.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":105,"q":"Who published a damning report on sanitary conditions in 1842?","a":"Edwin Chadwick.","topic":"Why did it take the 'Great Stink' to finally clean up Britain's streets?"},{"id":106,"q":"What was Dr John Snow’s revolutionary hypothesis regarding how cholera was transmitted in 1849?","a":"It was a waterborne disease transmitted by swallowing invisible contaminated water or food","topic":"End of Unit Assessment: Cholera Investigation"},{"id":107,"q":"During the September 1854 cholera outbreak in Soho, what specific piece of evidence did John Snow create to prove his theory?","a":"A street map plotting each cholera death as a black bar outside houses near the Broad Street pump","topic":"End of Unit Assessment: Cholera Investigation"},{"id":108,"q":"What did John Snow convince the parish Board of Guardians to do on 8 September 1854 to halt the Soho epidemic?","a":"Remove the handle from the Broad Street water pump so residents could not drink the water","topic":"End of Unit Assessment: Cholera Investigation"},{"id":109,"q":"What was discovered when inspectors later excavated the Broad Street pump well?","a":"A cracked brick cesspool from house number 40 was leaking baby cholera waste directly into the well water","topic":"End of Unit Assessment: Cholera Investigation"},{"id":110,"q":"Why were workers at the nearby Broad Street brewery completely unaffected by the 1854 cholera epidemic?","a":"They were allowed free beer and had their own private deep well on site, so they never drank from the Broad Street pump","topic":"End of Unit Assessment: Cholera Investigation"},{"id":111,"q":"Why did the British medical establishment and General Board of Health initially reject John Snow’s discovery?","a":"Because powerful authorities like Edwin Chadwick and Florence Nightingale were deeply committed to Miasma Theory","topic":"End of Unit Assessment: Cholera Investigation"},{"id":112,"q":"What German bacteriologist finally isolated and proved the cholera bacterium (Vibrio cholerae) under a microscope in 1883?","a":"Robert Koch","topic":"End of Unit Assessment: Cholera Investigation"},{"id":113,"q":"How did John Snow use the Lambeth Water Company versus Southwark & Vauxhall Water Company data to prove his waterborne theory?","a":"He compared customers on the same streets: those drinking from Lambeth (intake moved upriver) had vastly lower deaths than those drinking Southwark sewage","topic":"End of Unit Assessment: Cholera Investigation"},{"id":114,"q":"Which historical period made the LEAST progress in public health engineering in Britain?","a":"The Early Middle Ages (500–1000 AD)","topic":"End of Unit Assessment: Cholera Investigation"},{"id":115,"q":"What was the primary obstacle preventing earlier public health reform throughout British history?","a":"Laissez-faire government attitudes, high costs for ratepayers, and stubborn adherence to Miasma Theory","topic":"End of Unit Assessment: Cholera Investigation"},{"id":116,"q":"Which of the following was a key feature of the compulsory Public Health Act of 1875?","a":"Every local council was legally required to appoint a Medical Officer of Health and a Sanitary Inspector","topic":"End of Unit Assessment: Cholera Investigation"},{"id":117,"q":"How did Roman public health differ fundamentally from Victorian public health?","a":"Romans focused on military fitness and civic bathing without knowing about bacteria; Victorians eventually developed scientific bacteriology and compulsory laws","topic":"End of Unit Assessment: Cholera Investigation"},{"id":118,"q":"What role did Edwin Chadwick play in the story of British public health?","a":"He demonstrated statistically that poor sanitation caused illness and poverty, campaigning for the 1848 Public Health Act","topic":"End of Unit Assessment: Cholera Investigation"},{"id":119,"q":"What was the significance of Joseph Bazalgette’s intercepting sewer system for the city of London?","a":"It eradicated waterborne cholera from London and created a clean urban drainage infrastructure that still operates today","topic":"End of Unit Assessment: Cholera Investigation"},{"id":120,"q":"Why did John Snow’s investigation become famous as a founding moment of modern medical science?","a":"It pioneered the field of epidemiology — using data collection, map analysis, and scientific deduction to track and control epidemics","topic":"End of Unit Assessment: Cholera Investigation"},{"id":121,"q":"Looking back across all six lessons, why was progress in British public health NOT a simple straight line of improvement?","a":"Because Roman sanitary engineering collapsed in the Middle Ages, urbanisation overwhelmed early modern towns, and scientific understanding was delayed by false theories like miasma","topic":"End of Unit Assessment: Cholera Investigation"},{"id":122,"q":"What Roman engineering structure carried fresh water across valleys into towns?","a":"An aqueduct, using the pull of gravity.","topic":"End of Unit Assessment: Cholera Investigation"},{"id":123,"q":"What was a medieval worker who cleared cesspits at night called?","a":"A gongfermer (or nightman).","topic":"End of Unit Assessment: Cholera Investigation"},{"id":124,"q":"What incorrect theory claimed that foul smells and poisonous air caused disease?","a":"The Miasma Theory.","topic":"End of Unit Assessment: Cholera Investigation"},{"id":125,"q":"In what year did Asiatic cholera first strike Britain?","a":"1831 (in Sunderland).","topic":"End of Unit Assessment: Cholera Investigation"},{"id":126,"q":"What 1858 environmental crisis forced Parliament to fund London’s new sewer system?","a":"The Great Stink of the River Thames.","topic":"End of Unit Assessment: Cholera Investigation"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

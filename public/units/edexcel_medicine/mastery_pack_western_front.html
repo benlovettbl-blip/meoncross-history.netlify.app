@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 150 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/edexcel_medicine/mastery_pack_western_front.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/edexcel_medicine/mastery_pack_western_front.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -2066,206 +2555,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>KT5.1: What was the historical and medical context of the Western Front?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">Surgeons moved from 'antiseptic' surgery (killing germs already in the wound) to 'aseptic' surgery (preventing germs from entering the operating theatre in the first place).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Surgeons moved from 'antiseptic' surgery (killing germs already in the wound) to 'aseptic' surgery (preventing germs from entering the operating theatre in the first place).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">The steam autoclave (invented in 1881) used to sterilise surgical instruments.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The steam autoclave (invented in 1881) used to sterilise surgical instruments.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">1895</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1895</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">The radiation doses were 1,500 times stronger than today, causing severe burns and hair loss.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The radiation doses were 1,500 times stronger than today, causing severe burns and hair loss.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">The glass tubes were incredibly fragile, the machines were too heavy to move easily, and taking a single image could take up to 90 minutes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The glass tubes were incredibly fragile, the machines were too heavy to move easily, and taking a single image could take up to 90 minutes.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">He discovered three blood groups (A, B, and O), meaning doctors could finally match donor and patient blood types to prevent fatal rejection.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He discovered three blood groups (A, B, and O), meaning doctors could finally match donor and patient blood types to prevent fatal rejection.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Blood coagulated (clotted) as soon as it left the body, meaning it could not be stored in a bank. Transfusions had to be done with the donor and patient connected directly by a tube.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Blood coagulated (clotted) as soon as it left the body, meaning it could not be stored in a bank. Transfusions had to be done with the donor and patient connected directly by a tube.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">The flat agricultural land had its drainage systems destroyed by constant artillery, turning the battlefield into a horrific, waterlogged, muddy swamp.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The flat agricultural land had its drainage systems destroyed by constant artillery, turning the battlefield into a horrific, waterlogged, muddy swamp.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">A piece of land that juts out into enemy territory, making it highly dangerous because it is vulnerable to attack from three sides.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A piece of land that juts out into enemy territory, making it highly dangerous because it is vulnerable to attack from three sides.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">The Battle of the Somme</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Battle of the Somme</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">An extensive underground hospital built into the chalk tunnel network underneath the city, sheltering the wounded from artillery fire.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An extensive underground hospital built into the chalk tunnel network underneath the city, sheltering the wounded from artillery fire.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">The first ever blood bank, using stored blood to treat soldiers suffering from severe shock.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The first ever blood bank, using stored blood to treat soldiers suffering from severe shock.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">The soldiers' wounds were already deeply infected with anaerobic bacteria from the heavily manured, muddy soil the moment they were injured in the trenches.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The soldiers' wounds were already deeply infected with anaerobic bacteria from the heavily manured, muddy soil the moment they were injured in the trenches.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">The deep mud, craters, and destroyed roads made motorized transport impossible near the front, forcing stretcher-bearers to manually carry the wounded for miles.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The deep mud, craters, and destroyed roads made motorized transport impossible near the front, forcing stretcher-bearers to manually carry the wounded for miles.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">They were completely unprepared for the unique environmental illnesses, the massive casualty numbers, and the horrific shrapnel wounds caused by high-explosive artillery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were completely unprepared for the unique environmental illnesses, the massive casualty numbers, and the horrific shrapnel wounds caused by high-explosive artillery.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">A static, defensive conflict where millions of men lived for months in unhygienic dugouts, exposed to weather, rats, and human waste while trying to wear down the enemy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A static, defensive conflict where millions of men lived for months in unhygienic dugouts, exposed to weather, rats, and human waste while trying to wear down the enemy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">The deep mud was so thick that wagons had to be pulled by six horses instead of two, and the severe shaking often worsened the patients' injuries.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The deep mud was so thick that wagons had to be pulled by six horses instead of two, and the severe shaking often worsened the patients' injuries.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">A complex network of zigzag dugouts consisting of a front line, support trench, reserve trench, and communication trenches linking them.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A complex network of zigzag dugouts consisting of a front line, support trench, reserve trench, and communication trenches linking them.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">1907</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1907</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">High-tech medicine (aseptic surgery, x-rays, blood typing) had emerged, but key limitations in mobility and blood storage meant it was not yet adapted for a muddy, static battlefield.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">High-tech medicine (aseptic surgery, x-rays, blood typing) had emerged, but key limitations in mobility and blood storage meant it was not yet adapted for a muddy, static battlefield.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">Smoking tobacco.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smoking tobacco.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">CT scans or Bronchoscopy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">CT scans or Bronchoscopy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Banning cigarette advertising, raising taxes, and packaging warning labels.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Banning cigarette advertising, raising taxes, and packaging warning labels.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">1914 to 1918.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1914 to 1918.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">A 400-mile line of trenches stretching through Belgium and France.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A 400-mile line of trenches stretching through Belgium and France.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">A chemical compound that targets and kills specific microbes without harming the rest of the body.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A chemical compound that targets and kills specific microbes without harming the rest of the body.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Smallpox.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smallpox.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">The National Health Service (NHS).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The National Health Service (NHS).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">Aneurin Bevan.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Aneurin Bevan.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">Chloroform.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chloroform.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">Standing for days in cold, waterlogged mud without changing socks.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Standing for days in cold, waterlogged mud without changing socks.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">The feet would swell, blister, turn gangrenous, and often require surgical amputation to save the soldier's life.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The feet would swell, blister, turn gangrenous, and often require surgical amputation to save the soldier's life.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">A flu-like illness characterized by severe joint pain, shivering, and high fevers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A flu-like illness characterized by severe joint pain, shivering, and high fevers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">The millions of body lice living in the seams of the soldiers' unwashed uniforms.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The millions of body lice living in the seams of the soldiers' unwashed uniforms.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">They set up massive delousing stations and bathhouses to disinfect clothing with hot steam.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They set up massive delousing stations and bathhouses to disinfect clothing with hot steam.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">A vulnerable 'bulge' in the Allied line surrounded by the enemy on three sides, allowing the Germans to fire down from higher ground.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A vulnerable 'bulge' in the Allied line surrounded by the enemy on three sides, allowing the Germans to fire down from higher ground.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">They held onto the salient to stop the Germans advancing to the sea, successfully retaining control of the vital English Channel ports.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They held onto the salient to stop the Germans advancing to the sea, successfully retaining control of the vital English Channel ports.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">Chlorine gas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chlorine gas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">Offensive mining to tunnel under and blow up the German positions from below.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Offensive mining to tunnel under and blow up the German positions from below.</div>
                 </div>
                 </div>
         </div>
@@ -2276,202 +2773,202 @@
                 <div class="answer-list"><h3>KT5.2: How did the trench environment create new medical challenges?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">To relieve extreme military pressure on the French army fighting at Verdun.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To relieve extreme military pressure on the French army fighting at Verdun.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">The British suffered nearly 60,000 casualties in a single day, completely overwhelming the medical services.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The British suffered nearly 60,000 casualties in a single day, completely overwhelming the medical services.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">They dug a 2.5-mile network of tunnels sheltering 25,000 troops, which included a fully functioning underground hospital.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They dug a 2.5-mile network of tunnels sheltering 25,000 troops, which included a fully functioning underground hospital.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">It was where troops would retreat to if the frontline came under heavy attack or was overrun.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was where troops would retreat to if the frontline came under heavy attack or was overrun.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">To prevent enemy fire or the blast wave from an exploding artillery shell from travelling straight down the line.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To prevent enemy fire or the blast wave from an exploding artillery shell from travelling straight down the line.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">It made it incredibly difficult and physically exhausting for stretcher-bearers to safely manoeuvre seriously wounded men around the tight corners while under fire.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It made it incredibly difficult and physically exhausting for stretcher-bearers to safely manoeuvre seriously wounded men around the tight corners while under fire.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">The heavy motor ambulances frequently got permanently stuck in the deep, waterlogged mud.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The heavy motor ambulances frequently got permanently stuck in the deep, waterlogged mud.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">The delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach a Casualty Clearing Station.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach a Casualty Clearing Station.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">A stomach infection causing severe diarrhea and dehydration, spread by drinking contaminated water from shell holes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A stomach infection causing severe diarrhea and dehydration, spread by drinking contaminated water from shell holes.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">That the relentless psychological trauma, noise, and sheer terror of the artillery war caused severe mental breakdowns, resulting in tiredness, nightmares, and uncontrollable shaking.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That the relentless psychological trauma, noise, and sheer terror of the artillery war caused severe mental breakdowns, resulting in tiredness, nightmares, and uncontrollable shaking.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">1914 to 1918.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1914 to 1918.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">A 400-mile line of trenches stretching through Belgium and France.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A 400-mile line of trenches stretching through Belgium and France.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">Ypres, Somme, Cambrai.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ypres, Somme, Cambrai.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">The dangerous, open ground between the Allied and German front-line trenches.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The dangerous, open ground between the Allied and German front-line trenches.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">A zig-zag pattern.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A zig-zag pattern.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">To keep soldiers' feet out of the mud and standing water at the bottom of the trench.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To keep soldiers' feet out of the mud and standing water at the bottom of the trench.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">John Snow.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">John Snow.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Chloroform.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chloroform.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">It contained the blast of any shell and prevented enemies from shooting straight down the trench.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It contained the blast of any shell and prevented enemies from shooting straight down the trench.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">Front-line, Support, and Communication trenches.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Front-line, Support, and Communication trenches.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT5.3: What new illnesses and wounds did soldiers face?</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">High-explosive artillery shells and shrapnel.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">High-explosive artillery shells and shrapnel.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">The jagged shrapnel tore through flesh, physically dragging pieces of muddy, bacteria-soaked uniform deep into the wound.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The jagged shrapnel tore through flesh, physically dragging pieces of muddy, bacteria-soaked uniform deep into the wound.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">It was agricultural farmland that had been heavily fertilized with animal manure, packing the soil with the anaerobic bacteria that caused tetanus and gas gangrene.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was agricultural farmland that had been heavily fertilized with animal manure, packing the soil with the anaerobic bacteria that caused tetanus and gas gangrene.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">It was a rapid infection that produced a foul-smelling gas inside dying muscle tissue, turning the flesh black and potentially killing a man within a single day.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was a rapid infection that produced a foul-smelling gas inside dying muscle tissue, turning the flesh black and potentially killing a man within a single day.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">Antiseptics only cleaned the surface of a wound; they could not reach the lethal bacteria that had been driven deep into the muscle by the force of an explosion.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Antiseptics only cleaned the surface of a wound; they could not reach the lethal bacteria that had been driven deep into the muscle by the force of an explosion.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">By administering routine anti-tetanus injections to wounded soldiers from late 1914 onwards.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By administering routine anti-tetanus injections to wounded soldiers from late 1914 onwards.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">Soldiers were fighting in trenches; their bodies were protected by earth, but their heads were exposed while wearing only soft cloth caps.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Soldiers were fighting in trenches; their bodies were protected by earth, but their heads were exposed while wearing only soft cloth caps.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">The steel Brodie helmet</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The steel Brodie helmet</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">Chlorine Gas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chlorine Gas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">It destroyed the respiratory system, causing victims to slowly suffocate as their lungs filled with fluid.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It destroyed the respiratory system, causing victims to slowly suffocate as their lungs filled with fluid.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">They urinated on cotton pads or handkerchiefs and pressed them to their faces to chemically neutralize the chlorine.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They urinated on cotton pads or handkerchiefs and pressed them to their faces to chemically neutralize the chlorine.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">Phosgene Gas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Phosgene Gas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">It was completely odourless and worked slowly, causing severe internal and external blisters that could burn skin straight through uniforms.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was completely odourless and worked slowly, causing severe internal and external blisters that could burn skin straight through uniforms.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">The rapid development and distribution of highly effective gas masks successfully protected the vast majority of troops.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The rapid development and distribution of highly effective gas masks successfully protected the vast majority of troops.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Trench Fever</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Trench Fever</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">A poorly understood psychological trauma (PTSD) caused by the constant bombardment of war, resulting in nightmares, loss of speech, and uncontrollable shaking.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A poorly understood psychological trauma (PTSD) caused by the constant bombardment of war, resulting in nightmares, loss of speech, and uncontrollable shaking.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Craiglockhart Hospital</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Craiglockhart Hospital</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">NYD.N (Not Yet Diagnosed, Nervous)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">NYD.N (Not Yet Diagnosed, Nervous)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">Because the harsh conditions caused so many massive casualties from illnesses (like trench foot and fever) that they had to actively prevent disease just to keep the army fit enough to fight.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because the harsh conditions caused so many massive casualties from illnesses (like trench foot and fever) that they had to actively prevent disease just to keep the army fit enough to fight.</div>
                 </div>
                 </div>
         </div>
@@ -2482,202 +2979,202 @@
                 <div class="answer-list"><h3>KT5.3: What new illnesses and wounds did soldiers face?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">The dangerous, open ground between the Allied and German front-line trenches.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The dangerous, open ground between the Allied and German front-line trenches.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">A zig-zag pattern.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A zig-zag pattern.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">To keep soldiers' feet out of the mud and standing water at the bottom of the trench.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To keep soldiers' feet out of the mud and standing water at the bottom of the trench.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">Artillery shells and shrapnel.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Artillery shells and shrapnel.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">Alexander Fleming.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Alexander Fleming.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">The double helix structure of DNA.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The double helix structure of DNA.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">A psychological condition caused by the trauma of constant shelling, now known as PTSD.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A psychological condition caused by the trauma of constant shelling, now known as PTSD.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">To provide a highly organised, multi-stage system of medical triage to rescue, transport, and treat massive numbers of casualties without overwhelming frontline units.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To provide a highly organised, multi-stage system of medical triage to rescue, transport, and treat massive numbers of casualties without overwhelming frontline units.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">Teams of four to six stretcher-bearers, who carried the casualties by hand through the mud.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Teams of four to six stretcher-bearers, who carried the casualties by hand through the mud.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">Within 200m of the frontline, often in a communication trench or dugout.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Within 200m of the frontline, often in a communication trench or dugout.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">They could only provide immediate first aid (like bandages and tourniquets) to get the walking wounded back to the fight or prepare serious cases for transport; they could not perform surgery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They could only provide immediate first aid (like bandages and tourniquets) to get the walking wounded back to the fight or prepare serious cases for transport; they could not perform surgery.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">Units of the Field Ambulance, consisting of medical officers, orderlies, and eventually nurses.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Units of the Field Ambulance, consisting of medical officers, orderlies, and eventually nurses.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">The Times newspaper launched a public appeal in 1914, raising money to purchase 512 new motor ambulances.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Times newspaper launched a public appeal in 1914, raising money to purchase 512 new motor ambulances.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">Because heavy motor vehicles frequently got bogged down and entirely stuck in the deep, waterlogged mud of the battlefield.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because heavy motor vehicles frequently got bogged down and entirely stuck in the deep, waterlogged mud of the battlefield.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">On specially designed ambulance trains and canal barges.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">On specially designed ambulance trains and canal barges.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">7 to 12 miles back from the frontline, safely out of artillery range but positioned near railway lines for rapid transport.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">7 to 12 miles back from the frontline, safely out of artillery range but positioned near railway lines for rapid transport.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">Triage, where patients were sorted into three groups: the walking wounded, those needing hospital treatment, and those with no chance of recovery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Triage, where patients were sorted into three groups: the walking wounded, those needing hospital treatment, and those with no chance of recovery.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT5.4: How did the RAMC and FANY operate the chain of evacuation?</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">It took over the role of performing critical, life-saving surgery (like amputations) from the Base Hospitals to stop the infection before transport.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It took over the role of performing critical, life-saving surgery (like amputations) from the Base Hospitals to stop the infection before transport.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">Near the French and Belgian coastal ports, ready to ship patients back to 'Blighty' (Britain).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Near the French and Belgian coastal ports, ready to ship patients back to 'Blighty' (Britain).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">The longer-term recovery of patients and the development of specialist wards for complex issues like head wounds or gas poisoning.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The longer-term recovery of patients and the development of specialist wards for complex issues like head wounds or gas poisoning.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">From 9,000 men to 113,000 men.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">From 9,000 men to 113,000 men.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">Queen Alexandra's Imperial Military Nursing Service, a corps of highly trained professional military nurses.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Queen Alexandra's Imperial Military Nursing Service, a corps of highly trained professional military nurses.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">First Aid Nursing Yeomanry.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">First Aid Nursing Yeomanry.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">They drove the motor ambulances, navigating terrible roads and deep mud under active shellfire to transport the wounded.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They drove the motor ambulances, navigating terrible roads and deep mud under active shellfire to transport the wounded.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">They transported supplies, set up cinemas, and operated mobile bath units that could bathe up to 40 men an hour.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They transported supplies, set up cinemas, and operated mobile bath units that could bathe up to 40 men an hour.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">It was a massive, fully functioning underground hospital built into existing chalk tunnels beneath the town of Arras.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was a massive, fully functioning underground hospital built into existing chalk tunnels beneath the town of Arras.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">Because it functioned as a fully equipped facility incredibly close to the frontline (with 700 stretcher beds, electricity, and water), while remaining completely safe from enemy artillery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because it functioned as a fully equipped facility incredibly close to the frontline (with 700 stretcher beds, electricity, and water), while remaining completely safe from enemy artillery.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">Artillery shells and shrapnel.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Artillery shells and shrapnel.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">Royal Army Medical Corps.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Royal Army Medical Corps.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">Driving ambulances, moving supplies, and running soup kitchens.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Driving ambulances, moving supplies, and running soup kitchens.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">A series of medical posts starting at the front line and ending at base hospitals.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A series of medical posts starting at the front line and ending at base hospitals.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">Smoking tobacco.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smoking tobacco.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">The National Health Service (NHS).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The National Health Service (NHS).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">To perform urgent surgery to save life or limbs close to the front line.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To perform urgent surgery to save life or limbs close to the front line.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">On the French coast, treating long-term casualties or sending them to Britain.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">On the French coast, treating long-term casualties or sending them to Britain.</div>
                 </div>
                 </div>
         </div>
@@ -2688,152 +3185,152 @@
                 <div class="answer-list"><h3>KT5.5: What incredible medical advances were forged on the Western Front?</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
-                    <div class="answer-text">Because the chaotic, muddy casualty stations were impossible to keep perfectly sterile, and traditional carbolic acid did not kill gas gangrene bacteria effectively.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because the chaotic, muddy casualty stations were impossible to keep perfectly sterile, and traditional carbolic acid did not kill gas gangrene bacteria effectively.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">122.</div>
-                    <div class="answer-text">Aggressively and rapidly cutting away all dead, damaged, and infected tissue from around a wound to physically remove the gangrene before stitching it up.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Aggressively and rapidly cutting away all dead, damaged, and infected tissue from around a wound to physically remove the gangrene before stitching it up.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">123.</div>
-                    <div class="answer-text">A system where tubes pumped a chemical sterilized salt solution directly into deep wounds to continually wash out and kill the infection-causing bacteria.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A system where tubes pumped a chemical sterilized salt solution directly into deep wounds to continually wash out and kill the infection-causing bacteria.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">124.</div>
-                    <div class="answer-text">The solution only stayed fresh for six hours and had to be constantly made as it was needed.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The solution only stayed fresh for six hours and had to be constantly made as it was needed.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">125.</div>
-                    <div class="answer-text">Immediate amputation of the infected limb (resulting in over 240,000 lost limbs by 1918).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Immediate amputation of the infected limb (resulting in over 240,000 lost limbs by 1918).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">126.</div>
-                    <div class="answer-text">80%</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">80%</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">127.</div>
-                    <div class="answer-text">Because traditional splints did not keep the leg straight, meaning the jagged broken bones ground together, severing major arteries and causing fatal internal bleeding and shock.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because traditional splints did not keep the leg straight, meaning the jagged broken bones ground together, severing major arteries and causing fatal internal bleeding and shock.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">128.</div>
-                    <div class="answer-text">Hugh Owen Thomas</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hugh Owen Thomas</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">129.</div>
-                    <div class="answer-text">It rigidly pulled the leg lengthways (traction), completely stopping the broken bones from grinding on each other and preventing fatal blood loss and shock during transport.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It rigidly pulled the leg lengthways (traction), completely stopping the broken bones from grinding on each other and preventing fatal blood loss and shock during transport.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">130.</div>
-                    <div class="answer-text">X-Rays</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">X-Rays</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">131.</div>
-                    <div class="answer-text">Six mobile X-ray units (vans) were developed to operate in the British sector, allowing them to be driven directly to Casualty Clearing Stations.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Six mobile X-ray units (vans) were developed to operate in the British sector, allowing them to be driven directly to Casualty Clearing Stations.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">132.</div>
-                    <div class="answer-text">The delicate glass tubes overheated very quickly, meaning the machines could only be used for an hour before needing to cool down.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The delicate glass tubes overheated very quickly, meaning the machines could only be used for an hour before needing to cool down.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">133.</div>
-                    <div class="answer-text">Transfusions had to be done 'arm-to-arm', directly transferring blood from a live donor to the patient before it clotted.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Transfusions had to be done 'arm-to-arm', directly transferring blood from a live donor to the patient before it clotted.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">134.</div>
-                    <div class="answer-text">Sodium Citrate</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sodium Citrate</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">135.</div>
-                    <div class="answer-text">They added citrate glucose to the blood, which allowed it to be safely stored for up to four weeks.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They added citrate glucose to the blood, which allowed it to be safely stored for up to four weeks.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">136.</div>
-                    <div class="answer-text">Oswald Hope Robertson</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Oswald Hope Robertson</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">137.</div>
-                    <div class="answer-text">He stored the blood in glass bottles packed with ice and sawdust.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He stored the blood in glass bottles packed with ice and sawdust.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">138.</div>
-                    <div class="answer-text">Harold Gillies</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Harold Gillies</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">139.</div>
-                    <div class="answer-text">Because traditional peacetime surgical methods completely failed to treat the complex, infected shrapnel wounds, forcing doctors to innovate radical new techniques out of sheer desperation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because traditional peacetime surgical methods completely failed to treat the complex, infected shrapnel wounds, forcing doctors to innovate radical new techniques out of sheer desperation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">140.</div>
-                    <div class="answer-text">They could not detect pieces of dirty clothing that had been driven into wounds by shrapnel, which often caused lethal infections.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They could not detect pieces of dirty clothing that had been driven into wounds by shrapnel, which often caused lethal infections.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">141.</div>
-                    <div class="answer-text">Royal Army Medical Corps.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Royal Army Medical Corps.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">142.</div>
-                    <div class="answer-text">Driving ambulances, moving supplies, and running soup kitchens.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Driving ambulances, moving supplies, and running soup kitchens.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">143.</div>
-                    <div class="answer-text">A series of medical posts starting at the front line and ending at base hospitals.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A series of medical posts starting at the front line and ending at base hospitals.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">144.</div>
-                    <div class="answer-text">A leg splint that kept the broken femur rigid, reducing blood loss and saving lives.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A leg splint that kept the broken femur rigid, reducing blood loss and saving lives.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">145.</div>
-                    <div class="answer-text">Sodium citrate.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sodium citrate.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">146.</div>
-                    <div class="answer-text">Perform blood transfusions at Casualty Clearing Stations (CCS) using blood banks.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Perform blood transfusions at Casualty Clearing Stations (CCS) using blood banks.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">147.</div>
-                    <div class="answer-text">James Watson and Francis Crick.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">James Watson and Francis Crick.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">148.</div>
-                    <div class="answer-text">Joseph Lister.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joseph Lister.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">149.</div>
-                    <div class="answer-text">Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">150.</div>
-                    <div class="answer-text">Sterilizing deep wounds by constantly flushing them with an antiseptic solution.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sterilizing deep wounds by constantly flushing them with an antiseptic solution.</div>
                 </div>
                 </div>
         </div>
@@ -2895,45 +3392,311 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 1: Medicine Through Time with the Western Front · Western Front</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (150 Questions)</option>
+                    <option value="0">Part 1: KT5.1: What was the historical and medical context of the Western Front?</option>
+<option value="1">Part 2: KT5.1: What was the historical and medical context of the Western Front?</option>
+<option value="2">Part 3: KT5.2: How did the trench environment create new medical challenges?</option>
+<option value="3">Part 4: KT5.3: What new illnesses and wounds did soldiers face?</option>
+<option value="4">Part 5: KT5.3: What new illnesses and wounds did soldiers face?</option>
+<option value="5">Part 6: KT5.4: How did the RAMC and FANY operate the chain of evacuation?</option>
+<option value="6">Part 7: KT5.5: What incredible medical advances were forged on the Western Front?</option>
+<option value="7">Part 8: KT5.5: What incredible medical advances were forged on the Western Front?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_western_front';
+    const ALL_DECK = [{"id":1,"q":"By 1900, how had surgical practice in civilian hospitals evolved from Joseph Lister's earlier methods?","a":"Surgeons moved from 'antiseptic' surgery (killing germs already in the wound) to 'aseptic' surgery (preventing germs from entering the operating theatre in the first place).","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":2,"q":"Which of the following was a key piece of technology used in aseptic surgery by the outbreak of the First World War?","a":"The steam autoclave (invented in 1881) used to sterilise surgical instruments.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":3,"q":"In what year did the German physicist Wilhelm Roentgen accidentally discover X-rays?","a":"1895","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":4,"q":"Which of the following was a major limitation of using early X-ray machines in 1914?","a":"The radiation doses were 1,500 times stronger than today, causing severe burns and hair loss.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":5,"q":"Why were early X-ray machines highly unsuitable for the fast-paced, mobile environment of a battlefield in 1914?","a":"The glass tubes were incredibly fragile, the machines were too heavy to move easily, and taking a single image could take up to 90 minutes.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":6,"q":"In 1901, the Austrian doctor Karl Landsteiner made a breakthrough that revolutionized blood transfusions. What did he discover?","a":"He discovered three blood groups (A, B, and O), meaning doctors could finally match donor and patient blood types to prevent fatal rejection.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":7,"q":"Before the discovery of sodium citrate in 1915, what was the massive problem with performing blood transfusions on the battlefield?","a":"Blood coagulated (clotted) as soon as it left the body, meaning it could not be stored in a bank. Transfusions had to be done with the donor and patient connected directly by a tube.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":8,"q":"When the British Expeditionary Force (BEF) arrived on the Western Front in 1914, what geographical feature made the medical situation catastrophic?","a":"The flat agricultural land had its drainage systems destroyed by constant artillery, turning the battlefield into a horrific, waterlogged, muddy swamp.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":9,"q":"What is the military definition of a 'salient', such as the famous one at Ypres?","a":"A piece of land that juts out into enemy territory, making it highly dangerous because it is vulnerable to attack from three sides.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":10,"q":"Which major British offensive, launched in 1916, became a medical disaster with over 57,000 casualties on the very first day?","a":"The Battle of the Somme","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":11,"q":"What unique medical facility was established during the Battle of Arras in 1917?","a":"An extensive underground hospital built into the chalk tunnel network underneath the city, sheltering the wounded from artillery fire.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":12,"q":"During the Battle of Cambrai in 1917, what groundbreaking medical logistical system was used for the first time by Oswald Robertson?","a":"The first ever blood bank, using stored blood to treat soldiers suffering from severe shock.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":13,"q":"Why did aseptic surgery (sterile operating theatres) prove to be nearly useless in frontline dressing stations in 1914?","a":"The soldiers' wounds were already deeply infected with anaerobic bacteria from the heavily manured, muddy soil the moment they were injured in the trenches.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":14,"q":"What made transporting wounded soldiers away from the frontline so incredibly difficult?","a":"The deep mud, craters, and destroyed roads made motorized transport impossible near the front, forcing stretcher-bearers to manually carry the wounded for miles.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":15,"q":"To what extent was the Royal Army Medical Corps (RAMC) prepared for the medical challenges of the Western Front in 1914?","a":"They were completely unprepared for the unique environmental illnesses, the massive casualty numbers, and the horrific shrapnel wounds caused by high-explosive artillery.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":16,"q":"What did the term 'war of attrition' mean for the soldiers living in the trench system?","a":"A static, defensive conflict where millions of men lived for months in unhygienic dugouts, exposed to weather, rats, and human waste while trying to wear down the enemy.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":17,"q":"Why were horse-drawn ambulances often ineffective in the worst conditions of the Western Front?","a":"The deep mud was so thick that wagons had to be pulled by six horses instead of two, and the severe shaking often worsened the patients' injuries.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":18,"q":"Which of the following best describes the layout of the trench system on the Western Front?","a":"A complex network of zigzag dugouts consisting of a front line, support trench, reserve trench, and communication trenches linking them.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":19,"q":"In what year did Karl Landsteiner discover that blood group O was the universal donor group?","a":"1907","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":20,"q":"Which statement accurately summarises the 'historical context' of medicine at the outbreak of war in 1914?","a":"High-tech medicine (aseptic surgery, x-rays, blood typing) had emerged, but key limitations in mobility and blood storage meant it was not yet adapted for a muddy, static battlefield.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":21,"q":"What lifestyle choice was definitively linked to lung cancer in the 1950s?","a":"Smoking tobacco.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":22,"q":"Name one modern technology used to diagnose lung cancer.","a":"CT scans or Bronchoscopy.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":23,"q":"State one way the modern government tries to prevent people from smoking.","a":"Banning cigarette advertising, raising taxes, and packaging warning labels.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":24,"q":"When did the First World War begin and end?","a":"1914 to 1918.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":25,"q":"What was the 'Western Front'?","a":"A 400-mile line of trenches stretching through Belgium and France.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":26,"q":"What is a 'magic bullet'?","a":"A chemical compound that targets and kills specific microbes without harming the rest of the body.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":27,"q":"What disease did Edward Jenner vaccinate against in 1796?","a":"Smallpox.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":28,"q":"What was established in Britain in 1948 to provide free medical care?","a":"The National Health Service (NHS).","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":29,"q":"Who was the Minister of Health responsible for establishing the NHS in 1948?","a":"Aneurin Bevan.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":30,"q":"Which anesthetic was discovered by James Simpson in 1847?","a":"Chloroform.","topic":"KT5.1: What was the historical and medical context of the Western Front?"},{"id":31,"q":"What was the direct environmental cause of 'Trench Foot' on the Western Front?","a":"Standing for days in cold, waterlogged mud without changing socks.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":32,"q":"What were the symptoms of severe, untreated Trench Foot?","a":"The feet would swell, blister, turn gangrenous, and often require surgical amputation to save the soldier's life.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":33,"q":"How did the British Army attempt to clinically prevent the spread of Trench Foot in permanently flooded trenches?","a":"By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":34,"q":"What was 'Trench Fever', and what were its primary symptoms?","a":"A flu-like illness characterized by severe joint pain, shivering, and high fevers.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":35,"q":"It took years for medical officers to discover the cause of Trench Fever. What was eventually found to be the transmitter?","a":"The millions of body lice living in the seams of the soldiers' unwashed uniforms.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":36,"q":"How did the British Army strategically adapt to combat the epidemic of Trench Fever once its cause was discovered?","a":"They set up massive delousing stations and bathhouses to disinfect clothing with hot steam.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":37,"q":"What was the 'Ypres Salient'?","a":"A vulnerable 'bulge' in the Allied line surrounded by the enemy on three sides, allowing the Germans to fire down from higher ground.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":38,"q":"Why was the First Battle of Ypres (Autumn 1914) strategically critical for the British?","a":"They held onto the salient to stop the Germans advancing to the sea, successfully retaining control of the vital English Channel ports.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":39,"q":"What terrifying new weapon was first used by the German Army at the Second Battle of Ypres in 1915?","a":"Chlorine gas","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":40,"q":"During the fight for Hill 60 in April 1915, what tactic did the British successfully use to defeat the German positions?","a":"Offensive mining to tunnel under and blow up the German positions from below.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":41,"q":"Why did the British launch the massive Battle of the Somme in 1916?","a":"To relieve extreme military pressure on the French army fighting at Verdun.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":42,"q":"What made the Battle of the Somme a 'medical nightmare' on its very first day?","a":"The British suffered nearly 60,000 casualties in a single day, completely overwhelming the medical services.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":43,"q":"Because the ground at Arras was chalky and easy to tunnel through, what incredible feat did British and New Zealand miners achieve in 1917?","a":"They dug a 2.5-mile network of tunnels sheltering 25,000 troops, which included a fully functioning underground hospital.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":44,"q":"In the organisation of the trench system, what was the primary purpose of the 'support trench', located roughly 80 metres behind the frontline?","a":"It was where troops would retreat to if the frontline came under heavy attack or was overrun.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":45,"q":"Why were trenches deliberately dug in a zig-zag pattern instead of a straight line?","a":"To prevent enemy fire or the blast wave from an exploding artillery shell from travelling straight down the line.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":46,"q":"How did the complex, zig-zag design of the trenches unintentionally create severe problems for the medical services?","a":"It made it incredibly difficult and physically exhausting for stretcher-bearers to safely manoeuvre seriously wounded men around the tight corners while under fire.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":47,"q":"Why did the army have to rely heavily on horse-drawn ambulance wagons instead of modern motor ambulances near the frontline?","a":"The heavy motor ambulances frequently got permanently stuck in the deep, waterlogged mud.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":48,"q":"What was the main medical danger caused by delays in evacuating wounded soldiers across the devastated, muddy terrain?","a":"The delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach a Casualty Clearing Station.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":49,"q":"What was 'Dysentery' and how was it spread on the Western Front?","a":"A stomach infection causing severe diarrhea and dehydration, spread by drinking contaminated water from shell holes.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":50,"q":"What does the medical condition 'Shell Shock' (now understood as PTSD) reveal about the environment of the Western Front?","a":"That the relentless psychological trauma, noise, and sheer terror of the artillery war caused severe mental breakdowns, resulting in tiredness, nightmares, and uncontrollable shaking.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":51,"q":"When did the First World War begin and end?","a":"1914 to 1918.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":52,"q":"What was the 'Western Front'?","a":"A 400-mile line of trenches stretching through Belgium and France.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":53,"q":"Name the three major battles fought by the British on the Western Front.","a":"Ypres, Somme, Cambrai.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":54,"q":"What was 'No Man's Land'?","a":"The dangerous, open ground between the Allied and German front-line trenches.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":55,"q":"Name the pattern in which trenches were dug.","a":"A zig-zag pattern.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":56,"q":"What was the purpose of the 'duckboards' in the trenches?","a":"To keep soldiers' feet out of the mud and standing water at the bottom of the trench.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":57,"q":"Who discovered the cause of cholera in 1854?","a":"John Snow.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":58,"q":"Which anesthetic was discovered by James Simpson in 1847?","a":"Chloroform.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":59,"q":"Explain why the zig-zag pattern of trenches was crucial for survival.","a":"It contained the blast of any shell and prevented enemies from shooting straight down the trench.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":60,"q":"What were the three main parallel lines of trenches?","a":"Front-line, Support, and Communication trenches.","topic":"KT5.2: How did the trench environment create new medical challenges?"},{"id":61,"q":"Which type of weapon was responsible for the highest percentage of wounds (roughly 58%) on the Western Front?","a":"High-explosive artillery shells and shrapnel.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":62,"q":"Why were deep shrapnel wounds almost guaranteed to become severely infected within hours?","a":"The jagged shrapnel tore through flesh, physically dragging pieces of muddy, bacteria-soaked uniform deep into the wound.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":63,"q":"What was biologically unique about the mud in Flanders and France that made it so deadly when dragged into a wound?","a":"It was agricultural farmland that had been heavily fertilized with animal manure, packing the soil with the anaerobic bacteria that caused tetanus and gas gangrene.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":64,"q":"What is the defining, fatal characteristic of the 'Gas Gangrene' infection?","a":"It was a rapid infection that produced a foul-smelling gas inside dying muscle tissue, turning the flesh black and potentially killing a man within a single day.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":65,"q":"Why did traditional 19th-century surgical antiseptics (like carbolic acid spray) fail to cure Gas Gangrene on the Western Front?","a":"Antiseptics only cleaned the surface of a wound; they could not reach the lethal bacteria that had been driven deep into the muscle by the force of an explosion.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":66,"q":"How did the British Army successfully reduce the threat of Tetanus infections on the Western Front?","a":"By administering routine anti-tetanus injections to wounded soldiers from late 1914 onwards.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":67,"q":"At the start of the war in 1914, why were head injuries disproportionately high (accounting for roughly 20% of wounds)?","a":"Soldiers were fighting in trenches; their bodies were protected by earth, but their heads were exposed while wearing only soft cloth caps.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":68,"q":"What crucial piece of protective equipment was introduced in 1915, drastically reducing fatal head injuries by 80%?","a":"The steel Brodie helmet","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":69,"q":"What terrifying new weapon did the German army introduce at the Second Battle of Ypres in April 1915?","a":"Chlorine Gas","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":70,"q":"What was the physical effect of a Chlorine Gas attack on a soldier?","a":"It destroyed the respiratory system, causing victims to slowly suffocate as their lungs filled with fluid.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":71,"q":"Before official gas masks were widely issued in July 1915, how did soldiers desperately attempt to survive gas attacks?","a":"They urinated on cotton pads or handkerchiefs and pressed them to their faces to chemically neutralize the chlorine.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":72,"q":"Which poisonous gas, introduced later in 1915, was significantly faster-acting than chlorine and capable of killing an exposed person within two days?","a":"Phosgene Gas","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":73,"q":"What made Mustard Gas (introduced in 1917) such a horrific and distinct weapon?","a":"It was completely odourless and worked slowly, causing severe internal and external blisters that could burn skin straight through uniforms.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":74,"q":"Despite the immense psychological terror it caused, why did poison gas actually account for under 5% of all British deaths (around 6,000 soldiers)?","a":"The rapid development and distribution of highly effective gas masks successfully protected the vast majority of troops.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":75,"q":"Which debilitating environmental illness was spread by the millions of body lice living in the seams of the soldiers' unwashed uniforms?","a":"Trench Fever","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":76,"q":"How did the British Army attempt to medically prevent the spread of Trench Foot in the flooded trenches?","a":"By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":77,"q":"What was 'Shellshock'?","a":"A poorly understood psychological trauma (PTSD) caused by the constant bombardment of war, resulting in nightmares, loss of speech, and uncontrollable shaking.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":78,"q":"Which specialist medical facility in Edinburgh was set up specifically to treat British officers suffering from severe Shellshock?","a":"Craiglockhart Hospital","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":79,"q":"What exact acronym did the British Army officially use in medical records to categorise cases of Shellshock?","a":"NYD.N (Not Yet Diagnosed, Nervous)","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":80,"q":"Why did the brutal environment of the trenches force the Royal Army Medical Corps (RAMC) to dedicate huge resources to 'preventative measures'?","a":"Because the harsh conditions caused so many massive casualties from illnesses (like trench foot and fever) that they had to actively prevent disease just to keep the army fit enough to fight.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":81,"q":"What was 'No Man's Land'?","a":"The dangerous, open ground between the Allied and German front-line trenches.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":82,"q":"Name the pattern in which trenches were dug.","a":"A zig-zag pattern.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":83,"q":"What was the purpose of the 'duckboards' in the trenches?","a":"To keep soldiers' feet out of the mud and standing water at the bottom of the trench.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":84,"q":"What is 'Trench Foot'?","a":"A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":85,"q":"Which weapon caused the most casualties on the Western Front?","a":"Artillery shells and shrapnel.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":86,"q":"Why were wounds on the Western Front highly prone to severe infection?","a":"The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":87,"q":"Who discovered Penicillin by accident in 1928?","a":"Alexander Fleming.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":88,"q":"What structure did Watson and Crick discover in 1953?","a":"The double helix structure of DNA.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":89,"q":"What preventative measure was introduced to stop Trench Foot?","a":"Soldiers rubbed whale oil on their feet and changed into dry socks twice a day.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":90,"q":"What was 'Shell Shock'?","a":"A psychological condition caused by the trauma of constant shelling, now known as PTSD.","topic":"KT5.3: What new illnesses and wounds did soldiers face?"},{"id":91,"q":"What was the fundamental purpose of the 'Chain of Evacuation' on the Western Front?","a":"To provide a highly organised, multi-stage system of medical triage to rescue, transport, and treat massive numbers of casualties without overwhelming frontline units.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":92,"q":"Who had the dangerous task of initially rescuing wounded men directly from No Man's Land under enemy fire?","a":"Teams of four to six stretcher-bearers, who carried the casualties by hand through the mud.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":93,"q":"Where was the Regimental Aid Post (RAP) physically located?","a":"Within 200m of the frontline, often in a communication trench or dugout.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":94,"q":"What was the medical capability of the Regimental Medical Officer stationed at the RAP?","a":"They could only provide immediate first aid (like bandages and tourniquets) to get the walking wounded back to the fight or prepare serious cases for transport; they could not perform surgery.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":95,"q":"Who staffed the Advanced Dressing Stations (ADS) and Main Dressing Stations (MDS)?","a":"Units of the Field Ambulance, consisting of medical officers, orderlies, and eventually nurses.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":96,"q":"How did the British military respond to the violent, injury-worsening journeys caused by horse-drawn ambulance wagons?","a":"The Times newspaper launched a public appeal in 1914, raising money to purchase 512 new motor ambulances.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":97,"q":"Why did the RAMC still have to rely heavily on horse-drawn wagons (sometimes needing six horses) even after acquiring motor ambulances?","a":"Because heavy motor vehicles frequently got bogged down and entirely stuck in the deep, waterlogged mud of the battlefield.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":98,"q":"How were massive numbers of stabilized casualties (up to 800 at a time) transported from the CCS to the Base Hospitals?","a":"On specially designed ambulance trains and canal barges.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":99,"q":"Where were the Casualty Clearing Stations (CCS) strategically located?","a":"7 to 12 miles back from the frontline, safely out of artillery range but positioned near railway lines for rapid transport.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":100,"q":"What vital medical sorting process took place at the Casualty Clearing Station (CCS)?","a":"Triage, where patients were sorted into three groups: the walking wounded, those needing hospital treatment, and those with no chance of recovery.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":101,"q":"Because deadly gas gangrene developed so rapidly, how did the role of the Casualty Clearing Station (CCS) critically change during the war?","a":"It took over the role of performing critical, life-saving surgery (like amputations) from the Base Hospitals to stop the infection before transport.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":102,"q":"Where were Base Hospitals located on the Western Front?","a":"Near the French and Belgian coastal ports, ready to ship patients back to 'Blighty' (Britain).","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":103,"q":"As the war progressed and the CCS took over emergency amputations, what did Base Hospitals begin to specialize in?","a":"The longer-term recovery of patients and the development of specialist wards for complex issues like head wounds or gas poisoning.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":104,"q":"To cope with the unprecedented scale of casualties, how drastically did the RAMC (Royal Army Medical Corps) expand between 1914 and 1918?","a":"From 9,000 men to 113,000 men.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":105,"q":"Who were the QAIMNS, whose numbers grew from 300 to 10,000 during the war?","a":"Queen Alexandra's Imperial Military Nursing Service, a corps of highly trained professional military nurses.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":106,"q":"What does the acronym FANY stand for?","a":"First Aid Nursing Yeomanry.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":107,"q":"What was the most famous and physically demanding frontline role undertaken by the female volunteers of the FANY?","a":"They drove the motor ambulances, navigating terrible roads and deep mud under active shellfire to transport the wounded.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":108,"q":"Aside from driving ambulances, what other vital morale and hygiene services did the FANY provide?","a":"They transported supplies, set up cinemas, and operated mobile bath units that could bathe up to 40 men an hour.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":109,"q":"What was incredibly unique about 'Thompson's Cave', built by British and Commonwealth troops in 1916?","a":"It was a massive, fully functioning underground hospital built into existing chalk tunnels beneath the town of Arras.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":110,"q":"Why was the underground hospital at Arras highly significant for treating casualties?","a":"Because it functioned as a fully equipped facility incredibly close to the frontline (with 700 stretcher beds, electricity, and water), while remaining completely safe from enemy artillery.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":111,"q":"What is 'Trench Foot'?","a":"A painful condition caused by prolonged exposure to cold, wet, and muddy conditions, leading to gangrene.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":112,"q":"Which weapon caused the most casualties on the Western Front?","a":"Artillery shells and shrapnel.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":113,"q":"Why were wounds on the Western Front highly prone to severe infection?","a":"The battlefield soil was heavily fertilized with manure, containing gas gangrene spores.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":114,"q":"What does RAMC stand for?","a":"Royal Army Medical Corps.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":115,"q":"What was the role of the FANY?","a":"Driving ambulances, moving supplies, and running soup kitchens.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":116,"q":"Describe the 'Chain of Evacuation' on the Western Front.","a":"A series of medical posts starting at the front line and ending at base hospitals.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":117,"q":"What lifestyle choice was definitively linked to lung cancer in the 1950s?","a":"Smoking tobacco.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":118,"q":"What was established in Britain in 1948 to provide free medical care?","a":"The National Health Service (NHS).","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":119,"q":"What was the primary role of the Casualty Clearing Station (CCS)?","a":"To perform urgent surgery to save life or limbs close to the front line.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":120,"q":"Where were the Base Hospitals located and what did they do?","a":"On the French coast, treating long-term casualties or sending them to Britain.","topic":"KT5.4: How did the RAMC and FANY operate the chain of evacuation?"},{"id":121,"q":"Why was traditional 19th-century aseptic surgery effectively impossible to maintain on the Western Front?","a":"Because the chaotic, muddy casualty stations were impossible to keep perfectly sterile, and traditional carbolic acid did not kill gas gangrene bacteria effectively.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":122,"q":"Faced with rampant gas gangrene, surgeons began using a technique called 'Debridement' (Wound Excision). What did this involve?","a":"Aggressively and rapidly cutting away all dead, damaged, and infected tissue from around a wound to physically remove the gangrene before stitching it up.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":123,"q":"What was the 'Carrel-Dakin method' used to treat deep infections?","a":"A system where tubes pumped a chemical sterilized salt solution directly into deep wounds to continually wash out and kill the infection-causing bacteria.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":124,"q":"What was the main logistical difficulty with the highly effective Carrel-Dakin solution?","a":"The solution only stayed fresh for six hours and had to be constantly made as it was needed.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":125,"q":"If antiseptics, debridement, and the Carrel-Dakin method all failed to stop the rapid spread of gas gangrene, what was a surgeon's only remaining option to save the patient's life?","a":"Immediate amputation of the infected limb (resulting in over 240,000 lost limbs by 1918).","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":126,"q":"Before 1915, what was the estimated mortality (death) rate for a soldier who suffered a fractured femur (thigh bone) from a gunshot or shrapnel wound?","a":"80%","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":127,"q":"Why did a fractured femur cause such a high death rate during early transport?","a":"Because traditional splints did not keep the leg straight, meaning the jagged broken bones ground together, severing major arteries and causing fatal internal bleeding and shock.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":128,"q":"Who originally designed the Thomas Splint before the outbreak of the First World War?","a":"Hugh Owen Thomas","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":129,"q":"How did the Thomas Splint (introduced to the Western Front by Robert Jones in December 1915) miraculously increase the survival rate for thigh fractures from 20% to 82%?","a":"It rigidly pulled the leg lengthways (traction), completely stopping the broken bones from grinding on each other and preventing fatal blood loss and shock during transport.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":130,"q":"What diagnostic technology was absolutely essential for accurately locating deeply embedded shrapnel so surgeons could remove it before infection set in?","a":"X-Rays","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":131,"q":"How was X-Ray technology adapted to deal with the vast number of casualties closer to the frontline?","a":"Six mobile X-ray units (vans) were developed to operate in the British sector, allowing them to be driven directly to Casualty Clearing Stations.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":132,"q":"What was a major technical limitation of the early mobile X-ray units used on the Western Front?","a":"The delicate glass tubes overheated very quickly, meaning the machines could only be used for an hour before needing to cool down.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":133,"q":"Early blood transfusions (such as those pioneered by Dr Lawrence Bruce Robertson) were heavily limited because blood could not be stored. How did this force doctors to perform transfusions?","a":"Transfusions had to be done 'arm-to-arm', directly transferring blood from a live donor to the patient before it clotted.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":134,"q":"In 1915, what chemical did Richard Lewisohn discover could be added to blood to successfully stop it from clotting?","a":"Sodium Citrate","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":135,"q":"Following Lewisohn's discovery, Richard Weil discovered that blood mixed with sodium citrate could be refrigerated for up to two days. What monumentally significant breakthrough did Francis Rous and James Turner make in 1916?","a":"They added citrate glucose to the blood, which allowed it to be safely stored for up to four weeks.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":136,"q":"Which American doctor utilized these chemical discoveries to establish the world's first 'blood depot' (blood bank) before the Battle of Cambrai in 1917?","a":"Oswald Hope Robertson","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":137,"q":"How did Oswald Hope Robertson successfully store the 22 units of pre-donated universal Type O blood for his pioneering blood bank at Cambrai?","a":"He stored the blood in glass bottles packed with ice and sawdust.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":138,"q":"Which pioneering surgeon developed early plastic surgery techniques to rebuild the severe, disfiguring facial injuries caused by shrapnel?","a":"Harold Gillies","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":139,"q":"Why did the brutal environment and massive casualty numbers of the Western Front force rapid medical advancements?","a":"Because traditional peacetime surgical methods completely failed to treat the complex, infected shrapnel wounds, forcing doctors to innovate radical new techniques out of sheer desperation.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":140,"q":"Which of the following represents a major diagnostic limitation of the mobile X-ray units?","a":"They could not detect pieces of dirty clothing that had been driven into wounds by shrapnel, which often caused lethal infections.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":141,"q":"What does RAMC stand for?","a":"Royal Army Medical Corps.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":142,"q":"What was the role of the FANY?","a":"Driving ambulances, moving supplies, and running soup kitchens.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":143,"q":"Describe the 'Chain of Evacuation' on the Western Front.","a":"A series of medical posts starting at the front line and ending at base hospitals.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":144,"q":"What was the Thomas Splint?","a":"A leg splint that kept the broken femur rigid, reducing blood loss and saving lives.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":145,"q":"What chemical was discovered in 1915 to prevent blood from clotting?","a":"Sodium citrate.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":146,"q":"What did the discovery of blood storage allow surgeons to do?","a":"Perform blood transfusions at Casualty Clearing Stations (CCS) using blood banks.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":147,"q":"Who discovered the structure of DNA in 1953?","a":"James Watson and Francis Crick.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":148,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":149,"q":"How did WWI affect the use of X-rays in medicine?","a":"Mobile X-ray units were deployed close to the front line to locate shrapnel inside wounds.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"},{"id":150,"q":"What was the 'Carrel-Dakin' method?","a":"Sterilizing deep wounds by constantly flushing them with an antiseptic solution.","topic":"KT5.5: What incredible medical advances were forged on the Western Front?"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 120 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/eee/mastery_pack_KT3.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/eee/mastery_pack_KT3.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1744,206 +2233,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>KT3.1: Education and leisure</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">Humanism</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Humanism</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">Roger Ascham</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Roger Ascham</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">The printing press</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The printing press</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">A Petty School / Dame School</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Petty School / Dame School</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">A hornbook</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A hornbook</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">A Grammar School</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Grammar School</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">Latin</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Latin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">30% of men, 10% of women</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">30% of men, 10% of women</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">Real tennis / Hawking / Fencing / Hunting on horseback</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Real tennis / Hawking / Fencing / Hunting on horseback</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">Mob football</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mob football</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Bear-baiting and Bull-baiting</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bear-baiting and Bull-baiting</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">She loved it and frequently ordered private exhibitions</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">She loved it and frequently ordered private exhibitions</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">Religious mystery plays</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Religious mystery plays</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Christopher Marlowe</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Christopher Marlowe</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">1576</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1576</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">Groundlings</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Groundlings</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">The Puritans</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Puritans</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">The Vagabonds Act</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Vagabonds Act</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">The Lord Chamberlain's Men / The Earl of Leicester's Men</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Lord Chamberlain's Men / The Earl of Leicester's Men</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">The Duke of Medina Sidonia.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Medina Sidonia.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">To sail to the Netherlands, pick up the Duke of Parma's army, and transport them to invade England.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To sail to the Netherlands, pick up the Duke of Parma's army, and transport them to invade England.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">They sent burning fireships into the Spanish fleet.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They sent burning fireships into the Spanish fleet.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">The Battle of Gravelines.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Battle of Gravelines.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">Strong winds (the 'Protestant Wind') blew the Spanish ships north around Scotland, destroying dozens on the rocks.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Strong winds (the 'Protestant Wind') blew the Spanish ships north around Scotland, destroying dozens on the rocks.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">He attacked the Spanish fleet, destroying ships and supplies.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He attacked the Spanish fleet, destroying ships and supplies.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">1587.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1587.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">An alliance between England and Dutch Protestant rebels.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An alliance between England and Dutch Protestant rebels.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">Elizabeth's spymaster.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Elizabeth's spymaster.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">The mandatory Protestant prayer book introduced in 1559.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The mandatory Protestant prayer book introduced in 1559.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">It grew rapidly from roughly 3 million to over 4 million</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It grew rapidly from roughly 3 million to over 4 million</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">Rapid inflation (prices rising much faster than wages)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rapid inflation (prices rising much faster than wages)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">Enclosure</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Enclosure</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">The European wool trade was more lucrative and it required fewer workers to pay</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The European wool trade was more lucrative and it required fewer workers to pay</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">They migrated to towns and cities looking for work, becoming vagrants/vagabonds</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They migrated to towns and cities looking for work, becoming vagrants/vagabonds</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">Antwerp</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Antwerp</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">The Impotent Poor</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Impotent Poor</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">The Able-bodied Poor</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Able-bodied Poor</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">A vagabond or vagrant</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A vagabond or vagrant</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">They believed they spread disease, committed crimes, and could start a rebellion</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They believed they spread disease, committed crimes, and could start a rebellion</div>
                 </div>
                 </div>
         </div>
@@ -1954,202 +2451,202 @@
                 <div class="answer-list"><h3>KT3.2: The Problem of Poverty</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Thomas Harman</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Thomas Harman</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">A beggar who faked epileptic fits using soap to get sympathy money</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A beggar who faked epileptic fits using soap to get sympathy money</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">Being whipped and having a hole burned through the right ear</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Being whipped and having a hole burned through the right ear</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">Execution</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Execution</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">The national Poor Rate</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The national Poor Rate</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">Justices of the Peace / JPs</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Justices of the Peace / JPs</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">That some able-bodied people wanted to work but simply couldn't find employment</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That some able-bodied people wanted to work but simply couldn't find employment</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">Raw materials, like wool and hemp, to work with and sell</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Raw materials, like wool and hemp, to work with and sell</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Houses of Correction</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Houses of Correction</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">Petty schools (for young children) and Grammar schools (for older boys of the middling sorts).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Petty schools (for young children) and Grammar schools (for older boys of the middling sorts).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">Latin or Greek.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Latin or Greek.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">Bear-baiting or bull-baiting.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Bear-baiting or bull-baiting.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">The Globe, The Theatre, or The Rose.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Globe, The Theatre, or The Rose.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">No, all female roles were played by young boys.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">No, all female roles were played by young boys.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">The Duke of Medina Sidonia.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Medina Sidonia.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">The major battle where English ships heavily damaged the Armada.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The major battle where English ships heavily damaged the Armada.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">'Singeing the King of Spain's beard.'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'Singeing the King of Spain's beard.'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">The final plot that proved Mary's guilt via coded letters.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The final plot that proved Mary's guilt via coded letters.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">The Tudor belief in a strict, God-given social hierarchy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Tudor belief in a strict, God-given social hierarchy.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT3.3: Exploration and voyages of discovery</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">The Antwerp cloth market</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Antwerp cloth market</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">The Astrolabe / Quadrant</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Astrolabe / Quadrant</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">The Galleon</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Galleon</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">Privateer</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Privateer</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">1577–1580</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1577–1580</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">Nova Albion</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Nova Albion</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">£400,000</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">£400,000</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">The Golden Hind</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Golden Hind</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">Sir Walter Raleigh</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Walter Raleigh</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">Virginia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Virginia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">Roanoke Island</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Roanoke Island</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">The Tiger</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Tiger</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">Ralph Lane (or Richard Grenville)</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ralph Lane (or Richard Grenville)</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">Chief Wingina</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chief Wingina</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">English demands for food, aggressive behaviour, and the spread of deadly European diseases</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">English demands for food, aggressive behaviour, and the spread of deadly European diseases</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">1587</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1587</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">John White</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">John White</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">All English ships were requisitioned to fight the Spanish Armada</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">All English ships were requisitioned to fight the Spanish Armada</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">Three years</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Three years</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">The 'Lost Colony'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 'Lost Colony'</div>
                 </div>
                 </div>
         </div>
@@ -2160,202 +2657,202 @@
                 <div class="answer-list"><h3>KT3.3: Exploration and voyages of discovery</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">A homeless person who wandered from place to place looking for work, heavily feared by the authorities.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A homeless person who wandered from place to place looking for work, heavily feared by the authorities.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">Those who were too old, young, or ill to work and deserved help.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Those who were too old, young, or ill to work and deserved help.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">Those who were fit to work but couldn't find a job, often seen as lazy criminals.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Those who were fit to work but couldn't find a job, often seen as lazy criminals.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">A harsh law where vagabonds could be whipped and have a hole burned through their ear.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A harsh law where vagabonds could be whipped and have a hole burned through their ear.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">Population growth, bad harvests, and the enclosure of farming land for sheep.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Population growth, bad harvests, and the enclosure of farming land for sheep.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">Latin.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Latin.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">No, boys played female roles.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">No, boys played female roles.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Fireships.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Fireships.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">A state-licensed pirate.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A state-licensed pirate.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">The law that made Elizabeth Supreme Governor of the Church.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The law that made Elizabeth Supreme Governor of the Church.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">1584</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1584</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">The Antwerp cloth market</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Antwerp cloth market</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">Virginia</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Virginia</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">No, Elizabeth refused to let him leave court</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">No, Elizabeth refused to let him leave court</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">Manteo and Wanchese</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Manteo and Wanchese</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">As a hidden base for privateers to attack Spanish treasure ships</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">As a hidden base for privateers to attack Spanish treasure ships</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">Roanoke Island</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Roanoke Island</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">Ralph Lane</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ralph Lane</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">Thomas Harriot</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Thomas Harriot</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">The Tiger</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Tiger</div>
                 </div>
                 </div><div class="answer-list"><h3>KT3.4: Raleigh and Virginia</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">They were mostly soldiers and gentlemen with no farming skills</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were mostly soldiers and gentlemen with no farming skills</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">Chief Wingina</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chief Wingina</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">European diseases to which they had no immunity</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">European diseases to which they had no immunity</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">Francis Drake</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Francis Drake</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">It included families, women, and children with farming skills</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It included families, women, and children with farming skills</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">John White</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">John White</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">Because of the violence and murders committed by Ralph Lane's men in 1585</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because of the violence and murders committed by Ralph Lane's men in 1585</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">Elizabeth banned all ships from leaving England to fight the Spanish Armada</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Elizabeth banned all ships from leaving England to fight the Spanish Armada</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">Three years / until 1590</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Three years / until 1590</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">CROATOAN</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">CROATOAN</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">To expand trade, bypass Spanish monopolies, and find new trade routes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To expand trade, bypass Spanish monopolies, and find new trade routes.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">Astrolabes for navigation, better maps, and more agile ships like galleons.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Astrolabes for navigation, better maps, and more agile ships like galleons.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">Sir Francis Drake.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Francis Drake.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">Sir Walter Raleigh.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sir Walter Raleigh.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">Due to food shortages and conflict with Native Americans.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Due to food shortages and conflict with Native Americans.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">It became the 'Lost Colony'; when a supply ship returned in 1590, everyone had vanished.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It became the 'Lost Colony'; when a supply ship returned in 1590, everyone had vanished.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">Population growth and bad harvests.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Population growth and bad harvests.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">A law punishing vagrants with whipping and ear-burning.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A law punishing vagrants with whipping and ear-burning.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">The Duke of Medina Sidonia.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Duke of Medina Sidonia.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">An assassination plot against Elizabeth backed by Spanish troops.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An assassination plot against Elizabeth backed by Spanish troops.</div>
                 </div>
                 </div>
         </div>
@@ -2417,45 +2914,309 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 2: Early Elizabethan England, 1558-88 · Key Topic 3: Elizabethan society in the Age of Exploration, 1558-88</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (120 Questions)</option>
+                    <option value="0">Part 1: KT3.1: Education and leisure</option>
+<option value="1">Part 2: KT3.1: Education and leisure</option>
+<option value="2">Part 3: KT3.2: The Problem of Poverty</option>
+<option value="3">Part 4: KT3.3: Exploration and voyages of discovery</option>
+<option value="4">Part 5: KT3.3: Exploration and voyages of discovery</option>
+<option value="5">Part 6: KT3.4: Raleigh and Virginia</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_eee_KT3';
+    const ALL_DECK = [{"id":1,"q":"What intellectual movement acted as a catalyst for educational reform in Elizabethan England?","a":"Humanism","topic":"KT3.1: Education and leisure"},{"id":2,"q":"Which prominent Humanist scholar was Queen Elizabeth's personal tutor?","a":"Roger Ascham","topic":"KT3.1: Education and leisure"},{"id":3,"q":"What invention significantly helped increase literacy by making books cheaper?","a":"The printing press","topic":"KT3.1: Education and leisure"},{"id":4,"q":"What type of local school provided basic education for young boys and some girls?","a":"A Petty School / Dame School","topic":"KT3.1: Education and leisure"},{"id":5,"q":"What wooden object covered in a transparent layer was used to teach children the alphabet?","a":"A hornbook","topic":"KT3.1: Education and leisure"},{"id":6,"q":"What type of school did the sons of the gentry and merchants attend from age seven?","a":"A Grammar School","topic":"KT3.1: Education and leisure"},{"id":7,"q":"Which language dominated the curriculum of the Elizabethan Grammar school?","a":"Latin","topic":"KT3.1: Education and leisure"},{"id":8,"q":"Roughly what percentage of men, and what percentage of women, were literate by 1603?","a":"30% of men, 10% of women","topic":"KT3.1: Education and leisure"},{"id":9,"q":"Name one exclusive sport played only by the nobility.","a":"Real tennis / Hawking / Fencing / Hunting on horseback","topic":"KT3.1: Education and leisure"},{"id":10,"q":"What violently aggressive sport was played by the lower classes between neighbouring villages?","a":"Mob football","topic":"KT3.1: Education and leisure"},{"id":11,"q":"Give two examples of 'cruel sports' popular in Elizabethan England.","a":"Bear-baiting and Bull-baiting","topic":"KT3.1: Education and leisure"},{"id":12,"q":"What was the Queen's personal attitude towards bear-baiting?","a":"She loved it and frequently ordered private exhibitions","topic":"KT3.1: Education and leisure"},{"id":13,"q":"What type of plays did Elizabeth ban in the 1570s to avoid religious conflict?","a":"Religious mystery plays","topic":"KT3.1: Education and leisure"},{"id":14,"q":"Name one famous pioneering Elizabethan playwright other than Shakespeare.","a":"Christopher Marlowe","topic":"KT3.1: Education and leisure"},{"id":15,"q":"In what year was the first purpose-built theatre (The Theatre) constructed?","a":"1576","topic":"KT3.1: Education and leisure"},{"id":16,"q":"What was the nickname given to the poorest theatre-goers who stood in the open-air pit?","a":"Groundlings","topic":"KT3.1: Education and leisure"},{"id":17,"q":"Which religious group furiously opposed the theatre, believing it was the work of the devil?","a":"The Puritans","topic":"KT3.1: Education and leisure"},{"id":18,"q":"What 1572 law meant actors could be whipped if they didn't have a noble license?","a":"The Vagabonds Act","topic":"KT3.1: Education and leisure"},{"id":19,"q":"Name one famous acting company sponsored by powerful nobility to protect them from the law.","a":"The Lord Chamberlain's Men / The Earl of Leicester's Men","topic":"KT3.1: Education and leisure"},{"id":20,"q":"Why did the location of the theatres (outside the City walls) exacerbate opposition from authorities?","a":"They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague","topic":"KT3.1: Education and leisure"},{"id":21,"q":"Who led the Spanish Armada?","a":"The Duke of Medina Sidonia.","topic":"KT3.1: Education and leisure"},{"id":22,"q":"What was the Armada's plan?","a":"To sail to the Netherlands, pick up the Duke of Parma's army, and transport them to invade England.","topic":"KT3.1: Education and leisure"},{"id":23,"q":"What tactic did the English use to break the Spanish defensive formation at Calais?","a":"They sent burning fireships into the Spanish fleet.","topic":"KT3.1: Education and leisure"},{"id":24,"q":"What was the decisive sea battle of the Armada called?","a":"The Battle of Gravelines.","topic":"KT3.1: Education and leisure"},{"id":25,"q":"What role did the weather play in defeating the Armada?","a":"Strong winds (the 'Protestant Wind') blew the Spanish ships north around Scotland, destroying dozens on the rocks.","topic":"KT3.1: Education and leisure"},{"id":26,"q":"What did Drake do in Cadiz in 1587?","a":"He attacked the Spanish fleet, destroying ships and supplies.","topic":"KT3.1: Education and leisure"},{"id":27,"q":"When was Mary, Queen of Scots executed?","a":"1587.","topic":"KT3.1: Education and leisure"},{"id":28,"q":"What was the Treaty of Nonsuch?","a":"An alliance between England and Dutch Protestant rebels.","topic":"KT3.1: Education and leisure"},{"id":29,"q":"Who was Francis Walsingham?","a":"Elizabeth's spymaster.","topic":"KT3.1: Education and leisure"},{"id":30,"q":"What was the Book of Common Prayer?","a":"The mandatory Protestant prayer book introduced in 1559.","topic":"KT3.1: Education and leisure"},{"id":31,"q":"What happened to the population of England between 1551 and 1601?","a":"It grew rapidly from roughly 3 million to over 4 million","topic":"KT3.2: The Problem of Poverty"},{"id":32,"q":"What economic problem was caused by demand for food outstripping supply?","a":"Rapid inflation (prices rising much faster than wages)","topic":"KT3.2: The Problem of Poverty"},{"id":33,"q":"What agricultural practice involved landlords fencing off common fields?","a":"Enclosure","topic":"KT3.2: The Problem of Poverty"},{"id":34,"q":"Why did landlords prefer breeding sheep over traditional crop farming?","a":"The European wool trade was more lucrative and it required fewer workers to pay","topic":"KT3.2: The Problem of Poverty"},{"id":35,"q":"What happened to unemployed rural workers after they were evicted due to enclosure?","a":"They migrated to towns and cities looking for work, becoming vagrants/vagabonds","topic":"KT3.2: The Problem of Poverty"},{"id":36,"q":"Which major European port city placed a trade embargo on English cloth, causing mass unemployment?","a":"Antwerp","topic":"KT3.2: The Problem of Poverty"},{"id":37,"q":"What term was used to describe the 'deserving' poor (the sick, elderly, and orphans)?","a":"The Impotent Poor","topic":"KT3.2: The Problem of Poverty"},{"id":38,"q":"What term was used to describe the 'undeserving' poor who were physically capable of working?","a":"The Able-bodied Poor","topic":"KT3.2: The Problem of Poverty"},{"id":39,"q":"What was the name given to a homeless, unemployed person who wandered from town to town?","a":"A vagabond or vagrant","topic":"KT3.2: The Problem of Poverty"},{"id":40,"q":"Give two reasons why the authorities were terrified of vagabonds.","a":"They believed they spread disease, committed crimes, and could start a rebellion","topic":"KT3.2: The Problem of Poverty"},{"id":41,"q":"Who wrote a famous pamphlet warning the public about the tricks used by vagabonds?","a":"Thomas Harman","topic":"KT3.2: The Problem of Poverty"},{"id":42,"q":"What was a 'Counterfeit Crank'?","a":"A beggar who faked epileptic fits using soap to get sympathy money","topic":"KT3.2: The Problem of Poverty"},{"id":43,"q":"What physical punishment was dictated by the 1572 Vagabonds Act for a first-time offence?","a":"Being whipped and having a hole burned through the right ear","topic":"KT3.2: The Problem of Poverty"},{"id":44,"q":"Under the 1572 Act, what was the punishment for being caught as a vagabond a third time?","a":"Execution","topic":"KT3.2: The Problem of Poverty"},{"id":45,"q":"What highly significant financial system did the 1572 Act introduce to help the impotent poor?","a":"The national Poor Rate","topic":"KT3.2: The Problem of Poverty"},{"id":46,"q":"Who was responsible for collecting the Poor Rate in local areas?","a":"Justices of the Peace / JPs","topic":"KT3.2: The Problem of Poverty"},{"id":47,"q":"What major economic reality did the 1576 Poor Relief Act finally recognise?","a":"That some able-bodied people wanted to work but simply couldn't find employment","topic":"KT3.2: The Problem of Poverty"},{"id":48,"q":"What did the 1576 Act order JPs to provide for the genuinely unemployed?","a":"Raw materials, like wool and hemp, to work with and sell","topic":"KT3.2: The Problem of Poverty"},{"id":49,"q":"What institutions were created under the 1576 Act to punish those who refused to work?","a":"Houses of Correction","topic":"KT3.2: The Problem of Poverty"},{"id":50,"q":"Why did the government ultimately transition from brutal punishment to national poor relief?","a":"They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored","topic":"KT3.2: The Problem of Poverty"},{"id":51,"q":"Name two types of schools in Elizabethan England.","a":"Petty schools (for young children) and Grammar schools (for older boys of the middling sorts).","topic":"KT3.2: The Problem of Poverty"},{"id":52,"q":"What was a typical subject studied at Grammar school?","a":"Latin or Greek.","topic":"KT3.2: The Problem of Poverty"},{"id":53,"q":"What was a popular cruel animal sport during this period?","a":"Bear-baiting or bull-baiting.","topic":"KT3.2: The Problem of Poverty"},{"id":54,"q":"Name one famous Elizabethan theatre.","a":"The Globe, The Theatre, or The Rose.","topic":"KT3.2: The Problem of Poverty"},{"id":55,"q":"Were women allowed to act on the Elizabethan stage?","a":"No, all female roles were played by young boys.","topic":"KT3.2: The Problem of Poverty"},{"id":56,"q":"Who led the Spanish Armada?","a":"The Duke of Medina Sidonia.","topic":"KT3.2: The Problem of Poverty"},{"id":57,"q":"What was the Battle of Gravelines?","a":"The major battle where English ships heavily damaged the Armada.","topic":"KT3.2: The Problem of Poverty"},{"id":58,"q":"What phrase did Drake use to describe his attack on Cadiz?","a":"'Singeing the King of Spain's beard.'","topic":"KT3.2: The Problem of Poverty"},{"id":59,"q":"What was the Babington Plot (1586)?","a":"The final plot that proved Mary's guilt via coded letters.","topic":"KT3.2: The Problem of Poverty"},{"id":60,"q":"What was the 'Great Chain of Being'?","a":"The Tudor belief in a strict, God-given social hierarchy.","topic":"KT3.2: The Problem of Poverty"},{"id":61,"q":"What traditional English trade market collapsed, prompting the search for new global markets?","a":"The Antwerp cloth market","topic":"KT3.3: Exploration and voyages of discovery"},{"id":62,"q":"Name an essential navigational instrument that used the stars to determine latitude.","a":"The Astrolabe / Quadrant","topic":"KT3.3: Exploration and voyages of discovery"},{"id":63,"q":"What type of new, highly manoeuvrable warship was developed by the English?","a":"The Galleon","topic":"KT3.3: Exploration and voyages of discovery"},{"id":64,"q":"What term describes a sailor officially licensed by the Queen to attack Spanish ships?","a":"Privateer","topic":"KT3.3: Exploration and voyages of discovery"},{"id":65,"q":"Between which years did Francis Drake circumnavigate the globe?","a":"1577–1580","topic":"KT3.3: Exploration and voyages of discovery"},{"id":66,"q":"What area of North America (modern-day California) did Drake claim for Elizabeth?","a":"Nova Albion","topic":"KT3.3: Exploration and voyages of discovery"},{"id":67,"q":"Roughly how much Spanish treasure did Drake bring back to England?","a":"£400,000","topic":"KT3.3: Exploration and voyages of discovery"},{"id":68,"q":"On which ship was Francis Drake knighted by Queen Elizabeth?","a":"The Golden Hind","topic":"KT3.3: Exploration and voyages of discovery"},{"id":69,"q":"Which English nobleman was given a royal charter in 1584 to colonise North America?","a":"Sir Walter Raleigh","topic":"KT3.3: Exploration and voyages of discovery"},{"id":70,"q":"What name was given to the new territory in honour of Elizabeth?","a":"Virginia","topic":"KT3.3: Exploration and voyages of discovery"},{"id":71,"q":"On which specific island off the coast of North America did the colonists land?","a":"Roanoke Island","topic":"KT3.3: Exploration and voyages of discovery"},{"id":72,"q":"What was the name of the flagship that hit a sandbank, ruining the colony's food and seeds?","a":"The Tiger","topic":"KT3.3: Exploration and voyages of discovery"},{"id":73,"q":"Name one of the aggressive military leaders of the 1585 expedition who caused conflict.","a":"Ralph Lane (or Richard Grenville)","topic":"KT3.3: Exploration and voyages of discovery"},{"id":74,"q":"Which Native American Chief turned against the English and attacked the colony?","a":"Chief Wingina","topic":"KT3.3: Exploration and voyages of discovery"},{"id":75,"q":"Why did Native Americans turn against the English settlers?","a":"English demands for food, aggressive behaviour, and the spread of deadly European diseases","topic":"KT3.3: Exploration and voyages of discovery"},{"id":76,"q":"In what year was the second attempt to establish a colony (which included women and children) launched?","a":"1587","topic":"KT3.3: Exploration and voyages of discovery"},{"id":77,"q":"Who was the leader of the 1587 expedition who returned to England for supplies?","a":"John White","topic":"KT3.3: Exploration and voyages of discovery"},{"id":78,"q":"Why couldn't supply ships return to Virginia in 1588?","a":"All English ships were requisitioned to fight the Spanish Armada","topic":"KT3.3: Exploration and voyages of discovery"},{"id":79,"q":"How long were the 1587 colonists left without any supplies or communication?","a":"Three years","topic":"KT3.3: Exploration and voyages of discovery"},{"id":80,"q":"What is the famous nickname given to the 1587 settlement that vanished without a trace?","a":"The 'Lost Colony'","topic":"KT3.3: Exploration and voyages of discovery"},{"id":81,"q":"What was a 'vagrant' or 'vagabond'?","a":"A homeless person who wandered from place to place looking for work, heavily feared by the authorities.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":82,"q":"What were the 'deserving poor'?","a":"Those who were too old, young, or ill to work and deserved help.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":83,"q":"What were the 'idle poor'?","a":"Those who were fit to work but couldn't find a job, often seen as lazy criminals.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":84,"q":"What was the 1572 Vagabonds Act?","a":"A harsh law where vagabonds could be whipped and have a hole burned through their ear.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":85,"q":"What caused poverty to rise in this period?","a":"Population growth, bad harvests, and the enclosure of farming land for sheep.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":86,"q":"What was a typical subject studied at a Grammar school?","a":"Latin.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":87,"q":"Were women allowed to act on stage?","a":"No, boys played female roles.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":88,"q":"What tactic did the English use to break the Spanish formation at Calais?","a":"Fireships.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":89,"q":"What was a 'privateer'?","a":"A state-licensed pirate.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":90,"q":"What was the Act of Supremacy?","a":"The law that made Elizabeth Supreme Governor of the Church.","topic":"KT3.3: Exploration and voyages of discovery"},{"id":91,"q":"In what year did Queen Elizabeth grant Walter Raleigh a Royal Charter?","a":"1584","topic":"KT3.4: Raleigh and Virginia"},{"id":92,"q":"What traditional European English trade market had collapsed, encouraging New World expansion?","a":"The Antwerp cloth market","topic":"KT3.4: Raleigh and Virginia"},{"id":93,"q":"What name was given to the new territory in North America in honour of Elizabeth?","a":"Virginia","topic":"KT3.4: Raleigh and Virginia"},{"id":94,"q":"Did Walter Raleigh personally lead the expeditions to North America?","a":"No, Elizabeth refused to let him leave court","topic":"KT3.4: Raleigh and Virginia"},{"id":95,"q":"Name the two Native Americans brought to England in 1584 to help with translation.","a":"Manteo and Wanchese","topic":"KT3.4: Raleigh and Virginia"},{"id":96,"q":"Strategically, what did the English hope to use a colony in Virginia for?","a":"As a hidden base for privateers to attack Spanish treasure ships","topic":"KT3.4: Raleigh and Virginia"},{"id":97,"q":"On which specific island was the colony established?","a":"Roanoke Island","topic":"KT3.4: Raleigh and Virginia"},{"id":98,"q":"Who was the aggressive military governor of the 1585 expedition?","a":"Ralph Lane","topic":"KT3.4: Raleigh and Virginia"},{"id":99,"q":"Who was the brilliant mathematician and mapmaker on the 1585 expedition?","a":"Thomas Harriot","topic":"KT3.4: Raleigh and Virginia"},{"id":100,"q":"What was the name of the flagship that hit a sandbank, ruining the food and seeds?","a":"The Tiger","topic":"KT3.4: Raleigh and Virginia"},{"id":101,"q":"Why were the 1585 colonists poorly suited to building a settlement?","a":"They were mostly soldiers and gentlemen with no farming skills","topic":"KT3.4: Raleigh and Virginia"},{"id":102,"q":"Which Native American Chief turned against the English and was killed by Ralph Lane?","a":"Chief Wingina","topic":"KT3.4: Raleigh and Virginia"},{"id":103,"q":"Apart from violence, what unwittingly killed many Native Americans?","a":"European diseases to which they had no immunity","topic":"KT3.4: Raleigh and Virginia"},{"id":104,"q":"Who rescued the surviving 1585 colonists and took them back to England?","a":"Francis Drake","topic":"KT3.4: Raleigh and Virginia"},{"id":105,"q":"How did the demographics of the 1587 expedition differ from the 1585 expedition?","a":"It included families, women, and children with farming skills","topic":"KT3.4: Raleigh and Virginia"},{"id":106,"q":"Who was the leader of the 1587 expedition?","a":"John White","topic":"KT3.4: Raleigh and Virginia"},{"id":107,"q":"Why were the Native Americans immediately hostile to the 1587 colonists?","a":"Because of the violence and murders committed by Ralph Lane's men in 1585","topic":"KT3.4: Raleigh and Virginia"},{"id":108,"q":"Why was John White unable to return to Virginia with supplies in 1588?","a":"Elizabeth banned all ships from leaving England to fight the Spanish Armada","topic":"KT3.4: Raleigh and Virginia"},{"id":109,"q":"How long was John White stranded in England?","a":"Three years / until 1590","topic":"KT3.4: Raleigh and Virginia"},{"id":110,"q":"What single word was found carved into a post when White finally returned?","a":"CROATOAN","topic":"KT3.4: Raleigh and Virginia"},{"id":111,"q":"Why did English sailors explore the world?","a":"To expand trade, bypass Spanish monopolies, and find new trade routes.","topic":"KT3.4: Raleigh and Virginia"},{"id":112,"q":"What new technology helped Elizabethan exploration?","a":"Astrolabes for navigation, better maps, and more agile ships like galleons.","topic":"KT3.4: Raleigh and Virginia"},{"id":113,"q":"Who was the first Englishman to circumnavigate the globe (1577-1580)?","a":"Sir Francis Drake.","topic":"KT3.4: Raleigh and Virginia"},{"id":114,"q":"Who did Elizabeth give a patent to colonize North America in 1584?","a":"Sir Walter Raleigh.","topic":"KT3.4: Raleigh and Virginia"},{"id":115,"q":"Why did the first Roanoke settlement (1585) fail?","a":"Due to food shortages and conflict with Native Americans.","topic":"KT3.4: Raleigh and Virginia"},{"id":116,"q":"What happened to the second Roanoke settlement (1587)?","a":"It became the 'Lost Colony'; when a supply ship returned in 1590, everyone had vanished.","topic":"KT3.4: Raleigh and Virginia"},{"id":117,"q":"What caused poverty to rise in the Elizabethan period?","a":"Population growth and bad harvests.","topic":"KT3.4: Raleigh and Virginia"},{"id":118,"q":"What was the 1572 Vagabonds Act?","a":"A law punishing vagrants with whipping and ear-burning.","topic":"KT3.4: Raleigh and Virginia"},{"id":119,"q":"Who led the Spanish Armada?","a":"The Duke of Medina Sidonia.","topic":"KT3.4: Raleigh and Virginia"},{"id":120,"q":"What was the Ridolfi Plot (1571)?","a":"An assassination plot against Elizabeth backed by Spanish troops.","topic":"KT3.4: Raleigh and Virginia"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 100 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/weimar_nazi_germany/mastery_pack_KT3.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/weimar_nazi_germany/mastery_pack_KT3.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1538,206 +2027,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>Key Topic 3.1: The Creation of a Dictatorship, 1933–1934</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">The German Workers' Party (DAP).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The German Workers' Party (DAP).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">The Nazi manifesto containing nationalist, socialist, and anti-Semitic ideas.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Nazi manifesto containing nationalist, socialist, and anti-Semitic ideas.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">Hitler's private army, also known as the Brownshirts, who protected meetings and beat up communists.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler's private army, also known as the Brownshirts, who protected meetings and beat up communists.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">Hitler's failed armed attempt to overthrow the Weimar government in Bavaria.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler's failed armed attempt to overthrow the Weimar government in Bavaria.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">He was arrested, gained national publicity at his trial, and wrote 'Mein Kampf' in prison.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He was arrested, gained national publicity at his trial, and wrote 'Mein Kampf' in prison.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">An agreement not to use war to solve disputes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An agreement not to use war to solve disputes.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">1926.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1926.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">The Rentenmark.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Rentenmark.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">US loans to help the German economy.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">US loans to help the German economy.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">Rosa Luxemburg.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rosa Luxemburg.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Heinrich Himmler</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Heinrich Himmler</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">Sicherheitsdienst / Security Service</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sicherheitsdienst / Security Service</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">The Reich Main Security Office, grouping the Gestapo, SD, and Kripo together</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Reich Main Security Office, grouping the Gestapo, SD, and Kripo together</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">Intelligence gathering / spying on opponents and keeping index cards on them</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Intelligence gathering / spying on opponents and keeping index cards on them</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">Ordinary citizens / informers denouncing their neighbours</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ordinary citizens / informers denouncing their neighbours</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">Schutzhaft</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Schutzhaft</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">The National Socialist League for the Maintenance of the Law</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The National Socialist League for the Maintenance of the Law</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">The People's Court</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The People's Court</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">Dachau</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Dachau</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">Political prisoners / Communists / Trade Unionists</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Political prisoners / Communists / Trade Unionists</div>
                 </div>
                 </div><div class="answer-list"><h3>Key Topic 3.2: The Police State and Religion, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">July 1933</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">July 1933</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">Keep the Catholic Church out of German politics</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Keep the Catholic Church out of German politics</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">Hanns Kerrl</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hanns Kerrl</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">'Mit brennender Sorge' / With Burning Concern</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'Mit brennender Sorge' / With Burning Concern</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">The Reich Church</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Reich Church</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Ludwig Müller</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ludwig Müller</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">'German Christians'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">'German Christians'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">The Confessional Church</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Confessional Church</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">Martin Niemöller or Dietrich Bonhoeffer</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Martin Niemöller or Dietrich Bonhoeffer</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">The collapse of the US stock market which triggered the Great Depression.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The collapse of the US stock market which triggered the Great Depression.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">The USA recalled its loans, causing German businesses to collapse and unemployment to soar.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The USA recalled its loans, causing German businesses to collapse and unemployment to soar.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">Over 6 million.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 6 million.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">Chancellor Brüning cut unemployment benefits and raised taxes, which was highly unpopular.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Chancellor Brüning cut unemployment benefits and raised taxes, which was highly unpopular.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Hitler promised 'Work and Bread' and people were desperate for extreme solutions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler promised 'Work and Bread' and people were desperate for extreme solutions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">The Nazi manifesto.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Nazi manifesto.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">The Brownshirts; Hitler's private army.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Brownshirts; Hitler's private army.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">Mein Kampf.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Mein Kampf.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">Hitler's failed attempt to seize power in 1923.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler's failed attempt to seize power in 1923.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">Because it relied on US loans.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because it relied on US loans.</div>
                 </div>
                 </div>
         </div>
@@ -1748,202 +2245,202 @@
                 <div class="answer-list"><h3>Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Joseph Goebbels</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joseph Goebbels</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">A law making newspaper editors personally responsible for anything printed in their papers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A law making newspaper editors personally responsible for anything printed in their papers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">The Eher Verlag</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Eher Verlag</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">Massive book burnings of works by Jewish and communist authors</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Massive book burnings of works by Jewish and communist authors</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">Volksempfänger</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Volksempfänger</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">So Germans could not pick up foreign broadcasts like the BBC</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">So Germans could not pick up foreign broadcasts like the BBC</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">They put loudspeakers in streets and sounded sirens in factories to stop work</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They put loudspeakers in streets and sounded sirens in factories to stop work</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">Nuremberg</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Nuremberg</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Albert Speer</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Albert Speer</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">Leni Riefenstahl</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Leni Riefenstahl</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">Goebbels knew people would get bored, so he hid the Nazi messages inside entertainment</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Goebbels knew people would get bored, so he hid the Nazi messages inside entertainment</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">1936</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1936</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">Jesse Owens</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Jesse Owens</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">33 gold medals</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">33 gold medals</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">The Reich Chamber of Culture</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Reich Chamber of Culture</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">Degenerate Art / Entartete Kunst</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Degenerate Art / Entartete Kunst</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">To deliberately display banned modern art so the German public could mock and laugh at it</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To deliberately display banned modern art so the German public could mock and laugh at it</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">To make the individual feel small and the Nazi State feel eternal and powerful</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">To make the individual feel small and the Nazi State feel eternal and powerful</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">Jazz</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Jazz</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">The aging President of the Weimar Republic from 1925 to 1934.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The aging President of the Weimar Republic from 1925 to 1934.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">Brüning, von Papen, and von Schleicher.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Brüning, von Papen, and von Schleicher.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">Von Papen convinced Hindenburg that they could control Hitler ('make him squeak').</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Von Papen convinced Hindenburg that they could control Hitler ('make him squeak').</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">37% (making them the largest party).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">37% (making them the largest party).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">The 1929 US economic collapse.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 1929 US economic collapse.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">6 million.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">6 million.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">By cutting benefits and raising taxes.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By cutting benefits and raising taxes.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">Friedrich Ebert.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Friedrich Ebert.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">Emergency presidential powers.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Emergency presidential powers.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">American loans to Germany.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">American loans to Germany.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">Passive Resistance</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Passive Resistance</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">1.3 million</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1.3 million</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">The Sopade reports</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Sopade reports</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">Sabotaging machinery / absenteeism / working deliberately slowly</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sabotaging machinery / absenteeism / working deliberately slowly</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Georg Elser</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Georg Elser</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">Hitler finished his speech early and left the building 13 minutes before the bomb went off</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler finished his speech early and left the building 13 minutes before the bomb went off</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">General Ludwig Beck</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">General Ludwig Beck</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Pastor Paul Schneider</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Pastor Paul Schneider</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">1936</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1936</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">It became too strict, militaristic, and focused on boring military drills</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It became too strict, militaristic, and focused on boring military drills</div>
                 </div>
                 </div>
         </div>
@@ -1954,102 +2451,102 @@
                 <div class="answer-list"><h3>Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">The Edelweiss Pirates</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Edelweiss Pirates</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">The Navajos / The Roving Dudes / The Kittelbach Pirates</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Navajos / The Roving Dudes / The Kittelbach Pirates</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">The white edelweiss flower</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The white edelweiss flower</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">They went on hikes / wore checked shirts / beat up Hitler Youth members</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They went on hikes / wore checked shirts / beat up Hitler Youth members</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">The Swing Youth</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Swing Youth</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">The Swing Youth were middle/upper class; the Pirates were working class</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Swing Youth were middle/upper class; the Pirates were working class</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">American Jazz and Swing</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">American Jazz and Swing</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Because of its African-American origins, they viewed it as racially inferior / 'black music'</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because of its African-American origins, they viewed it as racially inferior / 'black music'</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">They wore makeup and fashionable clothes, rather than the natural 'peasant' look</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They wore makeup and fashionable clothes, rather than the natural 'peasant' look</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">They arrested them, shaved their heads, and beat them, but rarely killed them</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They arrested them, shaved their heads, and beat them, but rarely killed them</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">It was burned down, and a Dutch communist (van der Lubbe) was blamed.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It was burned down, and a Dutch communist (van der Lubbe) was blamed.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">An emergency law passed after the fire that suspended civil rights and allowed communists to be arrested.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">An emergency law passed after the fire that suspended civil rights and allowed communists to be arrested.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">It gave Hitler the power to make laws without the Reichstag for four years, effectively making him a dictator.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It gave Hitler the power to make laws without the Reichstag for four years, effectively making him a dictator.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">He banned them and replaced them with the German Labour Front (DAF).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He banned them and replaced them with the German Labour Front (DAF).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">Hitler used the SS to murder the leaders of the SA, including Ernst Röhm, to win the army's support.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Hitler used the SS to murder the leaders of the SA, including Ernst Röhm, to win the army's support.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">Führer (combining President and Chancellor).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Führer (combining President and Chancellor).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">President Hindenburg.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">President Hindenburg.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">Franz von Papen.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Franz von Papen.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">The Brownshirts.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Brownshirts.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">The Nazi manifesto.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Nazi manifesto.</div>
                 </div>
                 </div>
         </div>
@@ -2111,45 +2608,308 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 3: Weimar and Nazi Germany, 1918-39 · Key Topic 3: Nazi Control and Dictatorship</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (100 Questions)</option>
+                    <option value="0">Part 1: Key Topic 3.1: The Creation of a Dictatorship, 1933–1934</option>
+<option value="1">Part 2: Key Topic 3.2: The Police State and Religion, 1933–1939</option>
+<option value="2">Part 3: Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939</option>
+<option value="3">Part 4: Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939</option>
+<option value="4">Part 5: Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_weimar_nazi_germany_KT3';
+    const ALL_DECK = [{"id":1,"q":"What was the original name of the Nazi Party?","a":"The German Workers' Party (DAP).","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":2,"q":"What was the 25-Point Programme (1920)?","a":"The Nazi manifesto containing nationalist, socialist, and anti-Semitic ideas.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":3,"q":"Who were the SA (Sturmabteilung)?","a":"Hitler's private army, also known as the Brownshirts, who protected meetings and beat up communists.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":4,"q":"What was the Munich Putsch (1923)?","a":"Hitler's failed armed attempt to overthrow the Weimar government in Bavaria.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":5,"q":"What was the result of the Munich Putsch for Hitler?","a":"He was arrested, gained national publicity at his trial, and wrote 'Mein Kampf' in prison.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":6,"q":"What was the Kellogg-Briand Pact?","a":"An agreement not to use war to solve disputes.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":7,"q":"When did Germany join the League of Nations?","a":"1926.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":8,"q":"What new currency ended hyperinflation?","a":"The Rentenmark.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":9,"q":"What was the Dawes Plan?","a":"US loans to help the German economy.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":10,"q":"Who led the Spartacist Uprising?","a":"Rosa Luxemburg.","topic":"Key Topic 3.1: The Creation of a Dictatorship, 1933–1934"},{"id":11,"q":"Who was the leader of the SS, who eventually took control of all police forces in Germany?","a":"Heinrich Himmler","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":12,"q":"What does the abbreviation 'SD' stand for?","a":"Sicherheitsdienst / Security Service","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":13,"q":"What was the RSHA, created in 1939 under Reinhard Heydrich?","a":"The Reich Main Security Office, grouping the Gestapo, SD, and Kripo together","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":14,"q":"What was the specific job of the SD?","a":"Intelligence gathering / spying on opponents and keeping index cards on them","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":15,"q":"Because the Gestapo was actually quite small, who did they rely on for 80% of their information?","a":"Ordinary citizens / informers denouncing their neighbours","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":16,"q":"What is the German term for 'Protective Custody', which allowed the Gestapo to arrest people without trial?","a":"Schutzhaft","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":17,"q":"What was the name of the compulsory organisation that all German judges were forced to join?","a":"The National Socialist League for the Maintenance of the Law","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":18,"q":"What was the name of the new court set up in 1934 to hear cases of treason without a jury?","a":"The People's Court","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":19,"q":"Name the first concentration camp, opened in Germany in 1933.","a":"Dachau","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":20,"q":"In the years 1933–39, which specific groups of people made up the vast majority of concentration camp inmates?","a":"Political prisoners / Communists / Trade Unionists","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":21,"q":"In what month and year did Hitler sign the Concordat with the Catholic Church?","a":"July 1933","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":22,"q":"Under the Concordat, what did the Pope agree to do?","a":"Keep the Catholic Church out of German politics","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":23,"q":"Who was placed in charge of the newly created Ministry of Church Affairs in 1935?","a":"Hanns Kerrl","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":24,"q":"Give one example of how Hitler broke the Concordat.","a":"He launched a campaign to remove crucifixes from schools / banned Catholic youth groups / arrested priests","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":25,"q":"What was the title of the angry letter the Pope had smuggled into Germany and read out in 1937?","a":"'Mit brennender Sorge' / With Burning Concern","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":26,"q":"What was the name of the official, Nazified Protestant church set up by the government?","a":"The Reich Church","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":27,"q":"Who was appointed as the 'Reich Bishop' to lead the Nazified Protestant church?","a":"Ludwig Müller","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":28,"q":"What did members of the Reich Church proudly call themselves?","a":"'German Christians'","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":29,"q":"What was the name of the illegal, breakaway Protestant church set up in opposition to the Nazis?","a":"The Confessional Church","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":30,"q":"Name one of the key leaders of the Confessional Church who opposed the Nazis.","a":"Martin Niemöller or Dietrich Bonhoeffer","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":31,"q":"What was the Wall Street Crash (1929)?","a":"The collapse of the US stock market which triggered the Great Depression.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":32,"q":"How did the Wall Street Crash affect Germany?","a":"The USA recalled its loans, causing German businesses to collapse and unemployment to soar.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":33,"q":"How many Germans were unemployed by 1932?","a":"Over 6 million.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":34,"q":"How did the Weimar government react to the Depression?","a":"Chancellor Brüning cut unemployment benefits and raised taxes, which was highly unpopular.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":35,"q":"Why did Nazi support surge during the Depression?","a":"Hitler promised 'Work and Bread' and people were desperate for extreme solutions.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":36,"q":"What was the 25-Point Programme?","a":"The Nazi manifesto.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":37,"q":"Who were the SA?","a":"The Brownshirts; Hitler's private army.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":38,"q":"What book did Hitler write in prison?","a":"Mein Kampf.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":39,"q":"What was the Munich Putsch?","a":"Hitler's failed attempt to seize power in 1923.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":40,"q":"Why did the 'Golden Age' end?","a":"Because it relied on US loans.","topic":"Key Topic 3.2: The Police State and Religion, 1933–1939"},{"id":41,"q":"Who was appointed as the Minister of Public Enlightenment and Propaganda in 1933?","a":"Joseph Goebbels","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":42,"q":"What was the 'Editor's Law' of 1933?","a":"A law making newspaper editors personally responsible for anything printed in their papers","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":43,"q":"What was the name of the Nazi publishing house that bought up 82% of all German newspapers by 1939?","a":"The Eher Verlag","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":44,"q":"What happened in Berlin and other university towns in May 1933?","a":"Massive book burnings of works by Jewish and communist authors","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":45,"q":"What was the German name for the cheap, mass-produced 'People's Receiver' radio?","a":"Volksempfänger","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":46,"q":"Why were the Nazi radios deliberately designed with short range?","a":"So Germans could not pick up foreign broadcasts like the BBC","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":47,"q":"How did the Nazis ensure people listened to Hitler's speeches even if they weren't at home?","a":"They put loudspeakers in streets and sounded sirens in factories to stop work","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":48,"q":"In which city did the Nazis hold their massive, carefully choreographed annual rallies?","a":"Nuremberg","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":49,"q":"Who was the architect who designed the 'Cathedral of Light' for the Nuremberg Rallies?","a":"Albert Speer","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":50,"q":"What was the name of the famous female film director who made 'Triumph of the Will'?","a":"Leni Riefenstahl","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":51,"q":"Why were 80% of Nazi films actually comedies or dramas rather than blatant propaganda?","a":"Goebbels knew people would get bored, so he hid the Nazi messages inside entertainment","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":52,"q":"In what year did Berlin host the Olympic Games?","a":"1936","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":53,"q":"Give one example of how the Nazis hid their true nature during the Olympics.","a":"They temporarily took down 'Jews Not Wanted' signs / hid anti-Semitic newspapers","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":54,"q":"Who was the African-American athlete who won four gold medals at the 1936 Olympics?","a":"Jesse Owens","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":55,"q":"How many gold medals did Germany win at the 1936 Olympics, allowing Goebbels to claim it was a domestic triumph?","a":"33 gold medals","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":56,"q":"What organisation did all artists, writers, and musicians have to join to get work?","a":"The Reich Chamber of Culture","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":57,"q":"What was the Nazi term for modern, abstract art that they completely banned?","a":"Degenerate Art / Entartete Kunst","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":58,"q":"What was the purpose of the 1937 'Degenerate Art Exhibition' in Munich?","a":"To deliberately display banned modern art so the German public could mock and laugh at it","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":59,"q":"Why did Hitler and Albert Speer build their architecture on such a massive scale?","a":"To make the individual feel small and the Nazi State feel eternal and powerful","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":60,"q":"Which genre of music did the Nazis ban because they racistly viewed it as 'black music'?","a":"Jazz","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":61,"q":"Who was Paul von Hindenburg?","a":"The aging President of the Weimar Republic from 1925 to 1934.","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":62,"q":"Who were the three chancellors before Hitler (1930-1932)?","a":"Brüning, von Papen, and von Schleicher.","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":63,"q":"Why did Hindenburg appoint Hitler as Chancellor in January 1933?","a":"Von Papen convinced Hindenburg that they could control Hitler ('make him squeak').","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":64,"q":"What percentage of the vote did the Nazis get in July 1932?","a":"37% (making them the largest party).","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":65,"q":"What was the Wall Street Crash?","a":"The 1929 US economic collapse.","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":66,"q":"How many Germans were unemployed by 1932?","a":"6 million.","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":67,"q":"How did Brüning try to fix the Depression?","a":"By cutting benefits and raising taxes.","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":68,"q":"Who was the first President of the Weimar Republic?","a":"Friedrich Ebert.","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":69,"q":"What was Article 48?","a":"Emergency presidential powers.","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":70,"q":"What was the Dawes Plan?","a":"American loans to Germany.","topic":"Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939"},{"id":71,"q":"What is the term for low-level, non-violent opposition, such as telling an anti-Nazi joke or working slowly?","a":"Passive Resistance","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":72,"q":"Roughly how many Germans were sent to concentration camps for political offenses between 1933 and 1939?","a":"1.3 million","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":73,"q":"What was the name of the secret intelligence reports smuggled out of Germany by the exiled SPD?","a":"The Sopade reports","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":74,"q":"Since trade unions were banned, give two subtle ways industrial workers resisted the Nazis in factories.","a":"Sabotaging machinery / absenteeism / working deliberately slowly","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":75,"q":"Who was the German carpenter who planted a time bomb in a Munich beer hall in November 1939?","a":"Georg Elser","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":76,"q":"Why did Georg Elser's assassination attempt fail?","a":"Hitler finished his speech early and left the building 13 minutes before the bomb went off","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":77,"q":"Which top German Army General resigned in 1938 in protest of Hitler's aggressive foreign policy?","a":"General Ludwig Beck","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":78,"q":"Who was the religious martyr murdered in 1939, known as the 'Preacher of Buchenwald'?","a":"Pastor Paul Schneider","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":79,"q":"In what year did membership of the Hitler Youth become legally compulsory?","a":"1936","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":80,"q":"Why did some teenagers begin to hate the Hitler Youth by the late 1930s?","a":"It became too strict, militaristic, and focused on boring military drills","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":81,"q":"What was the name of the working-class youth opposition group that emerged in cities like Cologne and Essen?","a":"The Edelweiss Pirates","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":82,"q":"Name one of the specific local gangs that made up the Edelweiss Pirates.","a":"The Navajos / The Roving Dudes / The Kittelbach Pirates","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":83,"q":"What symbol did the Edelweiss Pirates wear on their lapels to identify each other?","a":"The white edelweiss flower","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":84,"q":"Give two ways the Edelweiss Pirates rebelled against the Nazis.","a":"They went on hikes / wore checked shirts / beat up Hitler Youth members","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":85,"q":"What was the name of the middle-class youth opposition group found in cities like Berlin and Hamburg?","a":"The Swing Youth","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":86,"q":"How did the social class of the Swing Youth differ from the Edelweiss Pirates?","a":"The Swing Youth were middle/upper class; the Pirates were working class","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":87,"q":"What banned genre of music did the Swing Youth illegally listen to?","a":"American Jazz and Swing","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":88,"q":"Why did the Nazis hate Jazz music?","a":"Because of its African-American origins, they viewed it as racially inferior / 'black music'","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":89,"q":"How did the girls in the Swing Youth rebel against the Nazi ideal of German womanhood?","a":"They wore makeup and fashionable clothes, rather than the natural 'peasant' look","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":90,"q":"Before 1939, how did the Gestapo usually punish Edelweiss Pirates who were caught?","a":"They arrested them, shaved their heads, and beat them, but rarely killed them","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":91,"q":"What happened to the Reichstag building in February 1933?","a":"It was burned down, and a Dutch communist (van der Lubbe) was blamed.","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":92,"q":"What was the Decree for the Protection of the People and State?","a":"An emergency law passed after the fire that suspended civil rights and allowed communists to be arrested.","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":93,"q":"What was the Enabling Act (March 1933)?","a":"It gave Hitler the power to make laws without the Reichstag for four years, effectively making him a dictator.","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":94,"q":"What did Hitler do to trade unions in May 1933?","a":"He banned them and replaced them with the German Labour Front (DAF).","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":95,"q":"What was the Night of the Long Knives (June 1934)?","a":"Hitler used the SS to murder the leaders of the SA, including Ernst Röhm, to win the army's support.","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":96,"q":"What title did Hitler take upon Hindenburg's death in 1934?","a":"Führer (combining President and Chancellor).","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":97,"q":"Who appointed Hitler as Chancellor?","a":"President Hindenburg.","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":98,"q":"Who convinced Hindenburg to appoint Hitler?","a":"Franz von Papen.","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":99,"q":"What was the SA?","a":"The Brownshirts.","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"},{"id":100,"q":"What was the 25-Point Programme?","a":"The Nazi manifesto.","topic":"Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         

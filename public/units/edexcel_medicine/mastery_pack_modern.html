@@ -18,6 +18,24 @@
             .page-break { page-break-after: always; }
             body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+            }
+            .answer-text::after {
+                display: none !important;
+            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -173,29 +191,398 @@
         .screen-vault-toolbar {
             position: sticky;
             top: 0;
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 10px 16px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 9999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             font-family: 'Outfit', sans-serif;
         }
-        .screen-vault-toolbar a {
-            background: #fbbf24;
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
             color: #0f172a;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-block;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
-        @media print {
-            .screen-vault-toolbar {
-                display: none !important;
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .leitner-modal-card {
+                max-height: 96vh;
+                border-radius: 10px;
+            }
+            .card-question-text {
+                font-size: 1rem;
+            }
+            .card-answer-text {
+                font-size: 1.1rem;
+            }
+            .btn-sub {
+                display: none;
+            }
+            .leitner-stat-pill {
+                padding: 6px 4px;
+                font-size: 0.74rem;
+            }
+            .leitner-stat-pill strong {
+                font-size: 0.88rem;
             }
         }
 
@@ -316,7 +703,62 @@
             text-align: center;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
         }
         .answer-list {
             margin-bottom: 30px;
@@ -330,14 +772,56 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
+            align-items: center;
         }
         .answer-num {
             font-weight: bold;
-            width: 30px;
+            width: 32px;
             flex-shrink: 0;
+            color: #1e3a8a;
         }
         .answer-text {
             font-weight: 600;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            background: #e2e8f0;
+            color: transparent !important;
+            border-radius: 6px;
+            padding: 3px 12px;
+            min-height: 24px;
+            min-width: 140px;
+            box-sizing: border-box;
+            border: 1px dashed #94a3b8;
+            transition: all 0.15s ease;
+        }
+        .answer-text::after {
+            content: '🔒 Tap to Reveal';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.4px;
+        }
+        .answer-text:hover {
+            background: #cbd5e1;
+        }
+        .answer-text.revealed {
+            background: #ffffff;
+            color: #0f172a !important;
+            border: 1px solid #10b981;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .answer-text.revealed::after {
+            display: none !important;
         }
 
         /* Tracker Page */
@@ -442,9 +926,14 @@
 
     <!-- Mobile Screen-Only Toolbar -->
     <div class="screen-vault-toolbar">
-        <span>📱 Mobile Revision Mode · Interactive Digital Vault</span>
-        <div>
-            <a href="#the-vault">⚡ Jump to The Vault Solutions</a>
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
 
@@ -459,11 +948,11 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 120 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAAAAklEQVR4AewaftIAAA0aSURBVO3BARFcOw5FwRPX8BAQ4RIK4RIQIckGgJ0qp57mJftv94+fvyAiMmAhIjJkISIyZCEiMmQhIjJkISIyZCEiMuTDb5gn/6KuYMc8OekKdsyTk65gxzw56QpumSc7XcGJefKmruDEPNnpCm6ZJyddwY55ctIV7JgnT+oKdsyTf1FXsLMQERmyEBEZshARGbIQERmyEBEZshARGfLhD3UFbzJP3mae7HQFJ+bJTldw0hXsmCcnXcGOeXLSFeyYJyddwY55css8OekKdrqCW13BiXmy0xW8rSt4k3lyayEiMmQhIjJkISIyZCEiMmQhIjLkw8PMkyd1BU/pCv5W5slJV7DTFZyYJztdwYl58pSu4MQ82ekKTsyTb+gKdsyTJ3UFTzFPntQVPGUhIjJkISIyZCEiMmQhIjJkISIyZCEiMuTDf4h5cqsruGWenHQFO+bJk7qCW13BLfNkpys46Qp2zJNbXcGJebLTFZyYJztdwYl5InsLEZEhCxGRIQsRkSELEZEhCxGRIR/+Q7qCE/Pklnlyyzx5inlyqys4MU92uoK3dQU75skt8+SkK3hKV/BftxARGbIQERmyEBEZshARGbIQERmyEBEZ8uFhXcH/E/PkpCv4BvPkTebJSVewY56cdAVP6QpumSe3zJNb5slJV/CUruBvtRARGbIQERmyEBEZshARGbIQERny4Q+ZJ/8a8+SkK9gxT26ZJyddwY55ctIV7JgnJ13Bjnly0hXsmCd/K/PkpCv4hq5gxzx5knnyr1mIiAxZiIgMWYiIDFmIiAxZiIgMWYiIDPnx8xf+I8yTk65gxzz5f9IVvM08udUV7Jgnb+sKdsyTk67gv2AhIjJkISIyZCEiMmQhIjJkISIy5MNvmCcnXcGOeXKrKzgxT57SFTypK7hlnux0BU8yT3bMk2/oCk66gjd1BSfmyS3zZKcruGWenHQFt8yTna7gxDy51RXsLEREhixERIYsRESGLEREhixERIYsRESGfPiNruBtXcGbuoIT82SnK3iSebLTFdzqCk7Mk28wT3a6ghPzZKcruGWenHQFO+bJLfPkSebJra5gxzz5hoWIyJCFiMiQhYjIkIWIyJCFiMiQD3/IPNnpCm6ZJyddwY558qSu4FZX8Cbz5JZ5ctIVPMU8uWWenHQFO+bJSVdwyzzZ6QqeZJ7c6gre1BXcWoiIDFmIiAxZiIgMWYiIDFmIiAxZiIgM+fHzFx5knjypK3iTeXLSFdwyT76hK3iKeXLSFeyYJyddwY558rau4CnmyUlXsGOenHQFO+bJSVfwpoWIyJCFiMiQhYjIkIWIyJCFiMiQD79hnjypK9gxT26ZJ38r8+RJXcE3mCffYJ68qSs4MU92uoIT82SnKzgxT3a6gltdwYl5cqsr2DFPTrqCnYWIyJCFiMiQhYjIkIWIyJCFiMiQhYjIkB8/f+EPmCc7XcF/hXlyqyvYMU/e1hXsmCe3uoJb5smtruDEPHlTV3DLPDnpCm6ZJ7e6gh3z5KQr2FmIiAxZiIgMWYiIDFmIiAxZiIgM+fHzF77EPNnpCm6ZJ0/qCp5inpx0BTvmyUlX8BTz5G1dwS3zZKcreJt5stMV3DJPbnUFTzJPbnUFOwsRkSELEZEhCxGRIQsRkSELEZEhCxGRIR8eZp7cMk9udQVPMk9udQU7XcGTzJNbXcFOV/Ak8+QbuoId8+SkK/h/0hXcMk92uoKTruApCxGRIQsRkSELEZEhCxGRIQsRkSE/fv7CHzBPbnUFTzFPbnUFJ+bJTldwYp7sdAVPMk92uoJb5slJV7Bjnpx0BTvmya2u4BvMk5OuYMc8OekKdsyTk67gKebJra7gxDzZ6QpuLUREhixERIYsRESGLEREhixERIYsRESGfHhYV3Binux0BSfmyU5XcMs8uWWenHQFbzJPTrqCbzBPdrqCE/Nkxzw56Qp2zJNbXcHbzJOdruDEPNnpCp7UFTxlISIyZCEiMmQhIjJkISIyZCEiMuTDb5gnJ13Bjnly0hXsmCcnXcGOeXLSFTylK7hlntzqCm51BW/rCnbMk5Ou4E3mydu6gltdwY55ctIVvGkhIjJkISIyZCEiMmQhIjJkISIyZCEiMuTHz184ME+e1BXcMk92uoIT82SnK7hlnpx0BU8xT251BSfmyVO6ghPzZKcrODFPdrqCbzBPvqEruGWe3OoKTsyTW13Bjnly0hXsLEREhixERIYsRESGLEREhixERIZ8+EeZJyddwZvMk5Ou4FZXsGOenHQF39AV3OoKnmKenHQF39AV3DJPbnUFO+bJk8yTna7g1kJEZMhCRGTIQkRkyEJEZMhCRGTIQkRkyIeHdQUn5slTuoIT82SnK7jVFdzqCr6hKzgxT3a6ghPz5FZXcMs82ekKTsyTna7gSV3BLfPkVlewY56cmCe3uoId8+SWeXLSFewsRESGLEREhixERIYsRESGLEREhnz4ja7gxDx5Sldwyzy5ZZ7c6gpOzJOdruDEPHmKefKkruBN5snbzJNbXcGOeXJintzqCt7UFdxaiIgMWYiIDFmIiAxZiIgMWYiIDFmIiAz58DDz5Bu6glvmyZO6gqd0BSfmyU5XcMs8OekK/jXmyUlXsNMV3DJPntQV3DJPbnUFO13BiXnylIWIyJCFiMiQhYjIkIWIyJCFiMiQD79hnvytzJOTruBWV/ANXcGOefIk8+RN5snbzJOdruDEPNnpCk7Mk52u4EldwS3z5E0LEZEhCxGRIQsRkSELEZEhCxGRIQsRkSEffqMruGWenHQFt8yTna7gxDzZ6QpumSdP6gq+oSu4ZZ7sdAVP6gq+wTzZMU++wTw56Qp2zJOTruAbuoId8+SkK9hZiIgMWYiIDFmIiAxZiIgMWYiIDPnwG+bJSVfwJvPkpCvYMU9OuoJbXcGOeXKrKzgxT26ZJ2/qCm6ZJ0/qCnbMk5Ou4G9lnjylK/iGhYjIkIWIyJCFiMiQhYjIkIWIyJCFiMiQD7/RFZyYJztdwYl5stMVnHQFt8yTv5V58g1dwVPMk7d1BW8yT97WFeyYJ08yT56yEBEZshARGbIQERmyEBEZshARGfLhN8yTW+bJSVewY548qSvYMU+eZJ7c6gp2zJOTruAp5slJV/CmruDEPNnpCk7Mk52u4FZXcGKe7HQFJ+bJTldwYp78axYiIkMWIiJDFiIiQxYiIkMWIiJDFiIiQ378/IW/mHmy0xWcmCdP6QpOzJOndAUn5slOV/Ak8+QpXcGJeXKrK9gxT251Bd9gntzqCk7Mk52u4G+1EBEZshARGbIQERmyEBEZshARGfLj5y8cmCcnXcGOeXKrK7hlnrytK9gxT57UFdwyT57SFdwyT066glvmyd+qK7hlntzqCnbMk5Ou4E0LEZEhCxGRIQsRkSELEZEhCxGRIQsRkSEffqMruNUVnJgnO+bJSVew0xWcmCc7XcGJeXLLPNnpCp5knux0Bbe6ghPz5E3myUlX8A3myVPMk5OuYMc8eZJ58pSu4NZCRGTIQkRkyEJEZMhCRGTIQkRkyIc/ZJ7sdAW3uoJb5smTuoJvME/eZJ6cdAW3zJOdruDEPNnpCm6ZJ28zT26ZJ7fMk3/NQkRkyEJEZMhCRGTIQkRkyEJEZMhCRGTIj5+/8B9hntzqCm6ZJyddwY55ctIV7Jgnf6uu4MQ82ekKTsyTW13Bjnly0hU8xTw56QqeYp6cdAU75smTuoKdhYjIkIWIyJCFiMiQhYjIkIWIyJAPv2Ge/Iu6gqeYJyddwU5XcKsrODFPdrqCW+bJSVfwt+oKntIVnJgnbzJPTrqCW+bJU7qCWwsRkSELEZEhCxGRIQsRkSELEZEhCxGRIR/+UFfwJvPk/4l5css8udUVnJgnt7qCW13BLfPkVldwqyu4ZZ48pSt4UlfwpoWIyJCFiMiQhYjIkIWIyJCFiMiQDw8zT57UFTylKzgxT3a6gieZJztdwd+qKzgxT3a6glvmyZPMk6d0BSddwY55cmKevMk8OekKdsyTk65gZyEiMmQhIjJkISIyZCEiMmQhIjJkISIy5MN/iHnyJPNkpyt4knnylK7gSV3Bjnly0hXsdAW3zJMndQW3zJNbXcFTzJMT8+RNCxGRIQsRkSELEZEhCxGRIQsRkSEf5LfMk1vmyTd0BSfmyY558iTz5CnmyUlXsNMVPMk8udUVfIN5stMVnJgnO13BiXnylIWIyJCFiMiQhYjIkIWIyJCFiMiQhYjIkA8P6wr+Vl3BiXmy0xWcmCc7XcGTuoId8+RWV/A28+Qp5slJV7Bjnpx0BU8xT57UFeyYJ9/QFdxaiIgMWYiIDFmIiAxZiIgMWYiIDPnwh8yTf415css8OekK3tQV3DJPbnUFbzNPdrqCE/Nkpyu4ZZ6cdAVP6QpudQV/q4WIyJCFiMiQhYjIkIWIyJCFiMiQhYjIkB8/f0FEZMBCRGTIQkRkyEJEZMhCRGTIQkRkyP8AEW2qTth0+eUAAAAASUVORK5CYII=" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">📱 Interactive Digital Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch mobile self-marking mode &amp; solutions at home without flipping pages.</div>
-                        <div class="cover-qr-url">meoncross-history.netlify.app/units/edexcel_medicine/mastery_pack_modern.html</div>
+                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">meoncross-history.netlify.app/units/edexcel_medicine/mastery_pack_modern.html#practice-mode</div>
                     </div>
                 </div>
                 <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
@@ -1744,206 +2233,214 @@
         <div class="vault-watermark">🔒</div>
         <div class="vault-content">
             <h1>THE VAULT</h1>
-            <p style="text-align: center; font-style: italic; margin-bottom: 30px;">Restricted Access: Answer Keys</p>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
         <div class="answer-list"><h3>KT4.1: How have modern discoveries changed our understanding of illness?</h3>
                 <div class="answer-item">
                     <div class="answer-num">1.</div>
-                    <div class="answer-text">It moved to a multi-causal approach, recognizing that while microbes cause infectious diseases, genetics and lifestyle choices cause chronic illnesses.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It moved to a multi-causal approach, recognizing that while microbes cause infectious diseases, genetics and lifestyle choices cause chronic illnesses.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">2.</div>
-                    <div class="answer-text">Gregor Mendel</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Gregor Mendel</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">3.</div>
-                    <div class="answer-text">X-ray crystallography to take photographs of human cells</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">X-ray crystallography to take photographs of human cells</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">4.</div>
-                    <div class="answer-text">1953</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1953</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">5.</div>
-                    <div class="answer-text">The Human Genome Project</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Human Genome Project</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">6.</div>
-                    <div class="answer-text">There is still no cure or highly effective treatment for the majority of genetic conditions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">There is still no cure or highly effective treatment for the majority of genetic conditions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">7.</div>
-                    <div class="answer-text">By checking an individual's genetic code to see if they carry genes that put them at higher risk of developing certain cancers or conditions.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By checking an individual's genetic code to see if they carry genes that put them at higher risk of developing certain cancers or conditions.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">8.</div>
-                    <div class="answer-text">Type 2 diabetes</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Type 2 diabetes</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">9.</div>
-                    <div class="answer-text">Heart disease</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Heart disease</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">10.</div>
-                    <div class="answer-text">Emphysema</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Emphysema</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">11.</div>
-                    <div class="answer-text">Liver disease, kidney disease, and several cancers</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Liver disease, kidney disease, and several cancers</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">12.</div>
-                    <div class="answer-text">The Electron microscope</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Electron microscope</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">13.</div>
-                    <div class="answer-text">It shifted from a doctor's clinical observation of physical symptoms to precise, high-tech laboratory tests and scans.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It shifted from a doctor's clinical observation of physical symptoms to precise, high-tech laboratory tests and scans.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">14.</div>
-                    <div class="answer-text">The 1930s; they allowed doctors to test for a vast number of conditions without invasive surgery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 1930s; they allowed doctors to test for a vast number of conditions without invasive surgery.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">15.</div>
-                    <div class="answer-text">A CT scan is a 3D scan that creates detailed images of the inside of the body, allowing doctors to spot tiny tumors when they are the size of a pea.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A CT scan is a 3D scan that creates detailed images of the inside of the body, allowing doctors to spot tiny tumors when they are the size of a pea.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">16.</div>
-                    <div class="answer-text">The 1940s; they use high-frequency sound waves to build up a picture of the inside of the body.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 1940s; they use high-frequency sound waves to build up a picture of the inside of the body.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">17.</div>
-                    <div class="answer-text">They use electrical impulses to track and monitor heart activity.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They use electrical impulses to track and monitor heart activity.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">18.</div>
-                    <div class="answer-text">A flexible tube with a camera that allows doctors to see inside the body and collect cell samples without major surgery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A flexible tube with a camera that allows doctors to see inside the body and collect cell samples without major surgery.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">19.</div>
-                    <div class="answer-text">Taking a tiny sample of tissue from a lump to test it and see if it is cancerous.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Taking a tiny sample of tissue from a lump to test it and see if it is cancerous.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">20.</div>
-                    <div class="answer-text">The 1960s; it allowed patients to regularly check their own blood sugar at home to manage their condition.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The 1960s; it allowed patients to regularly check their own blood sugar at home to manage their condition.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">21.</div>
-                    <div class="answer-text">Smallpox.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smallpox.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">22.</div>
-                    <div class="answer-text">Milkmaids who caught cowpox never caught the deadly smallpox.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Milkmaids who caught cowpox never caught the deadly smallpox.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">23.</div>
-                    <div class="answer-text">John Snow.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">John Snow.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">24.</div>
-                    <div class="answer-text">Galen.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">25.</div>
-                    <div class="answer-text">A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">26.</div>
-                    <div class="answer-text">Joseph Lister.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joseph Lister.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">27.</div>
-                    <div class="answer-text">Galen believed the liver constantly manufactured new blood which was consumed by the body.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen believed the liver constantly manufactured new blood which was consumed by the body.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
-                    <div class="answer-text">Louis Pasteur.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Louis Pasteur.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">29.</div>
-                    <div class="answer-text">The printing press.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The printing press.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">30.</div>
-                    <div class="answer-text">A Renaissance belief that a disease could be passed on or transferred to an object or animal.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A Renaissance belief that a disease could be passed on or transferred to an object or animal.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">31.</div>
-                    <div class="answer-text">Because it was a synthetic chemical compound designed to target and destroy a specific disease-causing microbe inside the body without harming the rest of the patient's cells.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because it was a synthetic chemical compound designed to target and destroy a specific disease-causing microbe inside the body without harming the rest of the patient's cells.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">32.</div>
-                    <div class="answer-text">By methodically testing over 600 arsenic chemical compounds until finding one (the 606th) that specifically destroyed syphilis bacteria.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By methodically testing over 600 arsenic chemical compounds until finding one (the 606th) that specifically destroyed syphilis bacteria.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">33.</div>
-                    <div class="answer-text">Puerperal (childbed) fever and blood poisoning caused by streptococcus bacteria.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Puerperal (childbed) fever and blood poisoning caused by streptococcus bacteria.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">34.</div>
-                    <div class="answer-text">Antiseptics killed microbes on external surfaces or open wound tissue, whereas magic bullets were taken internally to target and destroy specific pathogens inside the body without poisoning the patient.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Antiseptics killed microbes on external surfaces or open wound tissue, whereas magic bullets were taken internally to target and destroy specific pathogens inside the body without poisoning the patient.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">35.</div>
-                    <div class="answer-text">Magic bullets were synthetic chemical compounds created in laboratories, whereas antibiotics like penicillin were created using living microorganisms to kill bacteria.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Magic bullets were synthetic chemical compounds created in laboratories, whereas antibiotics like penicillin were created using living microorganisms to kill bacteria.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">36.</div>
-                    <div class="answer-text">Sulphanilamide, which allowed pharmaceutical companies to mass-produce cheap, effective drugs for pneumonia, meningitis, and scarlet fever.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Sulphanilamide, which allowed pharmaceutical companies to mass-produce cheap, effective drugs for pneumonia, meningitis, and scarlet fever.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
-                    <div class="answer-text">It only provided free GP care to sick workers who paid weekly contributions, completely excluding their wives, children, and those who were unemployed or retired.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It only provided free GP care to sick workers who paid weekly contributions, completely excluding their wives, children, and those who were unemployed or retired.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">38.</div>
-                    <div class="answer-text">The Beveridge Report</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Beveridge Report</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">39.</div>
-                    <div class="answer-text">1948; under Aneurin Bevan</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1948; under Aneurin Bevan</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">40.</div>
-                    <div class="answer-text">That comprehensive healthcare should be free at the point of delivery for everyone in Britain, paid for through national taxation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That comprehensive healthcare should be free at the point of delivery for everyone in Britain, paid for through national taxation.</div>
                 </div>
                 </div>
         </div>
@@ -1954,202 +2451,202 @@
                 <div class="answer-list"><h3>KT4.2: How have prevention and treatment advanced in the modern era?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
-                    <div class="answer-text">Primary care (GPs, dentists, opticians), hospital services (managed by regional boards), and local authority health services (such as ambulances and health visitors).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Primary care (GPs, dentists, opticians), hospital services (managed by regional boards), and local authority health services (such as ambulances and health visitors).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">42.</div>
-                    <div class="answer-text">They feared they would lose their independent status, lose their private patient income, and become state-controlled civil servants.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They feared they would lose their independent status, lose their private patient income, and become state-controlled civil servants.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">43.</div>
-                    <div class="answer-text">By 'stuffing their mouths with gold'-allowing hospital consultants to continue treating lucrative private patients alongside their NHS work.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By 'stuffing their mouths with gold'-allowing hospital consultants to continue treating lucrative private patients alongside their NHS work.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">44.</div>
-                    <div class="answer-text">It made advanced diagnostic tests and specialized surgical treatments free for everyone, removing the fear of bankruptcy from getting ill.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It made advanced diagnostic tests and specialized surgical treatments free for everyone, removing the fear of bankruptcy from getting ill.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">45.</div>
-                    <div class="answer-text">It fell rapidly, dropping from high rates in the early 20th century to less than 1% by the late 20th century.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It fell rapidly, dropping from high rates in the early 20th century to less than 1% by the late 20th century.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">46.</div>
-                    <div class="answer-text">Public education and lifestyle campaigns encouraging healthy eating, physical exercise, and reducing tobacco or alcohol consumption.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Public education and lifestyle campaigns encouraging healthy eating, physical exercise, and reducing tobacco or alcohol consumption.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">47.</div>
-                    <div class="answer-text">Because while breakthroughs like X-rays and aseptic surgery existed, many traditional home remedies (like wrapping brown paper and vinegar for headaches) remained highly common.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because while breakthroughs like X-rays and aseptic surgery existed, many traditional home remedies (like wrapping brown paper and vinegar for headaches) remained highly common.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">48.</div>
-                    <div class="answer-text">The introduction of the polio vaccine in the 1950s.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The introduction of the polio vaccine in the 1950s.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">49.</div>
-                    <div class="answer-text">Organ transplants, prosthetic joint replacements, and keyhole surgery.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Organ transplants, prosthetic joint replacements, and keyhole surgery.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">50.</div>
-                    <div class="answer-text">The evolution of drug-resistant strains of bacteria (superbugs like MRSA) due to the over-prescription and overuse of antibiotics.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The evolution of drug-resistant strains of bacteria (superbugs like MRSA) due to the over-prescription and overuse of antibiotics.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">51.</div>
-                    <div class="answer-text">The double helix structure of DNA.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The double helix structure of DNA.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">52.</div>
-                    <div class="answer-text">It contains genetic instructions that can cause hereditary diseases or influence susceptibility.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It contains genetic instructions that can cause hereditary diseases or influence susceptibility.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">53.</div>
-                    <div class="answer-text">Smoking, poor diet, or lack of exercise.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smoking, poor diet, or lack of exercise.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">54.</div>
-                    <div class="answer-text">Rosalind Franklin.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rosalind Franklin.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
-                    <div class="answer-text">Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">56.</div>
-                    <div class="answer-text">Galen believed the liver constantly manufactured new blood which was consumed by the body.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Galen believed the liver constantly manufactured new blood which was consumed by the body.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">57.</div>
-                    <div class="answer-text">Louis Pasteur.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Louis Pasteur.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">58.</div>
-                    <div class="answer-text">Joseph Lister.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joseph Lister.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">59.</div>
-                    <div class="answer-text">Andreas Vesalius.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Andreas Vesalius.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">60.</div>
-                    <div class="answer-text">It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT4.3: How was Penicillin discovered and mass-produced?</h3>
                 <div class="answer-item">
                     <div class="answer-num">61.</div>
-                    <div class="answer-text">1928; at St Mary's Hospital in London</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1928; at St Mary's Hospital in London</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">62.</div>
-                    <div class="answer-text">A contaminating mould had grown on the dish and killed off the surrounding staphylococci bacteria.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A contaminating mould had grown on the dish and killed off the surrounding staphylococci bacteria.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">63.</div>
-                    <div class="answer-text">He lacked the specialized chemical team and funding needed to isolate, concentrate, and stabilize the active compound.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He lacked the specialized chemical team and funding needed to isolate, concentrate, and stabilize the active compound.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">64.</div>
-                    <div class="answer-text">That Alexander Fleming single-handedly developed penicillin into a mass-produced, usable medicine.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">That Alexander Fleming single-handedly developed penicillin into a mass-produced, usable medicine.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">65.</div>
-                    <div class="answer-text">He found that penicillin became completely ineffective when mixed with blood in test tubes, causing him to doubt its value in living people.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He found that penicillin became completely ineffective when mixed with blood in test tubes, causing him to doubt its value in living people.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">66.</div>
-                    <div class="answer-text">Howard Florey and Ernst Chain; at Oxford University</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Howard Florey and Ernst Chain; at Oxford University</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">67.</div>
-                    <div class="answer-text">As a skilled biochemist, he successfully grew the mould in his laboratory and extracted the active chemical compound.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">As a skilled biochemist, he successfully grew the mould in his laboratory and extracted the active chemical compound.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">68.</div>
-                    <div class="answer-text">It proved that penicillin was a highly effective antibiotic capable of killing deadly infections inside living bodies.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It proved that penicillin was a highly effective antibiotic capable of killing deadly infections inside living bodies.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">69.</div>
-                    <div class="answer-text">Penicillin was incredibly difficult to produce in large quantities, requiring massive volumes of grown mould to extract tiny amounts of active liquid.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Penicillin was incredibly difficult to produce in large quantities, requiring massive volumes of grown mould to extract tiny amounts of active liquid.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">70.</div>
-                    <div class="answer-text">Albert Alexander, a local policeman who developed septicaemia after being scratched by a rose bush.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Albert Alexander, a local policeman who developed septicaemia after being scratched by a rose bush.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">71.</div>
-                    <div class="answer-text">The patient initially showed dramatic recovery, but died after the tiny supply of penicillin ran out, despite the doctors trying to recycle the drug from his urine.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The patient initially showed dramatic recovery, but died after the tiny supply of penicillin ran out, despite the doctors trying to recycle the drug from his urine.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">72.</div>
-                    <div class="answer-text">British firms were fully occupied with the war effort, manufacturing essential military supplies and ammunition for World War II.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">British firms were fully occupied with the war effort, manufacturing essential military supplies and ammunition for World War II.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
-                    <div class="answer-text">The United States</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The United States</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">74.</div>
-                    <div class="answer-text">The entry of the United States into World War II, making the treatment of wounded soldiers a matter of urgent national priority.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The entry of the United States into World War II, making the treatment of wounded soldiers a matter of urgent national priority.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">75.</div>
-                    <div class="answer-text">Growing the mould in giant beer vats and deep-fermentation tanks.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Growing the mould in giant beer vats and deep-fermentation tanks.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">76.</div>
-                    <div class="answer-text">Over 2.3 million doses, enough to treat all Allied casualties</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 2.3 million doses, enough to treat all Allied casualties</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">77.</div>
-                    <div class="answer-text">He refused to patent the drug, declaring that it should be a free, lifesaving resource available to everyone in the world.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">He refused to patent the drug, declaring that it should be a free, lifesaving resource available to everyone in the world.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">78.</div>
-                    <div class="answer-text">Dorothy Crowfoot Hodgkin</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Dorothy Crowfoot Hodgkin</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">79.</div>
-                    <div class="answer-text">1945</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1945</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">80.</div>
-                    <div class="answer-text">Individual brilliance (Fleming/Florey/Chain), institutions (the US Government), science/technology (deep fermentation), and the catalyst of war (WWII).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Individual brilliance (Fleming/Florey/Chain), institutions (the US Government), science/technology (deep fermentation), and the catalyst of war (WWII).</div>
                 </div>
                 </div>
         </div>
@@ -2160,202 +2657,202 @@
                 <div class="answer-list"><h3>KT4.3: How was Penicillin discovered and mass-produced?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
-                    <div class="answer-text">A chemical compound that targets and kills specific microbes without harming the rest of the body.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A chemical compound that targets and kills specific microbes without harming the rest of the body.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">82.</div>
-                    <div class="answer-text">Salvarsan 606.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Salvarsan 606.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">83.</div>
-                    <div class="answer-text">The National Health Service (NHS).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The National Health Service (NHS).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">84.</div>
-                    <div class="answer-text">Aneurin Bevan.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Aneurin Bevan.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">85.</div>
-                    <div class="answer-text">Prontosil.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Prontosil.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">86.</div>
-                    <div class="answer-text">The double helix structure of DNA.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The double helix structure of DNA.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">87.</div>
-                    <div class="answer-text">Louis Pasteur.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Louis Pasteur.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">88.</div>
-                    <div class="answer-text">Joseph Lister.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Joseph Lister.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">89.</div>
-                    <div class="answer-text">Smoking, poor diet, or lack of exercise.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Smoking, poor diet, or lack of exercise.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">90.</div>
-                    <div class="answer-text">Rosalind Franklin.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Rosalind Franklin.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">91.</div>
-                    <div class="answer-text">1950</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1950</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">92.</div>
-                    <div class="answer-text">Because the government earned around £4 billion from tobacco tax, thousands of jobs depended on the industry, and there were ethical debates about limiting personal freedoms.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because the government earned around £4 billion from tobacco tax, thousands of jobs depended on the industry, and there were ethical debates about limiting personal freedoms.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">93.</div>
-                    <div class="answer-text">They were not clear enough, meaning tumors were often missed entirely or mistaken for other things like lung abscesses.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They were not clear enough, meaning tumors were often missed entirely or mistaken for other things like lung abscesses.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">94.</div>
-                    <div class="answer-text">A CT scan uses dye and takes detailed 3D images, allowing doctors to spot tiny tumors when they are the size of a pea.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A CT scan uses dye and takes detailed 3D images, allowing doctors to spot tiny tumors when they are the size of a pea.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">95.</div>
-                    <div class="answer-text">It shows how active the cancer cells are by tracking how much energy the tumor is using, helping doctors see if a treatment is working.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It shows how active the cancer cells are by tracking how much energy the tumor is using, helping doctors see if a treatment is working.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">96.</div>
-                    <div class="answer-text">A flexible tube with a camera passed down the patient's airway, allowing doctors to see inside the lungs and collect cell samples.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A flexible tube with a camera passed down the patient's airway, allowing doctors to see inside the lungs and collect cell samples.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">97.</div>
-                    <div class="answer-text">It is the extraction and scientific analysis of a tiny sample of lung tissue to confirm if a tumor is indeed cancerous.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It is the extraction and scientific analysis of a tiny sample of lung tissue to confirm if a tumor is indeed cancerous.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">98.</div>
-                    <div class="answer-text">It uses powerful drugs (chemicals) to attack and kill cancer cells throughout the body, but it also damages healthy cells, causing severe side effects.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">It uses powerful drugs (chemicals) to attack and kill cancer cells throughout the body, but it also damages healthy cells, causing severe side effects.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">99.</div>
-                    <div class="answer-text">Using targeted, high-energy radiation beams to shrink and destroy localized cancer tumors.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Using targeted, high-energy radiation beams to shrink and destroy localized cancer tumors.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">100.</div>
-                    <div class="answer-text">Using specialized drugs to 'wake up' and boost the patient's own immune system so it can identify and destroy cancer cells.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Using specialized drugs to 'wake up' and boost the patient's own immune system so it can identify and destroy cancer cells.</div>
                 </div>
                 </div><div class="answer-list"><h3>KT4.4: How has the government tackled the modern epidemic of Lung Cancer?</h3>
                 <div class="answer-item">
                     <div class="answer-num">101.</div>
-                    <div class="answer-text">Banning cigarette advertisements on television.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Banning cigarette advertisements on television.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">102.</div>
-                    <div class="answer-text">2005</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">2005</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">103.</div>
-                    <div class="answer-text">They raised the legal age for buying tobacco from 16 to 18.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">They raised the legal age for buying tobacco from 16 to 18.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">104.</div>
-                    <div class="answer-text">A ban on smoking in all enclosed workplaces, including pubs, cafés, restaurants, and offices.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A ban on smoking in all enclosed workplaces, including pubs, cafés, restaurants, and offices.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">105.</div>
-                    <div class="answer-text">A requirement that all tobacco products in shops must be removed from open display and kept hidden from sight.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A requirement that all tobacco products in shops must be removed from open display and kept hidden from sight.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">106.</div>
-                    <div class="answer-text">By banning smoking in all cars carrying children under the age of 18.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">By banning smoking in all cars carrying children under the age of 18.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">107.</div>
-                    <div class="answer-text">Compulsory plain, olive-green packaging featuring prominent graphic health warnings and no brand logos.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Compulsory plain, olive-green packaging featuring prominent graphic health warnings and no brand logos.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">108.</div>
-                    <div class="answer-text">Because the available tests are not accurate enough to outweigh the negative effects of screening, such as exposing healthy people to radiation.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Because the available tests are not accurate enough to outweigh the negative effects of screening, such as exposing healthy people to radiation.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
-                    <div class="answer-text">In both cases, the initial response was slow, with the government only directly intervening with compulsory laws after the death toll became too high to ignore.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">In both cases, the initial response was slow, with the government only directly intervening with compulsory laws after the death toll became too high to ignore.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">110.</div>
-                    <div class="answer-text">The laissez-faire (leave it alone) approach of the 19th century</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The laissez-faire (leave it alone) approach of the 19th century</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">111.</div>
-                    <div class="answer-text">Alexander Fleming.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Alexander Fleming.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">112.</div>
-                    <div class="answer-text">Howard Florey and Ernst Chain.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Howard Florey and Ernst Chain.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">113.</div>
-                    <div class="answer-text">The Second World War.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Second World War.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">114.</div>
-                    <div class="answer-text">A chemical compound that targets and kills specific microbes without harming the rest of the body.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">A chemical compound that targets and kills specific microbes without harming the rest of the body.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">115.</div>
-                    <div class="answer-text">The National Health Service (NHS).</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The National Health Service (NHS).</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">116.</div>
-                    <div class="answer-text">Aneurin Bevan.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Aneurin Bevan.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">117.</div>
-                    <div class="answer-text">Blood, phlegm, yellow bile, black bile.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Blood, phlegm, yellow bile, black bile.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">118.</div>
-                    <div class="answer-text">Andreas Vesalius.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Andreas Vesalius.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">119.</div>
-                    <div class="answer-text">Symptoms often do not appear until the cancer is advanced and has spread to other organs.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Symptoms often do not appear until the cancer is advanced and has spread to other organs.</div>
                 </div>
                 
                 <div class="answer-item">
                     <div class="answer-num">120.</div>
-                    <div class="answer-text">The British Doctors Study by Richard Doll and Bradford Hill.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The British Doctors Study by Richard Doll and Bradford Hill.</div>
                 </div>
                 </div>
         </div>
@@ -2417,45 +2914,309 @@
         </div>
     </div>
 
+    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <p class="leitner-unit-subtitle">Paper 1: Medicine Through Time with the Western Front · Modern</p>
+                </div>
+                <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+            </div>
+
+            <div class="leitner-box-stats">
+                <div class="leitner-stat-pill box-1" id="stat-box-1" title="Box 1: Daily Practice">
+                    <span>🔴</span>
+                    <span>Box 1 (Learning):</span>
+                    <strong id="count-box-1">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-2" id="stat-box-2" title="Box 2: Review Every 3 Days">
+                    <span>🟡</span>
+                    <span>Box 2 (Consolidating):</span>
+                    <strong id="count-box-2">0</strong>
+                </div>
+                <div class="leitner-stat-pill box-3" id="stat-box-3" title="Box 3: Mastered (Weekly)">
+                    <span>🟢</span>
+                    <span>Box 3 (Mastered):</span>
+                    <strong id="count-box-3">0</strong>
+                </div>
+            </div>
+
+            <div class="leitner-filter-row">
+                <label for="leitner-topic-select">Filter Topic:</label>
+                <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                    <option value="all">All Topics (120 Questions)</option>
+                    <option value="0">Part 1: KT4.1: How have modern discoveries changed our understanding of illness?</option>
+<option value="1">Part 2: KT4.1: How have modern discoveries changed our understanding of illness?</option>
+<option value="2">Part 3: KT4.2: How have prevention and treatment advanced in the modern era?</option>
+<option value="3">Part 4: KT4.3: How was Penicillin discovered and mass-produced?</option>
+<option value="4">Part 5: KT4.3: How was Penicillin discovered and mass-produced?</option>
+<option value="5">Part 6: KT4.4: How has the government tackled the modern epidemic of Lung Cancer?</option>
+                </select>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Actions (Leitner 3-Box Movement) -->
+            <div class="leitner-action-bar">
+                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
+                    <span class="btn-title">🔴 Box 1</span>
+                    <span class="btn-sub">Needs Work (Blank)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
+                    <span class="btn-title">🟡 Box 2</span>
+                    <span class="btn-sub">Got It (Effortful)</span>
+                </button>
+                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
+                    <span class="btn-title">🟢 Box 3</span>
+                    <span class="btn-sub">Mastered (Instant)</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+
+    const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_modern';
+    const ALL_DECK = [{"id":1,"q":"How did the 20th-century understanding of what causes illness fundamentally differ from the 19th-century focus on Germ Theory?","a":"It moved to a multi-causal approach, recognizing that while microbes cause infectious diseases, genetics and lifestyle choices cause chronic illnesses.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":2,"q":"Which 19th-century scientist first demonstrated that physical characteristics could be passed down between generations of living things?","a":"Gregor Mendel","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":3,"q":"What crucial scientific technique did Rosalind Franklin and Maurice Wilkins use at King's College London to help identify the structure of DNA?","a":"X-ray crystallography to take photographs of human cells","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":4,"q":"In which year did James Watson and Francis Crick successfully work out and model the double-helix structure of DNA?","a":"1953","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":5,"q":"What major international scientific project was launched in 1990 to identify and map every single gene in human DNA?","a":"The Human Genome Project","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":6,"q":"What is a major modern limitation of the genetic breakthroughs achieved by mapping the human genome?","a":"There is still no cure or highly effective treatment for the majority of genetic conditions.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":7,"q":"How do modern doctors use DNA discoveries to prevent or catch illnesses early through genetic screening?","a":"By checking an individual's genetic code to see if they carry genes that put them at higher risk of developing certain cancers or conditions.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":8,"q":"According to modern scientific research, what specific medical condition can be triggered by eating a diet that is too high in sugar?","a":"Type 2 diabetes","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":9,"q":"What chronic modern disease is directly linked to eating a diet too high in fat and experiencing obesity?","a":"Heart disease","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":10,"q":"Apart from lung cancer, what other debilitating respiratory disease has modern research linked directly to tobacco smoking?","a":"Emphysema","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":11,"q":"Which chronic, organ-based illnesses has modern science linked directly to the excessive drinking of alcohol?","a":"Liver disease, kidney disease, and several cancers","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":12,"q":"Which major piece of technology, invented in the 1930s, was 1,000 times more powerful than standard light microscopes, allowing scientists to see viruses for the first time?","a":"The Electron microscope","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":13,"q":"How did diagnosis in the modern era fundamentally change compared to previous historical periods?","a":"It shifted from a doctor's clinical observation of physical symptoms to precise, high-tech laboratory tests and scans.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":14,"q":"When were blood tests first introduced into modern medicine, and what was their diagnostic significance?","a":"The 1930s; they allowed doctors to test for a vast number of conditions without invasive surgery.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":15,"q":"What is the key diagnostic advantage of a modern CT scan compared to a traditional X-ray?","a":"A CT scan is a 3D scan that creates detailed images of the inside of the body, allowing doctors to spot tiny tumors when they are the size of a pea.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":16,"q":"When were ultrasound scans first developed, and how do they help doctors diagnose internal conditions like gallstones or kidney stones?","a":"The 1940s; they use high-frequency sound waves to build up a picture of the inside of the body.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":17,"q":"What are ECGs (electrocardiograms), which were developed in the 1900s, used for in modern diagnosis?","a":"They use electrical impulses to track and monitor heart activity.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":18,"q":"What is an endoscope (such as a bronchoscope used in lung investigations), and how does it assist in modern diagnosis?","a":"A flexible tube with a camera that allows doctors to see inside the body and collect cell samples without major surgery.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":19,"q":"What is a biopsy, and what role does it play in the modern diagnosis of chronic illnesses like cancer?","a":"Taking a tiny sample of tissue from a lump to test it and see if it is cancerous.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":20,"q":"When was blood sugar monitoring introduced, and how did it change the daily management of diabetes?","a":"The 1960s; it allowed patients to regularly check their own blood sugar at home to manage their condition.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":21,"q":"What disease did Edward Jenner vaccinate against in 1796?","a":"Smallpox.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":22,"q":"What did Edward Jenner observe that led to his vaccine?","a":"Milkmaids who caught cowpox never caught the deadly smallpox.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":23,"q":"Who discovered the cause of cholera in 1854?","a":"John Snow.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":24,"q":"Which Roman physician developed the Theory of Opposites?","a":"Galen.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":25,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":26,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":27,"q":"What did Harvey prove wrong about Galen's theories of blood?","a":"Galen believed the liver constantly manufactured new blood which was consumed by the body.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":28,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":29,"q":"What invention helped spread new medical ideas during the Renaissance?","a":"The printing press.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":30,"q":"What was 'transference'?","a":"A Renaissance belief that a disease could be passed on or transferred to an object or animal.","topic":"KT4.1: How have modern discoveries changed our understanding of illness?"},{"id":31,"q":"In 1909, Paul Ehrlich and his research team developed Salvarsan 606 to treat syphilis. Why was Salvarsan 606 clinically known as the first 'magic bullet'?","a":"Because it was a synthetic chemical compound designed to target and destroy a specific disease-causing microbe inside the body without harming the rest of the patient's cells.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":32,"q":"During his research, how did Paul Ehrlich discover Salvarsan 606?","a":"By methodically testing over 600 arsenic chemical compounds until finding one (the 606th) that specifically destroyed syphilis bacteria.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":33,"q":"In 1932, Gerhard Domagk discovered Prontosil, the second 'magic bullet'. What type of infection did Prontosil cure?","a":"Puerperal (childbed) fever and blood poisoning caused by streptococcus bacteria.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":34,"q":"How did 20th-century 'magic bullets' fundamentally differ in their clinical application from 19th-century antiseptics like Joseph Lister's carbolic acid?","a":"Antiseptics killed microbes on external surfaces or open wound tissue, whereas magic bullets were taken internally to target and destroy specific pathogens inside the body without poisoning the patient.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":35,"q":"What is the biological difference between early chemical 'magic bullets' like Salvarsan 606 and the first true antibiotic, penicillin?","a":"Magic bullets were synthetic chemical compounds created in laboratories, whereas antibiotics like penicillin were created using living microorganisms to kill bacteria.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":36,"q":"After Gerhard Domagk published his findings on Prontosil, what active ingredient did French scientists isolate, leading to the creation of cheap sulphonamide drugs?","a":"Sulphanilamide, which allowed pharmaceutical companies to mass-produce cheap, effective drugs for pneumonia, meningitis, and scarlet fever.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":37,"q":"Before the creation of the NHS, the Liberal Government introduced the 1911 National Insurance Act. What was a major limitation of this Act's medical coverage?","a":"It only provided free GP care to sick workers who paid weekly contributions, completely excluding their wives, children, and those who were unemployed or retired.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":38,"q":"Which landmark 1942 government report recommended that the British state should provide comprehensive social security and healthcare 'from the cradle to the grave'?","a":"The Beveridge Report","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":39,"q":"In which year did the National Health Service (NHS) begin operating, and who was the government minister responsible for its launch?","a":"1948; under Aneurin Bevan","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":40,"q":"What was the revolutionary founding principle of the National Health Service (NHS) in 1948?","a":"That comprehensive healthcare should be free at the point of delivery for everyone in Britain, paid for through national taxation.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":41,"q":"When the NHS was launched in 1948, its services were organized into a 'tripartite' (three-part) system. What were these three parts?","a":"Primary care (GPs, dentists, opticians), hospital services (managed by regional boards), and local authority health services (such as ambulances and health visitors).","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":42,"q":"Why did the British Medical Association (BMA)-representing the country's doctors-initially strongly oppose the creation of the NHS?","a":"They feared they would lose their independent status, lose their private patient income, and become state-controlled civil servants.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":43,"q":"How did Aneurin Bevan famously win over the doctors who opposed the NHS?","a":"By 'stuffing their mouths with gold'-allowing hospital consultants to continue treating lucrative private patients alongside their NHS work.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":44,"q":"How did the launch of the NHS in 1948 transform access to high-tech medical treatments for the working class?","a":"It made advanced diagnostic tests and specialized surgical treatments free for everyone, removing the fear of bankruptcy from getting ill.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":45,"q":"Following the introduction of sulphonamide magic bullets in the 1930s and the NHS in 1948, what dramatic trend occurred in maternal mortality (mothers dying during or after childbirth)?","a":"It fell rapidly, dropping from high rates in the early 20th century to less than 1% by the late 20th century.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":46,"q":"As part of its modern focus on preventing disease, what type of campaigns does the government run through the NHS?","a":"Public education and lifestyle campaigns encouraging healthy eating, physical exercise, and reducing tobacco or alcohol consumption.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":47,"q":"Why does the 1935 illustration 'Medical moments in time' in the textbook emphasize that the pace of medical change in the first half of the 20th century was steady rather than rapid?","a":"Because while breakthroughs like X-rays and aseptic surgery existed, many traditional home remedies (like wrapping brown paper and vinegar for headaches) remained highly common.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":48,"q":"Which of the following is a successful example of a modern, government-funded NHS preventative immunization campaign that wiped out a major paralyzing disease in Britain?","a":"The introduction of the polio vaccine in the 1950s.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":49,"q":"Which of the following represents a modern, high-tech surgical treatment developed in the late 20th century that is provided free of charge under the NHS?","a":"Organ transplants, prosthetic joint replacements, and keyhole surgery.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":50,"q":"What is a major modern challenge facing the long-term effectiveness of antibiotic treatments like penicillin?","a":"The evolution of drug-resistant strains of bacteria (superbugs like MRSA) due to the over-prescription and overuse of antibiotics.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":51,"q":"What structure did Watson and Crick discover in 1953?","a":"The double helix structure of DNA.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":52,"q":"What is the function of DNA in relation to disease?","a":"It contains genetic instructions that can cause hereditary diseases or influence susceptibility.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":53,"q":"Name one modern lifestyle factor that causes disease.","a":"Smoking, poor diet, or lack of exercise.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":54,"q":"Which female scientist's X-ray crystallography photo was vital to Watson and Crick's DNA discovery?","a":"Rosalind Franklin.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":55,"q":"Why did the mapping of the human genome not lead to immediate cures?","a":"Identifying the genes responsible for a disease is only the first step; creating therapies is vastly more complex.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":56,"q":"What did Harvey prove wrong about Galen's theories of blood?","a":"Galen believed the liver constantly manufactured new blood which was consumed by the body.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":57,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":58,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":59,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":60,"q":"What was the significance of the Public Health Act of 1875?","a":"It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.","topic":"KT4.2: How have prevention and treatment advanced in the modern era?"},{"id":61,"q":"In which year did Alexander Fleming make his accidental observation of Penicillium mould on a staphylococci culture plate, and where did this take place?","a":"1928; at St Mary's Hospital in London","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":62,"q":"What did Alexander Fleming actually observe in his forgotten petri dish in 1928 that led to the discovery of penicillin?","a":"A contaminating mould had grown on the dish and killed off the surrounding staphylococci bacteria.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":63,"q":"Why did Alexander Fleming abandon his research into penicillin as a systemic medical treatment by 1931?","a":"He lacked the specialized chemical team and funding needed to isolate, concentrate, and stabilize the active compound.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":64,"q":"Which of the following is a widespread historical 'myth' regarding the development of penicillin that examiners warn students to avoid in their essays?","a":"That Alexander Fleming single-handedly developed penicillin into a mass-produced, usable medicine.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":65,"q":"How did Alexander Fleming's early laboratory experiments in 1928-1929 mislead him about penicillin's potential as an internal medicine?","a":"He found that penicillin became completely ineffective when mixed with blood in test tubes, causing him to doubt its value in living people.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":66,"q":"Which two scientists revived Alexander Fleming's neglected 1929 paper on penicillin in 1938, and where were they based?","a":"Howard Florey and Ernst Chain; at Oxford University","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":67,"q":"How did Ernst Chain contribute to the team's early breakthroughs in purifying penicillin?","a":"As a skilled biochemist, he successfully grew the mould in his laboratory and extracted the active chemical compound.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":68,"q":"What was the result of Florey and Chain's landmark scientific experiment on mice in the year 1940?","a":"It proved that penicillin was a highly effective antibiotic capable of killing deadly infections inside living bodies.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":69,"q":"Why did Florey and Chain's Oxford research team have to use household objects like milk churns, bed pans, and even a bath tub in their laboratory?","a":"Penicillin was incredibly difficult to produce in large quantities, requiring massive volumes of grown mould to extract tiny amounts of active liquid.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":70,"q":"Who was the first human patient to be treated with Florey and Chain's purified penicillin in 1941, and how did he contract his infection?","a":"Albert Alexander, a local policeman who developed septicaemia after being scratched by a rose bush.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":71,"q":"What tragic clinical outcome occurred during the first human trial of penicillin in 1941, and why?","a":"The patient initially showed dramatic recovery, but died after the tiny supply of penicillin ran out, despite the doctors trying to recycle the drug from his urine.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":72,"q":"When Florey and Chain first approached British pharmaceutical companies in 1939-1940 to mass-produce penicillin, why were they turned down?","a":"British firms were fully occupied with the war effort, manufacturing essential military supplies and ammunition for World War II.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":73,"q":"To which country did Howard Florey travel in July 1941 to seek the industrial help and investment needed to mass-produce penicillin?","a":"The United States","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":74,"q":"What major historical event in December 1941 served as a catalyst, prompting the US government to heavily fund the mass production of penicillin?","a":"The entry of the United States into World War II, making the treatment of wounded soldiers a matter of urgent national priority.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":75,"q":"Which industrial manufacturing method allowed US pharmaceutical companies to scale up penicillin production from small laboratory bottles to millions of doses?","a":"Growing the mould in giant beer vats and deep-fermentation tanks.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":76,"q":"How many doses of penicillin did Allied medical services have available by the D-Day landings in June 1944, demonstrating the success of wartime mass-production?","a":"Over 2.3 million doses, enough to treat all Allied casualties","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":77,"q":"How did Howard Florey's attitude toward patenting penicillin accelerate its worldwide availability and keep manufacturing costs down?","a":"He refused to patent the drug, declaring that it should be a free, lifesaving resource available to everyone in the world.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":78,"q":"Which female scientist at Oxford University identified the exact chemical structure of penicillin in 1945, allowing chemists to create semi-synthetic variations?","a":"Dorothy Crowfoot Hodgkin","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":79,"q":"In which year did Fleming, Florey, and Chain jointly receive the Nobel Prize in Medicine to recognize their collective roles in the penicillin breakthrough?","a":"1945","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":80,"q":"Looking at the penicillin story through Edexcel GCSE 'factors', which combination of factors was most crucial in turning a minor 1928 laboratory discovery into a global medical revolution by 1944?","a":"Individual brilliance (Fleming/Florey/Chain), institutions (the US Government), science/technology (deep fermentation), and the catalyst of war (WWII).","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":81,"q":"What is a 'magic bullet'?","a":"A chemical compound that targets and kills specific microbes without harming the rest of the body.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":82,"q":"Name the first magic bullet, discovered by Paul Ehrlich in 1909.","a":"Salvarsan 606.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":83,"q":"What was established in Britain in 1948 to provide free medical care?","a":"The National Health Service (NHS).","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":84,"q":"Who was the Minister of Health responsible for establishing the NHS in 1948?","a":"Aneurin Bevan.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":85,"q":"Name the second magic bullet, discovered by Gerhard Domagk in 1932 to treat strep infections.","a":"Prontosil.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":86,"q":"What structure did Watson and Crick discover in 1953?","a":"The double helix structure of DNA.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":87,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":88,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":89,"q":"Name one modern lifestyle factor that causes disease.","a":"Smoking, poor diet, or lack of exercise.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":90,"q":"Which female scientist's X-ray crystallography photo was vital to Watson and Crick's DNA discovery?","a":"Rosalind Franklin.","topic":"KT4.3: How was Penicillin discovered and mass-produced?"},{"id":91,"q":"In which year did the British Medical Research Council publish the landmark study by Doll and Hill that conclusively proved the link between smoking and lung cancer?","a":"1950","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":92,"q":"Why was the British government initially very slow to take legislative action against smoking after the scientific link to lung cancer was proven in 1950?","a":"Because the government earned around £4 billion from tobacco tax, thousands of jobs depended on the industry, and there were ethical debates about limiting personal freedoms.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":93,"q":"What was a major limitation of using traditional chest X-rays to diagnose lung cancer before advanced scanning technology was developed?","a":"They were not clear enough, meaning tumors were often missed entirely or mistaken for other things like lung abscesses.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":94,"q":"What key technological advantage does a modern CT (computerised tomography) scan have over a traditional chest X-ray in diagnosing lung cancer?","a":"A CT scan uses dye and takes detailed 3D images, allowing doctors to spot tiny tumors when they are the size of a pea.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":95,"q":"How does a high-tech PET (positron emission tomography) scan assist modern doctors in managing a lung cancer patient's treatment?","a":"It shows how active the cancer cells are by tracking how much energy the tumor is using, helping doctors see if a treatment is working.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":96,"q":"What is bronchoscopy (a type of endoscope) and how is it used to diagnose lung cancer?","a":"A flexible tube with a camera passed down the patient's airway, allowing doctors to see inside the lungs and collect cell samples.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":97,"q":"What is a biopsy, and why is it a crucial step in the modern diagnosis of lung cancer?","a":"It is the extraction and scientific analysis of a tiny sample of lung tissue to confirm if a tumor is indeed cancerous.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":98,"q":"How does modern chemotherapy treat lung cancer, and what is its main clinical drawback?","a":"It uses powerful drugs (chemicals) to attack and kill cancer cells throughout the body, but it also damages healthy cells, causing severe side effects.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":99,"q":"What does modern radiotherapy treatment for lung cancer involve?","a":"Using targeted, high-energy radiation beams to shrink and destroy localized cancer tumors.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":100,"q":"What is immunotherapy, one of the most advanced treatments for lung cancer in the twenty-first century?","a":"Using specialized drugs to 'wake up' and boost the patient's own immune system so it can identify and destroy cancer cells.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":101,"q":"What was the very first major advertising restriction the British government placed on tobacco, introduced in 1965?","a":"Banning cigarette advertisements on television.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":102,"q":"Following gradual extensions of advertising rules, in which year did the government finally implement a complete ban on all tobacco advertising and sports sponsorship in the UK?","a":"2005","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":103,"q":"In 2007, what legislative measure did the government take to restrict teenagers' access to tobacco products?","a":"They raised the legal age for buying tobacco from 16 to 18.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":104,"q":"Under the Health Act of 2006, what major legislative ban came into force on 1 July 2007 to protect the public from passive smoking?","a":"A ban on smoking in all enclosed workplaces, including pubs, cafés, restaurants, and offices.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":105,"q":"What retail display regulation was introduced in 2012 to discourage young people from taking up smoking?","a":"A requirement that all tobacco products in shops must be removed from open display and kept hidden from sight.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":106,"q":"In 2015, how did the government extend the smoking ban to protect children from the dangers of second-hand smoke?","a":"By banning smoking in all cars carrying children under the age of 18.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":107,"q":"Which of the following was a 'nudge' tactic introduced in 2015 that standardizes cigarette boxes to make them unappealing to young people?","a":"Compulsory plain, olive-green packaging featuring prominent graphic health warnings and no brand logos.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":108,"q":"Why is there currently no national routine screening program for lung cancer in the UK, unlike other chronic conditions?","a":"Because the available tests are not accurate enough to outweigh the negative effects of screening, such as exposing healthy people to radiation.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":109,"q":"When comparing government action against 19th-century cholera with 20th-century lung cancer, what major similarity do historians identify?","a":"In both cases, the initial response was slow, with the government only directly intervening with compulsory laws after the death toll became too high to ignore.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":110,"q":"The government's modern campaigns (like the Sugar Tax and Change4Life) and legislative bans represent a transition away from which historical political philosophy?","a":"The laissez-faire (leave it alone) approach of the 19th century","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":111,"q":"Who discovered Penicillin by accident in 1928?","a":"Alexander Fleming.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":112,"q":"Which two scientists at Oxford developed Penicillin into a usable drug?","a":"Howard Florey and Ernst Chain.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":113,"q":"What major global event drove the mass production of Penicillin?","a":"The Second World War.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":114,"q":"What is a 'magic bullet'?","a":"A chemical compound that targets and kills specific microbes without harming the rest of the body.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":115,"q":"What was established in Britain in 1948 to provide free medical care?","a":"The National Health Service (NHS).","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":116,"q":"Who was the Minister of Health responsible for establishing the NHS in 1948?","a":"Aneurin Bevan.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":117,"q":"What are the four humours?","a":"Blood, phlegm, yellow bile, black bile.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":118,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":119,"q":"Why is lung cancer so difficult to treat effectively compared to other diseases?","a":"Symptoms often do not appear until the cancer is advanced and has spread to other organs.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"},{"id":120,"q":"Which landmark 1950 epidemiological study proved the link between smoking and lung cancer?","a":"The British Doctors Study by Richard Doll and Bradford Hill.","topic":"KT4.4: How has the government tackled the modern epidemic of Lung Cancer?"}];
+
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      const boxClass = 'box-badge b' + cardBox;
+      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
+
+      if (boxBadge) {
+        boxBadge.className = boxClass;
+        boxBadge.textContent = boxText;
+      }
+      if (boxBadgeBack) {
+        boxBadgeBack.className = boxClass;
+        boxBadgeBack.textContent = boxText;
+      }
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) qText.textContent = card.q;
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) aText.textContent = card.a;
+
+      updateStats();
+    }
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        loadLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash === '#practice-mode') {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') closeLeitnerModal();
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === '1') rateCurrentCard(1);
+      else if (e.key === '2') rateCurrentCard(2);
+      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadLeitnerProgress();
+      if (window.location.hash === '#practice-mode') {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#practice-mode') {
+          openLeitnerModal();
         }
       });
-    }
-    replaceLines('task-lines');
-    replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
+    });
+  })();
 </script>
-
         
