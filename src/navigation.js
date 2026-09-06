@@ -50,7 +50,7 @@ export function initNavigationUI() {
         breadcrumbs.style.display = 'none';
       } else {
         let displayName = viewName.toUpperCase();
-        if (viewName === 'interactive') displayName = 'Interactive Quiz';
+        if (viewName === 'interactive') displayName = 'Spaced Recall & Mastery';
         if (viewName === 'timeline') displayName = 'Chronological Timeline';
         if (viewName === 'booklet') displayName = 'Printable A4 Booklet';
         if (viewName === 'profile') displayName = 'Student Profile';
@@ -267,12 +267,18 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navLessons.onclick = () => switchView('lessons', unitId);
   }
 
-  const hasQuiz = unitData.quizData && unitData.quizData.length > 0;
-  if (navInteractive && hasQuiz) {
+  const hasMasteryRecall =
+    !isTrip &&
+    ((unitData.lessons && unitData.lessons.length > 0) ||
+      (unitData.workbooks && unitData.workbooks.length > 0) ||
+      (unitData.quizData && unitData.quizData.length > 0));
+  if (navInteractive && hasMasteryRecall) {
     navInteractive.style.display = 'flex';
     navInteractive.dataset.action = 'switch-view';
     navInteractive.dataset.view = 'interactive';
     navInteractive.dataset.unit = unitId;
+    navInteractive.innerHTML =
+      '<i class="fa-solid fa-bolt-lightning" style="color: #f59e0b;"></i><span>Spaced Recall & Mastery</span>';
     navInteractive.onclick = () => switchView('interactive', unitId);
   } else if (navInteractive) {
     navInteractive.style.display = 'none';

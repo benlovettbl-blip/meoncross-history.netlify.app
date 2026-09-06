@@ -496,53 +496,179 @@ window.launchSubApp = function (subAppName) {
 
 export function renderInteractiveQuiz() {
   const container = document.getElementById('main-content');
+  const unitId = state.selectedUnitId || window.currentUnitId;
   const data = state.activeUnitData;
 
-  if (!data || !data.quizData || data.quizData.length === 0) {
+  if (!data || !unitId) {
     container.innerHTML = `
-      <div class="card text-center">
-        <p>No quiz questions available for this unit.</p>
+      <div class="card text-center" style="padding: 40px;">
+        <h3><i class="fa-solid fa-bolt-lightning" style="color: #f59e0b;"></i> Spaced Recall &amp; Mastery Arena</h3>
+        <p>Please select a unit to access its spaced recall deck and mastery packs.</p>
         <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
     return;
   }
 
-  // Choose a random question or Leitner review question
-  const questions = data.quizData;
-  const randomIndex = Math.floor(Math.random() * questions.length);
-  const q = questions[randomIndex];
+  const workbooks = data.workbooks || [
+    { id: 'full', title: 'Complete Unit Mastery', prefix: 'lesson' },
+  ];
 
-  // Scramble options
-  const options = [q.answer, ...q.distractors].sort(() => Math.random() - 0.5);
+  // Calculate total question count across lessons
+  let totalQuestions = 0;
+  const lessons = data.lessons || data.subtopics || [];
+  lessons.forEach((l) => {
+    if (l.quiz && Array.isArray(l.quiz)) totalQuestions += l.quiz.length;
+    if (l.do_now && Array.isArray(l.do_now.items)) totalQuestions += l.do_now.items.length;
+    else if (l.do_now && Array.isArray(l.do_now.questions))
+      totalQuestions += l.do_now.questions.length;
+  });
+  if (totalQuestions === 0 && data.quizData) totalQuestions = data.quizData.length;
 
-  container.innerHTML = `
-    <div class="card max-w-lg mx-auto quiz-container">
-      <div class="quiz-header">
-        <span class="quiz-badge">Interactive Recall Quiz</span>
-        <button class="btn btn-outline btn-sm" data-action="toggle-bookmark" data-id="${q.id}">
-          <i class="${state.bookmarks.includes(q.id) ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
-        </button>
+  let html = `
+    <div style="max-width: 1100px; margin: 0 auto; padding-bottom: 40px; animation: fadeInUp 0.3s ease-out;">
+      <!-- Hero Banner -->
+      <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #1e3a8a 100%); color: white; padding: 36px 32px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 24px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -30px; right: -30px; font-size: 14rem; opacity: 0.05; pointer-events: none;"><i class="fa-solid fa-bolt-lightning"></i></div>
+        <div style="position: relative; z-index: 2;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: rgba(245, 158, 11, 0.25); color: #fef08a; border: 1px solid rgba(245, 158, 11, 0.4); padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+              ⚡ Cognitive Retrieval Suite
+            </span>
+            <span style="background: rgba(255, 255, 255, 0.15); color: #e0e7ff; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;">
+              ${totalQuestions > 0 ? `${totalQuestions} Core Questions` : 'Full Unit Bank'}
+            </span>
+            <span style="background: rgba(16, 185, 129, 0.2); color: #a7f3d0; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;">
+              ✓ 100% Curriculum Coverage
+            </span>
+          </div>
+          <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.1rem; margin: 0 0 10px 0; color: #ffffff; font-weight: 800; letter-spacing: -0.5px;">
+            Spaced Recall &amp; Mastery Arena
+          </h1>
+          <p style="color: #cbd5e1; font-size: 1.05rem; margin: 0; max-width: 780px; line-height: 1.5;">
+            Master long-term historical recall through effortful retrieval practice. Test your memory with the interactive 3-Box Leitner system, project 15-second choral recall drills in class, or verify your written homework pack.
+          </p>
+        </div>
       </div>
-      <h3 class="quiz-question">${q.question}</h3>
-      <div class="quiz-options">
-        ${options
-          .map(
-            (opt) => `
-          <button class="btn btn-block btn-quiz-opt" data-action="submit-quiz-answer" data-id="${q.id}" data-opt="${opt.replace(/"/g, '&quot;')}">
-            ${opt}
-          </button>
-        `,
-          )
-          .join('')}
+
+      <!-- Feature Pill Badges -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 30px;">
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <div style="background: #fef3c7; color: #b45309; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">🧠</div>
+          <div>
+            <h4 style="margin: 0; font-size: 0.92rem; color: #0f172a;">3-Box Leitner Engine</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #64748b;">Daily, 3-day &amp; weekly intervals</p>
+          </div>
+        </div>
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <div style="background: #fee2e2; color: #b91c1c; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">🔥</div>
+          <div>
+            <h4 style="margin: 0; font-size: 0.92rem; color: #0f172a;">7-Day Retrieval Streak</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #64748b;">Visual heatmap &amp; habit tracker</p>
+          </div>
+        </div>
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <div style="background: #dbeafe; color: #1d4ed8; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">📽️</div>
+          <div>
+            <h4 style="margin: 0; font-size: 0.92rem; color: #0f172a;">Whiteboard Ready</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #64748b;">48pt font &amp; 15s rapid-fire timer</p>
+          </div>
+        </div>
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <div style="background: #ecfdf5; color: #047857; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">🔒</div>
+          <div>
+            <h4 style="margin: 0; font-size: 0.92rem; color: #0f172a;">The Vault Self-Marking</h4>
+            <p style="margin: 2px 0 0 0; font-size: 0.76rem; color: #64748b;">Tap-to-reveal scratch-off keys</p>
+          </div>
+        </div>
       </div>
-      <div id="quiz-feedback" class="quiz-feedback hidden"></div>
-      <div style="margin-top: 24px; display: flex; justify-content: space-between;">
-        <button class="btn btn-secondary" data-action="switch-view" data-view="dashboard">Exit Quiz</button>
-        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="interactive" data-unit="${state.selectedUnitId}">Next Question &rarr;</button>
+
+      <!-- Revision Modules / Key Topic Packs Grid -->
+      <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: #0f172a; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-layer-group" style="color: #4f46e5;"></i>
+        <span>Available Revision Decks &amp; Mastery Packs</span>
+      </h2>
+
+      <div style="display: grid; grid-template-columns: ${workbooks.length > 1 ? 'repeat(auto-fill, minmax(320px, 1fr))' : '1fr'}; gap: 20px; margin-bottom: 35px;">
+  `;
+
+  workbooks.forEach((wb, idx) => {
+    const wbId = wb.name || wb.id;
+    const isFull = wbId === 'full';
+    const htmlUrl = `/units/${unitId}/mastery_pack_${wbId}.html`;
+    const flashcardUrl = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode`;
+    const pdfUrl = `/pdfs/${unitId}_mastery_pack_${wbId}_FINAL_V17.pdf`;
+
+    html += `
+      <div style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#6366f1'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)';">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="background: #e0e7ff; color: #4338ca; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; text-transform: uppercase;">
+              ${isFull ? 'Comprehensive Unit Deck' : `Key Topic ${idx + 1}`}
+            </span>
+            <span style="color: #94a3b8; font-size: 0.8rem; font-weight: 600;">
+              ${isFull ? 'All Lessons' : wb.title || wb.name}
+            </span>
+          </div>
+
+          <h3 style="margin: 0 0 10px 0; font-size: 1.2rem; color: #1e293b; font-family: 'Montserrat', sans-serif;">
+            ${wb.title || wb.name}
+          </h3>
+
+          <p style="color: #64748b; font-size: 0.88rem; line-height: 1.4; margin: 0 0 20px 0;">
+            Includes complete question bank with 3-box Leitner progression, scratch-off answer key, and classroom whiteboard mode.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="${flashcardUrl}" target="_blank" style="text-decoration: none; background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); color: white; padding: 12px 18px; border-radius: 8px; font-weight: 700; font-size: 0.92rem; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
+            <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i>
+            <span>Launch Leitner Flashcards (Interactive)</span>
+          </a>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <a href="${htmlUrl}" target="_blank" style="text-decoration: none; background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; padding: 9px 12px; border-radius: 6px; font-weight: 600; font-size: 0.82rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#e2e8f0';" onmouseout="this.style.background='#f8fafc';">
+              <i class="fa-solid fa-lock" style="color: #d97706;"></i>
+              <span>The Vault Key</span>
+            </a>
+            <a href="${pdfUrl}" target="_blank" style="text-decoration: none; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 9px 12px; border-radius: 6px; font-weight: 600; font-size: 0.82rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#fee2e2';" onmouseout="this.style.background='#fef2f2';">
+              <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i>
+              <span>Print A4 PDF</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `
+      </div>
+
+      <!-- Pedagogical Leitner Spaced Routine Box -->
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px 26px;">
+        <h3 style="margin-top: 0; font-size: 1.05rem; color: #1e293b; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-graduation-cap" style="color: #4f46e5;"></i>
+          <span>How to Revise with the Leitner 3-Box Routine</span>
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px;">
+          <div style="background: white; border-left: 4px solid #ef4444; border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+            <strong style="color: #b91c1c; font-size: 0.88rem;">🔴 Box 1: Daily Practice</strong>
+            <p style="margin: 4px 0 0 0; font-size: 0.8rem; color: #64748b;">Questions you struggled with or got blank on. Practice every evening until recall is effortless.</p>
+          </div>
+          <div style="background: white; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+            <strong style="color: #b45309; font-size: 0.88rem;">🟡 Box 2: Review Every 3 Days</strong>
+            <p style="margin: 4px 0 0 0; font-size: 0.8rem; color: #64748b;">Effortful recall. Re-test after a 3-day gap to consolidate into long-term memory.</p>
+          </div>
+          <div style="background: white; border-left: 4px solid #10b981; border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+            <strong style="color: #047857; font-size: 0.88rem;">🟢 Box 3: Weekly Review</strong>
+            <p style="margin: 4px 0 0 0; font-size: 0.8rem; color: #64748b;">Mastered knowledge. Review once a week before exam assessments to prevent decay.</p>
+          </div>
+        </div>
       </div>
     </div>
   `;
+
+  container.innerHTML = html;
 }
 
 window.toggleBookmarkQuestion = function (qid) {
@@ -993,7 +1119,26 @@ export async function renderLessonsView() {
         ${
           isTrip
             ? ''
-            : `<p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and historian's tips for each lesson before testing yourself.</p>`
+            : `
+          <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: white; border-radius: 12px; padding: 18px 24px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="background: rgba(245, 158, 11, 0.2); color: #fef08a; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                <i class="fa-solid fa-bolt-lightning"></i>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 1.05rem; color: #ffffff; font-family: 'Montserrat', sans-serif;">Spaced Recall &amp; Mastery Arena</h4>
+                <p style="margin: 3px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Test your memory across all unit questions with 3-Box Leitner flashcards &amp; whiteboard drills.</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 700; border: none; padding: 10px 18px; border-radius: 8px; font-size: 0.88rem; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35); transition: all 0.15s ease;" onclick="window.switchView('interactive', '${unitId}')" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <span>Open Recall Deck</span>
+              </button>
+            </div>
+          </div>
+          <p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and historian's tips for each lesson before testing yourself.</p>
+        `
         }
         
         ${renderKeyTopicLessonsHTML(data, unitId, data)}
