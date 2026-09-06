@@ -503,8 +503,8 @@ export function renderInteractiveQuiz() {
   if (!data || !unitId) {
     container.innerHTML = `
       <div class="card text-center" style="padding: 40px;">
-        <h3><i class="fa-solid fa-bolt-lightning" style="color: #f59e0b;"></i> Spaced Recall &amp; Mastery Arena</h3>
-        <p>Please select a unit to access its spaced recall deck and mastery packs.</p>
+        <h3><i class="fa-solid fa-circle-question" style="color: #f59e0b;"></i> Interactive Quizzing &amp; Spaced Recall</h3>
+        <p>Please select a unit to access its interactive quizzes and spaced recall decks.</p>
         <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
@@ -538,12 +538,12 @@ export function renderInteractiveQuiz() {
       <!-- Streamlined Header -->
       <div style="margin-bottom: 28px; text-align: center;">
         <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(99, 102, 241, 0.25); color: #c7d2fe; border: 1px solid rgba(99, 102, 241, 0.4); padding: 5px 16px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; backdrop-filter: blur(4px);">
-          <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i> Spaced Retrieval Suite
+          <i class="fa-solid fa-circle-question" style="color: #fef08a;"></i> Quizzing &amp; Spaced Retrieval
         </div>
         <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.3rem; font-weight: 800; color: #ffffff; margin: 0 0 10px 0; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.4);">
-          Spaced Recall &amp; Exam Mastery
+          Interactive Quizzing &amp; Spaced Recall
         </h1>
-        <p style="color: #cbd5e1; font-size: 1.05rem; margin: 0 auto; max-width: 620px; line-height: 1.5; font-weight: 400;">
+        <p style="color: #cbd5e1; font-size: 1.05rem; margin: 0 auto; max-width: 620px; line-height: 1.5; font-weight: 400; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
           Strengthen long-term factual memory through daily 5-minute retrieval drills, or benchmark your exam readiness with a 10-minute diagnostic check.
         </p>
       </div>
@@ -1196,17 +1196,17 @@ export async function renderLessonsView() {
           <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: white; border-radius: 12px; padding: 18px 24px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div style="background: rgba(245, 158, 11, 0.2); color: #fef08a; width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
-                <i class="fa-solid fa-bolt-lightning"></i>
+                <i class="fa-solid fa-circle-question"></i>
               </div>
               <div>
-                <h4 style="margin: 0; font-size: 1.05rem; color: #ffffff; font-family: 'Montserrat', sans-serif;">Spaced Recall &amp; Mastery Arena</h4>
-                <p style="margin: 3px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Test your memory across all unit questions with 3-Box Leitner flashcards &amp; whiteboard drills.</p>
+                <h4 style="margin: 0; font-size: 1.05rem; color: #ffffff; font-family: 'Montserrat', sans-serif;">Interactive Quizzing &amp; Spaced Recall</h4>
+                <p style="margin: 3px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Test your knowledge across all unit questions with timed diagnostic quizzes, 3-Box Leitner flashcards &amp; whiteboard drills.</p>
               </div>
             </div>
             <div style="display: flex; align-items: center; gap: 10px;">
               <button class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 700; border: none; padding: 10px 18px; border-radius: 8px; font-size: 0.88rem; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35); transition: all 0.15s ease;" onclick="window.switchView('interactive', '${unitId}')" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
-                <i class="fa-solid fa-bolt-lightning"></i>
-                <span>Open Recall Deck</span>
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Open Quizzing Arena</span>
               </button>
             </div>
           </div>

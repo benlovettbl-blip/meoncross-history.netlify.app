@@ -50,7 +50,7 @@ export function initNavigationUI() {
         breadcrumbs.style.display = 'none';
       } else {
         let displayName = viewName.toUpperCase();
-        if (viewName === 'interactive') displayName = 'Spaced Recall & Mastery';
+        if (viewName === 'interactive') displayName = 'Interactive Quizzing & Spaced Recall';
         if (viewName === 'timeline') displayName = 'Chronological Timeline';
         if (viewName === 'booklet') displayName = 'Printable A4 Booklet';
         if (viewName === 'profile') displayName = 'Student Profile';
@@ -167,6 +167,23 @@ async function loadUnit(unitId) {
       const lessonsList = state.activeUnitData.lessons || state.activeUnitData.subtopics || [];
       lessonsList.forEach((lesson, lIdx) => {
         const baseId = lesson.id || `lesson_${lIdx}`;
+        if (lesson.quiz && Array.isArray(lesson.quiz)) {
+          lesson.quiz.forEach((q, idx) => {
+            const prompt = q.question || q.q;
+            const ans = q.answer || q.a;
+            if (prompt && ans && q.options && Array.isArray(q.options)) {
+              extractedQuizData.push({
+                id: `q_${baseId}_${idx}`,
+                question: prompt,
+                options: q.options,
+                answer: ans,
+                distractors: q.options.filter((opt) => opt !== ans),
+                explanation:
+                  q.explanation || `Core recall question from ${lesson.title || baseId}.`,
+              });
+            }
+          });
+        }
         if (lesson.do_now && lesson.do_now.type === 'quiz' && lesson.do_now.questions) {
           lesson.do_now.questions.forEach((q, idx) => {
             extractedQuizData.push({
@@ -278,7 +295,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navInteractive.dataset.view = 'interactive';
     navInteractive.dataset.unit = unitId;
     navInteractive.innerHTML =
-      '<i class="fa-solid fa-bolt-lightning" style="color: #f59e0b;"></i><span>Spaced Recall & Mastery</span>';
+      '<i class="fa-solid fa-circle-question" style="color: #f59e0b;"></i><span>Interactive Quizzing</span>';
     navInteractive.onclick = () => switchView('interactive', unitId);
   } else if (navInteractive) {
     navInteractive.style.display = 'none';
