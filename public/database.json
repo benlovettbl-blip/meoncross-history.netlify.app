@@ -42597,8 +42597,11 @@
   },
   "trip_ypres": {
     "data": {
+      "id": "trip_ypres",
       "type": "trip",
-      "title": "History Battlefield Tour",
+      "yearGroup": "Years 10–11",
+      "category": "GCSE Field Study",
+      "title": "GCSE Battlefield Tour: Ypres & The Salient",
       "poetry_dossiers": {
         "day_1": [
           {

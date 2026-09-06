@@ -1,8 +1,11 @@
 import { poetryDossiers } from './poetry_data.js';
 
 export const unitData = {
+  id: 'trip_ypres',
   type: 'trip',
-  title: 'History Battlefield Tour',
+  yearGroup: 'Years 10–11',
+  category: 'GCSE Field Study',
+  title: 'GCSE Battlefield Tour: Ypres & The Salient',
   poetry_dossiers: poetryDossiers,
   enquiry_question: 'Ypres & The Salient',
   enquiry: 'Thursday 1st October – Saturday 3rd October 2026',
