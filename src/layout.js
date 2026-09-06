@@ -36,6 +36,55 @@ export function bindEvents() {
     navProfile.addEventListener('click', () => switchView('profile'));
   }
 
+  // Bind Compact 4-Icon Mobile Bottom Navigation Bar (Home, Units, Quizzing, Profile)
+  const mobNavHome = document.getElementById('mob-nav-home');
+  if (mobNavHome) {
+    mobNavHome.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchView('dashboard');
+    });
+  }
+
+  const mobNavUnits = document.getElementById('mob-nav-units');
+  if (mobNavUnits) {
+    mobNavUnits.addEventListener('click', (e) => {
+      e.preventDefault();
+      const currentView =
+        state.currentView ||
+        (window.appStore && window.appStore.state && window.appStore.state.currentView);
+      if (currentView === 'lessons') {
+        // If already in lessons view, toggle sidebar drawer so pupil can easily select another unit/lesson
+        const menuToggle = document.getElementById('sidebar-toggle-btn');
+        if (menuToggle) menuToggle.click();
+      } else if (state.selectedUnitId) {
+        switchView('lessons', state.selectedUnitId);
+      } else {
+        switchView('dashboard');
+        setTimeout(() => {
+          const modulesGrid = document.querySelector('.modules-grid');
+          if (modulesGrid) modulesGrid.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    });
+  }
+
+  const mobNavQuizzing = document.getElementById('mob-nav-quizzing');
+  if (mobNavQuizzing) {
+    mobNavQuizzing.addEventListener('click', (e) => {
+      e.preventDefault();
+      const unitId = state.selectedUnitId || 'great_war';
+      switchView('interactive', unitId);
+    });
+  }
+
+  const mobNavProfile = document.getElementById('mob-nav-profile');
+  if (mobNavProfile) {
+    mobNavProfile.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchView('profile');
+    });
+  }
+
   // Bind theme selector clicks (both sidebar dots and header popover)
   document.querySelectorAll('.theme-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -100,14 +149,16 @@ export function bindEvents() {
     overlay.addEventListener('click', toggleSidebar);
 
     // Auto-close on mobile when a navigation item is clicked
-    document.querySelectorAll('.nav-item').forEach((item) => {
-      item.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          sidebar.classList.remove('mobile-open');
-          overlay.classList.remove('active');
-        }
+    document
+      .querySelectorAll('.nav-item, #mob-nav-home, #mob-nav-quizzing, #mob-nav-profile')
+      .forEach((item) => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            sidebar.classList.remove('mobile-open');
+            overlay.classList.remove('active');
+          }
+        });
       });
-    });
   }
 
   // Render Sidebar Units

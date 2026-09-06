@@ -256,6 +256,88 @@ export function renderDiagnosticLauncherHTML(unitId, unitData) {
 let activeSession = null;
 
 /**
+ * Handles direct keyboard hotkeys and navigation during Diagnostic Benchmark:
+ * - 1, 2, 3, 4 or A, B, C, D: Instantly select corresponding option
+ * - Enter or ArrowRight: Advance to next question (or submit on question 20)
+ * - ArrowLeft: Return to previous question
+ * - Escape: Close modal / prompt exit
+ */
+function handleDiagnosticKeydown(e) {
+  if (!activeSession || activeSession.isCompleted) return;
+
+  const tag = e.target ? e.target.tagName : '';
+  if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+
+  const key = e.key;
+
+  // Handle Option selection (1-4 or A-D)
+  const q = activeSession.questions[activeSession.currentIndex];
+  if (!q) return;
+
+  let optionIndex = -1;
+  if (key === '1' || key.toLowerCase() === 'a') optionIndex = 0;
+  else if (key === '2' || key.toLowerCase() === 'b') optionIndex = 1;
+  else if (key === '3' || key.toLowerCase() === 'c') optionIndex = 2;
+  else if (key === '4' || key.toLowerCase() === 'd') optionIndex = 3;
+
+  if (optionIndex >= 0 && q.options && optionIndex < q.options.length) {
+    e.preventDefault();
+    const opt = q.options[optionIndex];
+    window.selectDiagnosticAnswer(encodeURIComponent(opt));
+    return;
+  }
+
+  // Handle Navigation (ArrowRight / Enter -> Next)
+  if (key === 'ArrowRight' || key === 'Enter') {
+    const confirmPrompt = document.getElementById('diag-confirm-prompt');
+    if (confirmPrompt) {
+      e.preventDefault();
+      confirmPrompt.remove();
+      window.submitDiagnosticBenchmark(true);
+      return;
+    }
+
+    e.preventDefault();
+    if (activeSession.currentIndex < activeSession.questions.length - 1) {
+      window.nextDiagnosticQuestion();
+    } else {
+      window.submitDiagnosticBenchmark();
+    }
+    return;
+  }
+
+  // Handle Navigation (ArrowLeft -> Previous)
+  if (key === 'ArrowLeft') {
+    const confirmPrompt = document.getElementById('diag-confirm-prompt');
+    if (confirmPrompt) {
+      e.preventDefault();
+      confirmPrompt.remove();
+      return;
+    }
+
+    e.preventDefault();
+    if (activeSession.currentIndex > 0) {
+      window.prevDiagnosticQuestion();
+    }
+    return;
+  }
+
+  // Handle Escape (Exit)
+  if (key === 'Escape') {
+    const confirmPrompt = document.getElementById('diag-confirm-prompt');
+    if (confirmPrompt) {
+      e.preventDefault();
+      confirmPrompt.remove();
+      return;
+    }
+
+    e.preventDefault();
+    window.closeDiagnosticModal();
+    return;
+  }
+}
+
+/**
  * Launches the interactive Diagnostic Benchmark Modal.
  */
 export function startDiagnosticBenchmark(unitId) {
@@ -281,6 +363,10 @@ export function startDiagnosticBenchmark(unitId) {
   createOrShowDiagnosticModal();
   startDiagnosticTimer();
   renderDiagnosticQuestion();
+
+  // Attach keyboard shortcuts
+  window.removeEventListener('keydown', handleDiagnosticKeydown);
+  window.addEventListener('keydown', handleDiagnosticKeydown);
 }
 
 window.startDiagnosticBenchmark = startDiagnosticBenchmark;
@@ -329,6 +415,9 @@ export function closeDiagnosticModal(force = false) {
       return;
     }
   }
+
+  // Detach keyboard listener
+  window.removeEventListener('keydown', handleDiagnosticKeydown);
 
   if (activeSession && activeSession.timerInterval) {
     clearInterval(activeSession.timerInterval);
@@ -491,11 +580,12 @@ function renderDiagnosticQuestion() {
           ${q.prompt}
         </h2>
 
-        <!-- 4 Option Cards (A, B, C, D) -->
+        <!-- 4 Option Cards (A, B, C, D / Hotkeys 1, 2, 3, 4) -->
         <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
           ${q.options
             .map((opt, optIdx) => {
               const letter = String.fromCharCode(65 + optIdx);
+              const numKey = optIdx + 1;
               const isSelected = selectedOption === opt;
               const borderStyle = isSelected ? '2px solid #4f46e5' : '1px solid #cbd5e1';
               const bgStyle = isSelected ? '#f5f3ff' : '#ffffff';
@@ -504,13 +594,18 @@ function renderDiagnosticQuestion() {
 
               return `
                 <div onclick="window.selectDiagnosticAnswer('${encodeURIComponent(opt)}')" style="background: ${bgStyle}; border: ${borderStyle}; border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; cursor: pointer; transition: all 0.15s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.03);" onmouseover="if(!${isSelected}) this.style.borderColor='#94a3b8';" onmouseout="if(!${isSelected}) this.style.borderColor='#cbd5e1';">
-                  <div style="background: ${badgeBg}; color: ${badgeColor}; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;">
+                  <div style="background: ${badgeBg}; color: ${badgeColor}; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.92rem; flex-shrink: 0; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
                     ${letter}
                   </div>
                   <div style="font-size: 1rem; color: #1e293b; font-weight: ${isSelected ? '600' : '500'}; flex: 1;">
                     ${opt}
                   </div>
-                  ${isSelected ? `<i class="fa-solid fa-circle-check" style="color: #4f46e5; font-size: 1.2rem;"></i>` : ''}
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <kbd style="background: ${isSelected ? '#ede9fe' : '#f1f5f9'}; border: 1px solid ${isSelected ? '#c4b5fd' : '#cbd5e1'}; color: ${isSelected ? '#4338ca' : '#64748b'}; padding: 2px 7px; border-radius: 5px; font-size: 0.72rem; font-family: monospace; font-weight: 700; display: inline-flex; align-items: center; gap: 3px;" title="Press '${numKey}' or '${letter}'">
+                      <span>${numKey}</span><span style="opacity: 0.4;">/</span><span>${letter}</span>
+                    </kbd>
+                    ${isSelected ? `<i class="fa-solid fa-circle-check" style="color: #4f46e5; font-size: 1.25rem;"></i>` : ''}
+                  </div>
                 </div>
               `;
             })
@@ -519,24 +614,30 @@ function renderDiagnosticQuestion() {
       </div>
 
       <!-- Navigation & Submission Footer -->
-      <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-        <div style="display: flex; gap: 10px;">
-          <button onclick="window.prevDiagnosticQuestion()" ${activeSession.currentIndex === 0 ? 'disabled' : ''} style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; cursor: ${activeSession.currentIndex === 0 ? 'not-allowed' : 'pointer'}; opacity: ${activeSession.currentIndex === 0 ? '0.5' : '1'}; transition: all 0.15s ease;">
-            ⬅️ Previous
+      <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button onclick="window.prevDiagnosticQuestion()" ${activeSession.currentIndex === 0 ? 'disabled' : ''} style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 9px 15px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; cursor: ${activeSession.currentIndex === 0 ? 'not-allowed' : 'pointer'}; opacity: ${activeSession.currentIndex === 0 ? '0.5' : '1'}; transition: all 0.15s ease;" title="Previous Question (Left Arrow)">
+            ⬅️ Prev
           </button>
-          <button onclick="window.nextDiagnosticQuestion()" ${activeSession.currentIndex === totalQ - 1 ? 'disabled' : ''} style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; cursor: ${activeSession.currentIndex === totalQ - 1 ? 'not-allowed' : 'pointer'}; opacity: ${activeSession.currentIndex === totalQ - 1 ? '0.5' : '1'}; transition: all 0.15s ease;">
+          <button onclick="window.nextDiagnosticQuestion()" ${activeSession.currentIndex === totalQ - 1 ? 'disabled' : ''} style="background: white; border: 1px solid #cbd5e1; color: #334155; padding: 9px 15px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; cursor: ${activeSession.currentIndex === totalQ - 1 ? 'not-allowed' : 'pointer'}; opacity: ${activeSession.currentIndex === totalQ - 1 ? '0.5' : '1'}; transition: all 0.15s ease;" title="Next Question (Right Arrow or Enter)">
             Next ➡️
           </button>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <span style="font-size: 0.85rem; color: #64748b;">
-            <strong>${answeredCount}</strong> of <strong>${totalQ}</strong> Answered
+        <!-- Direct Keyboard Hotkey Hint -->
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 0.76rem; color: #64748b; background: #ffffff; padding: 5px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
+          <i class="fa-solid fa-keyboard" style="color: #4f46e5; font-size: 0.85rem;"></i>
+          <span>Keys: <strong>1–4</strong> / <strong>A–D</strong> select · <strong>Enter/➔</strong> next · <strong>⬅</strong> back · <strong>Esc</strong> exit</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 0.82rem; color: #64748b;">
+            <strong>${answeredCount}</strong> of <strong>${totalQ}</strong>
           </span>
 
-          <button onclick="window.submitDiagnosticBenchmark()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none; padding: 11px 22px; border-radius: 8px; font-weight: 800; font-size: 0.92rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
+          <button onclick="window.submitDiagnosticBenchmark()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 800; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
             <i class="fa-solid fa-flag-checkered"></i>
-            <span>Submit Benchmark</span>
+            <span>Submit</span>
           </button>
         </div>
       </div>
@@ -633,6 +734,9 @@ export function submitDiagnosticBenchmark(forceSubmit = false) {
     activeSession.timerInterval = null;
   }
   activeSession.isCompleted = true;
+
+  // Detach keyboard listener once benchmark finishes
+  window.removeEventListener('keydown', handleDiagnosticKeydown);
 
   // Evaluate answers
   let correctCount = 0;

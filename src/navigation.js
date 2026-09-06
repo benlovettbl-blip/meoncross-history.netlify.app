@@ -71,6 +71,33 @@ export function initNavigationUI() {
     });
     const navItem = document.getElementById(`nav-${viewName}`);
     if (navItem) navItem.classList.add('active');
+
+    // Update active mobile bottom nav item
+    document.querySelectorAll('.mobile-bottom-nav .mob-nav-item').forEach((item) => {
+      item.classList.remove('active');
+    });
+    let activeMobId = null;
+    if (viewName === 'dashboard') activeMobId = 'mob-nav-home';
+    else if (
+      viewName === 'lessons' ||
+      viewName === 'timeline' ||
+      viewName === 'booklet' ||
+      viewName === 'individuals' ||
+      viewName === 'reading' ||
+      viewName === 'decisions' ||
+      viewName === 'taboo'
+    ) {
+      activeMobId = 'mob-nav-units';
+    } else if (viewName === 'interactive') {
+      activeMobId = 'mob-nav-quizzing';
+    } else if (viewName === 'profile') {
+      activeMobId = 'mob-nav-profile';
+    }
+
+    if (activeMobId) {
+      const mobEl = document.getElementById(activeMobId);
+      if (mobEl) mobEl.classList.add('active');
+    }
   });
 }
 
