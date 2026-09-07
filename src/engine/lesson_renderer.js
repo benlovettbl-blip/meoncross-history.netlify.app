@@ -1283,7 +1283,11 @@ export function renderLesson(lesson) {
         'src="/units/' + window.currentUnitId + '/assets/',
       );
       let styledContent = contentStr;
-      if (!isQuote && !contentStr.trim().startsWith('<') && contentStr.length > 20) {
+      if (contentStr.trim().startsWith('<strong>')) {
+        styledContent = contentStr.replace(/^<strong>(.*?)<\/strong>\s*/i, (match, headingText) => {
+          return `<div class="paragraph-signpost" style="font-weight: 700; color: #1e3a8a; font-size: 1.08rem; letter-spacing: 0.1px; margin-bottom: 6px; border-left: 3px solid #3b82f6; padding-left: 8px;">${headingText}</div><br/>`;
+        });
+      } else if (!isQuote && !contentStr.trim().startsWith('<') && contentStr.length > 20) {
         const firstLetter = contentStr.charAt(0);
         const rest = contentStr.slice(1);
         styledContent =
@@ -1317,7 +1321,14 @@ export function renderLesson(lesson) {
 
         l4ContentStr = formatBold(l4ContentStr);
         l4StyledContent = l4ContentStr;
-        if (!isQuote && !l4ContentStr.trim().startsWith('<') && l4ContentStr.length > 20) {
+        if (l4ContentStr.trim().startsWith('<strong>')) {
+          l4StyledContent = l4ContentStr.replace(
+            /^<strong>(.*?)<\/strong>\s*/i,
+            (match, headingText) => {
+              return `<div class="paragraph-signpost" style="font-weight: 700; color: #047857; font-size: 1.08rem; letter-spacing: 0.1px; margin-bottom: 6px; border-left: 3px solid #10b981; padding-left: 8px;">${headingText}</div><br/>`;
+            },
+          );
+        } else if (!isQuote && !l4ContentStr.trim().startsWith('<') && l4ContentStr.length > 20) {
           const firstLetter = l4ContentStr.charAt(0);
           const rest = l4ContentStr.slice(1);
           l4StyledContent =
@@ -2434,6 +2445,45 @@ export function renderLesson(lesson) {
             }
           </div>
         </div>
+    `;
+  }
+
+  // --- EXIT TICKET / LESSON CLOSURE ---
+  if (lesson.exit_ticket) {
+    const et = lesson.exit_ticket;
+    html += `
+      <div class="phase-card exit-ticket-card no-print" style="padding: 25px; background: #f8fafc; border: 2px solid #3b82f6; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 16px;">
+          <h3 style="margin: 0; color: #1e3a8a; font-size: 1.35rem; display: flex; align-items: center; gap: 10px; font-family: 'Playfair Display', serif;">
+            <i class="fa-solid fa-ticket" style="color: #2563eb;"></i> ${et.title || 'Exit Ticket · Lesson Closure'}
+          </h3>
+          <span style="background: #dbeafe; color: #1e40af; font-size: 0.85rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">${et.type_label || 'Exit Ticket'}</span>
+        </div>
+        <p style="color: #1e293b; font-size: 1.05rem; line-height: 1.6; margin-bottom: 15px;">
+          ${window.formatBold(et.prompt)}
+        </p>
+        ${
+          et.options && et.options.length > 0
+            ? `
+          <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+            ${et.options.map((opt) => `<div style="padding: 8px 12px; margin-bottom: 6px; background: #f8fafc; border-radius: 6px; font-size: 1rem; color: #334155; border-left: 3px solid #94a3b8;">${window.formatBold(opt)}</div>`).join('')}
+          </div>
+        `
+            : ''
+        }
+        ${
+          et.guidance
+            ? `
+          <div style="font-size: 0.95rem; color: #64748b; font-style: italic; margin-bottom: 12px;">
+            <strong>Teacher Guidance:</strong> ${window.formatBold(et.guidance)}
+          </div>
+        `
+            : ''
+        }
+        <div style="margin-top: 15px;">
+          <textarea class="form-control" placeholder="Write your exit ticket response here before leaving class..." style="width: 100%; min-height: 90px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 12px; font-size: 1rem; line-height: 1.5;"></textarea>
+        </div>
+      </div>
     `;
   }
 

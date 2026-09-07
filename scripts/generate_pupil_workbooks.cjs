@@ -1784,10 +1784,23 @@ allDirs.forEach((unitId) => {
             }
             html += `</div>`;
           } else {
-            const consolText =
-              lesson.consolidation ||
-              "Reflect on today's learning and answer your teacher's final challenge.";
-            html += `<p style="font-weight: bold; margin-bottom: 15px;">${consolText}</p>`;
+            let consolHtml = '';
+            if (unitId === 'cme_new' && lesson.exit_ticket) {
+              const et = lesson.exit_ticket;
+              consolHtml = `<div style="background: #f8fafc; border: 2px solid #3b82f6; border-radius: 6px; padding: 12px; margin-bottom: 15px;">
+                <div style="font-weight: bold; color: #1e3a8a; font-size: 11pt; margin-bottom: 6px; text-transform: uppercase;">
+                  ${et.title || 'Exit Ticket'} (${et.type_label || 'Closure'})
+                </div>
+                <p style="margin: 0 0 8px 0; font-size: 10pt; color: #1e293b; line-height: 1.4;">${et.prompt}</p>
+                ${et.options && et.options.length > 0 ? `<div style="font-size: 9.5pt; color: #334155; margin-bottom: 8px;">${et.options.map((o) => `<div>• ${o}</div>`).join('')}</div>` : ''}
+              </div>`;
+            } else {
+              const consolText =
+                lesson.consolidation ||
+                "Reflect on today's learning and answer your teacher's final challenge.";
+              consolHtml = `<p style="font-weight: bold; margin-bottom: 15px;">${consolText}</p>`;
+            }
+            html += consolHtml;
           }
 
           for (let i = 0; i < 15; i++) {
