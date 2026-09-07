@@ -1191,15 +1191,9 @@ lessonKeys.forEach((key, idx) => {
   if (idx === 0) {
     doNowItems.push(
       {
-        question: 'What was the 1896 Plessy v. Ferguson Supreme Court ruling?',
+        question: 'What was the constitutional significance of the 13th Amendment (1865)?',
         answer:
-          "It established the 'separate but equal' doctrine, making racial segregation legal across the Southern states.",
-      },
-      {
-        question:
-          'What is the constitutional difference between federal laws and Southern state laws?',
-        answer:
-          'The US Constitution is federal supreme law; state laws cannot violate constitutional rights guaranteed under the 14th Amendment.',
+          'It officially abolished slavery and involuntary servitude throughout the United States.',
       },
       {
         question: 'What was the purpose of the 14th Amendment to the US Constitution (1868)?',
@@ -1207,14 +1201,20 @@ lessonKeys.forEach((key, idx) => {
           'It guaranteed citizenship and equal protection under the law to all persons born or naturalized in the USA.',
       },
       {
-        question: 'What does the term disenfranchisement mean in 20th century American history?',
+        question: 'What was the constitutional guarantee of the 15th Amendment (1870)?',
         answer:
-          'Systematically depriving a group of citizens of their constitutional right to register and vote.',
+          'It prohibited federal and state governments from denying a citizen the right to vote based on race or color.',
       },
       {
-        question: 'What was the Ku Klux Klan (KKK)?',
+        question: 'What was the post-Civil War Reconstruction era in American history?',
         answer:
-          'A white supremacist terrorist organisation founded after the Civil War that used violence and murder to enforce white supremacy.',
+          'The period from 1865 to 1877 when the federal government attempted to reintegrate Southern states and protect Black civil rights.',
+      },
+      {
+        question:
+          'How did Black American military service in the Second World War affect attitudes to civil rights?',
+        answer:
+          'Over 1 million Black Americans served abroad in segregated units; returning veterans demanded full democratic equality at home (the Double V campaign).',
       },
     );
   } else {
@@ -1224,10 +1224,25 @@ lessonKeys.forEach((key, idx) => {
     prevCore.slice(0, 3).forEach((c) => {
       doNowItems.push({ question: c.q, answer: c.starter });
     });
-    if (qList.length > 0) {
-      qList.slice(0, 2).forEach((q) => {
-        doNowItems.push({ question: q.question, answer: q.answer });
-      });
+
+    // Gather candidate questions from earlier lessons strictly (0 to idx - 1)
+    const earlierKeys = lessonKeys.slice(0, idx);
+    let earlierQList = [];
+    QUIZ_DATA.forEach((t) => {
+      if (t.subtopics) {
+        t.subtopics.forEach((st) => {
+          if (earlierKeys.includes(st.id) && st.standard) {
+            earlierQList.push(...st.standard);
+          }
+        });
+      }
+    });
+    let eIdx = 0;
+    while (doNowItems.length < 5 && eIdx < earlierQList.length) {
+      const candidate = earlierQList[eIdx++];
+      if (!doNowItems.some((item) => item.question === candidate.question)) {
+        doNowItems.push({ question: candidate.question, answer: candidate.answer });
+      }
     }
   }
 
@@ -1318,6 +1333,11 @@ lessonKeys.forEach((key, idx) => {
         cleanText += `\n\n> **🎓 ${step.scholarlyDepth.title || 'Scholarly Perspective'}:** ${step.scholarlyDepth.body}`;
       }
 
+      // Seamlessly integrate Eyewitness Testimony into step 0 or 1
+      if (sIdx === 0 && rawL.livedExperience) {
+        cleanText += `\n\n> 🎙️ **Eyewitness Testimony — ${rawL.livedExperience.witness}:** &ldquo;${rawL.livedExperience.quote}&rdquo;\n>\n> *Context: ${rawL.livedExperience.context}*\n>\n> 💬 **Reflective Question:** ${rawL.livedExperience.discussionQuestion}`;
+      }
+
       // Link key individuals
       cleanText = linkKeyIndividuals(cleanText);
 
@@ -1369,91 +1389,107 @@ lessonKeys.forEach((key, idx) => {
     });
   }
 
-  // Visual Starters (Think & Wonder)
-  const starters = [];
-  if (rawL.doNowStarter && rawL.doNowStarter.image) {
-    starters.push({
-      title: rawL.doNowStarter.enquiry
-        ? `Historical Enquiry: ${rawL.doNowStarter.enquiry}`
-        : 'Historical Sources: Think & Wonder',
-      source: `/units/usa/${rawL.doNowStarter.image.replace(/^assets\//, 'assets/')}`,
-      caption: rawL.doNowStarter.provenance || 'Contemporary primary source document.',
-      think_wonder: rawL.doNowStarter.seeThinkWonder
-        ? `Observe: ${rawL.doNowStarter.seeThinkWonder.see} Think: ${rawL.doNowStarter.seeThinkWonder.think} Wonder: ${rawL.doNowStarter.seeThinkWonder.wonder}`
-        : 'Analyze the provenance and historical significance of this primary source evidence.',
-    });
-  } else if (stepConfigs[0]) {
-    starters.push({
-      title: 'Historical Sources: Think & Wonder',
-      source: stepConfigs[0].image,
-      caption: stepConfigs[0].caption,
-      think_wonder:
-        'What does this primary source reveal about the conflict between federal authority and local resistance?',
-    });
-  }
-
-  // Lived Experience / Primary Source
-  let primary_source = null;
-  if (rawL.livedExperience) {
-    primary_source = {
-      qNum: 'Source 1',
-      title: `Eyewitness Testimony: ${rawL.livedExperience.witness}`,
-      witness: rawL.livedExperience.witness,
-      context: rawL.livedExperience.context,
-      quote: rawL.livedExperience.quote,
-      question: rawL.livedExperience.discussionQuestion,
-      scaffolding:
-        'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-    };
-  }
-
-  // 8-Mark Utility Starters & Extended Practice
-  let utility_starters = null;
+  // Extended Assessment Practice at the End of the Lesson
   let extended = null;
   if (rawL.howUsefulAnalyser) {
     const hua = rawL.howUsefulAnalyser;
-    utility_starters = {
-      enquiry: rawL.headerIntro ? rawL.headerIntro.split('.')[0] : 'this key historical topic',
-      sources: [
-        {
-          title: hua.sourceD ? hua.sourceD.provenance : 'Source A: Contemporary Report',
-          type: hua.sourceD && hua.sourceD.image ? 'visual' : 'written',
-          source: hua.sourceD && hua.sourceD.image ? `/units/usa/${hua.sourceD.image}` : undefined,
-          content: hua.sourceD ? hua.sourceD.content : '',
-          provenance_clue:
-            'Consider the author, motive, and contemporary legal context of this primary evidence.',
-        },
-        {
-          title: hua.sourceE ? hua.sourceE.provenance : 'Source B: Contemporary Visual Source',
-          type: hua.sourceE && hua.sourceE.image ? 'visual' : 'written',
-          source: hua.sourceE && hua.sourceE.image ? `/units/usa/${hua.sourceE.image}` : undefined,
-          caption: hua.sourceE ? hua.sourceE.caption : '',
-          content: hua.sourceE ? hua.sourceE.content : '',
-          provenance_clue:
-            'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-        },
-      ],
-    };
+    // Clean up prompt
+    let qText =
+      hua.question || 'How useful are Sources A and B for an enquiry into this topic? (8 marks)';
+    qText = qText.replace(/Sources D and E/gi, 'Sources A and B');
+    qText = qText.replace(/Sources D & E/gi, 'Sources A and B');
+
+    // Clean up model answer
+    let modelText = hua.modelAnswer || '';
+    modelText = modelText.replace(/Source D/g, 'Source A');
+    modelText = modelText.replace(/Source E/g, 'Source B');
+    modelText = modelText.replace(/\[\[/g, '<strong>').replace(/\]\]/g, '</strong>');
+    modelText = modelText.replace(/\{\{/g, '<em>').replace(/\}\}/g, '</em>');
+
+    let srcA = null;
+    if (hua.sourceD) {
+      let prov = hua.sourceD.provenance || 'Contemporary primary source.';
+      if (!prov.startsWith('Source A:')) {
+        prov = `Source A: ${prov.replace(/^From /i, 'From ')}`;
+      }
+      srcA = {
+        provenance: prov,
+        content: hua.sourceD.content || '',
+      };
+    }
+    let srcB = null;
+    if (hua.sourceE) {
+      let prov = hua.sourceE.provenance || 'Contemporary primary source.';
+      if (!prov.startsWith('Source B:')) {
+        prov = `Source B: ${prov.replace(/^From /i, 'From ')}`;
+      }
+      srcB = {
+        provenance: prov,
+        content: hua.sourceE.content || '',
+      };
+    }
 
     extended = {
-      title: '8-Mark Source Utility Assessment',
+      title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
+      question: qText,
+      source_a: srcA,
+      source_b: srcB,
+      hints: [
+        'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+        'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+        'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+      ],
+      provenance_clue:
+        "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
+      model: modelText,
+    };
+  } else if (key === 'subtopic_1_4') {
+    extended = {
+      title: 'Edexcel GCSE Paper 3: 12-Mark Explanation Assessment',
       question:
-        hua.question || 'How useful are Sources A and B for an enquiry into this topic? (8 marks)',
-      source_a: hua.sourceD
-        ? {
-            provenance: hua.sourceD.provenance,
-            content: hua.sourceD.content,
-          }
-        : null,
-      source_b: hua.sourceE
-        ? {
-            provenance: hua.sourceE.provenance,
-            content: hua.sourceE.content,
-          }
-        : null,
-      model:
-        hua.modelAnswer ||
-        'A top-level 8-mark response evaluates both sources in terms of content utility, contextual knowledge verification, and provenance reliability/limitations.',
+        "Explain why there was widespread Southern white opposition to desegregation in the years 1954–57. (12 marks)\n\nYou may use the following in your answer:\n- The Ku Klux Klan (KKK)\n- The 'Southern Manifesto' (1956)\nYou must also use information of your own.",
+      hints: [
+        'Explain three distinct, fully developed causes using PEEL paragraphs (Point, Evidence, Explanation, Link).',
+        "Analyze political resistance (Southern Manifesto / Dixiecrats), economic coercion (White Citizens' Councils), and violent intimidation (KKK / murder of Emmett Till).",
+        'Ensure you directly explain WHY each factor motivated Southern white resistance to federal authority.',
+      ],
+      model: `<h3>Model Answer (Level 4 — 12/12 marks):</h3>
+<p><strong>One major reason for widespread Southern white opposition to desegregation was organized political resistance led by Southern elected officials, epitomized by the 1956 'Southern Manifesto'.</strong> In 1956, 101 Southern congressmen and senators signed the manifesto, openly condemning the Supreme Court's <em>Brown v. Board of Education</em> decision as a 'clear abuse of judicial power' and pledging to use 'all lawful means' to resist integration. Southern state governments, led by 'Dixiecrats', embraced the strategy of 'Massive Resistance', passing state laws to cut funding from integrated schools and even shutting down public schools entirely (as Governor Faubus did in Little Rock during the 'Lost Year' of 1958–59). This political leadership legitimized popular defiance by framing segregation as a constitutional defense of 'states' rights' against federal tyranny, encouraging ordinary white citizens to disobey federal court orders.</p>
+<p><strong>A second crucial reason was the rise of middle-class economic coercion through White Citizens' Councils.</strong> Formed in Mississippi in 1954 following the <em>Brown</em> ruling, the White Citizens' Councils grew to over 250,000 members across the South, attracting doctors, lawyers, bankers, and business owners who branded themselves as 'respectable' segregationists. Rather than using overt physical violence, the Councils used devastating economic warfare against Black activists and integration supporters. Black parents who signed petitions to integrate local schools had their mortgages foreclosed, bank loans canceled, and employment terminated, while Black sharecroppers were evicted from white-owned land. This systematic economic terror made supporting desegregation financially ruinous for Black families, effectively paralyzing local integration efforts without needing open street violence.</p>
+<p><strong>Finally, extreme racial opposition was enforced through violent domestic terrorism and intimidation by the Ku Klux Klan (KKK).</strong> The <em>Brown</em> decision triggered a violent resurgence of the KKK across the Deep South, marked by cross burnings, firebombings of Black churches and homes, and brutal lynchings. The horrific murder of 14-year-old Emmett Till in Mississippi in August 1955 and the subsequent acquittal of his white murderers by an all-white jury demonstrated that white violence was protected by the Southern legal system. This unchecked brutality was designed to terrify Black communities into submission and demonstrate that any challenge to the racial hierarchy would carry fatal consequences. Therefore, Southern white opposition succeeded in delaying integration through a coordinated combination of political obstruction, economic ruin, and physical terror.</p>`,
+    };
+  } else if (key === 'subtopic_2_4') {
+    extended = {
+      title: 'Edexcel GCSE Paper 3: 12-Mark Explanation Assessment',
+      question:
+        'Explain why violent riots broke out in American cities between 1965 and 1968. (12 marks)\n\nYou may use the following in your answer:\n- The Watts Riot (1965)\n- The Kerner Commission Report (1968)\nYou must also use information of your own.',
+      hints: [
+        'Focus on systemic causes rather than just immediate triggers.',
+        'Contrast de jure segregation in the South with de facto economic and housing segregation in Northern ghettos.',
+        "Examine police brutality, economic despair, and the catalytic shock of Martin Luther King Jr.'s assassination.",
+      ],
+      model: `<h3>Model Answer (Level 4 — 12/12 marks):</h3>
+<p><strong>One fundamental reason for the outbreak of urban riots between 1965 and 1968 was severe de facto segregation and economic deprivation in Northern and Western inner-city ghettos.</strong> While federal legislation like the 1964 Civil Rights Act outlawed legal (de jure) segregation in the South, it did nothing to address economic hardship in northern cities like Los Angeles, Chicago, and Detroit. Black Americans were trapped in substandard inner-city housing due to discriminatory practices like 'redlining' by banks. Unemployment among young Black urban men was up to three times higher than national averages, and ghetto schools were chronically underfunded. This created an atmosphere of deep despair, as Black urban populations felt excluded from the American economic dream despite civil rights victories in the South.</p>
+<p><strong>A second direct cause was pervasive police brutality and racial friction with virtually all-white police forces.</strong> In August 1965, the arrest of Marquette Frye in the Watts district of Los Angeles by California Highway Patrol sparked six days of rioting that left 34 dead and over 1,000 injured. Similar confrontations ignited riots in Newark and Detroit in 1967. The federal Kerner Commission Report, published in 1968 by President Johnson's National Advisory Commission on Civil Disorders, famously concluded that America was 'moving toward two societies, one black, one white—separate and unequal.' The Kerner Report explicitly identified aggressive, heavy-handed policing in Black neighborhoods as the immediate spark that detonated urban anger.</p>
+<p><strong>Finally, urban violence was catalyzed by rising frustration with the limitations of non-violence and the catastrophic shock of Martin Luther King Jr.'s assassination in April 1968.</strong> Many young urban Black Americans felt that the SCLC's non-violent Christian marches had failed to improve the material conditions of the northern working class, leading them to embrace more assertive Black Power rhetoric. When King was assassinated on April 4, 1968, in Memphis, the devastating news triggered violent uprisings in more than 100 American cities within hours, including Washington D.C., Chicago, and Baltimore. The assassination destroyed faith in peaceful reform among millions of Black Americans, unleashing a wave of grief and fury that required tens of thousands of federal troops to suppress. Therefore, systemic economic exclusion, discriminatory policing, and the death of non-violent leadership combined to ignite the urban rebellions of the late 1960s.</p>`,
+    };
+  } else if (key === 'subtopic_4_4') {
+    extended = {
+      title: 'Edexcel GCSE Paper 3: 16-Mark Judgment Essay',
+      question:
+        "'The main reason the United States failed to win the Vietnam War was the military effectiveness of Vietcong guerrilla tactics.' How far do you agree with this statement? (16 marks + 4 SPaG)\n\nYou may use the following in your answer:\n- Vietcong guerrilla tactics and tunnel networks\n- The domestic anti-war movement and the 'credibility gap'\nYou must also use information of your own.",
+      hints: [
+        'Formulate a clear thesis in your introduction that directly answers the question.',
+        'Examine Vietcong guerrilla tactics (ambushes, booby traps, Cu Chi tunnels, blending with peasants) vs US tactical failures (search-and-destroy, firepower reliance).',
+        'Examine alternative factors: US home front collapse (anti-war protests, media coverage, Tet Offensive), ARVN weakness and political corruption in Saigon, and North Vietnamese resolve (Ho Chi Minh trail, Soviet/Chinese aid).',
+        'Provide a sustained, justified judgment in your conclusion.',
+      ],
+      model: `<h3>Model Answer (Level 4 — 16/16 marks + 4 SPaG):</h3>
+<p><strong>Introduction:</strong> The US failure to achieve military victory in Vietnam between 1965 and 1973 was a multifaceted catastrophe. While Vietcong guerrilla tactics were exceptionally effective in neutralizing American technological superiority and inflicting continuous attrition, they were not the sole cause of defeat. The war was equally lost due to the domestic collapse of political support on the American home front, the deep corruption and military weakness of the South Vietnamese government (ARVN), and the unwavering resilience of North Vietnam backed by Soviet and Chinese aid. Ultimately, Vietcong tactics were decisive because they prolonged the war to the point where the American public and political system refused to sustain it.</p>
+<p><strong>Arguments supporting the statement (Vietcong Tactics):</strong> There is strong evidence that Vietcong guerrilla tactics were the primary operational reason for US failure. Guided by General Vo Nguyen Giap, the Vietcong avoided set-piece battles where US air superiority and artillery could destroy them. Instead, they adopted 'hanging onto American belts'—fighting at close range so US forces could not call in air strikes without hitting their own troops. Their extensive underground tunnel networks, such as at Cu Chi, allowed them to launch surprise ambushes, store supplies, and disappear undetected. Furthermore, booby traps (like punji stake pits and tripwire mines) caused 11% of all US deaths and 17% of wounds, inflicting devastating psychological trauma on American conscripts. By dressing as ordinary peasants, the Vietcong denied US troops a visible enemy, rendering search-and-destroy missions deeply frustrating and often counterproductive.</p>
+<p><strong>Alternative Factor 1 (US Tactical and Strategic Errors):</strong> Conversely, it can be argued that US failure stemmed from flawed American military strategies rather than Vietcong brilliance alone. General Westmoreland pursued a war of attrition measured by 'body counts', mistakenly believing US firepower would force the enemy to a breaking point. Instead, tactics like search-and-destroy, heavy napalm bombing, and Agent Orange defoliation alienated the South Vietnamese peasantry whose 'hearts and minds' were essential to win. The massacre of hundreds of unarmed civilians at My Lai in 1968 demonstrated how strategic frustration led to atrocities that destroyed the moral legitimacy of the American mission both in Vietnam and internationally.</p>
+<p><strong>Alternative Factor 2 (Home Front Opposition & The Credibility Gap):</strong> Crucially, the war was lost on the American home front as domestic political consensus collapsed. Vietnam was the world's first 'television war', bringing graphic footage of combat, wounded soldiers, and burning villages into American living rooms every night. The shock of the January 1968 Tet Offensive shattered government claims that victory was near, creating a vast 'credibility gap' between official statements and battlefield reality. Following Tet, influential news anchor Walter Cronkite declared the war an unwinnable stalemate. Massive anti-war demonstrations, university strikes (culminating in the Kent State shootings of 1970), and veteran protests made continuing the war politically impossible, compelling President Nixon to pursue 'Vietnamization' and diplomatic withdrawal.</p>
+<p><strong>Conclusion:</strong> In conclusion, while Vietcong guerrilla tactics were essential in preventing a rapid American victory, they were not the sole reason the US lost. The decisive factor was the interplay between guerrilla warfare and the American home front. Asymmetric guerrilla tactics succeeded because they turned the war into a prolonged war of attrition. North Vietnam and the Vietcong were fighting an existential war of national liberation and were willing to absorb staggering casualties, whereas the United States was fighting a limited Cold War engagement. Once the American public recognized that no amount of bombing or troop deployment could break the enemy's will, political support evaporated. Therefore, Vietcong tactics succeeded primarily because they created the conditions that forced America's domestic withdrawal.</p>`,
     };
   }
 
@@ -1514,22 +1550,29 @@ lessonKeys.forEach((key, idx) => {
     primer: `This lesson investigates ${rawL.headerTitle || 'this key topic in 20th century US history'}. ${rawL.headerIntro || ''}`,
     objectives: [
       {
-        objective: `Analyze the key developments, events, and individuals in ${rawL.headerTitle || 'this lesson'}.`,
+        objective: `Demonstrate comprehensive historical knowledge of the key developments and figures in ${rawL.headerTitle || 'this lesson'}.`,
         primer:
-          'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
-        question: `How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?`,
+          'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
+        question: `What was the most significant direct cause of developments in ${rawL.headerTitle ? rawL.headerTitle.split(':')[1]?.trim() || rawL.headerTitle : 'this topic'}?`,
       },
       {
         objective:
-          'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+          'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
         primer:
-          'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
-        question: `Which factor had the most enduring long-term consequence: legal litigation or direct action?`,
+          'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
+        question: `How did the balance of power between federal authority and local opposition shift as a result of these events?`,
+      },
+      {
+        objective:
+          'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+        primer:
+          "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+        question: `Which factor had the greatest enduring long-term consequence for the United States?`,
       },
     ],
     source_context: rawL.livedExperience
       ? `${rawL.livedExperience.context} **Hinge Question:** ${rawL.livedExperience.discussionQuestion}`
-      : 'Examine historical accounts and evidence. **Hinge Question:** Why did eyewitnesses interpret these events with conflicting perspectives?',
+      : `Examine this primary source evidence from ${rawL.headerTitle || 'this period'}. **Hinge Question:** Why did eyewitnesses interpret these events with conflicting perspectives?`,
   };
 
   lessons.push({
@@ -1552,11 +1595,11 @@ lessonKeys.forEach((key, idx) => {
       instructions: 'Answer these questions in full sentences to activate prior knowledge.',
       items: doNowItems,
     },
-    starters: starters.length > 0 ? starters : undefined,
+    starters: undefined,
     vocab: vocab,
     narrative_blocks: narrative_blocks,
-    primary_source: primary_source,
-    utility_starters: utility_starters,
+    primary_source: null,
+    utility_starters: null,
     extended: extended,
     historians_corner: historians_corner,
     pair_share: pair_share,
