@@ -1094,7 +1094,7 @@ export function renderLesson(lesson) {
           `;
 
         block.maps.forEach((m, idx) => {
-          htmlNarrative += `<img src="${getAssetUrl(m.src)}" id="map-img-${m.id}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; transition: opacity 0.6s ease-in-out; border-radius: 6px;">`;
+          htmlNarrative += `<img src="${getAssetUrl(m.src)}" id="map-img-${m.id}" data-action="open-modal" data-src="${getAssetUrl(m.src)}" alt="${m.label}" style="position: absolute; max-width: 100%; max-height: 100%; object-fit: contain; opacity: ${idx === 0 ? '1' : '0'}; pointer-events: ${idx === 0 ? 'auto' : 'none'}; transition: opacity 0.6s ease-in-out; border-radius: 6px; cursor: zoom-in;" title="Click to enlarge map">`;
         });
 
         htmlNarrative += `
@@ -1105,8 +1105,12 @@ export function renderLesson(lesson) {
 
         block.maps.forEach((m, idx) => {
           const activeClass = idx === 0 ? 'active-map-btn' : '';
+          const activeStyle =
+            idx === 0
+              ? 'background-color: #1e40af; color: #ffffff; border: 1px solid #1e40af;'
+              : 'background-color: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;';
           htmlNarrative += `
-                <button class="btn btn-secondary map-toggle-btn ${activeClass}" data-map-id="${m.id}" data-caption="${m.caption.replace(/"/g, '&quot;')}" data-action="toggle-map" style="border-radius: 30px; padding: 8px 16px; font-weight: bold;">
+                <button class="btn btn-secondary map-toggle-btn ${activeClass}" data-map-id="${m.id}" data-caption="${m.caption.replace(/"/g, '&quot;')}" data-action="toggle-map" style="border-radius: 30px; padding: 8px 18px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; ${activeStyle}">
                   ${m.year} ${m.label}
                 </button>
             `;

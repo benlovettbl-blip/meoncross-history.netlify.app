@@ -1,4 +1,3 @@
-// Auto-generated Paper 2 Conflict in the Middle East Unit Data
 const cme_new = {
   lesson_reflection: {
     prompt:
@@ -510,6 +509,14 @@ const cme_new = {
                 'The fundamental contradiction was that Britain pledged the same territory to two opposing nationalist movements. Through the McMahon-Hussein Correspondence, Arab leaders were led to believe Britain would support an independent Arab kingdom including Palestine in reward for fighting the Ottomans. However, the Balfour Declaration officially promised British backing for a Jewish national home in Palestine, ignoring the political self-determination of the existing 90% Arab majority.',
             },
           ],
+          source: {
+            title: 'The Sykes-Picot Agreement Partition Map (May 1916)',
+            src: '/images/cme_sykes_picot_1916_map.jpg',
+            caption:
+              'The original partition map signed by Sir Mark Sykes and François Georges-Picot dividing the Ottoman Empire into British (red/B) and French (blue/A) spheres of control, placing Palestine under international administration.',
+            question:
+              'Source Detective: Study the map. How did the secret partition into French (Zone A) and British (Zone B) spheres directly contradict the promises of an independent Arab kingdom made to Sharif Hussein in the McMahon-Hussein Correspondence?',
+          },
         },
         {
           type: 'narrative',
@@ -2422,6 +2429,8 @@ const cme_new = {
             question: "How did the Law of Return help solve Israel's security vulnerability?",
           },
         ],
+        source_context:
+          'The 1949 Armistice Green Line map reveals the dramatic territorial expansion of the new State of Israel from the 55% allocated under UN Resolution 181 to nearly 79% of the former British Mandate. By illustrating how the West Bank fell under Jordanian control and the Gaza Strip under Egyptian administration, the map visually anchors the origin of the Palestinian refugee diaspora and the permanent absence of the independent Arab state envisioned by the UN. **Hinge Question:** Why did the 1949 Green Line create a fragile geopolitical status quo that virtually guaranteed future armed conflict between Israel and its Arab neighbours?',
       },
       flashcards: [
         {
@@ -3920,6 +3929,14 @@ const cme_new = {
                 "Once Israel launched a pre-emptive strike toward the canal, Britain and France would issue an ultimatum for both sides to pull back. When Egypt inevitably refused, Britain and France would invade to 'protect' international shipping.",
             },
           ],
+          source: {
+            title: 'Military Campaign Map: The 1956 Suez Crisis & Operation Kadesh',
+            src: '/images/cme_suez_1956_campaign_map.jpg',
+            caption:
+              'Military map illustrating the rapid Israeli armoured advance across the Sinai Peninsula, paratrooper drops at the Mitla Pass, isolation of Sharm el-Sheikh, and Anglo-French amphibious landings at Port Said.',
+            question:
+              'Source Detective: Study the troop movements on the map. How did the rapid Israeli capture of the Mitla Pass and Sinai allow Britain and France to claim they were merely intervening as "peacekeepers" to protect the Suez Canal?',
+          },
         },
         {
           text: "**Operation Musketeer: Anglo-French Airborne Assault on Port Said:** On 29 October 1956, the plan was put into action. The IDF launched a highly successful blitzkrieg across Sinai, routing the Egyptian army and advancing rapidly toward the canal. Britain and France immediately issued their pre-planned ultimatum and, as expected, launched heavy bombing raids and landed paratroopers at Port Said to seize control of the canal. The conspiracy backfired due to furious resistance from the global superpowers. Soviet leader Nikita Khrushchev threatened to launch nuclear missile strikes against London and Paris. More decisively, US President Dwight D. Eisenhower was outraged that his allies had launched a war without consulting him, fearing it would drive the entire Arab world into the arms of the USSR. Eisenhower applied massive economic pressure on Great Britain, threatening to refuse loans and block Britain's access to oil.",
@@ -5882,6 +5899,14 @@ const cme_new = {
                 "The PLO had established a 'state-within-a-state' in Jordan, collecting taxes, running checkpoints, and launching unauthorized rocket attacks on Israel that drew destructive military reprisals onto Jordanian territory.",
             },
           ],
+          source: {
+            title: 'Map of Fedayeen Bases & Black September Civil Conflict in Jordan (1970)',
+            src: '/images/cme_jordan_fedayeen_1970_map.png',
+            caption:
+              'Map showing Palestinian guerrilla (Fedayeen) strongholds around Amman, Zarqa, Irbid, and Karameh, alongside the Syrian armoured invasion routes repelled by the Jordanian Armed Forces during Black September.',
+            question:
+              "Source Detective: Study the map. Why did the armed Fedayeen presence in Jordanian capital cities directly threaten the survival and sovereignty of King Hussein's Hashemite monarchy?",
+          },
         },
         {
           text: '**The Black September Civil War: Sequence of the Jordan Showdown:** <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 10px 0; page-break-inside: avoid;">\n  <h4 style="text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src="/units/cme_new/assets/black_september.svg" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;" alt="Flowchart showing the sequence of events of the Black September Civil War">\n</div>',
@@ -6969,6 +6994,14 @@ const cme_new = {
           text: '**Operation Badr: The Surprise Two-Front Attack (6 October 1973):** By 1973, these settlements had become permanent "facts on the ground," deeply fragmenting Palestinian society and convincing Arab leaders that Israel was expanding permanently. On 6 October 1973, Sadat’s secret plan for war was put into action. Egypt and its ally, Syria, launched a highly coordinated, two-front surprise attack against Israel.',
           level_4:
             'By 1973, these settlements had become permanent "facts on the ground," deeply fragmenting Palestinian society and convincing Arab leaders that Israel was expanding permanently. Egypt and its ally, Syria, launched a highly coordinated, two-front surprise attack against Israel.',
+          source: {
+            title: 'Military Map: Yom Kippur War — Sinai Front (6 October 1973)',
+            src: '/images/cme_yom_kippur_1973_map.png',
+            caption:
+              'Tactical campaign map of the Suez Canal and Sinai front on 6 October 1973, showing Egyptian assault crossing sectors, the Israeli Bar Lev fortifications, and the strategic Mitla and Gidi passes.',
+            question:
+              'Source Detective: Study the Egyptian crossing points along the Suez Canal. How did Egyptian forces use the water barrier and geographical depth of the Sinai passes to catch the Israeli Bar Lev line by surprise?',
+          },
         },
         {
           text: '**The Surprise Offensive: Tactical Plan of Operation Badr:** <img src="/units/cme_new/assets/surprise_attack.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="surprise_attack">',
@@ -8457,6 +8490,14 @@ const cme_new = {
                 "Framework 2 outlined a bilateral peace treaty: Israel agreed to a phased, complete withdrawal from the Sinai Peninsula, and Egypt agreed to normalise relations and officially recognize Israel's right to exist.",
             },
           ],
+          source: {
+            title: 'Map of the Sinai Peninsula: Camp David Land-for-Peace Settlement (1979)',
+            src: '/images/cme_sinai_peninsula_map.jpg',
+            caption:
+              'Official cartographic map showing the 60,000 square kilometre Sinai Peninsula returned in phases by Israel to Egypt between 1979 and 1982 in exchange for diplomatic recognition and free passage through the Straits of Tiran.',
+            question:
+              'Source Detective: Explain why control of Sharm ash Shaykh and the Strait of Tiran at the southern tip of Sinai was such a vital strategic issue in the peace treaty.',
+          },
         },
         {
           text: '<img src="/units/cme_new/assets/sinai_returned.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sinai_returned">',
@@ -9510,6 +9551,14 @@ const cme_new = {
                 "Sharon's true ambitions were to completely destroy the PLO in Lebanon, defeat Syrian forces, and install a pro-Israeli Christian government in Beirut led by Maronite leader Bashir Gemayel.",
             },
           ],
+          source: {
+            title: 'Military Map: 1982 Lebanon War (Operation Peace for Galilee)',
+            src: '/images/cme_lebanon_1982_campaign_map.png',
+            caption:
+              'Military campaign map illustrating the June 1982 Israeli advances northward along the Mediterranean coast past Tyre and Sidon into Beirut, alongside clashes with Syrian forces in the Bekaa Valley.',
+            question:
+              'Source Detective: Study the arrows marking the Israeli advance northward. How does the map demonstrate that Sharon pushed the invasion far beyond the initial 40-kilometre security zone to encircle Beirut?',
+          },
         },
         {
           text: "Having successfully expelled the PLO, Israel's close Maronite ally, Bashir Gemayel, was elected President of Lebanon. However, on 14 September 1982, Gemayel was assassinated in a massive bomb blast by Syrian agents.",
@@ -10200,6 +10249,8 @@ const cme_new = {
               'What were the three main territorial divisions established by the Oslo II Accords?',
           },
         ],
+        source_context:
+          "The Oslo II map demonstrates the intricate and fragmented division of the West Bank into Areas A, B, and C. While Area A gave the Palestinian Authority nominal civil and internal security control over populated urban centers like Ramallah and Nablus, Area C (under exclusive Israeli civil and military control) encompassed over 60% of the land, severing Palestinian towns into isolated enclaves surrounded by Israeli checkpoints, bypass roads, and growing Jewish settlements. **Hinge Question:** How did the spatial fragmentation of Areas A, B, and C undermine ordinary Palestinians' belief in a viable independent future state, directly fueling extremist rejection of the peace process?",
       },
       do_now: {
         type: 'questions',
@@ -10451,6 +10502,14 @@ const cme_new = {
           text: 'On 28 September 1995, Rabin and Arafat signed the Oslo II Accords, which detailed the expansion of Palestinian self-rule across the West Bank by dividing it into three zones.',
           level_4:
             'On 28 September 1995, Rabin and Arafat signed the Oslo II Accords, which detailed the expansion of Palestinian self-rule across the West Bank by dividing it into three zones.',
+          source: {
+            title: 'Map of the West Bank under Oslo II (1995): Areas A, B, and C',
+            src: '/images/cme_oslo_areas_map.png',
+            caption:
+              'Map illustrating the territorial fragmentation of the West Bank: Area A (green, Palestinian cities with civil and security control), Area B (red, joint Israeli-Palestinian control), and Area C (pink, full Israeli civil and military control covering 60% of the land).',
+            question:
+              'Source Detective: Study the distribution of Areas A, B, and C. Why did this fragmented "archipelago" of isolated Palestinian urban enclaves lead many Palestinians to view Oslo II as an unworkable compromise?',
+          },
         },
         {
           text: '<img src="/units/cme_new/assets/oslo2.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="oslo2">',

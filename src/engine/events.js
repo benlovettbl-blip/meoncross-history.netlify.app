@@ -534,6 +534,42 @@ export function toggleAllAnswers(btnOrContainer) {
   }
 }
 
+export function toggleMap(btn) {
+  const container = btn.closest('.interactive-map-container');
+  if (!container) return;
+
+  // Update buttons
+  container.querySelectorAll('.map-toggle-btn').forEach((b) => {
+    b.classList.remove('active-map-btn');
+    b.style.backgroundColor = '#f1f5f9';
+    b.style.color = '#334155';
+    b.style.borderColor = '#cbd5e1';
+  });
+  btn.classList.add('active-map-btn');
+  btn.style.backgroundColor = '#1e40af';
+  btn.style.color = '#ffffff';
+  btn.style.borderColor = '#1e40af';
+
+  // Update images
+  const targetId = btn.getAttribute('data-map-id');
+  container.querySelectorAll('img[id^="map-img-"]').forEach((img) => {
+    img.style.opacity = '0';
+    img.style.pointerEvents = 'none';
+  });
+  const targetImg = container.querySelector('#map-img-' + targetId);
+  if (targetImg) {
+    targetImg.style.opacity = '1';
+    targetImg.style.pointerEvents = 'auto';
+  }
+
+  // Update caption
+  const captionDisplay = container.querySelector('#map-caption-display');
+  if (captionDisplay) {
+    captionDisplay.innerHTML = btn.getAttribute('data-caption') || '';
+  }
+}
+
 if (typeof window !== 'undefined') {
   window.toggleAllAnswers = toggleAllAnswers;
+  window.toggleMap = toggleMap;
 }
