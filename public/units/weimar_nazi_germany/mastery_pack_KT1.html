@@ -819,6 +819,303 @@
             color: #2563eb;
         }
 
+        /* CME Dual-Tier & Printable Revision Suite Styles */
+        .toolbar-btn.printables {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        .toolbar-btn.printables:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+
+        /* Printables Suite Modal */
+        .printables-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        .printables-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .printables-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .printables-modal-header h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .printables-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .printables-modal-sub {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
+        }
+        .printables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+        .printable-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .printable-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        .printable-card-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .printable-card h4 {
+            margin: 0 0 8px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            color: #0f172a;
+        }
+        .printable-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin: 0 0 16px 0;
+            flex-grow: 1;
+        }
+        .printable-links {
+            display: flex;
+            gap: 8px;
+        }
+        .print-link-btn {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s ease;
+        }
+        .print-link-btn.web {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .print-link-btn.web:hover {
+            background: #bae6fd;
+        }
+        .print-link-btn.pdf {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .print-link-btn.pdf:hover {
+            background: #fee2e2;
+        }
+
+        /* Dual-Tier Leitner Switcher Bar */
+        .leitner-tier-switcher {
+            display: flex;
+            background: #0f172a;
+            padding: 8px 16px 0 16px;
+            gap: 6px;
+            border-bottom: 1px solid #334155;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            background: #1e293b;
+            color: #94a3b8;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tier-btn:hover:not(.active) {
+            background: #334155;
+            color: #ffffff;
+        }
+        .tier-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Stem Filter Row */
+        .leitner-stem-filter-row {
+            background: #f8fafc;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .stem-filter-label {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        .stem-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .stem-pill:hover {
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+        .stem-pill.active {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        /* Exam Card Elements */
+        .exam-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .exam-stem-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .exam-stem-badge.consequence {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .exam-stem-badge.narrative {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+        .exam-stem-badge.importance {
+            background: #ffedd5;
+            color: #9a3412;
+            border: 1px solid #fdba74;
+        }
+        .exam-stem-badge.term {
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid #7dd3fc;
+        }
+        .exam-formula-badge {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .exam-facts-hint {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px dashed #cbd5e1;
+        }
+        .historian-box {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 4px solid #eab308;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #713f12;
+            line-height: 1.45;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .facts-checklist {
+            margin-top: 10px;
+            text-align: left;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #166534;
+        }
+        .facts-checklist ul {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+        }
+        .facts-checklist li {
+            margin-bottom: 2px;
+        }
+
         /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
         .leitner-modal-overlay.teacher-mode {
             padding: 0;
@@ -1595,10 +1892,13 @@
             <span class="toolbar-badge">Mobile</span>
         </div>
         <div class="toolbar-actions">
+            
             <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
+
+    
 
     <!-- Cover Page -->
     <div class="page cover page-break">
@@ -3592,6 +3892,8 @@
                 </div>
             </div>
 
+            
+
             <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
                 <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
@@ -3723,10 +4025,19 @@
   (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
-    const LEITNER_STORAGE_KEY = 'leitner_v1_weimar_nazi_germany_KT1';
+    const IS_CME_NEW = false;
+    const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_weimar_nazi_germany_KT1';
+    const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_weimar_nazi_germany_KT1_exam';
+    let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
     const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
-    const ALL_DECK = [{"id":1,"q":"What was the financial impact of WWI on Germany's national debt by 1918?","a":"It tripled from 50 billion marks to 150 billion marks","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":2,"q":"How many German civilians died from food shortages caused by the British naval blockade?","a":"Approximately 750,000","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":3,"q":"What event occurred at a naval base in late October 1918 that sparked a nationwide revolution?","a":"The mutiny of German sailors at Kiel","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":4,"q":"On what exact date did Kaiser Wilhelm II abdicate?","a":"9 November 1918","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":5,"q":"Where did Kaiser Wilhelm II flee to after his abdication?","a":"Holland","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":6,"q":"Who proclaimed the new German Republic from the balcony of the Reichstag?","a":"Philipp Scheidemann","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":7,"q":"Who became the first Chancellor (and later first President) of the Weimar Republic?","a":"Friedrich Ebert","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":8,"q":"What was the name of the temporary government set up by Ebert until elections could be held?","a":"The Council of People's Representatives","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":9,"q":"On what exact date was the Armistice signed?","a":"11 November 1918","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":10,"q":"Which German politician signed the Armistice on behalf of the Republic?","a":"Matthias Erzberger","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":11,"q":"What insulting term was given to the politicians who signed the Armistice by right-wing nationalists?","a":"The November Criminals","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":12,"q":"What is the German term for the 'stab-in-the-back' myth?","a":"Dolchstoßlegende","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":13,"q":"Why did the new politicians meet in Weimar in 1919 rather than the capital, Berlin?","a":"Berlin was too violent and unstable due to ongoing political rioting","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":14,"q":"Under the Weimar Constitution, what was the voting age?","a":"All men and women over the age of 20","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":15,"q":"What was the specific name of the voting system used to elect the Reichstag?","a":"Proportional Representation","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":16,"q":"How frequently was the President of the Weimar Republic elected?","a":"Every 7 years","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":17,"q":"Under the Constitution, how many votes did a party need to gain exactly one seat in the Reichstag?","a":"60,000 votes","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":18,"q":"Why did Proportional Representation create weak governments?","a":"It meant no single party ever won a majority, forcing weak 'coalition' governments","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":19,"q":"What was Article 48?","a":"A constitutional clause allowing the President to bypass the Reichstag and rule by emergency decree","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":20,"q":"What was the name of the upper house of parliament that represented the 18 German regions (Länder)?","a":"The Reichsrat","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":21,"q":"What was the Triple Entente in the First World War?","a":"An alliance between Britain, France, and Russia.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":22,"q":"What was the Triple Alliance?","a":"An alliance between Germany, Austria-Hungary, and Italy.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":23,"q":"What is a 'dictatorship'?","a":"A country ruled by a single leader with total power.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":24,"q":"What is a 'democracy'?","a":"A system where the government is elected by the people.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":25,"q":"What does 'abdicate' mean?","a":"When a monarch steps down from the throne.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":26,"q":"What is a 'republic'?","a":"A country without a monarch, usually led by an elected president.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":27,"q":"What does 'inflation' mean?","a":"The general increase in prices and fall in the purchasing value of money.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":28,"q":"What is an 'armistice'?","a":"A formal agreement to stop fighting; a truce.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":29,"q":"What does 'mutiny' mean?","a":"An open rebellion against the proper authorities, especially by soldiers or sailors.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":30,"q":"In what year did the First World War begin?","a":"1914.","topic":"KT1.1: The Origins of the Republic, 1918–1919"},{"id":31,"q":"On what exact date was the Treaty of Versailles signed?","a":"28 June 1919","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":32,"q":"What was Article 231 of the Treaty of Versailles?","a":"The War Guilt Clause, forcing Germany to accept total blame for the war","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":33,"q":"How much was Germany ordered to pay in reparations in 1921?","a":"£6.6 billion","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":34,"q":"Under the Treaty, what was the maximum number of soldiers allowed in the German army?","a":"100,000 men","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":35,"q":"What German term was used to describe the Treaty of Versailles, meaning a 'dictated peace'?","a":"Diktat","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":36,"q":"Who were the two main leaders of the Spartacist League?","a":"Rosa Luxemburg and Karl Liebknecht","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":37,"q":"What political ideology did the Spartacists follow?","a":"Extreme Left-wing (Communism)","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":38,"q":"In what month and year did the Spartacist Uprising take place?","a":"January 1919","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":39,"q":"Who did Chancellor Ebert use to violently crush the Spartacist Uprising?","a":"The Freikorps","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":40,"q":"Who were the Freikorps?","a":"Right-wing private armies made up of demobilised ex-soldiers","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":41,"q":"In what month and year did the Kapp Putsch take place?","a":"March 1920","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":42,"q":"Why did the Kapp Putsch begin?","a":"The government tried to disband Freikorps units to comply with the Treaty of Versailles limits","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":43,"q":"Why did the regular German army refuse to stop the Kapp Putsch?","a":"Because they sympathised with the right-wing rebels","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":44,"q":"How did the Weimar government successfully defeat the Kapp Putsch?","a":"They called on the workers of Berlin to launch a General Strike","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":45,"q":"Why did French and Belgian troops invade the Ruhr in January 1923?","a":"Because Germany had failed to pay its scheduled reparations","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":46,"q":"What non-violent tactic did the German government order the Ruhr workers to use against the French?","a":"Passive Resistance","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":47,"q":"Why did the invasion of the Ruhr directly lead to hyperinflation?","a":"The government printed massive amounts of unbacked paper money to pay the striking workers","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":48,"q":"By November 1923, how much did a single loaf of bread cost in Germany?","a":"201 billion marks","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":49,"q":"Which specific social class was hit the hardest by hyperinflation, and why?","a":"The middle classes, because their life savings and fixed pensions became completely worthless","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":50,"q":"Name one group of people who actually benefited (were 'winners') during the hyperinflation crisis.","a":"People with debts or mortgages","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":51,"q":"When did the First World War end?","a":"11 November 1918.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":52,"q":"Who was the Kaiser of Germany during WW1?","a":"Kaiser Wilhelm II.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":53,"q":"Why did the Kaiser abdicate?","a":"Germany was losing the war, there were food shortages, and sailors mutinied at Kiel.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":54,"q":"What was the 'stab in the back' myth (Dolchstoßlegende)?","a":"The false belief that the German army was betrayed by socialist and Jewish politicians.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":55,"q":"Who were the 'November Criminals'?","a":"The nickname given by right-wing Germans to the politicians who signed the Armistice.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":56,"q":"What is a 'democracy'?","a":"A system where the government is elected by the people.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":57,"q":"What is a 'republic'?","a":"A country without a monarch.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":58,"q":"What does 'mutiny' mean?","a":"A rebellion by soldiers or sailors.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":59,"q":"What was the Triple Entente?","a":"The alliance of Britain, France, and Russia.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":60,"q":"What does 'abdicate' mean?","a":"To step down from the throne.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923"},{"id":61,"q":"Who became Chancellor in August 1923 and is widely credited with saving the Weimar Republic?","a":"Gustav Stresemann","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":62,"q":"What was the name of the temporary currency introduced by Stresemann in November 1923?","a":"The Rentenmark","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":63,"q":"What was the Rentenmark tied to in order to restore public confidence in its value?","a":"German property / agricultural and industrial land values","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":64,"q":"What permanent, gold-backed currency replaced the temporary one in 1924?","a":"The Reichsmark","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":65,"q":"In what year was the Dawes Plan agreed?","a":"1924","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":66,"q":"Under the Dawes Plan, which country agreed to loan Germany 800 million gold marks?","a":"The USA","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":67,"q":"What was the primary economic danger of the Dawes Plan for the Weimar Republic?","a":"It made the entire German economy reliant on American loans","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":68,"q":"What was the name of the 1929 economic plan that reduced total reparations?","a":"The Young Plan","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":69,"q":"How much was the reparations bill reduced to under the Young Plan?","a":"From £6.6 billion to £2 billion","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":70,"q":"What diplomatic treaty did Germany sign in 1925, agreeing to its new western borders?","a":"The Locarno Pact","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":71,"q":"Why was the Locarno Pact viewed so differently by Germans compared to the Treaty of Versailles?","a":"Germany was treated as an equal negotiating partner, not dictated to","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":72,"q":"In what year was Germany allowed to join the League of Nations?","a":"1926","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":73,"q":"What position was Germany given within the League of Nations to show it was a 'great power' again?","a":"A seat on the League of Nations Council","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":74,"q":"What was the Kellogg-Briand Pact of 1928?","a":"An international agreement signed by 65 countries to resolve conflicts peacefully rather than using war","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":75,"q":"How many seats did the Nazi Party win in the 1928 Reichstag election, highlighting the drop in extremist support?","a":"12 seats","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":76,"q":"Who was elected as President of the Weimar Republic in 1925 following the death of Friedrich Ebert?","a":"Paul von Hindenburg","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":77,"q":"Which two groups in German society did not experience prosperity during the Golden Age?","a":"Farmers and the middle classes who had lost their savings in 1923","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":78,"q":"During the 'Golden Age', what was the lowest number of unemployed people in Germany, showing underlying economic weakness?","a":"Unemployment never fell below 1.3 million","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":79,"q":"What was Stresemann's famous quote warning about the fragility of the German economy?","a":"\"Germany is dancing on a volcano.\"","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":80,"q":"What major global economic event happened in October 1929, just weeks after Stresemann died?","a":"The Wall Street Crash","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":81,"q":"What was the Weimar Constitution?","a":"The set of rules for how Germany would be governed as a democratic republic.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":82,"q":"What was Proportional Representation (PR)?","a":"An electoral system where the percentage of votes equals the percentage of seats in the Reichstag.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":83,"q":"Why was Proportional Representation a weakness?","a":"It led to dozens of tiny parties and weak coalition governments.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":84,"q":"What was Article 48?","a":"It allowed the President to make laws without the Reichstag in an emergency.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":85,"q":"Who was the first President of the Weimar Republic?","a":"Friedrich Ebert.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":86,"q":"What was the 'stab in the back' myth?","a":"The belief that Germany was betrayed by politicians, not defeated in battle.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":87,"q":"Who were the 'November Criminals'?","a":"The politicians who signed the Armistice.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":88,"q":"When did WW1 end?","a":"1918.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":89,"q":"What is an 'armistice'?","a":"An agreement to stop fighting.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":90,"q":"What does 'inflation' mean?","a":"Prices rising rapidly.","topic":"KT1.3: The Recovery of the Republic, 1924–1929"},{"id":91,"q":"By what percentage did 'real wages' for German workers rise between 1925 and 1928?","a":"25%","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":92,"q":"What major welfare law was passed in 1927 to protect workers?","a":"The Unemployment Insurance Act","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":93,"q":"What percentage of a worker's wage was deducted to fund the 1927 Unemployment Insurance Act?","a":"3%","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":94,"q":"How many new homes were built between 1925 and 1929 to solve the housing crisis?","a":"Over 100,000","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":95,"q":"Which specific clause in the Weimar Constitution guaranteed women equal rights with men?","a":"Article 109","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":96,"q":"How many female deputies were in the Reichstag by 1926?","a":"32","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":97,"q":"What insulting term was used by traditionalists to describe married women who held jobs?","a":"Double-earners","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":98,"q":"By 1933, how many female teachers were there in Germany?","a":"100,000","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":99,"q":"What term was used by the media to describe young, independent, fashion-conscious women in the 1920s?","a":"The 'New Woman' (Neue Frau)","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":100,"q":"Give two reasons why a cultural explosion occurred in 1920s Germany.","a":"The removal of pre-war censorship and economic recovery providing funding","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":101,"q":"What was the name of the new movement in art that painted the gritty reality of everyday German life?","a":"New Objectivity (Neue Sachlichkeit)","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":102,"q":"Name two famous German artists associated with the New Objectivity movement.","a":"George Grosz and Otto Dix","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":103,"q":"What was the name of the revolutionary school of design and architecture founded in Weimar Germany?","a":"The Bauhaus","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":104,"q":"Who was the founder of the Bauhaus movement?","a":"Walter Gropius","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":105,"q":"What was the guiding principle or slogan of the Bauhaus school?","a":"\"Art and Technology - a new unity\"","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":106,"q":"Who directed the groundbreaking 1927 science-fiction film Metropolis?","a":"Fritz Lang","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":107,"q":"Which German actress became a global film superstar during the Weimar era?","a":"Marlene Dietrich","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":108,"q":"Why did right-wing groups and the Nazi Party despise the cultural changes of the 1920s?","a":"They believed the new culture was immoral, un-German, and undermined traditional family values","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":109,"q":"Why did extreme left-wing groups (Communists) criticise the cultural explosion?","a":"They felt it was an extravagant waste of money when poor workers were still struggling to survive","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":110,"q":"Which social class deeply resented the improvements made for the working classes because they had not recovered their own lost savings?","a":"The middle classes","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":111,"q":"Which treaty punished Germany after WW1?","a":"The Treaty of Versailles (1919).","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":112,"q":"How much was Germany forced to pay in reparations?","a":"£6.6 billion.","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":113,"q":"What was Article 231?","a":"The 'War Guilt Clause', forcing Germany to accept full blame for starting the war.","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":114,"q":"How was the German army restricted by the Treaty?","a":"Limited to 100,000 men, no air force, no submarines, and 6 battleships.","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":115,"q":"What happened to the Rhineland?","a":"It was demilitarised (no German troops allowed).","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":116,"q":"What was Proportional Representation?","a":"An electoral system leading to weak coalition governments.","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":117,"q":"What was Article 48?","a":"The President's emergency decree power.","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":118,"q":"Who were the November Criminals?","a":"The politicians who signed the 1918 Armistice.","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":119,"q":"Who was Friedrich Ebert?","a":"The first President of the Weimar Republic.","topic":"KT1.4: Changes in Society, 1924–1929"},{"id":120,"q":"What is a 'dictatorship'?","a":"Rule by a single leader with total power.","topic":"KT1.4: Changes in Society, 1924–1929"}];
 
+    const RAPID_DECK = [{"id":1,"q":"What was the financial impact of WWI on Germany's national debt by 1918?","a":"It tripled from 50 billion marks to 150 billion marks","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":2,"q":"How many German civilians died from food shortages caused by the British naval blockade?","a":"Approximately 750,000","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":3,"q":"What event occurred at a naval base in late October 1918 that sparked a nationwide revolution?","a":"The mutiny of German sailors at Kiel","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":4,"q":"On what exact date did Kaiser Wilhelm II abdicate?","a":"9 November 1918","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":5,"q":"Where did Kaiser Wilhelm II flee to after his abdication?","a":"Holland","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":6,"q":"Who proclaimed the new German Republic from the balcony of the Reichstag?","a":"Philipp Scheidemann","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":7,"q":"Who became the first Chancellor (and later first President) of the Weimar Republic?","a":"Friedrich Ebert","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":8,"q":"What was the name of the temporary government set up by Ebert until elections could be held?","a":"The Council of People's Representatives","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":9,"q":"On what exact date was the Armistice signed?","a":"11 November 1918","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":10,"q":"Which German politician signed the Armistice on behalf of the Republic?","a":"Matthias Erzberger","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":11,"q":"What insulting term was given to the politicians who signed the Armistice by right-wing nationalists?","a":"The November Criminals","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":12,"q":"What is the German term for the 'stab-in-the-back' myth?","a":"Dolchstoßlegende","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":13,"q":"Why did the new politicians meet in Weimar in 1919 rather than the capital, Berlin?","a":"Berlin was too violent and unstable due to ongoing political rioting","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":14,"q":"Under the Weimar Constitution, what was the voting age?","a":"All men and women over the age of 20","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":15,"q":"What was the specific name of the voting system used to elect the Reichstag?","a":"Proportional Representation","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":16,"q":"How frequently was the President of the Weimar Republic elected?","a":"Every 7 years","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":17,"q":"Under the Constitution, how many votes did a party need to gain exactly one seat in the Reichstag?","a":"60,000 votes","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":18,"q":"Why did Proportional Representation create weak governments?","a":"It meant no single party ever won a majority, forcing weak 'coalition' governments","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":19,"q":"What was Article 48?","a":"A constitutional clause allowing the President to bypass the Reichstag and rule by emergency decree","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":20,"q":"What was the name of the upper house of parliament that represented the 18 German regions (Länder)?","a":"The Reichsrat","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":21,"q":"What was the Triple Entente in the First World War?","a":"An alliance between Britain, France, and Russia.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":22,"q":"What was the Triple Alliance?","a":"An alliance between Germany, Austria-Hungary, and Italy.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":23,"q":"What is a 'dictatorship'?","a":"A country ruled by a single leader with total power.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":24,"q":"What is a 'democracy'?","a":"A system where the government is elected by the people.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":25,"q":"What does 'abdicate' mean?","a":"When a monarch steps down from the throne.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":26,"q":"What is a 'republic'?","a":"A country without a monarch, usually led by an elected president.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":27,"q":"What does 'inflation' mean?","a":"The general increase in prices and fall in the purchasing value of money.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":28,"q":"What is an 'armistice'?","a":"A formal agreement to stop fighting; a truce.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":29,"q":"What does 'mutiny' mean?","a":"An open rebellion against the proper authorities, especially by soldiers or sailors.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":30,"q":"In what year did the First World War begin?","a":"1914.","topic":"KT1.1: The Origins of the Republic, 1918–1919","tier":"rapid"},{"id":31,"q":"On what exact date was the Treaty of Versailles signed?","a":"28 June 1919","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":32,"q":"What was Article 231 of the Treaty of Versailles?","a":"The War Guilt Clause, forcing Germany to accept total blame for the war","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":33,"q":"How much was Germany ordered to pay in reparations in 1921?","a":"£6.6 billion","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":34,"q":"Under the Treaty, what was the maximum number of soldiers allowed in the German army?","a":"100,000 men","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":35,"q":"What German term was used to describe the Treaty of Versailles, meaning a 'dictated peace'?","a":"Diktat","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":36,"q":"Who were the two main leaders of the Spartacist League?","a":"Rosa Luxemburg and Karl Liebknecht","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":37,"q":"What political ideology did the Spartacists follow?","a":"Extreme Left-wing (Communism)","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":38,"q":"In what month and year did the Spartacist Uprising take place?","a":"January 1919","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":39,"q":"Who did Chancellor Ebert use to violently crush the Spartacist Uprising?","a":"The Freikorps","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":40,"q":"Who were the Freikorps?","a":"Right-wing private armies made up of demobilised ex-soldiers","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":41,"q":"In what month and year did the Kapp Putsch take place?","a":"March 1920","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":42,"q":"Why did the Kapp Putsch begin?","a":"The government tried to disband Freikorps units to comply with the Treaty of Versailles limits","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":43,"q":"Why did the regular German army refuse to stop the Kapp Putsch?","a":"Because they sympathised with the right-wing rebels","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":44,"q":"How did the Weimar government successfully defeat the Kapp Putsch?","a":"They called on the workers of Berlin to launch a General Strike","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":45,"q":"Why did French and Belgian troops invade the Ruhr in January 1923?","a":"Because Germany had failed to pay its scheduled reparations","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":46,"q":"What non-violent tactic did the German government order the Ruhr workers to use against the French?","a":"Passive Resistance","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":47,"q":"Why did the invasion of the Ruhr directly lead to hyperinflation?","a":"The government printed massive amounts of unbacked paper money to pay the striking workers","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":48,"q":"By November 1923, how much did a single loaf of bread cost in Germany?","a":"201 billion marks","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":49,"q":"Which specific social class was hit the hardest by hyperinflation, and why?","a":"The middle classes, because their life savings and fixed pensions became completely worthless","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":50,"q":"Name one group of people who actually benefited (were 'winners') during the hyperinflation crisis.","a":"People with debts or mortgages","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":51,"q":"When did the First World War end?","a":"11 November 1918.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":52,"q":"Who was the Kaiser of Germany during WW1?","a":"Kaiser Wilhelm II.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":53,"q":"Why did the Kaiser abdicate?","a":"Germany was losing the war, there were food shortages, and sailors mutinied at Kiel.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":54,"q":"What was the 'stab in the back' myth (Dolchstoßlegende)?","a":"The false belief that the German army was betrayed by socialist and Jewish politicians.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":55,"q":"Who were the 'November Criminals'?","a":"The nickname given by right-wing Germans to the politicians who signed the Armistice.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":56,"q":"What is a 'democracy'?","a":"A system where the government is elected by the people.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":57,"q":"What is a 'republic'?","a":"A country without a monarch.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":58,"q":"What does 'mutiny' mean?","a":"A rebellion by soldiers or sailors.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":59,"q":"What was the Triple Entente?","a":"The alliance of Britain, France, and Russia.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":60,"q":"What does 'abdicate' mean?","a":"To step down from the throne.","topic":"KT1.2: Early Challenges to the Republic, 1919–1923","tier":"rapid"},{"id":61,"q":"Who became Chancellor in August 1923 and is widely credited with saving the Weimar Republic?","a":"Gustav Stresemann","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":62,"q":"What was the name of the temporary currency introduced by Stresemann in November 1923?","a":"The Rentenmark","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":63,"q":"What was the Rentenmark tied to in order to restore public confidence in its value?","a":"German property / agricultural and industrial land values","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":64,"q":"What permanent, gold-backed currency replaced the temporary one in 1924?","a":"The Reichsmark","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":65,"q":"In what year was the Dawes Plan agreed?","a":"1924","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":66,"q":"Under the Dawes Plan, which country agreed to loan Germany 800 million gold marks?","a":"The USA","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":67,"q":"What was the primary economic danger of the Dawes Plan for the Weimar Republic?","a":"It made the entire German economy reliant on American loans","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":68,"q":"What was the name of the 1929 economic plan that reduced total reparations?","a":"The Young Plan","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":69,"q":"How much was the reparations bill reduced to under the Young Plan?","a":"From £6.6 billion to £2 billion","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":70,"q":"What diplomatic treaty did Germany sign in 1925, agreeing to its new western borders?","a":"The Locarno Pact","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":71,"q":"Why was the Locarno Pact viewed so differently by Germans compared to the Treaty of Versailles?","a":"Germany was treated as an equal negotiating partner, not dictated to","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":72,"q":"In what year was Germany allowed to join the League of Nations?","a":"1926","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":73,"q":"What position was Germany given within the League of Nations to show it was a 'great power' again?","a":"A seat on the League of Nations Council","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":74,"q":"What was the Kellogg-Briand Pact of 1928?","a":"An international agreement signed by 65 countries to resolve conflicts peacefully rather than using war","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":75,"q":"How many seats did the Nazi Party win in the 1928 Reichstag election, highlighting the drop in extremist support?","a":"12 seats","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":76,"q":"Who was elected as President of the Weimar Republic in 1925 following the death of Friedrich Ebert?","a":"Paul von Hindenburg","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":77,"q":"Which two groups in German society did not experience prosperity during the Golden Age?","a":"Farmers and the middle classes who had lost their savings in 1923","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":78,"q":"During the 'Golden Age', what was the lowest number of unemployed people in Germany, showing underlying economic weakness?","a":"Unemployment never fell below 1.3 million","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":79,"q":"What was Stresemann's famous quote warning about the fragility of the German economy?","a":"\"Germany is dancing on a volcano.\"","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":80,"q":"What major global economic event happened in October 1929, just weeks after Stresemann died?","a":"The Wall Street Crash","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":81,"q":"What was the Weimar Constitution?","a":"The set of rules for how Germany would be governed as a democratic republic.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":82,"q":"What was Proportional Representation (PR)?","a":"An electoral system where the percentage of votes equals the percentage of seats in the Reichstag.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":83,"q":"Why was Proportional Representation a weakness?","a":"It led to dozens of tiny parties and weak coalition governments.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":84,"q":"What was Article 48?","a":"It allowed the President to make laws without the Reichstag in an emergency.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":85,"q":"Who was the first President of the Weimar Republic?","a":"Friedrich Ebert.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":86,"q":"What was the 'stab in the back' myth?","a":"The belief that Germany was betrayed by politicians, not defeated in battle.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":87,"q":"Who were the 'November Criminals'?","a":"The politicians who signed the Armistice.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":88,"q":"When did WW1 end?","a":"1918.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":89,"q":"What is an 'armistice'?","a":"An agreement to stop fighting.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":90,"q":"What does 'inflation' mean?","a":"Prices rising rapidly.","topic":"KT1.3: The Recovery of the Republic, 1924–1929","tier":"rapid"},{"id":91,"q":"By what percentage did 'real wages' for German workers rise between 1925 and 1928?","a":"25%","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":92,"q":"What major welfare law was passed in 1927 to protect workers?","a":"The Unemployment Insurance Act","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":93,"q":"What percentage of a worker's wage was deducted to fund the 1927 Unemployment Insurance Act?","a":"3%","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":94,"q":"How many new homes were built between 1925 and 1929 to solve the housing crisis?","a":"Over 100,000","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":95,"q":"Which specific clause in the Weimar Constitution guaranteed women equal rights with men?","a":"Article 109","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":96,"q":"How many female deputies were in the Reichstag by 1926?","a":"32","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":97,"q":"What insulting term was used by traditionalists to describe married women who held jobs?","a":"Double-earners","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":98,"q":"By 1933, how many female teachers were there in Germany?","a":"100,000","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":99,"q":"What term was used by the media to describe young, independent, fashion-conscious women in the 1920s?","a":"The 'New Woman' (Neue Frau)","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":100,"q":"Give two reasons why a cultural explosion occurred in 1920s Germany.","a":"The removal of pre-war censorship and economic recovery providing funding","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":101,"q":"What was the name of the new movement in art that painted the gritty reality of everyday German life?","a":"New Objectivity (Neue Sachlichkeit)","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":102,"q":"Name two famous German artists associated with the New Objectivity movement.","a":"George Grosz and Otto Dix","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":103,"q":"What was the name of the revolutionary school of design and architecture founded in Weimar Germany?","a":"The Bauhaus","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":104,"q":"Who was the founder of the Bauhaus movement?","a":"Walter Gropius","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":105,"q":"What was the guiding principle or slogan of the Bauhaus school?","a":"\"Art and Technology - a new unity\"","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":106,"q":"Who directed the groundbreaking 1927 science-fiction film Metropolis?","a":"Fritz Lang","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":107,"q":"Which German actress became a global film superstar during the Weimar era?","a":"Marlene Dietrich","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":108,"q":"Why did right-wing groups and the Nazi Party despise the cultural changes of the 1920s?","a":"They believed the new culture was immoral, un-German, and undermined traditional family values","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":109,"q":"Why did extreme left-wing groups (Communists) criticise the cultural explosion?","a":"They felt it was an extravagant waste of money when poor workers were still struggling to survive","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":110,"q":"Which social class deeply resented the improvements made for the working classes because they had not recovered their own lost savings?","a":"The middle classes","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":111,"q":"Which treaty punished Germany after WW1?","a":"The Treaty of Versailles (1919).","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":112,"q":"How much was Germany forced to pay in reparations?","a":"£6.6 billion.","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":113,"q":"What was Article 231?","a":"The 'War Guilt Clause', forcing Germany to accept full blame for starting the war.","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":114,"q":"How was the German army restricted by the Treaty?","a":"Limited to 100,000 men, no air force, no submarines, and 6 battleships.","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":115,"q":"What happened to the Rhineland?","a":"It was demilitarised (no German troops allowed).","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":116,"q":"What was Proportional Representation?","a":"An electoral system leading to weak coalition governments.","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":117,"q":"What was Article 48?","a":"The President's emergency decree power.","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":118,"q":"Who were the November Criminals?","a":"The politicians who signed the 1918 Armistice.","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":119,"q":"Who was Friedrich Ebert?","a":"The first President of the Weimar Republic.","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"},{"id":120,"q":"What is a 'dictatorship'?","a":"Rule by a single leader with total power.","topic":"KT1.4: Changes in Society, 1924–1929","tier":"rapid"}];
+
+    const EXAM_DECK = [];
+
+    let currentTier = 'rapid';
+    let currentStemFilter = 'all';
+    let ALL_DECK = RAPID_DECK;
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
@@ -3830,6 +4141,7 @@
       try {
         const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
         if (raw) userBoxes = JSON.parse(raw);
+        else userBoxes = {};
       } catch (e) {
         userBoxes = {};
       }
@@ -3873,7 +4185,13 @@
       if (cardEl) cardEl.classList.remove('flipped');
 
       const qNumBadge = document.getElementById('card-qnum-badge');
-      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+      if (qNumBadge) {
+        if (currentTier === 'exam') {
+          qNumBadge.textContent = 'Exam Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        } else {
+          qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        }
+      }
 
       const boxBadge = document.getElementById('card-box-badge');
       const boxBadgeBack = document.getElementById('card-box-badge-back');
@@ -3890,11 +4208,50 @@
       }
 
       const qText = document.getElementById('card-question-text');
-      if (qText) qText.textContent = card.q;
+      if (qText) {
+        if (currentTier === 'exam') {
+          let metaHtml = '<div class="exam-meta-row">';
+          const stemClass = card.stem || 'consequence';
+          const stemLabel = card.marks ? (card.marks + 'm ' + (card.stem === 'consequence' ? 'Consequence' : card.stem === 'narrative' ? 'Narrative Account' : card.stem === 'importance' ? 'Importance' : 'Key Term')) : card.stem;
+          metaHtml += '<span class="exam-stem-badge ' + stemClass + '">🎯 ' + stemLabel + '</span>';
+          if (card.formula) {
+            metaHtml += '<span class="exam-formula-badge">⚡ ' + card.formula + (card.formula_name ? ': ' + card.formula_name : '') + '</span>';
+          }
+          metaHtml += '</div>';
+
+          let factsHint = '';
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
+          }
+          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+        } else {
+          qText.textContent = card.q;
+        }
+      }
 
       const aText = document.getElementById('card-answer-text');
       if (aText) {
-        if (card.explanation) {
+        if (currentTier === 'exam') {
+          let html = '<div class="exam-meta-row">';
+          if (card.formula) {
+            html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
+          }
+          html += '</div>';
+          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
+            card.specific_facts.forEach(f => {
+              html += '<li>' + f + '</li>';
+            });
+            html += '</ul></div>';
+          }
+
+          if (card.historian_explanation) {
+            html += '<div class="historian-box">🏛️ <strong>Historian &amp; Examiner Analysis:</strong> ' + card.historian_explanation + '</div>';
+          }
+          aText.innerHTML = html;
+        } else if (card.explanation) {
           aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
         } else {
           aText.textContent = card.a;
@@ -3903,6 +4260,75 @@
 
       updateStats();
     }
+
+    window.switchPracticeTier = function(tier) {
+      if (currentTier === tier) return;
+      currentTier = tier;
+      stopRapidFireTimer();
+
+      const btnRapid = document.getElementById('tier-btn-rapid');
+      const btnExam = document.getElementById('tier-btn-exam');
+      const stemRow = document.getElementById('leitner-stem-filter-row');
+
+      if (tier === 'exam') {
+        if (btnRapid) btnRapid.classList.remove('active');
+        if (btnExam) btnExam.classList.add('active');
+        if (stemRow) stemRow.style.display = 'flex';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_EXAM;
+        ALL_DECK = EXAM_DECK;
+        currentStemFilter = 'all';
+        resetStemPills();
+      } else {
+        if (btnRapid) btnRapid.classList.add('active');
+        if (btnExam) btnExam.classList.remove('active');
+        if (stemRow) stemRow.style.display = 'none';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+        ALL_DECK = RAPID_DECK;
+      }
+
+      currentDeck = [...ALL_DECK];
+      currentIndex = 0;
+      loadLeitnerProgress();
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    window.filterByExamStem = function(stem) {
+      currentStemFilter = stem;
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === stem);
+      });
+
+      if (stem === 'all') {
+        currentDeck = [...EXAM_DECK];
+      } else {
+        currentDeck = EXAM_DECK.filter(c => c.stem === stem);
+        if (currentDeck.length === 0) currentDeck = [...EXAM_DECK];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    function resetStemPills() {
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === 'all');
+      });
+    }
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'flex';
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'none';
+    };
 
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
@@ -4223,6 +4649,7 @@
       }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') rateCurrentCard(1);
       else if (e.key === '2') rateCurrentCard(2);

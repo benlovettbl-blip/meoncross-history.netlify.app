@@ -819,6 +819,303 @@
             color: #2563eb;
         }
 
+        /* CME Dual-Tier & Printable Revision Suite Styles */
+        .toolbar-btn.printables {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        .toolbar-btn.printables:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+
+        /* Printables Suite Modal */
+        .printables-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        .printables-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .printables-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .printables-modal-header h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .printables-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .printables-modal-sub {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
+        }
+        .printables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+        .printable-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .printable-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        .printable-card-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .printable-card h4 {
+            margin: 0 0 8px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            color: #0f172a;
+        }
+        .printable-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin: 0 0 16px 0;
+            flex-grow: 1;
+        }
+        .printable-links {
+            display: flex;
+            gap: 8px;
+        }
+        .print-link-btn {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s ease;
+        }
+        .print-link-btn.web {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .print-link-btn.web:hover {
+            background: #bae6fd;
+        }
+        .print-link-btn.pdf {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .print-link-btn.pdf:hover {
+            background: #fee2e2;
+        }
+
+        /* Dual-Tier Leitner Switcher Bar */
+        .leitner-tier-switcher {
+            display: flex;
+            background: #0f172a;
+            padding: 8px 16px 0 16px;
+            gap: 6px;
+            border-bottom: 1px solid #334155;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            background: #1e293b;
+            color: #94a3b8;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tier-btn:hover:not(.active) {
+            background: #334155;
+            color: #ffffff;
+        }
+        .tier-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Stem Filter Row */
+        .leitner-stem-filter-row {
+            background: #f8fafc;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .stem-filter-label {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        .stem-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .stem-pill:hover {
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+        .stem-pill.active {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        /* Exam Card Elements */
+        .exam-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .exam-stem-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .exam-stem-badge.consequence {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .exam-stem-badge.narrative {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+        .exam-stem-badge.importance {
+            background: #ffedd5;
+            color: #9a3412;
+            border: 1px solid #fdba74;
+        }
+        .exam-stem-badge.term {
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid #7dd3fc;
+        }
+        .exam-formula-badge {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .exam-facts-hint {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px dashed #cbd5e1;
+        }
+        .historian-box {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 4px solid #eab308;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #713f12;
+            line-height: 1.45;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .facts-checklist {
+            margin-top: 10px;
+            text-align: left;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #166534;
+        }
+        .facts-checklist ul {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+        }
+        .facts-checklist li {
+            margin-bottom: 2px;
+        }
+
         /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
         .leitner-modal-overlay.teacher-mode {
             padding: 0;
@@ -1595,10 +1892,13 @@
             <span class="toolbar-badge">Mobile</span>
         </div>
         <div class="toolbar-actions">
+            
             <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
+
+    
 
     <!-- Cover Page -->
     <div class="page cover page-break">
@@ -3592,6 +3892,8 @@
                 </div>
             </div>
 
+            
+
             <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
                 <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
@@ -3723,10 +4025,19 @@
   (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
-    const LEITNER_STORAGE_KEY = 'leitner_v1_eee_KT1';
+    const IS_CME_NEW = false;
+    const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_eee_KT1';
+    const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_eee_KT1_exam';
+    let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
     const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
-    const ALL_DECK = [{"id":1,"q":"How old was Elizabeth when she ascended to the throne in 1558?","a":"25","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":2,"q":"What phrase describes the rigid social hierarchy of Elizabethan England where everyone 'knew their place'?","a":"The Great Chain of Being","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":3,"q":"What percentage of the Elizabethan population lived in the countryside?","a":"90%","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":4,"q":"What system did the monarch use to maintain control by rewarding loyalty with land, titles, and monopolies?","a":"Patronage","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":5,"q":"Roughly how many trusted nobles and advisers made up the Privy Council?","a":"19","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":6,"q":"Who was Elizabeth's most important minister and Secretary of State?","a":"William Cecil","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":7,"q":"How many times was Parliament called during Elizabeth's entire reign?","a":"Nine times","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":8,"q":"Why did the Pope view Elizabeth as illegitimate?","a":"He refused to recognise Henry VIII's marriage to Anne Boleyn","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":9,"q":"What term was used to describe a female ruler with actual power, rather than just a figurehead?","a":"Queen Regnant","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":10,"q":"Why was Elizabeth reluctant to marry?","a":"Her husband would be expected to govern the country, reducing her power","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":11,"q":"How much debt did Elizabeth inherit in 1558?","a":"£300,000","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":12,"q":"What was the Crown's annual revenue when Elizabeth became queen?","a":"£286,667","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":13,"q":"How much money was owed to the Antwerp Exchange?","a":"£100,000","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":14,"q":"What interest rate did the foreign moneylenders at the Antwerp Exchange charge?","a":"14%","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":15,"q":"What economic process implemented by previous monarchs caused massive inflation?","a":"Debasement of the coinage","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":16,"q":"How did Elizabeth remarkably clear the Crown's debt by 1574?","a":"She cut household expenses by half and sold Crown lands","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":17,"q":"What 1559 treaty ended the war with France and surrendered Calais?","a":"Treaty of Cateau-Cambrésis","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":18,"q":"What was the name of the traditional alliance between France and Scotland?","a":"The Auld Alliance","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":19,"q":"Which Catholic monarch had a strong claim to the English throne and was married to the French heir?","a":"Mary, Queen of Scots","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":20,"q":"What 1564 treaty did Elizabeth sign to avoid further war with France by permanently recognising their claim to Calais?","a":"Peace of Troyes","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":21,"q":"What did William Harvey discover?","a":"The circulation of blood.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":22,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":23,"q":"What did Edward Jenner discover?","a":"The smallpox vaccine (1796).","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":24,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":25,"q":"What was 'miasma'?","a":"The medieval belief that bad air or smells caused disease.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":26,"q":"Who was Elizabeth I's father?","a":"King Henry VIII.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":27,"q":"What was the Reformation?","a":"A 16th-century movement challenging the Catholic Church, leading to the creation of Protestantism.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":28,"q":"Who was the monarch immediately before Elizabeth?","a":"Her half-sister, Mary I.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":29,"q":"What religion was Mary I?","a":"Strictly Catholic.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":30,"q":"What was the 'Great Chain of Being'?","a":"A strict hierarchical structure of all matter and life, decreed by God, with the monarch near the top.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558"},{"id":31,"q":"What year did Elizabeth introduce her Religious Settlement?","a":"1559","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":32,"q":"What term is used to describe Elizabeth's political compromise to satisfy both Protestants and Catholics?","a":"The 'Middle Way'","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":33,"q":"Which specific Act made Elizabeth the 'Supreme Governor' rather than the 'Supreme Head' of the Church?","a":"The Act of Supremacy","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":34,"q":"Which Act dictated that the English Book of Common Prayer must be used in all churches?","a":"The Act of Uniformity","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":35,"q":"What were the strict instructions issued by William Cecil detailing exactly how to worship and govern the Church called?","a":"The Royal Injunctions","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":36,"q":"Aside from religious services, name one crucial social function of the parish church.","a":"Providing charity for the poor / enforcing social control","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":37,"q":"What specific legal system did the Church run to handle moral crimes, marriage, slander, and wills?","a":"Church courts","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":38,"q":"What term describes the official inspections carried out by bishops every three to four years to check on the clergy?","a":"Visitations","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":39,"q":"Who were the radical Protestants that wanted to eradicate all Catholic \"superstitions\" from the Church?","a":"Puritans","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":40,"q":"Which Catholic item did Puritans demand be removed from churches, leading to a major controversy where Elizabeth backed down?","a":"Crucifixes","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":41,"q":"What was the name of the document issued by the Archbishop of Canterbury in 1566 to enforce traditional clerical robes?","a":"The Book of Advertisements","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":42,"q":"How many Puritan priests in London were dismissed for refusing to wear the mandated vestments?","a":"37","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":43,"q":"What term describes Catholics who actively refused to attend the new Protestant Church services?","a":"Recusants","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":44,"q":"In what year did the Pope explicitly order English Catholics not to attend the new Church of England services?","a":"1566","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":45,"q":"Why did Elizabeth initially instruct authorities to turn a blind eye to minor Catholic disobedience?","a":"She actively avoided creating Catholic martyrs","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":46,"q":"Which Catholic figurehead arrived in England in 1568, giving disgruntled Catholics a legitimate rival to rally around?","a":"Mary, Queen of Scots","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":47,"q":"What severe action did the Pope take against Elizabeth in 1570?","a":"He excommunicated her","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":48,"q":"How did the 1570 excommunication change the behaviour of English Catholics?","a":"It absolved them of their loyalty to the Queen / weaponised them into treason","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":49,"q":"Which two Catholic superpowers were officially encouraged by the Pope to sponsor plots against Elizabeth?","a":"Spain and France","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":50,"q":"Why was the Catholic challenge ultimately more dangerous to Elizabeth than the Puritan challenge?","a":"Catholics had the backing of foreign militaries, the Papacy, and a rival queen to replace Elizabeth","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":51,"q":"What year did Elizabeth I become Queen?","a":"1558.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":52,"q":"How much debt did Mary I leave to Elizabeth?","a":"£300,000.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":53,"q":"Which French city did England lose in 1559 under the Treaty of Cateau-Cambrésis?","a":"Calais.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":54,"q":"What was a 'Queen Regnant'?","a":"A queen who ruled in her own right with actual power, not just the wife of a king.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":55,"q":"Who was Elizabeth's mother?","a":"Anne Boleyn.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":56,"q":"Why was Elizabeth's legitimacy questioned by Catholics?","a":"The Catholic Church didn't recognize Henry VIII's divorce from his first wife, making Elizabeth illegitimate in their eyes.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":57,"q":"What was the 'Auld Alliance'?","a":"An alliance between Catholic France and Scotland.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":58,"q":"What did Florence Nightingale improve?","a":"Hospital hygiene and nursing standards (during the Crimean War).","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":59,"q":"Who discovered Penicillin by accident?","a":"Alexander Fleming.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":60,"q":"What is a 'magic bullet'?","a":"A chemical that targets and kills specific germs without harming the body.","topic":"KT1.2: The 'settlement' of religion, 1559"},{"id":61,"q":"What was the main objection of the Puritans regarding the 1559 Religious Settlement?","a":"They believed it kept too many Catholic elements and wanted to 'purify' the Church","topic":"KT1.3: Challenge to the religious settlement"},{"id":62,"q":"What objects did Puritans demand be removed from churches because they viewed them as superstitious idols?","a":"Crucifixes","topic":"KT1.3: Challenge to the religious settlement"},{"id":63,"q":"Why did Elizabeth back down during the Crucifix Controversy?","a":"Several powerful Puritan bishops threatened to resign","topic":"KT1.3: Challenge to the religious settlement"},{"id":64,"q":"What controversy in 1566 involved Puritans refusing to wear special clerical robes (surplices)?","a":"The Vestment Controversy","topic":"KT1.3: Challenge to the religious settlement"},{"id":65,"q":"What was the name of the guidelines issued by the Archbishop of Canterbury in 1566 to enforce priestly clothing?","a":"The Book of Advertisements","topic":"KT1.3: Challenge to the religious settlement"},{"id":66,"q":"How many London priests were dismissed for refusing to wear the mandated vestments?","a":"37","topic":"KT1.3: Challenge to the religious settlement"},{"id":67,"q":"Who was the ultimate authority for Catholics, making their loyalty to Elizabeth suspect?","a":"The Pope","topic":"KT1.3: Challenge to the religious settlement"},{"id":68,"q":"What term describes Catholics who actively refused to attend the new Protestant Church of England services?","a":"Recusants","topic":"KT1.3: Challenge to the religious settlement"},{"id":69,"q":"In which region of England was traditional Catholic support and noble resistance the strongest?","a":"The North / North-West","topic":"KT1.3: Challenge to the religious settlement"},{"id":70,"q":"Why did Elizabeth initially avoid strictly enforcing recusancy fines against Catholics?","a":"She did not want to create Catholic martyrs or provoke a rebellion","topic":"KT1.3: Challenge to the religious settlement"},{"id":71,"q":"What major domestic Catholic rebellion occurred in 1569?","a":"The Revolt of the Northern Earls","topic":"KT1.3: Challenge to the religious settlement"},{"id":72,"q":"What was the Catholic Church's Europe-wide campaign to reverse the Protestant Reformation called?","a":"The Counter-Reformation","topic":"KT1.3: Challenge to the religious settlement"},{"id":73,"q":"What instruction did the Pope give to English Catholics in 1566?","a":"Not to attend Church of England services","topic":"KT1.3: Challenge to the religious settlement"},{"id":74,"q":"What catastrophic action did Pope Pius V take against Elizabeth in 1570?","a":"He excommunicated her / issued a Papal Bull","topic":"KT1.3: Challenge to the religious settlement"},{"id":75,"q":"What did the 1570 Papal Bull explicitly tell English Catholics?","a":"That it was no longer a sin to rebel against her and they were absolved of their loyalty","topic":"KT1.3: Challenge to the religious settlement"},{"id":76,"q":"Which Catholic figurehead fled to England in 1568, becoming the focus of plots against Elizabeth?","a":"Mary, Queen of Scots","topic":"KT1.3: Challenge to the religious settlement"},{"id":77,"q":"Which two major European superpowers posed a direct military threat to Protestant England?","a":"Spain and France","topic":"KT1.3: Challenge to the religious settlement"},{"id":78,"q":"Where was the Catholic seminary located that trained priests to be secretly sent into England?","a":"Douai, in the Netherlands","topic":"KT1.3: Challenge to the religious settlement"},{"id":79,"q":"Name one prominent Puritan leader who actively opposed the Elizabethan settlement.","a":"John Foxe / Thomas Cartwright","topic":"KT1.3: Challenge to the religious settlement"},{"id":80,"q":"Why was the Catholic challenge considered vastly more dangerous than the Puritan challenge?","a":"Catholics had the backing of foreign military powers, the Papacy, and had Mary, Queen of Scots as an alternative monarch","topic":"KT1.3: Challenge to the religious settlement"},{"id":81,"q":"What two Acts made up Elizabeth's Religious Settlement of 1559?","a":"The Act of Supremacy and the Act of Uniformity.","topic":"KT1.3: Challenge to the religious settlement"},{"id":82,"q":"What title did Elizabeth take in the Act of Supremacy?","a":"Supreme Governor of the Church of England.","topic":"KT1.3: Challenge to the religious settlement"},{"id":83,"q":"What was the Act of Uniformity?","a":"It established the appearance of churches and the form of services they had to hold.","topic":"KT1.3: Challenge to the religious settlement"},{"id":84,"q":"What was the Book of Common Prayer?","a":"A set prayer book in English that had to be used in all churches.","topic":"KT1.3: Challenge to the religious settlement"},{"id":85,"q":"Who were the Puritans?","a":"Extreme Protestants who wanted to 'purify' the church of all Catholic traces.","topic":"KT1.3: Challenge to the religious settlement"},{"id":86,"q":"What were the Royal Injunctions?","a":"Instructions to the clergy to reinforce the Settlement (e.g., all clergy must teach the Royal Supremacy).","topic":"KT1.3: Challenge to the religious settlement"},{"id":87,"q":"How much debt did Mary I leave to Elizabeth?","a":"£300,000.","topic":"KT1.3: Challenge to the religious settlement"},{"id":88,"q":"Which French city did England lose in 1559?","a":"Calais.","topic":"KT1.3: Challenge to the religious settlement"},{"id":89,"q":"What year did the Black Death arrive in England?","a":"1348.","topic":"KT1.3: Challenge to the religious settlement"},{"id":90,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT1.3: Challenge to the religious settlement"},{"id":91,"q":"How was Mary, Queen of Scots related to Elizabeth I?","a":"She was her second cousin","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":92,"q":"From which English King did Mary derive her claim to the throne?","a":"King Henry VII","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":93,"q":"Why did many Catholics believe Elizabeth was illegitimate?","a":"They did not recognise Henry VIII's divorce, meaning his marriage to Anne Boleyn was invalid","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":94,"q":"Which country was Mary briefly the Queen of before returning to Scotland?","a":"France","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":95,"q":"What was the name of Mary's second husband, who was murdered in 1567?","a":"Lord Darnley","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":96,"q":"Who was the prime suspect in the murder, whom Mary subsequently married?","a":"The Earl of Bothwell","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":97,"q":"What did the Scottish Protestant lords force Mary to do after capturing her in 1567?","a":"Abdicate the throne","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":98,"q":"In whose favour was Mary forced to abdicate?","a":"Her infant son, James VI","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":99,"q":"In what year did Mary flee Scotland and arrive in England?","a":"1568","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":100,"q":"Why did Elizabeth refuse to help Mary regain her throne by force?","a":"It would anger the friendly Protestant Scottish lords and ruin relations with Scotland","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":101,"q":"Why was Elizabeth reluctant to hand Mary over to the Scottish lords for punishment?","a":"She believed in the Divine Right of Kings and did not want to support subjects overthrowing an anointed monarch","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":102,"q":"Why couldn't Elizabeth simply allow Mary to travel to France or Spain?","a":"She feared Mary would raise a foreign Catholic army to invade England","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":103,"q":"What was the name of the legal inquiry set up by Elizabeth to investigate Mary?","a":"The Conference of York / Westminster","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":104,"q":"What evidence was produced by the Scottish lords to try and prove Mary's guilt?","a":"The 'Casket Letters'","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":105,"q":"What did the Casket Letters allegedly contain?","a":"Letters and poems plotting Darnley's murder","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":106,"q":"What was Mary's defence against the letters?","a":"She claimed they were forged and that a court couldn't try an anointed queen","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":107,"q":"What was Elizabeth's final verdict regarding Mary's guilt?","a":"She stated that her guilt was \"not proven\" / neither guilty nor innocent","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":108,"q":"What was the immediate outcome for Mary following the inquiry?","a":"She was kept in strict captivity in England","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":109,"q":"Why was keeping Mary in England a massive risk for Elizabeth?","a":"It made Mary a focal point for English Catholics and plotters to rally around","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":110,"q":"What major uprising occurred in England just one year after Mary's arrival?","a":"The Revolt of the Northern Earls in 1569","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":111,"q":"What was the 'Crucifix Controversy'?","a":"Puritans demanded all crucifixes be removed from churches; Elizabeth eventually backed down to avoid losing Puritan bishops.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":112,"q":"What was the 'Vestment Controversy'?","a":"Puritans refused to wear the elaborate Catholic-style vestments ordered by Elizabeth.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":113,"q":"Who was the Pope that excommunicated Elizabeth in 1570?","a":"Pope Pius V.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":114,"q":"What was the Papal Bull of 1570?","a":"A decree by the Pope excommunicating Elizabeth and ordering Catholics not to obey her.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":115,"q":"Why did the Dutch Revolt matter to Elizabeth?","a":"She feared a massive Spanish army directly across the Channel in the Netherlands.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":116,"q":"What title did Elizabeth take in the Act of Supremacy?","a":"Supreme Governor.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":117,"q":"What was the Book of Common Prayer?","a":"The mandatory English prayer book for all church services.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":118,"q":"Who were the Puritans?","a":"Extreme Protestants who hated all Catholic decoration and ritual.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":119,"q":"What was a 'Queen Regnant'?","a":"A ruling queen with actual power.","topic":"KT1.4: The problem of Mary, Queen of Scots"},{"id":120,"q":"What did Edward Jenner discover?","a":"The smallpox vaccine.","topic":"KT1.4: The problem of Mary, Queen of Scots"}];
 
+    const RAPID_DECK = [{"id":1,"q":"How old was Elizabeth when she ascended to the throne in 1558?","a":"25","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":2,"q":"What phrase describes the rigid social hierarchy of Elizabethan England where everyone 'knew their place'?","a":"The Great Chain of Being","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":3,"q":"What percentage of the Elizabethan population lived in the countryside?","a":"90%","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":4,"q":"What system did the monarch use to maintain control by rewarding loyalty with land, titles, and monopolies?","a":"Patronage","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":5,"q":"Roughly how many trusted nobles and advisers made up the Privy Council?","a":"19","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":6,"q":"Who was Elizabeth's most important minister and Secretary of State?","a":"William Cecil","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":7,"q":"How many times was Parliament called during Elizabeth's entire reign?","a":"Nine times","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":8,"q":"Why did the Pope view Elizabeth as illegitimate?","a":"He refused to recognise Henry VIII's marriage to Anne Boleyn","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":9,"q":"What term was used to describe a female ruler with actual power, rather than just a figurehead?","a":"Queen Regnant","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":10,"q":"Why was Elizabeth reluctant to marry?","a":"Her husband would be expected to govern the country, reducing her power","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":11,"q":"How much debt did Elizabeth inherit in 1558?","a":"£300,000","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":12,"q":"What was the Crown's annual revenue when Elizabeth became queen?","a":"£286,667","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":13,"q":"How much money was owed to the Antwerp Exchange?","a":"£100,000","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":14,"q":"What interest rate did the foreign moneylenders at the Antwerp Exchange charge?","a":"14%","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":15,"q":"What economic process implemented by previous monarchs caused massive inflation?","a":"Debasement of the coinage","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":16,"q":"How did Elizabeth remarkably clear the Crown's debt by 1574?","a":"She cut household expenses by half and sold Crown lands","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":17,"q":"What 1559 treaty ended the war with France and surrendered Calais?","a":"Treaty of Cateau-Cambrésis","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":18,"q":"What was the name of the traditional alliance between France and Scotland?","a":"The Auld Alliance","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":19,"q":"Which Catholic monarch had a strong claim to the English throne and was married to the French heir?","a":"Mary, Queen of Scots","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":20,"q":"What 1564 treaty did Elizabeth sign to avoid further war with France by permanently recognising their claim to Calais?","a":"Peace of Troyes","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":21,"q":"What did William Harvey discover?","a":"The circulation of blood.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":22,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":23,"q":"What did Edward Jenner discover?","a":"The smallpox vaccine (1796).","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":24,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":25,"q":"What was 'miasma'?","a":"The medieval belief that bad air or smells caused disease.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":26,"q":"Who was Elizabeth I's father?","a":"King Henry VIII.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":27,"q":"What was the Reformation?","a":"A 16th-century movement challenging the Catholic Church, leading to the creation of Protestantism.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":28,"q":"Who was the monarch immediately before Elizabeth?","a":"Her half-sister, Mary I.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":29,"q":"What religion was Mary I?","a":"Strictly Catholic.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":30,"q":"What was the 'Great Chain of Being'?","a":"A strict hierarchical structure of all matter and life, decreed by God, with the monarch near the top.","topic":"KT1.1: The situation on Elizabeth’s accession, 1558","tier":"rapid"},{"id":31,"q":"What year did Elizabeth introduce her Religious Settlement?","a":"1559","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":32,"q":"What term is used to describe Elizabeth's political compromise to satisfy both Protestants and Catholics?","a":"The 'Middle Way'","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":33,"q":"Which specific Act made Elizabeth the 'Supreme Governor' rather than the 'Supreme Head' of the Church?","a":"The Act of Supremacy","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":34,"q":"Which Act dictated that the English Book of Common Prayer must be used in all churches?","a":"The Act of Uniformity","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":35,"q":"What were the strict instructions issued by William Cecil detailing exactly how to worship and govern the Church called?","a":"The Royal Injunctions","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":36,"q":"Aside from religious services, name one crucial social function of the parish church.","a":"Providing charity for the poor / enforcing social control","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":37,"q":"What specific legal system did the Church run to handle moral crimes, marriage, slander, and wills?","a":"Church courts","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":38,"q":"What term describes the official inspections carried out by bishops every three to four years to check on the clergy?","a":"Visitations","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":39,"q":"Who were the radical Protestants that wanted to eradicate all Catholic \"superstitions\" from the Church?","a":"Puritans","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":40,"q":"Which Catholic item did Puritans demand be removed from churches, leading to a major controversy where Elizabeth backed down?","a":"Crucifixes","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":41,"q":"What was the name of the document issued by the Archbishop of Canterbury in 1566 to enforce traditional clerical robes?","a":"The Book of Advertisements","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":42,"q":"How many Puritan priests in London were dismissed for refusing to wear the mandated vestments?","a":"37","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":43,"q":"What term describes Catholics who actively refused to attend the new Protestant Church services?","a":"Recusants","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":44,"q":"In what year did the Pope explicitly order English Catholics not to attend the new Church of England services?","a":"1566","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":45,"q":"Why did Elizabeth initially instruct authorities to turn a blind eye to minor Catholic disobedience?","a":"She actively avoided creating Catholic martyrs","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":46,"q":"Which Catholic figurehead arrived in England in 1568, giving disgruntled Catholics a legitimate rival to rally around?","a":"Mary, Queen of Scots","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":47,"q":"What severe action did the Pope take against Elizabeth in 1570?","a":"He excommunicated her","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":48,"q":"How did the 1570 excommunication change the behaviour of English Catholics?","a":"It absolved them of their loyalty to the Queen / weaponised them into treason","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":49,"q":"Which two Catholic superpowers were officially encouraged by the Pope to sponsor plots against Elizabeth?","a":"Spain and France","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":50,"q":"Why was the Catholic challenge ultimately more dangerous to Elizabeth than the Puritan challenge?","a":"Catholics had the backing of foreign militaries, the Papacy, and a rival queen to replace Elizabeth","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":51,"q":"What year did Elizabeth I become Queen?","a":"1558.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":52,"q":"How much debt did Mary I leave to Elizabeth?","a":"£300,000.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":53,"q":"Which French city did England lose in 1559 under the Treaty of Cateau-Cambrésis?","a":"Calais.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":54,"q":"What was a 'Queen Regnant'?","a":"A queen who ruled in her own right with actual power, not just the wife of a king.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":55,"q":"Who was Elizabeth's mother?","a":"Anne Boleyn.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":56,"q":"Why was Elizabeth's legitimacy questioned by Catholics?","a":"The Catholic Church didn't recognize Henry VIII's divorce from his first wife, making Elizabeth illegitimate in their eyes.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":57,"q":"What was the 'Auld Alliance'?","a":"An alliance between Catholic France and Scotland.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":58,"q":"What did Florence Nightingale improve?","a":"Hospital hygiene and nursing standards (during the Crimean War).","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":59,"q":"Who discovered Penicillin by accident?","a":"Alexander Fleming.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":60,"q":"What is a 'magic bullet'?","a":"A chemical that targets and kills specific germs without harming the body.","topic":"KT1.2: The 'settlement' of religion, 1559","tier":"rapid"},{"id":61,"q":"What was the main objection of the Puritans regarding the 1559 Religious Settlement?","a":"They believed it kept too many Catholic elements and wanted to 'purify' the Church","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":62,"q":"What objects did Puritans demand be removed from churches because they viewed them as superstitious idols?","a":"Crucifixes","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":63,"q":"Why did Elizabeth back down during the Crucifix Controversy?","a":"Several powerful Puritan bishops threatened to resign","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":64,"q":"What controversy in 1566 involved Puritans refusing to wear special clerical robes (surplices)?","a":"The Vestment Controversy","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":65,"q":"What was the name of the guidelines issued by the Archbishop of Canterbury in 1566 to enforce priestly clothing?","a":"The Book of Advertisements","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":66,"q":"How many London priests were dismissed for refusing to wear the mandated vestments?","a":"37","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":67,"q":"Who was the ultimate authority for Catholics, making their loyalty to Elizabeth suspect?","a":"The Pope","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":68,"q":"What term describes Catholics who actively refused to attend the new Protestant Church of England services?","a":"Recusants","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":69,"q":"In which region of England was traditional Catholic support and noble resistance the strongest?","a":"The North / North-West","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":70,"q":"Why did Elizabeth initially avoid strictly enforcing recusancy fines against Catholics?","a":"She did not want to create Catholic martyrs or provoke a rebellion","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":71,"q":"What major domestic Catholic rebellion occurred in 1569?","a":"The Revolt of the Northern Earls","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":72,"q":"What was the Catholic Church's Europe-wide campaign to reverse the Protestant Reformation called?","a":"The Counter-Reformation","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":73,"q":"What instruction did the Pope give to English Catholics in 1566?","a":"Not to attend Church of England services","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":74,"q":"What catastrophic action did Pope Pius V take against Elizabeth in 1570?","a":"He excommunicated her / issued a Papal Bull","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":75,"q":"What did the 1570 Papal Bull explicitly tell English Catholics?","a":"That it was no longer a sin to rebel against her and they were absolved of their loyalty","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":76,"q":"Which Catholic figurehead fled to England in 1568, becoming the focus of plots against Elizabeth?","a":"Mary, Queen of Scots","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":77,"q":"Which two major European superpowers posed a direct military threat to Protestant England?","a":"Spain and France","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":78,"q":"Where was the Catholic seminary located that trained priests to be secretly sent into England?","a":"Douai, in the Netherlands","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":79,"q":"Name one prominent Puritan leader who actively opposed the Elizabethan settlement.","a":"John Foxe / Thomas Cartwright","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":80,"q":"Why was the Catholic challenge considered vastly more dangerous than the Puritan challenge?","a":"Catholics had the backing of foreign military powers, the Papacy, and had Mary, Queen of Scots as an alternative monarch","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":81,"q":"What two Acts made up Elizabeth's Religious Settlement of 1559?","a":"The Act of Supremacy and the Act of Uniformity.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":82,"q":"What title did Elizabeth take in the Act of Supremacy?","a":"Supreme Governor of the Church of England.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":83,"q":"What was the Act of Uniformity?","a":"It established the appearance of churches and the form of services they had to hold.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":84,"q":"What was the Book of Common Prayer?","a":"A set prayer book in English that had to be used in all churches.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":85,"q":"Who were the Puritans?","a":"Extreme Protestants who wanted to 'purify' the church of all Catholic traces.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":86,"q":"What were the Royal Injunctions?","a":"Instructions to the clergy to reinforce the Settlement (e.g., all clergy must teach the Royal Supremacy).","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":87,"q":"How much debt did Mary I leave to Elizabeth?","a":"£300,000.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":88,"q":"Which French city did England lose in 1559?","a":"Calais.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":89,"q":"What year did the Black Death arrive in England?","a":"1348.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":90,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT1.3: Challenge to the religious settlement","tier":"rapid"},{"id":91,"q":"How was Mary, Queen of Scots related to Elizabeth I?","a":"She was her second cousin","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":92,"q":"From which English King did Mary derive her claim to the throne?","a":"King Henry VII","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":93,"q":"Why did many Catholics believe Elizabeth was illegitimate?","a":"They did not recognise Henry VIII's divorce, meaning his marriage to Anne Boleyn was invalid","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":94,"q":"Which country was Mary briefly the Queen of before returning to Scotland?","a":"France","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":95,"q":"What was the name of Mary's second husband, who was murdered in 1567?","a":"Lord Darnley","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":96,"q":"Who was the prime suspect in the murder, whom Mary subsequently married?","a":"The Earl of Bothwell","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":97,"q":"What did the Scottish Protestant lords force Mary to do after capturing her in 1567?","a":"Abdicate the throne","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":98,"q":"In whose favour was Mary forced to abdicate?","a":"Her infant son, James VI","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":99,"q":"In what year did Mary flee Scotland and arrive in England?","a":"1568","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":100,"q":"Why did Elizabeth refuse to help Mary regain her throne by force?","a":"It would anger the friendly Protestant Scottish lords and ruin relations with Scotland","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":101,"q":"Why was Elizabeth reluctant to hand Mary over to the Scottish lords for punishment?","a":"She believed in the Divine Right of Kings and did not want to support subjects overthrowing an anointed monarch","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":102,"q":"Why couldn't Elizabeth simply allow Mary to travel to France or Spain?","a":"She feared Mary would raise a foreign Catholic army to invade England","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":103,"q":"What was the name of the legal inquiry set up by Elizabeth to investigate Mary?","a":"The Conference of York / Westminster","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":104,"q":"What evidence was produced by the Scottish lords to try and prove Mary's guilt?","a":"The 'Casket Letters'","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":105,"q":"What did the Casket Letters allegedly contain?","a":"Letters and poems plotting Darnley's murder","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":106,"q":"What was Mary's defence against the letters?","a":"She claimed they were forged and that a court couldn't try an anointed queen","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":107,"q":"What was Elizabeth's final verdict regarding Mary's guilt?","a":"She stated that her guilt was \"not proven\" / neither guilty nor innocent","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":108,"q":"What was the immediate outcome for Mary following the inquiry?","a":"She was kept in strict captivity in England","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":109,"q":"Why was keeping Mary in England a massive risk for Elizabeth?","a":"It made Mary a focal point for English Catholics and plotters to rally around","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":110,"q":"What major uprising occurred in England just one year after Mary's arrival?","a":"The Revolt of the Northern Earls in 1569","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":111,"q":"What was the 'Crucifix Controversy'?","a":"Puritans demanded all crucifixes be removed from churches; Elizabeth eventually backed down to avoid losing Puritan bishops.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":112,"q":"What was the 'Vestment Controversy'?","a":"Puritans refused to wear the elaborate Catholic-style vestments ordered by Elizabeth.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":113,"q":"Who was the Pope that excommunicated Elizabeth in 1570?","a":"Pope Pius V.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":114,"q":"What was the Papal Bull of 1570?","a":"A decree by the Pope excommunicating Elizabeth and ordering Catholics not to obey her.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":115,"q":"Why did the Dutch Revolt matter to Elizabeth?","a":"She feared a massive Spanish army directly across the Channel in the Netherlands.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":116,"q":"What title did Elizabeth take in the Act of Supremacy?","a":"Supreme Governor.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":117,"q":"What was the Book of Common Prayer?","a":"The mandatory English prayer book for all church services.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":118,"q":"Who were the Puritans?","a":"Extreme Protestants who hated all Catholic decoration and ritual.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":119,"q":"What was a 'Queen Regnant'?","a":"A ruling queen with actual power.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"},{"id":120,"q":"What did Edward Jenner discover?","a":"The smallpox vaccine.","topic":"KT1.4: The problem of Mary, Queen of Scots","tier":"rapid"}];
+
+    const EXAM_DECK = [];
+
+    let currentTier = 'rapid';
+    let currentStemFilter = 'all';
+    let ALL_DECK = RAPID_DECK;
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
@@ -3830,6 +4141,7 @@
       try {
         const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
         if (raw) userBoxes = JSON.parse(raw);
+        else userBoxes = {};
       } catch (e) {
         userBoxes = {};
       }
@@ -3873,7 +4185,13 @@
       if (cardEl) cardEl.classList.remove('flipped');
 
       const qNumBadge = document.getElementById('card-qnum-badge');
-      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+      if (qNumBadge) {
+        if (currentTier === 'exam') {
+          qNumBadge.textContent = 'Exam Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        } else {
+          qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        }
+      }
 
       const boxBadge = document.getElementById('card-box-badge');
       const boxBadgeBack = document.getElementById('card-box-badge-back');
@@ -3890,11 +4208,50 @@
       }
 
       const qText = document.getElementById('card-question-text');
-      if (qText) qText.textContent = card.q;
+      if (qText) {
+        if (currentTier === 'exam') {
+          let metaHtml = '<div class="exam-meta-row">';
+          const stemClass = card.stem || 'consequence';
+          const stemLabel = card.marks ? (card.marks + 'm ' + (card.stem === 'consequence' ? 'Consequence' : card.stem === 'narrative' ? 'Narrative Account' : card.stem === 'importance' ? 'Importance' : 'Key Term')) : card.stem;
+          metaHtml += '<span class="exam-stem-badge ' + stemClass + '">🎯 ' + stemLabel + '</span>';
+          if (card.formula) {
+            metaHtml += '<span class="exam-formula-badge">⚡ ' + card.formula + (card.formula_name ? ': ' + card.formula_name : '') + '</span>';
+          }
+          metaHtml += '</div>';
+
+          let factsHint = '';
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
+          }
+          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+        } else {
+          qText.textContent = card.q;
+        }
+      }
 
       const aText = document.getElementById('card-answer-text');
       if (aText) {
-        if (card.explanation) {
+        if (currentTier === 'exam') {
+          let html = '<div class="exam-meta-row">';
+          if (card.formula) {
+            html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
+          }
+          html += '</div>';
+          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
+            card.specific_facts.forEach(f => {
+              html += '<li>' + f + '</li>';
+            });
+            html += '</ul></div>';
+          }
+
+          if (card.historian_explanation) {
+            html += '<div class="historian-box">🏛️ <strong>Historian &amp; Examiner Analysis:</strong> ' + card.historian_explanation + '</div>';
+          }
+          aText.innerHTML = html;
+        } else if (card.explanation) {
           aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
         } else {
           aText.textContent = card.a;
@@ -3903,6 +4260,75 @@
 
       updateStats();
     }
+
+    window.switchPracticeTier = function(tier) {
+      if (currentTier === tier) return;
+      currentTier = tier;
+      stopRapidFireTimer();
+
+      const btnRapid = document.getElementById('tier-btn-rapid');
+      const btnExam = document.getElementById('tier-btn-exam');
+      const stemRow = document.getElementById('leitner-stem-filter-row');
+
+      if (tier === 'exam') {
+        if (btnRapid) btnRapid.classList.remove('active');
+        if (btnExam) btnExam.classList.add('active');
+        if (stemRow) stemRow.style.display = 'flex';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_EXAM;
+        ALL_DECK = EXAM_DECK;
+        currentStemFilter = 'all';
+        resetStemPills();
+      } else {
+        if (btnRapid) btnRapid.classList.add('active');
+        if (btnExam) btnExam.classList.remove('active');
+        if (stemRow) stemRow.style.display = 'none';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+        ALL_DECK = RAPID_DECK;
+      }
+
+      currentDeck = [...ALL_DECK];
+      currentIndex = 0;
+      loadLeitnerProgress();
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    window.filterByExamStem = function(stem) {
+      currentStemFilter = stem;
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === stem);
+      });
+
+      if (stem === 'all') {
+        currentDeck = [...EXAM_DECK];
+      } else {
+        currentDeck = EXAM_DECK.filter(c => c.stem === stem);
+        if (currentDeck.length === 0) currentDeck = [...EXAM_DECK];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    function resetStemPills() {
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === 'all');
+      });
+    }
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'flex';
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'none';
+    };
 
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
@@ -4223,6 +4649,7 @@
       }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') rateCurrentCard(1);
       else if (e.key === '2') rateCurrentCard(2);

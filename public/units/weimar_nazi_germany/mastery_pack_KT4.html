@@ -819,6 +819,303 @@
             color: #2563eb;
         }
 
+        /* CME Dual-Tier & Printable Revision Suite Styles */
+        .toolbar-btn.printables {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        .toolbar-btn.printables:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+
+        /* Printables Suite Modal */
+        .printables-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        .printables-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .printables-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .printables-modal-header h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .printables-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .printables-modal-sub {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
+        }
+        .printables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+        .printable-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .printable-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        .printable-card-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .printable-card h4 {
+            margin: 0 0 8px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            color: #0f172a;
+        }
+        .printable-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin: 0 0 16px 0;
+            flex-grow: 1;
+        }
+        .printable-links {
+            display: flex;
+            gap: 8px;
+        }
+        .print-link-btn {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s ease;
+        }
+        .print-link-btn.web {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .print-link-btn.web:hover {
+            background: #bae6fd;
+        }
+        .print-link-btn.pdf {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .print-link-btn.pdf:hover {
+            background: #fee2e2;
+        }
+
+        /* Dual-Tier Leitner Switcher Bar */
+        .leitner-tier-switcher {
+            display: flex;
+            background: #0f172a;
+            padding: 8px 16px 0 16px;
+            gap: 6px;
+            border-bottom: 1px solid #334155;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            background: #1e293b;
+            color: #94a3b8;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tier-btn:hover:not(.active) {
+            background: #334155;
+            color: #ffffff;
+        }
+        .tier-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Stem Filter Row */
+        .leitner-stem-filter-row {
+            background: #f8fafc;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .stem-filter-label {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        .stem-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .stem-pill:hover {
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+        .stem-pill.active {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        /* Exam Card Elements */
+        .exam-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .exam-stem-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .exam-stem-badge.consequence {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .exam-stem-badge.narrative {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+        .exam-stem-badge.importance {
+            background: #ffedd5;
+            color: #9a3412;
+            border: 1px solid #fdba74;
+        }
+        .exam-stem-badge.term {
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid #7dd3fc;
+        }
+        .exam-formula-badge {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .exam-facts-hint {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px dashed #cbd5e1;
+        }
+        .historian-box {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 4px solid #eab308;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #713f12;
+            line-height: 1.45;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .facts-checklist {
+            margin-top: 10px;
+            text-align: left;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #166534;
+        }
+        .facts-checklist ul {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+        }
+        .facts-checklist li {
+            margin-bottom: 2px;
+        }
+
         /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
         .leitner-modal-overlay.teacher-mode {
             padding: 0;
@@ -1595,10 +1892,13 @@
             <span class="toolbar-badge">Mobile</span>
         </div>
         <div class="toolbar-actions">
+            
             <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
+
+    
 
     <!-- Cover Page -->
     <div class="page cover page-break">
@@ -3764,6 +4064,8 @@
                 </div>
             </div>
 
+            
+
             <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
                 <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
@@ -3896,10 +4198,19 @@
   (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
-    const LEITNER_STORAGE_KEY = 'leitner_v1_weimar_nazi_germany_KT4';
+    const IS_CME_NEW = false;
+    const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_weimar_nazi_germany_KT4';
+    const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_weimar_nazi_germany_KT4_exam';
+    let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
     const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
-    const ALL_DECK = [{"id":1,"q":"What three German words (starting with K) summarised the traditional Nazi ideal for women?","a":"Kinder, Küche, Kirche","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":2,"q":"Translate those three words into English.","a":"Children, Kitchen, Church","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":3,"q":"What was the name of the 1933 law that gave couples 1,000 marks to marry?","a":"The Law for the Encouragement of Marriage","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":4,"q":"What was the condition placed on the wife for the couple to receive this loan?","a":"She had to quit her job","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":5,"q":"How much of the marriage loan was forgiven for each child born?","a":"25% / one quarter","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":6,"q":"How many children did a woman have to give birth to in order to win the Gold Mother's Cross?","a":"8 or more","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":7,"q":"What did Hitler Youth members have to do if they saw a woman wearing a Gold Mother's Cross?","a":"Salute her","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":8,"q":"What was the name of the SS 'Spring of Life' breeding programme started by Heinrich Himmler in 1935?","a":"Lebensborn","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":9,"q":"What did the 1933 Sterilisation Law allow the government to do?","a":"Forcefully sterilise women deemed disabled, 'feeble-minded', or unfit to be mothers","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":10,"q":"Give two ways the Nazis wanted the ideal Aryan woman to style her hair.","a":"Tied back in a bun or in traditional plaits/braids","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":11,"q":"Why were women heavily discouraged from slimming/dieting?","a":"The Nazis believed heavier women had easier childbirths/produced healthier babies","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":12,"q":"Who was the 'Reich Women's Leader' in charge of all female organisations?","a":"Gertrud Scholtz-Klink","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":13,"q":"What was the difference between the NSF and the DFW?","a":"The NSF was the elite Nazi Women's League; the DFW was the mass organisation for ordinary women to learn domestic skills","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":14,"q":"What was the legal quota cap placed on female university enrolment?","a":"Maximum 10%","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":15,"q":"Which female professionals were immediately forced to give up their jobs in 1933?","a":"Female teachers, doctors, and civil servants","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":16,"q":"What profession were women completely banned from entering in 1936?","a":"The legal profession / becoming judges or lawyers","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":17,"q":"What economic plan, introduced by Göring in 1936, forced the Nazis to change their minds about women working?","a":"The Four Year Plan for rearmament","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":18,"q":"Why did the Four Year Plan mean women had to go back to work?","a":"Men were joining the army, creating a massive labor shortage in factories","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":19,"q":"What was the 'Compulsory Duty Year' introduced in 1937?","a":"A policy forcing young women to work on farms or in factories","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":20,"q":"Did female employment go up or down between 1933 and 1939? (Give the statistics if you can).","a":"It went up, rising from 11.6 million to 14.6 million","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":21,"q":"Who was Joseph Goebbels?","a":"The Minister of People's Enlightenment and Propaganda.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":22,"q":"Name two methods of Nazi propaganda.","a":"Censorship, mass rallies, cheap radios, and controlling the press.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":23,"q":"Who were the SS (Schutzstaffel)?","a":"Hitler's elite black-shirted personal bodyguard, led by Heinrich Himmler.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":24,"q":"What was the Gestapo?","a":"The secret state police who spied on citizens using a network of informers.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":25,"q":"What was the role of concentration camps in the 1930s?","a":"To imprison political opponents, such as communists and vocal critics.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":26,"q":"What was the Enabling Act?","a":"A law giving Hitler dictatorial powers.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":27,"q":"What was the Night of the Long Knives?","a":"Hitler's purge of the SA leadership.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":28,"q":"Who was Ernst Röhm?","a":"The leader of the SA who was murdered.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":29,"q":"What happened to the Reichstag in 1933?","a":"It burned down.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":30,"q":"What title did Hitler take in 1934?","a":"Führer.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939"},{"id":31,"q":"Who was the Nazi Minister of Education?","a":"Bernhard Rust","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":32,"q":"What was the name of the compulsory union that 97% of teachers had joined by 1939?","a":"The National Socialist Teachers' League / NSLB","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":33,"q":"What happened to teachers who refused to teach Nazi ideas?","a":"They were sacked or reported to the Gestapo","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":34,"q":"What new compulsory subject taught students to classify races and measure skulls?","a":"Race Studies / Eugenics","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":35,"q":"What percentage of the school timetable was eventually taken up by Physical Education (PE)?","a":"15%","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":36,"q":"Give an example of how mathematics was used for propaganda.","a":"Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":37,"q":"From 1935 onwards, what book became a compulsory textbook in all schools?","a":"Hitler's autobiography, Mein Kampf","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":38,"q":"In what year were Jewish children banned from attending German state schools entirely?","a":"1938","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":39,"q":"Name one of the two types of elite boarding schools set up for the most promising Aryan boys.","a":"Napolas or Adolf Hitler Schools","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":40,"q":"Who was appointed by Hitler in 1933 as the Reich Youth Leader?","a":"Baldur von Schirach","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":41,"q":"What was the name of the youth group for boys aged 14-18?","a":"Hitlerjugend / HJ / Hitler Youth","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":42,"q":"Give two examples of typical Hitler Youth activities for boys.","a":"Rifle shooting, map reading, hiking, military drill","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":43,"q":"What was the ultimate goal for boys in the Hitler Youth?","a":"To become soldiers for the army","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":44,"q":"What was the name of the youth group for girls aged 14-18?","a":"Bund Deutscher Mädel / BDM / League of German Maidens","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":45,"q":"What was the ultimate goal for girls in the BDM?","a":"To become healthy, racially pure mothers","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":46,"q":"What was the name of the society created in 1938 for young women aged 17-21 to stop them forgetting their domestic training?","a":"The Faith and Beauty Society","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":47,"q":"How did the Nazis use the youth movements to undermine families?","a":"They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":48,"q":"In what year did the Hitler Youth Law make the youth movements effectively mandatory?","a":"1936","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":49,"q":"Roughly how many members were in the Nazi youth movements by 1939?","a":"8 million","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":50,"q":"Why did some young people start to hate the Hitler Youth by the late 1930s?","a":"It became compulsory, too strict, and focused on boring military drill instead of fun","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":51,"q":"What were the 'Three Ks' for women in Nazi Germany?","a":"Kinder, Küche, Kirche (Children, Kitchen, Church).","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":52,"q":"What was the Law for the Encouragement of Marriage?","a":"Loans given to young couples, which they could keep a portion of for every child they had.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":53,"q":"What was the Mother's Cross?","a":"A medal awarded to women who had large numbers of children (e.g. Gold for 8+).","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":54,"q":"What was the Hitler Youth?","a":"The mandatory youth organization that indoctrinated boys and prepared them for the military.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":55,"q":"How did schools change under the Nazis?","a":"Textbooks were rewritten, Jewish teachers fired, and subjects like 'Race Studies' were introduced.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":56,"q":"Who was Joseph Goebbels?","a":"The Minister of Propaganda.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":57,"q":"What was the Gestapo?","a":"The secret state police.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":58,"q":"Who led the SS?","a":"Heinrich Himmler.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":59,"q":"What was the Enabling Act?","a":"The law that allowed Hitler to bypass the Reichstag.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":60,"q":"Who were the 'November Criminals'?","a":"The politicians who signed the Armistice.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939"},{"id":61,"q":"How many Germans were officially unemployed when Hitler became Chancellor in 1933?","a":"Nearly 6 million","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":62,"q":"What was the official unemployment figure reported by the Nazis in 1939?","a":"Approximately 300,000","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":63,"q":"What do the initials RAD stand for in English?","a":"National Labour Service","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":64,"q":"In what year did the RAD become compulsory for all young men aged 18–25?","a":"1935","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":65,"q":"How long did young men have to serve in the RAD?","a":"6 months","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":66,"q":"By 1938, how many men were employed building the Autobahns?","a":"Over 100,000","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":67,"q":"What term is used to describe the Nazi manipulation of unemployment statistics?","a":"Invisible Unemployment","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":68,"q":"Name two groups of people who were removed from the workforce but not counted in the unemployment figures.","a":"Jews and Women","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":69,"q":"How large did the German army grow between 1933 and 1939 after conscription was reintroduced?","a":"From 100,000 to 1.4 million men","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":70,"q":"Who was the Minister of Economics responsible for the 'New Plan' (1934-1937)?","a":"Hjalmar Schacht","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":71,"q":"Who was put in charge of the 'Four Year Plan' in 1936?","a":"Hermann Goering","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":72,"q":"What was the ultimate goal of the Four Year Plan?","a":"To prepare the German economy for war within four years","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":73,"q":"What is the term for the economic policy of self-sufficiency?","a":"Autarky","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":74,"q":"What is the German word for the artificial substitute goods developed to achieve self-sufficiency?","a":"Ersatz","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":75,"q":"Give an example of an Ersatz good.","a":"Making rubber or oil from coal","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":76,"q":"In May 1933, what did Hitler ban to gain control over the workers?","a":"Trade Unions","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":77,"q":"What Nazi organisation replaced trade unions?","a":"The German Labour Front / DAF","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":78,"q":"Who was the leader of the DAF?","a":"Robert Ley","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":79,"q":"What did Strength Through Joy (KdF) provide for workers?","a":"Cheap, subsidised leisure activities like theatre tickets and cruises","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":80,"q":"How much did workers pay per week into the Volkswagen savings scheme?","a":"5 marks","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":81,"q":"Why was the Volkswagen scheme a massive scam?","a":"Production shifted to military vehicles in 1939; no one got a car and no money was refunded","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":82,"q":"What was the catch with the 'Beauty of Labour' (SdA) improvements?","a":"Workers had to build the new facilities themselves during their unpaid free time","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":83,"q":"How much did the average working week increase between 1933 and 1939?","a":"From 43 hours to 49 hours","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":84,"q":"Which phrase describes the tension between military spending and consumer goods?","a":"'Guns versus Butter'","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":85,"q":"Did 'real wages' (purchasing power) for the average worker improve by 1939?","a":"No, because food prices rose faster than their wages","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":86,"q":"What was the National Labour Service (RAD)?","a":"A compulsory scheme where young men did six months of manual public works (like building autobahns).","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":87,"q":"How did Hitler reduce the official unemployment figures?","a":"By creating public works, rearming, and removing women and Jews from the register.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":88,"q":"What was 'Strength Through Joy' (KdF)?","a":"An organization providing cheap holidays and leisure activities for loyal workers.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":89,"q":"What was the 'Beauty of Labour' (SdA)?","a":"A scheme designed to improve working conditions in factories.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":90,"q":"What did the German Labour Front (DAF) replace?","a":"Trade unions (which Hitler had banned).","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":91,"q":"What were the 'Three Ks'?","a":"Children, Kitchen, Church.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":92,"q":"What was the Hitler Youth?","a":"The Nazi organization for indoctrinating boys.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":93,"q":"What was the Mother's Cross?","a":"A medal for having many children.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":94,"q":"Who was the Minister of Propaganda?","a":"Joseph Goebbels.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":95,"q":"What was the Night of the Long Knives?","a":"The purge of the SA.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939"},{"id":96,"q":"What twisted biological theory underpinned Hitler's racial ideology?","a":"Social Darwinism","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":97,"q":"What did the term 'Untermenschen' mean?","a":"Sub-humans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":98,"q":"Give two examples of groups the Nazis considered 'Asocials'.","a":"Homosexuals, vagrants, alcoholics","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":99,"q":"What was the name of the 1933 law that allowed the government to surgically prevent disabled people from having children?","a":"The Law for the Prevention of Hereditarily Diseased Offspring","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":100,"q":"Roughly how many people were forcibly sterilised under this law?","a":"400,000","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":101,"q":"What was the T4 programme introduced in 1939?","a":"A secret state euthanasia programme killing disabled babies and children","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":102,"q":"Where were hundreds of Roma and Sinti forced to live ahead of the 1936 Berlin Olympics?","a":"The Marzahn internment camp","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":103,"q":"Why were homosexual men targeted by the Nazis?","a":"They did not fit the traditional family ideal and did not produce children for the Reich","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":104,"q":"What colour triangle were homosexual prisoners forced to wear in concentration camps?","a":"Pink","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":105,"q":"In what month and year did the SA lead a one-day boycott of Jewish shops and businesses?","a":"April 1933","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":106,"q":"What 1933 law resulted in Jewish teachers, judges, and government workers losing their jobs?","a":"The Civil Service Act","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":107,"q":"In what year were the Nuremberg Laws passed?","a":"1935","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":108,"q":"What did the 'Reich Citizenship Law' do?","a":"Stripped Jewish people of their German citizenship and the right to vote","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":109,"q":"What did the 'Law for the Protection of German Blood and Honour' forbid?","a":"Marriage and sexual relations between Jews and Aryans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":110,"q":"In October 1938, what was stamped on the passports of all Jewish people?","a":"A large red letter 'J'","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":111,"q":"What middle names were Jewish men and women forced to adopt in 1938?","a":"Israel for men, Sarah for women","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":112,"q":"What is the exact date of Kristallnacht?","a":"9-10 November 1938","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":113,"q":"Who orchestrated Kristallnacht to win Hitler's favour?","a":"Joseph Goebbels","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":114,"q":"How many Jewish men were arrested and sent to concentration camps following Kristallnacht?","a":"30,000","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":115,"q":"According to Gestapo and Sopade reports, why were many ordinary Germans disgusted by Kristallnacht?","a":"They hated the public disorder and the wasteful destruction of property","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":116,"q":"Who did the Nazi government blame for the destruction of Kristallnacht?","a":"The Jewish community","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":117,"q":"What was the exact fine placed on the Jewish community to pay for the damage?","a":"1 billion marks","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":118,"q":"What does the term 'Aryanisation' mean in the context of 1938-1939?","a":"The forced transfer of Jewish businesses and property to Aryans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":119,"q":"In January 1939, what organisation did Reinhard Heydrich set up?","a":"The Reich Office for Jewish Emigration","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":120,"q":"What was the purpose of this new office?","a":"To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":121,"q":"What did the Nazis mean by 'Untermenschen'?","a":"Sub-humans (the racist term applied to Jews, Slavs, and Roma).","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":122,"q":"What were the Nuremberg Laws (1935)?","a":"Laws that stripped Jews of German citizenship and banned marriage between Jews and non-Jews.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":123,"q":"What happened during Kristallnacht (1938)?","a":"The 'Night of Broken Glass': a violent nationwide pogrom against Jewish shops, homes, and synagogues.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":124,"q":"What happened to the disabled under Nazi rule?","a":"Hundreds of thousands were forcibly sterilized, and later murdered in the T4 euthanasia programme.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":125,"q":"How did the Nazis treat minority groups like homosexuals and Jehovah's Witnesses?","a":"They were persecuted and sent to concentration camps.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":126,"q":"What was the National Labour Service (RAD)?","a":"A compulsory manual labor scheme for young men.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":127,"q":"What was 'Strength Through Joy' (KdF)?","a":"Cheap holidays for workers.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":128,"q":"How did Hitler reduce unemployment?","a":"Rearmament and public works (like autobahns).","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":129,"q":"What were the 'Three Ks'?","a":"Children, Kitchen, Church.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"},{"id":130,"q":"What was the Gestapo?","a":"The secret state police.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939"}];
 
+    const RAPID_DECK = [{"id":1,"q":"What three German words (starting with K) summarised the traditional Nazi ideal for women?","a":"Kinder, Küche, Kirche","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":2,"q":"Translate those three words into English.","a":"Children, Kitchen, Church","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":3,"q":"What was the name of the 1933 law that gave couples 1,000 marks to marry?","a":"The Law for the Encouragement of Marriage","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":4,"q":"What was the condition placed on the wife for the couple to receive this loan?","a":"She had to quit her job","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":5,"q":"How much of the marriage loan was forgiven for each child born?","a":"25% / one quarter","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":6,"q":"How many children did a woman have to give birth to in order to win the Gold Mother's Cross?","a":"8 or more","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":7,"q":"What did Hitler Youth members have to do if they saw a woman wearing a Gold Mother's Cross?","a":"Salute her","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":8,"q":"What was the name of the SS 'Spring of Life' breeding programme started by Heinrich Himmler in 1935?","a":"Lebensborn","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":9,"q":"What did the 1933 Sterilisation Law allow the government to do?","a":"Forcefully sterilise women deemed disabled, 'feeble-minded', or unfit to be mothers","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":10,"q":"Give two ways the Nazis wanted the ideal Aryan woman to style her hair.","a":"Tied back in a bun or in traditional plaits/braids","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":11,"q":"Why were women heavily discouraged from slimming/dieting?","a":"The Nazis believed heavier women had easier childbirths/produced healthier babies","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":12,"q":"Who was the 'Reich Women's Leader' in charge of all female organisations?","a":"Gertrud Scholtz-Klink","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":13,"q":"What was the difference between the NSF and the DFW?","a":"The NSF was the elite Nazi Women's League; the DFW was the mass organisation for ordinary women to learn domestic skills","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":14,"q":"What was the legal quota cap placed on female university enrolment?","a":"Maximum 10%","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":15,"q":"Which female professionals were immediately forced to give up their jobs in 1933?","a":"Female teachers, doctors, and civil servants","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":16,"q":"What profession were women completely banned from entering in 1936?","a":"The legal profession / becoming judges or lawyers","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":17,"q":"What economic plan, introduced by Göring in 1936, forced the Nazis to change their minds about women working?","a":"The Four Year Plan for rearmament","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":18,"q":"Why did the Four Year Plan mean women had to go back to work?","a":"Men were joining the army, creating a massive labor shortage in factories","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":19,"q":"What was the 'Compulsory Duty Year' introduced in 1937?","a":"A policy forcing young women to work on farms or in factories","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":20,"q":"Did female employment go up or down between 1933 and 1939? (Give the statistics if you can).","a":"It went up, rising from 11.6 million to 14.6 million","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":21,"q":"Who was Joseph Goebbels?","a":"The Minister of People's Enlightenment and Propaganda.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":22,"q":"Name two methods of Nazi propaganda.","a":"Censorship, mass rallies, cheap radios, and controlling the press.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":23,"q":"Who were the SS (Schutzstaffel)?","a":"Hitler's elite black-shirted personal bodyguard, led by Heinrich Himmler.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":24,"q":"What was the Gestapo?","a":"The secret state police who spied on citizens using a network of informers.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":25,"q":"What was the role of concentration camps in the 1930s?","a":"To imprison political opponents, such as communists and vocal critics.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":26,"q":"What was the Enabling Act?","a":"A law giving Hitler dictatorial powers.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":27,"q":"What was the Night of the Long Knives?","a":"Hitler's purge of the SA leadership.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":28,"q":"Who was Ernst Röhm?","a":"The leader of the SA who was murdered.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":29,"q":"What happened to the Reichstag in 1933?","a":"It burned down.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":30,"q":"What title did Hitler take in 1934?","a":"Führer.","topic":"Key Topic 4.1: Nazi Policies Towards Women, 1933–1939","tier":"rapid"},{"id":31,"q":"Who was the Nazi Minister of Education?","a":"Bernhard Rust","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":32,"q":"What was the name of the compulsory union that 97% of teachers had joined by 1939?","a":"The National Socialist Teachers' League / NSLB","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":33,"q":"What happened to teachers who refused to teach Nazi ideas?","a":"They were sacked or reported to the Gestapo","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":34,"q":"What new compulsory subject taught students to classify races and measure skulls?","a":"Race Studies / Eugenics","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":35,"q":"What percentage of the school timetable was eventually taken up by Physical Education (PE)?","a":"15%","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":36,"q":"Give an example of how mathematics was used for propaganda.","a":"Word problems calculating the cost of keeping disabled people in asylums or calculating bomb trajectories","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":37,"q":"From 1935 onwards, what book became a compulsory textbook in all schools?","a":"Hitler's autobiography, Mein Kampf","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":38,"q":"In what year were Jewish children banned from attending German state schools entirely?","a":"1938","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":39,"q":"Name one of the two types of elite boarding schools set up for the most promising Aryan boys.","a":"Napolas or Adolf Hitler Schools","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":40,"q":"Who was appointed by Hitler in 1933 as the Reich Youth Leader?","a":"Baldur von Schirach","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":41,"q":"What was the name of the youth group for boys aged 14-18?","a":"Hitlerjugend / HJ / Hitler Youth","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":42,"q":"Give two examples of typical Hitler Youth activities for boys.","a":"Rifle shooting, map reading, hiking, military drill","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":43,"q":"What was the ultimate goal for boys in the Hitler Youth?","a":"To become soldiers for the army","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":44,"q":"What was the name of the youth group for girls aged 14-18?","a":"Bund Deutscher Mädel / BDM / League of German Maidens","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":45,"q":"What was the ultimate goal for girls in the BDM?","a":"To become healthy, racially pure mothers","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":46,"q":"What was the name of the society created in 1938 for young women aged 17-21 to stop them forgetting their domestic training?","a":"The Faith and Beauty Society","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":47,"q":"How did the Nazis use the youth movements to undermine families?","a":"They encouraged teenagers to denounce their own parents to the Gestapo if they criticised the regime","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":48,"q":"In what year did the Hitler Youth Law make the youth movements effectively mandatory?","a":"1936","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":49,"q":"Roughly how many members were in the Nazi youth movements by 1939?","a":"8 million","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":50,"q":"Why did some young people start to hate the Hitler Youth by the late 1930s?","a":"It became compulsory, too strict, and focused on boring military drill instead of fun","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":51,"q":"What were the 'Three Ks' for women in Nazi Germany?","a":"Kinder, Küche, Kirche (Children, Kitchen, Church).","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":52,"q":"What was the Law for the Encouragement of Marriage?","a":"Loans given to young couples, which they could keep a portion of for every child they had.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":53,"q":"What was the Mother's Cross?","a":"A medal awarded to women who had large numbers of children (e.g. Gold for 8+).","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":54,"q":"What was the Hitler Youth?","a":"The mandatory youth organization that indoctrinated boys and prepared them for the military.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":55,"q":"How did schools change under the Nazis?","a":"Textbooks were rewritten, Jewish teachers fired, and subjects like 'Race Studies' were introduced.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":56,"q":"Who was Joseph Goebbels?","a":"The Minister of Propaganda.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":57,"q":"What was the Gestapo?","a":"The secret state police.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":58,"q":"Who led the SS?","a":"Heinrich Himmler.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":59,"q":"What was the Enabling Act?","a":"The law that allowed Hitler to bypass the Reichstag.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":60,"q":"Who were the 'November Criminals'?","a":"The politicians who signed the Armistice.","topic":"Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939","tier":"rapid"},{"id":61,"q":"How many Germans were officially unemployed when Hitler became Chancellor in 1933?","a":"Nearly 6 million","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":62,"q":"What was the official unemployment figure reported by the Nazis in 1939?","a":"Approximately 300,000","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":63,"q":"What do the initials RAD stand for in English?","a":"National Labour Service","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":64,"q":"In what year did the RAD become compulsory for all young men aged 18–25?","a":"1935","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":65,"q":"How long did young men have to serve in the RAD?","a":"6 months","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":66,"q":"By 1938, how many men were employed building the Autobahns?","a":"Over 100,000","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":67,"q":"What term is used to describe the Nazi manipulation of unemployment statistics?","a":"Invisible Unemployment","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":68,"q":"Name two groups of people who were removed from the workforce but not counted in the unemployment figures.","a":"Jews and Women","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":69,"q":"How large did the German army grow between 1933 and 1939 after conscription was reintroduced?","a":"From 100,000 to 1.4 million men","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":70,"q":"Who was the Minister of Economics responsible for the 'New Plan' (1934-1937)?","a":"Hjalmar Schacht","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":71,"q":"Who was put in charge of the 'Four Year Plan' in 1936?","a":"Hermann Goering","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":72,"q":"What was the ultimate goal of the Four Year Plan?","a":"To prepare the German economy for war within four years","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":73,"q":"What is the term for the economic policy of self-sufficiency?","a":"Autarky","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":74,"q":"What is the German word for the artificial substitute goods developed to achieve self-sufficiency?","a":"Ersatz","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":75,"q":"Give an example of an Ersatz good.","a":"Making rubber or oil from coal","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":76,"q":"In May 1933, what did Hitler ban to gain control over the workers?","a":"Trade Unions","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":77,"q":"What Nazi organisation replaced trade unions?","a":"The German Labour Front / DAF","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":78,"q":"Who was the leader of the DAF?","a":"Robert Ley","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":79,"q":"What did Strength Through Joy (KdF) provide for workers?","a":"Cheap, subsidised leisure activities like theatre tickets and cruises","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":80,"q":"How much did workers pay per week into the Volkswagen savings scheme?","a":"5 marks","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":81,"q":"Why was the Volkswagen scheme a massive scam?","a":"Production shifted to military vehicles in 1939; no one got a car and no money was refunded","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":82,"q":"What was the catch with the 'Beauty of Labour' (SdA) improvements?","a":"Workers had to build the new facilities themselves during their unpaid free time","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":83,"q":"How much did the average working week increase between 1933 and 1939?","a":"From 43 hours to 49 hours","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":84,"q":"Which phrase describes the tension between military spending and consumer goods?","a":"'Guns versus Butter'","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":85,"q":"Did 'real wages' (purchasing power) for the average worker improve by 1939?","a":"No, because food prices rose faster than their wages","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":86,"q":"What was the National Labour Service (RAD)?","a":"A compulsory scheme where young men did six months of manual public works (like building autobahns).","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":87,"q":"How did Hitler reduce the official unemployment figures?","a":"By creating public works, rearming, and removing women and Jews from the register.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":88,"q":"What was 'Strength Through Joy' (KdF)?","a":"An organization providing cheap holidays and leisure activities for loyal workers.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":89,"q":"What was the 'Beauty of Labour' (SdA)?","a":"A scheme designed to improve working conditions in factories.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":90,"q":"What did the German Labour Front (DAF) replace?","a":"Trade unions (which Hitler had banned).","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":91,"q":"What were the 'Three Ks'?","a":"Children, Kitchen, Church.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":92,"q":"What was the Hitler Youth?","a":"The Nazi organization for indoctrinating boys.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":93,"q":"What was the Mother's Cross?","a":"A medal for having many children.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":94,"q":"Who was the Minister of Propaganda?","a":"Joseph Goebbels.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":95,"q":"What was the Night of the Long Knives?","a":"The purge of the SA.","topic":"Key Topic 4.3: Employment and Living Standards, 1933–1939","tier":"rapid"},{"id":96,"q":"What twisted biological theory underpinned Hitler's racial ideology?","a":"Social Darwinism","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":97,"q":"What did the term 'Untermenschen' mean?","a":"Sub-humans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":98,"q":"Give two examples of groups the Nazis considered 'Asocials'.","a":"Homosexuals, vagrants, alcoholics","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":99,"q":"What was the name of the 1933 law that allowed the government to surgically prevent disabled people from having children?","a":"The Law for the Prevention of Hereditarily Diseased Offspring","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":100,"q":"Roughly how many people were forcibly sterilised under this law?","a":"400,000","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":101,"q":"What was the T4 programme introduced in 1939?","a":"A secret state euthanasia programme killing disabled babies and children","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":102,"q":"Where were hundreds of Roma and Sinti forced to live ahead of the 1936 Berlin Olympics?","a":"The Marzahn internment camp","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":103,"q":"Why were homosexual men targeted by the Nazis?","a":"They did not fit the traditional family ideal and did not produce children for the Reich","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":104,"q":"What colour triangle were homosexual prisoners forced to wear in concentration camps?","a":"Pink","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":105,"q":"In what month and year did the SA lead a one-day boycott of Jewish shops and businesses?","a":"April 1933","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":106,"q":"What 1933 law resulted in Jewish teachers, judges, and government workers losing their jobs?","a":"The Civil Service Act","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":107,"q":"In what year were the Nuremberg Laws passed?","a":"1935","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":108,"q":"What did the 'Reich Citizenship Law' do?","a":"Stripped Jewish people of their German citizenship and the right to vote","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":109,"q":"What did the 'Law for the Protection of German Blood and Honour' forbid?","a":"Marriage and sexual relations between Jews and Aryans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":110,"q":"In October 1938, what was stamped on the passports of all Jewish people?","a":"A large red letter 'J'","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":111,"q":"What middle names were Jewish men and women forced to adopt in 1938?","a":"Israel for men, Sarah for women","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":112,"q":"What is the exact date of Kristallnacht?","a":"9-10 November 1938","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":113,"q":"Who orchestrated Kristallnacht to win Hitler's favour?","a":"Joseph Goebbels","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":114,"q":"How many Jewish men were arrested and sent to concentration camps following Kristallnacht?","a":"30,000","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":115,"q":"According to Gestapo and Sopade reports, why were many ordinary Germans disgusted by Kristallnacht?","a":"They hated the public disorder and the wasteful destruction of property","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":116,"q":"Who did the Nazi government blame for the destruction of Kristallnacht?","a":"The Jewish community","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":117,"q":"What was the exact fine placed on the Jewish community to pay for the damage?","a":"1 billion marks","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":118,"q":"What does the term 'Aryanisation' mean in the context of 1938-1939?","a":"The forced transfer of Jewish businesses and property to Aryans","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":119,"q":"In January 1939, what organisation did Reinhard Heydrich set up?","a":"The Reich Office for Jewish Emigration","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":120,"q":"What was the purpose of this new office?","a":"To systematically force Jewish people to leave Germany by taking their wealth in exchange for exit visas","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":121,"q":"What did the Nazis mean by 'Untermenschen'?","a":"Sub-humans (the racist term applied to Jews, Slavs, and Roma).","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":122,"q":"What were the Nuremberg Laws (1935)?","a":"Laws that stripped Jews of German citizenship and banned marriage between Jews and non-Jews.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":123,"q":"What happened during Kristallnacht (1938)?","a":"The 'Night of Broken Glass': a violent nationwide pogrom against Jewish shops, homes, and synagogues.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":124,"q":"What happened to the disabled under Nazi rule?","a":"Hundreds of thousands were forcibly sterilized, and later murdered in the T4 euthanasia programme.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":125,"q":"How did the Nazis treat minority groups like homosexuals and Jehovah's Witnesses?","a":"They were persecuted and sent to concentration camps.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":126,"q":"What was the National Labour Service (RAD)?","a":"A compulsory manual labor scheme for young men.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":127,"q":"What was 'Strength Through Joy' (KdF)?","a":"Cheap holidays for workers.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":128,"q":"How did Hitler reduce unemployment?","a":"Rearmament and public works (like autobahns).","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":129,"q":"What were the 'Three Ks'?","a":"Children, Kitchen, Church.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"},{"id":130,"q":"What was the Gestapo?","a":"The secret state police.","topic":"Key Topic 4.4: The Persecution of Minorities, 1933–1939","tier":"rapid"}];
+
+    const EXAM_DECK = [];
+
+    let currentTier = 'rapid';
+    let currentStemFilter = 'all';
+    let ALL_DECK = RAPID_DECK;
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
@@ -4003,6 +4314,7 @@
       try {
         const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
         if (raw) userBoxes = JSON.parse(raw);
+        else userBoxes = {};
       } catch (e) {
         userBoxes = {};
       }
@@ -4046,7 +4358,13 @@
       if (cardEl) cardEl.classList.remove('flipped');
 
       const qNumBadge = document.getElementById('card-qnum-badge');
-      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+      if (qNumBadge) {
+        if (currentTier === 'exam') {
+          qNumBadge.textContent = 'Exam Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        } else {
+          qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        }
+      }
 
       const boxBadge = document.getElementById('card-box-badge');
       const boxBadgeBack = document.getElementById('card-box-badge-back');
@@ -4063,11 +4381,50 @@
       }
 
       const qText = document.getElementById('card-question-text');
-      if (qText) qText.textContent = card.q;
+      if (qText) {
+        if (currentTier === 'exam') {
+          let metaHtml = '<div class="exam-meta-row">';
+          const stemClass = card.stem || 'consequence';
+          const stemLabel = card.marks ? (card.marks + 'm ' + (card.stem === 'consequence' ? 'Consequence' : card.stem === 'narrative' ? 'Narrative Account' : card.stem === 'importance' ? 'Importance' : 'Key Term')) : card.stem;
+          metaHtml += '<span class="exam-stem-badge ' + stemClass + '">🎯 ' + stemLabel + '</span>';
+          if (card.formula) {
+            metaHtml += '<span class="exam-formula-badge">⚡ ' + card.formula + (card.formula_name ? ': ' + card.formula_name : '') + '</span>';
+          }
+          metaHtml += '</div>';
+
+          let factsHint = '';
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
+          }
+          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+        } else {
+          qText.textContent = card.q;
+        }
+      }
 
       const aText = document.getElementById('card-answer-text');
       if (aText) {
-        if (card.explanation) {
+        if (currentTier === 'exam') {
+          let html = '<div class="exam-meta-row">';
+          if (card.formula) {
+            html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
+          }
+          html += '</div>';
+          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
+            card.specific_facts.forEach(f => {
+              html += '<li>' + f + '</li>';
+            });
+            html += '</ul></div>';
+          }
+
+          if (card.historian_explanation) {
+            html += '<div class="historian-box">🏛️ <strong>Historian &amp; Examiner Analysis:</strong> ' + card.historian_explanation + '</div>';
+          }
+          aText.innerHTML = html;
+        } else if (card.explanation) {
           aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
         } else {
           aText.textContent = card.a;
@@ -4076,6 +4433,75 @@
 
       updateStats();
     }
+
+    window.switchPracticeTier = function(tier) {
+      if (currentTier === tier) return;
+      currentTier = tier;
+      stopRapidFireTimer();
+
+      const btnRapid = document.getElementById('tier-btn-rapid');
+      const btnExam = document.getElementById('tier-btn-exam');
+      const stemRow = document.getElementById('leitner-stem-filter-row');
+
+      if (tier === 'exam') {
+        if (btnRapid) btnRapid.classList.remove('active');
+        if (btnExam) btnExam.classList.add('active');
+        if (stemRow) stemRow.style.display = 'flex';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_EXAM;
+        ALL_DECK = EXAM_DECK;
+        currentStemFilter = 'all';
+        resetStemPills();
+      } else {
+        if (btnRapid) btnRapid.classList.add('active');
+        if (btnExam) btnExam.classList.remove('active');
+        if (stemRow) stemRow.style.display = 'none';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+        ALL_DECK = RAPID_DECK;
+      }
+
+      currentDeck = [...ALL_DECK];
+      currentIndex = 0;
+      loadLeitnerProgress();
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    window.filterByExamStem = function(stem) {
+      currentStemFilter = stem;
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === stem);
+      });
+
+      if (stem === 'all') {
+        currentDeck = [...EXAM_DECK];
+      } else {
+        currentDeck = EXAM_DECK.filter(c => c.stem === stem);
+        if (currentDeck.length === 0) currentDeck = [...EXAM_DECK];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    function resetStemPills() {
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === 'all');
+      });
+    }
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'flex';
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'none';
+    };
 
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
@@ -4396,6 +4822,7 @@
       }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') rateCurrentCard(1);
       else if (e.key === '2') rateCurrentCard(2);

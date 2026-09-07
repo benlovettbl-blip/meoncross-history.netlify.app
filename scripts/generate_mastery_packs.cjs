@@ -113,6 +113,18 @@ const units = fs
                 });
               });
             }
+          } else if (unitId === 'cme_new') {
+            // For cme_new, quiz array holds the 20 Rapid Recall questions per lesson
+            if (lesson.quiz && Array.isArray(lesson.quiz)) {
+              lesson.quiz.forEach((q) => {
+                questions.push({
+                  lessonTitle: lesson.title,
+                  q: q.question || q.q,
+                  a: resolveAns(q),
+                  explanation: q.explanation || '',
+                });
+              });
+            }
           } else {
             if (lesson.quiz && Array.isArray(lesson.quiz)) {
               lesson.quiz.forEach((q) => {
@@ -131,6 +143,28 @@ const units = fs
                   q: q.question || q.q,
                   a: resolveAns(q),
                   explanation: q.explanation || '',
+                });
+              });
+            }
+          }
+        }
+
+        let examQuestions = [];
+        if (unitId === 'cme_new') {
+          for (const lesson of matchingLessons) {
+            if (lesson.exam_clinic && Array.isArray(lesson.exam_clinic)) {
+              lesson.exam_clinic.forEach((q) => {
+                examQuestions.push({
+                  lessonTitle: lesson.title,
+                  q: q.question || q.q,
+                  a: resolveAns(q),
+                  stem: q.stem || 'consequence',
+                  marks: q.marks || 4,
+                  formula: q.formula || 'P-F-C',
+                  formula_name: q.formula_name || '',
+                  specific_facts: q.specific_facts || [],
+                  historian_explanation: q.historian_explanation || q.explanation || '',
+                  explanation: q.explanation || q.historian_explanation || '',
                 });
               });
             }
@@ -1028,6 +1062,303 @@ const units = fs
             color: #2563eb;
         }
 
+        /* CME Dual-Tier & Printable Revision Suite Styles */
+        .toolbar-btn.printables {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        .toolbar-btn.printables:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+
+        /* Printables Suite Modal */
+        .printables-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        .printables-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .printables-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .printables-modal-header h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .printables-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .printables-modal-sub {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
+        }
+        .printables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+        .printable-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .printable-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        .printable-card-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .printable-card h4 {
+            margin: 0 0 8px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            color: #0f172a;
+        }
+        .printable-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin: 0 0 16px 0;
+            flex-grow: 1;
+        }
+        .printable-links {
+            display: flex;
+            gap: 8px;
+        }
+        .print-link-btn {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s ease;
+        }
+        .print-link-btn.web {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .print-link-btn.web:hover {
+            background: #bae6fd;
+        }
+        .print-link-btn.pdf {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .print-link-btn.pdf:hover {
+            background: #fee2e2;
+        }
+
+        /* Dual-Tier Leitner Switcher Bar */
+        .leitner-tier-switcher {
+            display: flex;
+            background: #0f172a;
+            padding: 8px 16px 0 16px;
+            gap: 6px;
+            border-bottom: 1px solid #334155;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            background: #1e293b;
+            color: #94a3b8;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tier-btn:hover:not(.active) {
+            background: #334155;
+            color: #ffffff;
+        }
+        .tier-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Stem Filter Row */
+        .leitner-stem-filter-row {
+            background: #f8fafc;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .stem-filter-label {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        .stem-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .stem-pill:hover {
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+        .stem-pill.active {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        /* Exam Card Elements */
+        .exam-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .exam-stem-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .exam-stem-badge.consequence {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .exam-stem-badge.narrative {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+        .exam-stem-badge.importance {
+            background: #ffedd5;
+            color: #9a3412;
+            border: 1px solid #fdba74;
+        }
+        .exam-stem-badge.term {
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid #7dd3fc;
+        }
+        .exam-formula-badge {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .exam-facts-hint {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px dashed #cbd5e1;
+        }
+        .historian-box {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 4px solid #eab308;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #713f12;
+            line-height: 1.45;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .facts-checklist {
+            margin-top: 10px;
+            text-align: left;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #166534;
+        }
+        .facts-checklist ul {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+        }
+        .facts-checklist li {
+            margin-bottom: 2px;
+        }
+
         /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
         .leitner-modal-overlay.teacher-mode {
             padding: 0;
@@ -1804,10 +2135,65 @@ const units = fs
             <span class="toolbar-badge">Mobile</span>
         </div>
         <div class="toolbar-actions">
+            ${
+              unitId === 'cme_new'
+                ? `
+            <button class="toolbar-btn printables" onclick="openPrintablesModal()">🖨️ Revision Suite (3 Formats)</button>
+            `
+                : ''
+            }
             <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
+
+    ${
+      unitId === 'cme_new'
+        ? `
+    <!-- 3-Format Printable Revision Suite Modal -->
+    <div id="printables-modal" class="printables-modal-overlay" style="display: none;" onclick="if(event.target === this) closePrintablesModal()">
+        <div class="printables-modal-card">
+            <div class="printables-modal-header">
+                <h3>🖨️ GCSE 3-Format Printable Revision Suite</h3>
+                <button onclick="closePrintablesModal()" class="leitner-close-btn">&times;</button>
+            </div>
+            <div class="printables-modal-body">
+                <p class="printables-modal-sub">Differentiated printables for <strong>${wb.title}</strong> designed to cater to every pupil's cognitive learning style:</p>
+                <div class="printables-grid">
+                    <div class="printable-card">
+                        <div class="printable-card-icon">📖</div>
+                        <h4>Format 1: The 2-Page A4 Workout Spread</h4>
+                        <p>Spaced retrieval, lined scaffolding with cognitive formula frames (P-F-C, T-P-C, F-I-L), ⚠️ Examiner Trap Doors, and 3-attempt flexible log.</p>
+                        <div class="printable-links">
+                            <a href="/units/cme_new/printables/cme_workout_${wb.id}.html" target="_blank" class="print-link-btn web">🌐 Interactive</a>
+                            <a href="/pdfs/cme_new/cme_workout_${wb.id}.pdf" target="_blank" download class="print-link-btn pdf">📕 A4 PDF</a>
+                        </div>
+                    </div>
+                    <div class="printable-card">
+                        <div class="printable-card-icon">🗺️</div>
+                        <h4>Format 2: The A3 Desk Knowledge Placemat</h4>
+                        <p>Visual command centre: Key Chronology Dominoes, 6-Topic Specification Blueprint, Color-Coded Model Answer Dissector, and High-Yield Fact Bank.</p>
+                        <div class="printable-links">
+                            <a href="/units/cme_new/printables/cme_placemat_${wb.id}.html" target="_blank" class="print-link-btn web">🌐 Interactive</a>
+                            <a href="/pdfs/cme_new/cme_placemat_${wb.id}.pdf" target="_blank" download class="print-link-btn pdf">📕 A3 PDF</a>
+                        </div>
+                    </div>
+                    <div class="printable-card">
+                        <div class="printable-card-icon">📰</div>
+                        <h4>Format 3: Foldable Pocket Trifold Zine</h4>
+                        <p>A4 Landscape 6-panel trifold pocket booklet with QR code linking to the live digital Leitner deck, fill-in challenges, and 5-min exam challenge.</p>
+                        <div class="printable-links">
+                            <a href="/units/cme_new/printables/cme_trifold_${wb.id}.html" target="_blank" class="print-link-btn web">🌐 Interactive</a>
+                            <a href="/pdfs/cme_new/cme_trifold_${wb.id}.pdf" target="_blank" download class="print-link-btn pdf">📕 Pocket PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+        : ''
+    }
 
     <!-- Cover Page -->
     <div class="page cover page-break">
@@ -2033,6 +2419,26 @@ const units = fs
                 </div>
             </div>
 
+            ${
+              unitId === 'cme_new'
+                ? `
+            <!-- Dual-Tier Switcher Bar -->
+            <div class="leitner-tier-switcher">
+                <button class="tier-btn active" id="tier-btn-rapid" onclick="switchPracticeTier('rapid')">⚡ Rapid Recall (Do Now)</button>
+                <button class="tier-btn" id="tier-btn-exam" onclick="switchPracticeTier('exam')">🎯 GCSE Exam Clinic (Stems)</button>
+            </div>
+            <!-- Exam Stem Filter Row (Active in Exam Tier) -->
+            <div class="leitner-stem-filter-row" id="leitner-stem-filter-row" style="display: none;">
+                <span class="stem-filter-label">Stem:</span>
+                <button class="stem-pill active" id="stem-pill-all" onclick="filterByExamStem('all')">All Stems</button>
+                <button class="stem-pill" id="stem-pill-consequence" onclick="filterByExamStem('consequence')">4m Consequence</button>
+                <button class="stem-pill" id="stem-pill-narrative" onclick="filterByExamStem('narrative')">8m Narrative</button>
+                <button class="stem-pill" id="stem-pill-importance" onclick="filterByExamStem('importance')">8m Importance</button>
+            </div>
+            `
+                : ''
+            }
+
             <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
                 <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
@@ -2159,9 +2565,13 @@ const units = fs
   (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
-    const LEITNER_STORAGE_KEY = 'leitner_v1_${unitId}_${wb.id}';
+    const IS_CME_NEW = ${unitId === 'cme_new'};
+    const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_${unitId}_${wb.id}';
+    const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_${unitId}_${wb.id}_exam';
+    let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
     const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
-    const ALL_DECK = ${JSON.stringify(
+
+    const RAPID_DECK = ${JSON.stringify(
       questions.map((q, idx) => ({
         id: idx + 1,
         q: q.q,
@@ -2170,9 +2580,30 @@ const units = fs
           ? q.explanation || ''
           : undefined,
         topic: q.lessonTitle,
+        tier: 'rapid',
       })),
     )};
 
+    const EXAM_DECK = ${JSON.stringify(
+      examQuestions.map((q, idx) => ({
+        id: idx + 1,
+        q: q.q,
+        a: q.a,
+        stem: q.stem || 'consequence',
+        marks: q.marks || 4,
+        formula: q.formula || 'P-F-C',
+        formula_name: q.formula_name || '',
+        specific_facts: q.specific_facts || [],
+        historian_explanation: q.historian_explanation || q.explanation || '',
+        explanation: q.explanation || q.historian_explanation || '',
+        topic: q.lessonTitle,
+        tier: 'exam',
+      })),
+    )};
+
+    let currentTier = 'rapid';
+    let currentStemFilter = 'all';
+    let ALL_DECK = RAPID_DECK;
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
@@ -2276,6 +2707,7 @@ const units = fs
       try {
         const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
         if (raw) userBoxes = JSON.parse(raw);
+        else userBoxes = {};
       } catch (e) {
         userBoxes = {};
       }
@@ -2319,7 +2751,13 @@ const units = fs
       if (cardEl) cardEl.classList.remove('flipped');
 
       const qNumBadge = document.getElementById('card-qnum-badge');
-      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+      if (qNumBadge) {
+        if (currentTier === 'exam') {
+          qNumBadge.textContent = 'Exam Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        } else {
+          qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        }
+      }
 
       const boxBadge = document.getElementById('card-box-badge');
       const boxBadgeBack = document.getElementById('card-box-badge-back');
@@ -2336,11 +2774,50 @@ const units = fs
       }
 
       const qText = document.getElementById('card-question-text');
-      if (qText) qText.textContent = card.q;
+      if (qText) {
+        if (currentTier === 'exam') {
+          let metaHtml = '<div class="exam-meta-row">';
+          const stemClass = card.stem || 'consequence';
+          const stemLabel = card.marks ? (card.marks + 'm ' + (card.stem === 'consequence' ? 'Consequence' : card.stem === 'narrative' ? 'Narrative Account' : card.stem === 'importance' ? 'Importance' : 'Key Term')) : card.stem;
+          metaHtml += '<span class="exam-stem-badge ' + stemClass + '">🎯 ' + stemLabel + '</span>';
+          if (card.formula) {
+            metaHtml += '<span class="exam-formula-badge">⚡ ' + card.formula + (card.formula_name ? ': ' + card.formula_name : '') + '</span>';
+          }
+          metaHtml += '</div>';
+
+          let factsHint = '';
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
+          }
+          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+        } else {
+          qText.textContent = card.q;
+        }
+      }
 
       const aText = document.getElementById('card-answer-text');
       if (aText) {
-        if (card.explanation) {
+        if (currentTier === 'exam') {
+          let html = '<div class="exam-meta-row">';
+          if (card.formula) {
+            html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
+          }
+          html += '</div>';
+          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
+            card.specific_facts.forEach(f => {
+              html += '<li>' + f + '</li>';
+            });
+            html += '</ul></div>';
+          }
+
+          if (card.historian_explanation) {
+            html += '<div class="historian-box">🏛️ <strong>Historian &amp; Examiner Analysis:</strong> ' + card.historian_explanation + '</div>';
+          }
+          aText.innerHTML = html;
+        } else if (card.explanation) {
           aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
         } else {
           aText.textContent = card.a;
@@ -2349,6 +2826,75 @@ const units = fs
 
       updateStats();
     }
+
+    window.switchPracticeTier = function(tier) {
+      if (currentTier === tier) return;
+      currentTier = tier;
+      stopRapidFireTimer();
+
+      const btnRapid = document.getElementById('tier-btn-rapid');
+      const btnExam = document.getElementById('tier-btn-exam');
+      const stemRow = document.getElementById('leitner-stem-filter-row');
+
+      if (tier === 'exam') {
+        if (btnRapid) btnRapid.classList.remove('active');
+        if (btnExam) btnExam.classList.add('active');
+        if (stemRow) stemRow.style.display = 'flex';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_EXAM;
+        ALL_DECK = EXAM_DECK;
+        currentStemFilter = 'all';
+        resetStemPills();
+      } else {
+        if (btnRapid) btnRapid.classList.add('active');
+        if (btnExam) btnExam.classList.remove('active');
+        if (stemRow) stemRow.style.display = 'none';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+        ALL_DECK = RAPID_DECK;
+      }
+
+      currentDeck = [...ALL_DECK];
+      currentIndex = 0;
+      loadLeitnerProgress();
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    window.filterByExamStem = function(stem) {
+      currentStemFilter = stem;
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === stem);
+      });
+
+      if (stem === 'all') {
+        currentDeck = [...EXAM_DECK];
+      } else {
+        currentDeck = EXAM_DECK.filter(c => c.stem === stem);
+        if (currentDeck.length === 0) currentDeck = [...EXAM_DECK];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    function resetStemPills() {
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === 'all');
+      });
+    }
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'flex';
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'none';
+    };
 
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
@@ -2669,6 +3215,7 @@ const units = fs
       }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') rateCurrentCard(1);
       else if (e.key === '2') rateCurrentCard(2);

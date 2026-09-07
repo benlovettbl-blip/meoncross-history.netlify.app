@@ -819,6 +819,303 @@
             color: #2563eb;
         }
 
+        /* CME Dual-Tier & Printable Revision Suite Styles */
+        .toolbar-btn.printables {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        .toolbar-btn.printables:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+
+        /* Printables Suite Modal */
+        .printables-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        .printables-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .printables-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .printables-modal-header h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .printables-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .printables-modal-sub {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
+        }
+        .printables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+        .printable-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .printable-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        .printable-card-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .printable-card h4 {
+            margin: 0 0 8px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            color: #0f172a;
+        }
+        .printable-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin: 0 0 16px 0;
+            flex-grow: 1;
+        }
+        .printable-links {
+            display: flex;
+            gap: 8px;
+        }
+        .print-link-btn {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s ease;
+        }
+        .print-link-btn.web {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .print-link-btn.web:hover {
+            background: #bae6fd;
+        }
+        .print-link-btn.pdf {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .print-link-btn.pdf:hover {
+            background: #fee2e2;
+        }
+
+        /* Dual-Tier Leitner Switcher Bar */
+        .leitner-tier-switcher {
+            display: flex;
+            background: #0f172a;
+            padding: 8px 16px 0 16px;
+            gap: 6px;
+            border-bottom: 1px solid #334155;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            background: #1e293b;
+            color: #94a3b8;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tier-btn:hover:not(.active) {
+            background: #334155;
+            color: #ffffff;
+        }
+        .tier-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Stem Filter Row */
+        .leitner-stem-filter-row {
+            background: #f8fafc;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .stem-filter-label {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        .stem-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .stem-pill:hover {
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+        .stem-pill.active {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        /* Exam Card Elements */
+        .exam-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .exam-stem-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .exam-stem-badge.consequence {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .exam-stem-badge.narrative {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+        .exam-stem-badge.importance {
+            background: #ffedd5;
+            color: #9a3412;
+            border: 1px solid #fdba74;
+        }
+        .exam-stem-badge.term {
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid #7dd3fc;
+        }
+        .exam-formula-badge {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .exam-facts-hint {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px dashed #cbd5e1;
+        }
+        .historian-box {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 4px solid #eab308;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #713f12;
+            line-height: 1.45;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .facts-checklist {
+            margin-top: 10px;
+            text-align: left;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #166534;
+        }
+        .facts-checklist ul {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+        }
+        .facts-checklist li {
+            margin-bottom: 2px;
+        }
+
         /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
         .leitner-modal-overlay.teacher-mode {
             padding: 0;
@@ -1595,10 +1892,13 @@
             <span class="toolbar-badge">Mobile</span>
         </div>
         <div class="toolbar-actions">
+            
             <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
+
+    
 
     <!-- Cover Page -->
     <div class="page cover page-break">
@@ -3146,6 +3446,8 @@
                 </div>
             </div>
 
+            
+
             <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
                 <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
@@ -3276,10 +3578,19 @@
   (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
-    const LEITNER_STORAGE_KEY = 'leitner_v1_edexcel_medicine_18th_19th';
+    const IS_CME_NEW = false;
+    const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_edexcel_medicine_18th_19th';
+    const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_edexcel_medicine_18th_19th_exam';
+    let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
     const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
-    const ALL_DECK = [{"id":1,"q":"Before Louis Pasteur's Germ Theory was accepted, what was the popular scientific theory that claimed microscopic organisms were the result rather than the cause of decay?","a":"The theory of Spontaneous Generation","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":2,"q":"How did the theory of Spontaneous Generation differ from the traditional theory of Miasma?","a":"Spontaneous Generation argued that rotting or decaying matter naturally produced microbes, while Miasma claimed that foul-smelling air transmitted disease.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":3,"q":"In which year did Louis Pasteur publish his landmark Germ Theory, and what was he originally investigating that led to this discovery?","a":"1861; investigating why liquids like beetroot alcohol and wine went sour","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":4,"q":"Which famous piece of laboratory equipment did Louis Pasteur use to prove that microbes in the air caused decay, rather than the air itself creating them?","a":"Swan-neck flasks that kept sterilized liquids fresh by trapping airborne dust","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":5,"q":"How did the publication of Germ Theory in 1861 immediately affect everyday medical treatments for the general public in Britain?","a":"It had very little immediate impact on everyday treatments, as most doctors resisted the theory and continued to use traditional remedies.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":6,"q":"Why did many traditional British doctors and the British government initially reject Pasteur's Germ Theory in the 1860s?","a":"Because Pasteur was a university chemist, not a licensed medical doctor, and his work focused primarily on food and drink rather than human disease.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":7,"q":"How did the German scientist Robert Koch build upon Louis Pasteur's Germ Theory of disease?","a":"He identified the specific microbes that caused individual diseases, transforming Germ Theory into practical bacteriology.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":8,"q":"Which breakthrough laboratory methodology did Robert Koch develop that allowed scientists to grow and study 'pure' cultures of specific bacteria without them getting mixed up?","a":"Growing bacteria on solid agar jelly derived from seaweed in a flat dish","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":9,"q":"Why did Robert Koch begin using synthetic aniline dyes in his bacteriological research?","a":"To stain the transparent bacteria so they would stand out and be clearly visible under a microscope","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":10,"q":"Which deadly disease-causing microbe did Robert Koch successfully identify and isolate in the year 1882, which was the biggest killer in Victorian Britain?","a":"The Tuberculosis (TB) microbe","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":11,"q":"Which of the following is a common chronological error regarding Robert Koch's use of microscopes?","a":"Believing that Koch was the first person to invent the microscope, when in fact Antonie van Leeuwenhoek had observed 'animalcules' back in the 17th century.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":12,"q":"How did Robert Koch's work fundamentally change the way British medical scientists studied diseases?","a":"They stopped studying the physical symptoms of patients and began studying the specific microbes causing the disease.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":13,"q":"Which British surgeon was among the first to read Louis Pasteur's 1861 Germ Theory and apply its principles to solve the problem of infection in surgery?","a":"Joseph Lister","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":14,"q":"In 1870, which physicist supported Pasteur's Germ Theory by theorizing that disease-carrying germs were spread through microscopic dust particles in the air?","a":"John Tyndall","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":15,"q":"In what way did the work of Pasteur and Koch eventually lead to massive progress in the prevention of disease by the late 19th century?","a":"It allowed scientists to identify specific bacteria and subsequently develop targeted vaccines for multiple diseases.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":16,"q":"How did the intense scientific and political rivalry between France (Pasteur) and Germany (Koch) affect medical progress?","a":"It accelerated progress because both governments funded research teams who raced to identify the microbes for cholera, pneumonia, and plague.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":17,"q":"According to the Theory of Spontaneous Generation, where did microbes come from?","a":"They were created by decaying or rotting matter.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":18,"q":"How did Louis Pasteur's swan-neck flask experiments specifically disprove Spontaneous Generation?","a":"By showing that microbes existed in the air first and caused decay, and that if air was kept out, no decay or germs appeared in the liquid.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":19,"q":"Why is it historically inaccurate to state that Edward Jenner developed his 1796 smallpox vaccine as a direct result of Pasteur's Germ Theory?","a":"Because Jenner's work occurred over 60 years before Pasteur published Germ Theory, meaning Jenner did not actually understand why his vaccine worked.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":20,"q":"In 1883, Robert Koch traveled to Egypt and Calcutta to identify the specific microbe causing which deadly water-borne epidemic?","a":"Cholera","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":21,"q":"What did William Harvey discover about the human body?","a":"Blood circulates around the body, pumped by the heart.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":22,"q":"What did Harvey prove wrong about Galen's theories of blood?","a":"Galen believed the liver constantly manufactured new blood which was consumed by the body.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":23,"q":"In what year did the Great Plague hit London?","a":"1665.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":24,"q":"What was 'transference'?","a":"A Renaissance belief that a disease could be passed on or transferred to an object or animal.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":25,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":26,"q":"Who was Thomas Sydenham?","a":"An English physician who advocated observing patients' symptoms rather than relying on books.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":27,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":28,"q":"What invention helped spread new medical ideas during the Renaissance?","a":"The printing press.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":29,"q":"Why did the influence of the Church begin to decline in the Renaissance?","a":"The scientific method promoted questioning old authorities, and the Reformation weakened Church power.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":30,"q":"What did Vesalius prove about Galen's anatomical ideas?","a":"Galen had made over 300 mistakes because he dissected animals, not humans.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?"},{"id":31,"q":"What was the critical difference between the 1848 Public Health Act and the 1875 Public Health Act?","a":"The 1848 Act was 'permissive' (optional), whereas the 1875 Act was 'compulsory,' forcing local councils to provide clean water, sewers, and waste disposal.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":32,"q":"What did Florence Nightingale believe was the primary cause of disease spreading in hospitals when she reformed them?","a":"Miasma (bad air), which is why she emphasized high ceilings, large windows, and excellent ventilation.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":33,"q":"Which of the following correctly pairs a 19th-century surgical breakthrough with its specific medical function?","a":"Chloroform as an anaesthetic to eliminate pain; Carbolic acid as an antiseptic to kill microbes and prevent infection.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":34,"q":"Which feature of Florence Nightingale's 'pavilion-style' hospital design was specifically meant to combat the threat of miasma?","a":"Wards built with high ceilings, large windows, and separate wings to maximize ventilation and airflow.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":35,"q":"In which year did James Simpson discover the anaesthetic effects of chloroform, and what was its immediate impact on surgery?","a":"1847; it eliminated pain during operations but initially led to a 'Black Period' where infection rates and surgical deaths rose.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":36,"q":"How did Joseph Lister develop his carbolic acid antiseptic spray in 1865?","a":"After reading Louis Pasteur's Germ Theory and realizing he could use chemistry to kill airborne microbes before they infected wounds.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":37,"q":"Why did the discovery of chloroform as an anaesthetic initially lead to the 'Black Period' of surgery (1840s-1870s)?","a":"Because surgeons attempted deeper, more complex operations on unconscious patients, but because they did not yet understand antiseptics, many patients died of severe infections.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":38,"q":"What did the 19th-century British government's 'laissez-faire' attitude refer to, and how did it affect public health?","a":"A 'leave it alone' belief that it was not the government's responsibility or right to interfere in people's daily lives, which blocked sanitation improvements for years.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":39,"q":"Where did Florence Nightingale establish the world's first professional training school for nurses in 1860, and what was its focus?","a":"At St Thomas' Hospital in London; focusing on cleanliness, strict hygiene, and raising nursing to a respected, trained profession.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":40,"q":"Why did the 1848 Public Health Act fail to significantly improve living conditions across most of Britain?","a":"Because it was optional (permissive), meaning most local town councils chose not to set up Boards of Health or spend taxes on sewers.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":41,"q":"By 1890, the medical community shifted from 'antiseptic' surgery to 'aseptic' surgery. What is the difference between these two approaches?","a":"Antiseptic surgery focuses on killing germs already in the wound (using carbolic acid), while aseptic surgery focuses on preventing germs from getting into the operating theatre in the first place (using steam-cleaned instruments, gowns, and rubber gloves).","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":42,"q":"What did the tragic death of 14-year-old Hannah Greener in 1848 during a minor toenail operation demonstrate about early anaesthetics?","a":"That chloroform was difficult to dose correctly and carried a serious risk of fatal overdose.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":43,"q":"Which of the following was a major reason for initial opposition to James Simpson's use of chloroform in childbirth and surgery?","a":"Many religious leaders argued that pain during childbirth was sent by God and that Simpson was interfering with God's design.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":44,"q":"Which historical event in 1853 finally broke down public and medical resistance to the use of chloroform in Britain?","a":"Queen Victoria chose to use chloroform during the birth of her eighth child, making the anaesthetic highly fashionable and accepted.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":45,"q":"Which of the following duties was compulsory for local city authorities to provide under the 1875 Public Health Act?","a":"Clean piped water, sewage disposal systems, public toilets, and street lighting.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":46,"q":"How did Edwin Chadwick's 1842 Report on the Sanitary Conditions of the Labouring Population help pave the way for public health reform?","a":"It argued that living in filth and disease caused early deaths and cost the government money, suggesting that cleaning up cities would save taxpayer funds.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":47,"q":"What was the significance of the 'Great Stink' of 1858 in London?","a":"The smell of rotting waste in the Thames was so severe that it disrupted parliament, finally forcing MPs to fund Joseph Bazalgette to build London's massive sewer system.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":48,"q":"During her work at the military hospital in Scutari during the Crimean War, Florence Nightingale's hygienic reforms successfully dropped the mortality rate by what margin?","a":"From 42% down to 2%.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":49,"q":"What did Joseph Lister find was the long-term impact of his carbolic spray, even though the spray itself fell out of favor by 1890?","a":"It permanently changed the attitude of surgeons, who finally understood that preventing post-operative infection was their clinical duty.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":50,"q":"Why did many surgeons initially refuse to use Joseph Lister's carbolic acid antiseptics in the 1860s?","a":"Because they did not accept Louis Pasteur's Germ Theory and did not believe that invisible, microscopic bacteria actually existed.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":51,"q":"What was 'Spontaneous Generation'?","a":"The belief that microbes and decay appeared spontaneously out of dead matter.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":52,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":53,"q":"What did Robert Koch contribute to Germ Theory?","a":"He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":54,"q":"Why did many doctors reject Germ Theory at first?","a":"They could not see how tiny invisible microbes could kill large humans, and they still believed in miasma.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":55,"q":"What method did Robert Koch use to isolate and photograph bacteria?","a":"Using agar jelly to grow cultures and methyl violet dye to stain them.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":56,"q":"What was 'transference'?","a":"A Renaissance belief that a disease could be passed on or transferred to an object or animal.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":57,"q":"What did William Harvey discover about the human body?","a":"Blood circulates around the body, pumped by the heart.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":58,"q":"Who was Thomas Sydenham?","a":"An English physician who advocated observing patients' symptoms rather than relying on books.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":59,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":60,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?"},{"id":61,"q":"In which year did Edward Jenner develop the smallpox vaccine, and what traditional preventative method did it replace?","a":"1796; replacing the dangerous practice of smallpox inoculation","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":62,"q":"What was the process of smallpox inoculation used in 18th-century Britain, and what was its major clinical risk?","a":"Smearing active pus from a smallpox scab into a cut in the skin, which carried a high risk of causing a fatal smallpox outbreak","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":63,"q":"On what specific group of people did Edward Jenner make his initial observations that led to the discovery of the smallpox vaccine?","a":"Dairy maids who had contracted cowpox and subsequently seemed immune to smallpox","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":64,"q":"What empirical experiment did Jenner perform in 1796 to prove the safety and effectiveness of his smallpox vaccine?","a":"He infected a young boy, James Phipps, with cowpox, and later exposed him to smallpox to prove he was immune","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":65,"q":"What was a massive scientific limitation of Edward Jenner's 1796 vaccine breakthrough?","a":"Because Germ Theory was still decades away, Jenner did not know *why* his vaccine worked, meaning he could not replicate his method for other diseases","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":66,"q":"Why was Jenner's vaccine a 'one-off' breakthrough in the late 18th and early 19th centuries?","a":"Without an understanding of microbes and antibodies, scientists could not systematically design vaccines for other diseases until Louis Pasteur's Germ Theory was accepted","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":67,"q":"Which of the following is a common student misconception regarding Edward Jenner's cowpox discovery?","a":"All of the above are common misconceptions that examiners frequently identify","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":68,"q":"How did the British government eventually support Edward Jenner's smallpox vaccine in the 19th century?","a":"By awarding Jenner £30,000 in grants and eventually passing a law in 1853 making the vaccine compulsory","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":69,"q":"Despite government backing, why was there initial public and professional opposition to Jenner's smallpox vaccine in Britain?","a":"Professional inoculators feared losing their businesses, some religious leaders objected to injecting animal matter, and Jenner could not scientifically explain why the vaccine worked","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":70,"q":"Which deadly disease did Dr. John Snow investigate in London in 1854, and what was its popular believed cause before his work?","a":"Cholera; believed to be spread by miasma (foul-smelling bad air) or spontaneous generation","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":71,"q":"What was John Snow's theory about how cholera was transmitted, which he published in his 1849 pamphlet?","a":"It was water-borne, spread by drinking water contaminated with cholera-ridden human waste","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":72,"q":"How did John Snow gather empirical evidence to prove his water-borne cholera theory during the 1854 Broad Street epidemic?","a":"He created a detailed spot map of Soho, showing that deaths were tightly clustered around the Broad Street water pump","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":73,"q":"What famous 'control group' case studies did John Snow use to prove that the 1854 Soho cholera outbreak was linked to the water pump?","a":"A local workhouse and a brewery near Broad Street where workers did not catch cholera because they had private wells or drank only beer","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":74,"q":"What immediate, physical action did John Snow take in Soho that stopped the local 1854 cholera outbreak?","a":"He removed the handle of the Broad Street water pump so the public could no longer drink from it","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":75,"q":"How did the General Board of Health and the wider medical establishment initially react to John Snow's 1854 findings?","a":"They largely rejected his findings and clung to Miasma theory, as Snow lacked the microscopic biological proof that Germ Theory would later provide","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":76,"q":"What major environmental event in 1858, combined with Snow's research, finally forced the British government to build a massive sewer system for London?","a":"'The Great Stink' of 1858, where hot weather exposed rotting sewage in the Thames, disrupting Parliament","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":77,"q":"Who was the engineer appointed by the government to construct London's massive new sewer system (completed in 1875) following John Snow's work and the Great Stink?","a":"Joseph Bazalgette","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":78,"q":"Why is it a common examiner error for students to state that John Snow's 1854 discovery led to an *immediate* national change in public health laws?","a":"Because the government maintained a laissez-faire attitude and did not pass a compulsory public health act until 1875, over 20 years later, after Germ Theory had validated Snow's theory","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":79,"q":"Which subsequent scientific developments finally provided the undeniable biological proof that John Snow's water-borne cholera theory was correct?","a":"Louis Pasteur's Germ Theory (1861) and Robert Koch's identification of the specific cholera microbe (1883)","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":80,"q":"Comparing Jenner's and Snow's breakthroughs, what makes them similar in terms of 19th-century medical progress?","a":"Both individuals used empirical observation and scientific methods to achieve massive breakthroughs, yet faced initial resistance because their findings challenged traditional beliefs (like Miasma) before Germ Theory was established","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":81,"q":"Who was Florence Nightingale?","a":"A nurse who revolutionized hospital care and hygiene during the Crimean War.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":82,"q":"What did Florence Nightingale believe caused disease?","a":"Miasma (bad air) and poor hygiene.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":83,"q":"Which anesthetic was discovered by James Simpson in 1847?","a":"Chloroform.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":84,"q":"What was 'Spontaneous Generation'?","a":"The belief that microbes and decay appeared spontaneously out of dead matter.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":85,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":86,"q":"What did Robert Koch contribute to Germ Theory?","a":"He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":87,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":88,"q":"What did Vesalius prove about Galen's anatomical ideas?","a":"Galen had made over 300 mistakes because he dissected animals, not humans.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":89,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"},{"id":90,"q":"What was the significance of the Public Health Act of 1875?","a":"It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.","topic":"KT3.3: How significant were Edward Jenner and John Snow?"}];
 
+    const RAPID_DECK = [{"id":1,"q":"Before Louis Pasteur's Germ Theory was accepted, what was the popular scientific theory that claimed microscopic organisms were the result rather than the cause of decay?","a":"The theory of Spontaneous Generation","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":2,"q":"How did the theory of Spontaneous Generation differ from the traditional theory of Miasma?","a":"Spontaneous Generation argued that rotting or decaying matter naturally produced microbes, while Miasma claimed that foul-smelling air transmitted disease.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":3,"q":"In which year did Louis Pasteur publish his landmark Germ Theory, and what was he originally investigating that led to this discovery?","a":"1861; investigating why liquids like beetroot alcohol and wine went sour","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":4,"q":"Which famous piece of laboratory equipment did Louis Pasteur use to prove that microbes in the air caused decay, rather than the air itself creating them?","a":"Swan-neck flasks that kept sterilized liquids fresh by trapping airborne dust","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":5,"q":"How did the publication of Germ Theory in 1861 immediately affect everyday medical treatments for the general public in Britain?","a":"It had very little immediate impact on everyday treatments, as most doctors resisted the theory and continued to use traditional remedies.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":6,"q":"Why did many traditional British doctors and the British government initially reject Pasteur's Germ Theory in the 1860s?","a":"Because Pasteur was a university chemist, not a licensed medical doctor, and his work focused primarily on food and drink rather than human disease.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":7,"q":"How did the German scientist Robert Koch build upon Louis Pasteur's Germ Theory of disease?","a":"He identified the specific microbes that caused individual diseases, transforming Germ Theory into practical bacteriology.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":8,"q":"Which breakthrough laboratory methodology did Robert Koch develop that allowed scientists to grow and study 'pure' cultures of specific bacteria without them getting mixed up?","a":"Growing bacteria on solid agar jelly derived from seaweed in a flat dish","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":9,"q":"Why did Robert Koch begin using synthetic aniline dyes in his bacteriological research?","a":"To stain the transparent bacteria so they would stand out and be clearly visible under a microscope","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":10,"q":"Which deadly disease-causing microbe did Robert Koch successfully identify and isolate in the year 1882, which was the biggest killer in Victorian Britain?","a":"The Tuberculosis (TB) microbe","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":11,"q":"Which of the following is a common chronological error regarding Robert Koch's use of microscopes?","a":"Believing that Koch was the first person to invent the microscope, when in fact Antonie van Leeuwenhoek had observed 'animalcules' back in the 17th century.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":12,"q":"How did Robert Koch's work fundamentally change the way British medical scientists studied diseases?","a":"They stopped studying the physical symptoms of patients and began studying the specific microbes causing the disease.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":13,"q":"Which British surgeon was among the first to read Louis Pasteur's 1861 Germ Theory and apply its principles to solve the problem of infection in surgery?","a":"Joseph Lister","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":14,"q":"In 1870, which physicist supported Pasteur's Germ Theory by theorizing that disease-carrying germs were spread through microscopic dust particles in the air?","a":"John Tyndall","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":15,"q":"In what way did the work of Pasteur and Koch eventually lead to massive progress in the prevention of disease by the late 19th century?","a":"It allowed scientists to identify specific bacteria and subsequently develop targeted vaccines for multiple diseases.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":16,"q":"How did the intense scientific and political rivalry between France (Pasteur) and Germany (Koch) affect medical progress?","a":"It accelerated progress because both governments funded research teams who raced to identify the microbes for cholera, pneumonia, and plague.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":17,"q":"According to the Theory of Spontaneous Generation, where did microbes come from?","a":"They were created by decaying or rotting matter.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":18,"q":"How did Louis Pasteur's swan-neck flask experiments specifically disprove Spontaneous Generation?","a":"By showing that microbes existed in the air first and caused decay, and that if air was kept out, no decay or germs appeared in the liquid.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":19,"q":"Why is it historically inaccurate to state that Edward Jenner developed his 1796 smallpox vaccine as a direct result of Pasteur's Germ Theory?","a":"Because Jenner's work occurred over 60 years before Pasteur published Germ Theory, meaning Jenner did not actually understand why his vaccine worked.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":20,"q":"In 1883, Robert Koch traveled to Egypt and Calcutta to identify the specific microbe causing which deadly water-borne epidemic?","a":"Cholera","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":21,"q":"What did William Harvey discover about the human body?","a":"Blood circulates around the body, pumped by the heart.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":22,"q":"What did Harvey prove wrong about Galen's theories of blood?","a":"Galen believed the liver constantly manufactured new blood which was consumed by the body.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":23,"q":"In what year did the Great Plague hit London?","a":"1665.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":24,"q":"What was 'transference'?","a":"A Renaissance belief that a disease could be passed on or transferred to an object or animal.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":25,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":26,"q":"Who was Thomas Sydenham?","a":"An English physician who advocated observing patients' symptoms rather than relying on books.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":27,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":28,"q":"What invention helped spread new medical ideas during the Renaissance?","a":"The printing press.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":29,"q":"Why did the influence of the Church begin to decline in the Renaissance?","a":"The scientific method promoted questioning old authorities, and the Reformation weakened Church power.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":30,"q":"What did Vesalius prove about Galen's anatomical ideas?","a":"Galen had made over 300 mistakes because he dissected animals, not humans.","topic":"KT3.1: What breakthrough discoveries changed our understanding of disease causes?","tier":"rapid"},{"id":31,"q":"What was the critical difference between the 1848 Public Health Act and the 1875 Public Health Act?","a":"The 1848 Act was 'permissive' (optional), whereas the 1875 Act was 'compulsory,' forcing local councils to provide clean water, sewers, and waste disposal.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":32,"q":"What did Florence Nightingale believe was the primary cause of disease spreading in hospitals when she reformed them?","a":"Miasma (bad air), which is why she emphasized high ceilings, large windows, and excellent ventilation.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":33,"q":"Which of the following correctly pairs a 19th-century surgical breakthrough with its specific medical function?","a":"Chloroform as an anaesthetic to eliminate pain; Carbolic acid as an antiseptic to kill microbes and prevent infection.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":34,"q":"Which feature of Florence Nightingale's 'pavilion-style' hospital design was specifically meant to combat the threat of miasma?","a":"Wards built with high ceilings, large windows, and separate wings to maximize ventilation and airflow.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":35,"q":"In which year did James Simpson discover the anaesthetic effects of chloroform, and what was its immediate impact on surgery?","a":"1847; it eliminated pain during operations but initially led to a 'Black Period' where infection rates and surgical deaths rose.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":36,"q":"How did Joseph Lister develop his carbolic acid antiseptic spray in 1865?","a":"After reading Louis Pasteur's Germ Theory and realizing he could use chemistry to kill airborne microbes before they infected wounds.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":37,"q":"Why did the discovery of chloroform as an anaesthetic initially lead to the 'Black Period' of surgery (1840s-1870s)?","a":"Because surgeons attempted deeper, more complex operations on unconscious patients, but because they did not yet understand antiseptics, many patients died of severe infections.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":38,"q":"What did the 19th-century British government's 'laissez-faire' attitude refer to, and how did it affect public health?","a":"A 'leave it alone' belief that it was not the government's responsibility or right to interfere in people's daily lives, which blocked sanitation improvements for years.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":39,"q":"Where did Florence Nightingale establish the world's first professional training school for nurses in 1860, and what was its focus?","a":"At St Thomas' Hospital in London; focusing on cleanliness, strict hygiene, and raising nursing to a respected, trained profession.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":40,"q":"Why did the 1848 Public Health Act fail to significantly improve living conditions across most of Britain?","a":"Because it was optional (permissive), meaning most local town councils chose not to set up Boards of Health or spend taxes on sewers.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":41,"q":"By 1890, the medical community shifted from 'antiseptic' surgery to 'aseptic' surgery. What is the difference between these two approaches?","a":"Antiseptic surgery focuses on killing germs already in the wound (using carbolic acid), while aseptic surgery focuses on preventing germs from getting into the operating theatre in the first place (using steam-cleaned instruments, gowns, and rubber gloves).","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":42,"q":"What did the tragic death of 14-year-old Hannah Greener in 1848 during a minor toenail operation demonstrate about early anaesthetics?","a":"That chloroform was difficult to dose correctly and carried a serious risk of fatal overdose.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":43,"q":"Which of the following was a major reason for initial opposition to James Simpson's use of chloroform in childbirth and surgery?","a":"Many religious leaders argued that pain during childbirth was sent by God and that Simpson was interfering with God's design.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":44,"q":"Which historical event in 1853 finally broke down public and medical resistance to the use of chloroform in Britain?","a":"Queen Victoria chose to use chloroform during the birth of her eighth child, making the anaesthetic highly fashionable and accepted.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":45,"q":"Which of the following duties was compulsory for local city authorities to provide under the 1875 Public Health Act?","a":"Clean piped water, sewage disposal systems, public toilets, and street lighting.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":46,"q":"How did Edwin Chadwick's 1842 Report on the Sanitary Conditions of the Labouring Population help pave the way for public health reform?","a":"It argued that living in filth and disease caused early deaths and cost the government money, suggesting that cleaning up cities would save taxpayer funds.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":47,"q":"What was the significance of the 'Great Stink' of 1858 in London?","a":"The smell of rotting waste in the Thames was so severe that it disrupted parliament, finally forcing MPs to fund Joseph Bazalgette to build London's massive sewer system.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":48,"q":"During her work at the military hospital in Scutari during the Crimean War, Florence Nightingale's hygienic reforms successfully dropped the mortality rate by what margin?","a":"From 42% down to 2%.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":49,"q":"What did Joseph Lister find was the long-term impact of his carbolic spray, even though the spray itself fell out of favor by 1890?","a":"It permanently changed the attitude of surgeons, who finally understood that preventing post-operative infection was their clinical duty.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":50,"q":"Why did many surgeons initially refuse to use Joseph Lister's carbolic acid antiseptics in the 1860s?","a":"Because they did not accept Louis Pasteur's Germ Theory and did not believe that invisible, microscopic bacteria actually existed.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":51,"q":"What was 'Spontaneous Generation'?","a":"The belief that microbes and decay appeared spontaneously out of dead matter.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":52,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":53,"q":"What did Robert Koch contribute to Germ Theory?","a":"He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":54,"q":"Why did many doctors reject Germ Theory at first?","a":"They could not see how tiny invisible microbes could kill large humans, and they still believed in miasma.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":55,"q":"What method did Robert Koch use to isolate and photograph bacteria?","a":"Using agar jelly to grow cultures and methyl violet dye to stain them.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":56,"q":"What was 'transference'?","a":"A Renaissance belief that a disease could be passed on or transferred to an object or animal.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":57,"q":"What did William Harvey discover about the human body?","a":"Blood circulates around the body, pumped by the heart.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":58,"q":"Who was Thomas Sydenham?","a":"An English physician who advocated observing patients' symptoms rather than relying on books.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":59,"q":"What was the Royal Society?","a":"A group of scientists established in 1660 to share and discuss scientific experiments and discoveries.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":60,"q":"Who wrote 'On the Fabric of the Human Body' (1543)?","a":"Andreas Vesalius.","topic":"KT3.2: How did the Industrial Revolution transform prevention and treatment?","tier":"rapid"},{"id":61,"q":"In which year did Edward Jenner develop the smallpox vaccine, and what traditional preventative method did it replace?","a":"1796; replacing the dangerous practice of smallpox inoculation","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":62,"q":"What was the process of smallpox inoculation used in 18th-century Britain, and what was its major clinical risk?","a":"Smearing active pus from a smallpox scab into a cut in the skin, which carried a high risk of causing a fatal smallpox outbreak","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":63,"q":"On what specific group of people did Edward Jenner make his initial observations that led to the discovery of the smallpox vaccine?","a":"Dairy maids who had contracted cowpox and subsequently seemed immune to smallpox","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":64,"q":"What empirical experiment did Jenner perform in 1796 to prove the safety and effectiveness of his smallpox vaccine?","a":"He infected a young boy, James Phipps, with cowpox, and later exposed him to smallpox to prove he was immune","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":65,"q":"What was a massive scientific limitation of Edward Jenner's 1796 vaccine breakthrough?","a":"Because Germ Theory was still decades away, Jenner did not know *why* his vaccine worked, meaning he could not replicate his method for other diseases","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":66,"q":"Why was Jenner's vaccine a 'one-off' breakthrough in the late 18th and early 19th centuries?","a":"Without an understanding of microbes and antibodies, scientists could not systematically design vaccines for other diseases until Louis Pasteur's Germ Theory was accepted","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":67,"q":"Which of the following is a common student misconception regarding Edward Jenner's cowpox discovery?","a":"All of the above are common misconceptions that examiners frequently identify","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":68,"q":"How did the British government eventually support Edward Jenner's smallpox vaccine in the 19th century?","a":"By awarding Jenner £30,000 in grants and eventually passing a law in 1853 making the vaccine compulsory","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":69,"q":"Despite government backing, why was there initial public and professional opposition to Jenner's smallpox vaccine in Britain?","a":"Professional inoculators feared losing their businesses, some religious leaders objected to injecting animal matter, and Jenner could not scientifically explain why the vaccine worked","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":70,"q":"Which deadly disease did Dr. John Snow investigate in London in 1854, and what was its popular believed cause before his work?","a":"Cholera; believed to be spread by miasma (foul-smelling bad air) or spontaneous generation","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":71,"q":"What was John Snow's theory about how cholera was transmitted, which he published in his 1849 pamphlet?","a":"It was water-borne, spread by drinking water contaminated with cholera-ridden human waste","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":72,"q":"How did John Snow gather empirical evidence to prove his water-borne cholera theory during the 1854 Broad Street epidemic?","a":"He created a detailed spot map of Soho, showing that deaths were tightly clustered around the Broad Street water pump","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":73,"q":"What famous 'control group' case studies did John Snow use to prove that the 1854 Soho cholera outbreak was linked to the water pump?","a":"A local workhouse and a brewery near Broad Street where workers did not catch cholera because they had private wells or drank only beer","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":74,"q":"What immediate, physical action did John Snow take in Soho that stopped the local 1854 cholera outbreak?","a":"He removed the handle of the Broad Street water pump so the public could no longer drink from it","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":75,"q":"How did the General Board of Health and the wider medical establishment initially react to John Snow's 1854 findings?","a":"They largely rejected his findings and clung to Miasma theory, as Snow lacked the microscopic biological proof that Germ Theory would later provide","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":76,"q":"What major environmental event in 1858, combined with Snow's research, finally forced the British government to build a massive sewer system for London?","a":"'The Great Stink' of 1858, where hot weather exposed rotting sewage in the Thames, disrupting Parliament","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":77,"q":"Who was the engineer appointed by the government to construct London's massive new sewer system (completed in 1875) following John Snow's work and the Great Stink?","a":"Joseph Bazalgette","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":78,"q":"Why is it a common examiner error for students to state that John Snow's 1854 discovery led to an *immediate* national change in public health laws?","a":"Because the government maintained a laissez-faire attitude and did not pass a compulsory public health act until 1875, over 20 years later, after Germ Theory had validated Snow's theory","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":79,"q":"Which subsequent scientific developments finally provided the undeniable biological proof that John Snow's water-borne cholera theory was correct?","a":"Louis Pasteur's Germ Theory (1861) and Robert Koch's identification of the specific cholera microbe (1883)","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":80,"q":"Comparing Jenner's and Snow's breakthroughs, what makes them similar in terms of 19th-century medical progress?","a":"Both individuals used empirical observation and scientific methods to achieve massive breakthroughs, yet faced initial resistance because their findings challenged traditional beliefs (like Miasma) before Germ Theory was established","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":81,"q":"Who was Florence Nightingale?","a":"A nurse who revolutionized hospital care and hygiene during the Crimean War.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":82,"q":"What did Florence Nightingale believe caused disease?","a":"Miasma (bad air) and poor hygiene.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":83,"q":"Which anesthetic was discovered by James Simpson in 1847?","a":"Chloroform.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":84,"q":"What was 'Spontaneous Generation'?","a":"The belief that microbes and decay appeared spontaneously out of dead matter.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":85,"q":"Who published the Germ Theory in 1861?","a":"Louis Pasteur.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":86,"q":"What did Robert Koch contribute to Germ Theory?","a":"He identified the specific microbes responsible for specific diseases (e.g. anthrax and tuberculosis).","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":87,"q":"In what year did the Black Death arrive in England?","a":"1348.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":88,"q":"What did Vesalius prove about Galen's anatomical ideas?","a":"Galen had made over 300 mistakes because he dissected animals, not humans.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":89,"q":"Who introduced antiseptic surgery using carbolic acid in 1865?","a":"Joseph Lister.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"},{"id":90,"q":"What was the significance of the Public Health Act of 1875?","a":"It made it compulsory for local authorities to provide clean water, sewers, and street cleaning.","topic":"KT3.3: How significant were Edward Jenner and John Snow?","tier":"rapid"}];
+
+    const EXAM_DECK = [];
+
+    let currentTier = 'rapid';
+    let currentStemFilter = 'all';
+    let ALL_DECK = RAPID_DECK;
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
@@ -3383,6 +3694,7 @@
       try {
         const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
         if (raw) userBoxes = JSON.parse(raw);
+        else userBoxes = {};
       } catch (e) {
         userBoxes = {};
       }
@@ -3426,7 +3738,13 @@
       if (cardEl) cardEl.classList.remove('flipped');
 
       const qNumBadge = document.getElementById('card-qnum-badge');
-      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+      if (qNumBadge) {
+        if (currentTier === 'exam') {
+          qNumBadge.textContent = 'Exam Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        } else {
+          qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        }
+      }
 
       const boxBadge = document.getElementById('card-box-badge');
       const boxBadgeBack = document.getElementById('card-box-badge-back');
@@ -3443,11 +3761,50 @@
       }
 
       const qText = document.getElementById('card-question-text');
-      if (qText) qText.textContent = card.q;
+      if (qText) {
+        if (currentTier === 'exam') {
+          let metaHtml = '<div class="exam-meta-row">';
+          const stemClass = card.stem || 'consequence';
+          const stemLabel = card.marks ? (card.marks + 'm ' + (card.stem === 'consequence' ? 'Consequence' : card.stem === 'narrative' ? 'Narrative Account' : card.stem === 'importance' ? 'Importance' : 'Key Term')) : card.stem;
+          metaHtml += '<span class="exam-stem-badge ' + stemClass + '">🎯 ' + stemLabel + '</span>';
+          if (card.formula) {
+            metaHtml += '<span class="exam-formula-badge">⚡ ' + card.formula + (card.formula_name ? ': ' + card.formula_name : '') + '</span>';
+          }
+          metaHtml += '</div>';
+
+          let factsHint = '';
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
+          }
+          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+        } else {
+          qText.textContent = card.q;
+        }
+      }
 
       const aText = document.getElementById('card-answer-text');
       if (aText) {
-        if (card.explanation) {
+        if (currentTier === 'exam') {
+          let html = '<div class="exam-meta-row">';
+          if (card.formula) {
+            html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
+          }
+          html += '</div>';
+          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
+            card.specific_facts.forEach(f => {
+              html += '<li>' + f + '</li>';
+            });
+            html += '</ul></div>';
+          }
+
+          if (card.historian_explanation) {
+            html += '<div class="historian-box">🏛️ <strong>Historian &amp; Examiner Analysis:</strong> ' + card.historian_explanation + '</div>';
+          }
+          aText.innerHTML = html;
+        } else if (card.explanation) {
           aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
         } else {
           aText.textContent = card.a;
@@ -3456,6 +3813,75 @@
 
       updateStats();
     }
+
+    window.switchPracticeTier = function(tier) {
+      if (currentTier === tier) return;
+      currentTier = tier;
+      stopRapidFireTimer();
+
+      const btnRapid = document.getElementById('tier-btn-rapid');
+      const btnExam = document.getElementById('tier-btn-exam');
+      const stemRow = document.getElementById('leitner-stem-filter-row');
+
+      if (tier === 'exam') {
+        if (btnRapid) btnRapid.classList.remove('active');
+        if (btnExam) btnExam.classList.add('active');
+        if (stemRow) stemRow.style.display = 'flex';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_EXAM;
+        ALL_DECK = EXAM_DECK;
+        currentStemFilter = 'all';
+        resetStemPills();
+      } else {
+        if (btnRapid) btnRapid.classList.add('active');
+        if (btnExam) btnExam.classList.remove('active');
+        if (stemRow) stemRow.style.display = 'none';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+        ALL_DECK = RAPID_DECK;
+      }
+
+      currentDeck = [...ALL_DECK];
+      currentIndex = 0;
+      loadLeitnerProgress();
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    window.filterByExamStem = function(stem) {
+      currentStemFilter = stem;
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === stem);
+      });
+
+      if (stem === 'all') {
+        currentDeck = [...EXAM_DECK];
+      } else {
+        currentDeck = EXAM_DECK.filter(c => c.stem === stem);
+        if (currentDeck.length === 0) currentDeck = [...EXAM_DECK];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    function resetStemPills() {
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === 'all');
+      });
+    }
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'flex';
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'none';
+    };
 
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
@@ -3776,6 +4202,7 @@
       }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') rateCurrentCard(1);
       else if (e.key === '2') rateCurrentCard(2);

@@ -819,6 +819,303 @@
             color: #2563eb;
         }
 
+        /* CME Dual-Tier & Printable Revision Suite Styles */
+        .toolbar-btn.printables {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        .toolbar-btn.printables:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+
+        /* Printables Suite Modal */
+        .printables-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        .printables-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .printables-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .printables-modal-header h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .printables-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .printables-modal-sub {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
+        }
+        .printables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+        .printable-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .printable-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        .printable-card-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .printable-card h4 {
+            margin: 0 0 8px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            color: #0f172a;
+        }
+        .printable-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin: 0 0 16px 0;
+            flex-grow: 1;
+        }
+        .printable-links {
+            display: flex;
+            gap: 8px;
+        }
+        .print-link-btn {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s ease;
+        }
+        .print-link-btn.web {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .print-link-btn.web:hover {
+            background: #bae6fd;
+        }
+        .print-link-btn.pdf {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .print-link-btn.pdf:hover {
+            background: #fee2e2;
+        }
+
+        /* Dual-Tier Leitner Switcher Bar */
+        .leitner-tier-switcher {
+            display: flex;
+            background: #0f172a;
+            padding: 8px 16px 0 16px;
+            gap: 6px;
+            border-bottom: 1px solid #334155;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            background: #1e293b;
+            color: #94a3b8;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tier-btn:hover:not(.active) {
+            background: #334155;
+            color: #ffffff;
+        }
+        .tier-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Stem Filter Row */
+        .leitner-stem-filter-row {
+            background: #f8fafc;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .stem-filter-label {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        .stem-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .stem-pill:hover {
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+        .stem-pill.active {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        /* Exam Card Elements */
+        .exam-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .exam-stem-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .exam-stem-badge.consequence {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .exam-stem-badge.narrative {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+        .exam-stem-badge.importance {
+            background: #ffedd5;
+            color: #9a3412;
+            border: 1px solid #fdba74;
+        }
+        .exam-stem-badge.term {
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid #7dd3fc;
+        }
+        .exam-formula-badge {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .exam-facts-hint {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px dashed #cbd5e1;
+        }
+        .historian-box {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 4px solid #eab308;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #713f12;
+            line-height: 1.45;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .facts-checklist {
+            margin-top: 10px;
+            text-align: left;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #166534;
+        }
+        .facts-checklist ul {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+        }
+        .facts-checklist li {
+            margin-bottom: 2px;
+        }
+
         /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
         .leitner-modal-overlay.teacher-mode {
             padding: 0;
@@ -1595,10 +1892,13 @@
             <span class="toolbar-badge">Mobile</span>
         </div>
         <div class="toolbar-actions">
+            
             <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
+
+    
 
     <!-- Cover Page -->
     <div class="page cover page-break">
@@ -3286,6 +3586,8 @@
                 </div>
             </div>
 
+            
+
             <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
                 <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
@@ -3416,10 +3718,19 @@
   (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
-    const LEITNER_STORAGE_KEY = 'leitner_v1_australia_full';
+    const IS_CME_NEW = false;
+    const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_australia_full';
+    const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_australia_full_exam';
+    let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
     const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
-    const ALL_DECK = [{"id":1,"q":"What was the secret reason the British government sent Captain Cook to the South Pacific in 1768?","a":"To locate and claim the 'Great Southern Land' for the British Empire","topic":"Claiming Australia"},{"id":2,"q":"Which of the following describes a skill Tupaia used to navigate the Endeavour across 3,000 miles of ocean?","a":"He read the stars, bird flight patterns, and ocean currents","topic":"Claiming Australia"},{"id":3,"q":"Why did the Gweagal warriors oppose Captain Cook's landing at Botany Bay in 1770?","a":"They believed it was their spiritual and legal duty to protect their ancestral lands from uninvited strangers","topic":"Claiming Australia"},{"id":4,"q":"What public scientific event was the Endeavour voyage ostensibly sent to Tahiti to observe?","a":"The transit of Venus across the Sun","topic":"Claiming Australia"},{"id":5,"q":"Which Latin legal concept was used by Britain to declare Australia uninhabited territory?","a":"Terra Nullius","topic":"Claiming Australia"},{"id":6,"q":"Who was the wealthy young botanist who led the Royal Society's scientific team aboard the Endeavour?","a":"Sir Joseph Banks","topic":"Claiming Australia"},{"id":7,"q":"From which Pacific island did the master navigator Tupaia originate?","a":"Ra'iatea","topic":"Claiming Australia"},{"id":8,"q":"What occurred when Captain Cook first attempted to land at Botany Bay in April 1770?","a":"Two Gweagal warriors shouted warnings and threw spears, and Cook fired musket shots","topic":"Claiming Australia"},{"id":9,"q":"Approximately how long had Indigenous Australians inhabited the continent before European arrival?","a":"Over 65,000 years","topic":"Claiming Australia"},{"id":10,"q":"What name did Captain Cook give to the eastern coastline of Australia after raising the British flag?","a":"New South Wales","topic":"Claiming Australia"},{"id":11,"q":"Who was the young botanist that led the Royal Society's scientific team on the Endeavour?","a":"Sir Joseph Banks","topic":"Claiming Australia"},{"id":12,"q":"What public scientific event was the Endeavour sent to Tahiti to observe?","a":"The transit of Venus across the Sun","topic":"Claiming Australia"},{"id":13,"q":"Which prestigious British scientific academy funded Captain Cook's 1768 expedition?","a":"The Royal Society","topic":"Claiming Australia"},{"id":14,"q":"What secret instructions was Captain Cook given by the British Admiralty?","a":"To sail south, locate the 'Great Southern Land', and claim it for Britain before rival nations could.","topic":"Claiming Australia"},{"id":15,"q":"Who was the master Polynesian navigator who guided the Endeavour across the Pacific?","a":"Tupaia","topic":"Claiming Australia"},{"id":16,"q":"How did Tupaia navigate the Pacific without European instruments?","a":"By reading the stars, bird flight patterns, cloud formations, and ocean currents.","topic":"Claiming Australia"},{"id":17,"q":"Which Aboriginal Australian nation did Cook's crew encounter at Botany Bay?","a":"The Dharawal nation (specifically the Gweagal people)","topic":"Claiming Australia"},{"id":18,"q":"Why did the Gweagal warriors oppose Cook's landing in 1770?","a":"It was their sacred, spiritual, and legal duty to protect their ancestral lands from uninvited strangers.","topic":"Claiming Australia"},{"id":19,"q":"What Latin legal term did the British use to falsely claim Australia was 'nobody's land'?","a":"Terra Nullius","topic":"Claiming Australia"},{"id":20,"q":"On which island did Captain Cook raise the Union Jack to claim the eastern coast for Britain?","a":"Possession Island","topic":"Claiming Australia"},{"id":21,"q":"Why was the British government forced to stop transporting convicts to North America in 1776?","a":"The American colonies declared their independence from Britain","topic":"Creating a Convict Colony"},{"id":22,"q":"Who was the naval surgeon aboard the Lady Penrhyn who wrote a famous eyewitness journal about the landing of female convicts in 1788?","a":"Arthur Bowes Smyth","topic":"Creating a Convict Colony"},{"id":23,"q":"What punishment was given to difficult convicts who committed further crimes in the Sydney colony?","a":"They were forced to join road gangs and break stones in leg chains","topic":"Creating a Convict Colony"},{"id":24,"q":"What were the overcrowded, rotting wooden ships anchored in the Thames used as temporary prisons called?","a":"Prison Hulks","topic":"Creating a Convict Colony"},{"id":25,"q":"Who was appointed the first Governor of the British penal colony of New South Wales?","a":"Arthur Phillip","topic":"Creating a Convict Colony"},{"id":26,"q":"Why did Governor Phillip abandon Botany Bay and move the settlement to Sydney Cove (Port Jackson)?","a":"Sydney Cove provided deep water anchorage and fresh water from the Tank Stream","topic":"Creating a Convict Colony"},{"id":27,"q":"How many ships comprised the First Fleet that sailed from Portsmouth in May 1787?","a":"11 ships","topic":"Creating a Convict Colony"},{"id":28,"q":"What kind of crimes had the vast majority of convicts transported on the First Fleet committed?","a":"Petty theft of food, clothing, or household goods","topic":"Creating a Convict Colony"},{"id":29,"q":"What was the name of the nine-year-old London chimney sweep transported on the First Fleet for stealing clothes?","a":"John Hudson","topic":"Creating a Convict Colony"},{"id":30,"q":"What was a convict called who had served their sentence or received a pardon and chose to remain in Australia as a free citizen?","a":"Emancipist","topic":"Creating a Convict Colony"},{"id":31,"q":"Which global event in 1776 caused Britain to lose its primary location for transporting convicts?","a":"The American War of Independence","topic":"Creating a Convict Colony"},{"id":32,"q":"Where were British convicts temporarily held when prisons overflowed before Botany Bay was established?","a":"In 'hulks' (rotting decommissioned warships moored in the River Thames)","topic":"Creating a Convict Colony"},{"id":33,"q":"Who was appointed as the first Governor of the New South Wales colony?","a":"Captain Arthur Phillip","topic":"Creating a Convict Colony"},{"id":34,"q":"What were the most common crimes committed by the convicts of the First Fleet?","a":"Petty theft (e.g. stealing clothing, food, or small sums of money)","topic":"Creating a Convict Colony"},{"id":35,"q":"How many ships made up the First Fleet that sailed to Australia in 1787?","a":"11 ships","topic":"Creating a Convict Colony"},{"id":36,"q":"Why did Governor Phillip decide to abandon Botany Bay and move the settlement?","a":"Botany Bay lacked fresh water, had poor soil for farming, and offered no safe anchorage for the ships.","topic":"Creating a Convict Colony"},{"id":37,"q":"What name did Governor Phillip give to the new, more suitable harbor where the fleet finally settled?","a":"Sydney Cove (Port Jackson)","topic":"Creating a Convict Colony"},{"id":38,"q":"On what exact date did the British raise the flag at Sydney Cove?","a":"26 January 1788","topic":"Creating a Convict Colony"},{"id":39,"q":"What system did Governor Phillip implement to ensure the colony's survival during the first year?","a":"Strict rationing and forced manual labor for all convicts.","topic":"Creating a Convict Colony"},{"id":40,"q":"What skills did the early colony critically lack among its convict population?","a":"Skilled farmers, carpenters, and builders.","topic":"Creating a Convict Colony"},{"id":41,"q":"What devastating epidemic swept through the Indigenous Eora nation around Sydney in 1789?","a":"Smallpox","topic":"Encounters with the Indigenous Peoples"},{"id":42,"q":"Who was the Dharug / Bidjigal warrior who led a twelve-year armed resistance against British settlement in the Sydney region?","a":"Pemulwuy","topic":"Encounters with the Indigenous Peoples"},{"id":43,"q":"Why did Governor Arthur Phillip kidnap the Wangal man Bennelong in late 1789?","a":"To learn his language and use him as a cultural and diplomatic intermediary","topic":"Encounters with the Indigenous Peoples"},{"id":44,"q":"What instruction did King George III give to Governor Phillip regarding relations with Indigenous Australians?","a":"To live in 'amity and kindness' and conciliate their affections","topic":"Encounters with the Indigenous Peoples"},{"id":45,"q":"What was the primary root cause of the violent frontier conflicts between British settlers and Aboriginal peoples?","a":"Dispossession of traditional hunting lands, water sources, and sacred sites","topic":"Encounters with the Indigenous Peoples"},{"id":46,"q":"What happened to Bennelong in 1792?","a":"He sailed to England with Governor Phillip and was presented to King George III","topic":"Encounters with the Indigenous Peoples"},{"id":47,"q":"Which geographic barrier delayed British inland expansion west of Sydney until it was crossed in 1813?","a":"The Blue Mountains","topic":"Encounters with the Indigenous Peoples"},{"id":48,"q":"What military tactic did Indigenous resistance leaders like Pemulwuy use to fight British soldiers?","a":"Guerrilla hit-and-run raids on isolated farms and supply convoys","topic":"Encounters with the Indigenous Peoples"},{"id":49,"q":"What proclamation did Governor Lachlan Macquarie issue in 1816 during the Hawkesbury-Nepean frontier conflicts?","a":"He banned Aboriginal people from carrying weapons near settlements and authorised military patrols","topic":"Encounters with the Indigenous Peoples"},{"id":50,"q":"Why was Bennelong often caught between two worlds upon his return to Sydney?","a":"He was rejected by both British colonial society and alienated from his traditional community","topic":"Encounters with the Indigenous Peoples"},{"id":51,"q":"Who was the senior Eora man kidnapped by Governor Phillip to act as an intermediary?","a":"Bennelong","topic":"Encounters with the Indigenous Peoples"},{"id":52,"q":"What devastating disease swept through the Aboriginal population around Sydney in 1789?","a":"Smallpox","topic":"Encounters with the Indigenous Peoples"},{"id":53,"q":"Who was Pemulwuy?","a":"A Bidjigal resistance leader who waged a 12-year guerrilla war against British settlers.","topic":"Encounters with the Indigenous Peoples"},{"id":54,"q":"What was the 'Frontier War'?","a":"The prolonged, violent conflict over land and resources between British colonizers and Aboriginal resistance fighters.","topic":"Encounters with the Indigenous Peoples"},{"id":55,"q":"How did the British expansion into the Hawkesbury River impact the Dharug people?","a":"It destroyed their hunting grounds and food sources, leading to starvation and violent conflict.","topic":"Encounters with the Indigenous Peoples"},{"id":56,"q":"What was the Myall Creek Massacre of 1838?","a":"The unprovoked murder of 28 unarmed Aboriginal people by British stockmen, resulting in the rare execution of the white perpetrators.","topic":"Encounters with the Indigenous Peoples"},{"id":57,"q":"What horrific practice was conducted by scientists like Sir Joseph Banks regarding Aboriginal remains?","a":"The stealing and exporting of Aboriginal skulls to British museums for racist 'scientific' study.","topic":"Encounters with the Indigenous Peoples"},{"id":58,"q":"Why did the British concept of land ownership conflict with Aboriginal views?","a":"The British viewed land as property to be owned and fenced, while Aboriginal people saw it as a sacred, shared spiritual responsibility.","topic":"Encounters with the Indigenous Peoples"},{"id":59,"q":"What weapon gave the British a massive technological advantage during the Frontier Wars?","a":"Muskets (firearms)","topic":"Encounters with the Indigenous Peoples"},{"id":60,"q":"How did Governor Macquarie's policies toward Aboriginal people change over time?","a":"He initially tried to 'civilize' them through assimilation schools, but later authorized violent military campaigns against them.","topic":"Encounters with the Indigenous Peoples"},{"id":61,"q":"In what year did the Australian Gold Rush begin, triggered by discoveries in New South Wales and Victoria?","a":"1851","topic":"From Penal Colony to Settlement"},{"id":62,"q":"What was the name of the 1854 armed rebellion in Ballarat where gold miners fought British soldiers over unjust licence fees?","a":"The Eureka Stockade","topic":"From Penal Colony to Settlement"},{"id":63,"q":"What flag was flown by the rebellious diggers at the Eureka Stockade as a symbol of unity and independence?","a":"The Southern Cross","topic":"From Penal Colony to Settlement"},{"id":64,"q":"Which immigrant group faced severe racial prejudice, special entry taxes, and violent riots (such as Lambing Flat) on the goldfields?","a":"Chinese miners","topic":"From Penal Colony to Settlement"},{"id":65,"q":"How did the Gold Rush fundamentally alter the demographics and economy of Australia?","a":"The population nearly tripled in a decade, transforming penal colonies into wealthy, self-governing democracies","topic":"From Penal Colony to Settlement"},{"id":66,"q":"Who was elected leader of the Eureka miners who later became a prominent member of the Victorian Parliament?","a":"Peter Lalor","topic":"From Penal Colony to Settlement"},{"id":67,"q":"What system did colonial governments use to tax miners, regardless of whether they found any gold?","a":"Monthly mining licences","topic":"From Penal Colony to Settlement"},{"id":68,"q":"How did the Gold Rush impact Indigenous Australians living on the Victorian and NSW goldfields?","a":"Intense environmental destruction and water pollution caused severe ecological displacement","topic":"From Penal Colony to Settlement"},{"id":69,"q":"What key political reform was granted in Victoria shortly after the Eureka Stockade rebellion?","a":"Abolition of the expensive mining licence and the introduction of male suffrage (voting rights)","topic":"From Penal Colony to Settlement"},{"id":70,"q":"Which Australian city grew from a modest provincial town into 'Marvellous Melbourne', one of the richest cities in the world, during the 1880s?","a":"Melbourne","topic":"From Penal Colony to Settlement"},{"id":71,"q":"What highly profitable industry transformed Australia's economy in the 1820s?","a":"The wool industry (sheep farming)","topic":"From Penal Colony to Settlement"},{"id":72,"q":"Who were 'squatters' in colonial Australia?","a":"Wealthy settlers who illegally occupied massive tracts of Aboriginal land to graze their sheep.","topic":"From Penal Colony to Settlement"},{"id":73,"q":"What major discovery in 1851 completely changed the demographics and wealth of Australia?","a":"The discovery of Gold in New South Wales and Victoria","topic":"From Penal Colony to Settlement"},{"id":74,"q":"What was the Eureka Rebellion of 1854?","a":"A violent uprising by gold miners in Ballarat protesting against unfair mining licenses and police corruption.","topic":"From Penal Colony to Settlement"},{"id":75,"q":"Which immigrant group faced severe racism, violence, and discriminatory taxes on the goldfields?","a":"Chinese immigrants","topic":"From Penal Colony to Settlement"},{"id":76,"q":"What was a 'Ticket of Leave'?","a":"A document granting a well-behaved convict freedom to work for themselves before their sentence fully expired.","topic":"From Penal Colony to Settlement"},{"id":77,"q":"Who was Lachlan Macquarie?","a":"An influential Governor who transformed Sydney from a prison camp into a functioning city with roads, banks, and hospitals.","topic":"From Penal Colony to Settlement"},{"id":78,"q":"How were female convicts typically treated in the early colony?","a":"They faced extreme vulnerability, exploitation, and were often forced into domestic servitude or the 'Female Factories'.","topic":"From Penal Colony to Settlement"},{"id":79,"q":"What transportation system linked the Australian colonies by the late 19th century?","a":"The railway network","topic":"From Penal Colony to Settlement"},{"id":80,"q":"In what year did the separate Australian colonies federate to become the Commonwealth of Australia?","a":"1901","topic":"From Penal Colony to Settlement"},{"id":81,"q":"In what year did the six separate British colonies federate to form the Commonwealth of Australia?","a":"1901","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":82,"q":"What was the colloquial name given to the restrictive immigration legislation passed by the new federal parliament in 1901?","a":"The White Australia Policy","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":83,"q":"What arbitrary tool was used by immigration officials under the Immigration Restriction Act to block non-white immigrants?","a":"A 50-word dictation test in any European language chosen by the official","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":84,"q":"What historical term refers to the Aboriginal children forcibly removed from their families under state assimilation policies from the 1900s to 1970s?","a":"The Stolen Generations","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":85,"q":"What landmark 1992 High Court legal ruling legally overturned the doctrine of 'Terra Nullius' in Australia?","a":"The Mabo Decision","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":86,"q":"What significant constitutional reform was overwhelmingly approved by 90.77% of Australian voters in the 1967 Referendum?","a":"Allowing Indigenous Australians to be counted in the national census and enabling federal laws for them","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":87,"q":"Why do many Indigenous Australians refer to 26 January (Australia Day) as 'Invasion Day' or 'Survival Day'?","a":"It marks the 1788 landing of the First Fleet and the beginning of dispossession and violence","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":88,"q":"Who was the Meriam Indigenous leader from the Torres Strait who spent a decade fighting in court to prove native land ownership?","a":"Eddie Mabo","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":89,"q":"In what year did Prime Minister Kevin Rudd deliver the official National Apology to Australia's Indigenous Peoples, specifically the Stolen Generations?","a":"2008","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":90,"q":"Which of the following best summarises modern historical debate over the colonisation of Australia?","a":"Debates center on whether early British arrival should be evaluated as peaceful settlement, illegal invasion, or heroic Indigenous survival","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":91,"q":"What Latin legal term did the British Crown use to claim Australia was 'nobody's land'?","a":"Terra Nullius","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":92,"q":"Who was the master Polynesian star navigator who guided Captain Cook's Endeavour across the Pacific?","a":"Tupaia","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":93,"q":"Which global event in 1776 stopped Britain from transporting convicts to North America?","a":"The American War of Independence","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":94,"q":"What were the decaying, overcrowded decommissioned warships used as temporary prisons in Britain called?","a":"Prison hulks","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":95,"q":"Which naval officer was the first Governor of New South Wales and instituted equal food rationing?","a":"Governor Arthur Phillip","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":96,"q":"What catastrophic disease broke out in 1789, killing an estimated 50% to 70% of the Sydney Eora population?","a":"Smallpox","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":97,"q":"Which Bidjigal warrior led a twelve-year guerrilla resistance campaign against British settlement until 1802?","a":"Pemulwuy","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":98,"q":"At which 1838 massacre were seven white stockmen convicted and hanged for murdering 28 unarmed Aboriginal people?","a":"The Myall Creek Massacre","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":99,"q":"Which breed of Spanish sheep, championed by John Macarthur, created a booming export industry for New South Wales?","a":"Merino sheep","topic":"Lesson 5: Assessment - What's the story of Australia?"},{"id":100,"q":"What major mineral discovery by Edward Hargreaves in 1851 caused Australia's population to nearly triple within a decade?","a":"Gold (the 1851 Gold Rush)","topic":"Lesson 5: Assessment - What's the story of Australia?"}];
 
+    const RAPID_DECK = [{"id":1,"q":"What was the secret reason the British government sent Captain Cook to the South Pacific in 1768?","a":"To locate and claim the 'Great Southern Land' for the British Empire","topic":"Claiming Australia","tier":"rapid"},{"id":2,"q":"Which of the following describes a skill Tupaia used to navigate the Endeavour across 3,000 miles of ocean?","a":"He read the stars, bird flight patterns, and ocean currents","topic":"Claiming Australia","tier":"rapid"},{"id":3,"q":"Why did the Gweagal warriors oppose Captain Cook's landing at Botany Bay in 1770?","a":"They believed it was their spiritual and legal duty to protect their ancestral lands from uninvited strangers","topic":"Claiming Australia","tier":"rapid"},{"id":4,"q":"What public scientific event was the Endeavour voyage ostensibly sent to Tahiti to observe?","a":"The transit of Venus across the Sun","topic":"Claiming Australia","tier":"rapid"},{"id":5,"q":"Which Latin legal concept was used by Britain to declare Australia uninhabited territory?","a":"Terra Nullius","topic":"Claiming Australia","tier":"rapid"},{"id":6,"q":"Who was the wealthy young botanist who led the Royal Society's scientific team aboard the Endeavour?","a":"Sir Joseph Banks","topic":"Claiming Australia","tier":"rapid"},{"id":7,"q":"From which Pacific island did the master navigator Tupaia originate?","a":"Ra'iatea","topic":"Claiming Australia","tier":"rapid"},{"id":8,"q":"What occurred when Captain Cook first attempted to land at Botany Bay in April 1770?","a":"Two Gweagal warriors shouted warnings and threw spears, and Cook fired musket shots","topic":"Claiming Australia","tier":"rapid"},{"id":9,"q":"Approximately how long had Indigenous Australians inhabited the continent before European arrival?","a":"Over 65,000 years","topic":"Claiming Australia","tier":"rapid"},{"id":10,"q":"What name did Captain Cook give to the eastern coastline of Australia after raising the British flag?","a":"New South Wales","topic":"Claiming Australia","tier":"rapid"},{"id":11,"q":"Who was the young botanist that led the Royal Society's scientific team on the Endeavour?","a":"Sir Joseph Banks","topic":"Claiming Australia","tier":"rapid"},{"id":12,"q":"What public scientific event was the Endeavour sent to Tahiti to observe?","a":"The transit of Venus across the Sun","topic":"Claiming Australia","tier":"rapid"},{"id":13,"q":"Which prestigious British scientific academy funded Captain Cook's 1768 expedition?","a":"The Royal Society","topic":"Claiming Australia","tier":"rapid"},{"id":14,"q":"What secret instructions was Captain Cook given by the British Admiralty?","a":"To sail south, locate the 'Great Southern Land', and claim it for Britain before rival nations could.","topic":"Claiming Australia","tier":"rapid"},{"id":15,"q":"Who was the master Polynesian navigator who guided the Endeavour across the Pacific?","a":"Tupaia","topic":"Claiming Australia","tier":"rapid"},{"id":16,"q":"How did Tupaia navigate the Pacific without European instruments?","a":"By reading the stars, bird flight patterns, cloud formations, and ocean currents.","topic":"Claiming Australia","tier":"rapid"},{"id":17,"q":"Which Aboriginal Australian nation did Cook's crew encounter at Botany Bay?","a":"The Dharawal nation (specifically the Gweagal people)","topic":"Claiming Australia","tier":"rapid"},{"id":18,"q":"Why did the Gweagal warriors oppose Cook's landing in 1770?","a":"It was their sacred, spiritual, and legal duty to protect their ancestral lands from uninvited strangers.","topic":"Claiming Australia","tier":"rapid"},{"id":19,"q":"What Latin legal term did the British use to falsely claim Australia was 'nobody's land'?","a":"Terra Nullius","topic":"Claiming Australia","tier":"rapid"},{"id":20,"q":"On which island did Captain Cook raise the Union Jack to claim the eastern coast for Britain?","a":"Possession Island","topic":"Claiming Australia","tier":"rapid"},{"id":21,"q":"Why was the British government forced to stop transporting convicts to North America in 1776?","a":"The American colonies declared their independence from Britain","topic":"Creating a Convict Colony","tier":"rapid"},{"id":22,"q":"Who was the naval surgeon aboard the Lady Penrhyn who wrote a famous eyewitness journal about the landing of female convicts in 1788?","a":"Arthur Bowes Smyth","topic":"Creating a Convict Colony","tier":"rapid"},{"id":23,"q":"What punishment was given to difficult convicts who committed further crimes in the Sydney colony?","a":"They were forced to join road gangs and break stones in leg chains","topic":"Creating a Convict Colony","tier":"rapid"},{"id":24,"q":"What were the overcrowded, rotting wooden ships anchored in the Thames used as temporary prisons called?","a":"Prison Hulks","topic":"Creating a Convict Colony","tier":"rapid"},{"id":25,"q":"Who was appointed the first Governor of the British penal colony of New South Wales?","a":"Arthur Phillip","topic":"Creating a Convict Colony","tier":"rapid"},{"id":26,"q":"Why did Governor Phillip abandon Botany Bay and move the settlement to Sydney Cove (Port Jackson)?","a":"Sydney Cove provided deep water anchorage and fresh water from the Tank Stream","topic":"Creating a Convict Colony","tier":"rapid"},{"id":27,"q":"How many ships comprised the First Fleet that sailed from Portsmouth in May 1787?","a":"11 ships","topic":"Creating a Convict Colony","tier":"rapid"},{"id":28,"q":"What kind of crimes had the vast majority of convicts transported on the First Fleet committed?","a":"Petty theft of food, clothing, or household goods","topic":"Creating a Convict Colony","tier":"rapid"},{"id":29,"q":"What was the name of the nine-year-old London chimney sweep transported on the First Fleet for stealing clothes?","a":"John Hudson","topic":"Creating a Convict Colony","tier":"rapid"},{"id":30,"q":"What was a convict called who had served their sentence or received a pardon and chose to remain in Australia as a free citizen?","a":"Emancipist","topic":"Creating a Convict Colony","tier":"rapid"},{"id":31,"q":"Which global event in 1776 caused Britain to lose its primary location for transporting convicts?","a":"The American War of Independence","topic":"Creating a Convict Colony","tier":"rapid"},{"id":32,"q":"Where were British convicts temporarily held when prisons overflowed before Botany Bay was established?","a":"In 'hulks' (rotting decommissioned warships moored in the River Thames)","topic":"Creating a Convict Colony","tier":"rapid"},{"id":33,"q":"Who was appointed as the first Governor of the New South Wales colony?","a":"Captain Arthur Phillip","topic":"Creating a Convict Colony","tier":"rapid"},{"id":34,"q":"What were the most common crimes committed by the convicts of the First Fleet?","a":"Petty theft (e.g. stealing clothing, food, or small sums of money)","topic":"Creating a Convict Colony","tier":"rapid"},{"id":35,"q":"How many ships made up the First Fleet that sailed to Australia in 1787?","a":"11 ships","topic":"Creating a Convict Colony","tier":"rapid"},{"id":36,"q":"Why did Governor Phillip decide to abandon Botany Bay and move the settlement?","a":"Botany Bay lacked fresh water, had poor soil for farming, and offered no safe anchorage for the ships.","topic":"Creating a Convict Colony","tier":"rapid"},{"id":37,"q":"What name did Governor Phillip give to the new, more suitable harbor where the fleet finally settled?","a":"Sydney Cove (Port Jackson)","topic":"Creating a Convict Colony","tier":"rapid"},{"id":38,"q":"On what exact date did the British raise the flag at Sydney Cove?","a":"26 January 1788","topic":"Creating a Convict Colony","tier":"rapid"},{"id":39,"q":"What system did Governor Phillip implement to ensure the colony's survival during the first year?","a":"Strict rationing and forced manual labor for all convicts.","topic":"Creating a Convict Colony","tier":"rapid"},{"id":40,"q":"What skills did the early colony critically lack among its convict population?","a":"Skilled farmers, carpenters, and builders.","topic":"Creating a Convict Colony","tier":"rapid"},{"id":41,"q":"What devastating epidemic swept through the Indigenous Eora nation around Sydney in 1789?","a":"Smallpox","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":42,"q":"Who was the Dharug / Bidjigal warrior who led a twelve-year armed resistance against British settlement in the Sydney region?","a":"Pemulwuy","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":43,"q":"Why did Governor Arthur Phillip kidnap the Wangal man Bennelong in late 1789?","a":"To learn his language and use him as a cultural and diplomatic intermediary","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":44,"q":"What instruction did King George III give to Governor Phillip regarding relations with Indigenous Australians?","a":"To live in 'amity and kindness' and conciliate their affections","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":45,"q":"What was the primary root cause of the violent frontier conflicts between British settlers and Aboriginal peoples?","a":"Dispossession of traditional hunting lands, water sources, and sacred sites","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":46,"q":"What happened to Bennelong in 1792?","a":"He sailed to England with Governor Phillip and was presented to King George III","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":47,"q":"Which geographic barrier delayed British inland expansion west of Sydney until it was crossed in 1813?","a":"The Blue Mountains","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":48,"q":"What military tactic did Indigenous resistance leaders like Pemulwuy use to fight British soldiers?","a":"Guerrilla hit-and-run raids on isolated farms and supply convoys","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":49,"q":"What proclamation did Governor Lachlan Macquarie issue in 1816 during the Hawkesbury-Nepean frontier conflicts?","a":"He banned Aboriginal people from carrying weapons near settlements and authorised military patrols","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":50,"q":"Why was Bennelong often caught between two worlds upon his return to Sydney?","a":"He was rejected by both British colonial society and alienated from his traditional community","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":51,"q":"Who was the senior Eora man kidnapped by Governor Phillip to act as an intermediary?","a":"Bennelong","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":52,"q":"What devastating disease swept through the Aboriginal population around Sydney in 1789?","a":"Smallpox","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":53,"q":"Who was Pemulwuy?","a":"A Bidjigal resistance leader who waged a 12-year guerrilla war against British settlers.","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":54,"q":"What was the 'Frontier War'?","a":"The prolonged, violent conflict over land and resources between British colonizers and Aboriginal resistance fighters.","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":55,"q":"How did the British expansion into the Hawkesbury River impact the Dharug people?","a":"It destroyed their hunting grounds and food sources, leading to starvation and violent conflict.","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":56,"q":"What was the Myall Creek Massacre of 1838?","a":"The unprovoked murder of 28 unarmed Aboriginal people by British stockmen, resulting in the rare execution of the white perpetrators.","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":57,"q":"What horrific practice was conducted by scientists like Sir Joseph Banks regarding Aboriginal remains?","a":"The stealing and exporting of Aboriginal skulls to British museums for racist 'scientific' study.","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":58,"q":"Why did the British concept of land ownership conflict with Aboriginal views?","a":"The British viewed land as property to be owned and fenced, while Aboriginal people saw it as a sacred, shared spiritual responsibility.","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":59,"q":"What weapon gave the British a massive technological advantage during the Frontier Wars?","a":"Muskets (firearms)","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":60,"q":"How did Governor Macquarie's policies toward Aboriginal people change over time?","a":"He initially tried to 'civilize' them through assimilation schools, but later authorized violent military campaigns against them.","topic":"Encounters with the Indigenous Peoples","tier":"rapid"},{"id":61,"q":"In what year did the Australian Gold Rush begin, triggered by discoveries in New South Wales and Victoria?","a":"1851","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":62,"q":"What was the name of the 1854 armed rebellion in Ballarat where gold miners fought British soldiers over unjust licence fees?","a":"The Eureka Stockade","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":63,"q":"What flag was flown by the rebellious diggers at the Eureka Stockade as a symbol of unity and independence?","a":"The Southern Cross","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":64,"q":"Which immigrant group faced severe racial prejudice, special entry taxes, and violent riots (such as Lambing Flat) on the goldfields?","a":"Chinese miners","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":65,"q":"How did the Gold Rush fundamentally alter the demographics and economy of Australia?","a":"The population nearly tripled in a decade, transforming penal colonies into wealthy, self-governing democracies","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":66,"q":"Who was elected leader of the Eureka miners who later became a prominent member of the Victorian Parliament?","a":"Peter Lalor","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":67,"q":"What system did colonial governments use to tax miners, regardless of whether they found any gold?","a":"Monthly mining licences","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":68,"q":"How did the Gold Rush impact Indigenous Australians living on the Victorian and NSW goldfields?","a":"Intense environmental destruction and water pollution caused severe ecological displacement","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":69,"q":"What key political reform was granted in Victoria shortly after the Eureka Stockade rebellion?","a":"Abolition of the expensive mining licence and the introduction of male suffrage (voting rights)","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":70,"q":"Which Australian city grew from a modest provincial town into 'Marvellous Melbourne', one of the richest cities in the world, during the 1880s?","a":"Melbourne","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":71,"q":"What highly profitable industry transformed Australia's economy in the 1820s?","a":"The wool industry (sheep farming)","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":72,"q":"Who were 'squatters' in colonial Australia?","a":"Wealthy settlers who illegally occupied massive tracts of Aboriginal land to graze their sheep.","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":73,"q":"What major discovery in 1851 completely changed the demographics and wealth of Australia?","a":"The discovery of Gold in New South Wales and Victoria","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":74,"q":"What was the Eureka Rebellion of 1854?","a":"A violent uprising by gold miners in Ballarat protesting against unfair mining licenses and police corruption.","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":75,"q":"Which immigrant group faced severe racism, violence, and discriminatory taxes on the goldfields?","a":"Chinese immigrants","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":76,"q":"What was a 'Ticket of Leave'?","a":"A document granting a well-behaved convict freedom to work for themselves before their sentence fully expired.","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":77,"q":"Who was Lachlan Macquarie?","a":"An influential Governor who transformed Sydney from a prison camp into a functioning city with roads, banks, and hospitals.","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":78,"q":"How were female convicts typically treated in the early colony?","a":"They faced extreme vulnerability, exploitation, and were often forced into domestic servitude or the 'Female Factories'.","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":79,"q":"What transportation system linked the Australian colonies by the late 19th century?","a":"The railway network","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":80,"q":"In what year did the separate Australian colonies federate to become the Commonwealth of Australia?","a":"1901","topic":"From Penal Colony to Settlement","tier":"rapid"},{"id":81,"q":"In what year did the six separate British colonies federate to form the Commonwealth of Australia?","a":"1901","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":82,"q":"What was the colloquial name given to the restrictive immigration legislation passed by the new federal parliament in 1901?","a":"The White Australia Policy","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":83,"q":"What arbitrary tool was used by immigration officials under the Immigration Restriction Act to block non-white immigrants?","a":"A 50-word dictation test in any European language chosen by the official","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":84,"q":"What historical term refers to the Aboriginal children forcibly removed from their families under state assimilation policies from the 1900s to 1970s?","a":"The Stolen Generations","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":85,"q":"What landmark 1992 High Court legal ruling legally overturned the doctrine of 'Terra Nullius' in Australia?","a":"The Mabo Decision","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":86,"q":"What significant constitutional reform was overwhelmingly approved by 90.77% of Australian voters in the 1967 Referendum?","a":"Allowing Indigenous Australians to be counted in the national census and enabling federal laws for them","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":87,"q":"Why do many Indigenous Australians refer to 26 January (Australia Day) as 'Invasion Day' or 'Survival Day'?","a":"It marks the 1788 landing of the First Fleet and the beginning of dispossession and violence","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":88,"q":"Who was the Meriam Indigenous leader from the Torres Strait who spent a decade fighting in court to prove native land ownership?","a":"Eddie Mabo","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":89,"q":"In what year did Prime Minister Kevin Rudd deliver the official National Apology to Australia's Indigenous Peoples, specifically the Stolen Generations?","a":"2008","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":90,"q":"Which of the following best summarises modern historical debate over the colonisation of Australia?","a":"Debates center on whether early British arrival should be evaluated as peaceful settlement, illegal invasion, or heroic Indigenous survival","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":91,"q":"What Latin legal term did the British Crown use to claim Australia was 'nobody's land'?","a":"Terra Nullius","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":92,"q":"Who was the master Polynesian star navigator who guided Captain Cook's Endeavour across the Pacific?","a":"Tupaia","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":93,"q":"Which global event in 1776 stopped Britain from transporting convicts to North America?","a":"The American War of Independence","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":94,"q":"What were the decaying, overcrowded decommissioned warships used as temporary prisons in Britain called?","a":"Prison hulks","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":95,"q":"Which naval officer was the first Governor of New South Wales and instituted equal food rationing?","a":"Governor Arthur Phillip","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":96,"q":"What catastrophic disease broke out in 1789, killing an estimated 50% to 70% of the Sydney Eora population?","a":"Smallpox","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":97,"q":"Which Bidjigal warrior led a twelve-year guerrilla resistance campaign against British settlement until 1802?","a":"Pemulwuy","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":98,"q":"At which 1838 massacre were seven white stockmen convicted and hanged for murdering 28 unarmed Aboriginal people?","a":"The Myall Creek Massacre","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":99,"q":"Which breed of Spanish sheep, championed by John Macarthur, created a booming export industry for New South Wales?","a":"Merino sheep","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"},{"id":100,"q":"What major mineral discovery by Edward Hargreaves in 1851 caused Australia's population to nearly triple within a decade?","a":"Gold (the 1851 Gold Rush)","topic":"Lesson 5: Assessment - What's the story of Australia?","tier":"rapid"}];
+
+    const EXAM_DECK = [];
+
+    let currentTier = 'rapid';
+    let currentStemFilter = 'all';
+    let ALL_DECK = RAPID_DECK;
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
@@ -3523,6 +3834,7 @@
       try {
         const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
         if (raw) userBoxes = JSON.parse(raw);
+        else userBoxes = {};
       } catch (e) {
         userBoxes = {};
       }
@@ -3566,7 +3878,13 @@
       if (cardEl) cardEl.classList.remove('flipped');
 
       const qNumBadge = document.getElementById('card-qnum-badge');
-      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+      if (qNumBadge) {
+        if (currentTier === 'exam') {
+          qNumBadge.textContent = 'Exam Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        } else {
+          qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        }
+      }
 
       const boxBadge = document.getElementById('card-box-badge');
       const boxBadgeBack = document.getElementById('card-box-badge-back');
@@ -3583,11 +3901,50 @@
       }
 
       const qText = document.getElementById('card-question-text');
-      if (qText) qText.textContent = card.q;
+      if (qText) {
+        if (currentTier === 'exam') {
+          let metaHtml = '<div class="exam-meta-row">';
+          const stemClass = card.stem || 'consequence';
+          const stemLabel = card.marks ? (card.marks + 'm ' + (card.stem === 'consequence' ? 'Consequence' : card.stem === 'narrative' ? 'Narrative Account' : card.stem === 'importance' ? 'Importance' : 'Key Term')) : card.stem;
+          metaHtml += '<span class="exam-stem-badge ' + stemClass + '">🎯 ' + stemLabel + '</span>';
+          if (card.formula) {
+            metaHtml += '<span class="exam-formula-badge">⚡ ' + card.formula + (card.formula_name ? ': ' + card.formula_name : '') + '</span>';
+          }
+          metaHtml += '</div>';
+
+          let factsHint = '';
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
+          }
+          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+        } else {
+          qText.textContent = card.q;
+        }
+      }
 
       const aText = document.getElementById('card-answer-text');
       if (aText) {
-        if (card.explanation) {
+        if (currentTier === 'exam') {
+          let html = '<div class="exam-meta-row">';
+          if (card.formula) {
+            html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
+          }
+          html += '</div>';
+          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
+            card.specific_facts.forEach(f => {
+              html += '<li>' + f + '</li>';
+            });
+            html += '</ul></div>';
+          }
+
+          if (card.historian_explanation) {
+            html += '<div class="historian-box">🏛️ <strong>Historian &amp; Examiner Analysis:</strong> ' + card.historian_explanation + '</div>';
+          }
+          aText.innerHTML = html;
+        } else if (card.explanation) {
           aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
         } else {
           aText.textContent = card.a;
@@ -3596,6 +3953,75 @@
 
       updateStats();
     }
+
+    window.switchPracticeTier = function(tier) {
+      if (currentTier === tier) return;
+      currentTier = tier;
+      stopRapidFireTimer();
+
+      const btnRapid = document.getElementById('tier-btn-rapid');
+      const btnExam = document.getElementById('tier-btn-exam');
+      const stemRow = document.getElementById('leitner-stem-filter-row');
+
+      if (tier === 'exam') {
+        if (btnRapid) btnRapid.classList.remove('active');
+        if (btnExam) btnExam.classList.add('active');
+        if (stemRow) stemRow.style.display = 'flex';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_EXAM;
+        ALL_DECK = EXAM_DECK;
+        currentStemFilter = 'all';
+        resetStemPills();
+      } else {
+        if (btnRapid) btnRapid.classList.add('active');
+        if (btnExam) btnExam.classList.remove('active');
+        if (stemRow) stemRow.style.display = 'none';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+        ALL_DECK = RAPID_DECK;
+      }
+
+      currentDeck = [...ALL_DECK];
+      currentIndex = 0;
+      loadLeitnerProgress();
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    window.filterByExamStem = function(stem) {
+      currentStemFilter = stem;
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === stem);
+      });
+
+      if (stem === 'all') {
+        currentDeck = [...EXAM_DECK];
+      } else {
+        currentDeck = EXAM_DECK.filter(c => c.stem === stem);
+        if (currentDeck.length === 0) currentDeck = [...EXAM_DECK];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    function resetStemPills() {
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === 'all');
+      });
+    }
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'flex';
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'none';
+    };
 
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
@@ -3916,6 +4342,7 @@
       }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') rateCurrentCard(1);
       else if (e.key === '2') rateCurrentCard(2);

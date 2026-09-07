@@ -819,6 +819,303 @@
             color: #2563eb;
         }
 
+        /* CME Dual-Tier & Printable Revision Suite Styles */
+        .toolbar-btn.printables {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+        }
+        .toolbar-btn.printables:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+
+        /* Printables Suite Modal */
+        .printables-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        .printables-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .printables-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .printables-modal-header h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .printables-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .printables-modal-sub {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
+        }
+        .printables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+        .printable-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .printable-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        .printable-card-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .printable-card h4 {
+            margin: 0 0 8px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.98rem;
+            color: #0f172a;
+        }
+        .printable-card p {
+            font-size: 0.82rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin: 0 0 16px 0;
+            flex-grow: 1;
+        }
+        .printable-links {
+            display: flex;
+            gap: 8px;
+        }
+        .print-link-btn {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s ease;
+        }
+        .print-link-btn.web {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .print-link-btn.web:hover {
+            background: #bae6fd;
+        }
+        .print-link-btn.pdf {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .print-link-btn.pdf:hover {
+            background: #fee2e2;
+        }
+
+        /* Dual-Tier Leitner Switcher Bar */
+        .leitner-tier-switcher {
+            display: flex;
+            background: #0f172a;
+            padding: 8px 16px 0 16px;
+            gap: 6px;
+            border-bottom: 1px solid #334155;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            background: #1e293b;
+            color: #94a3b8;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tier-btn:hover:not(.active) {
+            background: #334155;
+            color: #ffffff;
+        }
+        .tier-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Stem Filter Row */
+        .leitner-stem-filter-row {
+            background: #f8fafc;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .stem-filter-label {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        .stem-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .stem-pill:hover {
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+        .stem-pill.active {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        /* Exam Card Elements */
+        .exam-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .exam-stem-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .exam-stem-badge.consequence {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .exam-stem-badge.narrative {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+        .exam-stem-badge.importance {
+            background: #ffedd5;
+            color: #9a3412;
+            border: 1px solid #fdba74;
+        }
+        .exam-stem-badge.term {
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid #7dd3fc;
+        }
+        .exam-formula-badge {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .exam-facts-hint {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px dashed #cbd5e1;
+        }
+        .historian-box {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 4px solid #eab308;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #713f12;
+            line-height: 1.45;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .facts-checklist {
+            margin-top: 10px;
+            text-align: left;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #166534;
+        }
+        .facts-checklist ul {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+        }
+        .facts-checklist li {
+            margin-bottom: 2px;
+        }
+
         /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
         .leitner-modal-overlay.teacher-mode {
             padding: 0;
@@ -1595,10 +1892,13 @@
             <span class="toolbar-badge">Mobile</span>
         </div>
         <div class="toolbar-actions">
+            
             <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
         </div>
     </div>
+
+    
 
     <!-- Cover Page -->
     <div class="page cover page-break">
@@ -3592,6 +3892,8 @@
                 </div>
             </div>
 
+            
+
             <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
                 <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
@@ -3723,10 +4025,19 @@
   (function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
 
-    const LEITNER_STORAGE_KEY = 'leitner_v1_weimar_nazi_germany_KT2';
+    const IS_CME_NEW = false;
+    const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_weimar_nazi_germany_KT2';
+    const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_weimar_nazi_germany_KT2_exam';
+    let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
     const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
-    const ALL_DECK = [{"id":1,"q":"Who was the original founder of the German Workers' Party (DAP) in 1919?","a":"Anton Drexler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":2,"q":"Why did Adolf Hitler originally attend a DAP meeting in September 1919?","a":"He was sent by the army as an intelligence officer to spy on them","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":3,"q":"What unique talent did Hitler use to captivate audiences and rise to leadership?","a":"His powerful, rehearsed, and theatrical public speaking / oratory skills","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":4,"q":"In what year did Hitler and Drexler write the 25-Point Programme?","a":"1920","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":5,"q":"Name one 'Nationalist' policy from the 25-Point Programme.","a":"Scrap the Treaty of Versailles / Expand Germany's borders / Demand Lebensraum","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":6,"q":"Name one 'Socialist' policy from the 25-Point Programme.","a":"Nationalise large industries / Share corporate profits with workers / Expand pensions","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":7,"q":"According to the anti-Semitic points in the Programme, who were the only people allowed to be German citizens?","a":"Those of 'German blood' / Jews were to be stripped of citizenship","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":8,"q":"What did Hitler officially rename the DAP to?","a":"The NSDAP / National Socialist German Workers' Party","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":9,"q":"In what year did Hitler force Drexler out and become the absolute leader of the Nazi Party?","a":"1921","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":10,"q":"Who was appointed as the Nazi Party's first full-time administrator to organise their new Munich headquarters?","a":"Rudolf Schüssler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":11,"q":"What was the name of the official Nazi newspaper purchased in December 1920?","a":"Völkischer Beobachter / People's Observer","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":12,"q":"Name the famous First World War fighter pilot who joined the early Nazi Party, giving it credibility.","a":"Hermann Göring","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":13,"q":"What ancient symbol did Hitler adopt and redesign to act as the party's logo?","a":"The Swastika","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":14,"q":"What does the abbreviation 'SA' stand for?","a":"Sturmabteilung / Storm Detachment","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":15,"q":"What was the common nickname for the SA, based on their uniforms?","a":"The Brownshirts","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":16,"q":"Who was the ex-army captain placed in command of the SA?","a":"Ernst Röhm","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":17,"q":"What were the two main roles of the SA?","a":"To protect Nazi speakers and to violently disrupt the meetings of political opponents","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":18,"q":"Why did Hitler form his own personal bodyguard, the Stosstrupp (Shock Troop), out of the SA?","a":"Because the regular SA were rowdy and more loyal to Ernst Röhm than they were to Hitler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":19,"q":"By the end of 1922, roughly how many members did the Nazi Party have?","a":"20,000","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":20,"q":"Which specific German region and city was the early Nazi Party entirely based in?","a":"Bavaria / Munich","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":21,"q":"What was the Spartacist Uprising (1919)?","a":"A communist attempt to overthrow the Weimar government in Berlin.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":22,"q":"Who led the Spartacist Uprising?","a":"Rosa Luxemburg and Karl Liebknecht.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":23,"q":"Who were the Freikorps?","a":"Right-wing ex-soldiers who hated communists and helped crush the Spartacist Uprising.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":24,"q":"What was the Kapp Putsch (1920)?","a":"A right-wing attempt by Wolfgang Kapp and the Freikorps to overthrow the government.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":25,"q":"How did the government defeat the Kapp Putsch?","a":"They asked the workers of Berlin to go on a general strike.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":26,"q":"How much were the reparations set at?","a":"£6.6 billion.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":27,"q":"What was the War Guilt Clause?","a":"Article 231 of the Treaty of Versailles.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":28,"q":"What was Article 48?","a":"The President's emergency power.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":29,"q":"What was the 'stab in the back' myth?","a":"The belief that Germany was betrayed by politicians.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":30,"q":"What is a 'republic'?","a":"A country without a monarch.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922"},{"id":31,"q":"In what month and year did the Munich Putsch take place?","a":"November 1923","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":32,"q":"Name the three men who made up the 'Bavarian Triumvirate' that Hitler tried to hijack.","a":"Gustav von Kahr, Otto von Lossow, Hans von Seisser","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":33,"q":"Which famous First World War general supported Hitler during the Munich Putsch?","a":"General Erich Ludendorff","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":34,"q":"How many Nazis were killed in the firefight with the police during the Putsch?","a":"14","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":35,"q":"What serious criminal charge was Hitler put on trial for in early 1924?","a":"High Treason","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":36,"q":"Why did Hitler receive such a lenient sentence (5 years) at his trial?","a":"The Weimar judges were right-wing and sympathised with his nationalist, anti-Weimar views","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":37,"q":"How long did Hitler actually spend in Landsberg Prison?","a":"Nine months","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":38,"q":"What was the title of the book Hitler dictated while in prison?","a":"Mein Kampf / My Struggle","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":39,"q":"What specific Nazi term was used in Hitler's book to describe the 'master race' of Germanic peoples?","a":"Aryan","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":40,"q":"What does the term 'Lebensraum' mean, as outlined in Mein Kampf?","a":"Living space - the need to expand Germany's borders into Eastern Europe","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":41,"q":"What major strategic lesson did Hitler learn from the failure of the Munich Putsch?","a":"That the Nazis had to win power legally through elections, not through violent revolution","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":42,"q":"What title was given to the local Nazi Party leaders appointed by Hitler to run the 35 regions (Gaue) of Germany?","a":"Gauleiters","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":43,"q":"What was the 'Führerprinzip'?","a":"The Leadership Principle: the idea that the party must be run by one absolute dictator","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":44,"q":"In what year did Hitler establish the SS (Schutzstaffel)?","a":"1925","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":45,"q":"Why did Hitler create the SS when he already had the SA?","a":"He needed an elite bodyguard that was unquestionably loyal only to him, unlike the SA which was loyal to Ernst Röhm","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":46,"q":"Who was the ruthless leader who eventually took command of the SS?","a":"Heinrich Himmler","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":47,"q":"In what year was the Bamberg Conference held?","a":"1926","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":48,"q":"Which key figure did Hitler successfully win over from the 'socialist' wing at the Bamberg Conference?","a":"Joseph Goebbels","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":49,"q":"How many seats did the Nazi Party win in the 1928 Reichstag elections?","a":"12 seats","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":50,"q":"Which two groups in society did the Nazis shift their propaganda to target in the late 1920s when they failed to win over industrial workers?","a":"Farmers and the lower-middle classes / Mittelstand","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":51,"q":"Why did France and Belgium invade the Ruhr in 1923?","a":"Because Germany had failed to pay its reparation instalment.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":52,"q":"How did German workers react to the Ruhr invasion?","a":"They used 'passive resistance' (going on strike).","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":53,"q":"What caused Hyperinflation in 1923?","a":"The government printed massive amounts of money to pay the striking Ruhr workers.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":54,"q":"Who suffered most from Hyperinflation?","a":"People with fixed savings and pensions, as their money became worthless.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":55,"q":"Who benefitted from Hyperinflation?","a":"People with debts or loans, as they could pay them off easily.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":56,"q":"Who were the Freikorps?","a":"Right-wing ex-soldiers.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":57,"q":"Who led the Spartacist Uprising?","a":"Rosa Luxemburg and Karl Liebknecht.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":58,"q":"How was the Kapp Putsch defeated?","a":"By a workers' general strike.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":59,"q":"What was Proportional Representation?","a":"An electoral system causing weak coalitions.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":60,"q":"What were the military restrictions of the Treaty of Versailles?","a":"100k men, no air force, 6 battleships.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929"},{"id":61,"q":"In what month and year did the Wall Street Crash occur?","a":"October 1929","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":62,"q":"Why was Germany's economy hit so hard by the Wall Street Crash?","a":"Because their economy relied heavily on US loans from the Dawes Plan, which American banks suddenly demanded back","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":63,"q":"By 1932, how many Germans were unemployed?","a":"6 million","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":64,"q":"Which Weimar Chancellor resigned in March 1930 because his 'Grand Coalition' could not agree on how to handle unemployment benefits?","a":"Hermann Müller","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":65,"q":"Who replaced Müller as Chancellor in 1930?","a":"Heinrich Brüning","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":66,"q":"What bitter nickname was given to Chancellor Brüning by the German public?","a":"The 'Hunger Chancellor'","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":67,"q":"Why did the public give Brüning this nickname?","a":"Because he raised taxes and cut government wages and unemployment benefits","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":68,"q":"Which constitutional clause did Brüning and President Hindenburg use to bypass the Reichstag and rule by decree?","a":"Article 48","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":69,"q":"Which extreme left-wing party saw a surge in support from unemployed workers during the Depression?","a":"The KPD / Communist Party","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":70,"q":"Why did wealthy industrialists like Fritz Thyssen and Krupp start giving massive financial backing to the Nazi Party?","a":"They were terrified of a Communist takeover where their wealth and factories would be confiscated","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":71,"q":"Who did Hitler run against in the 1932 Presidential Election?","a":"Paul von Hindenburg","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":72,"q":"Although he lost, roughly how many votes did Hitler secure in the 1932 Presidential Election?","a":"13.4 million votes","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":73,"q":"What was the name of the innovative propaganda campaign where Hitler travelled the country by aeroplane?","a":"The 'Hitler over Germany' campaign","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":74,"q":"What simple, powerful three-word slogan did the Nazis use to appeal to starving, unemployed workers?","a":"'Work and Bread'","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":75,"q":"How did Nazi propaganda specifically appeal to women voters?","a":"By claiming the Nazis would protect traditional family values and save their children from starvation","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":76,"q":"How many members did the SA (Brownshirts) have by 1932?","a":"400,000","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":77,"q":"What was the name of the violent paramilitary wing of the Communist Party that fought the SA in the streets?","a":"The Rotfrontkämpferbund / Red Front Fighters' League","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":78,"q":"Why did the violent street brawls actually help the Nazis win middle-class votes?","a":"The disciplined SA marches made the Nazis look like the only force organised and strong enough to crush the communists and restore order","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":79,"q":"What is the historical term for people supporting a political party because they share the same fears and hatreds, rather than identical beliefs?","a":"Negative Cohesion","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":80,"q":"How did the Nazis adapt their propaganda at a local level to maximise votes?","a":"They dropped messages that didn't work in specific towns and heavily pushed messages that local people wanted to hear","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":81,"q":"Who became Chancellor in 1923 and helped end hyperinflation?","a":"Gustav Stresemann.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":82,"q":"What new currency did Stresemann introduce in 1923?","a":"The Rentenmark.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":83,"q":"What was the Dawes Plan (1924)?","a":"A plan to reduce annual reparation payments and secure 800 million marks in US loans.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":84,"q":"What was the Young Plan (1929)?","a":"It reduced the total reparations bill from £6.6 billion to £2 billion and gave Germany longer to pay.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":85,"q":"What was the Locarno Pact (1925)?","a":"An agreement where Germany accepted its western borders with France.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":86,"q":"Why did France invade the Ruhr in 1923?","a":"Germany defaulted on reparations.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":87,"q":"What was passive resistance?","a":"Workers striking against the French in the Ruhr.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":88,"q":"Who suffered most from hyperinflation?","a":"People with fixed savings.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":89,"q":"What was the Kapp Putsch?","a":"A right-wing rebellion by the Freikorps.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":90,"q":"What was Article 231?","a":"The War Guilt clause.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932"},{"id":91,"q":"Which Chancellor was forced to resign in May 1932 after angering President Hindenburg with his land reform proposals?","a":"Heinrich Brüning","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":92,"q":"What drastic action did Brüning take in 1932 that angered right-wing politicians?","a":"He banned the SA and the SS","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":93,"q":"What was the name of the small, powerful inner circle of advisors who manipulated the ageing President Hindenburg?","a":"The camarilla","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":94,"q":"Who did Hindenburg appoint as Chancellor immediately after Brüning?","a":"Franz von Papen","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":95,"q":"What nickname was given to von Papen's undemocratic government because it was filled with wealthy elites?","a":"The 'Cabinet of Barons'","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":96,"q":"How many seats did the Nazi Party win in the July 1932 elections, making them the largest party?","a":"230 seats","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":97,"q":"Following the July 1932 elections, what did Hitler immediately demand from Hindenburg?","a":"To be appointed Chancellor","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":98,"q":"What insulting term did President Hindenburg use to describe Adolf Hitler?","a":"A \"Bohemian corporal\"","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":99,"q":"When Papen called a second election in November 1932, what happened to the Nazi vote?","a":"It dropped to 196 seats, and the party was running out of money","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":100,"q":"In November 1932, what did wealthy industrialists (like Hjalmar Schacht) send to Hindenburg?","a":"A formal petition urging him to appoint Hitler as Chancellor","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":101,"q":"Which army general warned Hindenburg that keeping Papen in power would lead to a civil war?","a":"Kurt von Schleicher","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":102,"q":"In what month and year did von Schleicher become Chancellor?","a":"December 1932","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":103,"q":"Who plotted revenge against von Schleicher by secretly meeting with Adolf Hitler?","a":"Franz von Papen","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":104,"q":"What is the historical phrase used to describe the secret deal-making that brought Hitler to power?","a":"Backstairs intrigue","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":105,"q":"What position did Franz von Papen demand in the new government in exchange for helping Hitler?","a":"Vice-Chancellor","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":106,"q":"On what exact date did Adolf Hitler officially become Chancellor of Germany?","a":"30 January 1933","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":107,"q":"How many Nazis were allowed in Hitler's first Cabinet of 12 ministers?","a":"Only three: Hitler, Wilhelm Frick, and Hermann Göring","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":108,"q":"Why did Hindenburg and Papen deliberately surround Hitler with conservative ministers?","a":"To control him and use him as a puppet","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":109,"q":"What famous quote did von Papen say, showing he severely underestimated Hitler?","a":"\"In two months we will have pushed Hitler into a corner so hard that he'll be squeaking\"","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":110,"q":"Did Hitler seize the Chancellorship by force, or was he appointed legally?","a":"He was appointed legally / under the rules of the Weimar Constitution","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":111,"q":"When did Germany join the League of Nations?","a":"1926.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":112,"q":"What was the Kellogg-Briand Pact (1928)?","a":"An international agreement where 62 countries promised not to use war to resolve disputes.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":113,"q":"Why did the 'Golden Age' (1924-29) rely on 'dancing on a volcano'?","a":"The economic recovery was heavily dependent on short-term American loans.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":114,"q":"How did culture change during the Golden Age?","a":"There was a boom in avant-garde art, cinema (e.g. Metropolis), and cabaret.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":115,"q":"What did Stresemann introduce to fix hyperinflation?","a":"The Rentenmark.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":116,"q":"What was the Dawes Plan?","a":"US loans to Germany to help pay reparations.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":117,"q":"What was the Young Plan?","a":"A reduction of the total reparation amount.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":118,"q":"What was the Locarno Pact?","a":"An agreement accepting western borders.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":119,"q":"Why did the French invade the Ruhr?","a":"Missed reparation payments.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"},{"id":120,"q":"Who were the November Criminals?","a":"Politicians who signed the Armistice.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933"}];
 
+    const RAPID_DECK = [{"id":1,"q":"Who was the original founder of the German Workers' Party (DAP) in 1919?","a":"Anton Drexler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":2,"q":"Why did Adolf Hitler originally attend a DAP meeting in September 1919?","a":"He was sent by the army as an intelligence officer to spy on them","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":3,"q":"What unique talent did Hitler use to captivate audiences and rise to leadership?","a":"His powerful, rehearsed, and theatrical public speaking / oratory skills","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":4,"q":"In what year did Hitler and Drexler write the 25-Point Programme?","a":"1920","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":5,"q":"Name one 'Nationalist' policy from the 25-Point Programme.","a":"Scrap the Treaty of Versailles / Expand Germany's borders / Demand Lebensraum","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":6,"q":"Name one 'Socialist' policy from the 25-Point Programme.","a":"Nationalise large industries / Share corporate profits with workers / Expand pensions","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":7,"q":"According to the anti-Semitic points in the Programme, who were the only people allowed to be German citizens?","a":"Those of 'German blood' / Jews were to be stripped of citizenship","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":8,"q":"What did Hitler officially rename the DAP to?","a":"The NSDAP / National Socialist German Workers' Party","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":9,"q":"In what year did Hitler force Drexler out and become the absolute leader of the Nazi Party?","a":"1921","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":10,"q":"Who was appointed as the Nazi Party's first full-time administrator to organise their new Munich headquarters?","a":"Rudolf Schüssler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":11,"q":"What was the name of the official Nazi newspaper purchased in December 1920?","a":"Völkischer Beobachter / People's Observer","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":12,"q":"Name the famous First World War fighter pilot who joined the early Nazi Party, giving it credibility.","a":"Hermann Göring","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":13,"q":"What ancient symbol did Hitler adopt and redesign to act as the party's logo?","a":"The Swastika","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":14,"q":"What does the abbreviation 'SA' stand for?","a":"Sturmabteilung / Storm Detachment","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":15,"q":"What was the common nickname for the SA, based on their uniforms?","a":"The Brownshirts","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":16,"q":"Who was the ex-army captain placed in command of the SA?","a":"Ernst Röhm","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":17,"q":"What were the two main roles of the SA?","a":"To protect Nazi speakers and to violently disrupt the meetings of political opponents","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":18,"q":"Why did Hitler form his own personal bodyguard, the Stosstrupp (Shock Troop), out of the SA?","a":"Because the regular SA were rowdy and more loyal to Ernst Röhm than they were to Hitler","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":19,"q":"By the end of 1922, roughly how many members did the Nazi Party have?","a":"20,000","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":20,"q":"Which specific German region and city was the early Nazi Party entirely based in?","a":"Bavaria / Munich","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":21,"q":"What was the Spartacist Uprising (1919)?","a":"A communist attempt to overthrow the Weimar government in Berlin.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":22,"q":"Who led the Spartacist Uprising?","a":"Rosa Luxemburg and Karl Liebknecht.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":23,"q":"Who were the Freikorps?","a":"Right-wing ex-soldiers who hated communists and helped crush the Spartacist Uprising.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":24,"q":"What was the Kapp Putsch (1920)?","a":"A right-wing attempt by Wolfgang Kapp and the Freikorps to overthrow the government.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":25,"q":"How did the government defeat the Kapp Putsch?","a":"They asked the workers of Berlin to go on a general strike.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":26,"q":"How much were the reparations set at?","a":"£6.6 billion.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":27,"q":"What was the War Guilt Clause?","a":"Article 231 of the Treaty of Versailles.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":28,"q":"What was Article 48?","a":"The President's emergency power.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":29,"q":"What was the 'stab in the back' myth?","a":"The belief that Germany was betrayed by politicians.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":30,"q":"What is a 'republic'?","a":"A country without a monarch.","topic":"KT2.1: The Early Development of the Nazi Party, 1919–1922","tier":"rapid"},{"id":31,"q":"In what month and year did the Munich Putsch take place?","a":"November 1923","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":32,"q":"Name the three men who made up the 'Bavarian Triumvirate' that Hitler tried to hijack.","a":"Gustav von Kahr, Otto von Lossow, Hans von Seisser","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":33,"q":"Which famous First World War general supported Hitler during the Munich Putsch?","a":"General Erich Ludendorff","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":34,"q":"How many Nazis were killed in the firefight with the police during the Putsch?","a":"14","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":35,"q":"What serious criminal charge was Hitler put on trial for in early 1924?","a":"High Treason","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":36,"q":"Why did Hitler receive such a lenient sentence (5 years) at his trial?","a":"The Weimar judges were right-wing and sympathised with his nationalist, anti-Weimar views","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":37,"q":"How long did Hitler actually spend in Landsberg Prison?","a":"Nine months","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":38,"q":"What was the title of the book Hitler dictated while in prison?","a":"Mein Kampf / My Struggle","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":39,"q":"What specific Nazi term was used in Hitler's book to describe the 'master race' of Germanic peoples?","a":"Aryan","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":40,"q":"What does the term 'Lebensraum' mean, as outlined in Mein Kampf?","a":"Living space - the need to expand Germany's borders into Eastern Europe","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":41,"q":"What major strategic lesson did Hitler learn from the failure of the Munich Putsch?","a":"That the Nazis had to win power legally through elections, not through violent revolution","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":42,"q":"What title was given to the local Nazi Party leaders appointed by Hitler to run the 35 regions (Gaue) of Germany?","a":"Gauleiters","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":43,"q":"What was the 'Führerprinzip'?","a":"The Leadership Principle: the idea that the party must be run by one absolute dictator","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":44,"q":"In what year did Hitler establish the SS (Schutzstaffel)?","a":"1925","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":45,"q":"Why did Hitler create the SS when he already had the SA?","a":"He needed an elite bodyguard that was unquestionably loyal only to him, unlike the SA which was loyal to Ernst Röhm","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":46,"q":"Who was the ruthless leader who eventually took command of the SS?","a":"Heinrich Himmler","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":47,"q":"In what year was the Bamberg Conference held?","a":"1926","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":48,"q":"Which key figure did Hitler successfully win over from the 'socialist' wing at the Bamberg Conference?","a":"Joseph Goebbels","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":49,"q":"How many seats did the Nazi Party win in the 1928 Reichstag elections?","a":"12 seats","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":50,"q":"Which two groups in society did the Nazis shift their propaganda to target in the late 1920s when they failed to win over industrial workers?","a":"Farmers and the lower-middle classes / Mittelstand","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":51,"q":"Why did France and Belgium invade the Ruhr in 1923?","a":"Because Germany had failed to pay its reparation instalment.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":52,"q":"How did German workers react to the Ruhr invasion?","a":"They used 'passive resistance' (going on strike).","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":53,"q":"What caused Hyperinflation in 1923?","a":"The government printed massive amounts of money to pay the striking Ruhr workers.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":54,"q":"Who suffered most from Hyperinflation?","a":"People with fixed savings and pensions, as their money became worthless.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":55,"q":"Who benefitted from Hyperinflation?","a":"People with debts or loans, as they could pay them off easily.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":56,"q":"Who were the Freikorps?","a":"Right-wing ex-soldiers.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":57,"q":"Who led the Spartacist Uprising?","a":"Rosa Luxemburg and Karl Liebknecht.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":58,"q":"How was the Kapp Putsch defeated?","a":"By a workers' general strike.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":59,"q":"What was Proportional Representation?","a":"An electoral system causing weak coalitions.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":60,"q":"What were the military restrictions of the Treaty of Versailles?","a":"100k men, no air force, 6 battleships.","topic":"KT2.2: The Munich Putsch and the Lean Years, 1923–1929","tier":"rapid"},{"id":61,"q":"In what month and year did the Wall Street Crash occur?","a":"October 1929","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":62,"q":"Why was Germany's economy hit so hard by the Wall Street Crash?","a":"Because their economy relied heavily on US loans from the Dawes Plan, which American banks suddenly demanded back","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":63,"q":"By 1932, how many Germans were unemployed?","a":"6 million","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":64,"q":"Which Weimar Chancellor resigned in March 1930 because his 'Grand Coalition' could not agree on how to handle unemployment benefits?","a":"Hermann Müller","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":65,"q":"Who replaced Müller as Chancellor in 1930?","a":"Heinrich Brüning","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":66,"q":"What bitter nickname was given to Chancellor Brüning by the German public?","a":"The 'Hunger Chancellor'","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":67,"q":"Why did the public give Brüning this nickname?","a":"Because he raised taxes and cut government wages and unemployment benefits","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":68,"q":"Which constitutional clause did Brüning and President Hindenburg use to bypass the Reichstag and rule by decree?","a":"Article 48","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":69,"q":"Which extreme left-wing party saw a surge in support from unemployed workers during the Depression?","a":"The KPD / Communist Party","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":70,"q":"Why did wealthy industrialists like Fritz Thyssen and Krupp start giving massive financial backing to the Nazi Party?","a":"They were terrified of a Communist takeover where their wealth and factories would be confiscated","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":71,"q":"Who did Hitler run against in the 1932 Presidential Election?","a":"Paul von Hindenburg","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":72,"q":"Although he lost, roughly how many votes did Hitler secure in the 1932 Presidential Election?","a":"13.4 million votes","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":73,"q":"What was the name of the innovative propaganda campaign where Hitler travelled the country by aeroplane?","a":"The 'Hitler over Germany' campaign","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":74,"q":"What simple, powerful three-word slogan did the Nazis use to appeal to starving, unemployed workers?","a":"'Work and Bread'","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":75,"q":"How did Nazi propaganda specifically appeal to women voters?","a":"By claiming the Nazis would protect traditional family values and save their children from starvation","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":76,"q":"How many members did the SA (Brownshirts) have by 1932?","a":"400,000","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":77,"q":"What was the name of the violent paramilitary wing of the Communist Party that fought the SA in the streets?","a":"The Rotfrontkämpferbund / Red Front Fighters' League","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":78,"q":"Why did the violent street brawls actually help the Nazis win middle-class votes?","a":"The disciplined SA marches made the Nazis look like the only force organised and strong enough to crush the communists and restore order","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":79,"q":"What is the historical term for people supporting a political party because they share the same fears and hatreds, rather than identical beliefs?","a":"Negative Cohesion","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":80,"q":"How did the Nazis adapt their propaganda at a local level to maximise votes?","a":"They dropped messages that didn't work in specific towns and heavily pushed messages that local people wanted to hear","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":81,"q":"Who became Chancellor in 1923 and helped end hyperinflation?","a":"Gustav Stresemann.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":82,"q":"What new currency did Stresemann introduce in 1923?","a":"The Rentenmark.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":83,"q":"What was the Dawes Plan (1924)?","a":"A plan to reduce annual reparation payments and secure 800 million marks in US loans.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":84,"q":"What was the Young Plan (1929)?","a":"It reduced the total reparations bill from £6.6 billion to £2 billion and gave Germany longer to pay.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":85,"q":"What was the Locarno Pact (1925)?","a":"An agreement where Germany accepted its western borders with France.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":86,"q":"Why did France invade the Ruhr in 1923?","a":"Germany defaulted on reparations.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":87,"q":"What was passive resistance?","a":"Workers striking against the French in the Ruhr.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":88,"q":"Who suffered most from hyperinflation?","a":"People with fixed savings.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":89,"q":"What was the Kapp Putsch?","a":"A right-wing rebellion by the Freikorps.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":90,"q":"What was Article 231?","a":"The War Guilt clause.","topic":"KT2.3: The Growth of Nazi Support, 1929–1932","tier":"rapid"},{"id":91,"q":"Which Chancellor was forced to resign in May 1932 after angering President Hindenburg with his land reform proposals?","a":"Heinrich Brüning","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":92,"q":"What drastic action did Brüning take in 1932 that angered right-wing politicians?","a":"He banned the SA and the SS","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":93,"q":"What was the name of the small, powerful inner circle of advisors who manipulated the ageing President Hindenburg?","a":"The camarilla","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":94,"q":"Who did Hindenburg appoint as Chancellor immediately after Brüning?","a":"Franz von Papen","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":95,"q":"What nickname was given to von Papen's undemocratic government because it was filled with wealthy elites?","a":"The 'Cabinet of Barons'","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":96,"q":"How many seats did the Nazi Party win in the July 1932 elections, making them the largest party?","a":"230 seats","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":97,"q":"Following the July 1932 elections, what did Hitler immediately demand from Hindenburg?","a":"To be appointed Chancellor","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":98,"q":"What insulting term did President Hindenburg use to describe Adolf Hitler?","a":"A \"Bohemian corporal\"","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":99,"q":"When Papen called a second election in November 1932, what happened to the Nazi vote?","a":"It dropped to 196 seats, and the party was running out of money","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":100,"q":"In November 1932, what did wealthy industrialists (like Hjalmar Schacht) send to Hindenburg?","a":"A formal petition urging him to appoint Hitler as Chancellor","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":101,"q":"Which army general warned Hindenburg that keeping Papen in power would lead to a civil war?","a":"Kurt von Schleicher","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":102,"q":"In what month and year did von Schleicher become Chancellor?","a":"December 1932","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":103,"q":"Who plotted revenge against von Schleicher by secretly meeting with Adolf Hitler?","a":"Franz von Papen","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":104,"q":"What is the historical phrase used to describe the secret deal-making that brought Hitler to power?","a":"Backstairs intrigue","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":105,"q":"What position did Franz von Papen demand in the new government in exchange for helping Hitler?","a":"Vice-Chancellor","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":106,"q":"On what exact date did Adolf Hitler officially become Chancellor of Germany?","a":"30 January 1933","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":107,"q":"How many Nazis were allowed in Hitler's first Cabinet of 12 ministers?","a":"Only three: Hitler, Wilhelm Frick, and Hermann Göring","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":108,"q":"Why did Hindenburg and Papen deliberately surround Hitler with conservative ministers?","a":"To control him and use him as a puppet","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":109,"q":"What famous quote did von Papen say, showing he severely underestimated Hitler?","a":"\"In two months we will have pushed Hitler into a corner so hard that he'll be squeaking\"","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":110,"q":"Did Hitler seize the Chancellorship by force, or was he appointed legally?","a":"He was appointed legally / under the rules of the Weimar Constitution","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":111,"q":"When did Germany join the League of Nations?","a":"1926.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":112,"q":"What was the Kellogg-Briand Pact (1928)?","a":"An international agreement where 62 countries promised not to use war to resolve disputes.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":113,"q":"Why did the 'Golden Age' (1924-29) rely on 'dancing on a volcano'?","a":"The economic recovery was heavily dependent on short-term American loans.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":114,"q":"How did culture change during the Golden Age?","a":"There was a boom in avant-garde art, cinema (e.g. Metropolis), and cabaret.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":115,"q":"What did Stresemann introduce to fix hyperinflation?","a":"The Rentenmark.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":116,"q":"What was the Dawes Plan?","a":"US loans to Germany to help pay reparations.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":117,"q":"What was the Young Plan?","a":"A reduction of the total reparation amount.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":118,"q":"What was the Locarno Pact?","a":"An agreement accepting western borders.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":119,"q":"Why did the French invade the Ruhr?","a":"Missed reparation payments.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"},{"id":120,"q":"Who were the November Criminals?","a":"Politicians who signed the Armistice.","topic":"KT2.4: How Hitler Became Chancellor, 1932–1933","tier":"rapid"}];
+
+    const EXAM_DECK = [];
+
+    let currentTier = 'rapid';
+    let currentStemFilter = 'all';
+    let ALL_DECK = RAPID_DECK;
     let currentDeck = [...ALL_DECK];
     let currentIndex = 0;
     let userBoxes = {};
@@ -3830,6 +4141,7 @@
       try {
         const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
         if (raw) userBoxes = JSON.parse(raw);
+        else userBoxes = {};
       } catch (e) {
         userBoxes = {};
       }
@@ -3873,7 +4185,13 @@
       if (cardEl) cardEl.classList.remove('flipped');
 
       const qNumBadge = document.getElementById('card-qnum-badge');
-      if (qNumBadge) qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+      if (qNumBadge) {
+        if (currentTier === 'exam') {
+          qNumBadge.textContent = 'Exam Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        } else {
+          qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        }
+      }
 
       const boxBadge = document.getElementById('card-box-badge');
       const boxBadgeBack = document.getElementById('card-box-badge-back');
@@ -3890,11 +4208,50 @@
       }
 
       const qText = document.getElementById('card-question-text');
-      if (qText) qText.textContent = card.q;
+      if (qText) {
+        if (currentTier === 'exam') {
+          let metaHtml = '<div class="exam-meta-row">';
+          const stemClass = card.stem || 'consequence';
+          const stemLabel = card.marks ? (card.marks + 'm ' + (card.stem === 'consequence' ? 'Consequence' : card.stem === 'narrative' ? 'Narrative Account' : card.stem === 'importance' ? 'Importance' : 'Key Term')) : card.stem;
+          metaHtml += '<span class="exam-stem-badge ' + stemClass + '">🎯 ' + stemLabel + '</span>';
+          if (card.formula) {
+            metaHtml += '<span class="exam-formula-badge">⚡ ' + card.formula + (card.formula_name ? ': ' + card.formula_name : '') + '</span>';
+          }
+          metaHtml += '</div>';
+
+          let factsHint = '';
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
+          }
+          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+        } else {
+          qText.textContent = card.q;
+        }
+      }
 
       const aText = document.getElementById('card-answer-text');
       if (aText) {
-        if (card.explanation) {
+        if (currentTier === 'exam') {
+          let html = '<div class="exam-meta-row">';
+          if (card.formula) {
+            html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
+          }
+          html += '</div>';
+          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
+            card.specific_facts.forEach(f => {
+              html += '<li>' + f + '</li>';
+            });
+            html += '</ul></div>';
+          }
+
+          if (card.historian_explanation) {
+            html += '<div class="historian-box">🏛️ <strong>Historian &amp; Examiner Analysis:</strong> ' + card.historian_explanation + '</div>';
+          }
+          aText.innerHTML = html;
+        } else if (card.explanation) {
           aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
         } else {
           aText.textContent = card.a;
@@ -3903,6 +4260,75 @@
 
       updateStats();
     }
+
+    window.switchPracticeTier = function(tier) {
+      if (currentTier === tier) return;
+      currentTier = tier;
+      stopRapidFireTimer();
+
+      const btnRapid = document.getElementById('tier-btn-rapid');
+      const btnExam = document.getElementById('tier-btn-exam');
+      const stemRow = document.getElementById('leitner-stem-filter-row');
+
+      if (tier === 'exam') {
+        if (btnRapid) btnRapid.classList.remove('active');
+        if (btnExam) btnExam.classList.add('active');
+        if (stemRow) stemRow.style.display = 'flex';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_EXAM;
+        ALL_DECK = EXAM_DECK;
+        currentStemFilter = 'all';
+        resetStemPills();
+      } else {
+        if (btnRapid) btnRapid.classList.add('active');
+        if (btnExam) btnExam.classList.remove('active');
+        if (stemRow) stemRow.style.display = 'none';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+        ALL_DECK = RAPID_DECK;
+      }
+
+      currentDeck = [...ALL_DECK];
+      currentIndex = 0;
+      loadLeitnerProgress();
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    window.filterByExamStem = function(stem) {
+      currentStemFilter = stem;
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === stem);
+      });
+
+      if (stem === 'all') {
+        currentDeck = [...EXAM_DECK];
+      } else {
+        currentDeck = EXAM_DECK.filter(c => c.stem === stem);
+        if (currentDeck.length === 0) currentDeck = [...EXAM_DECK];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    function resetStemPills() {
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === 'all');
+      });
+    }
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'flex';
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) modal.style.display = 'none';
+    };
 
     window.flipCurrentCard = function() {
       const cardEl = document.getElementById('leitner-flashcard');
@@ -4223,6 +4649,7 @@
       }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') rateCurrentCard(1);
       else if (e.key === '2') rateCurrentCard(2);
