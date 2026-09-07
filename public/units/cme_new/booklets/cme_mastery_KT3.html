@@ -30,8 +30,14 @@
   .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
   
   /* Lined paper simulation */
-  .writing-line { height: 16px; border-bottom: 1px solid #e2e8f0; margin-bottom: 2px; }
+  .writing-line { height: 15px; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; }
   .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 2px; }
+  
+  /* Answers-Only Bank (Green Pages 4 & 5) */
+  .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 10px; font-size: 7.2pt; flex: 1 1 auto; }
+  .ans-item { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 2.5px 6px; display: flex; gap: 6px; align-items: baseline; }
+  .ans-num { color: #166534; font-weight: 800; font-size: 7.2pt; flex-shrink: 0; min-width: 18px; }
+  .ans-text { color: #15803d; font-weight: 600; line-height: 1.25; }
   
   /* Cover Tracker Table */
   .tracker-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin: 6px 0; }
@@ -40,9 +46,9 @@
   .tracker-table tr:nth-child(even) { background: #f8fafc; }
   
   /* 2-Column Quiz Grids */
-  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 7.2pt; flex: 1 1 auto; overflow: hidden; }
-  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; display: flex; gap: 4px; align-items: flex-start; }
-  .quiz-cb { width: 10px; height: 10px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
+  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5px 8px; font-size: 6.9pt; line-height: 1.2; flex: 1 1 auto; overflow: hidden; }
+  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px; display: flex; gap: 4px; align-items: flex-start; }
+  .quiz-cb { width: 9px; height: 9px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
   
   /* Stepped Ladder Boxes */
   .ladder-zone { border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; }
@@ -95,11 +101,10 @@
                 <table class="tracker-table">
                     <thead>
                         <tr>
-                            <th style="width: 44%;">Assessment Component &amp; Stem Focus</th>
-                            <th style="width: 14%; text-align: center;">Format Style</th>
-                            <th style="width: 12%; text-align: center;">Max Marks</th>
-                            <th style="width: 14%; text-align: center;">Score</th>
-                            <th style="width: 16%; text-align: center;">RAG Status</th>
+                            <th style="width: 54%;">Assessment Component &amp; Stem Focus</th>
+                            <th style="width: 16%; text-align: center;">Format Style</th>
+                            <th style="width: 14%; text-align: center;">Max Marks</th>
+                            <th style="width: 16%; text-align: center;">Pupil Score</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -108,82 +113,72 @@
                             <td style="text-align: center;">Checklist</td>
                             <td style="text-align: center;">/60</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ R ] &nbsp; [ A ] &nbsp; [ G ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q1 Consequence (Treaty of Washington (1979) fo...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q2 Importance (Oslo Accords (1993) for the se...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q3 Narrative Account (events of the First Palestinia...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q1 Consequence (Israeli invasion of Lebanon (1...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q2 Importance (Arafat’s renunciation of terro...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q3 Narrative Account (diplomatic negotiations betwee...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q1 Consequence (Israel-Jordan peace treaty (19...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q2 Importance (oil crisis (1973) for the invo...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q3 Narrative Account (changing superpower policies i...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr style="background: #e0e7ff; font-weight: 800; font-size: 7.5pt;">
                             <td colspan="2">TOTAL COMBINED EXAM MARKS:</td>
                             <td style="text-align: center;">/60</td>
                             <td style="text-align: center;">_____ / 60</td>
-                            <td style="text-align: center;">Grade: [ 9 8 7 6 5 4 ]</td>
                         </tr>
                     </tbody>
                 </table>
-                <div style="display: flex; justify-content: space-between; font-size: 7pt; color: #475569; margin-top: 2px;">
-                    <span>Teacher / Marker Signature: _____________________________________</span>
-                    <span>Date Completed: _______________</span>
+                <div style="display: flex; justify-content: space-between; font-size: 7.2pt; color: #334155; margin-top: 3px; font-weight: 600;">
+                    <span>Teacher / Peer Marker: _____________________________________</span>
+                    <span>Date: _______________</span>
+                    <span>Overall Grade: [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
                 </div>
             </div>
 
@@ -193,9 +188,9 @@
                     <span>⏱️ Edexcel Exam Fast Facts &amp; Stem Blueprints (Option P5 Period Study)</span>
                     <span>Total Paper 2: 32 Marks · 50 Mins</span>
                 </div>
-                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 $ightarrow$ support with <strong>2–3 detailed facts</strong> $ightarrow$ explain direct <strong>Consequence Link</strong> (why this mattered).</div>
-                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> $ightarrow$ <strong>Decisive Turning Point</strong> $ightarrow$ <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
-                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> $ightarrow$ provide <strong>Information facts</strong> $ightarrow$ explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
+                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 &rarr; support with <strong>2–3 detailed facts</strong> &rarr; explain direct <strong>Consequence Link</strong> (why this mattered).</div>
+                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> &rarr; <strong>Decisive Turning Point</strong> &rarr; <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
+                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> &rarr; provide <strong>Information facts</strong> &rarr; explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
             </div>
         </div>
 
@@ -737,228 +732,173 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: A1 TO A30/40)           -->
+    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: ANSWERS 1 TO 30)   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>Key Topic 3: Attempts at a Solution, 1974–95</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Reference · Answers 1 to 30 (Double-Sided Flip Reference)</p>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 1 to 30 (Self &amp; Peer Marking Bank)</p>
                 </div>
                 <span class="header-tag" style="background: #059669;">Mark Scheme 1</span>
             </div>
 
-            <div class="quiz-grid">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 3px 8px; font-size: 6.8pt; color: #065f46; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Cover this bank with your hand or a sheet of paper to test yourself against Pages 2–3, or use for rapid peer marking.</span>
+                <span>Answers 1–30</span>
+            </div>
+
+            <div class="ans-grid">
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">1. What diplomatic method did US Secretary of State Henry Kissinger pioneer in 1974–75, flying repeatedly between Middle Eastern capitals to broker disengagement?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">'Shuttle Diplomacy'</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">1.</span>
+                        <span class="ans-text">'Shuttle Diplomacy'</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">2. What major economic and infrastructural milestone occurred in June 1975 as a direct result of the Sinai disengagement agreements?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Egypt officially reopened the Suez Canal to international maritime shipping after eight years of closure</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">2.</span>
+                        <span class="ans-text">Egypt officially reopened the Suez Canal to international maritime shipping after eight years of closure</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">3. What political earthquake occurred in Israel in May 1977, ending 29 unbroken years of Labour Party dominance?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The right-wing Likud party led by former Irgun commander Menachem Begin won the national election (The 'Mahapakh')</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">3.</span>
+                        <span class="ans-text">The right-wing Likud party led by former Irgun commander Menachem Begin won the national election (The 'Mahapakh')</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">4. What stunning announcement did President Anwar Sadat make to the Egyptian Parliament on 9 November 1977?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">That he was prepared to travel to the ends of the earth, even to the Israeli Knesset, to plead the cause of peace</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">4.</span>
+                        <span class="ans-text">That he was prepared to travel to the ends of the earth, even to the Israeli Knesset, to plead the cause of peace</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">5. On what historic date did Anwar Sadat land at Ben Gurion Airport and address the Israeli Knesset in Jerusalem?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">19–20 November 1977</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">5.</span>
+                        <span class="ans-text">19–20 November 1977</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">6. Which US President intervened decisively to rescue the stalled negotiations by inviting Sadat and Begin to the presidential retreat at Camp David, Maryland in September 1978?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">President Jimmy Carter</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">6.</span>
+                        <span class="ans-text">President Jimmy Carter</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">7. What were the two distinct framework documents agreed upon at the conclusion of the 13-day Camp David summit in September 1978?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A Framework for Peace between Egypt and Israel, and a Framework for Peace in the Middle East (Palestinian autonomy)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">7.</span>
+                        <span class="ans-text">A Framework for Peace between Egypt and Israel, and a Framework for Peace in the Middle East (Palestinian autonomy)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">8. On what date was the historic Egypt-Israel Peace Treaty (Treaty of Washington) officially signed on the White House lawn?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">26 March 1979</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">8.</span>
+                        <span class="ans-text">26 March 1979</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">9. What was the primary territorial concession made by Israel under the 1979 Egypt-Israel Peace Treaty?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Israel returned the entire Sinai Peninsula to Egypt in three phased stages over three years</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">9.</span>
+                        <span class="ans-text">Israel returned the entire Sinai Peninsula to Egypt in three phased stages over three years</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">10. What controversial Israeli settlement in northeastern Sinai was forcibly evacuated by the IDF and demolished with bulldozers in April 1982 to complete the treaty terms?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Yamit</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">10.</span>
+                        <span class="ans-text">Yamit</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">11. What prestigious international honor was awarded jointly to Anwar Sadat and Menachem Begin in 1978 for their peace breakthrough?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Nobel Peace Prize</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">11.</span>
+                        <span class="ans-text">The Nobel Peace Prize</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">12. How did the rest of the Arab world immediately respond to Egypt signing the 1979 peace treaty with Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">They expelled Egypt from the Arab League, severed diplomatic ties, and moved the League headquarters from Cairo to Tunis</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">12.</span>
+                        <span class="ans-text">They expelled Egypt from the Arab League, severed diplomatic ties, and moved the League headquarters from Cairo to Tunis</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">13. What massive financial incentive did the United States provide to lock in the 1979 Egyptian-Israeli peace treaty?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Billions of dollars in permanent annual military and economic foreign aid to both Israel and Egypt</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">13.</span>
+                        <span class="ans-text">Billions of dollars in permanent annual military and economic foreign aid to both Israel and Egypt</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">14. What tragic event occurred on 6 October 1981 during a military victory parade in Cairo?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Anwar Sadat was assassinated by radical Islamist soldiers belonging to Egyptian Islamic Jihad</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">14.</span>
+                        <span class="ans-text">Anwar Sadat was assassinated by radical Islamist soldiers belonging to Egyptian Islamic Jihad</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">15. Who succeeded Anwar Sadat as President of Egypt in October 1981, maintaining the peace treaty with Israel for the next thirty years?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Hosni Mubarak</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">15.</span>
+                        <span class="ans-text">Hosni Mubarak</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">16. Why was Menachem Begin willing to return the entire Sinai to Egypt while resolutely refusing to concede any part of the West Bank or Gaza?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Begin viewed Sinai as a strategic desert buffer, but regarded the West Bank (Judea and Samaria) as non-negotiable ancestral biblical Jewish land</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">16.</span>
+                        <span class="ans-text">Begin viewed Sinai as a strategic desert buffer, but regarded the West Bank (Judea and Samaria) as non-negotiable ancestral biblical Jewish land</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">17. What law passed by the Israeli Knesset in July 1980 inflamed international opinion by declaring Jerusalem the 'complete and united' capital of Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Jerusalem Law</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">17.</span>
+                        <span class="ans-text">The Jerusalem Law</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">18. What strategic diplomatic goal did Egypt achieve by securing the return of the Sinai Peninsula?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It regained its full sovereign territory, oil fields, and total control over both banks of the Suez Canal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">18.</span>
+                        <span class="ans-text">It regained its full sovereign territory, oil fields, and total control over both banks of the Suez Canal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">19. Why did the Palestinian leadership under Yasser Arafat furiously reject the Camp David Accords?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Because the Accords offered only limited administrative 'autonomy' while ignoring Palestinian statehood, self-determination, and the status of Jerusalem</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">19.</span>
+                        <span class="ans-text">Because the Accords offered only limited administrative 'autonomy' while ignoring Palestinian statehood, self-determination, and the status of Jerusalem</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">20. What term is commonly used by political scientists to describe the post-1979 relationship between Egypt and Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A 'Cold Peace'</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">20.</span>
+                        <span class="ans-text">A 'Cold Peace'</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">21. What famous phrase did PLO Chairman Yasser Arafat use at the end of his landmark address to the UN General Assembly in November 1974?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">'I have come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch fall from my hand.'</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">21.</span>
+                        <span class="ans-text">'I have come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch fall from my hand.'</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">22. What status did the United Nations General Assembly grant to the Palestine Liberation Organization (PLO) in November 1974 via Resolution 3237?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Permanent Observer Status</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">22.</span>
+                        <span class="ans-text">Permanent Observer Status</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">23. What tragic internal conflict broke out in 1975, largely driven by sectarian tensions and the growing armed presence of the PLO?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Lebanese Civil War</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">23.</span>
+                        <span class="ans-text">The Lebanese Civil War</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">24. What was the official name of the full-scale Israeli military invasion of Lebanon launched on 6 June 1982?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Operation Peace for Galilee</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">24.</span>
+                        <span class="ans-text">Operation Peace for Galilee</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">25. What was the immediate trigger (pretext) used by Israel to launch the 1982 invasion of Lebanon?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The attempted assassination of Israeli Ambassador Shlomo Argov in London by the renegade Abu Nidal faction</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">25.</span>
+                        <span class="ans-text">The attempted assassination of Israeli Ambassador Shlomo Argov in London by the renegade Abu Nidal faction</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">26. What decisive military strategy did Defense Minister Ariel Sharon pursue during the summer of 1982 in Lebanon?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">He drove past the approved 40km buffer zone to surround and lay siege to West Beirut, subjecting the city to heavy air and artillery bombardment</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">26.</span>
+                        <span class="ans-text">He drove past the approved 40km buffer zone to surround and lay siege to West Beirut, subjecting the city to heavy air and artillery bombardment</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">27. Where were Yasser Arafat and 14,000 PLO fighters evacuated to by ship in August 1982 following the US-brokered siege of Beirut?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Tunis (Tunisia) and other Arab nations far from the Israeli border</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">27.</span>
+                        <span class="ans-text">Tunis (Tunisia) and other Arab nations far from the Israeli border</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">28. What horrific event took place in Beirut between 16 and 18 September 1982 following the assassination of Lebanese President-elect Bashir Gemayel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Sabra and Shatila massacre of Palestinian refugees by Christian Phalangist militias</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">28.</span>
+                        <span class="ans-text">The Sabra and Shatila massacre of Palestinian refugees by Christian Phalangist militias</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">29. What official Israeli judicial investigation found Defense Minister Ariel Sharon bearing 'personal responsibility' for failing to prevent the Sabra and Shatila massacre?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Kahan Commission</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">29.</span>
+                        <span class="ans-text">The Kahan Commission</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">30. What radical Iranian-backed Shia militant movement emerged in southern Lebanon during the 1980s to fight against Israeli occupation?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Hezbollah ('Party of God')</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">30.</span>
+                        <span class="ans-text">Hezbollah ('Party of God')</span>
                     </div>
                 
             </div>
@@ -972,228 +912,173 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: A31/41 TO A60/80)       -->
+    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: ANSWERS 31 TO 60) -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>Key Topic 3: Attempts at a Solution, 1974–95</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Reference · Answers 31 to 60</p>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 31 to 60 (Self &amp; Peer Marking Bank)</p>
                 </div>
                 <span class="header-tag" style="background: #059669;">Mark Scheme 2</span>
             </div>
 
-            <div class="quiz-grid">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 3px 8px; font-size: 6.8pt; color: #065f46; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Use for rapid recall checking against Vault Part 2 (Page 3). Log total correct recall items on Page 1.</span>
+                <span>Answers 31–60</span>
+            </div>
+
+            <div class="ans-grid">
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">31. What spontaneous event on 8 December 1987 ignited the First Palestinian Intifada in the Gaza Strip?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">An Israeli army tank transporter collided with civilian cars in the Jabalia refugee camp, killing four Palestinian workers</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">31.</span>
+                        <span class="ans-text">An Israeli army tank transporter collided with civilian cars in the Jabalia refugee camp, killing four Palestinian workers</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">32. What primary tactics characterized the First Intifada (1987–1993) on the streets of the occupied territories?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Grassroots civil disobedience, stone-throwing by youth ('Children of the Stones'), commercial strikes, barricades, and tax boycotts</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">32.</span>
+                        <span class="ans-text">Grassroots civil disobedience, stone-throwing by youth ('Children of the Stones'), commercial strikes, barricades, and tax boycotts</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">33. What underground committee inside the occupied territories coordinated the strikes, boycotts, and civil resistance of the First Intifada through clandestine leaflets?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The UNLU (Unified National Leadership of the Uprising)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">33.</span>
+                        <span class="ans-text">The UNLU (Unified National Leadership of the Uprising)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">34. What controversial policy was introduced by Israeli Defense Minister Yitzhak Rabin to suppress the First Intifada?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The 'Iron Fist' policy, including curfews, home demolitions, mass administrative detention, and 'breaking bones'</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">34.</span>
+                        <span class="ans-text">The 'Iron Fist' policy, including curfews, home demolitions, mass administrative detention, and 'breaking bones'</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">35. Which new Islamist militant organization was founded in Gaza in December 1987 by Sheikh Ahmed Yassin as an offshoot of the Muslim Brotherhood?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Hamas (The Islamic Resistance Movement)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">35.</span>
+                        <span class="ans-text">Hamas (The Islamic Resistance Movement)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">36. What historic announcement did King Hussein of Jordan make on 31 July 1988, dramatically reshaping Palestinian diplomacy?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">He severed all administrative and legal ties with the West Bank, abandoning Jordan's claim to the territory in favor of the PLO</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">36.</span>
+                        <span class="ans-text">He severed all administrative and legal ties with the West Bank, abandoning Jordan's claim to the territory in favor of the PLO</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">37. What historic declaration was made by Yasser Arafat and the Palestine National Council in Algiers on 15 November 1988?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The unilateral declaration of an independent State of Palestine, accepting UN Resolution 242 and renouncing terrorism</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">37.</span>
+                        <span class="ans-text">The unilateral declaration of an independent State of Palestine, accepting UN Resolution 242 and renouncing terrorism</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">38. What condition did US President Ronald Reagan insist upon before opening formal diplomatic dialogue with the PLO in December 1988?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Arafat had to explicitly accept UN Resolutions 242 and 338, recognize Israel's right to exist in peace, and renounce all forms of terrorism</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">38.</span>
+                        <span class="ans-text">Arafat had to explicitly accept UN Resolutions 242 and 338, recognize Israel's right to exist in peace, and renounce all forms of terrorism</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">39. What was the 'Security Zone' established by Israel in southern Lebanon in 1985?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A 10-mile deep buffer zone occupied by the IDF and the proxy South Lebanon Army (SLA) to prevent cross-border rocket attacks</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">39.</span>
+                        <span class="ans-text">A 10-mile deep buffer zone occupied by the IDF and the proxy South Lebanon Army (SLA) to prevent cross-border rocket attacks</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">40. How did the First Intifada fundamentally alter the dynamic of the Israeli-Palestinian conflict by the early 1990s?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It demonstrated to Israeli leaders that military occupation was unsustainable indefinitely, and proved to Palestinians that grassroots resistance could force diplomatic engagement</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">40.</span>
+                        <span class="ans-text">It demonstrated to Israeli leaders that military occupation was unsustainable indefinitely, and proved to Palestinians that grassroots resistance could force diplomatic engagement</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">41. What disastrous diplomatic gamble did Yasser Arafat take during the 1990–91 Gulf Crisis that alienated his wealthy Gulf Arab donors?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">He publicly backed Iraqi dictator Saddam Hussein following Iraq's invasion of Kuwait</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">41.</span>
+                        <span class="ans-text">He publicly backed Iraqi dictator Saddam Hussein following Iraq's invasion of Kuwait</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">42. What historic global transformation in 1991 deprived the Arab states and the PLO of their primary superpower sponsor and diplomatic shield?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The collapse of the Soviet Union</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">42.</span>
+                        <span class="ans-text">The collapse of the Soviet Union</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">43. What landmark diplomatic conference convened in Spain in October 1991, bringing Israeli, Jordanian, Syrian, Lebanese, and Palestinian delegates face-to-face for the first time?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Madrid Peace Conference</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">43.</span>
+                        <span class="ans-text">The Madrid Peace Conference</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">44. Which Israeli political party won the June 1992 national election on a platform of halting settlement construction and reaching an interim peace deal with the Palestinians?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Labour Party led by Yitzhak Rabin</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">44.</span>
+                        <span class="ans-text">The Labour Party led by Yitzhak Rabin</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">45. Where were the top-secret backchannel negotiations between Israeli academics and PLO officials conducted in 1993, completely bypassing the stalled official Washington talks?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">In Sarpsborg and Oslo, Norway</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">45.</span>
+                        <span class="ans-text">In Sarpsborg and Oslo, Norway</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">46. What historic exchange of documents occurred between Yitzhak Rabin and Yasser Arafat on 9–10 September 1993 prior to signing the Oslo Accords?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Letters of Mutual Recognition: Israel recognized the PLO as representative of the Palestinians, and the PLO recognized Israel's right to exist in peace and security</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">46.</span>
+                        <span class="ans-text">The Letters of Mutual Recognition: Israel recognized the PLO as representative of the Palestinians, and the PLO recognized Israel's right to exist in peace and security</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">47. On what historic date was the Declaration of Principles (Oslo I Accord) signed on the South Lawn of the White House, sealed by an iconic handshake between Rabin and Arafat?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">13 September 1993</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">47.</span>
+                        <span class="ans-text">13 September 1993</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">48. What interim governing body was established under the Oslo Accords to administer civilian life in parts of the West Bank and Gaza Strip?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Palestinian National Authority (PNA / PA)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">48.</span>
+                        <span class="ans-text">The Palestinian National Authority (PNA / PA)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">49. What was the first territorial phase of the Oslo peace process implemented in May 1994 under the Cairo Agreement?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">'Gaza-Jericho First': Limited Palestinian self-rule established in the Gaza Strip and the West Bank city of Jericho</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">49.</span>
+                        <span class="ans-text">'Gaza-Jericho First': Limited Palestinian self-rule established in the Gaza Strip and the West Bank city of Jericho</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">50. Who were the three leaders jointly awarded the 1994 Nobel Peace Prize for their groundbreaking work on the Oslo Accords?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Yitzhak Rabin, Shimon Peres, and Yasser Arafat</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">50.</span>
+                        <span class="ans-text">Yitzhak Rabin, Shimon Peres, and Yasser Arafat</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">51. What historic bilateral treaty was signed on 26 October 1994 at the Arava border crossing, making this country only the second Arab state to make peace with Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Israel-Jordan Peace Treaty, signed by Yitzhak Rabin and King Hussein</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">51.</span>
+                        <span class="ans-text">The Israel-Jordan Peace Treaty, signed by Yitzhak Rabin and King Hussein</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">52. What atrocity on 25 February 1994 in Hebron threatened to derail the peace process and sparked widespread rioting?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">American-Israeli Jewish extremist Baruch Goldstein opened fire with an assault rifle on Muslim worshippers inside the Cave of the Patriarchs (Ibrahimi Mosque), killing 29</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">52.</span>
+                        <span class="ans-text">American-Israeli Jewish extremist Baruch Goldstein opened fire with an assault rifle on Muslim worshippers inside the Cave of the Patriarchs (Ibrahimi Mosque), killing 29</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">53. What deadly tactic did militant Islamist factions Hamas and Palestinian Islamic Jihad systematically launch in 1994–95 to destroy Israeli public support for the Oslo Accords?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Suicide bus bombings in Israeli cities like Tel Aviv, Afula, and Hadera targeting civilians</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">53.</span>
+                        <span class="ans-text">Suicide bus bombings in Israeli cities like Tel Aviv, Afula, and Hadera targeting civilians</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">54. How was the territory of the West Bank divided under the September 1995 Interim Agreement (Oslo II / Taba Accord)?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Into three distinct administrative categories: Areas A, B, and C</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">54.</span>
+                        <span class="ans-text">Into three distinct administrative categories: Areas A, B, and C</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">55. Under the Oslo II territorial breakdown, what was the status of 'Area C' in the West Bank?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Full Israeli military and civil control, covering over 70% of the land and containing all Jewish settlements, military bases, and bypass roads</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">55.</span>
+                        <span class="ans-text">Full Israeli military and civil control, covering over 70% of the land and containing all Jewish settlements, military bases, and bypass roads</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">56. What was the most critical structural flaw of the Oslo peace process that ultimately contributed to its collapse?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It deliberately deferred the most contentious 'permanent status' issues (Jerusalem, Palestinian refugees' Right of Return, borders, and Jewish settlements) to be solved later</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">56.</span>
+                        <span class="ans-text">It deliberately deferred the most contentious 'permanent status' issues (Jerusalem, Palestinian refugees' Right of Return, borders, and Jewish settlements) to be solved later</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">57. How did the expansion of Israeli settlements during the Oslo years (1993–1995) impact Palestinian attitudes toward the peace process?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It generated deep cynicism and disillusionment, as the settler population in the West Bank and Gaza grew by over 50%, signaling that Israel had no intention of ending the occupation</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">57.</span>
+                        <span class="ans-text">It generated deep cynicism and disillusionment, as the settler population in the West Bank and Gaza grew by over 50%, signaling that Israel had no intention of ending the occupation</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">58. What toxic political climate emerged inside Israel among right-wing and religious nationalist groups opposing the Oslo Accords in 1994–95?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Rabin was branded a traitor, 'Judenrat', and depicted in Nazi SS uniform at mass rallies led by right-wing opposition politicians</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">58.</span>
+                        <span class="ans-text">Rabin was branded a traitor, 'Judenrat', and depicted in Nazi SS uniform at mass rallies led by right-wing opposition politicians</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">59. What devastating tragedy occurred on the evening of 4 November 1995 at Kings of Israel Square in Tel Aviv, dealing a fatal blow to the peace process?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Israeli Prime Minister Yitzhak Rabin was assassinated by Yigal Amir, a right-wing Jewish extremist, after addressing a massive peace rally</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">59.</span>
+                        <span class="ans-text">Israeli Prime Minister Yitzhak Rabin was assassinated by Yigal Amir, a right-wing Jewish extremist, after addressing a massive peace rally</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">60. What was the political consequence of Yitzhak Rabin's assassination in Israel's May 1996 general election?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Following a wave of Hamas suicide bus bombings, right-wing Likud leader Benjamin Netanyahu narrowly defeated Shimon Peres on a campaign emphasizing security over peace concessions</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">60.</span>
+                        <span class="ans-text">Following a wave of Hamas suicide bus bombings, right-wing Likud leader Benjamin Netanyahu narrowly defeated Shimon Peres on a campaign emphasizing security over peace concessions</span>
                     </div>
                 
             </div>
@@ -1251,31 +1136,41 @@
 
             <!-- Q2: 8-Mark Importance -->
             <div class="ladder-zone" style="border-left: 3.5px solid #8b5cf6;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
                     <strong style="font-size: 8.5pt; color: #1e293b;">Question 2: Importance (8 Marks)</strong>
-                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">F-I-L Formula · ~12 Mins</span>
+                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">F-I-L Formula · ~12 Mins · 2 Developed Explanations</span>
                 </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
                     Explain the importance of the Oslo Accords (1993) for the setting up of the Palestinian National Authority.
                 </div>
 
                 <!-- Launchpad -->
-                <div class="ladder-launchpad">
+                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
                     <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"The Oslo Accords were critically important because they established the legal and administrative framework for Palestinian self-government."</em><br>
                     <strong>Facts to Include:</strong> Signed on 13 September 1993 following secret Norwegian backchannel talks; established a 5-year interim period of Palestinian self-rule, starting with Israeli withdrawal from the Gaza Strip and Jericho.
                 </div>
 
-                <!-- Writing lines -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">This event was important for the outcome because...</div>
-                    <div class="writing-line starter">For example, (provide precise factual knowledge)...</div>
+                <!-- Writing lines (12 Lines Total: 2 Developed Paragraphs) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 1px 0; text-transform: uppercase;">Paragraph 1: First Reason for Importance</div>
+                    <div class="writing-line starter">One reason this was important was because...</div>
+                    <div class="writing-line starter">For example, (deploy 2–3 precise historical facts)...</div>
+                    <div class="writing-line starter">This was critical because it directly caused / led to...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Second Reason for Importance</div>
+                    <div class="writing-line starter">A second reason this was important was because...</div>
+                    <div class="writing-line starter">Specifically, (support with detailed factual evidence)...</div>
                     <div class="writing-line starter">Without this development, the outcome would have differed because...</div>
+                    <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Stretch:</strong> Grade 9 Evaluation: Analyse the structural limitations of Oslo — why did deferring "permanent status issues" (Jerusalem, refugees, borders, Jewish settlements) ultimately undermine the authority of the PNA?
                 </div>
             </div>
@@ -1341,20 +1236,35 @@
                     <strong>🔗 Causal Connectives Bank:</strong> The uprising erupted spontaneously when... &nbsp;•&nbsp; As civil disobedience expanded under the UNLU... &nbsp;•&nbsp; Faced with mounting international outcry... &nbsp;•&nbsp; This fundamental political deadlock led directly to...
                 </div>
 
-                <!-- Writing lines -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">Paragraph 1: The crisis / conflict began when...</div>
+                <!-- Writing lines: 3 Developed Paragraphs (18 Ruled Lines Total) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Stage 1 — Trigger &amp; Outbreak</div>
+                    <div class="writing-line starter">The conflict / crisis began when...</div>
+                    <div class="writing-line starter">Specifically, (deploy precise historical facts and figures)...</div>
                     <div class="writing-line"></div>
-                    <div class="writing-line starter">Paragraph 2: A decisive turning point occurred when...</div>
                     <div class="writing-line"></div>
-                    <div class="writing-line starter">Paragraph 3: As a direct consequence of this...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Stage 2 — Decisive Turning Point (Explicit Causal Link)</div>
+                    <div class="writing-line starter">As a direct consequence of this initial outbreak, a decisive turning point occurred when...</div>
+                    <div class="writing-line starter">For example, (include key names, operations, or policy shifts)...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 3: Stage 3 — Climax &amp; Outcome (Explicit Causal Link)</div>
+                    <div class="writing-line starter">This turning point directly triggered the final outcome when...</div>
+                    <div class="writing-line starter">Consequently, the long-term impact on the region was that...</div>
+                    <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Analytical Glue:</strong> Grade 9 Analytical Glue: Trace how the grassroots nature of the Intifada threatened both the Israeli security establishment and Arafat’s external PLO leadership in Tunis, forcing both sides to compromise at Oslo.
                 </div>
             </div>
@@ -1422,7 +1332,7 @@
                     Explain the importance of Arafat’s renunciation of terrorism (1988) for diplomatic relations with the USA.
                 </div>
 
-                <div class="dual-track-container" style="height: 120px;">
+                <div class="dual-track-container" style="height: 155px;">
                     <div class="toolkit-col">
                         <div>
                             <strong style="color: #0369a1; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🧰 Fact Vault (AO1)</strong>
@@ -1433,10 +1343,13 @@
                         </div>
                     </div>
                     <div class="writing-col">
-                        <div class="writing-line starter">This event was important for the outcome because...</div>
-                        <div class="writing-line starter">Specifically,...</div>
-                        <div class="writing-line starter">As a direct result,...</div>
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; text-transform: uppercase;">Para 1: First Reason for Importance</div>
+                        <div class="writing-line starter">One reason this was important was...</div>
+                        <div class="writing-line starter">Specifically, (factual detail)...</div>
                         <div class="writing-line"></div>
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; margin-top: 2px; text-transform: uppercase;">Para 2: Second Reason for Importance</div>
+                        <div class="writing-line starter">A second reason this was important was...</div>
+                        <div class="writing-line starter">Without this development,...</div>
                         <div class="writing-line"></div>
                         <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 2px 4px; font-size: 6.5pt; color: #86198f; margin-top: 2px;">
                             Grade 9 Upgrade: Explain how this diplomatic breakthrough laid the indispensable groundwork for the 1991 Madrid Conference and the subsequent 1993 Oslo Peace Process.

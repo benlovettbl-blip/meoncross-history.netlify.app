@@ -30,8 +30,14 @@
   .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
   
   /* Lined paper simulation */
-  .writing-line { height: 16px; border-bottom: 1px solid #e2e8f0; margin-bottom: 2px; }
+  .writing-line { height: 15px; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; }
   .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 2px; }
+  
+  /* Answers-Only Bank (Green Pages 4 & 5) */
+  .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 10px; font-size: 7.2pt; flex: 1 1 auto; }
+  .ans-item { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 2.5px 6px; display: flex; gap: 6px; align-items: baseline; }
+  .ans-num { color: #166534; font-weight: 800; font-size: 7.2pt; flex-shrink: 0; min-width: 18px; }
+  .ans-text { color: #15803d; font-weight: 600; line-height: 1.25; }
   
   /* Cover Tracker Table */
   .tracker-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin: 6px 0; }
@@ -40,9 +46,9 @@
   .tracker-table tr:nth-child(even) { background: #f8fafc; }
   
   /* 2-Column Quiz Grids */
-  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 7.2pt; flex: 1 1 auto; overflow: hidden; }
-  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; display: flex; gap: 4px; align-items: flex-start; }
-  .quiz-cb { width: 10px; height: 10px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
+  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5px 8px; font-size: 6.9pt; line-height: 1.2; flex: 1 1 auto; overflow: hidden; }
+  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px; display: flex; gap: 4px; align-items: flex-start; }
+  .quiz-cb { width: 9px; height: 9px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
   
   /* Stepped Ladder Boxes */
   .ladder-zone { border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; }
@@ -95,11 +101,10 @@
                 <table class="tracker-table">
                     <thead>
                         <tr>
-                            <th style="width: 44%;">Assessment Component &amp; Stem Focus</th>
-                            <th style="width: 14%; text-align: center;">Format Style</th>
-                            <th style="width: 12%; text-align: center;">Max Marks</th>
-                            <th style="width: 14%; text-align: center;">Score</th>
-                            <th style="width: 16%; text-align: center;">RAG Status</th>
+                            <th style="width: 54%;">Assessment Component &amp; Stem Focus</th>
+                            <th style="width: 16%; text-align: center;">Format Style</th>
+                            <th style="width: 14%; text-align: center;">Max Marks</th>
+                            <th style="width: 16%; text-align: center;">Pupil Score</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -108,82 +113,72 @@
                             <td style="text-align: center;">Checklist</td>
                             <td style="text-align: center;">/80</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ R ] &nbsp; [ A ] &nbsp; [ G ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q1 Consequence (bombing of the King David Hote...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q2 Importance (UN Resolution 181 for the crea...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q3 Narrative Account (key events of the Arab-Israeli...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q1 Consequence (Israeli attacks on Gaza in 195...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q2 Importance (Law of Return (1950) for the n...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q3 Narrative Account (key events of the Suez Crisis ...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q1 Consequence (formation of the United Arab R...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q2 Importance (creation of the Israeli Defenc...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q3 Narrative Account (key events leading to the end ...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr style="background: #e0e7ff; font-weight: 800; font-size: 7.5pt;">
                             <td colspan="2">TOTAL COMBINED EXAM MARKS:</td>
                             <td style="text-align: center;">/60</td>
                             <td style="text-align: center;">_____ / 60</td>
-                            <td style="text-align: center;">Grade: [ 9 8 7 6 5 4 ]</td>
                         </tr>
                     </tbody>
                 </table>
-                <div style="display: flex; justify-content: space-between; font-size: 7pt; color: #475569; margin-top: 2px;">
-                    <span>Teacher / Marker Signature: _____________________________________</span>
-                    <span>Date Completed: _______________</span>
+                <div style="display: flex; justify-content: space-between; font-size: 7.2pt; color: #334155; margin-top: 3px; font-weight: 600;">
+                    <span>Teacher / Peer Marker: _____________________________________</span>
+                    <span>Date: _______________</span>
+                    <span>Overall Grade: [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
                 </div>
             </div>
 
@@ -193,9 +188,9 @@
                     <span>⏱️ Edexcel Exam Fast Facts &amp; Stem Blueprints (Option P5 Period Study)</span>
                     <span>Total Paper 2: 32 Marks · 50 Mins</span>
                 </div>
-                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 $ightarrow$ support with <strong>2–3 detailed facts</strong> $ightarrow$ explain direct <strong>Consequence Link</strong> (why this mattered).</div>
-                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> $ightarrow$ <strong>Decisive Turning Point</strong> $ightarrow$ <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
-                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> $ightarrow$ provide <strong>Information facts</strong> $ightarrow$ explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
+                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 &rarr; support with <strong>2–3 detailed facts</strong> &rarr; explain direct <strong>Consequence Link</strong> (why this mattered).</div>
+                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> &rarr; <strong>Decisive Turning Point</strong> &rarr; <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
+                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> &rarr; provide <strong>Information facts</strong> &rarr; explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
             </div>
         </div>
 
@@ -897,298 +892,223 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: A1 TO A30/40)           -->
+    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: ANSWERS 1 TO 40)   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>Key Topic 1: The Birth of the State of Israel, 1945–63</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Reference · Answers 1 to 40 (Double-Sided Flip Reference)</p>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 1 to 40 (Self &amp; Peer Marking Bank)</p>
                 </div>
                 <span class="header-tag" style="background: #059669;">Mark Scheme 1</span>
             </div>
 
-            <div class="quiz-grid">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 3px 8px; font-size: 6.8pt; color: #065f46; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Cover this bank with your hand or a sheet of paper to test yourself against Pages 2–3, or use for rapid peer marking.</span>
+                <span>Answers 1–40</span>
+            </div>
+
+            <div class="ans-grid">
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">1. What crucial man-made waterway connects the Mediterranean Sea to the Red Sea, serving as a vital strategic chokepoint for international trade and oil?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Suez Canal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">1.</span>
+                        <span class="ans-text">The Suez Canal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">2. Which strategic maritime passage at the mouth of the Gulf of Aqaba was blockaded by Egypt in 1956 and 1967, acts that Israel considered causes of war?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Straits of Tiran</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">2.</span>
+                        <span class="ans-text">The Straits of Tiran</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">3. Which triangular desert peninsula connecting Africa to Asia was captured by Israel from Egypt in 1956 and 1967, before being returned under the Camp David Accords?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Sinai Peninsula</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">3.</span>
+                        <span class="ans-text">The Sinai Peninsula</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">4. Which strategic river forms the natural eastern boundary of the West Bank, flowing south from the Sea of Galilee into the Dead Sea?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The River Jordan</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">4.</span>
+                        <span class="ans-text">The River Jordan</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">5. Which ancient and holy city, claimed as a capital by both Israelis and Palestinians, was divided between 1948 and 1967 before Israeli forces captured the Old City?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Jerusalem</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">5.</span>
+                        <span class="ans-text">Jerusalem</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">6. Which elevated volcanic plateau bordering south-western Syria was captured by Israel during the 1967 Six Day War due to its dominant military vantage point over Galilee?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Golan Heights</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">6.</span>
+                        <span class="ans-text">The Golan Heights</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">7. Which narrow coastal strip bordering Egypt's Sinai Peninsula came under Egyptian military control in 1948, was captured by Israel in 1967, and became an epicenter of the 1987 Intifada?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Gaza Strip</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">7.</span>
+                        <span class="ans-text">The Gaza Strip</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">8. Which territory west of the River Jordan was annexed by Jordan in 1950, occupied by Israel in 1967, and became the central focus of Jewish settlement expansion?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The West Bank</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">8.</span>
+                        <span class="ans-text">The West Bank</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">9. What was the de facto border established by the 1949 Armistice Agreements separating Israel from the West Bank, Gaza Strip, and Golan Heights until 1967?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Green Line</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">9.</span>
+                        <span class="ans-text">The Green Line</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">10. Which arid southern desert region accounted for over 55% of the total land area allocated to the Jewish state under the 1947 UN Partition Plan?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Negev Desert</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">10.</span>
+                        <span class="ans-text">The Negev Desert</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">11. Which southern Israeli port city on the Gulf of Aqaba provides Israel with maritime access to the Red Sea, East Africa, and Asia without using the Suez Canal?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Eilat</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">11.</span>
+                        <span class="ans-text">Eilat</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">12. Which strategic fortified coastal town at the southern tip of the Sinai Peninsula directly commands the entrance to the Straits of Tiran?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Sharm el-Sheikh</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">12.</span>
+                        <span class="ans-text">Sharm el-Sheikh</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">13. Which major freshwater lake in northern Israel, fed by the River Jordan, was a frequent source of border clashes with Syria in the 1950s and 1960s?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Sea of Galilee (Lake Tiberias)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">13.</span>
+                        <span class="ans-text">The Sea of Galilee (Lake Tiberias)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">14. Which region north of Israel's border became known as 'Fatahland' in the 1970s as the PLO launched cross-border rocket attacks against northern Israeli towns?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Southern Lebanon</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">14.</span>
+                        <span class="ans-text">Southern Lebanon</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">15. What was the massive Israeli chain of sand-wall fortifications built along the eastern bank of the Suez Canal after 1967 to defend against an Egyptian crossing?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Bar-Lev Line</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">15.</span>
+                        <span class="ans-text">The Bar-Lev Line</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">16. Which capital city was subjected to a brutal three-month siege and heavy IDF bombardment in the summer of 1982, leading to the evacuation of the PLO to Tunisia?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Beirut</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">16.</span>
+                        <span class="ans-text">Beirut</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">17. What was the political movement that emerged in the late 19th century advocating for the establishment of a sovereign Jewish national homeland in Palestine?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Zionism</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">17.</span>
+                        <span class="ans-text">Zionism</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">18. What was the primary conflict between Arab and Jewish demands in Palestine as the British Mandate drew to a close in 1945?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Arabs demanded an independent democratic state based on majority rule, while Jews demanded an independent sovereign state to absorb Holocaust survivors</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">18.</span>
+                        <span class="ans-text">Arabs demanded an independent democratic state based on majority rule, while Jews demanded an independent sovereign state to absorb Holocaust survivors</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">19. Which neighboring Arab kingdom east of the River Jordan, ruled by King Abdullah I, annexed the West Bank and East Jerusalem following the 1948–49 War?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Transjordan (Jordan)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">19.</span>
+                        <span class="ans-text">Transjordan (Jordan)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">20. In 1945 at the end of the Second World War, what was the approximate demographic balance of the population living in Mandatory Palestine?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Approximately 1.2 million Palestinian Arabs and 600,000 Jews</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">20.</span>
+                        <span class="ans-text">Approximately 1.2 million Palestinian Arabs and 600,000 Jews</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">21. Why was British Foreign Secretary Ernest Bevin determined to maintain strict immigration quotas to Palestine in 1945–46?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">To preserve British alliances with oil-rich Arab states and prevent regional conflict</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">21.</span>
+                        <span class="ans-text">To preserve British alliances with oil-rich Arab states and prevent regional conflict</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">22. What tragic event on 22 July 1946 broke British civilian morale and accelerated their withdrawal from Palestine?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The bombing of the King David Hotel in Jerusalem</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">22.</span>
+                        <span class="ans-text">The bombing of the King David Hotel in Jerusalem</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">23. Which refugee ship carrying 4,500 Holocaust survivors was intercepted by the British Royal Navy in July 1947 and forcibly returned to displaced persons camps in Germany?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The SS Exodus 1947</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">23.</span>
+                        <span class="ans-text">The SS Exodus 1947</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">24. What did United Nations Resolution 181 (passed on 29 November 1947) propose for Palestine?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Partitioning Palestine into separate Arab and Jewish states with Jerusalem under international control</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">24.</span>
+                        <span class="ans-text">Partitioning Palestine into separate Arab and Jewish states with Jerusalem under international control</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">25. What was the Jewish Agency's reaction to UN Resolution 181 compared to that of the Arab Higher Committee?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Jewish Agency accepted partition, whereas the Arab Higher Committee rejected it completely</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">25.</span>
+                        <span class="ans-text">The Jewish Agency accepted partition, whereas the Arab Higher Committee rejected it completely</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">26. What was the primary military objective of the Haganah's 'Plan Dalet' (Plan D) launched in April 1948?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">To secure vital transport corridors (especially Tel Aviv-Jerusalem) and clear hostile villages prior to British departure</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">26.</span>
+                        <span class="ans-text">To secure vital transport corridors (especially Tel Aviv-Jerusalem) and clear hostile villages prior to British departure</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">27. What notorious event on 9 April 1948 involved an Irgun and Lehi attack on an Arab village, causing widespread panic and civilian flight?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Deir Yassin massacre</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">27.</span>
+                        <span class="ans-text">The Deir Yassin massacre</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">28. Who read the Declaration of Independence establishing the State of Israel in Tel Aviv on 14 May 1948?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">David Ben-Gurion</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">28.</span>
+                        <span class="ans-text">David Ben-Gurion</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">29. What happened on 15 May 1948, the day after Israel declared its independence?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Armies from five neighboring Arab states invaded the newly declared State of Israel</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">29.</span>
+                        <span class="ans-text">Armies from five neighboring Arab states invaded the newly declared State of Israel</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">30. How did the first UN-negotiated truce in June 1948 provide Israel with a decisive operational advantage?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It allowed Israel to reorganize the IDF, train conscripts, and import modern weapons from Czechoslovakia</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">30.</span>
+                        <span class="ans-text">It allowed Israel to reorganize the IDF, train conscripts, and import modern weapons from Czechoslovakia</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">31. Which UN mediator was assassinated in Jerusalem in September 1948 by the radical Jewish militant group Lehi (Stern Gang)?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Count Folke Bernadotte</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">31.</span>
+                        <span class="ans-text">Count Folke Bernadotte</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">32. What was the name of the official border established by the 1949 Armistice Agreements between Israel and its Arab neighbors?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Green Line</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">32.</span>
+                        <span class="ans-text">The Green Line</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">33. By the end of the 1948–49 Arab-Israeli War, what percentage of mandatory Palestine was controlled by Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Approximately 79%</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">33.</span>
+                        <span class="ans-text">Approximately 79%</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">34. Which Arab military force proved to be the most effective and well-trained during the 1948–49 War, successfully holding the Old City of Jerusalem?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Arab Legion of Transjordan</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">34.</span>
+                        <span class="ans-text">The Arab Legion of Transjordan</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">35. What was the 'Sergeants Affair' of July 1947, which caused widespread outrage in Britain?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Irgun executed two kidnapped British intelligence sergeants in retaliation for British hangings of Irgun members</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">35.</span>
+                        <span class="ans-text">The Irgun executed two kidnapped British intelligence sergeants in retaliation for British hangings of Irgun members</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">36. What happened to the territory designated for an independent Palestinian Arab state under UN Resolution 181 following the 1948–49 war?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It was annexed by Jordan (West Bank) and placed under Egyptian military control (Gaza Strip)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">36.</span>
+                        <span class="ans-text">It was annexed by Jordan (West Bank) and placed under Egyptian military control (Gaza Strip)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">37. Why was the Israeli supply corridor to Jerusalem known as the 'Burma Road' constructed in June 1948?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">To bypass Arab Legion blockades at Latrun and deliver vital food and weapons to besieged Jewish residents in Jerusalem</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">37.</span>
+                        <span class="ans-text">To bypass Arab Legion blockades at Latrun and deliver vital food and weapons to besieged Jewish residents in Jerusalem</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">38. What incident in June 1948 nearly sparked a civil war inside Israel when Ben-Gurion ordered the shelling of an Irgun arms ship off Tel Aviv?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Altalena Affair</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">38.</span>
+                        <span class="ans-text">The Altalena Affair</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">39. Which superpower was the first to grant de jure diplomatic recognition to the State of Israel in May 1948?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Soviet Union</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">39.</span>
+                        <span class="ans-text">The Soviet Union</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">40. Where were the formal 1949 armistice talks between Israel and Egypt, Jordan, Lebanon, and Syria held under UN auspices?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">On the island of Rhodes</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">40.</span>
+                        <span class="ans-text">On the island of Rhodes</span>
                     </div>
                 
             </div>
@@ -1202,298 +1122,223 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: A31/41 TO A60/80)       -->
+    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: ANSWERS 41 TO 80) -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>Key Topic 1: The Birth of the State of Israel, 1945–63</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Reference · Answers 41 to 80</p>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 41 to 80 (Self &amp; Peer Marking Bank)</p>
                 </div>
                 <span class="header-tag" style="background: #059669;">Mark Scheme 2</span>
             </div>
 
-            <div class="quiz-grid">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 3px 8px; font-size: 6.8pt; color: #065f46; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Use for rapid recall checking against Vault Part 2 (Page 3). Log total correct recall items on Page 1.</span>
+                <span>Answers 41–80</span>
+            </div>
+
+            <div class="ans-grid">
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">41. What Arabic term, meaning 'Catastrophe', is used to describe the expulsion and flight of approximately 700,000 Palestinians during the 1948–49 War?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Nakba</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">41.</span>
+                        <span class="ans-text">The Nakba</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">42. What was the core principle established by UN General Assembly Resolution 194 in December 1948 regarding Palestinian refugees?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Refugees wishing to return in peace should be permitted to do so, or be compensated for lost property</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">42.</span>
+                        <span class="ans-text">Refugees wishing to return in peace should be permitted to do so, or be compensated for lost property</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">43. Which United Nations agency was established in December 1949 to provide direct relief, education, and healthcare to displaced Palestinians?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">UNRWA (United Nations Relief and Works Agency)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">43.</span>
+                        <span class="ans-text">UNRWA (United Nations Relief and Works Agency)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">44. What landmark Israeli law passed in July 1950 granted every Jewish individual worldwide the right to immigrate to Israel and receive citizenship?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Law of Return</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">44.</span>
+                        <span class="ans-text">The Law of Return</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">45. What legislation passed by the Israeli Knesset in 1950 allowed the state to take custody of land and properties belonging to displaced Palestinian Arabs?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Absentee Property Law</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">45.</span>
+                        <span class="ans-text">The Absentee Property Law</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">46. What was Operation Magic Carpet (1949–1950)?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The secret airlift of approximately 50,000 Yemenite Jews to Israel</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">46.</span>
+                        <span class="ans-text">The secret airlift of approximately 50,000 Yemenite Jews to Israel</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">47. Why was the 1952 Reparations Agreement signed between Israel and West Germany so controversial inside Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Many Israelis, led by Menachem Begin, viewed accepting German money as blood money for the Holocaust</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">47.</span>
+                        <span class="ans-text">Many Israelis, led by Menachem Begin, viewed accepting German money as blood money for the Holocaust</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">48. What term was used to describe armed Palestinian guerrilla raiders who crossed armistice lines to launch cross-border attacks against Israeli targets in the 1950s?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Fedayeen</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">48.</span>
+                        <span class="ans-text">Fedayeen</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">49. What was the primary goal of Israel's military 'reprisal policy' developed during the 1950s under Moshe Dayan and David Ben-Gurion?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">To deter future infiltration by launching disproportionately severe military counter-strikes against Arab border villages and bases</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">49.</span>
+                        <span class="ans-text">To deter future infiltration by launching disproportionately severe military counter-strikes against Arab border villages and bases</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">50. Which controversial Israeli commando raid in October 1953, led by Major Ariel Sharon and Unit 101, resulted in the dynamiting of houses and 69 civilian deaths in a West Bank village?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Qibya Raid</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">50.</span>
+                        <span class="ans-text">The Qibya Raid</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">51. Why was King Abdullah I of Jordan assassinated by a Palestinian gunman outside the Al-Aqsa Mosque in Jerusalem in July 1951?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Because he was suspected of conducting secret bilateral peace negotiations with Israel</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">51.</span>
+                        <span class="ans-text">Because he was suspected of conducting secret bilateral peace negotiations with Israel</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">52. What was the 'Lavon Affair' (Operation Susannah) of 1954 in Egypt?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A covert Israeli military intelligence plot to bomb British and American targets in Egypt to frame the Muslim Brotherhood and stop British troop withdrawal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">52.</span>
+                        <span class="ans-text">A covert Israeli military intelligence plot to bomb British and American targets in Egypt to frame the Muslim Brotherhood and stop British troop withdrawal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">53. What was the 'Tzena' regime in Israel between 1949 and 1953?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A period of strict economic austerity, price controls, and food rationing to absorb hundreds of thousands of penniless immigrants</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">53.</span>
+                        <span class="ans-text">A period of strict economic austerity, price controls, and food rationing to absorb hundreds of thousands of penniless immigrants</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">54. Under what legal framework did Palestinian Arab citizens who remained inside the State of Israel live between 1948 and 1966?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Under a strict system of Military Administration with curfews, travel permits, and special courts</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">54.</span>
+                        <span class="ans-text">Under a strict system of Military Administration with curfews, travel permits, and special courts</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">55. What was the impact of the February 1955 Israeli raid on Gaza (Operation Black Arrow) that killed 38 Egyptian soldiers?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It shattered Egyptian military pride and directly convinced President Nasser to seek modern weapons from the Soviet bloc</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">55.</span>
+                        <span class="ans-text">It shattered Egyptian military pride and directly convinced President Nasser to seek modern weapons from the Soviet bloc</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">56. Which demographic group of Jewish immigrants faced significant discrimination, poor tent encampments (Ma'abarot), and social marginalization upon arrival in 1950s Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Mizrahi and Sephardic Jews from Arab and North African countries</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">56.</span>
+                        <span class="ans-text">Mizrahi and Sephardic Jews from Arab and North African countries</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">57. Which Arab country formally granted full citizenship to the Palestinian refugees residing within its borders after 1949?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Jordan</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">57.</span>
+                        <span class="ans-text">Jordan</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">58. What regional defense treaty, organized by Britain in 1955 to contain Soviet influence, was fiercely opposed by Egypt's Gamal Abdel Nasser as Western neo-colonialism?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Baghdad Pact</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">58.</span>
+                        <span class="ans-text">The Baghdad Pact</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">59. How did the United States support the young State of Israel economically in its immediate post-independence years?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">By providing extensive grants, private bond sales, and a $100 million Export-Import Bank loan</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">59.</span>
+                        <span class="ans-text">By providing extensive grants, private bond sales, and a $100 million Export-Import Bank loan</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">60. What was the 'Tripartite Declaration' issued by Britain, France, and the United States in May 1950?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A pledge to regulate arms sales to both Arab states and Israel to prevent an arms race and oppose border changes by force</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">60.</span>
+                        <span class="ans-text">A pledge to regulate arms sales to both Arab states and Israel to prevent an arms race and oppose border changes by force</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">61. What political revolution in July 1952 transformed Egypt from a pro-British monarchy into a radical nationalist republic?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Free Officers Revolution led by Gamal Abdel Nasser and Muhammad Naguib</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">61.</span>
+                        <span class="ans-text">The Free Officers Revolution led by Gamal Abdel Nasser and Muhammad Naguib</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">62. What major geopolitical ideology did President Nasser champion, advocating the political, cultural, and economic unification of all Arab peoples?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Pan-Arabism</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">62.</span>
+                        <span class="ans-text">Pan-Arabism</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">63. What landmark September 1955 agreement shattered the Western arms monopoly in the Middle East and alarmed both Israel and the United States?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Czechoslovak Arms Deal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">63.</span>
+                        <span class="ans-text">The Czechoslovak Arms Deal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">64. What decision by US Secretary of State John Foster Dulles in July 1956 directly triggered the Suez Crisis?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The abrupt withdrawal of US and British financing for the Aswan High Dam</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">64.</span>
+                        <span class="ans-text">The abrupt withdrawal of US and British financing for the Aswan High Dam</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">65. On what historic date did President Nasser nationalise the Suez Canal Company during a fiery speech in Alexandria?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">26 July 1956</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">65.</span>
+                        <span class="ans-text">26 July 1956</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">66. Why was British Prime Minister Sir Anthony Eden so personally hostile toward Gamal Abdel Nasser?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Eden viewed Nasser as a dangerous fascist dictator ('Mussolini on the Nile') who threatened Britain's imperial oil lifeline</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">66.</span>
+                        <span class="ans-text">Eden viewed Nasser as a dangerous fascist dictator ('Mussolini on the Nile') who threatened Britain's imperial oil lifeline</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">67. Why was France eager to join a military operation against Nasser in 1956?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">France accused Nasser of providing crucial military and financial support to the FLN rebels in Algeria</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">67.</span>
+                        <span class="ans-text">France accused Nasser of providing crucial military and financial support to the FLN rebels in Algeria</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">68. What secret collusion agreement was signed in October 1956 in a French villa between representatives of Britain, France, and Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Protocol of Sèvres</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">68.</span>
+                        <span class="ans-text">The Protocol of Sèvres</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">69. What was Operation Kadesh launched on 29 October 1956?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Israeli military invasion of the Sinai Peninsula, advancing rapidly toward the Suez Canal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">69.</span>
+                        <span class="ans-text">The Israeli military invasion of the Sinai Peninsula, advancing rapidly toward the Suez Canal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">70. What did the joint Anglo-French ultimatum issued on 30 October 1956 demand of Egypt and Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">That both sides stop fighting and withdraw their forces 10 miles away from the Suez Canal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">70.</span>
+                        <span class="ans-text">That both sides stop fighting and withdraw their forces 10 miles away from the Suez Canal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">71. How did President Dwight D. Eisenhower and the United States respond to the Anglo-French military intervention at Suez?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">With fury, threatening to collapse the British economy by selling US sterling reserves unless troops withdrew</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">71.</span>
+                        <span class="ans-text">With fury, threatening to collapse the British economy by selling US sterling reserves unless troops withdrew</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">72. What threat did Soviet Premier Nikolai Bulganin make against Britain and France in November 1956 during the height of the crisis?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">He issued veiled threats that London and Paris were vulnerable to Soviet rocket strikes</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">72.</span>
+                        <span class="ans-text">He issued veiled threats that London and Paris were vulnerable to Soviet rocket strikes</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">73. What innovative peacekeeping body was created by the UN General Assembly in November 1956 to oversee the withdrawal of invading forces from Egypt?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">UNEF (United Nations Emergency Force)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">73.</span>
+                        <span class="ans-text">UNEF (United Nations Emergency Force)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">74. What was the ultimate geopolitical consequence of the 1956 Suez Crisis for Britain and France?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It decisively demonstrated that Britain and France were no longer first-tier global superpowers and could not act independently of the US</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">74.</span>
+                        <span class="ans-text">It decisively demonstrated that Britain and France were no longer first-tier global superpowers and could not act independently of the US</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">75. What major political victory did Gamal Abdel Nasser achieve despite Egypt suffering defeat on the battlefield in 1956?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">He emerged as the heroic champion of the anti-imperialist Arab world, keeping control of the nationalised Suez Canal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">75.</span>
+                        <span class="ans-text">He emerged as the heroic champion of the anti-imperialist Arab world, keeping control of the nationalised Suez Canal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">76. What conditions did Israeli Prime Minister David Ben-Gurion secure before agreeing to withdraw the IDF from Sinai and Gaza in March 1957?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Guarantees from the US and the deployment of UNEF troops ensuring freedom of navigation through the Straits of Tiran</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">76.</span>
+                        <span class="ans-text">Guarantees from the US and the deployment of UNEF troops ensuring freedom of navigation through the Straits of Tiran</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">77. What was the 'Eisenhower Doctrine' announced by the US President in January 1957 following the Suez Crisis?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A policy offering military and economic aid to any Middle Eastern nation threatened by armed aggression from Communist-controlled states</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">77.</span>
+                        <span class="ans-text">A policy offering military and economic aid to any Middle Eastern nation threatened by armed aggression from Communist-controlled states</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">78. What political union was formed in February 1958, uniting Egypt and Syria under President Nasser's single leadership?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The United Arab Republic (UAR)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">78.</span>
+                        <span class="ans-text">The United Arab Republic (UAR)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">79. What dramatic event in July 1958 brought an abrupt end to the pro-Western Hashemite monarchy in Iraq?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A bloody military coup led by Brigadier Abd al-Karim Qasim that murdered King Faisal II and Prime Minister Nuri al-Said</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">79.</span>
+                        <span class="ans-text">A bloody military coup led by Brigadier Abd al-Karim Qasim that murdered King Faisal II and Prime Minister Nuri al-Said</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">80. What secret assistance did France begin providing to Israel in the late 1950s as a reward for their military cooperation at Suez?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Construction of a secret nuclear reactor and reprocessing facility at Dimona in the Negev desert</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">80.</span>
+                        <span class="ans-text">Construction of a secret nuclear reactor and reprocessing facility at Dimona in the Negev desert</span>
                     </div>
                 
             </div>
@@ -1551,31 +1396,41 @@
 
             <!-- Q2: 8-Mark Importance -->
             <div class="ladder-zone" style="border-left: 3.5px solid #8b5cf6;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
                     <strong style="font-size: 8.5pt; color: #1e293b;">Question 2: Importance (8 Marks)</strong>
-                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">F-I-L Formula · ~12 Mins</span>
+                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">F-I-L Formula · ~12 Mins · 2 Developed Explanations</span>
                 </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
                     Explain the importance of UN Resolution 181 for the creation of Israel.
                 </div>
 
                 <!-- Launchpad -->
-                <div class="ladder-launchpad">
+                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
                     <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"UN Resolution 181 was important for the creation of Israel because it provided essential international legal legitimacy for sovereign statehood."</em><br>
                     <strong>Facts to Include:</strong> Passed by a 2/3 UN majority on 29 November 1947, allocating 55% of Mandatory Palestine to a Jewish state, 45% to an Arab state, and designating Jerusalem an international corpus separatum under UN administration.
                 </div>
 
-                <!-- Writing lines -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">This event was important for the outcome because...</div>
-                    <div class="writing-line starter">For example, (provide precise factual knowledge)...</div>
+                <!-- Writing lines (12 Lines Total: 2 Developed Paragraphs) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 1px 0; text-transform: uppercase;">Paragraph 1: First Reason for Importance</div>
+                    <div class="writing-line starter">One reason this was important was because...</div>
+                    <div class="writing-line starter">For example, (deploy 2–3 precise historical facts)...</div>
+                    <div class="writing-line starter">This was critical because it directly caused / led to...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Second Reason for Importance</div>
+                    <div class="writing-line starter">A second reason this was important was because...</div>
+                    <div class="writing-line starter">Specifically, (support with detailed factual evidence)...</div>
                     <div class="writing-line starter">Without this development, the outcome would have differed because...</div>
+                    <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Stretch:</strong> Grade 9 Evaluation: Counter-factual analysis — explain whether Resolution 181 secured peace or whether its rejection by Arab states guaranteed that statehood could only be finalized through military warfare in 1948–49.
                 </div>
             </div>
@@ -1641,20 +1496,35 @@
                     <strong>🔗 Causal Connectives Bank:</strong> This triggered an immediate... &nbsp;•&nbsp; A decisive turning point occurred when... &nbsp;•&nbsp; Consequently, this enabled the IDF to... &nbsp;•&nbsp; The culmination of this development was...
                 </div>
 
-                <!-- Writing lines -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">Paragraph 1: The crisis / conflict began when...</div>
+                <!-- Writing lines: 3 Developed Paragraphs (18 Ruled Lines Total) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Stage 1 — Trigger &amp; Outbreak</div>
+                    <div class="writing-line starter">The conflict / crisis began when...</div>
+                    <div class="writing-line starter">Specifically, (deploy precise historical facts and figures)...</div>
                     <div class="writing-line"></div>
-                    <div class="writing-line starter">Paragraph 2: A decisive turning point occurred when...</div>
                     <div class="writing-line"></div>
-                    <div class="writing-line starter">Paragraph 3: As a direct consequence of this...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Stage 2 — Decisive Turning Point (Explicit Causal Link)</div>
+                    <div class="writing-line starter">As a direct consequence of this initial outbreak, a decisive turning point occurred when...</div>
+                    <div class="writing-line starter">For example, (include key names, operations, or policy shifts)...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 3: Stage 3 — Climax &amp; Outcome (Explicit Causal Link)</div>
+                    <div class="writing-line starter">This turning point directly triggered the final outcome when...</div>
+                    <div class="writing-line starter">Consequently, the long-term impact on the region was that...</div>
+                    <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Analytical Glue:</strong> Grade 9 Analytical Glue: Avoid writing a descriptive chronological story. Explicitly explain the CAUSAL LINK between the June truce breathing space and Israel’s tactical dominance in the autumn counter-offensives.
                 </div>
             </div>
@@ -1722,7 +1592,7 @@
                     Explain the importance of the Law of Return (1950) for the new state of Israel.
                 </div>
 
-                <div class="dual-track-container" style="height: 120px;">
+                <div class="dual-track-container" style="height: 155px;">
                     <div class="toolkit-col">
                         <div>
                             <strong style="color: #0369a1; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🧰 Fact Vault (AO1)</strong>
@@ -1733,10 +1603,13 @@
                         </div>
                     </div>
                     <div class="writing-col">
-                        <div class="writing-line starter">This event was important for the outcome because...</div>
-                        <div class="writing-line starter">Specifically,...</div>
-                        <div class="writing-line starter">As a direct result,...</div>
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; text-transform: uppercase;">Para 1: First Reason for Importance</div>
+                        <div class="writing-line starter">One reason this was important was...</div>
+                        <div class="writing-line starter">Specifically, (factual detail)...</div>
                         <div class="writing-line"></div>
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; margin-top: 2px; text-transform: uppercase;">Para 2: Second Reason for Importance</div>
+                        <div class="writing-line starter">A second reason this was important was...</div>
+                        <div class="writing-line starter">Without this development,...</div>
                         <div class="writing-line"></div>
                         <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 2px 4px; font-size: 6.5pt; color: #86198f; margin-top: 2px;">
                             Grade 9 Upgrade: Balance the military and demographic security advantages against the severe economic strain (ma’abarot tent cities, strict food rationing) it placed on the fledgling state.

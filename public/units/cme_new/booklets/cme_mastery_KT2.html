@@ -30,8 +30,14 @@
   .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
   
   /* Lined paper simulation */
-  .writing-line { height: 16px; border-bottom: 1px solid #e2e8f0; margin-bottom: 2px; }
+  .writing-line { height: 15px; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; }
   .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 2px; }
+  
+  /* Answers-Only Bank (Green Pages 4 & 5) */
+  .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 10px; font-size: 7.2pt; flex: 1 1 auto; }
+  .ans-item { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 2.5px 6px; display: flex; gap: 6px; align-items: baseline; }
+  .ans-num { color: #166534; font-weight: 800; font-size: 7.2pt; flex-shrink: 0; min-width: 18px; }
+  .ans-text { color: #15803d; font-weight: 600; line-height: 1.25; }
   
   /* Cover Tracker Table */
   .tracker-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin: 6px 0; }
@@ -40,9 +46,9 @@
   .tracker-table tr:nth-child(even) { background: #f8fafc; }
   
   /* 2-Column Quiz Grids */
-  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 7.2pt; flex: 1 1 auto; overflow: hidden; }
-  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; display: flex; gap: 4px; align-items: flex-start; }
-  .quiz-cb { width: 10px; height: 10px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
+  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5px 8px; font-size: 6.9pt; line-height: 1.2; flex: 1 1 auto; overflow: hidden; }
+  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px; display: flex; gap: 4px; align-items: flex-start; }
+  .quiz-cb { width: 9px; height: 9px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
   
   /* Stepped Ladder Boxes */
   .ladder-zone { border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; }
@@ -95,11 +101,10 @@
                 <table class="tracker-table">
                     <thead>
                         <tr>
-                            <th style="width: 44%;">Assessment Component &amp; Stem Focus</th>
-                            <th style="width: 14%; text-align: center;">Format Style</th>
-                            <th style="width: 12%; text-align: center;">Max Marks</th>
-                            <th style="width: 14%; text-align: center;">Score</th>
-                            <th style="width: 16%; text-align: center;">RAG Status</th>
+                            <th style="width: 54%;">Assessment Component &amp; Stem Focus</th>
+                            <th style="width: 16%; text-align: center;">Format Style</th>
+                            <th style="width: 14%; text-align: center;">Max Marks</th>
+                            <th style="width: 16%; text-align: center;">Pupil Score</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -108,82 +113,72 @@
                             <td style="text-align: center;">Checklist</td>
                             <td style="text-align: center;">/60</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ R ] &nbsp; [ A ] &nbsp; [ G ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q1 Consequence (expulsion of the PLO from Jord...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q2 Importance (UN Resolution 242 for the afte...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q3 Narrative Account (key events of the Six Day War ...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q1 Consequence (events of 7 April 1967 for esc...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q2 Importance (Cairo Conference (1964) for th...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q3 Narrative Account (key events of the Yom Kippur W...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q1 Consequence (Israel’s raid on Samu (1966) f...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q2 Importance (PFLP airplane hijacks of 1970 ...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q3 Narrative Account (actions of Nasser, the USSR, a...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr style="background: #e0e7ff; font-weight: 800; font-size: 7.5pt;">
                             <td colspan="2">TOTAL COMBINED EXAM MARKS:</td>
                             <td style="text-align: center;">/60</td>
                             <td style="text-align: center;">_____ / 60</td>
-                            <td style="text-align: center;">Grade: [ 9 8 7 6 5 4 ]</td>
                         </tr>
                     </tbody>
                 </table>
-                <div style="display: flex; justify-content: space-between; font-size: 7pt; color: #475569; margin-top: 2px;">
-                    <span>Teacher / Marker Signature: _____________________________________</span>
-                    <span>Date Completed: _______________</span>
+                <div style="display: flex; justify-content: space-between; font-size: 7.2pt; color: #334155; margin-top: 3px; font-weight: 600;">
+                    <span>Teacher / Peer Marker: _____________________________________</span>
+                    <span>Date: _______________</span>
+                    <span>Overall Grade: [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
                 </div>
             </div>
 
@@ -193,9 +188,9 @@
                     <span>⏱️ Edexcel Exam Fast Facts &amp; Stem Blueprints (Option P5 Period Study)</span>
                     <span>Total Paper 2: 32 Marks · 50 Mins</span>
                 </div>
-                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 $ightarrow$ support with <strong>2–3 detailed facts</strong> $ightarrow$ explain direct <strong>Consequence Link</strong> (why this mattered).</div>
-                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> $ightarrow$ <strong>Decisive Turning Point</strong> $ightarrow$ <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
-                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> $ightarrow$ provide <strong>Information facts</strong> $ightarrow$ explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
+                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 &rarr; support with <strong>2–3 detailed facts</strong> &rarr; explain direct <strong>Consequence Link</strong> (why this mattered).</div>
+                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> &rarr; <strong>Decisive Turning Point</strong> &rarr; <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
+                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> &rarr; provide <strong>Information facts</strong> &rarr; explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
             </div>
         </div>
 
@@ -737,228 +732,173 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: A1 TO A30/40)           -->
+    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: ANSWERS 1 TO 30)   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>Key Topic 2: The Escalating Conflict, 1964–73</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Reference · Answers 1 to 30 (Double-Sided Flip Reference)</p>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 1 to 30 (Self &amp; Peer Marking Bank)</p>
                 </div>
                 <span class="header-tag" style="background: #059669;">Mark Scheme 1</span>
             </div>
 
-            <div class="quiz-grid">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 3px 8px; font-size: 6.8pt; color: #065f46; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Cover this bank with your hand or a sheet of paper to test yourself against Pages 2–3, or use for rapid peer marking.</span>
+                <span>Answers 1–30</span>
+            </div>
+
+            <div class="ans-grid">
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">1. What major political entity was established at the January 1964 Arab League Summit in Cairo to represent the Palestinian national movement?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Palestine Liberation Organization (PLO)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">1.</span>
+                        <span class="ans-text">The Palestine Liberation Organization (PLO)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">2. Which faction within the Palestinian movement, led by Yasser Arafat, advocated independent armed guerrilla struggle rather than reliance on regular Arab armies?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Fatah</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">2.</span>
+                        <span class="ans-text">Fatah</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">3. What was the 'Water War' fought between Israel and Syria in the mid-1960s?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A series of military skirmishes over Syrian attempts to divert the headwaters of the River Jordan away from Israel's National Water Carrier</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">3.</span>
+                        <span class="ans-text">A series of military skirmishes over Syrian attempts to divert the headwaters of the River Jordan away from Israel's National Water Carrier</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">4. What major cross-border raid on 13 November 1966 saw the IDF attack a West Bank village in Jordanian territory following a Fatah landmine attack?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Samu Raid</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">4.</span>
+                        <span class="ans-text">The Samu Raid</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">5. What dramatic air engagement on 7 April 1967 escalated border tensions between Israel and Syria to a fever pitch?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Israeli Mirage fighters shot down six Syrian MiG-21s and buzzed the skies over Damascus</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">5.</span>
+                        <span class="ans-text">Israeli Mirage fighters shot down six Syrian MiG-21s and buzzed the skies over Damascus</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">6. What false intelligence report did the Soviet Union deliver to Egyptian officials in Cairo on 13 May 1967?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">That Israel was massing 11 to 13 military brigades on its northern border to launch an invasion of Syria</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">6.</span>
+                        <span class="ans-text">That Israel was massing 11 to 13 military brigades on its northern border to launch an invasion of Syria</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">7. What provocative step did President Nasser take on 16 May 1967 to demonstrate Egyptian solidarity with Syria?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">He demanded that UN Secretary-General U Thant withdraw all UNEF peacekeepers from Sinai</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">7.</span>
+                        <span class="ans-text">He demanded that UN Secretary-General U Thant withdraw all UNEF peacekeepers from Sinai</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">8. What action by President Nasser on 22 May 1967 was treated by Israel as an unambiguous act of war (casus belli)?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The closure of the Straits of Tiran to all Israeli shipping and strategic goods</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">8.</span>
+                        <span class="ans-text">The closure of the Straits of Tiran to all Israeli shipping and strategic goods</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">9. What pact signed in Cairo on 30 May 1967 convinced the Israeli cabinet that they were facing an imminent, coordinated three-front invasion?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A joint mutual defense pact signed between President Nasser and King Hussein of Jordan</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">9.</span>
+                        <span class="ans-text">A joint mutual defense pact signed between President Nasser and King Hussein of Jordan</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">10. Who was appointed Minister of Defense in Israel's emergency national unity government on 1 June 1967, electrifying public confidence?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">General Moshe Dayan</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">10.</span>
+                        <span class="ans-text">General Moshe Dayan</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">11. What was Operation Focus (Moked) launched by the Israeli Air Force at 7:45 AM on Monday, 5 June 1967?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A devastating pre-emptive airstrike that destroyed over 300 Egyptian combat aircraft on the ground in under three hours</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">11.</span>
+                        <span class="ans-text">A devastating pre-emptive airstrike that destroyed over 300 Egyptian combat aircraft on the ground in under three hours</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">12. Why did Jordan enter the Six Day War on 5 June 1967 despite Israeli Prime Minister Eshkol sending a message urging King Hussein to stay out?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Nasser misled King Hussein by falsely claiming that Egyptian air strikes had destroyed Israeli airfields and that his army was marching on Tel Aviv</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">12.</span>
+                        <span class="ans-text">Nasser misled King Hussein by falsely claiming that Egyptian air strikes had destroyed Israeli airfields and that his army was marching on Tel Aviv</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">13. On what historic date did Israeli paratroopers capture the Old City of Jerusalem and reach the Western Wall for the first time in 19 years?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">7 June 1967</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">13.</span>
+                        <span class="ans-text">7 June 1967</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">14. What geographical feature marked the final line of Israeli advance in the south after routing the Egyptian army in the Sinai Peninsula?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The east bank of the Suez Canal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">14.</span>
+                        <span class="ans-text">The east bank of the Suez Canal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">15. What steep, heavily fortified plateau did the IDF storm on 9–10 June 1967 to silence Syrian artillery bombardments of northern kibbutzim?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Golan Heights</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">15.</span>
+                        <span class="ans-text">The Golan Heights</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">16. What controversial maritime tragedy occurred on 8 June 1967 when Israeli jets and torpedo boats mistakenly attacked a neutral American vessel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The USS Liberty incident</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">16.</span>
+                        <span class="ans-text">The USS Liberty incident</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">17. How much territory did Israel control following its stunning victory in the Six Day War compared to its pre-war boundaries?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It controlled over three times more territory than it had before the war</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">17.</span>
+                        <span class="ans-text">It controlled over three times more territory than it had before the war</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">18. Approximately how many Arab casualties were suffered in the Six Day War compared to Israeli losses?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Around 20,000 Arab soldiers were killed, compared to fewer than 1,000 Israeli soldiers</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">18.</span>
+                        <span class="ans-text">Around 20,000 Arab soldiers were killed, compared to fewer than 1,000 Israeli soldiers</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">19. What psychological impact did the Six Day War have on the Israeli public and religious communities?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A wave of national euphoria, messianic fervor, and the conviction that Israel's military might guaranteed permanent security</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">19.</span>
+                        <span class="ans-text">A wave of national euphoria, messianic fervor, and the conviction that Israel's military might guaranteed permanent security</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">20. What term is used in the Arab world to describe the catastrophe and humiliation of the 1967 Six Day War defeat?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">An-Naksah (The Setback)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">20.</span>
+                        <span class="ans-text">An-Naksah (The Setback)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">21. What famous formula did the Arab League adopt at the Khartoum Summit on 1 September 1967?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The 'Three Noes': No peace, No recognition, No negotiations with Israel</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">21.</span>
+                        <span class="ans-text">The 'Three Noes': No peace, No recognition, No negotiations with Israel</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">22. What fundamental principle for resolving the Arab-Israeli conflict was established by UN Security Council Resolution 242 in November 1967?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">'Land for Peace'—Israeli withdrawal from occupied territories in exchange for recognized, secure borders</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">22.</span>
+                        <span class="ans-text">'Land for Peace'—Israeli withdrawal from occupied territories in exchange for recognized, secure borders</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">23. What crucial semantic ambiguity in the English text of UN Resolution 242 led to decades of competing legal interpretations?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It called for Israeli withdrawal from 'territories occupied' rather than 'THE territories occupied'</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">23.</span>
+                        <span class="ans-text">It called for Israeli withdrawal from 'territories occupied' rather than 'THE territories occupied'</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">24. What major waterway was completely shut down from June 1967 until 1975 because Egypt scuttled ships and laid mines to block traffic?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Suez Canal</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">24.</span>
+                        <span class="ans-text">The Suez Canal</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">25. Approximately how many additional Palestinian Arabs were displaced as refugees during the Six Day War, many for the second time?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Around 300,000</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">25.</span>
+                        <span class="ans-text">Around 300,000</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">26. What was the 'Allon Plan', formulated by Israeli Deputy Prime Minister Yigal Allon in 1967?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A strategic proposal to annex a defensible security perimeter in the Jordan Valley while returning populated Arab areas to Jordanian civil control</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">26.</span>
+                        <span class="ans-text">A strategic proposal to annex a defensible security perimeter in the Jordan Valley while returning populated Arab areas to Jordanian civil control</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">27. What battle on 21 March 1968 between the IDF and Palestinian fedayeen in Jordan became a massive symbolic victory for Yasser Arafat's Fatah movement?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Battle of Karameh</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">27.</span>
+                        <span class="ans-text">The Battle of Karameh</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">28. Who was elected Chairman of the PLO Executive Committee in February 1969, fundamentally shifting the organization away from Arab state control?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Yasser Arafat</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">28.</span>
+                        <span class="ans-text">Yasser Arafat</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">29. Which radical Marxist-Leninist Palestinian faction, founded by George Habash, pioneered international aircraft hijackings to publicize the Palestinian cause?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Popular Front for the Liberation of Palestine (PFLP)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">29.</span>
+                        <span class="ans-text">The Popular Front for the Liberation of Palestine (PFLP)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">30. What dramatic event in September 1970 saw the PFLP hijack four Western airliners and blow up three of them on an abandoned airstrip in the Jordanian desert?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Dawson's Field hijackings</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">30.</span>
+                        <span class="ans-text">The Dawson's Field hijackings</span>
                     </div>
                 
             </div>
@@ -972,228 +912,173 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: A31/41 TO A60/80)       -->
+    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: ANSWERS 31 TO 60) -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>Key Topic 2: The Escalating Conflict, 1964–73</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Reference · Answers 31 to 60</p>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 31 to 60 (Self &amp; Peer Marking Bank)</p>
                 </div>
                 <span class="header-tag" style="background: #059669;">Mark Scheme 2</span>
             </div>
 
-            <div class="quiz-grid">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 3px 8px; font-size: 6.8pt; color: #065f46; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Use for rapid recall checking against Vault Part 2 (Page 3). Log total correct recall items on Page 1.</span>
+                <span>Answers 31–60</span>
+            </div>
+
+            <div class="ans-grid">
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">31. What was 'Black September' in 1970?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A brutal civil war in Jordan where King Hussein deployed the army to crush Palestinian militias and expel the PLO from the country</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">31.</span>
+                        <span class="ans-text">A brutal civil war in Jordan where King Hussein deployed the army to crush Palestinian militias and expel the PLO from the country</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">32. Where did Yasser Arafat and the PLO relocate their main headquarters and military bases after their expulsion from Jordan in 1970–71?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Lebanon</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">32.</span>
+                        <span class="ans-text">Lebanon</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">33. What terrorist atrocity was carried out by the Palestinian 'Black September' faction at the 1972 Summer Olympics in Munich?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The kidnapping and murder of 11 Israeli Olympic athletes and coaches</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">33.</span>
+                        <span class="ans-text">The kidnapping and murder of 11 Israeli Olympic athletes and coaches</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">34. What was Operation Wrath of God authorized by Israeli Prime Minister Golda Meir in the wake of the Munich massacre?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A covert Mossad assassination campaign across Europe and the Middle East targeting individuals involved in the Munich attack</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">34.</span>
+                        <span class="ans-text">A covert Mossad assassination campaign across Europe and the Middle East targeting individuals involved in the Munich attack</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">35. What was the 'War of Attrition' fought between Egypt and Israel from 1967 to 1970 along the Suez Canal?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A grinding static war of heavy artillery duels, commando raids, and aerial dogfights designed to exhaust Israel's military resolve</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">35.</span>
+                        <span class="ans-text">A grinding static war of heavy artillery duels, commando raids, and aerial dogfights designed to exhaust Israel's military resolve</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">36. Which superpower directly intervened to protect Egypt during the War of Attrition, deploying advanced anti-aircraft missiles and flying combat missions?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Soviet Union</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">36.</span>
+                        <span class="ans-text">The Soviet Union</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">37. Who succeeded Gamal Abdel Nasser as President of Egypt following his sudden death from a heart attack in September 1970?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Anwar Sadat</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">37.</span>
+                        <span class="ans-text">Anwar Sadat</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">38. What religious nationalist Israeli movement was founded in 1974 to spearhead Jewish settlement across the West Bank (Judea and Samaria)?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Gush Emunim (Bloc of the Faithful)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">38.</span>
+                        <span class="ans-text">Gush Emunim (Bloc of the Faithful)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">39. How did the 1967 conquests transform Israel's domestic economy in the 1970s?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It created a construction boom and brought over 100,000 Palestinian day-labourers from the occupied territories into low-wage jobs in Israel</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">39.</span>
+                        <span class="ans-text">It created a construction boom and brought over 100,000 Palestinian day-labourers from the occupied territories into low-wage jobs in Israel</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">40. What did the Palestinian National Charter, amended by the PLO in 1968, explicitly declare regarding the State of Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">That the establishment of Israel was entirely illegal and that armed struggle was the only way to liberate all of Palestine</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">40.</span>
+                        <span class="ans-text">That the establishment of Israel was entirely illegal and that armed struggle was the only way to liberate all of Palestine</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">41. Why was Anwar Sadat determined to launch a military offensive against Israel in 1973?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">To break the diplomatic stalemate ('no war, no peace') and force the superpowers to pressure Israel into returning the Sinai</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">41.</span>
+                        <span class="ans-text">To break the diplomatic stalemate ('no war, no peace') and force the superpowers to pressure Israel into returning the Sinai</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">42. What bold geopolitical gamble did Sadat take in July 1972 that astonished the world and misled Israeli intelligence?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">He expelled 15,000 Soviet military advisers and technicians from Egypt</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">42.</span>
+                        <span class="ans-text">He expelled 15,000 Soviet military advisers and technicians from Egypt</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">43. Which Arab leader did Sadat ally with to plan a synchronized two-front surprise offensive against Israel in October 1973?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">President Hafez al-Assad of Syria</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">43.</span>
+                        <span class="ans-text">President Hafez al-Assad of Syria</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">44. What was the 'Conceptzia' (The Concept)—the fatal flaw in Israeli military intelligence prior to the 1973 War?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The unshakeable conviction that Egypt would never attack without long-range strike aircraft, and Syria would never attack without Egypt</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">44.</span>
+                        <span class="ans-text">The unshakeable conviction that Egypt would never attack without long-range strike aircraft, and Syria would never attack without Egypt</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">45. On what date and holy occasion did Egypt and Syria launch their simultaneous surprise assault against Israel?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">6 October 1973, on Yom Kippur (the Day of Atonement) and during Muslim Ramadan</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">45.</span>
+                        <span class="ans-text">6 October 1973, on Yom Kippur (the Day of Atonement) and during Muslim Ramadan</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">46. What formidable defensive barrier along the Suez Canal, built by Israel at a cost of $300 million, was breached by Egyptian engineers in October 1973?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Bar-Lev Line</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">46.</span>
+                        <span class="ans-text">The Bar-Lev Line</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">47. How did Egyptian engineering units ingeniously blast through the massive sand ramparts of the Bar-Lev Line within hours?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">By using high-pressure water cannons adapted from British and German fire-fighting pumps</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">47.</span>
+                        <span class="ans-text">By using high-pressure water cannons adapted from British and German fire-fighting pumps</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">48. What Soviet-supplied weapon devastated Israeli tank counter-attacks in the opening days of the 1973 war?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The AT-3 'Sagger' wire-guided anti-tank missile</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">48.</span>
+                        <span class="ans-text">The AT-3 'Sagger' wire-guided anti-tank missile</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">49. Why was the Israeli Air Force initially unable to provide close air support to troops on the Suez Canal and Golan Heights in 1973?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Because of Egypt and Syria's dense Soviet-built mobile surface-to-air missile (SAM) umbrella (SAM-6 and Shilka anti-aircraft guns)</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">49.</span>
+                        <span class="ans-text">Because of Egypt and Syria's dense Soviet-built mobile surface-to-air missile (SAM) umbrella (SAM-6 and Shilka anti-aircraft guns)</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">50. What desperate armored engagement on the Golan Heights saw fewer than 100 Israeli Centurion tanks hold off 500 Syrian T-55 and T-62 tanks for three days?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Battle of the Valley of Tears</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">50.</span>
+                        <span class="ans-text">The Battle of the Valley of Tears</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">51. What crucial strategic error did Anwar Sadat make on 14 October 1973, against the urgent advice of his Chief of Staff General Saad El Shazly?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">He ordered Egyptian armored divisions to advance into the open desert beyond the protective cover of their SAM missile umbrella</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">51.</span>
+                        <span class="ans-text">He ordered Egyptian armored divisions to advance into the open desert beyond the protective cover of their SAM missile umbrella</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">52. Who led the audacious Israeli counter-crossing of the Suez Canal on 15–16 October 1973 (Operation Stouthearted Men)?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Major General Ariel Sharon</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">52.</span>
+                        <span class="ans-text">Major General Ariel Sharon</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">53. What dramatic military position had Israeli forces achieved on the western side of the Suez Canal by the end of the war?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">They had completely encircled the Egyptian Third Army (20,000 men) and cut the road to Cairo</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">53.</span>
+                        <span class="ans-text">They had completely encircled the Egyptian Third Army (20,000 men) and cut the road to Cairo</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">54. What was Operation Nickel Grass ordered by US President Richard Nixon on 12 October 1973?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">A massive emergency military airlift flying 22,000 tons of tanks, ammunition, and precision missiles to Israel</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">54.</span>
+                        <span class="ans-text">A massive emergency military airlift flying 22,000 tons of tanks, ammunition, and precision missiles to Israel</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">55. What devastating economic weapon did the Organization of Arab Petroleum Exporting Countries (OAPEC) unleash during the 1973 War?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">An oil production cut and full embargo against the US and Netherlands, causing global oil prices to quadruple</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">55.</span>
+                        <span class="ans-text">An oil production cut and full embargo against the US and Netherlands, causing global oil prices to quadruple</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">56. What tense Cold War standoff occurred on 24–25 October 1973 as the war drew to a close?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Soviet leader Brezhnev threatened unilateral military intervention to save the Egyptian Third Army, prompting the US to place its nuclear forces on DEFCON 3</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">56.</span>
+                        <span class="ans-text">Soviet leader Brezhnev threatened unilateral military intervention to save the Egyptian Third Army, prompting the US to place its nuclear forces on DEFCON 3</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">57. What landmark United Nations Security Council Resolution, passed on 22 October 1973, called for an immediate ceasefire and the direct implementation of Resolution 242?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Resolution 338</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">57.</span>
+                        <span class="ans-text">Resolution 338</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">58. What judicial inquiry in Israel investigated the government and military's catastrophic lack of preparedness for the 1973 War?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">The Agranat Commission</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">58.</span>
+                        <span class="ans-text">The Agranat Commission</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">59. What political fallout occurred in Israel in the months following the release of the Agranat Commission report in 1974?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">Prime Minister Golda Meir and Defense Minister Moshe Dayan were forced to resign amid massive public outrage</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">59.</span>
+                        <span class="ans-text">Prime Minister Golda Meir and Defense Minister Moshe Dayan were forced to resign amid massive public outrage</span>
                     </div>
                 
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">60. What profound psychological and diplomatic breakthrough did the 1973 Yom Kippur War achieve for the Middle East?</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">It shattered Israel's assumption that Arab armies would never fight effectively, and restored Egyptian national honor, making peace talks as equals possible</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">60.</span>
+                        <span class="ans-text">It shattered Israel's assumption that Arab armies would never fight effectively, and restored Egyptian national honor, making peace talks as equals possible</span>
                     </div>
                 
             </div>
@@ -1251,31 +1136,41 @@
 
             <!-- Q2: 8-Mark Importance -->
             <div class="ladder-zone" style="border-left: 3.5px solid #8b5cf6;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
                     <strong style="font-size: 8.5pt; color: #1e293b;">Question 2: Importance (8 Marks)</strong>
-                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">F-I-L Formula · ~12 Mins</span>
+                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">F-I-L Formula · ~12 Mins · 2 Developed Explanations</span>
                 </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
                     Explain the importance of UN Resolution 242 for the aftermath of the 1967 war.
                 </div>
 
                 <!-- Launchpad -->
-                <div class="ladder-launchpad">
+                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
                     <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"UN Resolution 242 was important because it established the fundamental "Land for Peace" diplomatic formula that governed all subsequent Middle East negotiations."</em><br>
                     <strong>Facts to Include:</strong> Adopted unanimously on 22 November 1967; called for the withdrawal of Israeli forces from occupied territories in exchange for the termination of belligerency and recognition of every state’s right to live in peace within secure borders.
                 </div>
 
-                <!-- Writing lines -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">This event was important for the outcome because...</div>
-                    <div class="writing-line starter">For example, (provide precise factual knowledge)...</div>
+                <!-- Writing lines (12 Lines Total: 2 Developed Paragraphs) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 1px 0; text-transform: uppercase;">Paragraph 1: First Reason for Importance</div>
+                    <div class="writing-line starter">One reason this was important was because...</div>
+                    <div class="writing-line starter">For example, (deploy 2–3 precise historical facts)...</div>
+                    <div class="writing-line starter">This was critical because it directly caused / led to...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Second Reason for Importance</div>
+                    <div class="writing-line starter">A second reason this was important was because...</div>
+                    <div class="writing-line starter">Specifically, (support with detailed factual evidence)...</div>
                     <div class="writing-line starter">Without this development, the outcome would have differed because...</div>
+                    <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Stretch:</strong> Grade 9 Evaluation: Examine how the deliberate omission of the word "the" before "territories" in the English draft allowed Israel to retain strategic buffer zones while Egypt and Jordan demanded total withdrawal.
                 </div>
             </div>
@@ -1341,20 +1236,35 @@
                     <strong>🔗 Causal Connectives Bank:</strong> The war opened decisively when... &nbsp;•&nbsp; With aerial control secured, Israeli forces... &nbsp;•&nbsp; Following victory on the Jordanian front... &nbsp;•&nbsp; The outcome of this rapid advance was...
                 </div>
 
-                <!-- Writing lines -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">Paragraph 1: The crisis / conflict began when...</div>
+                <!-- Writing lines: 3 Developed Paragraphs (18 Ruled Lines Total) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Stage 1 — Trigger &amp; Outbreak</div>
+                    <div class="writing-line starter">The conflict / crisis began when...</div>
+                    <div class="writing-line starter">Specifically, (deploy precise historical facts and figures)...</div>
                     <div class="writing-line"></div>
-                    <div class="writing-line starter">Paragraph 2: A decisive turning point occurred when...</div>
                     <div class="writing-line"></div>
-                    <div class="writing-line starter">Paragraph 3: As a direct consequence of this...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Stage 2 — Decisive Turning Point (Explicit Causal Link)</div>
+                    <div class="writing-line starter">As a direct consequence of this initial outbreak, a decisive turning point occurred when...</div>
+                    <div class="writing-line starter">For example, (include key names, operations, or policy shifts)...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 3: Stage 3 — Climax &amp; Outcome (Explicit Causal Link)</div>
+                    <div class="writing-line starter">This turning point directly triggered the final outcome when...</div>
+                    <div class="writing-line starter">Consequently, the long-term impact on the region was that...</div>
+                    <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Analytical Glue:</strong> Grade 9 Analytical Glue: Explicitly trace how Israel’s complete air supremacy established in the first 180 minutes directly enabled ground commanders to execute rapid flanking maneuvers across three separate fronts.
                 </div>
             </div>
@@ -1422,7 +1332,7 @@
                     Explain the importance of the Cairo Conference (1964) for the growth of Fatah and the PLO.
                 </div>
 
-                <div class="dual-track-container" style="height: 120px;">
+                <div class="dual-track-container" style="height: 155px;">
                     <div class="toolkit-col">
                         <div>
                             <strong style="color: #0369a1; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🧰 Fact Vault (AO1)</strong>
@@ -1433,10 +1343,13 @@
                         </div>
                     </div>
                     <div class="writing-col">
-                        <div class="writing-line starter">This event was important for the outcome because...</div>
-                        <div class="writing-line starter">Specifically,...</div>
-                        <div class="writing-line starter">As a direct result,...</div>
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; text-transform: uppercase;">Para 1: First Reason for Importance</div>
+                        <div class="writing-line starter">One reason this was important was...</div>
+                        <div class="writing-line starter">Specifically, (factual detail)...</div>
                         <div class="writing-line"></div>
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; margin-top: 2px; text-transform: uppercase;">Para 2: Second Reason for Importance</div>
+                        <div class="writing-line starter">A second reason this was important was...</div>
+                        <div class="writing-line starter">Without this development,...</div>
                         <div class="writing-line"></div>
                         <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 2px 4px; font-size: 6.5pt; color: #86198f; margin-top: 2px;">
                             Grade 9 Upgrade: Contrast Nasser’s intention to control Palestinian nationalism with the unintended consequence of providing a platform that radicalized fedayeen guerrilla warfare.

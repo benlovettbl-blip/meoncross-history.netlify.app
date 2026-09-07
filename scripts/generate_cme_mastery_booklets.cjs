@@ -715,8 +715,14 @@ const COMMON_CSS = `
   .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
   
   /* Lined paper simulation */
-  .writing-line { height: 16px; border-bottom: 1px solid #e2e8f0; margin-bottom: 2px; }
+  .writing-line { height: 15px; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; }
   .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 2px; }
+  
+  /* Answers-Only Bank (Green Pages 4 & 5) */
+  .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 10px; font-size: 7.2pt; flex: 1 1 auto; }
+  .ans-item { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 2.5px 6px; display: flex; gap: 6px; align-items: baseline; }
+  .ans-num { color: #166534; font-weight: 800; font-size: 7.2pt; flex-shrink: 0; min-width: 18px; }
+  .ans-text { color: #15803d; font-weight: 600; line-height: 1.25; }
   
   /* Cover Tracker Table */
   .tracker-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin: 6px 0; }
@@ -725,9 +731,9 @@ const COMMON_CSS = `
   .tracker-table tr:nth-child(even) { background: #f8fafc; }
   
   /* 2-Column Quiz Grids */
-  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 7.2pt; flex: 1 1 auto; overflow: hidden; }
-  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; display: flex; gap: 4px; align-items: flex-start; }
-  .quiz-cb { width: 10px; height: 10px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
+  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5px 8px; font-size: 6.9pt; line-height: 1.2; flex: 1 1 auto; overflow: hidden; }
+  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px; display: flex; gap: 4px; align-items: flex-start; }
+  .quiz-cb { width: 9px; height: 9px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
   
   /* Stepped Ladder Boxes */
   .ladder-zone { border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; }
@@ -808,11 +814,10 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
                 <table class="tracker-table">
                     <thead>
                         <tr>
-                            <th style="width: 44%;">Assessment Component &amp; Stem Focus</th>
-                            <th style="width: 14%; text-align: center;">Format Style</th>
-                            <th style="width: 12%; text-align: center;">Max Marks</th>
-                            <th style="width: 14%; text-align: center;">Score</th>
-                            <th style="width: 16%; text-align: center;">RAG Status</th>
+                            <th style="width: 54%;">Assessment Component &amp; Stem Focus</th>
+                            <th style="width: 16%; text-align: center;">Format Style</th>
+                            <th style="width: 14%; text-align: center;">Max Marks</th>
+                            <th style="width: 16%; text-align: center;">Pupil Score</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -821,82 +826,72 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
                             <td style="text-align: center;">Checklist</td>
                             <td style="text-align: center;">/${questions.length}</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ R ] &nbsp; [ A ] &nbsp; [ G ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q1 Consequence (${getShortTitle(meta.round1.consequence.stem)}...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q2 Importance (${getShortTitle(meta.round1.importance.stem)}...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q3 Narrative Account (${getShortTitle(meta.round1.narrative.stem)}...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q1 Consequence (${getShortTitle(meta.round2.consequence.stem)}...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q2 Importance (${getShortTitle(meta.round2.importance.stem)}...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q3 Narrative Account (${getShortTitle(meta.round2.narrative.stem)}...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q1 Consequence (${getShortTitle(meta.round3.consequence.stem)}...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L1 &nbsp; [ ] L2</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q2 Importance (${getShortTitle(meta.round3.importance.stem)}...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q3 Narrative Account (${getShortTitle(meta.round3.narrative.stem)}...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
-                            <td style="text-align: center;">[ ] L2 &nbsp; [ ] L3</td>
                         </tr>
                         <tr style="background: #e0e7ff; font-weight: 800; font-size: 7.5pt;">
                             <td colspan="2">TOTAL COMBINED EXAM MARKS:</td>
                             <td style="text-align: center;">/60</td>
                             <td style="text-align: center;">_____ / 60</td>
-                            <td style="text-align: center;">Grade: [ 9 8 7 6 5 4 ]</td>
                         </tr>
                     </tbody>
                 </table>
-                <div style="display: flex; justify-content: space-between; font-size: 7pt; color: #475569; margin-top: 2px;">
-                    <span>Teacher / Marker Signature: _____________________________________</span>
-                    <span>Date Completed: _______________</span>
+                <div style="display: flex; justify-content: space-between; font-size: 7.2pt; color: #334155; margin-top: 3px; font-weight: 600;">
+                    <span>Teacher / Peer Marker: _____________________________________</span>
+                    <span>Date: _______________</span>
+                    <span>Overall Grade: [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
                 </div>
             </div>
 
@@ -906,9 +901,9 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
                     <span>⏱️ Edexcel Exam Fast Facts &amp; Stem Blueprints (Option P5 Period Study)</span>
                     <span>Total Paper 2: 32 Marks · 50 Mins</span>
                 </div>
-                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 $\rightarrow$ support with <strong>2–3 detailed facts</strong> $\rightarrow$ explain direct <strong>Consequence Link</strong> (why this mattered).</div>
-                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> $\rightarrow$ <strong>Decisive Turning Point</strong> $\rightarrow$ <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
-                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> $\rightarrow$ provide <strong>Information facts</strong> $\rightarrow$ explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
+                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 &rarr; support with <strong>2–3 detailed facts</strong> &rarr; explain direct <strong>Consequence Link</strong> (why this mattered).</div>
+                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> &rarr; <strong>Decisive Turning Point</strong> &rarr; <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
+                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> &rarr; provide <strong>Information facts</strong> &rarr; explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
             </div>
         </div>
 
@@ -994,27 +989,30 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: A1 TO A30/40)           -->
+    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: ANSWERS 1 TO ${halfQ})   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>${meta.title}</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Reference · Answers 1 to ${halfQ} (Double-Sided Flip Reference)</p>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 1 to ${halfQ} (Self &amp; Peer Marking Bank)</p>
                 </div>
                 <span class="header-tag" style="background: #059669;">Mark Scheme 1</span>
             </div>
 
-            <div class="quiz-grid">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 3px 8px; font-size: 6.8pt; color: #065f46; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Cover this bank with your hand or a sheet of paper to test yourself against Pages 2–3, or use for rapid peer marking.</span>
+                <span>Answers 1–${halfQ}</span>
+            </div>
+
+            <div class="ans-grid">
                 ${aPage1
                   .map(
                     (item, i) => `
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">${i + 1}. ${item.q}</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">${item.a}</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">${i + 1}.</span>
+                        <span class="ans-text">${item.a}</span>
                     </div>
                 `,
                   )
@@ -1030,27 +1028,30 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: A31/41 TO A60/80)       -->
+    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: ANSWERS ${halfQ + 1} TO ${questions.length}) -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>${meta.title}</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Reference · Answers ${halfQ + 1} to ${questions.length}</p>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers ${halfQ + 1} to ${questions.length} (Self &amp; Peer Marking Bank)</p>
                 </div>
                 <span class="header-tag" style="background: #059669;">Mark Scheme 2</span>
             </div>
 
-            <div class="quiz-grid">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 3px 8px; font-size: 6.8pt; color: #065f46; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Use for rapid recall checking against Vault Part 2 (Page 3). Log total correct recall items on Page 1.</span>
+                <span>Answers ${halfQ + 1}–${questions.length}</span>
+            </div>
+
+            <div class="ans-grid">
                 ${aPage2
                   .map(
                     (item, i) => `
-                    <div class="quiz-item" style="background: #f0fdf4; border-color: #bbf7d0;">
-                        <div style="flex: 1;">
-                            <strong style="color: #166534;">${halfQ + i + 1}. ${item.q}</strong><br>
-                            <span style="color: #0f172a; font-weight: 600;">Ans:</span> <span style="color: #15803d;">${item.a}</span>
-                        </div>
+                    <div class="ans-item">
+                        <span class="ans-num">${halfQ + i + 1}.</span>
+                        <span class="ans-text">${item.a}</span>
                     </div>
                 `,
                   )
@@ -1110,31 +1111,41 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
 
             <!-- Q2: 8-Mark Importance -->
             <div class="ladder-zone" style="border-left: 3.5px solid #8b5cf6;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
                     <strong style="font-size: 8.5pt; color: #1e293b;">Question 2: Importance (8 Marks)</strong>
-                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">F-I-L Formula · ~12 Mins</span>
+                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">F-I-L Formula · ~12 Mins · 2 Developed Explanations</span>
                 </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
                     ${meta.round1.importance.stem}
                 </div>
 
                 <!-- Launchpad -->
-                <div class="ladder-launchpad">
+                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
                     <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"${meta.round1.importance.starter}"</em><br>
                     <strong>Facts to Include:</strong> ${meta.round1.importance.facts}
                 </div>
 
-                <!-- Writing lines -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">This event was important for the outcome because...</div>
-                    <div class="writing-line starter">For example, (provide precise factual knowledge)...</div>
+                <!-- Writing lines (12 Lines Total: 2 Developed Paragraphs) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 1px 0; text-transform: uppercase;">Paragraph 1: First Reason for Importance</div>
+                    <div class="writing-line starter">One reason this was important was because...</div>
+                    <div class="writing-line starter">For example, (deploy 2–3 precise historical facts)...</div>
+                    <div class="writing-line starter">This was critical because it directly caused / led to...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Second Reason for Importance</div>
+                    <div class="writing-line starter">A second reason this was important was because...</div>
+                    <div class="writing-line starter">Specifically, (support with detailed factual evidence)...</div>
                     <div class="writing-line starter">Without this development, the outcome would have differed because...</div>
+                    <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Stretch:</strong> ${meta.round1.importance.stretch}
                 </div>
             </div>
@@ -1194,20 +1205,35 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
                     <strong>🔗 Causal Connectives Bank:</strong> ${meta.round1.narrative.connectives.join(' &nbsp;•&nbsp; ')}
                 </div>
 
-                <!-- Writing lines -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">Paragraph 1: The crisis / conflict began when...</div>
+                <!-- Writing lines: 3 Developed Paragraphs (18 Ruled Lines Total) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Stage 1 — Trigger &amp; Outbreak</div>
+                    <div class="writing-line starter">The conflict / crisis began when...</div>
+                    <div class="writing-line starter">Specifically, (deploy precise historical facts and figures)...</div>
                     <div class="writing-line"></div>
-                    <div class="writing-line starter">Paragraph 2: A decisive turning point occurred when...</div>
                     <div class="writing-line"></div>
-                    <div class="writing-line starter">Paragraph 3: As a direct consequence of this...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Stage 2 — Decisive Turning Point (Explicit Causal Link)</div>
+                    <div class="writing-line starter">As a direct consequence of this initial outbreak, a decisive turning point occurred when...</div>
+                    <div class="writing-line starter">For example, (include key names, operations, or policy shifts)...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 3: Stage 3 — Climax &amp; Outcome (Explicit Causal Link)</div>
+                    <div class="writing-line starter">This turning point directly triggered the final outcome when...</div>
+                    <div class="writing-line starter">Consequently, the long-term impact on the region was that...</div>
+                    <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                     <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Analytical Glue:</strong> ${meta.round1.narrative.stretch}
                 </div>
             </div>
@@ -1275,7 +1301,7 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
                     ${meta.round2.importance.stem}
                 </div>
 
-                <div class="dual-track-container" style="height: 120px;">
+                <div class="dual-track-container" style="height: 155px;">
                     <div class="toolkit-col">
                         <div>
                             <strong style="color: #0369a1; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🧰 Fact Vault (AO1)</strong>
@@ -1286,10 +1312,13 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
                         </div>
                     </div>
                     <div class="writing-col">
-                        <div class="writing-line starter">This event was important for the outcome because...</div>
-                        <div class="writing-line starter">Specifically,...</div>
-                        <div class="writing-line starter">As a direct result,...</div>
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; text-transform: uppercase;">Para 1: First Reason for Importance</div>
+                        <div class="writing-line starter">One reason this was important was...</div>
+                        <div class="writing-line starter">Specifically, (factual detail)...</div>
                         <div class="writing-line"></div>
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; margin-top: 2px; text-transform: uppercase;">Para 2: Second Reason for Importance</div>
+                        <div class="writing-line starter">A second reason this was important was...</div>
+                        <div class="writing-line starter">Without this development,...</div>
                         <div class="writing-line"></div>
                         <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 2px 4px; font-size: 6.5pt; color: #86198f; margin-top: 2px;">
                             ${meta.round2.importance.upgradeChallenge}
@@ -1717,6 +1746,14 @@ function renderBookletHtml(ktKey, meta, questions, answers, bookletNum, totalBoo
       margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
     });
     console.log(`   📕 Exported PDF: cme_mastery_pack_FULL.pdf (36 Pages Master Volume)`);
+
+    // Also copy to public/pdfs/ so both /pdfs/cme_new/ and /pdfs/ routes resolve cleanly
+    const globalPdfsDir = path.join(__dirname, '..', 'public', 'pdfs');
+    fs.copyFileSync(kt1PdfPath, path.join(globalPdfsDir, 'cme_mastery_pack_KT1.pdf'));
+    fs.copyFileSync(kt2PdfPath, path.join(globalPdfsDir, 'cme_mastery_pack_KT2.pdf'));
+    fs.copyFileSync(kt3PdfPath, path.join(globalPdfsDir, 'cme_mastery_pack_KT3.pdf'));
+    fs.copyFileSync(fullPdfPath, path.join(globalPdfsDir, 'cme_mastery_pack_FULL.pdf'));
+    console.log(`   📋 Synced PDFs to public/pdfs/ root`);
 
     await browser.close();
     console.log('\n🎉 Successfully compiled all 4 Mastery Booklets into print-perfect PDFs!');
