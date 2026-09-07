@@ -550,8 +550,13 @@ export function renderLesson(lesson) {
       const primerText = lesson.teacher_notes.primer
         ? `<div style="font-size: 1.05rem; margin-bottom: 20px;">${lesson.teacher_notes.primer}</div>`
         : '';
-      const sourceContext = lesson.teacher_notes.source_context
-        ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${lesson.teacher_notes.source_context}</div>`
+      const sourceContextText =
+        typeof lesson.teacher_notes.source_context === 'object' &&
+        lesson.teacher_notes.source_context !== null
+          ? Object.values(lesson.teacher_notes.source_context).join('<br/><br/>')
+          : lesson.teacher_notes.source_context;
+      const sourceContext = sourceContextText
+        ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${sourceContextText}</div>`
         : '';
       const objectivesHtml = (lesson.teacher_notes.objectives || [])
         .map(
@@ -1960,18 +1965,119 @@ export function renderLesson(lesson) {
               <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
             </div>
         `;
-      const renderQuestion = (q, qIdx) => `
-              <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-                <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                    ${formatQuestion(q.question)}
-                  <span style="display: inline-flex; vertical-align: middle;">
-                    ${q.model ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="ep-model-${qIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
-                  </span>
-                </div>
-                <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
-                ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
+      const renderQuestion = (q, qIdx) => {
+        let scaffoldHtml = '';
+        if (q.scaffolding) {
+          const sc = q.scaffolding;
+          const stepsHtml = (sc.steps || [])
+            .map(
+              (step) => `
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #2563eb; border-radius: 6px; padding: 10px 14px; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <span style="background: #1e40af; color: #ffffff; font-weight: 800; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">${step.letter}</span>
+                <strong style="color: #0f172a; font-size: 0.95rem;">${step.name}</strong>
               </div>
+              <div style="font-size: 0.9rem; color: #334155; margin-bottom: 4px;">${step.prompt}</div>
+              ${step.starter ? `<div style="font-size: 0.85rem; color: #1e40af; font-style: italic; background: #f0f9ff; padding: 4px 8px; border-radius: 4px;"><strong>Starter:</strong> "${step.starter}"</div>` : ''}
+            </div>
+          `,
+            )
+            .join('');
+
+          const startersHtml =
+            sc.sentence_starters && sc.sentence_starters.length > 0
+              ? `
+            <div style="margin-top: 10px;">
+              <strong style="font-size: 0.85rem; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-pen-fancy" style="color: #3b82f6;"></i> Model Sentence Starters:</strong>
+              <ul style="margin: 6px 0 0 0; padding-left: 20px; font-size: 0.9rem; color: #334155; line-height: 1.5;">
+                ${sc.sentence_starters.map((st) => `<li><em>"${st}"</em></li>`).join('')}
+              </ul>
+            </div>
+          `
+              : '';
+
+          const connectivesHtml =
+            sc.connectives_bank && sc.connectives_bank.length > 0
+              ? `
+            <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
+              <span style="font-size: 0.8rem; font-weight: bold; color: #64748b; text-transform: uppercase;">Connectives:</span>
+              ${sc.connectives_bank.map((conn) => `<span style="background: #e2e8f0; color: #1e293b; font-size: 0.8rem; font-weight: 600; padding: 2px 8px; border-radius: 12px;">${conn}</span>`).join('')}
+            </div>
+          `
+              : '';
+
+          const redFlagsHtml =
+            sc.red_flags && sc.red_flags.length > 0
+              ? `
+            <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 10px 12px; margin-top: 12px;">
+              <strong style="font-size: 0.85rem; color: #b91c1c; text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-triangle-exclamation"></i> Examiner Red Flags:</strong>
+              <ul style="margin: 6px 0 0 0; padding-left: 18px; font-size: 0.85rem; color: #991b1b; line-height: 1.4;">
+                ${sc.red_flags.map((rf) => `<li>${rf}</li>`).join('')}
+              </ul>
+            </div>
+          `
+              : '';
+
+          const checklistHtml =
+            sc.checklist && sc.checklist.length > 0
+              ? `
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px 12px; margin-top: 10px;">
+              <strong style="font-size: 0.85rem; color: #15803d; text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-square-check"></i> Self-Audit Checklist:</strong>
+              <ul style="margin: 6px 0 0 0; padding-left: 18px; font-size: 0.85rem; color: #166534; line-height: 1.4;">
+                ${sc.checklist.map((cl) => `<li>${cl}</li>`).join('')}
+              </ul>
+            </div>
+          `
+              : '';
+
+          scaffoldHtml = `
+            <div style="margin: 12px 0 16px 0;">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                <span style="background: #eff6ff; border: 1px solid #93c5fd; color: #1e40af; font-size: 0.85rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.5px;">
+                  <i class="fa-solid fa-layer-group" style="margin-right: 6px;"></i> ${sc.acronym || 'Structure Strip'}
+                </span>
+                <button class="btn btn-pedagogy btn-pedagogy-sm" data-action="toggle-element" data-target-id="ep-scaffold-${qIdx}" style="background: #f1f5f9; color: #1e3a8a; border: 1px solid #cbd5e1; font-weight: 600;">
+                  <i class="fa-solid fa-wand-magic-sparkles" style="color: #2563eb;"></i> Structure Strip &amp; Tips
+                </button>
+              </div>
+              <div id="ep-scaffold-${qIdx}" class="scaffold-box" style="display: block; background: #f8fafc; border: 1.5px solid #93c5fd; border-radius: 8px; padding: 16px; margin-top: 8px;">
+                <div style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-sitemap" style="color: #3b82f6;"></i> ${sc.acronym_title || 'Exam Technique Formula'}
+                </div>
+                ${sc.guidance ? `<p style="font-size: 0.9rem; color: #475569; margin: 0 0 12px 0; font-style: italic;">${sc.guidance}</p>` : ''}
+                ${stepsHtml}
+                ${startersHtml}
+                ${connectivesHtml}
+                ${redFlagsHtml}
+                ${checklistHtml}
+              </div>
+            </div>
+          `;
+        }
+
+        const promptHtml = q.prompt
+          ? `
+          <div style="font-size: 0.95rem; color: #334155; margin-bottom: 12px; line-height: 1.5; background: #f8fafc; padding: 10px 14px; border-left: 3px solid #64748b; border-radius: 4px;">
+            <strong><i class="fa-solid fa-circle-info" style="color: #3b82f6; margin-right: 6px;"></i> Guidance:</strong> ${q.prompt}
+          </div>
+        `
+          : '';
+
+        return `
+          <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
+              ${formatQuestion(q.question)}
+              <span style="display: inline-flex; vertical-align: middle;">
+                ${q.model ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="ep-model-${qIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
+              </span>
+            </div>
+            ${promptHtml}
+            ${scaffoldHtml}
+            <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
+            ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
+          </div>
         `;
+      };
 
       if (epQuestions.length > 0) {
         let q2Index = epQuestions.findIndex(

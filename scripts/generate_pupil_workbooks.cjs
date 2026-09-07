@@ -2379,7 +2379,33 @@ allDirs.forEach((unitId) => {
                 questionHtml += `</ul><p style="margin-top: 0; margin-bottom: 0; font-weight: bold;">You must also use information of your own.</p></div>`;
               }
             }
-            html += questionHtml + renderQuestionLines(ep.question);
+            let scaffoldBoxHtml = '';
+            if (unitId === 'cme_new' && ep.scaffolding) {
+              const sc = ep.scaffolding;
+              const stepsText = (sc.steps || [])
+                .map((s) => `<strong>[${s.letter}] ${s.name}:</strong> ${s.prompt}`)
+                .join('<br>');
+              const startersText = (sc.sentence_starters || [])
+                .slice(0, 3)
+                .map((st) => `• <em>"${st}"</em>`)
+                .join('<br>');
+              const connectivesText = (sc.connectives_bank || []).join(' &bull; ');
+              scaffoldBoxHtml = `
+                <div style="margin: 10px 0 12px 0; border: 1.5px solid #1e3a8a; border-radius: 6px; overflow: hidden; background: #ffffff; page-break-inside: avoid;">
+                  <div style="background: #1e3a8a; color: #ffffff; padding: 4px 10px; font-size: 8.5pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
+                    <span>Exam Structure Strip: ${sc.acronym_title || sc.acronym}</span>
+                    <span style="font-weight: normal; opacity: 0.9;">Edexcel Paper 2</span>
+                  </div>
+                  <div style="padding: 8px 12px; font-size: 8pt; color: #1e293b; line-height: 1.35; background: #f8fafc;">
+                    ${sc.guidance ? `<div style="font-style: italic; color: #475569; margin-bottom: 6px;">${sc.guidance}</div>` : ''}
+                    <div style="margin-bottom: 6px;">${stepsText}</div>
+                    ${startersText ? `<div style="margin-top: 4px; border-top: 1px dashed #cbd5e1; padding-top: 4px; color: #1e40af;"><strong>Sentence Starters:</strong><br>${startersText}</div>` : ''}
+                    ${connectivesText ? `<div style="margin-top: 4px; color: #64748b;"><strong>Causal Connectives:</strong> ${connectivesText}</div>` : ''}
+                  </div>
+                </div>
+              `;
+            }
+            html += questionHtml + scaffoldBoxHtml + renderQuestionLines(ep.question);
 
             if (unitId === 'weimar_nazi_germany') {
               let is3d = rawQText.includes('3d') || rawQText.includes('16 marks');
