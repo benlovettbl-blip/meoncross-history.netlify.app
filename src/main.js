@@ -48,12 +48,29 @@ window.addEventListener('DOMContentLoaded', async () => {
   const view = urlParams.get('view') || 'dashboard';
   const unit = urlParams.get('unit');
 
-  switchView(view, unit, true);
+  switchView(view, unit, true).then(() => {
+    if (window.location.hash && window.location.hash.includes('-section')) {
+      setTimeout(() => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  });
 
   window.addEventListener('popstate', (e) => {
     if (e.state && e.state.view) {
       switchView(e.state.view, e.state.unit, true);
     } else {
+      // If triggered by an in-page hash jump (e.g. #year11-section), smoothly scroll to target instead of reloading dashboard
+      if (window.location.hash && window.location.hash.includes('-section')) {
+        const targetEl = document.querySelector(window.location.hash);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+      }
       switchView('dashboard', null, true);
     }
   });

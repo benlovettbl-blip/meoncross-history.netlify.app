@@ -135,6 +135,39 @@ export function scrollToTop(instant = true) {
 }
 window.scrollToTop = scrollToTop;
 
+export function scrollToSection(sectionId) {
+  const currentView =
+    state.currentView ||
+    (window.appStore && window.appStore.state && window.appStore.state.currentView) ||
+    'dashboard';
+
+  const performScroll = () => {
+    const el = document.getElementById(sectionId);
+    if (!el) return;
+    const headerOffset = 24;
+    const elementPosition = el.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: Math.max(0, offsetPosition),
+      behavior: 'smooth',
+    });
+    el.classList.add('section-highlight');
+    setTimeout(() => el.classList.remove('section-highlight'), 1800);
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', '#' + sectionId);
+    }
+  };
+
+  if (currentView !== 'dashboard') {
+    switchView('dashboard').then(() => {
+      setTimeout(performScroll, 150);
+    });
+  } else {
+    performScroll();
+  }
+}
+window.scrollToSection = scrollToSection;
+
 export async function switchView(viewName, param = null, skipHistory = false) {
   // Always immediately reset scroll position to top
   scrollToTop(true);

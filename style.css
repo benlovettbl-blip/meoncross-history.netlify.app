@@ -320,7 +320,37 @@ body {
 .content-container {
   padding: 32px;
   flex-grow: 1;
-  overflow-y: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section-title,
+#gcse-trip-section {
+  scroll-margin-top: 24px;
+}
+
+.section-highlight {
+  animation: sectionHighlightPulse 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes sectionHighlightPulse {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(8px);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(4px);
+  }
+  80% {
+    transform: translateX(0);
+  }
 }
 
 /* --- Dashboard Elements --- */
