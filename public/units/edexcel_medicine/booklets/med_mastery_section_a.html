@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Section A: The British Sector of the Western Front, 1914–1918 — Complete Mastery Pack</title>
+    <style>
+  @page { size: A4 portrait; margin: 8mm 10mm; }
+  * { box-sizing: border-box; }
+  body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #0f172a; margin: 0; padding: 0; font-size: 8.5pt; line-height: 1.3; background: #fff; }
+  
+  .page { 
+    page-break-after: always; 
+    height: 280mm; 
+    max-height: 280mm; 
+    box-sizing: border-box; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    padding: 0;
+  }
+  .page:last-child { page-break-after: avoid; }
+  
+  /* Headers */
+  .page-header { border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .header-left h1 { margin: 0; font-size: 11pt; color: #1e3a8a; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; }
+  .header-left p { margin: 1px 0 0 0; font-size: 7pt; color: #64748b; font-weight: 500; }
+  .header-tag { font-size: 6.8pt; font-weight: 800; background: #1e3a8a; color: #fff; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; }
+  
+  .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
+  
+  /* Lined paper simulation */
+  .writing-line { height: 15px; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; }
+  .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 2px; }
+  
+  /* Answers-Only Bank (Green Pages) */
+  .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8px 6px; font-size: 6.6pt; line-height: 1.15; flex: 1 1 auto; }
+  .ans-grid.dense-3col { grid-template-columns: 1fr 1fr 1fr; gap: 1.5px 5px; font-size: 6.1pt; line-height: 1.12; }
+  .ans-item { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 2.5px; padding: 1.5px 4px; display: flex; gap: 4px; align-items: baseline; }
+  .ans-grid.dense-3col .ans-item { padding: 1.2px 3px; gap: 3px; }
+  .ans-num { color: #166534; font-weight: 800; font-size: 6.6pt; flex-shrink: 0; min-width: 16px; }
+  .ans-grid.dense-3col .ans-num { font-size: 6.1pt; min-width: 14px; }
+  .ans-text { color: #15803d; font-weight: 600; line-height: 1.15; flex: 1; }
+  .ans-check { font-size: 5.5pt; color: #166534; opacity: 0.65; white-space: nowrap; flex-shrink: 0; margin-left: 2px; }
+  
+  /* Cover Tracker Table */
+  .tracker-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin: 6px 0; }
+  .tracker-table th, .tracker-table td { border: 1px solid #cbd5e1; padding: 3px 5px; vertical-align: middle; }
+  .tracker-table th { background: #1e3a8a; color: white; font-weight: 800; text-align: left; }
+  .tracker-table tr:nth-child(even) { background: #f8fafc; }
+  
+  /* 2-Column Quiz Grids */
+  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 5px; font-size: 6.3pt; line-height: 1.14; flex: 1 1 auto; overflow: hidden; }
+  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 2.5px; padding: 1.2px 3px; display: flex; gap: 3px; align-items: flex-start; }
+  .quiz-cb { width: 8px; height: 8px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
+  
+  /* Stepped Ladder Boxes */
+  .ladder-zone { border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; }
+  .ladder-launchpad { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 4px 6px; font-size: 7.2pt; color: #1e40af; margin-bottom: 4px; }
+  .ladder-stretch { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 4px; padding: 4px 6px; font-size: 7.2pt; color: #6d28d9; margin-top: 4px; }
+  
+  /* Dual Track Split Columns */
+  .dual-track-container { display: grid; grid-template-columns: 34% 66%; gap: 8px; flex: 1 1 auto; margin-bottom: 4px; }
+  .toolkit-col { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px; font-size: 7pt; display: flex; flex-direction: column; justify-content: space-between; }
+  .writing-col { border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px; display: flex; flex-direction: column; justify-content: space-between; }
+  
+  /* Planning Engine Tables */
+  .plan-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin-bottom: 4px; }
+  .plan-table th, .plan-table td { border: 1px solid #cbd5e1; padding: 3px 5px; vertical-align: top; }
+  .plan-table th { background: #f1f5f9; font-weight: 800; color: #1e293b; text-align: left; }
+  
+  /* Follow-Up Grid Table */
+  .follow-up-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin-top: 3px; }
+  .follow-up-table td { border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: middle; }
+  .follow-up-table tr td:first-child { width: 42%; background: #f1f5f9; font-weight: 700; color: #1e293b; }
+</style>
+</head>
+<body>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 1: FRONT COVER & SECTION A PROGRESS TRACKER              -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <!-- Banner Header -->
+            <div style="background: linear-gradient(135deg, #78350f 0%, #1e293b 100%); color: white; padding: 12px 16px; border-radius: 6px; margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 4px; margin-bottom: 6px;">
+                    <span style="font-size: 7.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #fde68a;">Pearson Edexcel GCSE (9–1) History · Paper 1 (1HI0/11)</span>
+                    <span style="font-size: 7pt; background: #b45309; padding: 2px 6px; border-radius: 3px; font-weight: 700;">Section A 12-Page Pack</span>
+                </div>
+                <h1 style="margin: 0; font-size: 13.5pt; font-weight: 800; line-height: 1.2;">The British Sector of the Western Front, 1914–1918</h1>
+                <p style="margin: 3px 0 0 0; font-size: 8pt; color: #fef3c7;">The Historic Environment · Injuries, Treatment and the Trenches · Complete Mastery &amp; Source Studio</p>
+            </div>
+
+            <!-- Student Metadata Box -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 6px 10px; margin-bottom: 8px; font-size: 8pt;">
+                <div><strong>Pupil Name:</strong> ________________________________</div>
+                <div><strong>Class / Set:</strong> ___________</div>
+                <div><strong>Target Grade:</strong> [ &nbsp; ]</div>
+            </div>
+
+            <!-- The Master Assessment & Progress Tracker (4 Columns, NO RAG) -->
+            <div style="border: 1.5px solid #78350f; border-radius: 6px; padding: 6px 8px; background: #fff; margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #78350f; padding-bottom: 3px; margin-bottom: 4px;">
+                    <strong style="color: #78350f; font-size: 8.5pt; text-transform: uppercase;">📊 Section A Progress &amp; Assessment Tracker (16 Marks Total)</strong>
+                    <span style="font-size: 7pt; color: #64748b;">Marked by Teacher or Peer Verified</span>
+                </div>
+
+                <table class="tracker-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 54%;">Assessment Component &amp; Stem Focus</th>
+                            <th style="width: 16%; text-align: center;">Format Style</th>
+                            <th style="width: 14%; text-align: center;">Max Marks</th>
+                            <th style="width: 16%; text-align: center;">Pupil Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #fefce8; font-weight: 700;">
+                            <td>🧠 Complete Western Front Knowledge Vault (All 100 Recall Questions)</td>
+                            <td style="text-align: center;">Checklist</td>
+                            <td style="text-align: center;">/100</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Round 1 (Stepped):</strong> Q1(a) Feature 1 (Casualty Clearing Stations)</td>
+                            <td style="text-align: center;">Stepped Ladder</td>
+                            <td style="text-align: center;">/2</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Round 1 (Stepped):</strong> Q1(b) Feature 2 (Thomas Splint)</td>
+                            <td style="text-align: center;">Stepped Ladder</td>
+                            <td style="text-align: center;">/2</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Round 1 (Stepped):</strong> Q2(b) 4-Part Follow-Up Grid (Base Hospital Water)</td>
+                            <td style="text-align: center;">Stepped Ladder</td>
+                            <td style="text-align: center;">/4</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Round 1 (Stepped):</strong> Q2(a) Source Utility (Somme CCS vs Base Hospital)</td>
+                            <td style="text-align: center;">Stepped Ladder</td>
+                            <td style="text-align: center;">/8</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Round 2 (Dual-Track):</strong> Q1(a) &amp; Q1(b) Features (Mobile X-rays &amp; Trench Fever)</td>
+                            <td style="text-align: center;">Dual Track</td>
+                            <td style="text-align: center;">/4</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Round 2 (Dual-Track):</strong> Q2(b) 4-Part Follow-Up Grid (Gas Casualties)</td>
+                            <td style="text-align: center;">Dual Track</td>
+                            <td style="text-align: center;">/4</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Round 2 (Dual-Track):</strong> Q2(a) Source Utility (RAMC Logbook &amp; Flanders Mud)</td>
+                            <td style="text-align: center;">Dual Track</td>
+                            <td style="text-align: center;">/8</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Round 3 (Simulation):</strong> Full Section A Timed Exam Pitch (Q1a, Q1b, Q2a, Q2b)</td>
+                            <td style="text-align: center;">Exam Hall (25m)</td>
+                            <td style="text-align: center;">/16</td>
+                            <td style="text-align: center;">_____</td>
+                        </tr>
+                        <tr style="background: #fef3c7; font-weight: 800; font-size: 7.5pt;">
+                            <td colspan="2">TOTAL COMBINED EXAM PRACTICE MARKS:</td>
+                            <td style="text-align: center;">/48</td>
+                            <td style="text-align: center;">_____ / 48</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="display: flex; justify-content: space-between; font-size: 7.2pt; color: #334155; margin-top: 3px; font-weight: 600;">
+                    <span>Teacher / Peer Marker: _____________________________________</span>
+                    <span>Date: _______________</span>
+                    <span>Overall Grade: [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
+                </div>
+            </div>
+
+            <!-- Bottom Box: Fast Facts & Stem Formulas -->
+            <div style="border: 1.5px solid #0f766e; background: #f0fdfa; border-radius: 6px; padding: 6px 10px; font-size: 7pt; line-height: 1.35; color: #115e59;">
+                <div style="font-weight: 800; color: #0f766e; font-size: 7.5pt; text-transform: uppercase; margin-bottom: 3px; display: flex; justify-content: space-between;">
+                    <span>⏱️ Section A Edexcel Exam Fast Facts &amp; Stem Blueprints (16 Marks · ~25 Mins)</span>
+                    <span>Option 11 Paper 1 Section A</span>
+                </div>
+                <div><strong>• Q1(a) &amp; Q1(b) Features (2 Marks each · ~3 mins each):</strong> <em>F-D Formula.</em> State <strong>Feature</strong> in sentence 1 &rarr; support with <strong>1 precise supporting factual detail</strong>. (2 separate questions).</div>
+                <div><strong>• Q2(a) Source Utility (8 Marks · ~12 mins):</strong> <em>C-O-P Matrix.</em> Evaluate both sources for <strong>Content</strong> (what it says) &rarr; <strong>Own Contextual Knowledge</strong> &rarr; <strong>Provenance</strong> (Nature, Origin, Purpose / NOP).</div>
+                <div><strong>• Q2(b) Follow-Up Investigation (4 Marks · ~7 mins):</strong> <em>4-Step Enquiry.</em> Quote <strong>Detail in Source B</strong> &rarr; Formulate <strong>Targeted Question</strong> &rarr; Name <strong>Specific Historical Source Type</strong> &rarr; Explain <strong>Direct Purpose</strong>.</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Pearson Edexcel GCSE History</span>
+            <span>Western Front Historic Environment Complete Mastery Booklet</span>
+            <span>Page 1 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 2: COMPLETE KNOWLEDGE VAULT (PART 1: Q1 TO Q50)          -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>The British Sector of the Western Front, 1914–1918</h1>
+                    <p>Complete Knowledge Retrieval Vault · Questions 1 to 50 (Trench Environment, Ill-Health &amp; Wounds)</p>
+                </div>
+                <span class="header-tag" style="background: #b45309;">Vault Part 1</span>
+            </div>
+
+            <div class="quiz-grid">
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>1.</strong> By 1900, how had surgical practice in civilian hospitals evolved from Joseph Lister's earlier methods?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>2.</strong> Which of the following was a key piece of technology used in aseptic surgery by the outbreak of the First World War?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>3.</strong> In what year did the German physicist Wilhelm Roentgen accidentally discover X-rays?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>4.</strong> Which of the following was a major limitation of using early X-ray machines in 1914?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>5.</strong> Why were early X-ray machines highly unsuitable for the fast-paced, mobile environment of a battlefield in 1914?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>6.</strong> In 1901, the Austrian doctor Karl Landsteiner made a breakthrough that revolutionized blood transfusions. What did he discover?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>7.</strong> Before the discovery of sodium citrate in 1915, what was the massive problem with performing blood transfusions on the battlefield?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>8.</strong> When the British Expeditionary Force (BEF) arrived on the Western Front in 1914, what geographical feature made the medical situation catastrophic?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>9.</strong> What is the military definition of a 'salient', such as the famous one at Ypres?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>10.</strong> Which major British offensive, launched in 1916, became a medical disaster with over 57,000 casualties on the very first day?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>11.</strong> What unique medical facility was established during the Battle of Arras in 1917?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>12.</strong> During the Battle of Cambrai in 1917, what groundbreaking medical logistical system was used for the first time by Oswald Robertson?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>13.</strong> Why did aseptic surgery (sterile operating theatres) prove to be nearly useless in frontline dressing stations in 1914?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>14.</strong> What made transporting wounded soldiers away from the frontline so incredibly difficult?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>15.</strong> To what extent was the Royal Army Medical Corps (RAMC) prepared for the medical challenges of the Western Front in 1914?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>16.</strong> What did the term 'war of attrition' mean for the soldiers living in the trench system?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>17.</strong> Why were horse-drawn ambulances often ineffective in the worst conditions of the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>18.</strong> Which of the following best describes the layout of the trench system on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>19.</strong> In what year did Karl Landsteiner discover that blood group O was the universal donor group?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>20.</strong> Which statement accurately summarises the 'historical context' of medicine at the outbreak of war in 1914?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.1]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>21.</strong> What was the direct environmental cause of 'Trench Foot' on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>22.</strong> What were the symptoms of severe, untreated Trench Foot?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>23.</strong> How did the British Army attempt to clinically prevent the spread of Trench Foot in permanently flooded trenches?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>24.</strong> What was 'Trench Fever', and what were its primary symptoms?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>25.</strong> It took years for medical officers to discover the cause of Trench Fever. What was eventually found to be the transmitter?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>26.</strong> How did the British Army strategically adapt to combat the epidemic of Trench Fever once its cause was discovered?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>27.</strong> What was the 'Ypres Salient'?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>28.</strong> Why was the First Battle of Ypres (Autumn 1914) strategically critical for the British?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>29.</strong> What terrifying new weapon was first used by the German Army at the Second Battle of Ypres in 1915?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>30.</strong> During the fight for Hill 60 in April 1915, what tactic did the British successfully use to defeat the German positions?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>31.</strong> Why did the British launch the massive Battle of the Somme in 1916?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>32.</strong> What made the Battle of the Somme a 'medical nightmare' on its very first day?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>33.</strong> Because the ground at Arras was chalky and easy to tunnel through, what incredible feat did British and New Zealand miners achieve in 1917?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>34.</strong> In the organisation of the trench system, what was the primary purpose of the 'support trench', located roughly 80 metres behind the frontline?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>35.</strong> Why were trenches deliberately dug in a zig-zag pattern instead of a straight line?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>36.</strong> How did the complex, zig-zag design of the trenches unintentionally create severe problems for the medical services?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>37.</strong> Why did the army have to rely heavily on horse-drawn ambulance wagons instead of modern motor ambulances near the frontline?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>38.</strong> What was the main medical danger caused by delays in evacuating wounded soldiers across the devastated, muddy terrain?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>39.</strong> What was 'Dysentery' and how was it spread on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>40.</strong> What does the medical condition 'Shell Shock' (now understood as PTSD) reveal about the environment of the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.2]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>41.</strong> Which type of weapon was responsible for the highest percentage of wounds (roughly 58%) on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>42.</strong> Why were deep shrapnel wounds almost guaranteed to become severely infected within hours?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>43.</strong> What was biologically unique about the mud in Flanders and France that made it so deadly when dragged into a wound?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>44.</strong> What is the defining, fatal characteristic of the 'Gas Gangrene' infection?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>45.</strong> Why did traditional 19th-century surgical antiseptics (like carbolic acid spray) fail to cure Gas Gangrene on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>46.</strong> How did the British Army successfully reduce the threat of Tetanus infections on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>47.</strong> At the start of the war in 1914, why were head injuries disproportionately high (accounting for roughly 20% of wounds)?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>48.</strong> What crucial piece of protective equipment was introduced in 1915, drastically reducing fatal head injuries by 80%?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>49.</strong> What terrifying new weapon did the German army introduce at the Second Battle of Ypres in April 1915?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>50.</strong> What was the physical effect of a Chlorine Gas attack on a soldier?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Knowledge Vault Questions</span>
+            <span>Turn page for Vault Part 2 (Questions 51 to 100)</span>
+            <span>Page 2 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 3: COMPLETE KNOWLEDGE VAULT (PART 2: Q51 TO Q100)        -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>The British Sector of the Western Front, 1914–1918</h1>
+                    <p>Complete Knowledge Retrieval Vault · Questions 51 to 100 (Chain of Evacuation &amp; Medical Advances)</p>
+                </div>
+                <span class="header-tag" style="background: #b45309;">Vault Part 2</span>
+            </div>
+
+            <div class="quiz-grid">
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>51.</strong> Before official gas masks were widely issued in July 1915, how did soldiers desperately attempt to survive gas attacks?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>52.</strong> Which poisonous gas, introduced later in 1915, was significantly faster-acting than chlorine and capable of killing an exposed person within two days?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>53.</strong> What made Mustard Gas (introduced in 1917) such a horrific and distinct weapon?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>54.</strong> Despite the immense psychological terror it caused, why did poison gas actually account for under 5% of all British deaths (around 6,000 soldiers)?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>55.</strong> Which debilitating environmental illness was spread by the millions of body lice living in the seams of the soldiers' unwashed uniforms?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>56.</strong> How did the British Army attempt to medically prevent the spread of Trench Foot in the flooded trenches?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>57.</strong> What was 'Shellshock'?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>58.</strong> Which specialist medical facility in Edinburgh was set up specifically to treat British officers suffering from severe Shellshock?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>59.</strong> What exact acronym did the British Army officially use in medical records to categorise cases of Shellshock?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>60.</strong> Why did the brutal environment of the trenches force the Royal Army Medical Corps (RAMC) to dedicate huge resources to 'preventative measures'?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.3]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>61.</strong> What was the fundamental purpose of the 'Chain of Evacuation' on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>62.</strong> Who had the dangerous task of initially rescuing wounded men directly from No Man's Land under enemy fire?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>63.</strong> Where was the Regimental Aid Post (RAP) physically located?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>64.</strong> What was the medical capability of the Regimental Medical Officer stationed at the RAP?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>65.</strong> Who staffed the Advanced Dressing Stations (ADS) and Main Dressing Stations (MDS)?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>66.</strong> How did the British military respond to the violent, injury-worsening journeys caused by horse-drawn ambulance wagons?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>67.</strong> Why did the RAMC still have to rely heavily on horse-drawn wagons (sometimes needing six horses) even after acquiring motor ambulances?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>68.</strong> How were massive numbers of stabilized casualties (up to 800 at a time) transported from the CCS to the Base Hospitals?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>69.</strong> Where were the Casualty Clearing Stations (CCS) strategically located?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>70.</strong> What vital medical sorting process took place at the Casualty Clearing Station (CCS)?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>71.</strong> Because deadly gas gangrene developed so rapidly, how did the role of the Casualty Clearing Station (CCS) critically change during the war?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>72.</strong> Where were Base Hospitals located on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>73.</strong> As the war progressed and the CCS took over emergency amputations, what did Base Hospitals begin to specialize in?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>74.</strong> To cope with the unprecedented scale of casualties, how drastically did the RAMC (Royal Army Medical Corps) expand between 1914 and 1918?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>75.</strong> Who were the QAIMNS, whose numbers grew from 300 to 10,000 during the war?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>76.</strong> What does the acronym FANY stand for?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>77.</strong> What was the most famous and physically demanding frontline role undertaken by the female volunteers of the FANY?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>78.</strong> Aside from driving ambulances, what other vital morale and hygiene services did the FANY provide?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>79.</strong> What was incredibly unique about 'Thompson's Cave', built by British and Commonwealth troops in 1916?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>80.</strong> Why was the underground hospital at Arras highly significant for treating casualties?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.4]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>81.</strong> Why was traditional 19th-century aseptic surgery effectively impossible to maintain on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>82.</strong> Faced with rampant gas gangrene, surgeons began using a technique called 'Debridement' (Wound Excision). What did this involve?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>83.</strong> What was the 'Carrel-Dakin method' used to treat deep infections?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>84.</strong> What was the main logistical difficulty with the highly effective Carrel-Dakin solution?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>85.</strong> If antiseptics, debridement, and the Carrel-Dakin method all failed to stop the rapid spread of gas gangrene, what was a surgeon's only remaining option to save the patient's life?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>86.</strong> Before 1915, what was the estimated mortality (death) rate for a soldier who suffered a fractured femur (thigh bone) from a gunshot or shrapnel wound?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>87.</strong> Why did a fractured femur cause such a high death rate during early transport?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>88.</strong> Who originally designed the Thomas Splint before the outbreak of the First World War?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>89.</strong> How did the Thomas Splint (introduced to the Western Front by Robert Jones in December 1915) miraculously increase the survival rate for thigh fractures from 20% to 82%?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>90.</strong> What diagnostic technology was absolutely essential for accurately locating deeply embedded shrapnel so surgeons could remove it before infection set in?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>91.</strong> How was X-Ray technology adapted to deal with the vast number of casualties closer to the frontline?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>92.</strong> What was a major technical limitation of the early mobile X-ray units used on the Western Front?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>93.</strong> Early blood transfusions (such as those pioneered by Dr Lawrence Bruce Robertson) were heavily limited because blood could not be stored. How did this force doctors to perform transfusions?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>94.</strong> In 1915, what chemical did Richard Lewisohn discover could be added to blood to successfully stop it from clotting?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>95.</strong> Following Lewisohn's discovery, Richard Weil discovered that blood mixed with sodium citrate could be refrigerated for up to two days. What monumentally significant breakthrough did Francis Rous and James Turner make in 1916?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>96.</strong> Which American doctor utilized these chemical discoveries to establish the world's first 'blood depot' (blood bank) before the Battle of Cambrai in 1917?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>97.</strong> How did Oswald Hope Robertson successfully store the 22 units of pre-donated universal Type O blood for his pioneering blood bank at Cambrai?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>98.</strong> Which pioneering surgeon developed early plastic surgery techniques to rebuild the severe, disfiguring facial injuries caused by shrapnel?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>99.</strong> Why did the brutal environment and massive casualty numbers of the Western Front force rapid medical advancements?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+                    <div class="quiz-item">
+                        <div class="quiz-cb"></div>
+                        <div style="flex: 1;">
+                            <strong>100.</strong> Which of the following represents a major diagnostic limitation of the mobile X-ray units?
+                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[KT5.5]</div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Knowledge Vault Questions</span>
+            <span>Turn page for Official Mark Scheme Answers</span>
+            <span>Page 3 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: ANSWERS 1 TO 50)         -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>The British Sector of the Western Front, 1914–1918</h1>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 1 to 50 (Self &amp; Peer Marking Bank)</p>
+                </div>
+                <span class="header-tag" style="background: #059669;">Mark Scheme 1</span>
+            </div>
+
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 2px 6px; font-size: 6.8pt; color: #065f46; margin-bottom: 3px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Cover this bank with your hand or a sheet of paper to test yourself against Page 2, or use for rapid peer marking.</span>
+                <span>Answers 1–50</span>
+            </div>
+
+            <div class="ans-grid">
+                
+                    <div class="ans-item">
+                        <span class="ans-num">1.</span>
+                        <span class="ans-text">Surgeons moved from 'antiseptic' surgery (killing germs already in the wound) to 'aseptic' surgery (preventing germs from entering the operating theatre in the first place).</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">2.</span>
+                        <span class="ans-text">The steam autoclave (invented in 1881) used to sterilise surgical instruments.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">3.</span>
+                        <span class="ans-text">1895</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">4.</span>
+                        <span class="ans-text">The radiation doses were 1,500 times stronger than today, causing severe burns and hair loss.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">5.</span>
+                        <span class="ans-text">The glass tubes were incredibly fragile, the machines were too heavy to move easily, and taking a single image could take up to 90 minutes.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">6.</span>
+                        <span class="ans-text">He discovered three blood groups (A, B, and O), meaning doctors could finally match donor and patient blood types to prevent fatal rejection.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">7.</span>
+                        <span class="ans-text">Blood coagulated (clotted) as soon as it left the body, meaning it could not be stored in a bank. Transfusions had to be done with the donor and patient connected directly by a tube.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">8.</span>
+                        <span class="ans-text">The flat agricultural land had its drainage systems destroyed by constant artillery, turning the battlefield into a horrific, waterlogged, muddy swamp.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">9.</span>
+                        <span class="ans-text">A piece of land that juts out into enemy territory, making it highly dangerous because it is vulnerable to attack from three sides.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">10.</span>
+                        <span class="ans-text">The Battle of the Somme</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">11.</span>
+                        <span class="ans-text">An extensive underground hospital built into the chalk tunnel network underneath the city, sheltering the wounded from artillery fire.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">12.</span>
+                        <span class="ans-text">The first ever blood bank, using stored blood to treat soldiers suffering from severe shock.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">13.</span>
+                        <span class="ans-text">The soldiers' wounds were already deeply infected with anaerobic bacteria from the heavily manured, muddy soil the moment they were injured in the trenches.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">14.</span>
+                        <span class="ans-text">The deep mud, craters, and destroyed roads made motorized transport impossible near the front, forcing stretcher-bearers to manually carry the wounded for miles.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">15.</span>
+                        <span class="ans-text">They were completely unprepared for the unique environmental illnesses, the massive casualty numbers, and the horrific shrapnel wounds caused by high-explosive artillery.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">16.</span>
+                        <span class="ans-text">A static, defensive conflict where millions of men lived for months in unhygienic dugouts, exposed to weather, rats, and human waste while trying to wear down the enemy.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">17.</span>
+                        <span class="ans-text">The deep mud was so thick that wagons had to be pulled by six horses instead of two, and the severe shaking often worsened the patients' injuries.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">18.</span>
+                        <span class="ans-text">A complex network of zigzag dugouts consisting of a front line, support trench, reserve trench, and communication trenches linking them.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">19.</span>
+                        <span class="ans-text">1907</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">20.</span>
+                        <span class="ans-text">High-tech medicine (aseptic surgery, x-rays, blood typing) had emerged, but key limitations in mobility and blood storage meant it was not yet adapted for a muddy, static battlefield.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">21.</span>
+                        <span class="ans-text">Standing for days in cold, waterlogged mud without changing socks.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">22.</span>
+                        <span class="ans-text">The feet would swell, blister, turn gangrenous, and often require surgical amputation to save the soldier's life.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">23.</span>
+                        <span class="ans-text">By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">24.</span>
+                        <span class="ans-text">A flu-like illness characterized by severe joint pain, shivering, and high fevers.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">25.</span>
+                        <span class="ans-text">The millions of body lice living in the seams of the soldiers' unwashed uniforms.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">26.</span>
+                        <span class="ans-text">They set up massive delousing stations and bathhouses to disinfect clothing with hot steam.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">27.</span>
+                        <span class="ans-text">A vulnerable 'bulge' in the Allied line surrounded by the enemy on three sides, allowing the Germans to fire down from higher ground.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">28.</span>
+                        <span class="ans-text">They held onto the salient to stop the Germans advancing to the sea, successfully retaining control of the vital English Channel ports.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">29.</span>
+                        <span class="ans-text">Chlorine gas</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">30.</span>
+                        <span class="ans-text">Offensive mining to tunnel under and blow up the German positions from below.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">31.</span>
+                        <span class="ans-text">To relieve extreme military pressure on the French army fighting at Verdun.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">32.</span>
+                        <span class="ans-text">The British suffered nearly 60,000 casualties in a single day, completely overwhelming the medical services.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">33.</span>
+                        <span class="ans-text">They dug a 2.5-mile network of tunnels sheltering 25,000 troops, which included a fully functioning underground hospital.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">34.</span>
+                        <span class="ans-text">It was where troops would retreat to if the frontline came under heavy attack or was overrun.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">35.</span>
+                        <span class="ans-text">To prevent enemy fire or the blast wave from an exploding artillery shell from travelling straight down the line.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">36.</span>
+                        <span class="ans-text">It made it incredibly difficult and physically exhausting for stretcher-bearers to safely manoeuvre seriously wounded men around the tight corners while under fire.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">37.</span>
+                        <span class="ans-text">The heavy motor ambulances frequently got permanently stuck in the deep, waterlogged mud.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">38.</span>
+                        <span class="ans-text">The delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach a Casualty Clearing Station.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">39.</span>
+                        <span class="ans-text">A stomach infection causing severe diarrhea and dehydration, spread by drinking contaminated water from shell holes.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">40.</span>
+                        <span class="ans-text">That the relentless psychological trauma, noise, and sheer terror of the artillery war caused severe mental breakdowns, resulting in tiredness, nightmares, and uncontrollable shaking.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">41.</span>
+                        <span class="ans-text">High-explosive artillery shells and shrapnel.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">42.</span>
+                        <span class="ans-text">The jagged shrapnel tore through flesh, physically dragging pieces of muddy, bacteria-soaked uniform deep into the wound.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">43.</span>
+                        <span class="ans-text">It was agricultural farmland that had been heavily fertilized with animal manure, packing the soil with the anaerobic bacteria that caused tetanus and gas gangrene.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">44.</span>
+                        <span class="ans-text">It was a rapid infection that produced a foul-smelling gas inside dying muscle tissue, turning the flesh black and potentially killing a man within a single day.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">45.</span>
+                        <span class="ans-text">Antiseptics only cleaned the surface of a wound; they could not reach the lethal bacteria that had been driven deep into the muscle by the force of an explosion.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">46.</span>
+                        <span class="ans-text">By administering routine anti-tetanus injections to wounded soldiers from late 1914 onwards.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">47.</span>
+                        <span class="ans-text">Soldiers were fighting in trenches; their bodies were protected by earth, but their heads were exposed while wearing only soft cloth caps.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">48.</span>
+                        <span class="ans-text">The steel Brodie helmet</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">49.</span>
+                        <span class="ans-text">Chlorine Gas</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">50.</span>
+                        <span class="ans-text">It destroyed the respiratory system, causing victims to slowly suffocate as their lungs filled with fluid.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Official Mark Scheme</span>
+            <span>Score checked items and log on Front Cover Tracker</span>
+            <span>Page 4 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: ANSWERS 51 TO 100)       -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>The British Sector of the Western Front, 1914–1918</h1>
+                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 51 to 100 (Self &amp; Peer Marking Bank)</p>
+                </div>
+                <span class="header-tag" style="background: #059669;">Mark Scheme 2</span>
+            </div>
+
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 2px 6px; font-size: 6.8pt; color: #065f46; margin-bottom: 3px; display: flex; justify-content: space-between;">
+                <span>💡 <strong>Quick-Marking Bank:</strong> Use for rapid recall checking against Vault Part 2 (Page 3). Log total correct recall items on Page 1.</span>
+                <span>Answers 51–100</span>
+            </div>
+
+            <div class="ans-grid">
+                
+                    <div class="ans-item">
+                        <span class="ans-num">51.</span>
+                        <span class="ans-text">They urinated on cotton pads or handkerchiefs and pressed them to their faces to chemically neutralize the chlorine.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">52.</span>
+                        <span class="ans-text">Phosgene Gas</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">53.</span>
+                        <span class="ans-text">It was completely odourless and worked slowly, causing severe internal and external blisters that could burn skin straight through uniforms.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">54.</span>
+                        <span class="ans-text">The rapid development and distribution of highly effective gas masks successfully protected the vast majority of troops.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">55.</span>
+                        <span class="ans-text">Trench Fever</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">56.</span>
+                        <span class="ans-text">By ordering soldiers to change their socks twice a day and systematically rub their feet with whale oil.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">57.</span>
+                        <span class="ans-text">A poorly understood psychological trauma (PTSD) caused by the constant bombardment of war, resulting in nightmares, loss of speech, and uncontrollable shaking.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">58.</span>
+                        <span class="ans-text">Craiglockhart Hospital</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">59.</span>
+                        <span class="ans-text">NYD.N (Not Yet Diagnosed, Nervous)</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">60.</span>
+                        <span class="ans-text">Because the harsh conditions caused so many massive casualties from illnesses (like trench foot and fever) that they had to actively prevent disease just to keep the army fit enough to fight.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">61.</span>
+                        <span class="ans-text">To provide a highly organised, multi-stage system of medical triage to rescue, transport, and treat massive numbers of casualties without overwhelming frontline units.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">62.</span>
+                        <span class="ans-text">Teams of four to six stretcher-bearers, who carried the casualties by hand through the mud.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">63.</span>
+                        <span class="ans-text">Within 200m of the frontline, often in a communication trench or dugout.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">64.</span>
+                        <span class="ans-text">They could only provide immediate first aid (like bandages and tourniquets) to get the walking wounded back to the fight or prepare serious cases for transport; they could not perform surgery.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">65.</span>
+                        <span class="ans-text">Units of the Field Ambulance, consisting of medical officers, orderlies, and eventually nurses.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">66.</span>
+                        <span class="ans-text">The Times newspaper launched a public appeal in 1914, raising money to purchase 512 new motor ambulances.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">67.</span>
+                        <span class="ans-text">Because heavy motor vehicles frequently got bogged down and entirely stuck in the deep, waterlogged mud of the battlefield.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">68.</span>
+                        <span class="ans-text">On specially designed ambulance trains and canal barges.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">69.</span>
+                        <span class="ans-text">7 to 12 miles back from the frontline, safely out of artillery range but positioned near railway lines for rapid transport.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">70.</span>
+                        <span class="ans-text">Triage, where patients were sorted into three groups: the walking wounded, those needing hospital treatment, and those with no chance of recovery.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">71.</span>
+                        <span class="ans-text">It took over the role of performing critical, life-saving surgery (like amputations) from the Base Hospitals to stop the infection before transport.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">72.</span>
+                        <span class="ans-text">Near the French and Belgian coastal ports, ready to ship patients back to 'Blighty' (Britain).</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">73.</span>
+                        <span class="ans-text">The longer-term recovery of patients and the development of specialist wards for complex issues like head wounds or gas poisoning.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">74.</span>
+                        <span class="ans-text">From 9,000 men to 113,000 men.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">75.</span>
+                        <span class="ans-text">Queen Alexandra's Imperial Military Nursing Service, a corps of highly trained professional military nurses.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">76.</span>
+                        <span class="ans-text">First Aid Nursing Yeomanry.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">77.</span>
+                        <span class="ans-text">They drove the motor ambulances, navigating terrible roads and deep mud under active shellfire to transport the wounded.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">78.</span>
+                        <span class="ans-text">They transported supplies, set up cinemas, and operated mobile bath units that could bathe up to 40 men an hour.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">79.</span>
+                        <span class="ans-text">It was a massive, fully functioning underground hospital built into existing chalk tunnels beneath the town of Arras.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">80.</span>
+                        <span class="ans-text">Because it functioned as a fully equipped facility incredibly close to the frontline (with 700 stretcher beds, electricity, and water), while remaining completely safe from enemy artillery.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">81.</span>
+                        <span class="ans-text">Because the chaotic, muddy casualty stations were impossible to keep perfectly sterile, and traditional carbolic acid did not kill gas gangrene bacteria effectively.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">82.</span>
+                        <span class="ans-text">Aggressively and rapidly cutting away all dead, damaged, and infected tissue from around a wound to physically remove the gangrene before stitching it up.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">83.</span>
+                        <span class="ans-text">A system where tubes pumped a chemical sterilized salt solution directly into deep wounds to continually wash out and kill the infection-causing bacteria.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">84.</span>
+                        <span class="ans-text">The solution only stayed fresh for six hours and had to be constantly made as it was needed.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">85.</span>
+                        <span class="ans-text">Immediate amputation of the infected limb (resulting in over 240,000 lost limbs by 1918).</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">86.</span>
+                        <span class="ans-text">80%</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">87.</span>
+                        <span class="ans-text">Because traditional splints did not keep the leg straight, meaning the jagged broken bones ground together, severing major arteries and causing fatal internal bleeding and shock.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">88.</span>
+                        <span class="ans-text">Hugh Owen Thomas</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">89.</span>
+                        <span class="ans-text">It rigidly pulled the leg lengthways (traction), completely stopping the broken bones from grinding on each other and preventing fatal blood loss and shock during transport.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">90.</span>
+                        <span class="ans-text">X-Rays</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">91.</span>
+                        <span class="ans-text">Six mobile X-ray units (vans) were developed to operate in the British sector, allowing them to be driven directly to Casualty Clearing Stations.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">92.</span>
+                        <span class="ans-text">The delicate glass tubes overheated very quickly, meaning the machines could only be used for an hour before needing to cool down.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">93.</span>
+                        <span class="ans-text">Transfusions had to be done 'arm-to-arm', directly transferring blood from a live donor to the patient before it clotted.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">94.</span>
+                        <span class="ans-text">Sodium Citrate</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">95.</span>
+                        <span class="ans-text">They added citrate glucose to the blood, which allowed it to be safely stored for up to four weeks.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">96.</span>
+                        <span class="ans-text">Oswald Hope Robertson</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">97.</span>
+                        <span class="ans-text">He stored the blood in glass bottles packed with ice and sawdust.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">98.</span>
+                        <span class="ans-text">Harold Gillies</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">99.</span>
+                        <span class="ans-text">Because traditional peacetime surgical methods completely failed to treat the complex, infected shrapnel wounds, forcing doctors to innovate radical new techniques out of sheer desperation.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+                    <div class="ans-item">
+                        <span class="ans-num">100.</span>
+                        <span class="ans-text">They could not detect pieces of dirty clothing that had been driven into wounds by shrapnel, which often caused lethal infections.</span>
+                        <span class="ans-check">[✓][✗]</span>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Official Mark Scheme</span>
+            <span>Round 1 Exam Practice begins on Page 6</span>
+            <span>Page 5 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 6: ROUND 1 — STEPPED LADDER: FEATURES & FOLLOW-UP         -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Section A: The Historic Environment</h1>
+                    <p>Round 1: The Stepped Ladder · Question 1 (Features) &amp; Question 2(b) (Follow-Up Investigation)</p>
+                </div>
+                <span class="header-tag" style="background: #7c3aed;">Round 1: Stems 1 &amp; 2b</span>
+            </div>
+
+            <!-- Q1(a): Feature 1 (2 Marks) -->
+            <div class="ladder-zone" style="border-left: 3.5px solid #f59e0b; padding: 4px 8px; margin-bottom: 4px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 1 (a): Feature Question (2 Marks)</strong>
+                    <span style="font-size: 7pt; color: #b45309; font-weight: 700;">F-D Formula · ~3 Mins</span>
+                </div>
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
+                    Describe one feature of the work of Casualty Clearing Stations (CCS) on the Western Front.
+                </div>
+                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
+                    <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"One feature of Casualty Clearing Stations was that..."</em><br>
+                    <strong>Facts to Include:</strong> Located 7–12 miles back near railways; triage (walking wounded, urgent surgery, dying); performed critical amputations and chest surgeries before base evacuation.
+                </div>
+                <div style="padding: 1px 0;">
+                    <div class="writing-line starter">One feature of Casualty Clearing Stations was that...</div>
+                    <div class="writing-line starter">Specifically, (add one precise historical detail or statistic)...</div>
+                    <div class="writing-line"></div>
+                </div>
+            </div>
+
+            <!-- Q1(b): Feature 2 (2 Marks) -->
+            <div class="ladder-zone" style="border-left: 3.5px solid #f59e0b; padding: 4px 8px; margin-bottom: 4px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 1 (b): Feature Question (2 Marks)</strong>
+                    <span style="font-size: 7pt; color: #b45309; font-weight: 700;">F-D Formula · ~3 Mins</span>
+                </div>
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
+                    Describe one feature of the use of the Thomas splint on the Western Front.
+                </div>
+                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
+                    <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"One feature of the Thomas splint was that..."</em><br>
+                    <strong>Facts to Include:</strong> Introduced in 1915 by Robert Jones; rigid frame pulled leg straight to stop bone ends grinding; dramatically dropped compound fracture mortality from 80% to 20%.
+                </div>
+                <div style="padding: 1px 0;">
+                    <div class="writing-line starter">One feature of the Thomas splint was that...</div>
+                    <div class="writing-line starter">Specifically, (add one precise historical detail or statistic)...</div>
+                    <div class="writing-line"></div>
+                </div>
+            </div>
+
+            <!-- Q2(b): 4-Part Follow-Up Grid (4 Marks) -->
+            <div class="ladder-zone" style="border-left: 3.5px solid #0284c7; padding: 4px 8px; margin-bottom: 2px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 2 (b): Follow-Up Investigation Grid (4 Marks)</strong>
+                    <span style="font-size: 7pt; color: #0369a1; font-weight: 700;">4-Step Enquiry · ~6 Mins</span>
+                </div>
+                <div style="font-weight: 700; font-size: 7.8pt; color: #0f172a; margin-bottom: 2px;">
+                    Study Source B (Edith Smith letter: <em>"The pipes freeze entirely, meaning we must strictly ration the water provided to the wounded."</em>). How could you follow up Source B to find out more about the severe conditions faced by medical staff? Complete the table below.
+                </div>
+                
+                <table class="follow-up-table">
+                    <tr>
+                        <td><strong>Detail in Source B that I would follow up:</strong></td>
+                        <td style="color: #1e3a8a; font-style: italic;">"The pipes freeze entirely, meaning we must strictly ration the water provided to the wounded."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Question I would ask:</strong></td>
+                        <td><div class="writing-line starter">What specific impact did water shortages have on surgical sterilization and infection rates in winter 1917?</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>What type of source I would use:</strong></td>
+                        <td><div class="writing-line starter">Base Hospital Daily Medical Superintendent Logbooks and Sanitary Inspection Reports (1917–18).</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>How this source would help me answer my question:</strong></td>
+                        <td><div class="writing-line starter">It would provide official daily records of sanitation breakdowns and hospital infection rates during freezing months.</div><div class="writing-line"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
+            <span>Section A · Turn page for Question 2(a) 8-Mark Source Utility</span>
+            <span>Page 6 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 7: ROUND 1 — STEPPED LADDER: 8-MARK SOURCE UTILITY        -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Section A: The Historic Environment</h1>
+                    <p>Round 1: The Stepped Ladder · Question 2(a) 8-Mark Source Utility Masterclass</p>
+                </div>
+                <span class="header-tag" style="background: #2563eb;">Round 1: Stem 2a</span>
+            </div>
+
+            <div class="ladder-zone" style="border-left: 3.5px solid #2563eb; padding: 4px 8px; margin-bottom: 2px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 2 (a): Source Utility (8 Marks)</strong>
+                    <span style="font-size: 7pt; color: #1d4ed8; font-weight: 700;">C-O-P Formula · ~12 Mins</span>
+                </div>
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
+                    Study Sources A and B. How useful are Sources A and B for an historian studying the immense challenges of treating casualties on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context.
+                </div>
+
+                <!-- Sources Display Box -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px;">
+                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.5pt; line-height: 1.25;">
+                        <strong style="color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source A (Chaplain Arthur Davies, Somme CCS, July 1916):</strong>
+                        <em>"The casualties have started to arrive... The volume of patients is overwhelming; every bed is occupied, and men are fortunate just to find a spot on the bare ground. Many will pass away before surgery is possible. We have admitted 1,500 casualties, and the stream has not stopped."</em>
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.5pt; line-height: 1.25;">
+                        <strong style="color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source B (Edith Smith, VAD Nurse, Base Hospital, Dec 1917):</strong>
+                        <em>"Our morning duties begin at 3.30 am! The freezing temperatures are unbearable. Icicles hang thick over ward windows. Even kettles, rubber hot water bottles, and sponges have frozen solid. The pipes freeze entirely, meaning we must strictly ration water provided to the wounded."</em>
+                    </div>
+                </div>
+
+                <!-- Mandatory Provenance Clues Scaffolding Box (Per AGENTS.md rule) -->
+                <div style="background: #fef3c7; border: 1px solid #fde047; border-radius: 4px; padding: 3px 6px; font-size: 6.7pt; color: #854d0e; margin-bottom: 3px;">
+                    <strong>🔍 PROVENANCE CLUES (Author, Audience, Motive):</strong> Who wrote each source (eyewitness chaplain at CCS vs frontline VAD nurse at base hospital)? What was their motive (private diary recording sheer volume vs private letter home detailing physical conditions)? How does their perspective make the sources useful despite subjective emotional focus?
+                </div>
+
+                <!-- Writing lines (16 Ruled Lines Total) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Utility of Source A (Content + Provenance + Context)</div>
+                    <div class="writing-line starter">Source A is useful for investigating casualty challenges because the content reveals...</div>
+                    <div class="writing-line starter">From my own knowledge, this accurately reflects the Somme offensive because...</div>
+                    <div class="writing-line starter">Furthermore, the provenance makes it useful because as a private chaplain's diary...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Utility of Source B &amp; Comparative Judgement (Content + Provenance + Context)</div>
+                    <div class="writing-line starter">Source B is also useful because it highlights the severe environmental difficulties...</div>
+                    <div class="writing-line starter">Specifically, my own knowledge confirms that Base Hospitals in winter 1917...</div>
+                    <div class="writing-line starter">The provenance enhances its utility because as a private letter from a VAD nurse...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line starter">Overall, both sources are mutually useful because together they demonstrate...</div>
+                    <div class="writing-line"></div>
+                </div>
+
+                <!-- Stretch Callout -->
+                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 2px;">
+                    <strong>⚡ Level 3 (Grade 9) Utility Glue:</strong> Weigh up typicality vs limitation — note that Source A shows peak crisis conditions on 1 July 1916 (57,000 casualties in one day), while Source B reflects seasonal winter extremes at the coast.
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
+            <span>Section A · Round 2 Dual-Track begins on Page 8</span>
+            <span>Page 7 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 8: ROUND 2 — SPLIT-COLUMN DUAL TRACK (FEATURES & FOLLOW-UP)-->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Section A: The Historic Environment</h1>
+                    <p>Round 2: The Split-Column Dual Track · Features &amp; Follow-Up Toolkit</p>
+                </div>
+                <span class="header-tag" style="background: #0284c7;">Round 2: Stems 1 &amp; 2b</span>
+            </div>
+
+            <!-- Features Dual Track -->
+            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px; margin-bottom: 4px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 8.2pt; color: #1e293b;">Questions 1(a) &amp; 1(b): Features (2 + 2 = 4 Marks)</strong>
+                    <span style="font-size: 6.8pt; color: #0369a1; font-weight: 700;">Independent Toolkit</span>
+                </div>
+                <div class="dual-track-container" style="height: 125px;">
+                    <div class="toolkit-col">
+                        <div>
+                            <strong style="color: #0369a1; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🧰 Fact Vault (AO1)</strong>
+                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <strong>Mobile X-rays:</strong> 6 mobile units in British sector; located at CCS; couldn't detect clothing fragments; tubes overheated.</div>
+                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <strong>Trench Fever:</strong> Caused by body lice; flu-like pain in legs; affected ~15% of men; led to delousing stations and bathhouses.</div>
+                        </div>
+                        <div style="font-size: 6.2pt; color: #b91c1c; border-top: 1px dashed #f87171; padding-top: 2px;">
+                            <strong>⚠️ Trap:</strong> Do not confuse Trench Fever (lice) with Trench Foot (waterlogged mud/cold).
+                        </div>
+                    </div>
+                    <div class="writing-col">
+                        <div style="font-size: 6.8pt; font-weight: bold; color: #0f172a;">1(a) Describe one feature of mobile X-ray units near the frontline:</div>
+                        <div class="writing-line starter">One feature of mobile X-ray units was...</div>
+                        <div class="writing-line"></div>
+                        <div style="font-size: 6.8pt; font-weight: bold; color: #0f172a; margin-top: 2px;">1(b) Describe one feature of trench fever:</div>
+                        <div class="writing-line starter">One feature of trench fever was...</div>
+                        <div class="writing-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Follow-Up Dual Track -->
+            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 8.2pt; color: #1e293b;">Question 2(b): Follow-Up Practice (4 Marks)</strong>
+                    <span style="font-size: 6.8pt; color: #0369a1; font-weight: 700;">Historical Records Directory</span>
+                </div>
+                <div style="font-size: 7.2pt; color: #334155; margin-bottom: 2px;">
+                    Study this extract from an RAMC officer at Ypres: <em>"The chlorine gas casualties stumbled in clutching their throats. We washed their blinded eyes with bicarbonate of soda solutions, but many died from asphyxiation."</em>
+                </div>
+                <table class="follow-up-table">
+                    <tr>
+                        <td><strong>Detail in Source to follow up:</strong></td>
+                        <td><div class="writing-line starter">"We washed their blinded eyes with bicarbonate of soda solutions..."</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Question I would ask:</strong></td>
+                        <td><div class="writing-line starter">How effective were early chemical antidotes compared to later respirator gas masks?</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>What type of source I would use:</strong></td>
+                        <td><div class="writing-line starter">RAMC Field Ambulance Casualty Admission Books &amp; War Office Gas Defence Bulletins (1915).</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>How this source would help me:</strong></td>
+                        <td><div class="writing-line starter">It would record official medical survival rates of gas victims before and after the issue of Small Box Respirators.</div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
+            <span>Section A · Turn page for Question 2(a) Source Utility Masterclass</span>
+            <span>Page 8 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 9: ROUND 2 — SPLIT-COLUMN DUAL TRACK (SOURCE UTILITY)    -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Section A: The Historic Environment</h1>
+                    <p>Round 2: The Split-Column Dual Track · Question 2(a) Source Utility Masterclass</p>
+                </div>
+                <span class="header-tag" style="background: #0284c7;">Round 2: Stem 2a</span>
+            </div>
+
+            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 4px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 2(a): Source Utility Independent Execution (8 Marks)</strong>
+                    <span style="font-size: 7pt; color: #0284c7; font-weight: 700;">Wartime Trauma &amp; Gas Warfare</span>
+                </div>
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
+                    How useful are Source C (RAMC Logbook, 1915) and Source D (Official Training Manual on Trench Foot, 1916) for an enquiry into the prevention of trench illness on the Western Front?
+                </div>
+
+                <div class="dual-track-container" style="height: 220mm;">
+                    <div class="toolkit-col">
+                        <div>
+                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">⏱️ Provenance Evaluation Matrix</strong>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
+                                <strong style="color: #0369a1;">Official Reports:</strong> High factual accuracy regarding procedures; may minimize failure to maintain morale.
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
+                                <strong style="color: #0369a1;">Doctor/Nurse Accounts:</strong> Direct clinical insight into actual suffering; localized to one specific sector.
+                            </div>
+
+                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin: 4px 0 2px 0;">🌉 Causal &amp; Utility Connectives</strong>
+                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"The content is highly useful because it reveals..."</em></div>
+                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"The provenance strengthens its value because..."</em></div>
+                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"However, the source is limited in scope because..."</em></div>
+                        </div>
+
+                        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 4px; font-size: 6.2pt; color: #1e40af;">
+                            <strong>🎯 Level 3 Standard:</strong> Explicitly evaluate how the author's professional role and purpose shape what was included or omitted.
+                        </div>
+                    </div>
+
+                    <div class="writing-col">
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; text-transform: uppercase;">Paragraph 1: Utility of Source C</div>
+                        <div class="writing-line starter">Source C is useful for an enquiry into prevention because...</div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line starter">Its provenance as an RAMC logbook means...</div>
+                        <div class="writing-line"></div>
+
+                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; margin-top: 3px; text-transform: uppercase;">Paragraph 2: Utility of Source D &amp; Synthesis</div>
+                        <div class="writing-line starter">Source D is useful in a different way because it shows official policy on...</div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line starter">However, an official manual may not reflect actual frontline reality because...</div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line starter">Comparing both sources, an historian learns that...</div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
+            <span>Section A · Round 3 Exam Simulation begins on Page 10</span>
+            <span>Page 9 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 10: ROUND 3 — THE PLANNING ENGINE ROOM                   -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Section A: The Historic Environment</h1>
+                    <p>Round 3: The Planning Engine Room · Deconstruction Matrix (Plan here, write on Page 11)</p>
+                </div>
+                <span class="header-tag" style="background: #dc2626;">Round 3: Engine Room</span>
+            </div>
+
+            <!-- Pre-Flight Planning Grid for Section A -->
+            <div style="margin-bottom: 6px;">
+                <strong style="font-size: 7.8pt; color: #991b1b;">1. Question 1 Features Selector:</strong>
+                <table class="plan-table">
+                    <tr>
+                        <th style="width: 30%;">Exam Prompt</th>
+                        <th style="width: 35%;">Feature 1 (Core Concept)</th>
+                        <th style="width: 35%;">Supporting Specific Fact / Detail (AO1)</th>
+                    </tr>
+                    <tr>
+                        <td>Q1(a) Underground Hospital at Arras</td>
+                        <td>Built into chalk quarries; fully equipped</td>
+                        <td>700 beds, running water, electricity, operating theatre, mortuary.</td>
+                    </tr>
+                    <tr>
+                        <td>Q1(b) Blood Transfusion at Cambrai</td>
+                        <td>First large-scale indirect blood bank (1917)</td>
+                        <td>Oswald Robertson used sodium citrate/dextrose; treated 20 severely wounded men.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="margin-bottom: 6px;">
+                <strong style="font-size: 7.8pt; color: #991b1b;">2. Question 2(a) Source Utility Planning Grid:</strong>
+                <table class="plan-table">
+                    <tr>
+                        <th style="width: 20%;">Source</th>
+                        <th style="width: 40%;">Content Knowledge (What it reveals)</th>
+                        <th style="width: 40%;">Provenance Analysis (NOP &amp; Evaluation)</th>
+                    </tr>
+                    <tr>
+                        <td>Source A (Medical)</td>
+                        <td>Specific wound types (shrapnel, compound fracture, gangrene)</td>
+                        <td>Doctor/nurse eyewitness account; high clinical validity but localized.</td>
+                    </tr>
+                    <tr>
+                        <td>Source B (Soldier)</td>
+                        <td>Stretcher bearer delays in mud, shell craters, shell shock</td>
+                        <td>Infantry diary; emotional impact; subject to wartime censorship.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="margin-bottom: 6px;">
+                <strong style="font-size: 7.8pt; color: #991b1b;">3. Question 2(b) Follow-Up Pre-Flight Selector:</strong>
+                <table class="plan-table">
+                    <tr>
+                        <th style="width: 25%;">Detail to Quote</th>
+                        <th style="width: 25%;">Targeted Question</th>
+                        <th style="width: 25%;">Authentic Source Type</th>
+                        <th style="width: 25%;">How it Answers</th>
+                    </tr>
+                    <tr>
+                        <td>Exact phrase about delays in stretcher evacuation</td>
+                        <td>What was the average time taken from RAP to CCS in the Ypres salient?</td>
+                        <td>RAMC Field Ambulance Section War Diaries (WO 95)</td>
+                        <td>Provides recorded times of stretcher bearer transfers across muddy terrain.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; color: #991b1b;">
+                <strong>📋 PRE-FLIGHT AUDIT CHECKLIST:</strong> &nbsp;
+                [ ] Did I state TWO separate features for Q1? &nbsp;&nbsp;
+                [ ] Did I analyze BOTH content and provenance for Sources A &amp; B? &nbsp;&nbsp;
+                [ ] Is my Q2(b) source a specific historical record (not 'the internet')?
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Round 3 Engine Room</span>
+            <span>Section A · Execute continuous prose on Page 11</span>
+            <span>Page 10 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 11: ROUND 3 — THE EXAM PITCH (SECTION A EXAM SIMULATION) -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Section A: The Historic Environment</h1>
+                    <p>Round 3: The Exam Pitch · Authentic Edexcel Section A Simulation (16 Marks · 25 Mins)</p>
+                </div>
+                <span class="header-tag" style="background: #dc2626;">Timed Exam Pitch</span>
+            </div>
+
+            <div style="background: #f1f5f9; border: 1.5px solid #475569; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 6px; display: flex; justify-content: space-between;">
+                <div><strong>AO1 Knowledge:</strong> Precise names, locations (Ypres, Somme, Cambrai), equipment, and dates.</div>
+                <div><strong>AO3 Sources:</strong> Balanced analysis of utility using content, contextual knowledge, and provenance.</div>
+            </div>
+
+            <!-- Continuous Exam Lines for Section A -->
+            <div style="padding: 0;">
+                <div class="writing-line starter"><strong>Question 1(a) (2 Marks):</strong> Describe one feature of the underground hospital at Arras: ______________________</div>
+                <div class="writing-line"></div>
+                <div class="writing-line starter" style="margin-top: 3px;"><strong>Question 1(b) (2 Marks):</strong> Describe one feature of blood transfusion techniques on the Western Front: _________</div>
+                <div class="writing-line"></div>
+                
+                <div class="writing-line starter" style="margin-top: 3px;"><strong>Question 2(a) (8 Marks):</strong> Source A is useful because _____________________________________________________</div>
+                <div class="writing-line"></div>
+                <div class="writing-line"></div>
+                <div class="writing-line"></div>
+                <div class="writing-line starter">Source B is also useful because ____________________________________________________________________</div>
+                <div class="writing-line"></div>
+                <div class="writing-line"></div>
+                <div class="writing-line"></div>
+
+                <div style="font-size: 7.2pt; font-weight: bold; color: #0f172a; margin-top: 4px;">Question 2(b) (4 Marks): Complete the follow-up investigation table below:</div>
+                <table class="follow-up-table" style="margin-top: 2px;">
+                    <tr>
+                        <td><strong>Detail in Source B to follow up:</strong></td>
+                        <td><div class="writing-line"></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Question I would ask:</strong></td>
+                        <td><div class="writing-line"></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>What type of source I would use:</strong></td>
+                        <td><div class="writing-line"></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>How this source would help me:</strong></td>
+                        <td><div class="writing-line"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Authentic Exam Pitch</span>
+            <span>Section A · Turn page for 100% Spec Coverage Bank</span>
+            <span>Page 11 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 12: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <!-- Header Banner -->
+            <div style="background: #0f172a; color: white; padding: 8px 12px; border-radius: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h2 style="margin: 0; font-size: 10pt; font-weight: 800; text-transform: uppercase;">⚠️ Examiner Trap Doors &amp; 100% Specification Bank</h2>
+                    <p style="margin: 1px 0 0 0; font-size: 7pt; color: #94a3b8;">Section A: The British Sector of the Western Front · Pearson Edexcel GCSE History</p>
+                </div>
+                <span style="background: #ef4444; color: white; font-size: 6.8pt; font-weight: 800; padding: 2px 6px; border-radius: 3px;">100% Spec Guarantee</span>
+            </div>
+
+            <!-- Top Section: Trap Doors -->
+            <div style="border: 1.5px solid #ef4444; background: #fef2f2; border-radius: 5px; padding: 6px 8px; margin-bottom: 6px;">
+                <strong style="color: #b91c1c; font-size: 7.5pt; text-transform: uppercase; display: block; border-bottom: 1px solid #fecaca; padding-bottom: 2px; margin-bottom: 3px;">
+                    🚫 Top 3 Fatal Examiner Traps to Avoid for Section A
+                </strong>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
+                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
+                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The "Generic Source" Trap</strong>
+                        <span style="color: #7f1d1d;">Never write "I would check a diary" or "the internet" in Q2(b). You must specify an authentic record type, like RAMC War Diaries or Hospital Admission Registers.</span>
+                    </div>
+                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
+                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The "Treachery of Bias" Trap</strong>
+                        <span style="color: #7f1d1d;">Never reject a source simply because "it is biased so it's useless". Sources written with strong emotion or wartime censorship are highly useful for showing attitudes!</span>
+                    </div>
+                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
+                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The Single Feature Trap</strong>
+                        <span style="color: #7f1d1d;">Remember Q1 is split into two questions: 1(a) and 1(b). Do not combine them into one paragraph. Each requires one identified feature + one specific factual detail.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Section: 100% Specification Coverage Bank -->
+            <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; background: #fff; margin-bottom: 6px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 4px;">
+                    <strong style="color: #1e3a8a; font-size: 7.8pt; text-transform: uppercase;">📚 Specification Practice Bank: 100% Curriculum Coverage</strong>
+                    <span style="font-size: 6.5pt; color: #64748b;">Every remaining Western Front specification bullet point tested below</span>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
+                        <strong>1. Features (2m):</strong> Describe one feature of the role of the FANY (First Aid Nursing Yeomanry) in ambulance transport.
+                    </div>
+                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
+                        <strong>2. Features (2m):</strong> Describe one feature of the effects of mustard gas on soldiers.
+                    </div>
+                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
+                        <strong>3. Source Utility (8m):</strong> How useful are official trench casualty statistics compared to private letters for studying the effectiveness of Brodie helmets?
+                    </div>
+                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
+                        <strong>4. Features (2m):</strong> Describe one feature of the Carrel-Dakin method for treating gas gangrene.
+                    </div>
+                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
+                        <strong>5. Follow-Up (4m):</strong> Detail: <em>"Ambulance barges along the Somme-Yser canal were fitted with spring beds."</em> Formulate a question and name a primary source.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Follow-up Quick Drill Box -->
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; color: #166534;">
+                <strong>⚡ QUICK-FIRE FOLLOW-UP SOURCE DRILL:</strong> When asked to research:
+                (1) <em>Wound infections</em> &rarr; RAMC Medical Officer Daily Logs;
+                (2) <em>Frontline delousing routines</em> &rarr; Battalion War Diaries;
+                (3) <em>Blood transfusions</em> &rarr; CCS Surgical Register.
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · 100% Specification Bank</span>
+            <span>Section A Complete · Score checked items on Page 1</span>
+            <span>Page 12 of 12</span>
+        </div>
+    </div>
+</body>
+</html>

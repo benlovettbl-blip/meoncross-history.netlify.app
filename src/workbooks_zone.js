@@ -235,5 +235,89 @@ export function renderWorkbooksZone(container, unitData) {
     html += cmeHubHtml;
   }
 
+  if (state.selectedUnitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine') {
+    const medBooklets = [
+      {
+        id: 'SEC_A',
+        title: 'Section A: The British Sector of the Western Front, 1914–1918',
+        pages: '12 Pages',
+        badge: 'Section A Booklet',
+        color: '#b45309',
+        desc: 'The Historic Environment · 100 Rapid Recall Questions · Double-Sided Answers Bank · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Timed Exam Pitch) · Provenance Scaffolding & 4-Part Follow-Up Grid · 100% Spec Guarantee',
+        fileBase: '/units/edexcel_medicine/booklets/med_mastery_section_a.html',
+        pdfUrl: '/pdfs/edexcel_medicine/med_mastery_section_a_western_front.pdf',
+      },
+      {
+        id: 'SEC_B',
+        title: 'Section B: Medicine in Britain, c1250–present (Thematic Study Master)',
+        pages: '24 Pages',
+        badge: 'Section B Thematic Master',
+        color: '#1e3a8a',
+        desc: 'Thematic Study across 750 Years · 280 Rapid Recall Questions covering Medieval, Renaissance, 18th/19th C & Modern Eras · 4-Page Quick-Marking Centerfold · Cross-Period Similarity/Difference · Causal Analysis · Statement Essays with Criteria-Led Judgements',
+        fileBase: '/units/edexcel_medicine/booklets/med_mastery_section_b.html',
+        pdfUrl: '/pdfs/edexcel_medicine/med_mastery_section_b_thematic_study.pdf',
+      },
+      {
+        id: 'FULL',
+        title: 'Paper 1 Complete Master Compendium (Sections A & B Combined)',
+        pages: '36 Pages',
+        badge: 'Full Paper 1 Suite',
+        color: '#0f766e',
+        desc: 'The complete 36-page revision volume binding Section A (Western Front) and Section B (Thematic Study c1250–present) together. Contains all 380 recall questions, complete official mark scheme, and authentic exam hall simulations. Print once for the entire GCSE cohort!',
+        fileBase: '/units/edexcel_medicine/booklets/med_mastery_FULL.html',
+        pdfUrl: '/pdfs/edexcel_medicine/med_mastery_pack_FULL.pdf',
+      },
+    ];
+
+    let medHubHtml = `
+      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #1e3a8a;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
+              <i class="fa-solid fa-notes-medical"></i>
+            </div>
+            <div>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Mastery Revision Booklets &amp; Exam Suites</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Comprehensive, photocopier-ready A4 booklets for Pearson Edexcel GCSE Paper 1 (1HI0/11). Features 380 retrieval questions, space-saving mark schemes, 3 exam rounds, and 100% specification coverage.</p>
+            </div>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #e0e7ff; color: #1e3a8a; padding: 4px 12px; border-radius: 20px;">Photocopier Ready (Double-Sided)</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    `;
+
+    medBooklets.forEach((b) => {
+      medHubHtml += `
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 800; background: ${b.color}15; color: ${b.color}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${b.color}30;">${b.badge}</span>
+              <span style="font-size: 0.78rem; font-weight: 700; color: #475569;"><i class="fa-solid fa-file-pdf" style="color: ${b.color}; margin-right: 4px;"></i>${b.pages}</span>
+            </div>
+            <h3 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.05rem; line-height: 1.35;">${b.title}</h3>
+            <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 5px;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
+              <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
+            </button>
+
+            <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
+    medHubHtml += `
+        </div>
+      </div>
+    `;
+    html += medHubHtml;
+  }
+
   container.innerHTML = html;
 }
