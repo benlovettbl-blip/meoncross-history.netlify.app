@@ -174,7 +174,7 @@ export function renderLesson(lesson) {
     return formatBold(cleaned);
   };
   lesson = JSON.parse(JSON.stringify(lesson));
-  assignQuestionNumbers(lesson);
+  assignQuestionNumbers(lesson, unitId);
 
   // Normalize do_now format
   if (Array.isArray(lesson.do_now)) {
@@ -210,7 +210,8 @@ export function renderLesson(lesson) {
     // Duplication removed: exam_practice is rendered directly below.
   }
 
-  assignQuestionNumbers(lesson);
+  assignQuestionNumbers(lesson, unitId);
+  lesson.unitId = unitId;
   window.currentActiveLesson = lesson;
 
   // Tabs container logic
@@ -1779,10 +1780,9 @@ export function renderLesson(lesson) {
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
             <summary style="padding: 10px 15px; cursor: pointer; color: #059669; font-weight: bold; font-size: 1.05rem; background: #ecfdf5; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #a7f3d0;">
               <span><i class="fa-solid fa-users" style="color: #059669; margin-right: 10px;"></i> Think, Pair, Share</span>
-              <i class="fa-solid fa-chevron-down" style="color: #059669;"></i>
             </summary>
             <div style="padding: 20px; background: #ecfdf5;">
-              <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.prompt}</p>
+              <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.qNum ? `Q${ps.qNum}. ` : ''}${ps.prompt}</p>
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
                 <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                   <div style="font-weight: bold; color: #059669; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
@@ -2060,6 +2060,15 @@ export function renderLesson(lesson) {
       htmlPairShare +
       htmlHistorian +
       htmlTasks;
+  } else if (unitId === 'water_and_sanitation') {
+    html +=
+      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
+      htmlPrimary +
+      htmlDoNow +
+      htmlNarrative +
+      htmlPairShare +
+      htmlTasks +
+      htmlHistorian;
   } else {
     html +=
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
@@ -2495,34 +2504,113 @@ export function renderLesson(lesson) {
   }, 100);
 }
 
-export function assignQuestionNumbers(lesson) {
+export function assignQuestionNumbers(lesson, targetUnitId) {
+  const unit =
+    targetUnitId ||
+    (lesson && lesson.unitId) ||
+    (typeof window !== 'undefined' && window.currentUnitId) ||
+    (typeof appStore !== 'undefined' && appStore?.state?.selectedUnitId) ||
+    (typeof appStore !== 'undefined' && appStore?.state?.activeUnitData?.id) ||
+    (typeof window !== 'undefined' && window.location && window.location.search
+      ? new URLSearchParams(window.location.search).get('id') ||
+        new URLSearchParams(window.location.search).get('unit')
+      : null);
+
   let globalQNum = 1;
-  if (lesson.primary_source && lesson.primary_source.question)
+  const isGCSE = ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany'].includes(unit);
+  const isGreatWar = unit === 'great_war' || unit === 'great_war_part2';
+
+  // 1. Primary Source
+  if (lesson.primary_source && lesson.primary_source.question) {
     lesson.primary_source.qNum = globalQNum++;
-  if (lesson.sources)
+  }
+
+  // 2. Sources (non-GCSE units)
+  if (lesson.sources && lesson.sources.length > 0 && !isGCSE) {
     lesson.sources.forEach((source) => {
       if (source.question) source.qNum = globalQNum++;
     });
-  if (lesson.tasks)
-    lesson.tasks.forEach((task) => {
-      if (typeof task === 'object' && task !== null) task.qNum = globalQNum++;
-    });
-  if (lesson.historians_corner && lesson.historians_corner.stretch_question)
-    lesson.historians_corner.qNum = globalQNum++;
+  }
+
+  // 3. Narrative Blocks
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
       if (block.source && block.source.question) block.source.qNum = globalQNum++;
-      if (block.tasks)
+      if (block.tasks) {
         block.tasks.forEach((task) => {
-          if (typeof task === 'object' && task !== null && task.type !== 'vocab_match')
+          if (typeof task === 'object' && task !== null && task.type !== 'vocab_match') {
             task.qNum = globalQNum++;
+          }
         });
-      if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
+      }
     });
   }
-  if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
-  if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
-  if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+
+  // 4. Pair Share (for all units except Great War)
+  if (lesson.pair_share && !isGreatWar) {
+    lesson.pair_share.qNum = globalQNum++;
+  }
+
+  // 5. Standard Tasks
+  if (lesson.tasks) {
+    lesson.tasks.forEach((task) => {
+      if (typeof task === 'object' && task !== null) {
+        if (
+          task.type !== 'gcse_exam_practice' &&
+          task.type !== 'exam_practice' &&
+          task.type !== 'drawing' &&
+          task.type !== 'draw'
+        ) {
+          task.qNum = globalQNum++;
+        }
+      }
+    });
+  }
+
+  // 6. Historian's Corner
+  if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
+    if (lesson.historians_corner.stretch_question) {
+      lesson.historians_corner.qNum = globalQNum++;
+    }
+  }
+
+  // 7. Exam Practice Tasks
+  if (lesson.tasks) {
+    lesson.tasks.forEach((task) => {
+      if (typeof task === 'object' && task !== null) {
+        if (task.type === 'gcse_exam_practice' || task.type === 'exam_practice') {
+          task.qNum = globalQNum++;
+        }
+      }
+    });
+  }
+
+  // 8. Pair Share (for Great War)
+  if (lesson.pair_share && isGreatWar) {
+    lesson.pair_share.qNum = globalQNum++;
+  }
+
+  // 9. Extended Writing
+  if (lesson.extended && lesson.extended.question) {
+    lesson.extended.qNum = globalQNum++;
+  }
+
+  // 10. GCSE Task
+  if (lesson.gcse_task) {
+    if (lesson.gcse_task.tasks && Array.isArray(lesson.gcse_task.tasks)) {
+      lesson.gcse_task.tasks.forEach((task) => {
+        if (typeof task === 'object' && task !== null) {
+          task.qNum = globalQNum++;
+        }
+      });
+    } else {
+      lesson.gcse_task.qNum = globalQNum++;
+    }
+  }
+}
+
+if (typeof window !== 'undefined') {
+  window.assignQuestionNumbers = assignQuestionNumbers;
 }
 
 export function renderPoetryDossiersHTML(poetryDossiers) {

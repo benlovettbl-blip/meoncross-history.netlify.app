@@ -1,5 +1,5 @@
 import { appStore } from './store.js';
-import { renderLesson } from './lesson_renderer.js';
+import { renderLesson, assignQuestionNumbers } from './lesson_renderer.js';
 import { getAssetUrl } from './assets.js';
 
 let glossaryPopover = null;
@@ -78,25 +78,22 @@ export function openTaskWhiteboard() {
   container.innerHTML = '';
 
   const activeLesson = window.currentActiveLesson || appStore.state.activeUnitData.lessons[0];
+  const unitId =
+    (activeLesson && activeLesson.unitId) ||
+    window.currentUnitId ||
+    (appStore && appStore.state && appStore.state.selectedUnitId) ||
+    (appStore &&
+      appStore.state &&
+      appStore.state.activeUnitData &&
+      appStore.state.activeUnitData.id);
 
-  assignQuestionNumbers(activeLesson);
+  assignQuestionNumbers(activeLesson, unitId);
 
   let html = '';
+  const cards = [];
 
   const addQuestionCard = (qNum, questionText, answerText) => {
-    const finalAnswer = window.formatBold(answerText) || 'Model answer to be discussed in class.';
-    const prefix =
-      qNum && qNum !== '-' && qNum !== 'Do Now'
-        ? `Q${qNum}. `
-        : qNum === 'Do Now'
-          ? '<strong>[Do Now]</strong> '
-          : '';
-    html += `
-        <div class="wb-question-card" style="cursor:pointer;" data-action="toggle-wb-answer" title="Click to reveal answer">
-          <div style="font-weight: bold;">${prefix}${questionText}</div>
-          <div class="wb-answer">${finalAnswer}</div>
-        </div>
-      `;
+    cards.push({ qNum, questionText, answerText });
   };
 
   if (activeLesson.do_now) {
@@ -127,24 +124,6 @@ export function openTaskWhiteboard() {
     });
   }
 
-  if (activeLesson.tasks) {
-    activeLesson.tasks.forEach((task) => {
-      addQuestionCard(
-        task.qNum,
-        task.text || task.question || '',
-        task.model || task.model_answer || '',
-      );
-    });
-  }
-
-  if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
-    addQuestionCard(
-      activeLesson.historians_corner.qNum,
-      activeLesson.historians_corner.stretch_question,
-      activeLesson.historians_corner.model_answer || '',
-    );
-  }
-
   if (activeLesson.narrative_blocks) {
     activeLesson.narrative_blocks.forEach((block) => {
       if (block.source && block.source.question) {
@@ -171,6 +150,32 @@ export function openTaskWhiteboard() {
     });
   }
 
+  if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
+    addQuestionCard(
+      activeLesson.pair_share.qNum,
+      activeLesson.pair_share.prompt,
+      'Discuss in pairs.',
+    );
+  }
+
+  if (activeLesson.tasks) {
+    activeLesson.tasks.forEach((task) => {
+      addQuestionCard(
+        task.qNum,
+        task.text || task.question || '',
+        task.model || task.model_answer || '',
+      );
+    });
+  }
+
+  if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
+    addQuestionCard(
+      activeLesson.historians_corner.qNum,
+      activeLesson.historians_corner.stretch_question,
+      activeLesson.historians_corner.model_answer || '',
+    );
+  }
+
   if (activeLesson.extended && activeLesson.extended.question) {
     addQuestionCard(
       activeLesson.extended.qNum,
@@ -190,14 +195,6 @@ export function openTaskWhiteboard() {
     );
   }
 
-  if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
-    addQuestionCard(
-      activeLesson.pair_share.qNum,
-      activeLesson.pair_share.prompt,
-      'Discuss in pairs.',
-    );
-  }
-
   if (activeLesson.debate_prep) {
     addQuestionCard(
       '-',
@@ -205,6 +202,32 @@ export function openTaskWhiteboard() {
       `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map((a) => `<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map((a) => `<li>${a}</li>`).join('')}</ul>`,
     );
   }
+
+  // Sort cards: Do Now first, then numerically by assigned qNum, then unnumbered
+  cards.sort((a, b) => {
+    if (a.qNum === 'Do Now') return -1;
+    if (b.qNum === 'Do Now') return 1;
+    if (typeof a.qNum === 'number' && typeof b.qNum === 'number') return a.qNum - b.qNum;
+    if (typeof a.qNum === 'number') return -1;
+    if (typeof b.qNum === 'number') return 1;
+    return 0;
+  });
+
+  cards.forEach(({ qNum, questionText, answerText }) => {
+    const finalAnswer = window.formatBold(answerText) || 'Model answer to be discussed in class.';
+    const prefix =
+      qNum && qNum !== '-' && qNum !== 'Do Now'
+        ? `Q${qNum}. `
+        : qNum === 'Do Now'
+          ? '<strong>[Do Now]</strong> '
+          : '';
+    html += `
+        <div class="wb-question-card" style="cursor:pointer;" data-action="toggle-wb-answer" title="Click to reveal answer">
+          <div style="font-weight: bold;">${prefix}${questionText}</div>
+          <div class="wb-answer">${finalAnswer}</div>
+        </div>
+      `;
+  });
 
   container.innerHTML = html;
   modal.classList.add('visible');

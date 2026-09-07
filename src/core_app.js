@@ -1038,30 +1038,104 @@ window.updateProgress = () => {
   }
 };
 
-function assignQuestionNumbers(lesson) {
+function assignQuestionNumbers(lesson, targetUnitId) {
+  const unit =
+    targetUnitId ||
+    (typeof unitData !== 'undefined' && unitData.id) ||
+    (lesson && lesson.unitId) ||
+    (typeof window !== 'undefined' && window.currentUnitId);
+
   let globalQNum = 1;
-  if (lesson.primary_source && lesson.primary_source.question)
+  const isGCSE = ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany'].includes(unit);
+  const isGreatWar = unit === 'great_war' || unit === 'great_war_part2';
+
+  // 1. Primary Source
+  if (lesson.primary_source && lesson.primary_source.question) {
     lesson.primary_source.qNum = globalQNum++;
-  if (lesson.sources)
+  }
+
+  // 2. Sources (non-GCSE units)
+  if (lesson.sources && lesson.sources.length > 0 && !isGCSE) {
     lesson.sources.forEach((source) => {
       if (source.question) source.qNum = globalQNum++;
     });
-  if (lesson.tasks) lesson.tasks.forEach((task) => (task.qNum = globalQNum++));
-  if (lesson.historians_corner && lesson.historians_corner.stretch_question)
-    lesson.historians_corner.qNum = globalQNum++;
+  }
+
+  // 3. Narrative Blocks
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
       if (block.source && block.source.question) block.source.qNum = globalQNum++;
-      if (block.tasks)
+      if (block.tasks) {
         block.tasks.forEach((task) => {
-          if (task.type !== 'vocab_match') task.qNum = globalQNum++;
+          if (typeof task === 'object' && task !== null && task.type !== 'vocab_match') {
+            task.qNum = globalQNum++;
+          }
         });
-      if (block.hinge_question) block.hinge_question.qNum = globalQNum++;
+      }
     });
   }
-  if (lesson.extended && lesson.extended.question) lesson.extended.qNum = globalQNum++;
-  if (lesson.gcse_task) lesson.gcse_task.qNum = globalQNum++;
-  if (lesson.pair_share) lesson.pair_share.qNum = globalQNum++;
+
+  // 4. Pair Share (for all units except Great War)
+  if (lesson.pair_share && !isGreatWar) {
+    lesson.pair_share.qNum = globalQNum++;
+  }
+
+  // 5. Standard Tasks
+  if (lesson.tasks) {
+    lesson.tasks.forEach((task) => {
+      if (typeof task === 'object' && task !== null) {
+        if (
+          task.type !== 'gcse_exam_practice' &&
+          task.type !== 'exam_practice' &&
+          task.type !== 'drawing' &&
+          task.type !== 'draw'
+        ) {
+          task.qNum = globalQNum++;
+        }
+      }
+    });
+  }
+
+  // 6. Historian's Corner
+  if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
+    if (lesson.historians_corner.stretch_question) {
+      lesson.historians_corner.qNum = globalQNum++;
+    }
+  }
+
+  // 7. Exam Practice Tasks
+  if (lesson.tasks) {
+    lesson.tasks.forEach((task) => {
+      if (typeof task === 'object' && task !== null) {
+        if (task.type === 'gcse_exam_practice' || task.type === 'exam_practice') {
+          task.qNum = globalQNum++;
+        }
+      }
+    });
+  }
+
+  // 8. Pair Share (for Great War)
+  if (lesson.pair_share && isGreatWar) {
+    lesson.pair_share.qNum = globalQNum++;
+  }
+
+  // 9. Extended Writing
+  if (lesson.extended && lesson.extended.question) {
+    lesson.extended.qNum = globalQNum++;
+  }
+
+  // 10. GCSE Task
+  if (lesson.gcse_task) {
+    if (lesson.gcse_task.tasks && Array.isArray(lesson.gcse_task.tasks)) {
+      lesson.gcse_task.tasks.forEach((task) => {
+        if (typeof task === 'object' && task !== null) {
+          task.qNum = globalQNum++;
+        }
+      });
+    } else {
+      lesson.gcse_task.qNum = globalQNum++;
+    }
+  }
 }
 
 function openTaskWhiteboard() {
@@ -1073,24 +1147,17 @@ function openTaskWhiteboard() {
 
   const activeLesson = window.currentActiveLesson || unitData.lessons[0];
 
-  assignQuestionNumbers(activeLesson);
+  const unitId =
+    (typeof unitData !== 'undefined' && unitData.id) ||
+    (activeLesson && activeLesson.unitId) ||
+    window.currentUnitId;
+  assignQuestionNumbers(activeLesson, unitId);
 
   let html = '';
+  const cards = [];
 
   const addQuestionCard = (qNum, questionText, answerText) => {
-    const finalAnswer = window.formatBold(answerText) || 'Model answer to be discussed in class.';
-    const prefix =
-      qNum && qNum !== '-' && qNum !== 'Do Now'
-        ? `Q${qNum}. `
-        : qNum === 'Do Now'
-          ? '<strong>[Do Now]</strong> '
-          : '';
-    html += `
-        <div class="wb-question-card" style="cursor:pointer;" onclick="this.querySelector('.wb-answer').classList.toggle('revealed')" title="Click to reveal answer">
-          <div style="font-weight: bold;">${prefix}${questionText}</div>
-          <div class="wb-answer">${finalAnswer}</div>
-        </div>
-      `;
+    cards.push({ qNum, questionText, answerText });
   };
 
   if (activeLesson.do_now) {
@@ -1121,24 +1188,6 @@ function openTaskWhiteboard() {
     });
   }
 
-  if (activeLesson.tasks) {
-    activeLesson.tasks.forEach((task) => {
-      addQuestionCard(
-        task.qNum,
-        task.text || task.question || '',
-        task.model || task.model_answer || '',
-      );
-    });
-  }
-
-  if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
-    addQuestionCard(
-      activeLesson.historians_corner.qNum,
-      activeLesson.historians_corner.stretch_question,
-      activeLesson.historians_corner.model_answer || '',
-    );
-  }
-
   if (activeLesson.narrative_blocks) {
     activeLesson.narrative_blocks.forEach((block) => {
       if (block.source && block.source.question) {
@@ -1165,6 +1214,32 @@ function openTaskWhiteboard() {
     });
   }
 
+  if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
+    addQuestionCard(
+      activeLesson.pair_share.qNum,
+      activeLesson.pair_share.prompt,
+      'Discuss in pairs.',
+    );
+  }
+
+  if (activeLesson.tasks) {
+    activeLesson.tasks.forEach((task) => {
+      addQuestionCard(
+        task.qNum,
+        task.text || task.question || '',
+        task.model || task.model_answer || '',
+      );
+    });
+  }
+
+  if (activeLesson.historians_corner && activeLesson.historians_corner.stretch_question) {
+    addQuestionCard(
+      activeLesson.historians_corner.qNum,
+      activeLesson.historians_corner.stretch_question,
+      activeLesson.historians_corner.model_answer || '',
+    );
+  }
+
   if (activeLesson.extended && activeLesson.extended.question) {
     addQuestionCard(
       activeLesson.extended.qNum,
@@ -1184,14 +1259,6 @@ function openTaskWhiteboard() {
     );
   }
 
-  if (activeLesson.pair_share && activeLesson.pair_share.prompt) {
-    addQuestionCard(
-      activeLesson.pair_share.qNum,
-      activeLesson.pair_share.prompt,
-      'Discuss in pairs.',
-    );
-  }
-
   if (activeLesson.debate_prep) {
     addQuestionCard(
       '-',
@@ -1199,6 +1266,32 @@ function openTaskWhiteboard() {
       `<strong>Agree:</strong><ul>${activeLesson.debate_prep.arguments_for.map((a) => `<li>${a}</li>`).join('')}</ul><strong>Disagree:</strong><ul>${activeLesson.debate_prep.arguments_against.map((a) => `<li>${a}</li>`).join('')}</ul>`,
     );
   }
+
+  // Sort cards: Do Now first, then numerically by assigned qNum, then unnumbered
+  cards.sort((a, b) => {
+    if (a.qNum === 'Do Now') return -1;
+    if (b.qNum === 'Do Now') return 1;
+    if (typeof a.qNum === 'number' && typeof b.qNum === 'number') return a.qNum - b.qNum;
+    if (typeof a.qNum === 'number') return -1;
+    if (typeof b.qNum === 'number') return 1;
+    return 0;
+  });
+
+  cards.forEach(({ qNum, questionText, answerText }) => {
+    const finalAnswer = window.formatBold(answerText) || 'Model answer to be discussed in class.';
+    const prefix =
+      qNum && qNum !== '-' && qNum !== 'Do Now'
+        ? `Q${qNum}. `
+        : qNum === 'Do Now'
+          ? '<strong>[Do Now]</strong> '
+          : '';
+    html += `
+        <div class="wb-question-card" style="cursor:pointer;" onclick="this.querySelector('.wb-answer').classList.toggle('revealed')" title="Click to reveal answer">
+          <div style="font-weight: bold;">${prefix}${questionText}</div>
+          <div class="wb-answer">${finalAnswer}</div>
+        </div>
+      `;
+  });
 
   container.innerHTML = html;
   modal.classList.add('visible');
