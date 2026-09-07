@@ -428,6 +428,9 @@ export function renderLesson(lesson) {
 
   let headerEnquiry = lesson.enquiry || lesson.enquiry_question || lesson.inquiry_question;
   let targetText = headerEnquiry || lesson.title || '';
+  if (targetText && targetText.length > 90) {
+    targetText = lesson.title || targetText;
+  }
   let stickyHeaderText = '';
 
   if (isTrip) {
@@ -1068,6 +1071,19 @@ export function renderLesson(lesson) {
     htmlNarrative += `
         <div class="phase-card">
       `;
+
+    if (lesson.hook_text) {
+      htmlNarrative += `
+        <div class="historical-hook-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-left: 4px solid #0284c7; border-radius: 8px; padding: 20px 24px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: #0369a1; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;">
+            <i class="fa-solid fa-compass" style="color: #0284c7;"></i> The Big Picture &bull; Historical Context
+          </div>
+          <p style="margin: 0; font-size: 1.08rem; line-height: 1.7; color: #1e293b; font-style: italic; font-family: 'Georgia', serif;">
+            "${lesson.hook_text}"
+          </p>
+        </div>
+      `;
+    }
 
     lesson.narrative_blocks.forEach((block, index) => {
       if (block.type === 'interactive_map') {
