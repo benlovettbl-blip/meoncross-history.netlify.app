@@ -1383,14 +1383,35 @@ window.toggleAnswerById = function (id) {
   }
 };
 
-window.toggleAllAnswers = function (btn) {
-  const container =
-    btn.closest('.phase-card') || btn.closest('.do-now-box') || btn.closest('details');
+window.toggleAllAnswers = function (btnOrContainer) {
+  let container;
+  let btn;
+  if (btnOrContainer instanceof HTMLElement) {
+    if (
+      btnOrContainer.tagName === 'BUTTON' ||
+      btnOrContainer.dataset?.action === 'toggle-all-answers'
+    ) {
+      btn = btnOrContainer;
+      container =
+        btn.closest('details') ||
+        btn.closest('.phase-card') ||
+        btn.closest('.do-now-box') ||
+        document;
+    } else {
+      container = btnOrContainer.closest?.('details') || btnOrContainer;
+      btn = container?.querySelector?.('[data-action="toggle-all-answers"]');
+    }
+  } else {
+    container = document.querySelector('details:has(.do-now-card)') || document;
+    btn = container?.querySelector?.('[data-action="toggle-all-answers"]');
+  }
   if (!container) return;
+  if (container.tagName === 'DETAILS' && !container.open) container.open = true;
   const answers = container.querySelectorAll('.answer');
-  const anyHidden = Array.from(answers).some(
-    (a) => a.style.display !== 'block' && !a.classList.contains('revealed'),
-  );
+  if (!answers || answers.length === 0) return;
+  const anyHidden = Array.from(answers).some((a) => {
+    return window.getComputedStyle(a).display === 'none' || a.style.display === 'none';
+  });
   answers.forEach((a) => {
     if (anyHidden) {
       a.style.display = 'block';
@@ -1400,6 +1421,11 @@ window.toggleAllAnswers = function (btn) {
       a.classList.remove('revealed');
     }
   });
+  if (btn) {
+    btn.innerHTML = anyHidden
+      ? '<i class="fa-solid fa-eye-slash"></i> Hide All'
+      : '<i class="fa-solid fa-eye"></i> Reveal All';
+  }
 };
 
 window.toggleAllWhiteboardAnswers = function () {

@@ -776,7 +776,7 @@ export function renderLesson(lesson) {
             <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
               <span><i class="fa-solid fa-list-check" style="color: #3b82f6; margin-right: 10px;"></i> Do Now Tasks</span>
               <div>
-                <button class="btn btn-secondary" data-action="toggle-all-answers" style="font-size: 0.9rem; padding: 4px 10px; margin-right: 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
+                <button class="btn btn-secondary" data-action="toggle-all-answers" onclick="if(window.toggleAllAnswers){window.toggleAllAnswers(this);}event.stopPropagation();" style="font-size: 0.9rem; padding: 4px 10px; margin-right: 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
                 <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
               </div>
             </summary>
@@ -2757,4 +2757,53 @@ ${poem.poem_text}
     </div>
   `;
   return html;
+}
+
+export function toggleAllAnswers(btnOrContainer) {
+  let container;
+  let btn;
+  if (btnOrContainer instanceof HTMLElement) {
+    if (
+      btnOrContainer.tagName === 'BUTTON' ||
+      btnOrContainer.dataset?.action === 'toggle-all-answers'
+    ) {
+      btn = btnOrContainer;
+      container =
+        btn.closest('details') ||
+        btn.closest('.phase-card') ||
+        btn.closest('.do-now-box') ||
+        document;
+    } else {
+      container = btnOrContainer.closest?.('details') || btnOrContainer;
+      btn = container?.querySelector?.('[data-action="toggle-all-answers"]');
+    }
+  } else {
+    container = document.querySelector('details:has(.do-now-card)') || document;
+    btn = container?.querySelector?.('[data-action="toggle-all-answers"]');
+  }
+  if (!container) return;
+  if (container.tagName === 'DETAILS' && !container.open) container.open = true;
+  const answers = container.querySelectorAll('.answer');
+  if (!answers || answers.length === 0) return;
+  const anyHidden = Array.from(answers).some((a) => {
+    return window.getComputedStyle(a).display === 'none' || a.style.display === 'none';
+  });
+  answers.forEach((a) => {
+    if (anyHidden) {
+      a.style.display = 'block';
+      a.classList.add('revealed');
+    } else {
+      a.style.display = 'none';
+      a.classList.remove('revealed');
+    }
+  });
+  if (btn) {
+    btn.innerHTML = anyHidden
+      ? '<i class="fa-solid fa-eye-slash"></i> Hide All'
+      : '<i class="fa-solid fa-eye"></i> Reveal All';
+  }
+}
+
+if (typeof window !== 'undefined') {
+  window.toggleAllAnswers = toggleAllAnswers;
 }

@@ -253,10 +253,42 @@ export function initEventDelegation() {
         target.classList.toggle('flipped');
         break;
 
-      case 'toggle-all-answers':
+      case 'toggle-all-answers': {
         e.preventDefault();
-        if (window.toggleAllAnswers) window.toggleAllAnswers(target.closest('details'));
+        e.stopPropagation();
+
+        const details = target.closest('details');
+        const container =
+          details || target.closest('.phase-card') || target.closest('.do-now-box') || document;
+
+        // If inside a details element, ensure it is open so answers can be seen
+        if (details && !details.open) {
+          details.open = true;
+        }
+
+        const answers = container.querySelectorAll('.answer');
+        if (answers && answers.length > 0) {
+          const anyHidden = Array.from(answers).some((a) => {
+            const currentDisp = window.getComputedStyle(a).display;
+            return currentDisp === 'none' || a.style.display === 'none';
+          });
+
+          answers.forEach((a) => {
+            if (anyHidden) {
+              a.style.display = 'block';
+              a.classList.add('revealed');
+            } else {
+              a.style.display = 'none';
+              a.classList.remove('revealed');
+            }
+          });
+
+          target.innerHTML = anyHidden
+            ? '<i class="fa-solid fa-eye-slash"></i> Hide All'
+            : '<i class="fa-solid fa-eye"></i> Reveal All';
+        }
         break;
+      }
 
       case 'reveal-all-models':
         target
@@ -455,4 +487,53 @@ export function initEventDelegation() {
         console.warn('Unhandled data-action:', action);
     }
   });
+}
+
+export function toggleAllAnswers(btnOrContainer) {
+  let container;
+  let btn;
+  if (btnOrContainer instanceof HTMLElement) {
+    if (
+      btnOrContainer.tagName === 'BUTTON' ||
+      btnOrContainer.dataset?.action === 'toggle-all-answers'
+    ) {
+      btn = btnOrContainer;
+      container =
+        btn.closest('details') ||
+        btn.closest('.phase-card') ||
+        btn.closest('.do-now-box') ||
+        document;
+    } else {
+      container = btnOrContainer.closest?.('details') || btnOrContainer;
+      btn = container?.querySelector?.('[data-action="toggle-all-answers"]');
+    }
+  } else {
+    container = document.querySelector('details:has(.do-now-card)') || document;
+    btn = container?.querySelector?.('[data-action="toggle-all-answers"]');
+  }
+  if (!container) return;
+  if (container.tagName === 'DETAILS' && !container.open) container.open = true;
+  const answers = container.querySelectorAll('.answer');
+  if (!answers || answers.length === 0) return;
+  const anyHidden = Array.from(answers).some((a) => {
+    return window.getComputedStyle(a).display === 'none' || a.style.display === 'none';
+  });
+  answers.forEach((a) => {
+    if (anyHidden) {
+      a.style.display = 'block';
+      a.classList.add('revealed');
+    } else {
+      a.style.display = 'none';
+      a.classList.remove('revealed');
+    }
+  });
+  if (btn) {
+    btn.innerHTML = anyHidden
+      ? '<i class="fa-solid fa-eye-slash"></i> Hide All'
+      : '<i class="fa-solid fa-eye"></i> Reveal All';
+  }
+}
+
+if (typeof window !== 'undefined') {
+  window.toggleAllAnswers = toggleAllAnswers;
 }
