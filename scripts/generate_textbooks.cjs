@@ -298,6 +298,12 @@ allDirs.forEach((unitId) => {
       let sourceNum = 1;
       let sourceCharCode = 65;
 
+      const getSourceOverride = () => {
+        if (unitId === 'early_modern_world') return null;
+        if (unitId === 'cme_new') return String.fromCharCode(sourceCharCode++);
+        return 'S' + sourceNum++;
+      };
+
       let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
 
       if (lesson.narrative_blocks) {
@@ -396,7 +402,7 @@ allDirs.forEach((unitId) => {
         html += `</div>`;
       }
 
-      html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
+      html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
 
       html += `<div style="margin-bottom: 10px;"></div>`;
 
@@ -488,7 +494,7 @@ allDirs.forEach((unitId) => {
 
         html += `
         <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
-          ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
+          ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, getSourceOverride())}</strong><br>` : ''}
           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
           ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</strong></div>` : ''}
@@ -628,8 +634,8 @@ allDirs.forEach((unitId) => {
           ) {
             html += `
             <div class="source-container" style="">
-              <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-              ${source.title ? `<strong>${badgeSource(source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
+              <span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+              ${source.title ? `<strong>${badgeSource(source.title, getSourceOverride())}</strong><br>` : ''}
               ${source.src || source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src || source.source, 2) : source.src || source.source}" alt="Source">` : ''}
               ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
               ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}
@@ -646,14 +652,6 @@ allDirs.forEach((unitId) => {
         lesson.narrative_blocks.forEach((block, bIdx) => {
           // Support for new 'images' array schema
           if (block.images && Array.isArray(block.images)) {
-            var blockSourceLetter = '';
-            if ((block.images && block.images.some((i) => i.source_letter)) || block.source) {
-              blockSourceLetter = String.fromCharCode(sourceCharCode++);
-            }
-            var blockSourceLetter = '';
-            if ((block.images && block.images.some((i) => i.source_letter)) || block.source) {
-              blockSourceLetter = String.fromCharCode(sourceCharCode++);
-            }
             block.images.forEach((imgObj) => {
               let rawSrc = imgObj.src || imgObj.image;
               if (rawSrc) {
@@ -690,8 +688,8 @@ allDirs.forEach((unitId) => {
             let sIdx = lesson.sources ? lesson.sources.length + bIdx : bIdx;
             html += `
             <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
-              <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-              ${block.source.title ? `<strong>${badgeSource(block.source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
+              <span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+              ${block.source.title ? `<strong>${badgeSource(block.source.title, getSourceOverride())}</strong><br>` : ''}
               ${block.source.src || block.source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src || block.source.source, 2) : block.source.src || block.source.source}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
               ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
               ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
@@ -798,7 +796,7 @@ allDirs.forEach((unitId) => {
               html += `<div class="task-box">`;
               block.tasks.forEach((task, tIdx) => {
                 if (task.type === 'draw') {
-                  html += `<div class="draw-task" style="display:none;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${globalQNum++}: ${task.text || task.question}</div>`;
+                  html += `<div class="draw-task" style="display:none;"><span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${globalQNum++}: ${task.text || task.question}</div>`;
                 } else {
                   if (task.type === 'multiple_choice') {
                     html += `<div class="task-box">`;
@@ -926,7 +924,7 @@ allDirs.forEach((unitId) => {
                   ) {
                     // Do nothing
                   } else {
-                    html += `<p style="margin-top:10px;"><span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${globalQNum++}. ${task.text || task.question || task.instruction || task.instructions || task.title || ''}</strong></p>`;
+                    html += `<p style="margin-top:10px;"><span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${globalQNum++}. ${task.text || task.question || task.instruction || task.instructions || task.title || ''}</strong></p>`;
                     if (task.type === 'extended_writing' && task.instructions) {
                       html += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
                     }
@@ -1274,8 +1272,8 @@ allDirs.forEach((unitId) => {
                   : `style=""`;
               html += `
               <div class="source-container" ${containerStyle}>
-                <span style="color: #ffffff; font-size: 4px;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
-                ${source.title ? `<strong>${badgeSource(source.title, unitId === 'early_modern_world' ? null : 'S' + sourceNum++)}</strong><br>` : ''}
+                <span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+                ${source.title ? `<strong>${badgeSource(source.title, getSourceOverride())}</strong><br>` : ''}
                 ${source.src || source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src || source.source, 2) : source.src || source.source}" alt="Source">` : ''}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
                 ${source.caption ? `<div class="source-caption">${source.caption}</div>` : ''}

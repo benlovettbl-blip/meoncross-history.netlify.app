@@ -529,7 +529,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'The Sykes-Picot Agreement Partition Map (May 1916)',
+            title: 'Source A: The Sykes-Picot Agreement Partition Map (May 1916)',
             src: '/images/cme_sykes_picot_1916_map.jpg',
             caption:
               'The original partition map signed by Sir Mark Sykes and François Georges-Picot dividing the Ottoman Empire into British (red/B) and French (blue/A) spheres of control, placing Palestine under international administration.',
@@ -1529,7 +1529,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'UN Partition Plan for Palestine (1947)',
+            title: 'Source A: UN Partition Plan for Palestine (1947)',
             src: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
             caption:
               'The proposed UN Partition Plan dividing Palestine into independent Arab and Jewish states, which was rejected by Arab leadership.',
@@ -2732,7 +2732,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'UNRWA Refugee Camps',
+            title: 'Source D: Palestinian Refugee Camps (UNRWA, 1949)',
             src: '/units/cme_new/assets/palestinian_refugees_1948.jpg',
             caption:
               'Palestinian refugees displaced by the 1948 war, who would later be supported by UNRWA.',
@@ -4156,7 +4156,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Military Campaign Map: The 1956 Suez Crisis & Operation Kadesh',
+            title: 'Source C: Military Campaign Map: The 1956 Suez Crisis & Operation Kadesh',
             src: '/images/cme_suez_1956_campaign_map.jpg',
             caption:
               'Military map illustrating the rapid Israeli armoured advance across the Sinai Peninsula, paratrooper drops at the Mitla Pass, isolation of Sharm el-Sheikh, and Anglo-French amphibious landings at Port Said.',
@@ -4195,7 +4195,8 @@ export const unitData = {
           level_4:
             '<table style="width:100%; border-collapse: collapse; margin: 15px 0;">\n      <thead>\n        <tr>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For Egypt and Nasser</th>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For Israel’s Security</th>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">For the Cold War</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">Nasser emerged from the crisis as an <strong>undisputed Arab folk hero</strong>. Although his army had been defeated on the battlefield, he had successfully stood up to British, French, and Israeli "imperialism" and kept control of the Suez Canal, cementing Egypt’s leadership of the Arab world.</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">Israel scored massive military and strategic benefits. The IDF had proven its <strong>unquestioned military superiority</strong>, routing the Egyptian army in just a few days, which acted as a powerful deterrent against future Arab invasions.</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px; vertical-align: top;">The Middle East became a central theater of the Cold War. British and French colonial influence in the region was permanently broken, replaced by direct <strong>US support for Israel</strong> and <strong>Soviet backing for Egypt and Syria</strong>.</td>\n        </tr>\n      </tbody>\n    </table>',
           source: {
-            title: 'Anthony Eden',
+            title:
+              'Source E: Prime Minister Anthony Eden Defending the Suez Operation (November 1956)',
             src: '/units/cme_new/assets/cme_georges_bidault__anthony_eden_and_john_foster_dulles__cropped_.jpg',
             caption:
               'British Prime Minister Anthony Eden (center), whose career was ruined by the failure of the Suez intervention.',
@@ -4919,7 +4920,7 @@ export const unitData = {
           level_4:
             '<div style="background-color: #f8f9fa; border: 1px solid #ddd; padding: 10px; border-radius: 8px; margin-bottom: 10px;">\n  <h3 style="margin-top: 0; color: #333; text-align: center;">SPECIFICATION STUDY MAP: KEY TOPIC 2.1</h3>\n  <ol style="line-height: 1.4; margin-bottom: 0;">\n    <li><strong>Palestinian Nationalism</strong> &rarr; Cairo Conference (1964), creation of the PLO and Fatah.</li>\n    <li><strong>Border Wars &amp; Skirmishes</strong> &rarr; Disputes over Jordan water, Samu Raid (1966), 7 April 1967.</li>\n    <li><strong>The Slide to War (May \'67)</strong> &rarr; Soviet misinformation, UNEF withdrawal, closure of Tiran.</li>\n    <li><strong>The Six Day War</strong> &rarr; June 5 pre-emptive strike, lightning land war, redrawn boundaries.</li>\n  </ol>\n</div>',
           source: {
-            title: 'The Six-Day War Map',
+            title: 'Source A: The Six-Day War Map (June 1967)',
             src: '/units/cme_new/assets/palestine_1967_map.png',
             caption:
               'Map detailing the massive territorial gains made by Israel during the Six-Day War.',
@@ -4987,12 +4988,7 @@ export const unitData = {
           ],
         },
         {
-          text: '**Border Escalation: The Samu Reprisal Raid (November 1966):** <img src="/units/cme_new/assets/syria_fatah.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="syria_fatah">',
-          level_4:
-            '<img src="/units/cme_new/assets/syria_fatah.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="syria_fatah">',
-        },
-        {
-          text: '**The Aerial Clash over Damascus (7 April 1967):** The Samu Raid (November 1966): After a Fatah landmine killed three Israeli border policemen, Prime Minister Levi Eshkol ordered a massive reprisal raid into Jordan, which controlled the West Bank. On 13 November 1966, 600 IDF troops backed by tanks swept into the Jordanian village of Samu, dynamiting dozens of homes and clashing with the Jordanian military, leaving 15 Jordanian soldiers dead. The raid deeply embarrassed King Hussein of Jordan, who publicly accused President Nasser of hiding behind UN peacekeepers instead of helping defend his Arab allies. The Air Clash of 7 April 1967: Skirmishes on the Syrian border erupted into full-scale combat when Syrian artillery on the Golan Heights began bombarding Israeli tractors farming in the demilitarised zone. The Israeli air force responded aggressively. In a dramatic aerial dogfight over Damascus, Israeli fighter jets shot down six Syrian Soviet-built MiG-21 jets in a single afternoon. This humiliating defeat left the Syrian leadership desperate to find a way to restore their military honor.',
+          text: '**Border Escalation: The Samu Raid (1966) & Aerial Clash over Damascus (1967):** After a Fatah landmine killed three Israeli border policemen, Prime Minister Levi Eshkol ordered a massive reprisal raid into Jordan, which controlled the West Bank. On 13 November 1966, 600 IDF troops backed by tanks swept into the Jordanian village of Samu, dynamiting dozens of homes and clashing with the Jordanian military, leaving 15 Jordanian soldiers dead. The raid deeply embarrassed King Hussein of Jordan, who publicly accused President Nasser of hiding behind UN peacekeepers instead of helping defend his Arab allies. The Air Clash of 7 April 1967: Skirmishes on the Syrian border erupted into full-scale combat when Syrian artillery on the Golan Heights began bombarding Israeli tractors farming in the demilitarised zone. The Israeli air force responded aggressively. In a dramatic aerial dogfight over Damascus, Israeli fighter jets shot down six Syrian Soviet-built MiG-21 jets in a single afternoon. This humiliating defeat left the Syrian leadership desperate to find a way to restore their military honor.',
           level_4:
             'The Samu Raid (November 1966): After a Fatah landmine killed three Israeli border policemen, Prime Minister Levi Eshkol ordered a massive reprisal raid into Jordan, which controlled the West Bank. This humiliating defeat left the Syrian leadership desperate to find a way to restore their military honor.',
           tasks: [
@@ -5004,7 +5000,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Source B: Paratroopers at the Western Wall (June 1967)',
+            title: 'Source B: Israeli Paratroopers at the Western Wall (June 1967)',
             src: '/images/israeli_troops_wall.jpg',
             caption: 'Israeli paratroopers standing in awe before the Western Wall in Jerusalem.',
             question:
@@ -5070,7 +5066,7 @@ export const unitData = {
           level_4:
             '<img src="/units/cme_new/assets/operation_focus.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="operation_focus">',
           source: {
-            title: 'Operation Focus',
+            title: 'Source C: Operation Focus (5 June 1967)',
             src: '/images/operation_focus_mirage_formation.jpg',
             caption:
               'Israeli aircraft dominating the skies after destroying the Egyptian Air Force on the ground.',
@@ -6111,7 +6107,7 @@ export const unitData = {
           level_4:
             'The lightning ending of the Six Day War left the Middle East in a deep diplomatic deadlock. A just settlement of the refugee problem.',
           source: {
-            title: 'Source B: Black September Militant on the Balcony (September 1972)',
+            title: 'Source A: Black September Militant on the Balcony (September 1972)',
             src: '/images/cme_munich_1972_balcony.jpg',
             caption:
               'A masked member of the Palestinian group Black September on the balcony of the Israeli team quarters at the Munich Olympic Village.',
@@ -6173,7 +6169,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'UN Resolution 242',
+            title: 'Source B: UN Security Council Resolution 242 (November 1967)',
             src: '/units/cme_new/assets/un242.svg',
             custom_style: 'max-height: 150px; width: auto; object-fit: contain;',
             caption:
@@ -6250,7 +6246,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Map of Fedayeen Bases & Black September Civil Conflict in Jordan (1970)',
+            title: 'Source D: Map of Fedayeen Bases & Black September Conflict (1970)',
             src: '/images/cme_jordan_fedayeen_1970_map.png',
             caption:
               'Map showing Palestinian guerrilla (Fedayeen) strongholds around Amman, Zarqa, Irbid, and Karameh, alongside the Syrian armoured invasion routes repelled by the Jordanian Armed Forces during Black September.',
@@ -6263,7 +6259,7 @@ export const unitData = {
           level_4:
             '<div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 10px 0; page-break-inside: avoid;">\n  <h4 style="text-align: center; color: #0f172a; margin-top: 0; margin-bottom: 15px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; font-size: 1.1rem;">THE BLACK SEPTEMBER CIVIL WAR</h4>\n  <img src="/units/cme_new/assets/black_september.svg" style="width: 100%; max-width: 400px; display: block; margin: 0 auto;" alt="Flowchart showing the sequence of events of the Black September Civil War">\n</div>',
           source: {
-            title: 'Yasser Arafat and the PLO',
+            title: 'Source E: Yasser Arafat and the PLO',
             src: '/units/cme_new/assets/arafat_1974.svg',
             custom_style: 'max-height: 250px; width: auto; object-fit: contain;',
             caption:
@@ -6313,7 +6309,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Source D: The Munich Hostage Crisis (September 1972)',
+            title: 'Source F: The Munich Hostage Crisis (September 1972)',
             src: '/images/cme_munich_1972_balcony.jpg',
             caption: 'Masked Black September terrorist on the Olympic Village balcony in Munich.',
             question:
@@ -7281,7 +7277,7 @@ export const unitData = {
           level_4:
             'The immediate aftermath of the 1967 war did not bring peace, but rather a grueling, undeclared border war along the Suez Canal known as the War of Attrition (1969–1970). Backed by massive military aid from the Soviet Union, Nasser launched a continuous campaign of heavy artillery shelling, commando raids, and rocket barrages across the Suez Canal to wear down the Israeli Defence Forces (IDF) and make the occupation too costly to sustain.',
           source: {
-            title: 'The Yom Kippur War (1973)',
+            title: 'Source A: The Yom Kippur War (October 1973)',
             src: '/units/cme_new/assets/yom_kippur_crossing.png',
             caption:
               'Egyptian forces successfully crossing the Suez Canal during the surprise attack on Yom Kippur in 1973.',
@@ -7403,7 +7399,7 @@ export const unitData = {
           level_4:
             'By 1973, these settlements had become permanent "facts on the ground," deeply fragmenting Palestinian society and convincing Arab leaders that Israel was expanding permanently. Egypt and its ally, Syria, launched a highly coordinated, two-front surprise attack against Israel.',
           source: {
-            title: 'Military Map: Yom Kippur War — Sinai Front (6 October 1973)',
+            title: 'Source C: Military Map: Yom Kippur War — Sinai Front (6 October 1973)',
             src: '/images/cme_yom_kippur_1973_map.png',
             caption:
               'Tactical campaign map of the Suez Canal and Sinai front on 6 October 1973, showing Egyptian assault crossing sectors, the Israeli Bar Lev fortifications, and the strategic Mitla and Gidi passes.',
@@ -7441,7 +7437,7 @@ export const unitData = {
           level_4:
             "Simultaneously, Syrian tank divisions launched a massive assault across the Golan Heights, overrunning Israel's thin border defenses and threatening to break through into the Galilee. On the Northern Front, the IDF successfully halted the Syrian advance and pushed Syrian forces back beyond the 1967 border.",
           source: {
-            title: 'Golda Meir',
+            title: 'Source E: Prime Minister Golda Meir Addressing the Nation (October 1973)',
             src: '/images/golda_meir.jpg',
             caption:
               'Israeli Prime Minister Golda Meir, whose government faced severe criticism for lack of preparedness in 1973.',
@@ -8819,7 +8815,7 @@ export const unitData = {
           level_4:
             'The Yom Kippur War of October 1973 was a military conflict that triggered a global economic and geopolitical revolution. As oil prices rose, production costs increased, making goods more expensive; consequently, consumers bought fewer items, leading to factory bankruptcies and mass layoffs.',
           source: {
-            title: 'Sadat visits Jerusalem',
+            title: 'Source A: President Anwar Sadat Addresses the Israeli Knesset (November 1977)',
             src: '/units/cme_new/assets/anwar_sadat.jpg',
             caption:
               'Egyptian President Anwar Sadat, who made a historic and unprecedented visit to Israel in 1977 to pursue peace.',
@@ -8878,7 +8874,7 @@ export const unitData = {
           level_4:
             "By 1977, the momentum of Kissinger’s shuttle diplomacy had stalled. Most observers assumed Begin's election would end all hopes of peace.",
           source: {
-            title: 'The Camp David Accords (1978)',
+            title: 'Source B: The Camp David Accords (September 1978)',
             src: '/units/cme_new/assets/camp_david_accords.png',
             caption:
               'Begin, Carter, and Sadat shaking hands after successfully negotiating the Camp David Accords.',
@@ -8932,7 +8928,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Map of the Sinai Peninsula: Camp David Land-for-Peace Settlement (1979)',
+            title: 'Source C: Map of the Sinai Peninsula: Camp David Settlement (1979)',
             src: '/images/cme_sinai_peninsula_map.jpg',
             caption:
               'Official cartographic map showing the 60,000 square kilometre Sinai Peninsula returned in phases by Israel to Egypt between 1979 and 1982 in exchange for diplomatic recognition and free passage through the Straits of Tiran.',
@@ -8945,7 +8941,7 @@ export const unitData = {
           level_4:
             '<img src="/units/cme_new/assets/sinai_returned.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sinai_returned">',
           source: {
-            title: 'The Egypt-Israel Peace Treaty (1979)',
+            title: 'Source D: The Egypt-Israel Peace Treaty Signing (26 March 1979)',
             src: '/units/cme_new/assets/menachem_begin.jpeg',
             caption:
               'Israeli Prime Minister Menachem Begin, who signed the historic Egypt-Israel Peace Treaty in 1979.',
@@ -9964,7 +9960,7 @@ export const unitData = {
           level_4:
             'Following the 1973 Yom Kippur War, the Palestine Liberation Organisation (PLO) sought to capitalize on the shifting geopolitical landscape to advance its diplomatic standing. Do not let the olive branch fall from my hand."',
           source: {
-            title: 'The First Intifada (1987)',
+            title: 'Source A: The First Intifada (1987)',
             src: '/units/cme_new/assets/first_intifada.png',
             caption:
               'Palestinian youth confronting Israeli troops during the First Intifada, a spontaneous grassroots uprising.',
@@ -10042,7 +10038,7 @@ export const unitData = {
           level_4:
             '<img src="/units/cme_new/assets/lebanese_invasion.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="lebanese_invasion">',
           source: {
-            title: 'Israeli Response to the Intifada',
+            title: 'Source B: Israeli Security Forces Response to the Intifada (1988)',
             src: '/images/yitzhak_shamir.jpg',
             caption:
               "Israeli Prime Minister , who implemented a harsh 'Iron Fist' policy in response to the Intifada.",
@@ -10074,7 +10070,7 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Military Map: 1982 Lebanon War (Operation Peace for Galilee)',
+            title: 'Source C: Military Map: 1982 Lebanon War (Operation Peace for Galilee)',
             src: '/images/cme_lebanon_1982_campaign_map.png',
             caption:
               'Military campaign map illustrating the June 1982 Israeli advances northward along the Mediterranean coast past Tyre and Sidon into Beirut, alongside clashes with Syrian forces in the Bekaa Valley.',
@@ -10128,7 +10124,7 @@ export const unitData = {
           level_4:
             '<img src="/units/cme_new/assets/intifada_escalation.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="intifada_escalation">',
           source: {
-            title: 'PLO Exile in Lebanon',
+            title: 'Source D: PLO Evacuation from Beirut (August 1982)',
             src: '/units/cme_new/assets/arafat_1999.jpg',
             caption:
               'Yasser Arafat, leader of the PLO, whose organization was forced into exile in Tunisia following the 1982 Lebanon War.',
@@ -10991,7 +10987,8 @@ export const unitData = {
           level_4:
             'By late 1988, PLO Chairman Yasser Arafat realized that the political landscape was shifting beneath his feet. Arafat faced a major dilemma: his leadership was being rapidly overshadowed by new, highly popular underground leaders in the Unified National Leadership of the Uprising (UNLU) and radical Islamist groups like Hamas and Islamic Jihad.',
           source: {
-            title: 'The Oslo Handshake (1993)',
+            title:
+              'Source A: The Historic Oslo Handshake on the White House Lawn (13 September 1993)',
             src: '/images/oslo_handshake.jpg',
             caption:
               'Yitzhak Rabin, Yasser Arafat, and Bill Clinton sealing the Oslo I Accord on the White House lawn.',
@@ -11056,7 +11053,7 @@ export const unitData = {
           level_4:
             '<img src="/units/cme_new/assets/arafat_saddam.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="arafat_saddam">',
           source: {
-            title: 'Israel-Jordan Peace Treaty (1994)',
+            title: 'Source B: The Israel-Jordan Peace Treaty (October 1994)',
             src: '/images/king_hussein.jpg',
             caption:
               'King Hussein of Jordan, who signed the historic peace treaty with Israel in 1994, normalizing relations between the two countries.',
@@ -11115,7 +11112,7 @@ export const unitData = {
           level_4:
             'On 28 September 1995, Rabin and Arafat signed the Oslo II Accords, which detailed the expansion of Palestinian self-rule across the West Bank by dividing it into three zones.',
           source: {
-            title: 'Map of the West Bank under Oslo II (1995): Areas A, B, and C',
+            title: 'Source C: Map of the West Bank under Oslo II (1995)',
             src: '/images/cme_oslo_areas_map.png',
             caption:
               'Map illustrating the territorial fragmentation of the West Bank: Area A (green, Palestinian cities with civil and security control), Area B (red, joint Israeli-Palestinian control), and Area C (pink, full Israeli civil and military control covering 60% of the land).',
@@ -11128,7 +11125,8 @@ export const unitData = {
           level_4:
             '<img src="/units/cme_new/assets/oslo2.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="oslo2">',
           source: {
-            title: 'Assassination of Yitzhak Rabin',
+            title:
+              'Source D: Rally in Tel Aviv Before the Assassination of Yitzhak Rabin (November 1995)',
             src: '/units/cme_new/assets/rabinovich_cover.png',
             caption:
               "The book cover of 'Yitzhak Rabin: Soldier, Leader, Statesman' depicting Rabin, who was assassinated by an Israeli extremist at a Tel Aviv peace rally.",

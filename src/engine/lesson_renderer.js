@@ -1470,19 +1470,29 @@ export function renderLesson(lesson) {
         blockSourceHtml = `
               <div class="gcse-source-container" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left;">
                 ${
-                  block.source.caption
+                  window.currentUnitId === 'cme_new' && block.source.title
                     ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; line-height: 1.4;">
-                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
-                  ${block.source.caption}
-                </h4>`
-                    : block.source.title
-                      ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center;">
                   <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
                   ${block.source.title}
                 </h4>`
-                      : ''
+                    : block.source.caption
+                      ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; line-height: 1.4;">
+                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
+                  ${block.source.caption}
+                </h4>`
+                      : block.source.title
+                        ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center;">
+                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
+                  ${block.source.title}
+                </h4>`
+                        : ''
                 }
                 ${sourceContentHtml}
+                ${
+                  window.currentUnitId === 'cme_new' && block.source.title && block.source.caption
+                    ? `<div style="font-size: 0.95rem; color: #475569; margin-top: -5px; margin-bottom: 15px; font-style: italic;">${block.source.caption}</div>`
+                    : ''
+                }
                 ${
                   block.source.source_context
                     ? `
