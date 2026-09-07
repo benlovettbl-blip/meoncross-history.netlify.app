@@ -3695,17 +3695,17 @@
           ],
           "quiz": [
             {
-              "question": "Why was British Foreign Secretary Ernest Bevin determined to maintain strict immigration quotas to Palestine in 1945–46?",
-              "q": "Why was British Foreign Secretary Ernest Bevin determined to maintain strict immigration quotas to Palestine in 1945–46?",
+              "question": "What were the core conflicting demands of Palestinian Arabs and Jewish Zionists within the British Mandate immediately after 1945?",
+              "q": "What were the core conflicting demands of Palestinian Arabs and Jewish Zionists within the British Mandate immediately after 1945?",
               "options": [
-                "To preserve British alliances with oil-rich Arab states and prevent regional conflict",
-                "Because Britain planned to make Palestine an official county of England",
-                "Because the United Nations ordered Britain to halt all maritime transport",
-                "To force all Holocaust survivors to settle permanently in the Soviet Union"
+                "Palestinian Arabs demanded immediate national independence and an end to immigration, while Zionists demanded a sovereign Jewish state and open entry for Holocaust survivors",
+                "Both communities agreed to share power equally under continued British colonial governance",
+                "Arabs demanded immediate union with Egypt, while Zionists demanded incorporation into the Soviet Union",
+                "Jewish leaders sought a return to Ottoman rule, while Palestinian Arabs requested a United States trusteeship"
               ],
-              "answer": "To preserve British alliances with oil-rich Arab states and prevent regional conflict",
-              "a": "To preserve British alliances with oil-rich Arab states and prevent regional conflict",
-              "explanation": "Bevin feared that mass Jewish immigration would alienate strategic Arab allies and ignite an all-out Middle Eastern war. Distractors offer fabricated political motives."
+              "answer": "Palestinian Arabs demanded immediate national independence and an end to immigration, while Zionists demanded a sovereign Jewish state and open entry for Holocaust survivors",
+              "a": "Palestinian Arabs demanded immediate national independence and an end to immigration, while Zionists demanded a sovereign Jewish state and open entry for Holocaust survivors",
+              "explanation": "Following the Second World War and the Holocaust, Zionists urgently demanded a sovereign Jewish homeland in Palestine to resettle refugees. In contrast, Palestinian Arabs, who formed the majority of the population, demanded national independence and a complete halt to Jewish immigration, creating an irreconcilable conflict."
             },
             {
               "question": "What tragic event on 22 July 1946 broke British civilian morale and accelerated their withdrawal from Palestine?",

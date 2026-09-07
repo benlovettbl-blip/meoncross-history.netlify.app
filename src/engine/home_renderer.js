@@ -384,6 +384,35 @@ export function renderSidebar() {
     navContainer.appendChild(cheatSheetLink);
   }
 
+  if (window.currentUnitId === 'usa') {
+    const tradingLink = document.createElement('a');
+    tradingLink.className = 'lesson-link';
+    tradingLink.innerHTML =
+      '<i class="fa-solid fa-layer-group" style="color: #facc15; margin-right: 8px;"></i> Historical Hooligans (Top Trumps)';
+    tradingLink.href = '/units/usa/trading_cards.html';
+    tradingLink.target = '_blank';
+    tradingLink.style.marginTop = '12px';
+    navContainer.appendChild(tradingLink);
+
+    const arcadeLink = document.createElement('a');
+    arcadeLink.className = 'lesson-link';
+    arcadeLink.innerHTML =
+      '<i class="fa-solid fa-gamepad" style="color: #06b6d4; margin-right: 8px;"></i> Falling Blocks Arcade';
+    arcadeLink.href = '/units/usa/falling_blocks.html';
+    arcadeLink.target = '_blank';
+    arcadeLink.style.marginTop = '8px';
+    navContainer.appendChild(arcadeLink);
+
+    const worksheetLink = document.createElement('a');
+    worksheetLink.className = 'lesson-link';
+    worksheetLink.innerHTML =
+      '<i class="fa-solid fa-file-pen" style="color: #3b82f6; margin-right: 8px;"></i> Civil Rights Revision Worksheet';
+    worksheetLink.href = '/units/usa/revision_worksheet_civil_rights.html';
+    worksheetLink.target = '_blank';
+    worksheetLink.style.marginTop = '8px';
+    navContainer.appendChild(worksheetLink);
+  }
+
   if (appStore.state.activeUnitData.guided_reading) {
     const grLink = document.createElement('a');
     grLink.className = 'lesson-link';

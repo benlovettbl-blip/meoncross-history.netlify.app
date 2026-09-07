@@ -179,6 +179,22 @@ export function renderQuizZone(container, unitData) {
                     `
                         : ''
                     }
+                    ${
+                      window.currentUnitId === 'usa'
+                        ? `
+                    <div style="border: 2px solid #facc15; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s; background: rgba(250, 204, 21, 0.05);" onmouseover="this.style.borderColor='#eab308'; this.style.background='rgba(250, 204, 21, 0.1)';" onmouseout="this.style.borderColor='#facc15'; this.style.background='rgba(250, 204, 21, 0.05)';" id="btn-mode-trading-cards">
+                        <i class="fa-solid fa-layer-group" style="font-size: 3rem; color: #facc15; margin-bottom: 15px;"></i>
+                        <h3 style="margin:0 0 10px 0; color: #ca8a04; font-size: 1.5rem;">Historical Hooligans</h3>
+                        <p style="color: #64748b; margin:0;">16 3D satirical collector cards &amp; Top Trumps stats for USA figures.</p>
+                    </div>
+                    <div style="border: 2px solid #06b6d4; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s; background: rgba(6, 182, 212, 0.05);" onmouseover="this.style.borderColor='#0891b2'; this.style.background='rgba(6, 182, 212, 0.1)';" onmouseout="this.style.borderColor='#06b6d4'; this.style.background='rgba(6, 182, 212, 0.05)';" id="btn-mode-falling-blocks">
+                        <i class="fa-solid fa-gamepad" style="font-size: 3rem; color: #06b6d4; margin-bottom: 15px;"></i>
+                        <h3 style="margin:0 0 10px 0; color: #0891b2; font-size: 1.5rem;">Falling Blocks Arcade</h3>
+                        <p style="color: #64748b; margin:0;">Fast-paced retro arcade game matching USA terms and definitions.</p>
+                    </div>
+                    `
+                        : ''
+                    }
                 </div>
             </div>
 
@@ -233,6 +249,21 @@ export function renderQuizZone(container, unitData) {
       uiContainer.style.display = 'block';
       startQuiz(portraitBank, 'Who Am I? (Portraits)', false);
     });
+  }
+
+  if (window.currentUnitId === 'usa') {
+    const btnTrading = container.querySelector('#btn-mode-trading-cards');
+    if (btnTrading) {
+      btnTrading.addEventListener('click', () => {
+        window.open('/units/usa/trading_cards.html', '_blank');
+      });
+    }
+    const btnArcade = container.querySelector('#btn-mode-falling-blocks');
+    if (btnArcade) {
+      btnArcade.addEventListener('click', () => {
+        window.open('/units/usa/falling_blocks.html', '_blank');
+      });
+    }
   }
 
   function shuffleArray(array) {

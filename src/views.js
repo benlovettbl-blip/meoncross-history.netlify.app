@@ -717,6 +717,36 @@ export function renderInteractiveQuiz() {
 
       </div>
 
+      ${
+        unitId === 'usa'
+          ? `
+      <div style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), rgba(6, 182, 212, 0.08)); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 14px; padding: 20px 24px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #f97316, #ea580c); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);">
+            <i class="fa-solid fa-layer-group" style="color: #facc15;"></i>
+          </div>
+          <div>
+            <h3 style="margin: 0 0 4px 0; font-size: 1.15rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #ffffff;">
+              Historical Hooligans &amp; Arcade Revision Games
+            </h3>
+            <p style="margin: 0; color: #cbd5e1; font-size: 0.85rem;">
+              16 3D satirical collector cards (Top Trumps stats) + Retro Falling Blocks arcade revision game.
+            </p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="/units/usa/trading_cards.html" target="_blank" class="btn-pedagogy-primary btn-pedagogy-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(135deg, #f97316, #ea580c); color: #fff; font-weight: 700; border-radius: 8px; padding: 9px 16px;">
+            <i class="fa-solid fa-id-card"></i> Open Trading Cards
+          </a>
+          <a href="/units/usa/falling_blocks.html" target="_blank" class="btn btn-secondary btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; background: rgba(255, 255, 255, 0.08); color: #fff; font-weight: 700; border-radius: 8px; padding: 9px 16px; border: 1px solid var(--border-glass);">
+            <i class="fa-solid fa-gamepad" style="color: #06b6d4;"></i> Falling Blocks Arcade
+          </a>
+        </div>
+      </div>
+      `
+          : ''
+      }
+
       <!-- Quiet Secondary Drawer: Printable Materials & The Vault -->
       <details style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
         <summary style="font-weight: 700; color: #1e293b; font-size: 0.92rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; outline: none; user-select: none;">
