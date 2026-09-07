@@ -949,6 +949,17 @@
         .print-link-btn.pdf:hover {
             background: #fee2e2;
         }
+        .print-link-btn.preview {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+        }
+        .print-link-btn.preview:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+            transform: translateY(-1px);
+        }
 
         /* Dual-Tier Leitner Switcher Bar */
         .leitner-tier-switcher {
@@ -1916,8 +1927,9 @@
                         <h4>Format 1: The 2-Page A4 Workout Spread</h4>
                         <p>Spaced retrieval, lined scaffolding with cognitive formula frames (P-F-C, T-P-C, F-I-L), ⚠️ Examiner Trap Doors, and 3-attempt flexible log.</p>
                         <div class="printable-links">
-                            <a href="/units/cme_new/printables/cme_workout_KT1.html" target="_blank" class="print-link-btn web">🌐 Interactive</a>
-                            <a href="/pdfs/cme_new/cme_workout_KT1.pdf" target="_blank" download class="print-link-btn pdf">📕 A4 PDF</a>
+                            <button type="button" class="print-link-btn preview" onclick="openPrintPreviewIframe('/units/cme_new/printables/cme_workout_KT1.html', 'A4 Rapid Workout: Key Topic 1: The birth of the state of Israel, 1945–63', '/pdfs/cme_new/cme_workout_KT1.pdf')">🖨️ Preview</button>
+                            <a href="/units/cme_new/printables/cme_workout_KT1.html" target="_blank" class="print-link-btn web">🌐 Full Tab</a>
+                            <a href="/pdfs/cme_new/cme_workout_KT1.pdf" target="_blank" download class="print-link-btn pdf">📕 PDF</a>
                         </div>
                     </div>
                     <div class="printable-card">
@@ -1925,8 +1937,9 @@
                         <h4>Format 2: The A3 Desk Knowledge Placemat</h4>
                         <p>Visual command centre: Key Chronology Dominoes, 6-Topic Specification Blueprint, Color-Coded Model Answer Dissector, and High-Yield Fact Bank.</p>
                         <div class="printable-links">
-                            <a href="/units/cme_new/printables/cme_placemat_KT1.html" target="_blank" class="print-link-btn web">🌐 Interactive</a>
-                            <a href="/pdfs/cme_new/cme_placemat_KT1.pdf" target="_blank" download class="print-link-btn pdf">📕 A3 PDF</a>
+                            <button type="button" class="print-link-btn preview" onclick="openPrintPreviewIframe('/units/cme_new/printables/cme_placemat_KT1.html', 'A3 Revision Placemat: Key Topic 1: The birth of the state of Israel, 1945–63', '/pdfs/cme_new/cme_placemat_KT1.pdf')">🖨️ Preview</button>
+                            <a href="/units/cme_new/printables/cme_placemat_KT1.html" target="_blank" class="print-link-btn web">🌐 Full Tab</a>
+                            <a href="/pdfs/cme_new/cme_placemat_KT1.pdf" target="_blank" download class="print-link-btn pdf">📕 PDF</a>
                         </div>
                     </div>
                     <div class="printable-card">
@@ -1934,8 +1947,9 @@
                         <h4>Format 3: Foldable Pocket Trifold Zine</h4>
                         <p>A4 Landscape 6-panel trifold pocket booklet with QR code linking to the live digital Leitner deck, fill-in challenges, and 5-min exam challenge.</p>
                         <div class="printable-links">
-                            <a href="/units/cme_new/printables/cme_trifold_KT1.html" target="_blank" class="print-link-btn web">🌐 Interactive</a>
-                            <a href="/pdfs/cme_new/cme_trifold_KT1.pdf" target="_blank" download class="print-link-btn pdf">📕 Pocket PDF</a>
+                            <button type="button" class="print-link-btn preview" onclick="openPrintPreviewIframe('/units/cme_new/printables/cme_trifold_KT1.html', 'Foldable Pocket Trifold Zine: Key Topic 1: The birth of the state of Israel, 1945–63', '/pdfs/cme_new/cme_trifold_KT1.pdf')">🖨️ Preview</button>
+                            <a href="/units/cme_new/printables/cme_trifold_KT1.html" target="_blank" class="print-link-btn web">🌐 Full Tab</a>
+                            <a href="/pdfs/cme_new/cme_trifold_KT1.pdf" target="_blank" download class="print-link-btn pdf">📕 PDF</a>
                         </div>
                     </div>
                 </div>
@@ -4024,6 +4038,85 @@
           history.replaceState(null, null, ' ');
         }
       }
+    };
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.openPrintPreviewIframe = function(htmlUrl, title, pdfUrl) {
+      const existing = document.getElementById('masteryPrintPreviewModal');
+      if (existing) existing.remove();
+
+      const overlay = document.createElement('div');
+      overlay.id = 'masteryPrintPreviewModal';
+      overlay.className = 'printables-modal-overlay';
+      overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); z-index: 100001; display: flex; justify-content: center; align-items: center;';
+
+      overlay.innerHTML = `
+        <div style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; width: 94vw; max-width: 1350px; height: 92vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); font-family: 'Outfit', sans-serif;">
+          <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 38px; height: 38px; border-radius: 8px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.15rem;">
+                🖨️
+              </div>
+              <div>
+                <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(14, 165, 233, 0.2); color: #38bdf8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3);">Teacher Planning Hub</span>
+                <h3 style="margin: 2px 0 0 0; color: #f8fafc; font-size: 1.25rem; font-weight: 700;">${title}</h3>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button id="masteryPrintTriggerBtn" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 9px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(37,99,235,0.4);">
+                🖨️ Print Class Set
+              </button>
+              <a href="${pdfUrl}" target="_blank" download style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                📕 High-Res PDF
+              </a>
+              <button id="masteryPrintCloseBtn" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; font-size: 1.1rem; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                ✕
+              </button>
+            </div>
+          </div>
+          <div style="flex: 1; position: relative; background: #334155;">
+            <iframe id="masteryPreviewIframe" src="${htmlUrl}" style="width: 100%; height: 100%; border: none; background: #ffffff;"></iframe>
+          </div>
+          <div style="background: #1e293b; border-top: 1px solid #334155; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; color: #94a3b8;">
+            <span>💡 <strong>Teacher Tip:</strong> The print stylesheet automatically handles page sizing (A3 Landscape for Placemats, A4 Portrait for Workouts, A4 Landscape for Trifolds). Ensure <em>"Background graphics"</em> is checked in your browser's print dialog.</span>
+            <span>Press <kbd style="background: #334155; color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace;">Esc</kbd> to close</span>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+
+      const iframe = overlay.querySelector('#masteryPreviewIframe');
+      const close = () => {
+        window.removeEventListener('keydown', handleEsc);
+        overlay.remove();
+      };
+      const handleEsc = (e) => { if (e.key === 'Escape') close(); };
+      window.addEventListener('keydown', handleEsc);
+
+      overlay.querySelector('#masteryPrintCloseBtn').onclick = close;
+      overlay.onclick = (e) => { if (e.target === overlay) close(); };
+      overlay.querySelector('#masteryPrintTriggerBtn').onclick = () => {
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+        }
+      };
     };
 
     // Touch Swipe Gestures for Mobile Practice (Left: Box 1, Up: Box 2, Right: Box 3)

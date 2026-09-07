@@ -361,11 +361,82 @@ export function renderLesson(lesson) {
       notesHtml = `<div style="font-size: 1.05rem;">${lesson.teacher_notes}</div>`;
     }
 
+    let cmePrintBarHtml = '';
+    if (unitId === 'cme_new') {
+      let ktId = 'KT1';
+      let ktTitle = 'Key Topic 1: The Birth of Israel (1945–63)';
+      const t = lesson.title || '';
+      if (
+        t.startsWith('KT2') ||
+        t.includes('Six Day War') ||
+        t.includes('1967') ||
+        t.includes('1973') ||
+        t.includes('Yom Kippur')
+      ) {
+        ktId = 'KT2';
+        ktTitle = 'Key Topic 2: Escalating Conflict (1964–73)';
+      } else if (
+        t.startsWith('KT3') ||
+        t.includes('1974') ||
+        t.includes('1988') ||
+        t.includes('Peace') ||
+        t.includes('Solution') ||
+        t.includes('Camp David') ||
+        t.includes('Oslo')
+      ) {
+        ktId = 'KT3';
+        ktTitle = 'Key Topic 3: Attempts at Peace (1974–95)';
+      } else {
+        const lNum = parseInt((lesson.id || '').replace(/\D/g, ''), 10);
+        if (lNum >= 8) {
+          ktId = 'KT3';
+          ktTitle = 'Key Topic 3: Attempts at Peace (1974–95)';
+        } else if (lNum >= 5) {
+          ktId = 'KT2';
+          ktTitle = 'Key Topic 2: Escalating Conflict (1964–73)';
+        }
+      }
+
+      cmePrintBarHtml = `
+        <div class="teacher-printables-bar no-print" style="margin-top: 20px; padding-top: 16px; border-top: 1px dashed rgba(255,255,255,0.2); display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="background: #38bdf8; color: #0f172a; font-weight: 800; font-size: 0.72rem; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;">1-Click Classroom Sets</span>
+              <strong style="color: #f8fafc; font-size: 0.92rem;"><i class="fa-solid fa-print" style="color: #38bdf8; margin-right: 4px;"></i> Print &amp; Inspect for ${ktTitle.split(':')[0]}</strong>
+            </div>
+            <span style="font-size: 0.78rem; color: #cbd5e1;">Inspect iframe preview &amp; print before class</span>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_placemat_${ktId}', 'A3 Revision Placemat: ${ktTitle}', '/pdfs/cme_new/cme_placemat_${ktId}.pdf')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; font-size: 0.85rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.2s ease;">
+              <i class="fa-solid fa-table-cells" style="color: #facc15;"></i>
+              A3 Placemat Spread
+            </button>
+
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_workout_${ktId}', 'A4 Rapid Workout: ${ktTitle}', '/pdfs/cme_new/cme_workout_${ktId}.pdf')" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: #ffffff; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; font-size: 0.85rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.2s ease;">
+              <i class="fa-solid fa-dumbbell" style="color: #c4b5fd;"></i>
+              A4 Workout Spread
+            </button>
+
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_trifold_${ktId}', 'Pocket Trifold Zine: ${ktTitle}', '/pdfs/cme_new/cme_trifold_${ktId}.pdf')" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; border: 1px solid rgba(255,255,255,0.2); font-weight: 600; font-size: 0.85rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.2s ease;">
+              <i class="fa-solid fa-map" style="color: #a7f3d0;"></i>
+              Pocket Trifold Zine
+            </button>
+
+            <a href="/pdfs/cme_new/cme_placemat_${ktId}.pdf" target="_blank" download style="background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2); font-weight: 500; font-size: 0.85rem; padding: 8px 12px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-left: auto;">
+              <i class="fa-solid fa-download"></i> Direct PDF
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
     if (!isTrip) {
       html += `
           <div class="teacher-note">
             <h4><i class="fa-solid fa-chalkboard-user"></i> Pedagogical Primer</h4>
             ${notesHtml}
+            ${cmePrintBarHtml}
           </div>
         `;
     }

@@ -1364,3 +1364,130 @@ window.openParentBriefingModal = function () {
   void modal.offsetWidth;
   modal.style.opacity = '1';
 };
+
+window.openTeacherPrintPreview = function (fileBaseName, title, pdfUrl) {
+  let htmlUrl =
+    fileBaseName.startsWith('/') || fileBaseName.startsWith('http')
+      ? fileBaseName
+      : `/units/cme_new/printables/${fileBaseName}.html`;
+
+  if (!pdfUrl) {
+    pdfUrl = `/pdfs/cme_new/${fileBaseName}.pdf`;
+  }
+
+  // Remove existing modal if any
+  const existing = document.getElementById('teacherPrintPreviewModal');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'teacherPrintPreviewModal';
+  overlay.className = 'modal-overlay no-print';
+  overlay.style.cssText =
+    'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.25s ease;';
+
+  overlay.innerHTML = `
+    <div class="modal-content" style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; width: 94vw; max-width: 1350px; height: 92vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); transform: scale(0.97); transition: transform 0.25s ease; font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;">
+      
+      <!-- Modal Header -->
+      <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 38px; height: 38px; border-radius: 8px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.15rem; box-shadow: 0 2px 8px rgba(2,132,199,0.35);">
+            <i class="fa-solid fa-print"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(14, 165, 233, 0.2); color: #38bdf8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3);">Teacher Planning Hub</span>
+              <span style="font-size: 0.7rem; font-weight: 600; color: #94a3b8;">Classroom Set Print Preview</span>
+            </div>
+            <h3 style="margin: 2px 0 0 0; color: #f8fafc; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em;">${title || 'Classroom Print Preview'}</h3>
+          </div>
+        </div>
+
+        <!-- Action Controls -->
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <button id="teacherPrintModalTrigger" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 9px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(37,99,235,0.4); transition: all 0.2s ease;">
+            <i class="fa-solid fa-print"></i> Print Class Set
+          </button>
+          
+          <a href="${pdfUrl}" target="_blank" download style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
+            <i class="fa-solid fa-file-pdf"></i> High-Res PDF
+          </a>
+
+          <a href="${htmlUrl}" target="_blank" style="background: rgba(255, 255, 255, 0.08); color: #e2e8f0; border: 1px solid rgba(255, 255, 255, 0.15); font-weight: 600; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Tab
+          </a>
+
+          <button id="teacherPrintModalClose" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; font-size: 1.1rem; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Iframe Container with Loading Indicator -->
+      <div style="flex: 1; position: relative; background: #334155; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <div id="teacherIframeLoader" style="position: absolute; display: flex; flex-direction: column; align-items: center; gap: 12px; color: #94a3b8; font-size: 0.95rem; z-index: 1;">
+          <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; color: #38bdf8;"></i>
+          <span>Rendering high-fidelity print layout...</span>
+        </div>
+        <iframe id="teacherPreviewIframe" src="${htmlUrl}" style="width: 100%; height: 100%; border: none; background: #ffffff; position: relative; z-index: 2; opacity: 0; transition: opacity 0.2s ease;"></iframe>
+      </div>
+
+      <!-- Footer Bar with Teacher Print Instructions -->
+      <div style="background: #1e293b; border-top: 1px solid #334155; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; color: #94a3b8;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-lightbulb" style="color: #facc15;"></i>
+          <span><strong>Teacher Tip:</strong> The print stylesheet automatically handles page sizing (A3 Landscape for Placemats, A4 Portrait for Workouts, A4 Landscape for Trifolds). Ensure <em>"Background graphics"</em> is checked in your browser's print dialog.</span>
+        </div>
+        <div style="color: #64748b; font-size: 0.78rem;">
+          Press <kbd style="background: #334155; color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace;">Esc</kbd> to close
+        </div>
+      </div>
+
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const iframe = overlay.querySelector('#teacherPreviewIframe');
+  const loader = overlay.querySelector('#teacherIframeLoader');
+  const modalContent = overlay.querySelector('.modal-content');
+
+  iframe.onload = () => {
+    iframe.style.opacity = '1';
+    if (loader) loader.style.display = 'none';
+  };
+
+  const closeModal = () => {
+    window.removeEventListener('keydown', handleKeyDown);
+    overlay.style.opacity = '0';
+    modalContent.style.transform = 'scale(0.97)';
+    setTimeout(() => overlay.remove(), 250);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') closeModal();
+  };
+  window.addEventListener('keydown', handleKeyDown);
+
+  const closeBtn = overlay.querySelector('#teacherPrintModalClose');
+  if (closeBtn) closeBtn.onclick = closeModal;
+
+  overlay.onclick = (e) => {
+    if (e.target === overlay) closeModal();
+  };
+
+  const printBtn = overlay.querySelector('#teacherPrintModalTrigger');
+  if (printBtn) {
+    printBtn.onclick = () => {
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+      }
+    };
+  }
+
+  // Animate in
+  void overlay.offsetWidth;
+  overlay.style.opacity = '1';
+  modalContent.style.transform = 'scale(1)';
+};

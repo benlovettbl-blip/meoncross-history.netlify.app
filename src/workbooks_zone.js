@@ -136,5 +136,80 @@ export function renderWorkbooksZone(container, unitData) {
     );
   }
 
+  if (state.selectedUnitId === 'cme_new' || window.currentUnitId === 'cme_new') {
+    const cmeClassroomSets = [
+      {
+        id: 'KT1',
+        title: 'KT1: The Birth of the State of Israel (1945–63)',
+        color: '#0284c7',
+      },
+      {
+        id: 'KT2',
+        title: 'KT2: The Escalating Conflict (1964–73)',
+        color: '#dc2626',
+      },
+      {
+        id: 'KT3',
+        title: 'KT3: Attempts at a Solution (1974–95)',
+        color: '#059669',
+      },
+    ];
+
+    let cmeHubHtml = `
+      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #0284c7;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
+              <i class="fa-solid fa-print"></i>
+            </div>
+            <div>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Classroom Sets &amp; 1-Click Print Previews</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Inspect interactive iframe previews and print full classroom sets of A3 Placemats, A4 Workouts, and Pocket Trifolds before your lesson.</p>
+            </div>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 20px;">Direct In-Browser Printing</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+    `;
+
+    cmeClassroomSets.forEach((kt) => {
+      cmeHubHtml += `
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 800; background: ${kt.color}15; color: ${kt.color}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${kt.color}30;">${kt.id}</span>
+              <span style="font-size: 0.78rem; color: #64748b;"><i class="fa-solid fa-users"></i> Class Set</span>
+            </div>
+            <h3 style="margin: 0; color: #1e293b; font-size: 1.1rem; line-height: 1.3;">${kt.title}</h3>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_placemat_${kt.id}', 'A3 Revision Placemat: ${kt.title}', '/pdfs/cme_new/cme_placemat_${kt.id}.pdf')" style="width: 100%; text-align: left; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #0284c7; padding: 10px 14px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 0.88rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#0284c7'; this.style.boxShadow='0 2px 6px rgba(2,132,199,0.2)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='#0284c7'; this.style.boxShadow='none';">
+              <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-table-cells" style="color: #0284c7;"></i> A3 Placemat Spread</span>
+              <span style="color: #0284c7; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Preview &amp; Print</span>
+            </button>
+
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_workout_${kt.id}', 'A4 Rapid Workout: ${kt.title}', '/pdfs/cme_new/cme_workout_${kt.id}.pdf')" style="width: 100%; text-align: left; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #7c3aed; padding: 10px 14px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 0.88rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#7c3aed'; this.style.boxShadow='0 2px 6px rgba(124,58,237,0.2)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='#7c3aed'; this.style.boxShadow='none';">
+              <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-dumbbell" style="color: #7c3aed;"></i> A4 Workout Spread</span>
+              <span style="color: #7c3aed; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Preview &amp; Print</span>
+            </button>
+
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_trifold_${kt.id}', 'Pocket Trifold Zine: ${kt.title}', '/pdfs/cme_new/cme_trifold_${kt.id}.pdf')" style="width: 100%; text-align: left; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #059669; padding: 10px 14px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 0.88rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#059669'; this.style.boxShadow='0 2px 6px rgba(5,150,105,0.2)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='#059669'; this.style.boxShadow='none';">
+              <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-map" style="color: #059669;"></i> Pocket Trifold Zine</span>
+              <span style="color: #059669; font-size: 0.8rem;"><i class="fa-solid fa-eye"></i> Preview &amp; Print</span>
+            </button>
+          </div>
+        </div>
+      `;
+    });
+
+    cmeHubHtml += `
+        </div>
+      </div>
+    `;
+    html += cmeHubHtml;
+  }
+
   container.innerHTML = html;
 }

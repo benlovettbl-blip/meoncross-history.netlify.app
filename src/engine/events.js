@@ -359,6 +359,16 @@ export function initEventDelegation() {
         window.open(target.dataset.url, '_blank');
         break;
 
+      case 'open-teacher-preview':
+        if (window.openTeacherPrintPreview) {
+          window.openTeacherPrintPreview(
+            target.dataset.file,
+            target.dataset.title,
+            target.dataset.pdf,
+          );
+        }
+        break;
+
       case 'toggle-bookmark':
         if (window.toggleBookmarkQuestion) window.toggleBookmarkQuestion(target.dataset.id);
         break;
