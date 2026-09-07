@@ -1376,3 +1376,186 @@ export async function renderBookletView() {
   if (window.scrollToTop) window.scrollToTop(true);
   else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+export async function renderMockExamsView() {
+  const contentArea = document.getElementById('main-content');
+  if (!contentArea) return;
+  contentArea.innerHTML = '';
+  contentArea.style.paddingTop = '1rem';
+
+  const unitData = state.activeUnitData || {};
+  const unitId = state.selectedUnitId || window.currentUnitId || 'cme_new';
+  const mocks = unitData.mock_exams || [];
+
+  if (!mocks || mocks.length === 0) {
+    contentArea.innerHTML = `
+      <div style="padding: 40px; text-align: center; background: #fff; border-radius: 12px; margin: 20px auto; max-width: 800px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <i class="fa-solid fa-file-circle-xmark fa-3x" style="color: #cbd5e1; margin-bottom: 15px;"></i>
+        <h2 style="color: #0f172a; margin-top: 0;">No Mock Exams Available</h2>
+        <p style="color: #64748b;">There are currently no mock exam papers registered for this unit.</p>
+        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard" style="margin-top: 15px; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Back to Dashboard</button>
+      </div>
+    `;
+    return;
+  }
+
+  // Determine unit-specific exam metadata
+  let specTitle = 'Edexcel GCSE (9–1) History';
+  let headerColor = '#1e3a8a';
+  let headerGrad = 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)';
+  let defaultTime = '1 Hour 20 Mins';
+  let defaultMarks = '52 Marks';
+
+  if (unitId === 'cme_new') {
+    specTitle = 'Paper 2: Conflict in the Middle East, 1945–1995 (1HI0/21)';
+    headerColor = '#0284c7';
+    headerGrad = 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)';
+    defaultTime = '55 Minutes';
+    defaultMarks = '32 Marks';
+  } else if (unitId === 'weimar_nazi_germany') {
+    specTitle = 'Paper 3: Weimar and Nazi Germany, 1918–1939 (1HI0/31)';
+    headerColor = '#7f1d1d';
+    headerGrad = 'linear-gradient(135deg, #7f1d1d 0%, #1e1b4b 100%)';
+    defaultTime = '1 Hour 20 Mins';
+    defaultMarks = '52 Marks + 4 SPaG';
+  } else if (unitId === 'eee') {
+    specTitle = 'Paper 2: Early Elizabethan England, 1558–1588 (1HI0/B4)';
+    headerColor = '#b45309';
+    headerGrad = 'linear-gradient(135deg, #b45309 0%, #1e293b 100%)';
+    defaultTime = '55 Minutes';
+    defaultMarks = '32 Marks';
+  } else if (unitId === 'edexcel_medicine') {
+    specTitle = 'Paper 1: Medicine in Britain & British Sector of Western Front (1HI0/11)';
+    headerColor = '#0f766e';
+    headerGrad = 'linear-gradient(135deg, #0f766e 0%, #0f172a 100%)';
+    defaultTime = '1 Hour 15 Mins';
+    defaultMarks = '52 Marks + 4 SPaG';
+  }
+
+  let html = `
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px 40px 15px;">
+      <!-- Welcome Banner -->
+      <div style="background: ${headerGrad}; color: white; padding: 35px 30px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+          <span style="font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #93c5fd;">
+            ${specTitle}
+          </span>
+          <span style="font-size: 0.75rem; background: rgba(255,255,255,0.2); backdrop-filter: blur(4px); padding: 3px 10px; border-radius: 4px; font-weight: 700; border: 1px solid rgba(255,255,255,0.3);">
+            ${mocks.length} Official Mock Papers Available
+          </span>
+        </div>
+        <h1 style="margin: 0; font-size: 1.85rem; font-weight: 800; line-height: 1.25; font-family: 'Outfit', sans-serif;">
+          GCSE Mock Examination Papers
+        </h1>
+        <p style="margin: 8px 0 0 0; font-size: 1rem; color: #e2e8f0; max-width: 850px; line-height: 1.45;">
+          Authentic Pearson Edexcel GCSE (9–1) past-paper format replicas featuring full source booklets, question papers, and comprehensive teacher mark schemes. Ready to view, print for exam conditions, or use in classroom mock assessment cycles.
+        </p>
+      </div>
+
+      <!-- Quick Assessment Specifications & Instructions -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 18px 24px; margin-bottom: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div>
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Exam Timing</div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-regular fa-clock" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultTime}</div>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Total Marks Available</div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-award" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultMarks}</div>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Print Format</div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-print" style="color: ${headerColor}; margin-right: 6px;"></i>A4 Booklet / Replicas</div>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Marking Support</div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-chalkboard-user" style="color: ${headerColor}; margin-right: 6px;"></i>Full Model Answers</div>
+        </div>
+      </div>
+
+      <!-- Mock Papers Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+  `;
+
+  mocks.forEach((mock, idx) => {
+    const paperUrl = mock.url || `${mock.id}.html`;
+    const fullPaperUrl = paperUrl.startsWith('/') ? paperUrl : `/units/${unitId}/${paperUrl}`;
+
+    const hasMs = Boolean(
+      mock.has_mark_scheme ||
+      mock.mark_scheme_url ||
+      unitId === 'weimar_nazi_germany' ||
+      unitId === 'eee' ||
+      (unitId === 'edexcel_medicine' && mock.id !== 'mock_2025_clone'),
+    );
+    const msFileName =
+      mock.mark_scheme_url || `${paperUrl.replace(/\.html$/, '')}_mark_scheme.html`;
+    const fullMsUrl = msFileName.startsWith('/') ? msFileName : `/units/${unitId}/${msFileName}`;
+
+    const badgeText = mock.title.includes('NotebookLM')
+      ? 'Prediction Model'
+      : `Exam Mock ${idx + 1}`;
+
+    html += `
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.04)';">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+            <span style="font-size: 0.72rem; font-weight: 800; background: ${headerColor}18; color: ${headerColor}; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; border: 1px solid ${headerColor}30;">
+              ${badgeText}
+            </span>
+            <span style="font-size: 0.75rem; font-weight: 700; color: #64748b;">
+              <i class="fa-solid fa-file-lines" style="color: ${headerColor}; margin-right: 4px;"></i>${mock.paper_reference || specTitle.split(':')[0]}
+            </span>
+          </div>
+
+          <h3 style="margin: 0 0 10px 0; color: #0f172a; font-size: 1.15rem; line-height: 1.35; font-family: 'Outfit', sans-serif;">
+            ${mock.title}
+          </h3>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; font-size: 0.8rem; color: #475569; margin-bottom: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+            <span><strong>Time:</strong> ${mock.time_minutes ? mock.time_minutes + ' mins' : defaultTime}</span>
+            <span><strong>Marks:</strong> ${mock.total_marks ? mock.total_marks + ' marks' : defaultMarks}</span>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 5px;">
+          <a href="${fullPaperUrl}" target="_blank" style="text-align: center; text-decoration: none; background: linear-gradient(135deg, ${headerColor} 0%, #0f172a 100%); color: #ffffff; padding: 10px 14px; border-radius: 6px; font-size: 0.88rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.92';" onmouseout="this.style.opacity='1';">
+            <i class="fa-solid fa-file-pdf"></i> Open &amp; Print Question Paper
+          </a>
+
+          ${
+            hasMs
+              ? `
+            <a href="${fullMsUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #f1f5f9; color: #1e293b; border: 1.5px solid #cbd5e1; padding: 9px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease;" onmouseover="this.style.background='#e2e8f0'; this.style.borderColor='#94a3b8';" onmouseout="this.style.background='#f1f5f9'; this.style.borderColor='#cbd5e1';">
+              <i class="fa-solid fa-chalkboard-user" style="color: ${headerColor};"></i> View Teacher Mark Scheme
+            </a>
+          `
+              : `
+            <div style="font-size: 0.75rem; color: #94a3b8; text-align: center; font-style: italic; padding: 4px 0;">
+              Model answers integrated in unit study bank
+            </div>
+          `
+          }
+        </div>
+      </div>
+    `;
+  });
+
+  html += `
+      </div>
+
+      <!-- Bottom Actions Bar -->
+      <div style="margin-top: 35px; padding-top: 20px; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <button class="btn btn-secondary" data-action="switch-view" data-view="lessons" data-unit="${unitId}" style="padding: 10px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 600;">
+          <i class="fa-solid fa-arrow-left"></i> Return to Lessons
+        </button>
+        <button class="btn btn-secondary" data-action="switch-view" data-view="booklet" data-unit="${unitId}" style="padding: 10px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #8b5cf6; border-color: #ddd6fe;">
+          <i class="fa-solid fa-print"></i> Visit Print &amp; PDF Hub
+        </button>
+      </div>
+    </div>
+  `;
+
+  contentArea.innerHTML = html;
+  if (window.scrollToTop) window.scrollToTop(true);
+  else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
+}

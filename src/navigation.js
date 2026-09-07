@@ -9,6 +9,7 @@ import {
   renderInteractiveQuiz,
   renderTimeline,
   renderBookletView,
+  renderMockExamsView,
   renderProfileView,
   renderDecisionsView,
   renderTabooView,
@@ -53,6 +54,7 @@ export function initNavigationUI() {
         if (viewName === 'interactive') displayName = 'Interactive Quizzing & Spaced Recall';
         if (viewName === 'timeline') displayName = 'Chronological Timeline';
         if (viewName === 'booklet') displayName = 'Printable A4 Booklet';
+        if (viewName === 'mock-exams') displayName = 'GCSE Mock Examination Papers';
         if (viewName === 'profile') displayName = 'Student Profile';
         if (viewName === 'curriculum') displayName = 'Curriculum Overview';
 
@@ -82,6 +84,7 @@ export function initNavigationUI() {
       viewName === 'lessons' ||
       viewName === 'timeline' ||
       viewName === 'booklet' ||
+      viewName === 'mock-exams' ||
       viewName === 'individuals' ||
       viewName === 'reading' ||
       viewName === 'decisions' ||
@@ -155,6 +158,7 @@ export async function switchView(viewName, param = null, skipHistory = false) {
       'nav-interactive',
       'nav-timeline',
       'nav-booklet',
+      'nav-mock-exams',
       'nav-decisions',
       'nav-taboo',
       'nav-individuals',
@@ -179,6 +183,9 @@ export async function switchView(viewName, param = null, skipHistory = false) {
   } else if (viewName === 'booklet') {
     if (param) await loadUnit(param);
     renderBookletView();
+  } else if (viewName === 'mock-exams') {
+    if (param) await loadUnit(param);
+    renderMockExamsView();
   } else if (viewName === 'decisions') {
     if (param) await loadUnit(param);
     renderDecisionsView();
@@ -312,6 +319,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
   const navInteractive = document.getElementById('nav-interactive');
   const navTimeline = document.getElementById('nav-timeline');
   const navBooklet = document.getElementById('nav-booklet');
+  const navMockExams = document.getElementById('nav-mock-exams');
   const navIndividuals = document.getElementById('nav-individuals');
   const navReading = document.getElementById('nav-reading');
 
@@ -331,6 +339,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     if (navInteractive) navInteractive.style.display = 'none';
     if (navTimeline) navTimeline.style.display = 'none';
     if (navBooklet) navBooklet.style.display = 'none';
+    if (navMockExams) navMockExams.style.display = 'none';
     if (navDecisions) navDecisions.style.display = 'none';
     if (navTaboo) navTaboo.style.display = 'none';
     if (navIndividuals) navIndividuals.style.display = 'none';
@@ -380,6 +389,19 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navBooklet.dataset.view = 'booklet';
     navBooklet.dataset.unit = unitId;
     navBooklet.onclick = () => switchView('booklet', unitId);
+  }
+
+  const hasMockExams = Boolean(
+    unitData.mock_exams && Array.isArray(unitData.mock_exams) && unitData.mock_exams.length > 0,
+  );
+  if (navMockExams && hasMockExams) {
+    navMockExams.style.display = 'flex';
+    navMockExams.dataset.action = 'switch-view';
+    navMockExams.dataset.view = 'mock-exams';
+    navMockExams.dataset.unit = unitId;
+    navMockExams.onclick = () => switchView('mock-exams', unitId);
+  } else if (navMockExams) {
+    navMockExams.style.display = 'none';
   }
 
   const keyIndividualsData = unitData.key_individuals || unitData.biographies;

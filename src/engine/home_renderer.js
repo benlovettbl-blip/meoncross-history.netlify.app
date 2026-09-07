@@ -314,6 +314,33 @@ export function renderSidebar() {
     navContainer.appendChild(examPracticeLink);
   }
 
+  if (
+    appStore.state.activeUnitData.type !== 'trip' &&
+    unitData.mock_exams &&
+    Array.isArray(unitData.mock_exams) &&
+    unitData.mock_exams.length > 0
+  ) {
+    const mockExamsLink = document.createElement('a');
+    mockExamsLink.className = 'lesson-link';
+    mockExamsLink.innerHTML =
+      '<i class="fa-solid fa-file-signature" style="margin-right: 8px; color: #ef4444;"></i> GCSE Mock Exams';
+    mockExamsLink.style.marginTop = '15px';
+    mockExamsLink.style.color = '#f87171'; // Red-400
+    mockExamsLink.addEventListener('click', async (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
+      mockExamsLink.classList.add('active');
+      if (window.switchView) {
+        window.switchView('mock-exams', window.currentUnitId);
+      } else {
+        const { renderMockExamsView } = await import('../views.js');
+        renderMockExamsView();
+      }
+      (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    navContainer.appendChild(mockExamsLink);
+  }
+
   if (appStore.state.activeUnitData.type !== 'trip') {
     const quizPackLink = document.createElement('a');
     quizPackLink.id = 'quiz-zone-link';

@@ -319,5 +319,119 @@ export function renderWorkbooksZone(container, unitData) {
     html += medHubHtml;
   }
 
+  if (unitData.mock_exams && Array.isArray(unitData.mock_exams) && unitData.mock_exams.length > 0) {
+    const unitId = state.selectedUnitId || window.currentUnitId || 'cme_new';
+
+    let specTitle = 'Edexcel GCSE (9–1) History';
+    let themeColor = '#ef4444';
+    let defaultTime = '1 Hour 20 Mins';
+    let defaultMarks = '52 Marks';
+
+    if (unitId === 'cme_new') {
+      specTitle = 'Paper 2: Conflict in the Middle East, 1945–1995 (1HI0/21)';
+      themeColor = '#0284c7';
+      defaultTime = '55 Mins';
+      defaultMarks = '32 Marks';
+    } else if (unitId === 'weimar_nazi_germany') {
+      specTitle = 'Paper 3: Weimar and Nazi Germany, 1918–1939 (1HI0/31)';
+      themeColor = '#7f1d1d';
+      defaultTime = '1 Hour 20 Mins';
+      defaultMarks = '52 Marks + 4 SPaG';
+    } else if (unitId === 'eee') {
+      specTitle = 'Paper 2: Early Elizabethan England, 1558–1588 (1HI0/B4)';
+      themeColor = '#b45309';
+      defaultTime = '55 Mins';
+      defaultMarks = '32 Marks';
+    } else if (unitId === 'edexcel_medicine') {
+      specTitle = 'Paper 1: Medicine in Britain & Western Front (1HI0/11)';
+      themeColor = '#0f766e';
+      defaultTime = '1 Hour 15 Mins';
+      defaultMarks = '52 Marks + 4 SPaG';
+    }
+
+    let mocksHubHtml = `
+      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid ${themeColor};">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, ${themeColor} 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
+              <i class="fa-solid fa-file-signature"></i>
+            </div>
+            <div>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">GCSE Mock Examination Papers</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Authentic Pearson Edexcel GCSE (9–1) past-paper format replicas featuring full source booklets, question papers, and comprehensive teacher mark schemes formatted for A4 printing.</p>
+            </div>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 4px 12px; border-radius: 20px;">
+            ${unitData.mock_exams.length} Exam Papers Ready
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    `;
+
+    unitData.mock_exams.forEach((mock, idx) => {
+      const paperUrl = mock.url || `${mock.id}.html`;
+      const fullPaperUrl = paperUrl.startsWith('/') ? paperUrl : `/units/${unitId}/${paperUrl}`;
+      const hasMs = Boolean(
+        mock.has_mark_scheme ||
+        mock.mark_scheme_url ||
+        unitId === 'weimar_nazi_germany' ||
+        unitId === 'eee' ||
+        (unitId === 'edexcel_medicine' && mock.id !== 'mock_2025_clone'),
+      );
+      const msFileName =
+        mock.mark_scheme_url || `${paperUrl.replace(/\.html$/, '')}_mark_scheme.html`;
+      const fullMsUrl = msFileName.startsWith('/') ? msFileName : `/units/${unitId}/${msFileName}`;
+      const badgeText = mock.title.includes('NotebookLM')
+        ? 'Prediction Model'
+        : `Mock Paper ${idx + 1}`;
+
+      mocksHubHtml += `
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 800; background: ${themeColor}15; color: ${themeColor}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${themeColor}30;">
+                ${badgeText}
+              </span>
+              <span style="font-size: 0.78rem; font-weight: 700; color: #475569;">
+                <i class="fa-regular fa-clock" style="color: ${themeColor}; margin-right: 4px;"></i>${mock.time_minutes ? mock.time_minutes + ' mins' : defaultTime}
+              </span>
+            </div>
+            <h3 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.05rem; line-height: 1.35;">${mock.title}</h3>
+            <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">
+              ${mock.paper_reference || specTitle} · ${mock.total_marks ? mock.total_marks + ' marks' : defaultMarks} · Authentic exam booklet layout with line-spaced answer registers.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 5px;">
+            <a href="${fullPaperUrl}" target="_blank" style="text-align: center; text-decoration: none; background: linear-gradient(135deg, ${themeColor} 0%, #0f172a 100%); color: #ffffff; padding: 9px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.92';" onmouseout="this.style.opacity='1';">
+              <i class="fa-solid fa-file-pdf"></i> Open Question Paper
+            </a>
+
+            ${
+              hasMs
+                ? `
+              <a href="${fullMsUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; border-left: 3px solid ${themeColor}; padding: 8px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#f1f5f9'; this.style.borderColor='#94a3b8';" onmouseout="this.style.background='#ffffff'; this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${themeColor}';">
+                <i class="fa-solid fa-chalkboard-user" style="color: ${themeColor};"></i> Teacher Mark Scheme
+              </a>
+            `
+                : `
+              <div style="font-size: 0.75rem; color: #94a3b8; text-align: center; font-style: italic; padding: 3px 0;">
+                Model answers integrated in study bank
+              </div>
+            `
+            }
+          </div>
+        </div>
+      `;
+    });
+
+    mocksHubHtml += `
+        </div>
+      </div>
+    `;
+    html += mocksHubHtml;
+  }
+
   container.innerHTML = html;
 }
