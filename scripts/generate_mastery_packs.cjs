@@ -2270,7 +2270,7 @@ const units = fs
         let globalQNum = 1;
         pages.forEach((pageObj, pageIndex) => {
           html += `
-    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+    <div class="page grid-page page-break" id="topic-part-${pageIndex}" style="display: flex; flex-direction: column;">
         <h2>${pageObj.title}</h2>
         <table>
             <thead>
@@ -2579,8 +2579,6 @@ const units = fs
 </html>
 <script>
   (function() {
-    if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-
     const IS_CME_NEW = ${unitId === 'cme_new'};
     const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_${unitId}_${wb.id}';
     const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_${unitId}_${wb.id}_exam';
@@ -3149,10 +3147,45 @@ const units = fs
         }
         loadLeitnerProgress();
         updateStreakAndHeatmap();
-        if (window.location.hash.includes('box=1')) {
+
+        // Check if a subtopic or part was requested in the URL hash (e.g. #practice-mode&part=1 or &subtopic=KT1.2)
+        const hash = window.location.hash;
+        const partMatch = hash.match(/(?:part|topic|subtopic)=([^&]+)/i);
+        let appliedPart = false;
+        if (partMatch) {
+          const rawVal = decodeURIComponent(partMatch[1]).trim().toLowerCase();
+          const topicSelect = document.getElementById('leitner-topic-select');
+          if (topicSelect) {
+            let matchedValue = null;
+            if (rawVal === 'all') {
+              matchedValue = 'all';
+            } else if (!isNaN(parseInt(rawVal, 10)) && parseInt(rawVal, 10) < topicSelect.options.length) {
+              matchedValue = parseInt(rawVal, 10).toString();
+            } else {
+              for (let i = 0; i < topicSelect.options.length; i++) {
+                const optText = topicSelect.options[i].textContent.toLowerCase();
+                if (optText.includes(rawVal)) {
+                  matchedValue = topicSelect.options[i].value;
+                  break;
+                }
+              }
+            }
+            if (matchedValue !== null) {
+              topicSelect.value = matchedValue;
+              changeLeitnerTopic(matchedValue);
+              appliedPart = true;
+            }
+          }
+        }
+
+        if (hash.includes('box=1')) {
           filterByLeitnerBox(1);
-        } else {
+        } else if (!appliedPart) {
           renderCurrentCard();
+        }
+
+        if (hash.includes('teacher=true') && !isTeacherMode) {
+          toggleTeacherMode();
         }
       }
     };
@@ -3319,7 +3352,7 @@ const units = fs
       else if (e.key === 'ArrowLeft') prevCard();
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
+    function initLeitner() {
       loadLeitnerProgress();
       updateStreakAndHeatmap();
       if (window.location.hash.startsWith('#practice-mode')) {
@@ -3330,7 +3363,13 @@ const units = fs
           openLeitnerModal();
         }
       });
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener("DOMContentLoaded", initLeitner);
+    } else {
+      initLeitner();
+    }
   })();
 </script>
         `;

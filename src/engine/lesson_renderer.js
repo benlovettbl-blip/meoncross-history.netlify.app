@@ -59,6 +59,60 @@ window.formatBold = function (text) {
   return parsed;
 };
 
+function getRetrievalStarterActions(lesson, currentUnitId) {
+  if (currentUnitId === 'cme_new') {
+    let kt = 'KT1';
+    let pIdx = 0;
+    const lTitle = lesson.title || '';
+    const lId = lesson.id || '';
+    if (
+      lTitle.startsWith('KT1') ||
+      ['lesson_1', 'lesson_2', 'lesson_3', 'lesson_4'].includes(lId)
+    ) {
+      kt = 'KT1';
+      if (lTitle.includes('KT1.1') || lId === 'lesson_2') pIdx = 1;
+      else if (lTitle.includes('KT1.2') || lId === 'lesson_3') pIdx = 2;
+      else if (lTitle.includes('KT1.3') || lId === 'lesson_4') pIdx = 3;
+      else pIdx = 0;
+    } else if (lTitle.startsWith('KT2') || ['lesson_5', 'lesson_6', 'lesson_7'].includes(lId)) {
+      kt = 'KT2';
+      if (lTitle.includes('KT2.1') || lId === 'lesson_5') pIdx = 0;
+      else if (lTitle.includes('KT2.2') || lId === 'lesson_6') pIdx = 1;
+      else if (lTitle.includes('KT2.3') || lId === 'lesson_7') pIdx = 2;
+    } else if (lTitle.startsWith('KT3') || ['lesson_8', 'lesson_9', 'lesson_10'].includes(lId)) {
+      kt = 'KT3';
+      if (lTitle.includes('KT3.1') || lId === 'lesson_8') pIdx = 0;
+      else if (lTitle.includes('KT3.2') || lId === 'lesson_9') pIdx = 1;
+      else if (lTitle.includes('KT3.3') || lId === 'lesson_10') pIdx = 2;
+    }
+
+    const shortCode = lTitle.split(':')[0].trim();
+    return `
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <a href="/units/cme_new/mastery_pack_${kt}.html#practice-mode&part=${pIdx}" target="_blank" style="display: inline-flex; align-items: center; gap: 7px; font-size: 0.86rem; padding: 7px 14px; background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); color: #ffffff; text-decoration: none; font-weight: 700; border-radius: 6px; box-shadow: 0 2px 6px rgba(79,70,229,0.3); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
+          <i class="fa-solid fa-bolt" style="color: #fde047;"></i>
+          Launch ${shortCode} Leitner Drill (20 Cards)
+        </a>
+        <a href="/units/cme_new/mastery_pack_${kt}.html#practice-mode&part=${pIdx}&teacher=true" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.86rem; padding: 7px 12px; background: #ffffff; color: #4338ca; border: 1.5px solid #c7d2fe; text-decoration: none; font-weight: 600; border-radius: 6px; transition: all 0.15s ease;" title="Launch classroom whiteboard presentation with 15s timer" onmouseover="this.style.background='#eef2ff';" onmouseout="this.style.background='#ffffff';">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Whiteboard
+        </a>
+        <button class="btn btn-secondary" data-action="switch-view" data-view="interactive" data-unit="cme_new" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; padding: 6px 12px; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; font-weight: 600; border-radius: 6px; cursor: pointer;">
+          <i class="fa-solid fa-circle-question"></i>
+          All Decks
+        </button>
+      </div>
+    `;
+  }
+
+  return `
+    <button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${currentUnitId || ''}" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; padding: 8px 16px; background: #2563eb; color: #ffffff; border: none; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 5px rgba(37,99,235,0.25); transition: all 0.2s ease;">
+      <i class="fa-solid fa-circle-question" style="color: #fde047;"></i>
+      Jump to Unit Quizzing
+    </button>
+  `;
+}
+
 window.renderLessonByIndex = function (index, skipHistory = false) {
   if (
     appStore.state.activeUnitData &&
@@ -670,10 +724,7 @@ export function renderLesson(lesson) {
                         <div style="font-size: 0.83rem; color: #64748b;">Consolidate prior learning with 3-Box Leitner spaced flashcards or a 10-min readiness check.</div>
                       </div>
                     </div>
-                    <button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${(appStore && appStore.state && appStore.state.selectedUnitId) || window.currentUnitId || ''}" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; padding: 8px 16px; background: #2563eb; color: #ffffff; border: none; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 5px rgba(37,99,235,0.25); transition: all 0.2s ease;">
-                      <i class="fa-solid fa-circle-question" style="color: #fde047;"></i>
-                      Jump to Unit Quizzing
-                    </button>
+                    ${getRetrievalStarterActions(lesson, (appStore && appStore.state && appStore.state.selectedUnitId) || window.currentUnitId || '')}
                   </div>
                 `
                     : ''
@@ -740,10 +791,7 @@ export function renderLesson(lesson) {
                       <div style="font-size: 0.83rem; color: #64748b;">Consolidate prior learning with 3-Box Leitner spaced flashcards or a 10-min readiness check.</div>
                     </div>
                   </div>
-                  <button class="btn btn-primary" data-action="switch-view" data-view="interactive" data-unit="${currentUnitId}" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; padding: 8px 16px; background: #2563eb; color: #ffffff; border: none; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 5px rgba(37,99,235,0.25); transition: all 0.2s ease;">
-                    <i class="fa-solid fa-circle-question" style="color: #fde047;"></i>
-                    Jump to Unit Quizzing
-                  </button>
+                  ${getRetrievalStarterActions(lesson, currentUnitId)}
                 </div>
               `
                   : ''

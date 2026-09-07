@@ -106,13 +106,13 @@ export function renderQuizZone(container, unitData) {
   container.innerHTML = `
         <div style="max-width: 800px; margin: 0 auto; padding-bottom: 50px; font-family: 'Inter', sans-serif;">
             <div style="text-align: center; margin-bottom: 40px;">
-                <h1 style="font-size: 2.5rem; color: #1a237e; margin-bottom: 10px;"><i class="fa-solid fa-gamepad"></i> Interactive Revision Hub</h1>
-                <p style="color: #64748b; font-size: 1.1rem;">Test your recall of key historical facts!</p>
+                <h1 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);"><i class="fa-solid fa-gamepad" style="color: #60a5fa;"></i> Interactive Revision Hub</h1>
+                <p style="color: #cbd5e1; font-size: 1.1rem; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Test your recall of key historical facts!</p>
             </div>
 
             <!-- MODE SELECT MENU -->
             <div id="mode-select-container">
-                <p style="font-size: 1.2rem; color: #475569; margin-bottom: 30px; text-align: center;">Select a game mode to test your knowledge!</p>
+                <p style="font-size: 1.15rem; color: #cbd5e1; margin-bottom: 30px; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Select a game mode to test your knowledge!</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
                     <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s;" onmouseover="this.style.borderColor='#1e3a8a'; this.style.background='#f8fafc';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='white';" id="btn-mode-levels">
                         <i class="fa-solid fa-layer-group" style="font-size: 3rem; color: #3b82f6; margin-bottom: 15px;"></i>
@@ -201,20 +201,40 @@ export function renderQuizZone(container, unitData) {
       ? Object.values(groupedFlashcardLevels).filter((lvl) => lvl.questions.length > 0)
       : levels;
 
+    const groupings = unitData.groupings || unitData.workbooks || [];
+    let filterPillsHtml = '';
+    if (groupings.length > 1) {
+      filterPillsHtml = `
+        <div class="level-filter-bar" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+          <button class="level-filter-pill active" data-filter="all" style="background: #1e293b; color: #ffffff; border: none; padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">All Topics</button>
+          ${groupings
+            .map((g) => {
+              const prefix = g.prefix || g.id;
+              const name = g.name || g.title || prefix;
+              return `<button class="level-filter-pill" data-filter="${prefix}" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease;">${name}</button>`;
+            })
+            .join('')}
+        </div>
+      `;
+    }
+
     let levelHtml = `
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2 style="color: #0f172a; margin: 0;">Select a ${isFlashcard ? 'Flashcard Deck' : 'Topic'}</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h2 style="color: #0f172a; margin: 0;">Select a ${isFlashcard ? 'Flashcard Deck' : 'Subtopic Quiz'}</h2>
                 <button id="btn-back-main" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Back</button>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+            ${filterPillsHtml}
+            <div id="quiz-levels-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
         `;
 
     currentLevels.forEach((lvl, index) => {
+      const prefix = lvl.title.split(':')[0].trim();
       levelHtml += `
-                <div class="quiz-level-card" data-level="${index}" style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <div class="quiz-level-card" data-level="${index}" data-title="${lvl.title.replace(/"/g, '&quot;')}" data-prefix="${prefix}" style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                     <div style="font-size: 2rem; color: ${isFlashcard ? '#f59e0b' : '#3b82f6'}; margin-bottom: 10px;"><i class="fa-solid ${isFlashcard ? 'fa-bolt' : 'fa-unlock-keyhole'}"></i></div>
-                    <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1.1rem; line-height: 1.3;">${lvl.title}</h3>
-                    <p style="margin: 0; color: #64748b; font-size: 0.9rem; margin-top: 8px;">${lvl.questions.length} ${isFlashcard ? 'Cards' : 'Questions'}</p>
+                    <span style="display: inline-block; background: #eef2ff; color: #4338ca; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px;">${prefix}</span>
+                    <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1rem; line-height: 1.3;">${lvl.title}</h3>
+                    <p style="margin: 0; color: #64748b; font-size: 0.85rem; margin-top: 8px;">${lvl.questions.length} ${isFlashcard ? 'Cards' : 'Questions'}</p>
                 </div>
             `;
     });
@@ -234,6 +254,36 @@ export function renderQuizZone(container, unitData) {
     uiContainer.querySelector('#btn-back-main').addEventListener('click', () => {
       uiContainer.style.display = 'none';
       modeSelect.style.display = 'block';
+    });
+
+    const pills = uiContainer.querySelectorAll('.level-filter-pill');
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        pills.forEach((p) => {
+          p.style.background = '#f1f5f9';
+          p.style.color = '#475569';
+          p.style.border = '1px solid #cbd5e1';
+          p.classList.remove('active');
+        });
+        pill.style.background = '#1e293b';
+        pill.style.color = '#ffffff';
+        pill.style.border = 'none';
+        pill.classList.add('active');
+
+        const filter = pill.dataset.filter;
+        const levelCards = uiContainer.querySelectorAll('.quiz-level-card');
+        levelCards.forEach((c) => {
+          if (
+            filter === 'all' ||
+            (c.dataset.prefix && c.dataset.prefix.startsWith(filter)) ||
+            (c.dataset.title && c.dataset.title.includes(filter))
+          ) {
+            c.style.display = 'block';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      });
     });
 
     const cards = uiContainer.querySelectorAll('.quiz-level-card');

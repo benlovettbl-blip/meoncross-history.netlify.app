@@ -627,16 +627,40 @@ export function renderInteractiveQuiz() {
                 ? `
               <div style="margin-bottom: 18px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px;">
                 <label for="select-recall-deck" style="display: block; font-size: 0.76rem; font-weight: 700; color: #475569; margin-bottom: 6px; text-transform: uppercase;">
-                  Select Deck / Topic:
+                  Select Deck / Subtopic Drill:
                 </label>
                 <select id="select-recall-deck" class="form-select" style="width: 100%; padding: 7px 10px; font-size: 0.86rem; border: 1px solid #cbd5e1; border-radius: 6px; background: white; color: #0f172a; font-weight: 600; cursor: pointer;" onchange="window.handleRecallDeckChange('${unitId}', this.value)">
-                  ${workbooks
-                    .map((wb, i) => {
-                      const id = wb.name || wb.id;
-                      const isFull = id === 'full';
-                      return `<option value="${id}">${isFull ? 'Comprehensive Unit Deck (All Lessons)' : `Key Topic ${i + 1}: ${wb.title || wb.name}`}</option>`;
-                    })
-                    .join('')}
+                  ${
+                    unitId === 'cme_new'
+                      ? workbooks
+                          .map((wb, i) => {
+                            const wbId = wb.name || wb.id;
+                            const matching = lessons.filter(
+                              (l) =>
+                                l.workbook === wbId ||
+                                (l.title && l.title.startsWith(wb.prefix || wbId)) ||
+                                (l.id && l.id.startsWith(wb.prefix || wbId)),
+                            );
+                            return `
+                              <optgroup label="${wb.title || `Key Topic ${i + 1}`}">
+                                <option value="${wbId}:all">⭐ Complete ${wb.id || `Key Topic ${i + 1}`} Deck (${matching.length * 20 || 60}+ Cards)</option>
+                                ${matching
+                                  .map((l, pIdx) => {
+                                    return `<option value="${wbId}:${pIdx}">🎯 ${l.title} (20 Cards)</option>`;
+                                  })
+                                  .join('')}
+                              </optgroup>
+                            `;
+                          })
+                          .join('')
+                      : workbooks
+                          .map((wb, i) => {
+                            const id = wb.name || wb.id;
+                            const isFull = id === 'full';
+                            return `<option value="${id}">${isFull ? 'Comprehensive Unit Deck (All Lessons)' : `Key Topic ${i + 1}: ${wb.title || wb.name}`}</option>`;
+                          })
+                          .join('')
+                  }
                 </select>
               </div>
             `
@@ -775,14 +799,32 @@ export function renderInteractiveQuiz() {
   container.innerHTML = html;
 }
 
-window.handleRecallDeckChange = function (unitId, wbId) {
+window.handleRecallDeckChange = function (unitId, value) {
+  let wbId = value;
+  let part = null;
+  if (value && value.includes(':')) {
+    const parts = value.split(':');
+    wbId = parts[0];
+    part = parts[1];
+  }
+
   const flashcardBtn = document.getElementById('btn-start-flashcards');
   const wbBtn = document.getElementById('btn-wb-mode');
   const keyBtn = document.getElementById('btn-key-mode');
 
-  if (flashcardBtn) flashcardBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode`;
-  if (wbBtn) wbBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode&teacher=true`;
-  if (keyBtn) keyBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html`;
+  const partParam = part && part !== 'all' ? `&part=${part}` : '';
+
+  if (flashcardBtn)
+    flashcardBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode${partParam}`;
+  if (wbBtn)
+    wbBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode${partParam}&teacher=true`;
+  if (keyBtn) {
+    if (part && part !== 'all') {
+      keyBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#topic-part-${part}`;
+    } else {
+      keyBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#the-vault`;
+    }
+  }
 };
 
 window.toggleBookmarkQuestion = function (qid) {
