@@ -6,9 +6,11 @@ export function renderQuizZone(container, unitData) {
   let masterBank = [];
   let vocabBank = [];
   let portraitBank = [];
+  let examClinicPack = [];
 
   let groupedLevels = {};
   let groupedFlashcardLevels = {};
+  let groupedExamLevels = {};
 
   // Dynamically build banks
   if (unitData.lessons) {
@@ -22,8 +24,8 @@ export function renderQuizZone(container, unitData) {
         groupedFlashcardLevels[topicKey] = { title: topicKey, questions: [] };
       }
 
-      const addQuestion = (q, options, a, img) => {
-        const questionObj = { q, a, options, img, source: l.title };
+      const addQuestion = (q, options, a, img, explanation = '') => {
+        const questionObj = { q, a, options, img, source: l.title, explanation };
         quizPack.push(questionObj);
         groupedLevels[topicKey].questions.push(questionObj);
       };
@@ -47,8 +49,34 @@ export function renderQuizZone(container, unitData) {
             if (q.options && typeof q.answer === 'number') {
               answerText = q.options[q.answer];
             }
-            addQuestion(qText, q.options, answerText, q.img);
+            addQuestion(qText, q.options, answerText, q.img, q.explanation || '');
           }
+        });
+      }
+
+      // For exam clinic questions (structured exam-focused quizzes)
+      const lessonExam = l.exam_clinic;
+      if (lessonExam && Array.isArray(lessonExam)) {
+        if (!groupedExamLevels[topicKey]) {
+          groupedExamLevels[topicKey] = { title: topicKey, questions: [] };
+        }
+        lessonExam.forEach((q) => {
+          const qText = q.question || q.q;
+          let answerText = q.a || q.answer;
+          if (q.options && typeof q.answer === 'number') {
+            answerText = q.options[q.answer];
+          }
+          const questionObj = {
+            q: qText,
+            options: q.options,
+            a: answerText,
+            img: q.img,
+            source: l.title,
+            explanation: q.explanation || q.historian_explanation || '',
+            isExamClinic: true,
+          };
+          examClinicPack.push(questionObj);
+          groupedExamLevels[topicKey].questions.push(questionObj);
         });
       }
       if (l.do_now && l.do_now.type === 'questions' && l.do_now.items) {
@@ -119,6 +147,17 @@ export function renderQuizZone(container, unitData) {
                         <h3 style="margin:0 0 10px 0; color: #1e3a8a; font-size: 1.5rem;">Topic Quizzes</h3>
                         <p style="color: #64748b; margin:0;">Tracked, structured quizzes mapped to the A4 pack.</p>
                     </div>
+                    ${
+                      examClinicPack.length > 0
+                        ? `
+                    <div style="border: 2px solid #8b5cf6; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s; background: #faf5ff;" onmouseover="this.style.borderColor='#7c3aed'; this.style.background='#f3e8ff';" onmouseout="this.style.borderColor='#8b5cf6'; this.style.background='#faf5ff';" id="btn-mode-exam-clinic">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 3rem; color: #8b5cf6; margin-bottom: 15px;"></i>
+                        <h3 style="margin:0 0 10px 0; color: #6d28d9; font-size: 1.5rem;">GCSE Exam Clinic</h3>
+                        <p style="color: #64748b; margin:0;">${examClinicPack.length} questions on consequence &amp; importance stems with historian explanations.</p>
+                    </div>
+                    `
+                        : ''
+                    }
                     <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s;" onmouseover="this.style.borderColor='#1e3a8a'; this.style.background='#f8fafc';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='white';" id="btn-mode-flashcard">
                         <i class="fa-solid fa-bolt" style="font-size: 3rem; color: #f59e0b; margin-bottom: 15px;"></i>
                         <h3 style="margin:0 0 10px 0; color: #1e3a8a; font-size: 1.5rem;">Flashcard Frenzy</h3>
@@ -161,6 +200,18 @@ export function renderQuizZone(container, unitData) {
     renderLevelSelect(false);
   });
 
+  if (examClinicPack.length > 0) {
+    const btnExamClinic = container.querySelector('#btn-mode-exam-clinic');
+    if (btnExamClinic) {
+      btnExamClinic.addEventListener('click', () => {
+        activeMode = 'exam_clinic';
+        modeSelect.style.display = 'none';
+        uiContainer.style.display = 'block';
+        renderLevelSelect(false, true);
+      });
+    }
+  }
+
   container.querySelector('#btn-mode-flashcard').addEventListener('click', () => {
     activeMode = 'flashcard';
     modeSelect.style.display = 'none';
@@ -196,17 +247,19 @@ export function renderQuizZone(container, unitData) {
   // ==========================================
   // 1. LEVELLED QUIZZES LOGIC
   // ==========================================
-  function renderLevelSelect(isFlashcard = false) {
+  function renderLevelSelect(isFlashcard = false, isExamClinic = false) {
     let currentLevels = isFlashcard
       ? Object.values(groupedFlashcardLevels).filter((lvl) => lvl.questions.length > 0)
-      : levels;
+      : isExamClinic
+        ? Object.values(groupedExamLevels).filter((lvl) => lvl.questions.length > 0)
+        : levels;
 
     const groupings = unitData.groupings || unitData.workbooks || [];
     let filterPillsHtml = '';
     if (groupings.length > 1) {
       filterPillsHtml = `
         <div class="level-filter-bar" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-          <button class="level-filter-pill active" data-filter="all" style="background: #1e293b; color: #ffffff; border: none; padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">All Topics</button>
+          <button class="level-filter-pill active" data-filter="all" style="background: #1e3a8a; color: #ffffff; border: none; padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">All Topics</button>
           ${groupings
             .map((g) => {
               const prefix = g.prefix || g.id;
@@ -218,9 +271,15 @@ export function renderQuizZone(container, unitData) {
       `;
     }
 
+    const titlePrefix = isFlashcard
+      ? 'Select a Flashcard Deck'
+      : isExamClinic
+        ? 'Select a GCSE Exam Clinic Topic'
+        : 'Select a Subtopic Quiz';
+
     let levelHtml = `
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                <h2 style="color: #0f172a; margin: 0;">Select a ${isFlashcard ? 'Flashcard Deck' : 'Subtopic Quiz'}</h2>
+                <h2 style="color: #0f172a; margin: 0;">${titlePrefix}</h2>
                 <button id="btn-back-main" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Back</button>
             </div>
             ${filterPillsHtml}
@@ -231,7 +290,7 @@ export function renderQuizZone(container, unitData) {
       const prefix = lvl.title.split(':')[0].trim();
       levelHtml += `
                 <div class="quiz-level-card" data-level="${index}" data-title="${lvl.title.replace(/"/g, '&quot;')}" data-prefix="${prefix}" style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                    <div style="font-size: 2rem; color: ${isFlashcard ? '#f59e0b' : '#3b82f6'}; margin-bottom: 10px;"><i class="fa-solid ${isFlashcard ? 'fa-bolt' : 'fa-unlock-keyhole'}"></i></div>
+                    <div style="font-size: 2rem; color: ${isFlashcard ? '#f59e0b' : isExamClinic ? '#8b5cf6' : '#3b82f6'}; margin-bottom: 10px;"><i class="fa-solid ${isFlashcard ? 'fa-bolt' : isExamClinic ? 'fa-graduation-cap' : 'fa-unlock-keyhole'}"></i></div>
                     <span style="display: inline-block; background: #eef2ff; color: #4338ca; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px;">${prefix}</span>
                     <h3 style="margin: 0 0 5px 0; color: #1e293b; font-size: 1rem; line-height: 1.3;">${lvl.title}</h3>
                     <p style="margin: 0; color: #64748b; font-size: 0.85rem; margin-top: 8px;">${lvl.questions.length} ${isFlashcard ? 'Cards' : 'Questions'}</p>
@@ -240,11 +299,13 @@ export function renderQuizZone(container, unitData) {
     });
 
     if (!isFlashcard) {
+      const bossTitle = isExamClinic ? 'Exam Clinic Grand Master' : 'The Ultimate Test';
+      const bossSub = isExamClinic ? '15 Random High-Order Exam Questions' : '15 Random Questions';
       levelHtml += `
                 <div class="quiz-boss-card" style="background: linear-gradient(135deg, #1e1b4b, #312e81); border: 2px solid #4f46e5; border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);">
                     <div style="font-size: 2rem; color: #fbbf24; margin-bottom: 10px;"><i class="fa-solid fa-crown"></i></div>
-                    <h3 style="margin: 0 0 5px 0; color: white;">The Ultimate Test</h3>
-                    <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem;">15 Random Questions</p>
+                    <h3 style="margin: 0 0 5px 0; color: white;">${bossTitle}</h3>
+                    <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem;">${bossSub}</p>
                 </div>`;
     }
     levelHtml += `</div>`;
@@ -315,7 +376,11 @@ export function renderQuizZone(container, unitData) {
         bossCard.style.transform = 'translateY(0) scale(1)';
       });
       bossCard.addEventListener('click', () => {
-        startQuiz(bossQuestions, `The Ultimate Test`, true);
+        const bQuestions = isExamClinic
+          ? [...examClinicPack].sort(() => 0.5 - Math.random()).slice(0, 15)
+          : bossQuestions;
+        const bTitle = isExamClinic ? 'Exam Clinic Grand Master' : 'The Ultimate Test';
+        startQuiz(bQuestions, bTitle, true);
       });
     }
   }
@@ -422,6 +487,15 @@ export function renderQuizZone(container, unitData) {
               updateLeitnerBox(q.id, false);
               saveProgress();
             }
+          }
+
+          if (q.explanation) {
+            const expDiv = document.createElement('div');
+            expDiv.className = 'quiz-explanation-box';
+            expDiv.style.cssText =
+              'margin-top: 15px; padding: 14px 18px; background: #f8fafc; border-left: 4px solid #8b5cf6; border-radius: 6px; font-size: 0.95rem; color: #1e293b; text-align: left; line-height: 1.5; box-shadow: 0 1px 3px rgba(0,0,0,0.05);';
+            expDiv.innerHTML = `<strong style="color: #6d28d9; display: block; margin-bottom: 4px; font-size: 0.95rem;"><i class="fa-solid fa-graduation-cap"></i> Historian Explanation:</strong><span>${q.explanation}</span>`;
+            uiContainer.querySelector('#quiz-feedback').appendChild(expDiv);
           }
 
           const nextBtn = document.createElement('button');
