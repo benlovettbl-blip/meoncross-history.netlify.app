@@ -182,7 +182,10 @@ if (targetUnit && allDirs.includes(targetUnit)) {
 allDirs.forEach((unitId) => {
   console.log(`Processing workbooks for unit: ${unitId}`);
   let dataPath = path.join(publicUnitsDir, unitId, 'data.js');
-  if (!fs.existsSync(dataPath) && unitId === 'weimar_nazi_germany') {
+  if (unitId === 'cme_new') {
+    const canonicalCme = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
+    if (fs.existsSync(canonicalCme)) dataPath = canonicalCme;
+  } else if (!fs.existsSync(dataPath) && unitId === 'weimar_nazi_germany') {
     dataPath = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
   }
   if (!fs.existsSync(dataPath)) return;
@@ -309,6 +312,15 @@ allDirs.forEach((unitId) => {
       image: wb.image,
       filter: (l) => {
         const prefix = wb.prefix || '';
+        if (unitId === 'cme_new') {
+          const normP = prefix.replace(/\s+/g, '');
+          const normT = (l.title || '').replace(/\s+/g, '');
+          return (
+            l.title.startsWith(prefix) ||
+            normT.startsWith(normP) ||
+            (l.id && l.id.startsWith(prefix))
+          );
+        }
         return l.title.startsWith(prefix) || (l.id && l.id.startsWith(prefix));
       },
     }));
@@ -1809,6 +1821,27 @@ allDirs.forEach((unitId) => {
           html += `</div>`;
         }
       }
+
+      // Render Exit Ticket for cme_new before GCSE Exam Practice
+      if (unitId === 'cme_new' && lesson.exit_ticket) {
+        const et = lesson.exit_ticket;
+        html += `<div class="exit-ticket-box" style="page-break-inside: avoid; margin-top: 25px; border-top: 2px solid #e2e8f0; padding-top: 15px;">`;
+        html += `<div style="background: #f8fafc; border: 2px solid #3b82f6; border-radius: 6px; padding: 12px; margin-bottom: 12px;">
+          <div style="font-weight: bold; color: #1e3a8a; font-size: 11pt; margin-bottom: 6px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
+            <span><i class="fa-solid fa-door-open"></i> ${et.title || 'Exit Ticket'}</span>
+            <span style="font-size: 8.5pt; background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 9999px; font-weight: 600;">${et.type_label || 'Closure Activity'}</span>
+          </div>
+          <p style="margin: 0 0 8px 0; font-size: 10pt; color: #1e293b; line-height: 1.4; font-weight: 500;">${formatText(et.prompt)}</p>
+          ${et.options && et.options.length > 0 ? `<div style="font-size: 9.5pt; color: #334155; margin-bottom: 8px; background: white; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px;">${et.options.map((o) => `<div style="margin-bottom: 4px;">• ${formatText(o)}</div>`).join('')}</div>` : ''}
+          ${et.guidance ? `<p style="margin: 0; font-size: 9pt; color: #64748b; font-style: italic;"><strong>Teacher Guidance:</strong> ${formatText(et.guidance)}</p>` : ''}
+        </div>`;
+        html += `<div style="font-size: 9.5pt; font-weight: bold; color: #475569; margin-bottom: 6px;">Pupil Response:</div>`;
+        for (let i = 0; i < 6; i++) {
+          html += `<div class="task-lines-large"></div>`;
+        }
+        html += `</div>`;
+      }
+
       // GCSE Task
       let hasExamTask =
         lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);

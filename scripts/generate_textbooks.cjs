@@ -139,6 +139,15 @@ allDirs.forEach((unitId) => {
       image: wb.image,
       filter: (l) => {
         const prefix = wb.prefix || '';
+        if (unitId === 'cme_new') {
+          const normP = prefix.replace(/\s+/g, '');
+          const normT = (l.title || '').replace(/\s+/g, '');
+          return (
+            l.title.startsWith(prefix) ||
+            normT.startsWith(normP) ||
+            (l.id && l.id.startsWith(prefix))
+          );
+        }
         return l.title.startsWith(prefix) || (l.id && l.id.startsWith(prefix));
       },
     }));
