@@ -103,6 +103,9 @@ export function initEventDelegation() {
       case 'open-debate-modal':
         if (window.openDebateModal) window.openDebateModal();
         break;
+      case 'open-task-whiteboard':
+        if (window.openTaskWhiteboard) window.openTaskWhiteboard();
+        break;
       case 'open-tour-guide-modal':
         if (window.openTourGuideModal)
           window.openTourGuideModal(parseInt(target.dataset.index, 10));
@@ -321,6 +324,24 @@ export function initEventDelegation() {
       case 'toggle-wb-answer':
         const ans = target.querySelector('.wb-answer');
         if (ans) ans.classList.toggle('revealed');
+        break;
+
+      case 'close-task-whiteboard':
+        const wbModal = document.getElementById('task-whiteboard-modal');
+        if (wbModal) wbModal.classList.remove('visible');
+        break;
+
+      case 'reveal-all-wb-answers':
+        const allWbAnswers = document.querySelectorAll(
+          '#whiteboard-questions-container .wb-answer',
+        );
+        const anyHidden = Array.from(allWbAnswers).some((a) => !a.classList.contains('revealed'));
+        allWbAnswers.forEach((a) => a.classList.toggle('revealed', anyHidden));
+        if (target) {
+          target.innerHTML = anyHidden
+            ? '<i class="fa-solid fa-eye-slash"></i> Hide All'
+            : '<i class="fa-solid fa-eye"></i> Reveal All';
+        }
         break;
 
       case 'close-milestone-overlay':

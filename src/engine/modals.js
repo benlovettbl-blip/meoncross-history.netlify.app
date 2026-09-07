@@ -71,8 +71,33 @@ export function openCurriculumModal() {
 }
 
 export function openTaskWhiteboard() {
-  const modal = document.getElementById('task-whiteboard-modal');
-  if (!modal) return;
+  let modal = document.getElementById('task-whiteboard-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'task-whiteboard-modal';
+    modal.innerHTML = `
+      <div class="whiteboard-header">
+        <div>
+          <h2 style="margin: 0; font-family: 'Playfair Display', serif; color: #0f172a; font-size: 1.8rem;">
+            <i class="fa-solid fa-person-chalkboard" style="color: #0284c7; margin-right: 10px;"></i> Task Whiteboard · Live Marking
+          </h2>
+          <p style="margin: 4px 0 0 0; color: #64748b; font-size: 0.95rem;">
+            Click or tap any question card to reveal the model answer for whole-class review.
+          </p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <button class="btn btn-secondary" data-action="reveal-all-wb-answers" style="padding: 8px 14px; font-size: 0.9rem; cursor: pointer;">
+            <i class="fa-solid fa-eye"></i> Reveal All
+          </button>
+          <button class="btn btn-secondary" data-action="close-task-whiteboard" style="padding: 8px 16px; font-size: 0.9rem; cursor: pointer;">
+            <i class="fa-solid fa-times"></i> Close
+          </button>
+        </div>
+      </div>
+      <div class="whiteboard-content" id="whiteboard-questions-container"></div>
+    `;
+    document.body.appendChild(modal);
+  }
 
   const container = document.getElementById('whiteboard-questions-container');
   container.innerHTML = '';
@@ -232,6 +257,8 @@ export function openTaskWhiteboard() {
   container.innerHTML = html;
   modal.classList.add('visible');
 }
+
+window.openTaskWhiteboard = openTaskWhiteboard;
 
 export function initGlossaryPopover() {
   if (!document.getElementById('global-glossary-popover')) {

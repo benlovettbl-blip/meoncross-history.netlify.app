@@ -290,6 +290,7 @@ export function renderLesson(lesson) {
       <div class="sticky-lesson-header">
           <h4 class="sticky-lesson-title">
             ${stickyHeaderText}
+            <span class="edition-badge" title="Curriculum Edition" style="display: inline-block; font-size: 0.72rem; font-weight: 600; vertical-align: middle; margin-left: 8px; padding: 2px 7px; border-radius: 10px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; letter-spacing: 0.5px;">Edition ${activeUnit.edition || '2026.1'}</span>
           </h4>
           <div class="sticky-lesson-actions">
           ${
@@ -299,6 +300,7 @@ export function renderLesson(lesson) {
             `
               : `
               <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-debate-modal"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
+              <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-task-whiteboard" title="Teacher Whiteboard / Live Marking"><i class="fa-solid fa-person-chalkboard" style="color: #0284c7;"></i> Whiteboard</button>
               <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'gcse_usa_1954_1975'}"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
             `
           }
@@ -2394,6 +2396,13 @@ export function renderLesson(lesson) {
 
     html += `</div>`;
   }
+
+  const activeUnitEdition = (activeUnit && activeUnit.edition) || '2026.1';
+  html += `
+    <div class="lesson-footer-meta" style="text-align: center; margin-top: 50px; padding: 16px; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid #e2e8f0; font-family: 'Inter', sans-serif;">
+      Meoncross History Hub &bull; Unit: ${unitId} &bull; Edition ${activeUnitEdition}
+    </div>
+  `;
 
   html += `</div>`; // End lesson-content wrapper
 

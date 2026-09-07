@@ -17,6 +17,7 @@ const water_and_sanitation = {
     },
   ],
   id: 'water_and_sanitation',
+  edition: '2026.1',
   title: 'KS3: Water and Sanitation Through Time',
   homepage_background: '/units/water_and_sanitation/assets/court_for_king_cholera.png',
   color: '#0288d1',
