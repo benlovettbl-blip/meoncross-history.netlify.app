@@ -1333,9 +1333,9 @@ lessonKeys.forEach((key, idx) => {
         cleanText += `\n\n> **🎓 ${step.scholarlyDepth.title || 'Scholarly Perspective'}:** ${step.scholarlyDepth.body}`;
       }
 
-      // Seamlessly integrate Eyewitness Testimony into step 0 or 1
+      // Seamlessly integrate Eyewitness Testimony into step 0
       if (sIdx === 0 && rawL.livedExperience) {
-        cleanText += `\n\n> 🎙️ **Eyewitness Testimony — ${rawL.livedExperience.witness}:** &ldquo;${rawL.livedExperience.quote}&rdquo;\n>\n> *Context: ${rawL.livedExperience.context}*\n>\n> 💬 **Reflective Question:** ${rawL.livedExperience.discussionQuestion}`;
+        cleanText += `\n\n> 🎙️ **Eyewitness Testimony — ${rawL.livedExperience.witness}:** &ldquo;${rawL.livedExperience.quote}&rdquo;<br><br><em>Context: ${rawL.livedExperience.context}</em><br><br>💬 <strong>Reflective Question:</strong> ${rawL.livedExperience.discussionQuestion}`;
       }
 
       // Link key individuals

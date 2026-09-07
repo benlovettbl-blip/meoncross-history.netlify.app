@@ -607,19 +607,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 1.1: What was the position of Black Americans in the early 1950s?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 1.1: What was the position of Black Americans in the early 1950s?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in What was the position of Black Americans in the early 1950s??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -640,15 +648,9 @@ export const usa = {
         instructions: 'Answer these questions in full sentences to activate prior knowledge.',
         items: [
           {
-            question: 'What was the 1896 Plessy v. Ferguson Supreme Court ruling?',
+            question: 'What was the constitutional significance of the 13th Amendment (1865)?',
             answer:
-              "It established the 'separate but equal' doctrine, making racial segregation legal across the Southern states.",
-          },
-          {
-            question:
-              'What is the constitutional difference between federal laws and Southern state laws?',
-            answer:
-              'The US Constitution is federal supreme law; state laws cannot violate constitutional rights guaranteed under the 14th Amendment.',
+              'It officially abolished slavery and involuntary servitude throughout the United States.',
           },
           {
             question: 'What was the purpose of the 14th Amendment to the US Constitution (1868)?',
@@ -656,29 +658,23 @@ export const usa = {
               'It guaranteed citizenship and equal protection under the law to all persons born or naturalized in the USA.',
           },
           {
-            question:
-              'What does the term disenfranchisement mean in 20th century American history?',
+            question: 'What was the constitutional guarantee of the 15th Amendment (1870)?',
             answer:
-              'Systematically depriving a group of citizens of their constitutional right to register and vote.',
+              'It prohibited federal and state governments from denying a citizen the right to vote based on race or color.',
           },
           {
-            question: 'What was the Ku Klux Klan (KKK)?',
+            question: 'What was the post-Civil War Reconstruction era in American history?',
             answer:
-              'A white supremacist terrorist organisation founded after the Civil War that used violence and murder to enforce white supremacy.',
+              'The period from 1865 to 1877 when the federal government attempted to reintegrate Southern states and protect Black civil rights.',
+          },
+          {
+            question:
+              'How did Black American military service in the Second World War affect attitudes to civil rights?',
+            answer:
+              'Over 1 million Black Americans served abroad in segregated units; returning veterans demanded full democratic equality at home (the Double V campaign).',
           },
         ],
       },
-      starters: [
-        {
-          title:
-            'Historical Enquiry: segregation and discrimination in the Southern states in the 1950s',
-          source: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
-          caption:
-            "A Jim Crow sign designating a segregated 'Colored Waiting Room' in a bus terminal in the Southern United States, circa 1950s.",
-          think_wonder:
-            'Observe: Observe the bold letters and the physical placement of the sign near public entrances. Think: Why did Southern states legislate separation down to waiting rooms, water fountains, and ticket windows? Wonder: What would be the emotional and economic cost of defying this sign as a Black traveler in the 1950s?',
-        },
-      ],
       vocab: [
         {
           term: 'Plessy v. Ferguson',
@@ -711,9 +707,9 @@ export const usa = {
           id: 'block_lesson_1_1_1',
           title: 'Southern Segregation, Discrimination & Voting Rights',
           theme_heading: 'Southern Segregation, Discrimination & Voting Rights',
-          text: "<p>In the early 1950s, Black Americans in the Southern states faced a rigid, legally enforced system of white supremacy:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Southern states enforced <em>de jure</em> segregation in all public facilities (schools, transit, parks). Under the 1896 <em>Plessy v. Ferguson</em> ruling, segregation was legal if facilities were 'separate but equal' (though Black facilities were always vastly inferior).</li>\n              <li><strong>Voter Disenfranchisement:</strong> Southern registrars prevented Black citizens from voting using poll taxes, arbitrary literacy tests (e.g. asking Black applicants to explain complex constitutional clauses or answer impossible questions like <em>\"How many bubbles are in a bar of soap?\"</em>), and threats of violence. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Daily Discrimination:</strong> Segregated bus layouts forced Black passengers to pay at the front, exit, and re-enter via the back door. Black workers faced the 'last hired, first fired' policy, keeping them in low-wage menial labor.</li>\n            </ul>\n\n> **📝 Context Focus: Jim Crow Seating** Be prepared to explain how legal segregation was physically enforced in daily transit—such as Black passengers standing so white riders could sit—which created a climate of constant humiliation.\n\n> **🎓 Scholarly Perspective: De Jure vs. De Facto:** While de jure (legal) segregation defined the South, historians note that Black Americans in the North faced de facto segregation. Although Northern Black citizens had the right to vote, they were restricted to overcrowded ghettos by informal housing discrimination (redlining) and faced severe employment bias, showing that discrimination was a national, rather than solely Southern, issue.",
+          text: "<p>In the early 1950s, Black Americans in the Southern states faced a rigid, legally enforced system of white supremacy:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Southern states enforced <em>de jure</em> segregation in all public facilities (schools, transit, parks). Under the 1896 <em>Plessy v. Ferguson</em> ruling, segregation was legal if facilities were 'separate but equal' (though Black facilities were always vastly inferior).</li>\n              <li><strong>Voter Disenfranchisement:</strong> Southern registrars prevented Black citizens from voting using poll taxes, arbitrary literacy tests (e.g. asking Black applicants to explain complex constitutional clauses or answer impossible questions like <em>\"How many bubbles are in a bar of soap?\"</em>), and threats of violence. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Daily Discrimination:</strong> Segregated bus layouts forced Black passengers to pay at the front, exit, and re-enter via the back door. Black workers faced the 'last hired, first fired' policy, keeping them in low-wage menial labor.</li>\n            </ul>\n\n> **📝 Context Focus: Jim Crow Seating** Be prepared to explain how legal segregation was physically enforced in daily transit—such as Black passengers standing so white riders could sit—which created a climate of constant humiliation.\n\n> **🎓 Scholarly Perspective: De Jure vs. De Facto:** While de jure (legal) segregation defined the South, historians note that Black Americans in the North faced de facto segregation. Although Northern Black citizens had the right to vote, they were restricted to overcrowded ghettos by informal housing discrimination (redlining) and faced severe employment bias, showing that discrimination was a national, rather than solely Southern, issue.\n\n> 🎙️ **Eyewitness Testimony — John Lewis:** &ldquo;I remember going into town and seeing the clean, beautiful water fountain for white people, and the dirty, rusted fountain for us. I remember the signs: WHITE and COLORED. It was a physical and psychological barrier that told us every day that we were less than human. When I asked my parents why, they said, 'That's the way it is. Don't get in the way.'&rdquo;<br><br><em>Context: Civil rights activist and later Congressman, writing in his memoir *Walking with the Wind: A Memoir of the Movement* (1998) about growing up in rural Troy, Alabama.</em><br><br>💬 <strong>Reflective Question:</strong> How does John Lewis's childhood experience illustrate the difference between the physical enforcement of segregation and its psychological impact on young Black Americans?",
           content:
-            "<p>In the early 1950s, Black Americans in the Southern states faced a rigid, legally enforced system of white supremacy:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Southern states enforced <em>de jure</em> segregation in all public facilities (schools, transit, parks). Under the 1896 <em>Plessy v. Ferguson</em> ruling, segregation was legal if facilities were 'separate but equal' (though Black facilities were always vastly inferior).</li>\n              <li><strong>Voter Disenfranchisement:</strong> Southern registrars prevented Black citizens from voting using poll taxes, arbitrary literacy tests (e.g. asking Black applicants to explain complex constitutional clauses or answer impossible questions like <em>\"How many bubbles are in a bar of soap?\"</em>), and threats of violence. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Daily Discrimination:</strong> Segregated bus layouts forced Black passengers to pay at the front, exit, and re-enter via the back door. Black workers faced the 'last hired, first fired' policy, keeping them in low-wage menial labor.</li>\n            </ul>\n\n> **📝 Context Focus: Jim Crow Seating** Be prepared to explain how legal segregation was physically enforced in daily transit—such as Black passengers standing so white riders could sit—which created a climate of constant humiliation.\n\n> **🎓 Scholarly Perspective: De Jure vs. De Facto:** While de jure (legal) segregation defined the South, historians note that Black Americans in the North faced de facto segregation. Although Northern Black citizens had the right to vote, they were restricted to overcrowded ghettos by informal housing discrimination (redlining) and faced severe employment bias, showing that discrimination was a national, rather than solely Southern, issue.",
+            "<p>In the early 1950s, Black Americans in the Southern states faced a rigid, legally enforced system of white supremacy:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Southern states enforced <em>de jure</em> segregation in all public facilities (schools, transit, parks). Under the 1896 <em>Plessy v. Ferguson</em> ruling, segregation was legal if facilities were 'separate but equal' (though Black facilities were always vastly inferior).</li>\n              <li><strong>Voter Disenfranchisement:</strong> Southern registrars prevented Black citizens from voting using poll taxes, arbitrary literacy tests (e.g. asking Black applicants to explain complex constitutional clauses or answer impossible questions like <em>\"How many bubbles are in a bar of soap?\"</em>), and threats of violence. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Daily Discrimination:</strong> Segregated bus layouts forced Black passengers to pay at the front, exit, and re-enter via the back door. Black workers faced the 'last hired, first fired' policy, keeping them in low-wage menial labor.</li>\n            </ul>\n\n> **📝 Context Focus: Jim Crow Seating** Be prepared to explain how legal segregation was physically enforced in daily transit—such as Black passengers standing so white riders could sit—which created a climate of constant humiliation.\n\n> **🎓 Scholarly Perspective: De Jure vs. De Facto:** While de jure (legal) segregation defined the South, historians note that Black Americans in the North faced de facto segregation. Although Northern Black citizens had the right to vote, they were restricted to overcrowded ghettos by informal housing discrimination (redlining) and faced severe employment bias, showing that discrimination was a national, rather than solely Southern, issue.\n\n> 🎙️ **Eyewitness Testimony — John Lewis:** &ldquo;I remember going into town and seeing the clean, beautiful water fountain for white people, and the dirty, rusted fountain for us. I remember the signs: WHITE and COLORED. It was a physical and psychological barrier that told us every day that we were less than human. When I asked my parents why, they said, 'That's the way it is. Don't get in the way.'&rdquo;<br><br><em>Context: Civil rights activist and later Congressman, writing in his memoir *Walking with the Wind: A Memoir of the Movement* (1998) about growing up in rural Troy, Alabama.</em><br><br>💬 <strong>Reflective Question:</strong> How does John Lewis's childhood experience illustrate the difference between the physical enforcement of segregation and its psychological impact on young Black Americans?",
           image: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
           image_alt:
             "A Jim Crow sign designating a segregated 'Colored Waiting Room' in a bus terminal in the Southern United States.",
@@ -770,65 +766,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: John Lewis',
-        witness: 'John Lewis',
-        context:
-          'Civil rights activist and later Congressman, writing in his memoir *Walking with the Wind: A Memoir of the Movement* (1998) about growing up in rural Troy, Alabama.',
-        quote:
-          "I remember going into town and seeing the clean, beautiful water fountain for white people, and the dirty, rusted fountain for us. I remember the signs: WHITE and COLORED. It was a physical and psychological barrier that told us every day that we were less than human. When I asked my parents why, they said, 'That's the way it is. Don't get in the way.'",
-        question:
-          "How does John Lewis's childhood experience illustrate the difference between the physical enforcement of segregation and its psychological impact on young Black Americans?",
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          'In the early 1950s, Black Americans in the Southern states lived under the oppressive system of Jim Crow',
-        sources: [
-          {
-            title:
-              'From an NAACP legal report written by Thurgood Marshall in 1953, detailing court actions against segregated public facilities.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/warren-court-1954.jpg',
-            content:
-              '"We are taking our cases directly to the federal courts, challenging the legal base of Jim Crow. Southern registrars and school boards claim state sovereignty shields them, but the Constitution guarantees equal protection. Through litigation, we are showing that separate facilities are never equal."',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'A photograph of a segregation sign over a terminal entrance, taken in the Southern United States in the early 1950s.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
-            caption:
-              'A typical segregation sign directing Black passengers to separate facilities at a Southern bus station.',
-            content:
-              "[A photograph of a wooden sign reading 'COLORED WAITING ROOM' hanging above an entranceway of a public bus terminal.]",
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the position of Black Americans in the Southern states in the early 1950s? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the position of Black Americans in the Southern states in the early 1950s? (8 marks)',
         source_a: {
           provenance:
-            'From an NAACP legal report written by Thurgood Marshall in 1953, detailing court actions against segregated public facilities.',
+            'Source A: From an NAACP legal report written by Thurgood Marshall in 1953, detailing court actions against segregated public facilities.',
           content:
             '"We are taking our cases directly to the federal courts, challenging the legal base of Jim Crow. Southern registrars and school boards claim state sovereignty shields them, but the Constitution guarantees equal protection. Through litigation, we are showing that separate facilities are never equal."',
         },
         source_b: {
           provenance:
-            'A photograph of a segregation sign over a terminal entrance, taken in the Southern United States in the early 1950s.',
+            'Source B: A photograph of a segregation sign over a terminal entrance, taken in the Southern United States in the early 1950s.',
           content:
             "[A photograph of a wooden sign reading 'COLORED WAITING ROOM' hanging above an entranceway of a public bus terminal.]",
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          "Source D is highly useful for demonstrating the legal litigation strategy of the NAACP. The content outlines Marshall's defense of the Constitution's equal protection clause to challenge the legal basis of Jim Crow. This content is highly useful because it is supported by my knowledge that [[the NAACP Legal Defense Fund, led by Thurgood Marshall, spent the early 1950s systematically challenging segregation in courts, winning key rulings like Sweatt v. Painter in 1950]], which confirms that their legal strategy successfully targeted segregation's constitutional framework. {{The provenance makes the source extremely useful because it is an internal report written in 1953 by Thurgood Marshall himself, providing a reliable, direct account of NAACP legal tactics and their legal confidence just before their major victories. However, it is limited because it represents a top-down legal perspective, failing to show the daily experiences of ordinary Black citizens on the ground.}}\n\nSource E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading \"COLORED WAITING ROOM\" hanging above a public entrance. This content's utility is supported by my knowledge that [[Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions]], which confirms that the sign is an accurate representation of how segregation was physically and legally enforced in Southern public spaces. {{The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of state-sanctioned segregation infrastructure. However, it is less useful because it only shows the sign itself, failing to document the personal experiences of the Black passengers who suffered under segregation or the active resistance against it.}}",
+          "Source A is highly useful for demonstrating the legal litigation strategy of the NAACP. The content outlines Marshall's defense of the Constitution's equal protection clause to challenge the legal basis of Jim Crow. This content is highly useful because it is supported by my knowledge that <strong>the NAACP Legal Defense Fund, led by Thurgood Marshall, spent the early 1950s systematically challenging segregation in courts, winning key rulings like Sweatt v. Painter in 1950</strong>, which confirms that their legal strategy successfully targeted segregation's constitutional framework. <em>The provenance makes the source extremely useful because it is an internal report written in 1953 by Thurgood Marshall himself, providing a reliable, direct account of NAACP legal tactics and their legal confidence just before their major victories. However, it is limited because it represents a top-down legal perspective, failing to show the daily experiences of ordinary Black citizens on the ground.</em>\n\nSource B is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading \"COLORED WAITING ROOM\" hanging above a public entrance. This content's utility is supported by my knowledge that <strong>Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions</strong>, which confirms that the sign is an accurate representation of how segregation was physically and legally enforced in Southern public spaces. <em>The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of state-sanctioned segregation infrastructure. However, it is less useful because it only shows the sign itself, failing to document the personal experiences of the Black passengers who suffered under segregation or the active resistance against it.</em>",
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Challenging Segregation',
@@ -945,19 +909,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 1.2: How did developments in education challenge segregation (1954–57)?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 1.2: How did developments in education challenge segregation (1954–57)?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in How did developments in education challenge segregation (1954–57)??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -991,27 +963,15 @@ export const usa = {
           },
           {
             question:
-              'Which 1954 Supreme Court case declared segregation in public schools unconstitutional?',
-            answer: 'Brown v. Board of Education of Topeka',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'What was the name given to the group of Black students who integrated Central High School in Arkansas in 1957?',
-            answer: 'The Little Rock Nine',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title:
-            'Historical Enquiry: the role of the Supreme Court in challenging school segregation',
-          source: '/units/usa/assets/sources/warren-court-1954.jpg',
-          caption:
-            'A formal group portrait of the members of the Warren Court, the Supreme Court of the United States, taken in Washington D.C., 1954.',
-          think_wonder:
-            'Observe: Observe the formal attire and serious expressions of the Supreme Court justices in the portrait. Think: Why did Chief Justice Earl Warren strive for a unanimous (9-0) decision in the Brown v. Board case? Wonder: How did Southern states weaponize legal delays and massive resistance against a ruling issued by this court?',
-        },
-      ],
       vocab: [
         {
           term: '1954',
@@ -1043,9 +1003,9 @@ export const usa = {
           id: 'block_lesson_1_2_1',
           title: 'The Brown v. Board of Education Ruling (1954)',
           theme_heading: 'The Brown v. Board of Education Ruling (1954)',
-          text: "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\n    <ul>\n      <li><strong>The Case:</strong> Young Linda Brown was forced to walk a dangerous journey across busy roads and a railway line to a segregated Black school several miles away, despite living near an all-white school. Supported by the NAACP, her father sued the Topeka school board.</li>\n      <li><strong>The Ruling:</strong> Led by Chief Justice [Key Individual: Earl Warren], the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>. Warren wrote that separate educational facilities are <em>'inherently unequal'</em>.</li>\n      <li><strong>Precedents & Clark Doll Experiments:</strong> NAACP lawyers, led by [Key Individual: Thurgood Marshall], used psychological studies showing that segregation gave Black children a sense of inferiority (the Clark doll experiments), successfully overturning the 1896 <em>Plessy v. Ferguson</em> separate but equal doctrine.</li>\n      <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist integration. In 1955, the Court issued <em>Brown II</em>, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\n    </ul>\n\n> **🎓 Scholarly Perspective: Warren's Unanimity Strategy:** Chief Justice [Key Individual: Earl Warren] spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public.",
+          text: "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\n    <ul>\n      <li><strong>The Case:</strong> Young Linda Brown was forced to walk a dangerous journey across busy roads and a railway line to a segregated Black school several miles away, despite living near an all-white school. Supported by the NAACP, her father sued the Topeka school board.</li>\n      <li><strong>The Ruling:</strong> Led by Chief Justice [Key Individual: Earl Warren], the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>. Warren wrote that separate educational facilities are <em>'inherently unequal'</em>.</li>\n      <li><strong>Precedents & Clark Doll Experiments:</strong> NAACP lawyers, led by [Key Individual: Thurgood Marshall], used psychological studies showing that segregation gave Black children a sense of inferiority (the Clark doll experiments), successfully overturning the 1896 <em>Plessy v. Ferguson</em> separate but equal doctrine.</li>\n      <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist integration. In 1955, the Court issued <em>Brown II</em>, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\n    </ul>\n\n> **🎓 Scholarly Perspective: Warren's Unanimity Strategy:** Chief Justice [Key Individual: Earl Warren] spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public.\n\n> 🎙️ **Eyewitness Testimony — [Key Individual: Elizabeth Eckford]:** &ldquo;I looked for a friendly face in the crowd... I saw an elderly lady and she seemed to have a kind face, but when I looked at her again she spat on me. They surged closer, shouting, 'Lynch her! Lynch her!' I went to the bus stop and sat down on the bench. I couldn't keep from crying. I just wanted to go home.&rdquo;<br><br><em>Context: One of the 'Little Rock Nine' students, recalling her attempt to enter Central High School in Arkansas on September 4, 1957.</em><br><br>💬 <strong>Reflective Question:</strong> [Key Individual: Elizabeth Eckford] was just 15 years old. Why do you think school desegregation provoked such intense personal anger from ordinary white citizens?",
           content:
-            "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\n    <ul>\n      <li><strong>The Case:</strong> Young Linda Brown was forced to walk a dangerous journey across busy roads and a railway line to a segregated Black school several miles away, despite living near an all-white school. Supported by the NAACP, her father sued the Topeka school board.</li>\n      <li><strong>The Ruling:</strong> Led by Chief Justice [Key Individual: Earl Warren], the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>. Warren wrote that separate educational facilities are <em>'inherently unequal'</em>.</li>\n      <li><strong>Precedents & Clark Doll Experiments:</strong> NAACP lawyers, led by [Key Individual: Thurgood Marshall], used psychological studies showing that segregation gave Black children a sense of inferiority (the Clark doll experiments), successfully overturning the 1896 <em>Plessy v. Ferguson</em> separate but equal doctrine.</li>\n      <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist integration. In 1955, the Court issued <em>Brown II</em>, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\n    </ul>\n\n> **🎓 Scholarly Perspective: Warren's Unanimity Strategy:** Chief Justice [Key Individual: Earl Warren] spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public.",
+            "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\n    <ul>\n      <li><strong>The Case:</strong> Young Linda Brown was forced to walk a dangerous journey across busy roads and a railway line to a segregated Black school several miles away, despite living near an all-white school. Supported by the NAACP, her father sued the Topeka school board.</li>\n      <li><strong>The Ruling:</strong> Led by Chief Justice [Key Individual: Earl Warren], the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>. Warren wrote that separate educational facilities are <em>'inherently unequal'</em>.</li>\n      <li><strong>Precedents & Clark Doll Experiments:</strong> NAACP lawyers, led by [Key Individual: Thurgood Marshall], used psychological studies showing that segregation gave Black children a sense of inferiority (the Clark doll experiments), successfully overturning the 1896 <em>Plessy v. Ferguson</em> separate but equal doctrine.</li>\n      <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist integration. In 1955, the Court issued <em>Brown II</em>, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\n    </ul>\n\n> **🎓 Scholarly Perspective: Warren's Unanimity Strategy:** Chief Justice [Key Individual: Earl Warren] spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public.\n\n> 🎙️ **Eyewitness Testimony — [Key Individual: Elizabeth Eckford]:** &ldquo;I looked for a friendly face in the crowd... I saw an elderly lady and she seemed to have a kind face, but when I looked at her again she spat on me. They surged closer, shouting, 'Lynch her! Lynch her!' I went to the bus stop and sat down on the bench. I couldn't keep from crying. I just wanted to go home.&rdquo;<br><br><em>Context: One of the 'Little Rock Nine' students, recalling her attempt to enter Central High School in Arkansas on September 4, 1957.</em><br><br>💬 <strong>Reflective Question:</strong> [Key Individual: Elizabeth Eckford] was just 15 years old. Why do you think school desegregation provoked such intense personal anger from ordinary white citizens?",
           image: '/units/usa/assets/sources/eisenhower-little-rock-speech.jpg',
           image_alt:
             'President Eisenhower addressing the nation on the constitutional necessity of enforcing federal court desegregation orders.',
@@ -1102,65 +1062,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Elizabeth Eckford',
-        witness: 'Elizabeth Eckford',
-        context:
-          "One of the 'Little Rock Nine' students, recalling her attempt to enter Central High School in Arkansas on September 4, 1957.",
-        quote:
-          "I looked for a friendly face in the crowd... I saw an elderly lady and she seemed to have a kind face, but when I looked at her again she spat on me. They surged closer, shouting, 'Lynch her! Lynch her!' I went to the bus stop and sat down on the bench. I couldn't keep from crying. I just wanted to go home.",
-        question:
-          'Elizabeth Eckford was just 15 years old. Why do you think school desegregation provoked such intense personal anger from ordinary white citizens?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          'The desegregation of public schools became the first major battleground of the civil rights movement',
-        sources: [
-          {
-            title:
-              'From a photograph of white protestors gathered outside Central High School in September 1957.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/little-rock-protest-1957.jpg',
-            content:
-              "[A photograph showing an angry white crowd of students and adults protesting. Some are holding signs reading 'Keep Central High Clean' and yelling as Black students arrive.]",
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/airborne-little-rock-patrol.jpg',
-            caption:
-              'Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students.',
-            content:
-              '[A photograph showing soldiers of the 101st Airborne Division in a military jeep guarding a station wagon as Black students get inside the vehicle, with another soldier walking on patrol.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the levels of opposition to integration at Little Rock Central High School in 1957? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the levels of opposition to integration at Little Rock Central High School in 1957? (8 marks)',
         source_a: {
           provenance:
-            'From a photograph of white protestors gathered outside Central High School in September 1957.',
+            'Source A: From a photograph of white protestors gathered outside Central High School in September 1957.',
           content:
             "[A photograph showing an angry white crowd of students and adults protesting. Some are holding signs reading 'Keep Central High Clean' and yelling as Black students arrive.]",
         },
         source_b: {
           provenance:
-            'From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.',
+            'Source B: From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.',
           content:
             '[A photograph showing soldiers of the 101st Airborne Division in a military jeep guarding a station wagon as Black students get inside the vehicle, with another soldier walking on patrol.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          'Source D is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an "angry white crowd" of students and adults protesting, with some carrying signs reading "Keep Central High Clean". This content is highly useful because it is supported by my contextual knowledge that [[when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school]], which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. {{The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.}}\n\nSource E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows "soldiers of the 101st Airborne Division in a military jeep guarding a station wagon" as Black students enter it. This content\'s usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.}}',
+          'Source A is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an "angry white crowd" of students and adults protesting, with some carrying signs reading "Keep Central High Clean". This content is highly useful because it is supported by my contextual knowledge that <strong>when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school</strong>, which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. <em>The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.</em>\n\nSource B is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows "soldiers of the 101st Airborne Division in a military jeep guarding a station wagon" as Black students enter it. This content\'s usefulness is supported by my knowledge that <strong>Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration</strong>, which explains why such heavy military presence was necessary to protect the students. <em>The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.</em>',
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Federal Intervention at Little Rock',
@@ -1274,19 +1202,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in How did the Montgomery Bus Boycott happen, and why did it succeed??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -1319,26 +1255,16 @@ export const usa = {
             answer: 'Governor Faubus deployed the National Guard to block...',
           },
           {
-            question: 'Whose arrest on 1 December 1955 sparked the Montgomery Bus Boycott?',
-            answer: 'Rosa Parks',
+            question:
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'Which young minister was chosen to lead the Montgomery Improvement Association (MIA) during the boycott?',
-            answer: 'Martin Luther King Jr.',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: 'Historical Enquiry: the level of opposition to school integration in Little Rock',
-          source: '/units/usa/assets/sources/little-rock-protest-1957.jpg',
-          caption:
-            'A protestor outside Central High School holding a sign opposing school integration, Little Rock, Arkansas, September 1957.',
-          think_wonder:
-            'Observe: Look at the text on the sign and the facial expressions of the protestors. Think: Who is the protestor blaming for school integration, and what does this tell us about Southern views of federal authority? Wonder: Why would local Southern parents view desegregated schools as a threat to their community?',
-        },
-      ],
       vocab: [
         {
           term: 'Rosa Parks',
@@ -1367,9 +1293,9 @@ export const usa = {
           id: 'block_lesson_1_3_1',
           title: 'The Arrest of Rosa Parks (1955)',
           theme_heading: 'The Arrest of Rosa Parks (1955)',
-          text: "<p>On 1 December 1955, [Key Individual: Rosa Parks], a respected seamstress and NAACP member, refused to stand to allow a white passenger to sit on a Montgomery bus:</p>\r\n        \r\n        </div>\r\n        <ul>\r\n          <li><strong>The Arrest & NAACP Role:</strong> Parks was not just a tired seamstress; she was a trained **NAACP secretary** who had attended the Highlander Folk School. Her arrest provided a deliberate and respectable test case.</li>\r\n          <li><strong>The Organization:</strong> Local Black leaders founded the Montgomery Improvement Association (MIA) to coordinate the bus boycott.</li>\r\n          <li><strong>MLK Chosen & Strict Non-Violence:</strong> A 26-year-old minister, [Key Individual: Martin Luther King] Jr., was elected president of the MIA, bringing powerful Christian non-violence rhetoric to the fore. King strictly promoted non-violent direct action, urging his followers not to retaliate even after white supremacists firebombed his own home.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Choice of Test Case:** Nine months before [Key Individual: Rosa Parks]' arrest, a 15-year-old Black girl named Claudette Colvin was arrested in Montgomery for the same offence. However, civil rights leaders chose not to use her case to challenge segregation. Colvin was young, pregnant, and from a poorer background, which leaders feared segregationists would use to assassinate her character. [Key Individual: Rosa Parks], an middle-class, respected NAACP activist, was deemed the perfect 'test case' to withstand intense media scrutiny.",
+          text: "<p>On 1 December 1955, [Key Individual: Rosa Parks], a respected seamstress and NAACP member, refused to stand to allow a white passenger to sit on a Montgomery bus:</p>\r\n        \r\n        </div>\r\n        <ul>\r\n          <li><strong>The Arrest & NAACP Role:</strong> Parks was not just a tired seamstress; she was a trained **NAACP secretary** who had attended the Highlander Folk School. Her arrest provided a deliberate and respectable test case.</li>\r\n          <li><strong>The Organization:</strong> Local Black leaders founded the Montgomery Improvement Association (MIA) to coordinate the bus boycott.</li>\r\n          <li><strong>MLK Chosen & Strict Non-Violence:</strong> A 26-year-old minister, [Key Individual: Martin Luther King] Jr., was elected president of the MIA, bringing powerful Christian non-violence rhetoric to the fore. King strictly promoted non-violent direct action, urging his followers not to retaliate even after white supremacists firebombed his own home.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Choice of Test Case:** Nine months before [Key Individual: Rosa Parks]' arrest, a 15-year-old Black girl named Claudette Colvin was arrested in Montgomery for the same offence. However, civil rights leaders chose not to use her case to challenge segregation. Colvin was young, pregnant, and from a poorer background, which leaders feared segregationists would use to assassinate her character. [Key Individual: Rosa Parks], an middle-class, respected NAACP activist, was deemed the perfect 'test case' to withstand intense media scrutiny.\n\n> 🎙️ **Eyewitness Testimony — Jo Ann Robinson:** &ldquo;I did not go to bed that night. I went to the college and called two of my students. We stayed up all night, typing the stencils and running off 35,000 leaflets. By 6:00 a.m. we had them divided into neat piles for distribution. The leaflets said: 'Don't ride the buses on Monday.' We were tired, but we knew this was the moment we had waited for.&rdquo;<br><br><em>Context: President of the Women's Political Council (WPC), recalling the night of [Key Individual: Rosa Parks]'s arrest in December 1955.</em><br><br>💬 <strong>Reflective Question:</strong> [Key Individual: Rosa Parks]'s arrest is famous, but Jo Ann Robinson's account shows the massive organization behind the scenes. How does this source challenge the idea that the boycott was just a spontaneous event?",
           content:
-            "<p>On 1 December 1955, [Key Individual: Rosa Parks], a respected seamstress and NAACP member, refused to stand to allow a white passenger to sit on a Montgomery bus:</p>\r\n        \r\n        </div>\r\n        <ul>\r\n          <li><strong>The Arrest & NAACP Role:</strong> Parks was not just a tired seamstress; she was a trained **NAACP secretary** who had attended the Highlander Folk School. Her arrest provided a deliberate and respectable test case.</li>\r\n          <li><strong>The Organization:</strong> Local Black leaders founded the Montgomery Improvement Association (MIA) to coordinate the bus boycott.</li>\r\n          <li><strong>MLK Chosen & Strict Non-Violence:</strong> A 26-year-old minister, [Key Individual: Martin Luther King] Jr., was elected president of the MIA, bringing powerful Christian non-violence rhetoric to the fore. King strictly promoted non-violent direct action, urging his followers not to retaliate even after white supremacists firebombed his own home.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Choice of Test Case:** Nine months before [Key Individual: Rosa Parks]' arrest, a 15-year-old Black girl named Claudette Colvin was arrested in Montgomery for the same offence. However, civil rights leaders chose not to use her case to challenge segregation. Colvin was young, pregnant, and from a poorer background, which leaders feared segregationists would use to assassinate her character. [Key Individual: Rosa Parks], an middle-class, respected NAACP activist, was deemed the perfect 'test case' to withstand intense media scrutiny.",
+            "<p>On 1 December 1955, [Key Individual: Rosa Parks], a respected seamstress and NAACP member, refused to stand to allow a white passenger to sit on a Montgomery bus:</p>\r\n        \r\n        </div>\r\n        <ul>\r\n          <li><strong>The Arrest & NAACP Role:</strong> Parks was not just a tired seamstress; she was a trained **NAACP secretary** who had attended the Highlander Folk School. Her arrest provided a deliberate and respectable test case.</li>\r\n          <li><strong>The Organization:</strong> Local Black leaders founded the Montgomery Improvement Association (MIA) to coordinate the bus boycott.</li>\r\n          <li><strong>MLK Chosen & Strict Non-Violence:</strong> A 26-year-old minister, [Key Individual: Martin Luther King] Jr., was elected president of the MIA, bringing powerful Christian non-violence rhetoric to the fore. King strictly promoted non-violent direct action, urging his followers not to retaliate even after white supremacists firebombed his own home.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Choice of Test Case:** Nine months before [Key Individual: Rosa Parks]' arrest, a 15-year-old Black girl named Claudette Colvin was arrested in Montgomery for the same offence. However, civil rights leaders chose not to use her case to challenge segregation. Colvin was young, pregnant, and from a poorer background, which leaders feared segregationists would use to assassinate her character. [Key Individual: Rosa Parks], an middle-class, respected NAACP activist, was deemed the perfect 'test case' to withstand intense media scrutiny.\n\n> 🎙️ **Eyewitness Testimony — Jo Ann Robinson:** &ldquo;I did not go to bed that night. I went to the college and called two of my students. We stayed up all night, typing the stencils and running off 35,000 leaflets. By 6:00 a.m. we had them divided into neat piles for distribution. The leaflets said: 'Don't ride the buses on Monday.' We were tired, but we knew this was the moment we had waited for.&rdquo;<br><br><em>Context: President of the Women's Political Council (WPC), recalling the night of [Key Individual: Rosa Parks]'s arrest in December 1955.</em><br><br>💬 <strong>Reflective Question:</strong> [Key Individual: Rosa Parks]'s arrest is famous, but Jo Ann Robinson's account shows the massive organization behind the scenes. How does this source challenge the idea that the boycott was just a spontaneous event?",
           image: '/units/usa/assets/sources/rosa-parks-fingerprint.jpg',
           image_alt:
             'Rosa Parks being fingerprinted by Montgomery police officers following her arrest for refusing to surrender her bus seat, December 1955.',
@@ -1421,64 +1347,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Jo Ann Robinson',
-        witness: 'Jo Ann Robinson',
-        context:
-          "President of the Women's Political Council (WPC), recalling the night of Rosa Parks's arrest in December 1955.",
-        quote:
-          "I did not go to bed that night. I went to the college and called two of my students. We stayed up all night, typing the stencils and running off 35,000 leaflets. By 6:00 a.m. we had them divided into neat piles for distribution. The leaflets said: 'Don't ride the buses on Monday.' We were tired, but we knew this was the moment we had waited for.",
-        question:
-          "Rosa Parks's arrest is famous, but Jo Ann Robinson's account shows the massive organization behind the scenes. How does this source challenge the idea that the boycott was just a spontaneous event?",
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          'The Montgomery Bus Boycott (1955–1956) was the first major grassroots test of non-violent resistance',
-        sources: [
-          {
-            title:
-              'A photograph of Martin Luther King Jr. addressing boycotters in a crowded church during the Montgomery Bus Boycott, late 1955.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-            content:
-              '[A photograph showing Martin Luther King Jr. speaking passionately from a pulpit. The church is completely packed with Black citizens sitting and standing, listening intently with expressions of unity.]',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'From a photograph showing Rosa Parks being fingerprinted by police in Montgomery, Alabama, February 1956.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/rosa-parks-fingerprint.jpg',
-            caption: 'Rosa Parks being fingerprinted after her arrest during the bus boycott.',
-            content:
-              '[A photograph showing Rosa Parks standing calmly while a police officer applies ink to her fingers for fingerprinting, representing the arrest of activists during the boycott.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the methods and leadership of the Montgomery Bus Boycott? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the methods and leadership of the Montgomery Bus Boycott? (8 marks)',
         source_a: {
           provenance:
-            'A photograph of Martin Luther King Jr. addressing boycotters in a crowded church during the Montgomery Bus Boycott, late 1955.',
+            'Source A: A photograph of Martin Luther King Jr. addressing boycotters in a crowded church during the Montgomery Bus Boycott, late 1955.',
           content:
             '[A photograph showing Martin Luther King Jr. speaking passionately from a pulpit. The church is completely packed with Black citizens sitting and standing, listening intently with expressions of unity.]',
         },
         source_b: {
           provenance:
-            'From a photograph showing Rosa Parks being fingerprinted by police in Montgomery, Alabama, February 1956.',
+            'Source B: From a photograph showing Rosa Parks being fingerprinted by police in Montgomery, Alabama, February 1956.',
           content:
             '[A photograph showing Rosa Parks standing calmly while a police officer applies ink to her fingers for fingerprinting, representing the arrest of activists during the boycott.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          'Source D is highly useful for showing the spiritual leadership and religious solidarity that sustained the boycott. The photograph shows Martin Luther King Jr. "speaking passionately from a pulpit" to a packed church of Black citizens. This content is highly useful because it is supported by my contextual knowledge that [[the Montgomery Improvement Association (MIA) held regular mass meetings in local churches to coordinate strategy, maintain non-violent discipline, and raise funds for the boycott]], which confirms that the source is an accurate representation of the central role the church played as the movement\'s organizational and spiritual hub. {{The provenance of late 1955 makes the source highly useful because it captures the central role of the Black church at the very beginning of the boycott. However, it is less useful because it focuses solely on Dr. King\'s charismatic leadership, omitting the crucial organizing work of figures like Jo Ann Robinson and the Women\'s Political Council.}}\n\nSource E is highly useful for showing the direct police criminalization of peaceful protestors and the individual courage of boycott leaders. The photograph depicts "Rosa Parks standing calmly" while a police officer in uniform applies ink to her fingers for fingerprinting. This content is highly useful because it is supported by my contextual knowledge that [[the local authorities in Montgomery attempted to break the boycott by indicting and arresting over 80 leaders, including Rosa Parks and MLK, under an old anti-conspiracy law in February 1956]], which confirms that the photograph is an accurate representation of the state\'s efforts to legally harass and intimidate civil rights activists. {{The provenance, taken on 22 February 1956 during the height of the Montgomery Bus Boycott, strengthens its utility because it captures a real-time record of state-level intimidation. However, it is slightly limited because it is a staged publicity photo taken for the press, failing to represent the daily grassroots efforts of thousands of ordinary boycotters who walked or carpooled.}}',
+          'Source A is highly useful for showing the spiritual leadership and religious solidarity that sustained the boycott. The photograph shows Martin Luther King Jr. "speaking passionately from a pulpit" to a packed church of Black citizens. This content is highly useful because it is supported by my contextual knowledge that <strong>the Montgomery Improvement Association (MIA) held regular mass meetings in local churches to coordinate strategy, maintain non-violent discipline, and raise funds for the boycott</strong>, which confirms that the source is an accurate representation of the central role the church played as the movement\'s organizational and spiritual hub. <em>The provenance of late 1955 makes the source highly useful because it captures the central role of the Black church at the very beginning of the boycott. However, it is less useful because it focuses solely on Dr. King\'s charismatic leadership, omitting the crucial organizing work of figures like Jo Ann Robinson and the Women\'s Political Council.</em>\n\nSource B is highly useful for showing the direct police criminalization of peaceful protestors and the individual courage of boycott leaders. The photograph depicts "Rosa Parks standing calmly" while a police officer in uniform applies ink to her fingers for fingerprinting. This content is highly useful because it is supported by my contextual knowledge that <strong>the local authorities in Montgomery attempted to break the boycott by indicting and arresting over 80 leaders, including Rosa Parks and MLK, under an old anti-conspiracy law in February 1956</strong>, which confirms that the photograph is an accurate representation of the state\'s efforts to legally harass and intimidate civil rights activists. <em>The provenance, taken on 22 February 1956 during the height of the Montgomery Bus Boycott, strengthens its utility because it captures a real-time record of state-level intimidation. However, it is slightly limited because it is a staged publicity photo taken for the press, failing to represent the daily grassroots efforts of thousands of ordinary boycotters who walked or carpooled.</em>',
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Non-Violent Economic Action',
@@ -1593,19 +1488,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 1.4: Why did white people in the South resist integration, and how did they do it?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 1.4: Why did white people in the South resist integration, and how did they do it?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in Why did white people in the South resist integration, and how did they do it??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -1641,26 +1544,15 @@ export const usa = {
           },
           {
             question:
-              'What document signed by over 100 Southern congressmen in 1956 urged defiance of school integration?',
-            answer: 'The Southern Manifesto',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'Which segregationist group formed in Mississippi in 1954 to apply economic intimidation against civil rights?',
-            answer: "White Citizens' Councils",
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: 'Historical Enquiry: the success of the Montgomery Bus Boycott',
-          source: '/units/usa/assets/sources/rosa-parks-bus-1956.jpg',
-          caption:
-            'A photograph of Rosa Parks riding in the front of a Montgomery bus in December 1956, after the Supreme Court segregation ban took effect.',
-          think_wonder:
-            "Observe: Look at Rosa Parks' position on the bus and the white passenger sitting behind her. Think: How does her calm, dignified demeanor in the photograph serve as a powerful political statement? Wonder: Why was this photograph widely distributed to national newspapers rather than kept private?",
-        },
-      ],
       vocab: [
         {
           term: 'The Southern Manifesto',
@@ -1690,9 +1582,9 @@ export const usa = {
           id: 'block_lesson_1_4_1',
           title: 'Political Resistance and the Southern Manifesto',
           theme_heading: 'Political Resistance and the Southern Manifesto',
-          text: "<p>Southern politicians used local laws and state institutions to block federal desegregation directives:</p>\r\n        <ul>\r\n          <li><strong>The Southern Manifesto (1956):</strong> Signed by over 100 Southern congressmen, it urged states to resist integration. Led by Virginia Senator Harry Byrd, it initiated a campaign of **'Massive Resistance'** to close integrated schools.</li>\r\n          <li><strong>Dixiecrats & Filibustering:</strong> Conservative Southern Democrats used filibusters, such as Senator **Strom Thurmond's record 24-hour-18-minute filibuster** against the 1957 Civil Rights Act, to delay reforms.</li>\r\n          <li><strong>State Nullification:</strong> Several Southern states passed laws declaring federal desegregation rulings 'null and void' within their borders.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Revival of Interposition:** To bypass federal integration orders, Southern politicians revived the pre-Civil War constitutional theory of 'interposition.' Champions of this theory, such as Senator James Eastland, argued that states had the right to 'interpose' themselves between federal authorities and their citizens to protect local laws from federal overreach. This intellectual framework justified the Southern Manifesto and state-level nullification efforts.",
+          text: "<p>Southern politicians used local laws and state institutions to block federal desegregation directives:</p>\r\n        <ul>\r\n          <li><strong>The Southern Manifesto (1956):</strong> Signed by over 100 Southern congressmen, it urged states to resist integration. Led by Virginia Senator Harry Byrd, it initiated a campaign of **'Massive Resistance'** to close integrated schools.</li>\r\n          <li><strong>Dixiecrats & Filibustering:</strong> Conservative Southern Democrats used filibusters, such as Senator **Strom Thurmond's record 24-hour-18-minute filibuster** against the 1957 Civil Rights Act, to delay reforms.</li>\r\n          <li><strong>State Nullification:</strong> Several Southern states passed laws declaring federal desegregation rulings 'null and void' within their borders.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Revival of Interposition:** To bypass federal integration orders, Southern politicians revived the pre-Civil War constitutional theory of 'interposition.' Champions of this theory, such as Senator James Eastland, argued that states had the right to 'interpose' themselves between federal authorities and their citizens to protect local laws from federal overreach. This intellectual framework justified the Southern Manifesto and state-level nullification efforts.\n\n> 🎙️ **Eyewitness Testimony — Mose Wright:** &ldquo;They came to my house at 2:00 in the morning. Bryant had a pistol in one hand and a flashlight in the other. He asked me if I had two boys from Chicago. I said yes. He told Emmett to get his clothes on. Emmett's aunt offered them money to leave him, but they told her to shut up. In court, I had to stand up, look at those white men, and point my finger at them. I said: 'There he is.' I knew the danger of pointing my finger at a white man in Mississippi, but I had to do it.&rdquo;<br><br><em>Context: Emmett Till's great-uncle, testifying at the trial of the killers in Mississippi (September 1955).</em><br><br>💬 <strong>Reflective Question:</strong> Why was Mose Wright's action in court—openly accusing and pointing at white men in Mississippi—considered a revolutionary act of bravery in 1955?",
           content:
-            "<p>Southern politicians used local laws and state institutions to block federal desegregation directives:</p>\r\n        <ul>\r\n          <li><strong>The Southern Manifesto (1956):</strong> Signed by over 100 Southern congressmen, it urged states to resist integration. Led by Virginia Senator Harry Byrd, it initiated a campaign of **'Massive Resistance'** to close integrated schools.</li>\r\n          <li><strong>Dixiecrats & Filibustering:</strong> Conservative Southern Democrats used filibusters, such as Senator **Strom Thurmond's record 24-hour-18-minute filibuster** against the 1957 Civil Rights Act, to delay reforms.</li>\r\n          <li><strong>State Nullification:</strong> Several Southern states passed laws declaring federal desegregation rulings 'null and void' within their borders.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Revival of Interposition:** To bypass federal integration orders, Southern politicians revived the pre-Civil War constitutional theory of 'interposition.' Champions of this theory, such as Senator James Eastland, argued that states had the right to 'interpose' themselves between federal authorities and their citizens to protect local laws from federal overreach. This intellectual framework justified the Southern Manifesto and state-level nullification efforts.",
+            "<p>Southern politicians used local laws and state institutions to block federal desegregation directives:</p>\r\n        <ul>\r\n          <li><strong>The Southern Manifesto (1956):</strong> Signed by over 100 Southern congressmen, it urged states to resist integration. Led by Virginia Senator Harry Byrd, it initiated a campaign of **'Massive Resistance'** to close integrated schools.</li>\r\n          <li><strong>Dixiecrats & Filibustering:</strong> Conservative Southern Democrats used filibusters, such as Senator **Strom Thurmond's record 24-hour-18-minute filibuster** against the 1957 Civil Rights Act, to delay reforms.</li>\r\n          <li><strong>State Nullification:</strong> Several Southern states passed laws declaring federal desegregation rulings 'null and void' within their borders.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Revival of Interposition:** To bypass federal integration orders, Southern politicians revived the pre-Civil War constitutional theory of 'interposition.' Champions of this theory, such as Senator James Eastland, argued that states had the right to 'interpose' themselves between federal authorities and their citizens to protect local laws from federal overreach. This intellectual framework justified the Southern Manifesto and state-level nullification efforts.\n\n> 🎙️ **Eyewitness Testimony — Mose Wright:** &ldquo;They came to my house at 2:00 in the morning. Bryant had a pistol in one hand and a flashlight in the other. He asked me if I had two boys from Chicago. I said yes. He told Emmett to get his clothes on. Emmett's aunt offered them money to leave him, but they told her to shut up. In court, I had to stand up, look at those white men, and point my finger at them. I said: 'There he is.' I knew the danger of pointing my finger at a white man in Mississippi, but I had to do it.&rdquo;<br><br><em>Context: Emmett Till's great-uncle, testifying at the trial of the killers in Mississippi (September 1955).</em><br><br>💬 <strong>Reflective Question:</strong> Why was Mose Wright's action in court—openly accusing and pointing at white men in Mississippi—considered a revolutionary act of bravery in 1955?",
           image: '/units/usa/assets/sources/southern-manifesto-signing.jpg',
           image_alt:
             "Southern Senators and Congressmen sign the 1956 'Southern Manifesto' pledging massive resistance to federal desegregation orders.",
@@ -1749,21 +1641,20 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Mose Wright',
-        witness: 'Mose Wright',
-        context:
-          "Emmett Till's great-uncle, testifying at the trial of the killers in Mississippi (September 1955).",
-        quote:
-          "They came to my house at 2:00 in the morning. Bryant had a pistol in one hand and a flashlight in the other. He asked me if I had two boys from Chicago. I said yes. He told Emmett to get his clothes on. Emmett's aunt offered them money to leave him, but they told her to shut up. In court, I had to stand up, look at those white men, and point my finger at them. I said: 'There he is.' I knew the danger of pointing my finger at a white man in Mississippi, but I had to do it.",
-        question:
-          "Why was Mose Wright's action in court—openly accusing and pointing at white men in Mississippi—considered a revolutionary act of bravery in 1955?",
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
+      primary_source: null,
       utility_starters: null,
-      extended: null,
+      extended: {
+        title: 'Edexcel GCSE Paper 3: 12-Mark Explanation Assessment',
+        question:
+          "Explain why there was widespread Southern white opposition to desegregation in the years 1954–57. (12 marks)\n\nYou may use the following in your answer:\n- The Ku Klux Klan (KKK)\n- The 'Southern Manifesto' (1956)\nYou must also use information of your own.",
+        hints: [
+          'Explain three distinct, fully developed causes using PEEL paragraphs (Point, Evidence, Explanation, Link).',
+          "Analyze political resistance (Southern Manifesto / Dixiecrats), economic coercion (White Citizens' Councils), and violent intimidation (KKK / murder of Emmett Till).",
+          'Ensure you directly explain WHY each factor motivated Southern white resistance to federal authority.',
+        ],
+        model:
+          "<h3>Model Answer (Level 4 — 12/12 marks):</h3>\n<p><strong>One major reason for widespread Southern white opposition to desegregation was organized political resistance led by Southern elected officials, epitomized by the 1956 'Southern Manifesto'.</strong> In 1956, 101 Southern congressmen and senators signed the manifesto, openly condemning the Supreme Court's <em>Brown v. Board of Education</em> decision as a 'clear abuse of judicial power' and pledging to use 'all lawful means' to resist integration. Southern state governments, led by 'Dixiecrats', embraced the strategy of 'Massive Resistance', passing state laws to cut funding from integrated schools and even shutting down public schools entirely (as Governor Faubus did in Little Rock during the 'Lost Year' of 1958–59). This political leadership legitimized popular defiance by framing segregation as a constitutional defense of 'states' rights' against federal tyranny, encouraging ordinary white citizens to disobey federal court orders.</p>\n<p><strong>A second crucial reason was the rise of middle-class economic coercion through White Citizens' Councils.</strong> Formed in Mississippi in 1954 following the <em>Brown</em> ruling, the White Citizens' Councils grew to over 250,000 members across the South, attracting doctors, lawyers, bankers, and business owners who branded themselves as 'respectable' segregationists. Rather than using overt physical violence, the Councils used devastating economic warfare against Black activists and integration supporters. Black parents who signed petitions to integrate local schools had their mortgages foreclosed, bank loans canceled, and employment terminated, while Black sharecroppers were evicted from white-owned land. This systematic economic terror made supporting desegregation financially ruinous for Black families, effectively paralyzing local integration efforts without needing open street violence.</p>\n<p><strong>Finally, extreme racial opposition was enforced through violent domestic terrorism and intimidation by the Ku Klux Klan (KKK).</strong> The <em>Brown</em> decision triggered a violent resurgence of the KKK across the Deep South, marked by cross burnings, firebombings of Black churches and homes, and brutal lynchings. The horrific murder of 14-year-old Emmett Till in Mississippi in August 1955 and the subsequent acquittal of his white murderers by an all-white jury demonstrated that white violence was protected by the Southern legal system. This unchecked brutality was designed to terrify Black communities into submission and demonstrate that any challenge to the racial hierarchy would carry fatal consequences. Therefore, Southern white opposition succeeded in delaying integration through a coordinated combination of political obstruction, economic ruin, and physical terror.</p>",
+      },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Southern White Resistance',
         author_context:
@@ -1869,19 +1760,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in How did peaceful protests (like sit-ins and Freedom Rides) force the government to act??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -1917,26 +1816,16 @@ export const usa = {
             answer: 'His open-casket funeral was significant because it showed the world...',
           },
           {
-            question: 'In which city did the famous 1960 lunch counter sit-ins begin?',
-            answer: 'Greensboro, North Carolina',
+            question:
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question: 'What does the abbreviation SNCC stand for?',
-            answer: 'Student Nonviolent Coordinating Committee',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title:
-            'Historical Enquiry: the methods used by Southern white opposition to resist integration',
-          source: '/units/usa/assets/sources/southern-manifesto-signing.jpg',
-          caption:
-            "Senator Strom Thurmond signing the 'Southern Manifesto' in 1956, surrounded by other Southern politicians.",
-          think_wonder:
-            "Observe: Observe the formal setting and the documents being signed by the Southern politicians. Think: Why did Southern politicians feel the need to document their opposition to desegregation in a formal 'Manifesto'? Wonder: How did this political declaration encourage segregationist groups like the Ku Klux Klan and White Citizens' Councils?",
-        },
-      ],
       vocab: [
         {
           term: 'Greensboro',
@@ -1966,9 +1855,9 @@ export const usa = {
           id: 'block_lesson_2_1_1',
           title: 'Greensboro Sit-ins & SNCC (1960)',
           theme_heading: 'Greensboro Sit-ins & SNCC (1960)',
-          text: "<p>On 1 February 1960, four Black college students staged a daring direct action sit-in at a 'whites-only' Woolworth's lunch counter in Greensboro, North Carolina:</p>\r\n        <ul>\r\n          <li><strong>The Greensboro Four:</strong> **Ezell Blair Jr., Franklin McCain, Joseph McNeil, and David Richmond** sat at the counter. When they were refused service, they remained seated peacefully until the shop closed.</li>\r\n          <li><strong>Rapid Growth & Boycotts:</strong> The next day, 27 more students joined them. The numbers grew rapidly, and by the fifth day, 300 students were taking part. They organised a massive economic boycott of local shops with segregated lunch counters, causing sales to drop drastically.</li>\r\n          <li><strong>Non-violent Discipline:</strong> Protesters faced violence and were pelted with food and drinks by white youths, but they strictly maintained non-violent discipline.</li>\r\n          <li><strong>Greensboro Success & Spread:</strong> The economic pressure worked, and Greensboro's lunch counters were successfully desegregated. The simple, effective tactic attracted huge media attention and quickly spread to other states, eventually involving over <strong>70,000</strong> people.</li>\r\n          <li><strong>SNCC & Ella Baker:</strong> The success highlighted the power of student-led protests, leading to the creation of the Student Nonviolent Coordinating Committee (SNCC) in April 1960 (guided by veteran organizer **Ella Baker**) to coordinate further direct action.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Economic Leverage of Sit-ins:** The Greensboro sit-ins succeeded because they directly targeted the profits of national retail chains. Woolworth's lost over $200,000 in sales (equivalent to nearly $2 million today) due to the protests and secondary boycotts by sympathizers in the North. This demonstrated that hitting segregationist businesses in their pockets was far more effective than moral persuasion alone.",
+          text: "<p>On 1 February 1960, four Black college students staged a daring direct action sit-in at a 'whites-only' Woolworth's lunch counter in Greensboro, North Carolina:</p>\r\n        <ul>\r\n          <li><strong>The Greensboro Four:</strong> **Ezell Blair Jr., Franklin McCain, Joseph McNeil, and David Richmond** sat at the counter. When they were refused service, they remained seated peacefully until the shop closed.</li>\r\n          <li><strong>Rapid Growth & Boycotts:</strong> The next day, 27 more students joined them. The numbers grew rapidly, and by the fifth day, 300 students were taking part. They organised a massive economic boycott of local shops with segregated lunch counters, causing sales to drop drastically.</li>\r\n          <li><strong>Non-violent Discipline:</strong> Protesters faced violence and were pelted with food and drinks by white youths, but they strictly maintained non-violent discipline.</li>\r\n          <li><strong>Greensboro Success & Spread:</strong> The economic pressure worked, and Greensboro's lunch counters were successfully desegregated. The simple, effective tactic attracted huge media attention and quickly spread to other states, eventually involving over <strong>70,000</strong> people.</li>\r\n          <li><strong>SNCC & Ella Baker:</strong> The success highlighted the power of student-led protests, leading to the creation of the Student Nonviolent Coordinating Committee (SNCC) in April 1960 (guided by veteran organizer **Ella Baker**) to coordinate further direct action.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Economic Leverage of Sit-ins:** The Greensboro sit-ins succeeded because they directly targeted the profits of national retail chains. Woolworth's lost over $200,000 in sales (equivalent to nearly $2 million today) due to the protests and secondary boycotts by sympathizers in the North. This demonstrated that hitting segregationist businesses in their pockets was far more effective than moral persuasion alone.\n\n> 🎙️ **Eyewitness Testimony — Franklin McCain:** &ldquo;The waitress told us, 'We don't serve you here.' We said, 'We'd like to be served.' I had this feeling of absolute liberation. I felt like I had finally stood up and claimed my manhood. I had been afraid before, but sitting on that stool, I felt ten feet tall. A white police officer came in, paced behind us, and shook his nightstick, but he didn't know what to do because we were just sitting there quietly, asking for a cup of coffee. That's when I knew we had won a moral victory.&rdquo;<br><br><em>Context: One of the 'Greensboro Four' student activists, recalling the sit-in on February 1, 1960.</em><br><br>💬 <strong>Reflective Question:</strong> How can sitting quietly at a lunch counter be a powerful form of protest? Why was the police officer unable to stop them?",
           content:
-            "<p>On 1 February 1960, four Black college students staged a daring direct action sit-in at a 'whites-only' Woolworth's lunch counter in Greensboro, North Carolina:</p>\r\n        <ul>\r\n          <li><strong>The Greensboro Four:</strong> **Ezell Blair Jr., Franklin McCain, Joseph McNeil, and David Richmond** sat at the counter. When they were refused service, they remained seated peacefully until the shop closed.</li>\r\n          <li><strong>Rapid Growth & Boycotts:</strong> The next day, 27 more students joined them. The numbers grew rapidly, and by the fifth day, 300 students were taking part. They organised a massive economic boycott of local shops with segregated lunch counters, causing sales to drop drastically.</li>\r\n          <li><strong>Non-violent Discipline:</strong> Protesters faced violence and were pelted with food and drinks by white youths, but they strictly maintained non-violent discipline.</li>\r\n          <li><strong>Greensboro Success & Spread:</strong> The economic pressure worked, and Greensboro's lunch counters were successfully desegregated. The simple, effective tactic attracted huge media attention and quickly spread to other states, eventually involving over <strong>70,000</strong> people.</li>\r\n          <li><strong>SNCC & Ella Baker:</strong> The success highlighted the power of student-led protests, leading to the creation of the Student Nonviolent Coordinating Committee (SNCC) in April 1960 (guided by veteran organizer **Ella Baker**) to coordinate further direct action.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Economic Leverage of Sit-ins:** The Greensboro sit-ins succeeded because they directly targeted the profits of national retail chains. Woolworth's lost over $200,000 in sales (equivalent to nearly $2 million today) due to the protests and secondary boycotts by sympathizers in the North. This demonstrated that hitting segregationist businesses in their pockets was far more effective than moral persuasion alone.",
+            "<p>On 1 February 1960, four Black college students staged a daring direct action sit-in at a 'whites-only' Woolworth's lunch counter in Greensboro, North Carolina:</p>\r\n        <ul>\r\n          <li><strong>The Greensboro Four:</strong> **Ezell Blair Jr., Franklin McCain, Joseph McNeil, and David Richmond** sat at the counter. When they were refused service, they remained seated peacefully until the shop closed.</li>\r\n          <li><strong>Rapid Growth & Boycotts:</strong> The next day, 27 more students joined them. The numbers grew rapidly, and by the fifth day, 300 students were taking part. They organised a massive economic boycott of local shops with segregated lunch counters, causing sales to drop drastically.</li>\r\n          <li><strong>Non-violent Discipline:</strong> Protesters faced violence and were pelted with food and drinks by white youths, but they strictly maintained non-violent discipline.</li>\r\n          <li><strong>Greensboro Success & Spread:</strong> The economic pressure worked, and Greensboro's lunch counters were successfully desegregated. The simple, effective tactic attracted huge media attention and quickly spread to other states, eventually involving over <strong>70,000</strong> people.</li>\r\n          <li><strong>SNCC & Ella Baker:</strong> The success highlighted the power of student-led protests, leading to the creation of the Student Nonviolent Coordinating Committee (SNCC) in April 1960 (guided by veteran organizer **Ella Baker**) to coordinate further direct action.</li>\r\n        </ul>\n\n> **🎓 Scholarly Perspective: The Economic Leverage of Sit-ins:** The Greensboro sit-ins succeeded because they directly targeted the profits of national retail chains. Woolworth's lost over $200,000 in sales (equivalent to nearly $2 million today) due to the protests and secondary boycotts by sympathizers in the North. This demonstrated that hitting segregationist businesses in their pockets was far more effective than moral persuasion alone.\n\n> 🎙️ **Eyewitness Testimony — Franklin McCain:** &ldquo;The waitress told us, 'We don't serve you here.' We said, 'We'd like to be served.' I had this feeling of absolute liberation. I felt like I had finally stood up and claimed my manhood. I had been afraid before, but sitting on that stool, I felt ten feet tall. A white police officer came in, paced behind us, and shook his nightstick, but he didn't know what to do because we were just sitting there quietly, asking for a cup of coffee. That's when I knew we had won a moral victory.&rdquo;<br><br><em>Context: One of the 'Greensboro Four' student activists, recalling the sit-in on February 1, 1960.</em><br><br>💬 <strong>Reflective Question:</strong> How can sitting quietly at a lunch counter be a powerful form of protest? Why was the police officer unable to stop them?",
           image: '/units/usa/assets/sources/greensboro-sit-in-counter.jpg',
           image_alt:
             "Black college students stage a non-violent sit-in at the segregated Woolworth's lunch counter in Greensboro, North Carolina, February 1960.",
@@ -2079,64 +1968,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Franklin McCain',
-        witness: 'Franklin McCain',
-        context:
-          "One of the 'Greensboro Four' student activists, recalling the sit-in on February 1, 1960.",
-        quote:
-          "The waitress told us, 'We don't serve you here.' We said, 'We'd like to be served.' I had this feeling of absolute liberation. I felt like I had finally stood up and claimed my manhood. I had been afraid before, but sitting on that stool, I felt ten feet tall. A white police officer came in, paced behind us, and shook his nightstick, but he didn't know what to do because we were just sitting there quietly, asking for a cup of coffee. That's when I knew we had won a moral victory.",
-        question:
-          'How can sitting quietly at a lunch counter be a powerful form of protest? Why was the police officer unable to stop them?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry: 'By 1960, a new generation of student activists accelerated the movement',
-        sources: [
-          {
-            title:
-              "A photograph of the preserved Greensboro Woolworth's lunch counter and stools on display as an historical exhibit at the Smithsonian National Museum of American History.",
-            type: 'visual',
-            source: '/units/usa/assets/sources/greensboro-sit-in-counter.jpg',
-            content:
-              "[A photograph of the empty, preserved section of the Greensboro Woolworth's lunch counter and four stools, displayed as an exhibit in a museum to commemorate the 1960 sit-in protests.]",
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'From a photograph showing James Meredith walking to class at the University of Mississippi, October 1962.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/james-meredith-walking.jpg',
-            caption:
-              "James Meredith under heavy armed escort during the integration of 'Ole Miss'.",
-            content:
-              '[A photograph of James Meredith walking down a university path. He is flanked by several tall, serious US Marshals wearing helmets and armbands. In the background, soldiers are visible guarding the building.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the tactics of direct action and the response of Southern white opposition? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the tactics of direct action and the response of Southern white opposition? (8 marks)',
         source_a: {
           provenance:
-            "A photograph of the preserved Greensboro Woolworth's lunch counter and stools on display as an historical exhibit at the Smithsonian National Museum of American History.",
+            "Source A: A photograph of the preserved Greensboro Woolworth's lunch counter and stools on display as an historical exhibit at the Smithsonian National Museum of American History.",
           content:
             "[A photograph of the empty, preserved section of the Greensboro Woolworth's lunch counter and four stools, displayed as an exhibit in a museum to commemorate the 1960 sit-in protests.]",
         },
         source_b: {
           provenance:
-            'From a photograph showing James Meredith walking to class at the University of Mississippi, October 1962.',
+            'Source B: From a photograph showing James Meredith walking to class at the University of Mississippi, October 1962.',
           content:
             '[A photograph of James Meredith walking down a university path. He is flanked by several tall, serious US Marshals wearing helmets and armbands. In the background, soldiers are visible guarding the building.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          'Source D is highly useful for showing the non-violent direct action tactics used by student activists to challenge retail segregation. The photograph shows the "empty, preserved section of the Greensboro Woolworth\'s lunch counter and four stools" on display inside the Smithsonian Museum. This content is highly useful because it is supported by my knowledge that [[the Greensboro sit-in of February 1960 at Woolworth\'s was a turning point that sparked sit-ins across the South, and this preserved counter stands as a significant material artifact representing that struggle]], which confirms that the preserved counter stands as a significant material artifact representing that struggle. {{The provenance, showing the counter preserved at the Smithsonian, makes the source highly useful as it demonstrates the national historical significance and public recognition of the sit-ins. However, it is limited because it shows an empty museum exhibit rather than the actual 1960 protest, failing to capture the student activists, the hostile white crowds, or the harassment they endured.}}\n\nSource E is highly useful for showing the extreme level of state resistance to university integration and the federal intervention needed to override it. The photograph depicts James Meredith walking "flanked by several tall, serious US Marshals" wearing helmets. This content\'s utility is supported by my knowledge that [[Governor Ross Barnett defied federal orders, prompting President Kennedy to send 30,000 troops and US Marshals to force the integration of the University of Mississippi in October 1962, sparking riots that killed two people]], which explains the military necessity of using armed guards to protect a single Black student. {{The provenance of October 1962 makes the source extremely useful because it visually documents the armed federal power needed to protect Black rights. However, it is less useful because it depicts a controlled walk, failing to capture the chaos and violence of the Ole Miss riot itself.}}',
+          'Source A is highly useful for showing the non-violent direct action tactics used by student activists to challenge retail segregation. The photograph shows the "empty, preserved section of the Greensboro Woolworth\'s lunch counter and four stools" on display inside the Smithsonian Museum. This content is highly useful because it is supported by my knowledge that <strong>the Greensboro sit-in of February 1960 at Woolworth\'s was a turning point that sparked sit-ins across the South, and this preserved counter stands as a significant material artifact representing that struggle</strong>, which confirms that the preserved counter stands as a significant material artifact representing that struggle. <em>The provenance, showing the counter preserved at the Smithsonian, makes the source highly useful as it demonstrates the national historical significance and public recognition of the sit-ins. However, it is limited because it shows an empty museum exhibit rather than the actual 1960 protest, failing to capture the student activists, the hostile white crowds, or the harassment they endured.</em>\n\nSource B is highly useful for showing the extreme level of state resistance to university integration and the federal intervention needed to override it. The photograph depicts James Meredith walking "flanked by several tall, serious US Marshals" wearing helmets. This content\'s utility is supported by my knowledge that <strong>Governor Ross Barnett defied federal orders, prompting President Kennedy to send 30,000 troops and US Marshals to force the integration of the University of Mississippi in October 1962, sparking riots that killed two people</strong>, which explains the military necessity of using armed guards to protect a single Black student. <em>The provenance of October 1962 makes the source extremely useful because it visually documents the armed federal power needed to protect Black rights. However, it is less useful because it depicts a controlled walk, failing to capture the chaos and violence of the Ole Miss riot itself.</em>',
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Direct Action Protests',
@@ -2252,19 +2110,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -2298,27 +2164,15 @@ export const usa = {
           },
           {
             question:
-              'Which Alabama city was the site of the 1963 civil rights campaign where police used dogs and fire hoses against children?',
-            answer: 'Birmingham, Alabama',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'Who was the segregationist Police Commissioner of Birmingham who ordered the brutal response to protesters?',
-            answer: "Eugene 'Bull' Connor",
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title:
-            'Historical Enquiry: the significance of student-led sit-in protests in challenging segregation',
-          source: '/units/usa/assets/sources/greensboro-sit-in-counter.jpg',
-          caption:
-            "The Greensboro Woolworth's lunch counter and stools, now preserved as an exhibit at the Smithsonian National Museum of American History.",
-          think_wonder:
-            "Observe: Observe the empty lunch counter and stools on display in the museum. Think: Why was this specific section of the Woolworth's lunch counter preserved and placed in a national museum? Wonder: How did this physical space become a focal point for the civil rights struggle in 1960?",
-        },
-      ],
       vocab: [
         {
           term: "Eugene 'Bull' Connor",
@@ -2347,9 +2201,9 @@ export const usa = {
           id: 'block_lesson_2_2_1',
           title: 'Events in Birmingham & March on Washington (1963)',
           theme_heading: 'Events in Birmingham & March on Washington (1963)',
-          text: "<p>In April 1963, the SCLC launched <strong>'Project C'</strong> (Confrontation) in Birmingham, knowing the hot-headed police chief, <strong>Eugene 'Bull' Connor</strong>, would overreact to peaceful protests:</p>\n        <ul>\n          <li><strong>The Birmingham Campaign:</strong> When MLK was jailed (writing his famous <em>'Letter from a Birmingham Jail'</em>), the movement controversially used children to march; Connor unleashed attack dogs and high-pressure fire hoses on the students.</li>\n          <li><strong>The March on Washington (28 August 1963):</strong> To capitalise on the resulting national outrage and pressure Congress to pass a civil rights bill, <strong>250,000</strong> people (including 75,000 white Americans) gathered for the March on Washington, demanding <strong>'Jobs and Freedom'</strong>. The peaceful, globally televised event was highlighted by [Key Individual: Martin Luther King] Jr.'s iconic <strong>'I have a dream'</strong> speech.</li>\n          <li><strong>So What?</strong> The horrifying violence in Birmingham forced the President to finally propose sweeping civil rights legislation, while the monumental scale of the Washington march demonstrated unstoppable, unified national support for equality.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: [Key Individual: Bull Connor] as a Strategic Target:** Civil rights historians point out that SCLC chose Birmingham precisely because they knew [Key Individual: Bull Connor] would react with public brutality. Without Connor's violent reaction, the campaign would not have captured national television coverage, proving that the media was a key target of the protests.",
+          text: "<p>In April 1963, the SCLC launched <strong>'Project C'</strong> (Confrontation) in Birmingham, knowing the hot-headed police chief, <strong>Eugene 'Bull' Connor</strong>, would overreact to peaceful protests:</p>\n        <ul>\n          <li><strong>The Birmingham Campaign:</strong> When MLK was jailed (writing his famous <em>'Letter from a Birmingham Jail'</em>), the movement controversially used children to march; Connor unleashed attack dogs and high-pressure fire hoses on the students.</li>\n          <li><strong>The March on Washington (28 August 1963):</strong> To capitalise on the resulting national outrage and pressure Congress to pass a civil rights bill, <strong>250,000</strong> people (including 75,000 white Americans) gathered for the March on Washington, demanding <strong>'Jobs and Freedom'</strong>. The peaceful, globally televised event was highlighted by [Key Individual: Martin Luther King] Jr.'s iconic <strong>'I have a dream'</strong> speech.</li>\n          <li><strong>So What?</strong> The horrifying violence in Birmingham forced the President to finally propose sweeping civil rights legislation, while the monumental scale of the Washington march demonstrated unstoppable, unified national support for equality.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: [Key Individual: Bull Connor] as a Strategic Target:** Civil rights historians point out that SCLC chose Birmingham precisely because they knew [Key Individual: Bull Connor] would react with public brutality. Without Connor's violent reaction, the campaign would not have captured national television coverage, proving that the media was a key target of the protests.\n\n> 🎙️ **Eyewitness Testimony — Sheyann Webb-Christburg:** &ldquo;All I could see was a sea of blue state troopers. Suddenly, they charged. I saw horses, and I heard people screaming. Tear gas filled the air, and it burned my eyes. People were being beaten with nightsticks, falling all around me. I turned and ran for my life. A young white minister, Hosea Williams, grabbed my hand and helped me run. I thought I was going to die. When I got home, I was shaking, but I told my mother, 'I'm still going to march until we get our freedom.'&rdquo;<br><br><em>Context: Recalling her experience as an 8-year-old participant in the 'Bloody Sunday' march in Selma, Alabama on March 7, 1965.</em><br><br>💬 <strong>Reflective Question:</strong> Given the extreme danger, why do you think civil rights leaders allowed children to march? How did the public reaction to this violence change federal policy?",
           content:
-            "<p>In April 1963, the SCLC launched <strong>'Project C'</strong> (Confrontation) in Birmingham, knowing the hot-headed police chief, <strong>Eugene 'Bull' Connor</strong>, would overreact to peaceful protests:</p>\n        <ul>\n          <li><strong>The Birmingham Campaign:</strong> When MLK was jailed (writing his famous <em>'Letter from a Birmingham Jail'</em>), the movement controversially used children to march; Connor unleashed attack dogs and high-pressure fire hoses on the students.</li>\n          <li><strong>The March on Washington (28 August 1963):</strong> To capitalise on the resulting national outrage and pressure Congress to pass a civil rights bill, <strong>250,000</strong> people (including 75,000 white Americans) gathered for the March on Washington, demanding <strong>'Jobs and Freedom'</strong>. The peaceful, globally televised event was highlighted by [Key Individual: Martin Luther King] Jr.'s iconic <strong>'I have a dream'</strong> speech.</li>\n          <li><strong>So What?</strong> The horrifying violence in Birmingham forced the President to finally propose sweeping civil rights legislation, while the monumental scale of the Washington march demonstrated unstoppable, unified national support for equality.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: [Key Individual: Bull Connor] as a Strategic Target:** Civil rights historians point out that SCLC chose Birmingham precisely because they knew [Key Individual: Bull Connor] would react with public brutality. Without Connor's violent reaction, the campaign would not have captured national television coverage, proving that the media was a key target of the protests.",
+            "<p>In April 1963, the SCLC launched <strong>'Project C'</strong> (Confrontation) in Birmingham, knowing the hot-headed police chief, <strong>Eugene 'Bull' Connor</strong>, would overreact to peaceful protests:</p>\n        <ul>\n          <li><strong>The Birmingham Campaign:</strong> When MLK was jailed (writing his famous <em>'Letter from a Birmingham Jail'</em>), the movement controversially used children to march; Connor unleashed attack dogs and high-pressure fire hoses on the students.</li>\n          <li><strong>The March on Washington (28 August 1963):</strong> To capitalise on the resulting national outrage and pressure Congress to pass a civil rights bill, <strong>250,000</strong> people (including 75,000 white Americans) gathered for the March on Washington, demanding <strong>'Jobs and Freedom'</strong>. The peaceful, globally televised event was highlighted by [Key Individual: Martin Luther King] Jr.'s iconic <strong>'I have a dream'</strong> speech.</li>\n          <li><strong>So What?</strong> The horrifying violence in Birmingham forced the President to finally propose sweeping civil rights legislation, while the monumental scale of the Washington march demonstrated unstoppable, unified national support for equality.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: [Key Individual: Bull Connor] as a Strategic Target:** Civil rights historians point out that SCLC chose Birmingham precisely because they knew [Key Individual: Bull Connor] would react with public brutality. Without Connor's violent reaction, the campaign would not have captured national television coverage, proving that the media was a key target of the protests.\n\n> 🎙️ **Eyewitness Testimony — Sheyann Webb-Christburg:** &ldquo;All I could see was a sea of blue state troopers. Suddenly, they charged. I saw horses, and I heard people screaming. Tear gas filled the air, and it burned my eyes. People were being beaten with nightsticks, falling all around me. I turned and ran for my life. A young white minister, Hosea Williams, grabbed my hand and helped me run. I thought I was going to die. When I got home, I was shaking, but I told my mother, 'I'm still going to march until we get our freedom.'&rdquo;<br><br><em>Context: Recalling her experience as an 8-year-old participant in the 'Bloody Sunday' march in Selma, Alabama on March 7, 1965.</em><br><br>💬 <strong>Reflective Question:</strong> Given the extreme danger, why do you think civil rights leaders allowed children to march? How did the public reaction to this violence change federal policy?",
           image: '/units/usa/assets/sources/march-on-washington-crowd.jpg',
           image_alt:
             'Over 250,000 civil rights demonstrators gather at the Lincoln Memorial during the historic March on Washington, August 1963.',
@@ -2433,65 +2287,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Sheyann Webb-Christburg',
-        witness: 'Sheyann Webb-Christburg',
-        context:
-          "Recalling her experience as an 8-year-old participant in the 'Bloody Sunday' march in Selma, Alabama on March 7, 1965.",
-        quote:
-          "All I could see was a sea of blue state troopers. Suddenly, they charged. I saw horses, and I heard people screaming. Tear gas filled the air, and it burned my eyes. People were being beaten with nightsticks, falling all around me. I turned and ran for my life. A young white minister, Hosea Williams, grabbed my hand and helped me run. I thought I was going to die. When I got home, I was shaking, but I told my mother, 'I'm still going to march until we get our freedom.'",
-        question:
-          'Given the extreme danger, why do you think civil rights leaders allowed children to march? How did the public reaction to this violence change federal policy?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          'In 1963 and 1965, the Southern Christian Leadership Conference (SCLC) targeted the most segregated cities',
-        sources: [
-          {
-            title:
-              'From a photograph of Martin Luther King Jr. addressing the March on Washington from the Lincoln Memorial, 28 August 1963.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/mlk-dream-speech-1963.jpg',
-            content:
-              '[A photograph taken from behind Dr. King, showing him looking out over a massive crowd of over 250,000 demonstrators surrounding the reflecting pool in Washington D.C. Large banners and US flags are visible.]',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'From a photograph showing President Johnson signing the Voting Rights Act into law, 6 August 1965.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/lbj-signing-voting-rights-1965.jpg',
-            caption:
-              'President Johnson presenting a pen to Martin Luther King Jr. at the signing of the Voting Rights Act.',
-            content:
-              '[A photograph showing President Lyndon B. Johnson sitting at a desk, handing a commemorative pen to Martin Luther King Jr. and other civil rights leaders who are gathered around him smiling.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the impact of non-violent campaigns on federal civil rights legislation in the 1960s? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the impact of non-violent campaigns on federal civil rights legislation in the 1960s? (8 marks)',
         source_a: {
           provenance:
-            'From a photograph of Martin Luther King Jr. addressing the March on Washington from the Lincoln Memorial, 28 August 1963.',
+            'Source A: From a photograph of Martin Luther King Jr. addressing the March on Washington from the Lincoln Memorial, 28 August 1963.',
           content:
             '[A photograph taken from behind Dr. King, showing him looking out over a massive crowd of over 250,000 demonstrators surrounding the reflecting pool in Washington D.C. Large banners and US flags are visible.]',
         },
         source_b: {
           provenance:
-            'From a photograph showing President Johnson signing the Voting Rights Act into law, 6 August 1965.',
+            'Source B: From a photograph showing President Johnson signing the Voting Rights Act into law, 6 August 1965.',
           content:
             '[A photograph showing President Lyndon B. Johnson sitting at a desk, handing a commemorative pen to Martin Luther King Jr. and other civil rights leaders who are gathered around him smiling.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          'Source D is highly useful for showing the massive scale, unity, and public impact of non-violent civil rights campaigns. The photograph depicts Martin Luther King Jr. "looking out over a massive crowd of over 250,000 demonstrators" surrounding the reflecting pool. This content\'s utility is supported by my knowledge that [[the March on Washington in August 1963 was a key moment of multi-racial unity that put pressure on the Kennedy administration to pass civil rights laws]], which confirms the effectiveness of non-violent mobilization in capturing national attention. {{The provenance of 28 August 1963 makes the source highly useful because it captures the peak of the movement\'s public mobilization. However, it is less useful because it highlights a single speech, obscuring the deep strategic disagreements between SNCC, SCLC, and other coalition members behind the scenes.}}\n\nSource E is highly useful for showing the political and legislative outcomes of grassroots non-violent campaigns. The photograph shows President Johnson "handing a commemorative pen to Martin Luther King Jr." and other leaders at the desk. This content is highly useful because it is supported by my knowledge that [[the legislative alliance between LBJ and civil rights leaders led to the passage of the Voting Rights Act of 1965, which banned literacy tests and authorized federal registrars]], which proves that grassroots moral pressure successfully forced federal reform. {{The provenance of 6 August 1965 makes the source extremely useful because it documents the formal signing of this landmark act. However, it is less useful because it portrays a harmonious political consensus, hiding the intense pressure, political caution, and FBI surveillance that Johnson\'s administration directed at civil rights leaders.}}',
+          'Source A is highly useful for showing the massive scale, unity, and public impact of non-violent civil rights campaigns. The photograph depicts Martin Luther King Jr. "looking out over a massive crowd of over 250,000 demonstrators" surrounding the reflecting pool. This content\'s utility is supported by my knowledge that <strong>the March on Washington in August 1963 was a key moment of multi-racial unity that put pressure on the Kennedy administration to pass civil rights laws</strong>, which confirms the effectiveness of non-violent mobilization in capturing national attention. <em>The provenance of 28 August 1963 makes the source highly useful because it captures the peak of the movement\'s public mobilization. However, it is less useful because it highlights a single speech, obscuring the deep strategic disagreements between SNCC, SCLC, and other coalition members behind the scenes.</em>\n\nSource B is highly useful for showing the political and legislative outcomes of grassroots non-violent campaigns. The photograph shows President Johnson "handing a commemorative pen to Martin Luther King Jr." and other leaders at the desk. This content is highly useful because it is supported by my knowledge that <strong>the legislative alliance between LBJ and civil rights leaders led to the passage of the Voting Rights Act of 1965, which banned literacy tests and authorized federal registrars</strong>, which proves that grassroots moral pressure successfully forced federal reform. <em>The provenance of 6 August 1965 makes the source extremely useful because it documents the formal signing of this landmark act. However, it is less useful because it portrays a harmonious political consensus, hiding the intense pressure, political caution, and FBI surveillance that Johnson\'s administration directed at civil rights leaders.</em>',
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: The Birmingham & Selma Campaigns',
@@ -2606,19 +2428,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in What was the Black Power movement, and how did it differ from non-violent protests??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -2652,26 +2482,15 @@ export const usa = {
           },
           {
             question:
-              'Who was the leading spokesperson for the Nation of Islam (commonly known as the Black Muslims) who advocated self-defense in the early 1960s?',
-            answer: 'Malcolm X',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'Which radical civil rights slogan was popularized by Stokely Carmichael during a 1966 march in Mississippi?',
-            answer: 'Black Power',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: 'Historical Enquiry: the policing of civil rights protests in Selma',
-          source: '/units/usa/assets/sources/selma-troopers-bridge.jpg',
-          caption:
-            "State troopers facing civil rights marchers on the Edmund Pettus Bridge in Selma, Alabama, during 'Bloody Sunday', 7 March 1965.",
-          think_wonder:
-            'Observe: Compare the protective gear of the state troopers with the clothing of the marchers. Think: Why did the troopers wait at the bridge rather than stopping the march at its starting point? Wonder: How did the televised broadcast of this stand-off shift public opinion in favor of the Voting Rights Act?',
-        },
-      ],
       vocab: [
         {
           term: 'Huey Newton and Bobby Seale',
@@ -2700,9 +2519,9 @@ export const usa = {
           id: 'block_lesson_2_3_1',
           title: 'Malcolm X and the Nation of Islam (1963–65)',
           theme_heading: 'Malcolm X and the Nation of Islam (1963–65)',
-          text: '<p>In the early 1960s, [Key Individual: Malcolm X] offered a powerful militant alternative to the mainstream civil rights movement:</p>\n        <ul>\n          <li><strong>Beliefs and Methods (Pre-1964):</strong> [Key Individual: Malcolm X] was a brilliant public speaker and the leading figure of the <strong>Nation of Islam (NOI)</strong>, led by Elijah Muhammad. Unlike MLK, Malcolm initially completely rejected integration. He believed that white society was inherently racist, that Black Americans needed to create their own separate nation, and that they should rely entirely on themselves.</li>\n          <li><strong>Self-Defence:</strong> He famously rejected MLK\'s non-violent methods, calling them the <em>"philosophy of the fool"</em>, and believed Black Americans had the right to defend themselves against white violence <strong>"by any means necessary"</strong>. He heavily criticised the 1963 March on Washington, calling it a <em>"farce"</em> run by white people.</li>\n          <li><strong>Change of Attitude:</strong> In 1964, [Key Individual: Malcolm X] left the Nation of Islam and went on a religious pilgrimage to Mecca. Seeing Muslims of all different races interacting as equals profoundly changed his views. He began to believe that racial integration might be possible and softened his stance, becoming more willing to work with white people and mainstream civil rights groups.</li>\n          <li><strong>Assassination (1965):</strong> The Nation of Islam was furious at his change in beliefs and departure. On 21 February 1965, [Key Individual: Malcolm X] was shot dead by three NOI members while giving a speech in New York. However, his earlier ideas of Black pride and self-defence lived on to inspire the next generation.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The North/South Divide:** Historians argue that [Key Individual: Malcolm X]\'s appeal was rooted in Northern cities. While MLK\'s Southern campaigns targeted legal segregation, Northern Blacks faced economic discrimination and police brutality that legal rulings did not fix. Malcolm\'s militant rhetoric resonated with urban youth who felt non-violence had failed them.',
+          text: "<p>In the early 1960s, [Key Individual: Malcolm X] offered a powerful militant alternative to the mainstream civil rights movement:</p>\n        <ul>\n          <li><strong>Beliefs and Methods (Pre-1964):</strong> [Key Individual: Malcolm X] was a brilliant public speaker and the leading figure of the <strong>Nation of Islam (NOI)</strong>, led by Elijah Muhammad. Unlike MLK, Malcolm initially completely rejected integration. He believed that white society was inherently racist, that Black Americans needed to create their own separate nation, and that they should rely entirely on themselves.</li>\n          <li><strong>Self-Defence:</strong> He famously rejected MLK's non-violent methods, calling them the <em>\"philosophy of the fool\"</em>, and believed Black Americans had the right to defend themselves against white violence <strong>\"by any means necessary\"</strong>. He heavily criticised the 1963 March on Washington, calling it a <em>\"farce\"</em> run by white people.</li>\n          <li><strong>Change of Attitude:</strong> In 1964, [Key Individual: Malcolm X] left the Nation of Islam and went on a religious pilgrimage to Mecca. Seeing Muslims of all different races interacting as equals profoundly changed his views. He began to believe that racial integration might be possible and softened his stance, becoming more willing to work with white people and mainstream civil rights groups.</li>\n          <li><strong>Assassination (1965):</strong> The Nation of Islam was furious at his change in beliefs and departure. On 21 February 1965, [Key Individual: Malcolm X] was shot dead by three NOI members while giving a speech in New York. However, his earlier ideas of Black pride and self-defence lived on to inspire the next generation.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The North/South Divide:** Historians argue that [Key Individual: Malcolm X]'s appeal was rooted in Northern cities. While MLK's Southern campaigns targeted legal segregation, Northern Blacks faced economic discrimination and police brutality that legal rulings did not fix. Malcolm's militant rhetoric resonated with urban youth who felt non-violence had failed them.\n\n> 🎙️ **Eyewitness Testimony — Kathleen Cleaver:** &ldquo;For years, we were taught to hate ourselves. We were told our hair was too nappy, our skin too dark, our culture non-existent. Black Power means we define ourselves. We are proud of our African heritage. We wear our hair in Afros, and we do not beg white people for integration. We demand control of our own communities—our schools, our housing, our police. And if the police attack us, we have a constitutional right to defend ourselves. That is not hate; that is self-preservation.&rdquo;<br><br><em>Context: Communications Secretary for the Black Panther Party, interviewed in 1968 about the philosophy of Black Power and self-defense.</em><br><br>💬 <strong>Reflective Question:</strong> How did the Black Power philosophy shift the goal of the movement from 'integration' to 'self-determination'? What were the potential benefits and risks of this new approach?",
           content:
-            '<p>In the early 1960s, [Key Individual: Malcolm X] offered a powerful militant alternative to the mainstream civil rights movement:</p>\n        <ul>\n          <li><strong>Beliefs and Methods (Pre-1964):</strong> [Key Individual: Malcolm X] was a brilliant public speaker and the leading figure of the <strong>Nation of Islam (NOI)</strong>, led by Elijah Muhammad. Unlike MLK, Malcolm initially completely rejected integration. He believed that white society was inherently racist, that Black Americans needed to create their own separate nation, and that they should rely entirely on themselves.</li>\n          <li><strong>Self-Defence:</strong> He famously rejected MLK\'s non-violent methods, calling them the <em>"philosophy of the fool"</em>, and believed Black Americans had the right to defend themselves against white violence <strong>"by any means necessary"</strong>. He heavily criticised the 1963 March on Washington, calling it a <em>"farce"</em> run by white people.</li>\n          <li><strong>Change of Attitude:</strong> In 1964, [Key Individual: Malcolm X] left the Nation of Islam and went on a religious pilgrimage to Mecca. Seeing Muslims of all different races interacting as equals profoundly changed his views. He began to believe that racial integration might be possible and softened his stance, becoming more willing to work with white people and mainstream civil rights groups.</li>\n          <li><strong>Assassination (1965):</strong> The Nation of Islam was furious at his change in beliefs and departure. On 21 February 1965, [Key Individual: Malcolm X] was shot dead by three NOI members while giving a speech in New York. However, his earlier ideas of Black pride and self-defence lived on to inspire the next generation.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The North/South Divide:** Historians argue that [Key Individual: Malcolm X]\'s appeal was rooted in Northern cities. While MLK\'s Southern campaigns targeted legal segregation, Northern Blacks faced economic discrimination and police brutality that legal rulings did not fix. Malcolm\'s militant rhetoric resonated with urban youth who felt non-violence had failed them.',
+            "<p>In the early 1960s, [Key Individual: Malcolm X] offered a powerful militant alternative to the mainstream civil rights movement:</p>\n        <ul>\n          <li><strong>Beliefs and Methods (Pre-1964):</strong> [Key Individual: Malcolm X] was a brilliant public speaker and the leading figure of the <strong>Nation of Islam (NOI)</strong>, led by Elijah Muhammad. Unlike MLK, Malcolm initially completely rejected integration. He believed that white society was inherently racist, that Black Americans needed to create their own separate nation, and that they should rely entirely on themselves.</li>\n          <li><strong>Self-Defence:</strong> He famously rejected MLK's non-violent methods, calling them the <em>\"philosophy of the fool\"</em>, and believed Black Americans had the right to defend themselves against white violence <strong>\"by any means necessary\"</strong>. He heavily criticised the 1963 March on Washington, calling it a <em>\"farce\"</em> run by white people.</li>\n          <li><strong>Change of Attitude:</strong> In 1964, [Key Individual: Malcolm X] left the Nation of Islam and went on a religious pilgrimage to Mecca. Seeing Muslims of all different races interacting as equals profoundly changed his views. He began to believe that racial integration might be possible and softened his stance, becoming more willing to work with white people and mainstream civil rights groups.</li>\n          <li><strong>Assassination (1965):</strong> The Nation of Islam was furious at his change in beliefs and departure. On 21 February 1965, [Key Individual: Malcolm X] was shot dead by three NOI members while giving a speech in New York. However, his earlier ideas of Black pride and self-defence lived on to inspire the next generation.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The North/South Divide:** Historians argue that [Key Individual: Malcolm X]'s appeal was rooted in Northern cities. While MLK's Southern campaigns targeted legal segregation, Northern Blacks faced economic discrimination and police brutality that legal rulings did not fix. Malcolm's militant rhetoric resonated with urban youth who felt non-violence had failed them.\n\n> 🎙️ **Eyewitness Testimony — Kathleen Cleaver:** &ldquo;For years, we were taught to hate ourselves. We were told our hair was too nappy, our skin too dark, our culture non-existent. Black Power means we define ourselves. We are proud of our African heritage. We wear our hair in Afros, and we do not beg white people for integration. We demand control of our own communities—our schools, our housing, our police. And if the police attack us, we have a constitutional right to defend ourselves. That is not hate; that is self-preservation.&rdquo;<br><br><em>Context: Communications Secretary for the Black Panther Party, interviewed in 1968 about the philosophy of Black Power and self-defense.</em><br><br>💬 <strong>Reflective Question:</strong> How did the Black Power philosophy shift the goal of the movement from 'integration' to 'self-determination'? What were the potential benefits and risks of this new approach?",
           image: '/units/usa/assets/sources/malcolm-x-speaking.jpg',
           image_alt:
             'Malcolm X delivers a speech condemning non-violence as defenseless in the face of white supremacist terror, 1964.',
@@ -2786,65 +2605,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Kathleen Cleaver',
-        witness: 'Kathleen Cleaver',
-        context:
-          'Communications Secretary for the Black Panther Party, interviewed in 1968 about the philosophy of Black Power and self-defense.',
-        quote:
-          'For years, we were taught to hate ourselves. We were told our hair was too nappy, our skin too dark, our culture non-existent. Black Power means we define ourselves. We are proud of our African heritage. We wear our hair in Afros, and we do not beg white people for integration. We demand control of our own communities—our schools, our housing, our police. And if the police attack us, we have a constitutional right to defend ourselves. That is not hate; that is self-preservation.',
-        question:
-          "How did the Black Power philosophy shift the goal of the movement from 'integration' to 'self-determination'? What were the potential benefits and risks of this new approach?",
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          'By the mid-1960s, frustration with slow progress and continued white violence led to a major ideological split',
-        sources: [
-          {
-            title:
-              'A photograph of Malcolm X holding a newspaper showing a headline about self-defense, 1964.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/malcolm-x-newspaper.jpg',
-            content:
-              "[A photograph of Malcolm X pointing to a newspaper headline that reads: 'Blacks Must Defend Themselves Against Klan Terror!'. He has a serious expression, emphasizing self-reliance.]",
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'From a photograph showing members of the Black Panther Party marching in uniform, Oakland, California, 1968.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/black-panthers-marching.jpg',
-            caption:
-              'The Black Panthers marching in Oakland, symbolizing disciplined militancy and Black Power.',
-            content:
-              '[A photograph showing a column of Black Panther members wearing black leather jackets, black berets, and sunglasses marching in formation. They are holding banners demanding community control and self-defense.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the shift from non-violence to Black nationalism and self-defense in the mid-1960s? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the shift from non-violence to Black nationalism and self-defense in the mid-1960s? (8 marks)',
         source_a: {
           provenance:
-            'A photograph of Malcolm X holding a newspaper showing a headline about self-defense, 1964.',
+            'Source A: A photograph of Malcolm X holding a newspaper showing a headline about self-defense, 1964.',
           content:
             "[A photograph of Malcolm X pointing to a newspaper headline that reads: 'Blacks Must Defend Themselves Against Klan Terror!'. He has a serious expression, emphasizing self-reliance.]",
         },
         source_b: {
           provenance:
-            'From a photograph showing members of the Black Panther Party marching in uniform, Oakland, California, 1968.',
+            'Source B: From a photograph showing members of the Black Panther Party marching in uniform, Oakland, California, 1968.',
           content:
             '[A photograph showing a column of Black Panther members wearing black leather jackets, black berets, and sunglasses marching in formation. They are holding banners demanding community control and self-defense.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          "Source D is highly useful for understanding the intellectual shift toward self-defense and militancy. The photograph shows Malcolm X pointing to a newspaper headline that reads \"Blacks Must Defend Themselves Against Klan Terror!\". This content is highly useful because it is supported by my knowledge that [[Malcolm X rejected SCLC's non-violent integration, advocating Black nationalism, economic self-reliance, and self-defense 'by any means necessary' to appeal to Northern urban Black communities]], which confirms that the source is an accurate representation of his teachings and his rejection of MLK's non-violent approach. {{The provenance of 1964 makes the source highly useful because it documents how Malcolm X used print media to directly challenge MLK's traditional non-violent approach. However, it is less useful because it is a posed, strategic media photograph designed to project militancy, rather than showing Malcolm's complex intellectual evolution.}}\n\nSource E is highly useful for showing how Black Power and militancy were institutionalized by student groups in the late 1960s. The photograph depicts a \"column of Black Panther members wearing black leather jackets, black berets\" marching in formation. This content's usefulness is supported by my knowledge that [[the Black Panther Party, founded in 1966 in Oakland, California, rejected integration and police brutality, calling for armed patrols and community self-reliance]], which validates the source as a visual representation of their militant discipline and rejection of pacifism. {{The provenance of 1968 makes the source extremely useful because it visually captures the disciplined, militaristic style of Black Power. However, it is less useful because it focuses on their armed, militant appearance, ignoring their extensive community welfare programs, such as free breakfasts for children.}}",
+          "Source A is highly useful for understanding the intellectual shift toward self-defense and militancy. The photograph shows Malcolm X pointing to a newspaper headline that reads \"Blacks Must Defend Themselves Against Klan Terror!\". This content is highly useful because it is supported by my knowledge that <strong>Malcolm X rejected SCLC's non-violent integration, advocating Black nationalism, economic self-reliance, and self-defense 'by any means necessary' to appeal to Northern urban Black communities</strong>, which confirms that the source is an accurate representation of his teachings and his rejection of MLK's non-violent approach. <em>The provenance of 1964 makes the source highly useful because it documents how Malcolm X used print media to directly challenge MLK's traditional non-violent approach. However, it is less useful because it is a posed, strategic media photograph designed to project militancy, rather than showing Malcolm's complex intellectual evolution.</em>\n\nSource B is highly useful for showing how Black Power and militancy were institutionalized by student groups in the late 1960s. The photograph depicts a \"column of Black Panther members wearing black leather jackets, black berets\" marching in formation. This content's usefulness is supported by my knowledge that <strong>the Black Panther Party, founded in 1966 in Oakland, California, rejected integration and police brutality, calling for armed patrols and community self-reliance</strong>, which validates the source as a visual representation of their militant discipline and rejection of pacifism. <em>The provenance of 1968 makes the source extremely useful because it visually captures the disciplined, militaristic style of Black Power. However, it is less useful because it focuses on their armed, militant appearance, ignoring their extensive community welfare programs, such as free breakfasts for children.</em>",
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Malcolm X & Black Power',
@@ -2958,19 +2745,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 2.4: Why did riots break out in American cities between 1965 and 1968?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 2.4: Why did riots break out in American cities between 1965 and 1968?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in Why did riots break out in American cities between 1965 and 1968??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -3004,26 +2799,15 @@ export const usa = {
           },
           {
             question:
-              'Which district of Los Angeles was the site of massive, destructive race riots in August 1965?',
-            answer: 'Watts',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'What was the name of the federal commission appointed by Johnson that blamed white racism for the 1960s riots?',
-            answer: 'Kerner Commission',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: 'Historical Enquiry: the beliefs and methods of Malcolm X',
-          source: '/units/usa/assets/sources/malcolm-x-speaking.jpg',
-          caption:
-            'A portrait photograph of Malcolm X taken during a press conference in New York City on March 12, 1964, the day he announced his break with the Nation of Islam.',
-          think_wonder:
-            "Observe: Observe Malcolm X's expression, his glasses, and his formal attire. Think: Why would Malcolm X present himself in a highly formal and professional manner when addressing the national media? Wonder: What was the atmosphere like at this press conference, given his dramatic break from the Nation of Islam?",
-        },
-      ],
       vocab: [
         {
           term: 'The Kerner Commission Report',
@@ -3052,9 +2836,9 @@ export const usa = {
           id: 'block_lesson_2_4_1',
           title: 'The Riots of 1965–67 and the Kerner Report (1968)',
           theme_heading: 'The Riots of 1965–67 and the Kerner Report (1968)',
-          text: '<p>Between 1964 and 1968, massive frustration in Northern and Western city ghettos erupted into over 300 major riots. The intense summer heat often made overcrowded ghetto conditions worse and tempers short:</p>\n        <ul>\n          <li><strong>Causes:</strong> The riots were primarily driven by high unemployment, terrible housing, and deep-seated poverty, but they were usually sparked by a specific incident of police brutality against a young Black man.</li>\n          <li><strong>Key Riots:</strong> In August 1965, a major riot broke out in the Watts neighborhood of Los Angeles after a Black motorist was violently arrested, resulting in <strong>34 deaths</strong> and millions of dollars in damage. In 1967, violence peaked with riots in over 125 cities, including devastating unrest in Detroit that left over <strong>40 dead</strong> and <strong>7,000 arrested</strong>.</li>\n          <li><strong>The Kerner Report (1968):</strong> President Johnson set up an enquiry to investigate the causes of these riots, led by Otto Kerner. The 1968 report shockingly concluded that the riots were caused by white racism, police bias, and poverty, famously stating that the USA was becoming <em>"two societies, one black, one white—separate and unequal"</em>.</li>\n          <li><strong>So What?</strong> The report recommended sweeping government spending to improve ghetto housing and employment, but these suggestions were largely ignored as the government diverted its funds to the escalating Vietnam War.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The McCone Commission Findings:** Following the 1965 Watts riots, the McCone Commission investigated the causes of the unrest. While conservative politicians blamed outside agitators and criminals, the commission concluded that the riots were a protest against systemic socioeconomic conditions: a lack of jobs, substandard housing, inadequate schooling, and widespread resentment of police brutality in the ghetto.',
+          text: "<p>Between 1964 and 1968, massive frustration in Northern and Western city ghettos erupted into over 300 major riots. The intense summer heat often made overcrowded ghetto conditions worse and tempers short:</p>\n        <ul>\n          <li><strong>Causes:</strong> The riots were primarily driven by high unemployment, terrible housing, and deep-seated poverty, but they were usually sparked by a specific incident of police brutality against a young Black man.</li>\n          <li><strong>Key Riots:</strong> In August 1965, a major riot broke out in the Watts neighborhood of Los Angeles after a Black motorist was violently arrested, resulting in <strong>34 deaths</strong> and millions of dollars in damage. In 1967, violence peaked with riots in over 125 cities, including devastating unrest in Detroit that left over <strong>40 dead</strong> and <strong>7,000 arrested</strong>.</li>\n          <li><strong>The Kerner Report (1968):</strong> President Johnson set up an enquiry to investigate the causes of these riots, led by Otto Kerner. The 1968 report shockingly concluded that the riots were caused by white racism, police bias, and poverty, famously stating that the USA was becoming <em>\"two societies, one black, one white—separate and unequal\"</em>.</li>\n          <li><strong>So What?</strong> The report recommended sweeping government spending to improve ghetto housing and employment, but these suggestions were largely ignored as the government diverted its funds to the escalating Vietnam War.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The McCone Commission Findings:** Following the 1965 Watts riots, the McCone Commission investigated the causes of the unrest. While conservative politicians blamed outside agitators and criminals, the commission concluded that the riots were a protest against systemic socioeconomic conditions: a lack of jobs, substandard housing, inadequate schooling, and widespread resentment of police brutality in the ghetto.\n\n> 🎙️ **Eyewitness Testimony — Watts Resident:** &ldquo;People call this a riot. We call it an uprising. We aren't just destroying things; we are crying out. We've got no jobs, the police beat us up every day, and we live in rundown tenements where the rent is sky-high. The civil rights laws in Washington didn't change anything for us in Watts. We still can't feed our kids. If we have to burn down these white-owned stores that cheat us every day just to make the country look at us, then that's what we will do.&rdquo;<br><br><em>Context: An anonymous resident of Watts, Los Angeles, interviewed during the Watts Uprising in August 1965.</em><br><br>💬 <strong>Reflective Question:</strong> According to this resident, why did federal laws like the Civil Rights Act fail to prevent urban riots? What does this tell us about the limits of legal rights when economic misery remains?",
           content:
-            '<p>Between 1964 and 1968, massive frustration in Northern and Western city ghettos erupted into over 300 major riots. The intense summer heat often made overcrowded ghetto conditions worse and tempers short:</p>\n        <ul>\n          <li><strong>Causes:</strong> The riots were primarily driven by high unemployment, terrible housing, and deep-seated poverty, but they were usually sparked by a specific incident of police brutality against a young Black man.</li>\n          <li><strong>Key Riots:</strong> In August 1965, a major riot broke out in the Watts neighborhood of Los Angeles after a Black motorist was violently arrested, resulting in <strong>34 deaths</strong> and millions of dollars in damage. In 1967, violence peaked with riots in over 125 cities, including devastating unrest in Detroit that left over <strong>40 dead</strong> and <strong>7,000 arrested</strong>.</li>\n          <li><strong>The Kerner Report (1968):</strong> President Johnson set up an enquiry to investigate the causes of these riots, led by Otto Kerner. The 1968 report shockingly concluded that the riots were caused by white racism, police bias, and poverty, famously stating that the USA was becoming <em>"two societies, one black, one white—separate and unequal"</em>.</li>\n          <li><strong>So What?</strong> The report recommended sweeping government spending to improve ghetto housing and employment, but these suggestions were largely ignored as the government diverted its funds to the escalating Vietnam War.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The McCone Commission Findings:** Following the 1965 Watts riots, the McCone Commission investigated the causes of the unrest. While conservative politicians blamed outside agitators and criminals, the commission concluded that the riots were a protest against systemic socioeconomic conditions: a lack of jobs, substandard housing, inadequate schooling, and widespread resentment of police brutality in the ghetto.',
+            "<p>Between 1964 and 1968, massive frustration in Northern and Western city ghettos erupted into over 300 major riots. The intense summer heat often made overcrowded ghetto conditions worse and tempers short:</p>\n        <ul>\n          <li><strong>Causes:</strong> The riots were primarily driven by high unemployment, terrible housing, and deep-seated poverty, but they were usually sparked by a specific incident of police brutality against a young Black man.</li>\n          <li><strong>Key Riots:</strong> In August 1965, a major riot broke out in the Watts neighborhood of Los Angeles after a Black motorist was violently arrested, resulting in <strong>34 deaths</strong> and millions of dollars in damage. In 1967, violence peaked with riots in over 125 cities, including devastating unrest in Detroit that left over <strong>40 dead</strong> and <strong>7,000 arrested</strong>.</li>\n          <li><strong>The Kerner Report (1968):</strong> President Johnson set up an enquiry to investigate the causes of these riots, led by Otto Kerner. The 1968 report shockingly concluded that the riots were caused by white racism, police bias, and poverty, famously stating that the USA was becoming <em>\"two societies, one black, one white—separate and unequal\"</em>.</li>\n          <li><strong>So What?</strong> The report recommended sweeping government spending to improve ghetto housing and employment, but these suggestions were largely ignored as the government diverted its funds to the escalating Vietnam War.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The McCone Commission Findings:** Following the 1965 Watts riots, the McCone Commission investigated the causes of the unrest. While conservative politicians blamed outside agitators and criminals, the commission concluded that the riots were a protest against systemic socioeconomic conditions: a lack of jobs, substandard housing, inadequate schooling, and widespread resentment of police brutality in the ghetto.\n\n> 🎙️ **Eyewitness Testimony — Watts Resident:** &ldquo;People call this a riot. We call it an uprising. We aren't just destroying things; we are crying out. We've got no jobs, the police beat us up every day, and we live in rundown tenements where the rent is sky-high. The civil rights laws in Washington didn't change anything for us in Watts. We still can't feed our kids. If we have to burn down these white-owned stores that cheat us every day just to make the country look at us, then that's what we will do.&rdquo;<br><br><em>Context: An anonymous resident of Watts, Los Angeles, interviewed during the Watts Uprising in August 1965.</em><br><br>💬 <strong>Reflective Question:</strong> According to this resident, why did federal laws like the Civil Rights Act fail to prevent urban riots? What does this tell us about the limits of legal rights when economic misery remains?",
           image: '/units/usa/assets/sources/detroit-riot-guard-1967.jpg',
           image_alt:
             'National Guardsmen patrol burning streets in Detroit during the July 1967 rebellion, which left 43 people dead.',
@@ -3160,21 +2944,20 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Watts Resident',
-        witness: 'Watts Resident',
-        context:
-          'An anonymous resident of Watts, Los Angeles, interviewed during the Watts Uprising in August 1965.',
-        quote:
-          "People call this a riot. We call it an uprising. We aren't just destroying things; we are crying out. We've got no jobs, the police beat us up every day, and we live in rundown tenements where the rent is sky-high. The civil rights laws in Washington didn't change anything for us in Watts. We still can't feed our kids. If we have to burn down these white-owned stores that cheat us every day just to make the country look at us, then that's what we will do.",
-        question:
-          'According to this resident, why did federal laws like the Civil Rights Act fail to prevent urban riots? What does this tell us about the limits of legal rights when economic misery remains?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
+      primary_source: null,
       utility_starters: null,
-      extended: null,
+      extended: {
+        title: 'Edexcel GCSE Paper 3: 12-Mark Explanation Assessment',
+        question:
+          'Explain why violent riots broke out in American cities between 1965 and 1968. (12 marks)\n\nYou may use the following in your answer:\n- The Watts Riot (1965)\n- The Kerner Commission Report (1968)\nYou must also use information of your own.',
+        hints: [
+          'Focus on systemic causes rather than just immediate triggers.',
+          'Contrast de jure segregation in the South with de facto economic and housing segregation in Northern ghettos.',
+          "Examine police brutality, economic despair, and the catalytic shock of Martin Luther King Jr.'s assassination.",
+        ],
+        model:
+          "<h3>Model Answer (Level 4 — 12/12 marks):</h3>\n<p><strong>One fundamental reason for the outbreak of urban riots between 1965 and 1968 was severe de facto segregation and economic deprivation in Northern and Western inner-city ghettos.</strong> While federal legislation like the 1964 Civil Rights Act outlawed legal (de jure) segregation in the South, it did nothing to address economic hardship in northern cities like Los Angeles, Chicago, and Detroit. Black Americans were trapped in substandard inner-city housing due to discriminatory practices like 'redlining' by banks. Unemployment among young Black urban men was up to three times higher than national averages, and ghetto schools were chronically underfunded. This created an atmosphere of deep despair, as Black urban populations felt excluded from the American economic dream despite civil rights victories in the South.</p>\n<p><strong>A second direct cause was pervasive police brutality and racial friction with virtually all-white police forces.</strong> In August 1965, the arrest of Marquette Frye in the Watts district of Los Angeles by California Highway Patrol sparked six days of rioting that left 34 dead and over 1,000 injured. Similar confrontations ignited riots in Newark and Detroit in 1967. The federal Kerner Commission Report, published in 1968 by President Johnson's National Advisory Commission on Civil Disorders, famously concluded that America was 'moving toward two societies, one black, one white—separate and unequal.' The Kerner Report explicitly identified aggressive, heavy-handed policing in Black neighborhoods as the immediate spark that detonated urban anger.</p>\n<p><strong>Finally, urban violence was catalyzed by rising frustration with the limitations of non-violence and the catastrophic shock of Martin Luther King Jr.'s assassination in April 1968.</strong> Many young urban Black Americans felt that the SCLC's non-violent Christian marches had failed to improve the material conditions of the northern working class, leading them to embrace more assertive Black Power rhetoric. When King was assassinated on April 4, 1968, in Memphis, the devastating news triggered violent uprisings in more than 100 American cities within hours, including Washington D.C., Chicago, and Baltimore. The assassination destroyed faith in peaceful reform among millions of Black Americans, unleashing a wave of grief and fury that required tens of thousands of federal troops to suppress. Therefore, systemic economic exclusion, discriminatory policing, and the death of non-violent leadership combined to ignite the urban rebellions of the late 1960s.</p>",
+      },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Urban Riots and the Kerner Report',
         author_context:
@@ -3279,19 +3062,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -3324,26 +3115,16 @@ export const usa = {
             answer: 'The Kerner Report described America as moving towards two societies...',
           },
           {
-            question: 'Who was the leader of the communist forces and President of North Vietnam?',
-            answer: 'Ho Chi Minh',
+            question:
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'Which 1954 battle saw the decisive defeat of the French army, ending French colonial rule in Indochina?',
-            answer: 'Dien Bien Phu',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: 'Historical Enquiry: the causes and scale of urban riots in the late 1960s',
-          source: '/units/usa/assets/sources/detroit-riot-guard-1967.jpg',
-          caption:
-            'A photograph showing a National Guard soldier patrolling a street during the Detroit Riot, July 1967.',
-          think_wonder:
-            "Observe: Observe the armed soldier in combat gear patrolling a residential street with smoke in the background. Think: Why did the US government deploy military forces (National Guard) to American cities in the late 1960s? Wonder: How did these violent urban riots affect the public support for the civil rights movement's non-violent goals?",
-        },
-      ],
       vocab: [
         {
           term: '17th Parallel',
@@ -3373,9 +3154,9 @@ export const usa = {
           id: 'block_lesson_3_1_1',
           title: 'The Battle of Dien Bien Phu and the End of French Rule (1954)',
           theme_heading: 'The Battle of Dien Bien Phu and the End of French Rule (1954)',
-          text: "<p>Prior to the mid-1950s, Vietnam was part of the French empire, but a nationalist and communist rebellion challenged colonial rule:</p>\n        <ul>\n          <li><strong>French Rule & Viet Minh:</strong> Before the Second World War, Vietnam was part of the French empire (known as French Indochina). After the war, a communist independence movement known as the <strong>Viet Minh</strong>, led by <strong>[Key Individual: Ho Chi Minh]</strong>, began fighting to kick the French out of the country.</li>\n          <li><strong>US Financial Backing:</strong> Because [Key Individual: Ho Chi Minh] was a communist, the USA viewed the Viet Minh as a major threat and paid for a massive portion (**80%**) of the French war effort to try and stop them.</li>\n          <li><strong>Dien Bien Phu (1954):</strong> Despite heavy US financial backing, the French army suffered a crushing and humiliating defeat by the Viet Minh at the Battle of <strong>Dien Bien Phu</strong> in May 1954. This disaster forced France to withdraw entirely, ending French colonial rule in Vietnam.</li>\n          <li><strong>The Geneva Accords (1954):</strong> Following the French defeat, a peace conference produced the Geneva Accords. This agreement temporarily divided Vietnam in half along the <strong>17th Parallel</strong>. The North was controlled by the communist [Key Individual: Ho Chi Minh], while the South was ruled by a non-communist, US-backed leader named <strong>[Key Individual: Ngo Dinh Diem]</strong>.</li>\n          <li><strong>Elections Refused:</strong> The agreement promised that nationwide elections would be held in 1956 to reunite the country, but the USA and Diem refused to hold them, knowing [Key Individual: Ho Chi Minh] would easily win.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: NSC-68 and the Roots of Intervention:** The Domino Theory was rooted in National Security Council Report 68 (NSC-68), a classified 1950 policy paper. NSC-68 argued that the Soviet Union was engaged in a global, monolithic conspiracy for world domination. This framework led US policymakers to view local anti-colonial struggles, like [Key Individual: Ho Chi Minh]'s nationalist movement against the French, as Soviet-directed aggression rather than local struggles for independence.",
+          text: "<p>Prior to the mid-1950s, Vietnam was part of the French empire, but a nationalist and communist rebellion challenged colonial rule:</p>\n        <ul>\n          <li><strong>French Rule & Viet Minh:</strong> Before the Second World War, Vietnam was part of the French empire (known as French Indochina). After the war, a communist independence movement known as the <strong>Viet Minh</strong>, led by <strong>[Key Individual: Ho Chi Minh]</strong>, began fighting to kick the French out of the country.</li>\n          <li><strong>US Financial Backing:</strong> Because [Key Individual: Ho Chi Minh] was a communist, the USA viewed the Viet Minh as a major threat and paid for a massive portion (**80%**) of the French war effort to try and stop them.</li>\n          <li><strong>Dien Bien Phu (1954):</strong> Despite heavy US financial backing, the French army suffered a crushing and humiliating defeat by the Viet Minh at the Battle of <strong>Dien Bien Phu</strong> in May 1954. This disaster forced France to withdraw entirely, ending French colonial rule in Vietnam.</li>\n          <li><strong>The Geneva Accords (1954):</strong> Following the French defeat, a peace conference produced the Geneva Accords. This agreement temporarily divided Vietnam in half along the <strong>17th Parallel</strong>. The North was controlled by the communist [Key Individual: Ho Chi Minh], while the South was ruled by a non-communist, US-backed leader named <strong>[Key Individual: Ngo Dinh Diem]</strong>.</li>\n          <li><strong>Elections Refused:</strong> The agreement promised that nationwide elections would be held in 1956 to reunite the country, but the USA and Diem refused to hold them, knowing [Key Individual: Ho Chi Minh] would easily win.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: NSC-68 and the Roots of Intervention:** The Domino Theory was rooted in National Security Council Report 68 (NSC-68), a classified 1950 policy paper. NSC-68 argued that the Soviet Union was engaged in a global, monolithic conspiracy for world domination. This framework led US policymakers to view local anti-colonial struggles, like [Key Individual: Ho Chi Minh]'s nationalist movement against the French, as Soviet-directed aggression rather than local struggles for independence.\n\n> 🎙️ **Eyewitness Testimony — Thich Thien Hao:** &ldquo;I watched as brother Quang Duc sat in the lotus position in the middle of the street. Another monk poured gasoline over him. He struck a match and was instantly enveloped in flames. He did not cry out, nor did he move a muscle. The air was thick with the smell of burning flesh, and the crowd around him began to weep and bow down. He burned for ten minutes before falling. He did this so the world would see the unbearable oppression of the Diem regime against the Buddhist majority.&rdquo;<br><br><em>Context: A Buddhist monk and eyewitness to the self-immolation of Thich Quang Duc in Saigon on June 11, 1963.</em><br><br>💬 <strong>Reflective Question:</strong> What does this extreme act of protest reveal about the intensity of Buddhist opposition to Diem? How did this impact US support for Diem?",
           content:
-            "<p>Prior to the mid-1950s, Vietnam was part of the French empire, but a nationalist and communist rebellion challenged colonial rule:</p>\n        <ul>\n          <li><strong>French Rule & Viet Minh:</strong> Before the Second World War, Vietnam was part of the French empire (known as French Indochina). After the war, a communist independence movement known as the <strong>Viet Minh</strong>, led by <strong>[Key Individual: Ho Chi Minh]</strong>, began fighting to kick the French out of the country.</li>\n          <li><strong>US Financial Backing:</strong> Because [Key Individual: Ho Chi Minh] was a communist, the USA viewed the Viet Minh as a major threat and paid for a massive portion (**80%**) of the French war effort to try and stop them.</li>\n          <li><strong>Dien Bien Phu (1954):</strong> Despite heavy US financial backing, the French army suffered a crushing and humiliating defeat by the Viet Minh at the Battle of <strong>Dien Bien Phu</strong> in May 1954. This disaster forced France to withdraw entirely, ending French colonial rule in Vietnam.</li>\n          <li><strong>The Geneva Accords (1954):</strong> Following the French defeat, a peace conference produced the Geneva Accords. This agreement temporarily divided Vietnam in half along the <strong>17th Parallel</strong>. The North was controlled by the communist [Key Individual: Ho Chi Minh], while the South was ruled by a non-communist, US-backed leader named <strong>[Key Individual: Ngo Dinh Diem]</strong>.</li>\n          <li><strong>Elections Refused:</strong> The agreement promised that nationwide elections would be held in 1956 to reunite the country, but the USA and Diem refused to hold them, knowing [Key Individual: Ho Chi Minh] would easily win.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: NSC-68 and the Roots of Intervention:** The Domino Theory was rooted in National Security Council Report 68 (NSC-68), a classified 1950 policy paper. NSC-68 argued that the Soviet Union was engaged in a global, monolithic conspiracy for world domination. This framework led US policymakers to view local anti-colonial struggles, like [Key Individual: Ho Chi Minh]'s nationalist movement against the French, as Soviet-directed aggression rather than local struggles for independence.",
+            "<p>Prior to the mid-1950s, Vietnam was part of the French empire, but a nationalist and communist rebellion challenged colonial rule:</p>\n        <ul>\n          <li><strong>French Rule & Viet Minh:</strong> Before the Second World War, Vietnam was part of the French empire (known as French Indochina). After the war, a communist independence movement known as the <strong>Viet Minh</strong>, led by <strong>[Key Individual: Ho Chi Minh]</strong>, began fighting to kick the French out of the country.</li>\n          <li><strong>US Financial Backing:</strong> Because [Key Individual: Ho Chi Minh] was a communist, the USA viewed the Viet Minh as a major threat and paid for a massive portion (**80%**) of the French war effort to try and stop them.</li>\n          <li><strong>Dien Bien Phu (1954):</strong> Despite heavy US financial backing, the French army suffered a crushing and humiliating defeat by the Viet Minh at the Battle of <strong>Dien Bien Phu</strong> in May 1954. This disaster forced France to withdraw entirely, ending French colonial rule in Vietnam.</li>\n          <li><strong>The Geneva Accords (1954):</strong> Following the French defeat, a peace conference produced the Geneva Accords. This agreement temporarily divided Vietnam in half along the <strong>17th Parallel</strong>. The North was controlled by the communist [Key Individual: Ho Chi Minh], while the South was ruled by a non-communist, US-backed leader named <strong>[Key Individual: Ngo Dinh Diem]</strong>.</li>\n          <li><strong>Elections Refused:</strong> The agreement promised that nationwide elections would be held in 1956 to reunite the country, but the USA and Diem refused to hold them, knowing [Key Individual: Ho Chi Minh] would easily win.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: NSC-68 and the Roots of Intervention:** The Domino Theory was rooted in National Security Council Report 68 (NSC-68), a classified 1950 policy paper. NSC-68 argued that the Soviet Union was engaged in a global, monolithic conspiracy for world domination. This framework led US policymakers to view local anti-colonial struggles, like [Key Individual: Ho Chi Minh]'s nationalist movement against the French, as Soviet-directed aggression rather than local struggles for independence.\n\n> 🎙️ **Eyewitness Testimony — Thich Thien Hao:** &ldquo;I watched as brother Quang Duc sat in the lotus position in the middle of the street. Another monk poured gasoline over him. He struck a match and was instantly enveloped in flames. He did not cry out, nor did he move a muscle. The air was thick with the smell of burning flesh, and the crowd around him began to weep and bow down. He burned for ten minutes before falling. He did this so the world would see the unbearable oppression of the Diem regime against the Buddhist majority.&rdquo;<br><br><em>Context: A Buddhist monk and eyewitness to the self-immolation of Thich Quang Duc in Saigon on June 11, 1963.</em><br><br>💬 <strong>Reflective Question:</strong> What does this extreme act of protest reveal about the intensity of Buddhist opposition to Diem? How did this impact US support for Diem?",
           image: '/units/usa/assets/sources/ho-chi-minh-trail-bicycles.jpg',
           image_alt:
             'Viet Minh logistical supply lines; ordinary peasants used modified bicycles to carry heavy artillery up mountains surrounding Dien Bien Phu.',
@@ -3454,64 +3235,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Thich Thien Hao',
-        witness: 'Thich Thien Hao',
-        context:
-          'A Buddhist monk and eyewitness to the self-immolation of Thich Quang Duc in Saigon on June 11, 1963.',
-        quote:
-          'I watched as brother Quang Duc sat in the lotus position in the middle of the street. Another monk poured gasoline over him. He struck a match and was instantly enveloped in flames. He did not cry out, nor did he move a muscle. The air was thick with the smell of burning flesh, and the crowd around him began to weep and bow down. He burned for ten minutes before falling. He did this so the world would see the unbearable oppression of the Diem regime against the Buddhist majority.',
-        question:
-          'What does this extreme act of protest reveal about the intensity of Buddhist opposition to Diem? How did this impact US support for Diem?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          'Following the 1954 Geneva Accords, which temporarily divided Vietnam at the 17th parallel, the United States committed to containing communism in Southeast Asia',
-        sources: [
-          {
-            title:
-              'A photograph showing President Ngo Dinh Diem reviewing a military parade in Saigon, October 1957.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/ngo-dinh-diem-parade.jpg',
-            content:
-              '[A photograph of Diem standing in an open-top car, reviewing rows of South Vietnamese soldiers who are carrying US-supplied weapons. US advisers are standing nearby in civilian clothes.]',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              "A photograph of Buddhist demonstrations in Saigon against President Diem's government, June 1963.",
-            type: 'visual',
-            source: '/units/usa/assets/sources/buddhist-protests-1963.jpg',
-            caption: 'Buddhist monks protesting in Saigon during the 1963 Buddhist Crisis.',
-            content:
-              "[A photograph showing a massive crowd of Buddhist monks and nuns sitting in a street, holding banners reading 'Stop Religious Persecution!' and blocking traffic. Police are surrounding the crowd.]",
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          "How useful are Sources D and E for an enquiry into the unpopularity and collapse of Ngo Dinh Diem's regime in South Vietnam? (8 marks)",
+          "How useful are Sources A and B for an enquiry into the unpopularity and collapse of Ngo Dinh Diem's regime in South Vietnam? (8 marks)",
         source_a: {
           provenance:
-            'A photograph showing President Ngo Dinh Diem reviewing a military parade in Saigon, October 1957.',
+            'Source A: A photograph showing President Ngo Dinh Diem reviewing a military parade in Saigon, October 1957.',
           content:
             '[A photograph of Diem standing in an open-top car, reviewing rows of South Vietnamese soldiers who are carrying US-supplied weapons. US advisers are standing nearby in civilian clothes.]',
         },
         source_b: {
           provenance:
-            "A photograph of Buddhist demonstrations in Saigon against President Diem's government, June 1963.",
+            "Source B: A photograph of Buddhist demonstrations in Saigon against President Diem's government, June 1963.",
           content:
             "[A photograph showing a massive crowd of Buddhist monks and nuns sitting in a street, holding banners reading 'Stop Religious Persecution!' and blocking traffic. Police are surrounding the crowd.]",
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          "Source D is highly useful for showing President Diem's authoritarian methods and his reliance on military forces to maintain power. The photograph shows \"Diem standing in an open-top car, reviewing rows of South Vietnamese soldiers\" carrying US-supplied weapons. This content is highly useful because it is supported by my knowledge that [[the US supported Diem's anti-communist regime with massive military aid and advisors from 1955, despite his corruption, nepotism, and lack of peasant support]], which explains the militaristic nature of Diem's control. {{The provenance of October 1957 makes the source highly useful because it illustrates how the regime projected military authority to hide its internal weaknesses. However, it is less useful because it shows a highly staged state event in Saigon, concealing the lack of peasant support and the growing communist insurgency in the countryside.}}\n\nSource E is highly useful for showing the scale of religious opposition that undermined Diem's regime. The photograph shows a \"massive crowd of Buddhist monks and nuns sitting in a street, holding banners reading 'Stop Religious Persecution!'\". This content's utility is supported by my knowledge that [[Diem's favoritism toward the Catholic minority and suppression of the Buddhist majority sparked the Buddhist Crisis of 1963, including self-immolations that destroyed the regime's international legitimacy]], which confirms that the source represents the broad civil opposition that made the regime collapse-prone. {{The provenance of June 1963 makes the source extremely useful because it captures the public crisis that forced the US to support a military coup against Diem in November 1963. However, it is less useful because it only captures the peaceful protests, omitting the violent police raids on pagodas.}}",
+          "Source A is highly useful for showing President Diem's authoritarian methods and his reliance on military forces to maintain power. The photograph shows \"Diem standing in an open-top car, reviewing rows of South Vietnamese soldiers\" carrying US-supplied weapons. This content is highly useful because it is supported by my knowledge that <strong>the US supported Diem's anti-communist regime with massive military aid and advisors from 1955, despite his corruption, nepotism, and lack of peasant support</strong>, which explains the militaristic nature of Diem's control. <em>The provenance of October 1957 makes the source highly useful because it illustrates how the regime projected military authority to hide its internal weaknesses. However, it is less useful because it shows a highly staged state event in Saigon, concealing the lack of peasant support and the growing communist insurgency in the countryside.</em>\n\nSource B is highly useful for showing the scale of religious opposition that undermined Diem's regime. The photograph shows a \"massive crowd of Buddhist monks and nuns sitting in a street, holding banners reading 'Stop Religious Persecution!'\". This content's utility is supported by my knowledge that <strong>Diem's favoritism toward the Catholic minority and suppression of the Buddhist majority sparked the Buddhist Crisis of 1963, including self-immolations that destroyed the regime's international legitimacy</strong>, which confirms that the source represents the broad civil opposition that made the regime collapse-prone. <em>The provenance of June 1963 makes the source extremely useful because it captures the public crisis that forced the US to support a military coup against Diem in November 1963. However, it is less useful because it only captures the peaceful protests, omitting the violent police raids on pagodas.</em>",
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Support for Ngo Dinh Diem',
@@ -3626,19 +3376,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -3672,27 +3430,15 @@ export const usa = {
           },
           {
             question:
-              'Which US destroyer was reportedly attacked by North Vietnamese torpedo boats in August 1964?',
-            answer: 'USS Maddox',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'Which congressional resolution in August 1964 gave President Johnson war powers to defend South Vietnam?',
-            answer: 'Gulf of Tonkin Resolution',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title:
-            "Historical Enquiry: the unpopularity and militaristic nature of Ngo Dinh Diem's regime",
-          source: '/units/usa/assets/sources/ngo-dinh-diem-parade.jpg',
-          caption:
-            'President Ngo Dinh Diem of South Vietnam during an official military parade in Saigon, late 1950s.',
-          think_wonder:
-            "Observe: Observe President Ngo Dinh Diem walking on foot in a white suit during a parade, with South Vietnamese soldiers standing in the foreground. Think: What image of stability and control is the Diem regime attempting to project here? Wonder: How did Diem's Catholicism and nepotism undermine the military strength shown in this parade?",
-        },
-      ],
       vocab: [
         {
           term: 'Gulf of Tonkin Resolution',
@@ -3723,9 +3469,9 @@ export const usa = {
           id: 'block_lesson_3_2_1',
           title: 'The Increasing Threat of the Vietcong (1963–65)',
           theme_heading: 'The Increasing Threat of the Vietcong (1963–65)',
-          text: '<p>When Johnson took office, the South Vietnamese government was on the verge of collapse, making the communist Vietcong a more dangerous threat than ever before:</p>\n        <ul>\n          <li><strong>Political Chaos in the South:</strong> Following the assassination of President Diem in 1963, South Vietnam suffered from extreme political instability. One weak military government was toppled by another in a series of constant coups, meaning the South Vietnamese leaders were too busy fighting each other to effectively fight the communists.</li>\n          <li><strong>Vietcong Successes:</strong> Taking advantage of this chaos, the Vietcong (supported by the North Vietnamese Army) gained massive ground. By 1964, they controlled roughly <strong>35%</strong> of South Vietnam and were inflicting heavy defeats on the South Vietnamese Army (ARVN) in conventional battles, such as at Binh Gia.</li>\n          <li><strong>Attacks on Americans:</strong> The Vietcong began directly and aggressively targeting American military installations and personnel. In November 1964, they attacked the US airbase at Bien Hoa, and in February 1965, they launched a deadly raid on a US base at Pleiku, killing **8 Americans** and destroying **10 aircraft**.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Binh Gia and Conventional Shift:** Historians point to the Battle of Binh Gia (December 1964) as a crucial moment. For the first time, the Vietcong deployed full regiments and defeated elite ARVN forces in a conventional, multi-day battle. This proved to US observers that the Vietcong was no longer just a small-scale guerrilla band but an organized army capable of defeating South Vietnam.',
+          text: "<p>When Johnson took office, the South Vietnamese government was on the verge of collapse, making the communist Vietcong a more dangerous threat than ever before:</p>\n        <ul>\n          <li><strong>Political Chaos in the South:</strong> Following the assassination of President Diem in 1963, South Vietnam suffered from extreme political instability. One weak military government was toppled by another in a series of constant coups, meaning the South Vietnamese leaders were too busy fighting each other to effectively fight the communists.</li>\n          <li><strong>Vietcong Successes:</strong> Taking advantage of this chaos, the Vietcong (supported by the North Vietnamese Army) gained massive ground. By 1964, they controlled roughly <strong>35%</strong> of South Vietnam and were inflicting heavy defeats on the South Vietnamese Army (ARVN) in conventional battles, such as at Binh Gia.</li>\n          <li><strong>Attacks on Americans:</strong> The Vietcong began directly and aggressively targeting American military installations and personnel. In November 1964, they attacked the US airbase at Bien Hoa, and in February 1965, they launched a deadly raid on a US base at Pleiku, killing **8 Americans** and destroying **10 aircraft**.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Binh Gia and Conventional Shift:** Historians point to the Battle of Binh Gia (December 1964) as a crucial moment. For the first time, the Vietcong deployed full regiments and defeated elite ARVN forces in a conventional, multi-day battle. This proved to US observers that the Vietcong was no longer just a small-scale guerrilla band but an organized army capable of defeating South Vietnam.\n\n> 🎙️ **Eyewitness Testimony — James Stockdale:** &ldquo;I had the best seat in the house from my cockpit, flying low over the destroyers Maddox and Turner Joy in the pitch black. I was ordered to look for North Vietnamese PT boats attacking our ships. I fired my guns where the sonar men said the targets were, but there was nothing there. No boats, no wakes, no gunfire from the Vietnamese. It was just our own ships shooting at ghost targets on their radars. When I landed, I was told we were launching retaliatory airstrikes for an 'attack' that I knew had never happened.&rdquo;<br><br><em>Context: US Navy pilot flying over the Gulf of Tonkin on the night of August 4, 1964.</em><br><br>💬 <strong>Reflective Question:</strong> If the second Gulf of Tonkin attack was a 'ghost' event, how does this affect the moral and political justification for the US escalation of the war?",
           content:
-            '<p>When Johnson took office, the South Vietnamese government was on the verge of collapse, making the communist Vietcong a more dangerous threat than ever before:</p>\n        <ul>\n          <li><strong>Political Chaos in the South:</strong> Following the assassination of President Diem in 1963, South Vietnam suffered from extreme political instability. One weak military government was toppled by another in a series of constant coups, meaning the South Vietnamese leaders were too busy fighting each other to effectively fight the communists.</li>\n          <li><strong>Vietcong Successes:</strong> Taking advantage of this chaos, the Vietcong (supported by the North Vietnamese Army) gained massive ground. By 1964, they controlled roughly <strong>35%</strong> of South Vietnam and were inflicting heavy defeats on the South Vietnamese Army (ARVN) in conventional battles, such as at Binh Gia.</li>\n          <li><strong>Attacks on Americans:</strong> The Vietcong began directly and aggressively targeting American military installations and personnel. In November 1964, they attacked the US airbase at Bien Hoa, and in February 1965, they launched a deadly raid on a US base at Pleiku, killing **8 Americans** and destroying **10 aircraft**.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Binh Gia and Conventional Shift:** Historians point to the Battle of Binh Gia (December 1964) as a crucial moment. For the first time, the Vietcong deployed full regiments and defeated elite ARVN forces in a conventional, multi-day battle. This proved to US observers that the Vietcong was no longer just a small-scale guerrilla band but an organized army capable of defeating South Vietnam.',
+            "<p>When Johnson took office, the South Vietnamese government was on the verge of collapse, making the communist Vietcong a more dangerous threat than ever before:</p>\n        <ul>\n          <li><strong>Political Chaos in the South:</strong> Following the assassination of President Diem in 1963, South Vietnam suffered from extreme political instability. One weak military government was toppled by another in a series of constant coups, meaning the South Vietnamese leaders were too busy fighting each other to effectively fight the communists.</li>\n          <li><strong>Vietcong Successes:</strong> Taking advantage of this chaos, the Vietcong (supported by the North Vietnamese Army) gained massive ground. By 1964, they controlled roughly <strong>35%</strong> of South Vietnam and were inflicting heavy defeats on the South Vietnamese Army (ARVN) in conventional battles, such as at Binh Gia.</li>\n          <li><strong>Attacks on Americans:</strong> The Vietcong began directly and aggressively targeting American military installations and personnel. In November 1964, they attacked the US airbase at Bien Hoa, and in February 1965, they launched a deadly raid on a US base at Pleiku, killing **8 Americans** and destroying **10 aircraft**.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Binh Gia and Conventional Shift:** Historians point to the Battle of Binh Gia (December 1964) as a crucial moment. For the first time, the Vietcong deployed full regiments and defeated elite ARVN forces in a conventional, multi-day battle. This proved to US observers that the Vietcong was no longer just a small-scale guerrilla band but an organized army capable of defeating South Vietnam.\n\n> 🎙️ **Eyewitness Testimony — James Stockdale:** &ldquo;I had the best seat in the house from my cockpit, flying low over the destroyers Maddox and Turner Joy in the pitch black. I was ordered to look for North Vietnamese PT boats attacking our ships. I fired my guns where the sonar men said the targets were, but there was nothing there. No boats, no wakes, no gunfire from the Vietnamese. It was just our own ships shooting at ghost targets on their radars. When I landed, I was told we were launching retaliatory airstrikes for an 'attack' that I knew had never happened.&rdquo;<br><br><em>Context: US Navy pilot flying over the Gulf of Tonkin on the night of August 4, 1964.</em><br><br>💬 <strong>Reflective Question:</strong> If the second Gulf of Tonkin attack was a 'ghost' event, how does this affect the moral and political justification for the US escalation of the war?",
           image: '/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg',
           image_alt:
             'A US infantryman cautiously patrols a murky swamp in South Vietnam, where Vietcong guerrillas blended into the local rural population.',
@@ -3831,63 +3577,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: James Stockdale',
-        witness: 'James Stockdale',
-        context: 'US Navy pilot flying over the Gulf of Tonkin on the night of August 4, 1964.',
-        quote:
-          "I had the best seat in the house from my cockpit, flying low over the destroyers Maddox and Turner Joy in the pitch black. I was ordered to look for North Vietnamese PT boats attacking our ships. I fired my guns where the sonar men said the targets were, but there was nothing there. No boats, no wakes, no gunfire from the Vietnamese. It was just our own ships shooting at ghost targets on their radars. When I landed, I was told we were launching retaliatory airstrikes for an 'attack' that I knew had never happened.",
-        question:
-          "If the second Gulf of Tonkin attack was a 'ghost' event, how does this affect the moral and political justification for the US escalation of the war?",
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          "Following President Kennedy's assassination in 1963, President Johnson inherited a rapidly deteriorating situation in South Vietnam",
-        sources: [
-          {
-            title:
-              'From a photograph of the destroyer USS Maddox sailing in the Gulf of Tonkin, August 1964.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/uss-maddox.jpg',
-            content:
-              '[A photograph showing the US warship USS Maddox traveling through calm seas. Radar antennas are rotating, and gun turrets are aimed toward the horizon.]',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'From a photograph of US Marines landing at Da Nang beach, South Vietnam, 8 March 1965.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/marines-landing-danang.jpg',
-            caption: 'The first official US ground combat troops landing at Da Nang, March 1965.',
-            content:
-              '[A photograph of US Marines carrying heavy backpacks and rifles wading through shallow water onto a sandy beach. Local Vietnamese women are handing them flower garlands as they land.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the escalation of US involvement and the deployment of combat troops to Vietnam? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the escalation of US involvement and the deployment of combat troops to Vietnam? (8 marks)',
         source_a: {
           provenance:
-            'From a photograph of the destroyer USS Maddox sailing in the Gulf of Tonkin, August 1964.',
+            'Source A: From a photograph of the destroyer USS Maddox sailing in the Gulf of Tonkin, August 1964.',
           content:
             '[A photograph showing the US warship USS Maddox traveling through calm seas. Radar antennas are rotating, and gun turrets are aimed toward the horizon.]',
         },
         source_b: {
           provenance:
-            'From a photograph of US Marines landing at Da Nang beach, South Vietnam, 8 March 1965.',
+            'Source B: From a photograph of US Marines landing at Da Nang beach, South Vietnam, 8 March 1965.',
           content:
             '[A photograph of US Marines carrying heavy backpacks and rifles wading through shallow water onto a sandy beach. Local Vietnamese women are handing them flower garlands as they land.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          'Source D is highly useful for showing the US naval presence that served as the trigger for direct combat escalation. The photograph shows the "USS Maddox traveling through calm seas" with gun turrets aimed toward the horizon. This content is highly useful because it is supported by my knowledge that [[the Gulf of Tonkin incidents of August 1964 led Congress to pass the Gulf of Tonkin Resolution, giving President Johnson a \'blank check\' to escalate US military involvement]], which confirms the naval buildup that preceded the congressional mandate. {{The provenance of August 1964 makes the source highly useful because it documents the actual vessel involved in the clashes. However, it is less useful because it shows a calm, routine patrol, failing to clarify the disputed and confusing details of the attacks.}}\n\nSource E is highly useful for showing the transition to full combat operations and the deployment of ground troops. The photograph shows "US Marines carrying heavy backpacks and rifles wading through shallow water" onto Da Nang beach. This content\'s utility is supported by my knowledge that [[the landing of the 9th Marine Expeditionary Brigade in March 1965 marked the official start of the US ground war, with troop levels rising to 184,000 by the end of 1965]], which confirms that the photograph captures the historic landing that marked the end of the advisory phase. {{The provenance of 8 March 1965 makes the source extremely useful because it captures the historical moment of transition to direct combat. However, it is less useful because the presence of local women handing out flowers was a staged public relations event, hiding the hostile, muddy reality of combat that the Marines would soon face.}}',
+          'Source A is highly useful for showing the US naval presence that served as the trigger for direct combat escalation. The photograph shows the "USS Maddox traveling through calm seas" with gun turrets aimed toward the horizon. This content is highly useful because it is supported by my knowledge that <strong>the Gulf of Tonkin incidents of August 1964 led Congress to pass the Gulf of Tonkin Resolution, giving President Johnson a \'blank check\' to escalate US military involvement</strong>, which confirms the naval buildup that preceded the congressional mandate. <em>The provenance of August 1964 makes the source highly useful because it documents the actual vessel involved in the clashes. However, it is less useful because it shows a calm, routine patrol, failing to clarify the disputed and confusing details of the attacks.</em>\n\nSource B is highly useful for showing the transition to full combat operations and the deployment of ground troops. The photograph shows "US Marines carrying heavy backpacks and rifles wading through shallow water" onto Da Nang beach. This content\'s utility is supported by my knowledge that <strong>the landing of the 9th Marine Expeditionary Brigade in March 1965 marked the official start of the US ground war, with troop levels rising to 184,000 by the end of 1965</strong>, which confirms that the photograph captures the historic landing that marked the end of the advisory phase. <em>The provenance of 8 March 1965 makes the source extremely useful because it captures the historical moment of transition to direct combat. However, it is less useful because the presence of local women handing out flowers was a staged public relations event, hiding the hostile, muddy reality of combat that the Marines would soon face.</em>',
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Gulf of Tonkin Resolution',
@@ -4003,19 +3719,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -4049,26 +3773,15 @@ export const usa = {
           },
           {
             question:
-              'What Vietcong military tactic involved hit-and-run ambushes, traps, and avoiding conventional pitched battles?',
-            answer: 'Guerrilla warfare',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'What US military tactic involved patrolling the jungle to locate enemy units and calling in artillery and air strikes?',
-            answer: 'Search and Destroy',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: 'Historical Enquiry: the escalation of US military involvement in Vietnam',
-          source: '/units/usa/assets/sources/uss-maddox.jpg',
-          caption:
-            'The USS Maddox, the destroyer involved in the Gulf of Tonkin incidents in August 1964.',
-          think_wonder:
-            'Observe: Observe the guns and radar equipment on the USS Maddox. Think: Why was a US destroyer patrolling so close to North Vietnamese territorial waters in 1964? Wonder: How did the events involving this ship change the nature of the Vietnam War?',
-        },
-      ],
       vocab: [
         {
           term: 'Agent Orange',
@@ -4100,9 +3813,9 @@ export const usa = {
           id: 'block_lesson_3_3_1',
           title: 'The Guerrilla Tactics Used by the Vietcong',
           theme_heading: 'The Guerrilla Tactics Used by the Vietcong',
-          text: "<p>The Vietcong (VC) knew they could not defeat the technologically advanced US military in open, pitched battles. Instead, they relied on their deep knowledge of the local jungle terrain and used guerrilla warfare to wear down American morale:</p>\n        <ul>\n          <li><strong>Hit-and-Run and Ambushes:</strong> The VC followed strict principles: retreat when the enemy attacks, raid when the enemy camps, and attack when the enemy tires. They never engaged in direct conventional battles, instead picking off enemy soldiers in ambushes before quickly disappearing into the jungle.</li>\n          <li><strong>'Hanging onto the Belts':</strong> To counter America's massive advantage in air power and artillery, VC fighters stayed as close to US troops as possible during firefights. By engaging at such close quarters, the Americans could not call in bombing strikes for fear of hitting their own men.</li>\n          <li><strong>The Invisible Enemy:</strong> VC fighters did not wear military uniforms. They dressed in everyday clothing so they could hide in plain sight, making it nearly impossible for US soldiers to distinguish between innocent civilian peasants and the enemy.</li>\n          <li><strong>Booby Traps:</strong> Around <strong>11% to 19%</strong> of all US casualties were caused by cheap, terrifying booby traps. The most common were <strong>punji sticks</strong> (sharpened bamboo stakes hidden in shallow, camouflaged pits, often smeared with excrement to cause infection), tripwires, and 'Bouncing Betty' mines that exploded at waist height.</li>\n          <li><strong>Tunnel Networks:</strong> The VC constructed hundreds of miles of complex underground tunnels, such as those at **Cu Chi**. These multi-level networks contained barracks, hospitals, and weapons factories, protecting them from US bombing and allowing them to move completely undetected.</li>\n          <li><strong>The [Key Individual: Ho Chi Minh] Trail:</strong> To keep their fighters armed, the VC relied on a <strong>15,000km network</strong> of jungle paths known as the [Key Individual: Ho Chi Minh] Trail, which ran from North Vietnam through neutral Laos and Cambodia to secretly deliver Soviet and Chinese weapons to the South.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Vietcong Logistics and Resilience:** Revisionist historians argue that the US completely underestimated the logistic resilience of the Vietcong. The [Key Individual: Ho Chi Minh] Trail, despite constant US bombing, remained open because thousands of volunteers repaired the damage immediately, showing the national commitment to reunification.",
+          text: "<p>The Vietcong (VC) knew they could not defeat the technologically advanced US military in open, pitched battles. Instead, they relied on their deep knowledge of the local jungle terrain and used guerrilla warfare to wear down American morale:</p>\n        <ul>\n          <li><strong>Hit-and-Run and Ambushes:</strong> The VC followed strict principles: retreat when the enemy attacks, raid when the enemy camps, and attack when the enemy tires. They never engaged in direct conventional battles, instead picking off enemy soldiers in ambushes before quickly disappearing into the jungle.</li>\n          <li><strong>'Hanging onto the Belts':</strong> To counter America's massive advantage in air power and artillery, VC fighters stayed as close to US troops as possible during firefights. By engaging at such close quarters, the Americans could not call in bombing strikes for fear of hitting their own men.</li>\n          <li><strong>The Invisible Enemy:</strong> VC fighters did not wear military uniforms. They dressed in everyday clothing so they could hide in plain sight, making it nearly impossible for US soldiers to distinguish between innocent civilian peasants and the enemy.</li>\n          <li><strong>Booby Traps:</strong> Around <strong>11% to 19%</strong> of all US casualties were caused by cheap, terrifying booby traps. The most common were <strong>punji sticks</strong> (sharpened bamboo stakes hidden in shallow, camouflaged pits, often smeared with excrement to cause infection), tripwires, and 'Bouncing Betty' mines that exploded at waist height.</li>\n          <li><strong>Tunnel Networks:</strong> The VC constructed hundreds of miles of complex underground tunnels, such as those at **Cu Chi**. These multi-level networks contained barracks, hospitals, and weapons factories, protecting them from US bombing and allowing them to move completely undetected.</li>\n          <li><strong>The [Key Individual: Ho Chi Minh] Trail:</strong> To keep their fighters armed, the VC relied on a <strong>15,000km network</strong> of jungle paths known as the [Key Individual: Ho Chi Minh] Trail, which ran from North Vietnam through neutral Laos and Cambodia to secretly deliver Soviet and Chinese weapons to the South.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Vietcong Logistics and Resilience:** Revisionist historians argue that the US completely underestimated the logistic resilience of the Vietcong. The [Key Individual: Ho Chi Minh] Trail, despite constant US bombing, remained open because thousands of volunteers repaired the damage immediately, showing the national commitment to reunification.\n\n> 🎙️ **Eyewitness Testimony — Nguyen Thi Binh:** &ldquo;We lived like rats under the ground. The tunnels of Cu Chi were dark, damp, and crawled with centipedes and scorpions. When the Americans bombed, the earth shook and dirt fell in our eyes. But we stayed. We learned to cook without smoke and walk without leaving footprints. We waited until the American soldiers walked past, then we would pop up, fire, and disappear into the ground. They had tanks and helicopters, but they could not fight what they could not see.&rdquo;<br><br><em>Context: A female Vietcong guerrilla fighter, interviewed about surviving search-and-destroy missions in the Cu Chi tunnels.</em><br><br>💬 <strong>Reflective Question:</strong> How did the Vietcong use the tunnels and hit-and-run tactics to render the US military's technological superiority ineffective?",
           content:
-            "<p>The Vietcong (VC) knew they could not defeat the technologically advanced US military in open, pitched battles. Instead, they relied on their deep knowledge of the local jungle terrain and used guerrilla warfare to wear down American morale:</p>\n        <ul>\n          <li><strong>Hit-and-Run and Ambushes:</strong> The VC followed strict principles: retreat when the enemy attacks, raid when the enemy camps, and attack when the enemy tires. They never engaged in direct conventional battles, instead picking off enemy soldiers in ambushes before quickly disappearing into the jungle.</li>\n          <li><strong>'Hanging onto the Belts':</strong> To counter America's massive advantage in air power and artillery, VC fighters stayed as close to US troops as possible during firefights. By engaging at such close quarters, the Americans could not call in bombing strikes for fear of hitting their own men.</li>\n          <li><strong>The Invisible Enemy:</strong> VC fighters did not wear military uniforms. They dressed in everyday clothing so they could hide in plain sight, making it nearly impossible for US soldiers to distinguish between innocent civilian peasants and the enemy.</li>\n          <li><strong>Booby Traps:</strong> Around <strong>11% to 19%</strong> of all US casualties were caused by cheap, terrifying booby traps. The most common were <strong>punji sticks</strong> (sharpened bamboo stakes hidden in shallow, camouflaged pits, often smeared with excrement to cause infection), tripwires, and 'Bouncing Betty' mines that exploded at waist height.</li>\n          <li><strong>Tunnel Networks:</strong> The VC constructed hundreds of miles of complex underground tunnels, such as those at **Cu Chi**. These multi-level networks contained barracks, hospitals, and weapons factories, protecting them from US bombing and allowing them to move completely undetected.</li>\n          <li><strong>The [Key Individual: Ho Chi Minh] Trail:</strong> To keep their fighters armed, the VC relied on a <strong>15,000km network</strong> of jungle paths known as the [Key Individual: Ho Chi Minh] Trail, which ran from North Vietnam through neutral Laos and Cambodia to secretly deliver Soviet and Chinese weapons to the South.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Vietcong Logistics and Resilience:** Revisionist historians argue that the US completely underestimated the logistic resilience of the Vietcong. The [Key Individual: Ho Chi Minh] Trail, despite constant US bombing, remained open because thousands of volunteers repaired the damage immediately, showing the national commitment to reunification.",
+            "<p>The Vietcong (VC) knew they could not defeat the technologically advanced US military in open, pitched battles. Instead, they relied on their deep knowledge of the local jungle terrain and used guerrilla warfare to wear down American morale:</p>\n        <ul>\n          <li><strong>Hit-and-Run and Ambushes:</strong> The VC followed strict principles: retreat when the enemy attacks, raid when the enemy camps, and attack when the enemy tires. They never engaged in direct conventional battles, instead picking off enemy soldiers in ambushes before quickly disappearing into the jungle.</li>\n          <li><strong>'Hanging onto the Belts':</strong> To counter America's massive advantage in air power and artillery, VC fighters stayed as close to US troops as possible during firefights. By engaging at such close quarters, the Americans could not call in bombing strikes for fear of hitting their own men.</li>\n          <li><strong>The Invisible Enemy:</strong> VC fighters did not wear military uniforms. They dressed in everyday clothing so they could hide in plain sight, making it nearly impossible for US soldiers to distinguish between innocent civilian peasants and the enemy.</li>\n          <li><strong>Booby Traps:</strong> Around <strong>11% to 19%</strong> of all US casualties were caused by cheap, terrifying booby traps. The most common were <strong>punji sticks</strong> (sharpened bamboo stakes hidden in shallow, camouflaged pits, often smeared with excrement to cause infection), tripwires, and 'Bouncing Betty' mines that exploded at waist height.</li>\n          <li><strong>Tunnel Networks:</strong> The VC constructed hundreds of miles of complex underground tunnels, such as those at **Cu Chi**. These multi-level networks contained barracks, hospitals, and weapons factories, protecting them from US bombing and allowing them to move completely undetected.</li>\n          <li><strong>The [Key Individual: Ho Chi Minh] Trail:</strong> To keep their fighters armed, the VC relied on a <strong>15,000km network</strong> of jungle paths known as the [Key Individual: Ho Chi Minh] Trail, which ran from North Vietnam through neutral Laos and Cambodia to secretly deliver Soviet and Chinese weapons to the South.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Vietcong Logistics and Resilience:** Revisionist historians argue that the US completely underestimated the logistic resilience of the Vietcong. The [Key Individual: Ho Chi Minh] Trail, despite constant US bombing, remained open because thousands of volunteers repaired the damage immediately, showing the national commitment to reunification.\n\n> 🎙️ **Eyewitness Testimony — Nguyen Thi Binh:** &ldquo;We lived like rats under the ground. The tunnels of Cu Chi were dark, damp, and crawled with centipedes and scorpions. When the Americans bombed, the earth shook and dirt fell in our eyes. But we stayed. We learned to cook without smoke and walk without leaving footprints. We waited until the American soldiers walked past, then we would pop up, fire, and disappear into the ground. They had tanks and helicopters, but they could not fight what they could not see.&rdquo;<br><br><em>Context: A female Vietcong guerrilla fighter, interviewed about surviving search-and-destroy missions in the Cu Chi tunnels.</em><br><br>💬 <strong>Reflective Question:</strong> How did the Vietcong use the tunnels and hit-and-run tactics to render the US military's technological superiority ineffective?",
           image: '/units/usa/assets/sources/us-troops-bogged-down.jpg',
           image_alt:
             'US soldiers struggle through thick, booby-trapped jungle terrain searching for hidden Vietcong tunnel complexes.',
@@ -4203,65 +3916,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Nguyen Thi Binh',
-        witness: 'Nguyen Thi Binh',
-        context:
-          'A female Vietcong guerrilla fighter, interviewed about surviving search-and-destroy missions in the Cu Chi tunnels.',
-        quote:
-          'We lived like rats under the ground. The tunnels of Cu Chi were dark, damp, and crawled with centipedes and scorpions. When the Americans bombed, the earth shook and dirt fell in our eyes. But we stayed. We learned to cook without smoke and walk without leaving footprints. We waited until the American soldiers walked past, then we would pop up, fire, and disappear into the ground. They had tanks and helicopters, but they could not fight what they could not see.',
-        question:
-          "How did the Vietcong use the tunnels and hit-and-run tactics to render the US military's technological superiority ineffective?",
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          'Between 1965 and 1968, the Vietnam War became a brutal conflict of contrasting strategies',
-        sources: [
-          {
-            title:
-              'From a photograph showing a US soldier patrolling on foot in a swampy jungle, 1967.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg',
-            content:
-              '[A photograph of a US soldier wading waist-deep through muddy swamp water in dense jungle. He is holding his M16 rifle high above the water and looks tense and exhausted.]',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'From a photograph showing US Air Force C-123 planes spraying defoliants over a forest, 1966.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/agent-orange-spraying-c123.jpg',
-            caption:
-              'US C-123 aircraft spraying Agent Orange to strip jungle cover and destroy enemy crops.',
-            content:
-              '[A photograph showing three C-123 military transport planes flying in formation at low altitude, releasing thick white chemical trails of Agent Orange over dense green forest canopy.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the tactics used by the US military in the Vietnam War? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the tactics used by the US military in the Vietnam War? (8 marks)',
         source_a: {
           provenance:
-            'From a photograph showing a US soldier patrolling on foot in a swampy jungle, 1967.',
+            'Source A: From a photograph showing a US soldier patrolling on foot in a swampy jungle, 1967.',
           content:
             '[A photograph of a US soldier wading waist-deep through muddy swamp water in dense jungle. He is holding his M16 rifle high above the water and looks tense and exhausted.]',
         },
         source_b: {
           provenance:
-            'From a photograph showing US Air Force C-123 planes spraying defoliants over a forest, 1966.',
+            'Source B: From a photograph showing US Air Force C-123 planes spraying defoliants over a forest, 1966.',
           content:
             '[A photograph showing three C-123 military transport planes flying in formation at low altitude, releasing thick white chemical trails of Agent Orange over dense green forest canopy.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          'Source D is highly useful for showing the tactical and physical challenges that US combat patrols faced. The photograph shows a US soldier "wading waist-deep through muddy swamp water in dense jungle" holding his rifle high. This content\'s utility is supported by my knowledge that [[US Search and Destroy tactics designed to find the Vietcong faced terrain problems and ambush vulnerability, as the Vietcong used booby traps and the jungle environment to neutralize US technology]], which explains the physical and psychological exhaustion depicted. {{The provenance of 1967 makes the source highly useful because it offers a realistic, gritty look at the brutal environmental conditions. However, it is less useful because it focuses on a single soldier\'s exhaustion, failing to show the high civilian casualties and destruction of villages that search-and-destroy missions often caused.}}\n\nSource E is highly useful for showing the chemical warfare tactics used by the US to counter these environmental challenges. The photograph shows "C-123 military transport planes... releasing thick white chemical trails of Agent Orange" over dense forest. This content is highly useful because it is supported by my knowledge that [[Operation Ranch Hand sprayed millions of gallons of herbicides to strip jungle cover and destroy crops, which poisoned food supplies and alienated the peasant population]], which confirms the systemic scale of environmental destruction that alienated the local population. {{The provenance of 1966 makes the source extremely useful because it documents the systematic, industrial scale of chemical defoliation. However, it is less useful because it presents a clean, aerial view of the spraying, omitting the devastating health consequences, birth defects, and political backlash among Vietnamese peasants.}}',
+          'Source A is highly useful for showing the tactical and physical challenges that US combat patrols faced. The photograph shows a US soldier "wading waist-deep through muddy swamp water in dense jungle" holding his rifle high. This content\'s utility is supported by my knowledge that <strong>US Search and Destroy tactics designed to find the Vietcong faced terrain problems and ambush vulnerability, as the Vietcong used booby traps and the jungle environment to neutralize US technology</strong>, which explains the physical and psychological exhaustion depicted. <em>The provenance of 1967 makes the source highly useful because it offers a realistic, gritty look at the brutal environmental conditions. However, it is less useful because it focuses on a single soldier\'s exhaustion, failing to show the high civilian casualties and destruction of villages that search-and-destroy missions often caused.</em>\n\nSource B is highly useful for showing the chemical warfare tactics used by the US to counter these environmental challenges. The photograph shows "C-123 military transport planes... releasing thick white chemical trails of Agent Orange" over dense forest. This content is highly useful because it is supported by my knowledge that <strong>Operation Ranch Hand sprayed millions of gallons of herbicides to strip jungle cover and destroy crops, which poisoned food supplies and alienated the peasant population</strong>, which confirms the systemic scale of environmental destruction that alienated the local population. <em>The provenance of 1966 makes the source extremely useful because it documents the systematic, industrial scale of chemical defoliation. However, it is less useful because it presents a clean, aerial view of the spraying, omitting the devastating health consequences, birth defects, and political backlash among Vietnamese peasants.</em>',
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Military Tactics in Vietnam',
@@ -4377,19 +4058,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              "Analyze the key developments, events, and individuals in KT 3.4: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?.",
+              "Demonstrate comprehensive historical knowledge of the key developments and figures in KT 3.4: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?.",
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              "What was the most significant direct cause of developments in What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour??",
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -4423,27 +4112,15 @@ export const usa = {
           },
           {
             question:
-              'What policy under President Nixon aimed to withdraw US troops and hand over combat duties to the South Vietnamese army?',
-            answer: 'Vietnamisation',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'What was the name of the foreign policy doctrine declaring that US allies must provide their own ground troops?',
-            answer: 'Nixon Doctrine',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title:
-            'Historical Enquiry: the transport methods and tactics used by communist forces in Vietnam',
-          source: '/units/usa/assets/sources/ho-chi-minh-trail-bicycles.jpg',
-          caption:
-            'Vietcong porters pushing heavily loaded cargo bicycles along the Ho Chi Minh Trail under jungle cover, circa 1967.',
-          think_wonder:
-            'Observe: Observe how the bicycles are modified with poles to carry massive loads of supplies. Think: Why did the Vietcong rely on footpaths and bicycles rather than modern trucks and paved roads? Wonder: How did this low-tech supply line survive years of intense US aerial bombardment?',
-        },
-      ],
       vocab: [
         {
           term: 'Vietnamization',
@@ -4475,9 +4152,9 @@ export const usa = {
           id: 'block_lesson_3_4_1',
           title: 'The Nixon Doctrine and the Withdrawal of US Troops',
           theme_heading: 'The Nixon Doctrine and the Withdrawal of US Troops',
-          text: "<p>Elected in 1968 on the promise of bringing 'peace with honor', President [Key Individual: Richard Nixon] introduced a new Cold War strategy to reduce direct American combat involvement:</p>\n        <ul>\n          <li><strong>The Nixon Doctrine (1969):</strong> Outlined in July 1969, this doctrine fundamentally changed US strategy. Nixon stated that the USA would honor its defence commitments and support allies against communism with financial aid and military equipment, but would no longer provide American combat troops.</li>\n          <li><strong>Troop Withdrawals:</strong> Following this doctrine, Nixon began the gradual withdrawal of US troops, announcing the first withdrawal of <strong>25,000 troops</strong> in June 1969. This steadily reduced the US presence from its peak of over 500,000 men. By March 1973, the last American combat troops had completely withdrawn from Vietnam.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Shift in Global Strategy:** Historians view the Nixon Doctrine as a realistic adjustment to the limits of American power exposed by the Vietnam War. Rather than trying to police the world with ground troops, the US shifted to a strategy of supporting regional powers to defend themselves, a policy that marked a significant retreat from the expansive containment policies of the early Cold War.",
+          text: "<p>Elected in 1968 on the promise of bringing 'peace with honor', President [Key Individual: Richard Nixon] introduced a new Cold War strategy to reduce direct American combat involvement:</p>\n        <ul>\n          <li><strong>The Nixon Doctrine (1969):</strong> Outlined in July 1969, this doctrine fundamentally changed US strategy. Nixon stated that the USA would honor its defence commitments and support allies against communism with financial aid and military equipment, but would no longer provide American combat troops.</li>\n          <li><strong>Troop Withdrawals:</strong> Following this doctrine, Nixon began the gradual withdrawal of US troops, announcing the first withdrawal of <strong>25,000 troops</strong> in June 1969. This steadily reduced the US presence from its peak of over 500,000 men. By March 1973, the last American combat troops had completely withdrawn from Vietnam.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Shift in Global Strategy:** Historians view the Nixon Doctrine as a realistic adjustment to the limits of American power exposed by the Vietnam War. Rather than trying to police the world with ground troops, the US shifted to a strategy of supporting regional powers to defend themselves, a policy that marked a significant retreat from the expansive containment policies of the early Cold War.\n\n> 🎙️ **Eyewitness Testimony — ARVN Soldier:** &ldquo;The Americans told us we were ready to fight alone. They gave us their M16 rifles and their tanks, and then they told us to cross the border into Laos to cut the [Key Individual: Ho Chi Minh] trail. But once we crossed, we met massive North Vietnamese artillery and tanks. The Americans provided air support, but it wasn't enough. We were slaughtered. Our commanders panicked and fled. I saw soldiers clinging to the skids of departing American helicopters just to escape. We were not ready, and we knew it.&rdquo;<br><br><em>Context: A soldier in the South Vietnamese army, recalling the disastrous invasion of Laos (Operation Lam Son 719) in 1971.</em><br><br>💬 <strong>Reflective Question:</strong> What does this soldier's account of the Laos invasion tell us about the practical weaknesses and failures of Nixon's 'Vietnamization' policy?",
           content:
-            "<p>Elected in 1968 on the promise of bringing 'peace with honor', President [Key Individual: Richard Nixon] introduced a new Cold War strategy to reduce direct American combat involvement:</p>\n        <ul>\n          <li><strong>The Nixon Doctrine (1969):</strong> Outlined in July 1969, this doctrine fundamentally changed US strategy. Nixon stated that the USA would honor its defence commitments and support allies against communism with financial aid and military equipment, but would no longer provide American combat troops.</li>\n          <li><strong>Troop Withdrawals:</strong> Following this doctrine, Nixon began the gradual withdrawal of US troops, announcing the first withdrawal of <strong>25,000 troops</strong> in June 1969. This steadily reduced the US presence from its peak of over 500,000 men. By March 1973, the last American combat troops had completely withdrawn from Vietnam.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Shift in Global Strategy:** Historians view the Nixon Doctrine as a realistic adjustment to the limits of American power exposed by the Vietnam War. Rather than trying to police the world with ground troops, the US shifted to a strategy of supporting regional powers to defend themselves, a policy that marked a significant retreat from the expansive containment policies of the early Cold War.",
+            "<p>Elected in 1968 on the promise of bringing 'peace with honor', President [Key Individual: Richard Nixon] introduced a new Cold War strategy to reduce direct American combat involvement:</p>\n        <ul>\n          <li><strong>The Nixon Doctrine (1969):</strong> Outlined in July 1969, this doctrine fundamentally changed US strategy. Nixon stated that the USA would honor its defence commitments and support allies against communism with financial aid and military equipment, but would no longer provide American combat troops.</li>\n          <li><strong>Troop Withdrawals:</strong> Following this doctrine, Nixon began the gradual withdrawal of US troops, announcing the first withdrawal of <strong>25,000 troops</strong> in June 1969. This steadily reduced the US presence from its peak of over 500,000 men. By March 1973, the last American combat troops had completely withdrawn from Vietnam.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Shift in Global Strategy:** Historians view the Nixon Doctrine as a realistic adjustment to the limits of American power exposed by the Vietnam War. Rather than trying to police the world with ground troops, the US shifted to a strategy of supporting regional powers to defend themselves, a policy that marked a significant retreat from the expansive containment policies of the early Cold War.\n\n> 🎙️ **Eyewitness Testimony — ARVN Soldier:** &ldquo;The Americans told us we were ready to fight alone. They gave us their M16 rifles and their tanks, and then they told us to cross the border into Laos to cut the [Key Individual: Ho Chi Minh] trail. But once we crossed, we met massive North Vietnamese artillery and tanks. The Americans provided air support, but it wasn't enough. We were slaughtered. Our commanders panicked and fled. I saw soldiers clinging to the skids of departing American helicopters just to escape. We were not ready, and we knew it.&rdquo;<br><br><em>Context: A soldier in the South Vietnamese army, recalling the disastrous invasion of Laos (Operation Lam Son 719) in 1971.</em><br><br>💬 <strong>Reflective Question:</strong> What does this soldier's account of the Laos invasion tell us about the practical weaknesses and failures of Nixon's 'Vietnamization' policy?",
           image: '/units/usa/assets/sources/nixon-visiting-troops.jpg',
           image_alt:
             'President Richard Nixon visits American infantrymen in Vietnam in July 1969 as he began phased troop withdrawals.',
@@ -4587,65 +4264,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: ARVN Soldier',
-        witness: 'ARVN Soldier',
-        context:
-          'A soldier in the South Vietnamese army, recalling the disastrous invasion of Laos (Operation Lam Son 719) in 1971.',
-        quote:
-          "The Americans told us we were ready to fight alone. They gave us their M16 rifles and their tanks, and then they told us to cross the border into Laos to cut the Ho Chi Minh trail. But once we crossed, we met massive North Vietnamese artillery and tanks. The Americans provided air support, but it wasn't enough. We were slaughtered. Our commanders panicked and fled. I saw soldiers clinging to the skids of departing American helicopters just to escape. We were not ready, and we knew it.",
-        question:
-          "What does this soldier's account of the Laos invasion tell us about the practical weaknesses and failures of Nixon's 'Vietnamization' policy?",
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          "Elected in 1968 on a promise of 'Peace with Honor', President Nixon sought to reduce US involvement without appearing to surrender",
-        sources: [
-          {
-            title:
-              'From a photograph of President Richard Nixon visiting US troops in South Vietnam, July 1969.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/nixon-visiting-troops.jpg',
-            content:
-              '[A photograph showing President Nixon standing in a crowd of smiling US soldiers in combat uniforms. He is shaking hands and talking with them, projecting a positive image of troop support.]',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'A photograph showing South Vietnamese ARVN troops advancing during the invasion of Cambodia, May 1970.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/arvn-troops-combat.jpg',
-            caption:
-              'ARVN forces invading Cambodia, demonstrating the expansion of combat operations.',
-            content:
-              '[A photograph showing several ARVN soldiers running past a burning tank on a dirt road in Cambodia. Helicopters are flying overhead, and the soldiers are carrying M16 rifles.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          "How useful are Sources D and E for an enquiry into the effectiveness of Nixon's policy of Vietnamization? (8 marks)",
+          "How useful are Sources A and B for an enquiry into the effectiveness of Nixon's policy of Vietnamization? (8 marks)",
         source_a: {
           provenance:
-            'From a photograph of President Richard Nixon visiting US troops in South Vietnam, July 1969.',
+            'Source A: From a photograph of President Richard Nixon visiting US troops in South Vietnam, July 1969.',
           content:
             '[A photograph showing President Nixon standing in a crowd of smiling US soldiers in combat uniforms. He is shaking hands and talking with them, projecting a positive image of troop support.]',
         },
         source_b: {
           provenance:
-            'A photograph showing South Vietnamese ARVN troops advancing during the invasion of Cambodia, May 1970.',
+            'Source B: A photograph showing South Vietnamese ARVN troops advancing during the invasion of Cambodia, May 1970.',
           content:
             '[A photograph showing several ARVN soldiers running past a burning tank on a dirt road in Cambodia. Helicopters are flying overhead, and the soldiers are carrying M16 rifles.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          "Source D is highly useful for showing the public relations campaign used to justify Vietnamization. The photograph shows \"Nixon standing in a crowd of smiling US soldiers\" in combat uniforms. This content's utility is supported by my knowledge that [[President Nixon introduced 'Vietnamization' in 1969 to gradually withdraw US combat troops while shifting responsibility to the ARVN, seeking 'peace with honor' to satisfy the public]], which explains the positive, supportive image projected by the President. {{The provenance of July 1969 makes the source highly useful because it illustrates the presidential photo opportunity used to project troop support. However, it is less useful because it is a carefully managed event, masking the low morale, drug use, and growing anti-war sentiment among the soldiers in the field.}}\n\nSource E is highly useful for showing that Vietnamization actually expanded the geographical scope of the war. The photograph shows \"ARVN soldiers running past a burning tank on a dirt road in Cambodia\" with helicopters overhead. This content is highly useful because it is supported by my knowledge that [[Nixon ordered the invasion of Cambodia in May 1970 to destroy communist sanctuaries and supply lines, which failed to secure South Vietnam and sparked massive protests at Kent State]], which confirms that ARVN relied heavily on US air support and regional incursions rather than independent ground strength. {{The provenance of May 1970 makes the source extremely useful because it shows ARVN troops in active combat. However, it is less useful because it portrays a successful tactical advance, failing to show the strategic failure of the campaign or the ARVN's heavy reliance on US air power.}}",
+          "Source A is highly useful for showing the public relations campaign used to justify Vietnamization. The photograph shows \"Nixon standing in a crowd of smiling US soldiers\" in combat uniforms. This content's utility is supported by my knowledge that <strong>President Nixon introduced 'Vietnamization' in 1969 to gradually withdraw US combat troops while shifting responsibility to the ARVN, seeking 'peace with honor' to satisfy the public</strong>, which explains the positive, supportive image projected by the President. <em>The provenance of July 1969 makes the source highly useful because it illustrates the presidential photo opportunity used to project troop support. However, it is less useful because it is a carefully managed event, masking the low morale, drug use, and growing anti-war sentiment among the soldiers in the field.</em>\n\nSource B is highly useful for showing that Vietnamization actually expanded the geographical scope of the war. The photograph shows \"ARVN soldiers running past a burning tank on a dirt road in Cambodia\" with helicopters overhead. This content is highly useful because it is supported by my knowledge that <strong>Nixon ordered the invasion of Cambodia in May 1970 to destroy communist sanctuaries and supply lines, which failed to secure South Vietnam and sparked massive protests at Kent State</strong>, which confirms that ARVN relied heavily on US air support and regional incursions rather than independent ground strength. <em>The provenance of May 1970 makes the source extremely useful because it shows ARVN troops in active combat. However, it is less useful because it portrays a successful tactical advance, failing to show the strategic failure of the campaign or the ARVN's heavy reliance on US air power.</em>",
       },
       historians_corner: {
         title: "⚖️ Dual Interpretation: Nixon's Cambodia Invasion (1970)",
@@ -4760,19 +4405,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -4806,25 +4459,15 @@ export const usa = {
           },
           {
             question:
-              'What was the name of the system used to select young men for compulsory military service in Vietnam?',
-            answer: 'The Draft',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'At which university did National Guardsmen shoot and kill four student protesters in May 1970?',
-            answer: 'Kent State University',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: "Historical Enquiry: Nixon's policy of Vietnamization and troop morale",
-          source: '/units/usa/assets/sources/nixon-visiting-troops.jpg',
-          caption: 'President Richard Nixon visiting US troops in South Vietnam, July 1969.',
-          think_wonder:
-            'Observe: Observe Nixon standing at eye level on the ground, surrounded by a dense crowd of helmeted American soldiers. Think: What political message is the Nixon administration attempting to send to voters back home through this photo? Wonder: How did this visit contrast with the secret bombing campaigns Nixon was launching in Cambodia?',
-        },
-      ],
       vocab: [
         {
           term: 'Kent State University',
@@ -4856,9 +4499,9 @@ export const usa = {
           id: 'block_lesson_4_1_1',
           title: 'Reasons for the Growth of Opposition',
           theme_heading: 'Reasons for the Growth of Opposition',
-          text: "<p>As the Vietnam War dragged on into the late 1960s, public support collapsed, replaced by a powerful and diverse anti-war movement:</p>\n        <ul>\n          <li><strong>The Student Movement:</strong> Many young Americans were part of the 1960s 'counter-culture', which rejected traditional values. Students organized teach-ins, boycotts, and massive marches on college campuses, with groups like the Students for a Democratic Society (SDS) gaining huge followings and chanting slogans like, <em>\"Hey, hey, [Key Individual: LBJ], how many kids did you kill today?\"</em></li>\n          <li><strong>TV and Media Coverage:</strong> Vietnam was America's first 'televised war' or 'living room war'. Every night, ordinary citizens saw graphic footage of bloody combat, civilian casualties, and weapons like napalm, creating a massive <strong>'credibility gap'</strong> between government claims and reality. This was reinforced during the 1968 Tet Offensive and by respected CBS news anchor Walter Cronkite declaring the war a stalemate.</li>\n          <li><strong>The Draft System:</strong> The conscripted military service system was widely viewed as profoundly unfair. Middle-class and wealthy young men could get college deferments, leaving a disproportionately high number of working-class and Black Americans to be drafted. This led to massive draft resistance, with young men burning draft cards, refusing to register, or fleeing to Canada.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Media Influence on Public Opinion:** Historians argue that the media did not create the anti-war movement, but it legitimized it. Seeing respected anchors like Walter Cronkite question the war, alongside raw battlefield footage, made it respectable for mainstream Americans to oppose the conflict.",
+          text: "<p>As the Vietnam War dragged on into the late 1960s, public support collapsed, replaced by a powerful and diverse anti-war movement:</p>\n        <ul>\n          <li><strong>The Student Movement:</strong> Many young Americans were part of the 1960s 'counter-culture', which rejected traditional values. Students organized teach-ins, boycotts, and massive marches on college campuses, with groups like the Students for a Democratic Society (SDS) gaining huge followings and chanting slogans like, <em>\"Hey, hey, [Key Individual: LBJ], how many kids did you kill today?\"</em></li>\n          <li><strong>TV and Media Coverage:</strong> Vietnam was America's first 'televised war' or 'living room war'. Every night, ordinary citizens saw graphic footage of bloody combat, civilian casualties, and weapons like napalm, creating a massive <strong>'credibility gap'</strong> between government claims and reality. This was reinforced during the 1968 Tet Offensive and by respected CBS news anchor Walter Cronkite declaring the war a stalemate.</li>\n          <li><strong>The Draft System:</strong> The conscripted military service system was widely viewed as profoundly unfair. Middle-class and wealthy young men could get college deferments, leaving a disproportionately high number of working-class and Black Americans to be drafted. This led to massive draft resistance, with young men burning draft cards, refusing to register, or fleeing to Canada.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Media Influence on Public Opinion:** Historians argue that the media did not create the anti-war movement, but it legitimized it. Seeing respected anchors like Walter Cronkite question the war, alongside raw battlefield footage, made it respectable for mainstream Americans to oppose the conflict.\n\n> 🎙️ **Eyewitness Testimony — Ron Kovic:** &ldquo;I went to Vietnam believing in the war, believing I was defending democracy. But I returned paralyzed from the chest down, sitting in a wheelchair in a rundown veterans' hospital full of rats and neglected men. I realized we had been lied to. We weren't heroes; we were sent to kill women and children in villages we didn't know, for a cause that was unjust. When I joined the protest outside the Republican National Convention, I threw my medals away. I wanted the country to know the truth of what they had done to us and to the Vietnamese.&rdquo;<br><br><em>Context: Decorated US Marine veteran paralyzed in Vietnam and author of the memoir *Born on the Fourth of July* (1976).</em><br><br>💬 <strong>Reflective Question:</strong> Why did testimonies from returning veterans like Ron Kovic have such a powerful emotional and political impact on the American public compared to student protests?",
           content:
-            "<p>As the Vietnam War dragged on into the late 1960s, public support collapsed, replaced by a powerful and diverse anti-war movement:</p>\n        <ul>\n          <li><strong>The Student Movement:</strong> Many young Americans were part of the 1960s 'counter-culture', which rejected traditional values. Students organized teach-ins, boycotts, and massive marches on college campuses, with groups like the Students for a Democratic Society (SDS) gaining huge followings and chanting slogans like, <em>\"Hey, hey, [Key Individual: LBJ], how many kids did you kill today?\"</em></li>\n          <li><strong>TV and Media Coverage:</strong> Vietnam was America's first 'televised war' or 'living room war'. Every night, ordinary citizens saw graphic footage of bloody combat, civilian casualties, and weapons like napalm, creating a massive <strong>'credibility gap'</strong> between government claims and reality. This was reinforced during the 1968 Tet Offensive and by respected CBS news anchor Walter Cronkite declaring the war a stalemate.</li>\n          <li><strong>The Draft System:</strong> The conscripted military service system was widely viewed as profoundly unfair. Middle-class and wealthy young men could get college deferments, leaving a disproportionately high number of working-class and Black Americans to be drafted. This led to massive draft resistance, with young men burning draft cards, refusing to register, or fleeing to Canada.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Media Influence on Public Opinion:** Historians argue that the media did not create the anti-war movement, but it legitimized it. Seeing respected anchors like Walter Cronkite question the war, alongside raw battlefield footage, made it respectable for mainstream Americans to oppose the conflict.",
+            "<p>As the Vietnam War dragged on into the late 1960s, public support collapsed, replaced by a powerful and diverse anti-war movement:</p>\n        <ul>\n          <li><strong>The Student Movement:</strong> Many young Americans were part of the 1960s 'counter-culture', which rejected traditional values. Students organized teach-ins, boycotts, and massive marches on college campuses, with groups like the Students for a Democratic Society (SDS) gaining huge followings and chanting slogans like, <em>\"Hey, hey, [Key Individual: LBJ], how many kids did you kill today?\"</em></li>\n          <li><strong>TV and Media Coverage:</strong> Vietnam was America's first 'televised war' or 'living room war'. Every night, ordinary citizens saw graphic footage of bloody combat, civilian casualties, and weapons like napalm, creating a massive <strong>'credibility gap'</strong> between government claims and reality. This was reinforced during the 1968 Tet Offensive and by respected CBS news anchor Walter Cronkite declaring the war a stalemate.</li>\n          <li><strong>The Draft System:</strong> The conscripted military service system was widely viewed as profoundly unfair. Middle-class and wealthy young men could get college deferments, leaving a disproportionately high number of working-class and Black Americans to be drafted. This led to massive draft resistance, with young men burning draft cards, refusing to register, or fleeing to Canada.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Media Influence on Public Opinion:** Historians argue that the media did not create the anti-war movement, but it legitimized it. Seeing respected anchors like Walter Cronkite question the war, alongside raw battlefield footage, made it respectable for mainstream Americans to oppose the conflict.\n\n> 🎙️ **Eyewitness Testimony — Ron Kovic:** &ldquo;I went to Vietnam believing in the war, believing I was defending democracy. But I returned paralyzed from the chest down, sitting in a wheelchair in a rundown veterans' hospital full of rats and neglected men. I realized we had been lied to. We weren't heroes; we were sent to kill women and children in villages we didn't know, for a cause that was unjust. When I joined the protest outside the Republican National Convention, I threw my medals away. I wanted the country to know the truth of what they had done to us and to the Vietnamese.&rdquo;<br><br><em>Context: Decorated US Marine veteran paralyzed in Vietnam and author of the memoir *Born on the Fourth of July* (1976).</em><br><br>💬 <strong>Reflective Question:</strong> Why did testimonies from returning veterans like Ron Kovic have such a powerful emotional and political impact on the American public compared to student protests?",
           image: '/units/usa/assets/sources/vietnam-draft-lottery.jpg',
           image_alt:
             'Officials draw birth dates during the first US selective service draft lottery in Washington D.C., December 1969.',
@@ -4937,64 +4580,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Ron Kovic',
-        witness: 'Ron Kovic',
-        context:
-          'Decorated US Marine veteran paralyzed in Vietnam and author of the memoir *Born on the Fourth of July* (1976).',
-        quote:
-          "I went to Vietnam believing in the war, believing I was defending democracy. But I returned paralyzed from the chest down, sitting in a wheelchair in a rundown veterans' hospital full of rats and neglected men. I realized we had been lied to. We weren't heroes; we were sent to kill women and children in villages we didn't know, for a cause that was unjust. When I joined the protest outside the Republican National Convention, I threw my medals away. I wanted the country to know the truth of what they had done to us and to the Vietnamese.",
-        question:
-          'Why did testimonies from returning veterans like Ron Kovic have such a powerful emotional and political impact on the American public compared to student protests?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry: 'As the war dragged on, domestic opposition erupted into a powerful movement',
-        sources: [
-          {
-            title:
-              'From a photograph showing U.S. Marshals carrying away an anti-war demonstrator outside the Pentagon, October 1967.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg',
-            content:
-              '[A photograph showing two U.S. Marshals wearing white helmets carrying away a civilian demonstrator, while media reporters and cameras watch in the background.]',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'From a photograph showing student demonstrators facing the National Guard at Kent State University, May 1970.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/kent-state-protests-1970.jpg',
-            caption:
-              'Kent State University students protesting shortly before National Guardsmen opened fire.',
-            content:
-              '[A photograph showing a crowd of college students gathered on a campus lawn. In the distance, a line of National Guard soldiers in gas masks and helmets is aimed toward them, holding rifles.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the anti-war movement and the response of the government? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the anti-war movement and the response of the government? (8 marks)',
         source_a: {
           provenance:
-            'From a photograph showing U.S. Marshals carrying away an anti-war demonstrator outside the Pentagon, October 1967.',
+            'Source A: From a photograph showing U.S. Marshals carrying away an anti-war demonstrator outside the Pentagon, October 1967.',
           content:
             '[A photograph showing two U.S. Marshals wearing white helmets carrying away a civilian demonstrator, while media reporters and cameras watch in the background.]',
         },
         source_b: {
           provenance:
-            'From a photograph showing student demonstrators facing the National Guard at Kent State University, May 1970.',
+            'Source B: From a photograph showing student demonstrators facing the National Guard at Kent State University, May 1970.',
           content:
             '[A photograph showing a crowd of college students gathered on a campus lawn. In the distance, a line of National Guard soldiers in gas masks and helmets is aimed toward them, holding rifles.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          'Source D is highly useful for showing the direct confrontation and physical arrest of anti-war protestors by federal authorities. The photograph shows "two U.S. Marshals wearing white helmets carrying away a civilian demonstrator". This content\'s utility is supported by my knowledge that [[the Pentagon protest of October 1967 reflected the rapid growth of the anti-war movement as the draft escalated, with draft card burning and peaceful marches becoming common]], which confirms the growing polarization and student involvement at this time. {{The provenance of October 1967 makes the source highly useful because it captures the direct, physical conflict and state response to anti-war protestors. However, it is less useful because it focuses on a single demonstration in Washington D.C., failing to show the wider, working-class opposition or moderate critics of the war.}}\n\nSource E is highly useful for showing the lethal escalation of state suppression of student protests on campus. The photograph shows a "line of National Guard soldiers... aimed toward them, holding rifles" at Kent State. This content is highly useful because it is supported by my knowledge that [[the Kent State shootings of May 1970, where National Guardsmen killed four students protesting the invasion of Cambodia, triggered a strike of 4 million students nationwide]], which validates the high tension and physical danger student protesters faced. {{The provenance of May 1970 makes the source extremely useful because it documents the tense standoff just before the shooting. However, it is less useful because it captures the standoff, failing to explain the panic, chaos, and nationwide student strike that followed.}}',
+          'Source A is highly useful for showing the direct confrontation and physical arrest of anti-war protestors by federal authorities. The photograph shows "two U.S. Marshals wearing white helmets carrying away a civilian demonstrator". This content\'s utility is supported by my knowledge that <strong>the Pentagon protest of October 1967 reflected the rapid growth of the anti-war movement as the draft escalated, with draft card burning and peaceful marches becoming common</strong>, which confirms the growing polarization and student involvement at this time. <em>The provenance of October 1967 makes the source highly useful because it captures the direct, physical conflict and state response to anti-war protestors. However, it is less useful because it focuses on a single demonstration in Washington D.C., failing to show the wider, working-class opposition or moderate critics of the war.</em>\n\nSource B is highly useful for showing the lethal escalation of state suppression of student protests on campus. The photograph shows a "line of National Guard soldiers... aimed toward them, holding rifles" at Kent State. This content is highly useful because it is supported by my knowledge that <strong>the Kent State shootings of May 1970, where National Guardsmen killed four students protesting the invasion of Cambodia, triggered a strike of 4 million students nationwide</strong>, which validates the high tension and physical danger student protesters faced. <em>The provenance of May 1970 makes the source extremely useful because it documents the tense standoff just before the shooting. However, it is less useful because it captures the standoff, failing to explain the panic, chaos, and nationwide student strike that followed.</em>',
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: The Anti-War Movement',
@@ -5108,19 +4720,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              "Analyze the key developments, events, and individuals in KT 4.2: Why did some Americans support the Vietnam War and the 'Silent Majority'?.",
+              "Demonstrate comprehensive historical knowledge of the key developments and figures in KT 4.2: Why did some Americans support the Vietnam War and the 'Silent Majority'?.",
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              "What was the most significant direct cause of developments in Why did some Americans support the Vietnam War and the 'Silent Majority'??",
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -5154,27 +4774,15 @@ export const usa = {
           },
           {
             question:
-              'What term did Nixon use in November 1969 to describe the patriotic Americans who supported his war policy?',
-            answer: 'The Silent Majority',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'What was the primary political motivation for pro-war supporters in the US, fearing the global spread of communism?',
-            answer: 'Anti-communism',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title:
-            "Historical Enquiry: the anti-war movement and the government's response to protests",
-          source: '/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg',
-          caption:
-            'A photograph showing U.S. Marshals carrying away an anti-war demonstrator at the Pentagon, October 1967.',
-          think_wonder:
-            'Observe: Observe the two U.S. Marshals physically lifting and carrying a civilian demonstrator away. Think: Why would protestors target the Pentagon rather than local draft board offices? Wonder: How did images of armed soldiers facing young civilians affect public support for the war?',
-        },
-      ],
       vocab: [
         {
           term: 'Silent Majority',
@@ -5206,9 +4814,9 @@ export const usa = {
           id: 'block_lesson_4_2_1',
           title: 'Reasons for Early Support & Anti-Communism',
           theme_heading: 'Reasons for Early Support & Anti-Communism',
-          text: "<p>In the early years of the conflict, the vast majority of Americans backed their government's actions, with up to 85% supporting the policy in 1964:</p>\n        <ul>\n          <li><strong>The Fear of Communism (The 'Red Scare'):</strong> During the 1950s, the USA experienced the 'Red Scare'—a period of intense anti-communist paranoia fueled by politicians like Senator Joe McCarthy. Following the Soviet takeover of Eastern Europe, the communist victory in China, and the Korean War, many Americans firmly believed in the **Domino Theory** and wanted to contain communism.</li>\n          <li><strong>Patriotism:</strong> Many Americans felt a strong sense of devotion and loyalty, embracing slogans like <em>\"My country, right or wrong\"</em>. Patriots believed that protesting against the government was deeply unpatriotic and a betrayal of the troops, and they wanted America to defend the free world.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Cold War Consensus:** Historians point to the early support for the war as the peak of the post-WWII 'Cold War consensus.' During this era, both political parties and the general public shared the unquestioned belief that global communism posed a mortal threat to US security, making military intervention in places like Vietnam seem not only justified but necessary.",
+          text: "<p>In the early years of the conflict, the vast majority of Americans backed their government's actions, with up to 85% supporting the policy in 1964:</p>\n        <ul>\n          <li><strong>The Fear of Communism (The 'Red Scare'):</strong> During the 1950s, the USA experienced the 'Red Scare'—a period of intense anti-communist paranoia fueled by politicians like Senator Joe McCarthy. Following the Soviet takeover of Eastern Europe, the communist victory in China, and the Korean War, many Americans firmly believed in the **Domino Theory** and wanted to contain communism.</li>\n          <li><strong>Patriotism:</strong> Many Americans felt a strong sense of devotion and loyalty, embracing slogans like <em>\"My country, right or wrong\"</em>. Patriots believed that protesting against the government was deeply unpatriotic and a betrayal of the troops, and they wanted America to defend the free world.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Cold War Consensus:** Historians point to the early support for the war as the peak of the post-WWII 'Cold War consensus.' During this era, both political parties and the general public shared the unquestioned belief that global communism posed a mortal threat to US security, making military intervention in places like Vietnam seem not only justified but necessary.\n\n> 🎙️ **Eyewitness Testimony — Construction Worker:** &ldquo;These students are coddled brats. They get deferments from the draft, they live in comfortable university dorms, and then they spit on the American flag and call our boys in Vietnam 'baby killers.' My brother is over there right now, risking his life in the jungle. We work hard every day to build this city, and we love our country. When we saw them protesting and lowering the flag, we couldn't take it anymore. We went down there to show them that working men support the President and support our troops. You don't insult America and get away with it.&rdquo;<br><br><em>Context: A New York construction worker (hardhat) interviewed after the 'Hardhat Riots' of May 8, 1970.</em><br><br>💬 <strong>Reflective Question:</strong> How did the anti-war movement create deep social and class divisions in American society? How did Nixon capitalize on these divisions?",
           content:
-            "<p>In the early years of the conflict, the vast majority of Americans backed their government's actions, with up to 85% supporting the policy in 1964:</p>\n        <ul>\n          <li><strong>The Fear of Communism (The 'Red Scare'):</strong> During the 1950s, the USA experienced the 'Red Scare'—a period of intense anti-communist paranoia fueled by politicians like Senator Joe McCarthy. Following the Soviet takeover of Eastern Europe, the communist victory in China, and the Korean War, many Americans firmly believed in the **Domino Theory** and wanted to contain communism.</li>\n          <li><strong>Patriotism:</strong> Many Americans felt a strong sense of devotion and loyalty, embracing slogans like <em>\"My country, right or wrong\"</em>. Patriots believed that protesting against the government was deeply unpatriotic and a betrayal of the troops, and they wanted America to defend the free world.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Cold War Consensus:** Historians point to the early support for the war as the peak of the post-WWII 'Cold War consensus.' During this era, both political parties and the general public shared the unquestioned belief that global communism posed a mortal threat to US security, making military intervention in places like Vietnam seem not only justified but necessary.",
+            "<p>In the early years of the conflict, the vast majority of Americans backed their government's actions, with up to 85% supporting the policy in 1964:</p>\n        <ul>\n          <li><strong>The Fear of Communism (The 'Red Scare'):</strong> During the 1950s, the USA experienced the 'Red Scare'—a period of intense anti-communist paranoia fueled by politicians like Senator Joe McCarthy. Following the Soviet takeover of Eastern Europe, the communist victory in China, and the Korean War, many Americans firmly believed in the **Domino Theory** and wanted to contain communism.</li>\n          <li><strong>Patriotism:</strong> Many Americans felt a strong sense of devotion and loyalty, embracing slogans like <em>\"My country, right or wrong\"</em>. Patriots believed that protesting against the government was deeply unpatriotic and a betrayal of the troops, and they wanted America to defend the free world.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: Cold War Consensus:** Historians point to the early support for the war as the peak of the post-WWII 'Cold War consensus.' During this era, both political parties and the general public shared the unquestioned belief that global communism posed a mortal threat to US security, making military intervention in places like Vietnam seem not only justified but necessary.\n\n> 🎙️ **Eyewitness Testimony — Construction Worker:** &ldquo;These students are coddled brats. They get deferments from the draft, they live in comfortable university dorms, and then they spit on the American flag and call our boys in Vietnam 'baby killers.' My brother is over there right now, risking his life in the jungle. We work hard every day to build this city, and we love our country. When we saw them protesting and lowering the flag, we couldn't take it anymore. We went down there to show them that working men support the President and support our troops. You don't insult America and get away with it.&rdquo;<br><br><em>Context: A New York construction worker (hardhat) interviewed after the 'Hardhat Riots' of May 8, 1970.</em><br><br>💬 <strong>Reflective Question:</strong> How did the anti-war movement create deep social and class divisions in American society? How did Nixon capitalize on these divisions?",
           image: '/units/usa/assets/sources/pro-war-rally-nyc.jpg',
           image_alt:
             'Pro-war demonstrators march down Fifth Avenue in New York City holding banners supporting US troops and demanding victory over communism.',
@@ -5292,65 +4900,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Construction Worker',
-        witness: 'Construction Worker',
-        context:
-          "A New York construction worker (hardhat) interviewed after the 'Hardhat Riots' of May 8, 1970.",
-        quote:
-          "These students are coddled brats. They get deferments from the draft, they live in comfortable university dorms, and then they spit on the American flag and call our boys in Vietnam 'baby killers.' My brother is over there right now, risking his life in the jungle. We work hard every day to build this city, and we love our country. When we saw them protesting and lowering the flag, we couldn't take it anymore. We went down there to show them that working men support the President and support our troops. You don't insult America and get away with it.",
-        question:
-          'How did the anti-war movement create deep social and class divisions in American society? How did Nixon capitalize on these divisions?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry:
-          'Despite the high profile of the anti-war movement, millions of Americans supported the war or opposed the protests',
-        sources: [
-          {
-            title:
-              'From a photograph of pro-war demonstrators at a rally in support of US troops, New York City, 1970.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/pro-war-rally-nyc.jpg',
-            content:
-              "[A photograph of citizens holding large US flags and signs reading 'Support Our President', 'Silent Majority Speaks', and 'Victory Over Communism in Vietnam'. They look patriotic and orderly.]",
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'A photograph showing construction workers marching during the Hard Hat Riots in New York City, May 1970.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/hard-hat-riot-1970.jpg',
-            caption:
-              'Construction workers marching in support of the government during the Hard Hat Riots.',
-            content:
-              "[A photograph showing thousands of construction workers wearing hard hats marching down a street. They are carrying American flags and banners reading 'USA All the Way' and cheering.]",
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          "How useful are Sources D and E for an enquiry into the views of the 'Silent Majority' and support for the Vietnam War? (8 marks)",
+          "How useful are Sources A and B for an enquiry into the views of the 'Silent Majority' and support for the Vietnam War? (8 marks)",
         source_a: {
           provenance:
-            'From a photograph of pro-war demonstrators at a rally in support of US troops, New York City, 1970.',
+            'Source A: From a photograph of pro-war demonstrators at a rally in support of US troops, New York City, 1970.',
           content:
             "[A photograph of citizens holding large US flags and signs reading 'Support Our President', 'Silent Majority Speaks', and 'Victory Over Communism in Vietnam'. They look patriotic and orderly.]",
         },
         source_b: {
           provenance:
-            'A photograph showing construction workers marching during the Hard Hat Riots in New York City, May 1970.',
+            'Source B: A photograph showing construction workers marching during the Hard Hat Riots in New York City, May 1970.',
           content:
             "[A photograph showing thousands of construction workers wearing hard hats marching down a street. They are carrying American flags and banners reading 'USA All the Way' and cheering.]",
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          "Source D is highly useful for showing the organized public support for President Nixon's policies. The photograph shows citizens holding signs reading \"Support Our President\" and \"Silent Majority Speaks\". This content's usefulness is supported by my knowledge that [[President Nixon's November 1969 speech appealed to the 'Silent Majority'—the patriotic, law-abiding middle-class citizens who did not join protests—to politically counter the anti-war movement]], which confirms that Nixon's rhetoric successfully mobilized a visible, pro-government counter-protest. {{The provenance of 1970 makes the source highly useful because it proves that pro-war citizens actively adopted Nixon's rhetoric. However, it is less useful because it is a pro-war rally, which may exaggerate the active support of the average citizen who was simply silent or disengaged.}}\n\nSource E is highly useful for showing the working-class basis of this pro-war support and the polarization of the home front. The photograph shows \"construction workers... marching... banners reading 'USA All the Way'\". This content is highly useful because it is supported by my knowledge that [[the Hard Hat Riots of May 1970, where construction workers attacked students protesting the Kent State shootings in New York City, revealed deep class divisions on the home front]], which explains why working-class patriotism clashed violently with student pacifism. {{The provenance of May 1970 makes the source extremely useful because it documents the intense, working-class backlash against student protestors. However, it is less useful because it shows workers marching, concealing the complex economic anxieties and union politics that also drove their opposition to student demonstrators.}}",
+          "Source A is highly useful for showing the organized public support for President Nixon's policies. The photograph shows citizens holding signs reading \"Support Our President\" and \"Silent Majority Speaks\". This content's usefulness is supported by my knowledge that <strong>President Nixon's November 1969 speech appealed to the 'Silent Majority'—the patriotic, law-abiding middle-class citizens who did not join protests—to politically counter the anti-war movement</strong>, which confirms that Nixon's rhetoric successfully mobilized a visible, pro-government counter-protest. <em>The provenance of 1970 makes the source highly useful because it proves that pro-war citizens actively adopted Nixon's rhetoric. However, it is less useful because it is a pro-war rally, which may exaggerate the active support of the average citizen who was simply silent or disengaged.</em>\n\nSource B is highly useful for showing the working-class basis of this pro-war support and the polarization of the home front. The photograph shows \"construction workers... marching... banners reading 'USA All the Way'\". This content is highly useful because it is supported by my knowledge that <strong>the Hard Hat Riots of May 1970, where construction workers attacked students protesting the Kent State shootings in New York City, revealed deep class divisions on the home front</strong>, which explains why working-class patriotism clashed violently with student pacifism. <em>The provenance of May 1970 makes the source extremely useful because it documents the intense, working-class backlash against student protestors. However, it is less useful because it shows workers marching, concealing the complex economic anxieties and union politics that also drove their opposition to student demonstrators.</em>",
       },
       historians_corner: {
         title: "⚖️ Dual Interpretation: Nixon's Silent Majority Appeal",
@@ -5465,19 +5041,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -5511,26 +5095,15 @@ export const usa = {
           },
           {
             question:
-              'What event marked the official end of the Vietnam War and the defeat of South Vietnam in 1975?',
-            answer: 'The Fall of Saigon to North Vietnamese forces',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'What was the name of the final North Vietnamese conventional offensive that captured Saigon in 1975?',
-            answer: 'The Ho Chi Minh Campaign',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: 'Historical Enquiry: pro-war sentiment and divisions on the home front',
-          source: '/units/usa/assets/sources/hard-hat-riot-1970.jpg',
-          caption:
-            'Construction workers wearing hard hats marching in support of the government during the Hard Hat Riots, New York City, May 1970.',
-          think_wonder:
-            'Observe: Observe the text on the banners and the American flags carried by the marchers. Think: Why did blue-collar workers feel alienated by and hostile toward student anti-war protestors? Wonder: How did Nixon capitalize on this patriotism to build his political coalition?',
-        },
-      ],
       vocab: [
         {
           term: '1973',
@@ -5561,9 +5134,9 @@ export const usa = {
           id: 'block_lesson_4_3_1',
           title: 'Peace Negotiations & The Role of Kissinger',
           theme_heading: 'Peace Negotiations & The Role of Kissinger',
-          text: "<p>Extricating American forces was a long, complex diplomatic process marked by ongoing combat and secret deals:</p>\n        <ul>\n          <li><strong>Reasons for Negotiations:</strong> The 1968 Tet Offensive proved the war was in a stalemate, creating a 'credibility gap' that led President Johnson to halt bombing and seek talks. [Key Individual: Richard Nixon] won the 1968 election on a promise of 'peace with honour'. Furthermore, mounting costs and rising casualties made the war unsustainable, leading Congress to threaten funding cuts.</li>\n          <li><strong>Official vs. Secret Talks:</strong> Official peace talks began in Paris in May 1968 but stalled immediately. The US wanted South Vietnam to remain independent and non-communist, while North Vietnam demanded the removal of President Thieu. As talks stalled, both sides pursued a strategy of <em>\"fighting and talking\"</em>.</li>\n          <li><strong>[Key Individual: Henry Kissinger]'s Role:</strong> As National Security Advisor, Kissinger bypassed official talks, holding secret negotiations with North Vietnam's chief negotiator, <strong>Le Duc Tho</strong>. They used <strong>détente</strong> (improving relations with China and the USSR) to pressure North Vietnam. When South Vietnam's President Thieu refused to sign a draft in late 1972, Nixon ordered the massive **'Christmas Bombings'** (Operation Linebacker II) to force Hanoi back to the table and reassure Thieu of US backing.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The 'Decent Interval' Strategy:** Traditional historians argue that [Key Individual: Henry Kissinger] and [Key Individual: Richard Nixon] pursued a 'decent interval' strategy in the peace negotiations. They privately recognized that South Vietnam's military could not survive without US air support, but sought a peace agreement that would delay the collapse of Saigon by a few years so that the eventual defeat would not be blamed directly on US foreign policy or Nixon's reelection campaign.",
+          text: "<p>Extricating American forces was a long, complex diplomatic process marked by ongoing combat and secret deals:</p>\n        <ul>\n          <li><strong>Reasons for Negotiations:</strong> The 1968 Tet Offensive proved the war was in a stalemate, creating a 'credibility gap' that led President Johnson to halt bombing and seek talks. [Key Individual: Richard Nixon] won the 1968 election on a promise of 'peace with honour'. Furthermore, mounting costs and rising casualties made the war unsustainable, leading Congress to threaten funding cuts.</li>\n          <li><strong>Official vs. Secret Talks:</strong> Official peace talks began in Paris in May 1968 but stalled immediately. The US wanted South Vietnam to remain independent and non-communist, while North Vietnam demanded the removal of President Thieu. As talks stalled, both sides pursued a strategy of <em>\"fighting and talking\"</em>.</li>\n          <li><strong>[Key Individual: Henry Kissinger]'s Role:</strong> As National Security Advisor, Kissinger bypassed official talks, holding secret negotiations with North Vietnam's chief negotiator, <strong>Le Duc Tho</strong>. They used <strong>détente</strong> (improving relations with China and the USSR) to pressure North Vietnam. When South Vietnam's President Thieu refused to sign a draft in late 1972, Nixon ordered the massive **'Christmas Bombings'** (Operation Linebacker II) to force Hanoi back to the table and reassure Thieu of US backing.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The 'Decent Interval' Strategy:** Traditional historians argue that [Key Individual: Henry Kissinger] and [Key Individual: Richard Nixon] pursued a 'decent interval' strategy in the peace negotiations. They privately recognized that South Vietnam's military could not survive without US air support, but sought a peace agreement that would delay the collapse of Saigon by a few years so that the eventual defeat would not be blamed directly on US foreign policy or Nixon's reelection campaign.\n\n> 🎙️ **Eyewitness Testimony — US Embassy Employee:** &ldquo;The gates of the embassy were surrounded by thousands of desperate people screaming to get in. We had worked for the Americans for years; we knew that if the Communists captured us, we would be sent to re-education camps or shot. I managed to climb the wall with my wife and get inside the courtyard. We watched helicopters land on the roof, load people, and fly away. But many were left behind. The American marines suddenly shut the doors, went to the roof, and locked the gates. They abandoned us. The helicopters stopped coming, and we heard the tanks of the North Vietnamese entering the city.&rdquo;<br><br><em>Context: A South Vietnamese employee at the US Embassy in Saigon, recalling the chaotic evacuation on April 29-30, 1975.</em><br><br>💬 <strong>Reflective Question:</strong> How does this eyewitness account challenge the idea that the US exit from Vietnam was an orderly, honorable retreat? What was the human cost of the sudden withdrawal?",
           content:
-            "<p>Extricating American forces was a long, complex diplomatic process marked by ongoing combat and secret deals:</p>\n        <ul>\n          <li><strong>Reasons for Negotiations:</strong> The 1968 Tet Offensive proved the war was in a stalemate, creating a 'credibility gap' that led President Johnson to halt bombing and seek talks. [Key Individual: Richard Nixon] won the 1968 election on a promise of 'peace with honour'. Furthermore, mounting costs and rising casualties made the war unsustainable, leading Congress to threaten funding cuts.</li>\n          <li><strong>Official vs. Secret Talks:</strong> Official peace talks began in Paris in May 1968 but stalled immediately. The US wanted South Vietnam to remain independent and non-communist, while North Vietnam demanded the removal of President Thieu. As talks stalled, both sides pursued a strategy of <em>\"fighting and talking\"</em>.</li>\n          <li><strong>[Key Individual: Henry Kissinger]'s Role:</strong> As National Security Advisor, Kissinger bypassed official talks, holding secret negotiations with North Vietnam's chief negotiator, <strong>Le Duc Tho</strong>. They used <strong>détente</strong> (improving relations with China and the USSR) to pressure North Vietnam. When South Vietnam's President Thieu refused to sign a draft in late 1972, Nixon ordered the massive **'Christmas Bombings'** (Operation Linebacker II) to force Hanoi back to the table and reassure Thieu of US backing.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The 'Decent Interval' Strategy:** Traditional historians argue that [Key Individual: Henry Kissinger] and [Key Individual: Richard Nixon] pursued a 'decent interval' strategy in the peace negotiations. They privately recognized that South Vietnam's military could not survive without US air support, but sought a peace agreement that would delay the collapse of Saigon by a few years so that the eventual defeat would not be blamed directly on US foreign policy or Nixon's reelection campaign.",
+            "<p>Extricating American forces was a long, complex diplomatic process marked by ongoing combat and secret deals:</p>\n        <ul>\n          <li><strong>Reasons for Negotiations:</strong> The 1968 Tet Offensive proved the war was in a stalemate, creating a 'credibility gap' that led President Johnson to halt bombing and seek talks. [Key Individual: Richard Nixon] won the 1968 election on a promise of 'peace with honour'. Furthermore, mounting costs and rising casualties made the war unsustainable, leading Congress to threaten funding cuts.</li>\n          <li><strong>Official vs. Secret Talks:</strong> Official peace talks began in Paris in May 1968 but stalled immediately. The US wanted South Vietnam to remain independent and non-communist, while North Vietnam demanded the removal of President Thieu. As talks stalled, both sides pursued a strategy of <em>\"fighting and talking\"</em>.</li>\n          <li><strong>[Key Individual: Henry Kissinger]'s Role:</strong> As National Security Advisor, Kissinger bypassed official talks, holding secret negotiations with North Vietnam's chief negotiator, <strong>Le Duc Tho</strong>. They used <strong>détente</strong> (improving relations with China and the USSR) to pressure North Vietnam. When South Vietnam's President Thieu refused to sign a draft in late 1972, Nixon ordered the massive **'Christmas Bombings'** (Operation Linebacker II) to force Hanoi back to the table and reassure Thieu of US backing.</li>\n        </ul>\n\n> **🎓 Scholarly Perspective: The 'Decent Interval' Strategy:** Traditional historians argue that [Key Individual: Henry Kissinger] and [Key Individual: Richard Nixon] pursued a 'decent interval' strategy in the peace negotiations. They privately recognized that South Vietnam's military could not survive without US air support, but sought a peace agreement that would delay the collapse of Saigon by a few years so that the eventual defeat would not be blamed directly on US foreign policy or Nixon's reelection campaign.\n\n> 🎙️ **Eyewitness Testimony — US Embassy Employee:** &ldquo;The gates of the embassy were surrounded by thousands of desperate people screaming to get in. We had worked for the Americans for years; we knew that if the Communists captured us, we would be sent to re-education camps or shot. I managed to climb the wall with my wife and get inside the courtyard. We watched helicopters land on the roof, load people, and fly away. But many were left behind. The American marines suddenly shut the doors, went to the roof, and locked the gates. They abandoned us. The helicopters stopped coming, and we heard the tanks of the North Vietnamese entering the city.&rdquo;<br><br><em>Context: A South Vietnamese employee at the US Embassy in Saigon, recalling the chaotic evacuation on April 29-30, 1975.</em><br><br>💬 <strong>Reflective Question:</strong> How does this eyewitness account challenge the idea that the US exit from Vietnam was an orderly, honorable retreat? What was the human cost of the sudden withdrawal?",
           image: '/units/usa/assets/sources/kissinger-peace-talks.jpg',
           image_alt:
             'National Security Advisor Henry Kissinger and North Vietnamese negotiator Le Duc Tho conduct bilateral peace negotiations in Paris.',
@@ -5637,63 +5210,33 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: US Embassy Employee',
-        witness: 'US Embassy Employee',
-        context:
-          'A South Vietnamese employee at the US Embassy in Saigon, recalling the chaotic evacuation on April 29-30, 1975.',
-        quote:
-          'The gates of the embassy were surrounded by thousands of desperate people screaming to get in. We had worked for the Americans for years; we knew that if the Communists captured us, we would be sent to re-education camps or shot. I managed to climb the wall with my wife and get inside the courtyard. We watched helicopters land on the roof, load people, and fly away. But many were left behind. The American marines suddenly shut the doors, went to the roof, and locked the gates. They abandoned us. The helicopters stopped coming, and we heard the tanks of the North Vietnamese entering the city.',
-        question:
-          'How does this eyewitness account challenge the idea that the US exit from Vietnam was an orderly, honorable retreat? What was the human cost of the sudden withdrawal?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
-      utility_starters: {
-        enquiry: 'Peace negotiations began in Paris in 1968 but remained deadlocked for years',
-        sources: [
-          {
-            title:
-              'From a photograph showing the signing of the Paris Peace Accords, 27 January 1973.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
-            content:
-              '[A photograph showing foreign ministers and diplomats sitting around a massive circular table in a grand room in Paris. Several cameras are flashing as they sign the official treaty documents.]',
-            provenance_clue:
-              'Consider the author, motive, and contemporary legal context of this primary evidence.',
-          },
-          {
-            title:
-              'A photograph showing the evacuation of the US embassy in Saigon, 29 April 1975.',
-            type: 'visual',
-            source: '/units/usa/assets/sources/saigon-embassy-evacuation.jpg',
-            caption: 'Evacuation of American personnel and South Vietnamese refugees from Saigon.',
-            content:
-              '[A photograph showing a long line of people climbing a ladder onto the roof of a building adjacent to the US embassy to board a CIA Huey helicopter. Thick smoke rises in the distance.]',
-            provenance_clue:
-              'Evaluate how photographic evidence captures state-enforced reality while remaining limited to a single perspective.',
-          },
-        ],
-      },
+      primary_source: null,
+      utility_starters: null,
       extended: {
-        title: '8-Mark Source Utility Assessment',
+        title: 'Edexcel GCSE Paper 3: 8-Mark Source Utility Assessment',
         question:
-          'How useful are Sources D and E for an enquiry into the peace process and the final withdrawal of the US from Vietnam? (8 marks)',
+          'How useful are Sources A and B for an enquiry into the peace process and the final withdrawal of the US from Vietnam? (8 marks)',
         source_a: {
           provenance:
-            'From a photograph showing the signing of the Paris Peace Accords, 27 January 1973.',
+            'Source A: From a photograph showing the signing of the Paris Peace Accords, 27 January 1973.',
           content:
             '[A photograph showing foreign ministers and diplomats sitting around a massive circular table in a grand room in Paris. Several cameras are flashing as they sign the official treaty documents.]',
         },
         source_b: {
           provenance:
-            'A photograph showing the evacuation of the US embassy in Saigon, 29 April 1975.',
+            'Source B: A photograph showing the evacuation of the US embassy in Saigon, 29 April 1975.',
           content:
             '[A photograph showing a long line of people climbing a ladder onto the roof of a building adjacent to the US embassy to board a CIA Huey helicopter. Thick smoke rises in the distance.]',
         },
+        hints: [
+          'Content (Utility): What specific details in each source answer the enquiry? Support this with your own historical knowledge.',
+          'Provenance (Author, Motive, Date): Who created the source, why did they produce it, and does this increase or limit its utility?',
+          'Comparative Judgment: Clearly weigh up the relative strengths and limitations of both sources to reach a balanced conclusion.',
+        ],
+        provenance_clue:
+          "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
-          'Source D is highly useful for showing the formal, diplomatic conclusion of US military involvement in Vietnam. The photograph shows "diplomats sitting around a massive circular table... signing the official treaty" in Paris. This content\'s utility is supported by my knowledge that [[the signing of the Paris Peace Accords in January 1973 ended direct US military involvement, securing the withdrawal of US troops and the return of POWs]], which confirms the diplomatic settlement that allowed a face-saving exit for the US. {{The provenance of 27 January 1973 makes the source highly useful because it documents the formal legal conclusion of the war. However, it is less useful because it portrays a polished, peaceful diplomatic consensus, ignoring the secret negotiations, pressure on South Vietnamese President Thieu, and the fact that fighting continued between North and South.}}\n\nSource E is highly useful for showing the chaotic, real-world failure of the peace treaty and the collapse of Vietnamization. The photograph shows a "long line of people climbing a ladder onto the roof... to board a CIA Huey helicopter" at the US embassy. This content is highly useful because it is supported by my knowledge that [[the Fall of Saigon in April 1975, when North Vietnamese forces captured the capital and South Vietnam surrendered, marked the final failure of US containment policy in Indochina]], which explains why the evacuation had to be conducted in such a panic. {{The provenance of 29 April 1975 makes the source extremely useful because it provides a raw, iconic visual record of defeat. However, it is less useful because it focuses on the panic at the evacuation point, failing to capture the military campaigns and political decisions that led to the final collapse.}}',
+          'Source A is highly useful for showing the formal, diplomatic conclusion of US military involvement in Vietnam. The photograph shows "diplomats sitting around a massive circular table... signing the official treaty" in Paris. This content\'s utility is supported by my knowledge that <strong>the signing of the Paris Peace Accords in January 1973 ended direct US military involvement, securing the withdrawal of US troops and the return of POWs</strong>, which confirms the diplomatic settlement that allowed a face-saving exit for the US. <em>The provenance of 27 January 1973 makes the source highly useful because it documents the formal legal conclusion of the war. However, it is less useful because it portrays a polished, peaceful diplomatic consensus, ignoring the secret negotiations, pressure on South Vietnamese President Thieu, and the fact that fighting continued between North and South.</em>\n\nSource B is highly useful for showing the chaotic, real-world failure of the peace treaty and the collapse of Vietnamization. The photograph shows a "long line of people climbing a ladder onto the roof... to board a CIA Huey helicopter" at the US embassy. This content is highly useful because it is supported by my knowledge that <strong>the Fall of Saigon in April 1975, when North Vietnamese forces captured the capital and South Vietnam surrendered, marked the final failure of US containment policy in Indochina</strong>, which explains why the evacuation had to be conducted in such a panic. <em>The provenance of 29 April 1975 makes the source extremely useful because it provides a raw, iconic visual record of defeat. However, it is less useful because it focuses on the panic at the evacuation point, failing to capture the military campaigns and political decisions that led to the final collapse.</em>',
       },
       historians_corner: {
         title: '⚖️ Dual Interpretation: The Paris Peace Accords (1973)',
@@ -5808,19 +5351,27 @@ export const usa = {
         objectives: [
           {
             objective:
-              'Analyze the key developments, events, and individuals in KT 4.4: What were the main reasons why the US failed to win the war in Vietnam?.',
+              'Demonstrate comprehensive historical knowledge of the key developments and figures in KT 4.4: What were the main reasons why the US failed to win the war in Vietnam?.',
             primer:
-              'Guide pupils through the narrative sections, emphasizing the contrast between top-down federal action and grassroots activism.',
+              'Guide pupils through the numbered narrative themes, emphasizing specific historical evidence, dates, and legislation.',
             question:
-              'How did the events of this period decisively alter the balance of power between federal authority and local Southern/foreign resistance?',
+              'What was the most significant direct cause of developments in What were the main reasons why the US failed to win the war in Vietnam??',
           },
           {
             objective:
-              'Evaluate competing historical interpretations and causal significance for Pearson Edexcel Paper 3.',
+              'Analyse conflicting motivations, tactics, and responses of groups and individuals involved in the crisis.',
             primer:
-              'Ensure students use specific dates, percentages, and names in their 16-mark essay judgments.',
+              'Contrast top-down federal authority with grassroots direct action and entrenched local opposition using primary source accounts.',
             question:
-              'Which factor had the most enduring long-term consequence: legal litigation or direct action?',
+              'How did the balance of power between federal authority and local opposition shift as a result of these events?',
+          },
+          {
+            objective:
+              'Evaluate competing historical interpretations and source evidence to construct reasoned causal judgments for Paper 3.',
+            primer:
+              "Direct pupils to the Historian's Corner and the concluding GCSE assessment practice, ensuring criteria-driven evaluation.",
+            question:
+              'Which factor had the greatest enduring long-term consequence for the United States?',
           },
         ],
         source_context:
@@ -5855,26 +5406,15 @@ export const usa = {
           },
           {
             question:
-              'What was the name of the highly resilient supply route running through Laos and Cambodia that the US failed to block?',
-            answer: 'Ho Chi Minh Trail',
+              'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+            answer: 'Jim Crow laws',
           },
           {
-            question:
-              'Which two communist superpowers provided essential military hardware, air defenses, and financial aid to North Vietnam?',
-            answer: 'Soviet Union and China',
+            question: 'What does the abbreviation NAACP stand for?',
+            answer: 'National Association for the Advancement of Colored People',
           },
         ],
       },
-      starters: [
-        {
-          title: 'Historical Enquiry: the US withdrawal from Vietnam and the Fall of Saigon',
-          source: '/units/usa/assets/sources/saigon-embassy-evacuation.jpg',
-          caption:
-            'Evacuation of American personnel and South Vietnamese refugees by helicopter from the US Embassy roof in Saigon, 29 April 1975.',
-          think_wonder:
-            'Observe: Look at the line of people climbing the ladder to board the single helicopter on the roof. Think: What does the desperate nature of this evacuation tell us about the speed of the South Vietnamese collapse? Wonder: Why did the US military refuse to send air support to stop the North Vietnamese offensive?',
-        },
-      ],
       vocab: [
         {
           term: 'Soviet Union and China',
@@ -5907,9 +5447,9 @@ export const usa = {
           id: 'block_lesson_4_4_1',
           title: 'The Strengths of North Vietnam',
           theme_heading: 'The Strengths of North Vietnam',
-          text: '<p>The North Vietnamese and the Vietcong (VC) possessed several major advantages that made them a formidable enemy:</p>\n            <ul>\n              <li><strong>Russian and Chinese Support:</strong> North Vietnam was not fighting alone. Between 1954 and 1967, the communist superpowers of China and the USSR provided over <strong>$3 billion in financial aid and military equipment</strong>. This included vital supplies such as tanks, MiG fighter jets, 8,000 anti-aircraft guns, and 200 surface-to-air missile sites, which were used to shoot down hundreds of American planes.</li>\n              <li><strong>Vietcong Guerrilla Tactics:</strong> The VC fought a highly effective guerrilla war, using their expert knowledge of the jungle. They blended in with ordinary peasants, used hit-and-run ambushes, and laid deadly booby traps (like punji sticks), which were responsible for around <strong>11% of all US deaths</strong>. They also used the tactic of <strong>"hanging onto the belts"</strong> of Americans—fighting at such close quarters that the US could not call in air strikes for fear of hitting their own men. Furthermore, the VC built massive underground tunnel networks (like those at <strong>Cu Chi</strong>) to move undetected and shelter from bombings.</li>\n              <li><strong>The [Key Individual: Ho Chi Minh] Trail:</strong> This was a massive, <strong>15,000 km network of jungle paths</strong> running through neutral Laos and Cambodia into South Vietnam. It was crucial for survival, keeping the VC constantly supplied with up to 60 tons of equipment a day and 20,000 replacement soldiers a month. Despite heavy US bombing, teams of volunteers quickly repaired the trail to ensure supplies never stopped.</li>\n              <li><strong>Total Commitment:</strong> The Vietnamese communists were fighting for their survival and independence. They were willing to absorb a massive "body count" (losing between <strong>500,000 and 900,000 people</strong>) that would have broken the will of any other army.</li>\n            </ul>\n\n> **📝 Context Focus: Communist Strengths** Explain how the combination of Chinese/Soviet material aid and high local commitment allowed the Vietcong to survive the US war of attrition.\n\n> **🎓 Scholarly Perspective: Communist Resolve and Nationalism:** Many historians argue that the primary cause of US defeat was the total commitment of the Vietnamese communists. Unlike the US, which fought a limited war, North Vietnam fought a total war of national liberation, meaning they were willing to accept near-infinite casualties (the \'commitment bug\') and leverage superpower aid to achieve reunification.',
+          text: "<p>The North Vietnamese and the Vietcong (VC) possessed several major advantages that made them a formidable enemy:</p>\n            <ul>\n              <li><strong>Russian and Chinese Support:</strong> North Vietnam was not fighting alone. Between 1954 and 1967, the communist superpowers of China and the USSR provided over <strong>$3 billion in financial aid and military equipment</strong>. This included vital supplies such as tanks, MiG fighter jets, 8,000 anti-aircraft guns, and 200 surface-to-air missile sites, which were used to shoot down hundreds of American planes.</li>\n              <li><strong>Vietcong Guerrilla Tactics:</strong> The VC fought a highly effective guerrilla war, using their expert knowledge of the jungle. They blended in with ordinary peasants, used hit-and-run ambushes, and laid deadly booby traps (like punji sticks), which were responsible for around <strong>11% of all US deaths</strong>. They also used the tactic of <strong>\"hanging onto the belts\"</strong> of Americans—fighting at such close quarters that the US could not call in air strikes for fear of hitting their own men. Furthermore, the VC built massive underground tunnel networks (like those at <strong>Cu Chi</strong>) to move undetected and shelter from bombings.</li>\n              <li><strong>The [Key Individual: Ho Chi Minh] Trail:</strong> This was a massive, <strong>15,000 km network of jungle paths</strong> running through neutral Laos and Cambodia into South Vietnam. It was crucial for survival, keeping the VC constantly supplied with up to 60 tons of equipment a day and 20,000 replacement soldiers a month. Despite heavy US bombing, teams of volunteers quickly repaired the trail to ensure supplies never stopped.</li>\n              <li><strong>Total Commitment:</strong> The Vietnamese communists were fighting for their survival and independence. They were willing to absorb a massive \"body count\" (losing between <strong>500,000 and 900,000 people</strong>) that would have broken the will of any other army.</li>\n            </ul>\n\n> **📝 Context Focus: Communist Strengths** Explain how the combination of Chinese/Soviet material aid and high local commitment allowed the Vietcong to survive the US war of attrition.\n\n> **🎓 Scholarly Perspective: Communist Resolve and Nationalism:** Many historians argue that the primary cause of US defeat was the total commitment of the Vietnamese communists. Unlike the US, which fought a limited war, North Vietnam fought a total war of national liberation, meaning they were willing to accept near-infinite casualties (the 'commitment bug') and leverage superpower aid to achieve reunification.\n\n> 🎙️ **Eyewitness Testimony — Colonel Harry G. Summers Jr.:** &ldquo;I told the North Vietnamese colonel: 'You know, you never defeated us on the battlefield.' He looked at me, thought for a moment, and replied: 'That may be so. But it is also irrelevant.' We had all the firepower, we won almost every major engagement, and we killed ten times as many of their men. But they won the war because they were willing to suffer and die indefinitely for their independence, while our public at home lost the will to fight. They understood that war is a political struggle, not just a military scorecard.&rdquo;<br><br><em>Context: US Army historian and veteran, recounting an exchange in Hanoi in April 1975 with North Vietnamese Colonel Nguyen Don Tu.</em><br><br>💬 <strong>Reflective Question:</strong> Why is it possible to win every military battle but still lose a war? How does this sum up the core failure of the US intervention in Vietnam?",
           content:
-            '<p>The North Vietnamese and the Vietcong (VC) possessed several major advantages that made them a formidable enemy:</p>\n            <ul>\n              <li><strong>Russian and Chinese Support:</strong> North Vietnam was not fighting alone. Between 1954 and 1967, the communist superpowers of China and the USSR provided over <strong>$3 billion in financial aid and military equipment</strong>. This included vital supplies such as tanks, MiG fighter jets, 8,000 anti-aircraft guns, and 200 surface-to-air missile sites, which were used to shoot down hundreds of American planes.</li>\n              <li><strong>Vietcong Guerrilla Tactics:</strong> The VC fought a highly effective guerrilla war, using their expert knowledge of the jungle. They blended in with ordinary peasants, used hit-and-run ambushes, and laid deadly booby traps (like punji sticks), which were responsible for around <strong>11% of all US deaths</strong>. They also used the tactic of <strong>"hanging onto the belts"</strong> of Americans—fighting at such close quarters that the US could not call in air strikes for fear of hitting their own men. Furthermore, the VC built massive underground tunnel networks (like those at <strong>Cu Chi</strong>) to move undetected and shelter from bombings.</li>\n              <li><strong>The [Key Individual: Ho Chi Minh] Trail:</strong> This was a massive, <strong>15,000 km network of jungle paths</strong> running through neutral Laos and Cambodia into South Vietnam. It was crucial for survival, keeping the VC constantly supplied with up to 60 tons of equipment a day and 20,000 replacement soldiers a month. Despite heavy US bombing, teams of volunteers quickly repaired the trail to ensure supplies never stopped.</li>\n              <li><strong>Total Commitment:</strong> The Vietnamese communists were fighting for their survival and independence. They were willing to absorb a massive "body count" (losing between <strong>500,000 and 900,000 people</strong>) that would have broken the will of any other army.</li>\n            </ul>\n\n> **📝 Context Focus: Communist Strengths** Explain how the combination of Chinese/Soviet material aid and high local commitment allowed the Vietcong to survive the US war of attrition.\n\n> **🎓 Scholarly Perspective: Communist Resolve and Nationalism:** Many historians argue that the primary cause of US defeat was the total commitment of the Vietnamese communists. Unlike the US, which fought a limited war, North Vietnam fought a total war of national liberation, meaning they were willing to accept near-infinite casualties (the \'commitment bug\') and leverage superpower aid to achieve reunification.',
+            "<p>The North Vietnamese and the Vietcong (VC) possessed several major advantages that made them a formidable enemy:</p>\n            <ul>\n              <li><strong>Russian and Chinese Support:</strong> North Vietnam was not fighting alone. Between 1954 and 1967, the communist superpowers of China and the USSR provided over <strong>$3 billion in financial aid and military equipment</strong>. This included vital supplies such as tanks, MiG fighter jets, 8,000 anti-aircraft guns, and 200 surface-to-air missile sites, which were used to shoot down hundreds of American planes.</li>\n              <li><strong>Vietcong Guerrilla Tactics:</strong> The VC fought a highly effective guerrilla war, using their expert knowledge of the jungle. They blended in with ordinary peasants, used hit-and-run ambushes, and laid deadly booby traps (like punji sticks), which were responsible for around <strong>11% of all US deaths</strong>. They also used the tactic of <strong>\"hanging onto the belts\"</strong> of Americans—fighting at such close quarters that the US could not call in air strikes for fear of hitting their own men. Furthermore, the VC built massive underground tunnel networks (like those at <strong>Cu Chi</strong>) to move undetected and shelter from bombings.</li>\n              <li><strong>The [Key Individual: Ho Chi Minh] Trail:</strong> This was a massive, <strong>15,000 km network of jungle paths</strong> running through neutral Laos and Cambodia into South Vietnam. It was crucial for survival, keeping the VC constantly supplied with up to 60 tons of equipment a day and 20,000 replacement soldiers a month. Despite heavy US bombing, teams of volunteers quickly repaired the trail to ensure supplies never stopped.</li>\n              <li><strong>Total Commitment:</strong> The Vietnamese communists were fighting for their survival and independence. They were willing to absorb a massive \"body count\" (losing between <strong>500,000 and 900,000 people</strong>) that would have broken the will of any other army.</li>\n            </ul>\n\n> **📝 Context Focus: Communist Strengths** Explain how the combination of Chinese/Soviet material aid and high local commitment allowed the Vietcong to survive the US war of attrition.\n\n> **🎓 Scholarly Perspective: Communist Resolve and Nationalism:** Many historians argue that the primary cause of US defeat was the total commitment of the Vietnamese communists. Unlike the US, which fought a limited war, North Vietnam fought a total war of national liberation, meaning they were willing to accept near-infinite casualties (the 'commitment bug') and leverage superpower aid to achieve reunification.\n\n> 🎙️ **Eyewitness Testimony — Colonel Harry G. Summers Jr.:** &ldquo;I told the North Vietnamese colonel: 'You know, you never defeated us on the battlefield.' He looked at me, thought for a moment, and replied: 'That may be so. But it is also irrelevant.' We had all the firepower, we won almost every major engagement, and we killed ten times as many of their men. But they won the war because they were willing to suffer and die indefinitely for their independence, while our public at home lost the will to fight. They understood that war is a political struggle, not just a military scorecard.&rdquo;<br><br><em>Context: US Army historian and veteran, recounting an exchange in Hanoi in April 1975 with North Vietnamese Colonel Nguyen Don Tu.</em><br><br>💬 <strong>Reflective Question:</strong> Why is it possible to win every military battle but still lose a war? How does this sum up the core failure of the US intervention in Vietnam?",
           image: '/units/usa/assets/sources/ho-chi-minh-trail-bicycles.jpg',
           image_alt:
             'The Ho Chi Minh Trail: an intricate logistics network through Laos and Cambodia that the US Air Force was never able to sever permanently.',
@@ -5988,21 +5528,21 @@ export const usa = {
           },
         },
       ],
-      primary_source: {
-        qNum: 'Source 1',
-        title: 'Eyewitness Testimony: Colonel Harry G. Summers Jr.',
-        witness: 'Colonel Harry G. Summers Jr.',
-        context:
-          'US Army historian and veteran, recounting an exchange in Hanoi in April 1975 with North Vietnamese Colonel Nguyen Don Tu.',
-        quote:
-          "I told the North Vietnamese colonel: 'You know, you never defeated us on the battlefield.' He looked at me, thought for a moment, and replied: 'That may be so. But it is also irrelevant.' We had all the firepower, we won almost every major engagement, and we killed ten times as many of their men. But they won the war because they were willing to suffer and die indefinitely for their independence, while our public at home lost the will to fight. They understood that war is a political struggle, not just a military scorecard.",
-        question:
-          'Why is it possible to win every military battle but still lose a war? How does this sum up the core failure of the US intervention in Vietnam?',
-        scaffolding:
-          'Evaluate how personal experience highlights the psychological terror and physical reality of the conflict.',
-      },
+      primary_source: null,
       utility_starters: null,
-      extended: null,
+      extended: {
+        title: 'Edexcel GCSE Paper 3: 16-Mark Judgment Essay',
+        question:
+          "'The main reason the United States failed to win the Vietnam War was the military effectiveness of Vietcong guerrilla tactics.' How far do you agree with this statement? (16 marks + 4 SPaG)\n\nYou may use the following in your answer:\n- Vietcong guerrilla tactics and tunnel networks\n- The domestic anti-war movement and the 'credibility gap'\nYou must also use information of your own.",
+        hints: [
+          'Formulate a clear thesis in your introduction that directly answers the question.',
+          'Examine Vietcong guerrilla tactics (ambushes, booby traps, Cu Chi tunnels, blending with peasants) vs US tactical failures (search-and-destroy, firepower reliance).',
+          'Examine alternative factors: US home front collapse (anti-war protests, media coverage, Tet Offensive), ARVN weakness and political corruption in Saigon, and North Vietnamese resolve (Ho Chi Minh trail, Soviet/Chinese aid).',
+          'Provide a sustained, justified judgment in your conclusion.',
+        ],
+        model:
+          "<h3>Model Answer (Level 4 — 16/16 marks + 4 SPaG):</h3>\n<p><strong>Introduction:</strong> The US failure to achieve military victory in Vietnam between 1965 and 1973 was a multifaceted catastrophe. While Vietcong guerrilla tactics were exceptionally effective in neutralizing American technological superiority and inflicting continuous attrition, they were not the sole cause of defeat. The war was equally lost due to the domestic collapse of political support on the American home front, the deep corruption and military weakness of the South Vietnamese government (ARVN), and the unwavering resilience of North Vietnam backed by Soviet and Chinese aid. Ultimately, Vietcong tactics were decisive because they prolonged the war to the point where the American public and political system refused to sustain it.</p>\n<p><strong>Arguments supporting the statement (Vietcong Tactics):</strong> There is strong evidence that Vietcong guerrilla tactics were the primary operational reason for US failure. Guided by General Vo Nguyen Giap, the Vietcong avoided set-piece battles where US air superiority and artillery could destroy them. Instead, they adopted 'hanging onto American belts'—fighting at close range so US forces could not call in air strikes without hitting their own troops. Their extensive underground tunnel networks, such as at Cu Chi, allowed them to launch surprise ambushes, store supplies, and disappear undetected. Furthermore, booby traps (like punji stake pits and tripwire mines) caused 11% of all US deaths and 17% of wounds, inflicting devastating psychological trauma on American conscripts. By dressing as ordinary peasants, the Vietcong denied US troops a visible enemy, rendering search-and-destroy missions deeply frustrating and often counterproductive.</p>\n<p><strong>Alternative Factor 1 (US Tactical and Strategic Errors):</strong> Conversely, it can be argued that US failure stemmed from flawed American military strategies rather than Vietcong brilliance alone. General Westmoreland pursued a war of attrition measured by 'body counts', mistakenly believing US firepower would force the enemy to a breaking point. Instead, tactics like search-and-destroy, heavy napalm bombing, and Agent Orange defoliation alienated the South Vietnamese peasantry whose 'hearts and minds' were essential to win. The massacre of hundreds of unarmed civilians at My Lai in 1968 demonstrated how strategic frustration led to atrocities that destroyed the moral legitimacy of the American mission both in Vietnam and internationally.</p>\n<p><strong>Alternative Factor 2 (Home Front Opposition & The Credibility Gap):</strong> Crucially, the war was lost on the American home front as domestic political consensus collapsed. Vietnam was the world's first 'television war', bringing graphic footage of combat, wounded soldiers, and burning villages into American living rooms every night. The shock of the January 1968 Tet Offensive shattered government claims that victory was near, creating a vast 'credibility gap' between official statements and battlefield reality. Following Tet, influential news anchor Walter Cronkite declared the war an unwinnable stalemate. Massive anti-war demonstrations, university strikes (culminating in the Kent State shootings of 1970), and veteran protests made continuing the war politically impossible, compelling President Nixon to pursue 'Vietnamization' and diplomatic withdrawal.</p>\n<p><strong>Conclusion:</strong> In conclusion, while Vietcong guerrilla tactics were essential in preventing a rapid American victory, they were not the sole reason the US lost. The decisive factor was the interplay between guerrilla warfare and the American home front. Asymmetric guerrilla tactics succeeded because they turned the war into a prolonged war of attrition. North Vietnam and the Vietcong were fighting an existential war of national liberation and were willing to absorb staggering casualties, whereas the United States was fighting a limited Cold War engagement. Once the American public recognized that no amount of bombing or troop deployment could break the enemy's will, political support evaporated. Therefore, Vietcong tactics succeeded primarily because they created the conditions that forced America's domestic withdrawal.</p>",
+      },
       historians_corner: {
         title: '⚖️ Dual Interpretation: Reasons for US Defeat in Vietnam',
         author_context:
