@@ -226,38 +226,6 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         </div>
       `;
 
-      if (currentUnitId === 'cme_new' && (p.id === 'KT1' || p.id === 'KT2' || p.id === 'KT3')) {
-        const ktId = p.id;
-        lessonsHTML += `
-          <div class="teacher-planning-banner no-print" style="margin-top: -10px; margin-bottom: 20px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1.5px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 34px; height: 34px; border-radius: 8px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 0.95rem; flex-shrink: 0;">
-                <i class="fa-solid fa-print"></i>
-              </div>
-              <div>
-                <div style="font-weight: 700; color: #f8fafc; font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
-                  <span>Teacher Planning Overview: ${p.title}</span>
-                  <span style="font-size: 0.68rem; font-weight: 800; background: #0284c7; color: #ffffff; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">Classroom Sets</span>
-                </div>
-                <div style="font-size: 0.8rem; color: #94a3b8;">1-Click iframe print preview &amp; classroom set generator before teaching this topic.</div>
-              </div>
-            </div>
-
-            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_placemat_${ktId}', 'A3 Revision Placemat: ${p.title}', '/pdfs/cme_new/cme_placemat_${ktId}.pdf')" style="background: #0284c7; color: #ffffff; border: none; font-size: 0.82rem; font-weight: 600; padding: 7px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(2,132,199,0.3); transition: all 0.2s ease;">
-                <i class="fa-solid fa-table-cells" style="color: #fde047;"></i> A3 Placemat
-              </button>
-              <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_workout_${ktId}', 'A4 Rapid Workout: ${p.title}', '/pdfs/cme_new/cme_workout_${ktId}.pdf')" style="background: #7c3aed; color: #ffffff; border: none; font-size: 0.82rem; font-weight: 600; padding: 7px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(124,58,237,0.3); transition: all 0.2s ease;">
-                <i class="fa-solid fa-dumbbell" style="color: #c4b5fd;"></i> A4 Workout
-              </button>
-              <button type="button" class="btn" onclick="window.openTeacherPrintPreview('cme_trifold_${ktId}', 'Pocket Trifold Zine: ${p.title}', '/pdfs/cme_new/cme_trifold_${ktId}.pdf')" style="background: #059669; color: #ffffff; border: none; font-size: 0.82rem; font-weight: 600; padding: 7px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(5,150,105,0.3); transition: all 0.2s ease;">
-                <i class="fa-solid fa-map" style="color: #a7f3d0;"></i> Pocket Trifold
-              </button>
-            </div>
-          </div>
-        `;
-      }
-
       lessonsHTML +=
         '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left;">';
 
