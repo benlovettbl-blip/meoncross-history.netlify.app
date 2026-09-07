@@ -2832,6 +2832,11 @@
                   "type": "comprehension",
                   "question": "Explain why the Sykes-Picot Agreement and League of Nations mandates created artificial borders in the Middle East.",
                   "model": "The Sykes-Picot Agreement created artificial borders because British and French diplomats divided the collapsed Ottoman Empire according to European imperial and strategic interests rather than local realities. They drew arbitrary straight lines across desert maps without consulting the indigenous populations, grouping rival religious sects and distinct tribes into newly fabricated states while splitting historic communities across national frontiers."
+                },
+                {
+                  "type": "written",
+                  "text": "Source Detective: Study the 1916 Sykes-Picot Agreement map above. What does the straight pencil line drawn between the British and French zones reveal about European imperial priorities versus on-the-ground ethnic and religious realities?",
+                  "model": "The straight pencil line drawn across the Syrian desert demonstrates that European diplomats prioritized dividing imperial assets (railways, ports, oil pipeline access) rather than respecting existing ethnic, religious, or tribal groupings. By drawing arbitrary straight lines across nomadic and sectarian communities, Britain and France grouped rival populations into artificial states, creating enduring political instability."
                 }
               ]
             },
@@ -2854,6 +2859,17 @@
               "text": "During the desperate fighting of World War One, the British government made contradictory promises to both Arab and Jewish leaders in order to secure essential wartime support, creating a legacy of bitter betrayal.<br><br>\n<strong>1. The McMahon-Hussein Correspondence (1915–1916):</strong><br>\nSir Henry McMahon, British High Commissioner in Cairo, exchanged ten official letters with <strong>Sharif Hussein of Mecca</strong>, guardian of Islam’s holiest sites. In exchange for the Arabs launching an armed rebellion (the Great Arab Revolt, assisted by T.E. Lawrence) against Ottoman forces, Britain pledged to recognize an independent, sovereign Arab kingdom across the Middle East. Arab leaders believed this pledge encompassed Palestine.<br><br>\n<strong>2. The Balfour Declaration (2 November 1917):</strong><br>\nJust two years later, British Foreign Secretary Arthur Balfour sent an official letter to Lord Walter Rothschild, a prominent leader of the British Jewish community. The declaration stated: <em>'His Majesty's Government view with favour the establishment in Palestine of a national home for the Jewish people...'</em>. While it added that nothing should prejudice the civil and religious rights of existing non-Jewish communities, it made no mention of their political or national rights, despite Arabs making up over 90% of Palestine’s population in 1917.<br><br>\n<strong>The Clash of Nationalisms:</strong>\n<ul>\n  <li><strong>Zionism:</strong> Founded by Theodor Herzl in 1897 in response to violent European antisemitic pogroms. Zionists argued that Jewish people would never be safe from persecution without their own sovereign state in their ancestral biblical homeland (Eretz Israel / Palestine).</li>\n  <li><strong>Arab Nationalism:</strong> Arab leaders argued that having lived continuously in Palestine for centuries, the Arab majority possessed an indisputable natural right to national self-determination and independent statehood.</li>\n</ul>\nBritain had promised the exact same sliver of land to two different peoples with mutually irreconcilable aspirations.",
               "tasks": [
                 {
+                  "type": "table_planner",
+                  "text": "Diplomatic Contradictions Matrix: Complete the comparative planner analyzing the three conflicting British wartime pledges during World War One:",
+                  "columns": [
+                    "Wartime Agreement",
+                    "Date & Key Signatories",
+                    "Recipient & British Commitment",
+                    "Why It Contradicted Other Pledges"
+                  ],
+                  "rows": 3
+                },
+                {
                   "type": "comprehension",
                   "question": "Explain the fundamental contradiction between the McMahon-Hussein Correspondence and the Balfour Declaration.",
                   "model": "The fundamental contradiction was that Britain pledged the same territory to two opposing nationalist movements. Through the McMahon-Hussein Correspondence, Arab leaders were led to believe Britain would support an independent Arab kingdom including Palestine in reward for fighting the Ottomans. However, the Balfour Declaration officially promised British backing for a Jewish national home in Palestine, ignoring the political self-determination of the existing 90% Arab majority."
@@ -2873,6 +2889,28 @@
               "image_context": "Physical geography and strategic chokepoints of the Middle East. **Hinge Question:** Why did controlling physical terrain (high ground like the Golan Heights and waterways like the Straits of Tiran) dictate the military timing of both the 1956 Suez Crisis and the 1967 Six-Day War?",
               "text": "Understanding the physical geography of the Middle East is essential to understanding the military strategies, reasons for war, and peace negotiations of the Arab-Israeli conflict. The conflict centers on four critical spatial flashpoints:\n<ol>\n  <li><strong>The Maritime Chokepoints (Suez Canal & Straits of Tiran):</strong><br>\n  The <strong>Suez Canal</strong> links the Mediterranean Sea to the Red Sea, serving as the global trade artery between Europe and Asia. The <strong>Straits of Tiran</strong> are a narrow 3-mile bottleneck at the southern mouth of the Gulf of Aqaba, commanding Israel’s southern maritime corridor from Eilat. Whenever Egypt blockaded the Straits (in 1956 and May 1967), it severed Israel’s oil imports and trade lifeline with Asia, acting as a direct trigger for war.</li>\n  <li><strong>The Elevated High Ground (The Golan Heights):</strong><br>\n  A volcanic plateau in south-western Syria rising 3,000 feet above the Sea of Galilee. Prior to 1967, Syrian artillery on the heights routinely bombarded Israeli farming settlements (kibbutzim) in the Hula Valley below. Capturing the plateau in 1967 gave Israel indispensable defensive high ground and early radar detection over Damascus.</li>\n  <li><strong>The Water Basin & Territorial Depth (The West Bank & River Jordan):</strong><br>\n  The hill country west of the River Jordan provides vital territorial depth. The <strong>River Jordan</strong> and the <strong>Sea of Galilee</strong> provide over 50% of the region’s fresh water. Before 1967, Israel was only 9 miles wide at its narrowest waist near Tel Aviv; capturing the West Bank pushed the military frontier to the natural barrier of the Jordan Valley.</li>\n  <li><strong>The Sacred Core (Jerusalem & The Old City):</strong><br>\n  One square kilometer of ancient stone containing the holiest sites of Judaism (The Western Wall / Temple Mount), Christianity (The Church of the Holy Sepulchre), and Islam (The Al-Aqsa Mosque and Dome of the Rock). Divided between Israel and Jordan along the 1949 Green Line, its capture by Israel in 1967 remains the emotional and political heart of the conflict.</li>\n</ol>",
               "tasks": [
+                {
+                  "type": "matching",
+                  "text": "Strategic Flashpoints & Chokepoints: Match each critical geographic flashpoint on the left with its decisive military significance on the right:",
+                  "pairs": [
+                    {
+                      "left": "1. The Straits of Tiran (Gulf of Aqaba)",
+                      "right": "Israel's only southern maritime corridor for oil imports; its blockade by Egypt in 1956 and 1967 constituted an immediate act of war."
+                    },
+                    {
+                      "left": "2. The Golan Heights (South-western Syria)",
+                      "right": "Elevated volcanic plateau giving Syrian artillery commanding sightlines to bombard civilian Israeli settlements across the Galilee plain."
+                    },
+                    {
+                      "left": "3. The Suez Canal (Egypt)",
+                      "right": "Vital 120-mile maritime artery connecting the Mediterranean to the Red Sea, cutting 5,000 miles off trade routes between Europe and Asia."
+                    },
+                    {
+                      "left": "4. The River Jordan & West Bank Ridge",
+                      "right": "Natural freshwater boundary and strategic mountain ridge providing essential defensive depth against ground invasion from the east."
+                    }
+                  ]
+                },
                 {
                   "type": "comprehension",
                   "question": "Why were the Golan Heights and the Straits of Tiran of supreme strategic importance in the Arab-Israeli wars?",
@@ -2935,6 +2973,18 @@
             "share": "Share your pair's combined conclusion with the class."
           },
           "consolidation": "Why is the geography of the Middle East so geopolitically important?",
+          "exit_ticket": {
+            "type": "ranking_ladder",
+            "type_label": "Exit Ticket · Evaluative Ranking Ladder",
+            "title": "Exit Ticket: The Geopolitical Priority Verdict",
+            "prompt": "Which foundational factor studied today created the greatest long-term obstacle to peace in the Middle East? Rank them from 1 (Most Destabilising) to 3 (Least Destabilising) and justify your #1 rank:",
+            "options": [
+              "Factor A: Contradictory Imperial Pledges (McMahon-Hussein Correspondence vs Balfour Declaration vs Sykes-Picot).",
+              "Factor B: Artificial Borders & Mandates (European straight-line borders dividing historic ethnic and religious communities).",
+              "Factor C: Strategic Chokepoints & Topography (vulnerability around the Straits of Tiran, Golan Heights, and Suez Canal)."
+            ],
+            "guidance": "State your #1 factor and write 2-3 structured sentences using precise historical vocabulary (e.g., mandate, sovereignty, buffer zone, casus belli) to justify your choice."
+          },
           "learning_objectives": [
             "Understand how the collapse of the Ottoman Empire after WW1 and the secret Sykes-Picot Agreement (1916) created artificial borders and European mandates in the Middle East.",
             "Examine conflicting British wartime promises: the McMahon-Hussein Correspondence (1915) versus the Balfour Declaration (1917).",
@@ -3584,9 +3634,20 @@
               ]
             },
             {
-              "text": "**Zionist Militancy & Post-Holocaust Immigration:** Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. In October 1945, the moderate militia (the Haganah) joined forces with extreme paramilitary splinter groups—the Irgun (led by ) and the Lehi (also known as the Stern Gang). Together, they launched a coordinated, violent campaign known as the Jewish Insurgency to force a British withdrawal. While the moderate Haganah focused primarily on organizing illegal immigration (such as bringing Holocaust survivors on ships like the SS Exodus), the Irgun and Lehi targeted British military infrastructure. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
+              "text": "**Zionist Militancy & Post-Holocaust Immigration:** Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. In October 1945, the moderate militia (the Haganah) joined forces with extreme paramilitary splinter groups—the Irgun (led by Menachem Begin) and the Lehi (also known as the Stern Gang). Together, they launched a coordinated, violent campaign known as the Jewish Insurgency to force a British withdrawal. While the moderate Haganah focused primarily on organizing illegal immigration (such as bringing Holocaust survivors on ships like the SS Exodus), the Irgun and Lehi targeted British military infrastructure. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
               "level_4": "Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
               "tasks": [
+                {
+                  "type": "sorting",
+                  "text": "Chronological Causal Sequence: Order the following 5 key developments leading to the British decision to abandon Palestine from 1 (Earliest) to 5 (Latest):",
+                  "events": [
+                    "Ernest Bevin imposes a strict monthly quota of 1,500 Jewish immigrants to appease oil-rich Arab allies.",
+                    "The Haganah, Irgun, and Lehi form the United Resistance Movement to launch coordinated sabotage against British military infrastructure.",
+                    "The Irgun detonates explosives in the King David Hotel, destroying the British Mandate headquarters and killing 91 people.",
+                    "The Royal Navy boards the SS Exodus and forcibly returns 4,500 Holocaust survivors to displaced persons camps in Europe.",
+                    "Faced with public outrage over the 'Sergeants Affair' and a £100m annual policing cost, Britain hands Palestine to the United Nations."
+                  ]
+                },
                 {
                   "type": "written",
                   "text": "What was the 'Jewish Insurgency' and which three Zionist groups united to launch it? (P3)",
@@ -3626,6 +3687,17 @@
               "text": "**The SS Exodus & British Abdication:** The public reaction in Britain was explosive. Angry anti-Semitic riots erupted in major British cities. Faced with a war-weary public demanding that the government 'bring the boys home,' Prime Minister Attlee and Foreign Secretary Bevin admitted that Palestine had become ungovernable. Unable to find a compromise that satisfied both Jewish and Arab demands, Britain formally referred the entire problem to the newly created United Nations (UN) in February 1947. The United Nations Special Committee on Palestine (UNSCOP) concluded that the only viable solution was the partition of the territory into separate Jewish and Arab states, with Jerusalem administered as an international zone (corpus separatum) under UN control. On 29 November 1947, the UN General Assembly voted on Resolution 181. The US and Soviet Union both supported partition, hoping to expand their own influence.",
               "level_4": "The public reaction in Britain was explosive. The US and Soviet Union both supported partition, hoping to expand their own influence.",
               "tasks": [
+                {
+                  "type": "table_planner",
+                  "text": "UN Resolution 181 Partition Matrix: Complete the comparative table below analyzing the territorial allocations and reactions to the 1947 UN Partition Plan:",
+                  "columns": [
+                    "Dimension",
+                    "Proposed Jewish State",
+                    "Proposed Arab State",
+                    "City of Jerusalem (Corpus Separatum)"
+                  ],
+                  "rows": 3
+                },
                 {
                   "type": "written",
                   "text": "How did the United Nations Partition Plan (Resolution 181) divide the land of Palestine, and what was the reaction of the two communities? (P6)",
@@ -4400,6 +4472,17 @@
               "level_4": "The remaining portions of mandate Palestine were occupied by neighboring Arab states, entirely preventing the creation of an independent Palestinian Arab state. Jerusalem itself was left deeply divided, with barbed wire, concrete walls, and military checkpoints separating Israeli-controlled West Jerusalem from Jordanian-controlled East Jerusalem.",
               "tasks": [
                 {
+                  "type": "table_planner",
+                  "text": "Territorial Transformation Matrix: Complete the table comparing the 1947 UN Partition Plan boundaries with the actual 1949 Armistice (Green Line) outcomes:",
+                  "columns": [
+                    "Territory / Region",
+                    "Allocated Under UN 181 (1947)",
+                    "Actual Outcome Under 1949 Armistice",
+                    "Controlling Authority after 1949"
+                  ],
+                  "rows": 4
+                },
+                {
                   "type": "written",
                   "text": "What happened to the remaining portions of mandate Palestine (the West Bank and Gaza Strip) following the 1948-49 war? (P2)",
                   "model": "The West Bank and East Jerusalem were occupied and annexed by King Abdullah of Transjordan, while the Gaza Strip was placed under the military and administrative control of Egypt."
@@ -4427,6 +4510,16 @@
               "text": "**The Deadlock Over UN Resolution 194 & The Right of Return:** Despite the end of the war, a permanent resolution to the crisis was blocked by deep political divisions. Israel strictly denied the Palestinians their 'right of return' to their former homes. The Israeli government argued that allowing hundreds of thousands of hostile Arab refugees to return would destroy the Jewish majority, compromise national security, and undermine the sovereign Jewish character of the state. Conversely, the Arab host states (with the exception of Jordan) refused to grant the refugees citizenship or integrate them into their national societies. They insisted that the camps must remain intact to prevent the international community from forgetting the Palestinian issue and to keep permanent diplomatic and moral pressure on Israel to honor the right of return. As a result, generations of Palestinians were left stranded in squalid, overcrowded camps, suffering from poor sanitation, deep economic poverty, and a permanent lack of civil rights.",
               "level_4": "Despite the end of the war, a permanent resolution to the crisis was blocked by deep political divisions. As a result, generations of Palestinians were left stranded in squalid, overcrowded camps, suffering from poor sanitation, deep economic poverty, and a permanent lack of civil rights.",
               "tasks": [
+                {
+                  "type": "table_planner",
+                  "text": "The Refugee Deadlock Matrix: Complete the table analyzing the opposing policies and rationales regarding the displaced Palestinian refugees:",
+                  "columns": [
+                    "Key Actor",
+                    "Official Policy on Palestinian Refugees",
+                    "Strategic & Political Rationale"
+                  ],
+                  "rows": 3
+                },
                 {
                   "type": "written",
                   "text": "Why did both Israel and the Arab host states refuse to permanently integrate the Palestinian refugees into their societies? (P4)",
@@ -4464,11 +4557,11 @@
             },
             {
               "text": "**The Austerity Regime (Tzena) & Economic Survival:** In its early years, Israel faced severe economic crises that threatened to collapse the state from within. The young country had to fund a massive military defense budget, build housing for hundreds of thousands of destitute immigrants arriving under the Law of Return, and survive a total economic boycott implemented by the Arab League, which banned all trade with Israel and penalised foreign companies that did business with the Jewish state. In this precarious position, direct financial and political aid from the United States was absolutely critical to Israel's survival. President Harry S. Truman, driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants. This massive US aid to Israel became a vital economic lifeline that allowed the young nation to absorb immigrants and build its defense forces.",
-              "level_4": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. President , driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants.",
+              "level_4": "In its early years, Israel faced severe economic crises that threatened to collapse the state from within. President Harry S. Truman, driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, quickly recognized Israel and authorized massive emergency loans and grants.",
               "tasks": [
                 {
                   "type": "written",
-                  "text": "Why did President  authorise massive emergency loans and grants to Israel in its early years? (P7)",
+                  "text": "Why did President Harry S. Truman authorise massive emergency loans and grants to Israel in its early years? (P7)",
                   "model": "Truman was driven by strong domestic sympathy for Holocaust survivors and intense political lobbying, providing critical financial and political aid to help Israel survive a severe economic crisis and an Arab League boycott."
                 }
               ]
@@ -4504,7 +4597,7 @@
               }
             },
             {
-              "text": "**Unit 101 & Ariel Sharon: The Deterrence Doctrine:** To counter this threat, David Ben-Gurion implemented a severe reprisal policy, ordering the IDF to respond to every border raid with disproportionate military force against Egyptian military posts to deter future attacks. This created a violent, escalating border war that kept the region on the brink of conflict. This border tension escalated dramatically in July 1952, when the corrupt and pro-Western King Farouk of Egypt was overthrown in a military coup by the Free Officers Movement. This coup eventually brought the charismatic and fiercely anti-Western Colonel  to power in Egypt. Nasser’s championing of Pan-Arabism and his determination to avenge the Arab defeat of 1948 made him the undisputed leader of the Arab world, setting Egypt and Israel on a direct collision course that would culminate in the 1956 Suez Crisis.",
+              "text": "**Unit 101 & Ariel Sharon: The Deterrence Doctrine:** To counter this threat, David Ben-Gurion implemented a severe reprisal policy, ordering the IDF to respond to every border raid with disproportionate military force against Egyptian military posts to deter future attacks. This created a violent, escalating border war that kept the region on the brink of conflict. This border tension escalated dramatically in July 1952, when the corrupt and pro-Western King Farouk of Egypt was overthrown in a military coup by the Free Officers Movement. This coup eventually brought the charismatic and fiercely anti-Western Colonel Gamal Abdel Nasser to power in Egypt. Nasser’s championing of Pan-Arabism and his determination to avenge the Arab defeat of 1948 made him the undisputed leader of the Arab world, setting Egypt and Israel on a direct collision course that would culminate in the 1956 Suez Crisis.",
               "level_4": "To counter this threat, David Ben-Gurion implemented a severe reprisal policy, ordering the IDF to respond to every border raid with disproportionate military force against Egyptian military posts to deter future attacks. Nasser’s championing of Pan-Arabism and his determination to avenge the Arab defeat of 1948 made him the undisputed leader of the Arab world, setting Egypt and Israel on a direct collision course that would culminate in the 1956 Suez Crisis.",
               "tasks": [
                 {
@@ -4513,8 +4606,9 @@
                   "model": "Ben-Gurion implemented a severe reprisal policy, ordering the IDF to respond to every raid with disproportionate military force. This created an escalating border war that kept the region on the brink of conflict."
                 },
                 {
-                  "text": "Explain one consequence of the territorial changes following the 1948–49 Arab-Israeli war. (4 marks)",
-                  "model": "One consequence of the territorial changes following the 1948–49 Arab-Israeli War was the permanent displacement of the Palestinian Arab population and the creation of a massive refugee crisis. Prior to the war, the UN Partition Plan had allocated 45% of the land to a proposed Arab state; however, Israel's military victory expanded its borders to cover 79% of mandate Palestine, while Jordan occupied and annexed the West Bank and Egypt took control of the Gaza Strip.\n\nAs a direct result of these territorial changes, over 700,000 Palestinian Arabs lost their homes and became stateless refugees. They were forced to resettle in squalid, overcrowded refugee camps managed by UNRWA in the Gaza Strip, West Bank, Jordan, and Lebanon, where they were denied the \"right of return\" by Israel, cementing a permanent humanitarian crisis that remains unresolved."
+                  "type": "written",
+                  "text": "Explain one consequence of the cross-border Fedayeen raids and Israeli reprisal policy between 1950 and 1955. (4 marks)",
+                  "model": "One consequence of the Fedayeen border raids and Israeli reprisal policy was the rapid escalation of military tensions between Israel and Egypt, bringing both nations to the brink of war. Palestinian Fedayeen guerrillas based in the Egyptian-administered Gaza Strip launched regular sabotage attacks into southern Israel, killing civilians and mining roads. In response, Prime Minister David Ben-Gurion and General Moshe Dayan established an aggressive deterrence doctrine, launching disproportionate cross-border counter-strikes (such as the February 1955 Gaza Raid, which killed 38 Egyptian soldiers). Consequently, this cycle of violence humiliated Egypt’s military leadership and directly prompted President Nasser to seek advanced Soviet weaponry through the 1955 Czech Arms Deal."
                 }
               ]
             }
@@ -5581,9 +5675,19 @@
               }
             },
             {
-              "text": "**Imperial Outrage: Eden and Mollet Plot Military Intervention:** The nationalisation of the Suez Canal outraged Great Britain and France. British Prime Minister  viewed Nasser as a dangerous dictator who threatened Europe’s vital oil supply line. Behind the scenes, Britain and France colluded with Israel to plan a military intervention to overthrow Nasser and retake the canal. This conspiracy was codified in the highly secret Protocol of Sèvres in October 1956.",
+              "text": "**Imperial Outrage: Eden and Mollet Plot Military Intervention:** The nationalisation of the Suez Canal outraged Great Britain and France. British Prime Minister Anthony Eden viewed Nasser as a dangerous dictator who threatened Europe’s vital oil supply line. Behind the scenes, Britain and France colluded with Israel to plan a military intervention to overthrow Nasser and retake the canal. This conspiracy was codified in the highly secret Protocol of Sèvres in October 1956.",
               "level_4": "The nationalisation of the Suez Canal outraged Great Britain and France. This conspiracy was codified in the highly secret Protocol of Sèvres in October 1956.",
               "tasks": [
+                {
+                  "type": "table_planner",
+                  "text": "Protocol of Sèvres Collusion Matrix: Complete the table below analyzing the secret conspiracy forged between Britain, France, and Israel in October 1956:",
+                  "columns": [
+                    "Conspiring Nation",
+                    "Key National Motive / Grievance",
+                    "Agreed Secret Role in Operation Kadesh"
+                  ],
+                  "rows": 3
+                },
                 {
                   "type": "written",
                   "text": "What was the secret Protocol of Sèvres in October 1956? (P8)",
