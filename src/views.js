@@ -159,7 +159,7 @@ export function renderDashboard() {
     .sort((a, b) => year10Order.indexOf(a.id) - year10Order.indexOf(b.id));
 
   // Year 11 Grouping
-  const year11Order = ['edexcel_medicine', 'eee'];
+  const year11Order = ['edexcel_medicine', 'eee', 'usa'];
   const year11Units = units
     .filter((u) => year11Order.includes(u.id))
     .sort((a, b) => year11Order.indexOf(a.id) - year11Order.indexOf(b.id));
@@ -196,10 +196,11 @@ export function renderDashboard() {
       australia: 'center 70%',
       great_war_part2: 'center top',
       weimar_nazi_germany: 'center 20%',
+      usa: 'center 25%',
     };
     const bgPos = unit.cover_image_position || positionFallbacks[unit.id] || 'center';
 
-    const gcseUnitIds = ['cme_new', 'weimar_nazi_germany', 'edexcel_medicine', 'eee'];
+    const gcseUnitIds = ['cme_new', 'weimar_nazi_germany', 'edexcel_medicine', 'eee', 'usa'];
     const isGcse = gcseUnitIds.includes(unit.id);
     const gcseBadge = isGcse
       ? `<span style="position:absolute; top:10px; left:10px; z-index:10; background:#f59e0b; color:#fff; font-size:0.65rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; padding:3px 9px; border-radius:20px; box-shadow:0 2px 6px rgba(0,0,0,0.25);">GCSE</span>`
@@ -222,6 +223,7 @@ export function renderDashboard() {
       weimar_nazi_germany: 'Weimar Germany',
       edexcel_medicine: 'Medicine Through Time',
       eee: 'Elizabethan England',
+      usa: 'USA 1954–75',
     };
     const ctaLabel = unitShortNames[unit.id] || title;
 
@@ -352,32 +354,6 @@ export function renderDashboard() {
       <div class="modules-grid">
     `;
     year11Units.forEach(renderUnitCard);
-
-    // Legacy USA App Card
-    html += `
-      <div class="module-card" style="animation-delay: 0.5s; cursor: pointer;" data-action="open-link" data-url="https://edexcelgcsehistoryusa.netlify.app/">
-        <div class="module-card-img" style="background-image: url('/images/mlk_washington.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 4rem;">
-            <i class="fa-solid fa-flag-usa"></i>
-        </div>
-        <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="module-header" style="margin-bottom: 8px;">
-          </div>
-          <div style="display: flex; gap: 14px; align-items: flex-start; flex-grow: 1;">
-            <div style="flex-grow: 1; min-width: 0;">
-              <h4 style="margin: 0 0 4px 0; font-size: 0.95rem; font-weight: 600; line-height: 1.25; color: inherit; font-family: 'Playfair Display', serif;">USA 1954–75 (Legacy App)</h4>
-              <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; opacity: 0.9;">Conflict at Home and Abroad (Legacy access for current Year 11s)</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
-          <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-            <i class="fa-solid fa-external-link-alt"></i> Open Legacy App
-          </button>
-        </div>
-      </div>
-    `;
-
     html += `</div>`;
   }
   html += `</div>`;
@@ -522,13 +498,9 @@ window.launchSubApp = function (subAppName) {
       window.location.href = '/cme/';
       return;
     }
-    if (subAppName === 'gcse_usa_1954_1975') {
-      window.location.href = '/usa/';
-      return;
-    }
-
     let mappedName = subAppName;
     if (subAppName === 'gcse_middle_east_1945_1995_new') mappedName = 'cme_new';
+    if (subAppName === 'gcse_usa_1954_1975') mappedName = 'usa';
     if (subAppName === 'gcse_elizabethan_england') mappedName = 'eee';
     if (subAppName === 'great_war_v2') mappedName = 'great_war';
 
@@ -906,7 +878,7 @@ export async function renderDecisionsView() {
   if (unitId === 'gcse_middle_east_1945_1995' || unitId === 'cme_new') {
     const mod = await import('./data/cme/decisions_data.js');
     decisionsData = mod.DECISIONS_DATA;
-  } else if (unitId === 'gcse_usa_1954_1975') {
+  } else if (unitId === 'gcse_usa_1954_1975' || unitId === 'usa') {
     const mod = await import('./decisions_data.js');
     decisionsData = mod.DECISIONS_DATA;
   }
@@ -1058,7 +1030,12 @@ export async function renderTabooView() {
   const unitId = window.currentUnitId || state.selectedUnitId || 'cme_new';
 
   let tabooCards = [];
-  if (unitId === 'cme_new' || unitId === 'gcse_middle_east_1945_1995') {
+  if (
+    unitId === 'cme_new' ||
+    unitId === 'gcse_middle_east_1945_1995' ||
+    unitId === 'usa' ||
+    unitId === 'gcse_usa_1954_1975'
+  ) {
     // Both USA and CME are currently pulling from the same taboo_data file for now based on the old code
     const mod = await import('./taboo_data.js');
     Object.keys(mod.TABOO_CARDS).forEach((cat) => {
@@ -1523,6 +1500,12 @@ export async function renderMockExamsView() {
     headerGrad = 'linear-gradient(135deg, #0f766e 0%, #0f172a 100%)';
     defaultTime = '1 Hour 15 Mins';
     defaultMarks = '52 Marks + 4 SPaG';
+  } else if (unitId === 'usa') {
+    specTitle = 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75 (1HI0/33)';
+    headerColor = '#1e40af';
+    headerGrad = 'linear-gradient(135deg, #1e40af 0%, #0f172a 100%)';
+    defaultTime = '1 Hour 20 Mins';
+    defaultMarks = '52 Marks + 4 SPaG';
   }
 
   const defaultMins = defaultTime.includes('55') ? 55 : defaultTime.includes('15') ? 75 : 80;
@@ -1626,6 +1609,7 @@ export async function renderMockExamsView() {
       mock.mark_scheme_url ||
       unitId === 'weimar_nazi_germany' ||
       unitId === 'eee' ||
+      unitId === 'usa' ||
       (unitId === 'edexcel_medicine' && mock.id !== 'mock_2025_clone'),
     );
     const msFileName =

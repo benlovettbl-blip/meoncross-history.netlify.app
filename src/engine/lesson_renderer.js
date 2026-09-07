@@ -302,7 +302,13 @@ export function renderLesson(lesson) {
     window.currentUnitId;
   const isEarlyModern = unitId === 'early_modern_world';
   const isGCSE =
-    unitId === 'weimar_nazi_germany' || unitId === 'cme_new' || activeUnit.isGCSE || false;
+    unitId === 'weimar_nazi_germany' ||
+    unitId === 'cme_new' ||
+    unitId === 'usa' ||
+    unitId === 'eee' ||
+    unitId === 'edexcel_medicine' ||
+    activeUnit.isGCSE ||
+    false;
   let htmlDoNow = '',
     htmlPrimary = '',
     htmlSources1 = '',
@@ -383,6 +389,11 @@ export function renderLesson(lesson) {
     else if (ktMatch[1].startsWith('3')) heroImage = '/images/banner_medicine_18th_19th.jpg';
     else if (ktMatch[1].startsWith('4')) heroImage = '/images/banner_medicine_modern.png';
     else if (ktMatch[1].startsWith('5')) heroImage = '/images/banner_medicine_western_front.jpg';
+  } else if (window.currentUnitId === 'usa' && ktMatch) {
+    if (ktMatch[1].startsWith('1')) heroImage = '/units/usa/assets/card_mlk.png';
+    else if (ktMatch[1].startsWith('2')) heroImage = '/units/usa/assets/card_malcolmx.png';
+    else if (ktMatch[1].startsWith('3')) heroImage = '/units/usa/assets/card_westmoreland.png';
+    else if (ktMatch[1].startsWith('4')) heroImage = '/units/usa/assets/card_nixon.png';
   }
 
   if (isTrip) {
@@ -2608,7 +2619,9 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
       : null);
 
   let globalQNum = 1;
-  const isGCSE = ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany'].includes(unit);
+  const isGCSE = ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany', 'usa'].includes(
+    unit,
+  );
   const isGreatWar = unit === 'great_war' || unit === 'great_war_part2';
 
   // 1. Primary Source

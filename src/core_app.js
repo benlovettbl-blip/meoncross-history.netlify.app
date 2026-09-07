@@ -1046,7 +1046,9 @@ function assignQuestionNumbers(lesson, targetUnitId) {
     (typeof window !== 'undefined' && window.currentUnitId);
 
   let globalQNum = 1;
-  const isGCSE = ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany'].includes(unit);
+  const isGCSE = ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany', 'usa'].includes(
+    unit,
+  );
   const isGreatWar = unit === 'great_war' || unit === 'great_war_part2';
 
   // 1. Primary Source

@@ -50,7 +50,8 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     currentUnitId === 'edexcel_medicine' ||
     currentUnitId === 'cme_new' ||
     currentUnitId === 'weimar_nazi_germany' ||
-    currentUnitId === 'eee'
+    currentUnitId === 'eee' ||
+    currentUnitId === 'usa'
   ) {
     let periods = [];
     if (currentUnitId === 'edexcel_medicine') {
@@ -208,6 +209,53 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           border: '#1f2937',
           image: 'assets/placeholder_cover.jpg',
           enquiry: 'What was life like during the Elizabethan Golden Age?',
+        },
+      ];
+    } else if (
+      currentUnitId === 'usa' ||
+      (currentUnitData && currentUnitData.title && currentUnitData.title.includes('USA'))
+    ) {
+      periods = [
+        {
+          id: 'KT1',
+          title: 'Key Topic 1: The development of the civil rights movement, 1954–60',
+          prefix: 'lesson_1_',
+          gradient: 'linear-gradient(135deg, #1e3a8a, #2563eb)',
+          border: '#2563eb',
+          image: '/units/usa/assets/card_mlk.png',
+          enquiry:
+            'How did legal victories and grassroots action transform the struggle for civil rights?',
+        },
+        {
+          id: 'KT2',
+          title: 'Key Topic 2: Protest, progress and radicalism, 1960–75',
+          prefix: 'lesson_2_',
+          gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)',
+          border: '#dc2626',
+          image: '/units/usa/assets/card_malcolmx.png',
+          enquiry:
+            'How did the civil rights movement evolve from non-violent protest to Black Power?',
+        },
+        {
+          id: 'KT3',
+          title: 'Key Topic 3: US involvement in the Vietnam War, 1954–75',
+          prefix: 'lesson_3_',
+          gradient: 'linear-gradient(135deg, #064e3b, #059669)',
+          border: '#059669',
+          image: '/units/usa/assets/card_westmoreland.png',
+          enquiry:
+            'Why did the USA become militarily entangled in Vietnam, and why were US tactics unable to defeat the Vietcong?',
+        },
+        {
+          id: 'KT4',
+          title:
+            'Key Topic 4: Reactions to, and the end of, US involvement in the Vietnam War, 1964–75',
+          prefix: 'lesson_4_',
+          gradient: 'linear-gradient(135deg, #312e81, #6366f1)',
+          border: '#6366f1',
+          image: '/units/usa/assets/card_nixon.png',
+          enquiry:
+            'Why did domestic opposition force the USA to withdraw, and what was the consequence of the fall of Saigon?',
         },
       ];
     }

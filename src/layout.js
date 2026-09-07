@@ -189,7 +189,7 @@ export function bindEvents() {
       'post_war_britain',
     ]).filter((u) => !underConstructionIds.includes(u.id));
     const year10Units = getOrderedUnits(['cme_new', 'weimar_nazi_germany']);
-    const year11Units = getOrderedUnits(['edexcel_medicine', 'eee']);
+    const year11Units = getOrderedUnits(['edexcel_medicine', 'eee', 'usa']);
     const tripUnits = getOrderedUnits(['trip_ypres']);
 
     const renderAccordionGroup = (title, unitList, defaultOpen = false) => {

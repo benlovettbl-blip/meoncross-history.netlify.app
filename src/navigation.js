@@ -430,7 +430,9 @@ function updateSidebarForUnit(unitId, unitData = {}) {
       unitId.startsWith('gcse_') ||
       unitId === 'edexcel_medicine' ||
       unitId === 'eee' ||
-      unitId === 'cme_new'
+      unitId === 'cme_new' ||
+      unitId === 'weimar_nazi_germany' ||
+      unitId === 'usa'
     ) {
       if (unitId === 'gcse_elizabethan_england' || unitId === 'eee') {
         navDecisions.style.display = 'none';

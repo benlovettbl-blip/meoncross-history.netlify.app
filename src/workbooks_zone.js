@@ -347,6 +347,11 @@ export function renderWorkbooksZone(container, unitData) {
       themeColor = '#0f766e';
       defaultTime = '1 Hour 15 Mins';
       defaultMarks = '52 Marks + 4 SPaG';
+    } else if (unitId === 'usa') {
+      specTitle = 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75 (1HI0/33)';
+      themeColor = '#1e40af';
+      defaultTime = '1 Hour 20 Mins';
+      defaultMarks = '52 Marks + 4 SPaG';
     }
 
     let mocksHubHtml = `
@@ -377,6 +382,7 @@ export function renderWorkbooksZone(container, unitData) {
         mock.mark_scheme_url ||
         unitId === 'weimar_nazi_germany' ||
         unitId === 'eee' ||
+        unitId === 'usa' ||
         (unitId === 'edexcel_medicine' && mock.id !== 'mock_2025_clone'),
       );
       const msFileName =
