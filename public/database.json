@@ -52330,7 +52330,7 @@
       "specification_file": "/data/usa_spec.json",
       "title": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
       "enquiry_question": "Civil Rights and the Vietnam War: How did social and foreign crises transform the USA?",
-      "homepage_background": "/images/mlk_washington.jpg",
+      "homepage_background": "/images/usa_march_on_washington_leaders.jpg",
       "category": "Edexcel GCSE",
       "desc": "Paper 3 (1HI0/33)",
       "icon": "fa-flag-usa",
@@ -52342,28 +52342,28 @@
         {
           "id": "KT1",
           "title": "Key Topic 1: The development of the civil rights movement, 1954–60",
-          "image": "/units/usa/assets/card_mlk.png",
+          "image": "/units/usa/assets/sources/airborne-little-rock-patrol.jpg",
           "prefix": "lesson_1_",
           "enquiry": "How did legal victories and grassroots action transform the struggle for civil rights?"
         },
         {
           "id": "KT2",
           "title": "Key Topic 2: Protest, progress and radicalism, 1960–75",
-          "image": "/units/usa/assets/card_malcolmx.png",
+          "image": "/units/usa/assets/sources/birmingham-protests-dogs-1963.jpg",
           "prefix": "lesson_2_",
           "enquiry": "How did the civil rights movement evolve from non-violent protest to Black Power?"
         },
         {
           "id": "KT3",
           "title": "Key Topic 3: US involvement in the Vietnam War, 1954–75",
-          "image": "/units/usa/assets/card_westmoreland.png",
+          "image": "/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg",
           "prefix": "lesson_3_",
           "enquiry": "Why did the USA become militarily entangled in Vietnam, and why were US tactics unable to defeat the Vietcong?"
         },
         {
           "id": "KT4",
           "title": "Key Topic 4: Reactions to, and the end of, US involvement in the Vietnam War, 1964–75",
-          "image": "/units/usa/assets/card_nixon.png",
+          "image": "/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg",
           "prefix": "lesson_4_",
           "enquiry": "Why did domestic opposition force the USA to withdraw, and what was the consequence of the fall of Saigon?"
         }

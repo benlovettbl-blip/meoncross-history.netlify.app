@@ -652,16 +652,23 @@ export function renderLesson(lesson) {
   htmlSources1 += ``;
 
   if (lesson.primary_source) {
-    let srcs = Array.isArray(lesson.primary_source.src)
-      ? lesson.primary_source.src
-      : [lesson.primary_source.src];
+    let rawSrcs = lesson.primary_source.src || lesson.primary_source.image;
+    let srcs = rawSrcs ? (Array.isArray(rawSrcs) ? rawSrcs.filter(Boolean) : [rawSrcs]) : [];
     htmlPrimary += `
         <div class="phase-card">
           <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+            ${
+              srcs.length > 0
+                ? `
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 15px;">
               ${srcs.map((src) => `<img src="${getAssetUrl(src)}" alt="Source" style="max-height: 500px; max-width: ${srcs.length > 1 ? '45%' : '100%'}; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">`).join('')}
             </div>
+            `
+                : ''
+            }
             <div style="font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary);">${lesson.primary_source.title}</div>
+            ${lesson.primary_source.context ? `<div style="color: #64748b; margin-bottom: 12px; font-size: 0.9rem; text-align: left; font-style: italic;"><strong>Context:</strong> ${lesson.primary_source.context}</div>` : ''}
+            ${lesson.primary_source.quote ? `<blockquote style="border-left: 4px solid #3b82f6; background: #f8fafc; padding: 14px 18px; margin: 15px 0; border-radius: 0 8px 8px 0; font-style: italic; color: #1e293b; text-align: left; font-size: 1rem; line-height: 1.6;">&ldquo;${lesson.primary_source.quote}&rdquo;</blockquote>` : ''}
             ${lesson.primary_source.caption ? `<div style="color: #475569; margin-bottom: 15px; font-size: 0.95rem; text-align: left;">${lesson.primary_source.caption}</div>` : ''}
             ${
               lesson.primary_source.question
