@@ -1377,6 +1377,99 @@ export async function renderBookletView() {
   else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+window.hubExamTimerState = window.hubExamTimerState || {
+  interval: null,
+  totalSeconds: 3300,
+  initialSeconds: 3300,
+  isRunning: false,
+};
+
+window.toggleHubExamClock = function (action, defaultMinutes = 55) {
+  const state = window.hubExamTimerState;
+  const display = document.getElementById('hub-exam-clock-display');
+  const startBtn = document.getElementById('hub-exam-clock-start');
+  const pauseBtn = document.getElementById('hub-exam-clock-pause');
+
+  const formatTime = (secs) => {
+    const h = Math.floor(secs / 3600);
+    const m = Math.floor((secs % 3600) / 60);
+    const s = secs % 60;
+    if (h > 0) {
+      return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+    return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+  };
+
+  const updateDisplay = () => {
+    if (display) {
+      display.textContent = formatTime(state.totalSeconds);
+      if (state.totalSeconds === 0) {
+        display.style.color = '#ef4444';
+        display.textContent = "00:00 (Time's Up!)";
+      } else if (state.totalSeconds <= 300) {
+        display.style.color = '#ef4444';
+      } else if (state.totalSeconds <= 900) {
+        display.style.color = '#f59e0b';
+      } else {
+        display.style.color = '#38bdf8';
+      }
+    }
+  };
+
+  if (action === 'start') {
+    if (state.isRunning) return;
+    if (state.totalSeconds === 0) {
+      state.totalSeconds = state.initialSeconds || defaultMinutes * 60;
+    }
+    state.isRunning = true;
+    if (startBtn) startBtn.style.display = 'none';
+    if (pauseBtn) pauseBtn.style.display = 'inline-flex';
+
+    if (state.interval) clearInterval(state.interval);
+    state.interval = setInterval(() => {
+      if (state.totalSeconds > 0) {
+        state.totalSeconds--;
+        updateDisplay();
+        if (state.totalSeconds === 0) {
+          clearInterval(state.interval);
+          state.interval = null;
+          state.isRunning = false;
+          if (startBtn) {
+            startBtn.style.display = 'inline-flex';
+            startBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Restart';
+          }
+          if (pauseBtn) pauseBtn.style.display = 'none';
+        }
+      }
+    }, 1000);
+  } else if (action === 'pause') {
+    if (!state.isRunning) return;
+    clearInterval(state.interval);
+    state.interval = null;
+    state.isRunning = false;
+    if (startBtn) {
+      startBtn.style.display = 'inline-flex';
+      startBtn.innerHTML = '<i class="fa-solid fa-play"></i> Resume';
+    }
+    if (pauseBtn) pauseBtn.style.display = 'none';
+  } else if (action === 'reset') {
+    if (state.interval) clearInterval(state.interval);
+    state.interval = null;
+    state.isRunning = false;
+    state.totalSeconds = defaultMinutes * 60;
+    state.initialSeconds = defaultMinutes * 60;
+    updateDisplay();
+    if (startBtn) {
+      startBtn.style.display = 'inline-flex';
+      startBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start Clock';
+    }
+    if (pauseBtn) pauseBtn.style.display = 'none';
+  } else if (action === 'add5') {
+    state.totalSeconds += 300;
+    updateDisplay();
+  }
+};
+
 export async function renderMockExamsView() {
   const contentArea = document.getElementById('main-content');
   if (!contentArea) return;
@@ -1432,6 +1525,17 @@ export async function renderMockExamsView() {
     defaultMarks = '52 Marks + 4 SPaG';
   }
 
+  const defaultMins = defaultTime.includes('55') ? 55 : defaultTime.includes('15') ? 75 : 80;
+  if (window.hubExamTimerState && window.hubExamTimerState.interval) {
+    clearInterval(window.hubExamTimerState.interval);
+  }
+  window.hubExamTimerState = {
+    interval: null,
+    totalSeconds: defaultMins * 60,
+    initialSeconds: defaultMins * 60,
+    isRunning: false,
+  };
+
   let html = `
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px 40px 15px;">
       <!-- Welcome Banner -->
@@ -1453,7 +1557,7 @@ export async function renderMockExamsView() {
       </div>
 
       <!-- Quick Assessment Specifications & Instructions -->
-      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 18px 24px; margin-bottom: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 18px 24px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
         <div>
           <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Exam Timing</div>
           <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-regular fa-clock" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultTime}</div>
@@ -1469,6 +1573,43 @@ export async function renderMockExamsView() {
         <div>
           <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Marking Support</div>
           <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-chalkboard-user" style="color: ${headerColor}; margin-right: 6px;"></i>Full Model Answers</div>
+        </div>
+      </div>
+
+      <!-- Digital Exam Hall Clock & Timer Bar -->
+      <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; border-radius: 10px; padding: 18px 24px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 5px solid #38bdf8; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 1.3rem;">
+            <i class="fa-solid fa-stopwatch-20"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 0.72rem; font-weight: 800; background: #38bdf8; color: #0f172a; padding: 2px 7px; border-radius: 3px; text-transform: uppercase;">
+                Digital Exam Clock
+              </span>
+              <span style="font-size: 0.8rem; color: #94a3b8;">
+                Whiteboard Projector Mode · In-Browser Timers Active
+              </span>
+            </div>
+            <div id="hub-exam-clock-display" style="font-size: 1.85rem; font-weight: 800; font-family: 'Courier New', Courier, monospace; letter-spacing: 2px; color: #38bdf8; line-height: 1.15; margin-top: 3px;">
+              ${defaultMins === 55 ? '55:00' : defaultMins === 75 ? '01:15:00' : '01:20:00'}
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <button type="button" class="btn" id="hub-exam-clock-start" onclick="window.toggleHubExamClock('start', ${defaultMins})" style="background: #10b981; color: #fff; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-play"></i> Start Clock
+          </button>
+          <button type="button" class="btn" id="hub-exam-clock-pause" onclick="window.toggleHubExamClock('pause')" style="background: #f59e0b; color: #fff; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; display: none; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-pause"></i> Pause
+          </button>
+          <button type="button" class="btn" id="hub-exam-clock-reset" onclick="window.toggleHubExamClock('reset', ${defaultMins})" style="background: #334155; color: #e2e8f0; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-rotate-right"></i> Reset
+          </button>
+          <button type="button" class="btn" onclick="window.toggleHubExamClock('add5')" style="background: #1e293b; color: #94a3b8; border: 1px solid #475569; padding: 8px 12px; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer;" title="Add 5 Minutes Extra Time">
+            +5m Extra Time
+          </button>
         </div>
       </div>
 

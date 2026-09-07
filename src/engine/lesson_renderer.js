@@ -113,6 +113,145 @@ function getRetrievalStarterActions(lesson, currentUnitId) {
   `;
 }
 
+function renderDoNowTimerBarHTML(timerId = 'donow-timer') {
+  return `
+    <div class="donow-timer-bar" id="${timerId}-bar" style="grid-column: 1 / -1; width: 100%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #0284c7; border-radius: 8px; padding: 10px 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); box-sizing: border-box;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 36px; height: 36px; border-radius: 8px; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;">
+          <i class="fa-solid fa-stopwatch"></i>
+        </div>
+        <div>
+          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Do Now Task Timer</div>
+          <div style="font-size: 1.35rem; font-weight: 800; font-family: 'Courier New', monospace; color: #0f172a; line-height: 1.1;" id="${timerId}-display">05:00</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+        <button type="button" class="btn btn-primary btn-sm" id="${timerId}-start-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'start');" style="padding: 6px 14px; font-weight: 700; font-size: 0.82rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; background: #0284c7; color: #fff; border: none;">
+          <i class="fa-solid fa-play"></i> Start
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-pause-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'pause');" style="padding: 6px 12px; font-size: 0.82rem; font-weight: 600; border-radius: 6px; cursor: pointer; display: none; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-pause"></i> Pause
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-reset-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'reset');" style="padding: 6px 12px; font-size: 0.82rem; font-weight: 600; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset to 5 minutes">
+          <i class="fa-solid fa-rotate-right"></i> Reset (5m)
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-add5-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'add5');" style="padding: 6px 12px; font-size: 0.82rem; font-weight: 600; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Add 5 minutes">
+          +5m
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+window.doNowTimers = window.doNowTimers || {};
+
+window.toggleDoNowTimer = function (timerId, action) {
+  let timer = window.doNowTimers[timerId];
+  if (!timer) {
+    timer = {
+      totalSeconds: 300,
+      initialSeconds: 300,
+      interval: null,
+      isRunning: false,
+    };
+    window.doNowTimers[timerId] = timer;
+  }
+
+  const display = document.getElementById(`${timerId}-display`);
+  const summaryBadge = document.getElementById(`${timerId}-summary-badge`);
+  const startBtn = document.getElementById(`${timerId}-start-btn`);
+  const pauseBtn = document.getElementById(`${timerId}-pause-btn`);
+
+  const updateDisplay = () => {
+    const mins = Math.floor(timer.totalSeconds / 60);
+    const secs = timer.totalSeconds % 60;
+    const formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    if (display) {
+      display.textContent = formatted;
+      if (timer.totalSeconds === 0) {
+        display.style.color = '#ef4444';
+        display.textContent = "00:00 (Time's Up!)";
+      } else if (timer.totalSeconds <= 30) {
+        display.style.color = '#ef4444';
+      } else {
+        display.style.color = '#0f172a';
+      }
+    }
+    if (summaryBadge) {
+      summaryBadge.textContent = formatted;
+      summaryBadge.style.color = timer.totalSeconds <= 30 ? '#ef4444' : '#0369a1';
+    }
+  };
+
+  const playChime = () => {
+    try {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+      osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.15); // A5
+      gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.8);
+    } catch (e) {}
+  };
+
+  if (action === 'start') {
+    if (timer.isRunning) return;
+    if (timer.totalSeconds === 0) timer.totalSeconds = 300;
+    timer.isRunning = true;
+    if (startBtn) startBtn.style.display = 'none';
+    if (pauseBtn) pauseBtn.style.display = 'inline-flex';
+
+    if (timer.interval) clearInterval(timer.interval);
+    timer.interval = setInterval(() => {
+      if (timer.totalSeconds > 0) {
+        timer.totalSeconds--;
+        updateDisplay();
+        if (timer.totalSeconds === 0) {
+          clearInterval(timer.interval);
+          timer.interval = null;
+          timer.isRunning = false;
+          if (startBtn) {
+            startBtn.style.display = 'inline-flex';
+            startBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Restart (5m)';
+          }
+          if (pauseBtn) pauseBtn.style.display = 'none';
+          playChime();
+        }
+      }
+    }, 1000);
+  } else if (action === 'pause') {
+    if (!timer.isRunning) return;
+    clearInterval(timer.interval);
+    timer.interval = null;
+    timer.isRunning = false;
+    if (startBtn) {
+      startBtn.style.display = 'inline-flex';
+      startBtn.innerHTML = '<i class="fa-solid fa-play"></i> Resume';
+    }
+    if (pauseBtn) pauseBtn.style.display = 'none';
+  } else if (action === 'reset') {
+    if (timer.interval) clearInterval(timer.interval);
+    timer.interval = null;
+    timer.isRunning = false;
+    timer.totalSeconds = 300;
+    updateDisplay();
+    if (startBtn) {
+      startBtn.style.display = 'inline-flex';
+      startBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+    }
+    if (pauseBtn) pauseBtn.style.display = 'none';
+  } else if (action === 'add5') {
+    timer.totalSeconds += 300;
+    updateDisplay();
+  }
+};
+
 window.renderLessonByIndex = function (index, skipHistory = false) {
   if (
     appStore.state.activeUnitData &&
@@ -145,6 +284,12 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
 };
 
 export function renderLesson(lesson) {
+  if (window.doNowTimers) {
+    Object.values(window.doNowTimers).forEach((t) => {
+      if (t && t.interval) clearInterval(t.interval);
+    });
+    window.doNowTimers = {};
+  }
   window.postRenderHooks = [];
   const activeUnit =
     window.currentUnitData || (appStore && appStore.state && appStore.state.activeUnitData) || {};
@@ -637,10 +782,14 @@ export function renderLesson(lesson) {
       htmlDoNow += `
           <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
               <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
-                <span><i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6; margin-right: 10px;"></i> Chronological Timeline</span>
+                <span style="display: flex; align-items: center; gap: 10px;">
+                  <i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6;"></i> Chronological Timeline
+                  <span id="donow-timeline-timer-summary-badge" style="font-size: 0.8rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-family: monospace;">05:00</span>
+                </span>
                 <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
               </summary>
               <div style="padding: 20px;">
+                ${renderDoNowTimerBarHTML('donow-timeline-timer')}
                 ${
                   !isTrip &&
                   ((appStore && appStore.state && appStore.state.selectedUnitId) ||
@@ -703,13 +852,17 @@ export function renderLesson(lesson) {
     htmlDoNow += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
             <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
-              <span><i class="fa-solid fa-list-check" style="color: #3b82f6; margin-right: 10px;"></i> Do Now Tasks</span>
+              <span style="display: flex; align-items: center; gap: 10px;">
+                <i class="fa-solid fa-list-check" style="color: #3b82f6;"></i> Do Now Tasks
+                <span id="donow-timer-summary-badge" style="font-size: 0.8rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-family: monospace;">05:00</span>
+              </span>
               <div>
                 <button class="btn btn-secondary" data-action="toggle-all-answers" onclick="if(window.toggleAllAnswers){window.toggleAllAnswers(this);}event.stopPropagation();" style="font-size: 0.9rem; padding: 4px 10px; margin-right: 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
                 <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
               </div>
             </summary>
             <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+              ${renderDoNowTimerBarHTML('donow-timer')}
               ${
                 showQuizzing
                   ? `
