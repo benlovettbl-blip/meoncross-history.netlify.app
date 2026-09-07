@@ -222,7 +222,8 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           prefix: 'lesson_1_',
           gradient: 'linear-gradient(135deg, #1e3a8a, #2563eb)',
           border: '#2563eb',
-          image: '/units/usa/assets/card_mlk.png',
+          image: '/units/usa/assets/sources/airborne-little-rock-patrol.jpg',
+          bgPos: 'center 35%',
           enquiry:
             'How did legal victories and grassroots action transform the struggle for civil rights?',
         },
@@ -232,7 +233,8 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           prefix: 'lesson_2_',
           gradient: 'linear-gradient(135deg, #7f1d1d, #dc2626)',
           border: '#dc2626',
-          image: '/units/usa/assets/card_malcolmx.png',
+          image: '/units/usa/assets/sources/birmingham-protests-dogs-1963.jpg',
+          bgPos: 'center 30%',
           enquiry:
             'How did the civil rights movement evolve from non-violent protest to Black Power?',
         },
@@ -242,7 +244,8 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           prefix: 'lesson_3_',
           gradient: 'linear-gradient(135deg, #064e3b, #059669)',
           border: '#059669',
-          image: '/units/usa/assets/card_westmoreland.png',
+          image: '/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg',
+          bgPos: 'center 30%',
           enquiry:
             'Why did the USA become militarily entangled in Vietnam, and why were US tactics unable to defeat the Vietcong?',
         },
@@ -253,7 +256,8 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           prefix: 'lesson_4_',
           gradient: 'linear-gradient(135deg, #312e81, #6366f1)',
           border: '#6366f1',
-          image: '/units/usa/assets/card_nixon.png',
+          image: '/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg',
+          bgPos: 'center 30%',
           enquiry:
             'Why did domestic opposition force the USA to withdraw, and what was the consequence of the fall of Saigon?',
         },

@@ -390,10 +390,14 @@ export function renderLesson(lesson) {
     else if (ktMatch[1].startsWith('4')) heroImage = '/images/banner_medicine_modern.png';
     else if (ktMatch[1].startsWith('5')) heroImage = '/images/banner_medicine_western_front.jpg';
   } else if (window.currentUnitId === 'usa' && ktMatch) {
-    if (ktMatch[1].startsWith('1')) heroImage = '/units/usa/assets/card_mlk.png';
-    else if (ktMatch[1].startsWith('2')) heroImage = '/units/usa/assets/card_malcolmx.png';
-    else if (ktMatch[1].startsWith('3')) heroImage = '/units/usa/assets/card_westmoreland.png';
-    else if (ktMatch[1].startsWith('4')) heroImage = '/units/usa/assets/card_nixon.png';
+    if (ktMatch[1].startsWith('1'))
+      heroImage = '/units/usa/assets/sources/airborne-little-rock-patrol.jpg';
+    else if (ktMatch[1].startsWith('2'))
+      heroImage = '/units/usa/assets/sources/birmingham-protests-dogs-1963.jpg';
+    else if (ktMatch[1].startsWith('3'))
+      heroImage = '/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg';
+    else if (ktMatch[1].startsWith('4'))
+      heroImage = '/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg';
   }
 
   if (isTrip) {
