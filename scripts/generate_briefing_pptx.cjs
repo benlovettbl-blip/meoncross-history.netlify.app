@@ -46,7 +46,7 @@ s1.addText('YPRES 1914–1918: REMEMBRANCE, SACRIFICE & LOCAL HERITAGE', {
 });
 
 s1.addText(
-  'Meoncross School History Department & The History Boys · Mr B. Lovett & Mr J. Garrett (Leaders) · Dr Kirkup & Mrs Lushey',
+  'Meoncross School History Department & The History Boys · Mr B. Lovett & Mr J. Garrett (Leaders) · Accompanied by Two Meoncross Staff',
   {
     x: 0.5,
     y: 0.47,
@@ -524,7 +524,7 @@ s2.addText(
 
 // Slide 2 Footer
 s2.addText(
-  'Expedition Staff: Mr Ben Lovett & Mr James Garrett (Tour Leaders) · Dr Kirkup & Mrs Lushey (Accompanying Staff)',
+  'Expedition Staff: Mr Ben Lovett & Mr James Garrett (Tour Leaders) · Accompanied by Two Meoncross Staff',
   {
     x: 0.6,
     y: 5.25,

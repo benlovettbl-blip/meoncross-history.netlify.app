@@ -1259,7 +1259,7 @@ window.openParentBriefingModal = function () {
               YPRES 1914–1918: REMEMBRANCE, SACRIFICE &amp; LOCAL HERITAGE
             </h2>
             <div style="font-size: 0.9rem; color: #cbd5e1; margin-top: 4px;">
-              Meoncross School History Department &amp; The History Boys · Led jointly by <strong>Mr Ben Lovett</strong> &amp; <strong>Mr James Garrett</strong> · Accomp: <strong>Dr Kirkup</strong> &amp; <strong>Mrs Lushey</strong>
+              Meoncross School History Department &amp; The History Boys · Led jointly by <strong>Mr Ben Lovett</strong> &amp; <strong>Mr James Garrett</strong> · Accompanied by <strong>Two Meoncross Staff</strong>
             </div>
           </div>
 

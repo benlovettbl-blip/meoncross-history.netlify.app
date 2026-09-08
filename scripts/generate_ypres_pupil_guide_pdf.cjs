@@ -417,7 +417,7 @@ function getHtmlContent() {
       </div>
       <div style="text-align: right;">
         <strong style="color: #1e3a8a;">ACCOMPANYING STAFF:</strong><br>
-        Dr Kirkup &amp; Mrs Lushey
+        Two Meoncross Staff
       </div>
     </div>
 
@@ -543,7 +543,7 @@ function getHtmlContent() {
           <tr>
             <td style="padding: 2.6px 6px;"><strong>Day 2 · 19:20</strong></td>
             <td style="padding: 2.6px 6px;"><strong>Stop 9:</strong> The Menin Gate Last Post Ceremony</td>
-            <td style="padding: 2.6px 6px;">Arrive early for 20:00 ceremony; locate Sgt. Frank Rogers (Panel 35); Meoncross wreath laying.</td>
+            <td style="padding: 2.6px 6px;">Arrive early for 20:00 ceremony; locate Pte. Franklin &amp; Pte. Ayling (Panel 35); Meoncross wreath laying.</td>
           </tr>
           <tr>
             <td style="padding: 2.6px 6px;"><strong>Day 3 · 09:15</strong></td>
@@ -733,34 +733,34 @@ function getHtmlContent() {
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 7.5px 9px;"><strong>Pte. Walter Spratt</strong></td>
+                <td style="padding: 7.5px 9px;"><strong>Pte. Thomas Franklin</strong></td>
                 <td style="padding: 7.5px 9px;">1st Bn, Hampshire Regt</td>
-                <td style="padding: 7.5px 9px;">Ploegsteert Memorial (Missing)</td>
-              </tr>
-              <tr>
-                <td style="padding: 7.5px 9px;"><strong>Sgt. Frank Rogers</strong></td>
-                <td style="padding: 7.5px 9px;">2nd Bn, Hampshire Regt</td>
                 <td style="padding: 7.5px 9px;">Menin Gate (Panel 35)</td>
               </tr>
               <tr>
-                <td style="padding: 7.5px 9px;"><strong>L/Cpl. Arthur Newman</strong></td>
-                <td style="padding: 7.5px 9px;">Royal Engineers (Signals)</td>
-                <td style="padding: 7.5px 9px;">Tyne Cot Memorial Wall</td>
+                <td style="padding: 7.5px 9px;"><strong>Pte. William Ayling</strong></td>
+                <td style="padding: 7.5px 9px;">1st Bn, Hampshire Regt</td>
+                <td style="padding: 7.5px 9px;">Menin Gate (Panel 35)</td>
               </tr>
               <tr>
-                <td style="padding: 7.5px 9px;"><strong>Pte. George Stares</strong></td>
-                <td style="padding: 7.5px 9px;">8th Bn, Hampshire Regt</td>
-                <td style="padding: 7.5px 9px;">Bedford House Cemetery</td>
+                <td style="padding: 7.5px 9px;"><strong>Pte. Sydney Muckett</strong></td>
+                <td style="padding: 7.5px 9px;">15th Bn, Hampshire Regt</td>
+                <td style="padding: 7.5px 9px;">Tyne Cot Memorial (Panel 88-90)</td>
               </tr>
               <tr>
-                <td style="padding: 7.5px 9px;"><strong>Dvr. Edward Vear</strong></td>
-                <td style="padding: 7.5px 9px;">Royal Field Artillery</td>
-                <td style="padding: 7.5px 9px;">Brandhoek Military Cemetery</td>
+                <td style="padding: 7.5px 9px;"><strong>Pte. Arthur Rye</strong></td>
+                <td style="padding: 7.5px 9px;">14th Bn, Hampshire Regt</td>
+                <td style="padding: 7.5px 9px;">Tyne Cot Memorial (Panel 88-90)</td>
               </tr>
               <tr>
-                <td style="padding: 7.5px 9px;"><strong>Cpl. Harry Freemantle</strong></td>
-                <td style="padding: 7.5px 9px;">Royal Marine Artillery</td>
-                <td style="padding: 7.5px 9px;">Dunkirk / Ypres Coastal Sector</td>
+                <td style="padding: 7.5px 9px;"><strong>L/Cpl. Archibald Ward</strong></td>
+                <td style="padding: 7.5px 9px;">15th Bn, Hampshire Regt</td>
+                <td style="padding: 7.5px 9px;">Tyne Cot Memorial (Panel 88-90)</td>
+              </tr>
+              <tr>
+                <td style="padding: 7.5px 9px;"><strong>Pte. Charles Warland</strong></td>
+                <td style="padding: 7.5px 9px;">3rd/4th Bn, The Queen's</td>
+                <td style="padding: 7.5px 9px;">Tyne Cot Memorial (Panel 14-17)</td>
               </tr>
             </tbody>
           </table>
@@ -802,7 +802,7 @@ function getHtmlContent() {
           📍 Locating Parish Fallen in the Salient
         </div>
         <div style="font-size: 8.8pt; color: #475569; line-height: 1.46;">
-          When arriving at Menin Gate, locate <strong>Frank Rogers</strong> on Panel 35 under Hampshire Regiment. At Tyne Cot, inspect the rear stone wall panels for <strong>Arthur Newman</strong>. Notice how individual identification bridges the gap between massive casualty rolls and human memory.
+          When arriving at Menin Gate, locate <strong>Thomas Franklin</strong> and <strong>William Ayling</strong> on Panel 35 under Hampshire Regiment. At Tyne Cot, inspect the rear stone wall panels for <strong>Sydney Muckett</strong> and our local fallen. Notice how individual identification bridges the gap between massive casualty rolls and human memory.
         </div>
       </div>
     </div>
@@ -1562,7 +1562,7 @@ Her sights and sounds; dreams happy as her day;
       <div style="background: #0f172a; color: #ffffff; padding: 8px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 8pt;">
         <div>
           <span style="color: #fbbf24; font-weight: 700;">Expedition Staff:</span>
-          Mr Ben Lovett &amp; Mr James Garrett (Tour Leaders) · Dr Kirkup &amp; Mrs Lushey (Accompanying Staff)
+          Mr Ben Lovett &amp; Mr James Garrett (Tour Leaders) · Accompanied by Two Meoncross Staff
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>

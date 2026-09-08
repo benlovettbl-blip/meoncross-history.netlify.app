@@ -5,7 +5,173 @@
 import { appStore } from './store.js';
 
 export function initEventDelegation() {
+  // Vocabulary Matching Game State
+  let selectedTermIdx = null;
+  let selectedTermEl = null;
+  let selectedDefIdx = null;
+  let selectedDefEl = null;
+
+  const resetVocabSelection = () => {
+    if (selectedTermEl && !selectedTermEl.disabled) {
+      selectedTermEl.style.borderColor = '#cbd5e1';
+      selectedTermEl.style.background = '';
+      selectedTermEl.style.boxShadow = '';
+    }
+    if (selectedDefEl && !selectedDefEl.disabled) {
+      selectedDefEl.style.borderColor = '#cbd5e1';
+      selectedDefEl.style.background = '';
+      selectedDefEl.style.boxShadow = '';
+    }
+    selectedTermIdx = null;
+    selectedTermEl = null;
+    selectedDefIdx = null;
+    selectedDefEl = null;
+  };
+  window.resetVocabSelection = resetVocabSelection;
+
   document.body.addEventListener('click', (e) => {
+    // 1. Vocabulary Matching Game Handlers
+    const termBtn = e.target.closest('.match-term-btn');
+    const defBtn = e.target.closest('.match-def-btn');
+
+    if (termBtn && !termBtn.disabled) {
+      // If a definition was already selected, check if they match!
+      if (selectedDefIdx !== null && selectedDefEl) {
+        if (termBtn.dataset.idx === selectedDefIdx) {
+          // Match found!
+          termBtn.style.background = '#10b981';
+          termBtn.style.color = '#fff';
+          termBtn.style.borderColor = '#059669';
+          termBtn.disabled = true;
+          termBtn.style.cursor = 'default';
+          termBtn.style.boxShadow = 'none';
+
+          selectedDefEl.style.background = '#10b981';
+          selectedDefEl.style.color = '#fff';
+          selectedDefEl.style.borderColor = '#059669';
+          selectedDefEl.disabled = true;
+          selectedDefEl.style.cursor = 'default';
+          selectedDefEl.style.boxShadow = 'none';
+
+          resetVocabSelection();
+          window.vocabMatchesFound = (window.vocabMatchesFound || 0) + 1;
+
+          const container = termBtn.closest('#vocab-match-game');
+          const totalTerms = container
+            ? container.querySelectorAll('.match-term-btn').length
+            : document.querySelectorAll('.match-term-btn').length;
+          if (window.vocabMatchesFound >= totalTerms) {
+            const successMsg =
+              (container && container.parentElement.querySelector('#unlock-success')) ||
+              document.getElementById('unlock-success');
+            if (successMsg) successMsg.style.display = 'block';
+
+            const lockedSec = document.getElementById('locked-content');
+            if (lockedSec) {
+              lockedSec.style.opacity = '1';
+              lockedSec.style.pointerEvents = 'auto';
+              lockedSec.style.filter = 'none';
+            }
+          }
+        } else {
+          // Wrong match
+          termBtn.style.borderColor = '#ef4444';
+          termBtn.style.background = '#fef2f2';
+          setTimeout(() => {
+            if (!termBtn.disabled) {
+              termBtn.style.borderColor = '#cbd5e1';
+              termBtn.style.background = '';
+            }
+          }, 500);
+        }
+        return;
+      }
+
+      // No definition was selected: toggle or select this term
+      if (selectedTermEl === termBtn) {
+        resetVocabSelection();
+        return;
+      }
+
+      resetVocabSelection();
+
+      termBtn.style.borderColor = '#3b82f6';
+      termBtn.style.background = '#eff6ff';
+      termBtn.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.2)';
+      selectedTermIdx = termBtn.dataset.idx;
+      selectedTermEl = termBtn;
+      return;
+    }
+
+    if (defBtn && !defBtn.disabled) {
+      // If a term was already selected, check if they match!
+      if (selectedTermIdx !== null && selectedTermEl) {
+        if (defBtn.dataset.idx === selectedTermIdx) {
+          // Match found!
+          defBtn.style.background = '#10b981';
+          defBtn.style.color = '#fff';
+          defBtn.style.borderColor = '#059669';
+          defBtn.disabled = true;
+          defBtn.style.cursor = 'default';
+          defBtn.style.boxShadow = 'none';
+
+          selectedTermEl.style.background = '#10b981';
+          selectedTermEl.style.color = '#fff';
+          selectedTermEl.style.borderColor = '#059669';
+          selectedTermEl.disabled = true;
+          selectedTermEl.style.cursor = 'default';
+          selectedTermEl.style.boxShadow = 'none';
+
+          resetVocabSelection();
+          window.vocabMatchesFound = (window.vocabMatchesFound || 0) + 1;
+
+          const container = defBtn.closest('#vocab-match-game');
+          const totalTerms = container
+            ? container.querySelectorAll('.match-term-btn').length
+            : document.querySelectorAll('.match-term-btn').length;
+          if (window.vocabMatchesFound >= totalTerms) {
+            const successMsg =
+              (container && container.parentElement.querySelector('#unlock-success')) ||
+              document.getElementById('unlock-success');
+            if (successMsg) successMsg.style.display = 'block';
+
+            const lockedSec = document.getElementById('locked-content');
+            if (lockedSec) {
+              lockedSec.style.opacity = '1';
+              lockedSec.style.pointerEvents = 'auto';
+              lockedSec.style.filter = 'none';
+            }
+          }
+        } else {
+          // Wrong match
+          defBtn.style.borderColor = '#ef4444';
+          defBtn.style.background = '#fef2f2';
+          setTimeout(() => {
+            if (!defBtn.disabled) {
+              defBtn.style.borderColor = '#cbd5e1';
+              defBtn.style.background = '';
+            }
+          }, 500);
+        }
+        return;
+      }
+
+      // No term was selected: toggle or select this definition
+      if (selectedDefEl === defBtn) {
+        resetVocabSelection();
+        return;
+      }
+
+      resetVocabSelection();
+
+      defBtn.style.borderColor = '#3b82f6';
+      defBtn.style.background = '#eff6ff';
+      defBtn.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.2)';
+      selectedDefIdx = defBtn.dataset.idx;
+      selectedDefEl = defBtn;
+      return;
+    }
+
     const target = e.target.closest('[data-action]');
 
     // Auto-detect zoomable images with cursor: zoom-in across the app

@@ -378,7 +378,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                 <h3 style="margin: 0; color: #0369a1; font-size: 1.18rem; font-family: 'Playfair Display', serif;">Pre-Trip Information &amp; Parental Briefing</h3>
                 <span style="background: #eff6ff; color: #0284c7; border: 1px solid #bfdbfe; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Thu 10 Sep · 16:15 Briefing</span>
               </div>
-              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Joint expedition led by Mr Ben Lovett &amp; Mr James Garrett (The History Boys) · Accomp: Dr Kirkup &amp; Mrs Lushey. Packing checklist, catering &amp; €30–€40 Euros, rooming timeline, and return forms.</p>
+              <p style="margin: 0; color: #475569; font-size: 0.88rem; line-height: 1.4;">Joint expedition led by Mr Ben Lovett &amp; Mr James Garrett (The History Boys) · Accomp: Two Meoncross Staff. Packing checklist, catering &amp; €30–€40 Euros, rooming timeline, and return forms.</p>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
               <a href="/pdfs/ypres_1914_1918_pupil_field_guide.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #eff6ff; color: #1e3a8a; border: 1.5px solid #93c5fd; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#dbeafe';" onmouseout="this.style.background='#eff6ff';">

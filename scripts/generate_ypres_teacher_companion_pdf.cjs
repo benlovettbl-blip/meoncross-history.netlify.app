@@ -335,7 +335,7 @@ function getHtmlContent() {
         </div>
         <div style="font-size: 8.5pt; line-height: 1.46; color: #1e293b;">
           <strong>Tour Leaders:</strong> Mr Ben Lovett (Head of History) &amp; Mr James Garrett (The History Boys)<br>
-          <strong>Accompanying Staff:</strong> Dr Kirkup (Pastoral Lead) &amp; Mrs Lushey (First Aid &amp; Sweep Lead)<br>
+          <strong>Accompanying Staff:</strong> Two Meoncross Staff (Pastoral Care &amp; First Aid Leads)<br>
           <strong>Expedition Dates:</strong> Thursday 1st – Saturday 3rd October 2026<br>
           <strong>Base Camp:</strong> Peace Village Hostel, Nieuwkerkestraat 9, 8957 Mesen, Belgium (+32 57 22 60 40)<br>
           <strong>Transport:</strong> Jet Connect 53-Seat Executive Coach · Driver Rest Regulations strictly observed
@@ -373,7 +373,7 @@ function getHtmlContent() {
           </div>
           <div>
             <span style="font-size: 7.8pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Accompanying Staff:</span>
-            <span style="font-size: 8.6pt; color: #0f172a; font-weight: 600;">Dr Kirkup &amp; Mrs Lushey</span>
+            <span style="font-size: 8.6pt; color: #0f172a; font-weight: 600;">Two Meoncross Staff</span>
           </div>
           <div>
             <span style="font-size: 7.8pt; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.05em; display: block;">School Base 24/7 Emergency:</span>
@@ -388,7 +388,7 @@ function getHtmlContent() {
           🏡 Peace Village Base Camp Protocol (Mesen)
         </div>
         <div style="font-size: 8.1pt; color: #1e293b; line-height: 1.42;">
-          Nightly academic debriefs held in Seminar Room A (19:15–20:30). Staff room allocations, emergency first-aid post, and evening student curfew (22:00) managed on-site by Dr Kirkup &amp; Mrs Lushey.
+          Nightly academic debriefs held in Seminar Room A (19:15–20:30). Staff room allocations, emergency first-aid post, and evening student curfew (22:00) managed on-site by accompanying Meoncross staff.
         </div>
       </div>
     </div>
@@ -488,7 +488,7 @@ function getHtmlContent() {
             <tr>
               <td style="padding: 2.2px 7px;"><strong>Day 2 · 19:20</strong></td>
               <td style="padding: 2.2px 7px;"><strong>Stop 9:</strong> The Menin Gate Last Post Ceremony</td>
-              <td style="padding: 2.2px 7px;">Arrive early for prime position; brief two Meoncross wreath bearers; Frank Rogers on Panel 35.</td>
+              <td style="padding: 2.2px 7px;">Arrive early for prime position; brief two Meoncross wreath bearers; Pte. Franklin &amp; Pte. Ayling on Panel 35.</td>
             </tr>
             <tr>
               <td style="padding: 2.2px 7px;"><strong>Day 3 · 09:15</strong></td>
@@ -529,7 +529,7 @@ function getHtmlContent() {
           <div class="box-header">📋 Staff Supervisory Protocol</div>
           <div style="font-size: 7.8pt; color: #334155; line-height: 1.4;">
             • Strict headcounts at every coach departure &amp; cemetery gate.<br>
-            • Dr Kirkup and Mrs Lushey manage the rear sweep.<br>
+            • Accompanying Meoncross staff manage the rear sweep.<br>
             • Designated pupil assembly point is the coach bay.<br>
             • Pupils must remain in assigned buddy pairs at all times.
           </div>
@@ -706,34 +706,34 @@ function getHtmlContent() {
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 7px 8px;"><strong>Pte. Walter Spratt</strong></td>
+                <td style="padding: 7px 8px;"><strong>Pte. Thomas Franklin</strong></td>
                 <td style="padding: 7px 8px;">1st Bn, Hampshire Regt</td>
-                <td style="padding: 7px 8px;">Ploegsteert (Missing)</td>
-              </tr>
-              <tr>
-                <td style="padding: 7px 8px;"><strong>Sgt. Frank Rogers</strong></td>
-                <td style="padding: 7px 8px;">2nd Bn, Hampshire Regt</td>
                 <td style="padding: 7px 8px;">Menin Gate (Panel 35)</td>
               </tr>
               <tr>
-                <td style="padding: 7px 8px;"><strong>L/Cpl. Arthur Newman</strong></td>
-                <td style="padding: 7px 8px;">Royal Engineers (Signals)</td>
-                <td style="padding: 7px 8px;">Tyne Cot Memorial</td>
+                <td style="padding: 7px 8px;"><strong>Pte. William Ayling</strong></td>
+                <td style="padding: 7px 8px;">1st Bn, Hampshire Regt</td>
+                <td style="padding: 7px 8px;">Menin Gate (Panel 35)</td>
               </tr>
               <tr>
-                <td style="padding: 7px 8px;"><strong>Pte. George Stares</strong></td>
-                <td style="padding: 7px 8px;">8th Bn, Hampshire Regt</td>
-                <td style="padding: 7px 8px;">Bedford House Cemetery</td>
+                <td style="padding: 7px 8px;"><strong>Pte. Sydney Muckett</strong></td>
+                <td style="padding: 7px 8px;">15th Bn, Hampshire Regt</td>
+                <td style="padding: 7px 8px;">Tyne Cot Memorial (Panel 88-90)</td>
               </tr>
               <tr>
-                <td style="padding: 7px 8px;"><strong>Dvr. Edward Vear</strong></td>
-                <td style="padding: 7px 8px;">Royal Field Artillery</td>
-                <td style="padding: 7px 8px;">Brandhoek Military Cemetery</td>
+                <td style="padding: 7px 8px;"><strong>Pte. Arthur Rye</strong></td>
+                <td style="padding: 7px 8px;">14th Bn, Hampshire Regt</td>
+                <td style="padding: 7px 8px;">Tyne Cot Memorial (Panel 88-90)</td>
               </tr>
               <tr>
-                <td style="padding: 7px 8px;"><strong>Cpl. Harry Freemantle</strong></td>
-                <td style="padding: 7px 8px;">Royal Marine Artillery</td>
-                <td style="padding: 7px 8px;">Dunkirk / Ypres Coast</td>
+                <td style="padding: 7px 8px;"><strong>L/Cpl. Archibald Ward</strong></td>
+                <td style="padding: 7px 8px;">15th Bn, Hampshire Regt</td>
+                <td style="padding: 7px 8px;">Tyne Cot Memorial (Panel 88-90)</td>
+              </tr>
+              <tr>
+                <td style="padding: 7px 8px;"><strong>Pte. Charles Warland</strong></td>
+                <td style="padding: 7px 8px;">3rd/4th Bn, The Queen's</td>
+                <td style="padding: 7px 8px;">Tyne Cot Memorial (Panel 14-17)</td>
               </tr>
             </tbody>
           </table>
@@ -1345,7 +1345,7 @@ They sleep beyond England's foam.
           <div style="font-size: 8.2pt; color: #334155; line-height: 1.45;">
             <strong>54,395 Names:</strong> Inscribed with Commonwealth soldiers missing in the Salient prior to 16 August 1917. Designed by Sir Reginald Blomfield as a classical triumphal arch.<br>
             <strong>The Last Post Ceremony:</strong> Sounded every night at 20:00 by volunteer fire brigade buglers without fail since 1928 (suspended only during WWII occupation).<br>
-            <strong>Frank Rogers:</strong> Guide students to Panel 35 to locate Sgt. Frank Rogers of the Hampshire Regiment.
+            <strong>Thomas Franklin &amp; William Ayling:</strong> Guide students to Panel 35 to locate Private Thomas Franklin and Private William Ayling of the 1st Battalion, Hampshire Regiment.
           </div>
         </div>
 
@@ -1659,7 +1659,7 @@ And laughter, learnt of friends; and gentleness,
           🎒 Tour Leader Equipment Checklist &amp; On-Site Kit
         </div>
         <div style="font-size: 8.1pt; color: #1e293b; line-height: 1.44;">
-          • <strong>School First Aid Kits:</strong> Carried by Mrs Lushey at all times (including travel sickness meds).<br>
+          • <strong>School First Aid Kits:</strong> Carried by accompanying Meoncross staff at all times (including travel sickness meds).<br>
           • <strong>Pupil Medication Roster:</strong> Asthma inhalers &amp; EpiPens inspected prior to coach boarding.<br>
           • <strong>Emergency Whistle &amp; Hi-Vis Vests:</strong> Worn by staff leads during urban transit in Ypres and Poperinge.<br>
           • <strong>Meoncross Poppy Wreaths:</strong> Safely stowed in coach forward locker for the Menin Gate ceremony.
@@ -1681,7 +1681,7 @@ And laughter, learnt of friends; and gentleness,
       <div style="background: #0f172a; color: #ffffff; padding: 9px 15px; border-radius: 7px; display: flex; justify-content: space-between; align-items: center; font-size: 8pt;">
         <div>
           <span style="color: #fbbf24; font-weight: 700;">Expedition Staff:</span>
-          Mr Ben Lovett &amp; Mr James Garrett (Tour Leaders) · Dr Kirkup &amp; Mrs Lushey (Accompanying Staff)
+          Mr Ben Lovett &amp; Mr James Garrett (Tour Leaders) · Accompanied by Two Meoncross Staff
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>

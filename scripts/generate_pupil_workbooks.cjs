@@ -185,7 +185,7 @@ allDirs.forEach((unitId) => {
   if (unitId === 'cme_new') {
     const canonicalCme = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
     if (fs.existsSync(canonicalCme)) dataPath = canonicalCme;
-  } else if (!fs.existsSync(dataPath) && unitId === 'weimar_nazi_germany') {
+  } else if (!fs.existsSync(dataPath) && (unitId === 'weimar_nazi_germany' || unitId === 'early_modern_world')) {
     dataPath = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
   }
   if (!fs.existsSync(dataPath)) return;
@@ -848,13 +848,16 @@ allDirs.forEach((unitId) => {
 
       // Vocab
       html += `<div>`;
-      let vocabTerms = lesson.vocab;
-      if (!vocabTerms && lesson.glossary) {
-        vocabTerms = Object.keys(lesson.glossary).map((k) => ({
-          term: k,
-          definition: lesson.glossary[k],
-        }));
-      }
+      let vocabTerms =
+        lesson.flashcards && lesson.flashcards.length > (lesson.vocab ? lesson.vocab.length : 0)
+          ? lesson.flashcards
+          : lesson.vocab ||
+            (lesson.glossary
+              ? Object.keys(lesson.glossary).map((k) => ({
+                  term: k,
+                  definition: lesson.glossary[k],
+                }))
+              : []);
       if (vocabTerms && vocabTerms.length > 0) {
         let vocabStyle = lessonIndex % 3;
         html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;">`;
@@ -868,7 +871,7 @@ allDirs.forEach((unitId) => {
             let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, ' [ . . . . . . . . ] ');
             html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
           } else {
-            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least ${vocabTerms.length >= 4 ? 'FOUR' : vocabTerms.length === 3 ? 'THREE' : vocabTerms.length === 2 ? 'TWO' : 'ONE'} of the vocabulary words below correctly.</p>`;
+            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least ${vocabTerms.length >= 3 ? 'THREE' : vocabTerms.length === 2 ? 'TWO' : 'ONE'} of the vocabulary words below correctly.</p>`;
             let words = vocabTerms.map((v) => v.term).join(' &nbsp;|&nbsp; ');
             html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
             for (let i = 0; i < 4; i++) {

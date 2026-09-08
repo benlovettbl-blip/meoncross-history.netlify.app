@@ -949,7 +949,7 @@ export function renderLesson(lesson) {
       `;
 
     lesson.vocab.forEach((v, idx) => {
-      htmlDoNow += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; transition: all 0.2s;">${v.term}</button>`;
+      htmlDoNow += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; cursor: pointer; transition: all 0.2s;">${v.term}</button>`;
     });
 
     htmlDoNow += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
@@ -958,7 +958,7 @@ export function renderLesson(lesson) {
     defs.sort(() => Math.random() - 0.5);
 
     defs.forEach((d) => {
-      htmlDoNow += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; transition: all 0.2s;">${d.def}</button>`;
+      htmlDoNow += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; cursor: pointer; transition: all 0.2s;">${d.def}</button>`;
     });
 
     htmlDoNow += `
@@ -2847,6 +2847,7 @@ export function renderLesson(lesson) {
     }
   }
   window.vocabMatchesFound = 0;
+  if (window.resetVocabSelection) window.resetVocabSelection();
   setTimeout(() => {
     if (window.mermaid) {
       try {

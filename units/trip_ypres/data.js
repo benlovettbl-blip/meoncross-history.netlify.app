@@ -193,7 +193,7 @@ export const unitData = {
       banner: '/images/stubbington_names_3.jpg',
       teacher_notes: {
         primer:
-          'The Pre-Trip Parental Briefing equips parents and pupils with essential practical, logistical, and historical framing ahead of the October expedition. It details our joint leadership with Mr James Garrett (The History Boys) alongside Dr Kirkup and Mrs Lushey, clarifies all kit, catering, and currency requirements (€30–€40 cash), establishes our rooming and supervision timeline, and introduces the profound local heritage mission connecting Stubbington to Flanders.',
+          'The Pre-Trip Parental Briefing equips parents and pupils with essential practical, logistical, and historical framing ahead of the October expedition. It details our joint leadership with Mr James Garrett (The History Boys) alongside two accompanying Meoncross staff, clarifies all kit, catering, and currency requirements (€30–€40 cash), establishes our rooming and supervision timeline, and introduces the profound local heritage mission connecting Stubbington to Flanders.',
         objectives: [
           {
             objective:
@@ -244,7 +244,7 @@ export const unitData = {
                   <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #eff6ff; color: #1e3a8a; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 6px;">Joint Educational Venture</span>
                   <h3 style="margin: 0 0 6px 0; color: #0f172a; font-size: 1.3rem; font-family: 'Playfair Display', serif;">Meoncross School History Department &amp; The History Boys</h3>
                   <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.5;">
-                    Led jointly by <strong>Mr Ben Lovett</strong> (Head of History, Meoncross School) and <strong>Mr James Garrett</strong> (The History Boys Tour Company — expert battlefield historian and fellow history teacher), accompanied by <strong>Dr Kirkup</strong> and <strong>Mrs Lushey</strong>. Together, they provide exceptional historical scholarship, pastoral care, and engaging on-site guidance.
+                    Led jointly by <strong>Mr Ben Lovett</strong> (Head of History, Meoncross School) and <strong>Mr James Garrett</strong> (The History Boys Tour Company — expert battlefield historian and fellow history teacher), accompanied by <strong>two accompanying Meoncross staff</strong>. Together, they provide exceptional historical scholarship, pastoral care, and engaging on-site guidance.
                   </p>
                 </div>
               </div>
@@ -851,7 +851,7 @@ export const unitData = {
             objective:
               'Reflect on civic memory, Empire participation, and the enduring nightly ritual of the Menin Gate Last Post Ceremony.',
             primer:
-              'Escort pupils under the Menin Gate archway before 19:30. Guide them to Panel 35 to locate Sgt. Frank Rogers, view the Indian Forces Memorial on the ramparts, and support our two nominated school wreath bearers during the 20:00 ceremony.',
+              'Escort pupils under the Menin Gate archway before 19:30. Guide them to Panel 35 to locate Private Thomas Franklin and Private William Ayling, view the Indian Forces Memorial on the ramparts, and support our two nominated school wreath bearers during the 20:00 ceremony.',
             question:
               'Why has the nightly sounding of the Last Post by volunteer firemen endured since 1928 as the defining global ritual of Great War remembrance?',
           },
@@ -1076,7 +1076,7 @@ export const unitData = {
         'Tyne Cot Pilgrimage: Locate the massive Cross of Sacrifice, built directly on top of a captured German concrete pillbox. Then walk up to the Memorial Wall to locate our local heroes: Sydney Muckett, Arthur Rye, Archibald Ward (Panels 88–90), and Charles Warland (Panels 14–17).',
         'Lijssenthoek Medical Line: Find the grave of Staff Nurse Nellie Spindler, killed by artillery fire at a casualty clearing station in 1917. Reflect on the role of women operating directly within shell range.',
         'Passchendaele Dugout Immersion: Descend 20 feet into the reconstructed subterranean British dugout at Zonnebeke Chateau. Analyze the cramped tiers of wooden bunks, the battalion signal room, and medical dressing post. Reflect on how underground tunneling protected troops from surface artillery while creating extreme sensory and psychological strain.',
-        'Menin Gate Last Post: Stand beneath the colossal triumphal arch at 8:00 PM for the sounding of the Last Post. Locate Sgt. Frank Rogers on Panel 35 under the Hampshire Regiment, and support our Meoncross wreath bearers.',
+        'Menin Gate Last Post: Stand beneath the colossal triumphal arch at 8:00 PM for the sounding of the Last Post. Locate Private Franklin and Private Ayling on Panel 35 under the Hampshire Regiment, and support our Meoncross wreath bearers.',
       ],
     },
     {

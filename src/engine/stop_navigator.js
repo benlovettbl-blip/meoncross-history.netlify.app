@@ -126,7 +126,7 @@ export const BATTLEFIELD_DAYS = [
         shortTitle: 'Menin Gate Last Post',
         time: '7:00 PM',
         icon: 'fa-archway',
-        highlight: 'Official 8:00 PM ceremony, wreath laying & Sgt. Frank Rogers Panel 35',
+        highlight: 'Official 8:00 PM ceremony, wreath laying & Pte. Franklin & Pte. Ayling (Panel 35)',
       },
     ],
   },
@@ -287,7 +287,7 @@ export const BATTLEFIELD_DAYS = [
         shortTitle: 'Leadership',
         time: 'Staff',
         icon: 'fa-user-tie',
-        highlight: 'Mr Ben Lovett, Mr James Garrett (The History Boys), Dr Kirkup, Mrs Lushey',
+        highlight: 'Mr Ben Lovett, Mr James Garrett (The History Boys), & Two Meoncross Staff',
       },
       {
         id: 'prep_mission',
