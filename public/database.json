@@ -42493,7 +42493,7 @@
             },
             {
               "title": "Local History Case Study: Henry Cort at Funtley Ironworks",
-              "text": "<strong>Source A:</strong> The man who solved this national crisis lived right here in Hampshire. Henry Cort was an ambitious navy agent who realized he could make a fortune if he could figure out how to mass-produce high-quality British iron. In 1775, he took over the **Funtley Ironworks** (just north of Fareham) because it was ideally located to supply the massive Royal Navy dockyards in nearby Portsmouth.\n\nAt Funtley, Cort invented two revolutionary processes in 1783 and 1784:\n\n1. **The Puddling Process:** He invented a new type of furnace where molten iron was stirred (or \"puddled\") with long iron rods to burn off carbon impurities.\n2. **The Rolling Mill:** Instead of hammering the iron into shape by hand, Cort passed the red-hot iron through heavy, grooved rollers to squeeze out the last impurities and shape it into rails and bars.",
+              "text": "<strong>Source A:</strong> The man who solved this national crisis lived right here in Hampshire. Henry Cort was an ambitious navy agent who realized he could make a fortune if he could figure out how to mass-produce high-quality British iron. In 1775, he took over the **Funtley Ironworks** (just north of Fareham) because it was ideally located to supply the massive Royal Navy dockyards in nearby Portsmouth.\n\nAt Funtley, Cort invented two revolutionary processes in 1783 and 1784:\n\n1. **The Puddling Process:** He invented a new type of furnace where molten iron was stirred (or \"puddled\") with long iron rods to burn off carbon impurities.\n2. **The Rolling Mill:** Instead of hammering the iron into shape by hand, Cort passed the red-hot iron through heavy, grooved rollers to squeeze out the last impurities and shape it into rails and bars.\n\nIn March 1787, Cort invited the Admiralty Navy Board to Portsmouth Royal Navy Dockyard for decisive trials (**Source C**). Navy smiths subjected Funtley iron to rigorous bending and tensile tests, concluding that it surpassed any iron made in Britain and matched the finest Swedish imports. Britain could now build its warships using domestic iron.",
               "hinge_question": {
                 "qNum": "H1",
                 "question": "What was the primary purpose of the 'Puddling Process' invented by Cort?",
@@ -42520,8 +42520,8 @@
                 {
                   "type": "analysis",
                   "qNum": 4,
-                  "text": "Study Source A. How does the physical design of the puddling furnace show that Cort was trying to solve the problem of 'pig iron' impurities?",
-                  "model_answer": "The cross-section in Source A shows that the burning coal is kept separate from the melting iron. This prevented the carbon in the coal from mixing with the iron, allowing workers to 'puddle' (stir) the iron and burn off the remaining impurities, creating strong wrought iron."
+                  "text": "Study Source A and Source C. How did Cort's experiments at Funtley and the trials at Portsmouth Dockyard solve the Royal Navy's crisis of relying on Swedish iron?",
+                  "model_answer": "Cort's puddling furnace and grooved rollers produced tough, flexible wrought iron at industrial speed. The 1787 Portsmouth Dockyard trials proved Funtley iron was equal in strength to premium Swedish Orgrounds iron, freeing the Royal Navy from foreign import dependency for warship bolts, mast hoops, and anchors."
                 }
               ]
             },
@@ -42608,11 +42608,6 @@
               "definition": "Cort's invention of passing hot iron through heavy grooved cylinders to shape it into useful bars and rails."
             }
           ],
-          "primary_source_dossier": {
-            "title": "Henry Cort & Funtley Ironworks: Primary Source Archival Dossier",
-            "pdf": "/pdfs/henry_cort_funtley_primary_source_pack.pdf",
-            "description": "Downloadable 1-page archival research pack featuring Cort’s 1784 patent drawings, River Meon survey maps, and Admiralty Portsmouth Dockyard trial minutes to support enquiry and competition entries."
-          },
           "sources": [
             {
               "title": "Source A: Cort’s Patent Specification No. 1420 (1784)",
@@ -42624,21 +42619,22 @@
               "qNum": 2
             },
             {
-              "title": "Source B: Hampshire Administrative Map & River Meon (1832)",
-              "caption": "An authentic 1832 map showing the county of Hampshire, highlighting the River Meon watercourse connecting Funtley to Fareham Quay and Portsmouth Harbour.",
-              "src": "/images/map_hampshire_1832.png",
-              "question": "Why was the natural watercourse of the River Meon essential to Henry Cort’s rolling mills before steam power was widely adopted in Hampshire?",
-              "model_answer": "Before steam engines were universally installed, Cort relied on the powerful flow of the River Meon to turn heavy waterwheels, which provided the mechanical force needed to drive his massive grooved iron-rolling cylinders.",
+              "title": "Source B: Contemporary Dedication Portrait of Henry Cort (c. 1780s)",
+              "caption": "An authentic 18th-century dedication engraving commemorating Henry Cort, inscribed: “HENRY CORT: The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain”.",
+              "src": "/images/henry_cort.jpg",
+              "question": "How does Source B show that Henry Cort was celebrated as a national hero who transformed the British economy?",
+              "model_answer": "Source B compares Cort to “Tubal Cain” (the biblical first metalworker) and dedicates his portrait to the entire British iron trade. This demonstrates that contemporaries viewed his puddling furnace and rolling mills at Funtley as a revolutionary industrial triumph that rescued Britain from relying on foreign iron.",
               "qNum": 3,
-              "hinge_question": "How does the geography of Hampshire, particularly its access to the coast and rivers, help explain why industrial sites like Funtley Ironworks were so successful?"
+              "hinge_question": "Why would contemporaries compare an 18th-century Hampshire ironmaster to an ancient heroic metalworker, and what does this reveal about Britain’s growing industrial pride?"
             },
             {
-              "title": "Source C: Admiralty Navy Board Portsmouth Dockyard Trial Report (March 1784)",
-              "caption": "Official Navy Board trials conducted at Portsmouth Dockyard testing Cort’s Funtley iron against imported Swedish Orgrounds iron.",
+              "title": "Source C: Admiralty Navy Board Portsmouth Dockyard Trial Minutes (1787)",
+              "caption": "Official Navy Board trials conducted at Portsmouth Royal Navy Dockyard testing Cort’s Funtley iron against imported Swedish Orgrounds iron for royal warships.",
               "content": "“Pursuant to your directions, we have caused trials to be made of Mr Henry Cort’s iron manufactured at Fontley. We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.”",
               "question": "Why was this Admiralty report from Portsmouth Dockyard the ultimate validation of Cort’s local experiments at Funtley?",
-              "model_answer": "The Royal Navy was the most demanding iron customer in the world. Proving that Funtley iron was equal to superior Swedish imports meant Britain could become self-sufficient in wartime naval shipbuilding without relying on foreign trade.",
-              "qNum": 4
+              "model_answer": "The Royal Navy was the most demanding iron customer in the world. Proving that Funtley iron was equal to superior Swedish imports meant Britain could achieve self-sufficiency in naval shipbuilding, providing unbreakable wrought iron anchors, bolts, and hoops for warships like HMS Victory right before the French Revolutionary Wars.",
+              "qNum": 4,
+              "hinge_question": "How does this trial report demonstrate that the industrial revolution was driven as much by naval and military necessity as by commercial profit?"
             }
           ],
           "exam_practice": {
