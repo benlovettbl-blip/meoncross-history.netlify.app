@@ -1360,6 +1360,7 @@ export const unitData = {
           id: 'cme_king_david_hotel_1946',
           title: 'Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)',
           date: '22 July 1946',
+          src: '/assets/cme_new_king_david_ruins.png',
           image: '/assets/cme_new_king_david_ruins.png',
           caption:
             'The south-west wing of the King David Hotel collapsed after the Irgun bomb detonation, killing 91 British, Arab, and Jewish personnel.',
@@ -1374,6 +1375,7 @@ export const unitData = {
           id: 'cme_sergeants_affair_1947',
           title: 'Source B: The Sergeants Affair, Netanya (July 1947)',
           date: '31 July 1947',
+          src: '/images/cme_sergeants_affair_1947.jpg',
           image: '/images/cme_sergeants_affair_1947.jpg',
           caption:
             'British Army Intelligence Corps sergeants Clifford Martin and Mervyn Paice hanged by the Irgun in a eucalyptus grove near Netanya.',
@@ -1390,6 +1392,7 @@ export const unitData = {
           id: 'cme_exodus_haifa_1947',
           title: 'Source C: The SS Exodus Intercepted off Palestine (July 1947)',
           date: '18 July 1947',
+          src: '/units/cme_new/assets/cme_exodus.jpeg',
           image: '/units/cme_new/assets/cme_exodus.jpeg',
           caption:
             'The SS Exodus carrying 4,500 Holocaust survivors intercepted by the Royal Navy and returned to displaced persons camps in Germany.',
