@@ -2788,20 +2788,22 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Source D: Palestinian Refugee Camps (UNRWA, 1949)',
-            src: '/units/cme_new/assets/palestinian_refugees_1948.jpg',
+            title: 'Source C: Maritime Chokepoints & The Sinai Peninsula (Blockade of Tiran)',
+            src: '/images/cme_sinai_peninsula_map.jpg',
             caption:
-              'Palestinian refugees displaced by the 1948 war, who would later be supported by UNRWA.',
+              'Topographical map of the Sinai Peninsula, highlighting the narrow Straits of Tiran and the entrance to the Gulf of Aqaba, which Egypt blockaded against Israeli shipping in the 1950s.',
+            question:
+              'Source Detective: Locate the Straits of Tiran at the southern tip of the Sinai Peninsula. Why was Egypt’s naval blockade here considered an act of war (casus belli) by Israel?',
             teacher_notes: {
               primer:
-                'Explain the creation of permanent refugee camps in Gaza, the West Bank, and neighboring countries.',
+                'Focus pupils on the strategic bottleneck of the Straits of Tiran at the mouth of the Gulf of Aqaba, illustrating why maritime access to the Red Sea was an economic lifeline for Israel.',
               objectives: [
                 {
-                  objective: 'Identify international responses',
+                  objective: 'Analyse geo-strategic flashpoints in the Sinai Peninsula',
                   primer:
-                    'Discuss how the refugee issue became a permanent feature of the conflict.',
+                    'Guide students to identify how geographic chokepoints transformed political disputes into direct military crises.',
                   question:
-                    'What does this source reveal about international attempts to manage the Palestinian refugee crisis?',
+                    'Hinge Question: Why did control of the Straits of Tiran grant Egypt decisive leverage over Israel’s southern sea trade, and why did Israel warn that closing them would trigger war?',
                 },
               ],
             },
