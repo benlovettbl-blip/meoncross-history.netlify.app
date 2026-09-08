@@ -350,9 +350,7 @@ export const unitData = {
           src: '/images/cme_sykes_picot_1916_map.jpg',
           source: '/images/cme_sykes_picot_1916_map.jpg',
           caption:
-            'The official partition map signed by Britain and France in 1916 dividing the Middle East.',
-          question:
-            'How does the straight line dividing Area A and Area B reveal the imperial priorities of Britain and France over local self-determination?',
+            'The official partition map signed by Britain and France in 1916 dividing the Middle East into European spheres of influence.',
         },
         {
           title: 'Source B: The Original Balfour Declaration Letter (2 November 1917)',
@@ -360,8 +358,6 @@ export const unitData = {
           source: '/images/cme_balfour_declaration_1917.jpg',
           caption:
             "Official letter from British Foreign Secretary Arthur Balfour to Lord Rothschild expressing British support for a 'national home for the Jewish people' in Palestine.",
-          question:
-            'What contradictory promises did Britain make to Arab and Jewish leaders between 1915 and 1917, and how did this letter ignite communal conflict?',
         },
       ],
       do_now: {
@@ -467,15 +463,9 @@ export const unitData = {
             {
               type: 'comprehension',
               question:
-                'Explain why the Sykes-Picot Agreement and League of Nations mandates created artificial borders in the Middle East.',
+                'Explain why the borders drawn by the Sykes-Picot Agreement (1916) created long-term instability in the Middle East.',
               model:
-                'The Sykes-Picot Agreement created artificial borders because British and French diplomats divided the collapsed Ottoman Empire according to European imperial and strategic interests rather than local realities. They drew arbitrary straight lines across desert maps without consulting the indigenous populations, grouping rival religious sects and distinct tribes into newly fabricated states while splitting historic communities across national frontiers.',
-            },
-            {
-              type: 'written',
-              text: 'Source Detective: Study the 1916 Sykes-Picot Agreement map above. What does the straight pencil line drawn between the British and French zones reveal about European imperial priorities versus on-the-ground ethnic and religious realities?',
-              model:
-                'The straight pencil line drawn across the Syrian desert demonstrates that European diplomats prioritized dividing imperial assets (railways, ports, oil pipeline access) rather than respecting existing ethnic, religious, or tribal groupings. By drawing arbitrary straight lines across nomadic and sectarian communities, Britain and France grouped rival populations into artificial states, creating enduring political instability.',
+                'The Sykes-Picot Agreement created lasting instability because British and French diplomats partitioned the former Ottoman Empire according to European imperial and strategic interests, rather than consulting local populations. By using a ruler to draw arbitrary straight lines across desert communities, they forced rival religious and ethnic groups into newly fabricated states while dividing historic communities across artificial borders.',
             },
           ],
         },
@@ -496,31 +486,18 @@ export const unitData = {
           text: 'During the desperate fighting of World War One, the British government made contradictory promises to both Arab and Jewish leaders in order to secure essential wartime support, creating a legacy of bitter betrayal.<br><br>\n<strong>1. The McMahon-Hussein Correspondence (1915–1916):</strong><br>\nSir Henry McMahon, British High Commissioner in Cairo, exchanged ten official letters with <strong>Sharif Hussein of Mecca</strong>, guardian of Islam’s holiest sites. In exchange for the Arabs launching an armed rebellion (the Great Arab Revolt, assisted by T.E. Lawrence) against Ottoman forces, Britain pledged to recognize an independent, sovereign Arab kingdom across the Middle East. Arab leaders believed this pledge encompassed Palestine.<br><br>\n<strong>2. The Balfour Declaration (2 November 1917):</strong><br>\nJust two years later, British Foreign Secretary Arthur Balfour sent an official letter to Lord Walter Rothschild, a prominent leader of the British Jewish community. The declaration stated: <em>\'His Majesty\'s Government view with favour the establishment in Palestine of a national home for the Jewish people...\'</em>. While it added that nothing should prejudice the civil and religious rights of existing non-Jewish communities, it made no mention of their political or national rights, despite Arabs making up over 90% of Palestine’s population in 1917.<br><br>\n<strong>The Clash of Nationalisms:</strong>\n<ul>\n  <li><strong>Zionism:</strong> Founded by Theodor Herzl in 1897 in response to violent European antisemitic pogroms. Zionists argued that Jewish people would never be safe from persecution without their own sovereign state in their ancestral biblical homeland (Eretz Israel / Palestine).</li>\n  <li><strong>Arab Nationalism:</strong> Arab leaders argued that having lived continuously in Palestine for centuries, the Arab majority possessed an indisputable natural right to national self-determination and independent statehood.</li>\n</ul>\nBritain had promised the exact same sliver of land to two different peoples with mutually irreconcilable aspirations.\n<hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 20px 0;">\n<h4>The Interwar Crucible: Demographic Pressures, The 1936–39 Arab Revolt & The 1939 White Paper</h4>\n<p>During the interwar British Mandate, the demographic and political balance shifted dramatically:</p>\n<ul>\n  <li><strong>The Fifth Aliyah (1930s):</strong> Following Adolf Hitler’s accession to power in 1933 and the enactment of the anti-Semitic Nuremberg Laws in 1935, over 200,000 Jewish refugees fled Nazi Germany and Central Europe to Palestine. The Jewish proportion of Palestine’s population rose rapidly from roughly 10% in 1919 to over 30% by 1939, stoking intense Palestinian Arab fears of total economic and demographic displacement.</li>\n  <li><strong>The 1936–1939 Arab Revolt:</strong> In April 1936, Palestinian leaders formed the Arab Higher Committee and launched a six-month General Strike. This escalated into an armed, countryside rebellion targeting British military personnel and Jewish settlements. British authorities suppressed the revolt with ruthless martial law, using collective punishments, village cordons, house demolitions, and the exile or hanging of Arab nationalist leaders. While defeated, the revolt crippled the Palestinian political and military leadership on the eve of World War Two.</li>\n  <li><strong>The 1937 Peel Commission (First Partition Plan):</strong> Led by Lord Peel, Britain’s royal commission concluded that the Mandate was unworkable because the "aspirations of 400,000 Jews and 1,000,000 Arabs were irreconcilable." The Peel Commission proposed the first partition of Palestine: a sovereign Jewish state (comprising roughly 20% of the land along the coastal plain and Galilee), an Arab state merged with Transjordan, and a British corridor encompassing Jerusalem and Bethlehem. While David Ben-Gurion accepted partition in principle as a tactical foothold, Arab leaders vehemently rejected surrendering fertile farmland to a minority.</li>\n  <li><strong>The 1939 MacDonald White Paper:</strong> On the brink of war with Nazi Germany in May 1939, Britain desperately needed to secure Middle Eastern oil pipelines and maintain Arab loyalty across the Empire. The British government executed a dramatic policy reversal: the 1939 MacDonald White Paper severely restricted Jewish land purchases, capped total Jewish immigration to 75,000 over the next five years (after which immigration would require Arab consent), and promised an independent Arab-majority state within ten years. Zionists viewed the White Paper as a catastrophic betrayal that trapped European Jews in the path of the Holocaust. Jewish Agency leader David Ben-Gurion famously declared: <em>"We shall fight the war as if there were no White Paper, and fight the White Paper as if there were no war."</em></li>\n</ul>',
           tasks: [
             {
-              type: 'table_planner',
-              text: 'Diplomatic Contradictions Matrix: Complete the comparative planner analyzing the three conflicting British wartime pledges during World War One:',
-              columns: [
-                'Wartime Agreement',
-                'Date & Key Signatories',
-                'Recipient & British Commitment',
-                'Why It Contradicted Other Pledges',
-              ],
-              rows: 3,
-            },
-            {
               type: 'comprehension',
               question:
-                'Explain the fundamental contradiction between the McMahon-Hussein Correspondence and the Balfour Declaration.',
+                'Explain the fundamental contradiction between Britain’s promises to the Arabs (McMahon-Hussein Correspondence) and to the Jews (Balfour Declaration).',
               model:
-                'The fundamental contradiction was that Britain pledged the same territory to two opposing nationalist movements. Through the McMahon-Hussein Correspondence, Arab leaders were led to believe Britain would support an independent Arab kingdom including Palestine in reward for fighting the Ottomans. However, the Balfour Declaration officially promised British backing for a Jewish national home in Palestine, ignoring the political self-determination of the existing 90% Arab majority.',
+                'The fundamental contradiction was that Britain promised the exact same land to two different peoples with opposing nationalist goals. Through the McMahon-Hussein Correspondence, Britain led Arab leaders to believe they would gain an independent Arab state including Palestine in exchange for fighting Ottoman forces. However, the Balfour Declaration officially promised British support for a Jewish national home in Palestine, setting the Arab majority and Jewish immigrants on a direct collision course.',
             },
           ],
           source: {
             title: 'Source B: The Original Balfour Declaration Letter (2 November 1917)',
             src: '/images/cme_balfour_declaration_1917.jpg',
             caption:
-              'Official letter from British Foreign Secretary Arthur Balfour to Lord Rothschild expressing British support for a national home for the Jewish people in Palestine.',
-            question:
-              'Source Detective: Study the 1917 Balfour Declaration letter (Source B). How did Britain’s commitment to a "national home for the Jewish people" directly contradict the wartime promises of Arab sovereignty made to Sharif Hussein in the McMahon-Hussein Correspondence?',
+              'Official letter from British Foreign Secretary Arthur Balfour to Lord Walter Rothschild expressing British support for a "national home for the Jewish people" in Palestine.',
           },
         },
         {
@@ -693,15 +670,16 @@ export const unitData = {
       },
       pair_share: {
         prompt:
-          'Explain two reasons why the physical geography and strategic waterways of the Middle East repeatedly triggered military conflict between Israel and its Arab neighbours.',
+          'By 1945, why did Britain face impossible, conflicting pressures in governing Palestine?',
         think:
-          'Consider maritime bottlenecks like the Straits of Tiran and Suez Canal (where naval blockades threatened vital trade and oil supplies), alongside elevated high ground like the Golan Heights (commanding artillery sightlines over civilian settlements) and scarce freshwater sources like the River Jordan.',
-        pair: 'Discuss your two chosen geographic factors with your partner. Compare whether maritime chokepoints or elevated topographical high ground posed the more immediate threat to national survival, and refine your causal explanations.',
+          'Consider the dilemma facing the British government at the end of the Second World War:\n1. Palestinian Arabs (two-thirds of the population) demanded immediate independence and an end to Jewish immigration, citing Britain’s promises in the 1939 MacDonald White Paper.\n2. Jewish leaders and survivors demanded that Britain tear up immigration quotas and create an independent Jewish homeland to rescue 250,000 Holocaust survivors stranded in European displaced persons camps.\n3. Britain was economically exhausted from the war and caught in the crossfire of escalating communal violence.',
+        pair: 'Discuss with your partner: Could Britain have satisfied both Arabs and Jews in 1945, or had violent conflict become completely unavoidable? Explain your reasoning.',
         share:
-          'Share your analytical points with the class using the sentence starters below, explaining precisely how geography made military pre-emption so tempting.',
+          'Share your conclusion with the class using the sentence starters below to explain Britain’s impossible dilemma.',
         starters: [
-          'One reason is that control of maritime chokepoints like the Straits of Tiran was considered an immediate casus belli (act of war) because...',
-          'Another reason is that elevated topographical features like the Golan Heights created severe military instability because...',
+          'On the one hand, Palestinian Arabs placed heavy pressure on Britain because...',
+          'On the other hand, Jewish leaders and Holocaust survivors pressured Britain because...',
+          'This created an impossible dilemma for the British government because...',
         ],
       },
       consolidation: 'Why is the geography of the Middle East so geopolitically important?',

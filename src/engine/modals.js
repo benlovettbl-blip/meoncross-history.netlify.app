@@ -149,7 +149,9 @@ export function openTaskWhiteboard() {
 
   if (activeLesson.sources) {
     activeLesson.sources.forEach((source) => {
-      if (source.question) addQuestionCard(source.qNum, source.question, source.model_answer || '');
+      if (source.question && source.qNum) {
+        addQuestionCard(source.qNum, source.question, source.model_answer || '');
+      }
     });
   }
 

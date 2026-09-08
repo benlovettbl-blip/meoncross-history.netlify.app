@@ -1828,7 +1828,7 @@ export function renderLesson(lesson) {
                            `<div style="padding:10px; background:white; border:1px solid #cbd5e1; border-radius:6px;">${p.right}</div>`,
                        )
                        .join('')}
-                   </div></div></details>`;
+                   </div></div></div>`;
             return;
           }
           if (task.type === 'table_planner') {
@@ -1860,7 +1860,7 @@ export function renderLesson(lesson) {
                    <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
                      <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-comments"></i> Partner's Thoughts</div>
                      <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="What did your partner add?..."></textarea>
-                   </div></div></details>`;
+                   </div></div></div>`;
             return;
           }
           if (task.type === 'drawing') {
@@ -1928,27 +1928,27 @@ export function renderLesson(lesson) {
     });
 
     if (!isTrip) {
-      let hasModels = false;
-      if (lesson.tasks) {
-        hasModels = lesson.tasks.some((t) => !!t.model);
-      }
-      if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
-        hasModels = true;
-      }
-
-      const revealBtn = hasModels
-        ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>`
-        : '';
-
-      htmlTasks += `
-          <div class="phase-card">
-            <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-              
-              ${revealBtn}
-            </div>
-        `;
-
       if (lesson.tasks && lesson.tasks.length > 0) {
+        let hasModels = false;
+        if (lesson.tasks) {
+          hasModels = lesson.tasks.some((t) => !!t.model);
+        }
+        if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
+          hasModels = true;
+        }
+
+        const revealBtn = hasModels
+          ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>`
+          : '';
+
+        htmlTasks += `
+            <div class="phase-card">
+              <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+                
+                ${revealBtn}
+              </div>
+          `;
+
         lesson.tasks.forEach((task, tIdx) => {
           if (task.type === 'drag_drop_timeline') {
             const timelineId = `dd-timeline-lesson-${tIdx}`;
