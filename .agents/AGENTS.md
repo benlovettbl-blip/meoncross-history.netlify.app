@@ -69,7 +69,10 @@ Whenever you need to add an image from Wikimedia Commons for a historical figure
 
 
 ## Edexcel GCSE Exam Specification: Feature Questions
-Whenever generating or evaluating Edexcel GCSE History exam questions specifically for Paper 1 (Medicine) or Early Elizabethan England, remember that the 'features' question format has changed. Instead of a single 4-mark question asking to 'Describe two features of...', it is now structured as two separate 2-mark questions: 'Describe one feature of...' which appears twice. Ensure all exam practice forms, UI templates, and generated assessments reflect this.
+Whenever generating or evaluating Edexcel GCSE History exam questions specifically for Paper 1 (Medicine) or Early Elizabethan England, remember the question structure and format changes:
+1. **Paper 1 (Medicine):** The 'feature' questions appear **ONLY in Section A (The British Sector of the Western Front, 1914–18)**, structured as two separate 2-mark questions: Q1(a) 'Describe one feature of...' [2 marks] and Q1(b) 'Describe one feature of...' [2 marks]. Section B (the thematic study: Medieval to Modern) does NOT have feature questions (it consists of Q3 similarity/difference [4 marks], Q4 explain why [12 marks], and Q5/Q6 essay [16 marks]).
+2. **Early Elizabethan England (Paper 2):** 'Describe one feature of...' appears twice as two separate 2-mark questions (Q1(a) and Q1(b)).
+Ensure all exam practice forms, UI templates, and generated assessments reflect this specification.
 
 ### Fallback for Hotlink-Protected Images
 If a Wikimedia Commons URL works via the API (or curl) but returns a 403 Forbidden broken image icon in the browser (due to Wikimedia's hotlinking protection on high-traffic images), you MUST completely bypass hotlinking. Download the 500px thumbnail image directly into the `public/images/` directory using a Node script or curl, and update the JSON curriculum data to reference the local file path (e.g., `/images/vesalius.jpg`). This guarantees the image will always load flawlessly in the web app.
