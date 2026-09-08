@@ -553,7 +553,7 @@ s3.addShape(pptx.ShapeType.rect, {
   h: 0.9,
   fill: { color: '0F172A' },
 });
-s3.addText('OUR LOCAL MISSION: TRACING THE VILLAGE FALLEN', {
+s3.addText('LOCAL HERITAGE: TRACING OUR VILLAGE FALLEN', {
   x: 0.6,
   y: 0.15,
   w: 8.8,

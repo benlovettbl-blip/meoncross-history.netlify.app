@@ -268,7 +268,7 @@ export const unitData = {
         },
         {
           type: 'narrative',
-          theme_heading: 'The Core Mission: The Lowry Family & The Stubbington Fallen',
+          theme_heading: 'Local Heritage: The Lowry Family & The Stubbington Fallen',
           text: `
             <div style="background: #fefce8; border: 1px solid #fef08a; border-left: 5px solid #d97706; border-radius: 8px; padding: 22px; margin-bottom: 24px;">
               <h3 style="margin: 0 0 10px 0; color: #78350f; font-family: 'Playfair Display', serif; font-size: 1.35rem;">
@@ -281,7 +281,7 @@ export const unitData = {
                 "How did three sons from one coastal Hampshire family answer the call across Gallipoli, Arras, and the Somme—and how did six young men from our quiet village come to rest upon the ramparts and mud of Flanders?"
               </blockquote>
               <p style="color: #451a03; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                On this tour, pupils will not be tourists. Each pupil will be entrusted with a local mission: locating and touching the carved names of our village fallen—including <strong>Private Franklin</strong> and <strong>Private Ayling</strong> on Menin Gate Panel 35, and <strong>Private Muckett</strong>, <strong>Private Rye</strong>, <strong>Lance Corporal Ward</strong>, and <strong>Private Warland</strong> on the rear curved panels of Tyne Cot.
+                On this tour, pupils will not be tourists. Each pupil will undertake a local historical study: locating and touching the carved names of our village fallen—including <strong>Private Franklin</strong> and <strong>Private Ayling</strong> on Menin Gate Panel 35, and <strong>Private Muckett</strong>, <strong>Private Rye</strong>, <strong>Lance Corporal Ward</strong>, and <strong>Private Warland</strong> on the rear curved panels of Tyne Cot.
               </p>
               
               <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px;">

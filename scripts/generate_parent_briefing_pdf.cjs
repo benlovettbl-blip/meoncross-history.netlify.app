@@ -523,14 +523,13 @@ function getHtmlContent() {
         </div>
       </div>
 
-      <!-- Core Mission Box -->
+      <!-- Heritage Box -->
       <div class="heritage-box">
         <div class="heritage-header">
-          <span class="heritage-tag">The Core Mission</span>
           <span class="heritage-title">Connecting Our Village Community to Flanders Fields</span>
         </div>
         <div class="heritage-content">
-          On this expedition, our pupils are not passive tourists—they are field historians carrying a profound local mission. Carved into the Great War memorials back home across Stubbington and Lee-on-the-Solent are the names of young men who once walked our familiar streets before answering the call. Over these three days, pupils will bridge classroom history with village memory, physically locating and honouring our local fallen—including <strong>Private Thomas Franklin</strong> and <strong>Private William Ayling</strong> on Menin Gate Panel 35, and our village soldiers commemorated upon the memorial panels of Tyne Cot.
+          On this expedition, our pupils are not passive tourists—they are field historians exploring our local community's living history. Carved into the Great War memorials back home across Stubbington and Lee-on-the-Solent are the names of young men who once walked our familiar streets before answering the call. Over these three days, pupils will bridge classroom history with village memory, physically locating and honouring our local fallen—including <strong>Private Thomas Franklin</strong> and <strong>Private William Ayling</strong> on Menin Gate Panel 35, and our village soldiers commemorated upon the memorial panels of Tyne Cot.
         </div>
       </div>
 
