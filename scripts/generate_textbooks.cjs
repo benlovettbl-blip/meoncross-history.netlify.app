@@ -880,6 +880,30 @@ allDirs.forEach((unitId) => {
             if (block.tasks) {
               html += `<div class="task-box">`;
               block.tasks.forEach((task, tIdx) => {
+                if (task.flowchart) {
+                  const fc = task.flowchart;
+                  html += `
+                    <div style="margin: 8px 0 10px 0; padding: 8px 10px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; page-break-inside: avoid;">
+                      <div style="font-weight: bold; font-size: 8.5pt; color: #0f172a; margin-bottom: 6px;">${fc.title}</div>
+                      <div style="display: flex; gap: 8px;">
+                        ${fc.steps
+                          .map(
+                            (s, sIdx) => `
+                          <div style="flex: 1; background: #ffffff; border: 1px solid #cbd5e1; border-top: 3px solid ${sIdx === 0 ? '#0284c7' : sIdx === 1 ? '#d97706' : '#dc2626'}; border-radius: 4px; padding: 6px 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                              <strong style="font-size: 7.8pt; color: #334155;">Step ${s.num}</strong>
+                              <span style="font-size: 6.8pt; font-weight: bold; text-transform: uppercase; color: ${sIdx === 0 ? '#0284c7' : sIdx === 1 ? '#d97706' : '#dc2626'}; border: 0.5px solid #cbd5e1; padding: 1px 4px; border-radius: 3px;">${s.badge}</span>
+                            </div>
+                            <div style="font-weight: bold; font-size: 8pt; color: #0f172a; margin-bottom: 2px;">${s.title}</div>
+                            <div style="font-size: 7.2pt; color: #475569; line-height: 1.25;">${s.desc}</div>
+                          </div>
+                        `,
+                          )
+                          .join('')}
+                      </div>
+                    </div>
+                  `;
+                }
                 if (task.type === 'draw') {
                   html += `<div class="draw-task" style="display:none;"><span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${globalQNum++}: ${task.text || task.question}</div>`;
                 } else {

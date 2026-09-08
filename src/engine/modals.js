@@ -86,8 +86,8 @@ export function openTaskWhiteboard() {
           </p>
         </div>
         <div style="display: flex; gap: 10px; align-items: center;">
-          <button class="btn btn-secondary" data-action="reveal-all-wb-answers" style="padding: 8px 14px; font-size: 0.9rem; cursor: pointer;">
-            <i class="fa-solid fa-eye"></i> Reveal All
+          <button class="btn" data-action="reveal-all-wb-answers" id="wb-reveal-all-btn" style="padding: 8px 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; background: #0284c7; color: white; border: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(2, 132, 199, 0.25); display: inline-flex; align-items: center; gap: 7px; transition: all 0.2s ease;">
+            <i class="fa-solid fa-eye"></i> Reveal All Answers <span style="background: rgba(255,255,255,0.25); padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-family: monospace;">A</span>
           </button>
           <button class="btn btn-secondary" data-action="close-task-whiteboard" style="padding: 8px 16px; font-size: 0.9rem; cursor: pointer;">
             <i class="fa-solid fa-times"></i> Close
@@ -287,6 +287,22 @@ export function openTaskWhiteboard() {
 
   container.innerHTML = html;
   modal.classList.add('visible');
+
+  // Teacher Quick-Toggle keyboard shortcuts: 'A' to toggle all answers, 'Escape' to close
+  if (!window._wbKeyHandlerAttached) {
+    window._wbKeyHandlerAttached = true;
+    window.addEventListener('keydown', (e) => {
+      const wbModal = document.getElementById('task-whiteboard-modal');
+      if (!wbModal || !wbModal.classList.contains('visible')) return;
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+      if (e.key === 'a' || e.key === 'A') {
+        const toggleBtn = wbModal.querySelector('[data-action="reveal-all-wb-answers"]');
+        if (toggleBtn) toggleBtn.click();
+      } else if (e.key === 'Escape') {
+        wbModal.classList.remove('visible');
+      }
+    });
+  }
 }
 
 window.openTaskWhiteboard = openTaskWhiteboard;

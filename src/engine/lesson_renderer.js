@@ -1881,8 +1881,36 @@ export function renderLesson(lesson) {
           const starterDiv = task.starter
             ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${task.starter}</div>`
             : '';
+          let flowchartHtml = '';
+          if (task.flowchart) {
+            const fc = task.flowchart;
+            flowchartHtml = `
+              <div class="dual-coding-flowchart" style="margin: 10px 0 16px 0; padding: 12px 14px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px;">
+                <div style="font-weight: 800; font-size: 0.92rem; color: #0f172a; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                  <span>${fc.title}</span>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                  ${fc.steps
+                    .map(
+                      (s, sIdx) => `
+                    <div style="background: white; border: 1px solid #cbd5e1; border-top: 3.5px solid ${sIdx === 0 ? '#0284c7' : sIdx === 1 ? '#d97706' : '#dc2626'}; border-radius: 6px; padding: 10px;">
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                        <span style="font-weight: 800; font-size: 0.78rem; background: #f1f5f9; color: #334155; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">${s.num}</span>
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: ${sIdx === 0 ? '#0284c7' : sIdx === 1 ? '#d97706' : '#dc2626'}; background: #f8fafc; padding: 2px 6px; border-radius: 4px; border: 1px solid #e2e8f0;">${s.badge}</span>
+                      </div>
+                      <div style="font-weight: 700; font-size: 0.85rem; color: #0f172a; margin-bottom: 3px;">${s.title}</div>
+                      <div style="font-size: 0.78rem; color: #475569; line-height: 1.35;">${s.desc}</div>
+                    </div>
+                  `,
+                    )
+                    .join('')}
+                </div>
+              </div>
+            `;
+          }
           extrasHtml += `
                <div style="margin-bottom: 10px;">
+                 ${flowchartHtml}
                  <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + (task.text || task.question || ''))}</div>
                  <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-reveal" data-action="toggle-element" data-target-id="${ansId}"><i class="fa-solid fa-eye"></i> Show</button>
                  ${starterBtn}
@@ -2233,6 +2261,30 @@ export function renderLesson(lesson) {
           `;
         }
 
+        const is4Mark =
+          (q.tariff && q.tariff.includes('4')) ||
+          q.type === '4-mark' ||
+          (lesson.exam_practice && lesson.exam_practice.type === 'consequence_4m');
+        let stampHtml = '';
+        if (is4Mark) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #0284c7; border-radius: 8px; background: #f0f9ff; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #bae6fd; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-stamp" style="margin-right: 6px;"></i> Edexcel 4-Mark Consequence Formula Stamp</span>
+                <span style="background: #0284c7; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[4 marks &bull; 5 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #0284c7; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">P</span>
+                <div><strong>Point (Consequence):</strong> <em>"One significant consequence of [Event] was..."</em> (Directly state the resulting change)</div>
+                <span style="background: #0284c7; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">E</span>
+                <div><strong>Evidence (Historical Detail):</strong> <em>"Specifically, [names, dates, treaties, or figures]..."</em> (Deploy precise factual proof)</div>
+                <span style="background: #0284c7; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">E</span>
+                <div><strong>Explanation (Causal Impact):</strong> <em>"This resulted in... / Consequently, this led to..."</em> (Explain the ongoing historical effect)</div>
+              </div>
+            </div>
+          `;
+        }
+
         const promptHtml = q.prompt
           ? `
           <div style="font-size: 0.95rem; color: #334155; margin-bottom: 12px; line-height: 1.5; background: #f8fafc; padding: 10px 14px; border-left: 3px solid #64748b; border-radius: 4px;">
@@ -2249,6 +2301,7 @@ export function renderLesson(lesson) {
                 ${q.model ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="ep-model-${qIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
               </span>
             </div>
+            ${stampHtml}
             ${promptHtml}
             ${scaffoldHtml}
             <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>

@@ -537,8 +537,8 @@ export function initEventDelegation() {
         allWbAnswers.forEach((a) => a.classList.toggle('revealed', anyHidden));
         if (target) {
           target.innerHTML = anyHidden
-            ? '<i class="fa-solid fa-eye-slash"></i> Hide All'
-            : '<i class="fa-solid fa-eye"></i> Reveal All';
+            ? '<i class="fa-solid fa-eye-slash"></i> Hide All Answers <span style="background: rgba(255,255,255,0.25); padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-family: monospace;">A</span>'
+            : '<i class="fa-solid fa-eye"></i> Reveal All Answers <span style="background: rgba(255,255,255,0.25); padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-family: monospace;">A</span>';
         }
         break;
 

@@ -5969,7 +5969,30 @@
                     "Secret Real Objective"
                   ],
                   "rows": 3,
-                  "model": "Israel: Pretext was stopping fedayeen raids; real goal was capturing Sinai and opening Straits of Tiran. Britain & France: Pretext was separating combatants and protecting the canal; real goal was toppling Nasser and regaining imperial ownership of the Suez Canal."
+                  "model": "Israel: Pretext was stopping fedayeen raids; real goal was capturing Sinai and opening Straits of Tiran. Britain & France: Pretext was separating combatants and protecting the canal; real goal was toppling Nasser and regaining imperial ownership of the Suez Canal.",
+                  "flowchart": {
+                    "title": "⚡ Dual-Coding Sequence: The Secret Protocol of Sèvres (October 1956)",
+                    "steps": [
+                      {
+                        "num": 1,
+                        "badge": "Pretext Invasion",
+                        "title": "Israel Invades Sinai",
+                        "desc": "29 Oct 1956: Israeli paratroopers drop into Mitla Pass and sweep toward the Suez Canal, manufacturing an armed conflict."
+                      },
+                      {
+                        "num": 2,
+                        "badge": "Collusive Ultimatum",
+                        "title": "Anglo-French 'Peace' Ultimatum",
+                        "desc": "30 Oct 1956: Britain and France feign shock and order both sides to withdraw 10 miles from the Canal, knowing Egypt cannot comply."
+                      },
+                      {
+                        "num": 3,
+                        "badge": "Canal Seizure",
+                        "title": "Anglo-French Invasion",
+                        "desc": "5 Nov 1956: Citing Egypt's refusal, British and French troops invade Port Said to 'protect' the Canal and depose Nasser."
+                      }
+                    ]
+                  }
                 }
               ]
             },
@@ -6684,7 +6707,30 @@
                   "text": "Explain how Soviet false intelligence and Nasser's expulsion of UNEF peacekeepers triggered the countdown to war in May 1967. (P10)",
                   "starter": "The crisis was triggered in May 1967 when...",
                   "model": "The Soviet Union passed false intelligence reports to Cairo claiming Israel was massing twelve brigades on the Syrian border for an invasion. Although false, President Nasser felt compelled to prove his Arab nationalist leadership: he mobilized Egyptian troops into the Sinai, expelled the United Nations Emergency Force (UNEF) that had guarded the border since 1957, and closed the Straits of Tiran to Israeli shipping—which Israel had repeatedly warned would constitute an act of war (casus belli).",
-                  "model_answer": "The Soviet Union passed false intelligence reports to Cairo claiming Israel was massing twelve brigades on the Syrian border for an invasion. Although false, President Nasser felt compelled to prove his Arab nationalist leadership: he mobilized Egyptian troops into the Sinai, expelled the United Nations Emergency Force (UNEF) that had guarded the border since 1957, and closed the Straits of Tiran to Israeli shipping—which Israel had repeatedly warned would constitute an act of war (casus belli)."
+                  "model_answer": "The Soviet Union passed false intelligence reports to Cairo claiming Israel was massing twelve brigades on the Syrian border for an invasion. Although false, President Nasser felt compelled to prove his Arab nationalist leadership: he mobilized Egyptian troops into the Sinai, expelled the United Nations Emergency Force (UNEF) that had guarded the border since 1957, and closed the Straits of Tiran to Israeli shipping—which Israel had repeatedly warned would constitute an act of war (casus belli).",
+                  "flowchart": {
+                    "title": "⚡ Dual-Coding Sequence: Nasser's Fatal Escalation Ladder (May 1967)",
+                    "steps": [
+                      {
+                        "num": 1,
+                        "badge": "Mobilization",
+                        "title": "Sinai Troop Surge",
+                        "desc": "15 May 1967: Prompted by Soviet false reports of Israeli forces on Syrian border, Nasser moves 100,000 troops into the Sinai."
+                      },
+                      {
+                        "num": 2,
+                        "badge": "Expulsion",
+                        "title": "UN Peacekeepers Evicted",
+                        "desc": "16–18 May 1967: Nasser orders the expulsion of UNEF peacekeepers who had guaranteed the Egyptian-Israeli border since 1957."
+                      },
+                      {
+                        "num": 3,
+                        "badge": "Blockade (Casus Belli)",
+                        "title": "Closure of Straits of Tiran",
+                        "desc": "22 May 1967: Egypt blocks Israeli shipping from the Straits of Tiran, cutting off 90% of Israel's oil and making war inevitable."
+                      }
+                    ]
+                  }
                 }
               ]
             },

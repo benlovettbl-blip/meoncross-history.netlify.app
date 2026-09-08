@@ -1432,6 +1432,30 @@ allDirs.forEach((unitId) => {
             if (block.tasks && block.tasks.length > 0) {
               _nbHtml += `<div class="task-box">`;
               block.tasks.forEach((task) => {
+                if (task.flowchart) {
+                  const fc = task.flowchart;
+                  _nbHtml += `
+                    <div style="margin: 8px 0 10px 0; padding: 8px 10px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; page-break-inside: avoid;">
+                      <div style="font-weight: bold; font-size: 8.5pt; color: #0f172a; margin-bottom: 6px;">${fc.title}</div>
+                      <div style="display: flex; gap: 8px;">
+                        ${fc.steps
+                          .map(
+                            (s, sIdx) => `
+                          <div style="flex: 1; background: #ffffff; border: 1px solid #cbd5e1; border-top: 3px solid ${sIdx === 0 ? '#0284c7' : sIdx === 1 ? '#d97706' : '#dc2626'}; border-radius: 4px; padding: 6px 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                              <strong style="font-size: 7.8pt; color: #334155;">Step ${s.num}</strong>
+                              <span style="font-size: 6.8pt; font-weight: bold; text-transform: uppercase; color: ${sIdx === 0 ? '#0284c7' : sIdx === 1 ? '#d97706' : '#dc2626'}; border: 0.5px solid #cbd5e1; padding: 1px 4px; border-radius: 3px;">${s.badge}</span>
+                            </div>
+                            <div style="font-weight: bold; font-size: 8pt; color: #0f172a; margin-bottom: 2px;">${s.title}</div>
+                            <div style="font-size: 7.2pt; color: #475569; line-height: 1.25;">${s.desc}</div>
+                          </div>
+                        `,
+                          )
+                          .join('')}
+                      </div>
+                    </div>
+                  `;
+                }
                 if (task.type === 'drawing' || task.type === 'draw') {
                   _nbHtml += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
                   let _t = processTaskTextWithTariff(task.text || task.question);
@@ -2929,6 +2953,28 @@ allDirs.forEach((unitId) => {
               }
             }
             let scaffoldBoxHtml = '';
+            const is4Mark =
+              (item.tariff && item.tariff.includes('4')) ||
+              item.type === '4-mark' ||
+              (lesson.exam_practice && lesson.exam_practice.type === 'consequence_4m');
+            if (is4Mark && unitId === 'cme_new') {
+              scaffoldBoxHtml += `
+                <div style="margin: 8px 0 10px 0; border: 1.5px solid #0284c7; border-radius: 6px; background: #f0f9ff; padding: 8px 12px; page-break-inside: avoid;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; border-bottom: 1px solid #bae6fd; padding-bottom: 4px;">
+                    <span style="font-weight: 800; font-size: 8.5pt; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">🎯 Edexcel 4-Mark Consequence Formula Stamp</span>
+                    <span style="background: #0284c7; color: white; font-size: 7.5pt; font-weight: bold; padding: 1px 6px; border-radius: 8px;">[4 marks &bull; 5 mins]</span>
+                  </div>
+                  <div style="display: grid; grid-template-columns: auto 1fr; gap: 4px 8px; font-size: 7.8pt; line-height: 1.3; color: #0f172a;">
+                    <span style="background: #0284c7; color: white; font-weight: bold; padding: 1px 6px; border-radius: 3px; font-family: monospace; text-align: center; height: fit-content;">P</span>
+                    <div><strong>Point (Consequence):</strong> <em>"One significant consequence of [Event] was..."</em> (Directly name the resulting change)</div>
+                    <span style="background: #0284c7; color: white; font-weight: bold; padding: 1px 6px; border-radius: 3px; font-family: monospace; text-align: center; height: fit-content;">E</span>
+                    <div><strong>Evidence (Historical Fact):</strong> <em>"Specifically, [names, dates, treaties, or figures]..."</em> (Deploy precise detail)</div>
+                    <span style="background: #0284c7; color: white; font-weight: bold; padding: 1px 6px; border-radius: 3px; font-family: monospace; text-align: center; height: fit-content;">E</span>
+                    <div><strong>Explanation (Causal Impact):</strong> <em>"This resulted in... / Consequently, this led to..."</em> (Explain the ongoing effect)</div>
+                  </div>
+                </div>
+              `;
+            }
             if (unitId === 'cme_new' && ep.scaffolding) {
               const sc = ep.scaffolding;
               const stepsText = (sc.steps || [])
