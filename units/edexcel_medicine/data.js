@@ -669,9 +669,9 @@ export const unitData = {
           tasks: [
             {
               type: 'written',
-              text: "Identify one reason why the Church promoted Galen's ideas.",
+              text: "Explain how supernatural and religious beliefs were used to explain the causes of disease in medieval England.",
               model:
-                'Because his idea that the body was perfectly designed fit with the Christian belief in a single Creator.',
+                "The Catholic Church taught that disease was sent by God as a punishment for sin or a test of faith (such as leprosy in the Bible). Additionally, people used astrology, believing that negative planetary alignments (such as the 1345 alignment of Mars, Jupiter, and Saturn) corrupted the air and caused epidemics like the Black Death. Because people believed God and the stars controlled health, they sought spiritual cures like prayer rather than scientific medicine.",
             },
           ],
         },
@@ -707,12 +707,6 @@ export const unitData = {
           tasks: [
             {
               type: 'written',
-              text: 'Explain how astrology was used in medieval medicine.',
-              model:
-                'Physicians used star charts to check the alignment of planets. They believed negative alignments could cause disease, such as the 1345 alignment being blamed for the Black Death.',
-            },
-            {
-              type: 'written',
               text: 'Evaluate the significance of the Church in holding back medical progress in the Middle Ages.',
               model:
                 "The Church was highly significant in holding back progress because it controlled education and the copying of texts. By enforcing Galen's ideas as absolute truth and discouraging human dissection, the Church prevented any new medical discoveries.",
@@ -722,6 +716,14 @@ export const unitData = {
         {
           text: '[Key Individual: Claudius Galen]',
           theme_heading: 'Galen: Medical Pioneer',
+          tasks: [
+            {
+              type: 'written',
+              text: "Using the Claudius Galen Key Individual card, explain why Galen made anatomical errors, and why these errors remained unchallenged throughout the Middle Ages.",
+              model:
+                "Galen made anatomical errors because Roman law prohibited the dissection of human corpses, forcing him to dissect animals like pigs and Barbary apes. This caused him to make major anatomical mistakes, such as claiming the human lower jaw consists of two bones, the liver has five lobes, and blood flows through invisible pores in the heart septum. These errors remained unchallenged for over 1,000 years because the Catholic Church held absolute authority over education and universities, outlawed human dissection, and treated Galen's writings as divine dogma, punishing anyone who challenged him.",
+            },
+          ],
         },
         {
           text: "**Medieval Diagnostic Methods**\n\nPhysicians used two highly significant practical diagnostic methods to determine a patient's illness and internal humoural balance.\n\nThe first was Urine Charts. Examining a patient's urine was the primary diagnostic tool. A physician would carefully examine a sample against a chart, checking its color, thickness, smell, and even tasting it to diagnose the illness (for example, white or thin urine was diagnosed as an excess of phlegm). This method was so highly valued that large institutions, such as Norwich Cathedral Priory, employed a full-time physician solely to examine urine.\n\nPhysicians also carried a Vademecum, a pocket-sized book of charts that included urine colors and astrological diagrams, to patients' bedsides. A common and crucial drawing inside the Vademecum was the 'Zodiac Man' diagram. This illustrated how different star signs governed different parts of the human body, warning physicians when it was astrologically unsafe to treat or perform surgery on a specific body part.",

@@ -1243,23 +1243,69 @@ export function renderLesson(lesson) {
               p.name.toLowerCase().includes(personName.toLowerCase()),
             );
         }
+        if (
+          !person &&
+          typeof appStore !== 'undefined' &&
+          appStore?.state?.activeUnitData?.key_individuals
+        ) {
+          person = appStore.state.activeUnitData.key_individuals.find((p) =>
+            p.name.toLowerCase().includes(personName.toLowerCase()),
+          );
+        }
         if (person) {
           const cardHtml = generateKeyIndividualEmbedHTML
             ? generateKeyIndividualEmbedHTML(person)
             : `<div>${person.name}</div>`;
           htmlNarrative += `
-               <div class="key-individual-embed" style="margin-bottom: 20px; border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; background: #f8fafc; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                 <button data-action="toggle-chevron" style="width: 100%; text-align: left; padding: 15px 20px; background: rgba(59, 130, 246, 0.1); border: none; font-weight: bold; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; transition: background 0.2s;">
-                   <span><i class="fa-solid fa-id-card-clip" style="margin-right: 10px; color: #3b82f6;"></i> Key Individual: ${person.name}</span>
-                   <i class="fa-solid fa-chevron-down chevron-icon"></i>
-                 </button>
-                 <div style="display: none; padding: 25px; background: #ffffff;">
-                   <div style="width: 100%; margin: 0 auto;">
-                     ${cardHtml}
-                   </div>
-                 </div>
+               <div class="key-individual-embed" style="margin-bottom: 25px;">
+                 ${cardHtml}
                </div>
              `;
+          if (block.tasks && block.tasks.length > 0) {
+            htmlNarrative += `<div class="embedded-tasks-container" style="margin-bottom: 25px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
+            block.tasks.forEach((task) => {
+              const qNumPrefix = task.qNum ? `Q${task.qNum}. ` : '';
+              const cleanTaskText = (task.text || task.question || '').replace(/^Q\d+[\.\:]\s*/i, '');
+              htmlNarrative += `
+                <div class="task-box" style="margin-bottom: 12px; background: white; padding: 12px 15px; border-radius: 6px; border: 1px solid #fde68a;">
+                  <strong style="color: #92400e; font-size: 1.05rem;">${qNumPrefix}${cleanTaskText}</strong>
+                  ${task.model ? `<details style="margin-top: 8px;"><summary style="cursor: pointer; color: #b45309; font-weight: 600; font-size: 0.9rem;">View Model Answer</summary><div style="margin-top: 8px; padding: 10px; background: #fef3c7; border-radius: 4px; font-size: 0.95rem; color: #78350f;">${task.model}</div></details>` : ''}
+                </div>
+              `;
+            });
+            htmlNarrative += `</div>`;
+          }
+          if (block.hinge_question) {
+            const hingeId = `hinge-${index}`;
+            const hingeQuestionText = block.hinge_question.text || block.hinge_question.question;
+            const correctIndex =
+              block.hinge_question.correct_index !== undefined
+                ? block.hinge_question.correct_index
+                : block.hinge_question.answer;
+            htmlNarrative += `
+                <div class="hinge-question-container no-print" style="margin-bottom: 25px; margin-top: -5px;">
+                  <button class="btn btn-secondary" id="btn-${hingeId}" data-action="reveal-hinge" data-target="${hingeId}" style="background: #0ea5e9; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;"><i class="fa-solid fa-person-circle-question" style="margin-right: 6px;"></i> Reveal Hinge Question</button>
+                  <div id="${hingeId}" style="display: none; background: #f0f9ff; border: 2px solid #38bdf8; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div style="color: #0284c7; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Interactive Hinge Question</div>
+                    <div style="color: #0f172a; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">"${hingeQuestionText}"</div>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                      ${block.hinge_question.options
+                        .map(
+                          (opt, i) => `
+                        <button data-action="hinge-mcq-select" data-correct="${correctIndex}" data-index="${i}" style="text-align: left; background: white; border: 1px solid #bae6fd; padding: 12px 15px; border-radius: 6px; cursor: pointer; transition: all 0.2s; font-size: 1rem; color: #334155;">
+                          <strong>${String.fromCharCode(65 + i)}:</strong> ${opt}
+                        </button>
+                      `,
+                        )
+                        .join('')}
+                    </div>
+                    <div style="display: none; margin-top: 15px; padding: 12px; background: #dcfce7; border-left: 4px solid #22c55e; color: #166534; font-size: 1rem; border-radius: 0 6px 6px 0;">
+                      <strong>Explanation:</strong> ${block.hinge_question.explanation}
+                    </div>
+                  </div>
+                </div>
+              `;
+          }
           return;
         }
       }
