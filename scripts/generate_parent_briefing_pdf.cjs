@@ -772,7 +772,7 @@ function getHtmlContent() {
 
     <!-- Footer -->
     <div class="footer-bar">
-      <span>Meoncross School History Department · Stubbington &amp; Lee-on-the-Solent Heritage Expedition</span>
+      <span>Meoncross School History Department · In Partnership with The History Boys</span>
       <span>Page 2 of 2 · Information Accurate for 1st–3rd October 2026 Tour</span>
     </div>
   </div>
