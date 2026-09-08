@@ -460,14 +460,6 @@ export const unitData = {
           type: 'narrative',
           theme_heading:
             '1. The Imperial Dismemberment: The Collapse of the Ottoman Empire & Sykes-Picot (1916)',
-          images: [
-            {
-              src: '/images/cme_sykes_picot_1916_map.jpg',
-              caption:
-                'Primary Source: The original signed Sykes-Picot Agreement map (8 May 1916). British and French diplomats used a ruler to carve the Ottoman Middle East into European zones of control.',
-              alt: 'Map of the Sykes-Picot Agreement 1916',
-            },
-          ],
           image_context:
             'Primary map of the secret Sykes-Picot Agreement signed on 8 May 1916 by Sir Mark Sykes and François Georges-Picot, dividing the Ottoman Middle East into British and French zones. **Hinge Question:** Why did British and French diplomats believe drawing straight lines across tribal, ethnic, and religious lands would remain stable, and why did this arbitrary imperial partition create over a century of chronic conflict?',
           text: 'For over four centuries leading up to the First World War, the Middle East was ruled as part of the vast Turkish <strong>Ottoman Empire</strong>. The region was not divided into modern nation-states like Lebanon, Syria, Jordan, or Iraq; instead, it was administered as imperial provinces under the Ottoman Sultan in Constantinople.<br><br>\nWhen the Ottoman Empire joined World War One on the side of Germany in October 1914, Britain and France seized the opportunity to dismember the Turkish empire and expand their imperial dominance. In May 1916, British diplomat Sir Mark Sykes and French diplomat François Georges-Picot drew up the secret <strong>Sykes-Picot Agreement</strong>. Using a ruler across a map, they partitioned the region:\n<ul>\n  <li><strong>French Sphere:</strong> Syria and Lebanon (coastal blue zone and Area A).</li>\n  <li><strong>British Sphere:</strong> Mesopotamia (modern Iraq) and Transjordan (Area B and red zone), securing oil routes to the Persian Gulf.</li>\n  <li><strong>Brown Zone (Palestine):</strong> Designated for international administration due to the religious sensitivity of Christian, Muslim, and Jewish holy sites in Jerusalem.</li>\n</ul>\nFollowing Allied victory in 1918, the newly formed <strong>League of Nations</strong> formalised this partition through the <strong>Mandates System</strong> at the San Remo Conference (1920). These straight-line borders completely ignored traditional tribal boundaries, religious sects (Sunni, Shia, Christian, Druze, Jewish), and natural geography. This artificial map sowed the seeds of chronic regional instability that persists to this day.',
@@ -492,12 +484,6 @@ export const unitData = {
           theme_heading:
             '2. Contradictory Imperial Pledges: The McMahon-Hussein Correspondence vs The Balfour Declaration (1915–1917)',
           images: [
-            {
-              src: '/images/cme_balfour_declaration_1917.jpg',
-              caption:
-                'Primary Source: The Balfour Declaration (2 November 1917). British Foreign Secretary Arthur Balfour conveyed the British government’s support for a Jewish national home in Palestine to Lord Walter Rothschild.',
-              alt: 'The Balfour Declaration 1917',
-            },
             {
               src: '/images/cme_allenby_jerusalem_1917.jpg',
               caption:
@@ -529,12 +515,12 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Source A: The Sykes-Picot Agreement Partition Map (May 1916)',
-            src: '/images/cme_sykes_picot_1916_map.jpg',
+            title: 'Source B: The Original Balfour Declaration Letter (2 November 1917)',
+            src: '/images/cme_balfour_declaration_1917.jpg',
             caption:
-              'The original partition map signed by Sir Mark Sykes and François Georges-Picot dividing the Ottoman Empire into British (red/B) and French (blue/A) spheres of control, placing Palestine under international administration.',
+              'Official letter from British Foreign Secretary Arthur Balfour to Lord Rothschild expressing British support for a national home for the Jewish people in Palestine.',
             question:
-              'Source Detective: Study the map. How did the secret partition into French (Zone A) and British (Zone B) spheres directly contradict the promises of an independent Arab kingdom made to Sharif Hussein in the McMahon-Hussein Correspondence?',
+              'Source Detective: Study the 1917 Balfour Declaration letter (Source B). How did Britain’s commitment to a "national home for the Jewish people" directly contradict the wartime promises of Arab sovereignty made to Sharif Hussein in the McMahon-Hussein Correspondence?',
           },
         },
         {
