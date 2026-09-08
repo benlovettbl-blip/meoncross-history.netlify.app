@@ -1164,7 +1164,7 @@ allDirs.forEach((unitId) => {
 
         html += `
         <div class="source-container" style=" margin-bottom: 0px; padding-top: 0px; border-top: none;">
-          ${renderImages && lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, String.fromCharCode(sourceCharCode++))}</strong><br>` : ''}
+          ${renderImages && lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, unitId === 'cme_new' ? null : String.fromCharCode(sourceCharCode++))}</strong><br>` : ''}
           <div style="${srcs.length > 1 ? 'display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;' : 'display: flex; justify-content: center; gap: 10px;'} margin: 15px 0;">${imgTags}</div>
           ${renderImages && lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
           ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` [p. ${lesson.primary_source.page}]` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}

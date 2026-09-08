@@ -369,8 +369,7 @@ allDirs.forEach((unitId) => {
       let sourceCharCode = 65;
 
       const getSourceOverride = () => {
-        if (unitId === 'early_modern_world') return null;
-        if (unitId === 'cme_new') return String.fromCharCode(sourceCharCode++);
+        if (unitId === 'early_modern_world' || unitId === 'cme_new') return null;
         return 'S' + sourceNum++;
       };
 
