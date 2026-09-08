@@ -15832,14 +15832,15 @@
               {
                 "objective": "Explain how the Ottoman Empire and West African kingdoms controlled global wealth.",
                 "primer": "Use the sources from Kritovoulos and the Catalan Atlas to demonstrate contemporary perceptions of wealth.",
-                "question": "How did 's pilgrimage demonstrate the vast wealth of West Africa?"
+                "question": "How did Mansa Musa's pilgrimage demonstrate the vast wealth of West Africa?"
               },
               {
                 "objective": "Evaluate why Western Europe was on the periphery (edges) of world trade in 1450.",
                 "primer": "Explain that European exploration was driven by desperation due to the Ottoman blockade, not just curiosity.",
                 "question": "Why did Western Europe need to find a sea route to Asia in the 15th century?"
               }
-            ]
+            ],
+            "source_context": "Source A from the Catalan Atlas (1375) illustrates Marco Polo’s caravan travelling along the Silk Road, demonstrating that medieval global wealth flowed through overland trade routes connecting Asia and Europe before Ottoman conquests forced Europeans into the oceans. **Hinge Question:** If overland trade along the Silk Road was already so established and profitable, why did the Ottoman capture of Constantinople in 1453 force European kingdoms to risk everything sailing across uncharted oceans?"
           },
           "do_now": {
             "title": "Do Now: Connecting the Sources",
@@ -15864,8 +15865,16 @@
             },
             {
               "title": "Micro-History: A Venetian Merchant’s Shock (May 1453)",
-              "text": "In May 1453, a Venetian merchant named Niccolò Barbaro stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old Sultan Mehmed II of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
+              "text": "In May 1453, a Venetian merchant named <span class=\"historical-figure\" data-person=\"niccolo_barbaro\">Niccolò Barbaro</span> stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old <span class=\"historical-figure\" data-person=\"mehmed_ii\">Sultan Mehmed II</span> of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
               "tasks": [
+                {
+                  "type": "source_analysis",
+                  "source_title": "Source C: Eyewitness Diary of Nicolò Barbaro (May 1453)",
+                  "source_text": "\"On the twenty-ninth of May, 1453, the last day of the siege, our Lord God decided to deliver the city into the hands of the pagans... The blood flowed in the city like rainwater in the gutters after a sudden storm. The corpses of the Christians were thrown into the sea like melons floating along a canal...\"\n— Adapted from the diary of Nicolò Barbaro, a Venetian eye-witness.",
+                  "provenance_clue": "Provenance Clue: Consider who Nicolò Barbaro was (a Venetian Christian merchant whose trade depended on Christian control) and where he was during the siege (trapped inside the collapsing city). How might his religion, nationality, and sheer terror shape the way he describes the Ottoman forces?",
+                  "question": "Source Analysis (Provenance): Why might a Venetian merchant like Nicolò Barbaro have a biased or particularly panicked view of the Ottoman siege of Constantinople?",
+                  "model_answer": "Nicolò Barbaro was a Venetian Christian merchant trapped inside Constantinople as it was bombarded and captured. His view would be heavily biased and panicked for several reasons: First, as a devout Christian, he viewed the Muslim Ottoman Turks as religious enemies (\"pagans\") invading Christendom. Second, as a Venetian merchant, his personal wealth and future livelihood depended entirely on free trade through Christian Constantinople—the Ottoman conquest threatened ruinous taxes and trade disruption for Venice. Finally, witnessing the traumatic, violent collapse of the city first-hand under terrifying artillery bombardment naturally caused extreme panic and emotional exaggeration in his diary entries."
+                },
                 {
                   "type": "multiple_choice",
                   "questions": [
@@ -16262,13 +16271,13 @@
             "objectives": [
               {
                 "objective": "Explain how the Protestant Reformation shattered European unity after 1517.",
-                "primer": "Direct students to the Macro-History section on  and the 95 Theses. Emphasize how this split created a geopolitical divide that spilled into the New World.",
-                "question": "How did 's actions in 1517 directly contribute to the later naval conflict between England and Spain?"
+                "primer": "Direct students to the Macro-History section on Martin Luther and the 95 Theses. Emphasize how this split created a geopolitical divide that spilled into the New World.",
+                "question": "How did Martin Luther's actions in 1517 directly contribute to the later naval conflict between England and Spain?"
               },
               {
                 "objective": "Analyze the role of Elizabethan privateers in challenging Catholic Spain's global monopoly.",
                 "primer": "Use the Micro-History of San Juan de Ulúa and the section on Protestant Privateers to show how Drake's personal vendetta aligned with Elizabeth's need to challenge Spain cheaply.",
-                "question": "Why did  choose to use privateers like Francis Drake rather than sending an official Royal Navy fleet to challenge Spain in the Americas?"
+                "question": "Why did Queen Elizabeth I choose to use privateers like Francis Drake rather than sending an official Royal Navy fleet to challenge Spain in the Americas?"
               },
               {
                 "objective": "Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions.",
@@ -16345,14 +16354,14 @@
                   "image": "/images/early_mod_l2_banner.jpg",
                   "image_alt": "Map of the Spanish Armada Route (1588)",
                   "image_context": "Trace the chaotic route of the Spanish fleet around the rugged coasts of Scotland and Ireland. This map highlights how the Armada was defeated not just by English naval tactics, but by disastrous weather (the 'Protestant Wind') and poor logistical planning. **Hinge Question:** Does this map suggest the English victory was due to superior skill, or lucky geography and weather?",
-                  "image_caption": "An expedition map showing the route of the Spanish Armada in 1588.  of Spain launched the massive fleet to overthrow the Protestant , but it was defeated by English naval tactics and severe storms.",
+                  "image_caption": "An expedition map showing the route of the Spanish Armada in 1588. King Philip II of Spain launched the massive fleet to overthrow the Protestant Queen Elizabeth I, but it was defeated by English naval tactics and severe storms.",
                   "source_letter": "A"
                 },
                 {
                   "image": "/images/francis_drake.jpg",
                   "image_alt": "Portrait of Sir Francis Drake (1591)",
                   "image_context": "Notice Drake's confident posture and the hand resting on a globe. To the English, he was a heroic explorer and a symbol of their growing naval power. To the Spanish, however, he was 'El Draque' (The Dragon)—a ruthless pirate who terrorized their galleons. **Hinge Question:** How can the exact same historical figure be remembered as both a national hero and a criminal pirate?",
-                  "image_caption": "Portrait of  (1591), attributed to Marcus Gheeraerts the Younger. Drake was an English privateer whose raiding of Spanish treasure ships and successful circumnavigation of the globe (1577–1580) helped transform England into a formidable maritime power.",
+                  "image_caption": "Portrait of Sir Francis Drake (1591), attributed to Marcus Gheeraerts the Younger. Drake was an English privateer whose raiding of Spanish treasure ships and successful circumnavigation of the globe (1577–1580) helped transform England into a formidable maritime power.",
                   "source_letter": "B"
                 }
               ]
@@ -18265,7 +18274,7 @@
               "tasks": [
                 {
                   "type": "extended_writing",
-                  "question": "UCL Research Task Worksheet: Summarize the core findings.\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
+                  "question": "UCL Research Task Worksheet: Summarize the core findings of your local investigation into the legacies of slavery. Use the <abbr title=\"I - Identify (make your point)\\nD - Describe (give historical evidence/detail)\\nE - Explain (how the evidence supports the point)\\nA - Analyse (link back to the question and evaluate significance)\" style=\"text-decoration: underline dotted; cursor: help;\">IDEA framework</abbr> to structure your response.",
                   "lines": 20
                 }
               ]
@@ -18590,7 +18599,7 @@
           "narrative_blocks": [
             {
               "title": "Micro-History: Queen Nanny and the Blue Mountains (1730s)",
-              "text": "High in the mist-shrouded Blue Mountains of eastern Jamaica, an English army patrol crept through the dense rainforest in 1734. Suddenly, the trees themselves seemed to come alive.<br><br>Men and women dressed in camouflage woven from forest foliage descended upon the soldiers. The English troops were routed without ever seeing the main body of their enemy. Leading this guerrilla force was a woman whom British colonial officials called a \"rebel witch,\" but whom her people knew as <strong>Queen Nanny</strong>.<br><br>Born in the Gold Coast (modern-day Ghana) around 1686, Nanny was kidnapped, enslaved, and brought to Jamaica. She escaped from a sugar plantation into the rugged interior, joining communities of formerly enslaved people known as <strong>Maroons</strong> (derived from the Spanish <em>cimarrón</em>, meaning \"wild\" or \"untamed\").<br><br>Nanny was an extraordinary military strategist. She established <strong>Nanny Town</strong>, a fortified, self-sufficient mountain sanctuary where freed Africans grew crops, maintained African cultural traditions, and launched lightning raids to free enslaved workers from nearby British sugar plantations.<br><br>For over a decade, British forces tried and failed to conquer Nanny Town. By 1739, the British Crown was forced to do something unthinkable: <strong>sign a peace treaty with former slaves</strong>, recognizing their freedom and granting them 1,500 acres of autonomous land in Jamaica.<br><br>Queen Nanny’s story shatters a persistent historical myth: that enslaved Africans were passive victims who waited silently for white European abolitionists to free them. From the decks of slave ships to the sugar fields of the Caribbean, African resistance was continuous, sophisticated, and relentless.",
+              "text": "High in the mist-shrouded Blue Mountains of eastern Jamaica, an English army patrol crept through the dense rainforest in 1734. Suddenly, the trees themselves seemed to come alive.<br><br>Men and women dressed in camouflage woven from forest foliage descended upon the soldiers. The English troops were routed without ever seeing the main body of their enemy. Leading this guerrilla force was a woman whom British colonial officials called a \"rebel witch,\" but whom her people knew as <strong><span class=\"historical-figure\" data-person=\"queen_nanny\">Queen Nanny</span></strong>.<br><br>Born in the Gold Coast (modern-day Ghana) around 1686, Nanny was kidnapped, enslaved, and brought to Jamaica. She escaped from a sugar plantation into the rugged interior, joining communities of formerly enslaved people known as <strong>Maroons</strong> (derived from the Spanish <em>cimarrón</em>, meaning \"wild\" or \"untamed\").<br><br>Nanny was an extraordinary military strategist. She established <strong>Nanny Town</strong>, a fortified, self-sufficient mountain sanctuary where freed Africans grew crops, maintained African cultural traditions, and launched lightning raids to free enslaved workers from nearby British sugar plantations.<br><br>For over a decade, British forces tried and failed to conquer Nanny Town. By 1739, the British Crown was forced to do something unthinkable: <strong>sign a peace treaty with former slaves</strong>, recognizing their freedom and granting them 1,500 acres of autonomous land in Jamaica.<br><br><span class=\"historical-figure\" data-person=\"queen_nanny\">Queen Nanny</span>’s story shatters a persistent historical myth: that enslaved Africans were passive victims who waited silently for white European abolitionists to free them. From the decks of slave ships to the sugar fields of the Caribbean, African resistance was continuous, sophisticated, and relentless.",
               "tasks": [
                 {
                   "type": "source_analysis",
@@ -18639,7 +18648,7 @@
             },
             {
               "title": "Voices of Resistance: Equiano's Testimony",
-              "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source A: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source B: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source C: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of </strong>, a Jamaican sugar plantation overseer.</blockquote>"
+              "text": "To truly understand the experience of the Transatlantic Slave Trade, we must read the words of those who survived it.<br><br><blockquote style=\"border-left: 5px solid #3b82f6; padding-left: 15px; margin-left: 0; background: #f8fafc; padding: 15px; border-radius: 4px;\"><strong>Source A: Olaudah Equiano Recounts the Terror of the Ship’s Hold (1789)</strong><br><em>\"The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us. This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died... The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative of the Life of Olaudah Equiano</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #ef4444; padding-left: 15px; margin-left: 0; background: #fef2f2; padding: 15px; border-radius: 4px;\"><strong>Source B: Equiano Describes Shipboard Revolts</strong><br><em>\"One day, when we had a smooth sea and moderate wind, two of my wearied countrymen, who were chained together (I was near them at the time), preferring death to such a life of misery, somehow made through the nettings, and jumped into the sea: immediately another quite dejected fellow, who, on account of his illness, was suffered to be out of irons, also followed their example... I believe many more would very soon have done the same, if they had not been prevented by the ship's crew, who were instantly alarmed.\"</em><br>— <strong>Olaudah Equiano</strong>, <em>The Interesting Narrative</em> (1789).</blockquote><br><blockquote style=\"border-left: 5px solid #10b981; padding-left: 15px; margin-left: 0; background: #f0fdf4; padding: 15px; border-radius: 4px;\"><strong>Source C: A Jamaican Overseer’s Diary Recording Everyday Sabotage (1771)</strong><br><em>\"May 14: The slaves again delayed the grinding of the cane... claim the main waterwheel spindle is broken by accident, but I suspect it was done maliciously by the mill boiler. May 19: Found three cows dead in the lower pasture, poisoned with nightshade root. The Negroes deny all knowledge, but there is a spirit of sullen defiance among them.\"</em><br>— <strong>Adapted from the diary of Thomas Thistlewood</strong>, a Jamaican sugar plantation overseer.</blockquote>"
             },
             {
               "title": "Examining the Evidence",
@@ -18702,7 +18711,7 @@
             {
               "title": "Analyzing Source F",
               "image": "/images/william_wilberforce.jpg",
-              "image_alt": "Portrait of , a British politician and abolitionist",
+              "image_alt": "Portrait of William Wilberforce, a British politician and abolitionist",
               "source_letter": "F",
               "tasks": [
                 {
@@ -18721,11 +18730,11 @@
                   "model_answer": "Slavery ended because it was becoming less economically profitable, and because massive armed rebellions by enslaved people made the system too dangerous and expensive to maintain."
                 },
                 {
-                  "question": "Study Source F (Portrait of a British politician and abolitionist). Why were portraits like this important for the abolitionist movement in the late 18th century?",
+                  "question": "Study Source F (Portrait of William Wilberforce, a British politician and abolitionist). Why were portraits like this important for the abolitionist movement in the late 18th century?",
                   "model_answer": "Portraits and visual propaganda were crucial tools for abolitionists to humanize their cause, raise public awareness, and project an image of moral authority in their long political campaign to end the transatlantic slave trade."
                 }
               ],
-              "image_caption": "Portrait of , a British politician and abolitionist"
+              "image_caption": "Portrait of William Wilberforce, a British politician and abolitionist"
             },
             {
               "title": "Lesson Reflection",
@@ -19816,6 +19825,7 @@
       ],
       "key_individuals": [
         {
+          "id": "niccolo_barbaro",
           "name": "Niccolò Barbaro",
           "role": "Venetian Doctor & Merchant",
           "lifespan": "c. 1420 – 1494",
@@ -19830,6 +19840,7 @@
           "group": "Historical Figures"
         },
         {
+          "id": "mehmed_ii",
           "name": "Sultan Mehmed II",
           "role": "Ottoman Sultan",
           "lifespan": "1432 – 1481",
@@ -19845,6 +19856,7 @@
           "group": "Historical Figures"
         },
         {
+          "id": "mansa_musa",
           "name": "Mansa Musa",
           "role": "Emperor of Mali",
           "lifespan": "c. 1280 – 1337",
@@ -19962,9 +19974,10 @@
           "group": "Historical Figures"
         },
         {
+          "id": "olaudah_equiano",
           "name": "Olaudah Equiano",
           "role": "Abolitionist & Writer",
-          "lifespan": "c. 1545 – 1597",
+          "lifespan": "c. 1745 – 1797",
           "bio": "An enslaved African who bought his own freedom and wrote a bestselling autobiography exposing the horrors of the Transatlantic Slave Trade.",
           "image": "/images/individuals/olaudah_equiano.png",
           "actions": "<ul><li>Survived the horrors of the Middle Passage and enslavement in the Caribbean and Americas.</li><li>Purchased his own freedom in 1766 for £40 after working as a merchant seaman.</li><li>Published 'The Interesting Narrative of the Life of Olaudah Equiano' in 1789 and toured the UK speaking against slavery.</li></ul>",
@@ -19977,9 +19990,14 @@
           "group": "Historical Figures"
         },
         {
-          "name": "Nanny of the Maroons",
+          "id": "queen_nanny",
+          "name": "Queen Nanny (Nanny of the Maroons)",
+          "aliases": [
+            "Queen Nanny",
+            "Nanny of the Maroons"
+          ],
           "role": "Maroon Leader & National Hero",
-          "lifespan": "c. 1686 – c. 1733",
+          "lifespan": "c. 1686 – c. 1755",
           "bio": "An iconic Jamaican leader of the Windward Maroons. Born in West Africa, she escaped slavery in Jamaica and led a highly successful guerrilla war against the British colonial forces.",
           "actions": "<ul><li>United escaped enslaved people to form secure, fortified mountain communities (Nanny Town).</li><li>Orchestrated decades of successful guerrilla warfare against British soldiers.</li><li>Freed over 800 enslaved people during raids on plantations.</li></ul>",
           "achievements": [
@@ -19987,6 +20005,21 @@
             "Recognized today as a National Hero of Jamaica."
           ],
           "image": "/images/individuals/queen_nanny_nanny_of_the_maroons.jpg",
+          "group": "Historical Figures"
+        },
+        {
+          "id": "william_wilberforce",
+          "name": "William Wilberforce",
+          "role": "British Politician & Abolitionist",
+          "lifespan": "1759 – 1833",
+          "bio": "A British MP who led the parliamentary campaign to abolish the transatlantic slave trade in 1807.",
+          "image": "/images/william_wilberforce.jpg",
+          "actions": "<ul><li>Led the parliamentary campaign for 20 years to abolish the British transatlantic slave trade.</li><li>Introduced the Abolition of the Slave Trade Bill, passed in 1807.</li><li>Advocated for complete emancipation of enslaved people across the British Empire.</li></ul>",
+          "achievements": [
+            "Instrumental in passing the 1807 Slave Trade Act.",
+            "Helped build mass political petitions and public campaigns across Britain."
+          ],
+          "limitations": "Traditional histories over-emphasised his role at the expense of enslaved Africans who fought for their own freedom through active rebellion and resistance.",
           "group": "Historical Figures"
         },
         {
