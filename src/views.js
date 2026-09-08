@@ -10,10 +10,11 @@ import { renderCoverSourcesHTML } from './cover_sources.js';
 import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
 import { renderLesson } from './engine/lesson_renderer.js'; // force-refresh
 import { initKeyIndividualsTask } from './key_individuals.js';
-import { initGuidedReadingTask } from './guided_reading.js'; // Added for guided reading tab
+import { initGuidedReadingTask } from './guided_reading.js';
 import { getAssetUrl } from './engine/assets.js';
 import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
 import { renderDiagnosticLauncherHTML } from './diagnostic_benchmark.js';
+export { renderCompetitionsView } from './competitions_zone.js';
 
 export function getUnits() {
   if (!window.db) return [];
@@ -123,6 +124,30 @@ export function renderDashboard() {
 
   let html = `
     <div style="max-width: 1150px; margin: 0 auto; padding: 0 20px;">
+  `;
+
+  // Young Historian & Competitions Spotlight Banner
+  html += `
+    <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-radius: 14px; padding: 18px 22px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.09); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 14px; min-width: 280px; flex: 1;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #f59e0b; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2px;">
+            <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #d97706; color: #ffffff; padding: 2px 8px; border-radius: 12px;">Young Historians Spotlight</span>
+            <span style="font-size: 0.75rem; font-weight: 700; color: #92400e;">Hampshire Archives Trust Competition 2026–27</span>
+          </div>
+          <div style="font-size: 0.96rem; font-weight: 700; color: #78350f;">
+            Win £100 student cash &amp; £300 for Meoncross History Department
+          </div>
+        </div>
+      </div>
+      <button class="btn-pedagogy-primary" onclick="window.switchView('competitions')" style="background: #d97706; border-color: #b45309; padding: 9px 18px; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; border-radius: 8px; cursor: pointer; color: #ffffff; flex-shrink: 0;">
+        <span>Explore Competition &amp; Ideas</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
   `;
 
   const units = getUnits();
@@ -493,7 +518,7 @@ window.launchSubApp = function (subAppName) {
     curtain.classList.remove('hidden');
   }
 
-  setTimeout(() => {
+  setTimeout(async () => {
     if (subAppName === 'gcse_middle_east_1945_1995') {
       window.location.href = '/cme/';
       return;
@@ -504,8 +529,16 @@ window.launchSubApp = function (subAppName) {
     if (subAppName === 'gcse_elizabethan_england') mappedName = 'eee';
     if (subAppName === 'great_war_v2') mappedName = 'great_war';
 
-    window.location.href = `/?view=lessons&unit=${mappedName}`;
-  }, 350);
+    if (window.switchView) {
+      await window.switchView('lessons', mappedName);
+    } else {
+      window.location.href = `/?view=lessons&unit=${mappedName}`;
+    }
+
+    if (curtain) {
+      setTimeout(() => curtain.classList.add('hidden'), 150);
+    }
+  }, 180);
 };
 
 export function renderInteractiveQuiz() {

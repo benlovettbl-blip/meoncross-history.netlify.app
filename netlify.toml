@@ -3,6 +3,12 @@
   command = "npm run build"
 
 [[headers]]
+  # Ensure the service worker is never cached by the browser HTTP cache
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
   # By default, force the browser to check if the file has changed (for HTML, PDFs, public/style.css)
   for = "/*"
   [headers.values]

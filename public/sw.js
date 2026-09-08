@@ -1,5 +1,5 @@
-const CACHE_NAME = 'history-hub-cache-v11';
-const DYNAMIC_CACHE = 'history-hub-dynamic-v11';
+const CACHE_NAME = 'history-hub-cache-v12';
+const DYNAMIC_CACHE = 'history-hub-dynamic-v12';
 
 const CORE_ASSETS = [
   '/',
@@ -91,6 +91,32 @@ self.addEventListener('fetch', (event) => {
 
   // Skip Chrome extensions and non-http schemes
   if (!url.protocol.startsWith('http')) return;
+
+  // 1. Network-First for database.json: always fetch fresh live curriculum data when online; fallback to cache offline
+  if (url.pathname.includes('database.json')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(event.request, responseToCache);
+              cache.put('/database.json', responseToCache.clone());
+            });
+          }
+          return networkResponse;
+        })
+        .catch(async () => {
+          console.warn('[Service Worker] Offline fallback for database.json');
+          const cached =
+            (await caches.match('/database.json')) ||
+            (await caches.match(event.request, { ignoreSearch: true }));
+          if (cached) return cached;
+          throw new Error('Offline and no database.json found in cache');
+        }),
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
