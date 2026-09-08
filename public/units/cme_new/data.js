@@ -1360,6 +1360,7 @@ export const unitData = {
           id: 'cme_king_david_hotel_1946',
           title: 'Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)',
           date: '22 July 1946',
+          src: '/assets/cme_new_king_david_ruins.png',
           image: '/assets/cme_new_king_david_ruins.png',
           caption:
             'The south-west wing of the King David Hotel collapsed after the Irgun bomb detonation, killing 91 British, Arab, and Jewish personnel.',
@@ -1374,6 +1375,7 @@ export const unitData = {
           id: 'cme_sergeants_affair_1947',
           title: 'Source B: The Sergeants Affair, Netanya (July 1947)',
           date: '31 July 1947',
+          src: '/images/cme_sergeants_affair_1947.jpg',
           image: '/images/cme_sergeants_affair_1947.jpg',
           caption:
             'British Army Intelligence Corps sergeants Clifford Martin and Mervyn Paice hanged by the Irgun in a eucalyptus grove near Netanya.',
@@ -1390,6 +1392,7 @@ export const unitData = {
           id: 'cme_exodus_haifa_1947',
           title: 'Source C: The SS Exodus Intercepted off Palestine (July 1947)',
           date: '18 July 1947',
+          src: '/units/cme_new/assets/cme_exodus.jpeg',
           image: '/units/cme_new/assets/cme_exodus.jpeg',
           caption:
             'The SS Exodus carrying 4,500 Holocaust survivors intercepted by the Royal Navy and returned to displaced persons camps in Germany.',
@@ -2690,11 +2693,11 @@ export const unitData = {
           ],
           source: {
             title: 'Source B: Palestinian Refugees Leaving Their Villages (1948 Nakba)',
-            src: '/images/cme_palestinian_refugees_1948.jpg',
+            src: '/images/cme_palestinian_refugees_leaving_gaza.webp',
             caption:
-              'Authentic UN Archival Photograph: Palestinian families carrying bundles of clothing and food as they flee their homes in 1948.',
+              'Authentic Historical Photograph: Palestinian families wading through coastal waters carrying trunks and possessions as they flee the fighting during the 1948 Nakba.',
             question:
-              'Source Detective: How did the displacement of over 700,000 Palestinians create an unresolved humanitarian and territorial crisis that shaped every subsequent conflict?',
+              'Source Detective: Study the possessions and families fleeing in the photograph. What does this reveal about the suddenness of their flight and the immense humanitarian crisis created across the region?',
           },
         },
         {
@@ -2785,20 +2788,22 @@ export const unitData = {
             },
           ],
           source: {
-            title: 'Source D: Palestinian Refugee Camps (UNRWA, 1949)',
-            src: '/units/cme_new/assets/palestinian_refugees_1948.jpg',
+            title: 'Source C: Maritime Chokepoints & The Sinai Peninsula (Blockade of Tiran)',
+            src: '/images/cme_sinai_peninsula_map.jpg',
             caption:
-              'Palestinian refugees displaced by the 1948 war, who would later be supported by UNRWA.',
+              'Topographical map of the Sinai Peninsula, highlighting the narrow Straits of Tiran and the entrance to the Gulf of Aqaba, which Egypt blockaded against Israeli shipping in the 1950s.',
+            question:
+              'Source Detective: Locate the Straits of Tiran at the southern tip of the Sinai Peninsula. Why was Egypt’s naval blockade here considered an act of war (casus belli) by Israel?',
             teacher_notes: {
               primer:
-                'Explain the creation of permanent refugee camps in Gaza, the West Bank, and neighboring countries.',
+                'Focus pupils on the strategic bottleneck of the Straits of Tiran at the mouth of the Gulf of Aqaba, illustrating why maritime access to the Red Sea was an economic lifeline for Israel.',
               objectives: [
                 {
-                  objective: 'Identify international responses',
+                  objective: 'Analyse geo-strategic flashpoints in the Sinai Peninsula',
                   primer:
-                    'Discuss how the refugee issue became a permanent feature of the conflict.',
+                    'Guide students to identify how geographic chokepoints transformed political disputes into direct military crises.',
                   question:
-                    'What does this source reveal about international attempts to manage the Palestinian refugee crisis?',
+                    'Hinge Question: Why did control of the Straits of Tiran grant Egypt decisive leverage over Israel’s southern sea trade, and why did Israel warn that closing them would trigger war?',
                 },
               ],
             },
@@ -4091,11 +4096,11 @@ export const unitData = {
             'The fragile status quo established by the 1949 armistice was permanently shattered by political upheavals inside Egypt. Nasser quickly positioned himself as the champion of Pan-Arabism—a powerful political ideology aimed at uniting Arab nations to throw off Western colonial influence, secure Arab dignity, and avenge the humiliating 1948 defeat by Israel.',
           source: {
             title: 'Source A: President Gamal Abdel Nasser (1956)',
-            src: '/images/cme_alahram_suez_1956.jpg',
+            src: '/images/cme_nasser_1956.jpg',
             caption:
-              'Front page of Egyptian newspaper Al-Ahram (27 July 1956) reporting President Nasser’s speech in Alexandria nationalising the Suez Canal Company.',
+              'Official portrait of Colonel Gamal Abdel Nasser, President of Egypt (1954–1970) and leader of the Pan-Arab movement.',
             question:
-              'Source Detective: Look at the celebratory front page: why was the nationalisation of the canal seen across the Arab world as a historic victory over Western imperialism?',
+              'Source Detective: Study the portrait of Nasser. Why did his charismatic leadership and anti-colonial stance inspire such widespread devotion across the Arab world?',
           },
         },
         {
